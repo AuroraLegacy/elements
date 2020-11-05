@@ -1,0 +1,559 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<elements>
+	<info>
+		<name>Unearthed Arcana: Subclasses, Part 5</name>
+		<update version="0.0.1">
+			<file name="20200805.xml" url="https://raw.githubusercontent.com/AuroraLegacy/elements/master/unearthed-arcana/2020/20201026.xml" />
+		</update>
+	</info>
+
+	<element name="Unearthed Arcana: Subclasses, Part 5" type="Source" source="Core" id="ID_WOTC_SOURCE_UNEARTHED_ARCANA_20201026">
+		<description>
+			<p>Empowered by dragons, two subclasses land in today’s Unearthed Arcana: the Way of the Ascendant Dragon for monks and the Drakewarden for rangers.</p>
+		</description>
+		<setters>
+			<set name="abbreviation">UA20201026</set>
+			<set name="url">https://dnd.wizards.com/articles/unearthed-arcana/subclasses5</set>
+			<set name="author" abbreviation="WOTC" url="http://dnd.wizards.com">Wizards of the Coast</set>
+			<set name="official">true</set>
+			<set name="playtest">true</set>
+			<set name="release">20201026</set>
+		</setters>
+	</element>
+	<element name="Way of the Ascendant Dragon" type="Archetype" source="Unearthed Arcana: Subclasses, Part 5" id="ID_WOTC_UA20201026_ARCHETYPE_WAY_OF_THE_ASCENDANT_DRAGON">
+		<supports>Monastic Tradition</supports>
+		<description>
+			<p>Monks who follow the Way of the Ascendant Dragon revere the power and grandeur of dragons. They alter their own ki to resonate with draconic might, channeling it to augment their prowess in battle, soar through the air, and to bolster their allies.</p>
+			<p class="indent">As a follower of this Monastic Tradition, you decide how you unlocked the power of dragons through your ki. The Ascendant Dragon Origin table offers some possibilities.</p>
+			<h5 class="caption">Ascendant Dragon Origin</h5>
+			<table>
+				<thead>
+					<tr><td>d6</td><td>Origin</td></tr>
+				</thead>
+				<tr><td>1</td><td>You honed your abilities by observing a dragon and aligning your ki with their world-altering power.</td></tr>
+				<tr><td>2</td><td>A dragon personally took an active role in shaping your inner energy.</td></tr>
+				<tr><td>3</td><td>You studied at a monastery that traces its teachings back centuries or more to a single dragon’s instruction.</td></tr>
+				<tr><td>4</td><td>You spent long stretches meditating in the region of influence of an ancient dragon’s lair, absorbing its ambient magic.</td></tr>
+				<tr><td>5</td><td>You found a scroll written in Draconic that contained inspiring new techniques.</td></tr>
+				<tr><td>6</td><td>After a dream that featured a five-handed dragonborn you awoke with altered ki, reflecting the breaths of dragons.</td></tr>
+			</table>
+			<div element="ID_WOTC_UA20201026_ARCHETYPE_FEATURE_ASCENDANT_DRAGON_DRACONIC_DISCIPLE" />
+			<div element="ID_WOTC_UA20201026_ARCHETYPE_FEATURE_ASCENDANT_DRAGON_BREATH_OF_THE_DRAGON" />
+			<div element="ID_WOTC_UA20201026_ARCHETYPE_FEATURE_ASCENDANT_DRAGON_WINGS_UNFURLED" />
+			<div element="ID_WOTC_UA20201026_ARCHETYPE_FEATURE_ASCENDANT_DRAGON_ASPECT_OF_THE_WYRM" />
+			<div element="ID_WOTC_UA20201026_ARCHETYPE_FEATURE_ASCENDANT_DRAGON_ASCENDANT_ASPECT" />
+		</description>
+		<sheet display="false" />
+		<rules>
+			<grant type="Archetype Feature" id="ID_WOTC_UA20201026_ARCHETYPE_FEATURE_ASCENDANT_DRAGON_DRACONIC_DISCIPLE" level="3" />
+			<grant type="Archetype Feature" id="ID_WOTC_UA20201026_ARCHETYPE_FEATURE_ASCENDANT_DRAGON_BREATH_OF_THE_DRAGON" level="3" />
+			<grant type="Archetype Feature" id="ID_WOTC_UA20201026_ARCHETYPE_FEATURE_ASCENDANT_DRAGON_WINGS_UNFURLED" level="6" />
+			<grant type="Archetype Feature" id="ID_WOTC_UA20201026_ARCHETYPE_FEATURE_ASCENDANT_DRAGON_ASPECT_OF_THE_WYRM" level="11" />
+			<grant type="Archetype Feature" id="ID_WOTC_UA20201026_ARCHETYPE_FEATURE_ASCENDANT_DRAGON_ASCENDANT_ASPECT" level="17" />
+		</rules>
+	</element>
+	<element name="Draconic Disciple" type="Archetype Feature" source="Unearthed Arcana: Subclasses, Part 5" id="ID_WOTC_UA20201026_ARCHETYPE_FEATURE_ASCENDANT_DRAGON_DRACONIC_DISCIPLE">
+		<description>
+			<p><em>3rd-level Way of the Ascendant Dragon feature</em></p>
+			<p>You can channel your draconic ki to imbue your unarmed strikes with the essence of a dragon’s breath and to use your connection with draconic creatures to magnify your presence. You gain the following benefits:</p>
+			<ul>
+				<li>When you damage a target with an unarmed strike, you can change the damage type to acid, cold, fire, lightning, or poison.</li>
+				<li>If you can’t already, you learn to speak, read, and write Draconic.</li>
+				<li>If you fail a Charisma (Intimidation) or Charisma (Persuasion) check, you can use your reaction to reroll the check, as you tap into the mighty presence of dragons. Once this feature turns a failure into a success, you can’t use it again until you finish a long rest.</li>
+			</ul>
+		</description>
+		<sheet>
+			<description>When you damage a target with an unarmed strike, you can change the damage type to acid, cold, fire, lightning, or poison.
+			If you fail a Intimidation or Persuasion check, you can use your reaction to reroll the check, as you tap into the mighty presence of dragons. Once this feature turns a failure into a success, you can’t use it again until you finish a long rest.</description>
+		</sheet>
+		<rules>
+			<grant type="Language" id="ID_LANGUAGE_DRACONIC" />
+		</rules>
+	</element>
+	<element name="Breath of the Dragon" type="Archetype Feature" source="Unearthed Arcana: Subclasses, Part 5" id="ID_WOTC_UA20201026_ARCHETYPE_FEATURE_ASCENDANT_DRAGON_BREATH_OF_THE_DRAGON">
+		<description>
+			<p><em>3rd-level Way of the Ascendant Dragon feature</em></p>
+			<p>You can channel your ki into destructive waves of energy like the dragons you emulate. When you take the Attack action on your turn, you can replace one of the attacks with an exhalation of draconic energy in either a 20-foot cone or a 30-foot line that is 5 feet wide (your choice). Choose a damage type: acid, cold, fire, lightning, or poison. Each creature in the area must make a Dexterity saving throw against your ki save DC, taking damage of the chosen type equal to two rolls of your Martial Arts die on a failure, or half as much damage on a success.</p>
+			<p class="indent">At 11th level, the damage of your breath increases to three rolls of your Martial Arts die.</p>
+			<p class="indent">You can use this feature a number of times equal to your proficiency bonus, and you regain all expended uses when you finish a long rest. While you have no uses available, you can spend 1 ki point to use this feature again.</p>
+		</description>
+		<sheet usage="{{proficiency}}/Long Rest">
+			<description>When you take the Attack action on your turn, you can replace one of the attacks with an exhalation of draconic energy in either a 20-foot cone or a 30-foot line that is 5 feet wide. Choose a damage type: acid, cold, fire, lightning, or poison. Each creature in the area must make a DC {{ki:dc}} Dexterity save, taking damage of the chosen type equal to two rolls of your Martial Arts die on a failure, or half as much damage on a success.
+			While you have no uses available, you can spend 1 ki point to use this feature again.</description>
+			<description level="11">When you take the Attack action on your turn, you can replace one of the attacks with an exhalation of draconic energy in either a 20-foot cone or a 30-foot line that is 5 feet wide. Choose a damage type: acid, cold, fire, lightning, or poison. Each creature in the area must make a DC {{ki:dc}} Dexterity save, taking damage of the chosen type equal to three rolls of your Martial Arts die on a failure, or half as much damage on a success.
+			While you have no uses available, you can spend 1 ki point to use this feature again.</description>
+		</sheet>
+	</element>
+	<element name="Wings Unfurled" type="Archetype Feature" source="Unearthed Arcana: Subclasses, Part 5" id="ID_WOTC_UA20201026_ARCHETYPE_FEATURE_ASCENDANT_DRAGON_WINGS_UNFURLED">
+		<description>
+			<p><em>6th-level Way of the Ascendant Dragon feature</em></p>
+			<p>When you use your Step of the Wind, you can unfurl spectral draconic wings from your back that vanish at the end of your turn. While the wings exist, you have a flying speed equal to your walking speed.</p>
+			<p class="indent">You can use this feature a number of times equal to your proficiency bonus, and you regain all expended uses when you finish a long rest. While you have no uses available, you can spend 1 additional ki point when you activate Step of the Wind to use this feature again.</p>
+		</description>
+		<sheet usage="{{proficiency}}/Long Rest">
+			<description>When you use your Step of the Wind, you can unfurl spectral draconic wings from your back that vanish at the end of your turn. While the wings exist, you have a {{speed}}ft flying speed.
+			While you have no uses available, you can spend 1 additional ki point when you activate Step of the Wind to use this feature again.</description>
+		</sheet>
+	</element>
+	<element name="Aspect of the Wyrm" type="Archetype Feature" source="Unearthed Arcana: Subclasses, Part 5" id="ID_WOTC_UA20201026_ARCHETYPE_FEATURE_ASCENDANT_DRAGON_ASPECT_OF_THE_WYRM">
+		<description>
+			<p><em>11th-level Way of the Ascendant Dragon feature</em></p>
+			<p>The power of your draconic ki now radiates from you, protecting your allies from harm and punishing any who raise arms against them. As a bonus action, you can create an aura of draconic power that radiates 30 feet from you for 1 minute. Choose acid, cold, fire, lightning, or poison damage, and for the duration, you gain the following effects:</p>
+			<ul>
+				<li>You and your allies within your aura gain resistance to the chosen damage type.</li>
+				<li>Waves of destructive energy flow out from you and your allies when any of you are attacked. When you or one of your allies in the aura is hit by an attack made by another creature within the aura, the target that was hit can use their reaction to deal an amount of damage of the chosen type equal to one roll of your Martial Arts die to the attacker.</li>
+			</ul>
+			<p class="indent">Once you use this bonus action, you can’t use it again until you finish a long rest, unless you expend 4 ki points to use it again.
+			</p>
+		</description>
+		<sheet action="Bonus Action" usage="1/Long Rest">
+			<description>You can create an aura of draconic power that radiates 30 feet from you for 1 minute. Choose acid, cold, fire, lightning, or poison damage, and for the duration, you gain the following effects:
+			You and your allies within your aura gain resistance to the chosen damage type.
+			Waves of destructive energy flow out from you and your allies when any of you are attacked. When you or one of your allies in the aura is hit by an attack made by another creature within the aura, the target that was hit can use their reaction to deal an amount of damage of the chosen type equal to one roll of your Martial Arts die to the attacker.
+			You expend 4 ki points to use this bonus action again.</description>
+		</sheet>
+	</element>
+	<element name="Ascendant Aspect" type="Archetype Feature" source="Unearthed Arcana: Subclasses, Part 5" id="ID_WOTC_UA20201026_ARCHETYPE_FEATURE_ASCENDANT_DRAGON_ASCENDANT_ASPECT">
+		<description>
+			<p><em>17th-level Way of the Ascendant Dragon feature</em></p>
+			<p>Your draconic ki reaches its peak. You gain the following benefits:</p>
+			<ul>
+				<li>You gain blindsight out to 30 feet. Within that range, you can effectively see anything that isn’t behind total cover, even if you’re blinded or in darkness. Moreover, you can see an invisible creature within that range, unless the creature successfully hides from you.</li>
+				<li>When you damage a creature with your Breath of the Dragon, the energy clings to the target. At the start of each of the creature’s turns, it takes damage of the type your breath dealt equal to one roll of your Martial Arts die. At the end of its turn, the creature can repeat the save, ending the effect on itself on a success.</li>
+				<li>When you activate your Aspect of the Wyrm, draconic fury explodes from you. Choose any number of creatures you can see within your aura. Those creatures each take 4d10 acid, cold, fire, lightning, or poison damage (your choice).</li>
+			</ul>
+		</description>
+		<sheet>
+			<description>Your draconic ki reaches its peak. You gain the following benefits:
+			You gain blindsight out to 30 feet. Within that range, you can effectively see anything that isn’t behind total cover, even if you’re blinded or in darkness. Moreover, you can see an invisible creature within that range, unless the creature successfully hides from you.
+			When you damage a creature with your Breath of the Dragon, the energy clings to the target. At the start of each of the creature’s turns, it takes damage of the type your breath dealt equal to one roll of your Martial Arts die. At the end of its turn, the creature can repeat the save, ending the effect on itself on a success.
+			When you activate your Aspect of the Wyrm, draconic fury explodes from you. Choose any number of creatures you can see within your aura. Those creatures each take 4d10 acid, cold, fire, lightning, or poison damage.
+			</description>
+		</sheet>
+	</element>
+	<element name="Drakewarden" type="Archetype" source="Unearthed Arcana: Subclasses, Part 5" id="ID_WOTC_UA20201026_ARCHETYPE_DRAKEWARDEN">
+		<supports>Ranger Archetype</supports>
+		<description>
+			<p>Drakewardens are rangers who use their magical connection with nature to form an enduring bond with a minor dragon, a drake. This bond allows the ranger to summon the drake to their side and to share in the awe-inspiring power wielded by dragons.</p>
+			<p class="indent">Consider how your ranger gained their bond with the drake. The Drakewarden Origin table offers some examples.</p>
+			<h5 class="caption">Drakewarden Origin</h5>
+			<table>
+				<thead>
+					<tr><td>d6</td><td>Origin</td></tr>
+				</thead>
+				<tr><td>1</td><td>You studied a dragon’s scale or claw, or a trinket from its hoard, and created your bond through the token’s lingering draconic magic.</td></tr>
+				<tr><td>2</td><td>A secret order of rangers who collect and guard draconic lore taught you their ways.</td></tr>
+				<tr><td>3</td><td>A true dragon gave you a drake egg to care for. When it hatched, the drake bonded to you.</td></tr>
+				<tr><td>4</td><td>You drank a few drops of dragon blood, forever infusing your nature magic with draconic power.</td></tr>
+				<tr><td>5</td><td>An ancient Draconic inscription on a standing stone empowered you when you read it aloud.</td></tr>
+				<tr><td>6</td><td>You had a vivid dream of a mysterious man, accompanied by seven yellow canaries, who warned you of impending doom. When you awoke, your drake was there, watching you.</td></tr>
+			</table>
+			<div element="ID_WOTC_UA20201026_ARCHETYPE_FEATURE_DRAKEWARDEN_DRACONIC_GIFT" />
+			<div element="ID_WOTC_UA20201026_ARCHETYPE_FEATURE_DRAKEWARDEN_DRAKE_COMPANION" />
+			<div element="ID_WOTC_UA20201026_ARCHETYPE_FEATURE_DRAKEWARDEN_BOND_OF_FANG_AND_SCALE" />
+			<div element="ID_WOTC_UA20201026_ARCHETYPE_FEATURE_DRAKEWARDEN_DRAKES_BREATH" />
+			<div element="ID_WOTC_UA20201026_ARCHETYPE_FEATURE_DRAKEWARDEN_PERFECTED_BOND" />
+		</description>
+		<sheet display="false" />
+		<rules>
+			<grant type="Archetype Feature" id="ID_WOTC_UA20201026_ARCHETYPE_FEATURE_DRAKEWARDEN_DRACONIC_GIFT" level="3" />
+			<grant type="Archetype Feature" id="ID_WOTC_UA20201026_ARCHETYPE_FEATURE_DRAKEWARDEN_DRAKE_COMPANION" level="3" />
+			<grant type="Archetype Feature" id="ID_WOTC_UA20201026_ARCHETYPE_FEATURE_DRAKEWARDEN_BOND_OF_FANG_AND_SCALE" level="7" />
+			<grant type="Archetype Feature" id="ID_WOTC_UA20201026_ARCHETYPE_FEATURE_DRAKEWARDEN_DRAKES_BREATH" level="11" />
+			<grant type="Archetype Feature" id="ID_WOTC_UA20201026_ARCHETYPE_FEATURE_DRAKEWARDEN_PERFECTED_BOND" level="15" />
+		</rules>
+	</element>
+	<element name="Draconic Gift" type="Archetype Feature" source="Unearthed Arcana: Subclasses, Part 5" id="ID_WOTC_UA20201026_ARCHETYPE_FEATURE_DRAKEWARDEN_DRACONIC_GIFT">
+		<description>
+			<p><em>3rd-level Drakewarden feature</em></p>
+			<p>The bond you share with your drake creates a deeper connection to dragon kind, granting you understanding and empowering your presence. You gain the following benefits:</p>
+			<ul>
+				<li>If you can’t already, you learn to speak, read, and write Draconic.</li>
+				<li>You learn the thaumaturgy cantrip, which is a ranger spell for you.</li>
+			</ul>
+		</description>
+		<sheet display="false" />
+		<rules>
+			<grant type="Language" id="ID_LANGUAGE_DRACONIC" />
+			<grant type="Spell" id="ID_PHB_SPELL_THAUMATURGY" spellcasting="Ranger" />
+		</rules>
+	</element>
+	<element name="Drake Companion" type="Archetype Feature" source="Unearthed Arcana: Subclasses, Part 5" id="ID_WOTC_UA20201026_ARCHETYPE_FEATURE_DRAKEWARDEN_DRAKE_COMPANION">
+		<description>
+			<p><em>3rd-level Drakewarden feature</em></p>
+			<p>You can magically summon the drake bound to you. As an action, you can summon the drake, which appears in an unoccupied space of your choice that you can see within 30 feet of you.</p>
+			<p class="indent">The drake is friendly to you and your companions and obeys your commands. See its game statistics in the Drake Companion stat block, which uses your proficiency bonus (PB) in several places. When you summon the drake, choose a damage type listed in its Draconic Essence trait. You can determine the cosmetic characteristics of the drake such as its color, scale texture, or any visible effect of its Draconic Essence; your choice has no effect on its game statistics.</p>
+			<p class="indent">In combat, the drake shares your initiative count, but it takes its turn immediately after yours. It can move and use its reaction on its own, but the only action it takes on its turn is the Dodge action, unless you take a bonus action on your turn to command it to take another action. That action can be one in its stat block or some other action. If you are incapacitated, the drake can take any action of its choice, not just Dodge.</p>
+			<p class="indent">Once you summon the drake, you can’t do so again until you finish a long rest, unless you expend a spell slot of 1st level or higher to summon it.</p>
+			<p class="indent">The drake remains for a number of hours equal to your proficiency bonus, until it is reduced to 0 hit points, until you use this feature to summon the drake again, or until you die. Anything the drake was wearing or carrying is left behind when the drake vanishes.</p>
+		</description>
+		<sheet action="Action">
+			<description>You can summon the drake, which appears in an unoccupied space of your choice that you can see within 30 feet of you.
+			The drake is friendly to you and your companions and obeys your commands. When you summon the drake, choose a damage type listed in its Draconic Essence trait. 
+			In combat, the drake shares your initiative count, but it takes its turn immediately after yours. It can move and use its reaction on its own, but the only action it takes on its turn is the Dodge action, unless you take a bonus action on your turn to command it to take another action. That action can be one in its stat block or some other action. If you are incapacitated, the drake can take any action of its choice, not just Dodge.
+			Once you summon the drake, you can’t do so again until you finish a long rest, unless you expend a spell slot of 1st level or higher to summon it.
+			The drake remains for {{proficiency}} hours, until it is reduced to 0 hit points, until you use this feature to summon the drake again, or until you die. Anything the drake was wearing or carrying is left behind when the drake vanishes.</description>
+		</sheet>
+		<rules>
+			<select type="Companion" name="Drake Companion" supports="UA20201026 Drake Companion" />
+		</rules>
+	</element>
+	<element name="Bond of Fang and Scale" type="Archetype Feature" source="Unearthed Arcana: Subclasses, Part 5" id="ID_WOTC_UA20201026_ARCHETYPE_FEATURE_DRAKEWARDEN_BOND_OF_FANG_AND_SCALE">
+		<description>
+			<p><em>7th-level Drakewarden feature</em></p>
+			<p>The bond you share with your drake intensifies, protecting you and stoking the drake’s fury. While your drake is summoned, you and the drake gain the following benefits:</p>
+			<ul>
+				<li>You gain resistance to the damage type chosen for the drake’s Draconic Essence.</li>
+				<li>Choose one of the following: the drake gains a swimming speed of 40 feet and can breathe both air and water, or the drake grows wings and gains a flying speed of 40 feet.</li>
+				<li>The drake’s bite attack deals an extra 1d6 damage of the type chosen for its Draconic Essence.</li>
+			</ul>
+		</description>
+		<sheet>
+			<description>The bond you share with your drake intensifies, protecting you and stoking the drake’s fury. While your drake is summoned, you and the drake gain the following benefits:
+			You gain resistance to the damage type chosen for the drake’s Draconic Essence.
+			Choose one of the following: the drake gains a swimming speed of 40 feet and can breathe both air and water, or the drake grows wings and gains a flying speed of 40 feet.
+			The drake’s bite attack deals an extra 1d6 damage of the type chosen for its Draconic Essence.</description>
+		</sheet>
+	</element>
+	<element name="Drake’s Breath" type="Archetype Feature" source="Unearthed Arcana: Subclasses, Part 5" id="ID_WOTC_UA20201026_ARCHETYPE_FEATURE_DRAKEWARDEN_DRAKES_BREATH">
+		<description>
+			<p><em>11th-level Drakewarden feature</em></p>
+			<p>As an action, you can exhale a 30-foot cone of damaging breath or cause your drake to exhale it. Choose acid, cold, fire, lightning, or poison damage. Each creature in the cone must make a Dexterity saving throw against your spell save DC, taking 6d6 damage on a failed save, or half as much damage on a successful one.</p>
+			<p class="indent">This damage increases to 8d6 when you reach 15th level in this class.</p>
+			<p class="indent">Once you use this feature, you can’t do so again until you finish a long rest, unless you expend a spell slot of 3rd level or higher to use it again.</p>
+		</description>
+		<sheet action="Action" usage="1/Long Rest">
+			<description>You can exhale a 30-foot cone of damaging breath or cause your drake to exhale it. Choose acid, cold, fire, lightning, or poison damage. Each creature in the cone must make a Dexterity save, taking 6d6 damage on a failed save, or half as much damage on a successful one. 
+			You can expend a spell slot of 3rd level or higher to use this feature again.</description>
+			<description level="15">You can exhale a 30-foot cone of damaging breath or cause your drake to exhale it. Choose acid, cold, fire, lightning, or poison damage. Each creature in the cone must make a Dexterity save, taking 8d6 damage on a failed save, or half as much damage on a successful one. 
+			You can expend a spell slot of 3rd level or higher to use this feature again.</description>
+		</sheet>
+	</element>
+	<element name="Perfected Bond" type="Archetype Feature" source="Unearthed Arcana: Subclasses, Part 5" id="ID_WOTC_UA20201026_ARCHETYPE_FEATURE_DRAKEWARDEN_PERFECTED_BOND">
+		<description>
+			<p><em>15th-level Drakewarden feature</em></p>
+			<p>Your bond to your drake reaches the pinnacle of its power. While your drake is summoned, you and the drake gain the following benefits:</p>
+			<ul>
+				<li>The drake grows to Large size.</li>
+				<li>The drake’s bite attack deals an extra 1d6 damage of the type chosen for its Draconic Essence (for a total of 2d6 extra damage).</li>
+				<li>When either you or the drake takes damage while you’re within 30 feet of each other, you can use your reaction to give yourself or the drake resistance to that instance of damage.</li>
+			</ul>
+		</description>
+		<sheet>
+			<description>While your drake is summoned, you and the drake gain the following benefits:
+			The drake grows to Large size.
+			The drake’s bite attack deals an extra 1d6 damage of the type chosen for its Draconic Essence (for a total of 2d6 extra damage).
+			When either you or the drake takes damage while you’re within 30 feet of each other, you can use your reaction to give yourself or the drake resistance to that instance of damage.</description>
+		</sheet>
+	</element>
+	<element name="Drake Companion" type="Companion" source="Unearthed Arcana: Subclasses, Part 5" id="ID_WOTC_UA20201026_COMPANION_DRAKEWARDEN_DRAKE_COMPANION">
+		<supports>UA20201026 Drake Companion</supports>
+		<description></description>
+		<setters>
+			<set name="strength">16</set>
+			<set name="dexterity">12</set>
+			<set name="constitution">15</set>
+			<set name="intelligence">8</set>
+			<set name="wisdom">14</set>
+			<set name="charisma">8</set>
+			<set name="ac">14 + PB (natural armor)</set>
+			<set name="hp">5 + five times your ranger level (the drake has a number of hit dice [d10s] equal to your ranger level)</set>
+			<set name="speed">40 ft.</set>
+			<set name="immunities">determined by the drake’s Draconic Essence trait</set>
+			<set name="saves">Dex +1 plus PB, Wis +2 plus PB</set>
+			<set name="senses">darkvision 60 ft., passive Perception 12</set>
+			<set name="languages">Draconic</set>
+			<set name="type">Dragon</set>
+			<set name="size">Small</set>
+			<set name="alignment">Unaligned</set>
+			<set name="challenge">—</set>
+			<set name="proficiency">2</set>
+			<set name="traits">ID_WOTC_UA20201026_COMPANION_TRAIT_DRAKEWARDEN_DRACONIC_ESSENCE</set>
+			<set name="actions">ID_WOTC_UA20201026_COMPANION_ACTION_DRAKEWARDEN_BITE</set>
+			<set name="reactions">ID_WOTC_UA20201026_COMPANION_REACTION_DRAKEWARDEN_INFUSED_STRIKES</set>
+		</setters>
+		<rules>
+			<stat name="companion:ac" value="14" bonus="base" />
+			<stat name="companion:ac" value="proficiency" bonus="proficiency" />
+			<stat name="companion:hp:max" value="5" />
+			<stat name="companion:hp:max" value="level:ranger" />
+			<stat name="companion:hp:max" value="level:ranger" />
+			<stat name="companion:hp:max" value="level:ranger" />
+			<stat name="companion:hp:max" value="level:ranger" />
+			<stat name="companion:hp:max" value="level:ranger" />
+			<stat name="companion:speed" value="40" bonus="base" />	
+			<stat name="companion:dexterity:save:proficiency" value="companion:proficiency" bonus="proficiency" />
+			<stat name="companion:constitution:save:proficiency" value="companion:proficiency" bonus="proficiency" />
+		</rules>
+	</element>
+	<element name="Draconic Essence" type="Companion Trait" source="Unearthed Arcana: Subclasses, Part 5" id="ID_WOTC_UA20201026_COMPANION_TRAIT_DRAKEWARDEN_DRACONIC_ESSENCE">
+		<description>
+			<p>When you summon the drake, choose a damage type: acid, cold, fire, lightning, or poison. The chosen type determines the drake’s damage immunity, the damage of its bite, and the damage of its Infused Strikes trait.</p>
+		</description>
+		<sheet>
+			<description>When you summon the drake, choose a damage type: acid, cold, fire, lightning, or poison. The chosen type determines the drake’s damage immunity, the damage of its bite, and the damage of its Infused Strikes trait.</description>
+		</sheet>
+	</element>
+	<element name="Bite" type="Companion Action" source="Unearthed Arcana: Subclasses, Part 5" id="ID_WOTC_UA20201026_COMPANION_ACTION_DRAKEWARDEN_BITE">
+		<description>
+			<p>Melee Weapon Attack: +3 plus your proficiency bonus to hit, reach 5 ft., one target. Hit: 1d6 piercing damage plus your proficiency bonus damage of a type determined by the drake’s Draconic Essence.</p>
+		</description>
+		<sheet>
+			<description>Melee Weapon Attack: +5 to hit, reach 5 ft., one target. Hit: 1d6 + 2 piercing damage of a type determined by the drake’s Draconic Essence.</description>
+		</sheet>
+	</element>
+	<element name="Infused Strikes" type="Companion Reaction" source="Unearthed Arcana: Subclasses, Part 5" id="ID_WOTC_UA20201026_COMPANION_REACTION_DRAKEWARDEN_INFUSED_STRIKES">
+		<description>
+			<p>When another creature within 30 feet of the drake that it can see hits with a weapon attack, the drake infuses the strike with its essence, causing the attack to deal an extra 1d6 damage of the type determined by its Draconic Essence.</p>
+		</description>
+		<sheet>
+			<description>When another creature within 30 feet of the drake that it can see hits with a weapon attack, the drake infuses the strike with its essence, causing the attack to deal an extra 1d6 damage of the type determined by its Draconic Essence.</description>
+		</sheet>
+	</element>
+	<element name="Drake Companion, Level 5" type="Companion" source="Unearthed Arcana: Subclasses, Part 5" id="ID_WOTC_UA20201026_COMPANION_DRAKEWARDEN_DRAKE_COMPANION_5">
+		<compendium display="false" />
+		<supports>UA20201026 Drake Companion</supports>
+		<requirements>[level:5]</requirements>
+		<description></description>
+		<setters>
+			<set name="strength">16</set>
+			<set name="dexterity">12</set>
+			<set name="constitution">15</set>
+			<set name="intelligence">8</set>
+			<set name="wisdom">14</set>
+			<set name="charisma">8</set>
+			<set name="ac">14 + PB (natural armor)</set>
+			<set name="hp">5 + five times your ranger level (the drake has a number of hit dice [d10s] equal to your ranger level)</set>
+			<set name="speed">40 ft.</set>
+			<set name="immunities">determined by the drake’s Draconic Essence trait</set>
+			<set name="saves">Dex +1 plus PB, Wis +2 plus PB</set>
+			<set name="senses">darkvision 60 ft., passive Perception 12</set>
+			<set name="languages">Draconic</set>
+			<set name="type">Dragon</set>
+			<set name="size">Small</set>
+			<set name="alignment">Unaligned</set>
+			<set name="challenge">—</set>
+			<set name="proficiency">3</set>
+			<set name="traits">ID_WOTC_UA20201026_COMPANION_TRAIT_DRAKEWARDEN_DRACONIC_ESSENCE</set>
+			<set name="actions">ID_WOTC_UA20201026_COMPANION_ACTION_DRAKEWARDEN_BITE_5</set>
+			<set name="reactions">ID_WOTC_UA20201026_COMPANION_REACTION_DRAKEWARDEN_INFUSED_STRIKES</set>
+		</setters>
+		<rules>
+			<stat name="companion:ac" value="14" bonus="base" />
+			<stat name="companion:ac" value="proficiency" bonus="proficiency" />
+			<stat name="companion:hp:max" value="5" />
+			<stat name="companion:hp:max" value="level:ranger" />
+			<stat name="companion:hp:max" value="level:ranger" />
+			<stat name="companion:hp:max" value="level:ranger" />
+			<stat name="companion:hp:max" value="level:ranger" />
+			<stat name="companion:hp:max" value="level:ranger" />
+			<stat name="companion:speed" value="40" bonus="base" />	
+			<stat name="companion:dexterity:save:proficiency" value="companion:proficiency" bonus="proficiency" />
+			<stat name="companion:constitution:save:proficiency" value="companion:proficiency" bonus="proficiency" />
+		</rules>
+	</element>
+	<element name="Bite" type="Companion Action" source="Unearthed Arcana: Subclasses, Part 5" id="ID_WOTC_UA20201026_COMPANION_ACTION_DRAKEWARDEN_BITE_5">
+		<compendium display="false" />
+		<description>
+			<p>Melee Weapon Attack: +3 plus your proficiency bonus to hit, reach 5 ft., one target. Hit: 1d6 piercing damage plus your proficiency bonus damage of a type determined by the drake’s Draconic Essence.</p>
+		</description>
+		<sheet>
+			<description>Melee Weapon Attack: +6 to hit, reach 5 ft., one target. Hit: 1d6 + 3 piercing damage of a type determined by the drake’s Draconic Essence.</description>
+		</sheet>
+	</element>
+	<element name="Drake Companion, Level 9" type="Companion" source="Unearthed Arcana: Subclasses, Part 5" id="ID_WOTC_UA20201026_COMPANION_DRAKEWARDEN_DRAKE_COMPANION_9">
+		<compendium display="false" />
+		<supports>UA20201026 Drake Companion</supports>
+		<requirements>[level:9]</requirements>
+		<description></description>
+		<setters>
+			<set name="strength">16</set>
+			<set name="dexterity">12</set>
+			<set name="constitution">15</set>
+			<set name="intelligence">8</set>
+			<set name="wisdom">14</set>
+			<set name="charisma">8</set>
+			<set name="ac">14 + PB (natural armor)</set>
+			<set name="hp">5 + five times your ranger level (the drake has a number of hit dice [d10s] equal to your ranger level)</set>
+			<set name="speed">40 ft.</set>
+			<set name="immunities">determined by the drake’s Draconic Essence trait</set>
+			<set name="saves">Dex +1 plus PB, Wis +2 plus PB</set>
+			<set name="senses">darkvision 60 ft., passive Perception 12</set>
+			<set name="languages">Draconic</set>
+			<set name="type">Dragon</set>
+			<set name="size">Small</set>
+			<set name="alignment">Unaligned</set>
+			<set name="challenge">—</set>
+			<set name="proficiency">4</set>
+			<set name="traits">ID_WOTC_UA20201026_COMPANION_TRAIT_DRAKEWARDEN_DRACONIC_ESSENCE</set>
+			<set name="actions">ID_WOTC_UA20201026_COMPANION_ACTION_DRAKEWARDEN_BITE_9</set>
+			<set name="reactions">ID_WOTC_UA20201026_COMPANION_REACTION_DRAKEWARDEN_INFUSED_STRIKES</set>
+		</setters>
+		<rules>
+			<stat name="companion:ac" value="14" bonus="base" />
+			<stat name="companion:ac" value="proficiency" bonus="proficiency" />
+			<stat name="companion:hp:max" value="5" />
+			<stat name="companion:hp:max" value="level:ranger" />
+			<stat name="companion:hp:max" value="level:ranger" />
+			<stat name="companion:hp:max" value="level:ranger" />
+			<stat name="companion:hp:max" value="level:ranger" />
+			<stat name="companion:hp:max" value="level:ranger" />
+			<stat name="companion:speed" value="40" bonus="base" />	
+			<stat name="companion:dexterity:save:proficiency" value="companion:proficiency" bonus="proficiency" />
+			<stat name="companion:constitution:save:proficiency" value="companion:proficiency" bonus="proficiency" />
+		</rules>
+	</element>
+	<element name="Bite" type="Companion Action" source="Unearthed Arcana: Subclasses, Part 5" id="ID_WOTC_UA20201026_COMPANION_ACTION_DRAKEWARDEN_BITE_9">
+		<compendium display="false" />
+		<description>
+			<p>Melee Weapon Attack: +3 plus your proficiency bonus to hit, reach 5 ft., one target. Hit: 1d6 piercing damage plus your proficiency bonus damage of a type determined by the drake’s Draconic Essence.</p>
+		</description>
+		<sheet>
+			<description>Melee Weapon Attack: +7 to hit, reach 5 ft., one target. Hit: 1d6 + 4 piercing damage of a type determined by the drake’s Draconic Essence.</description>
+		</sheet>
+	</element>
+	<element name="Drake Companion, Level 13" type="Companion" source="Unearthed Arcana: Subclasses, Part 5" id="ID_WOTC_UA20201026_COMPANION_DRAKEWARDEN_DRAKE_COMPANION_13">
+		<compendium display="false" />
+		<supports>UA20201026 Drake Companion</supports>
+		<requirements>[level:13]</requirements>
+		<description></description>
+		<setters>
+			<set name="strength">16</set>
+			<set name="dexterity">12</set>
+			<set name="constitution">15</set>
+			<set name="intelligence">8</set>
+			<set name="wisdom">14</set>
+			<set name="charisma">8</set>
+			<set name="ac">14 + PB (natural armor)</set>
+			<set name="hp">5 + five times your ranger level (the drake has a number of hit dice [d10s] equal to your ranger level)</set>
+			<set name="speed">40 ft.</set>
+			<set name="immunities">determined by the drake’s Draconic Essence trait</set>
+			<set name="saves">Dex +1 plus PB, Wis +2 plus PB</set>
+			<set name="senses">darkvision 60 ft., passive Perception 12</set>
+			<set name="languages">Draconic</set>
+			<set name="type">Dragon</set>
+			<set name="size">Small</set>
+			<set name="alignment">Unaligned</set>
+			<set name="challenge">—</set>
+			<set name="proficiency">5</set>
+			<set name="traits">ID_WOTC_UA20201026_COMPANION_TRAIT_DRAKEWARDEN_DRACONIC_ESSENCE</set>
+			<set name="actions">ID_WOTC_UA20201026_COMPANION_ACTION_DRAKEWARDEN_BITE_13</set>
+			<set name="reactions">ID_WOTC_UA20201026_COMPANION_REACTION_DRAKEWARDEN_INFUSED_STRIKES</set>
+		</setters>
+		<rules>
+			<stat name="companion:ac" value="14" bonus="base" />
+			<stat name="companion:ac" value="proficiency" bonus="proficiency" />
+			<stat name="companion:hp:max" value="5" />
+			<stat name="companion:hp:max" value="level:ranger" />
+			<stat name="companion:hp:max" value="level:ranger" />
+			<stat name="companion:hp:max" value="level:ranger" />
+			<stat name="companion:hp:max" value="level:ranger" />
+			<stat name="companion:hp:max" value="level:ranger" />
+			<stat name="companion:speed" value="40" bonus="base" />	
+			<stat name="companion:dexterity:save:proficiency" value="companion:proficiency" bonus="proficiency" />
+			<stat name="companion:constitution:save:proficiency" value="companion:proficiency" bonus="proficiency" />
+		</rules>
+	</element>
+	<element name="Bite" type="Companion Action" source="Unearthed Arcana: Subclasses, Part 5" id="ID_WOTC_UA20201026_COMPANION_ACTION_DRAKEWARDEN_BITE_13">
+		<compendium display="false" />
+		<description>
+			<p>Melee Weapon Attack: +3 plus your proficiency bonus to hit, reach 5 ft., one target. Hit: 1d6 piercing damage plus your proficiency bonus damage of a type determined by the drake’s Draconic Essence.</p>
+		</description>
+		<sheet>
+			<description>Melee Weapon Attack: +8 to hit, reach 5 ft., one target. Hit: 1d6 + 5 piercing damage of a type determined by the drake’s Draconic Essence.</description>
+		</sheet>
+	</element>
+	<element name="Drake Companion, Level 15" type="Companion" source="Unearthed Arcana: Subclasses, Part 5" id="ID_WOTC_UA20201026_COMPANION_DRAKEWARDEN_DRAKE_COMPANION_15">
+		<compendium display="false" />
+		<supports>UA20201026 Drake Companion</supports>
+		<requirements>[level:15]</requirements>
+		<description></description>
+		<setters>
+			<set name="strength">16</set>
+			<set name="dexterity">12</set>
+			<set name="constitution">15</set>
+			<set name="intelligence">8</set>
+			<set name="wisdom">14</set>
+			<set name="charisma">8</set>
+			<set name="ac">14 + PB (natural armor)</set>
+			<set name="hp">5 + five times your ranger level (the drake has a number of hit dice [d10s] equal to your ranger level)</set>
+			<set name="speed">40 ft.</set>
+			<set name="immunities">determined by the drake’s Draconic Essence trait</set>
+			<set name="saves">Dex +1 plus PB, Wis +2 plus PB</set>
+			<set name="senses">darkvision 60 ft., passive Perception 12</set>
+			<set name="languages">Draconic</set>
+			<set name="type">Dragon</set>
+			<set name="size">Large</set>
+			<set name="alignment">Unaligned</set>
+			<set name="challenge">—</set>
+			<set name="proficiency">5</set>
+			<set name="traits">ID_WOTC_UA20201026_COMPANION_TRAIT_DRAKEWARDEN_DRACONIC_ESSENCE</set>
+			<set name="actions">ID_WOTC_UA20201026_COMPANION_ACTION_DRAKEWARDEN_BITE_13</set>
+			<set name="reactions">ID_WOTC_UA20201026_COMPANION_REACTION_DRAKEWARDEN_INFUSED_STRIKES</set>
+		</setters>
+		<rules>
+			<stat name="companion:ac" value="14" bonus="base" />
+			<stat name="companion:ac" value="proficiency" bonus="proficiency" />
+			<stat name="companion:hp:max" value="5" />
+			<stat name="companion:hp:max" value="level:ranger" />
+			<stat name="companion:hp:max" value="level:ranger" />
+			<stat name="companion:hp:max" value="level:ranger" />
+			<stat name="companion:hp:max" value="level:ranger" />
+			<stat name="companion:hp:max" value="level:ranger" />
+			<stat name="companion:speed" value="40" bonus="base" />	
+			<stat name="companion:dexterity:save:proficiency" value="companion:proficiency" bonus="proficiency" />
+			<stat name="companion:constitution:save:proficiency" value="companion:proficiency" bonus="proficiency" />
+		</rules>
+	</element>
+	<element name="Drake Companion, Level 17" type="Companion" source="Unearthed Arcana: Subclasses, Part 5" id="ID_WOTC_UA20201026_COMPANION_DRAKEWARDEN_DRAKE_COMPANION_17">
+		<compendium display="false" />
+		<supports>UA20201026 Drake Companion</supports>
+		<requirements>[level:17]</requirements>
+		<description></description>
+		<setters>
+			<set name="strength">16</set>
+			<set name="dexterity">12</set>
+			<set name="constitution">15</set>
+			<set name="intelligence">8</set>
+			<set name="wisdom">14</set>
+			<set name="charisma">8</set>
+			<set name="ac">14 + PB (natural armor)</set>
+			<set name="hp">5 + five times your ranger level (the drake has a number of hit dice [d10s] equal to your ranger level)</set>
+			<set name="speed">40 ft.</set>
+			<set name="immunities">determined by the drake’s Draconic Essence trait</set>
+			<set name="saves">Dex +1 plus PB, Wis +2 plus PB</set>
+			<set name="senses">darkvision 60 ft., passive Perception 12</set>
+			<set name="languages">Draconic</set>
+			<set name="type">Dragon</set>
+			<set name="size">Large</set>
+			<set name="alignment">Unaligned</set>
+			<set name="challenge">—</set>
+			<set name="proficiency">6</set>
+			<set name="traits">ID_WOTC_UA20201026_COMPANION_TRAIT_DRAKEWARDEN_DRACONIC_ESSENCE</set>
+			<set name="actions">ID_WOTC_UA20201026_COMPANION_ACTION_DRAKEWARDEN_BITE_17</set>
+			<set name="reactions">ID_WOTC_UA20201026_COMPANION_REACTION_DRAKEWARDEN_INFUSED_STRIKES</set>
+		</setters>
+		<rules>
+			<stat name="companion:ac" value="14" bonus="base" />
+			<stat name="companion:ac" value="proficiency" bonus="proficiency" />
+			<stat name="companion:hp:max" value="5" />
+			<stat name="companion:hp:max" value="level:ranger" />
+			<stat name="companion:hp:max" value="level:ranger" />
+			<stat name="companion:hp:max" value="level:ranger" />
+			<stat name="companion:hp:max" value="level:ranger" />
+			<stat name="companion:hp:max" value="level:ranger" />
+			<stat name="companion:speed" value="40" bonus="base" />	
+			<stat name="companion:dexterity:save:proficiency" value="companion:proficiency" bonus="proficiency" />
+			<stat name="companion:constitution:save:proficiency" value="companion:proficiency" bonus="proficiency" />
+		</rules>
+	</element>
+	<element name="Bite" type="Companion Action" source="Unearthed Arcana: Subclasses, Part 5" id="ID_WOTC_UA20201026_COMPANION_ACTION_DRAKEWARDEN_BITE_17">
+		<compendium display="false" />
+		<description>
+			<p>Melee Weapon Attack: +3 plus your proficiency bonus to hit, reach 5 ft., one target. Hit: 1d6 piercing damage plus your proficiency bonus damage of a type determined by the drake’s Draconic Essence.</p>
+		</description>
+		<sheet>
+			<description>Melee Weapon Attack: +9 to hit, reach 5 ft., one target. Hit: 1d6 + 6 piercing damage of a type determined by the drake’s Draconic Essence.</description>
+		</sheet>
+	</element>
+</elements>
