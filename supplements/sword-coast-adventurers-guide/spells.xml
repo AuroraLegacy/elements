@@ -4,7 +4,7 @@
 		<name>Spells</name>
 		<description>The spells from the Sword Coast Adventurer’s Guide.</description>
 		<author url="http://dnd.wizards.com/products/tabletop-games/rpg-products/sc-adventurers-guide">Wizards of the Coast</author>
-		<update version="0.2.1">
+		<update version="0.2.2">
 			<file name="spells.xml" url="https://raw.githubusercontent.com/AuroraLegacy/elements/master/supplements/sword-coast-adventurers-guide/spells.xml" />
 		</update>
 	</info>
@@ -12,8 +12,8 @@
 	<element name="Booming Blade" type="Spell" source="Sword Coast Adventurer’s Guide" id="ID_SCAG_SPELL_BOOMING_BLADE">
 		<supports>Sorcerer, Wizard, Warlock</supports>
 		<description>
-			<p>As part of the action used to cast this spell, you must make a melee attack with a weapon against one creature within the spell’s range, otherwise the spell fails. On a hit, the target suffers the attack’s normal effects, and it becomes sheathed in booming energy until the start of your next turn. If the target willingly moves before then, it immediately takes 1d8 thunder damage, and the spell ends.</p>
-			<p class="indent">This spell’s damage increases when you reach higher levels. At 5th level, the melee attack deals an extra 1d8 thunder damage to the target, and the damage the target takes for moving increases to 2d8. Both damage rolls increase by 1d8 at 11th level and 17th level.</p>
+			<p>You brandish the weapon used in the spell’s casting and make a melee attack with it against one creature within 5 feet of you. On a hit, the target suffers the weapon attack’s normal effects and then becomes sheathed in booming energy until the start of your next turn. If the target willingly moves 5 feet or more before then, the target takes 1d8 thunder damage, and the spell ends.</p>
+			<p class="indent">This spell’s damage increases when you reach certain levels. At 5th level, the melee attack deals an extra 1d8 thunder damage to the target on a hit, and the damage the target takes for moving increases to 2d8. Both damage rolls increase by 1d8 at 11th level (2d8 and 3d8) and again at 17th level (3d8 and 4d8).</p>
 		</description>
 		<setters>
 			<set name="keywords">thunder</set>
@@ -21,11 +21,11 @@
 			<set name="school">Evocation</set>
 			<set name="time">1 action</set>
 			<set name="duration">1 round</set>
-			<set name="range">5 feet</set>
+			<set name="range">Self (5-foot radius)</set>
 			<set name="hasVerbalComponent">true</set>
 			<set name="hasSomaticComponent">false</set>
 			<set name="hasMaterialComponent">true</set>
-			<set name="materialComponent">a weapon</set>
+			<set name="materialComponent">a melee weapon worth at least 1 sp</set>
 			<set name="isConcentration">false</set>
 			<set name="isRitual">false</set>
 		</setters>
@@ -33,8 +33,8 @@
 	<element name="Green-Flame Blade" type="Spell" source="Sword Coast Adventurer’s Guide" id="ID_SCAG_SPELL_GREEN_FLAME_BLADE">
 		<supports>Sorcerer, Wizard, Warlock</supports>
 		<description>
-			<p>As part of the action used to cast this spell, you must make a melee attack with a weapon against one creature within the spell’s range, otherwise the spell fails. On a hit, the target suffers the attack’s normal effects, and green fire leaps from the target to a different creature of your choice that you can see within 5 feet of it. The second creature takes fire damage equal to your spellcasting ability modifier.</p>
-			<p class="indent">This spell’s damage increases when you reach higher levels. At 5th level, the melee attack deals an extra 1d8 fire damage to the target, and the fire damage to the second creature increases to 1d8 + your spellcasting ability modifier. Both damage rolls increase by 1d8 at 11th level and 17th level.</p>
+			<p>You brandish the weapon used in the spell’s casting and make a melee attack with it against one creature within 5 feet of you. On a hit, the target suffers the weapon attack’s normal effects, and you can cause green fire to leap from the target to a different creature of your choice that you can see within 5 feet of it. The second creature takes fire damage equal to your spellcasting ability modifier.</p>
+			<p class="indent">This spell’s damage increases when you reach certain levels. At 5th level, the melee attack deals an extra 1d8 fire damage to the target on a hit, and the fire damage to the second creature increases to 1d8 + your spellcasting ability modifier. Both damage rolls increase by 1d8 at 11th level (2d8 and 2d8) and 17th level (3d8 and 3d8).</p>
 		</description>
 		<setters>
 			<set name="keywords">fire</set>
@@ -42,11 +42,11 @@
 			<set name="school">Evocation</set>
 			<set name="time">1 action</set>
 			<set name="duration">Instantaneous</set>
-			<set name="range">5 feet</set>
+			<set name="range">Self (5-foot radius)</set>
 			<set name="hasVerbalComponent">true</set>
 			<set name="hasSomaticComponent">false</set>
 			<set name="hasMaterialComponent">true</set>
-			<set name="materialComponent">a weapon</set>
+			<set name="materialComponent">a melee weapon worth at least 1 sp</set>
 			<set name="isConcentration">false</set>
 			<set name="isRitual">false</set>
 		</setters>
@@ -54,7 +54,7 @@
 	<element name="Lightning Lure" type="Spell" source="Sword Coast Adventurer’s Guide" id="ID_SCAG_SPELL_LIGHTNING_LURE">
 		<supports>Sorcerer, Wizard, Warlock</supports>
 		<description>
-			<p>You create a lash of lightning energy that strikes at one creature of your choice that you can see within range. The target must succeed on a Strength saving throw or be pulled up to 10 feet in a straight line toward you and then take 1d8 lightning damage if it is within 5 feet of you.</p>
+			<p>You create a lash of lightning energy that strikes at one creature of your choice that you can see within 15 feet of you. The target must succeed on a Strength saving throw or be pulled up to 10 feet in a straight line toward you and then take 1d8 lightning damage if it is within 5 feet of you.</p>
 			<p class="indent">This spell’s damage increases by 1d8 when you reach 5th level (2d8), 11th level (3d8), and 17th level (4d8).</p>
 		</description>
 		<setters>
@@ -63,7 +63,7 @@
 			<set name="school">Evocation</set>
 			<set name="time">1 action</set>
 			<set name="duration">Instantaneous</set>
-			<set name="range">15 feet</set>
+			<set name="range">Self (15-foot radius)</set>
 			<set name="hasVerbalComponent">true</set>
 			<set name="hasSomaticComponent">false</set>
 			<set name="hasMaterialComponent">false</set>
@@ -75,7 +75,7 @@
 	<element name="Sword Burst" type="Spell" source="Sword Coast Adventurer’s Guide" id="ID_SCAG_SPELL_SWORD_BURST">
 		<supports>Sorcerer, Wizard, Warlock</supports>
 		<description>
-			<p>You create a momentary circle of spectral blades that sweep around you. Each creature within range, other than you, must succeed on a Dexterity saving throw or take 1d6 force damage.</p>
+			<p>You create a momentary circle of spectral blades that sweep around you. All other creatures within 5 feet of you must succeed on a Dexterity saving throw or take 1d6 force damage.</p>
 			<p class="indent">This spell’s damage increases by 1d6 when you reach 5th level (2d6), 11th level (3d6), and 17th level (4d6).</p>
 		</description>
 		<setters>
@@ -84,7 +84,7 @@
 			<set name="school">Conjuration</set>
 			<set name="time">1 action</set>
 			<set name="duration">Instantaneous</set>
-			<set name="range">5 feet</set>
+			<set name="range">Self (5-foot radius)</set>
 			<set name="hasVerbalComponent">true</set>
 			<set name="hasSomaticComponent">false</set>
 			<set name="hasMaterialComponent">false</set>
