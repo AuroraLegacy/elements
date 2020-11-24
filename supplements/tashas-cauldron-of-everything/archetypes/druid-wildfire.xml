@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<elements>
+  <info>
+    <name>Circle of Wildfire</name>
+    <description>The Circle of Wildfire from Tasha’s Cauldron of Everything</description>
+    <author url="http://dnd.wizards.com/products/tabletop-games/rpg-products/tashas-cauldron-everything">Tasha’s Cauldron of Everything</author>
+    <update version="0.0.1">
+      <file name="druid-wildfire.xml" url="https://raw.githubusercontent.com/AuroraLegacy/supplements/tashas-cauldron-of-everything/archetypes/druid-wildfire.xml" />
+    </update>
+  </info>
+	<element name="Circle of Wildfire" type="Archetype" source="Tasha’s Cauldron of Everything" id="ID_WOTC_TCOE_ARCHETYPE_DRUID_CIRCLE_OF_WILDFIRE">
+		<supports>Druid Circle</supports>
+		<description>
+			<p>Druids within the Circle of Wildfire understand that destruction is sometimes the precursor of creation, such as when a forest fire promotes later growth. These druids bond with a primal spirit that harbors both destructive and creative power, allowing the druids to create controlled flames that burn away one thing but give life to another.</p>
+			<div element="ID_WOTC_TCOE_ARCHETYPE_FEATURE_CIRCLE_OF_WILDFIRE_CIRCLE_SPELLS" />
+			<div element="ID_WOTC_TCOE_ARCHETYPE_FEATURE_CIRCLE_OF_WILDFIRE_SUMMON_WILDFIRE_SPIRIT" />
+			<div element="ID_WOTC_TCOE_ARCHETYPE_FEATURE_CIRCLE_OF_WILDFIRE_ENHANCED_BOND" />
+			<div element="ID_WOTC_TCOE_ARCHETYPE_FEATURE_CIRCLE_OF_WILDFIRE_CAUTERIZING_FLAMES" />
+			<div element="ID_WOTC_TCOE_ARCHETYPE_FEATURE_CIRCLE_OF_WILDFIRE_BLAZING_REVIVAL" />
+		</description>
+		<sheet display="false" />
+		<rules>
+			<grant type="Archetype Feature" id="ID_WOTC_TCOE_ARCHETYPE_FEATURE_CIRCLE_OF_WILDFIRE_CIRCLE_SPELLS" level="2" />
+			<grant type="Archetype Feature" id="ID_WOTC_TCOE_ARCHETYPE_FEATURE_CIRCLE_OF_WILDFIRE_SUMMON_WILDFIRE_SPIRIT" level="2" />
+			<grant type="Archetype Feature" id="ID_WOTC_TCOE_ARCHETYPE_FEATURE_CIRCLE_OF_WILDFIRE_ENHANCED_BOND" level="6" />
+			<grant type="Archetype Feature" id="ID_WOTC_TCOE_ARCHETYPE_FEATURE_CIRCLE_OF_WILDFIRE_CAUTERIZING_FLAMES" level="10" />
+			<grant type="Archetype Feature" id="ID_WOTC_TCOE_ARCHETYPE_FEATURE_CIRCLE_OF_WILDFIRE_BLAZING_REVIVAL" level="14" />
+		</rules>
+	</element>
+	<element name="Circle Spells" type="Archetype Feature" source="Tasha’s Cauldron of Everything" id="ID_WOTC_TCOE_ARCHETYPE_FEATURE_CIRCLE_OF_WILDFIRE_CIRCLE_SPELLS">
+		<description>
+			<p><em>2nd-level Circle of Wildfire feature</em></p>
+			<p>You have formed a bond with a wildfire spirit, a primal being of creation and destruction. Your link with this spirit grants you access to some spells when you reach certain levels in this class, as shown on the Circle of Wildfire Spells table.</p>
+			<p class="indent">Once you gain access to one of these spells, you always have it prepared, and it doesn’t count against the number of spells you can prepare each day. If you gain access to a spell that doesn’t appear on the druid spell list, the spell is nonetheless a druid spell for you.</p>
+			<h5 class="caption">Circle of Wildfire Spells</h5>
+			<table>
+				<thead>
+					<tr><td>Druid Level</td><td>Spells</td></tr>
+				</thead>
+				<tr><td>2nd</td><td><em>burning hands, cure wounds</em></td></tr>
+				<tr><td>3rd</td><td><em>flaming sphere, scorching ray</em></td></tr>
+				<tr><td>5th</td><td><em>plant growth, revivify</em></td></tr>
+				<tr><td>7th</td><td><em>aura of life, fire shield</em></td></tr>
+				<tr><td>9th</td><td><em>flame strike, mass cure wounds</em></td></tr>
+			</table>
+		</description>
+		<sheet display="false" />
+		<rules>
+			<grant type="Spell" id="ID_PHB_SPELL_BURNING_HANDS" level="2" spellcasting="Druid" prepared="true" />
+			<grant type="Spell" id="ID_PHB_SPELL_CURE_WOUNDS" level="2" spellcasting="Druid" prepared="true" />
+			<grant type="Spell" id="ID_PHB_SPELL_FLAMING_SPHERE" level="3" spellcasting="Druid" prepared="true" />
+			<grant type="Spell" id="ID_PHB_SPELL_SCORCHING_RAY" level="3" spellcasting="Druid" prepared="true" />
+			<grant type="Spell" id="ID_PHB_SPELL_PLANT_GROWTH" level="5" spellcasting="Druid" prepared="true" />
+			<grant type="Spell" id="ID_PHB_SPELL_REVIVIFY" level="5" spellcasting="Druid" prepared="true" />
+			<grant type="Spell" id="ID_PHB_SPELL_AURA_OF_LIFE" level="7" spellcasting="Druid" prepared="true" />
+			<grant type="Spell" id="ID_PHB_SPELL_FIRE_SHIELD" level="7" spellcasting="Druid" prepared="true" />
+			<grant type="Spell" id="ID_PHB_SPELL_FLAME_STRIKE" level="9" spellcasting="Druid" prepared="true" />
+			<grant type="Spell" id="ID_PHB_SPELL_MASS_CURE_WOUNDS" level="9" spellcasting="Druid" prepared="true" />
+		</rules>
+	</element>
+	<element name="Summon Wildfire Spirit" type="Archetype Feature" source="Tasha’s Cauldron of Everything" id="ID_WOTC_TCOE_ARCHETYPE_FEATURE_CIRCLE_OF_WILDFIRE_SUMMON_WILDFIRE_SPIRIT">
+		<description>
+			<p><em>2nd-level Circle of Wildfire feature</em></p>
+			<p>You can summon the primal spirit bound to your soul. As an action, you can expend one use of your Wild Shape feature to summon your wildfire spirit, rather than assuming a beast form.</p>
+			<p class="indent">The spirit appears in an unoccupied space of your choice that you can see within 30 feet of you. Each creature within 10 feet of the spirit (other than you) when it appears must succeed on a Dexterity saving throw against your spell save DC or take 2d6 fire damage.</p>
+			<p class="indent">The spirit is friendly to you and your companions and obeys your commands. See this creature’s game statistics in the Wildfire Spirit stat block, which uses your proficiency bonus (PB) in several places. You determine the spirit’s appearance. Some spirits take the form of a humanoid figure made of gnarled branches covered in flame, while others look like beasts wreathed in fire.</p>
+			<p class="indent">In combat, the spirit shares your initiative count, but it takes its turn immediately after yours. The only action it takes on its turn is the Dodge action, unless you take a bonus action on your turn to command it to take another action. That action can be one in its stat block or some other action. If you are incapacitated, the spirit can take any action of its choice, not just Dodge.</p>
+			<p class="indent">The spirit manifests for 1 hour, until it is reduced to 0 hit points, until you use this feature to summon the spirit again, or until you die.</p>
+			<!-- todo: spirit stats -->
+		</description>
+		<sheet action="Action">
+			<description>You can expend one use of your Wild Shape feature to summon your wildfire spirit, rather than assuming a beast form. 
+			The spirit appears in an unoccupied space of your choice that you can see within 30 feet of you. Each creature within 10 feet of the spirit (other than you) when it appears must succeed on a DC{{druid:spellcasting:dc}} Dexterity save or take 2d6 fire damage. 
+			The spirit is friendly to you and your companions and obeys your commands. 
+			In combat, the spirit shares your initiative count, but it takes its turn immediately after yours. The only action it takes on its turn is the Dodge action, unless you take a bonus action on your turn to command it to take another action. That action can be one in its stat block or some other action. If you are incapacitated, the spirit can take any action of its choice, not just Dodge. 
+			The spirit manifests for 1 hour, until it is reduced to 0 hit points, until you use this feature to summon the spirit again, or until you die.</description>
+		</sheet>
+	</element>
+	<element name="Enhanced Bond" type="Archetype Feature" source="Tasha’s Cauldron of Everything" id="ID_WOTC_TCOE_ARCHETYPE_FEATURE_CIRCLE_OF_WILDFIRE_ENHANCED_BOND">
+		<description>
+			<p><em>6th-level Circle of Wildfire feature</em></p>
+			<p>The bond with your wildfire spirit enhances your destructive and restorative spells. Whenever you cast a spell that deals fire damage or restores hit points while your wildfire spirit is summoned, roll a d8, and you gain a bonus equal to the number rolled to one damage or healing roll of the spell.</p>
+			<p class="indent">In addition, when you cast a spell with a range other than self, the spell can originate from you or your wildfire spirit.</p>
+		</description>
+		<sheet>
+			<description>Whenever you cast a spell that deals fire damage or restores hp while your wildfire spirit is summoned, roll a d8, and you gain a bonus equal to the number rolled to one damage or healing roll of the spell. 
+			When you cast a spell with a range other than self, the spell can originate from you or your wildfire spirit.</description>
+		</sheet>
+	</element>
+	<element name="Cauterizing Flames" type="Archetype Feature" source="Tasha’s Cauldron of Everything" id="ID_WOTC_TCOE_ARCHETYPE_FEATURE_CIRCLE_OF_WILDFIRE_CAUTERIZING_FLAMES">
+		<description>
+			<p><em>10th-level Circle of Wildfire feature</em></p>
+			<p>You gain the ability to turn death into magical flames that can heal or incinerate. When a Small or larger creature dies within 30 feet of you or your wildfire spirit, a harmless spectral flame springs forth in the dead creature’s space and flickers there for 1 minute. When a creature you can see enters that space, you can use your reaction to extinguish the spectral flame there and either heal the creature or deal fire damage to it. The healing or damage equals 2d10 + your Wisdom modifier.</p>
+			<p class="indent">You can use this reaction a number of times equal to your proficiency bonus, and you regain all expended uses when you finish a long rest.</p>
+		</description>
+		<sheet action="Reaction" usage="{{proficiency}}/Long Rest">
+			<description>When a Small or larger creature dies within 30 feet of you or your wildfire spirit, a harmless spectral flame springs forth in the dead creature’s space and flickers there for 1 minute. When a creature you can see enters that space, you can extinguish the spectral flame there and either heal the creature or deal fire damage to it. The healing or damage equals 2d10 + {{wisdom:modifier}}.</description>
+		</sheet>
+	</element>
+	<element name="Blazing Revival" type="Archetype Feature" source="Tasha’s Cauldron of Everything" id="ID_WOTC_TCOE_ARCHETYPE_FEATURE_CIRCLE_OF_WILDFIRE_BLAZING_REVIVAL">
+		<description>
+			<p><em>14th-level Circle of Wildfire feature</em></p>
+			<p>The bond with your wildfire spirit can save you from death. If the spirit is within 120 feet of you when you are reduced to 0 hit points and thereby fall unconscious, you can cause the spirit to drop to 0 hit points. You then regain half your hit points and immediately rise to your feet.</p>
+			<p class="indent">Once you use this feature, you can’t use it again until you finish a long rest.</p>
+		</description>
+		<sheet usage="1/Long Rest">
+			<description>If the spirit is within 120 feet of you when you are reduced to 0 hit points and thereby fall unconscious, you can cause the spirit to drop to 0 hit points. You then regain half your hit points and immediately rise to your feet.</description>
+		</sheet>
+	</element>	
+  
+</elements>
