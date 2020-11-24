@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<elements>
+  <info>
+    <name>Eldritch Invocations</name>
+    <description>The Eldritch Invocations from Tasha’s Cauldron of Everything</description>
+    <author url="http://dnd.wizards.com/products/tabletop-games/rpg-products/tashas-cauldron-everything">Tasha’s Cauldron of Everything</author>
+    <update version="0.0.1">
+      <file name="eldritch-invocations.xml" url="https://raw.githubusercontent.com/AuroraLegacy/supplements/tashas-cauldron-of-everything/eldritch-invocations.xml" />
+    </update>
+  </info>
+	<element name="Bond of the Talisman" type="Class Feature" source="Tasha’s Cauldron of Everything" id="ID_WOTC_TCOE_CLASS_FEATURE_BOND_OF_THE_TALISMAN">
+		<supports>Eldritch Invocation</supports>
+		<prerequisite>12th level, Pact of the Talisman</prerequisite>
+		<requirements>[level:12],ID_WOTC_TCOE_CLASS_FEATURE_WARLOCK_PACT_BOON_PACT_OF_THE_TALISMAN</requirements>
+		<description>
+			<p><em>Prerequisite: 12th level, Pact of the Talisman</em></p>
+			<p>While someone else is wearing your talisman, you can use your action to teleport to the unoccupied space closest to them, provided the two of you are on the same plane of existence. The wearer of your talisman can do the same thing, using their action to teleport to you. The teleportation can be used a number of times equal to your proficiency bonus, and all expended uses are restored when you finish a long rest.</p>
+		</description>
+		<sheet action="Action" usage="{{proficiency}}/Long Rest">
+			<description>While someone else is wearing your talisman, you can teleport to the unoccupied space closest to them, provided the two of you are on the same plane of existence. The wearer of your talisman can do the same thing, using their action to teleport to you.</description>
+		</sheet>
+	</element>
+	<element name="Eldritch Mind" type="Class Feature" source="Tasha’s Cauldron of Everything" id="ID_WOTC_TCOE_CLASS_FEATURE_ELDRITCH_MIND">
+		<supports>Eldritch Invocation</supports>
+		<description>
+			<p>You have advantage on Constitution saving throws that you make to maintain your concentration on a spell.</p>
+		</description>
+		<sheet>
+			<description>You have advantage on Constitution saves that you make to maintain your concentration on a spell.</description>
+		</sheet>
+	</element>
+	<element name="Far Scribe" type="Class Feature" source="Tasha’s Cauldron of Everything" id="ID_WOTC_TCOE_CLASS_FEATURE_FAR_SCRIBE">
+		<supports>Eldritch Invocation</supports>
+		<prerequisite>5th level, Pact of the Tome</prerequisite>
+		<requirements>[level:5],ID_WOTC_PHB_CLASS_FEATURE_WARLOCK_PACT_BOON_PACT_OF_THE_TOME</requirements>
+		<description>
+			<p><em>Prerequisite: 5th level, Pact of the Tome</em></p>
+			<p>A new page appears in your Book of Shadows. With your permission, a creature can use its action to write its name on that page, which can contain a number of names equal to your proficiency bonus.</p>
+			<p class="indent">You can cast the sending spell, targeting a creature whose name is on the page, without using a spell slot and without using material components. To do so, you must write the message on the page. The target hears the message in their mind, and if the target replies, their message appears on the page, rather than in your mind. The writing disappears after 1 minute.</p>
+			<p class="indent">As an action, you can magically erase a name on the page by touching it.</p>
+		</description>
+		<sheet>
+			<description>A new page appears in your Book of Shadows. With your permission, a creature can use its action to write its name on that page, which can contain {{proficiency}} names.
+			You can cast the sending spell, targeting a creature whose name is on the page, without using a spell slot and without using material components. To do so, you must write the message on the page. The target hears the message in their mind, and if the target replies, their message appears on the page, rather than in your mind. The writing disappears after 1 minute. 
+			As an action, you can magically erase a name on the page by touching it.</description>
+		</sheet>
+	</element>
+	<element name="Gift of the Protectors" type="Class Feature" source="Tasha’s Cauldron of Everything" id="ID_WOTC_TCOE_CLASS_FEATURE_GIFT_OF_THE_PROTECTORS">
+		<supports>Eldritch Invocation</supports>
+		<prerequisite>9th level, Pact of the Tome</prerequisite>
+		<requirements>[level:9],ID_WOTC_PHB_CLASS_FEATURE_WARLOCK_PACT_BOON_PACT_OF_THE_TOME</requirements>
+		<description>
+			<p><em>Prerequisite: 9th level, Pact of the Tome</em></p>
+			<p>A new page appears in your Book of Shadows. With your permission, a creature can use its action to write its name on that page, which can contain a number of names equal to your proficiency bonus.</p>
+			<p class="indent">When any creature whose name is on the page is reduced to 0 hit points but not killed outright, the creature magically drops to 1 hit point instead. Once this magic is triggered, no creature can benefit from it until you finish a long rest.</p>
+			<p class="indent">As an action, you can magically erase a name on the page by touching it.</p>
+		</description>
+		<sheet usage="1/Long Rest">
+			<description>A new page appears in your Book of Shadows. With your permission, a creature can use its action to write its name on that page, which can contain {{proficiency}} names.
+			When any creature whose name is on the page is reduced to 0 hp but not killed outright, the creature magically drops to 1 hp instead.
+			As an action, you can magically erase a name on the page by touching it.</description>
+		</sheet>
+	</element>
+	<element name="Investment of the Chain Master" type="Class Feature" source="Tasha’s Cauldron of Everything" id="ID_WOTC_TCOE_CLASS_FEATURE_INVESTMENT_OF_THE_CHAIN_MASTER">
+		<supports>Eldritch Invocation</supports>
+		<prerequisite>Pact of the Chain</prerequisite>
+		<requirements>ID_WOTC_PHB_CLASS_FEATURE_WARLOCK_PACT_BOON_PACT_OF_THE_CHAIN</requirements>
+		<description>
+			<p><em>Prerequisite: Pact of the Chain</em></p>
+			<p>When you cast find familiar, you infuse the summoned familiar with a measure of your eldritch power, granting the creature the following benefits:</p>
+			<ul>
+				<li>The familiar gains either a flying speed or a swimming speed (your choice) of 40 feet.</li>
+				<li>As a bonus action, you can command the familiar to take the Attack action.</li>
+				<li>The familiar’s weapon attacks are considered magical for the purpose of overcoming immunity and resistance to nonmagical attacks.</li>
+				<li>If the familiar forces a creature to make a saving throw, it uses your spell save DC.</li>
+				<li>When the familiar takes damage, you can use your reaction to grant it resistance against that damage.</li>
+			</ul>
+		</description>
+		<sheet>
+			<description>When you cast find familiar, you grant the creature the following benefits: 
+			The familiar gains either a flying speed or a swimming speed of 40 feet. 
+			As a bonus action, you can command the familiar to take the Attack action. 
+			The familiar’s weapon attacks are considered magical for the purpose of overcoming immunity and resistance to nonmagical attacks. 
+			If the familiar forces a creature to make a saving throw, it uses your spell save DC. 
+			When the familiar takes damage, you can use your reaction to grant it resistance against that damage.</description>
+		</sheet>
+	</element>
+	<element name="Protection of the Talisman" type="Class Feature" source="Tasha’s Cauldron of Everything" id="ID_WOTC_TCOE_CLASS_FEATURE_PROTECTION_OF_THE_TALISMAN">
+		<supports>Eldritch Invocation</supports>
+		<prerequisite>7th level, Pact of the Talisman</prerequisite>
+		<requirements>[level:7],ID_WOTC_TCOE_CLASS_FEATURE_WARLOCK_PACT_BOON_PACT_OF_THE_TALISMAN</requirements>
+		<description>
+			<p><em>Prerequisite: 7th level, Pact of the Talisman</em></p>
+			<p>When the wearer of your talisman fails a saving throw, they can add a d4 to the roll, potentially turning the save into a success. This benefit can be used a number of times equal to your proficiency bonus, and all expended uses are restored when you finish a long rest.</p>
+		</description>
+		<sheet usage="{{proficiency}}/Long Rest">
+			<description>When the wearer of your talisman fails a saving throw, they can add a d4 to the roll.</description>
+		</sheet>
+	</element>
+	<element name="Rebuke of the Talisman" type="Class Feature" source="Tasha’s Cauldron of Everything" id="ID_WOTC_TCOE_CLASS_FEATURE_REBUKE_OF_THE_TALISMAN">
+		<supports>Eldritch Invocation</supports>
+		<prerequisite>Pact of the Talisman</prerequisite>
+		<requirements>ID_WOTC_TCOE_CLASS_FEATURE_WARLOCK_PACT_BOON_PACT_OF_THE_TALISMAN</requirements>
+		<description>
+			<p><em>Prerequisite: Pact of the Talisman</em></p>
+			<p>When the wearer of your talisman is hit by an attacker you can see within 30 feet of you, you can use your reaction to deal psychic damage to the attacker equal to your proficiency bonus and push it up to 10 feet away from the talisman’s wearer.</p>
+		</description>
+		<sheet action="Reaction">
+			<description>When the wearer of your talisman is hit by an attacker you can see within 30 feet of you, you can deal {{proficiency}} psychic damage to the attacker and push it up to 10 feet away from the talisman’s wearer.</description>
+		</sheet>
+	</element>
+	<element name="Undying Servitude" type="Class Feature" source="Tasha’s Cauldron of Everything" id="ID_WOTC_TCOE_CLASS_FEATURE_UNDYING_SERVITUDE">
+		<supports>Eldritch Invocation</supports>
+		<prerequisite>5th level</prerequisite>
+		<requirements>[level:5]</requirements>
+		<description>
+			<p><em>Prerequisite: 5th level</em></p>
+			<p>You can cast animate dead without using a spell slot. Once you do so, you can’t cast it in this way again until you finish a long rest.</p>
+			<div class="reference">
+				<div element="ID_PHB_SPELL_ANIMATE_DEAD" />
+			</div>
+		</description>
+		<sheet usage="1/Long Rest">
+			<description>You can cast animate dead without using a spell slot.</description>
+		</sheet>
+	</element>
+</elements>

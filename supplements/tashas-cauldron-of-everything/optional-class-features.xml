@@ -1,0 +1,187 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<elements>
+  <info>
+    <name>Optional Class Features</name>
+    <description>Optional Class Features from Tasha’s Cauldron of Everything</description>
+    <author url="http://dnd.wizards.com/products/tabletop-games/rpg-products/tashas-cauldron-everything">Tasha’s Cauldron of Everything</author>
+    <update version="0.0.1">
+      <file name="optional-class-features.xml" url="https://raw.githubusercontent.com/AuroraLegacy/supplements/tashas-cauldron-of-everything/optional-class-features.xml" />
+    </update>
+  </info>
+  <element name="Optional Class Features" type="Grants" source="Tasha’s Cauldron of Everything" id="ID_GRANTS_OPTIONAL_CLASS_FEATURES" />
+	<element name="Blessed Warrior" type="Class Feature" source="Tasha’s Cauldron of Everything" id="ID_WOTC_TCOE_CLASS_FEATURE_FIGHTING_STYLE_BLESSED_WARRIOR">
+		<supports>Fighting Style, Paladin</supports>
+		<description>
+			<p>You learn two cantrips of your choice from the cleric spell list. They count as paladin spells for you and Charisma is your spellcasting ability for them. Whenever you gain a level in this class, you can replace one of these cantrips with another cantrip from the cleric spell list.</p>
+		</description>
+		<sheet>
+			<description>You learn two cantrips of your choice from the cleric spell list. They count as paladin spells for you and Charisma is your spellcasting ability for them. Whenever you gain a level in this class, you can replace one of these cantrips with another cantrip from the cleric spell list.</description>
+		</sheet>
+		<rules>
+			<select type="Spell" name="Cantrip, Blessed Warrior" supports="0,Cleric" spellcasting="Paladin" number="2" />
+		</rules>
+	</element>
+	<element name="Blind Fighting" type="Class Feature" source="Tasha’s Cauldron of Everything" id="ID_WOTC_TCOE_CLASS_FEATURE_FIGHTING_STYLE_BLIND_FIGHTING">
+		<supports>Fighting Style, Fighter, Paladin, Ranger</supports>
+		<description>
+			<p>You have blindsight with a range of 10 feet. Within that range, you can effectively see anything that isn’t behind total cover, even if you’re blinded or in darkness. Moreover, you can see an invisible creature within that range, unless the creature successfully hides from you.</p>
+		</description>
+		<sheet>
+			<description>You have blindsight with a range of 10 feet. Within that range, you can effectively see anything that isn’t behind total cover, even if you’re blinded or in darkness. Moreover, you can see an invisible creature within that range, unless the creature successfully hides from you.</description>
+		</sheet>
+	</element>
+	<element name="Druidic Warrior" type="Class Feature" source="Tasha’s Cauldron of Everything" id="ID_WOTC_TCOE_CLASS_FEATURE_FIGHTING_STYLE_DRUIDIC_WARRIOR">
+		<supports>Fighting Style, Ranger</supports>
+		<description>
+			<p>You learn two cantrips of your choice from the druid spell list. They count as ranger spells for you, and Wisdom is your spellcasting ability for them. Whenever you gain a level in this class, you can replace one of these cantrips with another cantrip from the druid spell list.</p>
+		</description>
+		<sheet>
+			<description>You learn two cantrips of your choice from the druid spell list. They count as ranger spells for you, and Wisdom is your spellcasting ability for them. Whenever you gain a level in this class, you can replace one of these cantrips with another cantrip from the druid spell list.</description>
+		</sheet>
+		<rules>
+			<select type="Spell" name="Cantrip, Druidic Warrior" supports="0,Druid" spellcasting="Ranger" number="2" />
+		</rules>
+	</element>
+	<element name="Interception" type="Class Feature" source="Tasha’s Cauldron of Everything" id="ID_WOTC_TCOE_CLASS_FEATURE_FIGHTING_STYLE_INTERCEPTION">
+		<supports>Fighting Style, Fighter, Paladin</supports>
+		<description>
+			<p>When a creature you can see hits a target, other than you, within 5 feet of you with an attack, you can use your reaction to reduce the damage the target takes by 1d10 + your proficiency bonus (to a minimum of 0 damage). You must be wielding a shield or a simple or martial weapon to use this reaction.</p>
+		</description>
+		<sheet action="Reaction">
+			<description>When a creature you can see hits a target, other than you, within 5 feet of you with an attack, you can reduce the damage the target takes by 1d10 + {{proficiency}}. You must be wielding a shield or a simple or martial weapon to use this reaction.</description>
+		</sheet>
+	</element>
+	<element name="Superior Technique" type="Class Feature" source="Tasha’s Cauldron of Everything" id="ID_WOTC_TCOE_CLASS_FEATURE_FIGHTING_STYLE_SUPERIOR_TECHNIQUE">
+		<supports>Fighting Style, Fighter</supports>
+		<description>
+			<p>You can learn one maneuver of your choice from among those available to the Battle Master archetype. If a maneuver you use requires your target to make a saving throw to resist the maneuver’s effects, the saving throw DC equals 8 + your proficiency bonus + your Strength or Dexterity modifier (your choice).</p>
+			<p class="indent">You gain one superiority die, which is a d6 (this die is added to any superiority dice you have from another source). This die is used to fuel your maneuvers. A superiority die is expended when you use it. You regain your expended superiority dice when you finish a short or long rest.</p>
+		</description>
+		<sheet usage="1d{{superior technique:size}}/Short Rest">
+			<description>If a maneuver you use requires your target to make a saving throw to resist the maneuver’s effects, the saving throw DC equals {{superior technique:dc}}.</description>
+		</sheet>
+		<rules>
+			<stat name="superior technique:size" value="6" bonus="size" />
+			<stat name="superior technique:size" value="superiority dice:size" bonus="size" />
+			<stat name="superior technique:dc" value="8" bonus="base" />
+			<stat name="superior technique:dc" value="proficiency" bonus="proficiency" />
+			<stat name="superior technique:dc:ability" value="strength:modifier" bonus="ability"/>
+			<stat name="superior technique:dc:ability" value="dexterity:modifier" bonus="ability"/>
+			<stat name="superior technique:dc" value="superior technique:dc:ability" bonus="ability" />
+			<select type="Archetype Feature" name="Maneuver, Superior Technique" supports="Maneuver,Battle Master" />
+		</rules>
+	</element>
+	<element name="Thrown Weapon Fighting" type="Class Feature" source="Tasha’s Cauldron of Everything" id="ID_WOTC_TCOE_CLASS_FEATURE_FIGHTING_STYLE_THROWN_WEAPON_FIGHTING">
+		<supports>Fighting Style, Fighter</supports>
+		<description>
+			<p>You can draw a weapon that has the thrown property as part of the attack you make with the weapon.</p>
+			<p class="indent">In addition, when you hit with a ranged attack using a thrown weapon, you gain a +2 bonus to the damage roll.</p>
+		</description>
+		<sheet>
+			<description>You can draw a weapon that has the thrown property as part of the attack you make with the weapon.
+			In addition, when you hit with a ranged attack using a thrown weapon, you gain a +2 bonus to the damage roll.</description>
+		</sheet>
+	</element>
+	<element name="Unarmed Fighting" type="Class Feature" source="Tasha’s Cauldron of Everything" id="ID_WOTC_TCOE_CLASS_FEATURE_FIGHTING_STYLE_UNARMED_FIGHTING">
+		<supports>Fighting Style, Fighter</supports>
+		<description>
+			<p>Your unarmed strikes can deal bludgeoning damage equal to 1d6 + your Strength modifier on a hit. If you aren’t wielding any weapons or a shield when you make the attack roll, the d6 becomes a d8.</p>
+			<p class="indent">At the start of each of your turns, you can deal 1d4 bludgeoning damage to one creature grappled by you.</p>
+		</description>
+		<sheet>
+			<description>Your unarmed strikes can deal 1d{{unarmed fighting:size}} + {{unarmed fighting:ability modifier}} bludgeoning damage on a hit.
+			At the start of each of your turns, you can deal 1d4 bludgeoning damage to one creature grappled by you.</description>
+		</sheet>
+		<rules>
+			<stat name="unarmed fighting:size" value="6" bonus="base" />
+			<stat name="unarmed fighting:size" value="8" bonus="base" equipped="[primary:none],[secondary:none]" />
+			<stat name="unarmed fighting:ability modifier" value="strength:modifier" bonus="ability" />
+		</rules>
+	</element>
+	<element name="Seeking Spell" type="Class Feature" source="Tasha’s Cauldron of Everything" id="ID_WOTC_TCOE_CLASS_FEATURE_SORCERER_METAMAGIC_SEEKING_SPELL">
+		<supports>Metamagic</supports>
+		<description>
+			<p>If you make an attack roll for a spell and miss, you can spend 2 sorcery points to reroll the d20, and you must use the new roll.</p>
+			<p class="indent">You can use Seeking Spell even if you have already used a different Metamagic option during the casting of the spell.</p>
+		</description>
+		<sheet>
+			<description>If you make an attack roll for a spell and miss, you can spend 2 sorcery points to reroll the d20, and you must use the new roll.
+			You can use Seeking Spell even if you have already used a different Metamagic option during the casting of the spell.</description>
+		</sheet>
+	</element>
+	<element name="Transmuted Spell" type="Class Feature" source="Tasha’s Cauldron of Everything" id="ID_WOTC_TCOE_CLASS_FEATURE_SORCERER_METAMAGIC_TRANSMUTED_SPELL">
+		<supports>Metamagic</supports>
+		<description>
+			<p>When you cast a spell that deals a type of damage from the following list, you can spend 1 sorcery point to change that damage type to one of the other listed types: acid, cold, fire, lightning, poison, thunder.</p>
+		</description>
+		<sheet>
+			<description>When you cast a spell that deals a type of damage from the following list, you can spend 1 sorcery point to change that damage type to one of the other listed types: acid, cold, fire, lightning, poison, thunder.</description>
+		</sheet>
+	</element>
+	<element name="Ambush" type="Archetype Feature" source="Tasha’s Cauldron of Everything" id="ID_WOTC_TCOE_ARCHETYPE_FEATURE_MANEUVER_AMBUSH">
+		<supports>Maneuver, Battle Master</supports>
+		<description>
+			<p>When you make a Dexterity (Stealth) check or an initiative roll, you can expend one superiority die and add the die to the roll, provided you aren’t incapacitated.</p>
+		</description>
+		<sheet>
+			<description>When you make a Stealth check or an initiative roll, you can expend one superiority die and add the die to the roll, provided you aren’t incapacitated.</description>
+		</sheet>
+	</element>
+	<element name="Bait and Switch" type="Archetype Feature" source="Tasha’s Cauldron of Everything" id="ID_WOTC_TCOE_ARCHETYPE_FEATURE_MANEUVER_BAIT_AND_SWITCH">
+		<supports>Maneuver, Battle Master</supports>
+		<description>
+			<p>When you’re within 5 feet of a creature on your turn, you can expend one superiority die and switch places with that creature, provided you spend at least 5 feet of movement and the creature is willing and isn’t incapacitated. This movement doesn’t provoke opportunity attacks.</p>
+			<p class="indent">Roll the superiority die. Until the start of your next turn, you or the other creature (your choice) gains a bonus to AC equal to the number rolled.</p>
+		</description>
+		<sheet>
+			<description>When you’re within 5 feet of a creature on your turn, you can expend one superiority die and switch places with that creature, provided you spend at least 5 feet of movement and the creature is willing and isn’t incapacitated. This movement doesn’t provoke opportunity attacks.
+			Roll the superiority die. Until the start of your next turn, you or the other creature gains a bonus to AC equal to the number rolled.</description>
+		</sheet>
+	</element>
+	<element name="Brace" type="Archetype Feature" source="Tasha’s Cauldron of Everything" id="ID_WOTC_TCOE_ARCHETYPE_FEATURE_MANEUVER_BRACE">
+		<supports>Maneuver, Battle Master</supports>
+		<description>
+			<p>When a creature you can see moves into the reach you have with the melee weapon you’re wielding, you can use your reaction to expend one superiority die and make one attack against the creature, using that weapon. If the attack hits, add the superiority die to the weapon’s damage roll.</p>
+		</description>
+		<sheet action="Reaction">
+			<description>When a creature you can see moves into the reach you have with the melee weapon you’re wielding, you can expend one superiority die and make one attack against the creature, using that weapon. If the attack hits, add the superiority die to the weapon’s damage roll.</description>
+		</sheet>
+	</element>
+	<element name="Commanding Presence" type="Archetype Feature" source="Tasha’s Cauldron of Everything" id="ID_WOTC_TCOE_ARCHETYPE_FEATURE_MANEUVER_COMMANDING_PRESENCE">
+		<supports>Maneuver, Battle Master</supports>
+		<description>
+			<p>When you make a Charisma (Intimidation), a Charisma (Performance), or a Charisma (Persuasion) check, you can expend one superiority die and add the superiority die to the ability check.</p>
+		</description>
+		<sheet>
+			<description>When you make a Intimidation, a Performance, or a Persuasion check, you can expend one superiority die and add the superiority die to the ability check.</description>
+		</sheet>
+	</element>
+	<element name="Grappling Strike" type="Archetype Feature" source="Tasha’s Cauldron of Everything" id="ID_WOTC_TCOE_ARCHETYPE_FEATURE_MANEUVER_GRAPPLING_STRIKE">
+		<supports>Maneuver, Battle Master</supports>
+		<description>
+			<p>Immediately after you hit a creature with a melee attack on your turn, you can expend one superiority die and then try to grapple the target as a bonus action (see the Player’s Handbook for rules on grappling). Add the superiority die to your Strength (Athletics) check.</p>
+		</description>
+		<sheet action="Bonus Action">
+			<description>Immediately after you hit a creature with a melee attack on your turn, you can expend one superiority die and then try to grapple the target. Add the superiority die to your Athletics check.</description>
+		</sheet>
+	</element>
+	<element name="Tactical Assessment" type="Archetype Feature" source="Tasha’s Cauldron of Everything" id="ID_WOTC_TCOE_ARCHETYPE_FEATURE_MANEUVER_TACTICAL_ASSESSMENT">
+		<supports>Maneuver, Battle Master</supports>
+		<description>
+			<p>When you make an Intelligence (Investigation), an Intelligence (History), or a Wisdom (Insight) check, you can expend one superiority die and add the superiority die to the ability check.</p>
+		</description>
+		<sheet>
+			<description>When you make an Investigation, an History, or a Insight check, you can expend one superiority die and add the superiority die to the ability check.</description>
+		</sheet>
+	</element>
+	<element name="Quick Toss" type="Archetype Feature" source="Tasha’s Cauldron of Everything" id="ID_WOTC_TCOE_ARCHETYPE_FEATURE_MANEUVER_QUICK_TOSS">
+		<supports>Maneuver, Battle Master</supports>
+		<description>
+			<p>As a bonus action, you can expend one superiority die and make a ranged attack with a weapon that has the thrown property. You can draw the weapon as part of making this attack. If you hit, add the superiority die to the weapon’s damage roll.</p>
+		</description>
+		<sheet action="Bonus Action">
+			<description>You can expend one superiority die and make a ranged attack with a weapon that has the thrown property. You can draw the weapon as part of making this attack. If you hit, add the superiority die to the weapon’s damage roll.</description>
+		</sheet>
+	</element>
+
+</elements>
