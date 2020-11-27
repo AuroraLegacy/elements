@@ -13,11 +13,13 @@ More information about extending the content can be found [here](http://aurorabu
 - https://raw.githubusercontent.com/AuroraLegacy/elements/master/supplements.index
 - https://raw.githubusercontent.com/AuroraLegacy/elements/master/unearthed-arcana.index
 
-__**Warning:**__ Users who previously used content from now archived Aurora repository, must first delete following folders and files in "__custom__" folder (you can open it through the Additional Content tab's "Content Folder" button), before using links above: "__core__" folder, "__supplements__" folder, "__unearthed-arcana__" folder, "__core.index__" file, "__supplements.index__" file, "__unearthed-arcana.index__" file. <br>
+_**Warning:**_ Users who previously used content from now archived Aurora repository, must first delete following folders and files in "_custom_" folder (you can open it through the Additional Content tab's "Content Folder" button), before using links above: "core" folder, "_supplements_" folder, "_unearthed-arcana_" folder, "_core.index_" file, "_supplements.index_" file, "_unearthed-arcana.index_" file.
+
 **Additionally**, old characters can require re-selecting some options, due to changes in new files (that includes errata, and general fixes).
 
 ### Disclaimer
-Aurora Legacy server is intended as a place for easily-accessible Aurora Builder content (xml) files of products you already own. Please ensure you only access content in accordance with your local laws. <br>
+Aurora Legacy repository is intended as a place for easily-accessible Aurora Builder content (xml) files of products you already own. Please ensure you only access content in accordance with your local laws.
+
 Project's contact email: aurorabuilderlegacy@gmail.com. Aurora Legacy is a fan project, and isn't affiliated with the Aurora Builder or Wizards of the Coast.
 
 ### Other Community Driven Repositories
