@@ -7,7 +7,7 @@ process easier and effective. Following these guidelines helps to communicate th
 
 ## Using the issue tracker
 
-The issue tracker is the preferred channel for content [issues](#issues) and [requests](#requests). Please **do not** use the issue tracker for personal support regarding the character builder (use info@aurorabuilder.com or [Discord](https://discord.gg/MmWvNFV)).
+The issue tracker is the preferred channel for content [issues](#issues) and [requests](#requests). Please **do not** use the issue tracker for personal support regarding the character builder (use info@aurorabuilder.com or [Aurora Discord Server](https://discord.gg/MmWvNFV)).
 
 <br>
 
@@ -18,22 +18,10 @@ Create an [issue](https://github.com/AuroraLegacy/elements/issues/new/choose) us
 A content issue might be one of the following:
 
 * missing content from an existing source <sup>1</sup>
-* typo in a (sheet) description or and outdated description (due to errate for example)
+* typo in a (sheet) description or and outdated description (due to errata for example)
 * incorrect values, traits, or features being added
 
 <sup>1</sup> The source might be marked as incomplete or has an additional information indicator with more information about why it's incomplete. This might be a contribution that was included in an incomplete state in the past. This will not be done in the future to avoid having multiple incomplete sources that are never finished.
-
-<br>
-
-<a name="requests"></a>
-## Content Requests
-
-Create an [issue](https://github.com/AuroraLegacy/elements/issues/new/choose) using the _Content Request_ template.
-Provide a link to the website where the content is presented and more information about the source can obtained (e.g. a link to the creator's website or a blog post). **Do not** post direct links to copyrighted material.
-
-When making a request make sure it's in the [project scope](#scope). Out of scope requests will be closed.
-
-Disclaimer: _Making a request does not guarantee it will be included._
 
 <br>
 
@@ -51,7 +39,7 @@ Next, make sure the content contribution falls in the [project scope](#scope) an
 * Indent (tabs) the files properly to make them readable
 * Make sure the IDs of new elements only contain alphanumeric characters and underscores (`[A-Z]`, `[0-9]`, `_`) and no spaces or other special characters.
 * Make sure to check and test your files - for example: when making a class make sure you've tested it with all archetype combinations for levels 1-20
-* Ensure the contribution is complete and ready to checked and merged. If you're working on something large, you can create an issue with a todo list to communicate your progress.
+* Ensure the contribution is complete and ready to be checked and merged. If you're working on something large, you can create an issue with a todo list to communicate your progress.
 
 <br>
 
