@@ -2,7 +2,7 @@
 <elements>
 	<info>
 		<name>Unearthed Arcana: Cleric, Druid, and Wizard</name>
-		<update version="0.0.4">
+		<update version="0.0.5">
 			<file name="20191003.xml" url="https://raw.githubusercontent.com/AuroraLegacy/elements/master/unearthed-arcana/2019/20191003.xml" />
 		</update>
 	</info>		
@@ -127,9 +127,9 @@
 			</ul>
 		</description>
 		<sheet alt="Twilight Sanctuary" action="Action" usage="Channel Divinity">
-			<description>You present your holy symbol, and a sphere of twilight emanates from you. The sphere is centered on you, has a 30-foot radius, and is filled with dim light. The sphere moves with you, and it lasts for 1 minute or until you are incapacitated or die. Whenever a creature ends its turn in the sphere, you can grant that creature one of these benefits:
-			Give it 1d8 temporary hit points.
-			End one effect causing it to be charmed or frightened.</description>
+			<description>You present your holy symbol, and a sphere of twilight emanates from you. The sphere is centered on you, has a 30-foot radius, and is filled with dim light. The sphere moves with you, and it lasts for 1 minute or until you are incapacitated or die. Whenever a creature ends its turn in the sphere, you can grant that creature one of these benefits: &#13;
+			• Give it 1d8 temporary hit points. &#13;
+			• End one effect causing it to be charmed or frightened.</description>
 		</sheet>
 	</element>
 	<element name="Steps of the Brave" type="Archetype Feature" source="Unearthed Arcana: Cleric, Druid, and Wizard" id="ID_WOTC_UA20191003_ARCHETYPE_FEATURE_TWILIGHT_STEPS_OF_THE_BRAVE">
@@ -254,9 +254,9 @@
 			<p class="indent"><strong><em>Fiery Teleportation (Recharges after a Short or Long Rest).</em></strong> The spirit and each willing creature of your choice within 5 feet of it teleport up to 30 feet to unoccupied spaces you can see. Each creature within 10 feet of the space that the spirit left must succeed on a Dexterity saving throw against your spell save DC or take 1d6 + 2 fire damage.</p>
 		</description>
 		<sheet action="Action">
-			<description>You can expend one use of your Wild Shape feature to summon your wildfire spirit, rather than assuming a beast form.
-			The spirit appears in an unoccupied space of your choice you can see within 30 feet of you. Each creature within 10 feet of the spirit (other than you) when it appears must succeed on a Dexterity saving throw against your spell save DC or take 2d10 fire damage.
-			In combat, the wildfire spirit shares your initiative count, but it takes its turn immediately after yours. The only action it takes on its turn is the Dodge action, unless you take a bonus action on your turn to command it to take one of the actions in its stat block or to take the Dash, Disengage, Help, or Hide action.
+			<description>You can expend one use of your Wild Shape feature to summon your wildfire spirit, rather than assuming a beast form. &#13;
+			The spirit appears in an unoccupied space of your choice you can see within 30 feet of you. Each creature within 10 feet of the spirit (other than you) when it appears must succeed on a Dexterity saving throw against your spell save DC or take 2d10 fire damage. &#13;
+			In combat, the wildfire spirit shares your initiative count, but it takes its turn immediately after yours. The only action it takes on its turn is the Dodge action, unless you take a bonus action on your turn to command it to take one of the actions in its stat block or to take the Dash, Disengage, Help, or Hide action. &#13;
 			The wildfire spirit manifests for 1 hour, until it is reduced to 0 hit points, or until you use your Wild Shape again.</description>
 		</sheet>
 		<rules>
@@ -270,8 +270,7 @@
 			<p class="indent">In addition, when you cast a spell with a range other than self, the spell can originate from you or your wildfire spirit.</p>
 		</description>
 		<sheet>
-			<description>Whenever you cast a spell that deals fire damage or restores hit points while your wildfire spirit is summoned, roll a d8, and you gain a bonus to one roll of the spell equal to the number rolled.
-			In addition, when you cast a spell with a range other than self, the spell can originate from you or your wildfire spirit.</description>
+			<description>Whenever you cast a spell that deals fire damage or restores hit points while your wildfire spirit is summoned, roll a d8, and you gain a bonus to one roll of the spell equal to the number rolled. In addition, when you cast a spell with a range other than self, the spell can originate from you or your wildfire spirit.</description>
 		</sheet>
 	</element>
 	<element name="Flames of Life" type="Archetype Feature" source="Unearthed Arcana: Cleric, Druid, and Wizard" id="ID_WOTC_UA20191003_ARCHETYPE_FEATURE_WILDFIRE_FLAMES_OF_LIFE">
@@ -281,7 +280,7 @@
 			<p class="indent">You can use this feature a number of times equal to your Wisdom modifier (minimum of once). You regain all expended uses when you finish a long rest.</p>
 		</description>
 		<sheet action="Reaction" usage="{{flames of life:usage}}/Long Rest">
-			<description>When a Small or larger creature that you can see dies within 30 feet of you or your wildfire spirit, you can use your reaction to cause primal flames to spring from the body. When a creature you can see touches these flames, the creature regains hit points or takes fire damage equal to 2d10+{{wisdom:modifier}}. The flames vanish after a creature has touched them or after 1 minute.</description>
+			<description>When a Small or larger creature that you can see dies within 30 feet of you or your wildfire spirit, you can cause primal flames to spring from the body. When a creature you can see touches these flames, the creature regains hit points or takes fire damage equal to 2d10+{{wisdom:modifier}}. The flames vanish after a creature has touched them or after 1 minute.</description>
 		</sheet>
 		<rules>
 			<stat name="flames of life:usage" value="1" bonus="base" />
@@ -483,12 +482,12 @@
 				<li><strong>Sympathy.</strong> If the named creature is within range of the spell, you can target the creature with the spell even if you can’t see the creature or it has total cover against the spell.</li>
 			</ul>
 		</description>
-		<sheet usage="{{resonant utterance:usage}}/Long Rest">
+		<sheet usage="{{level:wizard:half}}/Long Rest">
 			<description>You can use one Resonant when you cast a wizard spell with a spell slot and speak the true name of one creature targeted by the spell. Speaking the name is part of casting the spell.</description>
 		</sheet>
 		<rules>
 			<select type="Archetype Feature" name="Resonant, Onomancy" supports="UA Resonant Option" number="2" />
-			<stat name="resonant utterance:usage" value="level:wizard:half" />
+			<select type="Archetype Feature" name="Resonant, Inexorable Pronouncement" supports="UA Resonant Option" number="2" />			
 		</rules>
 	</element>
 	<element name="Inexorable Pronouncement" type="Archetype Feature" source="Unearthed Arcana: Cleric, Druid, and Wizard" id="ID_WOTC_UA20191003_ARCHETYPE_FEATURE_ONOMANCY_INEXORABLE_PRONOUNCEMENT">
@@ -496,10 +495,7 @@
 			<p><em>10th-level Onomancy feature</em></p>
 			<p>You learn two new Resonants of your choice from your Resonant Utterance feature.</p>
 		</description>
-		<sheet />
-		<rules>
-			<select type="Archetype Feature" name="Resonant, Inexorable Pronouncement" supports="UA Resonant Option" number="2" />			
-		</rules>
+		<sheet display="false" />
 	</element>
 	<element name="Relentless Naming" type="Archetype Feature" source="Unearthed Arcana: Cleric, Druid, and Wizard" id="ID_WOTC_UA20191003_ARCHETYPE_FEATURE_ONOMANCY_RELENTLESS_NAMING">
 		<description>
