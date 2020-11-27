@@ -4,7 +4,7 @@
         <name>Unearthed Arcana: Artificer</name>
         <description>Makers of magic-infused objects, artificers are defined by their inventive nature.</description>
         <author url="http://dnd.wizards.com/articles/unearthed-arcana/artificer">Wizards of the Coast</author>
-        <update version="0.1.4">
+        <update version="0.1.5">
             <file name="20170109.xml" url="https://raw.githubusercontent.com/AuroraLegacy/elements/master/unearthed-arcana/2017/20170109.xml" />
         </update>
     </info>
@@ -312,12 +312,8 @@
             <p>At 5th level, your superior understanding of magic items allows you to master their use. You can now attune to up to four, rather than three, magic items at a time.</p>
             <p class="indent">At 15th level, this limit increases to five magic items.</p>
         </description>
-        <sheet>
-            <description>You can now attune to up to {{superior attunement:slots}} magic items at a time.</description>
-        </sheet>
+        <sheet display="false" />
         <rules>
-            <stat name="superior attunement:slots" value="4" level="5" />
-            <stat name="superior attunement:slots" value="1" level="15" />
             <stat name="attunement:max" value="1" level="5" />
             <stat name="attunement:max" value="1" level="15" />
         </rules>
@@ -346,7 +342,7 @@
             <p>At 20th level, your understanding of magic items is unmatched, allowing you to mingle your soul with items linked to you. You can attune to up to six magic items at once. In addition, you gain a +1 bonus to all saving throws per magic item you are currently attuned to.</p>
         </description>
         <sheet>
-            <description>You can attune to up to six magic items at once. In addition, you gain a +1 bonus to all saving throws per magic item you are currently attuned to.</description>
+            <description>You gain a +1 bonus to all saving throws per magic item you are currently attuned to.</description>
         </sheet>
         <rules>
             <stat name="attunement:max" value="1" level="20" />
@@ -615,8 +611,8 @@
             <p>At 3rd level, you learn to channel thunder energy into your Thunder Cannon. As an action, you can make a special attack with your Thunder Cannon that deals an extra 1d6 thunder damage on a hit.</p>
             <p class="indent">This extra damage increases by 1d6 when you reach certain levels in this class: 5th level (2d6), 7th level (3d6), 9th level (4d6), 11th level (5d6), 13th level (6d6), 15th level (7d6), 17th level (8d6), and 19th level (9d6).</p>
         </description>
-        <sheet>
-            <description>As an action, you can make a special attack with your Thunder Cannon that deals an extra {{thunder monger:dmg}}d6 thunder damage on a hit.</description>
+        <sheet action="Action">
+            <description>You can make a special attack with your Thunder Cannon that deals an extra {{thunder monger:dmg}}d6 thunder damage on a hit.</description>
         </sheet>
         <rules>
             <stat name="thunder monger:dmg" value="1" level="3" />
@@ -635,8 +631,8 @@
             <p>Starting at 9th level, you can channel force energy into your Thunder Cannon. As an action, you can make a special attack with it. Rather than making an attack roll, you unleash force energy in a 15-foot cone from the gun. Each creature in that area must make a Strength saving throw with a DC of 8 + your proficiency bonus + your Intelligence modifier. On a failed saving throw, a target takes 2d6 force damage and is pushed 10 feet away from you.</p>
             <p class="indent">This damage increases by 1d6 when you reach certain levels in this class: 13th level (3d6) and 17th level (4d6).</p>
         </description>
-        <sheet>
-            <description>As an action you can release energy into a 15-foot cone from the gun. Each creature in that area makes a Strength saving throw against your spell save DC. On a failed throw, a target takes {{blast wave:dmg}}d6 force damage and is pushed 10 feet away from you.</description>
+        <sheet action="Action">
+            <description>You can release energy into a 15-foot cone from the gun. Each creature in that area makes a Strength saving throw against your spell save DC. On a failed throw, a target takes {{blast wave:dmg}}d6 force damage and is pushed 10 feet away from you.</description>
         </sheet>
         <rules>
             <stat name="blast wave:dmg" value="2" level="9" />
@@ -648,8 +644,8 @@
         <description>
             <p>Starting at 14th level, you can shoot lightning energy through your Thunder Cannon. As an action, you can make a special attack with it. Rather than making an attack roll, you cause the gun to unleash a bolt of lightning, 5-feet wide and 30-feet long. Each creature in that area must make Dexterity saving throws with a DC of 8 + your proficiency bonus + your Intelligence modifier. On a failed saving throw, a target takes 4d6 lightning damage. This damage increases to 6d6 when you reach 19th level in this class.</p>
         </description>
-        <sheet>
-            <description>As an action, you can unleash a bolt of lightning from your gun, 5-feet wide and 30-feet long. Each creature in that area must make a Dexterity saving throw against your spell save DC. On a failed throw the target takes {{piercing round:dmg}}d6 lightning damage.</description>
+        <sheet action="Action">
+            <description>You can unleash a bolt of lightning from your gun, 5-feet wide and 30-feet long. Each creature in that area must make a Dexterity saving throw against your spell save DC. On a failed throw the target takes {{piercing round:dmg}}d6 lightning damage.</description>
         </sheet>
         <rules>
             <stat name="piercing round:dmg" value="4" level="14" />
@@ -660,8 +656,8 @@
         <description>
             <p>Starting at 17th level, you can channel fiery energy into your Thunder Cannon. As an action, you can make a special attack with it. Rather than making an attack roll, you launch an explosive round from the gun. The round detonates in a 30-foot radius sphere at a point within range. Each creature in that area must make a Dexterity saving throw with a DC of 8 + your proficiency bonus + your Intelligence modifier. On a failed saving throw, a target takes 4d8 fire damage.</p>
         </description>
-        <sheet>
-            <description>As an action you launch an explosive round from the gun. The round detonates in a 30-foot radius sphere at a point within range. Each creature in that area must make a Dexterity saving throw against your spell save DC. On a failed throw the target takes 4d8 fire damage.</description>
+        <sheet action="Action">
+            <description>You launch an explosive round from the gun. The round detonates in a 30-foot radius sphere at a point within range. Each creature in that area must make a Dexterity saving throw against your spell save DC. On a failed throw the target takes 4d8 fire damage.</description>
         </sheet>
     </element>
     <!-- Thunder Cannon -->
@@ -679,7 +675,6 @@
 			<set name="range">150/500</set>
 			<set name="damage" type="piercing">2d6</set>
 			<set name="proficiency">ID_WOTC_UA_PROFICIENCY_WEAPON_THUNDER_CANNON</set>
-			<!-- <set name="ammunition">ID_WOTC_DMG_ITEM_BULLET</set> -->
 		</setters>
 	</element>
 	<element name="Weapon Proficiency (Thunder Cannon)" type="Proficiency" source="Unearthed Arcana: Artificer" id="ID_WOTC_UA_PROFICIENCY_WEAPON_THUNDER_CANNON">

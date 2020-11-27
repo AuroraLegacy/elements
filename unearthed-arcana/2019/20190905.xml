@@ -2,7 +2,7 @@
 <elements>
 	<info>
 		<name>Unearthed Arcana: Sorcerer and Warlock</name>
-		<update version="0.0.1">
+		<update version="0.0.2">
 			<file name="20190905.xml" url="https://raw.githubusercontent.com/AuroraLegacy/elements/master/unearthed-arcana/2019/20190905.xml" />
 		</update>
 	</info>
@@ -24,7 +24,7 @@
 	<element name="Aberrant Mind" type="Archetype" source="Unearthed Arcana: Sorcerer and Warlock" id="ID_WOTC_UA20190905_ARCHETYPE_ABERRANT_MIND">
 		<supports>Sorcerous Origin</supports>
 		<description>
-			<p>An alien influence has wrapped its tendrils around you, warping you in both body and mind. Perhaps a psychic splinter lodged in your psyche after you suffered domination by an aboleth. Maybe you were born somewhere tainted by the Far Realm, a planar blot that changed you forever. Or perhaps mind flayers kidnapped you, subjecting you to the nightmarish process of ceremorphosis—but the transformation failed and left you altered.</p>
+			<p>An alien influence has wrapped its tendrils around you, warping you in both body and mind. Perhaps a psychic splinter lodged in your psyche after you suffered domination by an aboleth. Maybe you were born somewhere tainted by the Far Realm, a planar blot that changed you forever. Or perhaps mind flayers kidnapped you, subjecting you to the nightmarish process of ceremorphosis — but the transformation failed and left you altered.</p>
 			<h5>UNIQUE DISTURBANCE</h5>
 			<p>Regardless of its genesis, the Aberrant Mind origin imparts a sense of eeriness to the character or their surroundings. This can be as subtle as when your sorcerer reads a creature’s mind with detect thoughts, anyone in their immediate vicinity experiences a faint but pervasive sense of dread. Or it could be unmistakable, such as sweating a sheen of viscous mucus when you’re scared, or your pupils squirming when you’re excited. Consider the potentially unspeakable source of your sorcerer’s powers, and use that as a guide to weave threads of eeriness throughout your magic.</p>
 			<div element="ID_WOTC_UA20190905_ARCHETYPE_FEATURE_ABERRANT_MIND_INVASIVE_THOUGHTS" />
@@ -128,11 +128,11 @@
 			</ul>
 		</description>
 		<sheet action="Bonus Action">
-			<description>Spend 1 or more sorcery points to magically transform your body for 1 minute. For each sorcery point you spend, you can gain one of the following benefits of your choice.
-            You gain a swimming speed equal to your walking speed and the ability to breathe water.
-            You gain a flying speed equal to {{speed}}ft and can hover.
-            You can move through any space as narrow as 1 inch without squeezing, and you can spend 5 feet of movement to escape from nonmagical restraints or being grappled.
-            You are aware of the location of any hidden or invisible creature within 60 feet of you.</description>
+			<description>Spend 1 or more sorcery points to magically transform your body for 1 minute. For each sorcery point you spend, you can gain one of the following benefits of your choice: &#13;
+            • You gain a swimming speed equal to your walking speed and the ability to breathe water. &#13;
+            • You gain a flying speed equal to {{speed}}ft and can hover. &#13;
+            • You can move through any space as narrow as 1 inch without squeezing, and you can spend 5 feet of movement to escape from nonmagical restraints or being grappled. &#13;
+            • You are aware of the location of any hidden or invisible creature within 60 feet of you.</description>
 		</sheet>
 	</element>
 	<element name="Warp Reality" type="Archetype Feature" source="Unearthed Arcana: Sorcerer and Warlock" id="ID_WOTC_UA20190905_ARCHETYPE_FEATURE_ABERRANT_MIND_WARP_REALITY">
@@ -211,12 +211,8 @@
 			<p class="indent">You can summon the tentacle a number of times equal to your Charisma modifier (minimum of once), and you regain all expended uses when you finish a long rest.</p>
 		</description>
 		<sheet action="Bonus Action" usage="{{grasp of the deep:usage}}/Long Rest">
-			<description>You create a 10-foot-long tentacle at a point you can see within 60 feet of you. The tentacle lasts for 1 minute or until you use this feature to create another tentacle.
-            When you create the tentacle, you can make a melee spell attack against a creature within 10 feet of it. On a hit, the target takes 1d8 cold or lightning damage and its speed is reduced by 10 feet until the start of your next turn.
-            As a bonus action on your turn, you can move the tentacle up to 30 feet and repeat the attack.</description>
-			<description level="10">You create a 10-foot-long tentacle at a point you can see within 60 feet of you. The tentacle lasts for 1 minute or until you use this feature to create another tentacle.
-            When you create the tentacle, you can make a melee spell attack against a creature within 10 feet of it. On a hit, the target takes 2d8 cold or lightning damage and its speed is reduced by 10 feet until the start of your next turn.
-            As a bonus action on your turn, you can move the tentacle up to 30 feet and repeat the attack.</description>
+			<description>You create a 10-foot-long tentacle at a point you can see within 60 feet of you. The tentacle lasts for 1 minute or until you use this feature to create another tentacle. When you create the tentacle, you can make a melee spell attack against a creature within 10 feet of it. On a hit, the target takes 1d8 cold or lightning damage and its speed is reduced by 10 feet until the start of your next turn. As a bonus action on your turn, you can move the tentacle up to 30 feet and repeat the attack.</description>
+			<description level="10">You create a 10-foot-long tentacle at a point you can see within 60 feet of you. The tentacle lasts for 1 minute or until you use this feature to create another tentacle. When you create the tentacle, you can make a melee spell attack against a creature within 10 feet of it. On a hit, the target takes 2d8 cold or lightning damage and its speed is reduced by 10 feet until the start of your next turn. As a bonus action on your turn, you can move the tentacle up to 30 feet and repeat the attack.</description>
 		</sheet>
 		<rules>
 			<stat name="grasp of the deep:usage" value="1" bonus="base" />
@@ -241,9 +237,7 @@
 			</ul>
 		</description>
 		<sheet>
-			<description>You can breathe both air and water.
-            You gain a swimming speed equal to {{speed}}ft.
-            You gain resistance to cold damage.</description>
+			<description>You can breathe both air and water.</description>
 		</sheet>
 		<rules>
 			<stat name="speed:swim" value="speed" bonus="base" />
@@ -264,27 +258,18 @@
 			<p class="indent">Once you use this feature, you can’t do so again until you finish a short or long rest.</p>
 		</description>
 		<sheet action="Action" usage="Short Rest">
-			<description>Choose a point you can see within 60 feet of you. For 1 minute, a translucent maw manifests in a 10-foot radius centered on that point. Each creature in that area when the maw appears must succeed on a Strength saving throw against your spell save DC or be restrained. Any creature that starts its turn in the maw’s area takes 3d6 cold or lightning damage. As an action, a restrained creature can repeat the saving throw, ending the restraint on a success. At the start of your turn, if there is a creature in the maw’s area, you gain {{devouring maw:temporary hp}} temporary hit points.</description>
+			<description>Choose a point you can see within 60 feet of you. For 1 minute, a translucent maw manifests in a 10-foot radius centered on that point. Each creature in that area when the maw appears must succeed on a Strength saving throw against your spell save DC or be restrained. Any creature that starts its turn in the maw’s area takes 3d6 cold or lightning damage. As an action, a restrained creature can repeat the saving throw, ending the restraint on a success. At the start of your turn, if there is a creature in the maw’s area, you gain {{level:warlock}} temporary hit points.</description>
 		</sheet>
-		<rules>
-			<stat name="devouring maw:temporary hp" value="level:warlock" />
-		</rules>
 	</element>
 	<element name="Unleash the Depths" type="Archetype Feature" source="Unearthed Arcana: Sorcerer and Warlock" id="ID_WOTC_UA20190905_ARCHETYPE_FEATURE_LURKER_UNLEASH_THE_DEPTHS">
 		<description>
 			<p>Starting at 14th level, you gain the ability to call upon your patron for aid. As an action, you choose a point within 30 feet of you where your patron tears through reality, manifesting a measure of its thalassic grandeur. Choose one of the following effects to issue from this manifestation point. Once you use either effect, you can’t use this feature again until you finish a long rest.</p>
-			<p class="indent">
-				<strong>
-					<em>Transport.</em>
-				</strong> You and up to five willing creatures of your choice that you can see within 30 feet of the manifestation point are grasped by spectral tentacles and yanked through your patron’s realm. The tentacles teleport you and the chosen creatures to a point of your choice within 100 miles that you have visited within the past 24 hours. The tentacles then vanish.</p>
-			<p class="indent">
-				<strong>
-					<em>Fury.</em>
-				</strong> You can direct a barrage of spectral tentacles to issue forth and strike up to five creatures you can see within 30 feet of the manifestation point. Each target must make a Dexterity saving throw against your spell save DC. On a failed save, the creature takes 6d10 cold or lightning damage (your choice) and is knocked prone. On a successful save, it takes half as much damage and is not knocked prone. The tentacles then vanish.</p>
+			<p class="indent"><strong><em>Transport.</em></strong> You and up to five willing creatures of your choice that you can see within 30 feet of the manifestation point are grasped by spectral tentacles and yanked through your patron’s realm. The tentacles teleport you and the chosen creatures to a point of your choice within 100 miles that you have visited within the past 24 hours. The tentacles then vanish.</p>
+			<p class="indent"><strong><em>Fury.</em></strong> You can direct a barrage of spectral tentacles to issue forth and strike up to five creatures you can see within 30 feet of the manifestation point. Each target must make a Dexterity saving throw against your spell save DC. On a failed save, the creature takes 6d10 cold or lightning damage (your choice) and is knocked prone. On a successful save, it takes half as much damage and is not knocked prone. The tentacles then vanish.</p>
 		</description>
 		<sheet action="Action" usage="Long Rest">
-			<description>You choose a point within 30 feet of you where your patron tears through reality, manifesting a measure of its thalassic grandeur. Choose one of the following effects to issue from this manifestation point.
-            Transport. You and up to five willing creatures of your choice that you can see within 30 feet of the manifestation point are grasped by spectral tentacles and yanked through your patron’s realm. The tentacles teleport you and the chosen creatures to a point of your choice within 100 miles that you have visited within the past 24 hours. The tentacles then vanish.
+			<description>You choose a point within 30 feet of you where your patron tears through reality, manifesting a measure of its thalassic grandeur. Choose one of the following effects to issue from this manifestation point: &#13;
+            Transport. You and up to five willing creatures of your choice that you can see within 30 feet of the manifestation point are grasped by spectral tentacles and yanked through your patron’s realm. The tentacles teleport you and the chosen creatures to a point of your choice within 100 miles that you have visited within the past 24 hours. The tentacles then vanish. &#13;
             Fury. You can direct a barrage of spectral tentacles to issue forth and strike up to five creatures you can see within 30 feet of the manifestation point. Each target must make a Dexterity saving throw against your spell save DC. On a failed save, the creature takes 6d10 cold or lightning damage and is knocked prone. On a successful save, it takes half as much damage and is not knocked prone. The tentacles then vanish.</description>
 		</sheet>
 	</element>
