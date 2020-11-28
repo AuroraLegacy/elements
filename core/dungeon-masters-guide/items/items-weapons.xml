@@ -4,7 +4,7 @@
 		<name>Weapons</name>
 		<description></description>
 		<author url="http://dnd.wizards.com/products/tabletop-games/rpg-products/rpg_playershandbook">Wizards of the Coast</author>
-		<update version="0.0.8">
+		<update version="0.0.9">
 			<file name="items-weapons.xml" url="https://raw.githubusercontent.com/AuroraLegacy/elements/master/core/dungeon-masters-guide/items/items-weapons.xml" />
 		</update>
 	</info>
@@ -646,22 +646,24 @@
 			<p></p>
 			<p><b>Magic Weapon.</b> The Axe of the Dwarvish Lords is a magic weapon that grants a +3 bonus to attack and damage rolls made with it. The axe also functions as a belt of dwarvenkind, a dwarven thrower, and a sword of sharpness.</p>
 			<p><b>Random Properties.</b> The axe has the following randomly determined properties:</p>
-			<p>2 minor beneficial properties</p>
-			<p>1 major beneficial property</p>
-			<p>2 minor detrimental properties</p>
-			<div class="reference">
-				<div element="ID_WOTC_DMG_ARTEFACT_TABLE" />
-			</div>
+			<ul>
+				<li>2 minor beneficial properties</li>
+				<li>1 major beneficial property</li>
+				<li>2 minor detrimental properties</li>
+			</ul>
 			<p></p>
 			<p><b>Blessings of Moradin.</b> If you are a dwarf attuned to the axe, you gain the following benefits:</p>
 			<p>You have immunity to poison damage.</p>
 			<p>The range of your darkvision increases by 60 feet.</p>
 			<p>You gain proficiency with artisan's tools related to blacksmithing, brewing, and stonemasonry.</p>
 			<p></p>
-			<p><b>Conjure Earth Elemental.</b> If you are holding the axe, you can use your action to cast the conjure elemental spell from it, summoning an earth elemental. You can't use this property again until the next dawn.</p>
-			<p><b>Travel the Depths.</b> You can use an action to touch the axe to a fixed piece of dwarven stonework and cast the teleport spell from the axe. If your intended destination is underground, there is no chance of a mishap or arriving somewhere unexpected. You can't use this property again until 3 days have passed.</p>
-			<p><b>Curse.</b> The axe bears a curse that affects any non-dwarf that becomes attuned to it. Even if the attunement ends, the curse remains. With each passing day, the creature's physical appearance and stature become more dwarflike. After seven days, the creature looks like a typical dwarf, but the creature neither loses its racial traits nor gains the racial traits of a dwarf. The physical changes wrought by the axe aren't considered magical in nature (and therefore can't be dispelled), but they can be undone by any effect that removes a curse, such as a greater restoration or remove curse spell.</p>
-			<p><b>Destroying the Axe.</b> The only way to destroy the axe is to melt it down in the Earthheart Forge, where it was created. It must remain in the burning forge for fifty years before it finally succumbs to the fire and is consumed.</p>
+			<p><i><b>Conjure Earth Elemental.</b></i> If you are holding the axe, you can use your action to cast the conjure elemental spell from it, summoning an earth elemental. You can't use this property again until the next dawn.</p>
+			<p><i><b>Travel the Depths.</b></i> You can use an action to touch the axe to a fixed piece of dwarven stonework and cast the teleport spell from the axe. If your intended destination is underground, there is no chance of a mishap or arriving somewhere unexpected. You can't use this property again until 3 days have passed.</p>
+			<p><i><b>Curse.</b></i> The axe bears a curse that affects any non-dwarf that becomes attuned to it. Even if the attunement ends, the curse remains. With each passing day, the creature's physical appearance and stature become more dwarflike. After seven days, the creature looks like a typical dwarf, but the creature neither loses its racial traits nor gains the racial traits of a dwarf. The physical changes wrought by the axe aren't considered magical in nature (and therefore can't be dispelled), but they can be undone by any effect that removes a curse, such as a greater restoration or remove curse spell.</p>
+			<p><i><b>Destroying the Axe.</b></i> The only way to destroy the axe is to melt it down in the Earthheart Forge, where it was created. It must remain in the burning forge for fifty years before it finally succumbs to the fire and is consumed.</p>
+			<div class="reference">
+				<div element="ID_WOTC_DMG_ARTIFACT_TABLE" />
+			</div>
 		</description>
 		<setters>
 			<set name="keywords"></set>
@@ -674,7 +676,10 @@
 		</setters>
 		<rules>
 			<grant type="Vision" id="ID_VISION_DARKVISION" requirements="ID_SRD_RACE_DWARF"/>
-			<grant type="Vision" id="ID_INTERNAL_CONDITION_DAMAGE_IMMUNITY_POISON" requirements="ID_SRD_RACE_DWARF"/>
+			<grant type="Condition" id="ID_INTERNAL_CONDITION_DAMAGE_IMMUNITY_POISON" requirements="ID_SRD_RACE_DWARF"/>
+			<grant type="Proficiency" id="ID_PROFICIENCY_TOOL_PROFICIENCY_BREWERS_SUPPLIES" requirements="ID_SRD_RACE_DWARF"/>
+			<grant type="Proficiency" id="ID_PROFICIENCY_TOOL_PROFICIENCY_SMITHS_TOOLS" requirements="ID_SRD_RACE_DWARF"/>
+			<grant type="Proficiency" id="ID_PROFICIENCY_TOOL_PROFICIENCY_MASONS_TOOLS" requirements="ID_SRD_RACE_DWARF"/>
 		</rules>
 	</element>
 	<element name="Sword of Kas" type="Magic Item" source="Dungeon Master's Guide" id="ID_WOTC_DMG_MAGIC_ITEM_SWORD_OF_KAS">
@@ -685,19 +690,21 @@
 			<p>If the sword isn't bathed in blood within 1 minute of being drawn from its scabbard, its wielder must make a DC 15 Charisma saving throw. On a successful save, the wielder takes 3d6 psychic damage. On a failed save, the wielder is dominated by the sword, as if by the dominate monster spell, and the sword demands that it be bathed in blood. The spell effect ends when the sword's demand is met.</p>
 			<p></p>
 			<p><b>Random Properties.</b> The Sword of Kas has the following random properties:</p>
-			<p>1 minor beneficial property</p>
-			<p>1 major beneficial property</p>
-			<p>1 major detrimental property</p>
-			<p>1 minor detrimental property</p>
-			<div class="reference">
-				<div element="ID_WOTC_DMG_ARTEFACT_TABLE" />
-			</div>
+			<ul>
+				<li>1 minor beneficial property</li>
+				<li>1 major beneficial property</li>
+				<li>1 major detrimental property</li>
+				<li>1 minor detrimental property</li>
+			</ul>
 			<p></p>
-			<p><b>Spirit of Kas.</b> While the sword is on your person, you add a d10 to your initiative at the start of every combat. In addition, when you use an action to attack with the sword, you can transfer some or all of its attack bonus to your Armor Class instead. The adjusted bonuses remain in effect until the start of your next turn.</p>
-			<p><b>Spells.</b> While the sword is on your person, you can use an action to cast one of the following spells (save 18) from it: call lightning, divine word, or finger of death. Once you use the sword to cast a spell, you can't cast that spell again from it until the next dawn.</p>
-			<p><b>Sentience.</b> The Sword of Kas is a sentient chaotic evil weapon with an Intelligence of 15, a Wisdom of 13, and a Charisma of 16. It has hearing and darkvision out to a range of 120 feet. The weapon communicates telepathically with its wielder and can speak, read, and understand Common</p>
-			<p><b>Personality.</b> The sword's purpose is to bring ruin to Vecna. Killing Vecna's worshipers, destroying the lich's works, and foiling his machinations all help to fulfill this goal. The Sword of Kas also seeks to destroy anyone corrupted by the Eye and Hand of Vecna. The sword's obsession with those artifacts eventually becomes a fixation for its wielder.</p>
-			<p><b>Destroying the Sword.</b> A creature attuned to both the Eye of Vecna and the Hand of Vecna can use the wish property of those combined artifacts to unmake the Sword of Kas. The creature must cast the wish spell and make a Charisma check contested by the Charisma check of the sword. The sword must be within 30 feet of the creature, or the spell fails. If the sword wins the contest, nothing happens, and the wish spell is wasted. If the sword loses the contest, it is destroyed.</p>
+			<p><i><b>Spirit of Kas.</b></i> While the sword is on your person, you add a d10 to your initiative at the start of every combat. In addition, when you use an action to attack with the sword, you can transfer some or all of its attack bonus to your Armor Class instead. The adjusted bonuses remain in effect until the start of your next turn.</p>
+			<p><i><b>Spells.</b></i> While the sword is on your person, you can use an action to cast one of the following spells (save 18) from it: call lightning, divine word, or finger of death. Once you use the sword to cast a spell, you can't cast that spell again from it until the next dawn.</p>
+			<p><i><b>Sentience.</b></i> The Sword of Kas is a sentient chaotic evil weapon with an Intelligence of 15, a Wisdom of 13, and a Charisma of 16. It has hearing and darkvision out to a range of 120 feet. The weapon communicates telepathically with its wielder and can speak, read, and understand Common</p>
+			<p><i><b>Personality.</b></i> The sword's purpose is to bring ruin to Vecna. Killing Vecna's worshipers, destroying the lich's works, and foiling his machinations all help to fulfill this goal. The Sword of Kas also seeks to destroy anyone corrupted by the Eye and Hand of Vecna. The sword's obsession with those artifacts eventually becomes a fixation for its wielder.</p>
+			<p><i><b>Destroying the Sword.</b></i> A creature attuned to both the Eye of Vecna and the Hand of Vecna can use the wish property of those combined artifacts to unmake the Sword of Kas. The creature must cast the wish spell and make a Charisma check contested by the Charisma check of the sword. The sword must be within 30 feet of the creature, or the spell fails. If the sword wins the contest, nothing happens, and the wish spell is wasted. If the sword loses the contest, it is destroyed.</p>
+			<div class="reference">
+				<div element="ID_WOTC_DMG_ARTIFACT_TABLE" />
+			</div>
 		</description>
 		<setters>
 			<set name="keywords"></set>
@@ -719,20 +726,22 @@
 			<p>In the hands of one who is attuned to it, the wand can be wielded as a magic mace that grants a +3 bonus to attack and damage rolls made with it. The wand deals an extra 2d12 necrotic damage on a hit.</p>
 			<p></p>
 			<p><b>Random Properties.</b> The Wand of Orcus has the following random properties:</p>
-			<p>2 minor beneficial properties</p>
-			<p>1 major beneficial property</p>
-			<p>2 major detrimental properties</p>
-			<p>1 minor detrimental property</p>
-			<div class="reference">
-				<div element="ID_WOTC_DMG_ARTEFACT_TABLE" />
-			</div>
+			<ul>
+				<li>2 minor beneficial properties</li>
+				<li>1 major beneficial property</li>
+				<li>2 major detrimental properties</li>
+				<li>1 minor detrimental property</li>
+			</ul>
 			<p></p>
-			<p><b>Protection.</b> You gain a +3 bonus to Armor Class while holding the wand.</p>
-			<p><b>Spells.</b> The wand has 7 charges. While holding it, you can use an action and expend 1 or more of its charges to cast one of the following spells (save DC 18) from it: animate dead (1 charge), blight (2 charges), circle of death (3 charges), finger of death (3 charges), power word kill (4 charges), or speak with dead (1 charge). The wand regains 1d4 + 3 expended charges daily at dawn. While attuned to the wand, Orcus or a follower blessed by him can cast each of the wand's spells using 2 fewer charges (minimum of 0).</p>
-			<p><b>Call Undead.</b> While you are holding the wand, you can use an action to conjure skeleton and zombie, calling forth as many of them as you can divide 500 hit points among, each undead having average hit points. The undead magically rise up from the ground or otherwise form in unoccupied spaces within 300 feet of you and obey your commands until they are destroyed or until dawn of the next day, when they collapse into inanimate piles of bones and rotting corpses. Once you use this property of the wand, you can't use it again until the next dawn. While attuned to the wand, Orcus can summon any kind of undead, not just skeletons and zombies. The undead don't perish or disappear at dawn the following day, remaining until Orcus dismisses them.</p>
-			<p><b>Sentience.</b> The Wand of Orcus is a sentient, chaotic evil item with an Intelligence of 16, a Wisdom of 12, and a Charisma of 16. It has hearing and darkvision out to a range of 120 feet. The wand communicates telepathically with its wielder and can speak, read, and understand Abyssal and Common.</p>
-			<p><b>Personality.</b> The wand's purpose is to help satisfy Orcus's desire to slay everything in the multiverse. The wand is cold, cruel, nihilistic, and bereft of humor. In order to further its master's goals, the wand feigns devotion to its current user and makes grandiose promises that it has no intention of fulfilling, such as vowing to help its user overthrow Orcus.</p>
-			<p><b>Destroying the Wand.</b> Destroying the Wand of Orcus requires that it be taken to the Positive Energy Plane by the ancient hero whose skull surmounts it. For this to happen, the long-lost hero must first be restored to life—no easy task, given the fact that Orcus has imprisoned the hero's soul and keeps it hidden and well guarded. Bathing the wand in positive energy causes it to crack and explode, but unless the above conditions are met, the wand instantly reforms on Orcus's layer of the Abyss.</p>
+			<p><i><b>Protection.</b></i> You gain a +3 bonus to Armor Class while holding the wand.</p>
+			<p><i><b>Spells.</b></i> The wand has 7 charges. While holding it, you can use an action and expend 1 or more of its charges to cast one of the following spells (save DC 18) from it: animate dead (1 charge), blight (2 charges), circle of death (3 charges), finger of death (3 charges), power word kill (4 charges), or speak with dead (1 charge). The wand regains 1d4 + 3 expended charges daily at dawn. While attuned to the wand, Orcus or a follower blessed by him can cast each of the wand's spells using 2 fewer charges (minimum of 0).</p>
+			<p><i><b>Call Undead.</b></i> While you are holding the wand, you can use an action to conjure skeleton and zombie, calling forth as many of them as you can divide 500 hit points among, each undead having average hit points. The undead magically rise up from the ground or otherwise form in unoccupied spaces within 300 feet of you and obey your commands until they are destroyed or until dawn of the next day, when they collapse into inanimate piles of bones and rotting corpses. Once you use this property of the wand, you can't use it again until the next dawn. While attuned to the wand, Orcus can summon any kind of undead, not just skeletons and zombies. The undead don't perish or disappear at dawn the following day, remaining until Orcus dismisses them.</p>
+			<p><i><b>Sentience.</b></i> The Wand of Orcus is a sentient, chaotic evil item with an Intelligence of 16, a Wisdom of 12, and a Charisma of 16. It has hearing and darkvision out to a range of 120 feet. The wand communicates telepathically with its wielder and can speak, read, and understand Abyssal and Common.</p>
+			<p><i><b>Personality.</b></i> The wand's purpose is to help satisfy Orcus's desire to slay everything in the multiverse. The wand is cold, cruel, nihilistic, and bereft of humor. In order to further its master's goals, the wand feigns devotion to its current user and makes grandiose promises that it has no intention of fulfilling, such as vowing to help its user overthrow Orcus.</p>
+			<p><i><b>Destroying the Wand.</b></i> Destroying the Wand of Orcus requires that it be taken to the Positive Energy Plane by the ancient hero whose skull surmounts it. For this to happen, the long-lost hero must first be restored to life—no easy task, given the fact that Orcus has imprisoned the hero's soul and keeps it hidden and well guarded. Bathing the wand in positive energy causes it to crack and explode, but unless the above conditions are met, the wand instantly reforms on Orcus's layer of the Abyss.</p>
+			<div class="reference">
+				<div element="ID_WOTC_DMG_ARTIFACT_TABLE" />
+			</div>
 		</description>
 		<setters>
 			<set name="keywords"></set>
