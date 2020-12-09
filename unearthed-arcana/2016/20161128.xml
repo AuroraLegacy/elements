@@ -4,7 +4,7 @@
 		<name>Unearthed Arcana: Druid Circles and Wild Shape</name>
 		<description>New options sprout for the druid this week: three new Druid Circle options and an optional rule for gaining different beast shapes for Wild Shape. We invite you to read the options' descriptions, make characters with them, and see whether you like them.</description>
 		<author url="https://dnd.wizards.com/articles/unearthed-arcana/druid-circles-and-wild-shape">Wizards of the Coast</author>
-		<update version="0.0.1">
+		<update version="0.0.2">
 			<file name="20161128.xml" url="https://raw.githubusercontent.com/AuroraLegacy/elements/master/unearthed-arcana/2016/20161128.xml" />
 		</update>
 	</info>
@@ -49,24 +49,18 @@
 			<p class="indent">When you roll damage for a spell, you can increase that damage by spending dice from the pool. You can spend a number of dice equal to half your druid level or less. Roll the spent dice and add them to the damage as necrotic damage. If you kill one or more hostile creatures with a spell augmented in this way, you or an ally of your choice that you can see within 30 feet of you regains 2 hit points per die spent to increase the spell’s damage, or 5 hit points per die if at least one of the slain creatures was undead.</p>
 			<p class="indent">You regain the expended dice when you finish a long rest.</p>
 		</description>
-		<sheet usage="{{harvests scythe:pool}}d10/Long Rest">
+		<sheet usage="{{level:druid}}d10/Long Rest">
 			<description>When you roll damage for a spell, you can increase that damage by spending dice from the pool. You can spend a number of dice equal to {{level:druid:half}} or less. Roll the spent dice and add them to the damage as necrotic damage. If you kill one or more hostile creatures with a spell augmented in this way, you or an ally of your choice that you can see within 30 feet of you regains 2 hit points per die spent to increase the spell’s damage, or 5 hit points per die if at least one of the slain creatures was undead.</description>
 		</sheet>
-		<rules>
-			<stat name="harvests scythe:pool" value="level:druid" />
-		</rules>
 	</element>
 	<element name="Speech Beyond the Grave" type="Archetype Feature" source="Unearthed Arcana: Druid Circles and Wild Shape" id="ID_WOTC_UA20161128_ARCHETYPE_FEATURE_CIRCLE_TWILIGHT_SPEECH_BEYOND_THE_GRAVE">
 		<description>
 			<p>At 6th level, you gain the ability to reach beyond death’s veil in search of knowledge. Using this feature, you can cast <i>speak with dead</i> without material components, and you understand what the target of this casting says. It can understand your questions, even if you don’t share a language or it is not intelligent enough to speak.</p>
 			<p class="indent">Once you use this feature, you can’t use it again until you finish a short or long rest.</p>
 		</description>
-		<sheet usage="1/Rest">
+		<sheet usage="1/Short Rest">
 			<description>You can cast <i>speak with dead</i> without material components, and you understand what the target of this casting says. It can understand your questions, even if you don’t share a language or it is not intelligent enough to speak.</description>
 		</sheet>
-		<rules>
-			<grant type="Spell" id="ID_PHB_SPELL_SPEAK_WITH_DEAD" />
-		</rules>
 	</element>
 	<element name="Watcher at the Threshold" type="Archetype Feature" source="Unearthed Arcana: Druid Circles and Wild Shape" id="ID_WOTC_UA20161128_ARCHETYPE_FEATURE_CIRCLE_TWILIGHT_WATCHER_AT_THE_THRESHOLD">
 		<description>
@@ -84,11 +78,8 @@
 		<description>
 			<p>At 14th level, your mastery of death allows you to tread the paths used by ghosts and other spirits. Using this feature, you can cast <i>etherealness</i>. Once the spell ends, you can’t cast it with this feature again until you finish a short or long rest.</p>
 		</description>
-		<sheet usage="1/Rest">
+		<sheet usage="1/Short Rest">
 			<description>Using this feature, you can cast <i>etherealness</i>.</description>
 		</sheet>
-		<rules>
-			<grant type="Spell" id="ID_PHB_SPELL_ETHEREALNESS" />
-		</rules>
 	</element>
 </elements>

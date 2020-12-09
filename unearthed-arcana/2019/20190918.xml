@@ -2,10 +2,11 @@
 <elements>
 	<info>
 		<name>Unearthed Arcana: Bard and Paladin</name>
-		<update version="0.0.3">
+		<update version="0.0.4">
 			<file name="20190918.xml" url="https://raw.githubusercontent.com/AuroraLegacy/elements/master/unearthed-arcana/2019/20190918.xml" />
 		</update>
-	</info>	
+	</info>
+
 	<element name="Unearthed Arcana: Bard and Paladin" type="Source" source="Core" id="ID_WOTC_SOURCE_UNEARTHED_ARCANA_20190918">
 		<description>
 			<p>The bard receives a new Bardic College feature: the College of Eloquence. Additionally, the paladin gains a new Sacred Oath feature: the Oath of Heroism.</p>
@@ -19,6 +20,7 @@
 			<set name="release">20190918</set>
 		</setters>
 	</element>
+
 	<element name="College of Eloquence" type="Archetype" source="Unearthed Arcana: Bard and Paladin" id="ID_WOTC_UA20190918_ARCHETYPE_COLLEGE_OF_ELOQUENCE">
 		<supports>Bard College</supports>
 		<description>
@@ -70,9 +72,9 @@
 			</ul>
 		</description>
 		<sheet action="Bonus Action">
-			<description>You can expend one of your uses of Bardic Inspiration. When you do so, choose a creature you can see within 60 of you that can hear you, then roll your Bardic Inspiration die and choose one of the following:
-			The creature takes psychic damage equal to the number you roll on the Bardic Inspiration die, and the creature must succeed on a DC {{spellcasting:dc:cha}} Intelligence saving throw or have disadvantage on the next saving throw it makes before the end of your next turn.
-			The creature regains hit points equal to the number you roll on the Bardic Inspiration die, and the creature has advantage on the next saving throw it makes before the end of your next turn.</description>
+			<description>You can expend one of your uses of Bardic Inspiration. When you do so, choose a creature you can see within 60 of you that can hear you, then roll your Bardic Inspiration die and choose one of the following: &#13;
+			• The creature takes psychic damage equal to the number you roll on the Bardic Inspiration die, and the creature must succeed on a DC {{spellcasting:dc:cha}} Intelligence saving throw or have disadvantage on the next saving throw it makes before the end of your next turn. &#13;
+			• The creature regains hit points equal to the number you roll on the Bardic Inspiration die, and the creature has advantage on the next saving throw it makes before the end of your next turn.</description>
 		</sheet>
 	</element>
 	<element name="Infectious Inspiration" type="Archetype Feature" source="Unearthed Arcana: Bard and Paladin" id="ID_WOTC_UA20190918_ARCHETYPE_FEATURE_ELOQUENCE_INFECTIOUS_INSPIRATION">
@@ -82,14 +84,14 @@
 			<p class="indent">In addition, when a creature adds one of your Bardic Inspiration dice to its ability check, attack roll, or saving throw and the roll succeeds, you can use your reaction to encourage a different creature (other than yourself) that can hear you within 60 feet of you, giving it a Bardic Inspiration die without expending any of your Bardic Inspiration uses. You can use this reaction a number of times equal to your Charisma modifier (minimum of once), and you regain all expended uses when you finish a long rest.</p>
 		</description>
 		<sheet action="Reaction" usage="{{infectious inspiration:usage}}/Long Rest">
-			<description>When a creature adds one of your Bardic Inspiration dice to its ability check, attack roll, or saving throw and the roll fails, the creature can keep the Bardic Inspiration die.
-			In addition, when a creature adds one of your Bardic Inspiration dice to its ability check, attack roll, or saving throw and the roll succeeds, you can use your reaction to encourage a different creature (other than yourself) that can hear you within 60 feet of you, giving it a Bardic Inspiration die without expending any of your Bardic Inspiration uses.</description>
+			<description>When a creature adds one of your Bardic Inspiration dice to its ability check, attack roll, or saving throw and the roll fails, the creature can keep the Bardic Inspiration die. In addition, when a creature adds one of your Bardic Inspiration dice to its ability check, attack roll, or saving throw and the roll succeeds, you can use your reaction to encourage a different creature (other than yourself) that can hear you within 60 feet of you, giving it a Bardic Inspiration die without expending any of your Bardic Inspiration uses.</description>
 		</sheet>
 		<rules>
 			<stat name="infectious inspiration:usage" value="1" bonus="base" />
 			<stat name="infectious inspiration:usage" value="charisma:modifier" bonus="base" />
 		</rules>
 	</element>
+
 	<element name="Oath of Heroism" type="Archetype" source="Unearthed Arcana: Bard and Paladin" id="ID_WOTC_UA20190918_ARCHETYPE_OATH_OF_HEROISM">
 		<supports>Sacred Oath</supports>
 		<description>
@@ -189,16 +191,14 @@
 			<p class="indent">Once you use this feature, you can’t use it again until the start of your next turn.</p>
 		</description>
 		<sheet>
-			<description>Whenever you score a critical hit or reduce a creature to 0 hp, you can choose up to {{mighty deed:creature count}} creatures that you can see within 30 feet of you. All the chosen creatures are affected by one of the following effects of your choice:
-			The creature gains 1d6+{{mighty deed:hp}} temporary hp.
-			The creature must succeed on a DC {{spellcasting:dc:cha}} Wisdom saving throw or be frightened of you until the start of your next turn.
+			<description>Whenever you score a critical hit or reduce a creature to 0 hp, you can choose up to {{mighty deed:amount}} creatures that you can see within 30 feet of you. All the chosen creatures are affected by one of the following effects of your choice: &#13;
+			• The creature gains 1d6+{{mighty deed:amount}} temporary hp. &#13;
+			• The creature must succeed on a DC{{spellcasting:dc:cha}} Wisdom saving throw or be frightened of you until the start of your next turn. &#13;
 			Once you use this feature, you can’t use it again until the start of your next turn.</description>
 		</sheet>
 		<rules>
-			<stat name="mighty deed:creature count" value="1" bonus="base" />
-			<stat name="mighty deed:creature count" value="charisma:modifier" bonus="base" />			
-			<stat name="mighty deed:hp" value="1" bonus="base" />
-			<stat name="mighty deed:hp" value="charisma:modifier" bonus="base" />
+			<stat name="mighty deed:amount" value="1" bonus="base" />
+			<stat name="mighty deed:amount" value="charisma:modifier" bonus="base" />			
 		</rules>
 	</element>
 	<element name="Glorious Defense" type="Archetype Feature" source="Unearthed Arcana: Bard and Paladin" id="ID_WOTC_UA20190918_ARCHETYPE_FEATURE_HEROISM_GLORIOUS_DEFENSE">
@@ -207,7 +207,7 @@
 			<p>Your blessed glory on the battlefield can misdirect an attack. When a creature you can see hits you with an attack roll, you can use your reaction to gain a bonus to AC against that attack, potentially causing it to miss you. The bonus equals your Charisma modifier (minimum of +1). If the attack misses, you can make one weapon attack against the attacker as part of this reaction.</p>
 		</description>
 		<sheet action="Reaction">
-			<description>When a creature you can see hits you with an attack roll, you can use your reaction to gain a +{{glorious defense:ac}} bonus to AC against that attack. If the attack misses, you can make one weapon attack against the attacker as part of this reaction.</description>
+			<description>When a creature you can see hits you with an attack roll, you can gain a +{{glorious defense:ac}} bonus to AC against that attack. If the attack misses, you can make one weapon attack against the attacker as part of this reaction.</description>
 		</sheet>
 		<rules>
 			<stat name="glorious defense:ac" value="1" bonus="base" />
@@ -225,11 +225,11 @@
 			</ul>
 			<p>Once you use this feature, you can’t use it again until you finish a long rest.</p>
 		</description>
-		<sheet action="Bonus Action" usage="Long Rest">
-			<description>You gain the following benefits for 10 minutes:
-			You have advantage on all Charisma checks.
-			Once on each of your turns when you make a weapon attack and miss, you can cause that attack to hit instead.
-			If you fail a saving throw, you can use your reaction to succeed instead.</description>
+		<sheet action="Bonus Action" usage="1/Long Rest">
+			<description>You gain the following benefits for 10 minutes: &#13;
+			• You have advantage on all Charisma checks. &#13;
+			• Once on each of your turns when you make a weapon attack and miss, you can cause that attack to hit instead. &#13;
+			• If you fail a saving throw, you can use your reaction to succeed instead.</description>
 		</sheet>
 	</element>
 </elements>
