@@ -1,0 +1,166 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<elements>
+	<info>
+		<name>Circle of Stars</name>
+		<description>The Circle of Stars from Tasha’s Cauldron of Everything</description>
+		<author url="http://dnd.wizards.com/products/tabletop-games/rpg-products/tashas-cauldron-everything">Tasha’s Cauldron of Everything</author>
+		<update version="0.0.1">
+			<file name="druid-stars.xml" url="https://raw.githubusercontent.com/AuroraLegacy/elements/master/supplements/tashas-cauldron-of-everything/archetypes/druid-stars.xml" />
+		</update>
+	</info>
+	<element name="Circle of Stars" type="Archetype" source="Tasha’s Cauldron of Everything" id="ID_WOTC_TCOE_ARCHETYPE_CIRCLE_OF_STARS">
+		<supports>Druid Circle</supports>
+		<description>
+			<p>The Circle of Stars allows druids to draw on the power of starlight. These druids have tracked heavenly patterns since time immemorial, discovering secrets hidden amid the constellations. By revealing and understanding these secrets, the Circle of Stars seeks to harness the powers of the cosmos.</p>
+			<p class="indent">Many druids of this circle keep records of the constellations and the stars’ effects on the world. Some groups document these observations at megalithic sites, which serve as enigmatic libraries of lore. These repositories might take the form of stone circles, pyramids, petroglyphs, and underground temples—any construction durable enough to protect the circle’s sacred knowledge even against a great cataclysm.</p>
+			<div element="ID_WOTC_TCOE_ARCHETYPE_FEATURE_CIRCLE_OF_STARS_STAR_MAP" />
+			<div element="ID_WOTC_TCOE_ARCHETYPE_FEATURE_CIRCLE_OF_STARS_STARRY_FORM" />
+			<div element="ID_WOTC_TCOE_ARCHETYPE_FEATURE_CIRCLE_OF_STARS_COSMIC_OMEN" />
+			<div element="ID_WOTC_TCOE_ARCHETYPE_FEATURE_CIRCLE_OF_STARS_TWINKLING_CONSTELLATIONS" />
+			<div element="ID_WOTC_TCOE_ARCHETYPE_FEATURE_CIRCLE_OF_STARS_FULL_OF_STARS" />
+		</description>
+		<sheet display="false" />
+		<rules>
+			<grant type="Archetype Feature" id="ID_WOTC_TCOE_ARCHETYPE_FEATURE_CIRCLE_OF_STARS_STAR_MAP" level="2" />
+			<grant type="Archetype Feature" id="ID_WOTC_TCOE_ARCHETYPE_FEATURE_CIRCLE_OF_STARS_STARRY_FORM" level="2" />
+			<grant type="Archetype Feature" id="ID_WOTC_TCOE_ARCHETYPE_FEATURE_CIRCLE_OF_STARS_COSMIC_OMEN" level="6" />
+			<grant type="Archetype Feature" id="ID_WOTC_TCOE_ARCHETYPE_FEATURE_CIRCLE_OF_STARS_TWINKLING_CONSTELLATIONS" level="10" />
+			<grant type="Archetype Feature" id="ID_WOTC_TCOE_ARCHETYPE_FEATURE_CIRCLE_OF_STARS_FULL_OF_STARS" level="14" />
+		</rules>
+	</element>
+	<element name="Star Map" type="Archetype Feature" source="Tasha’s Cauldron of Everything" id="ID_WOTC_TCOE_ARCHETYPE_FEATURE_CIRCLE_OF_STARS_STAR_MAP">
+		<description>
+			<p><em>2nd-level Circle of Stars feature</em></p>
+			<p>You’ve created a star chart as part of your heavenly studies. It is a Tiny object and can serve as a spellcasting focus for your druid spells. You determine its form by rolling on the Star Map table or by choosing one.</p>
+			<p class="indent">While holding this map, you have these benefits:</p>
+			<ul>
+				<li>You know the <i>guidance</i> cantrip.</li>
+				<li>You have the <i>guiding bolt</i> spell prepared. It counts as a druid spell for you, and it doesn’t count against the number of spells you can have prepared.</li>
+				<li>You can cast <i>guiding bolt</i> without expending a spell slot. You can do so a number of times equal to your proficiency bonus, and you regain all expended uses when you finish a long rest.</li>
+			</ul>
+			<p>If you lose the map, you can perform a 1-hour ceremony to magically create a replacement. This ceremony can be performed during a short or long rest, and it destroys the previous map.</p>
+			<h5 class="caption">Star Map</h5>
+			<table>
+				<thead>
+					<tr><td>d6</td><td>Map Form</td></tr>
+				</thead>
+				<tr><td>1</td><td>A scroll covered with depictions of constellations</td></tr>
+				<tr><td>2</td><td>A stone tablet with fine holes drilled through it</td></tr>
+				<tr><td>3</td><td>A speckled owlbear hide, tooled with raised marks</td></tr>
+				<tr><td>4</td><td>A collection of maps bound in an ebony cover</td></tr>
+				<tr><td>5</td><td>A crystal that projects starry patterns when placed before a light</td></tr>
+				<tr><td>6</td><td>Glass disks that depict constellations</td></tr>
+			</table>
+		</description>
+		<sheet>
+			<description>You’ve created a star chart as part of your heavenly studies. It is a Tiny object and can serve as a spellcasting focus for your druid spells. While holding this map, you have these benefits: &#13;
+			• You can cast guiding bolt without expending a spell slot {{proficiency}} times/Long Rest. &#13;
+			• If you lose the map, you can perform a 1-hour ceremony to magically create a replacement. This ceremony can be performed during a short or long rest, and it destroys the previous map.</description>
+		</sheet>
+		<rules>
+			<grant type="Spell" id="ID_PHB_SPELL_GUIDANCE" spellcasting="Druid" />
+			<grant type="Spell" id="ID_PHB_SPELL_GUIDING_BOLT" spellcasting="Druid" prepared="true" />
+		</rules>
+	</element>
+	<element name="Starry Form" type="Archetype Feature" source="Tasha’s Cauldron of Everything" id="ID_WOTC_TCOE_ARCHETYPE_FEATURE_CIRCLE_OF_STARS_STARRY_FORM">
+		<description>
+			<p><em>2nd-level Circle of Stars feature</em></p>
+			<p>As a bonus action, you can expend a use of your Wild Shape feature to take on a starry form, rather than transforming into a beast.</p>
+			<p class="indent">While in a starry form, you retain your game statistics, but your body becomes luminous; your joints glimmer like stars, and glowing lines connect them as on a star chart. This form sheds bright light in a 10-foot radius and dim light for an additional 10 feet. The form lasts for 10 minutes. It ends early if you dismiss it (no action required), are incapacitated, die, or use this feature again.</p>
+			<p class="indent">Whenever you assume your starry form, choose which of the following constellations glimmers on your body; your choice gives you certain benefits while in the form:</p>
+			<p style="text-indent: -1em; margin-left: 1em"><strong><em>Archer.</em></strong> A constellation of an archer appears on you. When you activate this form, and as a bonus action on your subsequent turns while it lasts, you can make a ranged spell attack, hurling a luminous arrow that targets one creature within 60 feet of you. On a hit, the attack deals radiant damage equal to 1d8 + your Wisdom modifier.</p>
+			<p style="text-indent: -1em; margin-left: 1em"><strong><em>Chalice.</em></strong> A constellation of a life-giving goblet appears on you. Whenever you cast a spell using a spell slot that restores hit points to a creature, you or another creature within 30 feet of you can regain hit points equal to 1d8 + your Wisdom modifier.</p>
+			<p style="text-indent: -1em; margin-left: 1em"><strong><em>Dragon.</em></strong> A constellation of a wise dragon appears on you. When you make an Intelligence or a Wisdom check or a Constitution saving throw to maintain concentration on a spell, you can treat a roll of 9 or lower on the d20 as a 10.</p>
+		</description>
+		<sheet action="Bonus Action">
+			<description>You can expend a use of your Wild Shape feature to take on a starry form, rather than transforming into a beast.
+			While in a starry form, you retain your game statistics. This form sheds bright light in a 10-foot radius and dim light for an additional 10 feet. The form lasts for 10 minutes. It ends early if you dismiss it (no action required), are incapacitated, die, or use this feature again.</description>
+		</sheet>
+		<rules>
+			<grant type="Archetype Feature" id="ID_WOTC_TCOE_ARCHETYPE_FEATURE_CIRCLE_OF_STARS_STARRY_FORM_ARCHER" />
+			<grant type="Archetype Feature" id="ID_WOTC_TCOE_ARCHETYPE_FEATURE_CIRCLE_OF_STARS_STARRY_FORM_CHALICE" />
+			<grant type="Archetype Feature" id="ID_WOTC_TCOE_ARCHETYPE_FEATURE_CIRCLE_OF_STARS_STARRY_FORM_DRAGON" />
+		</rules>
+	</element>
+	<element name="Archer" type="Archetype Feature" source="Tasha’s Cauldron of Everything" id="ID_WOTC_TCOE_ARCHETYPE_FEATURE_CIRCLE_OF_STARS_STARRY_FORM_ARCHER">
+		<compendium display="false" />
+		<description>
+			<p>A constellation of an archer appears on you. When you activate this form, and as a bonus action on your subsequent turns while it lasts, you can make a ranged spell attack, hurling a luminous arrow that targets one creature within 60 feet of you. On a hit, the attack deals radiant damage equal to 1d8 + your Wisdom modifier.</p>
+		</description>
+		<sheet usage="Starry Form">
+			<description>When you activate this form, and as a bonus action on your subsequent turns while it lasts, you can make a ranged spell attack, hurling a luminous arrow that targets one creature within 60 feet of you. On a hit, the attack deals {{archer constellation:dice:count}}d8 + {{wisdom:modifier}} radiant damage.</description>
+		</sheet>
+		<rules>
+			<stat name="archer constellation:dice:count" value="1" bonus="base" />
+		</rules>
+	</element>
+	<element name="Chalice" type="Archetype Feature" source="Tasha’s Cauldron of Everything" id="ID_WOTC_TCOE_ARCHETYPE_FEATURE_CIRCLE_OF_STARS_STARRY_FORM_CHALICE">
+		<compendium display="false" />
+		<description>
+			<p>A constellation of a life-giving goblet appears on you. Whenever you cast a spell using a spell slot that restores hit points to a creature, you or another creature within 30 feet of you can regain hit points equal to 1d8 + your Wisdom modifier.</p>
+		</description>
+		<sheet usage="Starry Form">
+			<description>Whenever you cast a spell using a spell slot that restores hp to a creature, you or another creature within 30 feet of you can regain {{chalice constellation:dice:count}}d8 + {{wisdom:modifier}} hp.</description>
+		</sheet>
+		<rules>
+			<stat name="chalice constellation:dice:count" value="1" bonus="base" />
+		</rules>
+	</element>
+	<element name="Dragon" type="Archetype Feature" source="Tasha’s Cauldron of Everything" id="ID_WOTC_TCOE_ARCHETYPE_FEATURE_CIRCLE_OF_STARS_STARRY_FORM_DRAGON">
+		<compendium display="false" />
+		<description>
+			<p>A constellation of a wise dragon appears on you. When you make an Intelligence or a Wisdom check or a Constitution saving throw to maintain concentration on a spell, you can treat a roll of 9 or lower on the d20 as a 10.</p>
+		</description>
+		<sheet usage="Starry Form">
+			<description>When you make an Intelligence or a Wisdom check or a Constitution save to maintain concentration on a spell, you can treat a roll of 9 or lower on the d20 as a 10.</description>
+		</sheet>
+	</element>
+	<element name="Cosmic Omen" type="Archetype Feature" source="Tasha’s Cauldron of Everything" id="ID_WOTC_TCOE_ARCHETYPE_FEATURE_CIRCLE_OF_STARS_COSMIC_OMEN">
+		<description>
+			<p><em>6th-level Circle of Stars feature</em></p>
+			<p>Whenever you finish a long rest, you can consult your Star Map for omens. When you do so, roll a die. Until you finish your next long rest, you gain access to a special reaction based on whether you rolled an even or an odd number on the die:</p>
+			<p style="text-indent: -1em; margin-left: 1em"><strong><em>Weal (even).</em></strong> Whenever a creature you can see within 30 feet of you is about to make an attack roll, a saving throw, or an ability check, you can use your reaction to roll a d6 and add the number rolled to the total.</p>
+			<p style="text-indent: -1em; margin-left: 1em; margin-bottom: 20px"><strong><em>Woe (odd).</em></strong> Whenever a creature you can see within 30 feet of you is about to make an attack roll, a saving throw, or an ability check, you can use your reaction to roll a d6 and subtract the number rolled to the total.</p>
+			<p class="indent">You can use your reaction a number of times equal to your proficiency bonus, and you regain all expended uses when you finish a long rest.</p>
+		</description>
+		<sheet action="Reaction" usage="{{proficiency}}/Long Rest">
+			<description>Whenever you finish a long rest, you can consult your Star Map for omens. When you do so, roll a die. Until you finish your next long rest, you gain access to a special reaction based on whether you rolled an even or an odd number on the die: &#13;
+			Weal (even). Whenever a creature you can see within 30 feet of you is about to make an attack roll, a saving throw, or an ability check, you can roll a d6 and add the number rolled to the total. &#13;
+			Woe (odd). Whenever a creature you can see within 30 feet of you is about to make an attack roll, a saving throw, or an ability check, you can roll a d6 and subtract the number rolled to the total.</description>
+		</sheet>
+	</element>
+	<element name="Twinkling Constellations" type="Archetype Feature" source="Tasha’s Cauldron of Everything" id="ID_WOTC_TCOE_ARCHETYPE_FEATURE_CIRCLE_OF_STARS_TWINKLING_CONSTELLATIONS">
+		<description>
+			<p><em>10th-level Circle of Stars feature</em></p>
+			<p>The constellations of your Starry Form improve. The 1d8 of the Archer and the Chalice becomes 2d8, and while the Dragon is active, you have a flying speed of 20 feet and can hover.</p>
+			<p class="indent">Moreover, at the start of each of your turns while in Starry Form, you can change which constellation glimmers on your body.</p>
+		</description>
+		<sheet>
+			<description>While the Dragon is active, you have a flying speed of 20 feet and can hover. 
+			At the start of each of your turns while in Starry Form, you can change which constellation glimmers on your body.</description>
+		</sheet>
+		<rules>
+			<stat name="archer constellation:dice:count" value="2" bonus="base" />
+			<stat name="chalice constellation:dice:count" value="2" bonus="base" />			
+		</rules>
+	</element>
+	<element name="Full of Stars" type="Archetype Feature" source="Tasha’s Cauldron of Everything" id="ID_WOTC_TCOE_ARCHETYPE_FEATURE_CIRCLE_OF_STARS_FULL_OF_STARS">
+		<description>
+			<p><em>14th-level Circle of Stars feature</em></p>
+			<p>While in your Starry Form, you become partially incorporeal, giving you resistance to bludgeoning, piercing, and slashing damage.</p>
+		</description>
+		<sheet>
+			<description>While in your Starry Form, you become partially incorporeal, giving you resistance to bludgeoning, piercing, and slashing damage.</description>
+		</sheet>
+	</element>
+	<element name="Star Map" type="Item" source="Tasha’s Cauldron of Everything" id="ID_WOTC_TCOE_ITEM_STAR_MAP">
+		<description>
+			<p>The map is a Tiny object and can serve as a spellcasting focus for your druid spells.</p>
+			<p class="indent">If you lose the map, you can perform a 1-hour ceremony to magically create a replacement. This ceremony can be performed during a short or long rest, and it destroys the previous map.</p>
+		</description>
+		<setters>
+			<set name="category">Spellcasting Focus</set>
+		</setters>
+	</element>
+
+</elements>

@@ -1,0 +1,166 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<elements>
+	<info>
+		<name>Psi Warrior</name>
+		<description>The Psi Warrior from Tasha’s Cauldron of Everything</description>
+		<author url="http://dnd.wizards.com/products/tabletop-games/rpg-products/tashas-cauldron-everything">Tasha’s Cauldron of Everything</author>
+		<update version="0.0.1">
+			<file name="fighter-psi.xml" url="https://raw.githubusercontent.com/AuroraLegacy/elements/master/supplements/tashas-cauldron-of-everything/archetypes/fighter-psi.xml" />
+		</update>
+	</info>
+	<element name="Psi Warrior" type="Archetype" source="Tasha’s Cauldron of Everything" id="ID_WOTC_TCOE_ARCHETYPE_FIGHTER_PSI_WARRIOR">
+		<supports>Martial Archetype</supports>
+		<description>
+			<p>Awake to the psionic power within, a Psi Warrior is a fighter who augments their physical might with psi-infused weapon strikes, telekinetic lashes, and barriers of mental force. Many githyanki train to become such warriors, as do some of the most disciplined high elves. In the world of Eberron, many young kalashtar dream of becoming Psi Warriors.</p>
+			<p class="indent">As a Psi Warrior, you might have honed your psionic abilities through solo discipline, unlocked it under the tutelage of a master, or refined it at an academy dedicated to wielding the mud’s power as both weapon and shield.</p>
+			<div element="ID_WOTC_TCOE_ARCHETYPE_FEATURE_PSI_WARRIOR_PSIONIC_POWER" />
+			<div element="ID_WOTC_TCOE_ARCHETYPE_FEATURE_PSI_WARRIOR_TELEKINETIC_ADEPT" />
+			<div element="ID_WOTC_TCOE_ARCHETYPE_FEATURE_PSI_WARRIOR_GUARDED_MIND" />
+			<div element="ID_WOTC_TCOE_ARCHETYPE_FEATURE_PSI_WARRIOR_BULWARK_OF_FORCE" />
+			<div element="ID_WOTC_TCOE_ARCHETYPE_FEATURE_PSI_WARRIOR_TELEKINETIC_MASTER" />
+		</description>
+		<sheet display="false" />
+		<rules>
+			<grant type="Archetype Feature" id="ID_WOTC_TCOE_ARCHETYPE_FEATURE_PSI_WARRIOR_PSIONIC_POWER" level="3" />
+			<grant type="Archetype Feature" id="ID_WOTC_TCOE_ARCHETYPE_FEATURE_PSI_WARRIOR_TELEKINETIC_ADEPT" level="7" />
+			<grant type="Archetype Feature" id="ID_WOTC_TCOE_ARCHETYPE_FEATURE_PSI_WARRIOR_GUARDED_MIND" level="10" />
+			<grant type="Archetype Feature" id="ID_WOTC_TCOE_ARCHETYPE_FEATURE_PSI_WARRIOR_BULWARK_OF_FORCE" level="15" />
+			<grant type="Archetype Feature" id="ID_WOTC_TCOE_ARCHETYPE_FEATURE_PSI_WARRIOR_TELEKINETIC_MASTER" level="18" />
+		</rules>
+	</element>
+	<element name="Psionic Power" type="Archetype Feature" source="Tasha’s Cauldron of Everything" id="ID_WOTC_TCOE_ARCHETYPE_FEATURE_PSI_WARRIOR_PSIONIC_POWER">
+		<description>
+			<p><em>3rd-level Psi Warrior feature</em></p>
+			<p>You harbor a wellspring of psionic energy within yourself. This energy is represented by your Psionic Energy dice, which are each a d6. You have a number of these dice equal to twice your proficiency bonus, and they fuel various psionic powers you have, which are detailed below.</p>
+			<p class="indent">Some of your powers expend the Psionic Energy die they use, as specified in a power’s description, and you can’t use a power if it requires you to use a die when your dice are all expended. You regain all your expended Psionic Energy dice when you finish a long rest. In addition, as a bonus action, you can regain one expended Psionic Energy die, but you can’t do so again until you finish a short or long rest.</p>
+			<p class="indent">When you reach certain levels in this class, the size of your Psionic Energy dice increases: at 5th level (d8), 11th level (d10), and 17th level (d12).</p>
+			<p class="indent">The powers below use your Psionic Energy dice.</p>
+			<p class="indent"><strong><em>Protective Field.</em></strong> When you or another creature you can see within 30 feet of you takes damage, you can use your reaction to expend one Psionic Energy die, roll the die, and reduce the damage taken by the number rolled plus your Intelligence modifier (minimum reduction of 1), as you create a momentary shield of telekinetic force.</p>
+			<p class="indent"><strong><em>Psionic Strike.</em></strong> You can propel your weapons with psionic force. Once on each of your turns, immediately after you hit a target within 30 feet of you with an attack and deal damage to it with a weapon, you can expend one Psionic Energy die, rolling it and dealing force damage to the target equal to the number rolled plus your Intelligence modifier.</p>
+			<p class="indent"><strong><em>Telekinetic Movement.</em></strong> You can move an object or a creature with your mind. As an action, you target one loose object that is Large or smaller or one willing creature, other than yourself. If you can see the target and it is within 30 feet of you, you can move it up to 30 feet to an unoccupied space you can see. Alternatively, if it is a Tiny object, you can move it to or from your hand. Either way, you can move the target horizontally, vertically, or both. Once you take this action, you can’t do so again until you finish a short or long rest, unless you expend a Psionic Energy die to take it again.</p>
+		</description>
+		<sheet usage="{{psionic power:dice:amount}}d{{psionic power:dice:size}}/Long Rest">
+			<description>This energy is represented by your Psionic Energy dice, which are each a d{{psionic power:dice:size}}. In addition, as a bonus action, you can regain one expended Psionic Energy die, but you can’t do so again until you finish a short or long rest.</description>
+		</sheet>
+		<rules>
+			<stat name="psionic power:dice:size" value="6" bonus="base" />
+			<stat name="psionic power:dice:size" value="8" level="5" bonus="base" />
+			<stat name="psionic power:dice:size" value="10" level="11" bonus="base" />
+			<stat name="psionic power:dice:size" value="12" level="17" bonus="base" />
+			<stat name="psi warrior psionic power:proficiency" value="proficiency" />
+			<stat name="psi warrior psionic power:proficiency" value="proficiency" />
+			<stat name="psionic power:dice:amount" value="psi warrior psionic power:proficiency" bonus="base" />
+			<stat name="psionic power:dc" value="8" bonus="base" />
+			<stat name="psionic power:dc" value="proficiency" bonus="proficiency" />
+			<stat name="psionic power:dc" value="intelligence:modifier" bonus="ability" />
+			<grant type="Archetype Feature" id="ID_WOTC_TCOE_ARCHETYPE_FEATURE_PSI_WARRIOR_PSIONIC_POWER_PROTECTIVE_FIELD"  />
+			<grant type="Archetype Feature" id="ID_WOTC_TCOE_ARCHETYPE_FEATURE_PSI_WARRIOR_PSIONIC_POWER_PSIONIC_STRIKE"  />
+			<grant type="Archetype Feature" id="ID_WOTC_TCOE_ARCHETYPE_FEATURE_PSI_WARRIOR_PSIONIC_POWER_TELEKINETIC_MOVEMENT"  />
+		</rules>
+	</element>
+	<element name="Protective Field" type="Archetype Feature" source="Tasha’s Cauldron of Everything" id="ID_WOTC_TCOE_ARCHETYPE_FEATURE_PSI_WARRIOR_PSIONIC_POWER_PROTECTIVE_FIELD">
+		<compendium display="false" />
+		<description>
+			<p>When you or another creature you can see within 30 feet of you takes damage, you can use your reaction to expend one Psionic Energy die, roll the die, and reduce the damage taken by the number rolled plus your Intelligence modifier (minimum reduction of 1), as you create a momentary shield of telekinetic force.</p>
+		</description>
+		<sheet action="Reaction">
+			<description>When you or another creature you can see within 30 feet of you takes damage, you can expend one Psionic Energy die, roll the die, and reduce the damage taken by {{protective field:intelligence}} plus the number rolled.</description>
+		</sheet>
+		<rules>
+			<stat name="protective field:intelligence" value="1" bonus="base" />
+			<stat name="protective field:intelligence" value="intelligence:modifier" bonus="base" />
+		</rules>
+	</element>
+	<element name="Psionic Strike" type="Archetype Feature" source="Tasha’s Cauldron of Everything" id="ID_WOTC_TCOE_ARCHETYPE_FEATURE_PSI_WARRIOR_PSIONIC_POWER_PSIONIC_STRIKE">
+		<compendium display="false" />
+		<description>
+			<p>You can propel your weapons with psionic force. Once on each of your turns, immediately after you hit a target within 30 feet of you with an attack and deal damage to it with a weapon, you can expend one Psionic Energy die, rolling it and dealing force damage to the target equal to the number rolled plus your Intelligence modifier.</p>
+		</description>
+		<sheet>
+			<description>Once on each of your turns, immediately after you hit a target within 30 feet of you with an attack and deal damage to it with a weapon, you can expend one Psionic Energy die, rolling it and dealing force damage to the target equal to {{intelligence:modifier}} plus the number rolled.</description>
+		</sheet>
+	</element>
+	<element name="Telekinetic Movement" type="Archetype Feature" source="Tasha’s Cauldron of Everything" id="ID_WOTC_TCOE_ARCHETYPE_FEATURE_PSI_WARRIOR_PSIONIC_POWER_TELEKINETIC_MOVEMENT">
+		<compendium display="false" />
+		<description>
+			<p>You can move an object or a creature with your mind. As an action, you target one loose object that is Large or smaller or one willing creature, other than yourself. If you can see the target and it is within 30 feet of you, you can move it up to 30 feet to an unoccupied space you can see. Alternatively, if it is a Tiny object, you can move it to or from your hand. Either way, you can move the target horizontally, vertically, or both. Once you take this action, you can’t do so again until you finish a short or long rest, unless you expend a Psionic Energy die to take it again.</p>
+		</description>
+		<sheet action="Action" usage="1/Short Rest">
+			<description>You target one loose object that is Large or smaller or one willing creature, other than yourself. If you can see the target and it is within 30 feet of you, you can move it up to 30 feet to an unoccupied space you can see. Alternatively, if it is a Tiny object, you can move it to or from your hand. Either way, you can move the target horizontally, vertically, or both. You can expend a Psionic Energy die to take the action again.</description>
+		</sheet>
+	</element>
+	<element name="Telekinetic Adept" type="Archetype Feature" source="Tasha’s Cauldron of Everything" id="ID_WOTC_TCOE_ARCHETYPE_FEATURE_PSI_WARRIOR_TELEKINETIC_ADEPT">
+		<description>
+			<p><em>7th-level Psi Warrior feature</em></p>
+			<p>You have mastered new ways to use your telekinetic abilities, detailed below.</p>
+			<p class="indent"><strong><em>Psi-Powered Leap.</em></strong> As a bonus action, you can propel your body with your mind. You gain a flying speed equal to twice your walking speed until the end of the current turn. Once you take this bonus action, you can’t do so again until you finish a short or long rest, unless you expend a Psionic Energy die to take it again.</p>
+			<p class="indent"><strong><em>Telekinetic Thrust.</em></strong> When you deal damage to a target with your Psionic Strike, you can force the target to make a Strength saving throw against a DC equal to 8 + your proficiency bonus + your Intelligence modifier. If the save fails, you can knock the target prone or move it up to 10 feet in any direction horizontally.</p>
+		</description>
+		<sheet display="false">
+			<description>You have mastered new ways to use your telekinetic abilities.</description>
+		</sheet>
+		<rules>
+			<grant type="Archetype Feature" id="ID_WOTC_TCOE_ARCHETYPE_FEATURE_PSI_WARRIOR_TELEKINETIC_ADEPT_PSI_POWERED_LEAP"  />
+			<grant type="Archetype Feature" id="ID_WOTC_TCOE_ARCHETYPE_FEATURE_PSI_WARRIOR_TELEKINETIC_ADEPT_TELEKINETIC_THRUST"  />
+		</rules>
+	</element>
+	<element name="Psi-Powered Leap" type="Archetype Feature" source="Tasha’s Cauldron of Everything" id="ID_WOTC_TCOE_ARCHETYPE_FEATURE_PSI_WARRIOR_TELEKINETIC_ADEPT_PSI_POWERED_LEAP">
+		<compendium display="false" />
+		<description>
+			<p>As a bonus action, you can propel your body with your mind. You gain a flying speed equal to twice your walking speed until the end of the current turn. Once you take this bonus action, you can’t do so again until you finish a short or long rest, unless you expend a Psionic Energy die to take it again.</p>
+		</description>
+		<sheet action="Bonus Action" usage="1/Short Rest">
+			<description>You gain a {{psi powered leap:speed}}ft flying speed until the end of the current turn. You expend a Psionic Energy die to take the bonus action again.</description>
+		</sheet>
+		<rules>
+			<stat name="psi powered leap:speed" value="speed" />
+			<stat name="psi powered leap:speed" value="speed" />
+		</rules>
+	</element>
+	<element name="Telekinetic Thrust" type="Archetype Feature" source="Tasha’s Cauldron of Everything" id="ID_WOTC_TCOE_ARCHETYPE_FEATURE_PSI_WARRIOR_TELEKINETIC_ADEPT_TELEKINETIC_THRUST">
+		<compendium display="false" />
+		<description>
+			<p>When you deal damage to a target with your Psionic Strike, you can force the target to make a Strength saving throw against a DC equal to 8 + your proficiency bonus + your Intelligence modifier. If the save fails, you can knock the target prone or move it up to 10 feet in any direction horizontally.</p>
+		</description>
+		<sheet>
+			<description>When you deal damage to a target with your Psionic Strike, you can force the target to make a DC{{psionic power:dc}} Strength save. If the save fails, you can knock the target prone or move it up to 10 feet in any direction horizontally.</description>
+		</sheet>
+	</element>
+	<element name="Guarded Mind" type="Archetype Feature" source="Tasha’s Cauldron of Everything" id="ID_WOTC_TCOE_ARCHETYPE_FEATURE_PSI_WARRIOR_GUARDED_MIND">
+		<description>
+			<p><em>10th-level Psi Warrior feature</em></p>
+			<p>The psionic energy flowing through you has bolstered your mind. You have resistance to psychic damage. Moreover, if you start your turn charmed or frightened, you can expend a Psionic Energy die and end every effect on yourself subjecting you to those conditions.</p>
+		</description>
+		<sheet>
+			<description>If you start your turn charmed or frightened, you can expend a Psionic Energy die and end every effect on yourself subjecting you to those conditions.</description>
+		</sheet>
+		<rules>
+			<grant type="Condition" id="ID_INTERNAL_CONDITION_DAMAGE_RESISTANCE_PSYCHIC" />
+		</rules>
+	</element>
+	<element name="Bulwark of Force" type="Archetype Feature" source="Tasha’s Cauldron of Everything" id="ID_WOTC_TCOE_ARCHETYPE_FEATURE_PSI_WARRIOR_BULWARK_OF_FORCE">
+		<description>
+			<p><em>15th-level Psi Warrior feature</em></p>
+			<p>You can shield yourself and others with telekinetic force. As a bonus action, you can choose creatures, which can include you, that you can see within 30 feet of you, up to a number of creatures equal to your Intelligence modifier (minimum of one creature). Each of the chosen creatures is protected by half cover for 1 minute or until you’re incapacitated.</p>
+			<p class="indent">Once you take this bonus action, you can’t do so again until you finish a long rest, unless you spend a Psionic Energy die to take it again.</p>
+		</description>
+		<sheet action="Bonus Action" usage="1/Long Rest">
+			<description>You can choose creatures, which can include you, that you can see within 30 feet of you, up to {{bulwark of force:creatures}} creatures. Each of the chosen creatures is protected by half cover for 1 minute or until you’re incapacitated. You can spend a Psionic Energy die to take the bonus action again.</description>
+		</sheet>
+		<rules>
+			<stat name="bulwark of force:creatures" value="1" bonus="base" />
+			<stat name="bulwark of force:creatures" value="intelligence:modifier" bonus="base" />
+		</rules>
+	</element>
+	<element name="Telekinetic Master" type="Archetype Feature" source="Tasha’s Cauldron of Everything" id="ID_WOTC_TCOE_ARCHETYPE_FEATURE_PSI_WARRIOR_TELEKINETIC_MASTER">
+		<description>
+			<p><em>18th-level Psi Warrior feature</em></p>
+			<p>Your ability to move creatures and objects with your mind is matched by few. You can cast the <em>telekinesis</em> spell, requiring no components, and your spellcasting ability for the spell is Intelligence. On each of your turns while you concentrate on the spell, including the turn when you cast it, you can make one attack with a weapon as a bonus action.</p>
+			<p class="indent">Once you cast the spell with this feature, you can’t do so again until you finish a long rest, unless you expend a Psionic Energy die to cast it again.</p>
+		</description>
+		<sheet usage="1/Long Rest">
+			<description>You can cast the telekinesis spell, requiring no components, and your spellcasting ability for the spell is Intelligence. On each of your turns while you concentrate on the spell, including the turn when you cast it, you can make one attack with a weapon as a bonus action. You can expend a Psionic Energy die to cast the spell again.</description>
+		</sheet>
+	</element>	
+  
+</elements>

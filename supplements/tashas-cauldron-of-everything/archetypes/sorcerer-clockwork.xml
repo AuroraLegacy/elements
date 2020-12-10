@@ -1,0 +1,145 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<elements>
+	<info>
+		<name>Clockwork Soul</name>
+		<description>The Clockwork Soul from Tasha’s Cauldron of Everything</description>
+		<author url="http://dnd.wizards.com/products/tabletop-games/rpg-products/tashas-cauldron-everything">Tasha’s Cauldron of Everything</author>
+		<update version="0.0.1">
+			<file name="sorcerer-clockwork.xml" url="https://raw.githubusercontent.com/AuroraLegacy/elements/master/supplements/tashas-cauldron-of-everything/archetypes/sorcerer-clockwork.xml" />
+		</update>
+	</info>
+	<element name="Clockwork Soul" type="Archetype" source="Tasha’s Cauldron of Everything" id="ID_WOTC_TCOE_ARCHETYPE_SORCERER_CLOCKWORK_SOUL">
+		<supports>Sorcerous Origin</supports>
+		<description>
+			<p>The cosmic force of order has suffused you with magic. That power arises from Mechanus or a realm like it—a plane of existence shaped entirely by clockwork efficiency. You, or someone from your lineage, might have become entangled in the machinations of the modrons, the orderly beings who inhabit Mechanus. Perhaps your ancestor even took part in the Great Modron March. Whatever its origin within you, the power of order can seem strange to others, but for you, it is part of a vast and glorious system.</p>
+			<div element="ID_WOTC_TCOE_ARCHETYPE_FEATURE_CLOCKWORK_SOUL_CLOCKWORK_MAGIC" />
+			<div element="ID_WOTC_TCOE_ARCHETYPE_FEATURE_CLOCKWORK_SOUL_RESTORE_BALANCE" />
+			<div element="ID_WOTC_TCOE_ARCHETYPE_FEATURE_CLOCKWORK_SOUL_BASTION_OF_LAW" />
+			<div element="ID_WOTC_TCOE_ARCHETYPE_FEATURE_CLOCKWORK_SOUL_TRANCE_OF_ORDER" />
+			<div element="ID_WOTC_TCOE_ARCHETYPE_FEATURE_CLOCKWORK_SOUL_CLOCKWORK_CAVALCADE" />
+		</description>
+		<sheet display="false" />
+		<rules>
+			<grant type="Archetype Feature" id="ID_WOTC_TCOE_ARCHETYPE_FEATURE_CLOCKWORK_SOUL_CLOCKWORK_MAGIC" level="1" />
+			<grant type="Archetype Feature" id="ID_WOTC_TCOE_ARCHETYPE_FEATURE_CLOCKWORK_SOUL_RESTORE_BALANCE" level="1" />
+			<grant type="Archetype Feature" id="ID_WOTC_TCOE_ARCHETYPE_FEATURE_CLOCKWORK_SOUL_BASTION_OF_LAW" level="6" />
+			<grant type="Archetype Feature" id="ID_WOTC_TCOE_ARCHETYPE_FEATURE_CLOCKWORK_SOUL_TRANCE_OF_ORDER" level="14" />
+			<grant type="Archetype Feature" id="ID_WOTC_TCOE_ARCHETYPE_FEATURE_CLOCKWORK_SOUL_CLOCKWORK_CAVALCADE" level="18" />
+		</rules>
+	</element>
+	<element name="Clockwork Magic" type="Archetype Feature" source="Tasha’s Cauldron of Everything" id="ID_WOTC_TCOE_ARCHETYPE_FEATURE_CLOCKWORK_SOUL_CLOCKWORK_MAGIC">
+		<description>
+			<p><em>1st-level Clockwork Soul feature</em></p>
+			<p>You learn additional spells when you reach certain levels in this class, as shown on the Clockwork Spells table. Each of these spells counts as a sorcerer spell for you, but it doesn't count against the number of sorcerer spells you know.</p>
+			<p class="indent">Whenever you gain a sorcerer level, you can replace one spell you gained from this feature with another spell of the same level. The new spell must be an abjuration or a transmutation spell from the sorcerer, warlock, or wizard spell list.</p>
+			<h5 class="caption">Clockwork Spells</h5>
+			<table>
+				<thead>
+					<tr><td>Sorcerer Level</td><td>Spells</td></tr>
+				</thead>
+				<tr><td>1st</td><td><em>alarm, protection from evil and good</em></td></tr>
+				<tr><td>3rd</td><td><em>aid, lesser restoration</em></td></tr>
+				<tr><td>5th</td><td><em>dispel magic, protection from energy</em></td></tr>
+				<tr><td>7th</td><td><em>freedom of movement, summon construct</em></td></tr>
+				<tr><td>9th</td><td><em>greater restoration, wall of force</em></td></tr>
+			</table>
+			<p>In addition, consult the Manifestations of Order table and choose or randomly determine a way your connection to order manifests while you are casting any of your sorcerer spells.</p>
+			<h5 class="caption">Manifestations of Order</h5>
+			<table>
+				<thead>
+					<tr><td>d6</td><td>Manifestation</td></tr>
+				</thead>
+				<tr><td>1</td><td>Spectral cogwheels hover behind you</td></tr>
+				<tr><td>2</td><td>The hands of a clock spin in your eyes</td></tr>
+				<tr><td>3</td><td>Your skin glows with a brassy sheen</td></tr>
+				<tr><td>4</td><td>Floating equations and geometric objects overlay your body</td></tr>
+				<tr><td>5</td><td>Your spellcasting focus temporarily takes the form of a Tiny clockwork mechanism</td></tr>
+				<tr><td>6</td><td>The ticking of gears or ringing of a clock can be heard by you and those aﬀected by your magic</td></tr>
+			</table>
+		</description>
+		<sheet>
+			<description>Whenever you gain a sorcerer level, you can replace one spell you gained from this feature with another spell of the same level. The new spell must be an abjuration or a transmutation spell from the sorcerer, warlock, or wizard spell list.</description>
+		</sheet>
+		<rules>
+			<select type="Spell" name="Spell, Clockwork Magic" supports="(Abjuration||Transmutation),(($(spellcasting:list))||Warlock||Wizard)" level="1" default="ID_PHB_SPELL_ALARM" spellcasting="Sorcerer" />
+			<select type="Spell" name="Spell, Clockwork Magic" supports="(Abjuration||Transmutation),(($(spellcasting:list))||Warlock||Wizard)" level="1" default="ID_PHB_SPELL_PROTECTION_FROM_EVIL_AND_GOOD" spellcasting="Sorcerer" />
+			<select type="Spell" name="Spell, Clockwork Magic" supports="(Abjuration||Transmutation),(($(spellcasting:list))||Warlock||Wizard)||Aid" level="3" default="ID_PHB_SPELL_AID" spellcasting="Sorcerer" />
+			<select type="Spell" name="Spell, Clockwork Magic" supports="(Abjuration||Transmutation),(($(spellcasting:list))||Warlock||Wizard)||Lesser Restoration" level="3" default="ID_PHB_SPELL_LESSER_RESTORATION" spellcasting="Sorcerer" />
+			<select type="Spell" name="Spell, Clockwork Magic" supports="(Abjuration||Transmutation),(($(spellcasting:list))||Warlock||Wizard)" level="5" default="ID_PHB_SPELL_DISPEL_MAGIC" spellcasting="Sorcerer" />
+			<select type="Spell" name="Spell, Clockwork Magic" supports="(Abjuration||Transmutation),(($(spellcasting:list))||Warlock||Wizard)" level="5" default="ID_PHB_SPELL_PROTECTION_FROM_ENERGY" spellcasting="Sorcerer" />
+			<select type="Spell" name="Spell, Clockwork Magic" supports="(Abjuration||Transmutation),(($(spellcasting:list))||Warlock||Wizard)||Freedom of Movement" level="7" default="ID_PHB_SPELL_FREEDOM_OF_MOVEMENT" spellcasting="Sorcerer" />
+			<select type="Spell" name="Spell, Clockwork Magic" supports="(Abjuration||Transmutation),(($(spellcasting:list))||Warlock||Wizard)||Summon Construct" level="7" default="ID_WOTC_TCOE_SPELL_SUMMON_CONSTRUCT" spellcasting="Sorcerer" />
+			<select type="Spell" name="Spell, Clockwork Magic" supports="(Abjuration||Transmutation),(($(spellcasting:list))||Warlock||Wizard)||Greater Restoration" level="9" default="ID_PHB_SPELL_GREATER_RESTORATION" spellcasting="Sorcerer" />
+			<select type="Spell" name="Spell, Clockwork Magic" supports="(Abjuration||Transmutation),(($(spellcasting:list))||Warlock||Wizard)||Wall of Force" level="9" default="ID_PHB_SPELL_WALL_OF_FORCE" spellcasting="Sorcerer" />
+		</rules>
+	</element>
+	<element name="Restore Balance" type="Archetype Feature" source="Tasha’s Cauldron of Everything" id="ID_WOTC_TCOE_ARCHETYPE_FEATURE_CLOCKWORK_SOUL_RESTORE_BALANCE">
+		<description>
+			<p><em>1st-level Clockwork Soul feature</em></p>
+			<p>Your connection to the plane of absolute order allows you to equalize chaotic moments. When a creature you can see within 60 feet of you is about to roll a d20 with advantage or disadvantage, you can use your reaction to prevent the roll from being affected by advantage and disadvantage.</p>
+			<p class="indent">You can use this feature a number of times equal to your proficiency bonus, and you regain all expended uses when you finish a long rest.</p>
+		</description>
+		<sheet action="Reaction" usage="{{proficiency}}/Long Rest">
+			<description>When a creature you can see within 60 feet of you is about to roll a d20 with advantage or disadvantage, you can prevent the roll from being affected by advantage and disadvantage.</description>
+		</sheet>
+	</element>
+	<element name="Bastion of Law" type="Archetype Feature" source="Tasha’s Cauldron of Everything" id="ID_WOTC_TCOE_ARCHETYPE_FEATURE_CLOCKWORK_SOUL_BASTION_OF_LAW">
+		<description>
+			<p><em>6th-level Clockwork Soul feature</em></p>
+			<p>You can tap into the grand equation of existence to imbue a creature with a shimmering shield of order. As an action, you can expend 1 to 5 sorcery points to create a magical ward around yourself or another creature you can see within 30 feet of you. The ward lasts until you finish a long rest or until you use this feature again.</p>
+			<p class="indent">The ward is represented by a number of d8s equal to the number of sorcery points spent to create it. When the warded creature takes damage, it can expend a number of those dice, roll them, and reduce the damage taken by the total rolled on those dice.</p>
+		</description>
+		<sheet action="Action">
+			<description>You can expend 1 to 5 sorcery points to create a magical ward around yourself or another creature you can see within 30 feet of you. The ward lasts until you finish a long rest or until you use this feature again. The ward is represented by a number of d8s equal to the number of sorcery points spent to create it. When the warded creature takes damage, it can expend a number of those dice, roll them, and reduce the damage taken by the total rolled on those dice.</description>
+		</sheet>
+	</element>
+	<element name="Trance of Order" type="Archetype Feature" source="Tasha’s Cauldron of Everything" id="ID_WOTC_TCOE_ARCHETYPE_FEATURE_CLOCKWORK_SOUL_TRANCE_OF_ORDER">
+		<description>
+			<p><em>14th-level Clockwork Soul feature</em></p>
+			<p>You gain the ability to align your consciousness to the endless calculations of Mechanus. As a bonus action, you can enter this state for 1 minute. For the duration, attack rolls against you can’t benefit from advantage, and whenever you make an attack roll, an ability check, or a saving throw, you can treat a roll of 9 or lower on the d20 as a 10.</p>
+			<p class="indent">Once you use this bonus action, you can’t use it again until you finish a long rest, unless you spend 5 sorcery points to use it again.</p>
+		</description>
+		<sheet action="Bonus Action" usage="1/Long Rest">
+			<description>You can enter this state for 1 minute. For the duration, attack rolls against you can’t benefit from advantage, and whenever you make an attack roll, an ability check, or a saving throw, you can treat a roll of 9 or lower on the d20 as a 10.
+			You can spend 5 sorcery points to use this feature again.</description>
+		</sheet>
+	</element>
+	<element name="Clockwork Cavalcade" type="Archetype Feature" source="Tasha’s Cauldron of Everything" id="ID_WOTC_TCOE_ARCHETYPE_FEATURE_CLOCKWORK_SOUL_CLOCKWORK_CAVALCADE">
+		<description>
+			<p><em>18th-level Clockwork Soul feature</em></p>
+			<p>You summon spirits of order to expunge disorder around you. As an action, you summon the spirits in a 30-foot cube originating from you. The spirits look like modrons or other constructs of your choice. The spirits are intangible and invulnerable, and they create the following effects within the cube before vanishing:</p>
+			<ul>
+				<li>The spirits restore up to 100 hit points, divided as you choose among any number of creatures of your choice in the cube.</li>
+				<li>Any damaged objects entirely in the cube are repaired instantly.</li>
+				<li>Every spell of 6th level or lower ends on creatures and objects of your choice in the cube.</li>
+			</ul>
+			<p class="indent">Once you use this action, you can't use it again until you finish a long rest, unless you spend 7 sorcery points to use it again.</p>
+		</description>
+		<sheet action="Action" usage="1/Long Rest">
+			<description>You summon the spirits in a 30-foot cube originating from you. The spirits are intangible and invulnerable, and they create the following effects within the cube before vanishing: &#13;
+			• The spirits restore up to 100 hit points, divided as you choose among any number of creatures of your choice in the cube. &#13;
+			• Any damaged objects entirely in the cube are repaired instantly. &#13;
+			• Every spell of 6th level or lower ends on creatures and objects of your choice in the cube. &#13;
+			You can spend 7 sorcery points to use this feature again.</description>
+		</sheet>
+	</element>
+	<append id="ID_PHB_SPELL_AID">
+		<supports>Aid</supports>
+	</append>
+	<append id="ID_PHB_SPELL_LESSER_RESTORATION">
+		<supports>Lesser Restoration</supports>
+	</append>
+	<append id="ID_PHB_SPELL_FREEDOM_OF_MOVEMENT">
+		<supports>Freedom of Movement</supports>
+	</append>
+	<append id="ID_PHB_SPELL_GREATER_RESTORATION">
+		<supports>Greater Restoration</supports>
+	</append>
+	<append id="ID_WOTC_TCOE_SPELL_SUMMON_CONSTRUCT">
+		<supports>Summon Construct</supports>
+	</append>
+	<append id="ID_PHB_SPELL_WALL_OF_FORCE">
+		<supports>Wall of Force</supports>
+	</append>
+  
+</elements>

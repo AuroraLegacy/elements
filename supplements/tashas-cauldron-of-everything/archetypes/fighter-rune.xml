@@ -1,0 +1,234 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<elements>
+	<info>
+		<name>Rune Knight</name>
+		<description>The Rune Knight from Tasha’s Cauldron of Everything</description>
+		<author url="http://dnd.wizards.com/products/tabletop-games/rpg-products/tashas-cauldron-everything">Tasha’s Cauldron of Everything</author>
+		<update version="0.0.1">
+			<file name="fighter-rune.xml" url="https://raw.githubusercontent.com/AuroraLegacy/elements/master/supplements/tashas-cauldron-of-everything/archetypes/fighter-rune.xml" />
+		</update>
+	</info>
+	<element name="Rune Knight" type="Archetype" source="Tasha’s Cauldron of Everything" id="ID_WOTC_TCOE_ARCHETYPE_FIGHTER_RUNE_KNIGHT">
+		<supports>Martial Archetype</supports>
+		<description>
+			<p>Rune Knights enhance their martial prowess using the supernatural power of runes, and ancient practice that originated with giants. Rune cutters can be found among any family of giants, and you likely learned your methods first or second hand from such a mystical artisan. Whether you found the giant’s work carved into a hill or cave, learned of the runes from a sage, or met the giant in person, you studied the giant’s craft and learned how to apply magic runes to empower your equipment.</p>
+			<div element="ID_WOTC_TCOE_ARCHETYPE_FEATURE_RUNE_KNIGHT_BONUS_PROFICIENCIES" />
+			<div element="ID_WOTC_TCOE_ARCHETYPE_FEATURE_RUNE_KNIGHT_RUNE_CARVER" />
+			<div element="ID_WOTC_TCOE_ARCHETYPE_FEATURE_RUNE_KNIGHT_GIANTS_MIGHT" />
+			<div element="ID_WOTC_TCOE_ARCHETYPE_FEATURE_RUNE_KNIGHT_RUNIC_SHIELD" />
+			<div element="ID_WOTC_TCOE_ARCHETYPE_FEATURE_RUNE_KNIGHT_GREAT_STATURE" />
+			<div element="ID_WOTC_TCOE_ARCHETYPE_FEATURE_RUNE_KNIGHT_MASTER_OF_RUNES" />
+			<div element="ID_WOTC_TCOE_ARCHETYPE_FEATURE_RUNE_KNIGHT_RUNIC_JUGGERNAUT" />
+		</description>
+		<sheet display="false" />
+		<rules>
+			<grant type="Archetype Feature" id="ID_WOTC_TCOE_ARCHETYPE_FEATURE_RUNE_KNIGHT_BONUS_PROFICIENCIES" level="3" />
+			<grant type="Archetype Feature" id="ID_WOTC_TCOE_ARCHETYPE_FEATURE_RUNE_KNIGHT_RUNE_CARVER" level="3" />
+			<grant type="Archetype Feature" id="ID_WOTC_TCOE_ARCHETYPE_FEATURE_RUNE_KNIGHT_GIANTS_MIGHT" level="3" />
+			<grant type="Archetype Feature" id="ID_WOTC_TCOE_ARCHETYPE_FEATURE_RUNE_KNIGHT_RUNIC_SHIELD" level="7" />
+			<grant type="Archetype Feature" id="ID_WOTC_TCOE_ARCHETYPE_FEATURE_RUNE_KNIGHT_GREAT_STATURE" level="10" />
+			<grant type="Archetype Feature" id="ID_WOTC_TCOE_ARCHETYPE_FEATURE_RUNE_KNIGHT_MASTER_OF_RUNES" level="15" />
+			<grant type="Archetype Feature" id="ID_WOTC_TCOE_ARCHETYPE_FEATURE_RUNE_KNIGHT_RUNIC_JUGGERNAUT" level="18" />
+		</rules>
+	</element>
+	<element name="Bonus Proficiencies" type="Archetype Feature" source="Tasha’s Cauldron of Everything" id="ID_WOTC_TCOE_ARCHETYPE_FEATURE_RUNE_KNIGHT_BONUS_PROFICIENCIES">
+		<description>
+			<p><em>3rd-level Rune Knight feature</em></p>
+			<p>You gain proficiency with smith’s tools, and you learn to speak, read, and write Giant.</p>
+		</description>
+		<sheet display="false">
+			<description>You gain proficiency with smith’s tools, and you learn to speak, read, and write Giant.</description>
+		</sheet>
+		<rules>
+			<grant type="Proficiency" id="ID_PROFICIENCY_TOOL_PROFICIENCY_SMITHS_TOOLS" />
+			<grant type="Language" id="ID_LANGUAGE_GIANT" />
+		</rules>
+	</element>
+	<element name="Rune Carver" type="Archetype Feature" source="Tasha’s Cauldron of Everything" id="ID_WOTC_TCOE_ARCHETYPE_FEATURE_RUNE_KNIGHT_RUNE_CARVER">
+		<description>
+			<p><em>3rd-level Rune Knight feature</em></p>
+			<p>You can use magic runes to enhance your gear. You learn two runes of your choice, from among the runes described below, and each time you gain a level in this class, you can replace one rune you know with a different one from this feature. When you reach certain levels in this class, you learn additional runes, as shown in the Runes Known table.</p>
+			<h5 class="caption">Runes Known</h5>
+			<table>
+				<thead>
+					<tr><td>Fighter Level</td><td>Number of Runes</td></tr>
+				</thead>
+				<tr><td>3rd</td><td>2</td></tr>
+				<tr><td>7th</td><td>3</td></tr>
+				<tr><td>10th</td><td>4</td></tr>
+				<tr><td>15th</td><td>5</td></tr>
+			</table>
+			<p class="indent">Whenever you finish a long rest, you can touch a number of objects equal to the number of runes you know, and you inscribe a different rune onto each of the objects. To be eligible, an object must be a weapon, suit of armor, a shield, a piece of jewelry, or something else you can wear or hold in a hand. Your rune remains on an object until you finish a long rest, and an object can bear only one of your runes at a time.</p>
+			<p class="indent">The following runes are available to you when you learn a rune. If a rune has a level requirement, you must be at least that level in this class to learn the rune. If a rune requires a saving throw, your Rune Magic save DC equals 8 + your proficiency bonus + your Constitution modifier.</p>
+			<p class="indent"><strong><em>Cloud Rune.</em></strong> This rune emulates the deceptive magic used by some cloud giants. While wearing or carrying an object inscribed with this rune, you have advantage on Dexterity (Sleight of Hand) checks and Charisma (Deception) checks.</p>
+			<p class="indent">In addition, when you or a creature you can see within 30 feet of you is hit by an attack roll, you can use your reaction to invoke the rune and choose a different creature within 30 feet of you, other than the attacker. The chosen creature becomes the target of the attack, using the same roll. This magic can transfer the attack’s effects regardless of the attack’s range. Once you invoke this rune, you can’t do so again until you finish a short or long rest.</p>
+			<p class="indent"><strong><em>Fire Rune.</em></strong> This rune’s magic channels the masterful craftsmanship of great smiths. While wearing or carrying an object inscribed with this rune, your proficiency bonus is doubled for any ability check you make that uses your proficiency with a tool.</p>
+			<p class="indent">In addition, when you hit a creature with an attack using a weapon, you can invoke the rune to summon fiery shackles: the target takes an extra 2d6 fire damage, and it must succeed on a Strength saving throw or be restrained for 1 minute. While restrained by the shackles, the target takes 2d6 fire damage at the start of each of its turns. The target can repeat the saving throw at the end of each of its turns, banishing the shackles on a success. Once you invoke this rune, you can’t do so again until you finish a short or long rest.</p>
+			<p class="indent"><strong><em>Frost Rune.</em></strong> This rune’s magic evokes the might of those who survive in the wintry wilderness, such as frost giants. While wearing or carrying an object inscribed with this rune, you have advantage on Wisdom (Animal Handling) checks and Charisma (Intimidation) checks.</p>
+			<p class="indent">In addition, you can invoke the rune as a bonus action to increase your sturdiness. For 10 minutes, you gain a +2 bonus to all ability checks and saving throws that use Strength or Constitution. Once you invoke this rune, you can’t do so again until you finish a short or long rest.</p>
+			<p class="indent"><strong><em>Stone Rune.</em></strong> This rune’s magic channels the judiciousness associated with stone giants. While wearing or carrying an object inscribed with this rune, you have advantage on Wisdom (Insight) checks, and you have darkvision out to a range of 120 feet.</p>
+			<p class="indent">In addition, when a creature you can see ends its turn within 30 feet of you, you can use your reaction to invoke the rune and force the creature to make a Wisdom saving throw. Unless the save succeeds, the creature is charmed by you for 1 minute. While charmed in this way, the creature has a speed of 0 and is incapacitated, descending into a dreamy stupor. The creature repeats the saving throw at the end of each of its turns, ending the effect on a success. Once you invoke this rune, you can’t do so again until you finish a short or long rest.</p>
+			<p class="indent"><strong><em>Hill Rune (7th Level or Higher).</em></strong> This rune’s magic bestows a resilience reminiscent of a hill giant. While wearing or carrying an object that bears this rune, you have advantage on saving throws against being poisoned, and you have resistance against poison damage.</p>
+			<p class="indent">In addition, you can invoke the rune as a bonus action, gaining resistance to bludgeoning, piercing, and slashing damage for 1 minute. Once you invoke this rune, you can’t do so again until you finish a short or long rest.</p>
+			<p class="indent"><strong><em>Storm Rune (7th Level or Higher).</em></strong> Using this rune, you can glimpse the future like a storm giant seer. While wearing or carrying an object inscribed with this rune, you have advantage on Intelligence (Arcana) checks, and you can’t be surprised as long as you aren’t incapacitated.</p>
+			<p class="indent">In addition, you can invoke the rune as a bonus action to enter a prophetic state for 1 minute or until you’re incapacitated. Until the state ends, when you or another creature you can see within 60 feet of you makes an attack roll, a saving throw, or an ability check, you can use your reaction to cause the roll to have advantage or disadvantage. Once you invoke this rune, you can’t do so again until you finish a short or long rest.</p>
+		</description>
+		<sheet>
+			<description>Whenever you finish a long rest, you can touch {{rune knight:runes:count}} objects, and you inscribe a different rune onto each of the objects. To be eligible, an object must be a weapon, suit of armor, a shield, a piece of jewelry, or something else you can wear or hold in a hand. Your rune remains on an object until you finish a long rest, and an object can bear only one of your runes at a time.
+			Your Rune Magic saving throw DC is {{rune knight:dc}}.</description>
+		</sheet>
+		<rules>
+			<stat name="rune knight:runes:count" value="2" level="3" bonus="base" />
+			<stat name="rune knight:runes:count" value="3" level="7" bonus="base" />
+			<stat name="rune knight:runes:count" value="4" level="10" bonus="base" />
+			<stat name="rune knight:runes:count" value="5" level="15" bonus="base" />
+			<stat name="rune knight:dc" value="8" base="base" />
+			<stat name="rune knight:dc" value="proficiency" base="proficiency" />
+			<stat name="rune knight:dc" value="constitution:modifier" base="ability" />
+			<select type="Archetype Feature" name="Rune, Rune Carver" supports="Rune Knight Rune" number="2" level="3" />
+			<select type="Archetype Feature" name="Rune, Rune Carver" supports="Rune Knight Rune" level="7" />
+			<select type="Archetype Feature" name="Rune, Rune Carver" supports="Rune Knight Rune" level="10" />
+			<select type="Archetype Feature" name="Rune, Rune Carver" supports="Rune Knight Rune" level="15" />
+			<stat name="rune knight rune:usage" value="1" bonus="base" />
+			<stat name="rune knight rune:usage" value="2" level="15" bonus="base" />
+		</rules>
+	</element>
+	<element name="Giant’s Might" type="Archetype Feature" source="Tasha’s Cauldron of Everything" id="ID_WOTC_TCOE_ARCHETYPE_FEATURE_RUNE_KNIGHT_GIANTS_MIGHT">
+		<description>
+			<p><em>3rd-level Rune Knight feature</em></p>
+			<p>You have learned how to imbue yourself with the might of giants. As a bonus action, you magically gain the following benefits, which last for 1 minute:</p>
+			<ul>
+				<li>If you are smaller than Large, you become Large, along with anything you are wearing. If you lack the room to become Large, your size doesn’t change.</li>
+				<li>You have advantage on Strength checks and Strength saving throws.</li>
+				<li>Once on each of your turns, one of your attacks with a weapon or an unarmed strike can deal an extra 1d6 damage to a target on a hit.</li>
+			</ul>
+			<p>You can use this feature a number of times equal to your proficiency bonus, and you regain all expended uses of it when you finish a long rest.</p>
+		</description>
+		<sheet action="Bonus Action" usage="{{proficiency}}/Long Rest">
+			<description>You magically gain the following benefits, which last for 1 minute: &#13;
+			• If you are smaller than Large, you become Large, along with anything you are wearing. If you lack the room to become Large, your size doesn’t change. &#13;
+			• You have advantage on Strength checks and Strength saving throws. &#13;
+			• Once on each of your turns, one of your attacks with a weapon or an unarmed strike can deal an extra 1d{{giants might:dice:size}} damage to a target on a hit.</description>
+		</sheet>
+		<rules>
+			<stat name="giants might:dice:size" value="6" bonus="base" />
+		</rules>
+	</element>
+	<element name="Runic Shield" type="Archetype Feature" source="Tasha’s Cauldron of Everything" id="ID_WOTC_TCOE_ARCHETYPE_FEATURE_RUNE_KNIGHT_RUNIC_SHIELD">
+		<description>
+			<p><em>7th-level Rune Knight feature</em></p>
+			<p>You learn to invoke your rune magic to protect your allies. When another creature you can see within 60 feet of you is hit by an attack roll, you can use your reaction to force the attacker to reroll the d20 and use the new roll.</p>
+			<p class="indent">You can use this feature a number of times equal to your proficiency bonus, and you regain all expended uses when you finish a long rest.</p>
+		</description>
+		<sheet action="Reaction" usage="{{proficiency}}/Long Rest">
+			<description>When another creature you can see within 60 feet of you is hit by an attack roll, you can force the attacker to reroll the d20 and use the new roll.</description>
+		</sheet>
+	</element>
+	<element name="Great Stature" type="Archetype Feature" source="Tasha’s Cauldron of Everything" id="ID_WOTC_TCOE_ARCHETYPE_FEATURE_RUNE_KNIGHT_GREAT_STATURE">
+		<description>
+			<p><em>10th-level Rune Knight feature</em></p>
+			<p>The magic of your runes permanently alters you. When you gain this feature, roll 3d4. You grow a number of inches in height equal to the roll.</p>
+			<p class="indent">Moreover, the extra damage you deal with your Giant’s Might feature increases to 1d8.</p>
+		</description>
+		<sheet>
+			<description>When you gain this feature, roll 3d4. You grow a number of inches in height equal to the roll.</description>
+		</sheet>
+		<rules>
+			<stat name="giants might:dice:size" value="8" bonus="base" />
+		</rules>
+	</element>
+	<element name="Master of Runes" type="Archetype Feature" source="Tasha’s Cauldron of Everything" id="ID_WOTC_TCOE_ARCHETYPE_FEATURE_RUNE_KNIGHT_MASTER_OF_RUNES">
+		<description>
+			<p><em>15th-level Rune Knight feature</em></p>
+			<p>You can invoke each rune you know from your Rune Carver feature twice, rather than once, and you regain all expended uses when you finish a short or long rest.</p>
+		</description>
+		<sheet display="false">
+			<description>You can invoke each rune you know from your Rune Carver feature twice, rather than once, and you regain all expended uses when you finish a short or long rest.</description>
+		</sheet>
+	</element>
+	<element name="Runic Juggernaut" type="Archetype Feature" source="Tasha’s Cauldron of Everything" id="ID_WOTC_TCOE_ARCHETYPE_FEATURE_RUNE_KNIGHT_RUNIC_JUGGERNAUT">
+		<description>
+			<p><em>18th-level Rune Knight feature</em></p>
+			<p>You learn to amplify your rune-powered transformation. As a result, the extra damage you deal with the Giant’s Might feature increases to 1d10. Moreover, when you use that feature, your size can increase to Huge, and while you are that size, your reach increases by 5 feet.</p>
+		</description>
+		<sheet>
+			<description>When you use Giant’s Might, your size can increase to Huge, and while you are that size, your reach increases by 5 feet.</description>
+		</sheet>
+		<rules>
+			<stat name="giants might:dice:size" value="10" bonus="base" />
+		</rules>
+	</element>
+	<element name="Cloud Rune" type="Archetype Feature" source="Tasha’s Cauldron of Everything" id="ID_WOTC_TCOE_ARCHETYPE_FEATURE_RUNE_KNIGHT_CLOUD_RUNE">
+		<supports>Rune Knight Rune</supports>
+		<description>
+			<p>This rune emulates the deceptive magic used by some cloud giants. While wearing or carrying an object inscribed with this rune, you have advantage on Dexterity (Sleight of Hand) checks and Charisma (Deception) checks.</p>
+			<p class="indent">In addition, when you or a creature you can see within 30 feet of you is hit by an attack roll, you can use your reaction to invoke the rune and choose a different creature within 30 feet of you, other than the attacker. The chosen creature becomes the target of the attack, using the same roll. This magic can transfer the attack’s effects regardless of the attack’s range. Once you invoke this rune, you can’t do so again until you finish a short or long rest.</p>
+		</description>
+		<sheet action="Reaction" usage="{{rune knight rune:usage}}/Short Rest">
+			<description>While wearing or carrying an object inscribed with this rune, you have advantage on Sleight of Hand checks and Deception checks.
+			When you or a creature you can see within 30 feet of you is hit by an attack roll, you can invoke the rune and choose a different creature within 30 feet of you, other than the attacker. The chosen creature becomes the target of the attack, using the same roll. This magic can transfer the attack’s effects regardless of the attack’s range.</description>
+		</sheet>
+	</element>
+	<element name="Fire Rune" type="Archetype Feature" source="Tasha’s Cauldron of Everything" id="ID_WOTC_TCOE_ARCHETYPE_FEATURE_RUNE_KNIGHT_FIRE_RUNE">
+		<supports>Rune Knight Rune</supports>
+		<description>
+			<p>This rune’s magic channels the masterful craftsmanship of great smiths. While wearing or carrying an object inscribed with this rune, your proficiency bonus is doubled for any ability check you make that uses your proficiency with a tool.</p>
+			<p class="indent">In addition, when you hit a creature with an attack using a weapon, you can invoke the rune to summon fiery shackles: the target takes an extra 2d6 fire damage, and it must succeed on a Strength saving throw or be restrained for 1 minute. While restrained by the shackles, the target takes 2d6 fire damage at the start of each of its turns. The target can repeat the saving throw at the end of each of its turns, banishing the shackles on a success. Once you invoke this rune, you can’t do so again until you finish a short or long rest.</p>
+		</description>
+		<sheet usage="{{rune knight rune:usage}}/Short Rest">
+			<description>While wearing or carrying an object inscribed with this rune, your proficiency bonus is doubled for any ability check you make that uses your proficiency with a tool.
+			When you hit a creature with an attack using a weapon, you can invoke the rune to summon fiery shackles: the target takes an extra 2d6 fire damage, and it must succeed on a DC{{rune knight:dc}} Strength save or be restrained for 1 minute. While restrained by the shackles, the target takes 2d6 fire damage at the start of each of its turns. The target can repeat the saving throw at the end of each of its turns, banishing the shackles on a success.</description>
+		</sheet>
+	</element>
+	<element name="Frost Rune" type="Archetype Feature" source="Tasha’s Cauldron of Everything" id="ID_WOTC_TCOE_ARCHETYPE_FEATURE_RUNE_KNIGHT_FROST_RUNE">
+		<supports>Rune Knight Rune</supports>
+		<description>
+			<p>This rune’s magic evokes the might of those who survive in the wintry wilderness, such as frost giants. While wearing or carrying an object inscribed with this rune, you have advantage on Wisdom (Animal Handling) checks and Charisma (Intimidation) checks.</p>
+			<p class="indent">In addition, you can invoke the rune as a bonus action to increase your sturdiness. For 10 minutes, you gain a +2 bonus to all ability checks and saving throws that use Strength or Constitution. Once you invoke this rune, you can’t do so again until you finish a short or long rest.</p>
+		</description>
+		<sheet action="Bonus Action" usage="{{rune knight rune:usage}}/Short Rest">
+			<description>While wearing or carrying an object inscribed with this rune, you have advantage on Animal Handling checks and Intimidation checks.
+			You can invoke the rune increase your sturdiness. For 10 minutes, you gain a +2 bonus to all ability checks and saving throws that use Strength or Constitution.</description>
+		</sheet>
+	</element>
+	<element name="Hill Rune" type="Archetype Feature" source="Tasha’s Cauldron of Everything" id="ID_WOTC_TCOE_ARCHETYPE_FEATURE_RUNE_KNIGHT_HILL_RUNE">
+		<supports>Rune Knight Rune</supports>
+		<prerequisite>7th level</prerequisite>
+		<requirements>[level:7]</requirements>
+		<description>
+			<p><em>Prerequisite: 7th level</em></p>
+			<p>This rune’s magic bestows a resilience reminiscent of a hill giant. While wearing or carrying an object that bears this rune, you have advantage on saving throws against being poisoned, and you have resistance against poison damage.</p>
+			<p class="indent">In addition, you can invoke the rune as a bonus action, gaining resistance to bludgeoning, piercing, and slashing damage for 1 minute. Once you invoke this rune, you can’t do so again until you finish a short or long rest.</p>
+		</description>
+		<sheet action="Bonus Action" usage="{{rune knight rune:usage}}/Short Rest">
+			<description>While wearing or carrying an object that bears this rune, you have advantage on saving throws against being poisoned, and you have resistance against poison damage. 
+			You can invoke the rune, gaining resistance to bludgeoning, piercing, and slashing damage for 1 minute.</description>
+		</sheet>
+	</element>
+	<element name="Stone Rune" type="Archetype Feature" source="Tasha’s Cauldron of Everything" id="ID_WOTC_TCOE_ARCHETYPE_FEATURE_RUNE_KNIGHT_STONE_RUNE">
+		<supports>Rune Knight Rune</supports>
+		<description>
+			<p>This rune’s magic channels the judiciousness associated with stone giants. While wearing or carrying an object inscribed with this rune, you have advantage on Wisdom (Insight) checks, and you have darkvision out to a range of 120 feet.</p>
+			<p class="indent">In addition, when a creature you can see ends its turn within 30 feet of you, you can use your reaction to invoke the rune and force the creature to make a Wisdom saving throw. Unless the save succeeds, the creature is charmed by you for 1 minute. While charmed in this way, the creature has a speed of 0 and is incapacitated, descending into a dreamy stupor. The creature repeats the saving throw at the end of each of its turns, ending the effect on a success. Once you invoke this rune, you can’t do so again until you finish a short or long rest.</p>
+		</description>
+		<sheet action="Reaction" usage="{{rune knight rune:usage}}/Short Rest">
+			<description>While wearing or carrying an object inscribed with this rune, you have advantage on Insight checks, and you have darkvision out to a range of 120 feet.
+			When a creature you can see ends its turn within 30 feet of you, you can invoke the rune and force the creature to make a DC{{rune knight:dc}} Wisdom save. Unless the save succeeds, the creature is charmed by you for 1 minute. While charmed in this way, the creature has a speed of 0 and is incapacitated, descending into a dreamy stupor. The creature repeats the saving throw at the end of each of its turns, ending the effect on a success.</description>
+		</sheet>
+	</element>
+	<element name="Storm Rune" type="Archetype Feature" source="Tasha’s Cauldron of Everything" id="ID_WOTC_TCOE_ARCHETYPE_FEATURE_RUNE_KNIGHT_STORM_RUNE">
+		<supports>Rune Knight Rune</supports>
+		<prerequisite>7th level</prerequisite>
+		<requirements>[level:7]</requirements>
+		<description>
+			<p><em>Prerequisite: 7th level</em></p>
+			<p>Using this rune, you can glimpse the future like a storm giant seer. While wearing or carrying an object inscribed with this rune, you have advantage on Intelligence (Arcana) checks, and you can’t be surprised as long as you aren’t incapacitated.</p>
+			<p class="indent">In addition, you can invoke the rune as a bonus action to enter a prophetic state for 1 minute or until you’re incapacitated. Until the state ends, when you or another creature you can see within 60 feet of you makes an attack roll, a saving throw, or an ability check, you can use your reaction to cause the roll to have advantage or disadvantage. Once you invoke this rune, you can’t do so again until you finish a short or long rest.</p>
+		</description>
+		<sheet action="Bonus Action" usage="{{rune knight rune:usage}}/Short Rest">
+			<description>While wearing or carrying an object inscribed with this rune, you have advantage on Arcana checks, and you can’t be surprised as long as you aren’t incapacitated.
+			You can invoke the rune enter a prophetic state for 1 minute or until you’re incapacitated. Until the state ends, when you or another creature you can see within 60 feet of you makes an attack roll, a saving throw, or an ability check, you can use your reaction to cause the roll to have advantage or disadvantage.</description>
+		</sheet>
+	</element>	
+  
+</elements>

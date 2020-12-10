@@ -1,0 +1,164 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<elements>
+	<info>
+		<name>Twilight Domain</name>
+		<description>The Twilight Domain from Tasha’s Cauldron of Everything</description>
+		<author url="http://dnd.wizards.com/products/tabletop-games/rpg-products/tashas-cauldron-everything">Tasha’s Cauldron of Everything</author>
+		<update version="0.0.1">
+			<file name="cleric-twilight.xml" url="https://raw.githubusercontent.com/AuroraLegacy/elements/master/supplements/tashas-cauldron-of-everything/archetypes/cleric-twilight.xml" />
+		</update>
+	</info>
+ 	<element name="Twilight Domain" type="Archetype" source="Tasha’s Cauldron of Everything" id="ID_WOTC_TCOE_ARCHETYPE_CLERIC_TWILIGHT_DOMAIN">
+		<supports>Divine Domain</supports>
+		<description>
+			<p>The twilit transition from light into darkness often brings calm and even joy, as the day’s labors end and the hours of rest begin. The darkness can also bring terrors, but the gods of twilight guard against the horrors of the night.</p>
+			<p class="indent">Clerics who serve these deities—examples of which appear on the Twilight Deities table—bring comfort to those who seek rest and protect them by venturing into the encroaching darkness to ensure that the dark is a comfort, not a terror.</p>
+			<h5 class="caption">Twilight Deities</h5>
+			<table>
+				<thead>
+					<tr><td>Example Deities</td><td>Pantheon</td></tr>
+				</thead>
+				<tr><td>Boldrei</td><td>Eberron</td></tr>
+				<tr><td>Celestian</td><td>Greyhawk</td></tr>
+				<tr><td>Dol Arrah</td><td>Eberron</td></tr>
+				<tr><td>Helm</td><td>Forgotten Realms</td></tr>
+				<tr><td>Ilmater</td><td>Forgotten Realms</td></tr>
+				<tr><td>Mishakal</td><td>Dragonlance</td></tr>
+				<tr><td>Selune</td><td>Forgotten Realms</td></tr>
+				<tr><td>Yondalla</td><td>Halfling</td></tr>
+			</table>
+			<div element="ID_WOTC_TCOE_ARCHETYPE_FEATURE_TWILIGHT_DOMAIN_DOMAIN_SPELLS" />
+			<div element="ID_WOTC_TCOE_ARCHETYPE_FEATURE_TWILIGHT_DOMAIN_BONUS_PROFICIENCIES" />
+			<div element="ID_WOTC_TCOE_ARCHETYPE_FEATURE_TWILIGHT_DOMAIN_EYES_OF_NIGHT" />
+			<div element="ID_WOTC_TCOE_ARCHETYPE_FEATURE_TWILIGHT_DOMAIN_VIGILANT_BLESSING" />
+			<div element="ID_WOTC_TCOE_ARCHETYPE_FEATURE_TWILIGHT_DOMAIN_CD_TWILIGHT_SANCTUARY" />
+			<div element="ID_WOTC_TCOE_ARCHETYPE_FEATURE_TWILIGHT_DOMAIN_STEPS_OF_NIGHT" />
+			<div element="ID_WOTC_TCOE_ARCHETYPE_FEATURE_TWILIGHT_DOMAIN_DIVINE_STRIKE" />
+			<div element="ID_WOTC_TCOE_ARCHETYPE_FEATURE_TWILIGHT_DOMAIN_TWILIGHT_SHROUD" />
+		</description>
+		<sheet display="false" />
+		<rules>
+			<grant type="Archetype Feature" id="ID_WOTC_TCOE_ARCHETYPE_FEATURE_TWILIGHT_DOMAIN_DOMAIN_SPELLS" level="1" />
+			<grant type="Archetype Feature" id="ID_WOTC_TCOE_ARCHETYPE_FEATURE_TWILIGHT_DOMAIN_BONUS_PROFICIENCIES" level="1" />
+			<grant type="Archetype Feature" id="ID_WOTC_TCOE_ARCHETYPE_FEATURE_TWILIGHT_DOMAIN_EYES_OF_NIGHT" level="1" />
+			<grant type="Archetype Feature" id="ID_WOTC_TCOE_ARCHETYPE_FEATURE_TWILIGHT_DOMAIN_VIGILANT_BLESSING" level="1" />
+			<grant type="Archetype Feature" id="ID_WOTC_TCOE_ARCHETYPE_FEATURE_TWILIGHT_DOMAIN_CD_TWILIGHT_SANCTUARY" level="2" />
+			<grant type="Archetype Feature" id="ID_WOTC_TCOE_ARCHETYPE_FEATURE_TWILIGHT_DOMAIN_STEPS_OF_NIGHT" level="6" />
+			<grant type="Archetype Feature" id="ID_WOTC_TCOE_ARCHETYPE_FEATURE_TWILIGHT_DOMAIN_DIVINE_STRIKE" level="8" />
+			<grant type="Archetype Feature" id="ID_WOTC_TCOE_ARCHETYPE_FEATURE_TWILIGHT_DOMAIN_TWILIGHT_SHROUD" level="17" />
+		</rules>
+	</element>
+	<element name="Domain Spells" type="Archetype Feature" source="Tasha’s Cauldron of Everything" id="ID_WOTC_TCOE_ARCHETYPE_FEATURE_TWILIGHT_DOMAIN_DOMAIN_SPELLS">
+		<description>
+			<p><em>1st-level Twilight Domain feature</em></p>
+			<p>You gain domain spells at the cleric levels listed in the Twilight Domain Spells table. See the Divine Domain class feature in the Player’s Handbook for how domain spells work.</p>
+			<h5>Twilight Domain Spells</h5>
+			<table>
+				<thead>
+					<tr><td>Cleric Level</td><td>Spells</td></tr>
+				</thead>
+				<tr><td>1st</td><td><em>faerie fire, sleep</em></td></tr>
+				<tr><td>3rd</td><td><em>moonbeam, see invisibility</em></td></tr>
+				<tr><td>5th</td><td><em>aura of vitality, Leomund’s tiny hut</em></td></tr>
+				<tr><td>7th</td><td><em>aura of life, greater invisibility</em></td></tr>
+				<tr><td>9th</td><td><em>circle of power, mislead</em></td></tr>
+			</table>
+		</description>
+		<sheet display="false"/>
+		<rules>
+			<grant type="Spell" id="ID_PHB_SPELL_FAERIE_FIRE" level="1" spellcasting="Cleric" prepared="true" />
+			<grant type="Spell" id="ID_PHB_SPELL_SLEEP" level="1" spellcasting="Cleric" prepared="true" />
+			<grant type="Spell" id="ID_PHB_SPELL_MOONBEAM" level="3" spellcasting="Cleric" prepared="true" />
+			<grant type="Spell" id="ID_PHB_SPELL_SEE_INVISIBILITY" level="3" spellcasting="Cleric" prepared="true" />
+			<grant type="Spell" id="ID_PHB_SPELL_AURA_OF_VITALITY" level="5" spellcasting="Cleric" prepared="true" />
+			<grant type="Spell" id="ID_PHB_SPELL_LEOMUNDS_TINY_HUT" level="5" spellcasting="Cleric" prepared="true" />
+			<grant type="Spell" id="ID_PHB_SPELL_AURA_OF_LIFE" level="7" spellcasting="Cleric" prepared="true" />
+			<grant type="Spell" id="ID_PHB_SPELL_GREATER_INVISIBILITY" level="7" spellcasting="Cleric" prepared="true" />
+			<grant type="Spell" id="ID_PHB_SPELL_CIRCLE_OF_POWER" level="9" spellcasting="Cleric" prepared="true" />
+			<grant type="Spell" id="ID_PHB_SPELL_MISLEAD" level="9" spellcasting="Cleric" prepared="true" />
+		</rules>
+	</element>
+	<element name="Bonus Proficiencies" type="Archetype Feature" source="Tasha’s Cauldron of Everything" id="ID_WOTC_TCOE_ARCHETYPE_FEATURE_TWILIGHT_DOMAIN_BONUS_PROFICIENCIES">
+		<description>
+			<p><em>1st-level Twilight Domain feature</em></p>
+			<p>You gain proficiency with martial weapons and heavy armor.</p>
+		</description>
+		<sheet display="false">
+			<description>You gain proficiency with martial weapons and heavy armor.</description>
+		</sheet>
+		<rules>
+			<grant type="Proficiency" id="ID_PROFICIENCY_WEAPON_PROFICIENCY_MARTIAL_WEAPONS" />
+			<grant type="Proficiency" id="ID_PROFICIENCY_ARMOR_PROFICIENCY_HEAVY_ARMOR" />
+		</rules>
+	</element>
+	<element name="Eyes of Night" type="Archetype Feature" source="Tasha’s Cauldron of Everything" id="ID_WOTC_TCOE_ARCHETYPE_FEATURE_TWILIGHT_DOMAIN_EYES_OF_NIGHT">
+		<description>
+			<p><em>1st-level Twilight Domain feature</em></p>
+			<p>You can see through the deepest gloom. You have darkvision out to a range of 300 feet. In that radius, you can see in dim light as if it were bright light and in darkness as if it were dim light.</p>
+			<p class="indent">As an action, you can magically share the darkvision of this feature with willing creatures you can see within 10 feet of you, up to a number of creatures equal to your Wisdom modifier (minimum of one creature). The shared darkvision lasts for 1 hour. Once you share it, you can’t do so again until you finish a long rest, unless you expend a spell slot of any level to share it again.</p>
+		</description>
+		<sheet action="Action" usage="1/Long Rest">
+			<description>You can magically share the darkvision of this feature with willing creatures you can see within 10 feet of you, up to {{eyes of night:creatures}} creatures. The shared darkvision lasts for 1 hour. You can expend a spell slot of any level to share it again.</description>
+		</sheet>
+		<rules>
+			<grant type="Vision" id="ID_VISION_DARKVISION" />
+			<stat name="darkvision:range" value="300" bonus="base" />
+			<stat name="eyes of night:creatures" value="1" bonus="base" />
+			<stat name="eyes of night:creatures" value="wisdom:modifier" bonus="base" />
+		</rules>
+	</element>
+	<element name="Vigilant Blessing" type="Archetype Feature" source="Tasha’s Cauldron of Everything" id="ID_WOTC_TCOE_ARCHETYPE_FEATURE_TWILIGHT_DOMAIN_VIGILANT_BLESSING">
+		<description>
+			<p><em>1st-level Twilight Domain feature</em></p>
+			<p>The night has taught you to be vigilant. As an action, you give one creature you touch (including possibly yourself) advantage on the next initiative roll the creature makes. This benefit ends immediately after the roll or if you use this feature again.</p>
+		</description>
+		<sheet action="Action">
+			<description>You give one creature you touch advantage on the next initiative roll the creature makes. This benefit ends immediately after the roll or if you use this feature again.</description>
+		</sheet>
+	</element>
+	<element name="Channel Divinity: Twilight Sanctuary" type="Archetype Feature" source="Tasha’s Cauldron of Everything" id="ID_WOTC_TCOE_ARCHETYPE_FEATURE_TWILIGHT_DOMAIN_CD_TWILIGHT_SANCTUARY">
+		<description>
+			<p><em>2nd-level Twilight Domain feature</em></p>
+			<p>You can use your Channel Divinity to refresh your allies with soothing twilight.</p>
+			<p class="indent">As an action, you present your holy symbol, and a sphere of twilight emanates from you. The sphere is centered on you, has a 30-foot radius, and is filled with dim light. The sphere moves with you, and it lasts for 1 minute or until you are incapacitated or die. Whenever a creature (including you) ends its turn in the sphere, you can grant that creature one of these benefits:</p>
+			<ul>
+				<li>You grant it temporary hit points equal to 1d6 plus your cleric level.</li>
+				<li>You end one effect on it causing it to be charmed or frightened.</li>
+			</ul>
+		</description>
+		<sheet alt="Twilight Sanctuary" action="Action" usage="Channel Divinity">
+			<description>You present your holy symbol, and a sphere of twilight emanates from you. The sphere is centered on you, has a 30-foot radius, and is filled with dim light. The sphere moves with you, and it lasts for 1 minute or until you are incapacitated or die. Whenever a creature ends its turn in the sphere, you can grant that creature one of these benefits: &#13;
+			• You grant it 1d6 + {{level:cleric}} temporary hp. &#13;
+			• You end one effect on it causing it to be charmed or frightened.</description>
+		</sheet>
+	</element>
+	<element name="Steps of Night" type="Archetype Feature" source="Tasha’s Cauldron of Everything" id="ID_WOTC_TCOE_ARCHETYPE_FEATURE_TWILIGHT_DOMAIN_STEPS_OF_NIGHT">
+		<description>
+			<p><em>6th-level Twilight Domain feature</em></p>
+			<p>You can draw on the mystical power of night to rise into the air. As a bonus action when you are in dim light or darkness, you can magically give yourself a flying speed equal to your walking speed for 1 minute. You can use this bonus action a number of times equal to your proficiency bonus, and you regain all expended uses when you finish a long rest.</p>
+		</description>
+		<sheet action="Bonus Action" usage="{{proficiency}}/Long Rest">
+			<description>When you are in dim light or darkness, you can magically give yourself a {{speed}}ft flying speed for 1 minute.</description>
+		</sheet>
+	</element>
+	<element name="Divine Strike" type="Archetype Feature" source="Tasha’s Cauldron of Everything" id="ID_WOTC_TCOE_ARCHETYPE_FEATURE_TWILIGHT_DOMAIN_DIVINE_STRIKE">
+		<description>
+			<p><em>8th-level Twilight Domain feature</em></p>
+			<p>You gain the ability to infuse your weapon strikes with divine energy. Once on each of your turns when you hit a creature with a weapon attack, you can cause the attack to deal an extra 1d8 radiant damage. When you reach 14th level, the extra damage increases to 2d8.</p>
+		</description>
+		<sheet>	
+			<description>Once on each of your turns when you hit a creature with a weapon attack, +1d8 radiant damage.</description>
+			<description level="14">Once on each of your turns when you hit a creature with a weapon attack, +2d8 radiant damage.</description>
+		</sheet>
+	</element>
+	<element name="Twilight Shroud" type="Archetype Feature" source="Tasha’s Cauldron of Everything" id="ID_WOTC_TCOE_ARCHETYPE_FEATURE_TWILIGHT_DOMAIN_TWILIGHT_SHROUD">
+		<description>
+			<p><em>17th-level Twilight Domain feature</em></p>
+			<p>The twilight that you summon offers a protective embrace: you and your allies have half cover while in the sphere created by your Twilight Sanctuary.</p>
+		</description>
+		<sheet>
+			<description>You and your allies have half cover while in the sphere created by your Twilight Sanctuary.</description>
+		</sheet>
+	</element>	
+ 
+</elements>

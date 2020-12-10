@@ -1,0 +1,331 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<elements>
+	<info>
+		<name>Genie Patron</name>
+		<description>The Genie Patron from Tasha’s Cauldron of Everything</description>
+		<author url="http://dnd.wizards.com/products/tabletop-games/rpg-products/tashas-cauldron-everything">Tasha’s Cauldron of Everything</author>
+		<update version="0.0.1">
+			<file name="warlock-genie.xml" url="https://raw.githubusercontent.com/AuroraLegacy/elements/master/supplements/tashas-cauldron-of-everything/archetypes/warlock-genie.xml" />
+		</update>
+	</info>
+	<element name="The Genie" type="Archetype" source="Tasha’s Cauldron of Everything" id="ID_WOTC_TCOE_ARCHETYPE_WARLOCK_THE_GENIE">
+		<supports>Otherworldly Patron</supports>
+		<description>
+			<p>You have made a pact with one of the rarest kinds of genie, a noble genie. Such entities rule vast fiefs on the Elemental Planes and have great influence over lesser genies and elemental creatures. Noble genies are varied in their motivations, but most are arrogant and wield power that rivals that of lesser deities. They delight in turning the table on mortals, who often bind genies into servitude, and readily enter into pacts that expand their reach.</p>
+			<p class="indent">You choose your patron’s kind or determine it randomly, using the Genie Kind table</p>
+			<h5 class="caption">Genie Kind</h5>
+			<table>
+				<thead>
+					<tr><td>d4</td><td>Kind</td><td>Element</td></tr>
+				</thead>
+				<tr><td>1</td><td>Dao</td><td>Earth</td></tr>
+				<tr><td>2</td><td>Djinni</td><td>Air</td></tr>
+				<tr><td>3</td><td>Efreeti</td><td>Fire</td></tr>
+				<tr><td>4</td><td>Marid</td><td>Water</td></tr>
+			</table>
+			<div element="ID_WOTC_TCOE_ARCHETYPE_FEATURE_THE_GENIE_EXPANDED_SPELL_LIST" />
+			<div element="ID_WOTC_TCOE_ARCHETYPE_FEATURE_THE_GENIE_GENIES_VESSEL" />
+			<div element="ID_WOTC_TCOE_ARCHETYPE_FEATURE_THE_GENIE_ELEMENTAL_GIFT" />
+			<div element="ID_WOTC_TCOE_ARCHETYPE_FEATURE_THE_GENIE_SANCTUARY_VESSEL" />
+			<div element="ID_WOTC_TCOE_ARCHETYPE_FEATURE_THE_GENIE_LIMITED_WISH" />
+		</description>
+		<sheet display="false" />
+		<rules>
+			<select type="Archetype Feature" name="Genie Kind" supports="The Genie Kind" />
+			<grant type="Archetype Feature" id="ID_WOTC_TCOE_ARCHETYPE_FEATURE_THE_GENIE_EXPANDED_SPELL_LIST" level="1" />
+			<grant type="Archetype Feature" id="ID_WOTC_TCOE_ARCHETYPE_FEATURE_THE_GENIE_GENIES_VESSEL" level="1" />
+			<grant type="Archetype Feature" id="ID_WOTC_TCOE_ARCHETYPE_FEATURE_THE_GENIE_ELEMENTAL_GIFT" level="6" />
+			<grant type="Archetype Feature" id="ID_WOTC_TCOE_ARCHETYPE_FEATURE_THE_GENIE_SANCTUARY_VESSEL" level="10" />
+			<grant type="Archetype Feature" id="ID_WOTC_TCOE_ARCHETYPE_FEATURE_THE_GENIE_LIMITED_WISH" level="14" />
+		</rules>
+	</element>	
+	<element name="Dao" type="Archetype Feature" source="Tasha’s Cauldron of Everything" id="ID_WOTC_TCOE_ARCHETYPE_FEATURE_THE_GENIE_KIND_DAO">
+		<compendium display="false" />
+		<supports>The Genie Kind</supports>
+		<description>
+			<p>The Dao is associated with the Earth element.</p>
+		</description>
+		<sheet display="false">
+			<description>The Dao is associated with the Earth element.</description>
+		</sheet>
+	</element>
+	<element name="Djinni" type="Archetype Feature" source="Tasha’s Cauldron of Everything" id="ID_WOTC_TCOE_ARCHETYPE_FEATURE_THE_GENIE_KIND_DJINNI">
+		<compendium display="false" />
+		<supports>The Genie Kind</supports>
+		<description>
+			<p>The Djinni is associated with the Air element.</p>
+		</description>
+		<sheet display="false">
+			<description>The Djinni is associated with the Air element.</description>
+		</sheet>
+	</element>
+	<element name="Efreeti" type="Archetype Feature" source="Tasha’s Cauldron of Everything" id="ID_WOTC_TCOE_ARCHETYPE_FEATURE_THE_GENIE_KIND_EFREETI">
+		<compendium display="false" />
+		<supports>The Genie Kind</supports>
+		<description>
+			<p>The Efreeti is associated with the Fire element.</p>
+		</description>
+		<sheet display="false">
+			<description>The Efreeti is associated with the Fire element.</description>
+		</sheet>
+	</element>
+	<element name="Marid" type="Archetype Feature" source="Tasha’s Cauldron of Everything" id="ID_WOTC_TCOE_ARCHETYPE_FEATURE_THE_GENIE_KIND_MARID">
+		<compendium display="false" />
+		<supports>The Genie Kind</supports>
+		<description>
+			<p>The Marid is associated with the Water element.</p>
+		</description>
+		<sheet display="false">
+			<description>The Marid is associated with the Water element.</description>
+		</sheet>
+	</element>	
+	<element name="Expanded Spell List" type="Archetype Feature" source="Tasha’s Cauldron of Everything" id="ID_WOTC_TCOE_ARCHETYPE_FEATURE_THE_GENIE_EXPANDED_SPELL_LIST">
+		<description>
+			<p>The Genie lets you choose from an expanded list of spells when you learn a warlock spell. The Genie Expanded Spells table shows the genie spells that are added to the warlock spell list for you, along with the spells associated in the table with your patron’s kind: dao, djinni, efreeti, or marid.</p>
+			<h5 class="caption">THE GENIE EXPANDED SPELLS</h5>
+			<table>
+				<thead>
+					<tr><td>Spell Level</td><td>Genie Spells</td><td>Dao Spells</td><td>Djinni Spells</td><td>Efreeti Spells</td><td>Marid Spells</td></tr>
+				</thead>
+				<tr><td>1st</td><td><em>detect evil and good</em></td><td><em>sanctuary</em></td><td><em>thunderwave</em></td><td><em>burning hands</em></td><td><em>fog cloud</em></td></tr>
+				<tr><td>2nd</td><td><em>phantasmal force</em></td><td><em>spike growth</em></td><td><em>gust of wind</em></td><td><em>scorching ray</em></td><td><em>blur</em></td></tr>
+				<tr><td>3rd</td><td><em>create food and water</em></td><td><em>meld into stone</em></td><td><em>wind wall</em></td><td><em>fireball</em></td><td><em>sleet storm</em></td></tr>
+				<tr><td>4th</td><td><em>phantasmal killer</em></td><td><em>stone shape</em></td><td><em>greater invisibility</em></td><td><em>fire shield</em></td><td><em>control water</em></td></tr>
+				<tr><td>5th</td><td><em>creation</em></td><td><em>wall of stone</em></td><td><em>seeming</em></td><td><em>flame strike</em></td><td><em>cone of cold</em></td></tr>
+				<tr><td>9th</td><td><em>wish</em></td><td><em>—</em></td><td><em>—</em></td><td><em>—</em></td><td><em>—</em></td></tr>
+			</table>
+		</description>
+		<sheet display="false">
+			<description>The Genie lets you choose from an expanded list of spells when you learn a warlock spell.</description>
+		</sheet>
+		<spellcasting name="Warlock" extend="true">
+			<extend>ID_PHB_SPELL_DETECT_EVIL_AND_GOOD</extend>
+			<extend>ID_PHB_SPELL_PHANTASMAL_FORCE</extend>
+			<extend>ID_PHB_SPELL_CREATE_FOOD_AND_WATER</extend>
+			<extend>ID_PHB_SPELL_PHANTASMAL_KILLER</extend>
+			<extend>ID_PHB_SPELL_CREATION</extend>
+			<extend>ID_PHB_SPELL_WISH</extend>
+		</spellcasting>
+		<rules>
+			<grant type="Grants" id="ID_WOTC_TCOE_ARCHETYPE_FEATURE_THE_GENIE_EXPANDED_SPELL_LIST_DAO" requirements="ID_WOTC_TCOE_ARCHETYPE_FEATURE_THE_GENIE_KIND_DAO" />
+			<grant type="Grants" id="ID_WOTC_TCOE_ARCHETYPE_FEATURE_THE_GENIE_EXPANDED_SPELL_LIST_DJINNI" requirements="ID_WOTC_TCOE_ARCHETYPE_FEATURE_THE_GENIE_KIND_DJINNI" />
+			<grant type="Grants" id="ID_WOTC_TCOE_ARCHETYPE_FEATURE_THE_GENIE_EXPANDED_SPELL_LIST_EFREETI" requirements="ID_WOTC_TCOE_ARCHETYPE_FEATURE_THE_GENIE_KIND_EFREETI" />
+			<grant type="Grants" id="ID_WOTC_TCOE_ARCHETYPE_FEATURE_THE_GENIE_EXPANDED_SPELL_LIST_MARID" requirements="ID_WOTC_TCOE_ARCHETYPE_FEATURE_THE_GENIE_KIND_MARID" />
+		</rules>
+	</element>
+	<element name="Dao Expanded Spells" type="Grants" source="Tasha’s Cauldron of Everything" id="ID_WOTC_TCOE_ARCHETYPE_FEATURE_THE_GENIE_EXPANDED_SPELL_LIST_DAO">
+		<compendium display="false" />
+		<spellcasting name="Warlock" extend="true">			
+			<extend>ID_PHB_SPELL_SANCTUARY</extend>
+			<extend>ID_PHB_SPELL_SPIKE_GROWTH</extend>
+			<extend>ID_PHB_SPELL_MELD_INTO_STONE</extend>
+			<extend>ID_PHB_SPELL_STONE_SHAPE</extend>
+			<extend>ID_PHB_SPELL_WALL_OF_STONE</extend>
+		</spellcasting>
+	</element>
+	<element name="Djinni Expanded Spells" type="Grants" source="Tasha’s Cauldron of Everything" id="ID_WOTC_TCOE_ARCHETYPE_FEATURE_THE_GENIE_EXPANDED_SPELL_LIST_DJINNI">
+		<compendium display="false" />
+		<spellcasting name="Warlock" extend="true">			
+			<extend>ID_PHB_SPELL_THUNDERWAVE</extend>
+			<extend>ID_PHB_SPELL_GUST_OF_WIND</extend>
+			<extend>ID_PHB_SPELL_WIND_WALL</extend>
+			<extend>ID_PHB_SPELL_GREATER_INVISIBILITY</extend>
+			<extend>ID_PHB_SPELL_SEEMING</extend>
+		</spellcasting>
+	</element>
+	<element name="Efreeti Expanded Spells" type="Grants" source="Tasha’s Cauldron of Everything" id="ID_WOTC_TCOE_ARCHETYPE_FEATURE_THE_GENIE_EXPANDED_SPELL_LIST_EFREETI">
+		<compendium display="false" />
+		<spellcasting name="Warlock" extend="true">			
+			<extend>ID_PHB_SPELL_BURNING_HANDS</extend>
+			<extend>ID_PHB_SPELL_SCORCHING_RAY</extend>
+			<extend>ID_PHB_SPELL_FIREBALL</extend>
+			<extend>ID_PHB_SPELL_FIRE_SHIELD</extend>
+			<extend>ID_PHB_SPELL_FLAME_STRIKE</extend>
+		</spellcasting>
+	</element>
+	<element name="Marid Expanded Spells" type="Grants" source="Tasha’s Cauldron of Everything" id="ID_WOTC_TCOE_ARCHETYPE_FEATURE_THE_GENIE_EXPANDED_SPELL_LIST_MARID">
+		<compendium display="false" />
+		<spellcasting name="Warlock" extend="true">			
+			<extend>ID_PHB_SPELL_FOG_CLOUD</extend>
+			<extend>ID_PHB_SPELL_BLUR</extend>
+			<extend>ID_PHB_SPELL_SLEET_STORM</extend>
+			<extend>ID_PHB_SPELL_CONTROL_WATER</extend>
+			<extend>ID_PHB_SPELL_CONE_OF_COLD</extend>
+		</spellcasting>
+	</element>
+	<element name="Genie’s Vessel" type="Archetype Feature" source="Tasha’s Cauldron of Everything" id="ID_WOTC_TCOE_ARCHETYPE_FEATURE_THE_GENIE_GENIES_VESSEL">
+		<description>
+			<p><em>1st-level The Genie feature</em></p>
+			<p>Your patron gifts you a magical vessel that grants you a measure of the genie’s power. The vessel is a Tiny object, and you can use it as a spellcasting focus for your warlock spells. You decide what the object is, or you can determine what it is randomly by rolling on the Genie’s Vessel table.</p>
+			<h5 class="caption">Genie’s Vessel</h5>
+			<table>
+				<thead>
+					<tr><td>d6</td><td>Vessel</td></tr>
+				</thead>
+				<tr><td>1</td><td>Oil lamp</td></tr>
+				<tr><td>2</td><td>Urn</td></tr>
+				<tr><td>3</td><td>Ring with a compartment</td></tr>
+				<tr><td>4</td><td>Stoppered bottle</td></tr>
+				<tr><td>5</td><td>Hollow statuette</td></tr>
+				<tr><td>6</td><td>Ornate lantern</td></tr>
+			</table>
+			<p>While you are touching the vessel, you can use it in the following ways:</p>
+			<p style="text-indent: -1em; margin-left: 1em"><strong><em>Bottled Respite.</em></strong> As an action, you can magically vanish and enter your vessel, which remains in the space you left. The interior of the vessel is an extradimensional space in the shape of a 20-foot radius cylinder, 20 feet high, and resembles your vessel. The interior is comfortably appointed with cushions and low tables and is a comfortable temperature. While inside, you can hear the area around your vessel as if you were in its space. You can remain inside the vessel up to a number of hours equal to twice your proficiency bonus. You exit the vessel early if you use a bonus action to leave, if you die, or if the vessel is destroyed. When you exit the vessel, you appear in the unoccupied space closest to it. Any objects left in the vessel remain there until carried out, and if the vessel is destroyed, every object stored there harmlessly appears in the unoccupied spaces closest to the vessel’s former space. Once you enter the vessel, you can’t enter again until you finish a long rest. </p>
+			<p style="text-indent: -1em; margin-left: 1em; margin-bottom: 20px"><strong><em>Genie’s Wrath.</em></strong> Once during each of your turns when you hit with an attack roll, you can deal extra damage to the target equal to your proficiency bonus. The type of this damage is determined by your patron: bludgeoning (dao), thunder (djinni), fire (efreeti), or cold (marid).</p>
+			<p class="indent">The vessel’s AC equals your spell save DC. Its hit points equal your warlock level plus your proficiency bonus, and it is immune to poison and psychic damage.</p>
+			<p class="indent">If the vessel is destroyed or you lose it, you can perform a 1-hour ceremony to receive a replacement from your patron. This ceremony can be performed during a short or long rest, and the previous vessel is destroyed if it still exists. The vessel vanishes in a flare of elemental power when you die.</p>
+		</description>
+		<sheet>
+			<description>A tiny object that you can use as a spellcasting focus for your warlock spells. While you are touching the vessel, you can use Bottled Respite or Genie’s Wrath.
+			The vessel’s has {{warlock:spellcasting:dc}} AC, {{genie vessel:hp}} hp, and it is immune to poison and psychic damage.
+			If the vessel is destroyed or you lose it, you can perform a 1-hour ceremony to receive a replacement from your patron. This ceremony can be performed during a short or long rest, and the previous vessel is destroyed if it still exists. The vessel vanishes in a flare of elemental power when you die.</description>
+		</sheet>
+		<rules>
+			<stat name="genie vessel:hp" value="level:warlock" />
+			<stat name="genie vessel:hp" value="proficiency" />
+			<grant type="Archetype Feature" id="ID_WOTC_TCOE_ARCHETYPE_FEATURE_THE_GENIE_GENIES_VESSEL_BOTTLED_RESPITE" />
+			<grant type="Grants" id="ID_WOTC_TCOE_ARCHETYPE_FEATURE_THE_GENIE_GENIES_VESSEL_GENIES_WRATH_DAO" requirements="ID_WOTC_TCOE_ARCHETYPE_FEATURE_THE_GENIE_KIND_DAO" />
+			<grant type="Grants" id="ID_WOTC_TCOE_ARCHETYPE_FEATURE_THE_GENIE_GENIES_VESSEL_GENIES_WRATH_DJINNI" requirements="ID_WOTC_TCOE_ARCHETYPE_FEATURE_THE_GENIE_KIND_DJINNI" />
+			<grant type="Grants" id="ID_WOTC_TCOE_ARCHETYPE_FEATURE_THE_GENIE_GENIES_VESSEL_GENIES_WRATH_EFREETI" requirements="ID_WOTC_TCOE_ARCHETYPE_FEATURE_THE_GENIE_KIND_EFREETI" />
+			<grant type="Grants" id="ID_WOTC_TCOE_ARCHETYPE_FEATURE_THE_GENIE_GENIES_VESSEL_GENIES_WRATH_MARID" requirements="ID_WOTC_TCOE_ARCHETYPE_FEATURE_THE_GENIE_KIND_MARID" />
+		</rules>
+	</element>
+	<element name="Bottled Respite" type="Archetype Feature" source="Tasha’s Cauldron of Everything" id="ID_WOTC_TCOE_ARCHETYPE_FEATURE_THE_GENIE_GENIES_VESSEL_BOTTLED_RESPITE">
+		<compendium display="false" />
+		<description>
+			<p>As an action, you can magically vanish and enter your vessel, which remains in the space you left. The interior of the vessel is an extradimensional space in the shape of a 20-foot radius cylinder, 20 feet high, and resembles your vessel. The interior is comfortably appointed with cushions and low tables and is a comfortable temperature. While inside, you can hear the area around your vessel as if you were in its space. You can remain inside the vessel up to a number of hours equal to twice your proficiency bonus. You exit the vessel early if you use a bonus action to leave, if you die, or if the vessel is destroyed. When you exit the vessel, you appear in the unoccupied space closest to it. Any objects left in the vessel remain there until carried out, and if the vessel is destroyed, every object stored there harmlessly appears in the unoccupied spaces closest to the vessel’s former space. Once you enter the vessel, you can’t enter again until you finish a long rest.</p>
+		</description>
+		<sheet action="Action" usage="1/Long Rest">
+			<description>You can magically vanish and enter your vessel, which remains in the space you left. The interior of the vessel is an extradimensional space in the shape of a 20-foot radius cylinder, 20 feet high, and resembles your vessel. The interior is comfortably appointed with cushions and low tables and is a comfortable temperature. While inside, you can hear the area around your vessel as if you were in its space. You can remain inside the vessel up to a number of hours equal to twice your proficiency bonus. You exit the vessel early if you use a bonus action to leave, if you die, or if the vessel is destroyed. When you exit the vessel, you appear in the unoccupied space closest to it. Any objects left in the vessel remain there until carried out, and if the vessel is destroyed, every object stored there harmlessly appears in the unoccupied spaces closest to the vessel’s former space.</description>
+		</sheet>
+	</element>
+	<element name="Genie’s Wrath" type="Archetype Feature" source="Tasha’s Cauldron of Everything" id="ID_WOTC_TCOE_ARCHETYPE_FEATURE_THE_GENIE_GENIES_VESSEL_GENIES_WRATH_DAO">
+		<compendium display="false" />
+		<description>
+			<p>Once during each of your turns when you hit with an attack roll, you can deal extra damage to the target equal to your proficiency bonus. The type of this damage is determined by your patron: bludgeoning (dao), thunder (djinni), fire (efreeti), or cold (marid).</p>
+		</description>
+		<sheet>
+			<description>Once during each of your turns when you hit with an attack roll, you can deal {{proficiency}} bludgeoning extra damage to the target.</description>
+		</sheet>
+	</element>
+	<element name="Genie’s Wrath" type="Archetype Feature" source="Tasha’s Cauldron of Everything" id="ID_WOTC_TCOE_ARCHETYPE_FEATURE_THE_GENIE_GENIES_VESSEL_GENIES_WRATH_DJINNI">
+		<compendium display="false" />
+		<description>
+			<p>Once during each of your turns when you hit with an attack roll, you can deal extra damage to the target equal to your proficiency bonus. The type of this damage is determined by your patron: bludgeoning (dao), thunder (djinni), fire (efreeti), or cold (marid).</p>
+		</description>
+		<sheet>
+			<description>Once during each of your turns when you hit with an attack roll, you can deal {{proficiency}} thunder extra damage to the target.</description>
+		</sheet>
+	</element>
+	<element name="Genie’s Wrath" type="Archetype Feature" source="Tasha’s Cauldron of Everything" id="ID_WOTC_TCOE_ARCHETYPE_FEATURE_THE_GENIE_GENIES_VESSEL_GENIES_WRATH_EFREETI">
+		<compendium display="false" />
+		<description>
+			<p>Once during each of your turns when you hit with an attack roll, you can deal extra damage to the target equal to your proficiency bonus. The type of this damage is determined by your patron: bludgeoning (dao), thunder (djinni), fire (efreeti), or cold (marid).</p>
+		</description>
+		<sheet>
+			<description>Once during each of your turns when you hit with an attack roll, you can deal {{proficiency}} fire extra damage to the target.</description>
+		</sheet>
+	</element>
+	<element name="Genie’s Wrath" type="Archetype Feature" source="Tasha’s Cauldron of Everything" id="ID_WOTC_TCOE_ARCHETYPE_FEATURE_THE_GENIE_GENIES_VESSEL_GENIES_WRATH_MARID">
+		<compendium display="false" />
+		<description>
+			<p>Once during each of your turns when you hit with an attack roll, you can deal extra damage to the target equal to your proficiency bonus. The type of this damage is determined by your patron: bludgeoning (dao), thunder (djinni), fire (efreeti), or cold (marid).</p>
+		</description>
+		<sheet>
+			<description>Once during each of your turns when you hit with an attack roll, you can deal {{proficiency}} cold extra damage to the target.</description>
+		</sheet>
+	</element>
+	<element name="Elemental Gift" type="Archetype Feature" source="Tasha’s Cauldron of Everything" id="ID_WOTC_TCOE_ARCHETYPE_FEATURE_THE_GENIE_ELEMENTAL_GIFT">
+		<description>
+			<p><em>6th-level The Genie feature</em></p>
+			<p>You begin to take on characteristics of your patron’s kind. You now have resistance to a damage type determined by your patron’s kind: bludgeoning (dao), thunder (djinni), fire (efreeti), or cold (marid).</p>
+			<p class="indent">In addition, as a bonus action, you can give yourself a flying speed of 30 feet that lasts for 10 minutes, during which you can hover. You can use this bonus action a number of times equal to your proficiency bonus, and you regain all expended uses when you finish a long rest.</p>
+		</description>
+		<sheet display="false">
+			<description>You now have resistance to a damage type determined by your patron’s kind: bludgeoning (dao), thunder (djinni), fire (efreeti), or cold (marid).
+			In addition, as a bonus action, you can give yourself a flying speed of 30 feet that lasts for 10 minutes, during which you can hover. You can use this bonus action a number of times equal to your proficiency bonus, and you regain all expended uses when you finish a long rest.</description>
+		</sheet>
+		<rules>
+			<grant type="Grants" id="ID_WOTC_TCOE_ARCHETYPE_FEATURE_THE_GENIE_ELEMENTAL_GIFT_DAO" requirements="ID_WOTC_TCOE_ARCHETYPE_FEATURE_THE_GENIE_KIND_DAO" />
+			<grant type="Grants" id="ID_WOTC_TCOE_ARCHETYPE_FEATURE_THE_GENIE_ELEMENTAL_GIFT_DJINNI" requirements="ID_WOTC_TCOE_ARCHETYPE_FEATURE_THE_GENIE_KIND_DJINNI" />
+			<grant type="Grants" id="ID_WOTC_TCOE_ARCHETYPE_FEATURE_THE_GENIE_ELEMENTAL_GIFT_EFREETI" requirements="ID_WOTC_TCOE_ARCHETYPE_FEATURE_THE_GENIE_KIND_EFREETI" />
+			<grant type="Grants" id="ID_WOTC_TCOE_ARCHETYPE_FEATURE_THE_GENIE_ELEMENTAL_GIFT_MARID" requirements="ID_WOTC_TCOE_ARCHETYPE_FEATURE_THE_GENIE_KIND_MARID" />			
+		</rules>
+	</element>
+	<element name="Elemental Gift" type="Archetype Feature" source="Tasha’s Cauldron of Everything" id="ID_WOTC_TCOE_ARCHETYPE_FEATURE_THE_GENIE_ELEMENTAL_GIFT_DAO">
+		<compendium display="false" />
+		<description>
+			<p>You begin to take on characteristics of your patron’s kind. You now have resistance to a damage type determined by your patron’s kind: bludgeoning (dao), thunder (djinni), fire (efreeti), or cold (marid).</p>
+			<p class="indent">In addition, as a bonus action, you can give yourself a flying speed of 30 feet that lasts for 10 minutes, during which you can hover. You can use this bonus action a number of times equal to your proficiency bonus, and you regain all expended uses when you finish a long rest.</p>
+		</description>
+		<sheet action="Bonus Action" usage="{{proficiency}}/Long Rest">
+			<description>You can give yourself a flying speed of 30 feet that lasts for 10 minutes, during which you can hover.</description>
+		</sheet>
+		<rules>
+			<grant type="Condition" id="ID_INTERNAL_CONDITION_DAMAGE_RESISTANCE_BLUDGEONING" />
+		</rules>
+	</element>
+	<element name="Elemental Gift" type="Archetype Feature" source="Tasha’s Cauldron of Everything" id="ID_WOTC_TCOE_ARCHETYPE_FEATURE_THE_GENIE_ELEMENTAL_GIFT_DJINNI">
+		<compendium display="false" />
+		<description>
+			<p>You begin to take on characteristics of your patron’s kind. You now have resistance to a damage type determined by your patron’s kind: bludgeoning (dao), thunder (djinni), fire (efreeti), or cold (marid).</p>
+			<p class="indent">In addition, as a bonus action, you can give yourself a flying speed of 30 feet that lasts for 10 minutes, during which you can hover. You can use this bonus action a number of times equal to your proficiency bonus, and you regain all expended uses when you finish a long rest.</p>
+		</description>
+		<sheet action="Bonus Action" usage="{{proficiency}}/Long Rest">
+			<description>You can give yourself a flying speed of 30 feet that lasts for 10 minutes, during which you can hover.</description>
+		</sheet>
+		<rules>
+			<grant type="Condition" id="ID_INTERNAL_CONDITION_DAMAGE_RESISTANCE_THUNDER" />
+		</rules>
+	</element>
+	<element name="Elemental Gift" type="Archetype Feature" source="Tasha’s Cauldron of Everything" id="ID_WOTC_TCOE_ARCHETYPE_FEATURE_THE_GENIE_ELEMENTAL_GIFT_EFREETI">
+		<compendium display="false" />
+		<description>
+			<p>You begin to take on characteristics of your patron’s kind. You now have resistance to a damage type determined by your patron’s kind: bludgeoning (dao), thunder (djinni), fire (efreeti), or cold (marid).</p>
+			<p class="indent">In addition, as a bonus action, you can give yourself a flying speed of 30 feet that lasts for 10 minutes, during which you can hover. You can use this bonus action a number of times equal to your proficiency bonus, and you regain all expended uses when you finish a long rest.</p>
+		</description>
+		<sheet action="Bonus Action" usage="{{proficiency}}/Long Rest">
+			<description>You can give yourself a flying speed of 30 feet that lasts for 10 minutes, during which you can hover.</description>
+		</sheet>
+		<rules>
+			<grant type="Condition" id="ID_INTERNAL_CONDITION_DAMAGE_RESISTANCE_FIRE" />
+		</rules>
+	</element>
+	<element name="Elemental Gift" type="Archetype Feature" source="Tasha’s Cauldron of Everything" id="ID_WOTC_TCOE_ARCHETYPE_FEATURE_THE_GENIE_ELEMENTAL_GIFT_MARID">
+		<compendium display="false" />
+		<description>
+			<p>You begin to take on characteristics of your patron’s kind. You now have resistance to a damage type determined by your patron’s kind: bludgeoning (dao), thunder (djinni), fire (efreeti), or cold (marid).</p>
+			<p class="indent">In addition, as a bonus action, you can give yourself a flying speed of 30 feet that lasts for 10 minutes, during which you can hover. You can use this bonus action a number of times equal to your proficiency bonus, and you regain all expended uses when you finish a long rest.</p>
+		</description>
+		<sheet action="Bonus Action" usage="{{proficiency}}/Long Rest">
+			<description>You can give yourself a flying speed of 30 feet that lasts for 10 minutes, during which you can hover.</description>
+		</sheet>
+		<rules>
+			<grant type="Condition" id="ID_INTERNAL_CONDITION_DAMAGE_RESISTANCE_COLD" />
+		</rules>
+	</element>
+	<element name="Sanctuary Vessel" type="Archetype Feature" source="Tasha’s Cauldron of Everything" id="ID_WOTC_TCOE_ARCHETYPE_FEATURE_THE_GENIE_SANCTUARY_VESSEL">
+		<description>
+			<p><em>10th-level The Genie feature</em></p>
+			<p>When you enter your Genie’s Vessel via the Bottle Respite feature, you can now choose up to five willing creatures that you can see within 30 feet of you, and the chosen creatures are drawn into the vessel with you.</p>
+			<p class="indent">As a bonus action, you can eject any number of creatures from the vessel, and everyone is ejected if you leave or the vessel is destroyed.</p>
+			<p class="indent">In addition, anyone (including you) who remains in the vessel for at least 10 minutes gains the benefit of finishing a short rest, and anyone can add your proficiency bonus to the number of hit points they regain if they spend any Hit Dice as part of a short rest there.</p>
+		</description>
+		<sheet>
+			<description>When you enter your Genie’s Vessel via the Bottle Respite feature, you can now choose up to five willing creatures that you can see within 30 feet of you, and the chosen creatures are drawn into the vessel with you. 
+			As a bonus action, you can eject any number of creatures from the vessel, and everyone is ejected if you leave or the vessel is destroyed. 
+			Anyone who remains in the vessel for at least 10 minutes gains the benefit of finishing a short rest, and anyone can add {{proficiency}} to the number of hp they regain if they spend any Hit Dice as part of a short rest there.</description>
+		</sheet>
+	</element>
+	<element name="Limited Wish" type="Archetype Feature" source="Tasha’s Cauldron of Everything" id="ID_WOTC_TCOE_ARCHETYPE_FEATURE_THE_GENIE_LIMITED_WISH">
+		<description>
+			<p><em>14th-level The Genie feature</em></p>
+			<p>You entreat your patron to grant you a small wish. As an action, you can speak your desire to your Genie’s Vessel, requesting the effect of one spell that is 6th level or lower and has a casting time of 1 action. The spell can be from any class’s spell list, and you don’t need to meet the requirements in that spell, including costly components; the spell simply takes effect as part of this action.</p>
+			<p class="indent">Once you use this feature, you can’t use it again until you finish 1d4 long rests.</p>
+		</description>
+		<sheet action="Action" usage="1/1d4 Long Rests">
+			<description>You can speak your desire to your Genie’s Vessel, requesting the effect of one spell that is 6th level or lower and has a casting time of 1 action. The spell can be from any class’s spell list, and you don’t need to meet the requirements in that spell, including costly components; the spell simply takes effect as part of this action.</description>
+		</sheet>
+	</element>	
+  
+</elements>
