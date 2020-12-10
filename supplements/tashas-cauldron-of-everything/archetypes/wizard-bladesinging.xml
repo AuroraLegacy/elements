@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<elements>
+	<info>
+		<name>Bladesinging</name>
+		<description>The Bladesinging from Tasha’s Cauldron of Everything</description>
+		<author url="http://dnd.wizards.com/products/tabletop-games/rpg-products/tashas-cauldron-everything">Tasha’s Cauldron of Everything</author>
+		<update version="0.0.1">
+			<file name="wizard-bladesinging.xml" url="https://raw.githubusercontent.com/AuroraLegacy/elements/master/supplements/tashas-cauldron-of-everything/archetypes/wizard-bladesinging.xml" />
+		</update>
+	</info>
+	<element name="Bladesinging" type="Archetype" source="Tasha’s Cauldron of Everything" id="ID_WOTC_TCOE_ARCHETYPE_WIZARD_BLADESINGING">
+		<supports>Arcane Tradition</supports>
+		<description>
+			<p>Bladesingers master a tradition of wizardry that incorporates swordplay and dance. Originally created by elves, this tradition has been adopted by non-elf practitioners, who honor and expand on the elven ways.</p>
+			<p class="indent">In combat, a bladesinger uses a series of intricate, elegant maneuvers that fend off harm and allow the bladesinger to channel magic into devastating attacks and a cunning defense. Many who have observed a bladesinger at work remember the display as one of the more beautiful experiences in their life, a glorious dance accompanied by a singing blade.</p>
+			<div element="ID_WOTC_TCOE_ARCHETYPE_FEATURE_BLADESINGING_TRAINING_IN_WAR_AND_SONG" />
+			<div element="ID_WOTC_TCOE_ARCHETYPE_FEATURE_BLADESINGING_BLADESONG" />
+			<div element="ID_WOTC_TCOE_ARCHETYPE_FEATURE_BLADESINGING_EXTRA_ATTACK" />
+			<div element="ID_WOTC_TCOE_ARCHETYPE_FEATURE_BLADESINGING_SONG_OF_DEFENSE" />
+			<div element="ID_WOTC_TCOE_ARCHETYPE_FEATURE_BLADESINGING_SONG_OF_VICTORY" />
+		</description>
+		<sheet display="false">
+			<description>You master a tradition of wizardry that incorporates swordplay and dance.</description>
+		</sheet>
+		<rules>
+			<grant type="Archetype Feature" id="ID_WOTC_TCOE_ARCHETYPE_FEATURE_BLADESINGING_TRAINING_IN_WAR_AND_SONG" level="2" />
+			<grant type="Archetype Feature" id="ID_WOTC_TCOE_ARCHETYPE_FEATURE_BLADESINGING_BLADESONG" level="2" />
+			<grant type="Archetype Feature" id="ID_WOTC_TCOE_ARCHETYPE_FEATURE_BLADESINGING_EXTRA_ATTACK" level="6" />
+			<grant type="Archetype Feature" id="ID_WOTC_TCOE_ARCHETYPE_FEATURE_BLADESINGING_SONG_OF_DEFENSE" level="10" />
+			<grant type="Archetype Feature" id="ID_WOTC_TCOE_ARCHETYPE_FEATURE_BLADESINGING_SONG_OF_VICTORY" level="14" />
+		</rules>
+	</element>
+	<element name="Training in War and Song" type="Archetype Feature" source="Tasha’s Cauldron of Everything" id="ID_WOTC_TCOE_ARCHETYPE_FEATURE_BLADESINGING_TRAINING_IN_WAR_AND_SONG">
+		<description>
+			<p><em>2nd-level Bladesinging feature</em></p>
+			<p>You gain proficiency with light armor, and you gain proficiency with one type of one-handed melee weapon of your choice.</p>
+			<p class="indent">You also gain proficiency in the Performance skill if you don’t already have it.</p>
+		</description>
+		<sheet display="false" />
+		<rules>
+			<grant type="Proficiency" id="ID_PROFICIENCY_ARMOR_PROFICIENCY_LIGHT_ARMOR" />
+			<select type="Proficiency" name="Weapon Proficiency, Training in War and Song" supports="(ID_INTERNAL_WEAPON_CATEGORY_SIMPLE_MELEE||ID_INTERNAL_WEAPON_CATEGORY_MARTIAL_MELEE),!ID_INTERNAL_WEAPON_PROPERTY_TWOHANDED" />
+			<grant type="Proficiency" id="ID_PROFICIENCY_SKILL_PERFORMANCE" />
+		</rules>
+	</element>
+	<element name="Bladesong" type="Archetype Feature" source="Tasha’s Cauldron of Everything" id="ID_WOTC_TCOE_ARCHETYPE_FEATURE_BLADESINGING_BLADESONG">
+		<description>
+			<p><em>2nd-level Bladesinging feature</em></p>
+			<p>You can invoke an elven magic called the Bladesong, provided that you aren't wearing medium or heavy armor or using a shield. It graces you with supernatural speed, agility, and focus.</p>
+			<p class="indent">You can use a bonus action to start the Bladesong, which lasts for 1 minute. It ends early if you are incapacitated, if you don medium or heavy armor or a shield, or if you use two hands to make an attack with a weapon. You can also dismiss the Bladesong at any time (no action required).</p>
+			<p class="indent">While your Bladesong is active, you gain the following benefits:</p>
+			<ul>
+				<li>You gain a bonus to your AC equal to your Intelligence modifier (minimum of +1).</li>
+				<li>Your walking speed increases by 10 feet.</li>
+				<li>You have advantage on Dexterity (Acrobatics) checks.</li>
+				<li>You gain a bonus to any Concentration saving throw you make to maintain your concentration on a spell. The bonus equals your Intelligence modifier (minimum of +1).</li>
+			</ul>
+			<p>You can use this feature a number of times equal to your proficiency bonus, and you regain all expended uses of it when you finish a long rest.</p>
+		</description>
+		<sheet action="Bonus Action" usage="{{proficiency}}/Long Rest">
+			<description>You can start the Bladesong, which lasts for 1 minute. It ends early if you are incapacitated, if you don medium or heavy armor or a shield, or if you use two hands to make an attack with a weapon. You can also dismiss the Bladesong at any time. While your Bladesong is active, you gain the following benefits: &#13;
+			• You gain a +{{bladesong:intelligence}} bonus to your AC. &#13;
+			• Your walking speed increases by 10 feet. &#13;
+			• You have advantage on Dexterity (Acrobatics) checks. &#13;
+			• You gain a +{{bladesong:intelligence}} bonus to any Concentration save you make to maintain your concentration on a spell.
+			</description>
+		</sheet>
+		<rules>
+			<stat name="bladesong:intelligence" value="1" bonus="base" />
+			<stat name="bladesong:intelligence" value="intelligence:modifier" bonus="base" />
+		</rules>
+	</element>
+	<element name="Extra Attack" type="Archetype Feature" source="Tasha’s Cauldron of Everything" id="ID_WOTC_TCOE_ARCHETYPE_FEATURE_BLADESINGING_EXTRA_ATTACK">
+		<description>
+			<p><em>6th-level Bladesinging feature</em></p>
+			<p>You can attack twice, instead of once, whenever you take the Attack action on your turn. Moreover, you can cast one of your cantrips in place of one of those attacks.</p>
+		</description>
+		<sheet>
+			<description>You can attack twice, instead of once, whenever you take the Attack action on your turn. Moreover, you can cast one of your cantrips in place of one of those attacks.</description>
+		</sheet>
+		<rules>
+			<stat name="extra attack:count" value="2" bonus="extra attack" level="6" />
+		</rules>
+	</element>
+	<element name="Song of Defense" type="Archetype Feature" source="Tasha’s Cauldron of Everything" id="ID_WOTC_TCOE_ARCHETYPE_FEATURE_BLADESINGING_SONG_OF_DEFENSE">
+		<description>
+			<p><em>10th-level Bladesinging feature</em></p>
+			<p>You can direct your magic to absorb damage while your Bladesong is active. When you take damage, you can use your reaction to expend one spell slot and reduce that damage to you by an amount equal to five times the spell slot's level.</p>
+		</description>
+		<sheet action="Reaction">
+			<description>You can direct your magic to absorb damage while your Bladesong is active. When you take damage, you can expend one spell slot and reduce that damage to you by an amount equal to five times the spell slot's level.</description>
+		</sheet>
+	</element>
+	<element name="Song of Victory" type="Archetype Feature" source="Tasha’s Cauldron of Everything" id="ID_WOTC_TCOE_ARCHETYPE_FEATURE_BLADESINGING_SONG_OF_VICTORY">
+		<description>
+			<p><em>14th-level Bladesinging feature</em></p>
+			<p>You can add your Intelligence modifier (minimum of +1) to the damage of your melee weapon attacks while your Bladesong is active.</p>
+		</description>
+		<sheet>
+			<description>You can add {{bladesong:intelligence}} to the damage of your melee weapon attacks while your Bladesong is active.</description>
+		</sheet>
+	</element>	
+  
+</elements>
