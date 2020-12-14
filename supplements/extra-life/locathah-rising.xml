@@ -44,19 +44,26 @@
         </setters>
         <sheet display="false"/>
         <rules>
-            <stat name="strength" value="2" />
-            <stat name="dexterity" value="1" />
+            <stat name="strength" value="2" requirements="!ID_WOTC_TCOE_OPTION_CUSTOMIZED_ASI" />
+            <stat name="dexterity" value="1" requirements="!ID_WOTC_TCOE_OPTION_CUSTOMIZED_ASI" />
+            <select type="Ability Score Improvement" name="Custom Ability Score Improvement +2 (Locathah)" supports="Custom Ability Score Increase 2" requirements="ID_WOTC_TCOE_OPTION_CUSTOMIZED_ASI" />
+			<select type="Ability Score Improvement" name="Custom Ability Score Improvement +1 (Locathah)" supports="Custom Ability Score Increase 1" requirements="ID_WOTC_TCOE_OPTION_CUSTOMIZED_ASI" />
             <stat name="innate speed" value="30" bonus="base"/>
             <stat name="innate speed:swim" value="30" bonus="base" />
             <grant type="Size" id="ID_SIZE_MEDIUM" />
-            <grant type="Language" id="ID_LANGUAGE_COMMON" />
-            <grant type="Language" id="ID_MM_LANGUAGE_AQUAN" />
+            <grant type="Language" id="ID_LANGUAGE_COMMON" requirements="!ID_WOTC_TCOE_OPTION_CUSTOMIZED_LANGUAGE" />
+            <grant type="Language" id="ID_MM_LANGUAGE_AQUAN" requirements="!ID_WOTC_TCOE_OPTION_CUSTOMIZED_LANGUAGE" />
+			<select type="Language" name="Customized Language" supports="Custom Race Language||Locathah Language" requirements="ID_WOTC_TCOE_OPTION_CUSTOMIZED_LANGUAGE" default="ID_LANGUAGE_COMMON" />
+			<select type="Language" name="Customized Language" supports="Custom Race Language||Locathah Language" requirements="ID_WOTC_TCOE_OPTION_CUSTOMIZED_LANGUAGE" default="ID_MM_LANGUAGE_AQUAN" />
             <grant type="Racial Trait" id="ID_WOTC_LR_RACIAL_TRAIT_LOCATHAH_NATURAL_ARMOR" />
             <grant type="Racial Trait" id="ID_WOTC_LR_RACIAL_TRAIT_LOCATHAH_OBSERVANT_AND_ATHLETIC" />
             <grant type="Racial Trait" id="ID_WOTC_LR_RACIAL_TRAIT_LOCATHAH_LEVIATHAN_WILL" />
             <grant type="Racial Trait" id="ID_WOTC_LR_RACIAL_TRAIT_LOCATHAH_LIMITED_AMPHIBIOUSNESS" />
         </rules>
     </element>
+    <append id="ID_MM_LANGUAGE_AQUAN">
+		<supports>Locathah Language</supports>
+	</append>
     <element name="Natural Armor" type="Racial Trait" source="Locathah Rising" id="ID_WOTC_LR_RACIAL_TRAIT_LOCATHAH_NATURAL_ARMOR">
         <description>
             <p>You have tough, scaly skin. When you aren’t wearing armor, your AC is 12 + your Dexterity modifier. You can use your natural armor to determine your AC if the armor you wear would leave you with a lower AC. A shield’s benefits apply as normal while you use your natural armor.</p>
@@ -76,8 +83,10 @@
         </description>
         <sheet display="false" />
         <rules>
-            <grant type="Proficiency" id="ID_PROFICIENCY_SKILL_ATHLETICS" />
-            <grant type="Proficiency" id="ID_PROFICIENCY_SKILL_PERCEPTION" />
+            <grant type="Proficiency" id="ID_PROFICIENCY_SKILL_ATHLETICS" requirements="!ID_WOTC_TCOE_OPTION_CUSTOMIZED_PROFICIENCY" />
+            <grant type="Proficiency" id="ID_PROFICIENCY_SKILL_PERCEPTION" requirements="!ID_WOTC_TCOE_OPTION_CUSTOMIZED_PROFICIENCY" />
+			<select type="Proficiency" name="Customized Skill Proficiency, Observant" supports="Skill" requirements="ID_WOTC_TCOE_OPTION_CUSTOMIZED_PROFICIENCY" default="ID_PROFICIENCY_SKILL_ATHLETICS" />
+			<select type="Proficiency" name="Customized Skill Proficiency, Observant" supports="Skill" requirements="ID_WOTC_TCOE_OPTION_CUSTOMIZED_PROFICIENCY" default="ID_PROFICIENCY_SKILL_PERCEPTION" />
         </rules>
     </element>
     <element name="Leviathan Will" type="Racial Trait" source="Locathah Rising" id="ID_WOTC_LR_RACIAL_TRAIT_LOCATHAH_LEVIATHAN_WILL">
