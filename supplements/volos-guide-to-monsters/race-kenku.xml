@@ -4,7 +4,7 @@
 		<name>Kenku</name>
 		<description></description>
 		<author url="http://dnd.wizards.com">Wizards of the Coast</author>
-		<update version="0.1.1">
+		<update version="0.1.2">
 			<file name="race-kenku.xml" url="https://raw.githubusercontent.com/AuroraLegacy/elements/master/supplements/volos-guide-to-monsters/race-kenku.xml" />
 		</update>
 	</info>
@@ -51,7 +51,7 @@
 				<span class="feature">Kenku Training.</span>You are proficient in your choice of two of the following skills: Acrobatics, Deception, Stealth, and Sleight of Hand.<br/>
 				<span class="feature">Mimicry.</span>You can mimic sounds you have heard, including voices. A creature that hears the sounds you make can tell they are imitations with a successful Wisdom (Insight) check opposed by your Charisma (Deception) check.<br/>
 				<span class="feature">Languages.</span>You can read and write Common and Auran, but you can speak only by using your Mimicry trait.<br/>
-			</p>
+			</p>      
 		</description>
 		<sheet display="false"/>
 		<setters>
@@ -61,17 +61,25 @@
 			<set name="weight" modifier="2d10">90 lb.</set>
 		</setters>
 		<rules>
-			<stat name="dexterity" value="2" />
-			<stat name="wisdom" value="1" />
+			<stat name="dexterity" value="2" requirements="!ID_WOTC_TCOE_OPTION_CUSTOMIZED_ASI" />
+			<stat name="wisdom" value="1" requirements="!ID_WOTC_TCOE_OPTION_CUSTOMIZED_ASI" />
+			<select type="Ability Score Improvement" name="Custom Ability Score Improvement +2 (Kenku)" supports="Custom ASI 2" requirements="ID_WOTC_TCOE_OPTION_CUSTOMIZED_ASI" default="ID_INTERNAL_ASI_DEXTERITY_INCREASE_2" />
+			<select type="Ability Score Improvement" name="Custom Ability Score Improvement +1 (Kenku)" supports="Custom ASI 1" requirements="ID_WOTC_TCOE_OPTION_CUSTOMIZED_ASI" default="ID_INTERNAL_ASI_WISDOM_INCREASE_1" />
 			<stat name="innate speed" value="30" bonus="base" />
 			<grant type="Size" id="ID_SIZE_MEDIUM" />
-			<grant type="Language" id="ID_LANGUAGE_COMMON" />
-			<grant type="Language" id="ID_MM_LANGUAGE_AURAN" />
+			<grant type="Language" id="ID_LANGUAGE_COMMON" requirements="!ID_WOTC_TCOE_OPTION_CUSTOMIZED_LANGUAGE" />
+			<grant type="Language" id="ID_MM_LANGUAGE_AURAN" requirements="!ID_WOTC_TCOE_OPTION_CUSTOMIZED_LANGUAGE" />
+			<select type="Language" name="Customized Language" supports="Tasha Race Language||Kenku Language" requirements="ID_WOTC_TCOE_OPTION_CUSTOMIZED_LANGUAGE" default="ID_LANGUAGE_COMMON" />
+			<select type="Language" name="Customized Language" supports="Tasha Race Language||Kenku Language" requirements="ID_WOTC_TCOE_OPTION_CUSTOMIZED_LANGUAGE" default="ID_MM_LANGUAGE_AURAN" />
 			<grant type="Racial Trait" id="ID_WOTC_VGTM_RACIAL_TRAIT_KENKU_EXPERT_FORGERY" />
 			<grant type="Racial Trait" id="ID_WOTC_VGTM_RACIAL_TRAIT_KENKU_KENKU_TRAINING" />
 			<grant type="Racial Trait" id="ID_WOTC_VGTM_RACIAL_TRAIT_KENKU_MIMICRY" />
 		</rules>
 	</element>
+
+	<append id="ID_MM_LANGUAGE_AURAN">
+		<supports>Kenku Language</supports>
+	</append>
 
 	<element name="Expert Forgery" type="Racial Trait" source="Volo’s Guide to Monsters" id="ID_WOTC_VGTM_RACIAL_TRAIT_KENKU_EXPERT_FORGERY">
 		<description>
@@ -90,7 +98,8 @@
 			<description>You are proficient in your choice of two of the following skills: Acrobatics, Deception, Stealth, and Sleight of Hand.</description>
 		</sheet>
 		<rules>
-			<select type="Proficiency" name="Kenku Training" supports="ID_PROFICIENCY_SKILL_ACROBATICS|ID_PROFICIENCY_SKILL_DECEPTION|ID_PROFICIENCY_SKILL_STEALTH|ID_PROFICIENCY_SKILL_SLEIGHTOFHAND" number="2" />
+			<select type="Proficiency" name="Kenku Training" supports="ID_PROFICIENCY_SKILL_ACROBATICS|ID_PROFICIENCY_SKILL_DECEPTION|ID_PROFICIENCY_SKILL_STEALTH|ID_PROFICIENCY_SKILL_SLEIGHTOFHAND" number="2" requirements="!ID_WOTC_TCOE_OPTION_CUSTOMIZED_PROFICIENCY" />
+			<select type="Proficiency" name="Customized Skill Proficiency, Kenku Training"  number="2" supports="Skill" requirements="ID_WOTC_TCOE_OPTION_CUSTOMIZED_PROFICIENCY" />
 		</rules>
 	</element>
 
