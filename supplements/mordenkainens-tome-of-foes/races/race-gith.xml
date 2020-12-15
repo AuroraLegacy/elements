@@ -38,8 +38,8 @@
 			<grant type="Size" id="ID_SIZE_MEDIUM" />
 			<grant type="Language" id="ID_LANGUAGE_COMMON" requirements="!ID_WOTC_TCOE_OPTION_CUSTOMIZED_LANGUAGE" />
 			<grant type="Language" id="ID_LANGUAGE_GITH" requirements="!ID_WOTC_TCOE_OPTION_CUSTOMIZED_LANGUAGE" />
-			<select type="Language" name="Customized Language" supports="Custom Race Language||Gith Language" requirements="ID_WOTC_TCOE_OPTION_CUSTOMIZED_LANGUAGE" default="ID_LANGUAGE_COMMON" />
-			<select type="Language" name="Customized Language" supports="Custom Race Language||Gith Language" requirements="ID_WOTC_TCOE_OPTION_CUSTOMIZED_LANGUAGE" default="ID_LANGUAGE_GITH" />
+			<select type="Language" name="Customized Language" supports="Custom Race Language||Gith Language" requirements="ID_WOTC_TCOE_OPTION_CUSTOMIZED_LANGUAGE" />
+			<select type="Language" name="Customized Language" supports="Custom Race Language||Gith Language" requirements="ID_WOTC_TCOE_OPTION_CUSTOMIZED_LANGUAGE" />
 			<select type="Sub Race" name="Gith Subrace" supports="Gith" />
 		</rules>
 	</element>
@@ -80,7 +80,8 @@
 		</sheet>
 		<rules>
 			<select type="Language" name="Language (Decadent Mastery)" supports="Standard||Exotic" />
-			<select type="Proficiency" name="Skill or Tool Proficiency (Decadent Mastery)" supports="Skill||Tool"/>
+			<select type="Proficiency" name="Skill or Tool Proficiency (Decadent Mastery)" supports="Skill||Tool" requirements="!ID_WOTC_TCOE_OPTION_CUSTOMIZED_PROFICIENCY" />
+			<select type="Proficiency" name="Simple Weapon, Skill, or Tool, Decadent Mastery" supports="Simple||Tool||Skill" requirements="ID_WOTC_TCOE_OPTION_CUSTOMIZED_PROFICIENCY" />
 		</rules>
 	</element>
 	<element name="Martial Prodigy" type="Racial Trait" source="Mordenkainen’s Tome of Foes" id="ID_WOTC_MTOF_RACIAL_TRAIT_GITHYANKI_MARTIAL_PRODIGY">
@@ -96,11 +97,7 @@
 			<grant type="Proficiency" id="ID_PROFICIENCY_WEAPON_PROFICIENCY_SHORTSWORD" requirements="!ID_WOTC_TCOE_OPTION_CUSTOMIZED_PROFICIENCY" />
 			<grant type="Proficiency" id="ID_PROFICIENCY_WEAPON_PROFICIENCY_LONGSWORD" requirements="!ID_WOTC_TCOE_OPTION_CUSTOMIZED_PROFICIENCY" />
 			<grant type="Proficiency" id="ID_PROFICIENCY_WEAPON_PROFICIENCY_GREATSWORD" requirements="!ID_WOTC_TCOE_OPTION_CUSTOMIZED_PROFICIENCY" />
-			<select type="Proficiency" name="Simple/Martial Weapon or Tool, Martial Prodigy" supports="Weapon||Tool||Githyanki Armor" requirements="ID_WOTC_TCOE_OPTION_CUSTOMIZED_PROFICIENCY" default="ID_PROFICIENCY_ARMOR_PROFICIENCY_LIGHT_ARMOR" />
-			<select type="Proficiency" name="Simple/Martial Weapon or Tool, Martial Prodigy" supports="Weapon||Tool||Githyanki Armor" requirements="ID_WOTC_TCOE_OPTION_CUSTOMIZED_PROFICIENCY" default="ID_PROFICIENCY_ARMOR_PROFICIENCY_MEDIUM_ARMOR" />
-			<select type="Proficiency" name="Simple/Martial Weapon or Tool, Martial Prodigy" supports="Weapon||Tool||Githyanki Armor" requirements="ID_WOTC_TCOE_OPTION_CUSTOMIZED_PROFICIENCY" default="ID_PROFICIENCY_WEAPON_PROFICIENCY_SHORTSWORD" />
-			<select type="Proficiency" name="Simple/Martial Weapon or Tool, Martial Prodigy" supports="Weapon||Tool||Githyanki Armor" requirements="ID_WOTC_TCOE_OPTION_CUSTOMIZED_PROFICIENCY" default="ID_PROFICIENCY_WEAPON_PROFICIENCY_LONGSWORD" />
-			<select type="Proficiency" name="Simple/Martial Weapon or Tool, Martial Prodigy" supports="Weapon||Tool||Githyanki Armor" requirements="ID_WOTC_TCOE_OPTION_CUSTOMIZED_PROFICIENCY" default="ID_PROFICIENCY_WEAPON_PROFICIENCY_GREATSWORD" />
+			<select type="Proficiency" name="Simple/Martial Weapon or Tool, Martial Prodigy" supports="Weapon||Tool||Githyanki Armor" number="5" requirements="ID_WOTC_TCOE_OPTION_CUSTOMIZED_PROFICIENCY" />
 		</rules>
 	</element>
 	<append id="ID_PROFICIENCY_ARMOR_PROFICIENCY_LIGHT_ARMOR">
