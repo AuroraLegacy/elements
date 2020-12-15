@@ -4,7 +4,7 @@
 		<name>Human</name>
 		<description></description>
 		<author url="https://media.wizards.com/2018/downloads/magic/Plane_Shift_Dominaria.pdf">Wizards of the Coast</author>
-		<update version="0.0.4">
+		<update version="0.0.5">
 			<file name="race-keldon-human.xml" url="https://raw.githubusercontent.com/AuroraLegacy/elements/master/unearthed-arcana/planeshift/dominaria/race-keldon-human.xml" />
 		</update>
 	</info>
@@ -30,14 +30,22 @@
     <sheet display="false"/>
     <rules>
       <grant type="Grants" id="ID_UA_PS_GRANTS_HUMAN_VARIANT" />
-      <stat name="strength" value="2" />
-      <stat name="constitution" value="1" />
+      <stat name="strength" value="2" requirements="!ID_WOTC_TCOE_OPTION_CUSTOMIZED_ASI" />
+      <stat name="constitution" value="1" requirements="!ID_WOTC_TCOE_OPTION_CUSTOMIZED_ASI" />
+			<select type="Ability Score Improvement" name="Custom Ability Score Improvement +2 (Keldon Human)" supports="Custom Ability Score Increase 2" requirements="ID_WOTC_TCOE_OPTION_CUSTOMIZED_ASI" />
+			<select type="Ability Score Improvement" name="Custom Ability Score Improvement +1 (Keldon Human)" supports="Custom Ability Score Increase 1" requirements="ID_WOTC_TCOE_OPTION_CUSTOMIZED_ASI" />
       <grant type="Proficiency" id="ID_PROFICIENCY_SAVINGTHROW_STRENGTH" />
-      <grant type="Proficiency" id="ID_PROFICIENCY_SKILL_ATHLETICS" />
-      <grant type="Language" id="ID_WOTC_PSD_LANGUAGE_KELDON" />
+      <grant type="Proficiency" id="ID_PROFICIENCY_SKILL_ATHLETICS" requirements="!ID_WOTC_TCOE_OPTION_CUSTOMIZED_PROFICIENCY" />
+			<select type="Proficiency" name="Customized Skill Proficiency" supports="Skill" requirements="ID_WOTC_TCOE_OPTION_CUSTOMIZED_PROFICIENCY" />
+      <grant type="Language" id="ID_WOTC_PSD_LANGUAGE_KELDON" requirements="!ID_WOTC_TCOE_OPTION_CUSTOMIZED_LANGUAGE" />
+			<select type="Language" name="Customized Language" supports="Custom Race Language||Keldon Language" requirements="ID_WOTC_TCOE_OPTION_CUSTOMIZED_LANGUAGE" />
       <grant type="Racial Trait" name="Icehaven Born" id="ID_WOTC_PSD_HUMAN_RACIAL_ICEHAVEN_BORN" />
     </rules>
   </element>
+
+  <append id="ID_WOTC_PSD_LANGUAGE_KELDON">
+		<supports>Keldon Language</supports>
+	</append>
   
   <element name="Icehaven Born" type="Racial Trait" source="Plane Shift: Dominaria" id="ID_WOTC_PSD_HUMAN_RACIAL_ICEHAVEN_BORN">
     <description>

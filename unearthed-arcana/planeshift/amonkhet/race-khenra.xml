@@ -4,7 +4,7 @@
         <name>Khenra</name>
         <description>Khenra Race from Plane Shift: Amonkhet</description>
         <author url="https://media.wizards.com/2017/downloads/magic/plane-shift_amonkhet.pdf">Wizard of the Coast</author>
-        <update version="0.0.2">
+        <update version="0.0.3">
             <file name="race-khenra.xml" url="https://raw.githubusercontent.com/AuroraLegacy/elements/master/unearthed-arcana/planeshift/amonkhet/race-khenra.xml" />
         </update>
     </info>
@@ -30,17 +30,24 @@
         </description>
         <sheet display="false" />
         <rules>
-            <stat name="dexterity" value="2" />
-            <stat name="strength" value="1" />
+            <stat name="dexterity" value="2" requirements="!ID_WOTC_TCOE_OPTION_CUSTOMIZED_ASI" />
+            <stat name="strength" value="1" requirements="!ID_WOTC_TCOE_OPTION_CUSTOMIZED_ASI" />
+			<select type="Ability Score Improvement" name="Custom Ability Score Improvement +2 (Khenra)" supports="Custom Ability Score Increase 2" requirements="ID_WOTC_TCOE_OPTION_CUSTOMIZED_ASI" />
+			<select type="Ability Score Improvement" name="Custom Ability Score Improvement +1 (Khenra)" supports="Custom Ability Score Increase 1" requirements="ID_WOTC_TCOE_OPTION_CUSTOMIZED_ASI" />
             <stat name="innate speed" value="35" bonus="base" />
             <grant type="Size" id="ID_SIZE_MEDIUM" />
-            <grant type="Language" id="ID_LANGUAGE_COMMON" />
-            <grant type="Language" id="ID_WOTC_PSA_LANGUAGE_KHENRA" />
-            <grant type="Proficiency" id="ID_PROFICIENCY_WEAPON_PROFICIENCY_JAVELIN" />
-            <grant type="Proficiency" id="ID_PROFICIENCY_WEAPON_PROFICIENCY_SPEAR" />
+            <grant type="Language" id="ID_LANGUAGE_COMMON" requirements="!ID_WOTC_TCOE_OPTION_CUSTOMIZED_LANGUAGE" />
+            <grant type="Language" id="ID_WOTC_PSA_LANGUAGE_KHENRA" requirements="!ID_WOTC_TCOE_OPTION_CUSTOMIZED_LANGUAGE" />
+			<select type="Language" name="Customized Language" supports="Custom Race Language||Khenra Language" number="2" requirements="ID_WOTC_TCOE_OPTION_CUSTOMIZED_LANGUAGE" />
+            <grant type="Proficiency" id="ID_PROFICIENCY_WEAPON_PROFICIENCY_JAVELIN" requirements="!ID_WOTC_TCOE_OPTION_CUSTOMIZED_PROFICIENCY" />
+            <grant type="Proficiency" id="ID_PROFICIENCY_WEAPON_PROFICIENCY_SPEAR" requirements="!ID_WOTC_TCOE_OPTION_CUSTOMIZED_PROFICIENCY" />
+			<select type="Proficiency" name="Simple Weapon or Tool" number="2" supports="Simple||Tool" requirements="ID_WOTC_TCOE_OPTION_CUSTOMIZED_PROFICIENCY" />
             <grant type="Racial Trait" id="ID_WOTC_PSA_KHENRA_RACIAL_TRAIT_KHENRA_TWIN" />
         </rules>
     </element>
+    <append id="ID_WOTC_PSA_LANGUAGE_KHENRA">
+		<supports>Khenra Language</supports>
+	</append>
 
     <element name="Khenra Twins" type="Racial Trait" source="Plane Shift: Amonkhet" id="ID_WOTC_PSA_KHENRA_RACIAL_TRAIT_KHENRA_TWIN">
         <description>

@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <elements>
 	<info>
-		<update version="0.0.1">
+		<update version="0.0.2">
 			<file name="dragonborn-variant.xml" url="https://raw.githubusercontent.com/AuroraLegacy/elements/master/supplements/explorers-guide-to-wildemount/races/dragonborn-variant.xml" />
 		</update>
 	</info>
@@ -17,8 +17,10 @@
 		<sheet alt="Draconblood" display="false" />
 		<rules>
 			<grant type="Grants" id="ID_WOTC_EGTW_GRANTS_DRAGONBORN_VARIANT" />
-			<stat name="intelligence" value="2" />
-			<stat name="charisma" value="1" />
+			<stat name="intelligence" value="2" requirements="!ID_WOTC_TCOE_OPTION_CUSTOMIZED_ASI" />
+			<stat name="charisma" value="1" requirements="!ID_WOTC_TCOE_OPTION_CUSTOMIZED_ASI" />
+			<select type="Ability Score Improvement" name="Custom Ability Score Improvement +2 (Draconblood)" supports="Custom Ability Score Increase 2" requirements="ID_WOTC_TCOE_OPTION_CUSTOMIZED_ASI" />
+			<select type="Ability Score Improvement" name="Custom Ability Score Improvement +1 (Draconblood)" supports="Custom Ability Score Increase 1" requirements="ID_WOTC_TCOE_OPTION_CUSTOMIZED_ASI" />
 			<grant type="Vision" id="ID_VISION_DARKVISION" />
 			<grant type="Racial Trait" id="ID_WOTC_EGTW_RACIAL_TRAIT_DRACONBLOOD_FORCEFUL_PRESENCE" />
 		</rules>
@@ -31,6 +33,7 @@
 			<description>When you make a Intimidation or Persuasion check, you can do so with advantage.</description>
 		</sheet>
 	</element>	
+
 	<element name="Ravenite" type="Race Variant" source="Explorer’s Guide to Wildemount" id="ID_WOTC_EGTW_RACE_VARIANT_DRAGONBORN_RAVENITE">
 		<supports>Dragonborn</supports>
 		<description>
@@ -43,8 +46,10 @@
 		<sheet alt="Ravenite" display="false" />
 		<rules>
 			<grant type="Grants" id="ID_WOTC_EGTW_GRANTS_DRAGONBORN_VARIANT" />
-			<stat name="strength" value="2" />
-			<stat name="constitution" value="1" />
+			<stat name="strength" value="2" requirements="!ID_WOTC_TCOE_OPTION_CUSTOMIZED_ASI" />
+			<stat name="constitution" value="1" requirements="!ID_WOTC_TCOE_OPTION_CUSTOMIZED_ASI" />
+			<select type="Ability Score Improvement" name="Custom Ability Score Improvement +2 (Ravenite)" supports="Custom Ability Score Increase 2" requirements="ID_WOTC_TCOE_OPTION_CUSTOMIZED_ASI" />
+			<select type="Ability Score Improvement" name="Custom Ability Score Improvement +1 (Ravenite)" supports="Custom Ability Score Increase 1" requirements="ID_WOTC_TCOE_OPTION_CUSTOMIZED_ASI" />
 			<grant type="Vision" id="ID_VISION_DARKVISION" />
 			<grant type="Racial Trait" id="ID_WOTC_EGTW_RACIAL_TRAIT_RAVENITE_VENGEFUL_ASSAULT" />
 		</rules>
