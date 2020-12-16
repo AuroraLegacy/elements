@@ -4,7 +4,7 @@
         <name>Siren</name>
         <description>Siren Race from Planeshift: Ixalan</description>
         <author url="https://media.wizards.com/2018/downloads/magic/plane-shift_ixalan.pdf">Wizards of the Coast</author>
-        <update version="0.0.3">
+        <update version="0.0.4">
             <file name="race-siren.xml" url="https://raw.githubusercontent.com/AuroraLegacy/elements/master/unearthed-arcana/planeshift/ixalan/race-siren.xml" />
         </update>
     </info>
@@ -27,15 +27,20 @@
         </description>
         <sheet display="false" />
         <rules>
-            <stat name="charisma" value="2" />
+            <stat name="charisma" value="2" requirements="!ID_WOTC_TCOE_OPTION_CUSTOMIZED_ASI" />
+			<select type="Ability Score Improvement" name="Custom Ability Score Improvement +2 (Siren)" supports="Custom Ability Score Increase 2" requirements="ID_WOTC_TCOE_OPTION_CUSTOMIZED_ASI" />
             <stat name="innate speed" value="30" bonus="base" />
             <grant type="Size" id="ID_SIZE_MEDIUM" />
-            <grant type="Language" id="ID_LANGUAGE_COMMON" />
-            <grant type="Language" id="ID_WOTC_PSI_LANGUAGE_SIREN" />
+            <grant type="Language" id="ID_LANGUAGE_COMMON" requirements="!ID_WOTC_TCOE_OPTION_CUSTOMIZED_LANGUAGE" />
+            <grant type="Language" id="ID_WOTC_PSI_LANGUAGE_SIREN" requirements="!ID_WOTC_TCOE_OPTION_CUSTOMIZED_LANGUAGE" />
+			<select type="Language" name="Customized Language" supports="Custom Race Language||Siren Language" number="2" requirements="ID_WOTC_TCOE_OPTION_CUSTOMIZED_LANGUAGE" />
             <grant type="Racial Trait" id="ID_WOTC_PSI_RACIAL_TRAIT_SIREN_SIRENS_SONG" />
             <grant type="Racial Trait" id="ID_WOTC_PSI_RACIAL_TRAIT_SIREN_FLIGHT" />
         </rules>
     </element>
+    <append id="ID_WOTC_PSI_LANGUAGE_SIREN">
+		<supports>Siren Language</supports>
+	</append>
     <element name="Flight" type="Racial Trait" source="Plane Shift: Ixalan" id="ID_WOTC_PSI_RACIAL_TRAIT_SIREN_FLIGHT">
 		<description>
 			<p>You have a flying speed of 30 feet. To use this speed, you can’t be wearing medium or heavy armor.</p>
