@@ -1,0 +1,295 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<elements>
+	<info>
+		<name>companions</name>		
+    <description>Companions from Tasha’s Cauldron of Everything</description>
+		<author url="http://dnd.wizards.com/products/tabletop-games/rpg-products/tashas-cauldron-everything">Tasha’s Cauldron of Everything</author>
+		<update version="0.0.1">
+			<file name="companions.xml" url="https://raw.githubusercontent.com/AuroraLegacy/elements/master/supplements/tashas-cauldron-of-everything/archetypes/items-infustions.xml" />
+		</update>
+	</info>
+  <element name="Homunculus Servant" type="Companion" source="Tasha’s Cauldron of Everything" id="ID_WOTC_TCOE_COMPANION_HOMUNCULUS_SERVANT">
+		<description>
+      <p><em>Item: A gem or crystal worth at least 100 gp</em></p>
+			<p>You learn intricate methods for magically creating a special homunculus that serves you. The item you infuse serves as the creature's heart, around which the creature's body instantly forms.</p>
+      <p class="indent">You determine the homunculus's appearance. Some artificers prefer mechanical-looking birds, whereas some like winged vials or miniature, animate cauldrons.</p>
+      <p class="indent">The homunculus is friendly to you and your companions, and it obeys your commands. See this creature's game statistics in the Homunculus Servant stat block, which uses your proficiency bonus (PB) in several places.</p>
+      <p class="indent">In combat, the homunculus shares your initiative count, but it takes its turn immediately after yours. It can move and use its reaction on its own, but the only action it takes on its turn is the Dodge action, unless you take a bonus action on your turn to command it to take another action. That action can be one in its stat block or some other action. If you are incapacitated, the homunculus can take any action of its choice, not just Dodge.</p>
+      <p class="indent">The homunculus regains 2d6 hit points if the mending spell is cast on it. If you or the homunculus dies, it vanishe􀎼. leaving its heart in its space.</p>
+      <p class="indent">Has number of d4 hit dice equal to your artificer level</p>
+      <p class="indent">Damage immunities: poison, Conidtion immunities: exhaustion, poisoned</p>
+      <p class="indent">Proficiency Bonus (PB) equals your bonus</p>
+    </description>
+		<setters>
+			<set name="strength">4</set>
+			<set name="dexterity">15</set>
+			<set name="constitution">12</set>
+			<set name="intelligence">10</set>
+			<set name="wisdom">10</set>
+			<set name="charisma">7</set>
+			<set name="ac">13</set>
+			<set name="hp">1 + Inteligence modifier + artificer level </set>
+      <set name="hd">d4</set>
+			<set name="speed">20 ft., fly 30 ft.</set>
+      <set name="immunities">poison</set>
+			<set name="conditionImmunities">exhaustion, poisoned</set>
+			<set name="languages">understands languages you speak</set>
+			<set name="skills">Stealth +2 +PB, Perception +0 +PB x 2</set>
+      <set name="senses">darkvision 60 ft., passive Perception 10 +PB x 2</set>
+			<set name="type">Construct</set>
+			<set name="size">Tiny</set>
+			<set name="alignment">Neutral</set>
+			<set name="challenge">-</set>
+      <set name="traits">ID_WOTC_TCOE_COMPANION_TRAIT_HOMUNCULUS_SERVANT_EVASION,ID_WOTC_TCOE_COMPANION_TRAIT_HOMUNCULUS_SERVANT_COMBAT</set>
+			<set name="actions">ID_WOTC_TCOE_COMPANION_ACTION_HOMUNCULUS_SERVANT_FORCE_STRIKE</set>
+      <set name="reactions">ID_WOTC_TCOE_COMPANION_REACTION_HOMUNCULUS_SERVANT_CHANNEL_MAGIC</set>
+		</setters>
+		<rules>
+			<stat name="companion:ac" value="13" />
+			<stat name="companion:hp:max" value="1" />
+      <stat name="companion:hp:max" value="intelligence:modifier" />
+      <stat name="companion:hp:max" value="level" />
+			<stat name="companion:speed" value="20" bonus="base" />
+			<stat name="companion:speed:fly" value="30" bonus="base" />
+			<stat name="companion:stealth:proficiency" value="companion:proficiency" bonus="base" />
+			<stat name="companion:perception:proficiency" value="companion:proficiency" bonus="base" />
+		</rules>
+	</element>
+	<element name="Evasion" type="Companion Trait" source="Tasha’s Cauldron of Everything" id="ID_WOTC_TCOE_COMPANION_TRAIT_HOMUNCULUS_SERVANT_EVASION">
+		<description>
+			<p>If the homunculus is subjected to an effect that allows it to make a Dexterity saving th row to take only half damage, it instead takes no damage if it succeeds on the saving th row, and only half damage if it fails. It can't use this trait if it's incapacitated.</p>
+		</description>
+		<sheet>
+			<description>If the homunculus is subjected to an effect that allows it to make a Dexterity saving th row to take only half damage, it instead takes no damage if it succeeds on the saving th row, and only half damage if it fails. It can't use this trait if it's incapacitated.</description>
+		</sheet>
+	</element>
+  <element name="Combat" type="Companion Trait" source="Tasha’s Cauldron of Everything" id="ID_WOTC_TCOE_COMPANION_TRAIT_HOMUNCULUS_SERVANT_COMBAT">
+		<description>
+			<p>In combat, the defender shares your initiative count, but it takes its turn immediately after yours. It can move and use its reaction on its own, but the only action it takes on its turn is the Dodge action, unless you take a bonus action on your turn to command it to take another action. That action can be one in its stat block or some other action. If you are incapacitated, the defender can take any action of its choice, not just Dodge.</p>
+		</description>
+		<sheet>
+			<description>shares your initative roll and goes directly after you in combat. Can move and use a reaction on its own but can only take the dodge action unless you use your bonus action to command it to take a regular action.</description>
+		</sheet>
+	</element>
+	<element name="Force Strike" type="Companion Action" source="Tasha’s Cauldron of Everything" id="ID_WOTC_TCOE_COMPANION_ACTION_HOMUNCULUS_SERVANT_FORCE_STRIKE">
+		<description>
+			<p>Ranged Weapon Attack: your spell attack modifier to hit, range 30 ft., one target you can see. Hit: 1d4 + PB force damage.</p>
+		</description>
+		<sheet>
+			<description>Ranged Weapon Attack: your spell attack modifier to hit, range 30 ft., one target you can see. Hit: 1d4 + $(proficiency) force damage.</description>
+		</sheet>
+	</element>
+	<element name="Channel Magic" type="Companion Reaction" source="Tasha’s Cauldron of Everything" id="ID_WOTC_TCOE_COMPANION_REACTION_HOMUNCULUS_SERVANT_CHANNEL_MAGIC">
+		<description>
+			<p>The homunculus delivers a spell you cast that has a range of touch. The homunculus must be within 1 20 feet of you.</p>
+		</description>
+		<sheet>
+			<description>REACTION: The homunculus delivers a spell you cast that has a range of touch. The homunculus must be within 120 feet of you.</description>
+		</sheet>
+	</element>
+  <element name="Steel Defender" type="Companion" source="Tasha’s Cauldron of Everything" id="ID_WOTC_TCOE_COMPANION_STEEL_DEFENDER">
+		<description>
+			<p>Your tinkering has borne you a companion, a steel defender. It's friendly to you and your companions, and it obeys your commands. See its game statistics in the Steel Defender stat block, which uses your proficiency bonus (PB) in several places. You determine the creature's appearance and whether ithas two legs or four; your choice has no effect on its game statistics.</p>
+      <p class="indent">In combat, the defender shares your initiative count, but it takes its turn immediately after yours. It can move and use its reaction on its own, but the only action it takes on its turn is the Dodge action, unless you take a bonus action on your turn to command it to take another action. That action can be one in its stat block or some other action. If you are incapacitated, the defender can take any action of its choice, not just Dodge.</p>
+      <p class="indent">If the mending spell is cast on the defender, it regains 2d6 hit points. If it has died within the last hour, you can use your smith's tools as an action to revive it, provided you are within 5 feet of it and you expend a spell slot of 1 st level or higher. The defender returns to life after 1 minute with all its hit points restored.</p>
+      <p class="indent">At the end of a long rest, you can create a new steel defender if you have smith's tools with you. If you already have a defender from this feature, the first one immediately perishes. The defender also perishes if you die.</p>
+      
+      <p class="indent">Has number of d8 hit dice equal to your artificer level</p>
+      <p class="indent">Damage immunities: poison, Conidtion immunities: charmed, exhaustion, poisoned</p>
+      <p class="indent">Proficiency Bonus (PB) equals your bonus</p>
+    </description>
+		<setters>
+			<set name="strength">14</set>
+			<set name="dexterity">12</set>
+			<set name="constitution">14</set>
+			<set name="intelligence">4</set>
+			<set name="wisdom">10</set>
+			<set name="charisma">6</set>
+			<set name="ac">15 (natual armor)</set>
+			<set name="hp">2 + Inteligence modifier + 5 X artificer level </set>
+      <set name="hd">d8</set>
+      <set name="hitdice">d8</set>
+			<set name="speed">40 ft.</set>
+      <set name="immunities">poison</set>
+			<set name="conditionImmunities">charmed, exhaustion, poisoned</set>
+			<set name="languages">understands languages you speak</set>
+			<set name="skills">Athletics +2 +PB, Perception +0 +PB x 2</set>
+      <set name="senses">darkvision 60 ft., passive perception 10 +PB x 2</set>
+			<set name="type">Construct</set>
+			<set name="size">Medium</set>
+			<set name="alignment">Neutral</set>
+			<set name="challenge">-</set>
+      <set name="traits">ID_WOTC_TCOE_COMPANION_TRAIT_STEEL_DEFENDER_VIGILANT,ID_WOTC_TCOE_COMPANION_TRAIT_STEEL_DEFENDER_COMBAT</set>
+			<set name="actions">ID_WOTC_TCOE_COMPANION_ACTION_STEEL_DEFENDER_FORCE_EMPOWERED_REND,ID_WOTC_TCOE_COMPANION_ACTION_STEEL_DEFENDER_REPAIR</set>
+      <set name="reactions">ID_WOTC_TCOE_COMPANION_REACTION_STEEL_DEFENDER_DEFLECT_ATTACK,ID_WOTC_TCOE_COMPANION_REACTION_STEEL_DEFENDER_DEFLECT_ATTACK_LEVEL_15</set>
+    </setters>
+		<rules>
+			<stat name="companion:ac" value="15" level="1"/>
+      <stat name="companion:ac" value="2" level="15"/>
+			<stat name="companion:hp:max" value="1" />
+      <stat name="companion:hp:max" value="intelligence:modifier" />
+      <stat name="companion:hp:max" value="level" />
+      <stat name="companion:hp:max" value="level" />
+      <stat name="companion:hp:max" value="level" />
+      <stat name="companion:hp:max" value="level" />
+      <stat name="companion:hp:max" value="level" />
+			<stat name="companion:speed" value="40" bonus="base" />
+      <stat name="companion:stealth:proficiency" value="2" />
+			<stat name="companion:stealth:proficiency" value="proficiency" />
+			<stat name="companion:perception:proficiency" value="proficiency" />
+      <stat name="companion:perception:proficiency" value="proficiency" />
+		</rules>
+	</element>
+	<element name="Vigilant" type="Companion Trait" source="Tasha’s Cauldron of Everything" id="ID_WOTC_TCOE_COMPANION_TRAIT_STEEL_DEFENDER_VIGILANT">
+		<description>
+			<p>defender can't be surprised.</p>
+		</description>
+		<sheet>
+			<description>defender can't be surprised.</description>
+		</sheet>
+	</element>
+  <element name="Combat" type="Companion Trait" source="Tasha’s Cauldron of Everything" id="ID_WOTC_TCOE_COMPANION_TRAIT_STEEL_DEFENDER_COMBAT">
+		<description>
+			<p>In combat, the defender shares your initiative count, but it takes its turn immediately after yours. It can move and use its reaction on its own, but the only action it takes on its turn is the Dodge action, unless you take a bonus action on your turn to command it to take another action. That action can be one in its stat block or some other action. If you are incapacitated, the defender can take any action of its choice, not just Dodge.</p>
+		</description>
+		<sheet>
+			<description>shares your initative roll and goes directly after you in combat. Can move and use a reaction on its own but can only take the dodge action unless you use your bonus action to command it to take a regular action.</description>
+		</sheet>
+	</element>
+	<element name="Force Empowered Rend" type="Companion Action" source="Tasha’s Cauldron of Everything" id="ID_WOTC_TCOE_COMPANION_ACTION_STEEL_DEFENDER_FORCE_EMPOWERED_REND">
+		<description>
+			<p>Melee Weapon Attack: your spell attack modifier to hit, reach 5 ft., one target you can see. Hit: ld8 + PB fo rce damage.</p>
+		</description>
+		<sheet>
+			<description>Melee Weapon Attack: your spell attack modifier to hit, reach 5 ft., one target you can see. Hit: ld8 + $(proficiency) force damage.</description>
+		</sheet>
+	</element>
+	<element name="Repair (3/day)" type="Companion Action" source="Tasha’s Cauldron of Everything" id="ID_WOTC_TCOE_COMPANION_ACTION_STEEL_DEFENDER_REPAIR">
+		<description>
+			<p>The magical mechanisms inside the defender restore 2d8 + PB hit points to itself or to one construct or object within 5 feet of it.</p>
+		</description>
+		<sheet>
+			<description>ACTION: The magical mechanisms inside the defender restore 2d8 + $(proficiency) hit points to itself or to one construct or object within 5 feet of it.</description>
+		</sheet>
+	</element>
+  <element name="Deflect Attack" type="Companion Reaction" source="Tasha’s Cauldron of Everything" id="ID_WOTC_TCOE_COMPANION_REACTION_STEEL_DEFENDER_DEFLECT_ATTACK">
+		<description>
+			<p>The defender imposes disadvantage on the attack roll of one creature it can see that is with in 5 feet of it, provided the attack roll is against a creature other than the defender.</p>
+		</description>
+		<sheet>
+			<description>REACTION: The defender imposes disadvantage on the attack roll of one creature it can see that is with in 5 feet of it, provided the attack roll is against a creature other than the defender.</description>
+		</sheet>
+	</element>
+  <element name="Deflect Attack (Level 15)" type="Companion Reaction" source="Tasha’s Cauldron of Everything" id="ID_WOTC_TCOE_COMPANION_REACTION_STEEL_DEFENDER_DEFLECT_ATTACK_LEVEL_15">
+		<supports>Deflect Attack</supports>
+    <description>
+			<p>Whenever your steel defender uses its Deflect Attack, the attacker takes force damage equal to ld4 +$(intelligence:modifier).</p>
+		</description>
+		<sheet>
+			<description>attacker also takes ld4 +$(intelligence:modifier) force damage</description>
+		</sheet>
+	</element>
+
+  <element name="Eldritch Cannon" type="Companion" source="Tasha’s Cauldron of Everything" id="ID_WOTC_TCOE_COMPANION_ELDRITCH_CANNON">
+		<description>
+			<p>You've learned how to create a magical cannon. Using woodcarver's tools or smith's tools, you can take an action to magically create a Small or Tiny eldritch cannon in an unoccupied space on a horizontal surface within 5 feet of you. A Small eldritch cannon occupies its space, and a Tiny one can be held in one hand.</p>
+      <p class="indent">Once you create a cannon, you can't do so again until you finish a long rest or until you expend a spell slot to create one. You can have only one cannon at a time and can't create one while your cannon is present.</p>
+      <p class="indent">The cannon is a magical object. Regardless of size, the cannon has an AC of 18 and a number of hit points equal to five times your artificer level. It is immune to poison damage and psychic damage. If it is forced to make an ability check or a saving throw, treat all its ability scores as 10 (+O). If the mending spell is cast on it, it regains 2d6 hit points. It disappears if it is reduced to 0 hit points or after 1 hour. You can dismiss it early as an action.</p>
+      <p class="indent">When you create the cannon, you determine its appearance and whether it has legs. You also decide which type it is, choosing from the options on the Eldritch Cannons table. On each of your turns, you can take a bonus action to cause the cannon to activate if you are within 60 feet of it. As part of the same bonus action, you can direct the cannon to walk or climb up to 1 5 feet to an unoccupied space, provided it has legs.</p>
+      <h5 class="caption">Eldritch Cannons</h5>
+			<table>
+				<thead><tr><td>Cannon</td><td>Activation</td></tr></thead>
+				<tr><td>Flamethrower</td><td><em>The cannon exhales fire in an adjacent 15-foot cone that you designate. Each creature in that area must make a Dexterity saving throw against your spell save DC, taking 2d8 fire damage on a failed save or half as much damage on a successful one. The fire ignites any flammable objects in the area that aren't being worn or carried.</em></td></tr>
+				<tr><td>Force Ballista</td><td><em>Make a ranged spell attack, originating from the cannon, at one creature or object with in 120 feet of it. On a hit, the target takes 2d8 force damage, and if the target is a creature, it is pushed up to 5. feet away from the cannon.</em></td></tr>
+				<tr><td>Protector</td><td><em>The cannon emits a burst of positive energy that grants itself and each creature of your choice within 10 feet of it a number of temporary hit points equal to ld8 + your Intelligence modifier (minimum of +l).</em></td></tr>
+			</table>
+    </description>
+		<setters>
+			<set name="strength">10</set>
+			<set name="dexterity">10</set>
+			<set name="constitution">10</set>
+			<set name="intelligence">10</set>
+			<set name="wisdom">10</set>
+			<set name="charisma">10</set>
+			<set name="ac">18</set>
+			<set name="hp">5 X artificer level </set>
+			<set name="speed">15 ft., climb 15 ft.</set>
+      <set name="immunities">poison, psychic</set>
+			<set name="languages">understands languages you speak</set>
+			<set name="type">Construct</set>
+			<set name="size">Tiny, Small</set>
+			<set name="alignment">Neutral</set>
+			<set name="challenge">-</set>
+      <set name="traits">ID_WOTC_TCOE_COMPANION_TRAIT_ELDRITCH_CANNON_COMBAT,ID_WOTC_TCOE_COMPANION_TRAIT_ELDRITCH_CANNON_TYPE,ID_WOTC_TCOE_COMPANION_TRAIT_ELDRITCH_CANNON_EXPLOSIVE_CANNON</set>
+			<set name="actions">ID_WOTC_TCOE_COMPANION_ACTION_ELDRITCH_CANNON_FLAMETHROWER,ID_WOTC_TCOE_COMPANION_ACTION_ELDRITCH_CANNON_FORCE_BALLISTA,ID_WOTC_TCOE_COMPANION_ACTION_ELDRITCH_CANNON_PROTECTOR,ID_WOTC_TCOE_COMPANION_ACTION_ELDRITCH_CANNON_EXPLOSIVE_CANNON</set>
+		</setters>
+		<rules>
+			<stat name="companion:ac" value="18" />
+      <stat name="companion:hp:max" value="level" />
+      <stat name="companion:hp:max" value="level" />
+      <stat name="companion:hp:max" value="level" />
+      <stat name="companion:hp:max" value="level" />
+      <stat name="companion:hp:max" value="level" />
+			<stat name="companion:speed" value="15" bonus="base" />
+			<stat name="companion:speed:climb" value="15" bonus="base" />
+		</rules>
+	</element>
+  <element name="Combat" type="Companion Trait" source="Tasha’s Cauldron of Everything" id="ID_WOTC_TCOE_COMPANION_TRAIT_ELDRITCH_CANNON_COMBAT">
+		<description>
+			<p>On each of your turns, you can take a bonus action to cause the cannon to activate if you are within 60 feet of it. As part of the same bonus action, you can direct the cannon to walk or climb up to 15 feet to an unoccupied space, provided it has legs.</p>
+		</description>
+		<sheet>
+			<description>On each of your turns, you can take a bonus action to cause the cannon to activate if you are within 60 feet of it. As part of the same bonus action, you can direct the cannon to walk or climb up to 15 feet to an unoccupied space, provided it has legs.</description>
+		</sheet>
+	</element>
+  <element name="Type" type="Companion Trait" source="Tasha’s Cauldron of Everything" id="ID_WOTC_TCOE_COMPANION_TRAIT_ELDRITCH_CANNON_TYPE">
+		<description>
+			<p>When you create the cannon, you determine its appearance and whether it has legs. You also decide which type it is, choosing from the options on the Eldritch Cannons table.</p>
+		</description>
+		<sheet>
+			<description>When you create the cannon, you determine its appearance and wether it has legs, and also which type it is. Each type has its own attack: Flamethrower, Force Ballista, Protector.</description>
+		</sheet>
+	</element>
+  <element name="Explosive Cannon, Damage" type="Companion Trait" source="Tasha’s Cauldron of Everything" id="ID_WOTC_TCOE_COMPANION_TRAIT_ELDRITCH_CANNON_EXPLOSIVE_CANNON">
+		<description>
+      <p><em>Unlocked at level 9</em></p>
+			<p>The cannon's damage rolls all increase by ld8.</p>
+		</description>
+		<sheet usage="Artificer level 9" alt="Damage">
+			<description>Each cannon gains +1d8 to damage rolls</description>
+		</sheet>
+	</element>
+  <element name="Flamethrower" type="Companion Trait" source="Tasha’s Cauldron of Everything" id="ID_WOTC_TCOE_COMPANION_ACTION_ELDRITCH_CANNON_FLAMETHROWER">
+		<description>
+			<p>The cannon exhales fire in an adjacent 15-foot cone that you designate. Each creature in that area must make a Dexterity saving throw against your spell save DC, taking 2d8 fire damage on a failed save or half as much damage on a successful one. The fire ignites any flammable objects in the area that aren't being worn or carried.</p>
+		</description>
+		<sheet>
+			<description>Cannon fires a 15ft cone, each creature inside makes a dexterity saving throw against your spell DC, taking 2d8 fire damage on a failed save and half as much if successful. The fire ignites any flamible objects that aren't being worn or carried.</description>
+		</sheet>
+	</element>
+  <element name="Force Ballista" type="Companion Trait" source="Tasha’s Cauldron of Everything" id="ID_WOTC_TCOE_COMPANION_ACTION_ELDRITCH_CANNON_FORCE_BALLISTA">
+		<description>
+			<p>Make a ranged spell attack, originating from the cannon, at one creature or object with in 120 feet of it. On a hit, the target takes 2d8 force damage, and if the target is a creature, it is pushed up to 5. feet away from the cannon.</p>
+		</description>
+		<sheet>
+			<description>Cannon makes a ranged spell attack. Does 2d8 force damage on hit and target is pushed 5ft away from cannon.</description>
+		</sheet>
+	</element>
+  <element name="Protector" type="Companion Trait" source="Tasha’s Cauldron of Everything" id="ID_WOTC_TCOE_COMPANION_ACTION_ELDRITCH_CANNON_PROTECTOR">
+		<description>
+			<p>The cannon emits a burst of positive energy that grants itself and each creature of your choice within 10 feet of it a number of temporary hit points equal to ld8 + your Intelligence modifier (minimum of +l).</p>
+		</description>
+		<sheet>
+			<description>Cannon heals itself and each creature of your choice within 10ft 1d8 +$(intelligence:modifier) temporary hit points</description>
+		</sheet>
+	</element>
+  <element name="Explosive Cannon, Explode" type="Companion Trait" source="Tasha’s Cauldron of Everything" id="ID_WOTC_TCOE_COMPANION_ACTION_ELDRITCH_CANNON_EXPLOSIVE_CANNON">
+		<description>
+      <p><em>Unlocked at level 9</em></p>
+			<p>As an action, you can command the cannon to detonate if you are within 60 feet of it. Doing so destroys the cannon and forces each creature within 20 feet of it to make a Dexterity saving throw against your spell save DC, taking 3d8 force damage on a failed save or half as much damage on a successful one.</p>
+		</description>
+		<sheet usage="Artificer level 9" alt="Explode">
+			<description>If you are within 60ft, use an action to command the cannon to detonate, destroying itself. each creature within 20ft makes a dexterity saving throw vs your spell DC, taking 3d8 force damage on a failed save and half as much on a successful one.</description>
+		</sheet>
+	</element>
+</elements>

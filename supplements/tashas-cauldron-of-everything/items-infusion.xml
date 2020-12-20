@@ -1,0 +1,466 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<elements>
+	<info>
+		<name>Item Infusions</name>		
+    <description>Artificer Infusion Items from Tasha’s Cauldron of Everything</description>
+		<author url="http://dnd.wizards.com/products/tabletop-games/rpg-products/tashas-cauldron-everything">Tasha’s Cauldron of Everything</author>
+		<update version="0.0.1">
+			<file name="items-infustions.xml" url="https://raw.githubusercontent.com/AuroraLegacy/elements/master/supplements/tashas-cauldron-of-everything/archetypes/items-infustions.xml" />
+		</update>
+	</info>
+	<element name="Arcane Propulsion Armor" type="Magic Item" source="Tasha’s Cauldron of Everything" id="ID_WOTC_TCOE_INFUSION_ITEM_ARCANE_PROPULSION_ARMOR">
+    <description>
+			<p>The wearer of this armor gains these benefits:</p>
+      <ul>
+				<li>The wearer's walking speed increases by 5 feet.</li>
+				<li>The armor includes gauntlets, each of which is a magic melee weapon that can be wielded only when the hand is holding nothing. The wearer is proficient with the gauntlets, and each one deals ld8 force damage on a hit and has the thrown property, with a normal range of 20 feet and a long range of 60 feet. When thrown, the gauntlet detaches and flies at the attack's target, then immediately returns to the wearer and reattaches.</li>
+				<li>The armor can't be removed against the wearer's will.</li>
+        <li>If the wearer is missing any limbs, the armor replaces those limbs-hands, arms, feet, legs, or similar appendages. The replacements function identically to the body parts they replace.</li>
+			</ul>
+		</description>
+		<setters>
+      <set name="keywords">Armor, Arcane, Propulsion, Infusion</set>
+			<set name="category">Magic Armor</set>
+			<set name="cost" currency="gp">0</set>
+			<set name="slot">body</set>
+			<set name="type" addition="light, medium, or heavy">Armor</set>
+			<set name="rarity">Infusion</set>
+      <set name="attunement">true</set>
+			<set name="armor">ID_INTERNAL_ARMOR_GROUP_LIGHT|ID_INTERNAL_ARMOR_GROUP_MEDIUM|ID_INTERNAL_ARMOR_GROUP_HEAVY</set>
+			<set name="name-format">{{parent}} of Arcane Propulsion</set>
+		</setters>
+		<rules>
+			<stat name="speed" value="5" bonus="enhancement" />
+      <grant type="Proficiency" id="ID_PROFICIENCY_WEAPON_PROFICIENCY_GAUNTLETS" />
+		</rules>
+	</element>
+  <element name="Amor of Magical Strength" type="Magic Item" source="Tasha’s Cauldron of Everything" id="ID_WOTC_TCOE_INFUSION_ITEM_ARMOR_OF_MAGICAL_STRENGTH">		
+    <description>
+			<p>This armor has 6 charges. The wearer can expend the armor's charges in the following ways:</p>
+      <ul>
+				<li>When the wearer makes a Strength check or a Strength saving throw, it can expend 1 charge to add a bonus to the roll equal to its Intelligence modifier.</li>
+				<li>If the creature would be knocked prone, it can use its reaction to expend 1 charge to avoid being knocked prone.</li>
+			</ul>
+      <p>The armor regains ld6 expended charges daily at dawn.</p>
+		</description>
+    <setters>
+      <set name="keywords">Armor, Magic, Strength, Infusion</set>
+			<set name="category">Magic Armor</set>
+			<set name="cost" currency="gp">0</set>
+			<set name="slot">body</set>
+			<set name="type" addition="light, medium, or heavy">Armor</set>
+			<set name="rarity">Infusion</set>
+      <set name="attunement">true</set>
+      <set name="charges">6</set>
+			<set name="armor">ID_INTERNAL_ARMOR_GROUP_LIGHT|ID_INTERNAL_ARMOR_GROUP_MEDIUM|ID_INTERNAL_ARMOR_GROUP_HEAVY</set>
+			<set name="name-format">{{parent}} of Magical Strength</set>
+		</setters>
+	</element>
+	<element name="Boots of the Winding Path" type="Magic Item" source="Tasha’s Cauldron of Everything" id="ID_WOTC_TCOE_INFUSION_ITEM_BOOTS_OF_THE_WINDING_PATH">
+		<description>
+			<p>While wearing these boots, a creature can teleport up to 15 feet as a bonus action to an unoccupied space the creature can see. The creature must have occupied that space at some point during the current turn.</p>
+		</description>
+    <setters>
+			<set name="keywords">stealth</set>
+			<set name="category">Wonderous Items</set>
+			<set name="cost" currency="gp">0</set>
+			<set name="weight" lb="0">0 lb.</set>
+			<set name="slot">feet</set>
+			<set name="type">Wondrous Item</set>
+			<set name="rarity">Infusion</set>
+      <set name="attunement">true</set>
+		</setters>
+	</element>
+	<element name="Enhanced Arcane Focus, Staff" type="Magic Item" source="Tasha’s Cauldron of Everything" id="ID_WOTC_TCOE_INFUSION_ITEM_ENHANCED_ARCANE_FOCUS_STAFF">		
+    <description>
+			<p>While holding this item, a creature gains a + 1 bonus to spell attack rolls. In addition, the creature ignores half cover when making a spell attack.</p>
+			<p class="indent">The bonus increases to +2 when you reach 10th level in this class.</p>
+		</description>
+    <setters>
+			<set name="keywords">Staff, Focus, Arcane, Enchanced</set>
+			<set name="category">Staffs</set>
+			<set name="cost" currency="gp">0</set>
+			<set name="weight" lb="4">4 lb.</set>
+			<set name="type">Staff</set>
+			<set name="attunement">true</set>
+			<set name="rarity">Infusion</set>
+			<set name="slot">onehand</set>
+			<set name="weapon">Quarterstaff</set>
+		</setters>
+    <rules>
+      <stat name="spellcasting:attack" value="1" bonus="enhancement" level="1"/>
+      <stat name="spellcasting:attack" value="2" bonus="enhancement" level="10"/>
+    </rules>
+	</element>
+  <element name="Enhanced Arcane Focus, Rod" type="Magic Item" source="Tasha’s Cauldron of Everything" id="ID_WOTC_TCOE_INFUSION_ITEM_ENHANCED_ARCANE_FOCUS_ROD">		
+    <description>
+			<p>While holding this item, a creature gains a + 1 bonus to spell attack rolls. In addition, the creature ignores half cover when making a spell attack.</p>
+			<p class="indent">The bonus increases to +2 when you reach 10th level in this class.</p>
+		</description>
+    <setters>
+			<set name="keywords">Rod, Focus, Arcane, Enchanced</set>
+			<set name="category">Rods</set>
+			<set name="cost" currency="gp">0</set>
+			<set name="weight" lb="2">2 lb.</set>
+			<set name="type">Rod</set>
+			<set name="attunement">true</set>
+			<set name="rarity">Infusion</set>
+			<set name="slot">onehand</set>
+		</setters>
+    <rules>
+      <stat name="spellcasting:attack" value="1" bonus="enhancement" level="1"/>
+      <stat name="spellcasting:attack" value="2" bonus="enhancement" level="10"/>
+    </rules>
+	</element>
+  <element name="Enhanced Arcane Focus, Wand" type="Magic Item" source="Tasha’s Cauldron of Everything" id="ID_WOTC_TCOE_INFUSION_ITEM_ENHANCED_ARCANE_FOCUS_WAND">		
+    <description>
+			<p>While holding this item, a creature gains a + 1 bonus to spell attack rolls. In addition, the creature ignores half cover when making a spell attack.</p>
+			<p class="indent">The bonus increases to +2 when you reach 10th level in this class.</p>
+		</description>
+    <setters>
+			<set name="keywords">Wand, Focus, Arcane, Enchanced</set>
+			<set name="category">Wands</set>
+			<set name="cost" currency="gp">0</set>
+			<set name="weight" lb="1">1 lb.</set>
+			<set name="type">Wand</set>
+			<set name="attunement">true</set>
+			<set name="rarity">Infusion</set>
+			<set name="slot">onehand</set>
+		</setters>
+    <rules>
+      <stat name="spellcasting:attack" value="1" bonus="enhancement" level="1"/>
+      <stat name="spellcasting:attack" value="2" bonus="enhancement" level="10"/>
+    </rules>
+	</element>
+  <element name="Helm of Awareness" type="Magic Item" source="Tasha’s Cauldron of Everything" id="ID_WOTC_TCOE_INFUSION_ITEM_HELM_OF_AWARENESS">
+		<description>
+			<p>While wearing this helmet, a creature has advantage on initiative rolls. In addition, the wearer can't be surprised, provided it isn't incapacitated.</p>
+		</description>
+    <setters>
+			<set name="keywords">awareness, helm</set>
+			<set name="category">Wonderous Items</set>
+			<set name="cost" currency="gp">0</set>
+			<set name="weight" lb="0">0 lb.</set>
+			<set name="slot">head</set>
+			<set name="type">Wondrous Item</set>
+			<set name="rarity">Infusion</set>
+      <set name="attunement">true</set>
+		</setters>
+    <rules>
+			<grant type="Grants" id="ID_INTERNAL_GRANTS_INITIATIVE_ADVANTAGE" />
+		</rules>
+	</element>
+  <element name="Mind Sharpener, Armor" type="Magic Item" source="Tasha’s Cauldron of Everything" id="ID_WOTC_TCOE_INFUSION_ITEM_MIND_SHARPENER_ARMOR">		
+    <description>
+			<p>The infused item can send a jolt to the wearer to refocus their mind. The item has 4 charges. When the wearer fails a Constitution saving throw to maintain concentration on a spell, the wearer can use its reaction to expend 1 of the item's charges to succeed instead. The item regains ld4 expended charges daily at dawn.</p>
+    </description>
+    <setters>
+      <set name="keywords">Armor, Mind</set>
+			<set name="category">Magic Armor</set>
+			<set name="cost" currency="gp">0</set>
+			<set name="slot">body</set>
+			<set name="type" addition="light, medium, or heavy">Armor</set>
+			<set name="rarity">Infusion</set>
+			<set name="armor">ID_INTERNAL_ARMOR_GROUP_LIGHT|ID_INTERNAL_ARMOR_GROUP_MEDIUM|ID_INTERNAL_ARMOR_GROUP_HEAVY</set>
+			<set name="name-format">Mind Sharpening {{parent}}</set>
+      <set name="charges">4</set>
+		</setters>
+	</element>
+  <element name="Mind Sharpener, Robe" type="Magic Item" source="Tasha’s Cauldron of Everything" id="ID_WOTC_TCOE_INFUSION_ITEM_MIND_SHARPENER_ROBE">		
+    <description>
+			<p>The infused item can send a jolt to the wearer to refocus their mind. The item has 4 charges. When the wearer fails a Constitution saving throw to maintain concentration on a spell, the wearer can use its reaction to expend 1 of the item's charges to succeed instead. The item regains ld4 expended charges daily at dawn.</p>
+    </description>
+    <setters>
+      <set name="keywords">Armor, Mind</set>
+			<set name="category">Wonderous Items</set>
+			<set name="cost" currency="gp">0</set>
+      <set name="weight" lb="4">4 lb.</set>
+			<set name="slot">sholders</set>
+			<set name="type">Wondrous Item</set>
+			<set name="rarity">Infusion</set>
+			<set name="name-format">Mind Sharpening robe</set>
+      <set name="charges">4</set>
+		</setters>
+	</element>
+	<element name="Radiant Weapon" type="Magic Item" source="Tasha’s Cauldron of Everything" id="ID_WOTC_TCOE_INFUSION_ITEM_RADIANT_WEAPON">
+		<description>
+			<p>This magic weapon grants a + 1 bonus to attack and damage rolls made with it. While holding it, the wielder can take a bonus action to cause it to shed bright light in a 30-foot radius and dim light for an additional 30 feet. The wielder can extinguish the light as a bonus action.</p>
+			<p class="indent">The weapon has 4 charges. As a reaction immediately after being hit by an attack, the wielder can expend 1 charge and cause the attacker to be blinded until the end of the attacker's next turn, unless the attacker succeeds on a Constitution saving throw against your spell save DC. The weapon regains ld4 expended charges daily at dawn.</p>
+		</description>
+    <setters>
+			<set name="category">Magic Weapons</set>
+			<set name="cost" currency="gp">0</set>
+			<set name="type" addition="any">Weapon</set>
+			<set name="rarity">Infusion</set>
+      <set name="enhancement">1</set>
+      <set name="attunement">true</set>
+			<set name="weapon">ID_INTERNAL_WEAPON_CATEGORY_SIMPLE_MELEE||ID_INTERNAL_WEAPON_CATEGORY_SIMPLE_RANGED||ID_INTERNAL_WEAPON_CATEGORY_MARTIAL_MELEE||ID_INTERNAL_WEAPON_CATEGORY_MARTIAL_RANGED</set>
+			<set name="name-format">Radiant {{parent}} +{{enhancement}}</set>
+      <set name="charges">4</set>
+		</setters>
+	</element>
+  <element name="Repeating Shot" type="Magic Item" source="Tasha’s Cauldron of Everything" id="ID_WOTC_TCOE_INFUSION_ITEM_REPEATING_SHOT">		
+    <description>
+			<p>This magic weapon grants a + 1 bonus to attack and damage rolls made with it when it's used to make a ranged attack, and it ignores the loading property if it has it.</p>
+			<p class="indent">If you load no ammunition in the weapon, it produces its own, automatically creating one piece of magic ammunition when you make a ranged attack with it. The ammunition created by the weapon vanishes the instant after it hits or misses a target.</p>
+		</description>
+    <setters>
+			<set name="category">Magic Weapons</set>
+			<set name="cost" currency="gp">0</set>
+			<set name="type" addition="a simple or martial weapon with the ammunition property">Weapon</set>
+			<set name="rarity">Infusion</set>
+      <set name="enhancement">1</set>
+      <set name="attunement">true</set>
+			<set name="weapon">(ID_INTERNAL_WEAPON_CATEGORY_SIMPLE_MELEE||ID_INTERNAL_WEAPON_CATEGORY_SIMPLE_RANGED||ID_INTERNAL_WEAPON_CATEGORY_MARTIAL_MELEE||ID_INTERNAL_WEAPON_CATEGORY_MARTIAL_RANGED),ID_INTERNAL_WEAPON_PROPERTY_AMMUNITION</set>
+			<set name="name-format">Repeating {{parent}} +{{enhancement}}</set>
+      <set name="charges">4</set>	
+		</setters>
+	</element>
+  <element name="Repulsion Sheild" type="Magic Item" source="Tasha’s Cauldron of Everything" id="ID_WOTC_TCOE_INFUSION_ITEM_REPULSION_SHIELD">
+		<description>
+			<p>A creature gains a +1 bonus to Armor Class while wielding this shield.</p>
+			<p class="indent">The shield has 4 charges. While holding it, the wielder can use a reaction immediately after being hit by a melee attack to expend 1 of the shield's charges and push the attacker up to 15 feet away. The shield regains ld4 expended charges daily at dawn.</p>
+		</description>
+    <setters>
+			<set name="keywords">infusion, shield, repulsion</set>
+			<set name="category">Magic Armor</set>
+			<set name="cost" currency="gp" override="false">0</set>
+			<set name="weight" lb="0">0 lb.</set>
+			<set name="type" addition="shield">Armor</set>
+			<set name="rarity">Infusion</set>
+			<set name="attunement">true</set>
+			<set name="enhancement">1</set>
+			<set name="armor">ID_INTERNAL_ARMOR_GROUP_SHIELD</set>
+			<set name="name-format">Repulsion Shield +{{enhancement}}</set>
+      <set name="charges">4</set>	
+		</setters>
+		<rules>
+			<stat name="ac:shield" value="1" bonus="enhancement" />
+		</rules>
+	</element>
+  <element name="Resistant Armor" type="Magic Item" source="Tasha’s Cauldron of Everything" id="ID_WOTC_TCOE_INFUSION_ITEM_RESISTANT_ARMOR">
+		<description>
+			<p>While wearing this armor, a creature has resistance to one of the following damage types, which you choose when you infuse the item: acid, cold, fire, force, lightning, necrotic, poison, psychic, radiant, or thunder.</p>
+		</description>
+    <setters>
+			<set name="category">Magic Armor</set>
+			<set name="cost" currency="gp">0</set>
+			<set name="slot">body</set>
+			<set name="type" addition="light, medium, or heavy">Armor</set>
+			<set name="rarity">Infusion</set>
+			<set name="enhancement">1</set>
+      <set name="attunement">true</set>
+			<set name="armor">ID_INTERNAL_ARMOR_GROUP_LIGHT|ID_INTERNAL_ARMOR_GROUP_MEDIUM|ID_INTERNAL_ARMOR_GROUP_HEAVY</set>
+			<set name="name-format">{{parent}} +{{enhancement}}</set>
+		</setters>
+	</element>
+	<element name="Returning Weapon" type="Magic Item" source="Tasha’s Cauldron of Everything" id="ID_WOTC_TCOE_INFUSION_ITEM_RETURNING_WEAPON">		
+    <description>
+			<p>This magic weapon grants a +1 bonus to attack and damage rolls made with it, and it returns to the wielder’s hand immediately after it is used to make a ranged attack.</p>
+		</description>
+    <setters>
+			<set name="keywords">infusion, returning</set>
+			<set name="category">Magic Weapons</set>
+			<set name="cost" currency="gp">0</set>
+			<set name="type" addition="a simple or martial weapon with the thrown property">Weapon</set>
+			<set name="rarity">Infusion</set>
+			<set name="enhancement">1</set>
+			<set name="weapon">(ID_INTERNAL_WEAPON_CATEGORY_SIMPLE_MELEE||ID_INTERNAL_WEAPON_CATEGORY_SIMPLE_RANGED||ID_INTERNAL_WEAPON_CATEGORY_MARTIAL_MELEE||ID_INTERNAL_WEAPON_CATEGORY_MARTIAL_RANGED),ID_INTERNAL_WEAPON_PROPERTY_THROWN</set>
+			<set name="name-format">Returning {{parent}} +{{enhancement}}</set>
+		</setters>
+	</element>
+  <element name="Spell-Refueling Ring" type="Magic Item" source="Tasha’s Cauldron of Everything" id="ID_WOTC_TCOE_INFUSION_ITEM_SPELL_REFUELING_RING">
+		<description>
+			<p>While wearing this ring, the creature can recover one expended spell slot as an action. The recovered slot can be of 3rd level or lower. Once used, the ring can't be used again until the next dawn.</p>
+		</description>
+    <setters>
+			<set name="keywords">Spell, Ring, Refueling</set>
+			<set name="category">Rings</set>
+			<set name="cost" currency="gp">0</set>
+			<set name="weight" lb="0">0 lb.</set>
+			<set name="slot">ring</set>
+			<set name="type">Ring</set>
+			<set name="rarity">Infusion</set>
+      <set name="attunement">true</set>
+		</setters>
+	</element>
+  <!--Power Armor-->
+  <element name="Guardian Power Armor" type="Magic Item" source="Tasha’s Cauldron of Everything" id="ID_WOTC_TCOE_MAGIC_ITEM_GUARDIAN_POWER_ARMOR">
+		<description>
+			<p>Your metallurgical pursuits have led to you making armor a conduit for your magic. As an action, you can turn a suit of armor you are wearing into Arcane Armor, provided you have smith's tools in hand.</p>
+			<p class="indent">You gain the following benefits while wearing this armor:</p>
+			<ul>
+				<li>If the armor normally has a Strength requirement, the arcane armor lacks this requirement for you.</li>
+				<li>You can use the arcane armor as a spellcasting focus for your artificer spells.</li>
+				<li>The armor attaches to you and can’t be removed against your will. It also expands to cover your entire body, although you can retract or deploy the helmet as a bonus action. The armor replaces any missing limbs, functioning identically to a limb it replaces.</li>
+				<li>You can doff or don the armor as an action.</li>
+			</ul>
+			<p class="indent">The armor continues to be Arcane Armor until you don another suit of armor or you die.</p>
+      <p>You can customize your Arcane Armor. When you do so, choose one of the following armor models: Guardian or Infiltrator. The model you choose gives you special benefits while you wear it.</p>
+			<p class="indent">Each model includes a special weapon. When you attack with that weapon, you can add your Intelligence modifier, instead of Strength or Dexterity, to the attack and damage rolls.</p>
+			<p class="indent">You can change the armor’s model whenever you finish a short or long rest, provided you have smith’s tools in hand.</p>
+      <p>You design your armor to be in the front line of conflict. It has the following features:</p>
+			<p style="text-indent: -1em; margin-left: 1em"><strong>Thunder Gauntlets.</strong> Each of the armor’s gauntlets counts as a simple melee weapon while you aren’t holding anything in it, and it deals 1d8 thunder damage on a hit. A creature hit by the gauntlet has disadvantage on attack rolls against targets other than you until the start of your next turn, as the armor magically emits a distracting pulse when the creature attacks someone else. </p>
+			<p style="text-indent: -1em; margin-left: 1em"><strong>Defensive Field.</strong> As a bonus action, you can gain temporary hit points equal to your level in this class, replacing any temporary hit points you already have. You lose these temporary hit points if you doff the armor. You can use this bonus action a number of times equal to your proficiency bonus, and you regain all expended uses when you finish a long rest.</p>
+		</description>
+		<setters>
+			<set name="keywords">artificer, armorer, power, guardian</set>
+			<set name="category">Magic Armor</set>
+			<set name="cost" currency="gp">0</set>
+			<set name="slot">body</set>
+			<set name="type" addition="any">Armor</set>
+			<set name="armor">ID_INTERNAL_ARMOR_GROUP_LIGHT|ID_INTERNAL_ARMOR_GROUP_MEDIUM|ID_INTERNAL_ARMOR_GROUP_HEAVY</set>
+			<set name="name-format">Guardian Power {{parent}}</set>
+		</setters>
+	</element>
+  <element name="Gauntlets" type="Weapon" source="Tasha’s Cauldron of Everything" id="ID_WOTC_TCOE_WEAPON_GAUNTLETS">
+		<supports>ID_INTERNAL_WEAPON_CATEGORY_SIMPLE_MELEE, ID_INTERNAL_DAMAGE_TYPE_BLUDGEONING, ID_INTERNAL_WEAPON_PROPERTY_LIGHT, ID_INTERNAL_WEAPON_GROUP_SPECIAL</supports>
+    <description>
+			<p></p>
+		</description>
+		<setters>
+      <set name="keywords">artificer, armorer, gauntlets</set>
+      <set name="category">Weapons</set>
+			<set name="cost" currency="gp">0</set>
+			<set name="weight" lb="2">2 lb.</set>
+			<set name="slot">onehand</set>
+			<set name="damage" type="bludgeoning">1d8</set>
+			<set name="proficiency">ID_PROFICIENCY_WEAPON_PROFICIENCY_GAUNTLETS</set>
+		</setters>
+	</element>
+  <element name="Gauntlets" type="Proficiency" source="Tasha’s Cauldron of Everything" id="ID_PROFICIENCY_WEAPON_PROFICIENCY_GAUNTLETS">
+		<supports>Weapon, Sartial, Melee, ID_INTERNAL_WEAPON_CATEGORY_SIMPLE_MELEE, ID_INTERNAL_DAMAGE_TYPE_BLUDGEONING, ID_INTERNAL_WEAPON_PROPERTY_LIGHT, ID_INTERNAL_WEAPON_PROPERTY_SPECIAL</supports>
+	</element>
+  <element name="Thunder Gauntlets" type="Magic Item" source="Tasha’s Cauldron of Everything" id="ID_WOTC_TCOE_MAGIC_ITEM_THUNDER_GAUNTLETS">
+    <description>
+      <p>These gauntlets allow you to add you intlignce modifier to the attack and damage roll instead of strength or dexterity.</p>
+			<p>Each of the armor’s gauntlets counts as a simple melee weapon while you aren’t holding anything in it, and it deals 1d8 thunder damage on a hit. A creature hit by the gauntlet has disadvantage on attack rolls against targets other than you until the start of your next turn, as the armor magically emits a distracting pulse when the creature attacks someone else.</p>
+		</description>
+		<setters>
+      <set name="keywords">artificer, armorer, gauntlets</set>
+      <set name="category">Magic Weapons</set>
+			<set name="cost" currency="gp">0</set>
+      <set name="rarity">Artificer Feature</set>
+			<set name="slot">onehand</set>
+			<set name="type" addition="gauntlets">Weapon</set>
+      <set name="damage" type="thunder">1d8</set>
+      <set name="weapon">Gauntlets</set>
+		</setters>
+	</element>
+  <element name="Lightning Launcher" type="Magic Item" source="Tasha’s Cauldron of Everything" id="ID_WOTC_TCOE_MAGIC_ITEM_LIGHTNING_LAUNCHER">
+    <description>
+      <p>This launcher allow you to add you intlignce modifier to the attack and damage roll instead of strength or dexterity.</p>
+			<p>A gemlike node appears on one of your armored fists or on the chest (your choice). It counts as a simple ranged weapon, with a normal range of 90 feet and a long range of 300 feet, and it deals 1d6 lightning damage on a hit. Once on each of your turns when you hit a creature with it, you can deal an extra 1d6 lightning damage to that target.</p>
+		</description>
+		<setters>
+      <set name="keywords">artificer, armorer, Launcher</set>
+      <set name="category">Magic Weapons</set>
+			<set name="cost" currency="gp">0</set>
+      <set name="rarity">Artificer Feature</set>
+			<set name="slot">onehand</set>
+			<set name="type" addition="simple ranged weapon">Weapon</set>
+      <set name="damage" type="lightning">1d6</set>
+      <set name="weapon">Crossbow, Hand</set>
+      <set name="range">90/300</set>
+		</setters>
+	</element>	
+	<element name="Infiltrator Power Armor" type="Magic Item" source="Tasha’s Cauldron of Everything" id="ID_WOTC_TCOE_MAGIC_ITEM_INFILTRATOR_POWER_ARMOR">
+		<description>
+      <p>Your metallurgical pursuits have led to you making armor a conduit for your magic. As an action, you can turn a suit of armor you are wearing into Arcane Armor, provided you have smith's tools in hand.</p>
+			<p class="indent">You gain the following benefits while wearing this armor:</p>
+			<ul>
+				<li>If the armor normally has a Strength requirement, the arcane armor lacks this requirement for you.</li>
+				<li>You can use the arcane armor as a spellcasting focus for your artificer spells.</li>
+				<li>The armor attaches to you and can’t be removed against your will. It also expands to cover your entire body, although you can retract or deploy the helmet as a bonus action. The armor replaces any missing limbs, functioning identically to a limb it replaces.</li>
+				<li>You can doff or don the armor as an action.</li>
+			</ul>
+			<p class="indent">The armor continues to be Arcane Armor until you don another suit of armor or you die.</p>
+      <p>You can customize your Arcane Armor. When you do so, choose one of the following armor models: Guardian or Infiltrator. The model you choose gives you special benefits while you wear it.</p>
+			<p class="indent">Each model includes a special weapon. When you attack with that weapon, you can add your Intelligence modifier, instead of Strength or Dexterity, to the attack and damage rolls.</p>
+			<p class="indent">You can change the armor’s model whenever you finish a short or long rest, provided you have smith’s tools in hand.</p>
+      <p>You can customize your armor for subtle undertakings. It has the following features:</p>
+			<p style="text-indent: -1em; margin-left: 1em"><strong>Lightning Launcher.</strong> A gemlike node appears on one of your armored fists or on the chest (your choice). It counts as a simple ranged weapon, with a normal range of 90 feet and a long range of 300 feet, and it deals 1d6 lightning damage on a hit. Once on each of your turns when you hit a creature with it, you can deal an extra 1d6 lightning damage to that target.</p>
+			<p style="text-indent: -1em; margin-left: 1em"><strong>Powered Steps.</strong> Your walking speed increases by 5 feet.</p>
+			<p style="text-indent: -1em; margin-left: 1em"><strong>Dampening Field.</strong> You have advantage on Dexterity (Stealth) checks. If the armor normally imposes disadvantage on such checks, the advantage and disadvantage cancel each other, as normal.</p>
+    </description>
+		<setters>
+			<set name="keywords">artificer, armorer, power, infiltrator</set>
+			<set name="category">Magic Armor</set>
+			<set name="cost" currency="gp">0</set>
+			<set name="weight" lb="0">—</set>
+			<set name="slot">body</set>
+			<set name="type" addition="any">Armor</set>
+			<set name="armor">ID_INTERNAL_ARMOR_GROUP_LIGHT|ID_INTERNAL_ARMOR_GROUP_MEDIUM|ID_INTERNAL_ARMOR_GROUP_HEAVY</set>
+			<set name="name-format">Infiltrator Power {{parent}}</set>
+		</setters>
+		<rules>
+			<grant type="Grants" id="ID_INTERNAL_GRANTS_STEALTH_ADVANTAGE" />
+			<stat name="speed" value="5" />
+		</rules>
+	</element>
+	<element name="Perfected Guardian Power Armor" type="Magic Item" source="Tasha’s Cauldron of Everything" id="ID_WOTC_TCOE_MAGIC_ITEM_GUARDIAN_PERFECTED_POWER_ARMOR">
+		<description>
+			<p>Your metallurgical pursuits have led to you making armor a conduit for your magic. As an action, you can turn a suit of armor you are wearing into Arcane Armor, provided you have smith's tools in hand.</p>
+			<p class="indent">You gain the following benefits while wearing this armor:</p>
+			<ul>
+				<li>If the armor normally has a Strength requirement, the arcane armor lacks this requirement for you.</li>
+				<li>You can use the arcane armor as a spellcasting focus for your artificer spells.</li>
+				<li>The armor attaches to you and can’t be removed against your will. It also expands to cover your entire body, although you can retract or deploy the helmet as a bonus action. The armor replaces any missing limbs, functioning identically to a limb it replaces.</li>
+				<li>You can doff or don the armor as an action.</li>
+			</ul>
+			<p class="indent">The armor continues to be Arcane Armor until you don another suit of armor or you die.</p>
+      <p>You can customize your Arcane Armor. When you do so, choose one of the following armor models: Guardian or Infiltrator. The model you choose gives you special benefits while you wear it.</p>
+			<p class="indent">Each model includes a special weapon. When you attack with that weapon, you can add your Intelligence modifier, instead of Strength or Dexterity, to the attack and damage rolls.</p>
+			<p class="indent">You can change the armor’s model whenever you finish a short or long rest, provided you have smith’s tools in hand.</p>
+      <p>You design your armor to be in the front line of conflict. It has the following features:</p>
+			<p style="text-indent: -1em; margin-left: 1em"><strong>Thunder Gauntlets.</strong> Each of the armor’s gauntlets counts as a simple melee weapon while you aren’t holding anything in it, and it deals 1d8 thunder damage on a hit. A creature hit by the gauntlet has disadvantage on attack rolls against targets other than you until the start of your next turn, as the armor magically emits a distracting pulse when the creature attacks someone else. </p>
+			<p style="text-indent: -1em; margin-left: 1em"><strong>Defensive Field.</strong> As a bonus action, you can gain temporary hit points equal to your level in this class, replacing any temporary hit points you already have. You lose these temporary hit points if you doff the armor. You can use this bonus action a number of times equal to your proficiency bonus, and you regain all expended uses when you finish a long rest.</p>
+      <p class="indent">When a Huge or smaller creature you can see ends its turn within 30 feet of you, you can use your reaction to magically force the creature to make a Strength saving throw against your spell save DC, pulling the creature up to 30 feet toward you to an unoccupied space. If you pull the target to a space within 5 feet of you, you can make a melee weapon attack against it as part of this reaction.</p>
+      <p class="indent">You can use this reaction a number of times equal to your proficiency bonus, and you regain all expended uses of it when you finish a long rest.</p>
+    </description>
+		<setters>
+			<set name="keywords">artificer, armorer, power, guardian</set>
+			<set name="category">Magic Armor</set>
+			<set name="cost" currency="gp">0</set>
+			<set name="slot">body</set>
+			<set name="type" addition="any">Armor</set>
+			<set name="armor">ID_INTERNAL_ARMOR_GROUP_LIGHT|ID_INTERNAL_ARMOR_GROUP_MEDIUM|ID_INTERNAL_ARMOR_GROUP_HEAVY</set>
+			<set name="name-format">Perfected Guardian Power {{parent}}</set>
+		</setters>
+	</element>
+  <element name="Perfected Infiltrator Power Armor" type="Magic Item" source="Tasha’s Cauldron of Everything" id="ID_WOTC_TCOE_MAGIC_ITEM_PERFECTED_INFILTRATOR_POWER_ARMOR">
+		<description>
+      <p>Your metallurgical pursuits have led to you making armor a conduit for your magic. As an action, you can turn a suit of armor you are wearing into Arcane Armor, provided you have smith's tools in hand.</p>
+			<p class="indent">You gain the following benefits while wearing this armor:</p>
+			<ul>
+				<li>If the armor normally has a Strength requirement, the arcane armor lacks this requirement for you.</li>
+				<li>You can use the arcane armor as a spellcasting focus for your artificer spells.</li>
+				<li>The armor attaches to you and can’t be removed against your will. It also expands to cover your entire body, although you can retract or deploy the helmet as a bonus action. The armor replaces any missing limbs, functioning identically to a limb it replaces.</li>
+				<li>You can doff or don the armor as an action.</li>
+			</ul>
+			<p class="indent">The armor continues to be Arcane Armor until you don another suit of armor or you die.</p>
+      <p>You can customize your Arcane Armor. When you do so, choose one of the following armor models: Guardian or Infiltrator. The model you choose gives you special benefits while you wear it.</p>
+			<p class="indent">Each model includes a special weapon. When you attack with that weapon, you can add your Intelligence modifier, instead of Strength or Dexterity, to the attack and damage rolls.</p>
+			<p class="indent">You can change the armor’s model whenever you finish a short or long rest, provided you have smith’s tools in hand.</p>
+      <p>You can customize your armor for subtle undertakings. It has the following features:</p>
+			<p style="text-indent: -1em; margin-left: 1em"><strong>Lightning Launcher.</strong> A gemlike node appears on one of your armored fists or on the chest (your choice). It counts as a simple ranged weapon, with a normal range of 90 feet and a long range of 300 feet, and it deals 1d6 lightning damage on a hit. Once on each of your turns when you hit a creature with it, you can deal an extra 1d6 lightning damage to that target.</p>
+			<p style="text-indent: -1em; margin-left: 1em"><strong>Powered Steps.</strong> Your walking speed increases by 5 feet.</p>
+			<p style="text-indent: -1em; margin-left: 1em"><strong>Dampening Field.</strong> You have advantage on Dexterity (Stealth) checks. If the armor normally imposes disadvantage on such checks, the advantage and disadvantage cancel each other, as normal.</p>
+      <p class="indent">Any creature that takes lightning damage from your Lightning Launcher glimmers with magical light until the start of your next turn. The glimmering creature sheds dim light in a 5-foot radius, and it has disadvantage on attack rolls against you, as the light jolts it if it attacks you. In addition, the next attack roll against it has advantage, and if that attack hits, the target takes an extra 1d6 lightning damage.</p>
+    </description>
+		<setters>
+			<set name="keywords">artificer, armorer, power, infiltrator</set>
+			<set name="category">Magic Armor</set>
+			<set name="cost" currency="gp">0</set>
+			<set name="weight" lb="0">—</set>
+			<set name="slot">body</set>
+			<set name="type" addition="any">Armor</set>
+			<set name="armor">ID_INTERNAL_ARMOR_GROUP_LIGHT|ID_INTERNAL_ARMOR_GROUP_MEDIUM|ID_INTERNAL_ARMOR_GROUP_HEAVY</set>
+			<set name="name-format">Perfected Infiltrator Power {{parent}}</set>
+		</setters>
+		<rules>
+			<grant type="Grants" id="ID_INTERNAL_GRANTS_STEALTH_ADVANTAGE" />
+			<stat name="speed" value="5" />
+		</rules>
+	</element>
+</elements>
