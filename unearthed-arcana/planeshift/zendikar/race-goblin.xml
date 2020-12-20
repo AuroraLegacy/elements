@@ -4,7 +4,7 @@
 		<name>Goblin</name>
 		<description>Goblin Race from Plane Shift: Zendikar</description>
 		<author url="https://media.wizards.com/2016/downloads/magic/Plane%20Shift%20Zendikar.pdf">Planeshift: Zendikar</author>
-		<update version="0.0.1">
+		<update version="0.0.2">
 			<file name="race-goblin.xml" url="https://raw.githubusercontent.com/AuroraLegacy/elements/master/unearthed-arcana/planeshift/zendikar/race-goblin.xml" />
 		</update>
 	</info>
@@ -31,8 +31,9 @@
 			<stat name="innate speed" value="25" bonus="base" />
 			<grant type="Size" id="ID_SIZE_SMALL" />
 			<grant type="Vision" id="ID_VISION_DARKVISION" />
-			<grant type="Language" id="ID_LANGUAGE_COMMON" />
-			<grant type="Language" id="ID_LANGUAGE_GOBLIN" />
+			<grant type="Language" id="ID_LANGUAGE_COMMON" requirements="!ID_WOTC_TCOE_OPTION_CUSTOMIZED_LANGUAGE" />
+			<grant type="Language" id="ID_LANGUAGE_GOBLIN" requirements="!ID_WOTC_TCOE_OPTION_CUSTOMIZED_LANGUAGE" />
+			<select type="Language" name="Customized Language" supports="Custom Race Language" number="2" requirements="ID_WOTC_TCOE_OPTION_CUSTOMIZED_LANGUAGE" />
 			<select type="Sub Race" name="Goblin Subrace" supports="Plane Shift Goblin Subrace" />
 		</rules>
 	</element>
@@ -48,7 +49,8 @@
 		</description>
 		<sheet display="false" />
 		<rules>
-			<stat name="constitution" value="2" />
+			<stat name="constitution" value="2" requirements="!ID_WOTC_TCOE_OPTION_CUSTOMIZED_ASI" />
+			<select type="Ability Score Improvement" name="Custom Ability Score Improvement +2 (Grotag Tribe Goblin)" supports="Custom Ability Score Increase 2" requirements="ID_WOTC_TCOE_OPTION_CUSTOMIZED_ASI" />
 			<grant type="Racial Trait" id="ID_WOTC_PSZ_RACIAL_TRAIT_GOBLIN_GRIT" />
 			<grant type="Racial Trait" id="ID_WOTC_PSZ_RACIAL_TRAIT_GOBLIN_GROTAG_TAMER" />
 		</rules>
@@ -61,7 +63,8 @@
 			<description>You have proficiency in the Animal Handling skill.</description>
 		</sheet>
 		<rules>
-			<grant type="Proficiency" id="ID_PROFICIENCY_SKILL_ANIMALHANDLING" />
+			<grant type="Proficiency" id="ID_PROFICIENCY_SKILL_ANIMALHANDLING" requirements="!ID_WOTC_TCOE_OPTION_CUSTOMIZED_PROFICIENCY" />
+			<select type="Proficiency" name="Customized Skill Proficiency"  supports="Skill" requirements="ID_WOTC_TCOE_OPTION_CUSTOMIZED_PROFICIENCY" />
 		</rules>
 	</element>
 
@@ -76,7 +79,8 @@
 		</description>
 		<sheet display="false" />
 		<rules>
-			<stat name="constitution" value="2" />
+			<stat name="constitution" value="2" requirements="!ID_WOTC_TCOE_OPTION_CUSTOMIZED_ASI" />
+			<select type="Ability Score Improvement" name="Custom Ability Score Improvement +2 (Lavastep Tribe Goblin)" supports="Custom Ability Score Increase 2" requirements="ID_WOTC_TCOE_OPTION_CUSTOMIZED_ASI" />
 			<grant type="Racial Trait" id="ID_WOTC_PSZ_RACIAL_TRAIT_GOBLIN_GRIT" />
 			<grant type="Racial Trait" id="ID_WOTC_PSZ_RACIAL_TRAIT_GOBLIN_LAVASTEP_GRIT" />
 		</rules>
@@ -101,7 +105,8 @@
 		</description>
 		<sheet display="false" />
 		<rules>
-			<stat name="constitution" value="2" />
+			<stat name="constitution" value="2" requirements="!ID_WOTC_TCOE_OPTION_CUSTOMIZED_ASI" />
+			<select type="Ability Score Improvement" name="Custom Ability Score Improvement +2 (Tuktuk Tribe Goblin)" supports="Custom Ability Score Increase 2" requirements="ID_WOTC_TCOE_OPTION_CUSTOMIZED_ASI" />
 			<grant type="Racial Trait" id="ID_WOTC_PSZ_RACIAL_TRAIT_GOBLIN_GRIT" />
 			<grant type="Racial Trait" id="ID_WOTC_PSZ_RACIAL_TRAIT_GOBLIN_TUKTUK_CUNNING" />
 		</rules>
@@ -114,7 +119,8 @@
 			<description>You have proficiency with thieves’ tools.</description>
 		</sheet>
 		<rules>
-			<grant type="Proficiency" id="ID_PROFICIENCY_TOOL_PROFICIENCY_THIEVES_TOOLS" />
+			<grant type="Proficiency" id="ID_PROFICIENCY_TOOL_PROFICIENCY_THIEVES_TOOLS" requirements="!ID_WOTC_TCOE_OPTION_CUSTOMIZED_PROFICIENCY" />
+			<select type="Proficiency" name="Simple Weapon or Tool, Tuktuk Cunning" supports="Simple||Tool" requirements="ID_WOTC_TCOE_OPTION_CUSTOMIZED_PROFICIENCY" />
 		</rules>
 	</element>
 
@@ -145,7 +151,8 @@
 		</description>
 		<sheet alt="Goblin" display="false" />
 		<rules>
-			<stat name="dexterity" value="2" />
+			<stat name="dexterity" value="2" requirements="!ID_WOTC_TCOE_OPTION_CUSTOMIZED_ASI" />
+			<select type="Ability Score Improvement" name="Custom Ability Score Improvement +2 (Ixalan Goblin)" supports="Custom Ability Score Increase 2" requirements="ID_WOTC_TCOE_OPTION_CUSTOMIZED_ASI" />
 			<grant type="Racial Trait" id="ID_WOTC_PSI_RACIAL_TRAIT_GOBLIN_AGILE_CLIMBER" />
 		</rules>
 	</element>

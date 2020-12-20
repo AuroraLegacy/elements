@@ -4,7 +4,7 @@
 		<name>Naga</name>
 		<description>Naga Race from Plane Shift: Amonkhet</description>
 		<author url="https://media.wizards.com/2017/downloads/magic/plane-shift_amonkhet.pdf">Wizard of the Coast</author>
-		<update version="0.0.2">
+		<update version="0.0.3">
 			<file name="race-naga.xml" url="https://raw.githubusercontent.com/AuroraLegacy/elements/master/unearthed-arcana/planeshift/amonkhet/race-naga.xml" />
 		</update>
 	</info>
@@ -29,16 +29,19 @@
 		</description>
 		<sheet display="false" />
 		<rules>
-			<stat name="constitution" value="2" />
-			<stat name="intelligence" value="1" />
+			<stat name="constitution" value="2" requirements="!ID_WOTC_TCOE_OPTION_CUSTOMIZED_ASI" />
+			<stat name="intelligence" value="1" requirements="!ID_WOTC_TCOE_OPTION_CUSTOMIZED_ASI" />
+			<select type="Ability Score Improvement" name="Custom Ability Score Improvement +2 (Naga)" supports="Custom Ability Score Increase 2" requirements="ID_WOTC_TCOE_OPTION_CUSTOMIZED_ASI" />
+			<select type="Ability Score Improvement" name="Custom Ability Score Improvement +1 (Naga)" supports="Custom Ability Score Increase 1" requirements="ID_WOTC_TCOE_OPTION_CUSTOMIZED_ASI" />
 			<stat name="innate speed" value="30" bonus="base" />
 			<grant type="Size" id="ID_SIZE_MEDIUM" />
 			<grant type="Racial Trait" id="ID_WOTC_PSA_RACIAL_TRAIT_NAGA_NATURAL_WEAPONS" />
 			<grant type="Racial Trait" id="ID_WOTC_PSA_RACIAL_TRAIT_NAGA_SPEED_BURST" />
 			<grant type="Racial Trait" id="ID_WOTC_PSA_RACIAL_TRAIT_NAGA_POISON_IMMUNITY" />
 			<grant type="Racial Trait" id="ID_WOTC_PSA_RACIAL_TRAIT_NAGA_POISON_AFFINITY" />
-			<grant type="Language" id="ID_LANGUAGE_COMMON" />
-			<grant type="Language" id="ID_WOTC_PSA_LANGUAGE_NAGA" />
+			<grant type="Language" id="ID_LANGUAGE_COMMON" requirements="!ID_WOTC_TCOE_OPTION_CUSTOMIZED_LANGUAGE" />
+			<grant type="Language" id="ID_WOTC_PSA_LANGUAGE_NAGA" requirements="!ID_WOTC_TCOE_OPTION_CUSTOMIZED_LANGUAGE" />
+			<select type="Language" name="Customized Language" supports="Custom Race Language||PS Naga Language" number="2" requirements="ID_WOTC_TCOE_OPTION_CUSTOMIZED_LANGUAGE" />
 		</rules>
 	</element>
 	<element name="Natural Weapons" type="Racial Trait" source="Plane Shift: Amonkhet" id="ID_WOTC_PSA_RACIAL_TRAIT_NAGA_NATURAL_WEAPONS">
@@ -76,7 +79,8 @@
 			<description>You gain proficiency with the poisoner’s kit.</description>
 		</sheet>
 		<rules>
-			<grant type="Proficiency" id="ID_PROFICIENCY_TOOL_PROFICIENCY_POISONERS_KIT" />
+			<grant type="Proficiency" id="ID_PROFICIENCY_TOOL_PROFICIENCY_POISONERS_KIT" requirements="!ID_WOTC_TCOE_OPTION_CUSTOMIZED_PROFICIENCY" />
+			<select type="Proficiency" name="Simple Weapon or Tool" supports="Simple||Tool" requirements="ID_WOTC_TCOE_OPTION_CUSTOMIZED_PROFICIENCY" />
 		</rules>
 	</element>
 	<element name="Speed Burst" type="Racial Trait" source="Plane Shift: Amonkhet" id="ID_WOTC_PSA_RACIAL_TRAIT_NAGA_SPEED_BURST">
@@ -90,6 +94,7 @@
 
 	<!-- Naga Language -->
 	<element name="Naga" type="Language" source="Plane Shift: Amonkhet" id="ID_WOTC_PSA_LANGUAGE_NAGA">
+		<supports>PS Naga Language</supports>
 		<description>
 			<p>Typically spoken by Nagas.</p>
 		</description>
