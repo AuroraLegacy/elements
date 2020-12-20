@@ -2,7 +2,7 @@
 <elements>
 	<info>
 		<name>Half-Elf</name>
-		<update version="0.1.9">
+		<update version="0.2.0">
 			<file name="race-halfelf.xml" url="https://raw.githubusercontent.com/AuroraLegacy/elements/master/core/players-handbook/races/race-halfelf.xml" />
 		</update>
 	</info>
@@ -38,13 +38,16 @@
 			<set name="weight" modifier="2d4">110 lb.</set>
 		</setters>
 		<rules>
-			<stat name="charisma" value="2" requirements="!ID_WOTC_WGTE_GRANTS_DARKMARKED,!ID_INTERNAL_GRANTS_DRAGONMARK"/>
-			<select type="Racial Trait" name="Ability Score Increase (Half-Elf)" supports="Half-Elf" number="2" requirements="!ID_WOTC_WGTE_GRANTS_DARKMARKED,!ID_INTERNAL_GRANTS_DRAGONMARK"/>
+			<stat name="charisma" value="2" requirements="!ID_WOTC_WGTE_GRANTS_DARKMARKED,!ID_INTERNAL_GRANTS_DRAGONMARK,!ID_WOTC_TCOE_OPTION_CUSTOMIZED_ASI"/>
+			<select type="Racial Trait" name="Ability Score Increase (Half-Elf)" supports="Half-Elf" number="2" requirements="!ID_WOTC_WGTE_GRANTS_DARKMARKED,!ID_INTERNAL_GRANTS_DRAGONMARK,!ID_WOTC_TCOE_OPTION_CUSTOMIZED_ASI"/>
+			<select type="Ability Score Improvement" name="Custom Ability Score Improvement +2 (Half-Elf)" supports="Custom Ability Score Increase 2" requirements="!ID_WOTC_WGTE_GRANTS_DARKMARKED,!ID_INTERNAL_GRANTS_DRAGONMARK,ID_WOTC_TCOE_OPTION_CUSTOMIZED_ASI" />
+			<select type="Ability Score Improvement" name="Custom Ability Score Improvement +1 (Half-Elf)" number="2" supports="Custom Ability Score Increase 1" requirements="!ID_WOTC_WGTE_GRANTS_DARKMARKED,!ID_INTERNAL_GRANTS_DRAGONMARK,ID_WOTC_TCOE_OPTION_CUSTOMIZED_ASI" />
 			<stat name="innate speed" value="30" bonus="base"/>
 			<grant type="Size" id="ID_SIZE_MEDIUM" />
 			<grant type="Vision" id="ID_VISION_DARKVISION" />
-			<grant type="Language" id="ID_LANGUAGE_COMMON" />
-			<grant type="Language" id="ID_LANGUAGE_ELVISH" />
+			<grant type="Language" id="ID_LANGUAGE_COMMON" requirements="!ID_WOTC_TCOE_OPTION_CUSTOMIZED_LANGUAGE" />
+			<grant type="Language" id="ID_LANGUAGE_ELVISH" requirements="!ID_WOTC_TCOE_OPTION_CUSTOMIZED_LANGUAGE" />
+			<select type="Language" name="Customized Language" supports="Custom Race Language" number="2" requirements="ID_WOTC_TCOE_OPTION_CUSTOMIZED_LANGUAGE" />
 			<select type="Language" name="Language (Half-Elf)" supports="Standard||Exotic" requirements="!ID_WOTC_WGTE_GRANTS_DARKMARKED"/>
 			<grant type="Racial Trait" id="ID_RACIAL_TRAIT_HALFELF_FEY_ANCESTRY" />
 			<grant type="Racial Trait" id="ID_RACIAL_TRAIT_SKILL_VERSATILITY" requirements="!(ID_WOTC_SCAG_GRANTS_VARIANT_HALF_ELF||ID_WOTC_WGTE_GRANTS_DARKMARKED||ID_INTERNAL_GRANTS_DRAGONMARK)"/>
@@ -65,7 +68,8 @@
 		</description>
 		<sheet display="false"/>
 		<rules>
-			<select type="Proficiency" name="Skill Proficiency (Half-Elf)" supports="Skill" number="2" />
+			<select type="Proficiency" name="Skill Proficiency (Half-Elf)" supports="Skill" number="2" requirements="!ID_WOTC_TCOE_OPTION_CUSTOMIZED_PROFICIENCY" />
+			<select type="Proficiency" name="Customized Skill Proficiency, Skill Versatility" number="2" supports="Skill" requirements="ID_WOTC_TCOE_OPTION_CUSTOMIZED_PROFICIENCY" />
 		</rules>
 	</element>
 

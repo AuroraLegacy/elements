@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<elements>
+	<info>
+		<update version="0.0.1">
+			<file name="race-custom-lineage.xml" url="https://raw.githubusercontent.com/AuroraLegacy/elements/master/supplements/tashas-cauldron-of-everything/race-custom-lineage.xml" />
+		</update>
+	</info>
+
+	<element name="Custom Lineage" type="Race" source="Tasha’s Cauldron of Everything" id="ID_WOTC_TCOE_RACE_CUSTOM_LINEAGE">
+		<description>
+			<p class="flavor">Instead of choosing one of the game's races for your character at 1st level, you can use the following traits to represent your character's lineage, giving you full control over how your character's origin shaped them:</p>
+			<p>
+				<span class="feature">Creature Type.</span>You are a humanoid. You determine your appearance and whether you resemble any of your kin.<br />
+				<span class="feature">Size.</span>You are Small or Medium (your choice).<br />
+				<span class="feature">Speed.</span>Your base walking speed is 30 feet.<br />
+				<span class="feature">Ability Score Increase.</span>One ability score of your choice increases by 2.<br />
+				<span class="feature">Feat.</span> You gain one feat of your choice for which you qualify.<br />
+				<span class="feature">Variable Trait.</span>You gain one of the folowing options of your choice: (a) darkvision with a range of 60 feet or (b) proficiency in one skill of your choice.<br />
+				<span class="feature">Languages.</span>You can speak, read, and write Common and one other language that you and your DM agree is appropriate for your character.<br />
+			</p>
+		</description>
+		<sheet display="false" />
+		<rules>
+			<select type="Racial Trait" name="Size" supports="Custom Lineage Size" />
+			<stat name="innate speed" value="30" bonus="base" />
+			<select type="Ability Score Improvement" name="Ability Score Improvement +2 (Custom Lineage)" supports="Custom Ability Score Increase 2" />
+			<select type="Feat" name="Feat (Custom Lineage)" />
+			<select type="Racial Trait" name="Variable Trait" supports="Custom Lineage Variable Trait" />
+			<grant type="Language" id="ID_LANGUAGE_COMMON" />
+			<select type="Language" name="Language (Custom Lineage)" supports="Standard||Exotic" />
+		</rules>
+	</element>
+
+
+	<!-- Size -->
+	<element name="Small" type="Racial Trait" source="Tasha’s Cauldron of Everything" id="ID_WOTC_TCOE_RACIAL_TRAIT_SMALL">
+		<supports> Custom Lineage Size </supports>
+		<description>
+			<p>Your size is Small.</p>
+		</description>
+		<sheet display="false" />
+		<compendium display="false" />
+		<rules>
+			<grant type="Size" id="ID_SIZE_SMALL" />
+		</rules>
+	</element>
+
+	<element name="Medium" type="Racial Trait" source="Tasha’s Cauldron of Everything" id="ID_WOTC_TCOE_RACIAL_TRAIT_MEDIUM">
+		<supports> Custom Lineage Size </supports>
+		<description>
+			<p>Your size is Medium.</p>
+		</description>
+		<sheet display="false" />
+		<compendium display="false" />
+		<rules>
+			<grant type="Size" id="ID_SIZE_MEDIUM" />
+		</rules>
+	</element>
+
+	<!-- Variable Trait -->
+	<element name="Skill Proficiency" type="Racial Trait" source="Tasha’s Cauldron of Everything" id="ID_WOTC_TCOE_RACIAL_TRAIT_SKILL_PROFIIENCY">
+		<supports> Custom Lineage Variable Trait </supports>
+		<description>
+			<p>Proficiency in one skill of your choice.</p>
+		</description>
+		<sheet display="false" />
+		<compendium display="false" />
+		<rules>
+			<select type="Proficiency" name="Skill (Custom Lineage)" supports="Skill" number="1" />
+		</rules>
+	</element>
+
+	<element name="Darkvision" type="Racial Trait" source="Tasha’s Cauldron of Everything" id="ID_WOTC_TCOE_RACIAL_TRAIT_DARKVISION">
+		<supports> Custom Lineage Variable Trait </supports>
+		<description>
+			<p>Darkvision with a range of 60 feet.</p>
+		</description>
+		<sheet display="false" />
+		<compendium display="false" />
+		<rules>
+			<grant type="Vision" id="ID_VISION_DARKVISION" />
+		</rules>
+	</element>
+</elements>

@@ -4,7 +4,7 @@
 		<name>Unearthed Arcana: Elf Subraces</name>
 		<description>When you choose the subrace of your elf character, you can choose one of the following options, in addition to those in the <i>Player’s Handbook</i>.</description>
 		<author url="http://dnd.wizards.com/articles/unearthed-arcana/elf-subraces">Wizards of the Coast</author>
-		<update version="0.0.5">
+		<update version="0.0.6">
 			<file name="20171113.xml" url="https://raw.githubusercontent.com/AuroraLegacy/elements/master/unearthed-arcana/2017/20171113.xml" />
 		</update>
 	</info>
@@ -39,9 +39,13 @@
 		</setters>
 		<rules>
 			<stat name="innate speed:fly" value="30" bonus="base" equipped="![armor:medium],![armor:heavy]" />
-			<grant type="Language" id="ID_MM_LANGUAGE_AURAN" />
+			<grant type="Language" id="ID_MM_LANGUAGE_AURAN" requirements="!ID_WOTC_TCOE_OPTION_CUSTOMIZED_LANGUAGE" />
+			<select type="Language" name="Customized Language" supports="Custom Race Language||Avariel Language" requirements="ID_WOTC_TCOE_OPTION_CUSTOMIZED_LANGUAGE" />
 		</rules>
-  	</element>  
+  	</element>
+	<append id="ID_MM_LANGUAGE_AURAN">
+		<supports>Avariel Language</supports>
+	</append>
 	<element name="Grugach" type="Sub Race" source="Unearthed Arcana: Elf Subraces" id="ID_WOTC_UA20171113_SUB_RACE_GRUGACH">
 		<supports>Elf</supports>
 		<description>
@@ -61,10 +65,12 @@
 	  		<set name="weight" modifier="1d6">75 lb.</set>
 		</setters>
 		<rules>
-			<stat name="strength" value="1" />
+			<stat name="strength" value="1" requirements="!ID_WOTC_TCOE_OPTION_CUSTOMIZED_ASI" />
+			<select type="Ability Score Improvement" name="Custom Ability Score Improvement +1 (Grugach)" supports="Custom Ability Score Increase 1" requirements="ID_WOTC_TCOE_OPTION_CUSTOMIZED_ASI" />
 			<grant type="Racial Trait" name="ID_WOTC_UA20171113_RACIAL_TRAIT_GRUGACH_WEAPON_TRAINING" />
 			<grant type="Racial Trait" name="ID_WOTC_UA20171113_RACIAL_TRAIT_GRUGACH_CANTRIP" />
-			<grant type="Language" id="ID_LANGUAGE_SYLVAN" />
+			<grant type="Language" id="ID_LANGUAGE_SYLVAN" requirements="!ID_WOTC_TCOE_OPTION_CUSTOMIZED_LANGUAGE" />
+			<select type="Language" name="Customized Language" supports="Custom Race Language" requirements="ID_WOTC_TCOE_OPTION_CUSTOMIZED_LANGUAGE" />
 		</rules>
   	</element>
 	<element name="Grugach Weapon Training" type="Racial Trait" source="Unearthed Arcana: Elf Subraces" id="ID_WOTC_UA20171113_RACIAL_TRAIT_GRUGACH_WEAPON_TRAINING">
@@ -73,10 +79,12 @@
 		</description>
 		<sheet display="false" />
 		<rules>
-			<grant type="Proficiency" name="ID_PROFICIENCY_WEAPON_PROFICIENCY_SPEAR" />
-			<grant type="Proficiency" name="ID_PROFICIENCY_WEAPON_PROFICIENCY_SHORTBOW" />
-			<grant type="Proficiency" name="ID_PROFICIENCY_WEAPON_PROFICIENCY_LONGBOW" />
-			<grant type="Proficiency" name="ID_PROFICIENCY_WEAPON_PROFICIENCY_NET" />
+			<grant type="Proficiency" name="ID_PROFICIENCY_WEAPON_PROFICIENCY_SPEAR" requirements="!ID_WOTC_TCOE_OPTION_CUSTOMIZED_PROFICIENCY" />
+			<grant type="Proficiency" name="ID_PROFICIENCY_WEAPON_PROFICIENCY_SHORTBOW" requirements="!ID_WOTC_TCOE_OPTION_CUSTOMIZED_PROFICIENCY" />
+			<grant type="Proficiency" name="ID_PROFICIENCY_WEAPON_PROFICIENCY_LONGBOW" requirements="!ID_WOTC_TCOE_OPTION_CUSTOMIZED_PROFICIENCY" />
+			<grant type="Proficiency" name="ID_PROFICIENCY_WEAPON_PROFICIENCY_NET" requirements="!ID_WOTC_TCOE_OPTION_CUSTOMIZED_PROFICIENCY" />
+			<select type="Proficiency" name="Simple Weapon or Tool (Grugach Weapon Training)" number="2" supports="Simple||Tool" requirements="ID_WOTC_TCOE_OPTION_CUSTOMIZED_PROFICIENCY" />
+			<select type="Proficiency" name="Simple/Martial Weapon or Tool (Grugach Weapon Training)" number="2" supports="Weapon||Tool" requirements="ID_WOTC_TCOE_OPTION_CUSTOMIZED_PROFICIENCY" />
 		</rules>
   	</element>
 	<element name="Cantrip" type="Racial Trait" source="Unearthed Arcana: Elf Subraces" id="ID_WOTC_UA20171113_RACIAL_TRAIT_GRUGACH_CANTRIP">
