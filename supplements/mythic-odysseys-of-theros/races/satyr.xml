@@ -2,7 +2,7 @@
 <elements>
 	<info>
 		<name>Satyr</name>
-		<update version="0.0.2">
+		<update version="0.0.3">
 			<file name="satyr.xml" url="https://raw.githubusercontent.com/AuroraLegacy/elements/master/supplements/mythic-odysseys-of-theros/races/satyr.xml" />
 		</update>
 	</info>
@@ -60,8 +60,10 @@
 		</setters>
 		<sheet display="false" />
 		<rules>
-			<stat name="charisma" value="2" />
-			<stat name="dexterity" value="1" />
+			<stat name="charisma" value="2" requirements="!ID_WOTC_TCOE_OPTION_CUSTOMIZED_ASI" />
+			<stat name="dexterity" value="1" requirements="!ID_WOTC_TCOE_OPTION_CUSTOMIZED_ASI" />
+			<select type="Ability Score Improvement" name="Custom Ability Score Improvement +2 (Satyr)" supports="Custom Ability Score Increase 2" requirements="ID_WOTC_TCOE_OPTION_CUSTOMIZED_ASI" />
+			<select type="Ability Score Improvement" name="Custom Ability Score Improvement +1 (Satyr)" supports="Custom Ability Score Increase 1" requirements="ID_WOTC_TCOE_OPTION_CUSTOMIZED_ASI" />
 			<grant type="Size" id="ID_SIZE_MEDIUM" />
 			<stat name="innate speed" value="35" bonus="base" />
 			<grant type="Racial Trait" id="ID_WOTC_MOOT_RACIAL_TRAIT_SATYR_FEY" />
@@ -69,8 +71,9 @@
 			<grant type="Racial Trait" id="ID_WOTC_MOOT_RACIAL_TRAIT_SATYR_MAGIC_RESISTANCE" />
 			<grant type="Racial Trait" id="ID_WOTC_MOOT_RACIAL_TRAIT_SATYR_MIRTHFUL_LEAPS" />
 			<grant type="Racial Trait" id="ID_WOTC_MOOT_RACIAL_TRAIT_SATYR_REVELER" />
-			<grant type="Language" id="ID_LANGUAGE_COMMON" />
-			<grant type="Language" id="ID_LANGUAGE_SYLVAN" />
+			<grant type="Language" id="ID_LANGUAGE_COMMON" requirements="!ID_WOTC_TCOE_OPTION_CUSTOMIZED_LANGUAGE" />
+			<grant type="Language" id="ID_LANGUAGE_SYLVAN" requirements="!ID_WOTC_TCOE_OPTION_CUSTOMIZED_LANGUAGE" />
+			<select type="Language" name="Customized Language" supports="Custom Race Language" number="2" requirements="ID_WOTC_TCOE_OPTION_CUSTOMIZED_LANGUAGE" />
 		</rules>
 	</element>
 	<element name="Fey" type="Racial Trait" source="Mythic Odysseys of Theros" id="ID_WOTC_MOOT_RACIAL_TRAIT_SATYR_FEY">
@@ -113,9 +116,11 @@
 			<description>You have proficiency in the Performance and Persuasion skills, and you have proficiency with one musical instrument of your choice.</description>
 		</sheet>
 		<rules>
-			<grant type="Proficiency" id="ID_PROFICIENCY_SKILL_PERFORMANCE" />
-			<grant type="Proficiency" id="ID_PROFICIENCY_SKILL_PERSUASION" />
-			<select type="Proficiency" name="Musical Instrument Proficiency, Reveler" supports="Musical Instrument" />
+			<grant type="Proficiency" id="ID_PROFICIENCY_SKILL_PERFORMANCE" requirements="!ID_WOTC_TCOE_OPTION_CUSTOMIZED_PROFICIENCY" />
+			<grant type="Proficiency" id="ID_PROFICIENCY_SKILL_PERSUASION" requirements="!ID_WOTC_TCOE_OPTION_CUSTOMIZED_PROFICIENCY" />
+			<select type="Proficiency" name="Customized Skill Proficiency, Reveler" supports="Skill" number="2" requirements="ID_WOTC_TCOE_OPTION_CUSTOMIZED_PROFICIENCY" />
+			<select type="Proficiency" name="Musical Instrument Proficiency, Reveler" supports="Musical Instrument" requirements="!ID_WOTC_TCOE_OPTION_CUSTOMIZED_PROFICIENCY" />
+			<select type="Proficiency" name="Simple Weapon or Tool, Reveler" supports="Simple||Tool" requirements="ID_WOTC_TCOE_OPTION_CUSTOMIZED_PROFICIENCY" />
 		</rules>
 	</element>	
 </elements>

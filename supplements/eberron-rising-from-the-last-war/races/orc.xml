@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <elements>
 	<info>
-		<update version="0.0.2">
+		<update version="0.0.3">
 			<file name="orc.xml" url="https://raw.githubusercontent.com/AuroraLegacy/elements/master/supplements/eberron-rising-from-the-last-war/races/orc.xml" />
 		</update>
 	</info>
@@ -59,16 +59,19 @@
 		</setters>
 		<sheet display="false" />
 		<rules>
-			<stat name="strength" value="2" />
-			<stat name="constitution" value="1" />
+			<stat name="strength" value="2" requirements="!ID_WOTC_TCOE_OPTION_CUSTOMIZED_ASI" />
+			<stat name="constitution" value="1" requirements="!ID_WOTC_TCOE_OPTION_CUSTOMIZED_ASI" />
+			<select type="Ability Score Improvement" name="Custom Ability Score Improvement +2 (Orc)" supports="Custom Ability Score Increase 2" requirements="ID_WOTC_TCOE_OPTION_CUSTOMIZED_ASI" />
+			<select type="Ability Score Improvement" name="Custom Ability Score Improvement +1 (Orc)" supports="Custom Ability Score Increase 1" requirements="ID_WOTC_TCOE_OPTION_CUSTOMIZED_ASI" />
 			<grant type="Size" id="ID_SIZE_MEDIUM" />
 			<stat name="innate speed" value="30" bonus="base" />
 			<grant type="Vision" id="ID_VISION_DARKVISION" />
 			<grant type="Racial Trait" id="ID_WOTC_ERLW_RACIAL_TRAIT_ORC_AGGRESSIVE" />
 			<grant type="Racial Trait" id="ID_WOTC_ERLW_RACIAL_TRAIT_ORC_POWERFUL_BUILD" />
 			<grant type="Racial Trait" id="ID_WOTC_ERLW_RACIAL_TRAIT_ORC_PRIMAL_INTUITION" />
-			<grant type="Language" id="ID_LANGUAGE_COMMON" />
-			<grant type="Language" id="ID_LANGUAGE_ORC" />
+			<grant type="Language" id="ID_LANGUAGE_COMMON" requirements="!ID_WOTC_TCOE_OPTION_CUSTOMIZED_LANGUAGE" />
+			<grant type="Language" id="ID_LANGUAGE_ORC" requirements="!ID_WOTC_TCOE_OPTION_CUSTOMIZED_LANGUAGE" />
+			<select type="Language" name="Customized Language" supports="Custom Race Language" number="2" requirements="ID_WOTC_TCOE_OPTION_CUSTOMIZED_LANGUAGE" />
 		</rules>
 	</element>
 	<element name="Aggressive" type="Racial Trait" source="Eberron: Rising from the Last War" id="ID_WOTC_ERLW_RACIAL_TRAIT_ORC_AGGRESSIVE">
@@ -98,7 +101,8 @@
 			<description>You have proficiency in two of the following skills of your choice: Animal Handling, Insight, Intimidation, Medicine, Nature, Perception, and Survival.</description>
 		</sheet>
 		<rules>
-			<select type="Proficiency" name="Skill Proficiency, Primal Intuition" supports="ID_PROFICIENCY_SKILL_ANIMALHANDLING|ID_PROFICIENCY_SKILL_INSIGHT|ID_PROFICIENCY_SKILL_INTIMIDATION|ID_PROFICIENCY_SKILL_MEDICINE|ID_PROFICIENCY_SKILL_NATURE|ID_PROFICIENCY_SKILL_PERCEPTION|ID_PROFICIENCY_SKILL_SURVIVAL" number="2" />
+			<select type="Proficiency" name="Skill Proficiency (Primal Intuition)" supports="ID_PROFICIENCY_SKILL_ANIMALHANDLING|ID_PROFICIENCY_SKILL_INSIGHT|ID_PROFICIENCY_SKILL_INTIMIDATION|ID_PROFICIENCY_SKILL_MEDICINE|ID_PROFICIENCY_SKILL_NATURE|ID_PROFICIENCY_SKILL_PERCEPTION|ID_PROFICIENCY_SKILL_SURVIVAL" number="2" requirements="!ID_WOTC_TCOE_OPTION_CUSTOMIZED_PROFICIENCY" />
+			<select type="Proficiency" name="Customized Skill Proficiency (Primal Intuition)"  number="2" supports="Skill" requirements="ID_WOTC_TCOE_OPTION_CUSTOMIZED_PROFICIENCY" />
 		</rules>
 	</element>	
 </elements>

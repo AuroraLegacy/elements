@@ -1,0 +1,323 @@
+<?xml version="1.0" encoding="utf-8"?>
+<elements>
+	<info>
+		<name>Options</name>
+		<description>Options from Tasha’s Cauldron of Everything</description>
+		<author url="http://dnd.wizards.com/products/tabletop-games/rpg-products/tashas-cauldron-everything">Tasha’s Cauldron of Everything</author>
+		<update version="0.0.2">
+			<file name="options.xml" url="https://raw.githubusercontent.com/AuroraLegacy/elements/master/supplements/tashas-cauldron-of-everything/options.xml" />
+		</update>
+	</info>
+
+	<element name="Customized Ability Score Increases" type="Option" source="Tasha’s Cauldron of Everything" id="ID_WOTC_TCOE_OPTION_CUSTOMIZED_ASI">
+		<description>
+			<p>Whatever D&amp;amp;D race you choose for your character, you get a trait called Ability Score Increase. This increase reflects an archetypal bit of excellence in the adventurers of this kind in D&amp;amp;D’s past. For example, if you’re a dwarf, your Constitution increases by 2, because dwarf heroes in D&amp;D are often exceptionally tough. This increase doesn’t apply to every dwarf, just to dwarf adventurers, and it exists to reinforce an archetype. That reinforcement is appropriate if you want to lean into the archetype, but it’s unhelpful if your character doesn’t conform to the archetype.</p>
+			<p class="indent">If you’d like your character to follow their own path, you may ignore your Ability Score Increase trait and assign ability score increases tailored to your character. Here’s how to do it: take any ability score increase you gain in your race or subrace and apply it to an ability score of your choice. If you gain more than one increase, you can’t apply those increases to the same ability score, and you can’t increase a score above 20.</p>
+			<p class="indent">For example, if the Ability Score Increase trait of your race or subrace increases your Constitution by 2 and your Wisdom by 1, you could instead increase your Intelligence by 2 and your Charisma by 1.</p>
+		</description>
+		<setters>
+			<set name="short">If you’d like your character to follow their own path, you may ignore your Ability Score Increase trait and assign ability score increases tailored to your character.</set>
+		</setters>
+	</element>
+
+	<element name="Customized Proficiencies" type="Option" source="Tasha’s Cauldron of Everything" id="ID_WOTC_TCOE_OPTION_CUSTOMIZED_PROFICIENCY">
+		<description>
+			<p>Some races and subraces grant skill, weapon, or tool proficiencies. These proficiencies are usually cultural, but your character might not have any connection to the culture in question or might have pursued different training. You can replace each of those proficiencies with a different one, as shown on the Proficiency Swaps table.</p>
+			<h5 class="caption">PROFICIENCY SWAPS</h5>
+			<table>
+				<thead>
+					<tr><td>Proficiency</td><td>Replacement Proficiency</td></tr>
+				</thead>
+				<tr><td>Skill</td><td><em>Skill</em></td></tr>
+				<tr><td>Armor</td><td><em>Simple/martial weapon or tool</em></td></tr>
+				<tr><td>Simple weapon</td><td><em>Simple weapon or tool</em></td></tr>
+				<tr><td>Martial weapon</td><td><em>Simple/martial weapon or tool</em></td></tr>
+				<tr><td>Tool</td><td><em>Tool or simple weapon</em></td></tr>
+			</table>
+		</description>
+		<setters>
+			<set name="short">You can replace each of your racial proficiencies with a different one, as shown on the Proficiency Swaps table.</set>
+		</setters>
+	</element>
+
+	<element name="Customized Language" type="Option" source="Tasha’s Cauldron of Everything" id="ID_WOTC_TCOE_OPTION_CUSTOMIZED_LANGUAGE">
+		<description>
+			<p>Your character’s race includes languages that your character is assumed to know, usually Common and the language of your ancestors. For example, a halfling adventurer is assumed to know Common and Halfling. Here’s the thing: D&amp;D adventurers are extraordinary, and your character might have grown up speaking languages different from the ones in your Languages trait.</p>
+			<p class="indent">To customize the languages you know, you may replace each language in your Languages trait with a language from the following list: Abyssal, Celestial, Common, Deep Speech, Draconic, Dwarvish, Elvish, Giant, Gnomish, Goblin, Halfling, Infernal, Orc, Primordial, Sylvan, or Undercommon</p>
+		</description>
+		<setters>
+			<set name="short">You may replace each language in your Languages trait with a language from the following list: Abyssal, Celestial, Common, Deep Speech, Draconic, Dwarvish, Elvish, Giant, Gnomish, Goblin, Halfling, Infernal, Orc, Primordial, Sylvan, or Undercommon</set>
+		</setters>
+	</element>
+
+	<!-- +1 ASI's -->
+	<element name="Strength" type="Ability Score Improvement" source="Tasha’s Cauldron of Everything" id="ID_WOTC_TCOE_OPTION_CUSTOMIZED_ASI_STRENGTH_INCREASE_1">
+		<requirements>!ID_WOTC_TCOE_OPTION_CUSTOMIZED_ASI_STRENGTH_INCREASE_2</requirements>
+		<supports>Custom Ability Score Increase 1</supports>
+		<description>
+			<p>Your Strength increases by 1.</p>
+		</description>
+		<sheet display="false" />
+		<rules>
+			<stat name="strength" value="1" alt="Ability Score Increase" />
+		</rules>
+	</element>
+	<element name="Dexterity" type="Ability Score Improvement" source="Tasha’s Cauldron of Everything" id="ID_WOTC_TCOE_OPTION_CUSTOMIZED_ASI_DEXTERITY_INCREASE_1">
+		<requirements>!ID_WOTC_TCOE_OPTION_CUSTOMIZED_ASI_DEXTERITY_INCREASE_2</requirements>
+		<supports>Custom Ability Score Increase 1</supports>
+		<description>
+			<p>Your Dexterity increases by 1.</p>
+		</description>
+		<sheet display="false" />
+		<rules>
+			<stat name="dexterity" value="1" alt="Ability Score Increase" />
+		</rules>
+	</element>
+	<element name="Constitution" type="Ability Score Improvement" source="Tasha’s Cauldron of Everything" id="ID_WOTC_TCOE_OPTION_CUSTOMIZED_ASI_CONSTITUTION_INCREASE_1">
+		<requirements>!ID_WOTC_TCOE_OPTION_CUSTOMIZED_ASI_CONSTITUTION_INCREASE_2</requirements>
+		<supports>Custom Ability Score Increase 1</supports>
+		<description>
+			<p>Your Constitution increases by 1.</p>
+		</description>
+		<sheet display="false" />
+		<rules>
+			<stat name="constitution" value="1" alt="Ability Score Increase" />
+		</rules>
+	</element>
+	<element name="Intelligence" type="Ability Score Improvement" source="Tasha’s Cauldron of Everything" id="ID_WOTC_TCOE_OPTION_CUSTOMIZED_ASI_INTELLIGENCE_INCREASE_1">
+		<requirements>!ID_WOTC_TCOE_OPTION_CUSTOMIZED_ASI_INTELLIGENCE_INCREASE_2</requirements>
+		<supports>Custom Ability Score Increase 1</supports>
+		<description>
+			<p>Your Intelligence increases by 1.</p>
+		</description>
+		<sheet display="false" />
+		<rules>
+			<stat name="intelligence" value="1" alt="Ability Score Increase" />
+		</rules>
+	</element>
+	<element name="Wisdom" type="Ability Score Improvement" source="Tasha’s Cauldron of Everything" id="ID_WOTC_TCOE_OPTION_CUSTOMIZED_ASI_WISDOM_INCREASE_1">
+		<supports>Custom Ability Score Increase 1</supports>
+		<requirements>!ID_WOTC_TCOE_OPTION_CUSTOMIZED_ASI_WISDOM_INCREASE_2</requirements>
+		<description>
+			<p>Your Wisdom increases by 1.</p>
+		</description>
+		<sheet display="false" />
+		<rules>
+			<stat name="wisdom" value="1" alt="Ability Score Increase" />
+		</rules>
+	</element>
+	<element name="Charisma" type="Ability Score Improvement" source="Tasha’s Cauldron of Everything" id="ID_WOTC_TCOE_OPTION_CUSTOMIZED_ASI_CHARISMA_INCREASE_1">
+		<supports>Custom Ability Score Increase 1</supports>
+		<requirements>!ID_WOTC_TCOE_OPTION_CUSTOMIZED_ASI_CHARISMA_INCREASE_2</requirements>
+		<description>
+			<p>Your Charisma increases by 1.</p>
+		</description>
+		<sheet display="false" />
+		<rules>
+			<stat name="charisma" value="1" alt="Ability Score Increase" />
+		</rules>
+	</element>
+
+	<!-- +2 ASI's -->
+	<element name="Strength" type="Ability Score Improvement" source="Tasha’s Cauldron of Everything" id="ID_WOTC_TCOE_OPTION_CUSTOMIZED_ASI_STRENGTH_INCREASE_2">
+		<requirements>!ID_WOTC_TCOE_OPTION_CUSTOMIZED_ASI_STRENGTH_INCREASE_1</requirements>
+		<supports>Custom Ability Score Increase 2</supports>
+		<description>
+			<p>Your Strength increases by 2.</p>
+		</description>
+		<sheet display="false" />
+		<rules>
+			<stat name="strength" value="2" alt="Ability Score Increase" />
+		</rules>
+	</element>
+	<element name="Dexterity" type="Ability Score Improvement" source="Tasha’s Cauldron of Everything" id="ID_WOTC_TCOE_OPTION_CUSTOMIZED_ASI_DEXTERITY_INCREASE_2">
+		<requirements>!ID_WOTC_TCOE_OPTION_CUSTOMIZED_ASI_DEXTERITY_INCREASE_1</requirements>
+		<supports>Custom Ability Score Increase 2</supports>
+		<description>
+			<p>Your Dexterity increases by 2.</p>
+		</description>
+		<sheet display="false" />
+		<rules>
+			<stat name="dexterity" value="2" alt="Ability Score Increase" />
+		</rules>
+	</element>
+	<element name="Constitution" type="Ability Score Improvement" source="Tasha’s Cauldron of Everything" id="ID_WOTC_TCOE_OPTION_CUSTOMIZED_ASI_CONSTITUTION_INCREASE_2">
+		<requirements>!ID_WOTC_TCOE_OPTION_CUSTOMIZED_ASI_CONSTITUTION_INCREASE_1</requirements>
+		<supports>Custom Ability Score Increase 2</supports>
+		<description>
+			<p>Your Constitution increases by 2.</p>
+		</description>
+		<sheet display="false" />
+		<rules>
+			<stat name="constitution" value="2" alt="Ability Score Increase" />
+		</rules>
+	</element>
+	<element name="Intelligence" type="Ability Score Improvement" source="Tasha’s Cauldron of Everything" id="ID_WOTC_TCOE_OPTION_CUSTOMIZED_ASI_INTELLIGENCE_INCREASE_2">
+		<requirements>!ID_WOTC_TCOE_OPTION_CUSTOMIZED_ASI_INTELLIGENCE_INCREASE_1</requirements>
+		<supports>Custom Ability Score Increase 2</supports>
+		<description>
+			<p>Your Intelligence increases by 2.</p>
+		</description>
+		<sheet display="false" />
+		<rules>
+			<stat name="intelligence" value="2" alt="Ability Score Increase" />
+		</rules>
+	</element>
+	<element name="Wisdom" type="Ability Score Improvement" source="Tasha’s Cauldron of Everything" id="ID_WOTC_TCOE_OPTION_CUSTOMIZED_ASI_WISDOM_INCREASE_2">
+		<requirements>!ID_WOTC_TCOE_OPTION_CUSTOMIZED_ASI_WISDOM_INCREASE_1</requirements>
+		<supports>Custom Ability Score Increase 2</supports>
+		<description>
+			<p>Your Wisdom increases by 2.</p>
+		</description>
+		<sheet display="false" />
+		<rules>
+			<stat name="wisdom" value="2" alt="Ability Score Increase" />
+		</rules>
+	</element>
+	<element name="Charisma" type="Ability Score Improvement" source="Tasha’s Cauldron of Everything" id="ID_WOTC_TCOE_OPTION_CUSTOMIZED_ASI_CHARISMA_INCREASE_2">
+		<requirements>!ID_WOTC_TCOE_OPTION_CUSTOMIZED_ASI_CHARISMA_INCREASE_1</requirements>
+		<supports>Custom Ability Score Increase 2</supports>
+		<description>
+			<p>Your Charisma increases by 2.</p>
+		</description>
+		<sheet display="false" />
+		<rules>
+			<stat name="charisma" value="2" alt="Ability Score Increase" />
+		</rules>
+	</element>
+
+	<!-- -1 ASI's -->
+	<element name="Strength" type="Ability Score Improvement" source="Tasha’s Cauldron of Everything" id="ID_WOTC_TCOE_OPTION_CUSTOMIZED_ASI_STRENGTH_DECREASE_1">
+		<supports>Custom Ability Score Decrease 1</supports>
+		<description>
+			<p>Your Strength decreases by 1.</p>
+		</description>
+		<sheet display="false" />
+		<setters>
+			<set name="allow duplicate">true</set>
+		</setters>
+		<rules>
+			<stat name="strength" value="-1" alt="Ability Score Decrease" />
+		</rules>
+	</element>
+
+	<element name="Dexterity" type="Ability Score Improvement" source="Tasha’s Cauldron of Everything" id="ID_WOTC_TCOE_OPTION_CUSTOMIZED_ASI_DEXTERITY_DECREASE_1">
+		<supports>Custom Ability Score Decrease 1</supports>
+		<description>
+			<p>Your Dexterity decreases by 1.</p>
+		</description>
+		<sheet display="false" />
+		<setters>
+			<set name="allow duplicate">true</set>
+		</setters>
+		<rules>
+			<stat name="dexterity" value="-1" alt="Ability Score Decrease" />
+		</rules>
+	</element>
+
+	<element name="Constitution" type="Ability Score Improvement" source="Tasha’s Cauldron of Everything" id="ID_WOTC_TCOE_OPTION_CUSTOMIZED_ASI_CONSTITUTION_DECREASE_1">
+		<supports>Custom Ability Score Decrease 1</supports>
+		<description>
+			<p>Your Constitution decreases by 1.</p>
+		</description>
+		<sheet display="false" />
+		<setters>
+			<set name="allow duplicate">true</set>
+		</setters>
+		<rules>
+			<stat name="constitution" value="-1" alt="Ability Score Decrease" />
+		</rules>
+	</element>
+
+	<element name="Intelligence" type="Ability Score Improvement" source="Tasha’s Cauldron of Everything" id="ID_WOTC_TCOE_OPTION_CUSTOMIZED_ASI_INTELLIGENCE_DECREASE_1">
+		<supports>Custom Ability Score Decrease 1</supports>
+		<description>
+			<p>Your Intelligence decreases by 1.</p>
+		</description>
+		<sheet display="false" />
+		<setters>
+			<set name="allow duplicate">true</set>
+		</setters>
+		<rules>
+			<stat name="intelligence" value="-1" alt="Ability Score Decrease" />
+		</rules>
+	</element>
+
+	<element name="Wisdom" type="Ability Score Improvement" source="Tasha’s Cauldron of Everything" id="ID_WOTC_TCOE_OPTION_CUSTOMIZED_ASI_WISDOM_DECREASE_1">
+		<supports>Custom Ability Score Decrease 1</supports>
+		<description>
+			<p>Your Wisdom decreases by 1.</p>
+		</description>
+		<sheet display="false" />
+		<setters>
+			<set name="allow duplicate">true</set>
+		</setters>
+		<rules>
+			<stat name="wisdom" value="-1" alt="Ability Score Decrease" />
+		</rules>
+	</element>
+
+	<element name="Charisma" type="Ability Score Improvement" source="Tasha’s Cauldron of Everything" id="ID_WOTC_TCOE_OPTION_CUSTOMIZED_ASI_CHARISMA_DECREASE_1">
+		<supports>Custom Ability Score Decrease 1</supports>
+		<description>
+			<p>Your Charisma decreases by 1.</p>
+		</description>
+		<sheet display="false" />
+		<setters>
+			<set name="allow duplicate">true</set>
+		</setters>
+		<rules>
+			<stat name="charisma" value="-1" alt="Ability Score Decrease" />
+		</rules>
+	</element>
+
+	<append id="ID_LANGUAGE_ABYSSAL">
+		<supports>Custom Race Language</supports>
+	</append>
+	<append id="ID_LANGUAGE_CELESTIAL">
+		<supports>Custom Race Language</supports>
+	</append>
+	<append id="ID_LANGUAGE_COMMON">
+		<supports>Custom Race Language</supports>
+	</append>
+	<append id="ID_LANGUAGE_DEEP_SPEECH">
+		<supports>Custom Race Language</supports>
+	</append>
+	<append id="ID_LANGUAGE_DRACONIC">
+		<supports>Custom Race Language</supports>
+	</append>
+	<append id="ID_LANGUAGE_DWARVISH">
+		<supports>Custom Race Language</supports>
+	</append>
+	<append id="ID_LANGUAGE_ELVISH">
+		<supports>Custom Race Language</supports>
+	</append>
+	<append id="ID_LANGUAGE_GIANT">
+		<supports>Custom Race Language</supports>
+	</append>
+	<append id="ID_LANGUAGE_GNOMISH">
+		<supports>Custom Race Language</supports>
+	</append>
+	<append id="ID_LANGUAGE_GOBLIN">
+		<supports>Custom Race Language</supports>
+	</append>
+	<append id="ID_LANGUAGE_HALFLING">
+		<supports>Custom Race Language</supports>
+	</append>
+	<append id="ID_LANGUAGE_INFERNAL">
+		<supports>Custom Race Language</supports>
+	</append>
+	<append id="ID_LANGUAGE_ORC">
+		<supports>Custom Race Language</supports>
+	</append>
+	<append id="ID_LANGUAGE_PRIMORDIAL">
+		<supports>Custom Race Language</supports>
+	</append>
+	<append id="ID_LANGUAGE_SYLVAN">
+		<supports>Custom Race Language</supports>
+	</append>
+	<append id="ID_LANGUAGE_UNDERCOMMON">
+		<supports>Custom Race Language</supports>
+	</append>
+
+</elements>

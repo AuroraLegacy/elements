@@ -2,7 +2,7 @@
 <elements>
 	<info>
 		<name>Tabaxi</name>
-		<update version="0.0.9">
+		<update version="0.1.0">
 			<file name="race-tabaxi.xml" url="https://raw.githubusercontent.com/AuroraLegacy/elements/master/supplements/volos-guide-to-monsters/race-tabaxi.xml" />
 		</update>
 	</info>
@@ -81,12 +81,15 @@
 			<set name="weight" modifier="2d4">100 lb.</set>
 		</setters>
 		<rules>
-			<stat name="dexterity" value="2"/>
-			<stat name="charisma" value="1"/>
+			<stat name="dexterity" value="2" requirements="!ID_WOTC_TCOE_OPTION_CUSTOMIZED_ASI" />
+			<stat name="charisma" value="1" requirements="!ID_WOTC_TCOE_OPTION_CUSTOMIZED_ASI" />
+			<select type="Ability Score Improvement" name="Custom Ability Score Improvement +2 (Tabaxi)" supports="Custom Ability Score Increase 2" requirements="ID_WOTC_TCOE_OPTION_CUSTOMIZED_ASI" />
+			<select type="Ability Score Improvement" name="Custom Ability Score Improvement +1 (Tabaxi)" supports="Custom Ability Score Increase 1" requirements="ID_WOTC_TCOE_OPTION_CUSTOMIZED_ASI" />
 			<stat name="innate speed" value="30" bonus="base"/>
 			<grant type="Vision" id="ID_VISION_DARKVISION" />
 			<grant type="Size" id="ID_SIZE_MEDIUM" />
-			<grant type="Language" id="ID_LANGUAGE_COMMON" />
+			<grant type="Language" id="ID_LANGUAGE_COMMON" requirements="!ID_WOTC_TCOE_OPTION_CUSTOMIZED_LANGUAGE" />
+			<select type="Language" name="Customized Language" supports="Custom Race Language" requirements="ID_WOTC_TCOE_OPTION_CUSTOMIZED_LANGUAGE" />
 			<select type="Language" name="Language (Tabaxi)" supports="Standard||Exotic" />
 			<grant type="Racial Trait" id="ID_WOTC_VGTM_RACIAL_TRAIT_TAXBAXI_FELINE_AGILITY" />
 			<grant type="Racial Trait" id="ID_WOTC_VGTM_RACIAL_TRAIT_TAXBAXI_CATS_CLAWS" />
@@ -120,8 +123,9 @@
 			<description>You have proficiency in the Perception and Stealth skills.</description>
 		</sheet>
 		<rules>
-			<grant type="Proficiency" id="ID_PROFICIENCY_SKILL_PERCEPTION" />
-			<grant type="Proficiency" id="ID_PROFICIENCY_SKILL_STEALTH" />
+			<grant type="Proficiency" id="ID_PROFICIENCY_SKILL_PERCEPTION" requirements="!ID_WOTC_TCOE_OPTION_CUSTOMIZED_PROFICIENCY" />
+			<grant type="Proficiency" id="ID_PROFICIENCY_SKILL_STEALTH" requirements="!ID_WOTC_TCOE_OPTION_CUSTOMIZED_PROFICIENCY" />
+			<select type="Proficiency" name="Customized Skill Proficiency, Cat’s Talent" supports="Skill" number="2" requirements="ID_WOTC_TCOE_OPTION_CUSTOMIZED_PROFICIENCY" />
 		</rules>
 	</element>  
 </elements>

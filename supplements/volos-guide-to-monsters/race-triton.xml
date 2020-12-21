@@ -2,7 +2,7 @@
 <elements>
 	<info>
 		<name>Triton</name>
-		<update version="0.1.1">
+		<update version="0.1.2">
 			<file name="race-triton.xml" url="https://raw.githubusercontent.com/AuroraLegacy/elements/master/supplements/volos-guide-to-monsters/race-triton.xml" />
 		</update>
 	</info>
@@ -70,15 +70,17 @@
 			<set name="weight" modifier="2d4">100 lb.</set>
 		</setters>
 		<rules>
-			<stat name="strength" value="1"/>
-			<stat name="constitution" value="1"/>
-			<stat name="charisma" value="1"/>
+			<stat name="strength" value="1" requirements="!ID_WOTC_TCOE_OPTION_CUSTOMIZED_ASI" />
+			<stat name="constitution" value="1" requirements="!ID_WOTC_TCOE_OPTION_CUSTOMIZED_ASI" />
+			<stat name="charisma" value="1" requirements="!ID_WOTC_TCOE_OPTION_CUSTOMIZED_ASI" />
+			<select type="Ability Score Improvement" name="Custom Ability Score Improvement +1" number="3" supports="Custom Ability Score Increase 1" requirements="ID_WOTC_TCOE_OPTION_CUSTOMIZED_ASI" />
 			<stat name="innate speed" value="30" bonus="base"/>
 			<stat name="innate speed:swim" value="30" bonus="base" />
 			<grant type="Size" id="ID_SIZE_MEDIUM" />
 			<grant type="Vision" id="ID_VISION_DARKVISION" />
-			<grant type="Language" id="ID_LANGUAGE_COMMON" />
-			<grant type="Language" id="ID_LANGUAGE_PRIMORDIAL" />
+			<grant type="Language" id="ID_LANGUAGE_COMMON" requirements="!ID_WOTC_TCOE_OPTION_CUSTOMIZED_LANGUAGE" />
+			<grant type="Language" id="ID_LANGUAGE_PRIMORDIAL" requirements="!ID_WOTC_TCOE_OPTION_CUSTOMIZED_LANGUAGE" />
+			<select type="Language" name="Customized Language" supports="Custom Race Language" number="2" requirements="ID_WOTC_TCOE_OPTION_CUSTOMIZED_LANGUAGE" />
 			<grant type="Racial Trait" id="ID_WOTC_VGTM_RACIAL_TRAIT_TRITON_AMPHIBIOUS" />
 			<grant type="Racial Trait" id="ID_WOTC_VGTM_RACIAL_TRAIT_TRITON_CONTROL_AIR_AND_WATER" />
 			<grant type="Racial Trait" id="ID_WOTC_VGTM_RACIAL_TRAIT_TRITON_EMISSARY_OF_THE_SEA" />

@@ -2,7 +2,7 @@
 <elements>	
 	<info>
 		<name>Unearthed Arcana: Feats</name>
-		<update version="0.0.2">
+		<update version="0.0.3">
 			<file name="20200713.xml" url="https://raw.githubusercontent.com/AuroraLegacy/elements/master/unearthed-arcana/2020/20200713.xml" />
 		</update>
 	</info>
@@ -19,6 +19,7 @@
 			<set name="release">20200713</set>
 		</setters>
 	</element>
+
 	<element name="Artificer Initiate" type="Feat" source="Unearthed Arcana: Feats (2020)" id="ID_WOTC_UA20200713_FEAT_ARTIFICER_INITIATE">
 		<description>
 			<p>You’ve learned some of an artificer’s inventiveness, granting you the following benefits:</p>
@@ -38,6 +39,7 @@
 			<select type="Proficiency" name="Tool Proficiency, Artificer Initiate" supports="Artisan tools" />
 		</rules>
 	</element>
+
 	<element name="Chef" type="Feat" source="Unearthed Arcana: Feats (2020)" id="ID_WOTC_UA20200713_FEAT_CHEF">
 		<description>
 			<p>Time and effort spent mastering the culinary arts has paid off. You gain the following benefits:</p>
@@ -59,6 +61,7 @@
 			<stat name="ua:chef:prepare" value="proficiency" />
 		</rules>
 	</element>
+
 	<element name="Crusher" type="Feat" source="Unearthed Arcana: Feats (2020)" id="ID_WOTC_UA20200713_FEAT_CRUSHER">
 		<description>
 			<p>You are practiced in the art of crushing your enemies, granting you the following benefits:</p>
@@ -76,9 +79,9 @@
 			<select type="Ability Score Improvement" name="Ability Score Increase, Crusher" supports="ID_PHB_FEAT_ASI_STRENGTH|ID_PHB_FEAT_ASI_DEXTERITY" />			
 		</rules>
 	</element>
+
 	<element name="Eldritch Adept" type="Feat" source="Unearthed Arcana: Feats (2020)" id="ID_WOTC_UA20200713_FEAT_ELDRITCH_ADEPT">
 		<prerequisite>Spellcasting or Pact Magic feature</prerequisite>
-		<!-- todo: generic -->
 		<description>
 			<p><em>Prerequisite: Spellcasting or Pact Magic feature</em></p>
 			<p>Studying occult lore, you have unlocked eldritch power within yourself: you learn one Eldritch Invocation option of your choice from the warlock class. If the invocation has a prerequisite, you can choose that invocation only if you’re a warlock and only if you meet the prerequisite.</p>
@@ -88,26 +91,66 @@
 			<select type="Class Feature" name="Eldritch Invocation, Eldritch Adept" supports="Eldritch Invocation" />
 		</rules>
 	</element>
+
 	<element name="Fey Touched" type="Feat" source="Unearthed Arcana: Feats (2020)" id="ID_WOTC_UA20200713_FEAT_FEY_TOUCHED">
 		<description>
 			<p>Your exposure to the Feywild or one of its denizens has left a magical mark on you. You gain the following benefits:</p>
 			<ul>
 				<li>Increase your Intelligence, Wisdom, or Charisma score by 1, to a maximum of 20.</li>
-				<li>You learn the misty step spell and one 1st-level spell of your choice. The 1st-level spell must be from the divination or enchantment school of magic. You can cast each of these spells without expending a spell slot. Once you cast either of these spells in this way, you can’t cast that spell in this way again until you finish a long rest. You can also cast these spells using spell slots you have of the appropriate level. The spells’ spellcasting ability is the ability increased by this feat.</li>
+				<li>You learn the <i>misty step</i> spell and one 1st-level spell of your choice. The 1st-level spell must be from the divination or enchantment school of magic. You can cast each of these spells without expending a spell slot. Once you cast either of these spells in this way, you can’t cast that spell in this way again until you finish a long rest. You can also cast these spells using spell slots you have of the appropriate level. The spells’ spellcasting ability is the ability increased by this feat.</li>
 			</ul>
 		</description>
-		<sheet usage="1/Long Rest">
-			<description>You can cast your chosen spells without expending a spell slot or using any spell slots you have of the appropriate level.</description>
+		<sheet>
+			<description>You can cast this feat’s spells without a spell slot once. You can also cast these spells using spell slots you have of the appropriate level. Your spellcasting ability for these spells is {{ua:fey touched:ability}}.</description>
 		</sheet>
 		<rules>
-			<select type="Ability Score Improvement" name="Ability Score Increase, Fey Touched" supports="ID_PHB_FEAT_ASI_INTELLIGENCE|ID_PHB_FEAT_ASI_WISDOM|ID_PHB_FEAT_ASI_CHARISMA" />
+			<select type="Feat Feature" name="Ability Score Increase, Fey Touched" supports="ID_WOTC_UA20200713_FEAT_FEATURE_FEY_TOUCHED_INTELLIGENCE|ID_WOTC_UA20200713_FEAT_FEATURE_FEY_TOUCHED_WISDOM|ID_WOTC_UA20200713_FEAT_FEATURE_FEY_TOUCHED_CHARISMA" />
 			<grant type="Spell" id="ID_PHB_SPELL_MISTY_STEP" />
-			<select type="Spell" name="1st-level Spell, Fey Touched" supports="1,(Divination||Enchantment)" />
+			<select type="Spell" name="Spell, Fey Touched" supports="1,(Divination||Enchantment)" />
 		</rules>
 	</element>
+	<element name="Intelligence (Fey Touched)" type="Feat Feature" source="Unearthed Arcana: Feats (2020)" id="ID_WOTC_UA20200713_FEAT_FEATURE_FEY_TOUCHED_INTELLIGENCE">
+		<compendium display="false" />
+		<supports>Fey Touched</supports>
+		<requirements>ID_WOTC_UA20200713_FEAT_FEY_TOUCHED</requirements>
+		<description>
+			<p>Increase your Intelligence by 1, to a maximum of 20.</p>
+		</description>
+		<sheet display="false" />
+		<rules>
+			<stat name="intelligence" value="1" alt="Fey Touched" />
+			<stat name="ua:fey touched:ability" value="Intelligence" inline="true"/>
+		</rules>
+	</element>
+	<element name="Wisdom (Fey Touched)" type="Feat Feature" source="Unearthed Arcana: Feats (2020)" id="ID_WOTC_UA20200713_FEAT_FEATURE_FEY_TOUCHED_WISDOM">
+		<compendium display="false" />
+		<supports>Fey Touched</supports>
+		<requirements>ID_WOTC_UA20200713_FEAT_FEY_TOUCHED</requirements>
+		<description>
+			<p>Increase your Wisdom by 1, to a maximum of 20.</p>
+		</description>
+		<sheet display="false" />
+		<rules>
+			<stat name="wisdom" value="1" alt="Fey Touched" />
+			<stat name="ua:fey touched:ability" value="Wisdom" inline="true"/>
+		</rules>
+	</element>
+	<element name="Charisma (Fey Touched)" type="Feat Feature" source="Unearthed Arcana: Feats (2020)" id="ID_WOTC_UA20200713_FEAT_FEATURE_FEY_TOUCHED_CHARISMA">
+		<compendium display="false" />
+		<supports>Fey Touched</supports>
+		<requirements>ID_WOTC_UA20200713_FEAT_FEY_TOUCHED</requirements>
+		<description>
+			<p>Increase your Charisma by 1, to a maximum of 20.</p>
+		</description>
+		<sheet display="false" />
+		<rules>
+			<stat name="charisma" value="1" alt="Fey Touched" />
+			<stat name="ua:fey touched:ability" value="Charisma" inline="true"/>
+		</rules>
+	</element>
+
 	<element name="Fighting Initiate" type="Feat" source="Unearthed Arcana: Feats (2020)" id="ID_WOTC_UA20200713_FEAT_FIGHTING_INITIATE">
 		<prerequisite>Proficiency with a martial weapon</prerequisite>
-		<!-- todo: generic -->
 		<description>
 			<p><em>Prerequisite: Proficiency with a martial weapon</em></p>
 			<p>Your martial training has helped you develop a particular style of fighting. As a result, you learn one Fighting Style option of your choice from the fighter class. If you already have a style, the one you choose must be different.</p>
@@ -120,6 +163,7 @@
 			<select type="Class Feature" name="Fighting Style, Fighting Initiate" supports="Fighting Style, Fighter" />
 		</rules>
 	</element>
+
 	<element name="Gunner" type="Feat" source="Unearthed Arcana: Feats (2020)" id="ID_WOTC_UA20200713_FEAT_GUNNER">
 		<prerequisite>Firearms Optional Rule</prerequisite>
 		<description>
@@ -140,9 +184,9 @@
 			<grant type="Proficiency" id="ID_WOTC_DMG_PROFICIENCY_WEAPON_FIREARMS" />
 		</rules>
 	</element>
+
 	<element name="Metamagic Adept" type="Feat" source="Unearthed Arcana: Feats (2020)" id="ID_WOTC_UA20200713_FEAT_METAMAGIC_ADEPT">
 		<prerequisite>Spellcasting or Pact Magic feature</prerequisite>
-		<!-- todo: generic -->
 		<description>
 			<p><em>Prerequisite: Spellcasting or Pact Magic feature</em></p>
 			<p>You’ve learned how to exert your will on your spells to alter how they function. You gain the following benefits:</p>
@@ -159,6 +203,7 @@
 			<stat name="sorcery-points" value="2" />
 		</rules>
 	</element>
+
 	<element name="Piercer" type="Feat" source="Unearthed Arcana: Feats (2020)" id="ID_WOTC_UA20200713_FEAT_PIERCER">
 		<description>
 			<p>You have achieved a penetrating precision in combat, granting you the following benefits:</p>
@@ -176,6 +221,7 @@
 			<select type="Ability Score Improvement" name="Ability Score Increase, Piercer" supports="ID_PHB_FEAT_ASI_STRENGTH|ID_PHB_FEAT_ASI_DEXTERITY" />			
 		</rules>
 	</element>
+
 	<element name="Poisoner" type="Feat" source="Unearthed Arcana: Feats (2020)" id="ID_WOTC_UA20200713_FEAT_POISONER">
 		<description>
 			<p>You can prepare and deliver deadly poisons, gaining the following benefits:</p>
@@ -194,6 +240,7 @@
 			<grant type="Proficiency" id="ID_PROFICIENCY_TOOL_PROFICIENCY_POISONERS_KIT" />
 		</rules>
 	</element>
+
 	<element name="Practiced Expert" type="Feat" source="Unearthed Arcana: Feats (2020)" id="ID_WOTC_UA20200713_FEAT_PRACTICED_EXPERT">
 		<description>
 			<p>You have honed your proficiency with particular skills or tools, gaining the following benefits:</p>
@@ -213,23 +260,64 @@
 			<select type="Class Feature" name="Expertise, Practiced Expert" supports="Expertise, (Skill||Tool)" />
 		</rules>
 	</element>
+
 	<element name="Shadow Touched" type="Feat" source="Unearthed Arcana: Feats (2020)" id="ID_WOTC_UA20200713_FEAT_SHADOW_TOUCHED">
 		<description>
 			<p>You learn how to bend shadows from your experience with the Shadowfell. You gain the following benefits:</p>
 			<ul>
 				<li>Increase your Intelligence, Wisdom, or Charisma score by 1, to a maximum of 20.</li>
-				<li>You learn the darkness spell and one 1st-level spell of your choice. The 1st-level spell must be from the illusion or necromancy school of magic. You can cast each of these spells without expending a spell slot. Once you cast either of these spells in this way, you can’t cast that spell in this way again until you finish a long rest. You can also cast these spells using spell slots you have of the appropriate level. The spells’ spellcasting ability is the ability increased by this feat.</li>
+				<li>You learn the <i>darkness</i> spell and one 1st-level spell of your choice. The 1st-level spell must be from the illusion or necromancy school of magic. You can cast each of these spells without expending a spell slot. Once you cast either of these spells in this way, you can’t cast that spell in this way again until you finish a long rest. You can also cast these spells using spell slots you have of the appropriate level. The spells’ spellcasting ability is the ability increased by this feat.</li>
 			</ul>
 		</description>
-		<sheet usage="1/Long Rest">
-			<description>You can cast your chosen spells without expending a spell slot. You can also cast these spells using spell slots you have of the appropriate level. The spells’ spellcasting ability is the ability increased by this feat. </description>
+		<sheet>
+			<description>You can cast this feat’s spells without a spell slot once. You can also cast these spells using spell slots you have of the appropriate level. Your spellcasting ability for these spells is {{ua:shadow touched:ability}}.</description>
 		</sheet>
 		<rules>
-			<select type="Ability Score Improvement" name="Ability Score Increase, Shadow Touched" supports="ID_PHB_FEAT_ASI_INTELLIGENCE|ID_PHB_FEAT_ASI_WISDOM|ID_PHB_FEAT_ASI_CHARISMA" />
+			<select type="Feat Feature" name="Ability Score Increase, Shadow Touched" supports="ID_WOTC_UA20200713_FEAT_FEATURE_SHADOW_TOUCHED_INTELLIGENCE|ID_WOTC_UA20200713_FEAT_FEATURE_SHADOW_TOUCHED_WISDOM|ID_WOTC_UA20200713_FEAT_FEATURE_SHADOW_TOUCHED_CHARISMA" />
 			<grant type="Spell" id="ID_PHB_SPELL_DARKNESS" />
-			<select type="Spell" name="1st-level Spell, Shadow Touched" supports="1,(Illusion||Necromancy)" />			
+			<select type="Spell" name="Spell, Shadow Touched" supports="1,(Illusion||Necromancy)" />
 		</rules>
 	</element>
+	<element name="Intelligence (Shadow Touched)" type="Feat Feature" source="Unearthed Arcana: Feats (2020)" id="ID_WOTC_UA20200713_FEAT_FEATURE_SHADOW_TOUCHED_INTELLIGENCE">
+		<compendium display="false" />
+		<supports>Shadow Touched</supports>
+		<requirements>ID_WOTC_UA20200713_FEAT_SHADOW_TOUCHED</requirements>
+		<description>
+			<p>Increase your Intelligence by 1, to a maximum of 20.</p>
+		</description>
+		<sheet display="false" />
+		<rules>
+			<stat name="intelligence" value="1" alt="Shadow Touched" />
+			<stat name="ua:shadow touched:ability" value="Intelligence" inline="true"/>
+		</rules>
+	</element>
+	<element name="Wisdom (Shadow Touched)" type="Feat Feature" source="Unearthed Arcana: Feats (2020)" id="ID_WOTC_UA20200713_FEAT_FEATURE_SHADOW_TOUCHED_WISDOM">
+		<compendium display="false" />
+		<supports>Shadow Touched</supports>
+		<requirements>ID_WOTC_UA20200713_FEAT_SHADOW_TOUCHED</requirements>
+		<description>
+			<p>Increase your Wisdom by 1, to a maximum of 20.</p>
+		</description>
+		<sheet display="false" />
+		<rules>
+			<stat name="wisdom" value="1" alt="Shadow Touched" />
+			<stat name="ua:shadow touched:ability" value="Wisdom" inline="true"/>
+		</rules>
+	</element>
+	<element name="Charisma (Shadow Touched)" type="Feat Feature" source="Unearthed Arcana: Feats (2020)" id="ID_WOTC_UA20200713_FEAT_FEATURE_SHADOW_TOUCHED_CHARISMA">
+		<compendium display="false" />
+		<supports>Shadow Touched</supports>
+		<requirements>ID_WOTC_UA20200713_FEAT_SHADOW_TOUCHED</requirements>
+		<description>
+			<p>Increase your Charisma by 1, to a maximum of 20.</p>
+		</description>
+		<sheet display="false" />
+		<rules>
+			<stat name="charisma" value="1" alt="Shadow Touched" />
+			<stat name="ua:shadow touched:ability" value="Charisma" inline="true"/>
+		</rules>
+	</element>
+
 	<element name="Shield Training" type="Feat" source="Unearthed Arcana: Feats (2020)" id="ID_WOTC_UA20200713_FEAT_SHIELD_TRAINING">
 		<description>
 			<p>You’ve trained in the effective use of shields. You gain the following benefits:</p>
@@ -249,6 +337,7 @@
 			<grant type="Proficiency" id="ID_PROFICIENCY_ARMOR_PROFICIENCY_SHIELDS" />
 		</rules>
 	</element>
+
 	<element name="Slasher" type="Feat" source="Unearthed Arcana: Feats (2020)" id="ID_WOTC_UA20200713_FEAT_SLASHER">
 		<description>
 			<p>You’ve learned where to cut to have the greatest results, granting you the following benefits:</p>
@@ -266,6 +355,7 @@
 			<select type="Ability Score Improvement" name="Ability Score Increase, Slasher" supports="ID_PHB_FEAT_ASI_STRENGTH|ID_PHB_FEAT_ASI_DEXTERITY" />			
 		</rules>
 	</element>
+
 	<element name="Tandem Tactician" type="Feat" source="Unearthed Arcana: Feats (2020)" id="ID_WOTC_UA20200713_FEAT_TANDEM_TACTICIAN">
 		<description>
 			<p>Your presence in a scrap tends to elevate your comrades. You gain the following benefits:</p>
@@ -279,6 +369,7 @@
 			When you use the Help action to aid an ally in attacking a creature, increase the range of the Help action by 10 feet. Additionally, you can help two allies targeting the same creature within range when you use the Help action this way.</description>
 		</sheet>
 	</element>
+
 	<element name="Tracker" type="Feat" source="Unearthed Arcana: Feats (2020)" id="ID_WOTC_UA20200713_FEAT_TRACKER">
 		<description>
 			<p>You have spent time hunting creatures and honed your skills, gaining the following benefits:</p>

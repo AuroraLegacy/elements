@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <elements>
 	<info>
-		<update version="0.0.2">
+		<update version="0.0.3">
 			<file name="mark-of-detection.xml" url="https://raw.githubusercontent.com/AuroraLegacy/elements/master/supplements/eberron-rising-from-the-last-war/dragonmarks/mark-of-detection.xml" />
 		</update>
 	</info>
@@ -29,8 +29,10 @@
 		<sheet alt="Half-Elf (Mark of Detection)" display="false" />
 		<rules>
 			<grant type="Dragonmark" id="ID_WOTC_ERLW_DRAGONMARK_MARK_OF_DETECTION" />
-			<stat name="wisdom" value="2" alt="Dragonmark" />
-			<select type="Racial Trait" name="Ability Score Increase, Mark of Detection" supports="Ability Score Increase,Dragonmark,!Wisdom" />
+			<stat name="wisdom" value="2" alt="Dragonmark" requirements="!ID_WOTC_TCOE_OPTION_CUSTOMIZED_ASI" />
+			<select type="Ability Score Improvement" name="Custom Ability Score Improvement +2 (Mark of Detection)" supports="Custom Ability Score Increase 2" requirements="ID_WOTC_TCOE_OPTION_CUSTOMIZED_ASI" />
+			<select type="Racial Trait" name="Ability Score Increase, Mark of Detection" supports="Ability Score Increase,Dragonmark,!Wisdom" requirements="!ID_WOTC_TCOE_OPTION_CUSTOMIZED_ASI" />
+			<select type="Ability Score Improvement" name="Custom Ability Score Improvement +1 (Mark of Detection)" supports="Custom Ability Score Increase 1" requirements="ID_WOTC_TCOE_OPTION_CUSTOMIZED_ASI" />
 			<grant type="Racial Trait" id="ID_WOTC_ERLW_RACIAL_TRAIT_MARK_OF_DETECTION_DEDUCTIVE_INTUITION" />
 			<grant type="Racial Trait" id="ID_WOTC_ERLW_RACIAL_TRAIT_MARK_OF_DETECTION_MAGICAL_DETECTION" />
 			<grant type="Racial Trait" id="ID_WOTC_ERLW_RACIAL_TRAIT_MARK_OF_DETECTION_SPELLS_OF_THE_MARK" />

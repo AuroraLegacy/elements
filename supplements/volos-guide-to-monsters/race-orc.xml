@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<elements>
+	<info>
+		<name>Orc</name>
+		<description>The monstrous-adventurers from Volo’s Guide to Monsters.</description>
+		<author url="http://dnd.wizards.com/products/tabletop-games/rpg-products/volos-guide-to-monsters">Wizards of the Coast</author>
+		<update version="0.0.2">
+			<file name="race-orc.xml" url="https://raw.githubusercontent.com/AuroraLegacy/elements/master/supplements/volos-guide-to-monsters/race-orc.xml" />
+		</update>
+	</info>
+
+	<element name="Orc" type="Race" source="Volo’s Guide to Monsters" id="ID_WOTC_VGTM_RACE_ORC">
+		<description>
+			<p class="flavor">In some campaigns, humanoids normally regarded as sinister threats can emerge to adventure alongside humans and the other standard races. This section is aimed at those who wish to expand the race selections for their campaigns beyond the typical folk of D&amp;D.</p>
+			<h4>ORC TRAITS</h4>
+			<p>Your orc character has the following racial traits.</p>
+			<p>
+				<span class="feature">Ability Score Increase.</span>Your Strength score increases by 2, your Constitution score increases by 1.<br/>
+				<span class="feature">Age.</span>Orcs reach adulthood at age 12 and live up to 50 years. <br/>
+				<span class="feature">Alignment.</span>Orcs are vicious raiders, who believe that the world should be theirs. They also respect strength above all else and believe the strong must bully the weak to ensure that weakness does not spread like a disease. They are usually chaotic evil.<br/>
+				<span class="feature">Size.</span>Orcs are usually over 6 feet tall and weigh between 230 and 280 pounds. Your size is Medium.<br/>
+				<span class="feature">Speed.</span>Your base walking speed is 30 feet.<br/>
+				<span class="feature">Darkvision.</span>You can see in dim light within 60 feet of you as if it were bright light, and in darkness as if it were dim light. You can't discern color in darkness, only shades of gray.<br/>
+				<span class="feature">Aggressive.</span>As a bonus action, you can move up to your speed toward an enemy of your choice that you can see or hear. You must end this move closer to the enemy than you started.<br/>
+				<span class="feature">Menacing.</span>You are trained in the Intimidation skill.<br/>
+				<span class="feature">Powerful Build.</span>You count as one size larger when determining your carrying capacity and the weight you can push, drag, or lift.<br/>
+				<span class="feature">Languages.</span>You can speak, read, and write Common and Orc.<br/>
+			</p>
+		</description>
+		<sheet display="false"/>
+		<setters>
+			<!-- names taken from online generator to have at least a few names in here -->
+			<set name="names" type="male">Zhok, Dhag, Dull, Nondakk, Grortud, Rhakrog, Lavran, Loggug</set>
+			<set name="names" type="female">Huz, Nim, Div,Kuatam, Idkiel, Gaodki, Saav</set>
+			<set name="names" type="title">The Silent, Doom Axe, Vermin Axe, The Cold, The Simple, The Brute, The Violent</set>
+			<set name="names-format">{{name}} {{title}}</set>
+		</setters>
+		<rules>
+			<stat name="strength" value="2" requirements="!ID_WOTC_TCOE_OPTION_CUSTOMIZED_ASI" />
+			<stat name="constitution" value="1" requirements="!ID_WOTC_TCOE_OPTION_CUSTOMIZED_ASI" />
+			<select type="Ability Score Improvement" name="Custom Ability Score Improvement +2 (Orc)" supports="Custom Ability Score Increase 2" requirements="ID_WOTC_TCOE_OPTION_CUSTOMIZED_ASI" />
+			<select type="Ability Score Improvement" name="Custom Ability Score Improvement +1 (Orc)" supports="Custom Ability Score Increase 1" requirements="ID_WOTC_TCOE_OPTION_CUSTOMIZED_ASI" />
+			<stat name="innate speed" value="30" bonus="base" />
+			<grant type="Size" id="ID_SIZE_MEDIUM" />
+			<grant type="Vision" id="ID_VISION_DARKVISION" />
+			<grant type="Language" id="ID_LANGUAGE_COMMON" requirements="!ID_WOTC_TCOE_OPTION_CUSTOMIZED_LANGUAGE" />
+			<grant type="Language" id="ID_LANGUAGE_ORC" requirements="!ID_WOTC_TCOE_OPTION_CUSTOMIZED_LANGUAGE" />
+			<select type="Language" name="Customized Language" supports="Custom Race Language" number="2" requirements="ID_WOTC_TCOE_OPTION_CUSTOMIZED_LANGUAGE" />
+			<grant type="Racial Trait" id="ID_WOTC_VGTM_RACIAL_TRAIT_ORC_AGGRESSIVE" />
+			<!-- Menacing Trait is removed in Errata (as of version 2.0.) and replaced with Primal Intuition Trait -->
+			<!-- <grant type="Racial Trait" id="ID_WOTC_VGTM_RACIAL_TRAIT_ORC_MENACING" /> -->
+			<grant type="Racial Trait" id="ID_WOTC_VGTM_RACIAL_TRAIT_ORC_PRIMAL_INTUITION" />
+			<grant type="Racial Trait" id="ID_WOTC_VGTM_RACIAL_TRAIT_ORC_POWERFUL_BUILD" />
+		</rules>
+	</element>
+	<element name="Aggressive" type="Racial Trait" source="Volo’s Guide to Monsters" id="ID_WOTC_VGTM_RACIAL_TRAIT_ORC_AGGRESSIVE">
+		<description>
+			<p>As a bonus action, you can move up to your speed toward an enemy of your choice that you can see or hear. You must end this move closer to the enemy than you started.</p>
+		</description>
+		<sheet>
+			<description>As a bonus action, you can move up to your speed toward an enemy of your choice that you can see or hear. You must end this move closer to the enemy than you started.</description>
+		</sheet>
+	</element>
+
+	<!-- Menacing Trait is removed in Errata (as of version 2.0.) and replaced with Primal Intuition Trait -->
+	<!-- <element name="Menacing" type="Racial Trait" source="Volo’s Guide to Monsters" id="ID_WOTC_VGTM_RACIAL_TRAIT_ORC_MENACING">
+		<description>
+			<p>You are trained in the Intimidation skill.</p>
+		</description>
+		<sheet display="false">
+			<description>You are trained in the Intimidation skill.</description>
+		</sheet>
+		<rules>
+			<grant type="Proficiency" id="ID_PROFICIENCY_SKILL_INTIMIDATION" />
+		</rules>
+	</element> -->
+
+	<element name="Primal Intuition" type="Racial Trait" source="Volo’s Guide to Monsters" id="ID_WOTC_VGTM_RACIAL_TRAIT_ORC_PRIMAL_INTUITION">
+		<description>
+			<p>You have proficiency in two of the following skills of your choice: Animal Handling, Insight, Intimidation, Medicine, Nature, Perception, and Survival.</p>
+		</description>
+		<sheet display="false">
+			<description>You have proficiency in two of the following skills of your choice: Animal Handling, Insight, Intimidation, Medicine, Nature, Perception, and Survival.</description>
+		</sheet>
+		<rules>
+			<select type="Proficiency" name="Skill Proficiency, Primal Intuition" supports="ID_PROFICIENCY_SKILL_ANIMALHANDLING|ID_PROFICIENCY_SKILL_INSIGHT|ID_PROFICIENCY_SKILL_INTIMIDATION|ID_PROFICIENCY_SKILL_MEDICINE|ID_PROFICIENCY_SKILL_NATURE|ID_PROFICIENCY_SKILL_PERCEPTION|ID_PROFICIENCY_SKILL_SURVIVAL" number="2" requirements="!ID_WOTC_TCOE_OPTION_CUSTOMIZED_PROFICIENCY" />
+			<select type="Proficiency" name="Customized Skill Proficiency, Primal Intuition"  number="2" supports="Skill" requirements="ID_WOTC_TCOE_OPTION_CUSTOMIZED_PROFICIENCY" />
+		</rules>
+	</element>	
+
+	<element name="Powerful Build" type="Racial Trait" source="Volo’s Guide to Monsters" id="ID_WOTC_VGTM_RACIAL_TRAIT_ORC_POWERFUL_BUILD">
+		<description>
+			<p>You count as one size larger when determining your carrying capacity and the weight you can push, drag, or lift.</p>
+		</description>
+		<sheet>
+			<description>You count as one size larger when determining your carrying capacity and the weight you can push, drag, or lift.</description>
+		</sheet>
+		<rules>
+			<grant type="Grants" id="ID_INTERNAL_GRANTS_WEIGHT_CAPACITY_COUNTS_AS_LARGER" />
+		</rules>
+	</element>
+</elements>
