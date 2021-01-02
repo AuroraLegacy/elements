@@ -1013,14 +1013,12 @@
 			<p>Your hit points maximum increases by an amount equal to twice your level when you gain this feat. Whenever you gain a level thereafter, your hit points maximum increases by an additional 2 hit points.</p>
 		</description>
 		<sheet>
-			<description>Your hit points maximum increases by double your level.</description>
+			<description>Your hit points maximum increases by {{tough:hp}}.</description>
 		</sheet>
-		<setters>
-			<set name="allow duplicate">true</set>
-		</setters>
 		<rules>
-			<stat name="hp" value="level" />
-			<stat name="hp" value="level" />
+			<stat name="tough:hp" value="level" />
+			<stat name="tough:hp" value="level" />
+			<stat name="hp" value="tough:hp" />
 		</rules>
 	</element>
 	<element name="War Caster" type="Feat" source="Player’s Handbook" id="ID_PHB_FEAT_WARCASTER">
