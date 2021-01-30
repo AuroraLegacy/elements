@@ -25,7 +25,7 @@
 		<description>
 			<p>Every creature in D&amp;D, including every player character, has a special tag in the rules that identifies the type of creature they are. Most player characters are of the Humanoid type. A race option presented here tells you what your character’s creature type is.</p>
 			<p class="indent"><strong><em>List of Types.</em></strong> Here’s a list of the game’s creature types in alphabetical order: Aberration, Beast, Celestial, Construct, Dragon, Elemental, Fey, Fiend, Giant, Humanoid, Monstrosity, Ooze, Plant, Undead. These types don’t have rules themselves, but some rules in the game affect creatures of certain types in different ways. For example, the text of the <i>cure wounds</i> spell specifies that the spell doesn’t work on a creature that has the Construct or Undead type.</p>
-			<p class="indent"><strong><em>Having More Than One Type.</em></strong> Some creatures are of more than one creature type. If an effect works on at least one of a creature’s types, that effect can work on that creature. For example, if you are both a Humanoid and an Undead, cure wounds works on you, since the spell works on a Humanoid.</p>
+			<p class="indent"><strong><em>Having More Than One Type.</em></strong> Some creatures are of more than one creature type. If an effect works on at least one of a creature’s types, that effect can work on that creature. For example, if you are both a Humanoid and an Undead, <i>cure wounds</i> works on you, since the spell works on a Humanoid.</p>
 		</description>
 	</element>
 
@@ -84,7 +84,8 @@
 		</description>
 		<sheet display="false" />
 		<rules>
-			<select type="Racial Trait" name="Size" supports="ID_WOTC_TCOE_RACIAL_TRAIT_SMALL|ID_WOTC_TCOE_RACIAL_TRAIT_MEDIUM" />
+			<grant type="Racial Trait" id="ID_WOTC_UA20210126_RACIAL_TRAIT_DHAMPIR_TYPE_HUMANOID_AND_UNDEAD" />
+			<select type="Racial Trait" name="Size (Dhampir)" supports="ID_INTERNAL_RACIAL_TRAIT_SMALL|ID_INTERNAL_RACIAL_TRAIT_MEDIUM" />
 			<stat name="innate speed" value="35" bonus="base" />
 			<select type="Ability Score Improvement" name="Ability Score Improvement +2 (Dhampir)" supports="Custom Ability Score Increase 2" />
 			<select type="Ability Score Improvement" name="Ability Score Improvement +1 (Dhampir)" supports="Custom Ability Score Increase 1" />
@@ -94,6 +95,18 @@
 			<grant type="Racial Trait" id="ID_WOTC_UA20210126_RACIAL_TRAIT_DHAMPIR_SPIDER_CLIMB" />
 			<grant type="Racial Trait" id="ID_WOTC_UA20210126_RACIAL_TRAIT_DHAMPIR_VAMPIRIC_BITE" />
 		</rules>
+	</element>
+
+	<element name="Humanoid and Undead" type="Racial Trait" source="Unearthed Arcana: Gothic Lineages" id="ID_WOTC_UA20210126_RACIAL_TRAIT_DHAMPIR_TYPE_HUMANOID_AND_UNDEAD">
+		<description>
+			<p>Your creature type is Humanoid and Undead.</p>
+			<div class="reference">
+				<div element="ID_WOTC_UA20210126_INFORMATION_CREATURE_TYPE" />
+			</div>
+		</description>
+		<sheet alt="Type">
+			<description>Humanoid and Undead.</description>
+		</sheet>
 	</element>
 
 	<element name="Spider Climb" type="Racial Trait" source="Unearthed Arcana: Gothic Lineages" id="ID_WOTC_UA20210126_RACIAL_TRAIT_DHAMPIR_SPIDER_CLIMB">
@@ -168,7 +181,8 @@
 		</description>
 		<sheet display="false" />
 		<rules>
-			<select type="Racial Trait" name="Size" supports="ID_WOTC_TCOE_RACIAL_TRAIT_SMALL|ID_WOTC_TCOE_RACIAL_TRAIT_MEDIUM" />
+			<grant type="Racial Trait" id="ID_WOTC_UA20210126_RACIAL_TRAIT_HEXBLOOD_TYPE_HUMANOID_AND_FEY" />
+			<select type="Racial Trait" name="Size (Hexblood)" supports="ID_INTERNAL_RACIAL_TRAIT_SMALL|ID_INTERNAL_RACIAL_TRAIT_MEDIUM" />
 			<stat name="innate speed" value="30" bonus="base" />
 			<select type="Ability Score Improvement" name="Ability Score Improvement +2 (Hexblood)" supports="Custom Ability Score Increase 2" />
 			<select type="Ability Score Improvement" name="Ability Score Improvement +1 (Hexblood)" supports="Custom Ability Score Increase 1" />
@@ -179,6 +193,18 @@
 			<grant type="Racial Trait" id="ID_WOTC_UA20210126_RACIAL_TRAIT_HEXBLOOD_HEX_MAGIC" />
 			<grant type="Racial Trait" id="ID_WOTC_UA20210126_RACIAL_TRAIT_HEXBLOOD_MAGIC_TOKEN" />
 		</rules>
+	</element>
+
+	<element name="Humanoid and Fey" type="Racial Trait" source="Unearthed Arcana: Gothic Lineages" id="ID_WOTC_UA20210126_RACIAL_TRAIT_HEXBLOOD_TYPE_HUMANOID_AND_FEY">
+		<description>
+			<p>Your creature type is Humanoid and Fey.</p>
+			<div class="reference">
+				<div element="ID_WOTC_UA20210126_INFORMATION_CREATURE_TYPE" />
+			</div>
+		</description>
+		<sheet alt="Type">
+			<description>Humanoid and Fey.</description>
+		</sheet>
 	</element>
 
 	<element name="Fey Resilience" type="Racial Trait" source="Unearthed Arcana: Gothic Lineages" id="ID_WOTC_UA20210126_RACIAL_TRAIT_HEXBLOOD_FEY_RESILIENCE">
@@ -301,8 +327,9 @@
 		</description>
 		<sheet display="false" />
 		<rules>
-			<select type="Racial Trait" name="Size" supports="ID_WOTC_TCOE_RACIAL_TRAIT_SMALL|ID_WOTC_TCOE_RACIAL_TRAIT_MEDIUM" />
-			<stat name="innate speed" value="35" bonus="base" />
+			<select type="Racial Trait" name="Creature Type (Reborn)" supports="ID_WOTC_UA20210126_RACIAL_TRAIT_REBORN_TYPE_HUMANOID_AND_UNDEAD|ID_WOTC_UA20210126_RACIAL_TRAIT_REBORN_TYPE_HUMANOID_AND_CONSTRUCT" />
+			<select type="Racial Trait" name="Size (Reborn)" supports="ID_INTERNAL_RACIAL_TRAIT_SMALL|ID_INTERNAL_RACIAL_TRAIT_MEDIUM" />
+			<stat name="innate speed" value="30" bonus="base" />
 			<select type="Ability Score Improvement" name="Ability Score Improvement +2 (Reborn)" supports="Custom Ability Score Increase 2" />
 			<select type="Ability Score Improvement" name="Ability Score Improvement +1 (Reborn)" supports="Custom Ability Score Increase 1" />
 			<grant type="Language" id="ID_LANGUAGE_COMMON" />
@@ -311,6 +338,30 @@
 			<grant type="Racial Trait" id="ID_WOTC_UA20210126_RACIAL_TRAIT_REBORN_DEATHLESS_NATURE" />
 			<grant type="Racial Trait" id="ID_WOTC_UA20210126_RACIAL_TRAIT_REBORN_KNOWLEDGE_OF_A_PAST_LIFE" />
 		</rules>
+	</element>
+
+	<element name="Humanoid and Undead" type="Racial Trait" source="Unearthed Arcana: Gothic Lineages" id="ID_WOTC_UA20210126_RACIAL_TRAIT_REBORN_TYPE_HUMANOID_AND_UNDEAD">
+		<description>
+			<p>Your creature type is Humanoid and Undead.</p>
+			<div class="reference">
+				<div element="ID_WOTC_UA20210126_INFORMATION_CREATURE_TYPE" />
+			</div>
+		</description>
+		<sheet alt="Type">
+			<description>Humanoid and Undead.</description>
+		</sheet>
+	</element>
+
+	<element name="Humanoid and Construct" type="Racial Trait" source="Unearthed Arcana: Gothic Lineages" id="ID_WOTC_UA20210126_RACIAL_TRAIT_REBORN_TYPE_HUMANOID_AND_CONSTRUCT">
+		<description>
+			<p>Your creature type is Humanoid and Construct.</p>
+			<div class="reference">
+				<div element="ID_WOTC_UA20210126_INFORMATION_CREATURE_TYPE" />
+			</div>
+		</description>
+		<sheet alt="Type">
+			<description>Humanoid and Construct.</description>
+		</sheet>
 	</element>
 
 	<element name="Deathless Nature" type="Racial Trait" source="Unearthed Arcana: Gothic Lineages" id="ID_WOTC_UA20210126_RACIAL_TRAIT_REBORN_DEATHLESS_NATURE">
