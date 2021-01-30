@@ -4,7 +4,7 @@
 		<name>Unearthed Arcana: Feats for Races</name>
 		<description>Today we're offering another batch of feats to playtest. This time, the feats are associated with the races in the <i>Player’s Handbook</i>.</description>
 		<author url="http://dnd.wizards.com/articles/unearthed-arcana/feats-races">Wizards of the Coast</author>
-		<update version="0.0.4">
+		<update version="0.0.6">
 			<file name="20170424.xml" url="https://raw.githubusercontent.com/AuroraLegacy/elements/master/unearthed-arcana/2017/20170424.xml" />
 		</update>
 	</info>
@@ -25,7 +25,7 @@
 
 	<element name="Barbed Hide" type="Feat" source="Unearthed Arcana: Feats for Races" id="ID_WOTC_UA20170424_FEAT_BARBED_HIDE">
         <prerequisite>Tiefling</prerequisite>
-        <requirements>ID_RACE_TIEFLING</requirements>
+        <requirements>ID_RACE_TIEFLING||ID_WOTC_TCOE_RACE_CUSTOM_LINEAGE</requirements>
         <description>
             <p><i>Prerequisite: Tiefling</i></p>
             <p>One of your ancestors was a barbed devil or other spiky fiend. Barbs protrude from your head. You gain the following benefits:</p>
@@ -35,17 +35,18 @@
                 <li>You gain proficiency in the Intimidation skill. If you’re already proficient in it, your proficiency bonus is doubled for any check you make with it.</li>
             </ul>
         </description>
-        <sheet>
-            <description>Bonus Action: You can cause small barbs to protrude all over your body or cause them to retract. At the start of each of your turns while the barbs are out, you deal 1d6 piercing damage to any creature grappling you or any creature grappled by you.</description>
+        <sheet action="Bonus Action">
+            <description>You can cause small barbs to protrude all over your body or cause them to retract. At the start of each of your turns while the barbs are out, you deal 1d6 piercing damage to any creature grappling you or any creature grappled by you.</description>
         </sheet>
         <rules>
             <select type="Ability Score Improvement" name="Barbed Hide" supports="ID_PHB_FEAT_ASI_CONSTITUTION|ID_PHB_FEAT_ASI_CHARISMA" />
             <grant type="Grants" id="ID_INTERNAL_GRANTS_PROFICIENCY_SKILL_OR_DOUBLE_INTIMIDATION" />
         </rules>
     </element>
+
 	<element name="Critter Friend" type="Feat" source="Unearthed Arcana: Feats for Races" id="ID_WOTC_UA20170424_FEAT_CRITTER_FRIEND">
         <prerequisite>Gnome (forest)</prerequisite>
-        <requirements>ID_SUB_RACE_FOREST_GNOME</requirements>
+        <requirements>ID_SUB_RACE_FOREST_GNOME||ID_WOTC_TCOE_RACE_CUSTOM_LINEAGE</requirements>
         <description>
             <p><i>Prerequisite: Gnome (forest)</i></p>
             <p>Your friendship with animals mystically deepens. You gain the following benefits:</p>
@@ -60,12 +61,12 @@
         <rules>
             <grant type="Grants" id="ID_INTERNAL_GRANTS_PROFICIENCY_SKILL_OR_DOUBLE_ANIMALHANDLING" />
             <grant type="Spell" name="ID_PHB_SPELL_SPEAK_WITH_ANIMALS" />
-            <grant type="Spell" name="ID_PHB_SPELL_ANIMAL_FRIENDSHIP" />
         </rules>
     </element>
+
 	<element name="Dragon Wings" type="Feat" source="Unearthed Arcana: Feats for Races" id="ID_WOTC_UA20170424_FEAT_DRAGON_WINGS">
         <prerequisite>Dragonborn</prerequisite>
-        <requirements>ID_RACE_DRAGONBORN</requirements>
+        <requirements>ID_RACE_DRAGONBORN||ID_WOTC_TCOE_RACE_CUSTOM_LINEAGE</requirements>
         <description>
             <p><i>Prerequisite: Dragonborn</i></p>
             <p>You sprout draconic wings. With your wings, you have a flying speed of 20 feet if you aren’t wearing heavy armor and aren’t exceeding your carrying capacity.</p>
@@ -77,9 +78,10 @@
 			<stat name="speed:fly" value="20" bonus="base" equipped="![armor:heavy]" />
         </rules>
     </element>
+
 	<element name="Everybody's Friend" type="Feat" source="Unearthed Arcana: Feats for Races" id="ID_WOTC_UA20170424_FEAT_EVERYBODYS_FRIEND">
         <prerequisite>Half-elf</prerequisite>
-        <requirements>ID_RACE_HALFELF</requirements>
+        <requirements>ID_RACE_HALFELF||ID_WOTC_TCOE_RACE_CUSTOM_LINEAGE</requirements>
         <description>
             <p><i>Prerequisite: Half-elf</i></p>
             <p>You develop your magnetic personality to ease your way through the world. You gain the following benefits:</p>
@@ -95,21 +97,22 @@
             <grant type="Grants" id="ID_INTERNAL_GRANTS_PROFICIENCY_SKILL_OR_DOUBLE_PERSUASION" />
         </rules>
     </element>
+
 	<element name="Grudge-Bearer" type="Feat" source="Unearthed Arcana: Feats for Races" id="ID_WOTC_UA20170424_FEAT_GRUDGE_BEARER">
         <prerequisite>Dwarf</prerequisite>
-        <requirements>ID_SRD_RACE_DWARF</requirements>
+        <requirements>ID_SRD_RACE_DWARF||ID_WOTC_TCOE_RACE_CUSTOM_LINEAGE</requirements>
         <description>
             <p><i>Prerequisite: Dwarf</i></p>
             <p>You have a deep hatred for a particular kind of creature. Choose your foes, a type of creature to bear the burden of your wrath: aberrations, beasts, celestials, constructs, dragons, elementals, fey, fiends, giants, monstrosities, oozes, plants, or undead. Alternatively, you can choose two races of humanoid (such as gnolls and orcs). You gain the following benefits:</p>
             <ul>
                 <li>Increase your Strength, Constitution, or Wisdom score by 1, to a maximum of 20.</li>
-                <li>During the first round of any combat against your chosen foes, your attack rolls against any of themhave advantage.</li>
+                <li>During the first round of any combat against your chosen foes, your attack rolls against any of them have advantage.</li>
                 <li>When any of your chosen foes makes an opportunity attack against you, it makes the attack roll with disadvantage.</li>
                 <li>Whenever you make an Intelligence (Arcana, History, Nature, or Religion) check to recall information about your chosen foes, you add double your proficiency bonus to the check, even if you’re not normally proficient.</li>
             </ul>
         </description>
         <sheet>
-            <description>During the first round of any combat against your chosen foes, your attack rolls against any of themhave advantage. When any of your chosen foes makes an opportunity attack against you, it makes the attack roll with disadvantage. And whenever you make an Intelligence (Arcana, History, Nature, or Religion) check to recall information about your chosen foes, you add double your proficiency bonus to the check, even if you’re not normally proficient.</description>
+            <description>During the first round of any combat against your chosen foes, your attack rolls against any of them have advantage. When any of your chosen foes makes an opportunity attack against you, it makes the attack roll with disadvantage. And whenever you make an Intelligence (Arcana, History, Nature, or Religion) check to recall information about your chosen foes, you add double your proficiency bonus to the check, even if you’re not normally proficient.</description>
         </sheet>
         <rules>
             <select type="Ability Score Improvement" name="Grudge-Bearer" supports="ID_PHB_FEAT_ASI_CONSTITUTION|ID_PHB_FEAT_ASI_STRENGTH|ID_PHB_FEAT_ASI_WISDOM" />
@@ -255,9 +258,10 @@
             <description></description>
         </sheet>
     </element>
+
 	<element name="Human Determination" type="Feat" source="Unearthed Arcana: Feats for Races" id="ID_WOTC_UA20170424_FEAT_HUMAN_DETERMINATION">
         <prerequisite>Human</prerequisite>
-        <requirements>ID_RACE_HUMAN</requirements>
+        <requirements>ID_RACE_HUMAN||ID_WOTC_TCOE_RACE_CUSTOM_LINEAGE</requirements>
         <description>
             <p><i>Prerequisite: Human</i></p>
             <p>You are filled with a determination that can draw the unreachable within your reach. You gain the following benefits:</p>
@@ -273,20 +277,22 @@
             <select type="Ability Score Improvement" name="Human Determination" supports="Feat" />
         </rules>
     </element>
+
 	<element name="Orcish Aggression" type="Feat" source="Unearthed Arcana: Feats for Races" id="ID_WOTC_UA20170424_FEAT_ORCISH_AGGRESSION">
         <prerequisite>Half-orc</prerequisite>
-        <requirements>ID_RACE_HALFORC</requirements>
+        <requirements>ID_RACE_HALFORC||ID_WOTC_TCOE_RACE_CUSTOM_LINEAGE</requirements>
         <description>
             <p><i>Prerequisite: Half-orc</i></p>
             <p>As a bonus action, you can move up to your speed toward an enemy of your choice that you can see or hear. You must end this move closer to the enemy than you started.</p>
         </description>
-        <sheet>
-            <description>Bonus Action: You can move up to your speed toward an enemy of your choice that you can see or hear. You must end this move closer to the enemy than you started.</description>
+        <sheet action="Bonus Action">
+            <description>You can move up to your speed toward an enemy of your choice that you can see or hear. You must end this move closer to the enemy than you started.</description>
         </sheet>
     </element>
+
 	<element name="Wonder Maker" type="Feat" source="Unearthed Arcana: Feats for Races" id="ID_WOTC_UA20170424_FEAT_WONDER_MAKER">
         <prerequisite>Gnome (rock)</prerequisite>
-        <requirements>ID_SUB_RACE_ROCK_GNOME</requirements>
+        <requirements>ID_SUB_RACE_ROCK_GNOME||ID_WOTC_TCOE_RACE_CUSTOM_LINEAGE</requirements>
         <description>
             <p><i>Prerequisite: Gnome (rock)</i></p>
             <p>You master the tinker techniques of your people. You gain the following benefits:</p>

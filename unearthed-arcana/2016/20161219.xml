@@ -4,7 +4,7 @@
 		<name>Unearthed Arcana: Paladin: Sacred Oaths</name>
 		<description>Paladins have two new Sacred Oath options to ponder in today’s Unearthed Arcana: the Oath of Conquest and the Oath of Treachery. We invite you to read the options' descriptions, make characters with them, and see whether you like them. Next time we’ll provide a survey so that you can let us know what you think.</description>
 		<author url="http://dnd.wizards.com/articles/unearthed-arcana/paladin-sacred-oaths">Wizards of the Coast</author>
-		<update version="0.0.2">
+		<update version="0.0.3">
 			<file name="20161219.xml" url="https://raw.githubusercontent.com/AuroraLegacy/elements/master/unearthed-arcana/2016/20161219.xml" />
 		</update>
 	</info>
@@ -85,11 +85,33 @@
             <p class="indent">For the duration, you can cast spells as though you were in the illusion’s space, but you must use your own senses. Additionally, when both you and your illusion are within 5 feet of a creature that can see the illusion, you have advantage on attack rolls against that creature, given how uncanny the illusion is.</p>
             <p class="indent"><b><i>Poison Strike. </i></b>You can use your Channel Divinity to make a weapon deadlier. As a bonus action, you touch one weapon or piece of ammunition and conjure a special poison on it. The poison lasts for 1 minute. The next time you hit a target with an attack using that weapon or ammunition, the target takes poison damage immediately after the attack. The poison damage equals 2d10 + your paladin level, or 20 + your paladin level if you had advantage on the attack roll.</p>
         </description>
-        <sheet>
-            <description>Conjure Duplicate and Poison Strike</description>
-            <!-- todo: remove sheet placeholders above -->
-        </sheet>
-    </element>
+		<sheet display="false" />
+		<rules>
+			<grant type="Archetype Feature" id="ID_WOTC_UA20161219_ARCHETYPE_OATH_OF_TREACHERY_CHANNEL_DIVINITY_CONJURE_DUPLICATE" />
+			<grant type="Archetype Feature" id="ID_WOTC_UA20161219_ARCHETYPE_OATH_OF_TREACHERY_CHANNEL_DIVINITY_POISON_STRIKE" />
+		</rules>
+	</element>
+	<element name="Channel Divinity: Conjure Duplicate" type="Archetype Feature" source="Player’s Handbook" id="ID_WOTC_UA20161219_ARCHETYPE_OATH_OF_TREACHERY_CHANNEL_DIVINITY_CONJURE_DUPLICATE">
+		<description>
+			<p>As an action, you create a visual illusion of yourself that lasts for 1 minute, or until you lose your concentration (as if you were concentrating on a spell). The illusion appears in an unoccupied space of your choice that you can see within 30 feet of you. The illusion looks exactly like you; it is silent; it is your size, is insubstantial, and doesn’t occupy its space; and it is unaffected by attacks and damage. As a bonus action on your turn, you can move the illusion up to 30 feet to a space you can see, but the illusion must remain within 120 feet of you.</p>
+            <p class="indent">For the duration, you can cast spells as though you were in the illusion’s space, but you must use your own senses. Additionally, when both you and your illusion are within 5 feet of a creature that can see the illusion, you have advantage on attack rolls against that creature, given how uncanny the illusion is.</p>
+		</description>
+		<sheet alt="Conjure Duplicate" action="Action" usage="Channel Divinity">
+			<description>You create a visual illusion of yourself that lasts for 1 minute, or until you lose your concentration (as if you were concentrating on a spell). The illusion appears in an unoccupied space of your choice that you can see within 30 feet of you. The illusion looks exactly like you; it is silent; it is your size, is insubstantial, and doesn’t occupy its space; and it is unaffected by attacks and damage. As a bonus action on your turn, you can move the illusion up to 30 feet to a space you can see, but the illusion must remain within 120 feet of you. For the duration, you can cast spells as though you were in the illusion’s space, but you must use your own senses. Additionally, when both you and your illusion are within 5 feet of a creature that can see the illusion, you have advantage on attack rolls against that creature, given how uncanny the illusion is.</description>
+		</sheet>
+	</element>
+	<element name="Channel Divinity: Poison Strike" type="Archetype Feature" source="Player’s Handbook" id="ID_WOTC_UA20161219_ARCHETYPE_OATH_OF_TREACHERY_CHANNEL_DIVINITY_POISON_STRIKE">
+		<description>
+			<p>You can use your Channel Divinity to make a weapon deadlier. As a bonus action, you touch one weapon or piece of ammunition and conjure a special poison on it. The poison lasts for 1 minute. The next time you hit a target with an attack using that weapon or ammunition, the target takes poison damage immediately after the attack. The poison damage equals 2d10 + your paladin level, or 20 + your paladin level if you had advantage on the attack roll.</p>
+		</description>
+		<sheet alt="Poison Strike" action="Bonus Action" usage="Channel Divinity">
+			<description>You touch one weapon or piece of ammunition and conjure a special poison on it. The poison lasts for 1 minute. The next time you hit a target with an attack using that weapon or ammunition, the target takes poison damage immediately after the attack. The poison damage equals 2d10 + {{level:paladin}}, or {{poison strike:damage:max}} if you had advantage on the attack roll.</description>
+		</sheet>
+		<rules>
+			<stat name="poison strike:damage:max" value="20" />
+			<stat name="poison strike:damage:max" value="level:paladin" />
+		</rules>
+	</element>
     <element name="Aura of Treachery" type="Archetype Feature" source="Unearthed Arcana: Paladin: Sacred Oaths" id="ID_WOTC_UA20161219_ARCHETYPE_OATH_OF_TREACHERY_AURA_OF_TREACHERY">
         <description>
             <p>Starting at 7th level, you emanate an aura of discord, which gives you the following benefits.</p>
@@ -97,17 +119,18 @@
             <p class="indent"><b><i>Treacherous Strike. </i></b>If a creature within 5 feet of you misses you with a melee attack, you can use your reaction to force the attacker to reroll that attack against a creature of your choice that is also within 5 feet of the attacker. The ability fails and is wasted if the attacker is immune to being charmed.</p>
             <p class="indent">You can use this ability three times. You regain expended uses of it when you finish a short or long rest.</p>
         </description>
-        <sheet>
-            <description>Cull the Herd and Treacherous Strike</description>
-            <!-- todo: remove sheet placeholders above -->
+        <sheet usage="3/Short Rest">
+            <description>You emanate an aura of discord, which gives you the following benefits: &#13;
+			Cull the Herd. You have advantage on melee attack rolls against any creature that has one or more of its allies within 5 feet of it. &#13;
+            Treacherous Strike. If a creature within 5 feet of you misses you with a melee attack, you can use your reaction to force the attacker to reroll that attack against a creature of your choice that is also within 5 feet of the attacker. The ability fails and is wasted if the attacker is immune to being charmed.</description>
         </sheet>
     </element>
     <element name="Blackguard's Escape" type="Archetype Feature" source="Unearthed Arcana: Paladin: Sacred Oaths" id="ID_WOTC_UA20161219_ARCHETYPE_OATH_OF_TREACHERY_BLACKGUARDS_ESCAPE">
         <description>
             <p>At 15th level, you have the ability to slip away from your foes. Immediately after you are hit by an attack, you can use your reaction to turn invisible and teleport up to 60 feet to a spot you can see. You remain invisible until the end of your next turn or until you attack, deal damage, or force a creature to make a saving throw. Once you use this feature, you must finish a short or long rest before you can use it again.</p>
         </description>
-        <sheet usage="1/Short Rest">
-            <description>Immediately after you are hit by an attack, you can use your reaction to turn invisible and teleport up to 60 feet to a spot you can see. You remain invisible until the end of your next turn or until you attack, deal damage, or force a creature to make a saving throw.</description>
+        <sheet action="Reaction" usage="1/Short Rest">
+            <description>Immediately after you are hit by an attack, you can turn invisible and teleport up to 60 feet to a spot you can see. You remain invisible until the end of your next turn or until you attack, deal damage, or force a creature to make a saving throw.</description>
         </sheet>
     </element>
     <element name="Icon of Deceit" type="Archetype Feature" source="Unearthed Arcana: Paladin: Sacred Oaths" id="ID_WOTC_UA20161219_ARCHETYPE_OATH_OF_TREACHERY_ICON_OF_DECEIT">
@@ -121,10 +144,10 @@
             <p class="indent">Once you use this feature, you can’t use it again until you finish a long rest.</p>
         </description>
         <sheet action="Action" usage="1/Long Rest">
-            <description>You can magically become an avatar of deceit, gaining the following benefits for 1 minute:
-			You are invisible.
-			If a creature damages you on its turn, it must succeed on a Wisdom saving throw DC{{spellcasting:dc:cha}} or you control its next action, provided that you aren’t incapacitated when it takes the action. A creature automatically succeeds on the save if the creature is immune to being charmed.
-			If you have advantage on an attack roll, you gain a bonus to its damage roll equal to +{{level:paladin}}.</description>
+            <description>You can magically become an avatar of deceit, gaining the following benefits for 1 minute: &#13;
+			• You are invisible. &#13;
+			• If a creature damages you on its turn, it must succeed on a Wisdom saving throw DC{{spellcasting:dc:cha}} or you control its next action, provided that you aren’t incapacitated when it takes the action. A creature automatically succeeds on the save if the creature is immune to being charmed. &#13;
+			• If you have advantage on an attack roll, you gain a bonus to its damage roll equal to +{{level:paladin}}.</description>
         </sheet>
     </element>
 </elements>

@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<elements>
+	<info>
+		<name>Phantom</name>
+		<description>The Phantom from Tasha’s Cauldron of Everything</description>
+		<author url="http://dnd.wizards.com/products/tabletop-games/rpg-products/tashas-cauldron-everything">Tasha’s Cauldron of Everything</author>
+		<update version="0.0.1">
+			<file name="rogue-phantom.xml" url="https://raw.githubusercontent.com/AuroraLegacy/elements/master/supplements/tashas-cauldron-of-everything/archetypes/rogue-phantom.xml" />
+		</update>
+	</info>
+	<element name="Phantom" type="Archetype" source="Tasha’s Cauldron of Everything" id="ID_WOTC_TCOE_ARCHETYPE_ROGUE_PHANTOM">
+		<supports>Roguish Archetype</supports>
+		<description>
+			<p>Many rogues walk a fine line between life and death, risking their own lives and taking the lives of others. While adventuring on that line, some rogues discover a mystical connection to death itself. These rogues take knowledge from the dead and become immersed in negative energy, eventually becoming like ghosts. Thieves’ guilds value them as highly effective information gatherers and spies.</p>
+			<p class="indent">Many shadar-kai of the Shadowfell are masters of these macabre techniques, and some are willing to teach this path. In places like Thay in the Forgotten Realms and Karrnath in Eberron, where many necromancers practice their craft, a Phantom can become a wizard’s confidant and right hand. In temples of gods of death, the Phantom might work as an agent to track down those who try to cheat death and to recover knowledge that might otherwise be lost to the grave.</p>
+			<p class="indent">How did you discover this grim power? Did you sleep in a graveyard and awaken to your new abilities? Or did you cultivate them in a temple or thieves’ guild dedicated to a deity of death?</p>
+			<div element="ID_WOTC_TCOE_ARCHETYPE_FEATURE_PHANTOM_WHISPERS_OF_THE_DEAD" />
+			<div element="ID_WOTC_TCOE_ARCHETYPE_FEATURE_PHANTOM_WAILS_FROM_THE_GRAVE" />
+			<div element="ID_WOTC_TCOE_ARCHETYPE_FEATURE_PHANTOM_TOKENS_OF_THE_DEPARTED" />
+			<div element="ID_WOTC_TCOE_ARCHETYPE_FEATURE_PHANTOM_GHOST_WALK" />
+			<div element="ID_WOTC_TCOE_ARCHETYPE_FEATURE_PHANTOM_DEATHS_FRIEND" />
+		</description>
+		<sheet display="false" />
+		<rules>
+			<grant type="Archetype Feature" id="ID_WOTC_TCOE_ARCHETYPE_FEATURE_PHANTOM_WHISPERS_OF_THE_DEAD" level="3" />
+			<grant type="Archetype Feature" id="ID_WOTC_TCOE_ARCHETYPE_FEATURE_PHANTOM_WAILS_FROM_THE_GRAVE" level="3" />
+			<grant type="Archetype Feature" id="ID_WOTC_TCOE_ARCHETYPE_FEATURE_PHANTOM_TOKENS_OF_THE_DEPARTED" level="9" />
+			<grant type="Archetype Feature" id="ID_WOTC_TCOE_ARCHETYPE_FEATURE_PHANTOM_GHOST_WALK" level="13" />
+			<grant type="Archetype Feature" id="ID_WOTC_TCOE_ARCHETYPE_FEATURE_PHANTOM_DEATHS_FRIEND" level="17" />
+		</rules>
+	</element>
+	<element name="Whispers of the Dead" type="Archetype Feature" source="Tasha’s Cauldron of Everything" id="ID_WOTC_TCOE_ARCHETYPE_FEATURE_PHANTOM_WHISPERS_OF_THE_DEAD">
+		<description>
+			<p><em>3rd-level Phantom feature</em></p>
+			<p>Echoes of those who have died cling to you. Whenever you finish a short or long rest, you can choose one skill or tool proficiency that you lack and gain it, as a ghostly presence shares its knowledge with you. You lose this proficiency when you use this feature to choose a different proficiency that you lack.</p>
+		</description>
+		<sheet>
+			<description>Whenever you finish a short or long rest, you can choose one skill or tool proficiency that you lack and gain it, as a ghostly presence shares its knowledge with you. You lose this proficiency when you use this feature to choose a different proficiency that you lack.</description>
+		</sheet>
+		<rules>
+			<select type="Proficiency" name="Proficiency, Whispers of the Dead" supports="Skill||Tool" optional="true" />
+		</rules>
+	</element>
+	<element name="Wails from the Grave" type="Archetype Feature" source="Tasha’s Cauldron of Everything" id="ID_WOTC_TCOE_ARCHETYPE_FEATURE_PHANTOM_WAILS_FROM_THE_GRAVE">
+		<description>
+			<p><em>3rd-level Phantom feature</em></p>
+			<p>As you nudge someone closer to the grave, you can channel the power of death to harm someone else as well. Immediately after you deal your Sneak Attack damage to a creature on your turn, you can target a second creature that you can see within 30 feet of the first creature. Roll half the number of Sneak Attack dice for your level (round up), and the second creature takes necrotic damage equal to the roll’s total, as wails of the dead sound around them for a moment.</p>
+			<p class="indent">You can use this feature a number of times equal to your proficiency bonus, and you regain all expended uses when you finish a long rest.</p>
+		</description>
+		<sheet usage="{{proficiency}}/Long Rest">
+			<description>Immediately after you deal your Sneak Attack damage to a creature on your turn, you can target a second creature that you can see within 30 feet of the first creature. The second creature takes {{wails from the grave:count}}d{{sneak-attack:die}} necrotic damage.</description>
+		</sheet>
+		<rules>
+			<stat name="wails from the grave:count" value="1" bonus="base" />
+			<stat name="wails from the grave:count" value="2" level="5" bonus="base" />
+			<stat name="wails from the grave:count" value="3" level="9" bonus="base" />
+			<stat name="wails from the grave:count" value="4" level="13" bonus="base" />
+			<stat name="wails from the grave:count" value="5" level="17" bonus="base" />		
+		</rules>
+	</element>
+	<element name="Tokens of the Departed" type="Archetype Feature" source="Tasha’s Cauldron of Everything" id="ID_WOTC_TCOE_ARCHETYPE_FEATURE_PHANTOM_TOKENS_OF_THE_DEPARTED">
+		<description>
+			<p><em>9th-level Phantom feature</em></p>
+			<p>When a life ends in your presence, you’re able to snatch a token from the departing soul, a sliver of its life essence that takes physical form; as a reaction when a creature you can see dies within 30 feet of you, you can open your free hand and cause a Tiny trinket to appear there, a soul trinket. The DM determines the trinket’s form or has you roll on the Trinkets table in the Player’s Handbook to generate it.</p>
+			<p class="indent">You can have a maximum number of soul trinkets equal to your proficiency bonus, and you can’t create one while at your maximum.</p>
+			<p class="indent">You can use soul trinkets in the following ways:</p>
+			<ul>
+				<li>While a soul trinket is on your person, you have advantage on death saving throws and Constitution saving throws, for your vitality is enhanced by the life essence within the object</li>
+				<li>When you deal Sneak Attack damage on your turn, you can destroy one of your soul trinkets that’s on your person and then immediately use Wails from the Grave, without expending a use of that feature.</li>
+				<li>As an action, you can destroy one of your soul trinkets, no matter where it’s located. When you do so, you can ask the spirit associated with the trinket one question. The spirit appears to you and answers in a language it knew in life. It’s under no obligation to be truthful, and it answers as concisely as possible, eager to be free. The spirit knows only what it knew in life, as determined by the DM.</li>
+			</ul>
+		</description>
+		<sheet action="Reaction">
+			<description>When a creature you can see dies within 30 feet of you, you can open your free hand and cause a Tiny trinket to appear there, a soul trinket. You can have {{proficiency}} soul trinkets, and you can’t create one while at your maximum. You can use soul trinkets in the following ways: &#13;
+			• While a soul trinket is on your person, you have advantage on death saves and Constitution saves, for your vitality is enhanced by the life essence within the object. &#13;
+			• When you deal Sneak Attack damage on your turn, you can destroy one of your soul trinkets that’s on your person and then immediately use Wails from the Grave, without expending a use of that feature. &#13;
+			• As an action, you can destroy one of your soul trinkets, no matter where it’s located. When you do so, you can ask the spirit associated with the trinket one question. The spirit appears to you and answers in a language it knew in life. It’s under no obligation to be truthful, and it answers as concisely as possible, eager to be free. The spirit knows only what it knew in life, as determined by the DM.</description>
+		</sheet>
+	</element>
+	<element name="Ghost Walk" type="Archetype Feature" source="Tasha’s Cauldron of Everything" id="ID_WOTC_TCOE_ARCHETYPE_FEATURE_PHANTOM_GHOST_WALK">
+		<description>
+			<p><em>13th-level Phantom feature</em></p>
+			<p>You can phase partially into the realm of the dead, becoming like a ghost. As a bonus action, you assume a spectral form. While in this form, you have a flying speed of 10 feet, you can hover, and attack rolls have disadvantage against you. You can also move through creatures and objects as if they were difficult terrain, but you take 1d10 force damage if you end your turn inside a creature or object.</p>
+			<p class="indent">You stay in this form for 10 minutes or until you end it as a bonus action. To use this feature again, you must finish a long rest or destroy one of your soul trinkets as part of the bonus action you use to activate Ghost Walk.</p>
+		</description>
+		<sheet action="Bonus Action">
+			<description>You assume a spectral form. While in this form, you have a flying speed of 10 feet, you can hover, and attack rolls have disadvantage against you. You can also move through creatures and objects as if they were difficult terrain, but you take 1d10 force damage if you end your turn inside a creature or object.
+			You stay in this form for 10 minutes or until you end it as a bonus action. To use this feature again, you must finish a long rest or destroy one of your soul trinkets as part of the bonus action you use to activate Ghost Walk.</description>
+		</sheet>
+	</element>
+	<element name="Death’s Friend" type="Archetype Feature" source="Tasha’s Cauldron of Everything" id="ID_WOTC_TCOE_ARCHETYPE_FEATURE_PHANTOM_DEATHS_FRIEND">
+		<description>
+			<p><em>17th-level Phantom feature</em></p>
+			<p>Your association with death has become so close that you gain the following benefits:</p>
+			<ul>
+				<li>When you use your Wails from the Grave, you can deal the necrotic damage to both the first and second creature.</li>
+				<li>At the end of the long rest, a soul trinket appears in your hand if you don’t have any soul trinkets, as the spirits of the dead are drawn to you.</li>
+			</ul>
+		</description>
+		<sheet>
+			<description>When you use your Wails from the Grave, you can deal the necrotic damage to both the first and second creature.
+			At the end of the long rest, a soul trinket appears in your hand if you don’t have any soul trinkets, as the spirits of the dead are drawn to you.</description>
+		</sheet>
+	</element>	
+  
+</elements>

@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<elements>
+	<info>
+		<name>Goblin</name>
+		<description>The monstrous-adventurers from Volo’s Guide to Monsters.</description>
+		<author url="http://dnd.wizards.com/products/tabletop-games/rpg-products/volos-guide-to-monsters">Wizards of the Coast</author>
+		<update version="0.0.2">
+			<file name="race-goblin.xml" url="https://raw.githubusercontent.com/AuroraLegacy/elements/master/supplements/volos-guide-to-monsters/race-goblin.xml" />
+		</update>
+	</info>
+
+	<element name="Goblin" type="Race" source="Volo’s Guide to Monsters" id="ID_WOTC_VGTM_RACE_GOBLIN">
+		<description>
+			<p class="flavor">In some campaigns, humanoids normally regarded as sinister threats can emerge to adventure alongside humans and the other standard races. This section is aimed at those who wish to expand the race selections for their campaigns beyond the typical folk of D&amp;D.</p>
+			<h4>GOBLIN TRAITS</h4>
+			<p>Your goblin character has the following racial traits.</p>
+			<p>
+				<span class="feature">Ability Score Increase.</span>Your Dexterity score increases by 2, and your Constitution score increases by 1.<br/>
+				<span class="feature">Age.</span>Goblins reach adulthood at age 8 and live up to 60 years.<br/>
+				<span class="feature">Alignment.</span>Goblins are typically neutral evil, as they care only for their own needs. A few goblins might tend toward good or neutrality, but only rarely.<br/>
+				<span class="feature">Size.</span>Goblins are between 3 and 4 feet tall and weigh between 40 and 80 pounds. Your size is Small.<br/>
+				<span class="feature">Speed.</span>Your base walking speed is 30 feet.<br/>
+				<span class="feature">Darkvision.</span>You can see in dim light within 60 feet of you as if it were bright light, and in darkness as if it were dim light. You can't discern color in darkness, only shades of gray.<br/>
+				<span class="feature">Fury of the Small.</span>When you damage a creature with an attack or a spell and the creature's size is larger than yours, you can cause the attack or spell to deal extra damage to the creature. The extra damage equals your level. Once you use this trait, you can't use it again until you finish a short or long rest.<br/>
+				<span class="feature">Nimble Escape.</span>You can take the Disengage or Hide action as a bonus action on each of your turns.<br/>
+				<span class="feature">Languages.</span>You can speak, read, and write Common and Goblin.<br/>
+			</p>
+		</description>
+		<sheet display="false"/>
+		<setters>
+			<!-- names taken from online generator to have at least a few names in here -->
+			<set name="names" type="custom">n/a</set>
+			<set name="names-format">{{custom}}</set>
+		</setters>
+		<rules>
+			<stat name="dexterity" value="2" requirements="!ID_WOTC_TCOE_OPTION_CUSTOMIZED_ASI" />
+			<stat name="constitution" value="1" requirements="!ID_WOTC_TCOE_OPTION_CUSTOMIZED_ASI" />
+			<select type="Ability Score Improvement" name="Custom Ability Score Improvement +2 (Goblin)" supports="Custom Ability Score Increase 2" requirements="ID_WOTC_TCOE_OPTION_CUSTOMIZED_ASI" />
+			<select type="Ability Score Improvement" name="Custom Ability Score Improvement +1 (Goblin)" supports="Custom Ability Score Increase 1" requirements="ID_WOTC_TCOE_OPTION_CUSTOMIZED_ASI" />
+			<stat name="innate speed" value="30" bonus="base" />
+			<grant type="Size" id="ID_SIZE_SMALL" />
+			<grant type="Vision" id="ID_VISION_DARKVISION" />
+			<grant type="Language" id="ID_LANGUAGE_COMMON" requirements="!ID_WOTC_TCOE_OPTION_CUSTOMIZED_LANGUAGE" />
+			<grant type="Language" id="ID_LANGUAGE_GOBLIN" requirements="!ID_WOTC_TCOE_OPTION_CUSTOMIZED_LANGUAGE" />
+			<select type="Language" name="Customized Language" supports="Custom Race Language" number="2" requirements="ID_WOTC_TCOE_OPTION_CUSTOMIZED_LANGUAGE" />
+			<grant type="Racial Trait" id="ID_WOTC_VGTM_RACIAL_TRAIT_GOBLIN_FURY_OF_THE_SMALL" />
+			<grant type="Racial Trait" id="ID_WOTC_VGTM_RACIAL_TRAIT_GOBLIN_NIMBLE_ESCAPE" />
+		</rules>
+	</element>	
+	<element name="Fury of the Small" type="Racial Trait" source="Volo’s Guide to Monsters" id="ID_WOTC_VGTM_RACIAL_TRAIT_GOBLIN_FURY_OF_THE_SMALL">
+		<description>
+			<p>When you damage a creature with an attack or a spell and the creature's size is larger than yours, you can cause the attack or spell to deal extra damage to the creature. The extra damage equals your level. Once you use this trait, you can't use it again until you finish a short or long rest.</p>
+		</description>
+		<sheet>
+			<description>When you damage a creature with an attack or a spell and the creature's size is larger than yours, you can cause the attack or spell to deal extra damage to the creature. The extra damage equals your level. Once you use this trait, you can't use it again until you finish a short or long rest.</description>
+		</sheet>
+	</element>
+	<element name="Nimble Escape" type="Racial Trait" source="Volo’s Guide to Monsters" id="ID_WOTC_VGTM_RACIAL_TRAIT_GOBLIN_NIMBLE_ESCAPE">
+		<description>
+			<p>You can take the Disengage or Hide action as a bonus action on each of your turns.</p>
+		</description>
+		<sheet>
+			<description>You can take the Disengage or Hide action as a bonus action on each of your turns.</description>
+		</sheet>
+	</element>
+</elements>

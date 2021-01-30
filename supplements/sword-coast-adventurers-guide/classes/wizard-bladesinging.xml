@@ -4,7 +4,7 @@
 		<name>Bladesinging</name>
 		<description>The Bladesinging archetype from the Sword Coast Adventurer’s Guide.</description>
 		<author url="http://dnd.wizards.com/products/tabletop-games/rpg-products/sc-adventurers-guide">Wizards of the Coast</author>
-		<update version="0.1.4">
+		<update version="0.1.5">
 			<file name="wizard-bladesinging.xml" url="https://raw.githubusercontent.com/AuroraLegacy/elements/master/supplements/sword-coast-adventurers-guide/classes/wizard-bladesinging.xml" />
 		</update>
 	</info>
@@ -71,9 +71,9 @@
 				<li>You have advantage on Dexterity (Acrobatics) checks .</li>
 				<li>You gain a bonus to any Constitution saving throw you make to maintain your concentration on a spell. The bonus equals your Intelligence modifier (minimum of +l).</li>
 			</ul>
-			<p class="indent">You can use this feature twice. You regain all expended uses of it when you finish a short or long rest.</p>
+			<p class="indent">You can use this feature a number of times equal to your proficiency bonus, and you regain all expended uses of it when you finish a long rest.</p>
 		</description>
-		<sheet usage="2/Short Rest">
+		<sheet usage="{{proficiency}}/Long Rest">
 			<description>You can use a bonus action to start the Bladesong, which lasts for 1 minute. +{{bladesong:intelligence}} AC, +10 walking speed, advantage on Acrobatics checks, +{{bladesong:intelligence}} to concentration checks.</description>
 		</sheet>
 		<rules>
@@ -83,10 +83,10 @@
 	</element>
 	<element name="Extra Attack" type="Archetype Feature" source="Sword Coast Adventurer’s Guide" id="ID_WOTC_SCAG_ARCHETYPE_FEATURE_BLADESINGING_EXTRA_ATTACK">
 		<description>
-			<p>Starting at 6th level, you can attack twice, instead of once, whenever you take the Attack action on your turn.</p>
+			<p>Starting at 6th level, you can attack twice, instead of once, whenever you take the Attack action on your turn. Moreover, you can cast one of your cantrips in place of one of those attacks.</p>
 		</description>
 		<sheet>
-			<description>You can attack twice, instead of once, whenever you take the Attack action on your turn.</description>
+			<description>You can attack twice, instead of once, whenever you take the Attack action on your turn. Moreover, you can cast one of your cantrips in place of one of those attacks.</description>
 		</sheet>
 		<rules>
 			<stat name="extra attack:count" value="2" level="6" bonus="extra attack" />
