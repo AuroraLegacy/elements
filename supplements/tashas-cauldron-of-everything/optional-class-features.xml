@@ -223,16 +223,16 @@
 		<sheet display="false">
 			<description>The spells in the following list expand the cleric spell list in the <i>Player's Handbook</i>. The list is organized by spell level, not character level. If a spell can be cast as a ritual, the ritual tag appears after the spell's name. Each spell is in the <i>Player's Handbook</i>, unless it has an asterisk (a spell in chapter 3 of <i>Tasha’s Cauldron of Everything</i>). <i>Xanathar's Guide to Everything</i> also offers more spells.</description>
 		</sheet>
-		<rules>
-			<grant type="Spell" id="ID_PHB_SPELL_AURA_OF_VITALITY" spellcasting="Cleric" requirements="[level:cleric:5]"/>
-			<grant type="Spell" id="ID_WOTC_TCOE_SPELL_SPIRIT_SHROUD" spellcasting="Cleric" requirements="[level:cleric:5]" />
-			<grant type="Spell" id="ID_PHB_SPELL_AURA_OF_LIFE" spellcasting="Cleric" requirements="[level:cleric:7]" />
-			<grant type="Spell" id="ID_PHB_SPELL_AURA_OF_PURITY" spellcasting="Cleric" requirements="[level:cleric:7]" />
-			<grant type="Spell" id="ID_WOTC_TCOE_SPELL_SUMMON_CELESTIAL" spellcasting="Cleric" requirements="[level:cleric:9]" />
-			<grant type="Spell" id="ID_PHB_SPELL_SUNBEAM" spellcasting="Cleric" requirements="[level:cleric:11]" />
-			<grant type="Spell" id="ID_PHB_SPELL_SUNBURST" spellcasting="Cleric" requirements="[level:cleric:15]" />
-			<grant type="Spell" id="ID_PHB_SPELL_POWER_WORD_HEAL" spellcasting="Cleric" requirements="[level:cleric:17]" />
-		</rules>
+		<spellcasting name="Cleric" extend="true">
+			<extend>ID_PHB_SPELL_AURA_OF_VITALITY</extend>
+			<extend>ID_WOTC_TCOE_SPELL_SPIRIT_SHROUD</extend>
+			<extend>ID_PHB_SPELL_AURA_OF_LIFE</extend>
+			<extend>ID_PHB_SPELL_AURA_OF_PURITY</extend>
+			<extend>ID_WOTC_TCOE_SPELL_SUMMON_CELESTIAL</extend>
+			<extend>ID_PHB_SPELL_SUNBEAM</extend>
+			<extend>ID_PHB_SPELL_SUNBURST</extend>
+			<extend>ID_PHB_SPELL_POWER_WORD_HEAL</extend>
+		</spellcasting>
 	</element>
 
 	<element name="Cleric, LV01: Additional Cleric Spells" type="Item" source="Tasha’s Cauldron of Everything" id="ID_WOTC_TCOE_ITEM_OCF_CLERIC_ADDITIONAL_CLERIC_SPELLS">
@@ -296,7 +296,7 @@
 			<p>Whenever you reach a level in this class that grants the Ability Score Improvement feature, you can replace one cantrip you learned from this class's Spellcasting feature with another cantrip from the cleric spell list.</p>
 		</description>
 		<sheet alt="Cantrip Versatility">
-			<description>Whenever you reach a level in this class that grants the Ability Score Improvement feature, you can replace one cantrip you learned from this class's Spellcasting feature with another cantrip from the cleric spell list.</description>
+			<description>Whenever you reach a level in Cleric class that grants the Ability Score Improvement feature, you can replace one cantrip you learned from Cleric's Spellcasting feature with another cantrip from the cleric spell list.</description>
 		</sheet>
 	</element>
 
@@ -373,24 +373,24 @@
 		<sheet display="false">
 			<description>The spells in the following list expand the druid spell list in the <i>Player's Handbook</i>. The list is organized by spell level, not character level. If a spell can be cast as a ritual, the ritual tag appears after the spell's name. Each spell is in the <i>Player's Handbook</i>, unless it has an asterisk (a spell in chapter 3 of <i>Tasha’s Cauldron of Everything</i>). <i>Xanathar's Guide to Everything</i> also offers more spells.</description>
 		</sheet>
-        <rules>
-            <grant type="Spell" id="ID_PHB_SPELL_PROTECTION_FROM_EVIL_AND_GOOD" spellcasting="Druid" requirements="[level:druid:1]"/>
-            <grant type="Spell" id="ID_PHB_SPELL_AUGURY" spellcasting="Druid" requirements="[level:druid:3]" />
-            <grant type="Spell" id="ID_PHB_SPELL_CONTINUAL_FLAME" spellcasting="Druid" requirements="[level:druid:3]" />
-            <grant type="Spell" id="ID_PHB_SPELL_ENLARGE_REDUCE" spellcasting="Druid" requirements="[level:druid:3]" />
-			<grant type="Spell" id="ID_WOTC_TCOE_SPELL_SUMMON_BEAST" spellcasting="Druid" requirements="[level:druid:3]" />
-            <grant type="Spell" id="ID_PHB_SPELL_AURA_OF_VITALITY" spellcasting="Druid" requirements="[level:druid:5]" />
-            <grant type="Spell" id="ID_PHB_SPELL_ELEMENTAL_WEAPON" spellcasting="Druid" requirements="[level:druid:5]" />
-            <grant type="Spell" id="ID_PHB_SPELL_REVIVIFY" spellcasting="Druid" requirements="[level:druid:5]" />
-			<grant type="Spell" id="ID_WOTC_TCOE_SPELL_SUMMON_FEY" spellcasting="Druid" requirements="[level:druid:5]" />
-            <grant type="Spell" id="ID_PHB_SPELL_DIVINATION" spellcasting="Druid" requirements="[level:druid:7]" />
-            <grant type="Spell" id="ID_PHB_SPELL_FIRE_SHIELD" spellcasting="Druid" requirements="[level:druid:7]" />
-			<grant type="Spell" id="ID_WOTC_TCOE_SPELL_SUMMON_ELEMENTAL" spellcasting="Druid" requirements="[level:druid:7]" />
-            <grant type="Spell" id="ID_PHB_SPELL_CONE_OF_COLD" spellcasting="Druid" requirements="[level:druid:9]" />
-            <grant type="Spell" id="ID_PHB_SPELL_FLESH_TO_STONE" spellcasting="Druid" requirements="[level:druid:11]" />
-            <grant type="Spell" id="ID_PHB_SPELL_SYMBOL" spellcasting="Druid" requirements="[level:druid:13]" />
-            <grant type="Spell" id="ID_PHB_SPELL_INCENDIARY_CLOUD" spellcasting="Druid" requirements="[level:druid:15]" />
-        </rules>
+		<spellcasting name="Druid" extend="true">
+			<extend>ID_PHB_SPELL_PROTECTION_FROM_EVIL_AND_GOOD</extend>
+			<extend>ID_PHB_SPELL_AUGURY</extend>
+			<extend>ID_PHB_SPELL_CONTINUAL_FLAME</extend>
+			<extend>ID_PHB_SPELL_ENLARGE_REDUCE</extend>
+			<extend>ID_WOTC_TCOE_SPELL_SUMMON_BEAST</extend>
+			<extend>ID_PHB_SPELL_AURA_OF_VITALITY</extend>
+			<extend>ID_PHB_SPELL_ELEMENTAL_WEAPON</extend>
+			<extend>ID_PHB_SPELL_REVIVIFY</extend>
+			<extend>ID_WOTC_TCOE_SPELL_SUMMON_FEY</extend>
+			<extend>ID_PHB_SPELL_DIVINATION</extend>
+			<extend>ID_PHB_SPELL_FIRE_SHIELD</extend>
+			<extend>ID_WOTC_TCOE_SPELL_SUMMON_ELEMENTAL</extend>
+			<extend>ID_PHB_SPELL_CONE_OF_COLD</extend>
+			<extend>ID_PHB_SPELL_FLESH_TO_STONE</extend>
+			<extend>ID_PHB_SPELL_SYMBOL</extend>
+			<extend>ID_PHB_SPELL_INCENDIARY_CLOUD</extend>
+		</spellcasting>
 	</element>
 
 	<element name="Druid, LV01: Additional Druid Spells" type="Item" source="Tasha’s Cauldron of Everything" id="ID_WOTC_TCOE_ITEM_OCF_DRUID_ADDITIONAL_DRUID_SPELLS">
@@ -450,7 +450,7 @@
 			<p>Whenever you reach a level in this class that grants the Ability Score Improvement feature, you can replace one cantrip you learned from this class's Spellcasting feature with another cantrip from the druid spell list.</p>
 		</description>
 		<sheet alt="Cantrip Versatility">
-			<description>Whenever you reach a level in this class that grants the Ability Score Improvement feature, you can replace one cantrip you learned from this class's Spellcasting feature with another cantrip from the druid spell list.</description>
+			<description>Whenever you reach a level in Druid class that grants the Ability Score Improvement feature, you can replace one cantrip you learned from Druid's Spellcasting feature with another cantrip from the druid spell list.</description>
 		</sheet>
 	</element>
 
@@ -484,8 +484,8 @@
 				<li>If you know any maneuvers from the Battle Master archetype, you can replace one maneuver you know with a different maneuver.</li>
 			</ul>
 		</description>
-		<sheet>
-			<description>Whenever you reach a level in this class that grants the Ability Score Improvement feature, you can do one of the following: &#13;
+		<sheet alt="Martial Versatility">
+			<description>Whenever you reach a level in Fighter class that grants the Ability Score Improvement feature, you can do one of the following: &#13;
 			• Replace a fighting style you know with another fighting style available to fighters. &#13;
 			• If you know any maneuvers from the Battle Master archetype, you can replace one maneuver you know with a different maneuver.</description>
 		</sheet>
@@ -730,13 +730,13 @@
 		<sheet display="false">
 			<description>The spells in the following list expand the paladin spell list in the <i>Player's Handbook</i>. The list is organized by spell level, not character level. If a spell can be cast as a ritual, the ritual tag appears after the spell's name. Each spell is in the <i>Player's Handbook</i>, unless it has an asterisk (a spell in chapter 3 of <i>Tasha’s Cauldron of Everything</i>). <i>Xanathar's Guide to Everything</i> also offers more spells.</description>
 		</sheet>
-        <rules>
-            <grant type="Spell" id="ID_PHB_SPELL_GENTLE_REPOSE" spellcasting="Paladin" requirements="[level:paladin:5]" />
-            <grant type="Spell" id="ID_PHB_SPELL_PRAYER_OF_HEALING" spellcasting="Paladin" requirements="[level:paladin:5]" />
-            <grant type="Spell" id="ID_PHB_SPELL_WARDING_BOND" spellcasting="Paladin" requirements="[level:paladin:5]" />
-            <grant type="Spell" id="ID_WOTC_TCOE_SPELL_SPIRIT_SHROUD" spellcasting="Paladin" requirements="[level:paladin:9]" />
-            <grant type="Spell" id="ID_WOTC_TCOE_SPELL_SUMMON_CELESTIAL" spellcasting="Paladin" requirements="[level:paladin:17]" />
-        </rules>
+		<spellcasting name="Paladin" extend="true">
+			<extend>ID_PHB_SPELL_GENTLE_REPOSE</extend>
+			<extend>ID_PHB_SPELL_PRAYER_OF_HEALING</extend>
+			<extend>ID_PHB_SPELL_WARDING_BOND</extend>
+			<extend>ID_WOTC_TCOE_SPELL_SPIRIT_SHROUD</extend>
+			<extend>ID_WOTC_TCOE_SPELL_SUMMON_CELESTIAL</extend>
+		</spellcasting>
 	</element>
 
 	<element name="Paladin, LV02: Additional Paladin Spells" type="Item" source="Tasha’s Cauldron of Everything" id="ID_WOTC_TCOE_ITEM_OCF_PALADIN_ADDITIONAL_PALADIN_SPELLS">
@@ -800,7 +800,7 @@
 			<p>Whenever you reach a level in this class that grants the Ability Score Improvement feature, you can replace a fighting style you know with another fighting style available to paladins. This replacement represents a shift of focus in your martial practice.</p>
 		</description>
 		<sheet alt="Martial Versatility">
-			<description>Whenever you reach a level in this class that grants the Ability Score Improvement feature, you can replace a fighting style you know with another fighting style available to paladins.</description>
+			<description>Whenever you reach a level in Paladin class that grants the Ability Score Improvement feature, you can replace a fighting style you know with another fighting style available to paladins.</description>
 		</sheet>
 	</element>
 
@@ -1088,7 +1088,7 @@
 			<p>Whenever you reach a level in this class that grants the Ability Score Improvement feature, you can replace a fighting style you know with another fighting style available to rangers. This replacement represents a shift of focus in your martial practice.</p>
 		</description>
 		<sheet alt="Martial Versatility">
-			<description>Whenever you reach a level in this class that grants the Ability Score Improvement feature, you can replace a fighting style you know with another fighting style available to rangers.</description>
+			<description>Whenever you reach a level in Ranger class that grants the Ability Score Improvement feature, you can replace a fighting style you know with another fighting style available to rangers.</description>
 		</sheet>
 	</element>
 
@@ -1519,14 +1519,14 @@
 			<extend>ID_PHB_SPELL_MAGIC_WEAPON</extend>
 			<extend>ID_WOTC_TCOE_SPELL_TASHAS_MIND_WHIP</extend>
 			<extend>ID_WOTC_TCOE_SPELL_INTELLECT_FORTRESS</extend>
-            <extend>ID_PHB_SPELL_VAMPIRIC_TOUCH</extend>
+			<extend>ID_PHB_SPELL_VAMPIRIC_TOUCH</extend>
 			<extend>ID_PHB_SPELL_FIRE_SHIELD</extend>
 			<extend>ID_PHB_SPELL_BIGBYS_HAND</extend>
-            <extend>ID_PHB_SPELL_FLESH_TO_STONE</extend>
-            <extend>ID_PHB_SPELL_OTILUKES_FREEZING_SPHERE</extend>
+			<extend>ID_PHB_SPELL_FLESH_TO_STONE</extend>
+			<extend>ID_PHB_SPELL_OTILUKES_FREEZING_SPHERE</extend>
 			<extend>ID_WOTC_TCOE_SPELL_TASHAS_OTHERWORLDLY_GUISE</extend>
 			<extend>ID_WOTC_TCOE_SPELL_DREAM_OF_THE_BLUE_VEIL</extend>
-            <extend>ID_PHB_SPELL_DEMIPLANE</extend>
+			<extend>ID_PHB_SPELL_DEMIPLANE</extend>
 			<extend>ID_WOTC_TCOE_SPELL_BLADE_OF_DISASTER</extend>
 		</spellcasting>
 	</element>
@@ -1675,7 +1675,7 @@
 			<extend>ID_WOTC_TCOE_SPELL_SUMMON_ABERRATION</extend>
 			<extend>ID_PHB_SPELL_MISLEAD</extend>
 			<extend>ID_PHB_SPELL_PLANAR_BINDING</extend>
-            <extend>ID_PHB_SPELL_TELEPORTATION_CIRCLE</extend>
+			<extend>ID_PHB_SPELL_TELEPORTATION_CIRCLE</extend>
 			<extend>ID_WOTC_TCOE_SPELL_SUMMON_FIEND</extend>
 			<extend>ID_WOTC_TCOE_SPELL_TASHAS_OTHERWORLDLY_GUISE</extend>
 			<extend>ID_WOTC_TCOE_SPELL_DREAM_OF_THE_BLUE_VEIL</extend>
