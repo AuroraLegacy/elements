@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <elements>
 	<info>
-		<update version="0.0.2">
+		<update version="0.0.3">
 			<file name="race-custom-lineage.xml" url="https://raw.githubusercontent.com/AuroraLegacy/elements/master/supplements/tashas-cauldron-of-everything/race-custom-lineage.xml" />
 		</update>
 	</info>
@@ -26,7 +26,8 @@
 			<select type="Ability Score Improvement" name="Ability Score Improvement +2 (Custom Lineage)" supports="Custom Ability Score Increase 2" />
 			<select type="Feat" name="Feat (Custom Lineage)" />
 			<select type="Racial Trait" name="Variable Trait" supports="Custom Lineage Variable Trait" />
-			<grant type="Language" id="ID_LANGUAGE_COMMON" />
+			<grant type="Language" id="ID_LANGUAGE_COMMON" requirements="!ID_WOTC_TCOE_OPTION_CUSTOMIZED_LANGUAGE" />
+			<select type="Language" name="Customized Language" supports="Custom Race Language" requirements="ID_WOTC_TCOE_OPTION_CUSTOMIZED_LANGUAGE" />
 			<select type="Language" name="Language (Custom Lineage)" supports="Standard||Exotic" />
 		</rules>
 	</element>
@@ -66,7 +67,7 @@
 		<sheet display="false" />
 		<compendium display="false" />
 		<rules>
-			<select type="Proficiency" name="Skill (Custom Lineage)" supports="Skill" number="1" />
+			<select type="Proficiency" name="Skill (Custom Lineage)" supports="Skill" />
 		</rules>
 	</element>
 
