@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <elements>
 	<info>
-		<update version="0.0.1">
+		<update version="0.0.3">
 			<file name="race-custom-lineage.xml" url="https://raw.githubusercontent.com/AuroraLegacy/elements/master/supplements/tashas-cauldron-of-everything/race-custom-lineage.xml" />
 		</update>
 	</info>
@@ -15,7 +15,7 @@
 				<span class="feature">Speed.</span>Your base walking speed is 30 feet.<br />
 				<span class="feature">Ability Score Increase.</span>One ability score of your choice increases by 2.<br />
 				<span class="feature">Feat.</span> You gain one feat of your choice for which you qualify.<br />
-				<span class="feature">Variable Trait.</span>You gain one of the folowing options of your choice: (a) darkvision with a range of 60 feet or (b) proficiency in one skill of your choice.<br />
+				<span class="feature">Variable Trait.</span>You gain one of the following options of your choice: (a) darkvision with a range of 60 feet or (b) proficiency in one skill of your choice.<br />
 				<span class="feature">Languages.</span>You can speak, read, and write Common and one other language that you and your DM agree is appropriate for your character.<br />
 			</p>
 		</description>
@@ -26,13 +26,14 @@
 			<select type="Ability Score Improvement" name="Ability Score Improvement +2 (Custom Lineage)" supports="Custom Ability Score Increase 2" />
 			<select type="Feat" name="Feat (Custom Lineage)" />
 			<select type="Racial Trait" name="Variable Trait" supports="Custom Lineage Variable Trait" />
-			<grant type="Language" id="ID_LANGUAGE_COMMON" />
+			<grant type="Language" id="ID_LANGUAGE_COMMON" requirements="!ID_WOTC_TCOE_OPTION_CUSTOMIZED_LANGUAGE" />
+			<select type="Language" name="Customized Language" supports="Custom Race Language" requirements="ID_WOTC_TCOE_OPTION_CUSTOMIZED_LANGUAGE" />
 			<select type="Language" name="Language (Custom Lineage)" supports="Standard||Exotic" />
 		</rules>
 	</element>
 
 
-	<!-- Size -->
+	<!-- Size, todo: delete later and replace with universal version -->
 	<element name="Small" type="Racial Trait" source="Tasha’s Cauldron of Everything" id="ID_WOTC_TCOE_RACIAL_TRAIT_SMALL">
 		<supports> Custom Lineage Size </supports>
 		<description>
@@ -66,7 +67,7 @@
 		<sheet display="false" />
 		<compendium display="false" />
 		<rules>
-			<select type="Proficiency" name="Skill (Custom Lineage)" supports="Skill" number="1" />
+			<select type="Proficiency" name="Skill (Custom Lineage)" supports="Skill" />
 		</rules>
 	</element>
 
