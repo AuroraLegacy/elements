@@ -1,0 +1,388 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<elements>
+	<info>
+		<name>Unearthed Arcana: Folk of the Feywild</name>
+		<update version="0.0.1">
+			<file name="20210311.xml" url="https://raw.githubusercontent.com/AuroraLegacy/elements/master/unearthed-arcana/2021/20210311.xml" />
+		</update>
+	</info>
+
+	<element name="Unearthed Arcana: Folk of the Feywild" type="Source" source="Core" id="ID_WOTC_SOURCE_UNEARTHED_ARCANA_20210311">
+		<description>
+			<p>Wander into the magical realm of the Feywild in this month’s Unearthed Arcana! With the playtest options in the PDF below, your D&amp;D character can be a member of one of these new D&amp;D races: fairy, hobgoblin of the Feywild, owlfolk, or rabbitfolk.</p>
+		</description>
+		<setters>
+			<set name="abbreviation">UA20210311</set>
+			<set name="url">https://dnd.wizards.com/articles/unearthedarcana/folk_feywild</set>
+			<set name="author" abbreviation="WOTC" url="http://dnd.wizards.com">Wizards of the Coast</set>
+			<set name="official">true</set>
+			<set name="playtest">true</set>
+			<set name="release">20210311</set>
+		</setters>
+	</element>
+
+	<!-- Fairy -->
+	<element name="Fairy" type="Race" source="Unearthed Arcana: Folk of the Feywild" id="ID_WOTC_UA20210311_RACE_FAIRY">
+		<description>
+			<p>The Feywild is home to many fantastic peoples, including fairies. Fairies are a wee folk, but not nearly as much so as their pixie and sprite friends.</p>
+			<p class="indent">Infused with the magic of the Feywild, fairies share a few commonalities with one another but can differ widely in appearance, behavior, and attitude. Many fairies have a special physical characteristic that sets them apart from other creatures of their kind. For your fairy, roll on the Fey Characteristic table or choose an option from it. The Feywild is a wild place, so come up with your own characteristic if none of these fit your character.</p>
+			<p><b>Fey Characteristics</b></p>
+			<table>
+				<thead>
+					<tr><td>d8</td><td>Characteristic</td></tr>
+				</thead>
+				<tr><td>1</td><td>You have small wings like those of an insect.</td></tr>
+				<tr><td>2</td><td>You have shimmering, multicolored skin.</td></tr>
+				<tr><td>3</td><td>You have exceptionally large ears.</td></tr>
+				<tr><td>4</td><td>A constant, glittering mist surrounds you.</td></tr>
+				<tr><td>5</td><td>You have a small spectral horn on your forehead, like a little unicorn horn.</td></tr>
+				<tr><td>6</td><td>Your hands never look dirty.</td></tr>
+				<tr><td>7</td><td>You smell like fresh brownies.</td></tr>
+				<tr><td>8</td><td>A noticeable, harmless chill surrounds you.</td></tr>
+			</table>
+			<h4>FAIRY TRAITS</h4>
+			<p>You have the following racial traits.</p>
+			<p class="indent"><strong><em>Creature Type.</em></strong> You are a Fey.</p>
+			<p class="indent"><strong><em>Size.</em></strong> You are Small.</p>
+			<p class="indent"><strong><em>Speed.</em></strong> Your walking speed is 30 feet.</p>
+			<p class="indent"><strong><em>Fairy Flight.</em></strong> You have a flying speed equal to your walking speed and can hover. This flight is magical and does not require the use of your wings (if you have them).</p>
+			<p class="indent"><strong><em>Fairy Magic.</em></strong> You know the druidcraft and faerie fire spells. You can cast faerie fire without expending a spell slot, and you must finish a long rest before you can cast it this way again. You can also cast this spell using any spell slots you have. Your spellcasting ability for these spells is your choice of Intelligence, Wisdom, or Charisma.</p>
+			<p class="indent"><strong><em>Fey Passage.</em></strong> You can squeeze through a space as narrow as 1 inch wide.</p>
+		</description>
+		<sheet display="false" />
+		<rules>
+			<grant type="Racial Trait" id="ID_WOTC_UA20210311_RACIAL_TRAIT_FAIRY_TYPE_FEY" />
+			<grant type="Racial Trait" id="ID_INTERNAL_RACIAL_TRAIT_SMALL" />
+			<stat name="innate speed" value="30" bonus="base" />
+			<select type="Ability Score Improvement" name="Ability Score Improvement +2 (Fairy)" supports="Custom Ability Score Increase 2" />
+			<select type="Ability Score Improvement" name="Ability Score Improvement +1 (Fairy)" supports="Custom Ability Score Increase 1" />
+			<grant type="Language" id="ID_LANGUAGE_COMMON" requirements="!ID_WOTC_TCOE_OPTION_CUSTOMIZED_LANGUAGE" />
+			<select type="Language" name="Customized Language" supports="Custom Race Language" requirements="ID_WOTC_TCOE_OPTION_CUSTOMIZED_LANGUAGE" />
+			<select type="Language" name="Language (Fairy)" supports="Standard||Exotic" />
+			<grant type="Racial Trait" id="ID_WOTC_UA20210311_RACIAL_TRAIT_FAIRY_FAIRY_FLIGHT" />
+			<grant type="Racial Trait" id="ID_WOTC_UA20210311_RACIAL_TRAIT_FAIRY_FAIRY_MAGIC" />
+			<grant type="Racial Trait" id="ID_WOTC_UA20210311_RACIAL_TRAIT_FAIRY_FEY_PASSAGE" />
+		</rules>
+	</element>
+
+	<element name="Fey" type="Racial Trait" source="Unearthed Arcana: Folk of the Feywild" id="ID_WOTC_UA20210311_RACIAL_TRAIT_FAIRY_TYPE_FEY">
+		<description>
+			<p>You are a Fey.</p>
+		</description>
+		<sheet alt="Creature Type">
+			<description>You are a Fey.</description>
+		</sheet>
+	</element>
+
+	<element name="Fairy Flight" type="Racial Trait" source="Unearthed Arcana: Folk of the Feywild" id="ID_WOTC_UA20210311_RACIAL_TRAIT_FAIRY_FAIRY_FLIGHT">
+		<description>
+			<p>You have a flying speed equal to your walking speed and can hover. This flight is magical and does not require the use of your wings (if you have them).</p>
+		</description>
+		<sheet display="false">
+			<description>You have a flying speed equal to your walking speed and can hover. This flight is magical and does not require the use of your wings (if you have them).</description>
+		</sheet>
+		<rules>
+			<stat name="innate speed:fly" value="innate speed" bonus="base" />
+		</rules>
+	</element>
+
+	<element name="Fairy Magic" type="Racial Trait" source="Unearthed Arcana: Folk of the Feywild" id="ID_WOTC_UA20210311_RACIAL_TRAIT_FAIRY_FAIRY_MAGIC">
+		<description>
+			<p>You know the druidcraft and faerie fire spells. You can cast faerie fire without expending a spell slot, and you must finish a long rest before you can cast it this way again. You can also cast this spell using any spell slots you have. Your spellcasting ability for these spells is your choice of Intelligence, Wisdom, or Charisma.</p>
+		</description>
+		<sheet>
+			<description>You know the druidcraft and faerie fire spells. You can cast faerie fire without expending a spell slot, and you must finish a long rest before you can cast it this way again. You can also cast this spell using any spell slots you have. Your spellcasting ability for these spells is {{ua:fairy magic:ability}}.</description>
+		</sheet>
+		<rules>
+			<grant type="Spell" id="ID_PHB_SPELL_DRUIDCRAFT" />
+			<grant type="Spell" id="ID_PHB_SPELL_FAERIE_FIRE" />
+			<select type="Racial Trait" name="Spellcasting Ability (Fairy Magic)" supports="ID_WOTC_UA20210311_RACIAL_TRAIT_FAIRY_FAIRY_MAGIC_INTELLIGENCE|ID_WOTC_UA20210311_RACIAL_TRAIT_FAIRY_FAIRY_MAGIC_WISDOM|ID_WOTC_UA20210311_RACIAL_TRAIT_FAIRY_FAIRY_MAGIC_CHARISMA" />
+		</rules>
+	</element>
+	<element name="Intelligence (Fairy Magic)" type="Racial Trait" source="Unearthed Arcana: Folk of the Feywild" id="ID_WOTC_UA20210311_RACIAL_TRAIT_FAIRY_FAIRY_MAGIC_INTELLIGENCE">
+		<compendium display="false" />
+		<description>
+			<p>Your spellcasting ability for these spells is Intelligence.</p>
+		</description>
+		<sheet display="false" />
+		<rules>
+			<stat name="ua:fairy magic:ability" value="Intelligence" inline="true"/>
+		</rules>
+	</element>
+	<element name="Wisdom (Fairy Magic)" type="Racial Trait" source="Unearthed Arcana: Folk of the Feywild" id="ID_WOTC_UA20210311_RACIAL_TRAIT_FAIRY_FAIRY_MAGIC_WISDOM">
+		<compendium display="false" />
+		<description>
+			<p>Your spellcasting ability for these spells is Wisdom.</p>
+		</description>
+		<sheet display="false" />
+		<rules>
+			<stat name="ua:fairy magic:ability" value="Wisdom" inline="true"/>
+		</rules>
+	</element>
+	<element name="Charisma (Fairy Magic)" type="Racial Trait" source="Unearthed Arcana: Folk of the Feywild" id="ID_WOTC_UA20210311_RACIAL_TRAIT_FAIRY_FAIRY_MAGIC_CHARISMA">
+		<compendium display="false" />
+		<description>
+			<p>Your spellcasting ability for these spells is Charisma.</p>
+		</description>
+		<sheet display="false" />
+		<rules>
+			<stat name="ua:fairy magic:ability" value="Charisma" inline="true"/>
+		</rules>
+	</element>
+
+	<element name="Fey Passage" type="Racial Trait" source="Unearthed Arcana: Folk of the Feywild" id="ID_WOTC_UA20210311_RACIAL_TRAIT_FAIRY_FEY_PASSAGE">
+		<description>
+			<p>You can squeeze through a space as narrow as 1 inch wide.</p>
+		</description>
+		<sheet>
+			<description>You can squeeze through a space as narrow as 1 inch wide.</description>
+		</sheet>
+	</element>
+
+	<!-- Hobgoblin of the Feywild -->
+	<element name="Hobgoblin of the Feywild" type="Race" source="Unearthed Arcana: Folk of the Feywild" id="ID_WOTC_UA20210311_RACE_HOBGOBLIN_OF_THE_FEYWILD">
+		<description>
+			<p>Hobgoblins trace their origins to the Feywild, where they first appeared with their goblin and bugbear kin. That history has left its mark, for though hobgoblins are found throughout theMaterial Plane, they continue to channel an aspect of the Feywild’s rule of reciprocity, which creates a mystical bond between the giver and the receiver of a gift.</p>
+			<p class="indent">On some worlds, such bonds lead hobgoblins to form communities with deep ties to each other. In the Forgotten Realms, vast hobgoblin legions have emerged, with ranks upon ranks of devoted soldiers noteworthy for how effective they are at fighting as a unit.</p>
+			<p class="indent">Hobgoblins are generally taller than their goblin cousins but not quite as big as bugbears. They have curved, pointed ears and noses that turn red or blue during displays of emotion.</p>
+			<h4>HOBGOBLIN TRAITS</h4>
+			<p>You have the following racial traits.</p>
+			<p class="indent"><strong><em>Creature Type.</em></strong> You are a Humanoid.</p>
+			<p class="indent"><strong><em>Size.</em></strong> You are Medium.</p>
+			<p class="indent"><strong><em>Speed.</em></strong> Your walking speed is 30 feet.</p>
+			<p class="indent"><strong><em>Darkvision.</em></strong> You can see in dim light within 60 feet of you as if it were bright light and in darkness as if it were dim light. You discern colors in that darkness only as shades of gray.</p>
+			<p class="indent"><strong><em>Fey Ancestry.</em></strong> You have advantage on saving throws you make to avoid or end the charmed condition on yourself.</p>
+			<p class="indent"><strong><em>Fey Gift.</em></strong> You can use this trait to take the Help action as a bonus action, and you can do so a number of times equal to your proficiency bonus. You regain all expended uses when you finish a long rest.</p>
+			<p class="indent" style="margin-bottom: 5px">Starting at 3rd level, choose one of the options below each time you take the Help action, whether as a bonus action or an action:</p>
+			<p style="text-indent: -1em; margin-left: 1em; margin-bottom: 0px"><strong>Hospitality.</strong> You and the target of your Help action each gain a number of temporary hit points equal to 1d6 plus your proficiency bonus.</p>
+			<p style="text-indent: -1em; margin-left: 1em; margin-bottom: 0px"><strong>Passage.</strong> You and the target of your Help action each increase your walking speeds by 10 feet until the start of your next turn.</p>
+			<p style="text-indent: -1em; margin-left: 1em; margin-bottom: 20px"><strong>Spite.</strong> Until the start of your next turn, the first time you or the target of your Help action hits a creature with an attack roll, that creature has disadvantage on the next attack roll that it makes within the next minute.</p>
+			<p class="indent"><strong><em>Fortune from the Many.</em></strong> If you miss with an attack roll or fail an ability check or a saving throw, you can draw on your bonds of reciprocity to gain a bonus to the roll equal to the number of allies you can see within 30 feet of you (maximum bonus of +5). You can use this trait a number of times equal to your proficiency bonus, and you regain all expended uses you finish a long rest.</p>
+		</description>
+		<sheet display="false" />
+		<rules>
+			<grant type="Racial Trait" id="ID_INTERNAL_RACIAL_TRAIT_MEDIUM" />
+			<stat name="innate speed" value="30" bonus="base" />
+			<select type="Ability Score Improvement" name="Ability Score Improvement +2 (Hobgoblin)" supports="Custom Ability Score Increase 2" />
+			<select type="Ability Score Improvement" name="Ability Score Improvement +1 (Hobgoblin)" supports="Custom Ability Score Increase 1" />
+			<grant type="Language" id="ID_LANGUAGE_COMMON" requirements="!ID_WOTC_TCOE_OPTION_CUSTOMIZED_LANGUAGE" />
+			<select type="Language" name="Customized Language" supports="Custom Race Language" requirements="ID_WOTC_TCOE_OPTION_CUSTOMIZED_LANGUAGE" />
+			<select type="Language" name="Language (Hobgoblin)" supports="Standard||Exotic" />
+			<grant type="Vision" id="ID_VISION_DARKVISION" />
+			<grant type="Racial Trait" id="ID_WOTC_UA20210311_RACIAL_TRAIT_HOBGOBLIN_FEY_ANCESTRY" />
+			<grant type="Racial Trait" id="ID_WOTC_UA20210311_RACIAL_TRAIT_HOBGOBLIN_FEY_GIFT" />
+			<grant type="Racial Trait" id="ID_WOTC_UA20210311_RACIAL_TRAIT_HOBGOBLIN_FORTUNE_FROM_THE_MANY" />
+		</rules>
+	</element>
+
+	<element name="Fey Ancestry" type="Racial Trait" source="Unearthed Arcana: Folk of the Feywild" id="ID_WOTC_UA20210311_RACIAL_TRAIT_HOBGOBLIN_FEY_ANCESTRY">
+		<description>
+			<p>You have advantage on saving throws you make to avoid or end the charmed condition on yourself.</p>
+		</description>
+		<sheet>
+			<description>You have advantage on saving throws you make to avoid or end the charmed condition on yourself.</description>
+		</sheet>
+	</element>
+
+	<element name="Fey Gift" type="Racial Trait" source="Unearthed Arcana: Folk of the Feywild" id="ID_WOTC_UA20210311_RACIAL_TRAIT_HOBGOBLIN_FEY_GIFT">
+		<description>
+			<p>You can use this trait to take the Help action as a bonus action, and you can do so a number of times equal to your proficiency bonus. You regain all expended uses when you finish a long rest.</p>
+			<p class="indent">Starting at 3rd level, choose one of the options below each time you take the Help action, whether as a bonus action or an action:</p>
+			<p style="text-indent: -1em; margin-left: 1em"><strong>Hospitality.</strong> You and the target of your Help action each gain a number of temporary hit points equal to 1d6 plus your proficiency bonus.</p>
+			<p style="text-indent: -1em; margin-left: 1em"><strong>Passage.</strong> You and the target of your Help action each increase your walking speeds by 10 feet until the start of your next turn.</p>
+			<p style="text-indent: -1em; margin-left: 1em"><strong>Spite.</strong> Until the start of your next turn, the first time you or the target of your Help action hits a creature with an attack roll, that creature has disadvantage on the next attack roll that it makes within the next minute.</p>
+		</description>
+		<sheet action="Bonus Action" usage="{{proficiency}}/Long Rest">
+			<description>You can use this trait to take the Help action.</description>
+			<description level="3">You can use this trait to take the Help action. Additionally, choose one of the options below each time you take the Help action, whether as a bonus action or an action: &#13;
+			• Hospitality. You and the target of your Help action each gain a number of temporary hit points equal to 1d6 plus {{proficiency}}. &#13;
+			• Passage. You and the target of your Help action each increase your walking speeds by 10 feet until the start of your next turn. &#13;
+			• Spite. Until the start of your next turn, the first time you or the target of your Help action hits a creature with an attack roll, that creature has disadvantage on the next attack roll that it makes within the next minute.</description>
+		</sheet>
+	</element>
+
+	<element name="Fortune from the Many" type="Racial Trait" source="Unearthed Arcana: Folk of the Feywild" id="ID_WOTC_UA20210311_RACIAL_TRAIT_HOBGOBLIN_FORTUNE_FROM_THE_MANY">
+		<description>
+			<p>If you miss with an attack roll or fail an ability check or a saving throw, you can draw on your bonds of reciprocity to gain a bonus to the roll equal to the number of allies you can see within 30 feet of you (maximum bonus of +5). You can use this trait a number of times equal to your proficiency bonus, and you regain all expended uses you finish a long rest.</p>
+		</description>
+		<sheet usage="{{proficiency}}/Long Rest">
+			<description>If you miss with an attack roll or fail an ability check or a saving throw, you can draw on your bonds of reciprocity to gain a bonus to the roll equal to the number of allies you can see within 30 feet of you (maximum bonus of +5).</description>
+		</sheet>
+	</element>
+
+	<!-- Owlfolk -->
+	<element name="Owlfolk" type="Race" source="Unearthed Arcana: Folk of the Feywild" id="ID_WOTC_UA20210311_RACE_OWLFOLK">
+		<description>
+			<p>Distant kin of giant owls, owlfolk come in many shapes and sizes, from petite and fluffy to wide-winged and majestic. Owlfolk have arms and legs like other Humanoids, as well as wings that extend from their back and shoulders.</p>
+			<p class="indent">Because of their ancestral tie to the Feywild, owlfolk can innately see the magic of their surroundings. Like owls, owlfolk are graced with feathers that make no sound when they move or fly, making it easy for them to sneak up on you in the library.</p>
+			<p class="indent">Your owlfolk character might be nocturnal. Or perhaps your character is simply prone to rise later, embodying the common nickname of night owl.</p>
+			<h4>OWLFOLK TRAITS</h4>
+			<p>You have the following racial traits.</p>
+			<p class="indent"><strong><em>Creature Type.</em></strong> You are a Humanoid.</p>
+			<p class="indent"><strong><em>Size.</em></strong> You are Medium or Small. You choose the size when you gain this race.</p>
+			<p class="indent"><strong><em>Speed.</em></strong> Your walking speed is 30 feet.</p>
+			<p class="indent"><strong><em>Darkvision.</em></strong> You can see in dim light within 90 feet of you as if it were bright light and in darkness as if it were dim light. You discern colors in that darkness only as shades of gray.</p>
+			<p class="indent"><strong><em>Magic Sight.</em></strong> Your keen senses can focus to see the presence of magic. You gain the ability to cast the detect magic spell, but only as a ritual. Your spellcasting ability for this spell is your choice of Intelligence, Wisdom, or Charisma. You can also cast this spell normally with any spell slots you have.</p>
+			<p class="indent"><strong><em>Nimble Flight.</em></strong> Thanks to your wings, you have a flying speed equal to your walking speed. When you fall, you can use your reaction to make a Dexterity saving throw (DC 10) to stop falling and fly in place until the start of your next turn.</p>
+			<p class="indent"><strong><em>Silent Feathers.</em></strong> You have proficiency in the Stealth skill.</p>
+		</description>
+		<sheet display="false" />
+		<rules>
+			<select type="Racial Trait" name="Size (Owlfolk)" supports="ID_INTERNAL_RACIAL_TRAIT_SMALL|ID_INTERNAL_RACIAL_TRAIT_MEDIUM" />
+			<stat name="innate speed" value="30" bonus="base" />
+			<select type="Ability Score Improvement" name="Ability Score Improvement +2 (Owlfolk)" supports="Custom Ability Score Increase 2" />
+			<select type="Ability Score Improvement" name="Ability Score Improvement +1 (Owlfolk)" supports="Custom Ability Score Increase 1" />
+			<grant type="Language" id="ID_LANGUAGE_COMMON" requirements="!ID_WOTC_TCOE_OPTION_CUSTOMIZED_LANGUAGE" />
+			<select type="Language" name="Customized Language" supports="Custom Race Language" requirements="ID_WOTC_TCOE_OPTION_CUSTOMIZED_LANGUAGE" />
+			<select type="Language" name="Language (Owlfolk)" supports="Standard||Exotic" />
+			<grant type="Vision" id="ID_VISION_DARKVISION" />
+			<stat name="darkvision:range" value="90" bonus="base" />
+			<grant type="Racial Trait" id="ID_WOTC_UA20210311_RACIAL_TRAIT_OWLFOLK_MAGIC_SIGHT" />
+			<grant type="Racial Trait" id="ID_WOTC_UA20210311_RACIAL_TRAIT_OWLFOLK_NIMBLE_FLIGHT" />
+			<grant type="Racial Trait" id="ID_WOTC_UA20210311_RACIAL_TRAIT_OWLFOLK_SILENT_FEATHERS" />
+		</rules>
+	</element>
+
+	<element name="Magic Sight" type="Racial Trait" source="Unearthed Arcana: Folk of the Feywild" id="ID_WOTC_UA20210311_RACIAL_TRAIT_OWLFOLK_MAGIC_SIGHT">
+		<description>
+			<p>Your keen senses can focus to see the presence of magic. You gain the ability to cast the detect magic spell, but only as a ritual. Your spellcasting ability for this spell is your choice of Intelligence, Wisdom, or Charisma. You can also cast this spell normally with any spell slots you have.</p>
+		</description>
+		<sheet>
+			<description>You can cast the detect magic spell, but only as a ritual. Your spellcasting ability for this spell is {{ua:magic sight:ability}}. You can also cast this spell normally with any spell slots you have.</description>
+		</sheet>
+		<rules>
+			<select type="Racial Trait" name="Spellcasting Ability (Magic Sight)" supports="ID_WOTC_UA20210311_RACIAL_TRAIT_OWLFOLK_MAGIC_SIGHT_INTELLIGENCE|ID_WOTC_UA20210311_RACIAL_TRAIT_OWLFOLK_MAGIC_SIGHT_WISDOM|ID_WOTC_UA20210311_RACIAL_TRAIT_OWLFOLK_MAGIC_SIGHT_CHARISMA" />
+			<grant type="Spell" id="ID_PHB_SPELL_DETECT_MAGIC" />
+		</rules>
+	</element>
+	<element name="Intelligence (Magic Sight)" type="Racial Trait" source="Unearthed Arcana: Folk of the Feywild" id="ID_WOTC_UA20210311_RACIAL_TRAIT_OWLFOLK_MAGIC_SIGHT_INTELLIGENCE">
+		<compendium display="false" />
+		<description>
+			<p>Your spellcasting ability for these spells is Intelligence.</p>
+		</description>
+		<sheet display="false" />
+		<rules>
+			<stat name="ua:magic sight:ability" value="Intelligence" inline="true"/>
+		</rules>
+	</element>
+	<element name="Wisdom (Magic Sight)" type="Racial Trait" source="Unearthed Arcana: Folk of the Feywild" id="ID_WOTC_UA20210311_RACIAL_TRAIT_OWLFOLK_MAGIC_SIGHT_WISDOM">
+		<compendium display="false" />
+		<description>
+			<p>Your spellcasting ability for these spells is Wisdom.</p>
+		</description>
+		<sheet display="false" />
+		<rules>
+			<stat name="ua:magic sight:ability" value="Wisdom" inline="true"/>
+		</rules>
+	</element>
+	<element name="Charisma (Magic Sight)" type="Racial Trait" source="Unearthed Arcana: Folk of the Feywild" id="ID_WOTC_UA20210311_RACIAL_TRAIT_OWLFOLK_MAGIC_SIGHT_CHARISMA">
+		<compendium display="false" />
+		<description>
+			<p>Your spellcasting ability for these spells is Charisma.</p>
+		</description>
+		<sheet display="false" />
+		<rules>
+			<stat name="ua:magic sight:ability" value="Charisma" inline="true"/>
+		</rules>
+	</element>
+
+	<element name="Nimble Flight" type="Racial Trait" source="Unearthed Arcana: Folk of the Feywild" id="ID_WOTC_UA20210311_RACIAL_TRAIT_OWLFOLK_NIMBLE_FLIGHT">
+		<description>
+			<p>Thanks to your wings, you have a flying speed equal to your walking speed. When you fall, you can use your reaction to make a Dexterity saving throw (DC 10) to stop falling and fly in place until the start of your next turn.</p>
+		</description>
+		<sheet action="Reaction">
+			<description>When you fall, you can make a Dexterity saving throw (DC 10) to stop falling and fly in place until the start of your next turn.</description>
+		</sheet>
+		<rules>
+			<stat name="innate speed:fly" value="innate speed" bonus="base" />
+		</rules>
+	</element>
+
+	<element name="Silent Feathers" type="Racial Trait" source="Unearthed Arcana: Folk of the Feywild" id="ID_WOTC_UA20210311_RACIAL_TRAIT_OWLFOLK_SILENT_FEATHERS">
+		<description>
+			<p>You have proficiency in the Stealth skill.</p>
+		</description>
+		<sheet display="false">
+			<description>You have proficiency in the Stealth skill.</description>
+		</sheet>
+		<rules>
+			<grant type="Proficiency" id="ID_PROFICIENCY_SKILL_STEALTH"  requirements="!ID_WOTC_TCOE_OPTION_CUSTOMIZED_PROFICIENCY" />
+			<select type="Proficiency" name="Customized Skill Proficiency" supports="Skill" requirements="ID_WOTC_TCOE_OPTION_CUSTOMIZED_PROFICIENCY" />
+		</rules>
+	</element>
+
+	<!-- Rabbitfolk -->
+	<element name="Rabbitfolk" type="Race" source="Unearthed Arcana: Folk of the Feywild" id="ID_WOTC_UA20210311_RACE_RABBITFOLK">
+		<description>
+			<p>Bounding across the wilds, rabbitfolk from the Feywild embody a spirit of freedom and travel.</p>
+			<p class="indent">Rabbitfolk are bipedal, with the characteristic long feet of the animal they resemble and fur in a variety of colors. They share the keen senses and powerful legs of leporine creatures and are full of energy, like a wound-up spring. Rabbitfolk are blessed with a little fey luck, and they often find themselves a few fortunate feet away from dangers during adventures.</p>
+			<h4>RABBITFOLK TRAITS</h4>
+			<p>You have the following racial traits.</p>
+			<p class="indent"><strong><em>Creature Type.</em></strong> You are a Humanoid.</p>
+			<p class="indent"><strong><em>Size.</em></strong> You are Medium or Small. You choose the size when you gain this race.</p>
+			<p class="indent"><strong><em>Speed.</em></strong> Your walking speed is 30 feet.</p>
+			<p class="indent"><strong><em>Hare-Trigger.</em></strong> You add your proficiency bonus to your initiative rolls.</p>
+			<p class="indent"><strong><em>Leporine Senses.</em></strong> You have proficiency in the Perception skill.</p>
+			<p class="indent"><strong><em>Lucky Footwork.</em></strong> When you fail a Dexterity saving throw, you can use your reaction to roll a d4 and add it to the result, potentially turning the failure into a success.</p>
+			<p class="indent"><strong><em>Rabbit Hop.</em></strong> Once during each of your turns when you walk at least 5 feet, you can hop, rolling a d12 and moving that many feet in a direction of your choice. This extra distance doesn’t cost movement, but you can hop only if your speed isn’t 0. </p>
+		</description>
+		<sheet display="false" />
+		<rules>
+			<select type="Racial Trait" name="Size (Rabbitfolk)" supports="ID_INTERNAL_RACIAL_TRAIT_SMALL|ID_INTERNAL_RACIAL_TRAIT_MEDIUM" />
+			<stat name="innate speed" value="30" bonus="base" />
+			<select type="Ability Score Improvement" name="Ability Score Improvement +2 (Rabbitfolk)" supports="Custom Ability Score Increase 2" />
+			<select type="Ability Score Improvement" name="Ability Score Improvement +1 (Rabbitfolk)" supports="Custom Ability Score Increase 1" />
+			<grant type="Language" id="ID_LANGUAGE_COMMON" requirements="!ID_WOTC_TCOE_OPTION_CUSTOMIZED_LANGUAGE" />
+			<select type="Language" name="Customized Language" supports="Custom Race Language" requirements="ID_WOTC_TCOE_OPTION_CUSTOMIZED_LANGUAGE" />
+			<select type="Language" name="Language (Rabbitfolk)" supports="Standard||Exotic" />
+			<grant type="Racial Trait" id="ID_WOTC_UA20210311_RACIAL_TRAIT_RABBITFOLK_HARE_TRIGGER" />
+			<grant type="Racial Trait" id="ID_WOTC_UA20210311_RACIAL_TRAIT_RABBITFOLK_LEPORINE_SENSES" />
+			<grant type="Racial Trait" id="ID_WOTC_UA20210311_RACIAL_TRAIT_RABBITFOLK_LUCKY_FOOTWORK" />
+			<grant type="Racial Trait" id="ID_WOTC_UA20210311_RACIAL_TRAIT_RABBITFOLK_RABBIT_HOP" />
+		</rules>
+	</element>
+
+	<element name="Hare-Trigger" type="Racial Trait" source="Unearthed Arcana: Folk of the Feywild" id="ID_WOTC_UA20210311_RACIAL_TRAIT_RABBITFOLK_HARE_TRIGGER">
+		<description>
+			<p>You add your proficiency bonus to your initiative rolls.</p>
+		</description>
+		<sheet display="false">
+			<description>You add your proficiency bonus to your initiative rolls.</description>
+		</sheet>
+		<rules>
+			<stat name="initiative" value="proficiency" />
+		</rules>
+	</element>
+
+	<element name="Leporine Senses" type="Racial Trait" source="Unearthed Arcana: Folk of the Feywild" id="ID_WOTC_UA20210311_RACIAL_TRAIT_RABBITFOLK_LEPORINE_SENSES">
+		<description>
+			<p>You have proficiency in the Perception skill.</p>
+		</description>
+		<sheet display="false">
+			<description>You have proficiency in the Perception skill.</description>
+		</sheet>
+		<rules>
+			<grant type="Proficiency" id="ID_PROFICIENCY_SKILL_PERCEPTION"  requirements="!ID_WOTC_TCOE_OPTION_CUSTOMIZED_PROFICIENCY" />
+			<select type="Proficiency" name="Customized Skill Proficiency" supports="Skill" requirements="ID_WOTC_TCOE_OPTION_CUSTOMIZED_PROFICIENCY" />
+		</rules>
+	</element>
+
+	<element name="Lucky Footwork" type="Racial Trait" source="Unearthed Arcana: Folk of the Feywild" id="ID_WOTC_UA20210311_RACIAL_TRAIT_RABBITFOLK_LUCKY_FOOTWORK">
+		<description>
+			<p>When you fail a Dexterity saving throw, you can use your reaction to roll a d4 and add it to the result, potentially turning the failure into a success.</p>
+		</description>
+		<sheet action="Reaction">
+			<description>When you fail a Dexterity saving throw, you can roll a d4 and add it to the result, potentially turning the failure into a success.</description>
+		</sheet>
+	</element>
+
+	<element name="Rabbit Hop" type="Racial Trait" source="Unearthed Arcana: Folk of the Feywild" id="ID_WOTC_UA20210311_RACIAL_TRAIT_RABBITFOLK_RABBIT_HOP">
+		<description>
+			<p>Once during each of your turns when you walk at least 5 feet, you can hop, rolling a d12 and moving that many feet in a direction of your choice. This extra distance doesn’t cost movement, but you can hop only if your speed isn’t 0.</p>
+		</description>
+		<sheet>
+			<description>Once during each of your turns when you walk at least 5 feet, you can hop, rolling a d12 and moving that many feet in a direction of your choice. This extra distance doesn’t cost movement, but you can hop only if your speed isn’t 0.</description>
+		</sheet>
+	</element>
+
+</elements>
