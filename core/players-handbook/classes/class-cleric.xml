@@ -4,7 +4,7 @@
 		<name>Cleric</name>
 		<description>The Cleric class from the Player’s Handbook.</description>
 		<author url="http://dnd.wizards.com/products/tabletop-games/rpg-products/rpg_playershandbook">Wizards of the Coast</author>
-		<update version="0.4">
+		<update version="0.4.1">
 			<file name="class-cleric.xml" url="https://raw.githubusercontent.com/AuroraLegacy/elements/master/core/players-handbook/classes/class-cleric.xml" />
 		</update>
 	</info>
@@ -198,6 +198,7 @@
 		</rules>
 	</element>
 	<element name="Channel Divinity" type="Class Feature" source="Player’s Handbook" id="ID_WOTC_PHB_CLASS_FEATURE_CLERIC_CHANNELDIVINITY">
+		<requirements>!ID_INTERNAL_FEATURE_REPLACEMENT_CLERIC_CHANNEL_DIVINITY</requirements>
 		<description>
 			<p>At 2nd level, you gain the ability to channel divine energy directly from your deity, using that energy to fuel magical effects. You start with two such effects: Turn Undead and an effect determined by your domain. Some domains grant you additional effects as you advance in levels, as noted in the domain description.</p>
 			<p class="indent">When you use your Channel Divinity, you choose which effect to create. You must then finish a short or long rest to use your Channel Divinity again.</p>
@@ -361,6 +362,7 @@
 		</sheet>
 	</element>
 	<element name="Divine Strike" type="Archetype Feature" source="Player’s Handbook" id="ID_WOTC_PHB_ARCHETYPE_FEATURE_LIFE_DIVINESTRIKE">
+		<requirements>!ID_INTERNAL_FEATURE_REPLACEMENT_CLERIC_DIVINE_STRIKE_OR_POTENT_SPELLCASTING</requirements>
 		<description>
 			<p>At 8th level, you gain the ability to infuse your weapon strikes with divine energy. Once on each of your turns when you hit a creature with a weapon attack, you can cause the attack to deal an extra 1d8 radiant damage to the target. When you reach 14th level, the extra damage increases to 2d8.</p>
 		</description>
@@ -508,6 +510,7 @@
 		</rules>
 	</element>
 	<element name="Potent Spellcasting" type="Archetype Feature" source="Player’s Handbook" id="ID_WOTC_PHB_ARCHETYPE_FEATURE_KNOWLEDGE_DOMAIN_POTENT_SPELLCASTING">
+		<requirements>!ID_INTERNAL_FEATURE_REPLACEMENT_CLERIC_DIVINE_STRIKE_OR_POTENT_SPELLCASTING</requirements>
 		<description>
 			<p>Starting at 8th level, you add your Wisdom modifier to the damage you deal with any cleric cantrip.</p>
 		</description>
@@ -613,6 +616,7 @@
 		</sheet>
 	</element>
 	<element name="Potent Spellcasting" type="Archetype Feature" source="Player’s Handbook" id="ID_WOTC_PHB_ARCHETYPE_FEATURE_LIGHT_DOMAIN_POTENT_SPELLCASTING">
+		<requirements>!ID_INTERNAL_FEATURE_REPLACEMENT_CLERIC_DIVINE_STRIKE_OR_POTENT_SPELLCASTING</requirements>
 		<description>
 			<p>Starting at 8th level, you add your Wisdom modifier to the damage you deal with any cleric cantrip.</p>
 		</description>
@@ -710,6 +714,7 @@
 		</sheet>
 	</element>
 	<element name="Divine Strike" type="Archetype Feature" source="Player’s Handbook" id="ID_WOTC_PHB_ARCHETYPE_FEATURE_NATURE_DOMAIN_DIVINE_STRIKE">
+		<requirements>!ID_INTERNAL_FEATURE_REPLACEMENT_CLERIC_DIVINE_STRIKE_OR_POTENT_SPELLCASTING</requirements>
 		<description>
 			<p>At 8th level, you gain the ability to infuse your weapon strikes with divine energy. Once on each of your turns when you hit a creature with a weapon attack, you can cause the attack to deal an extra 1d8 cold, fire, or lightning damage (your choice) to the target. When you reach 14th level, the extra damage increases to 2d8.</p>
 		</description>
@@ -814,6 +819,7 @@
 		</sheet>
 	</element>
 	<element name="Divine Strike" type="Archetype Feature" source="Player’s Handbook" id="ID_WOTC_PHB_ARCHETYPE_FEATURE_TEMPEST_DOMAIN_DIVINE_STRIKE">
+		<requirements>!ID_INTERNAL_FEATURE_REPLACEMENT_CLERIC_DIVINE_STRIKE_OR_POTENT_SPELLCASTING</requirements>
 		<description>
 			<p>At 8th level, you gain the ability to infuse your weapon strikes with divine energy. Once on each of your turns when you hit a creature with a weapon attack, you can cause the attack to deal an extra 1d8 thunder damage to the target. When you reach 14th level, the extra damage increases to 2d8.</p>
 		</description>
@@ -903,6 +909,7 @@
 		</sheet>
 	</element>
 	<element name="Divine Strike" type="Archetype Feature" source="Player’s Handbook" id="ID_WOTC_PHB_ARCHETYPE_FEATURE_TRICKERY_DOMAIN_DIVINE_STRIKE">
+		<requirements>!ID_INTERNAL_FEATURE_REPLACEMENT_CLERIC_DIVINE_STRIKE_OR_POTENT_SPELLCASTING</requirements>
 		<description>
 			<p>At 8th level, you gain the ability to infuse your weapon strikes with poison—a gift from your deity. Once on each of your turns when you hit a creature with a weapon attack, you can cause the attack to deal an extra 1d8 poison damage to the target. When you reach 14th level, the extra damage increases to 2d8.</p>
 		</description>
@@ -1010,6 +1017,7 @@
 		</sheet>
 	</element>
 	<element name="Divine Strike" type="Archetype Feature" source="Player’s Handbook" id="ID_WOTC_PHB_ARCHETYPE_FEATURE_WAR_DOMAIN_DIVINE_STRIKE">
+		<requirements>!ID_INTERNAL_FEATURE_REPLACEMENT_CLERIC_DIVINE_STRIKE_OR_POTENT_SPELLCASTING</requirements>
 		<description>
 			<p>At 8th level, you gain the ability to infuse your weapon strikes with divine energy. Once on each of your turns when you hit a creature with a weapon attack, you can cause the attack to deal an extra 1d8 damage of the same type dealt by the weapon to the target. When you reach 14th level, the extra damage increases to 2d8.</p>
 		</description>
@@ -1026,4 +1034,8 @@
 			<description>You gain resistance to bludgeoning, piercing, and slashing damage from nonmagical weapons.</description>
 		</sheet>
 	</element>
+
+	<element name="Channel Divinity Feature Replacement" type="Grants" source="Internal" id="ID_INTERNAL_FEATURE_REPLACEMENT_CLERIC_CHANNEL_DIVINITY" />
+
+	<element name="Divine Strike or Potent Spellcasting Feature Replacement" type="Grants" source="Internal" id="ID_INTERNAL_FEATURE_REPLACEMENT_CLERIC_DIVINE_STRIKE_OR_POTENT_SPELLCASTING" />
 </elements>
