@@ -2,7 +2,7 @@
 <elements>
 	<info>
 		<name>Firearms</name>
-		<update version="0.0.2">
+		<update version="0.0.3">
 			<file name="items-firearms.xml" url="https://raw.githubusercontent.com/AuroraLegacy/elements/master/core/dungeon-masters-guide/items/items-firearms.xml" />
 		</update>
 	</info>
@@ -187,7 +187,7 @@
 			<set name="slot">twohand</set>
 			<set name="range">80/240</set>
 			<set name="damage" type="piercing">2d10</set>
-			<set name="proficiency">ID_WOTC_DMG_PROFICIENCY_WEAPON_MODERN_FIREARMS_RIFLE</set>
+			<set name="proficiency">ID_WOTC_DMG_PROFICIENCY_WEAPON_MODERN_FIREARMS_RIFLE_HUNTING</set>
 			<set name="reload">5</set>
 			<!-- <set name="ammunition">ID_WOTC_DMG_ITEM_BULLET_MODERN</set> -->
 		</setters>
@@ -202,7 +202,7 @@
 			<set name="slot">twohand</set>
 			<set name="range">80/240</set>
 			<set name="damage" type="piercing">2d8</set>
-			<set name="proficiency">ID_WOTC_DMG_PROFICIENCY_WEAPON_MODERN_FIREARMS_RIFLE</set>
+			<set name="proficiency">ID_WOTC_DMG_PROFICIENCY_WEAPON_MODERN_FIREARMS_RIFLE_AUTOMATIC</set>
 			<set name="reload">30</set>
 			<!-- <set name="ammunition">ID_WOTC_DMG_ITEM_BULLET_MODERN</set> -->
 		</setters>
@@ -304,7 +304,8 @@
 
 			<grant type="Proficiency" id="ID_WOTC_DMG_PROFICIENCY_WEAPON_MODERN_FIREARMS_PISTOL_AUTOMATIC" />
 			<grant type="Proficiency" id="ID_WOTC_DMG_PROFICIENCY_WEAPON_MODERN_FIREARMS_REVOLVER" />
-			<grant type="Proficiency" id="ID_WOTC_DMG_PROFICIENCY_WEAPON_MODERN_FIREARMS_RIFLE" />
+			<grant type="Proficiency" id="ID_WOTC_DMG_PROFICIENCY_WEAPON_MODERN_FIREARMS_RIFLE_HUNTING" />
+			<grant type="Proficiency" id="ID_WOTC_DMG_PROFICIENCY_WEAPON_MODERN_FIREARMS_RIFLE_AUTOMATIC" />
 			<grant type="Proficiency" id="ID_WOTC_DMG_PROFICIENCY_WEAPON_MODERN_FIREARMS_SHOTGUN" />
 
 			<grant type="Proficiency" id="ID_WOTC_DMG_PROFICIENCY_WEAPON_FUTURISTIC_FIREARMS_LASTER_PISTOL" />
@@ -336,7 +337,12 @@
 		<requirements>ID_WOTC_DMG_OPTION_FIREARMS</requirements>
 		<sheet alt="Revolver" />
 	</element>
-	<element name="Weapon Proficiency (Rifle)" type="Proficiency" source="Dungeon Master’s Guide" id="ID_WOTC_DMG_PROFICIENCY_WEAPON_MODERN_FIREARMS_RIFLE">
+	<element name="Weapon Proficiency (Rifle, Automatic)" type="Proficiency" source="Dungeon Master’s Guide" id="ID_WOTC_DMG_PROFICIENCY_WEAPON_MODERN_FIREARMS_RIFLE_AUTOMATIC">
+		<supports>Weapon, Martial, Ranged, Firearm, ID_INTERNAL_WEAPON_CATEGORY_FIREARM, ID_INTERNAL_WEAPON_CATEGORY_MARTIAL_RANGED, ID_INTERNAL_DAMAGE_TYPE_PIERCING, ID_WOTC_DMG_WEAPON_PROPERTY_FIREARM_AMMUNITION, ID_WOTC_DMG_WEAPON_PROPERTY_FIREARM_RELOAD, ID_INTERNAL_WEAPON_PROPERTY_TWOHANDED</supports>
+		<requirements>ID_WOTC_DMG_OPTION_FIREARMS</requirements>
+		<sheet alt="Rifle" />
+	</element>
+	<element name="Weapon Proficiency (Rifle, Hunting)" type="Proficiency" source="Dungeon Master’s Guide" id="ID_WOTC_DMG_PROFICIENCY_WEAPON_MODERN_FIREARMS_RIFLE_HUNTING">
 		<supports>Weapon, Martial, Ranged, Firearm, ID_INTERNAL_WEAPON_CATEGORY_FIREARM, ID_INTERNAL_WEAPON_CATEGORY_MARTIAL_RANGED, ID_INTERNAL_DAMAGE_TYPE_PIERCING, ID_WOTC_DMG_WEAPON_PROPERTY_FIREARM_AMMUNITION, ID_WOTC_DMG_WEAPON_PROPERTY_FIREARM_RELOAD, ID_INTERNAL_WEAPON_PROPERTY_TWOHANDED</supports>
 		<requirements>ID_WOTC_DMG_OPTION_FIREARMS</requirements>
 		<sheet alt="Rifle" />
