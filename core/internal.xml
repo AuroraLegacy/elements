@@ -3,7 +3,7 @@
 	<info>
 		<name>Internal</name>
 		<description>Elements that should've been part of the app itself</description>
-		<update version="0.0.3">
+		<update version="0.0.4">
 			<file name="internal.xml" url="https://raw.githubusercontent.com/AuroraLegacy/elements/master/core/internal.xml" />
 		</update>
 	</info>
@@ -381,6 +381,30 @@
 			<stat name="charisma" value="-1" alt="Ability Score Decrease" />
 		</rules>
 	</element>
+
+	<!-- Ability Score Increase Options -->
+	<element name="Ability Score Improvement +2, +1" type="Ability Score Improvement" source="Internal" id="ID_WOTC_ASI_ABILITY_SCORE_IMPROVEMENT_OPTION_1">
+        <supports>Custom Ability Score Improvement Option</supports>
+        <description>
+            <p>You can increase one of the scores by 2 and increase a different score by 1.</p>
+        </description>
+        <sheet display="false" />
+        <rules>
+            <select type="Ability Score Improvement" name="Custom Ability Score Improvement +2" supports="Custom Ability Score Increase 2" />
+            <select type="Ability Score Improvement" name="Custom Ability Score Improvement +1" supports="Custom Ability Score Increase 1" />
+        </rules>
+    </element>
+
+    <element name="Ability Score Improvement +1, +1, +1" type="Ability Score Improvement" source="Internal" id="ID_WOTC_ASI_ABILITY_SCORE_IMPROVEMENT_OPTION_2">
+        <supports>Custom Ability Score Improvement Option</supports>
+        <description>
+            <p>You can increase three different scores by 1.</p>
+        </description>
+        <sheet display="false" />
+        <rules>
+            <select type="Ability Score Improvement" name="Custom Ability Score Improvement +1" number="3" supports="Custom Ability Score Increase 1" />
+        </rules>
+    </element>
 
 	<!-- Sizes -->
 	<element name="Tiny" type="Racial Trait" source="Internal" id="ID_INTERNAL_RACIAL_TRAIT_TINY">
