@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <elements>
 	<info>
-		<update version="0.0.9">
+		<update version="0.1.0">
 			<file name="class-artificer.xml" url="https://raw.githubusercontent.com/AuroraLegacy/elements/master/supplements/eberron-rising-from-the-last-war/class-artificer.xml" />
 		</update>
 	</info>
@@ -1007,12 +1007,18 @@
 			<p class="indent">The homunculus is friendly to you and your companions, and it obeys your commands. See this creature’s game statistics in the Homunculus Servant stat block, which uses your proficiency bonus (PB) in several places.</p>
 			<p class="indent">In combat, the homunculus shares your initiative count, but it takes its turn immediately after yours. It can move and use its reaction on its own, but the only action it takes on its turn is the Dodge action, unless you take a bonus action on your turn to command it to take another action. That action can be one in its stat block or some other action. If you are incapacitated, the homunculus can take any action of its choice, not just Dodge.</p>
 			<p class="indent">The homunculus regains 2d6 hit points if the mending spell is cast on it. If you or the homunculus dies, it vanishes, leaving its heart in its space. </p>
+			<div class="reference">
+				<div element="ID_WOTC_ERLW_INFORMATION_HOMUNCULUS_SERVANT_STATBLOCK" />
+			</div>
 		</description>
 		<sheet>
 			<description>You can infuse a gem or crystal worth at least 100 gp into a homunculus servant.
 			In combat, the homunculus shares your initiative count, but it takes its turn immediately after yours. It can move and use its reaction on its own, but the only action it takes on its turn is the Dodge action, unless you take a bonus action on your turn to command it to take another action. That action can be one in its stat block or some other action. If you are incapacitated, the homunculus can take any action of its choice, not just Dodge.
 			The homunculus regains 2d6 hit points if the mending spell is cast on it. If you or the homunculus dies, it vanishes, leaving its heart in its space.</description>
 		</sheet>
+		<rules>
+			<select type="Companion" name="Homunculus Servant" supports="Homunculus Servant" />
+		</rules>
 	</element>
 	<element name="Radiant Weapon" type="Class Feature" source="Eberron: Rising from the Last War" id="ID_WOTC_ERLW_CLASS_FEATURE_ARTIFICER_INFUSION_RADIANT_WEAPON">
 		<supports>Artificer Infusion</supports>
@@ -1643,5 +1649,112 @@
 		<rules>
 			<select name="Feat (Level 19)" type="Feat" />
 		</rules>
+	</element>
+
+	<element name="Homunculus Servant" type="Companion" source="Eberron: Rising from the Last War" id="ID_WOTC_ERLW_COMPANION_ARTIFICER_HOMUNCULUS_SERVANT "> 
+		<supports>Homunculus Servant</supports>
+		<description> 
+			<p>You learn intricate methods for magically creating a special homunculus that serves you. The item you infuse (A gem or crystal worth at least 100 gp ) serves as the creature's heart, around which the creature's body instantly forms. </p> <p><b>Proficiency Bonus (PB)</b> equals your bonus</p> 
+		</description> 
+		<setters>
+			<set name="strength">4</set>
+			<set name="dexterity">15</set>
+			<set name="constitution">12</set>
+			<set name="intelligence">10</set>
+			<set name="wisdom">10</set>
+			<set name="charisma">7</set>
+			<set name="ac">13 (natural armor)</set>
+			<set name="hp">1 + your Intelligence modifier + your artificer level (the Homunculus has a number of Hit Dice [d4s] equal to your artificer level)</set>
+			<set name="speed">20 ft., fly 30 ft.</set>
+			<set name="immunities">poison</set>
+			<set name="conditionImmunities">exhaustion, poisoned</set>
+			<set name="saves">Dex +2 plus PB</set>
+			<set name="skills">Perception +0 plus PB x 2, Stealth +2 plus PB </set>
+			<set name="senses">darkvision 60 ft., passive Perception 10 + (PB x 2) </set>
+			<set name="languages">understands the languages you speak</set>
+			<set name="type">Construct</set>
+			<set name="size">Tiny</set>
+			<set name="alignment">neutral</set>
+			<set name="challenge">-</set>
+			<set name="traits">ID_WOTC_ERLW_COMPANION_TRAIT_HOMUNCULUS_SERVANT_EVASION</set>
+			<set name="actions">ID_WOTC_ERLW_COMPANION_ACTION_HOMUNCULUS_SERVANT_FORCE_STRIKE</set>
+			<set name="reactions">ID_WOTC_ERLW_COMPANION_REACTION_HOMUNCULUS_SERVANT_CHANNEL_MAGIC</set>
+		</setters> 
+		<rules>
+			<stat name="companion:ac" value="13" bonus="base" />
+			<stat name="companion:hp:max" value="1" />
+			<stat name="companion:hp:max" value="intelligence:modifier" />
+			<stat name="companion:hp:max" value="level:artificer" />
+			<stat name="companion:speed" value="20" bonus="base" />
+			<stat name="companion:speed:fly" value="40" bonus="base" />
+			<stat name="companion:proficiency" value="proficiency" bonus="base" />
+			<stat name="companion:proficiency" value="-2" bonus="base companion PB removal"/>
+			<stat name="companion:stealths:proficiency" value="companion:proficiency" bonus="proficiency" />
+			<stat name="companion:perception:proficiency" value="companion:proficiency" bonus="proficiency" />
+			<stat name="companion:perception:proficiency" value="companion:proficiency" bonus="double" />
+			<stat name="companion:dexterity:save:proficiency" value="companion:proficiency" bonus="proficiency" />
+		</rules> 
+	</element> 
+	<element name="Evasion" type="Companion Trait" source="Eberron: Rising from the Last War" id="ID_WOTC_ERLW_COMPANION_TRAIT_HOMUNCULUS_SERVANT_EVASION">
+		<description>
+			<p>If the homunculus is subjected to an effect that allows it to make a Dexterity saving throw to take only half damage, it instead takes no damage if it succeeds on the saving throw, and only half damage if it fails. It can't use this trait if it's incapacitated. </p>
+		</description>
+		<sheet>
+			<description>If the homunculus is subjected to an effect that allows it to make a Dexterity saving throw to take only half damage, it instead takes no damage if it succeeds on the saving throw, and only half damage if it fails. It can't use this trait if it's incapacitated. </description> 
+		</sheet> 
+	</element>
+	<element name="Force Strike" type="Companion Action" source="Eberron: Rising from the Last War" id="ID_WOTC_ERLW_COMPANION_ACTION_HOMUNCULUS_SERVANT_FORCE_STRIKE">
+		<description>
+			<p>Ranged Weapon Attack: your spell attack modifier to hit, range 30 ft., one target you can see. Hit: 1d4 + PB force damage. </p>
+		</description>
+		<sheet>
+			<description>Ranged Weapon Attack: your spell attack modifier to hit, range 30 ft., one target you can see. Hit: 1d4 + PB force damage. </description>
+		</sheet> 
+	</element>
+	<element name="Channel Magic" type="Companion Reaction" source="Eberron: Rising from the Last War" id="ID_WOTC_ERLW_COMPANION_REACTION_HOMUNCULUS_SERVANT_CHANNEL_MAGIC">
+		<description>
+			<p> The homunculus delivers a spell you cast that has a range of touch. The homunculus must be within 120 feet of you. </p>
+		</description>
+		<sheet>
+			<description> The homunculus delivers a spell you cast that has a range of touch. The homunculus must be within 120 feet of you. </description>
+		</sheet> 
+	</element>
+
+	<element name="Homunculus Servant" type="Information" source="Eberron: Rising from the Last War" id="ID_WOTC_ERLW_INFORMATION_HOMUNCULUS_SERVANT_STATBLOCK">
+		<description>
+			<p style="margin-bottom:-5px"><em>Tiny construct</em></p>
+			<h4 style="margin-top:5px" />
+			<ul class="unstyled">
+				<li><strong>Armor Class</strong> 13 (natural armor)</li>
+				<li><strong>Hit Points</strong> 1 + your Intelligence modifier + your artificer level (the homunculus servant has a number of Hit Dice [d4s] equal to your artificer level)</li>
+				<li><strong>Speed</strong> 20 ft., fly 30 ft.</li>
+			</ul>
+			<table style="text-align:center;margin-top:10px;margin-bottom:10px">
+				<thead><tr><td>STR</td><td>DEX</td><td>CON</td><td>INT</td><td>WIS</td><td>CHA</td></tr></thead>
+				<tr><td>4 (-3)</td><td>15 (+2)</td><td>12 (+1)</td><td>10 (+0)</td><td>10 (+0)</td><td>7 (-2)</td></tr>
+			</table>
+			<ul class="unstyled">
+				<li><strong>Saving Throws</strong> Dex +2 plus PB</li>
+				<li><strong>Skills</strong> Perception +0 plus PB x 2, Stealth +2 plus PB</li>
+				<li><strong>Damage Immunities</strong> poison</li>
+				<li><strong>Condition Immunities</strong> exhaustion, poisoned</li>
+				<li><strong>Senses</strong> darkvision 60 ft., passive Perception 10 + (PB x 2)</li>
+				<li><strong>Languages</strong> understands the language you speak</li>
+				<li><strong>Challenge</strong> —</li>
+				<li><strong>Proficiency Bonus (PB)</strong> equals your bonus</li>
+			</ul>
+			<h4 style="margin-top:5px; margin-bottom:10px" />
+			<ul class="unstyled">
+				<li><strong><em>Evasion.</em></strong> If the homunculus is subjected to an effect that allows it to make a Dexterity saving throw to take only half damage, it instead takes no damage if it succeeds on the saving throw, and only half damage if it fails. It can't use this trait if it's incapacitated.</li>
+			</ul>
+			<h4 style="margin-top:10px">Actions</h4>
+			<ul class="unstyled">
+				<li><strong><em>Force Strike. </em></strong><em>Ranged Weapon Attack:</em> your spell attack modifier to hit, range 30 ft., one target you can see. <em>Hit:</em> 1d4 + PB force damage.</li>
+			</ul>
+			<h4 style="margin-top:10px">Reactions</h4>
+			<ul class="unstyled">
+				<li><strong><em>Channel Magic. </em></strong>The homunculus delivers a spell you cast that has a range of touch. The homunculus must be within 120 feet of you.</li>
+			</ul>
+		</description>
 	</element>
 </elements>
