@@ -513,21 +513,18 @@
 			<stat name="darkvision:range" value="60" bonus="base" />
 		</rules>
 	</element>
-	<element name="Vision: Darkvision" type="Magic Item" source="Internal" id="ID_INTERNAL_RACIAL_TRAIT_DARKVISION">
+
+	<element name="Darkvision" type="Vision" source="Player’s Handbook" id="ID_VISION_LESSER_DARKVISION">
+		<requirements>!(ID_VISION_SUPERIORDARKVISION||ID_VISION_DARKVISION)</requirements>
+		<compendium display="false" />
 		<description>
-			<p><i>You can equip this item to “enable” it. It remains hidden from the inventory on your character sheet.</i></p>
-			<div class="reference">
-				<div element="ID_VISION_DARKVISION" />
-			</div>
+			<p>Many creatures in the worlds of D&amp;D, especially those that dwell underground, have darkvision. Within a specified range, a creature with darkvision can see in darkness as if the darkness were dim light, so areas of darkness are only lightly obscured as far as that creature is concerned. However, the creature can’t discern color in darkness, only shades of gray.</p>
 		</description>
-		<setters>
-			<set name="category">Additional Feature</set>
-			<set name="slot">misc</set>
-			<set name="inventory-hidden">true</set>
-		</setters>
-		<sheet display="false" />
+		<sheet>
+			<description>You can see in dim light within {{darkvision:range}} feet of you as if it were bright light, and in darkness as if it were dim light.</description>
+		</sheet>
 		<rules>
-			<grant type="Vision" id="ID_VISION_DARKVISION" />
+			<stat name="darkvision:range" value="0" bonus="base" />
 		</rules>
 	</element>
 
@@ -543,6 +540,7 @@
 		</setters>
 		<sheet display="false" />
 		<rules>
+			<grant type="Vision" id="ID_VISION_LESSER_DARKVISION" />
 			<stat name="darkvision:range" value="10" />
 		</rules>
 	</element>
@@ -559,6 +557,7 @@
 		</setters>
 		<sheet display="false" />
 		<rules>
+			<grant type="Vision" id="ID_VISION_LESSER_DARKVISION" />
 			<stat name="darkvision:range" value="5" />
 		</rules>
 	</element>
@@ -575,24 +574,6 @@
 		</rules>
 	</element>
 
-	<element name="Vision: Superior Darkvision" type="Magic Item" source="Internal" id="ID_INTERNAL_RACIAL_TRAIT_SUPERIOR_DARKVISION">
-		<description>
-			<p><i>You can equip this item to “enable” it. It remains hidden from the inventory on your character sheet.</i></p>
-			<div class="reference">
-				<div element="ID_VISION_SUPERIORDARKVISION" />
-			</div>
-		</description>
-		<setters>
-			<set name="category">Additional Feature</set>
-			<set name="slot">misc</set>
-			<set name="inventory-hidden">true</set>
-		</setters>
-		<sheet display="false" />
-		<rules>
-			<grant type="Vision" id="ID_VISION_SUPERIORDARKVISION" />
-		</rules>
-	</element>
-
 	<element name="Blindsight" type="Vision" source="Player’s Handbook" id="ID_VISION_BLINDSIGHT">
 		<description>
 			<p>A creature with blindsight can perceive its surroundings without relying on sight, within a specific radius. Creatures without eyes, such as oozes, and creatures with echolocation or heightened senses, such as bats and true dragons, have this sense.</p>
@@ -601,25 +582,7 @@
 			<description>You perceive your surroundings within {{blindsight:range}} feet without relying on sight.</description>
 		</sheet>
 		<rules>
-			<stat name="blindsight:range" value="10" bonus="base" />
-		</rules>
-	</element>
-
-	<element name="Vision: Blindsight" type="Magic Item" source="Internal" id="ID_INTERNAL_RACIAL_TRAIT_BLINDSIGHT">
-		<description>
-			<p><i>You can equip this item to “enable” it. It remains hidden from the inventory on your character sheet.</i></p>
-			<div class="reference">
-				<div element="ID_VISION_BLINDSIGHT" />
-			</div>
-		</description>
-		<setters>
-			<set name="category">Additional Feature</set>
-			<set name="slot">misc</set>
-			<set name="inventory-hidden">true</set>
-		</setters>
-		<sheet display="false" />
-		<rules>
-			<grant type="Vision" id="ID_VISION_BLINDSIGHT" />
+			<stat name="blindsight:range" value="0" bonus="base" />
 		</rules>
 	</element>
 
@@ -635,6 +598,7 @@
 		</setters>
 		<sheet display="false" />
 		<rules>
+			<grant type="Vision" id="ID_VISION_BLINDSIGHT" />
 			<stat name="blindsight:range" value="10" />
 		</rules>
 	</element>
@@ -651,6 +615,7 @@
 		</setters>
 		<sheet display="false" />
 		<rules>
+			<grant type="Vision" id="ID_VISION_BLINDSIGHT" />
 			<stat name="blindsight:range" value="5" />
 		</rules>
 	</element>
@@ -663,25 +628,7 @@
 			<description>You can see in normal and magical darkness, see invisible creatures and objects, automatically detect visual illusions and succeed on saving throws against them, and perceives the original form of a shapechanger or a creature that is transformed by magic within {{truesight:range}} feet. Furthermore, the creature can see into the Ethereal Plane.</description>
 		</sheet>
 		<rules>
-			<stat name="truesight:range" value="10" bonus="base" />
-		</rules>
-	</element>
-
-	<element name="Vision: Truesight" type="Magic Item" source="Internal" id="ID_INTERNAL_RACIAL_TRAIT_TRUESIGHT">
-		<description>
-			<p><i>You can equip this item to “enable” it. It remains hidden from the inventory on your character sheet.</i></p>
-			<div class="reference">
-				<div element="ID_VISION_TRUESIGHT" />
-			</div>
-		</description>
-		<setters>
-			<set name="category">Additional Feature</set>
-			<set name="slot">misc</set>
-			<set name="inventory-hidden">true</set>
-		</setters>
-		<sheet display="false" />
-		<rules>
-			<grant type="Vision" id="ID_VISION_TRUESIGHT" />
+			<stat name="truesight:range" value="0" bonus="base" />
 		</rules>
 	</element>
 
@@ -697,6 +644,7 @@
 		</setters>
 		<sheet display="false" />
 		<rules>
+			<grant type="Vision" id="ID_VISION_TRUESIGHT" />
 			<stat name="truesight:range" value="10" />
 		</rules>
 	</element>
@@ -713,6 +661,7 @@
 		</setters>
 		<sheet display="false" />
 		<rules>
+			<grant type="Vision" id="ID_VISION_TRUESIGHT" />
 			<stat name="truesight:range" value="5" />
 		</rules>
 	</element>
@@ -726,25 +675,7 @@
 			<description>You can detect and pinpoint the origin of vibrations within {{tremorsense:range}} feet, provided that the monster and the source of the vibrations are in contact with the same ground or substance. Tremorsense can't be used to detect flying or incorporeal creatures.</description>
 		</sheet>
 		<rules>
-			<stat name="tremorsense:range" value="10" bonus="base" />
-		</rules>
-	</element>
-
-	<element name="Vision: Tremorsense" type="Magic Item" source="Internal" id="ID_INTERNAL_RACIAL_TRAIT_TREMORSENSE">
-		<description>
-			<p><i>You can equip this item to “enable” it. It remains hidden from the inventory on your character sheet.</i></p>
-			<div class="reference">
-				<div element="ID_VISION_TREMORSENSE" />
-			</div>
-		</description>
-		<setters>
-			<set name="category">Additional Feature</set>
-			<set name="slot">misc</set>
-			<set name="inventory-hidden">true</set>
-		</setters>
-		<sheet display="false" />
-		<rules>
-			<grant type="Vision" id="ID_VISION_TREMORSENSE" />
+			<stat name="tremorsense:range" value="0" bonus="base" />
 		</rules>
 	</element>
 
@@ -760,6 +691,7 @@
 		</setters>
 		<sheet display="false" />
 		<rules>
+			<grant type="Vision" id="ID_VISION_TREMORSENSE" />
 			<stat name="tremorsense:range" value="10" />
 		</rules>
 	</element>
@@ -776,6 +708,7 @@
 		</setters>
 		<sheet display="false" />
 		<rules>
+			<grant type="Vision" id="ID_VISION_TREMORSENSE" />
 			<stat name="tremorsense:range" value="5" />
 		</rules>
 	</element>
