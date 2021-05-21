@@ -14,6 +14,7 @@
 			<h4>Dhampir Hungers</h4>
 			<p>Every dhampir knows a thirst slaked only by the living. Those who overindulge their thirst risk losing control and forever viewing others as prey. Those who resist might find exceptional ways of controlling their urges or suppress them through constant, molar-grinding restraint. In any case, temptation haunts dhampirs, and circumstances conspire to give them endless reasons to indulge.</p>
 			<p class="indent">While many dhampirs thirst for blood, your character might otherwise gain sustenance from the living. Roll on or choose an option from the Dhampir Hungers table to determine what tempts your character to feed.</p>
+			<h5>Dhampir Hungers</h5>
 			<table>
 				<thead>
 					<tr><td>d6</td><td>Hunger</td></tr>
@@ -27,6 +28,7 @@
 			</table>
 			<h4>Dhampir Origins</h4>
 			<p>Dhampirs often arise from encounters with vampires, but all manner of macabre bargains, necromantic influences, and encounters with mysterious immortals might have transformed your character. The Dhampir Origins table provides suggestions for how your character gained their lineage.</p>
+			<h5>Dhampir Origins</h5>
 			<table>
 				<thead>
 					<tr><td>d8</td><td>Origin</td></tr>
@@ -41,7 +43,7 @@
 				<tr><td>8</td><td>A radical experiment changed your body, making you reliant on others for vital fluids.</td></tr>
 			</table>
 			<h4>Dhampir Traits</h4>
-			<p></p>
+			<p>You have the following racial traits.</p>
 			<p class="indent"><strong><em>Ability Score Increase.</em></strong> Increase one score by 2 and increase a different score by 1, or you increase three different scores by 1.</p>
 			<p class="indent"><strong><em>Creature Type.</em></strong> You are a Humanoid.</p>
 			<p class="indent"><strong><em>Size.</em></strong> You are Medium or Small. You choose the size when you gain this lineage.</p>
@@ -69,11 +71,11 @@
 			<grant type="Racial Trait" id="ID_INTERNAL_RACIAL_TRAIT_TYPE_HUMANOID" />
 			<select type="Racial Trait" name="Size (Dhampir)" supports="ID_INTERNAL_RACIAL_TRAIT_SMALL|ID_INTERNAL_RACIAL_TRAIT_MEDIUM" />
 			<stat name="innate speed" value="35" bonus="base" />
-			<grant type="Racial Trait" id="ID_WOTC_VRGTR_RACIAL_TRAIT_ANCESTRAL_LEGACY" />
+			<grant type="Racial Trait" id="ID_WOTC_VRGTR_RACIAL_TRAIT_DHAMPIR_ANCESTRAL_LEGACY" />
 			<grant type="Vision" id="ID_VISION_DARKVISION" />
 			<grant type="Racial Trait" id="ID_WOTC_VRGTR_RACIAL_TRAIT_DHAMPIR_DEATHLESS_NATURE" />
-			<grant type="Racial Trait" id="ID_WOTC_VRGTR_RACIAL_TRAIT_SPIDER_CLIMB" />
-			<grant type="Racial Trait" id="ID_WOTC_VRGTR_RACIAL_TRAIT_VAMPIRIC_BITE" />
+			<grant type="Racial Trait" id="ID_WOTC_VRGTR_RACIAL_TRAIT_DHAMPIR_SPIDER_CLIMB" />
+			<grant type="Racial Trait" id="ID_WOTC_VRGTR_RACIAL_TRAIT_DHAMPIR_VAMPIRIC_BITE" />
 		</rules>
 	</element>
 
@@ -84,10 +86,7 @@
 		</description>
 		<sheet display="false" />
 		<rules>
-			<select type="Proficiency" name="Skill Proficiency, Ancestral Legacy" number="2" supports="Skill" optional="true" />
-			<select type="Racial Trait" name="Climb Speed, Ancestral Legacy" supports="Climb Speed" optional="true "/>
-			<select type="Racial Trait" name="Fly Speed, Ancestral Legacy" supports="Fly Speed" optional="true "/>
-			<select type="Racial Trait" name="Swim Speed, Ancestral Legacy" supports="Swim Speed" optional="true "/>
+			<select type="Proficiency" name="Skill Proficiency (Ancestral Legacy)" number="2" supports="Skill" optional="true" />
 		</rules>
 	</element>
 
@@ -100,7 +99,7 @@
 		</sheet>
 	</element>
 
-	<element name="Spider Climb" type="Racial Trait" source="Van Richten's Guide To Ravenloft" id="ID_WOTC_VRGTR_RACIAL_TRAIT_SPIDER_CLIMB">
+	<element name="Spider Climb" type="Racial Trait" source="Van Richten's Guide To Ravenloft" id="ID_WOTC_VRGTR_RACIAL_TRAIT_DHAMPIR_SPIDER_CLIMB">
 		<description>
 			<p>You have a climbing speed equal to your walking speed. In addition, at 3rd level, you can move up, down, and across vertical surfaces and upside down along ceilings, while leaving your hands free.</p>
 		</description>
@@ -113,7 +112,7 @@
 		</rules>
 	</element>
 	
-	<element name="Vampiric Bite" type="Racial Trait" source="Van Richten's Guide To Ravenloft" id="ID_WOTC_VRGTR_RACIAL_TRAIT_VAMPIRIC_BITE">
+	<element name="Vampiric Bite" type="Racial Trait" source="Van Richten's Guide To Ravenloft" id="ID_WOTC_VRGTR_RACIAL_TRAIT_DHAMPIR_VAMPIRIC_BITE">
 		<description>
 			<p>Your fanged bite is a natural weapon, which counts as a simple melee weapon with which you are proficient. You add your Constitution modifier, instead of your Strength modifier, to the attack and damage rolls when you attack with this bite. It deals 1d4 piercing damage on a hit. While you are missing half or more of your hit points, you have advantage on attack rolls you make with this bite.</p>
 			<p class="indent">When you attack with this bite and hit a creature that isn’t a Construct or an Undead, you can empower yourself in one of the following ways of your choice:</p>
@@ -124,10 +123,10 @@
 			<p class="indent">You can empower yourself with this bite a number of times equal to your proficiency bonus, and you regain all expended uses when you finish a long rest.</p>
 		</description>
 		<sheet>
-			<description>Your fanged bite is a natural weapon, which counts as a simple melee weapon with which you are proficient. You add your Constitution modifier, instead of your Strength modifier, to the attack and damage rolls when you attack with this bite. It deals 1d4 piercing damage on a hit. While you are missing half or more of your hit points, you have advantage on attack rolls you make with this bite. When you attack with this bite and hit a creature that isn’t a Construct or an Undead, you can empower yourself in one of the following ways of your choice: &#13;
+			<description>Your fanged bite is a natural weapon, which counts as a simple melee weapon with which you are proficient. You add your Constitution modifier, instead of your Strength modifier, to the attack rolls with this bite. It deals 1d4 + {{constitution:modifier}} piercing damage on a hit. While you are missing half or more of your hit points, you have advantage on attack rolls you make with this bite. When you attack with this bite and hit a creature that isn’t a Construct or an Undead, you can empower yourself in one of the following ways of your choice: &#13;
 			• You regain hit points equal to the piercing damage dealt by the bite. &#13;
 			• You gain a bonus to the next ability check or attack roll you make; the bonus equals the piercing damage dealt by the bite. &#13;
-			You can empower yourself with this bite a number of times equal to your proficiency bonus, and you regain all expended uses when you finish a long rest.</description>
+			You can empower yourself with your bite {{proficiency}} times, and you regain all expended uses when you finish a long rest.</description>
 		</sheet>
 	</element>
 </elements>

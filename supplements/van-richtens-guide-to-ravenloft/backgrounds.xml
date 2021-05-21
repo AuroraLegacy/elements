@@ -26,9 +26,22 @@
 	<element name="Optional Feature: Mist Wanderer" type="Background Feature" source="Van Richten's Guide To Ravenloft" id="ID_WOTC_VRGTR_BACKGROUND_FEATURE_MIST_WANDERER">
 		<supports>Background Feature, Optional Background Feature</supports>
 		<description>
-			<p>The Mists whisper to you and guide you through their mysterious eddies. You immediately know if an object you’re touching is a Mist talisman. You recognize where the talisman originates from if you have been to its domain of origin.</p>
+			<p>After a fateful experience, you believe you’re aligned with spirits and can serve as a conduit for their insights and goals. You have advantage on any Arcana or Religion check you make to remember or research information about spirits and the afterlife. Additionally, you begin your adventuring career with a custom-made device for communing with otherworldly forces, perhaps a spirit board, a tarokka deck, an automatic writing planchette, dowsing rods, a cup for tea leaves, or a device of your own design. Add your proficiency bonus to any ability check you make using this type of divining tool.</p>
 		</description>
 		<sheet alt="Mist Wanderer">
+			<description>After a fateful experience, you believe you’re aligned with spirits and can serve as a conduit for their insights and goals. You have advantage on any Arcana or Religion check you make to remember or research information about spirits and the afterlife. Additionally, you begin your adventuring career with a custom-made device for communing with otherworldly forces, perhaps a spirit board, a tarokka deck, an automatic writing planchette, dowsing rods, a cup for tea leaves, or a device of your own design. Add your proficiency bonus to any ability check you make using this type of divining tool.</description>
+		</sheet>
+		<rules>
+			<grant type="Grants" id="ID_INTERNAL_GRANT_OPTIONAL_BACKGROUND_FEATURE" />
+		</rules>
+	</element>
+
+	<element name="Optional Feature: Spirit Medium" type="Background Feature" source="Van Richten's Guide To Ravenloft" id="ID_WOTC_VRGTR_BACKGROUND_FEATURE_SPIRIT_MEDIUM">
+		<supports>Background Feature, Optional Background Feature</supports>
+		<description>
+			<p>The Mists whisper to you and guide you through their mysterious eddies. You immediately know if an object you’re touching is a Mist talisman. You recognize where the talisman originates from if you have been to its domain of origin.</p>
+		</description>
+		<sheet alt="Spirit Medium">
 			<description>The Mists whisper to you and guide you through their mysterious eddies. You immediately know if an object you’re touching is a Mist talisman. You recognize where the talisman originates from if you have been to its domain of origin.</description>
 		</sheet>
 		<rules>
@@ -69,7 +82,7 @@
 			<ul class="unstyled">
 				<li><strong>Skill Proficiencies:</strong> Choose two from among Arcana, Investigation, Religion, or Survival</li>
 				<li><strong>Languages:</strong> Choose two, one of which must be Abyssal, Celestial, Deep Speech, Draconic, Infernal, Primordial, Sylvan, or Undercommon</li>
-				<li><strong>Equipment:</strong> A monster hunter’s pack (containing a chest, a crowbar, a hammer, three wooden stakes, a holy symbol, a flask of holy water, a set of manacles, a steel mirror, a flask of oil, a tinderbox, and 3 torches), one trinket of special significance (choose one or roll on the Horror Trinkets table later in this chapter), a set of common clothes, and 1 sp.</li>
+				<li><strong>Equipment:</strong> A monster hunter’s pack (containing a chest, a crowbar, a hammer, three wooden stakes, a holy symbol, a flask of holy water, a set of manacles, a steel mirror, a flask of oil, a tinderbox, and 3 torches), one trinket of special significance, a set of common clothes, and 1 sp.</li>
 			</ul>
 			<h5>HARROWING EVENT</h5>
 			<p>Prior to becoming an adventurer, your path in life was defined by one dark moment, one fateful decision, or one tragedy. Now you feel a darkness threatening to consume you, and you fear there may be no hope of escape. Choose a harrowing event that haunts you, or roll one on the Harrowing Events table.</p>
@@ -92,7 +105,7 @@
 			<div element="ID_WOTC_VRGTR_BACKGROUND_FEATURE_HEART_OF_DARKNESS" />
 		</description>
 		<setters>
-			<set name="short">2 Arcana / Investigation / Religion / Survival, Language, Exotic Language </set>
+			<set name="short">2 Skills from Arcana/Investigation/Religion/Survival, 1 Exotic and 1 other Language</set>
 		</setters>
 		<rules>
 			<grant type="Background Feature" id="ID_WOTC_VRGTR_BACKGROUND_FEATURE_HEART_OF_DARKNESS" requirements="!ID_INTERNAL_GRANT_OPTIONAL_BACKGROUND_FEATURE"/>
@@ -109,9 +122,9 @@
 				<item id="9">A fiend possessed you as a child. You were locked away but escaped. The fiend is still inside you, but now you try to keep it bottled up.</item>
 				<item id="10">You did terrible things to avenge the murder of someone you loved. You became a monster, and it haunts your waking dreams.</item>
 			</select>
-			<select type="Proficiency" name="Skill Proficiency, Haunted One" number="2" supports="ID_PROFICIENCY_SKILL_ARCANA | ID_PROFICIENCY_SKILL_INVESTIGATION | ID_PROFICIENCY_SKILL_RELIGION | ID_PROFICIENCY_SKILL_SURVIVAL" />
-			<select type="Language" name="Language, Haunted One (Limited)" supports="ID_LANGUAGE_ABYSSAL | ID_LANGUAGE_CELESTIAL | ID_LANGUAGE_DEEP_SPEECH | ID_LANGUAGE_DRACONIC | ID_LANGUAGE_INFERNAL | ID_LANGUAGE_PRIMORDIAL | ID_LANGUAGE_SYLVAN | ID_LANGUAGE_UNDERCOMMON" />
-			<select type="Language" name="Language, Haunted One" supports="Standard||Exotic" />
+			<select type="Proficiency" name="Skill Proficiency (Haunted One)" number="2" supports="ID_PROFICIENCY_SKILL_ARCANA | ID_PROFICIENCY_SKILL_INVESTIGATION | ID_PROFICIENCY_SKILL_RELIGION | ID_PROFICIENCY_SKILL_SURVIVAL" />
+			<select type="Language" name="Exotic Language (Haunted One)" supports="ID_LANGUAGE_ABYSSAL|ID_LANGUAGE_CELESTIAL|ID_LANGUAGE_DEEP_SPEECH|ID_LANGUAGE_DRACONIC|ID_LANGUAGE_INFERNAL|ID_LANGUAGE_PRIMORDIAL|ID_LANGUAGE_SYLVAN|ID_LANGUAGE_UNDERCOMMON" />
+			<select type="Language" name="Language (Haunted One)" supports="Standard||Exotic" />
 		</rules>
 	</element>
 
@@ -125,14 +138,13 @@
 	</element>
 
 	<!--Investigator-->
-
 	<element name="Investigator" type="Background" source="Van Richten's Guide To Ravenloft" id="ID_WOTC_VRGTR_BACKGROUND_INVESTIGATOR">
 		<description>
 			<p>You relentlessly seek the truth. Perhaps you’re motivated by belief in the law and a sense of universal justice, or maybe that very law has failed you and you seek to make things right. You could have witnessed something remarkable or terrible, and now you must know more about this hidden truth. Or maybe you’re a detective for hire, uncovering secrets for well-paying clients. Whether the mysteries you’re embroiled in are local crimes or realm-spanning conspiracies, you’re driven by a personal need to hunt down even the most elusive clues and reveal what others would keep hidden in the shadows.</p>
 			<ul class="unstyled">
 				<li><strong>Skill Proficiencies:</strong> Choose two from among Insight, Investigation, or Perception</li>
 				<li><strong>Tool Proficiencies:</strong> Disguise kit, Thieves’ tools</li>
-				<li><strong>Equipment:</strong> A magnifying glass, evidence from a past case (choose one or roll for a trinket from the Horror Trinkets table later in this chapter), a set of common clothes, and 10 gp</li>
+				<li><strong>Equipment:</strong> A magnifying glass, evidence from a past case, a set of common clothes, and 10 gp</li>
 			</ul>
 			<h5>Path to Mystery</h5>
 			<p>Your first case influenced the types of mysteries you’re interested in. Why was this case so impactful, personal, or traumatic? Whom did it affect besides you? Why and how did you get involved? Was it solved? How did it set you on the path to investigating other mysteries? Roll on or choose details from the First Case table to develop the mystery that started your career as an investigator.</p>
@@ -152,7 +164,7 @@
 			<div element="ID_WOTC_VRGTR_BACKGROUND_FEATURE_OFFICIAL_INQUIRY" />
 		</description>
 		<setters>
-			<set name="short">2 Insight / Investigation / Perception, Disguise kit, Thieves’ tools</set>
+			<set name="short">2 Skills from Insight/Investigation/Perception, Disguise kit, Thieves’ tools</set>
 		</setters>
 		<rules>
 			<grant type="Background Feature" id="ID_WOTC_VRGTR_BACKGROUND_FEATURE_OFFICIAL_INQUIRY" requirements="!ID_INTERNAL_GRANT_OPTIONAL_BACKGROUND_FEATURE"/>
@@ -167,7 +179,7 @@
 				<item id="7">You found evidence of a conspiracy underpinning society. You tried to expose this mysterious cabal, but no one believed you. You’re still trying to prove what you know is true.</item>
 				<item id="8">You got a job with an agency that investigates crimes that local law enforcement can’t solve. You often wonder which you value more, the truth or your pay.</item>
 			</select>
-			<select type="Proficiency" name="Skill Proficiency, Investigator" supports="ID_PROFICIENCY_SKILL_INSIGHT | ID_PROFICIENCY_SKILL_INVESTIGATION | ID_PROFICIENCY_SKILL_PERCEPTION" />
+			<select type="Proficiency" name="Skill Proficiency (Investigator)" supports="ID_PROFICIENCY_SKILL_INSIGHT | ID_PROFICIENCY_SKILL_INVESTIGATION | ID_PROFICIENCY_SKILL_PERCEPTION" />
 			<grant type="Proficiency" id="ID_PROFICIENCY_TOOL_PROFICIENCY_THIEVES_TOOLS" />
 			<grant type="Proficiency" id="ID_PROFICIENCY_TOOL_PROFICIENCY_DISGUISE_KIT" />
 		</rules>

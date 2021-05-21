@@ -7,12 +7,13 @@
 		</update>
 	</info>
 
-	<element name="Reborn" type="Race" source="Van Richten's Guide To Ravenloft" id="ID_WOTC_VRGTR_RACE_Reborn">
+	<element name="Reborn" type="Race" source="Van Richten's Guide To Ravenloft" id="ID_WOTC_VRGTR_RACE_REBORN">
 		<description>
 			<p>Death isn’t always the end. The reborn exemplify this, being individuals who have died yet, somehow, still live. Some reborn exhibit the scars of fatal ends, their ashen flesh or bloodless veins making it clear that they’ve been touched by death. Other reborn are marvels of magic or science, being stitched together from disparate beings or bearing mysterious minds in manufactured bodies. Whatever their origins, reborn know a new life and seek experiences and answers all their own.</p>
 			<h4>Faded Memories</h4>
 			<p>Reborn suffer from some manner of discontinuity, an interruption of their lives or physical state that their minds are ill equipped to deal with. Their memories of events before this interruption are often vague or absent. Occasionally, the most unexpected experiences might cause sensations or visions of the past to come rushing back.</p>
 			<p class="indent">Rather than sleeping, reborn regularly sit and dwell on the past, hoping for some revelation of what came before. Most of the time, these are dark, silent stretches. Occasionally, though, in a moment of peace, stress, or excitement, a reborn gains a glimpse of what came before. When you desire to have such a dreamlike vision, roll on the Lost Memories table to inspire its details.</p>
+			<h5>Lost Memories</h5>
 			<table>
 				<thead>
 					<tr><td>d6</td><td>Memory</td></tr>
@@ -26,6 +27,7 @@
 			</table>
 			<h4>Reborn Origins</h4>
 			<p>Reborn might originate from circumstances similar to those of various undead or constructs. The Reborn Origins table provides suggestions for how your character became reborn.</p>
+			<h5>Reborn Origins</h5>
 			<table>
 				<thead>
 					<tr><td>d8</td><td>Origin</td></tr>
@@ -39,9 +41,8 @@
 				<tr><td>7</td><td>Your body hosts a possessing spirit that shares its memories and replaces your missing appendages with phantasmal limbs.</td></tr>
 				<tr><td>8</td><td>In public, you pass as an unremarkable individual, but you can feel the itchy straw stuffing inside you.</td></tr>
 			</table>
-			<p class="indent"></p>
 			<h4>Reborn Traits</h4>
-			<p></p>
+			<p>You have the following racial traits.</p>
 			<p class="indent"><strong><em>Ability Score Increase.</em></strong> Increase one score by 2 and increase a different score by 1, or you increase three different scores by 1.</p>
 			<p class="indent"><strong><em>Creature Type.</em></strong> You are a Humanoid.</p>
 			<p class="indent"><strong><em>Size.</em></strong> You are Medium or Small. You choose the size when you gain this lineage.</p>
@@ -67,13 +68,22 @@
 			<grant type="Racial Trait" id="ID_INTERNAL_RACIAL_TRAIT_TYPE_HUMANOID" />
 			<select type="Racial Trait" name="Size (Reborn)" supports="ID_INTERNAL_RACIAL_TRAIT_SMALL|ID_INTERNAL_RACIAL_TRAIT_MEDIUM" />
 			<stat name="innate speed" value="30" bonus="base" />
-			<grant type="Racial Trait" id="ID_WOTC_VRGTR_RACIAL_TRAIT_ANCESTRAL_LEGACY" />
+			<grant type="Racial Trait" id="ID_WOTC_VRGTR_RACIAL_TRAIT_REBORN_ANCESTRAL_LEGACY" />
 			<grant type="Racial Trait" id="ID_WOTC_VRGTR_RACIAL_TRAIT_REBORN_DEATHLESS_NATURE" />
-			<grant type="Racial Trait" id="ID_WOTC_VRGTR_RACIAL_TRAIT_KNOWLEDGE_FROM_A_PAST_LIFE" />
+			<grant type="Racial Trait" id="ID_WOTC_VRGTR_RACIAL_TRAIT_REBORN_KNOWLEDGE_FROM_A_PAST_LIFE" />
 		</rules>
 	</element>
 
-	<!--See race-dhampir.xml for Ancestral Legacy.-->
+	<element name="Ancestral Legacy" type="Racial Trait" source="Van Richten's Guide To Ravenloft" id="ID_WOTC_VRGTR_RACIAL_TRAIT_REBORN_ANCESTRAL_LEGACY">
+		<description>
+			<p>If you replace a race with this lineage, you can keep the following elements of that race: any skill proficiencies you gained from it and any climbing, flying, or swimming speed you gained from it.</p>
+			<p class="indent">If you don’t keep any of those elements or you choose this lineage at character creation, you gain proficiency in two skills of your choice.</p>
+		</description>
+		<sheet display="false" />
+		<rules>
+			<select type="Proficiency" name="Skill Proficiency (Ancestral Legacy)" number="2" supports="Skill" optional="true" />
+		</rules>
+	</element>
 
 	<element name="Deathless Nature" type="Racial Trait" source="Van Richten's Guide To Ravenloft" id="ID_WOTC_VRGTR_RACIAL_TRAIT_REBORN_DEATHLESS_NATURE">
 		<description>
@@ -97,7 +107,7 @@
 		</rules>
 	</element>
 
-	<element name="Knowledge from a Past Life" type="Racial Trait" source="Van Richten's Guide To Ravenloft" id="ID_WOTC_VRGTR_RACIAL_TRAIT_KNOWLEDGE_FROM_A_PAST_LIFE">
+	<element name="Knowledge from a Past Life" type="Racial Trait" source="Van Richten's Guide To Ravenloft" id="ID_WOTC_VRGTR_RACIAL_TRAIT_REBORN_KNOWLEDGE_FROM_A_PAST_LIFE">
 		<description>
 			<p>You temporarily remember glimpses of the past, perhaps faded memories from ages ago or a previous life. When you make an ability check that uses a skill, you can roll a d6 immediately after seeing the number on the d20 and add the number on the d6 to the check. You can use this feature a number of times equal to your proficiency bonus, and you regain all expended uses when you finish a long rest.</p>
 		</description>
