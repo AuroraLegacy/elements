@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<elements>
+	<info>
+		<name>Items and Weapons</name>
+		<update version="0.0.1">
+			<file name="items.xml" url="https://raw.githubusercontent.com/AuroraLegacy/elements/master/supplements/van-richtens-guide-to-ravenloft/items.xml" />
+		</update>
+	</info>
+
+	<element name="Harkon’s Bite" type="Magic Item" source="Van Richten's Guide To Ravenloft" id="ID_WOTC_VRGTR_MAGIC_ITEM_HARKONS_BITE">
+		<description>
+			<p>A dire wolf tooth dangles from this simple cord necklace. While you wear it, the necklace grants you a +1 bonus to ability checks and saving throws.</p>
+			<p class="indent"><strong><em>Curse. </em></strong>Attuning to <em>Harkon’s Bite</em> curses you until either Harkon Lukas removes the necklace from you or you are targeted by a <em>remove curse</em> spell or similar magic. As long as you remain cursed, you cannot remove the necklace.</p>
+			<p>Upon donning or removing the necklace, whether you are attuned to it or not, you are afflicted with werewolf lycanthropy as detailed in the <em>Monster Manual</em>. The curse lasts until the dawn after the next full moon. If you are still wearing the necklace at this time, you are afflicted with the lycanthropy again.</p>
+		</description>
+		<setters>
+			<set name="keywords">ability, saving throw</set>
+			<set name="category">Wondrous Items</set>
+			<set name="cost" currency="gp">0</set>
+			<set name="weight" lb="0">0 lb.</set>
+			<set name="type">Wondrous Item</set>
+			<set name="slot">neck</set>
+			<set name="attunement">true</set>
+			<set name="cursed">true</set>
+			<set name="rarity">Uncommon</set>
+		</setters>
+		<rules>
+			<stat name="initiative" value="1" />
+
+			<stat name="acrobatics:misc" value="1" />
+			<stat name="animal handling:misc" value="1" />
+			<stat name="arcana:misc" value="1" />
+			<stat name="athletics:misc" value="1" />
+			<stat name="deception:misc" value="1" />
+			<stat name="history:misc" value="1" />
+			<stat name="insight:misc" value="1" />
+			<stat name="intimidation:misc" value="1" />
+			<stat name="investigation:misc" value="1" />
+			<stat name="medicine:misc" value="1" />
+			<stat name="nature:misc" value="1" />
+			<stat name="perception:misc" value="1" />
+			<stat name="performance:misc" value="1" />
+			<stat name="persuasion:misc" value="1" />
+			<stat name="religion:misc" value="1" />
+			<stat name="sleight of hand:misc" value="1" />
+			<stat name="stealth:misc" value="1" />
+			<stat name="survival:misc" value="1" />
+
+			<stat name="strength:save:misc" value="1" />
+			<stat name="dexterity:save:misc" value="1" />
+			<stat name="constitution:save:misc" value="1" />
+			<stat name="intelligence:save:misc" value="1" />
+			<stat name="wisdom:save:misc" value="1" />
+			<stat name="charisma:save:misc" value="1" />
+
+			<grant type="Racial Trait" id="ID_WOTC_MM_RACIAL_TRAIT_WEREWOLF" />
+		</rules>
+	</element>
+
+	<element name="Nepenthe" type="Magic Item" source="Van Richten's Guide To Ravenloft" id="ID_WOTC_VRGTR_MAGIC_ITEM_NEPENTHE">
+		<description>
+			<p>You gain a +3 bonus to attack and damage rolls made with this magic weapon. When you hit a fiend or an undead with it, that creature takes an extra 2d10 radiant damage.</p>
+			<p class="indent">While you hold the drawn sword, it creates an aura in a 10-foot radius around you. You and all creatures friendly to you in the aura have advantage on saving throws against spells and other magical effects. If you have 17 or more levels in the paladin class, the radius of the aura increases to 30 feet.</p>
+			<p class="indent"><strong><em>Sentience. </em></strong>Nepenthe is a sentient, neutral evil weapon with an Intelligence of 10, a Wisdom of 8, and a Charisma of 18. It has hearing and darkvision out to a range of 60 feet. It can read and understand Elvish. It can also speak Elvish, but only through the voice of its wielder, with whom the sword can communicate telepathically.</p>
+			<p class="indent"><strong><em>Personality. </em></strong>In its lifetime, the sword has beheaded thousands of criminals, not all of whom were guilty of the crimes for which they were convicted. The sword cannot distinguish the guilty from the innocent. With each beheading, it hungers for more justice and blood. The sword is corrupt and irredeemable.</p>
+		</description>
+		<setters>
+			<set name="keywords">sword, paladin</set>
+			<set name="category">Magic Weapons</set>
+			<set name="cost" currency="gp">0</set>
+			<set name="type" addition="Longsword">Weapon</set>
+			<set name="attunement" addition="by a paladin">true</set>
+			<set name="rarity">Legendary</set>
+			<set name="enhancement">3</set>
+			<set name="weapon">Longsword</set>
+		</setters>
+	</element>
+
+	<element name="Sword of Vengeance" type="Magic Item" source="Van Richten's Guide To Ravenloft" id="ID_WOTC_VRGTR_MAGIC_ITEM_SWORD_OF_VENGEANCE">
+		<description>
+			<p>You gain a +1 bonus to attack and damage rolls made with this magic weapon.</p>
+			<p class="indent"><strong><em>Curse. </em></strong>This sword is cursed and possessed by a vengeful spirit. Becoming attuned to it extends the curse to you. As long as you remain cursed, you are unwilling to part with the sword, keeping it on your person at all times. While attuned to this weapon, you have disadvantage on attack rolls made with weapons other than this one.</p>
+			<p class="indent">In addition, while the sword is on your person, you must succeed on a DC 15 Wisdom saving throw whenever you take damage in combat. On a failed save, you must attack the creature that damaged you until you drop to 0 hit points or it does, or until you can’t reach the creature to make a melee attack against it.</p>
+			<p class="indent">You can break the curse in the usual ways. Alternatively, casting <i>banishment</i> on the sword forces the vengeful spirit to leave it. The sword then becomes a +1 weapon with no other properties.</p>
+		</description>
+		<setters>
+			<set name="keywords">sword</set>
+			<set name="category">Magic Weapons</set>
+			<set name="cost" currency="gp">0</set>
+			<set name="type" addition="any sword">Weapon</set>
+			<set name="attunement">true</set>
+			<set name="rarity">Uncommon</set>
+			<set name="enhancement">1</set>
+			<set name="cursed">true</set>
+			<set name="weapon">ID_INTERNAL_WEAPON_GROUP_SWORDS</set>
+			<set name="name-format">{{parent}} of Vengeance</set>
+		</setters>
+	</element>
+
+	<element name="Ivana's Whisper" type="Item" source="Van Richten's Guide To Ravenloft" id="ID_WOTC_VRGTR_ITEM_POISON_IVANAS_WHISPER">
+		<description>
+			<p>This poison bears a distinct scent and chemical message from Ivana Boritsi. A creature subjected to this poison must succeed on a DC 18 Constitution saving throw or experience the effects of a <i>dream</i> spell created by Ivana the next time they sleep. This poison is nonmagical, and Ivana doesn't directly communicate with those affected during the dream. Rather, she creates the illusion of speaking with her intended target by alchemically crafting her message, predicting her target's reactions, and chemically encoding in her responses. She wears this poison as a perfume or hides it within gift bouquets, allowing it to convey her message later.</p>
+			<div class="reference">
+				<div element="ID_INTERNAL_SUPPORT_POISON_INHALED" />
+			</div>
+		</description>
+		<setters>
+			<set name="keywords">poison,inhale</set>
+			<set name="category">Poison</set>
+			<set name="cost" currency="gp">0</set>
+			<set name="weight" lb="0.5">½ lb.</set>
+			<set name="stackable">true</set>
+		</setters>
+		<sheet alt="Ivana's Whisper (Inhaled)" />
+	</element>
+</elements>
