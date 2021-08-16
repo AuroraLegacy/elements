@@ -4112,6 +4112,10 @@
 			<set name="rarity">Artifact</set>
 			<set name="attunement" addition="by a creature of good alignment">true</set>
 		</setters>
+		<rules>
+			<stat name="wisdom" value="2" />
+			<stat name="wisdom:max" value="24" />
+		</rules>
 	</element>
 
 	<element name="Book of Vile Darkness" type="Magic Item" source="Dungeon Master’s Guide" id="ID_WOTC_DMG_MAGIC_ITEM_BOOK_OF_VILE_DARKNESS">
@@ -4151,6 +4155,10 @@
 			<set name="rarity">Artifact</set>
 			<set name="attunement">true</set>
 		</setters>
+		<rules>
+			<select type="Ability Score Improvement" name="Adjusted Ability Scores Increased Score" supports="Adjusted Ability Score Increase" />
+			<select type="Ability Score Improvement" name="Adjusted Ability Scores Decreased Score" supports="Adjusted Ability Score Decrease" />
+		</rules>
 	</element>
 
 	<element name="Eye of Vecna" type="Magic Item" source="Dungeon Master’s Guide" id="ID_WOTC_DMG_MAGIC_ITEM_EYE_OF_VECNA">
@@ -4186,6 +4194,9 @@
 			<div class="reference">
 				<div element="ID_WOTC_DMG_ARTIFACT_TABLE" />
 			</div>
+			<div class="reference">
+				<div element="ID_WOTC_DMG_MAGIC_ITEM_RING_OF_XRAY_VISION" />
+			</div>
 		</description>
 		<setters>
 			<set name="category">Wondrous Items</set>
@@ -4195,6 +4206,9 @@
 			<set name="rarity">Artifact</set>
 			<set name="attunement">true</set>
 		</setters>
+		<rules>
+			<grant type="Vision" id="ID_VISION_TRUESIGHT" />
+		</rules>
 	</element>
 
 	<element name="Hand of Vecna" type="Magic Item" source="Dungeon Master’s Guide" id="ID_WOTC_DMG_MAGIC_ITEM_HAND_OF_VECNA">
@@ -4404,4 +4418,145 @@
 			<set name="keywords">Artifacts</set>
 		</setters>
 	</element>
+
+	<element name="Strength Increase" type="Ability Score Improvement" source="Dungeon Master’s Guide" id="ID_WOTC_DMG_ADJUSTED_ABILITY_SCORE_INCREASE_STRENGTH">
+		<requirements>!ID_WOTC_DMG_ADJUSTED_ABILITY_SCORE_DECREASE_STRENGTH</requirements>
+		<supports>Adjusted Ability Score Increase</supports>
+		<description>
+			<p>Your Strength increases by 2 to a maximum of 24.</p>
+		</description>
+		<sheet display="false" />
+		<rules>
+			<stat name="strength" value="2"/>
+			<stat name="strength:max" value="4"/>
+		</rules>
+	</element>
+	<element name="Dexterity Increase" type="Ability Score Improvement" source="Dungeon Master’s Guide" id="ID_WOTC_DMG_ADJUSTED_ABILITY_SCORE_INCREASE_DEXTERITY">
+		<requirements>!ID_WOTC_DMG_ADJUSTED_ABILITY_SCORE_DECREASE_DEXTERIY</requirements>
+		<supports>Adjusted Ability Score Increase</supports>
+		<description>
+			<p>Your Dexterity increases by 2 to a maximum of 24.</p>
+		</description>
+		<sheet display="false" />
+		<rules>
+			<stat name="dexterity" value="2"/>
+			<stat name="dexterity:max" value="4"/>
+		</rules>
+	</element>
+	<element name="Constitution Increase" type="Ability Score Improvement" source="Dungeon Master’s Guide" id="ID_WOTC_DMG_ADJUSTED_ABILITY_SCORE_INCREASE_CONSTITUTION">
+		<requirements>!ID_WOTC_DMG_ADJUSTED_ABILITY_SCORE_DECREASE_CONSTITUTION</requirements>
+		<supports>Adjusted Ability Score Increase</supports>
+		<description>
+			<p>Your Constitution increases by 2 to a maximum of 24.</p>
+		</description>
+		<sheet display="false" />
+		<rules>
+			<stat name="constitution" value="2"/>
+			<stat name="constitution:max" value="4"/>
+		</rules>
+	</element>
+	<element name="Intelligence Increase" type="Ability Score Improvement" source="Dungeon Master’s Guide" id="ID_WOTC_DMG_ADJUSTED_ABILITY_SCORE_INCREASE_INTELLIGENCE">
+		<requirements>!ID_WOTC_DMG_ADJUSTED_ABILITY_SCORE_DECREASE_INTELLIGENCE</requirements>
+		<supports>Adjusted Ability Score Increase</supports>
+		<description>
+			<p>Your Intelligence increases by 2 to a maximum of 24.</p>
+		</description>
+		<sheet display="false" />
+		<rules>
+			<stat name="intelligence" value="2"/>
+			<stat name="intelligence:max" value="4"/>
+		</rules>
+	</element>
+	<element name="Wisdom Increase" type="Ability Score Improvement" source="Dungeon Master’s Guide" id="ID_WOTC_DMG_ADJUSTED_ABILITY_SCORE_INCREASE_WISDOM">
+		<requirements>!ID_WOTC_DMG_ADJUSTED_ABILITY_SCORE_DECREASE_WISDOM</requirements>
+		<supports>Adjusted Ability Score Increase</supports>
+		<description>
+			<p>Your Wisdom increases by 2 to a maximum of 24.</p>
+		</description>
+		<sheet display="false" />
+		<rules>
+			<stat name="wisdom" value="2"/>
+			<stat name="wisdom:max" value="4"/>
+		</rules>
+	</element>
+	<element name="Charisma Increase" type="Ability Score Improvement" source="Dungeon Master’s Guide" id="ID_WOTC_DMG_ADJUSTED_ABILITY_SCORE_INCREASE_CHARISMA">
+		<requirements>!ID_WOTC_DMG_ADJUSTED_ABILITY_SCORE_DECREASE_CHARISMA</requirements>
+		<supports>Adjusted Ability Score Increase</supports>
+		<description>
+			<p>Your Charisma increases by 2 to a maximum of 24.</p>
+		</description>
+		<sheet display="false" />
+		<rules>
+			<stat name="charisma" value="2"/>
+			<stat name="charisma:max" value="4"/>
+		</rules>
+	</element>
+
+	<element name="Strength Decrease" type="Ability Score Improvement" source="Dungeon Master’s Guide" id="ID_WOTC_DMG_ADJUSTED_ABILITY_SCORE_DECREASE_STRENGTH">
+		<requirements>!ID_WOTC_DMG_ADJUSTED_ABILITY_SCORE_INCREASE_STRENGTH</requirements>
+		<supports>Adjusted Ability Score Decrease</supports>
+		<description>
+			<p>Your Strength decreases by 2 to a minimum of 3.</p>
+		</description>
+		<sheet display="false" />
+		<rules>
+			<stat name="strength" value="-2"/>
+		</rules>
+	</element>
+	<element name="Dexterity Decrease" type="Ability Score Improvement" source="Dungeon Master’s Guide" id="ID_WOTC_DMG_ADJUSTED_ABILITY_SCORE_DECREASE_DEXTERITY">
+		<requirements>!ID_WOTC_DMG_ADJUSTED_ABILITY_SCORE_INCREASE_DEXTERITY</requirements>
+		<supports>Adjusted Ability Score Decrease</supports>
+		<description>
+			<p>Your Dexterity decreases by 2 to a minimum of 3.</p>
+		</description>
+		<sheet display="false" />
+		<rules>
+			<stat name="dexterity" value="-2"/>
+		</rules>
+	</element>
+	<element name="Constitution Decrease" type="Ability Score Improvement" source="Dungeon Master’s Guide" id="ID_WOTC_DMG_ADJUSTED_ABILITY_SCORE_DECREASE_CONSTITUTION">
+		<requirements>!ID_WOTC_DMG_ADJUSTED_ABILITY_SCORE_INCREASE_CONSTITUTION</requirements>
+		<supports>Adjusted Ability Score Decrease</supports>
+		<description>
+			<p>Your Constitution decreases by 2 to a minimum of 3.</p>
+		</description>
+		<sheet display="false" />
+		<rules>
+			<stat name="constitution" value="-2"/>
+		</rules>
+	</element>
+	<element name="Intelligence Decrease" type="Ability Score Improvement" source="Dungeon Master’s Guide" id="ID_WOTC_DMG_ADJUSTED_ABILITY_SCORE_DECREASE_INTELLIGENCE">
+		<requirements>!ID_WOTC_DMG_ADJUSTED_ABILITY_SCORE_INCREASE_INTELLIGENCE</requirements>
+		<supports>Adjusted Ability Score Decrease</supports>
+		<description>
+			<p>Your Intelligence decreases by 2 to a minimum of 3.</p>
+		</description>
+		<sheet display="false" />
+		<rules>
+			<stat name="intelligence" value="-2"/>
+		</rules>
+	</element>
+	<element name="Wisdom Decrease" type="Ability Score Improvement" source="Dungeon Master’s Guide" id="ID_WOTC_DMG_ADJUSTED_ABILITY_SCORE_DECREASE_WISDOM">
+		<requirements>!ID_WOTC_DMG_ADJUSTED_ABILITY_SCORE_INCREASE_WISDOM</requirements>
+		<supports>Adjusted Ability Score Decrease</supports>
+		<description>
+			<p>Your Wisdom decreases by 2 to a minimum of 3.</p>
+		</description>
+		<sheet display="false" />
+		<rules>
+			<stat name="wisdom" value="-2"/>
+		</rules>
+	</element>
+	<element name="Charisma Decrease" type="Ability Score Improvement" source="Dungeon Master’s Guide" id="ID_WOTC_DMG_ADJUSTED_ABILITY_SCORE_DECREASE_CHARISMA">
+		<requirements>!ID_WOTC_DMG_ADJUSTED_ABILITY_SCORE_INCREASE_CHARISMA</requirements>
+		<supports>Adjusted Ability Score Decrease</supports>
+		<description>
+			<p>Your Charisma decreases by 2 to a minimum of 3.</p>
+		</description>
+		<sheet display="false" />
+		<rules>
+			<stat name="charisma" value="-2"/>
+		</rules>
+	</element>
+
 </elements>
