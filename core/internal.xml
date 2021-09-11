@@ -3,7 +3,7 @@
 	<info>
 		<name>Internal</name>
 		<description>Elements that should've been part of the app itself</description>
-		<update version="0.0.3">
+		<update version="0.0.7">
 			<file name="internal.xml" url="https://raw.githubusercontent.com/AuroraLegacy/elements/master/core/internal.xml" />
 		</update>
 	</info>
@@ -382,6 +382,30 @@
 		</rules>
 	</element>
 
+	<!-- Ability Score Increase Options -->
+	<element name="Ability Score Improvement +2, +1" type="Ability Score Improvement" source="Internal" id="ID_WOTC_ASI_ABILITY_SCORE_IMPROVEMENT_OPTION_1">
+        <supports>Custom Ability Score Improvement Option</supports>
+        <description>
+            <p>You can increase one of the scores by 2 and increase a different score by 1.</p>
+        </description>
+        <sheet display="false" />
+        <rules>
+            <select type="Ability Score Improvement" name="Custom Ability Score Improvement +2" supports="Custom Ability Score Increase 2" />
+            <select type="Ability Score Improvement" name="Custom Ability Score Improvement +1" supports="Custom Ability Score Increase 1" />
+        </rules>
+    </element>
+
+    <element name="Ability Score Improvement +1, +1, +1" type="Ability Score Improvement" source="Internal" id="ID_WOTC_ASI_ABILITY_SCORE_IMPROVEMENT_OPTION_2">
+        <supports>Custom Ability Score Improvement Option</supports>
+        <description>
+            <p>You can increase three different scores by 1.</p>
+        </description>
+        <sheet display="false" />
+        <rules>
+            <select type="Ability Score Improvement" name="Custom Ability Score Improvement +1" number="3" supports="Custom Ability Score Increase 1" />
+        </rules>
+    </element>
+
 	<!-- Sizes -->
 	<element name="Tiny" type="Racial Trait" source="Internal" id="ID_INTERNAL_RACIAL_TRAIT_TINY">
 		<description>
@@ -475,4 +499,564 @@
 			<stat name="multiclass:spellcasting:level" value="1" level="19" />
 		</rules>
 	</element>
+	
+	<!--Creature Types-->
+	<element name="Creature Type" type="Information" source="Internal" id="ID_WOTC_INTERNAL_INFORMATION_CREATURE_TYPE">
+		<description>
+			<p>Every creature in D&amp;D, including every player character, has a special tag in the rules that identifies the type of creature they are. Most player characters are of the Humanoid type. A race option presented here tells you what your character’s creature type is.</p>
+			<p class="indent"><strong><em>List of Types.</em></strong> Here’s a list of the game’s creature types in alphabetical order: Aberration, Beast, Celestial, Construct, Dragon, Elemental, Fey, Fiend, Giant, Humanoid, Monstrosity, Ooze, Plant, Undead. These types don’t have rules themselves, but some rules in the game affect creatures of certain types in different ways. For example, the text of the <i>cure wounds</i> spell specifies that the spell doesn’t work on a creature that has the Construct or Undead type.</p>
+			<p class="indent"><strong><em>Having More Than One Type.</em></strong> Some creatures are of more than one creature type. If an effect works on at least one of a creature’s types, that effect can work on that creature. For example, if you are both a Humanoid and an Undead, <i>cure wounds</i> works on you, since the spell works on a Humanoid.</p>
+		</description>
+	</element>
+
+	<element name="Aberration" type="Racial Trait" source="Internal" id="ID_INTERNAL_RACIAL_TRAIT_TYPE_ABERRATION">
+		<supports>Creature Type</supports>
+		<description>
+			<p>Your creature type is Aberration.</p>
+			<div class="reference">
+				<div element="ID_WOTC_INTERNAL_INFORMATION_CREATURE_TYPE" />
+			</div>
+		</description>
+		<sheet alt="Creature Type">
+			<description>Aberration.</description>
+		</sheet>
+	</element>
+
+	<element name="Beast" type="Racial Trait" source="Internal" id="ID_INTERNAL_RACIAL_TRAIT_TYPE_BEAST">
+		<supports>Creature Type</supports>
+		<description>
+			<p>Your creature type is Beast.</p>
+			<div class="reference">
+				<div element="ID_WOTC_INTERNAL_INFORMATION_CREATURE_TYPE" />
+			</div>
+		</description>
+		<sheet alt="Creature Type">
+			<description>Beast.</description>
+		</sheet>
+	</element>
+
+	<element name="Construct" type="Racial Trait" source="Internal" id="ID_INTERNAL_RACIAL_TRAIT_TYPE_CONSTRUCT">
+		<supports>Creature Type</supports>
+		<description>
+			<p>Your creature type is Construct.</p>
+			<div class="reference">
+				<div element="ID_WOTC_INTERNAL_INFORMATION_CREATURE_TYPE" />
+			</div>
+		</description>
+		<sheet alt="Creature Type">
+			<description>Construct.</description>
+		</sheet>
+	</element>
+
+	<element name="Dragon" type="Racial Trait" source="Internal" id="ID_INTERNAL_RACIAL_TRAIT_TYPE_DRAGON">
+		<supports>Creature Type</supports>
+		<description>
+			<p>Your creature type is Dragon.</p>
+			<div class="reference">
+				<div element="ID_WOTC_INTERNAL_INFORMATION_CREATURE_TYPE" />
+			</div>
+		</description>
+		<sheet alt="Creature Type">
+			<description>Dragon.</description>
+		</sheet>
+	</element>
+
+	<element name="Elemental" type="Racial Trait" source="Internal" id="ID_INTERNAL_RACIAL_TRAIT_TYPE_ELEMENTAL">
+		<supports>Creature Type</supports>
+		<description>
+			<p>Your creature type is Elemental.</p>
+			<div class="reference">
+				<div element="ID_WOTC_INTERNAL_INFORMATION_CREATURE_TYPE" />
+			</div>
+		</description>
+		<sheet alt="Creature Type">
+			<description>Elemental.</description>
+		</sheet>
+	</element>
+
+	<element name="Fey" type="Racial Trait" source="Internal" id="ID_INTERNAL_RACIAL_TRAIT_TYPE_FEY">
+		<supports>Creature Type</supports>
+		<description>
+			<p>Your creature type is Fey.</p>
+			<div class="reference">
+				<div element="ID_WOTC_INTERNAL_INFORMATION_CREATURE_TYPE" />
+			</div>
+		</description>
+		<sheet alt="Creature Type">
+			<description>Fey.</description>
+		</sheet>
+	</element>
+
+	<element name="Fiend" type="Racial Trait" source="Internal" id="ID_INTERNAL_RACIAL_TRAIT_TYPE_FIEND">
+		<supports>Creature Type</supports>
+		<description>
+			<p>Your creature type is Fiend.</p>
+			<div class="reference">
+				<div element="ID_WOTC_INTERNAL_INFORMATION_CREATURE_TYPE" />
+			</div>
+		</description>
+		<sheet alt="Creature Type">
+			<description>Fiend.</description>
+		</sheet>
+	</element>
+
+	<element name="Giant" type="Racial Trait" source="Internal" id="ID_INTERNAL_RACIAL_TRAIT_TYPE_GIANT">
+		<supports>Creature Type</supports>
+		<description>
+			<p>Your creature type is Giant.</p>
+			<div class="reference">
+				<div element="ID_WOTC_INTERNAL_INFORMATION_CREATURE_TYPE" />
+			</div>
+		</description>
+		<sheet alt="Creature Type">
+			<description>Giant.</description>
+		</sheet>
+	</element>
+
+	<element name="Humanoid" type="Racial Trait" source="Internal" id="ID_INTERNAL_RACIAL_TRAIT_TYPE_HUMANOID">
+		<supports>Creature Type</supports>
+		<description>
+			<p>Your creature type is Humanoid.</p>
+			<div class="reference">
+				<div element="ID_WOTC_INTERNAL_INFORMATION_CREATURE_TYPE" />
+			</div>
+		</description>
+		<sheet alt="Creature Type">
+			<description>Humanoid.</description>
+		</sheet>
+	</element>
+
+	<element name="Monstrosity" type="Racial Trait" source="Internal" id="ID_INTERNAL_RACIAL_TRAIT_TYPE_MONSTROSITY">
+		<supports>Creature Type</supports>
+		<description>
+			<p>Your creature type is Monstrosity.</p>
+			<div class="reference">
+				<div element="ID_WOTC_INTERNAL_INFORMATION_CREATURE_TYPE" />
+			</div>
+		</description>
+		<sheet alt="Creature Type">
+			<description>Monstrosity.</description>
+		</sheet>
+	</element>
+
+	<element name="Ooze" type="Racial Trait" source="Internal" id="ID_INTERNAL_RACIAL_TRAIT_TYPE_OOZE">
+		<supports>Creature Type</supports>
+		<description>
+			<p>Your creature type is Ooze.</p>
+			<div class="reference">
+				<div element="ID_WOTC_INTERNAL_INFORMATION_CREATURE_TYPE" />
+			</div>
+		</description>
+		<sheet alt="Creature Type">
+			<description>Ooze.</description>
+		</sheet>
+	</element>
+
+	<element name="Plant" type="Racial Trait" source="Internal" id="ID_INTERNAL_RACIAL_TRAIT_TYPE_PLANT">
+		<supports>Creature Type</supports>
+		<description>
+			<p>Your creature type is Plant.</p>
+			<div class="reference">
+				<div element="ID_WOTC_INTERNAL_INFORMATION_CREATURE_TYPE" />
+			</div>
+		</description>
+		<sheet alt="Creature Type">
+			<description>Plant.</description>
+		</sheet>
+	</element>
+
+	<element name="Undead" type="Racial Trait" source="Internal" id="ID_INTERNAL_RACIAL_TRAIT_TYPE_UNDEAD">
+		<supports>Creature Type</supports>
+		<description>
+			<p>Your creature type is Undead.</p>
+			<div class="reference">
+				<div element="ID_WOTC_INTERNAL_INFORMATION_CREATURE_TYPE" />
+			</div>
+		</description>
+		<sheet alt="Creature Type">
+			<description>Undead.</description>
+		</sheet>
+	</element>
+
+	<!--Speed-->
+	<element name="Speed: Climb Equals Walking" type="Item" source="Internal" id="ID_INTERNAL_ITEM_CLIMB_WALKING">
+		<description>
+			<p><i>You can equip this item to “enable” it. It remains hidden from the inventory on your character sheet.</i></p>
+			<p>You have a climbing speed equal to your walking speed.</p>
+		</description>
+		<setters>
+			<set name="category">Additional Feature</set>
+			<set name="slot">misc</set>
+			<set name="inventory-hidden">true</set>
+		</setters>
+		<rules>
+			<stat name="innate speed:climb" value="innate speed" bonus="base" />
+		</rules>
+	</element>
+
+	<element name="Speed: Climb +5 Feet" type="Item" source="Internal" id="ID_INTERNAL_ITEM_CLIMB_5">
+		<description>
+			<p><i>You can equip this item to “enable” it. It remains hidden from the inventory on your character sheet.</i></p>
+			<p>YYou have an additional 5 feet of climbing speed.</p>
+		</description>
+		<setters>
+			<set name="category">Additional Feature</set>
+			<set name="slot">misc</set>
+			<set name="inventory-hidden">true</set>
+		</setters>
+		<rules>
+			<stat name="innate speed:climb" value="5" />
+		</rules>
+	</element>
+
+	<element name="Speed: Climb +10 Feet" type="Item" source="Internal" id="ID_INTERNAL_ITEM_CLIMB_10">
+		<description>
+			<p><i>You can equip this item to “enable” it. It remains hidden from the inventory on your character sheet.</i></p>
+			<p>You have an additional 10 feet of climbing speed.</p>
+		</description>
+		<setters>
+			<set name="category">Additional Feature</set>
+			<set name="slot">misc</set>
+			<set name="inventory-hidden">true</set>
+		</setters>
+		<rules>
+			<stat name="innate speed:climb" value="10"/>
+		</rules>
+	</element>
+
+	<element name="Speed: Swim Equals Walking" type="Item" source="Internal" id="ID_INTERNAL_ITEM_SWIM_WALKING">
+		<description>
+			<p><i>You can equip this item to “enable” it. It remains hidden from the inventory on your character sheet.</i></p>
+			<p>You have a swiming speed equal to your walking speed.</p>
+		</description>
+		<setters>
+			<set name="category">Additional Feature</set>
+			<set name="slot">misc</set>
+			<set name="inventory-hidden">true</set>
+		</setters>
+		<rules>
+			<stat name="innate speed:swim" value="innate speed" bonus="base" />
+		</rules>
+	</element>
+
+	<element name="Speed: Swim +5 Feet" type="Item" source="Internal" id="ID_INTERNAL_ITEM_SWIM_5">
+		<description>
+			<p><i>You can equip this item to “enable” it. It remains hidden from the inventory on your character sheet.</i></p>
+			<p>You have an additional 5 feet of smiming speed.</p>
+		</description>
+		<setters>
+			<set name="category">Additional Feature</set>
+			<set name="slot">misc</set>
+			<set name="inventory-hidden">true</set>
+		</setters>
+		<rules>
+			<stat name="innate speed:swim" value="5" />
+		</rules>
+	</element>
+
+	<element name="Speed: Swim +10 Feet" type="Item" source="Internal" id="ID_INTERNAL_ITEM_SWIM_10">
+		<description>
+			<p><i>You can equip this item to “enable” it. It remains hidden from the inventory on your character sheet.</i></p>
+			<p>You have an additional 10 feet of smiming speed.</p>
+		</description>
+		<setters>
+			<set name="category">Additional Feature</set>
+			<set name="slot">misc</set>
+			<set name="inventory-hidden">true</set>
+		</setters>
+		<rules>
+			<stat name="innate speed:swim" value="10" />
+		</rules>
+	</element>
+
+	<element name="Speed: Fly Equals Walking" type="Item" source="Internal" id="ID_INTERNAL_ITEM_FLY_WALKING">
+		<description>
+			<p><i>You can equip this item to “enable” it. It remains hidden from the inventory on your character sheet.</i></p>
+			<p>You have a flying speed equal to your walking speed.</p>
+		</description>
+		<setters>
+			<set name="category">Additional Feature</set>
+			<set name="slot">misc</set>
+			<set name="inventory-hidden">true</set>
+		</setters>
+		<rules>
+			<stat name="innate speed:fly" value="innate speed" bonus="base" />
+		</rules>
+	</element>
+
+	<element name="Speed: Fly +5 Feet" type="Item" source="Internal" id="ID_INTERNAL_ITEM_FLY_5">
+		<description>
+			<p><i>You can equip this item to “enable” it. It remains hidden from the inventory on your character sheet.</i></p>
+			<p>You have an additional 5 feet of flying speed.</p>
+		</description>
+		<setters>
+			<set name="category">Additional Feature</set>
+			<set name="slot">misc</set>
+			<set name="inventory-hidden">true</set>
+		</setters>
+		<rules>
+			<stat name="innate speed:fly" value="5"/>
+		</rules>
+	</element>
+
+	<element name="Speed: Fly +10 Feet" type="Item" source="Internal" id="ID_INTERNAL_ITEM_FLY_10">
+		<description>
+			<p><i>You can equip this item to “enable” it. It remains hidden from the inventory on your character sheet.</i></p>
+			<p>You have an additional 10 feet of flying speed.</p>
+		</description>
+		<setters>
+			<set name="category">Additional Feature</set>
+			<set name="slot">misc</set>
+			<set name="inventory-hidden">true</set>
+		</setters>
+		<rules>
+			<stat name="innate speed:fly" value="10" />
+		</rules>
+	</element>
+
+	<element name="Speed: Walk +5 Feet" type="Item" source="Internal" id="ID_INTERNAL_ITEM_WALK_5">
+		<description>
+			<p><i>You can equip this item to “enable” it. It remains hidden from the inventory on your character sheet.</i></p>
+			<p>You have an additional 5 feet of walking speed.</p>
+		</description>
+		<setters>
+			<set name="category">Additional Feature</set>
+			<set name="slot">misc</set>
+			<set name="inventory-hidden">true</set>
+		</setters>
+		<rules>
+			<stat name="innate speed" value="5"/>
+		</rules>
+	</element>
+
+	<element name="Speed: Walk +10 Feet" type="Item" source="Internal" id="ID_INTERNAL_ITEM_WALK_10">
+		<description>
+			<p><i>You can equip this item to “enable” it. It remains hidden from the inventory on your character sheet.</i></p>
+			<p>You have an additional 10 feet of walking speed.</p>
+		</description>
+		<setters>
+			<set name="category">Additional Feature</set>
+			<set name="slot">misc</set>
+			<set name="inventory-hidden">true</set>
+		</setters>
+		<rules>
+			<stat name="innate speed" value="10" />
+		</rules>
+	</element>
+
+	<!--Vision-->
+	<element name="Darkvision" type="Vision" source="Player’s Handbook" id="ID_VISION_DARKVISION">
+		<requirements>!ID_VISION_SUPERIORDARKVISION</requirements>
+		<description>
+			<p>Many creatures in the worlds of D&amp;D, especially those that dwell underground, have darkvision. Within a specified range, a creature with darkvision can see in darkness as if the darkness were dim light, so areas of darkness are only lightly obscured as far as that creature is concerned. However, the creature can’t discern color in darkness, only shades of gray.</p>
+		</description>
+		<sheet>
+			<description>You can see in dim light within {{darkvision:range}} feet of you as if it were bright light, and in darkness as if it were dim light.</description>
+		</sheet>
+		<rules>
+			<stat name="darkvision:range" value="60" bonus="base" />
+		</rules>
+	</element>
+
+	<element name="Darkvision" type="Vision" source="Player’s Handbook" id="ID_VISION_LESSER_DARKVISION">
+		<requirements>!(ID_VISION_SUPERIORDARKVISION || ID_VISION_DARKVISION)</requirements>
+		<compendium display="false" />
+		<description>
+			<p>Many creatures in the worlds of D&amp;D, especially those that dwell underground, have darkvision. Within a specified range, a creature with darkvision can see in darkness as if the darkness were dim light, so areas of darkness are only lightly obscured as far as that creature is concerned. However, the creature can’t discern color in darkness, only shades of gray.</p>
+		</description>
+		<sheet>
+			<description>You can see in dim light within {{darkvision:range}} feet of you as if it were bright light, and in darkness as if it were dim light.</description>
+		</sheet>
+		<rules>
+			<stat name="darkvision:range" value="0" bonus="base" />
+		</rules>
+	</element>
+
+	<element name="Superior Darkvision" type="Vision" source="Player’s Handbook" id="ID_VISION_SUPERIORDARKVISION">
+		<description>
+			<p>Many creatures in the worlds of D&amp;D, especially those that dwell underground, have darkvision. Within a specified range, a creature with darkvision can see in darkness as if the darkness were dim light, so areas of darkness are only lightly obscured as far as that creature is concerned. However, the creature can’t discern color in darkness, only shades of gray.</p>
+		</description>
+		<sheet>
+			<description>You can see in dim light within {{darkvision:range}} feet of you as if it were bright light, and in darkness as if it were dim light.</description>
+		</sheet>
+		<rules>
+			<stat name="darkvision:range" value="120" bonus="base" />
+		</rules>
+	</element>
+
+	<element name="Vision: Darkvision +10 Feet" type="Item" source="Internal" id="ID_INTERNAL_RACIAL_TRAIT_DARKVISION_10">
+		<description>
+			<p><i>You can equip this item to “enable” it. It remains hidden from the inventory on your character sheet.</i></p>
+			<p>You have an additional 10 feet of darkvision.</p>
+		</description>
+		<setters>
+			<set name="category">Additional Feature</set>
+			<set name="slot">misc</set>
+			<set name="inventory-hidden">true</set>
+		</setters>
+		<sheet display="false" />
+		<rules>
+			<grant type="Vision" id="ID_VISION_LESSER_DARKVISION" />
+			<stat name="darkvision:range" value="10" />
+		</rules>
+	</element>
+
+	<element name="Vision: Darkvision +5 Feet" type="Item" source="Internal" id="ID_INTERNAL_RACIAL_TRAIT_DARKVISION_5">
+		<description>
+			<p><i>You can equip this item to “enable” it. It remains hidden from the inventory on your character sheet.</i></p>
+			<p>You have an additional 5 feet of darkvision.</p>
+		</description>
+		<setters>
+			<set name="category">Additional Feature</set>
+			<set name="slot">misc</set>
+			<set name="inventory-hidden">true</set>
+		</setters>
+		<sheet display="false" />
+		<rules>
+			<grant type="Vision" id="ID_VISION_LESSER_DARKVISION" />
+			<stat name="darkvision:range" value="5" />
+		</rules>
+	</element>
+
+	<element name="Blindsight" type="Vision" source="Player’s Handbook" id="ID_VISION_BLINDSIGHT">
+		<description>
+			<p>A creature with blindsight can perceive its surroundings without relying on sight, within a specific radius. Creatures without eyes, such as oozes, and creatures with echolocation or heightened senses, such as bats and true dragons, have this sense.</p>
+		</description>
+		<sheet>
+			<description>You perceive your surroundings within {{blindsight:range}} feet without relying on sight.</description>
+		</sheet>
+		<rules>
+			<stat name="blindsight:range" value="0" bonus="base" />
+		</rules>
+	</element>
+
+	<element name="Vision: Blindsight +10 Feet" type="Item" source="Internal" id="ID_INTERNAL_RACIAL_TRAIT_BLINDSIGHT_10">
+		<description>
+			<p><i>You can equip this item to “enable” it. It remains hidden from the inventory on your character sheet.</i></p>
+			<p>You have an additional 10 feet of blindsight.</p>
+		</description>
+		<setters>
+			<set name="category">Additional Feature</set>
+			<set name="slot">misc</set>
+			<set name="inventory-hidden">true</set>
+		</setters>
+		<sheet display="false" />
+		<rules>
+			<grant type="Vision" id="ID_VISION_BLINDSIGHT" />
+			<stat name="blindsight:range" value="10" />
+		</rules>
+	</element>
+
+	<element name="Vision: Blindsight +5 Feet" type="Item" source="Internal" id="ID_INTERNAL_RACIAL_TRAIT_BLINDSIGHT_5">
+		<description>
+			<p><i>You can equip this item to “enable” it. It remains hidden from the inventory on your character sheet.</i></p>
+			<p>You have an additional 5 feet of blindsight.</p>
+		</description>
+		<setters>
+			<set name="category">Additional Feature</set>
+			<set name="slot">misc</set>
+			<set name="inventory-hidden">true</set>
+		</setters>
+		<sheet display="false" />
+		<rules>
+			<grant type="Vision" id="ID_VISION_BLINDSIGHT" />
+			<stat name="blindsight:range" value="5" />
+		</rules>
+	</element>
+
+	<element name="Truesight" type="Vision" source="Player’s Handbook" id="ID_VISION_TRUESIGHT">
+		<description>
+			<p>A creature with truesight can, out to a specific range, see in normal and magical darkness, see invisible creatures and objects, automatically detect visual illusions and succeed on saving throws against them, and perceives the original form of a shapechanger or a creature that is transformed by magic. Furthermore, the creature can see into the Ethereal Plane.</p>
+		</description>
+		<sheet>
+			<description>You can see in normal and magical darkness, see invisible creatures and objects, automatically detect visual illusions and succeed on saving throws against them, and perceives the original form of a shapechanger or a creature that is transformed by magic within {{truesight:range}} feet. Furthermore, the creature can see into the Ethereal Plane.</description>
+		</sheet>
+		<rules>
+			<stat name="truesight:range" value="0" bonus="base" />
+		</rules>
+	</element>
+
+	<element name="Vision: Truesight +10 Feet" type="Item" source="Internal" id="ID_INTERNAL_RACIAL_TRAIT_TRUESIGHT_10">
+		<description>
+			<p><i>You can equip this item to “enable” it. It remains hidden from the inventory on your character sheet.</i></p>
+			<p>You have an additional 10 feet of truesight.</p>
+		</description>
+		<setters>
+			<set name="category">Additional Feature</set>
+			<set name="slot">misc</set>
+			<set name="inventory-hidden">true</set>
+		</setters>
+		<sheet display="false" />
+		<rules>
+			<grant type="Vision" id="ID_VISION_TRUESIGHT" />
+			<stat name="truesight:range" value="10" />
+		</rules>
+	</element>
+
+	<element name="Vision: Truesight +5 Feet" type="Item" source="Internal" id="ID_INTERNAL_RACIAL_TRAIT_TRUESIGHT_5">
+		<description>
+			<p><i>You can equip this item to “enable” it. It remains hidden from the inventory on your character sheet.</i></p>
+			<p>You have an additional 5 feet of truesight.</p>
+		</description>
+		<setters>
+			<set name="category">Additional Feature</set>
+			<set name="slot">misc</set>
+			<set name="inventory-hidden">true</set>
+		</setters>
+		<sheet display="false" />
+		<rules>
+			<grant type="Vision" id="ID_VISION_TRUESIGHT" />
+			<stat name="truesight:range" value="5" />
+		</rules>
+	</element>
+
+	<element name="Tremorsense" type="Vision" source="Player’s Handbook" id="ID_VISION_TREMORSENSE">
+		<description>
+			<p>A monster with tremorsense can detect and pinpoint the origin of vibrations within a specific radius, provided that the monster and the source of the vibrations are in contact with the same ground or substance.</p>
+			<p class="indent">Tremorsense can't be used to detect flying or incorporeal creatures. Many burrowing creatures, such as ankhegs, have this special sense.</p>
+		</description>
+		<sheet>
+			<description>You can detect and pinpoint the origin of vibrations within {{tremorsense:range}} feet, provided that the monster and the source of the vibrations are in contact with the same ground or substance. Tremorsense can't be used to detect flying or incorporeal creatures.</description>
+		</sheet>
+		<rules>
+			<stat name="tremorsense:range" value="0" bonus="base" />
+		</rules>
+	</element>
+
+	<element name="Vision: Tremorsense +10 Feet" type="Item" source="Internal" id="ID_INTERNAL_RACIAL_TRAIT_TREMORSENSE_10">
+		<description>
+			<p><i>You can equip this item to “enable” it. It remains hidden from the inventory on your character sheet.</i></p>
+			<p>You have an additional 10 feet of tremorsense.</p>
+		</description>
+		<setters>
+			<set name="category">Additional Feature</set>
+			<set name="slot">misc</set>
+			<set name="inventory-hidden">true</set>
+		</setters>
+		<sheet display="false" />
+		<rules>
+			<grant type="Vision" id="ID_VISION_TREMORSENSE" />
+			<stat name="tremorsense:range" value="10" />
+		</rules>
+	</element>
+
+	<element name="Vision: Tremorsense +5 Feet" type="Item" source="Internal" id="ID_INTERNAL_RACIAL_TRAIT_TREMORSENSE_5">
+		<description>
+			<p><i>You can equip this item to “enable” it. It remains hidden from the inventory on your character sheet.</i></p>
+			<p>You have an additional 5 feet of tremorsense.</p>
+		</description>
+		<setters>
+			<set name="category">Additional Feature</set>
+			<set name="slot">misc</set>
+			<set name="inventory-hidden">true</set>
+		</setters>
+		<sheet display="false" />
+		<rules>
+			<grant type="Vision" id="ID_VISION_TREMORSENSE" />
+			<stat name="tremorsense:range" value="5" />
+		</rules>
+	</element>
+
+	<!--Misc-->
+	<element name="Armor Ignore Strength Requirement" type="Grants" source="Internal" id="ID_INTERNAL_GRANT_ARMOR_IGNORE_STRENGTH_REQUIREMENT" />
 </elements>

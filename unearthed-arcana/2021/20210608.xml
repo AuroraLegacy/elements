@@ -1,0 +1,1396 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<elements>
+	<info>
+		<name>Unearthed Arcana: Mages of Strixhaven</name>
+		<update version="0.0.1">
+			<file name="20210608.xml" url="https://raw.githubusercontent.com/AuroraLegacy/elements/master/unearthed-arcana/2021/20210608.xml" />
+		</update>
+	</info>
+
+	<element name="Unearthed Arcana: Mages of Strixhaven" type="Source" source="Core" id="ID_WOTC_SOURCE_UNEARTHED_ARCANA_20210608">
+		<description>
+			<p>Become a student of magic in this installment of <i>Unearthed Arcana</i>! This playtest document presents five subclasses for Dungeons &amp; Dragons. Each of these subclasses allows you to play a mage associated with one of the five colleges of Strixhaven, a university of magic. These subclasses are special, with each one being available to more than one class.</p>
+		</description>
+		<setters>
+			<set name="abbreviation">UA20210608</set>
+			<set name="url">https://dnd.wizards.com/articles/unearthed-arcana/strixhaven</set>
+			<set name="author" abbreviation="WOTC" url="http://dnd.wizards.com">Wizards of the Coast</set>
+			<set name="official">true</set>
+			<set name="playtest">true</set>
+			<set name="release">20210608</set>
+		</setters>
+	</element>
+
+	<element name="Colleges of Strixhaven" type="Information" source="Unearthed Arcana: Mages of Strixhaven" id="ID_WOTC_UA20210608_INFORMATION_COLLEGES_OF_STRIXHAVEN">
+		<description>
+			<p>The five subclasses in this document are designed for characters who dedicate themselves to one of the paths of magic practiced at Strixhaven.</p>
+			<p class="indent">The university of Strixhaven is home to a wide variety of students and spellcasters. While individuals are welcome to pursue their magical studies in whichever way they please, some choose to focus exclusively on the fundamentals of one of the university’s five colleges:</p>
+			<p style="text-indent: -1em; margin-left: 1em"><strong>Lorehold College</strong>, dedicated to the pursuit of history by conversing with ancient spirits and understanding the whims of time itself</p>
+			<p style="text-indent: -1em; margin-left: 1em"><strong>Prismari College</strong>, dedicated to the visual and performing arts and bolstered with the power of the elements</p>
+			<p style="text-indent: -1em; margin-left: 1em"><strong>Quandrix College</strong>, dedicated to the study and manipulation of nature’s core mathematic principles</p>
+			<p style="text-indent: -1em; margin-left: 1em"><strong>Silverquill College</strong>, dedicated to the magic of words, whether encouraging speeches that uplift allies or piercing wit that derides foes</p>
+			<p style="text-indent: -1em; margin-left: 1em"><strong>Witherbloom College</strong>, dedicated to the alchemy of life and death and harnessing the devastating energies of both</p>
+		</description>
+	</element>
+
+	<element name="Using These Subclasses" type="Rule" source="Unearthed Arcana: Mages of Strixhaven" id="ID_WOTC_UA20210608_RULE_USING_THESE_SUBCLASSES">
+		<description>
+			<p>Unlike regular subclasses, the options presented here are designed to be compatible with multiple classes. The classes that are compatible with each subclass option are specified in each subclass’s entry.</p>
+			<h5>Choosing the Subclass</h5>
+			<p>When you choose a subclass for your character (a bard’s Bardic College, a wizard’s Arcane Tradition, and so on), you can instead choose one of these subclass options, so long as the subclass is compatible with your character’s class. You can choose the subclass only once, even if you multiclass into another class that is also compatible with the subclass.</p>
+			<p class="indent">How the subclass manifests in your character’s story is up to you. Perhaps your sorcerer’s innate spark of elemental magic has been determinedly honed by this schooling ever since they first showed arcane potential, or your warlock eschewed their patron’s usual boons for learning these more esoteric manifestations of power. Maybe your druid chose to attend university instead of joining a druidic circle, or your wizard balked at a traditional apprenticeship in favor of newfangled numeromancy.</p>
+			<h5>At Higher Levels</h5>
+			<p>Like regular subclasses, the subclass you choose here grants your character new abilities at higher levels. When your character would normally gain a new subclass feature (as noted in your character’s class table), you gain a feature from this subclass instead. All the subclass features detailed here have a level prerequisite, as noted beneath their name, and you must meet the prerequisite to gain the feature. For example, to gain a feature noted as “Level 6+,” your character must be 6th level or higher in the class for which the subclass was chosen. So if you’re a wizard with the Mage of Prismari subclass, you must be a 6th-level wizard to gain the Favored Medium feature.</p>
+			<p class="indent">When you reach certain levels, you might be eligible to choose from among multiple features in the subclass. When you reach such a point, you select one of these features for your character to gain. Unless otherwise specified, you can gain no more than one subclass feature at a time. For example, if you are a bard with the Mage of Lorehold subclass, at 14th level you gain your choice of either the War Echoes feature or the History’s Whims feature, but not both.</p>
+		</description>
+	</element>
+
+	<!-- Mage of Lorehold -->
+	<!-- Bard Specific Elements-->
+	<element name="Mage of Lorehold" type="Archetype" source="Unearthed Arcana: Mages of Strixhaven" id="ID_WOTC_UA20210608_ARCHETYPE_BARD_MAGE_OF_LOREHOLD">
+		<supports>Bard College</supports>
+		<requirements>!ID_WOTC_UA20210608_ARCHETYPE_WARLOCK_MAGE_OF_LOREHOLD,!ID_WOTC_UA20210608_ARCHETYPE_WIZARD_MAGE_OF_LOREHOLD</requirements>
+		<description>
+			<p><em>Bard, Warlock, and Wizard Subclass</em></p>
+			<p>Mages of Lorehold are particularly concerned with the forces that underlie and drive history. Drawing inspiration from the scholars and adventurers of old, they manifest the arcane power of the past through ethereal dioramas and fantastical battle prowess. Lorehold mages are often found with a long-dead spirit summoned at their side—for who better to learn ancient history from than one who has experienced it first-hand?</p>
+			<h5>USING THIS SUBCLASS</h5>
+			<p>Upon selecting the Mage of Lorehold subclass, you gain two features: Lorehold Spells and Ancient Companion.</p>
+			<p class="indent">In this subclass’s features, any reference to your class refers to the class from which you gained the subclass. If you’re a bard, the College of Lorehold counts as your college; if you’re a warlock, the magic of the college serves as your patron; and if you’re a wizard, the college represents your arcane tradition.</p>
+			<p class="indent">When you subsequently reach a level in your class that gives you a subclass feature, you gain one feature of your choice from the options presented here. Each feature has a class level prerequisite, as noted beneath its name. You must meet that prerequisite to gain the feature.</p>
+			<div element="ID_WOTC_UA20210608_ARCHETYPE_FEATURE_MAGE_OF_LOREHOLD_LOREHOLD_SPELLS_BARD" />
+			<div element="ID_WOTC_UA20210608_ARCHETYPE_FEATURE_MAGE_OF_LOREHOLD_ANCIENT_COMPANION" />
+			<div element="ID_WOTC_UA20210608_ARCHETYPE_FEATURE_MAGE_OF_LOREHOLD_LESSONS_OF_THE_PAST" />
+			<div element="ID_WOTC_UA20210608_ARCHETYPE_FEATURE_MAGE_OF_LOREHOLD_WAR_ECHOES" />
+			<div element="ID_WOTC_UA20210608_ARCHETYPE_FEATURE_MAGE_OF_LOREHOLD_HISTORYS_WHIMS" />
+		</description>
+		<sheet display="false">
+			<description>Mages of Lorehold are particularly concerned with the forces that underlie and drive history.</description>
+		</sheet>
+		<rules>
+			<grant type="Archetype Feature" id="ID_WOTC_UA20210608_ARCHETYPE_FEATURE_MAGE_OF_LOREHOLD_LOREHOLD_SPELLS_BARD" />
+			<grant type="Archetype Feature" id="ID_WOTC_UA20210608_ARCHETYPE_FEATURE_MAGE_OF_LOREHOLD_ANCIENT_COMPANION" />
+			<grant type="Archetype Feature" id="ID_WOTC_UA20210608_ARCHETYPE_FEATURE_MAGE_OF_LOREHOLD_LESSONS_OF_THE_PAST" level="6" />
+			<select type="Archetype Feature" name="4th Feature (Mage of Lorehold)" supports="ID_WOTC_UA20210608_ARCHETYPE_FEATURE_MAGE_OF_LOREHOLD_WAR_ECHOES|ID_WOTC_UA20210608_ARCHETYPE_FEATURE_MAGE_OF_LOREHOLD_HISTORYS_WHIMS" level="14" />
+		</rules>
+	</element>
+
+	<element name="Lorehold Spells" type="Archetype Feature" source="Unearthed Arcana: Mages of Strixhaven" id="ID_WOTC_UA20210608_ARCHETYPE_FEATURE_MAGE_OF_LOREHOLD_LOREHOLD_SPELLS_BARD">
+		<description>
+			<p><em>Level 1+ Mage of Lorehold Feature</em></p>
+			<p>You learn the cantrip <i>sacred flame</i> and the 1st-level spell <i>comprehend languages</i>. You learn additional spells when you reach certain levels in this class, as shown on the Lorehold Spells table.</p>
+			<p class="indent">Each of these spells counts as a class spell for you, but it doesn’t count against the number of spells you know. If you are a wizard, you can add these spells to your spellbook upon learning them, without expending any gold, and prepare them as normal.</p>
+			<h5>Lorehold Spells</h5>
+			<table>
+				<thead>
+					<tr><td>Class Level</td><td class="left">Spells</td></tr>
+				</thead>
+				<tr><td>3rd</td><td class="left"><i>knock, locate object</i></td></tr>
+				<tr><td>5th</td><td class="left"><i>speak with dead, spirit guardians</i></td></tr>
+				<tr><td>7th</td><td class="left"><i>arcane eye, stone shape</i></td></tr>
+				<tr><td>9th</td><td class="left"><i>destructive wave, legend lore</i></td></tr>
+			</table>
+		</description>
+		<sheet display="false" />
+		<rules>
+			<grant type="Spell" id="ID_PHB_SPELL_SACRED_FLAME" spellcasting="Bard" />
+			<grant type="Spell" id="ID_PHB_SPELL_COMPREHEND_LANGUAGES" spellcasting="Bard" />
+			<grant type="Spell" id="ID_PHB_SPELL_KNOCK" level="3" spellcasting="Bard" />
+			<grant type="Spell" id="ID_PHB_SPELL_LOCATE_OBJECT" level="3" spellcasting="Bard" />
+			<grant type="Spell" id="ID_PHB_SPELL_SPEAK_WITH_DEAD" level="5" spellcasting="Bard" />
+			<grant type="Spell" id="ID_PHB_SPELL_SPIRIT_GUARDIANS" level="5" spellcasting="Bard" />
+			<grant type="Spell" id="ID_PHB_SPELL_ARCANE_EYE" level="7" spellcasting="Bard" />
+			<grant type="Spell" id="ID_PHB_SPELL_STONE_SHAPE" level="7" spellcasting="Bard" />
+			<grant type="Spell" id="ID_PHB_SPELL_DESTRUCTIVE_WAVE" level="9" spellcasting="Bard" />
+			<grant type="Spell" id="ID_PHB_SPELL_LEGEND_LORE" level="9" spellcasting="Bard" />
+		</rules>
+	</element>
+
+	<!-- Warlock Specific Elements-->
+	<element name="Mage of Lorehold" type="Archetype" source="Unearthed Arcana: Mages of Strixhaven" id="ID_WOTC_UA20210608_ARCHETYPE_WARLOCK_MAGE_OF_LOREHOLD">
+		<supports>Otherworldly Patron</supports>
+		<requirements>!ID_WOTC_UA20210608_ARCHETYPE_BARD_MAGE_OF_LOREHOLD,!ID_WOTC_UA20210608_ARCHETYPE_WIZARD_MAGE_OF_LOREHOLD</requirements>
+		<compendium display="false" />
+		<description>
+			<p><em>Bard, Warlock, and Wizard Subclass</em></p>
+			<p>Mages of Lorehold are particularly concerned with the forces that underlie and drive history. Drawing inspiration from the scholars and adventurers of old, they manifest the arcane power of the past through ethereal dioramas and fantastical battle prowess. Lorehold mages are often found with a long-dead spirit summoned at their side—for who better to learn ancient history from than one who has experienced it first-hand?</p>
+			<h5>USING THIS SUBCLASS</h5>
+			<p>Upon selecting the Mage of Lorehold subclass, you gain two features: Lorehold Spells and Ancient Companion.</p>
+			<p class="indent">In this subclass’s features, any reference to your class refers to the class from which you gained the subclass. If you’re a bard, the College of Lorehold counts as your college; if you’re a warlock, the magic of the college serves as your patron; and if you’re a wizard, the college represents your arcane tradition.</p>
+			<p class="indent">When you subsequently reach a level in your class that gives you a subclass feature, you gain one feature of your choice from the options presented here. Each feature has a class level prerequisite, as noted beneath its name. You must meet that prerequisite to gain the feature.</p>
+			<div element="ID_WOTC_UA20210608_ARCHETYPE_FEATURE_MAGE_OF_LOREHOLD_LOREHOLD_SPELLS_WARLOCK" />
+			<div element="ID_WOTC_UA20210608_ARCHETYPE_FEATURE_MAGE_OF_LOREHOLD_ANCIENT_COMPANION" />
+			<div element="ID_WOTC_UA20210608_ARCHETYPE_FEATURE_MAGE_OF_LOREHOLD_LESSONS_OF_THE_PAST" />
+			<div element="ID_WOTC_UA20210608_ARCHETYPE_FEATURE_MAGE_OF_LOREHOLD_WAR_ECHOES" />
+			<div element="ID_WOTC_UA20210608_ARCHETYPE_FEATURE_MAGE_OF_LOREHOLD_HISTORYS_WHIMS" />
+		</description>
+		<sheet display="false">
+			<description>Mages of Lorehold are particularly concerned with the forces that underlie and drive history.</description>
+		</sheet>
+		<rules>
+			<grant type="Archetype Feature" id="ID_WOTC_UA20210608_ARCHETYPE_FEATURE_MAGE_OF_LOREHOLD_LOREHOLD_SPELLS_WARLOCK" />
+			<grant type="Archetype Feature" id="ID_WOTC_UA20210608_ARCHETYPE_FEATURE_MAGE_OF_LOREHOLD_ANCIENT_COMPANION" />
+			<grant type="Archetype Feature" id="ID_WOTC_UA20210608_ARCHETYPE_FEATURE_MAGE_OF_LOREHOLD_LESSONS_OF_THE_PAST" level="6" />
+			<grant type="Archetype Feature" id="ID_WOTC_UA20210608_ARCHETYPE_FEATURE_MAGE_OF_LOREHOLD_WAR_ECHOES" level="10" />
+			<grant type="Archetype Feature" id="ID_WOTC_UA20210608_ARCHETYPE_FEATURE_MAGE_OF_LOREHOLD_HISTORYS_WHIMS" level="14" />
+		</rules>
+	</element>
+
+	<element name="Lorehold Spells" type="Archetype Feature" source="Unearthed Arcana: Mages of Strixhaven" id="ID_WOTC_UA20210608_ARCHETYPE_FEATURE_MAGE_OF_LOREHOLD_LOREHOLD_SPELLS_WARLOCK">
+		<compendium display="false" />
+		<description>
+			<p><em>Level 1+ Mage of Lorehold Feature</em></p>
+			<p>You learn the cantrip <i>sacred flame</i> and the 1st-level spell <i>comprehend languages</i>. You learn additional spells when you reach certain levels in this class, as shown on the Lorehold Spells table.</p>
+			<p class="indent">Each of these spells counts as a class spell for you, but it doesn’t count against the number of spells you know. If you are a wizard, you can add these spells to your spellbook upon learning them, without expending any gold, and prepare them as normal.</p>
+			<h5>Lorehold Spells</h5>
+			<table>
+				<thead>
+					<tr><td>Class Level</td><td class="left">Spells</td></tr>
+				</thead>
+				<tr><td>3rd</td><td class="left"><i>knock, locate object</i></td></tr>
+				<tr><td>5th</td><td class="left"><i>speak with dead, spirit guardians</i></td></tr>
+				<tr><td>7th</td><td class="left"><i>arcane eye, stone shape</i></td></tr>
+				<tr><td>9th</td><td class="left"><i>destructive wave, legend lore</i></td></tr>
+			</table>
+		</description>
+		<sheet display="false" />
+		<rules>
+			<grant type="Spell" id="ID_PHB_SPELL_SACRED_FLAME" spellcasting="Warlock" />
+			<grant type="Spell" id="ID_PHB_SPELL_COMPREHEND_LANGUAGES" spellcasting="Warlock" />
+			<grant type="Spell" id="ID_PHB_SPELL_KNOCK" level="3" spellcasting="Warlock" />
+			<grant type="Spell" id="ID_PHB_SPELL_LOCATE_OBJECT" level="3" spellcasting="Warlock" />
+			<grant type="Spell" id="ID_PHB_SPELL_SPEAK_WITH_DEAD" level="5" spellcasting="Warlock" />
+			<grant type="Spell" id="ID_PHB_SPELL_SPIRIT_GUARDIANS" level="5" spellcasting="Warlock" />
+			<grant type="Spell" id="ID_PHB_SPELL_ARCANE_EYE" level="7" spellcasting="Warlock" />
+			<grant type="Spell" id="ID_PHB_SPELL_STONE_SHAPE" level="7" spellcasting="Warlock" />
+			<grant type="Spell" id="ID_PHB_SPELL_DESTRUCTIVE_WAVE" level="9" spellcasting="Warlock" />
+			<grant type="Spell" id="ID_PHB_SPELL_LEGEND_LORE" level="9" spellcasting="Warlock" />
+		</rules>
+	</element>
+
+	<!-- Wizard Specific Elements-->
+	<element name="Mage of Lorehold" type="Archetype" source="Unearthed Arcana: Mages of Strixhaven" id="ID_WOTC_UA20210608_ARCHETYPE_WIZARD_MAGE_OF_LOREHOLD">
+		<supports>Arcane Tradition</supports>
+		<requirements>!ID_WOTC_UA20210608_ARCHETYPE_BARD_MAGE_OF_LOREHOLD,!ID_WOTC_UA20210608_ARCHETYPE_WARLOCK_MAGE_OF_LOREHOLD</requirements>
+		<compendium display="false" />
+		<description>
+			<p><em>Bard, Warlock, and Wizard Subclass</em></p>
+			<p>Mages of Lorehold are particularly concerned with the forces that underlie and drive history. Drawing inspiration from the scholars and adventurers of old, they manifest the arcane power of the past through ethereal dioramas and fantastical battle prowess. Lorehold mages are often found with a long-dead spirit summoned at their side—for who better to learn ancient history from than one who has experienced it first-hand?</p>
+			<h5>USING THIS SUBCLASS</h5>
+			<p>Upon selecting the Mage of Lorehold subclass, you gain two features: Lorehold Spells and Ancient Companion.</p>
+			<p class="indent">In this subclass’s features, any reference to your class refers to the class from which you gained the subclass. If you’re a bard, the College of Lorehold counts as your college; if you’re a warlock, the magic of the college serves as your patron; and if you’re a wizard, the college represents your arcane tradition.</p>
+			<p class="indent">When you subsequently reach a level in your class that gives you a subclass feature, you gain one feature of your choice from the options presented here. Each feature has a class level prerequisite, as noted beneath its name. You must meet that prerequisite to gain the feature.</p>
+			<div element="ID_WOTC_UA20210608_ARCHETYPE_FEATURE_MAGE_OF_LOREHOLD_LOREHOLD_SPELLS_WIZARD" />
+			<div element="ID_WOTC_UA20210608_ARCHETYPE_FEATURE_MAGE_OF_LOREHOLD_ANCIENT_COMPANION" />
+			<div element="ID_WOTC_UA20210608_ARCHETYPE_FEATURE_MAGE_OF_LOREHOLD_LESSONS_OF_THE_PAST" />
+			<div element="ID_WOTC_UA20210608_ARCHETYPE_FEATURE_MAGE_OF_LOREHOLD_WAR_ECHOES" />
+			<div element="ID_WOTC_UA20210608_ARCHETYPE_FEATURE_MAGE_OF_LOREHOLD_HISTORYS_WHIMS" />
+		</description>
+		<sheet display="false">
+			<description>Mages of Lorehold are particularly concerned with the forces that underlie and drive history.</description>
+		</sheet>
+		<rules>
+			<grant type="Archetype Feature" id="ID_WOTC_UA20210608_ARCHETYPE_FEATURE_MAGE_OF_LOREHOLD_LOREHOLD_SPELLS_WIZARD" />
+			<grant type="Archetype Feature" id="ID_WOTC_UA20210608_ARCHETYPE_FEATURE_MAGE_OF_LOREHOLD_ANCIENT_COMPANION" />
+			<grant type="Archetype Feature" id="ID_WOTC_UA20210608_ARCHETYPE_FEATURE_MAGE_OF_LOREHOLD_LESSONS_OF_THE_PAST" level="6" />
+			<grant type="Archetype Feature" id="ID_WOTC_UA20210608_ARCHETYPE_FEATURE_MAGE_OF_LOREHOLD_WAR_ECHOES" level="10" />
+			<grant type="Archetype Feature" id="ID_WOTC_UA20210608_ARCHETYPE_FEATURE_MAGE_OF_LOREHOLD_HISTORYS_WHIMS" level="14" />
+		</rules>
+	</element>
+
+	<element name="Lorehold Spells" type="Archetype Feature" source="Unearthed Arcana: Mages of Strixhaven" id="ID_WOTC_UA20210608_ARCHETYPE_FEATURE_MAGE_OF_LOREHOLD_LOREHOLD_SPELLS_WIZARD">
+		<compendium display="false" />
+		<description>
+			<p><em>Level 1+ Mage of Lorehold Feature</em></p>
+			<p>You learn the cantrip <i>sacred flame</i> and the 1st-level spell <i>comprehend languages</i>. You learn additional spells when you reach certain levels in this class, as shown on the Lorehold Spells table.</p>
+			<p class="indent">Each of these spells counts as a class spell for you, but it doesn’t count against the number of spells you know. If you are a wizard, you can add these spells to your spellbook upon learning them, without expending any gold, and prepare them as normal.</p>
+			<h5>Lorehold Spells</h5>
+			<table>
+				<thead>
+					<tr><td>Class Level</td><td class="left">Spells</td></tr>
+				</thead>
+				<tr><td>3rd</td><td class="left"><i>knock, locate object</i></td></tr>
+				<tr><td>5th</td><td class="left"><i>speak with dead, spirit guardians</i></td></tr>
+				<tr><td>7th</td><td class="left"><i>arcane eye, stone shape</i></td></tr>
+				<tr><td>9th</td><td class="left"><i>destructive wave, legend lore</i></td></tr>
+			</table>
+		</description>
+		<sheet display="false" />
+		<rules>
+			<grant type="Spell" id="ID_PHB_SPELL_SACRED_FLAME" spellcasting="Wizard" />
+			<grant type="Spell" id="ID_PHB_SPELL_COMPREHEND_LANGUAGES" spellcasting="Wizard" />
+			<grant type="Spell" id="ID_PHB_SPELL_KNOCK" level="3" spellcasting="Wizard" />
+			<grant type="Spell" id="ID_PHB_SPELL_LOCATE_OBJECT" level="3" spellcasting="Wizard" />
+			<grant type="Spell" id="ID_PHB_SPELL_SPEAK_WITH_DEAD" level="5" spellcasting="Wizard" />
+			<grant type="Spell" id="ID_PHB_SPELL_SPIRIT_GUARDIANS" level="5" spellcasting="Wizard" />
+			<grant type="Spell" id="ID_PHB_SPELL_ARCANE_EYE" level="7" spellcasting="Wizard" />
+			<grant type="Spell" id="ID_PHB_SPELL_STONE_SHAPE" level="7" spellcasting="Wizard" />
+			<grant type="Spell" id="ID_PHB_SPELL_DESTRUCTIVE_WAVE" level="9" spellcasting="Wizard" />
+			<grant type="Spell" id="ID_PHB_SPELL_LEGEND_LORE" level="9" spellcasting="Wizard" />
+		</rules>
+	</element>
+
+	<!-- Mage of Lorehold General Elements -->
+	<element name="Ancient Companion" type="Archetype Feature" source="Unearthed Arcana: Mages of Strixhaven" id="ID_WOTC_UA20210608_ARCHETYPE_FEATURE_MAGE_OF_LOREHOLD_ANCIENT_COMPANION">
+		<description>
+			<p><em>Level 1+ Mage of Lorehold Feature</em></p>
+			<p>You learn to call on the spirits of the ancient dead and house them temporarily in the remnants of old statues, so they may remain longer on this plane to bolster your studies and aid you in battle.</p>
+			<p class="indent">Whenever you finish a short or long rest, you can call forth and bond with one such spirit, who comes to inhabit a Medium, freestanding statue within 10 feet of you to serve as your ancient companion. See this creature’s game statistics in the Ancient Companion stat block, which uses your proficiency bonus (PB) in several places. When you bond with your ancient companion, choose the type of spirit you bond with: Healer, Sage, or Warrior. Your choice of spirit determines certain traits in its stat block. The statue determines the spirit’s appearance.</p>
+			<p class="indent">The ancient companion is friendly to you and your companions and obeys your commands. In combat, the companion shares your initiative count, but it takes its turn immediately after yours. It can move and use its reaction on its own, but the only action it takes on its turn is the Dodge action, unless you take a bonus action on your turn to command it to take another action. That action can be one in its stat block or some other action. If you are incapacitated, the companion can take any action of its choice, not just Dodge.</p>
+			<p class="indent">As an action, you can touch the ancient companion and expend a spell slot of 1st-level or higher. The ancient companion regains a number of hit points equal to 10 times the level of spell slot expended.</p>
+			<p class="indent">The companion perishes when it drops to 0 hit points, when you bond with a new ancient companion at the end of a short or long rest, or when you die. When the companion perishes, the spirit within returns to its plane of origin, and the statue becomes an inert object.</p>
+			<h5>Ancient Companion</h5>
+			<p><em>Medium Construct, Any Alignment</em></p>
+			<ul class="unstyled">
+				<li><strong>Armor Class</strong> 14 (natural armor) + 2 (Warrior only)</li>
+				<li><strong>Hit Points</strong> 5 + 5 times your level in this class (the companion has a number of Hit Dice [d8s] equal to your level in this class)</li>
+				<li><strong>Speed</strong> 30 ft.</li>
+			</ul>
+			<table style="text-align:center;margin-top:10px;margin-bottom:10px">
+				<thead>
+					<tr><td>STR</td><td>DEX</td><td>CON</td><td>INT</td><td>WIS</td><td>CHA</td></tr>
+				</thead>
+				<tr><td>14 (+2)</td><td>9 (-1)</td><td>15 (+2)</td><td>14 (+2)</td><td>14 (+2)</td><td>11 (+0)</td></tr>
+			</table>
+			<ul class="unstyled">
+				<li><strong>Saving Throws</strong> Con +2 plus PB, Int +2 plus PB, Wis +2 plus PB</li>
+				<li><strong>Skills</strong> History +2 plus PB, Perception +2 plus (PB × 2)</li>
+				<li><strong>Damage Immunities</strong> poison</li>
+				<li><strong>Condition Immunities</strong> charmed, exhaustion</li>
+				<li><strong>Senses</strong> passive Perception 12 + (PB × 2)</li>
+				<li><strong>Languages</strong> understands the languages you speak</li>
+				<li><strong>Challenge</strong> —</li>
+				<li><strong>Proficiency Bonus (PB)</strong> equals your bonus</li>
+			</ul>
+			<br/>
+			<p><strong><em>Ancient Fortitude.</em></strong> If damage reduces the companion to 0 hit points, it can make a Constitution saving throw with a DC of 5 + the damage taken, unless the damage is from a critical hit. On a success, the companion drops to 1 hit point instead.</p>
+			<p><strong><em>Sage’s Counsel (Sage Only).</em></strong> While within 15 feet of the companion, you and your allies gain a +2 bonus to Intelligence and Wisdom checks.</p>
+			<h4 style="margin-top:10px">Actions</h4>
+			<p><strong><em>Spirit Strike. </em></strong><em>Melee Weapon Attack:</em> your spell attack modifier to hit, reach 5 ft., one target you can see. Hit:1d8 + 2 + PB force damage.</p>
+			<p><strong><em>Healer’s Light (Healer Only).</em></strong> The companion chooses a creature it can see within 15 feet of itself and flares with invigorating light. The creature gains 1d8 + PB temporary hit points.</p>
+			<h4 style="margin-top:10px">Reactions</h4>
+			<p><strong><em>Warrior’s Protection (Warrior Only). </em></strong>When a creature within 5 feet of the companion makes a Strength or Dexterity saving throw, the companion imposes itself between the creature and the danger. The creature can roll a d4 and add the number rolled to the saving throw.</p>
+		</description>
+		<sheet>
+			<description>Whenever you finish a short or long rest, you can call forth and bond with one such spirit, who comes to inhabit a Medium, freestanding statue within 10 feet of you to serve as your ancient companion. When you bond with your ancient companion, choose the type of spirit you bond with: Healer, Sage, or Warrior. Your choice of spirit determines certain traits in its stat block. The statue determines the spirit’s appearance. &#13;
+			The ancient companion is friendly to you and your companions and obeys your commands. In combat, the companion shares your initiative count, but it takes its turn immediately after yours. It can move and use its reaction on its own, but the only action it takes on its turn is the Dodge action, unless you take a bonus action on your turn to command it to take another action. That action can be one in its stat block or some other action. If you are incapacitated, the companion can take any action of its choice, not just Dodge. &#13;
+			As an action, you can touch the ancient companion and expend a spell slot of 1st-level or higher. The ancient companion regains a number of hit points equal to 10 times the level of spell slot expended. &#13;
+			The companion perishes when it drops to 0 hit points, when you bond with a new ancient companion at the end of a short or long rest, or when you die. When the companion perishes, the spirit within returns to its plane of origin, and the statue becomes an inert object.</description>
+		</sheet>
+		<rules>
+			<select type="Companion" name="Ancient Companion" supports="Ancient Companion" default="ID_WOTC_UA20210608_COMPANION_ANCIENT_COMPANION" />
+			<select type="Companion Trait" name="Type of Spirit (Ancient Companion)" supports="ID_WOTC_UA20210608_COMPANION_TRAIT_ANCIENT_COMPANION_HEALER|ID_WOTC_UA20210608_COMPANION_TRAIT_ANCIENT_COMPANION_SAGE|ID_WOTC_UA20210608_COMPANION_TRAIT_ANCIENT_COMPANION_WARRIOR" />
+		</rules>
+	</element>
+
+	<element name="Lessons of the Past" type="Archetype Feature" source="Unearthed Arcana: Mages of Strixhaven" id="ID_WOTC_UA20210608_ARCHETYPE_FEATURE_MAGE_OF_LOREHOLD_LESSONS_OF_THE_PAST">
+		<description>
+			<p><em>Level 6+ Mage of Lorehold Feature</em></p>
+			<p>Through your studies, you learn how to better listen and take to heart the teachings of history. When you bond with your ancient companion, you gain the following additional benefits depending on the type of spirit you chose:</p>
+			<p style="text-indent: -1em; margin-left: 1em"><strong>Healer.</strong> Your hit point maximum increases by an amount equal to your level in this class, and you gain the same number of hit points. When you regain hit points from a spell, you regain an additional 1d8 hit points.</p>
+			<p style="text-indent: -1em; margin-left: 1em"><strong>Sage.</strong> You have advantage on ability checks using the Arcana, History, Nature, and Religion skills. Additionally, once per turn, when you deal damage to a creature with a spell of 1st-level or higher, you can deal an additional 1d8 force damage to that creature.</p>
+			<p style="text-indent: -1em; margin-left: 1em"><strong>Warrior.</strong> If you use your action to cast a cantrip, you can make one weapon attack as part of that action. If that weapon attack hits, the target takes an additional 1d8 radiant damage.</p>
+			<p>When you bond with a new ancient companion of a different type, you immediately lose the benefits of your previous companion and gain the benefits from the new companion’s type.</p>
+		</description>
+		<sheet display="false" />
+		<rules>
+			<grant type="Archetype Feature" id="ID_WOTC_UA20210608_ARCHETYPE_FEATURE_MAGE_OF_LOREHOLD_LESSONS_OF_THE_PAST_HEALER" requirements="ID_WOTC_UA20210608_COMPANION_TRAIT_ANCIENT_COMPANION_HEALER" />			
+			<grant type="Archetype Feature" id="ID_WOTC_UA20210608_ARCHETYPE_FEATURE_MAGE_OF_LOREHOLD_LESSONS_OF_THE_PAST_SAGE" requirements="ID_WOTC_UA20210608_COMPANION_TRAIT_ANCIENT_COMPANION_SAGE" />			
+			<grant type="Archetype Feature" id="ID_WOTC_UA20210608_ARCHETYPE_FEATURE_MAGE_OF_LOREHOLD_LESSONS_OF_THE_PAST_WARRIOR" requirements="ID_WOTC_UA20210608_COMPANION_TRAIT_ANCIENT_COMPANION_WARRIOR" />			
+		</rules>
+	</element>
+
+	<element name="Healer (Lessons of the Past)" type="Archetype Feature" source="Unearthed Arcana: Mages of Strixhaven" id="ID_WOTC_UA20210608_ARCHETYPE_FEATURE_MAGE_OF_LOREHOLD_LESSONS_OF_THE_PAST_HEALER">
+		<compendium display="false" />
+		<description>
+			<p>Your hit point maximum increases by an amount equal to your level in this class, and you gain the same number of hit points. When you regain hit points from a spell, you regain an additional 1d8 hit points.</p>
+		</description>
+		<sheet>
+			<description>When you regain hit points from a spell, you regain an additional 1d8 hit points.</description>
+		</sheet>
+		<rules>
+			<stat name="hp" value="level:bard" requirements="ID_WOTC_UA20210608_ARCHETYPE_BARD_MAGE_OF_LOREHOLD" />
+			<stat name="hp" value="level:warlock" requirements="ID_WOTC_UA20210608_ARCHETYPE_WARLOCK_MAGE_OF_LOREHOLD" />
+			<stat name="hp" value="level:wizard" requirements="ID_WOTC_UA20210608_ARCHETYPE_WIZARD_MAGE_OF_LOREHOLD" />
+		</rules>
+	</element>
+
+	<element name="Sage (Lessons of the Past)" type="Archetype Feature" source="Unearthed Arcana: Mages of Strixhaven" id="ID_WOTC_UA20210608_ARCHETYPE_FEATURE_MAGE_OF_LOREHOLD_LESSONS_OF_THE_PAST_SAGE">
+		<compendium display="false" />
+		<description>
+			<p>You have advantage on ability checks using the Arcana, History, Nature, and Religion skills. Additionally, once per turn, when you deal damage to a creature with a spell of 1st-level or higher, you can deal an additional 1d8 force damage to that creature.</p>
+		</description>
+		<sheet>
+			<description>You have advantage on ability checks using the Arcana, History, Nature, and Religion skills. Additionally, once per turn, when you deal damage to a creature with a spell of 1st-level or higher, you can deal an additional 1d8 force damage to that creature.</description>
+		</sheet>
+	</element>
+
+	<element name="Warrior (Lessons of the Past)" type="Archetype Feature" source="Unearthed Arcana: Mages of Strixhaven" id="ID_WOTC_UA20210608_ARCHETYPE_FEATURE_MAGE_OF_LOREHOLD_LESSONS_OF_THE_PAST_WARRIOR">
+		<compendium display="false" />
+		<description>
+			<p>If you use your action to cast a cantrip, you can make one weapon attack as part of that action. If that weapon attack hits, the target takes an additional 1d8 radiant damage.</p>
+		</description>
+		<sheet>
+			<description>If you use your action to cast a cantrip, you can make one weapon attack as part of that action. If that weapon attack hits, the target takes an additional 1d8 radiant damage.</description>
+		</sheet>
+	</element>
+
+	<element name="War Echoes" type="Archetype Feature" source="Unearthed Arcana: Mages of Strixhaven" id="ID_WOTC_UA20210608_ARCHETYPE_FEATURE_MAGE_OF_LOREHOLD_WAR_ECHOES">
+		<description>
+			<p><em>Level 10+ Mage of Lorehold Feature</em></p>
+			<p>By pulling from the magic of the past, you can cause your opponent’s old wounds to resonate anew. Once per turn, when a creature you can see hits a target with an attack roll, you can use your reaction to force the target to make a Wisdom saving throw against your spell save DC. On a failure, the target becomes vulnerable to one of the damage types dealt by the attack. This vulnerability lasts until the end of the target’s next turn and affects the damage dealt by the triggering attack.</p>
+			<p class="indent"> You can use your reaction in this way a number of times equal to your proficiency bonus, and you regain all expended uses when you finish a long rest.</p>
+		</description>
+		<sheet action="Reaction" usage="{{proficiency}}/Long Rest">
+			<description>Once per turn, when a creature you can see hits a target with an attack roll, you can force the target to make a Wisdom saving throw against your spell save DC. On a failure, the target becomes vulnerable to one of the damage types dealt by the attack. This vulnerability lasts until the end of the target’s next turn and affects the damage dealt by the triggering attack.</description>
+		</sheet>
+	</element>
+
+	<element name="History's Whims" type="Archetype Feature" source="Unearthed Arcana: Mages of Strixhaven" id="ID_WOTC_UA20210608_ARCHETYPE_FEATURE_MAGE_OF_LOREHOLD_HISTORYS_WHIMS">
+		<description>
+			<p><em>Level 14+ Mage of Lorehold Feature</em></p>
+			<p>Through steeping yourself in the chaotic whims of history, you learn how to briefly channel the wild nature of time itself. As a bonus action, you can enter a state of chronal chaos. When you enter this state, and at the start of each of your subsequent turns while in this state, you gain one of the following benefits of your choice:</p>
+			<p style="text-indent: -1em; margin-left: 1em"><strong>Luck.</strong> You receive brief flashes of the future, steeling yourself against oncoming assaults. Whenever you make a saving throw against an effect that deals damage, you can roll a d6 and add the number rolled to the total.</p>
+			<p style="text-indent: -1em; margin-left: 1em"><strong>Resistance.</strong> You rewind time, knitting together injuries as they occur. You have resistance to bludgeoning, piercing, and slashing damage.</p>
+			<p style="text-indent: -1em; margin-left: 1em"><strong>Swiftness.</strong> Time stutters, slowing others but hurtling you forward. Your movement speed increases by 15 feet, and you do not provoke opportunity attacks.</p>
+			<p>The benefit lasts until the start of your next turn. You cannot choose the same benefit two rounds in a row.</p>
+			<p class="indent">The state lasts for 1 minute and ends early if you’re incapacitated. Once you use this feature, you can’t use it again until you finish a long rest, unless you expend a spell slot of 4th level or higher to use it again.</p>
+		</description>
+		<sheet action="Bonus Action">
+			<description>You enter a state of chronal chaos. When you enter this state, and at the start of each of your subsequent turns while in this state, you gain one of the following benefits of your choice: &#13;
+			• Luck. You receive brief flashes of the future, steeling yourself against oncoming assaults. Whenever you make a saving throw against an effect that deals damage, you can roll a d6 and add the number rolled to the total. &#13;
+			• Resistance. You rewind time, knitting together injuries as they occur. You have resistance to bludgeoning, piercing, and slashing damage. &#13;
+			• Swiftness. Time stutters, slowing others but hurtling you forward. Your movement speed increases by 15 feet, and you do not provoke opportunity attacks. &#13;
+			The benefit lasts until the start of your next turn. You cannot choose the same benefit two rounds in a row. The state lasts for 1 minute and ends early if you’re incapacitated. Once you use this feature, you can’t use it again until you finish a long rest, unless you expend a spell slot of 4th level or higher to use it again.</description>
+		</sheet>
+	</element>
+
+	<!-- Companion -->
+	<element name="Ancient Companion" type="Companion" source="Unearthed Arcana: Mages of Strixhaven" id="ID_WOTC_UA20210608_COMPANION_ANCIENT_COMPANION">
+		<supports>Ancient Companion</supports>
+		<requirements>ID_WOTC_UA20210608_ARCHETYPE_FEATURE_MAGE_OF_LOREHOLD_ANCIENT_COMPANION</requirements>
+		<setters>
+			<set name="size">Medium</set>
+			<set name="type">Construct</set>
+			<set name="alignment">Any Alignment</set>
+			<set name="ac">14 (natural armor) + 2 (Warrior only)</set>
+			<set name="hp">5 + 5 times your level in this class (the companion has a number of Hit Dice [d8s] equal to your level in this class)</set>
+			<set name="speed">30 ft.</set>
+			<set name="strength">14</set>
+			<set name="dexterity">9</set>
+			<set name="constitution">15</set>
+			<set name="intelligence">14</set>
+			<set name="wisdom">14</set>
+			<set name="charisma">11</set>
+			<set name="saves">Con +2 plus PB, Int +2 plus PB, Wis +2 plus PB</set>
+			<set name="skills">History +2 plus PB, Perception +2 plus (PB × 2)</set>
+			<set name="immunities">poison</set>
+			<set name="conditionImmunities">charmed, exhaustion</set>
+			<set name="senses">passive Perception 12 + (PB × 2)</set>
+			<set name="languages">understands the languages you speak</set>
+			<set name="challenge">—</set>
+			<set name="traits">ID_WOTC_UA20210608_COMPANION_TRAIT_ANCIENT_COMPANION_ANCIENT_FORTITUDE,ID_WOTC_UA20210608_COMPANION_TRAIT_ANCIENT_COMPANION_SAGES_COUNSEL</set>
+			<set name="actions">ID_WOTC_UA20210608_COMPANION_ACTION_ANCIENT_COMPANION_SPIRIT_STRIKE,ID_WOTC_UA20210608_COMPANION_ACTION_ANCIENT_COMPANION_HEALERS_LIGHT</set>
+			<set name="reactions">ID_WOTC_UA20210608_COMPANION_REACTION_ANCIENT_COMPANION_WARRIORS_PROTECTION</set>
+		</setters>
+		<rules>
+			<stat name="companion:ac" value="14" bonus="base"/>
+			<stat name="companion:ac" value="2" bonus="warrior" requirements="ID_WOTC_UA20210608_COMPANION_TRAIT_ANCIENT_COMPANION_WARRIOR"/>
+			<stat name="companion:hp:max" value="5" bonus="base" />
+			<stat name="companion:hp:max" value="level:bard" requirements="ID_WOTC_UA20210608_ARCHETYPE_BARD_MAGE_OF_LOREHOLD"/>
+			<stat name="companion:hp:max" value="level:bard" requirements="ID_WOTC_UA20210608_ARCHETYPE_BARD_MAGE_OF_LOREHOLD"/>
+			<stat name="companion:hp:max" value="level:bard" requirements="ID_WOTC_UA20210608_ARCHETYPE_BARD_MAGE_OF_LOREHOLD"/>
+			<stat name="companion:hp:max" value="level:bard" requirements="ID_WOTC_UA20210608_ARCHETYPE_BARD_MAGE_OF_LOREHOLD"/>
+			<stat name="companion:hp:max" value="level:bard" requirements="ID_WOTC_UA20210608_ARCHETYPE_BARD_MAGE_OF_LOREHOLD"/>
+			<stat name="companion:hp:max" value="level:warlock" requirements="ID_WOTC_UA20210608_ARCHETYPE_WARLOCK_MAGE_OF_LOREHOLD"/>
+			<stat name="companion:hp:max" value="level:warlock" requirements="ID_WOTC_UA20210608_ARCHETYPE_WARLOCK_MAGE_OF_LOREHOLD"/>
+			<stat name="companion:hp:max" value="level:warlock" requirements="ID_WOTC_UA20210608_ARCHETYPE_WARLOCK_MAGE_OF_LOREHOLD"/>
+			<stat name="companion:hp:max" value="level:warlock" requirements="ID_WOTC_UA20210608_ARCHETYPE_WARLOCK_MAGE_OF_LOREHOLD"/>
+			<stat name="companion:hp:max" value="level:warlock" requirements="ID_WOTC_UA20210608_ARCHETYPE_WARLOCK_MAGE_OF_LOREHOLD"/>
+			<stat name="companion:hp:max" value="level:wizard" requirements="ID_WOTC_UA20210608_ARCHETYPE_WIZARD_MAGE_OF_LOREHOLD"/>
+			<stat name="companion:hp:max" value="level:wizard" requirements="ID_WOTC_UA20210608_ARCHETYPE_WIZARD_MAGE_OF_LOREHOLD"/>
+			<stat name="companion:hp:max" value="level:wizard" requirements="ID_WOTC_UA20210608_ARCHETYPE_WIZARD_MAGE_OF_LOREHOLD"/>
+			<stat name="companion:hp:max" value="level:wizard" requirements="ID_WOTC_UA20210608_ARCHETYPE_WIZARD_MAGE_OF_LOREHOLD"/>
+			<stat name="companion:hp:max" value="level:wizard" requirements="ID_WOTC_UA20210608_ARCHETYPE_WIZARD_MAGE_OF_LOREHOLD"/>
+			<stat name="companion:constitution:save:proficiency" value="proficiency" bonus="proficiency" />
+			<stat name="companion:intelligence:save:proficiency" value="proficiency" bonus="proficiency" />
+			<stat name="companion:wisdom:save:proficiency" value="proficiency" bonus="proficiency" />
+			<stat name="companion:history:proficiency" value="proficiency" bonus="proficiency" />
+			<stat name="companion:perception:proficiency" value="proficiency" bonus="proficiency" />
+			<stat name="companion:perception:proficiency" value="proficiency" bonus="double" />
+			<stat name="companion:speed" value="30" bonus="base" />
+			<grant type="Companion Trait" id="ID_WOTC_UA20210608_COMPANION_TRAIT_ANCIENT_COMPANION_ANCIENT_FORTITUDE" />
+			<grant type="Companion Trait" id="ID_WOTC_UA20210608_COMPANION_TRAIT_ANCIENT_COMPANION_SAGES_COUNSEL" />
+			<grant type="Companion Action" id="ID_WOTC_UA20210608_COMPANION_ACTION_ANCIENT_COMPANION_SPIRIT_STRIKE" />
+			<grant type="Companion Action" id="ID_WOTC_UA20210608_COMPANION_ACTION_ANCIENT_COMPANION_HEALERS_LIGHT" />
+			<grant type="Companion Reaction" id="ID_WOTC_UA20210608_COMPANION_REACTION_ANCIENT_COMPANION_WARRIORS_PROTECTION" />
+		</rules>
+	</element>
+
+	<element name="Healer" type="Companion Trait" source="Unearthed Arcana: Mages of Strixhaven" id="ID_WOTC_UA20210608_COMPANION_TRAIT_ANCIENT_COMPANION_HEALER">
+		<compendium display="false" />
+		<description>
+			<p>Whenever you finish a short or long rest, you can call forth and bond with one such spirit, who comes to inhabit a Medium, freestanding statue within 10 feet of you to serve as your ancient companion. See this creature’s game statistics in the Ancient Companion stat block, which uses your proficiency bonus (PB) in several places. When you bond with your ancient companion, choose the type of spirit you bond with: Healer, Sage, or Warrior. Your choice of spirit determines certain traits in its stat block. The statue determines the spirit’s appearance.</p>
+			<h5>Lessons of the Past</h5>
+			<p><em>Level 6+ Mage of Lorehold Feature</em></p>
+			<p style="text-indent: -1em; margin-left: 1em"><strong>Healer.</strong> Your hit point maximum increases by an amount equal to your level in this class, and you gain the same number of hit points. When you regain hit points from a spell, you regain an additional 1d8 hit points.</p>
+		</description>
+		<sheet display="false" />
+	</element>
+
+	<element name="Sage" type="Companion Trait" source="Unearthed Arcana: Mages of Strixhaven" id="ID_WOTC_UA20210608_COMPANION_TRAIT_ANCIENT_COMPANION_SAGE">
+		<compendium display="false" />
+		<description>
+			<p>Whenever you finish a short or long rest, you can call forth and bond with one such spirit, who comes to inhabit a Medium, freestanding statue within 10 feet of you to serve as your ancient companion. See this creature’s game statistics in the Ancient Companion stat block, which uses your proficiency bonus (PB) in several places. When you bond with your ancient companion, choose the type of spirit you bond with: Healer, Sage, or Warrior. Your choice of spirit determines certain traits in its stat block. The statue determines the spirit’s appearance.</p>
+			<h5>Lessons of the Past</h5>
+			<p><em>Level 6+ Mage of Lorehold Feature</em></p>
+			<p style="text-indent: -1em; margin-left: 1em"><strong>Sage.</strong> You have advantage on ability checks using the Arcana, History, Nature, and Religion skills. Additionally, once per turn, when you deal damage to a creature with a spell of 1st-level or higher, you can deal an additional 1d8 force damage to that creature.</p>
+		</description>
+		<sheet display="false" />
+	</element>
+
+	<element name="Warrior" type="Companion Trait" source="Unearthed Arcana: Mages of Strixhaven" id="ID_WOTC_UA20210608_COMPANION_TRAIT_ANCIENT_COMPANION_WARRIOR">
+		<compendium display="false" />
+		<description>
+			<p>Whenever you finish a short or long rest, you can call forth and bond with one such spirit, who comes to inhabit a Medium, freestanding statue within 10 feet of you to serve as your ancient companion. See this creature’s game statistics in the Ancient Companion stat block, which uses your proficiency bonus (PB) in several places. When you bond with your ancient companion, choose the type of spirit you bond with: Healer, Sage, or Warrior. Your choice of spirit determines certain traits in its stat block. The statue determines the spirit’s appearance.</p>
+			<h5>Lessons of the Past</h5>
+			<p><em>Level 6+ Mage of Lorehold Feature</em></p>
+			<p style="text-indent: -1em; margin-left: 1em"><strong>Warrior.</strong> If you use your action to cast a cantrip, you can make one weapon attack as part of that action. If that weapon attack hits, the target takes an additional 1d8 radiant damage.</p>
+		</description>
+		<sheet display="false" />
+	</element>
+
+	<element name="Ancient Fortitude" type="Companion Trait" source="Unearthed Arcana: Mages of Strixhaven" id="ID_WOTC_UA20210608_COMPANION_TRAIT_ANCIENT_COMPANION_ANCIENT_FORTITUDE">
+		<description>
+			<p>If damage reduces the companion to 0 hit points, it can make a Constitution saving throw with a DC of 5 + the damage taken, unless the damage is from a critical hit. On a success, the companion drops to 1 hit point instead.</p>
+		</description>
+		<sheet>
+			<description>If damage reduces the companion to 0 hit points, it can make a Constitution saving throw with a DC of 5 + the damage taken, unless the damage is from a critical hit. On a success, the companion drops to 1 hit point instead.</description>
+		</sheet>
+	</element>
+
+	<element name="Sage's Counsel (Sage Only)" type="Companion Trait" source="Unearthed Arcana: Mages of Strixhaven" id="ID_WOTC_UA20210608_COMPANION_TRAIT_ANCIENT_COMPANION_SAGES_COUNSEL">
+		<requirements>ID_WOTC_UA20210608_COMPANION_TRAIT_ANCIENT_COMPANION_SAGE</requirements>
+		<description>
+			<p>While within 15 feet of the companion, you and your allies gain a +2 bonus to Intelligence and Wisdom checks.</p>
+		</description>
+		<sheet alt="Sage's Counsel">
+			<description>While within 15 feet of the companion, you and your allies gain a +2 bonus to Intelligence and Wisdom checks.</description>
+		</sheet>
+	</element>
+
+	<element name="Spirit Strike" type="Companion Action" source="Unearthed Arcana: Mages of Strixhaven" id="ID_WOTC_UA20210608_COMPANION_ACTION_ANCIENT_COMPANION_SPIRIT_STRIKE">
+		<description>
+			<p><i>Melee Weapon Attack:</i> your spell attack modifier to hit, reach 5 ft., one target you can see. Hit:1d8 + 2 + PB force damage.</p>
+		</description>
+		<sheet>
+			<description><i>Melee Weapon Attack:</i> your spell attack modifier to hit, reach 5 ft., one target you can see. Hit:1d8 + 2 + PB force damage.</description>
+		</sheet>
+	</element>
+
+	<element name="Healer's Light (Healer Only)" type="Companion Action" source="Unearthed Arcana: Mages of Strixhaven" id="ID_WOTC_UA20210608_COMPANION_ACTION_ANCIENT_COMPANION_HEALERS_LIGHT">
+		<requirements>ID_WOTC_UA20210608_COMPANION_TRAIT_ANCIENT_COMPANION_HEALER</requirements>
+		<description>
+			<p>The companion chooses a creature it can see within 15 feet of itself and flares with invigorating light. The creature gains 1d8 + PB temporary hit points.</p>
+		</description>
+		<sheet>
+			<description>The companion chooses a creature it can see within 15 feet of itself and flares with invigorating light. The creature gains 1d8 + PB temporary hit points.</description>
+		</sheet>
+	</element>
+
+	<element name="Warrior's Protection (Warrior Only)" type="Companion Reaction" source="Unearthed Arcana: Mages of Strixhaven" id="ID_WOTC_UA20210608_COMPANION_REACTION_ANCIENT_COMPANION_WARRIORS_PROTECTION">
+		<requirements>ID_WOTC_UA20210608_COMPANION_TRAIT_ANCIENT_COMPANION_WARRIOR</requirements>
+		<description>
+			<p>When a creature within 5 feet of the companion makes a Strength or Dexterity saving throw, the companion imposes itself between the creature and the danger. The creature can roll a d4 and add the number rolled to the saving throw.</p>
+		</description>
+		<sheet>
+			<description>When a creature within 5 feet of the companion makes a Strength or Dexterity saving throw, the companion imposes itself between the creature and the danger. The creature can roll a d4 and add the number rolled to the saving throw.</description>
+		</sheet>
+	</element>
+
+	<!-- Mage of Prismari -->
+	<!-- Druid Specific Elements-->
+	<element name="Mage of Prismari" type="Archetype" source="Unearthed Arcana: Mages of Strixhaven" id="ID_WOTC_UA20210608_ARCHETYPE_DRUID_MAGE_OF_PRISMARI">
+		<supports>Druid Circle</supports>
+		<requirements>!ID_WOTC_UA20210608_ARCHETYPE_SORCERER_MAGE_OF_PRISMARI,!ID_WOTC_UA20210608_ARCHETYPE_WIZARD_MAGE_OF_PRISMARI</requirements>
+		<description>
+			<p><em>Druid, Sorcerer, and Wizard Subclass</em></p>
+			<p>Mages of Prismari use surges of elemental energy to express who they are and how they see the world. To them, magic and motion are one and the same;  both are exhibitions of raw creativity through which masterpieces are made. In their pursuit of the arts, some Prismari mages focus on perfecting the fine details of their technique, while others prefer to unleash their wild creative visions in dazzling spectacles of elemental power.</p>
+			<h5>USING THIS SUBCLASS</h5>
+			<p>Upon selecting the Mage of Prismari subclass, you gain two features: Creative Skills and Kinetic Artistry.</p>
+			<p class="indent">In this subclass’s features, any reference to your class refers to the class from which you gained the subclass. If you’re a druid, the College of Prismari counts as your circle; if you’re a sorcerer, the magic of the college is the origin of your sorcery; and if you’re a wizard, the college represents your arcane tradition.</p>
+			<p class="indent">When you subsequently reach a level in your class that gives you a subclass feature, you gain one feature of your choice from the options presented here. Each feature has a class level prerequisite, as noted beneath its name. You must meet that prerequisite to gain the feature.</p>
+			<div element="ID_WOTC_UA20210608_ARCHETYPE_FEATURE_MAGE_OF_PRISMARI_CREATIVE_SKILLS" />
+			<div element="ID_WOTC_UA20210608_ARCHETYPE_FEATURE_MAGE_OF_PRISMARI_KINETIC_ARTISTRY" />
+			<div element="ID_WOTC_UA20210608_ARCHETYPE_FEATURE_MAGE_OF_PRISMARI_FAVORED_MEDIUM" />
+			<div element="ID_WOTC_UA20210608_ARCHETYPE_FEATURE_MAGE_OF_PRISMARI_FOCUSED_EXPRESSION" />
+			<div element="ID_WOTC_UA20210608_ARCHETYPE_FEATURE_MAGE_OF_PRISMARI_IMPECCABLE_PHYSICALITY" />
+		</description>
+		<sheet display="false">
+			<description>Mages of Prismari use surges of elemental energy to express who they are and how they see the world.</description>
+		</sheet>
+		<rules>
+			<grant type="Archetype Feature" id="ID_WOTC_UA20210608_ARCHETYPE_FEATURE_MAGE_OF_PRISMARI_CREATIVE_SKILLS" />
+			<grant type="Archetype Feature" id="ID_WOTC_UA20210608_ARCHETYPE_FEATURE_MAGE_OF_PRISMARI_KINETIC_ARTISTRY" />
+			<grant type="Archetype Feature" id="ID_WOTC_UA20210608_ARCHETYPE_FEATURE_MAGE_OF_PRISMARI_FAVORED_MEDIUM" level="6" />
+			<grant type="Archetype Feature" id="ID_WOTC_UA20210608_ARCHETYPE_FEATURE_MAGE_OF_PRISMARI_FOCUSED_EXPRESSION" level="10" />
+			<grant type="Archetype Feature" id="ID_WOTC_UA20210608_ARCHETYPE_FEATURE_MAGE_OF_PRISMARI_IMPECCABLE_PHYSICALITY" level="14" />
+		</rules>
+	</element>
+
+	<!-- Sorcerer Specific Elements-->
+	<element name="Mage of Prismari" type="Archetype" source="Unearthed Arcana: Mages of Strixhaven" id="ID_WOTC_UA20210608_ARCHETYPE_SORCERER_MAGE_OF_PRISMARI">
+		<supports>Sorcerous Origin</supports>
+		<requirements>!ID_WOTC_UA20210608_ARCHETYPE_DRUID_MAGE_OF_PRISMARI,!ID_WOTC_UA20210608_ARCHETYPE_WIZARD_MAGE_OF_PRISMARI</requirements>
+		<compendium display="false" />
+		<description>
+			<p><em>Druid, Sorcerer, and Wizard Subclass</em></p>
+			<p>Mages of Prismari use surges of elemental energy to express who they are and how they see the world. To them, magic and motion are one and the same;  both are exhibitions of raw creativity through which masterpieces are made. In their pursuit of the arts, some Prismari mages focus on perfecting the fine details of their technique, while others prefer to unleash their wild creative visions in dazzling spectacles of elemental power.</p>
+			<h5>USING THIS SUBCLASS</h5>
+			<p>Upon selecting the Mage of Prismari subclass, you gain two features: Creative Skills and Kinetic Artistry.</p>
+			<p class="indent">In this subclass’s features, any reference to your class refers to the class from which you gained the subclass. If you’re a druid, the College of Prismari counts as your circle; if you’re a sorcerer, the magic of the college is the origin of your sorcery; and if you’re a wizard, the college represents your arcane tradition.</p>
+			<p class="indent">When you subsequently reach a level in your class that gives you a subclass feature, you gain one feature of your choice from the options presented here. Each feature has a class level prerequisite, as noted beneath its name. You must meet that prerequisite to gain the feature.</p>
+			<div element="ID_WOTC_UA20210608_ARCHETYPE_FEATURE_MAGE_OF_PRISMARI_CREATIVE_SKILLS" />
+			<div element="ID_WOTC_UA20210608_ARCHETYPE_FEATURE_MAGE_OF_PRISMARI_KINETIC_ARTISTRY" />
+			<div element="ID_WOTC_UA20210608_ARCHETYPE_FEATURE_MAGE_OF_PRISMARI_FAVORED_MEDIUM" />
+			<div element="ID_WOTC_UA20210608_ARCHETYPE_FEATURE_MAGE_OF_PRISMARI_FOCUSED_EXPRESSION" />
+			<div element="ID_WOTC_UA20210608_ARCHETYPE_FEATURE_MAGE_OF_PRISMARI_IMPECCABLE_PHYSICALITY" />
+		</description>
+		<sheet display="false">
+			<description>Mages of Prismari use surges of elemental energy to express who they are and how they see the world.</description>
+		</sheet>
+		<rules>
+			<grant type="Archetype Feature" id="ID_WOTC_UA20210608_ARCHETYPE_FEATURE_MAGE_OF_PRISMARI_CREATIVE_SKILLS" />
+			<grant type="Archetype Feature" id="ID_WOTC_UA20210608_ARCHETYPE_FEATURE_MAGE_OF_PRISMARI_KINETIC_ARTISTRY" />
+			<grant type="Archetype Feature" id="ID_WOTC_UA20210608_ARCHETYPE_FEATURE_MAGE_OF_PRISMARI_FAVORED_MEDIUM" level="6" />
+			<select type="Archetype Feature" name="4th Feature (Mage of Prismari)" supports="ID_WOTC_UA20210608_ARCHETYPE_FEATURE_MAGE_OF_PRISMARI_FOCUSED_EXPRESSION|ID_WOTC_UA20210608_ARCHETYPE_FEATURE_MAGE_OF_PRISMARI_IMPECCABLE_PHYSICALITY" level="14" />
+			<grant type="Archetype Feature" id="ID_WOTC_UA20210608_ARCHETYPE_FEATURE_MAGE_OF_PRISMARI_FOCUSED_EXPRESSION" level="18" requirements="ID_WOTC_UA20210608_ARCHETYPE_FEATURE_MAGE_OF_PRISMARI_IMPECCABLE_PHYSICALITY"/>
+			<grant type="Archetype Feature" id="ID_WOTC_UA20210608_ARCHETYPE_FEATURE_MAGE_OF_PRISMARI_IMPECCABLE_PHYSICALITY" level="18" requirements="ID_WOTC_UA20210608_ARCHETYPE_FEATURE_MAGE_OF_PRISMARI_FOCUSED_EXPRESSION"/>
+		</rules>
+	</element>
+
+	<!-- Wizard Specific Elements -->
+	<element name="Mage of Prismari" type="Archetype" source="Unearthed Arcana: Mages of Strixhaven" id="ID_WOTC_UA20210608_ARCHETYPE_WIZARD_MAGE_OF_PRISMARI">
+		<supports>Arcane Tradition</supports>
+		<requirements>!ID_WOTC_UA20210608_ARCHETYPE_DRUID_MAGE_OF_PRISMARI,!ID_WOTC_UA20210608_ARCHETYPE_SORCERER_MAGE_OF_PRISMARI</requirements>
+		<compendium display="false" />
+		<description>
+			<p><em>Druid, Sorcerer, and Wizard Subclass</em></p>
+			<p>Mages of Prismari use surges of elemental energy to express who they are and how they see the world. To them, magic and motion are one and the same;  both are exhibitions of raw creativity through which masterpieces are made. In their pursuit of the arts, some Prismari mages focus on perfecting the fine details of their technique, while others prefer to unleash their wild creative visions in dazzling spectacles of elemental power.</p>
+			<h5>USING THIS SUBCLASS</h5>
+			<p>Upon selecting the Mage of Prismari subclass, you gain two features: Creative Skills and Kinetic Artistry.</p>
+			<p class="indent">In this subclass’s features, any reference to your class refers to the class from which you gained the subclass. If you’re a druid, the College of Prismari counts as your circle; if you’re a sorcerer, the magic of the college is the origin of your sorcery; and if you’re a wizard, the college represents your arcane tradition.</p>
+			<p class="indent">When you subsequently reach a level in your class that gives you a subclass feature, you gain one feature of your choice from the options presented here. Each feature has a class level prerequisite, as noted beneath its name. You must meet that prerequisite to gain the feature.</p>
+			<div element="ID_WOTC_UA20210608_ARCHETYPE_FEATURE_MAGE_OF_PRISMARI_CREATIVE_SKILLS" />
+			<div element="ID_WOTC_UA20210608_ARCHETYPE_FEATURE_MAGE_OF_PRISMARI_KINETIC_ARTISTRY" />
+			<div element="ID_WOTC_UA20210608_ARCHETYPE_FEATURE_MAGE_OF_PRISMARI_FAVORED_MEDIUM" />
+			<div element="ID_WOTC_UA20210608_ARCHETYPE_FEATURE_MAGE_OF_PRISMARI_FOCUSED_EXPRESSION" />
+			<div element="ID_WOTC_UA20210608_ARCHETYPE_FEATURE_MAGE_OF_PRISMARI_IMPECCABLE_PHYSICALITY" />
+		</description>
+		<sheet display="false">
+			<description>Mages of Prismari use surges of elemental energy to express who they are and how they see the world.</description>
+		</sheet>
+		<rules>
+			<grant type="Archetype Feature" id="ID_WOTC_UA20210608_ARCHETYPE_FEATURE_MAGE_OF_PRISMARI_CREATIVE_SKILLS" />
+			<grant type="Archetype Feature" id="ID_WOTC_UA20210608_ARCHETYPE_FEATURE_MAGE_OF_PRISMARI_KINETIC_ARTISTRY" />
+			<grant type="Archetype Feature" id="ID_WOTC_UA20210608_ARCHETYPE_FEATURE_MAGE_OF_PRISMARI_FAVORED_MEDIUM" level="6" />
+			<grant type="Archetype Feature" id="ID_WOTC_UA20210608_ARCHETYPE_FEATURE_MAGE_OF_PRISMARI_FOCUSED_EXPRESSION" level="10" />
+			<grant type="Archetype Feature" id="ID_WOTC_UA20210608_ARCHETYPE_FEATURE_MAGE_OF_PRISMARI_IMPECCABLE_PHYSICALITY" level="14" />
+		</rules>
+	</element>
+
+	<!-- Mage of Prismari General Elements -->
+	<element name="Creative Skills" type="Archetype Feature" source="Unearthed Arcana: Mages of Strixhaven" id="ID_WOTC_UA20210608_ARCHETYPE_FEATURE_MAGE_OF_PRISMARI_CREATIVE_SKILLS">
+		<description>
+			<p><em>Level 1+ Mage of Prismari Feature</em></p>
+			<p>You gain proficiency in two of the following skills of your choice: Acrobatics, Athletics, Nature, or Performance.</p>
+		</description>
+		<sheet display="false" />
+		<rules>
+			<select type="Proficiency" name="Skills Proficiency (Creative Skills)" number="2" supports="ID_PROFICIENCY_SKILL_ACROBATICS|ID_PROFICIENCY_SKILL_ATHLETICS|ID_PROFICIENCY_SKILL_NATURE|ID_PROFICIENCY_SKILL_PERFORMANCE"/>
+		</rules>
+	</element>
+
+	<element name="Kinetic Artistry" type="Archetype Feature" source="Unearthed Arcana: Mages of Strixhaven" id="ID_WOTC_UA20210608_ARCHETYPE_FEATURE_MAGE_OF_PRISMARI_KINETIC_ARTISTRY">
+		<description>
+			<p><em>Level 1+ Mage of Prismari Feature</em></p>
+			<p>You can Dash as a bonus action. When you take this bonus action, choose one of the following additional effects:</p>
+			<p style="text-indent: -1em; margin-left: 1em"><strong>Boreal Sweep.</strong> Icy water swirls around you. Until the end of your turn, you can move across the surface of water as if it were harmless solid ground. Additionally, when you leave a space within 5 feet of a creature, you can force that creature to make a Strength saving throw against your spell save DC. On a failed save, the creature is knocked prone. A creature can be affected by the water only once each turn.</p>
+			<p style="text-indent: -1em; margin-left: 1em"><strong>Scorching Whirl.</strong> Flames wreath your steps. Once before the end of your turn, you can force each creature within 5 feet of you to make a Dexterity saving throw against your spell save DC. On a failure, a creature takes fire damage equal to 1d4 + your spellcasting modifier.</p>
+			<p style="text-indent: -1em; margin-left: 1em"><strong>Thunderlight Jaunt.</strong> You take on a nimble lightning form. Until the end of your turn, you can move through the space of other creatures, and you do not provoke opportunity attacks. If you end your turn inside a creature’s space, you are pushed into the nearest unoccupied space.</p>
+			<p>You can use a bonus action in this way a number of times equal to your proficiency bonus, and you regain all expended uses when you finish a long rest.</p>
+		</description>
+		<sheet action="Bonus Action" usage="{{proficiency}}/Long Rest">
+			<description>You can Dash and when you do so, choose one of the following additional effects: &#13;
+			• Boreal Sweep. Icy water swirls around you. Until the end of your turn, you can move across the surface of water as if it were harmless solid ground. Additionally, when you leave a space within 5 feet of a creature, you can force that creature to make a Strength saving throw against DC{{ua:kinetic artistry:dc}}. On a failed save, the creature is knocked prone. A creature can be affected by the water only once each turn. &#13;
+			• Scorching Whirl. Flames wreath your steps. Once before the end of your turn, you can force each creature within 5 feet of you to make a Dexterity saving throw against DC{{ua:kinetic artistry:dc}}. On a failure, a creature takes fire damage equal to 1d4 + {{ua:kinetic artistry:ability}}. &#13;
+			• Thunderlight Jaunt. You take on a nimble lightning form. Until the end of your turn, you can move through the space of other creatures, and you do not provoke opportunity attacks. If you end your turn inside a creature’s space, you are pushed into the nearest unoccupied space.</description>
+		</sheet>
+		<rules>
+			<stat name="ua:kinetic artistry:dc" value="druid:spellcasting:dc" bonus="class" requirements="ID_WOTC_UA20210608_ARCHETYPE_DRUID_MAGE_OF_PRISMARI"/>
+			<stat name="ua:kinetic artistry:dc" value="sorcerer:spellcasting:dc" bonus="class" requirements="ID_WOTC_UA20210608_ARCHETYPE_SORCERER_MAGE_OF_PRISMARI"/>
+			<stat name="ua:kinetic artistry:dc" value="wizard:spellcasting:dc" bonus="class" requirements="ID_WOTC_UA20210608_ARCHETYPE_WIZARD_MAGE_OF_PRISMARI"/>
+			<stat name="ua:kinetic artistry:ability" value="wisdom:modifier" bonus="ability" requirements="ID_WOTC_UA20210608_ARCHETYPE_DRUID_MAGE_OF_PRISMARI"/>
+			<stat name="ua:kinetic artistry:ability" value="charisma:modifier" bonus="ability" requirements="ID_WOTC_UA20210608_ARCHETYPE_SORCERER_MAGE_OF_PRISMARI"/>
+			<stat name="ua:kinetic artistry:ability" value="intelligence:modifier" bonus="ability" requirements="ID_WOTC_UA20210608_ARCHETYPE_WIZARD_MAGE_OF_PRISMARI"/>
+		</rules>
+	</element>
+
+	<element name="Favored Medium" type="Archetype Feature" source="Unearthed Arcana: Mages of Strixhaven" id="ID_WOTC_UA20210608_ARCHETYPE_FEATURE_MAGE_OF_PRISMARI_FAVORED_MEDIUM">
+		<description>
+			<p><em>Level 6+ Mage of Prismari Feature</em></p>
+			<p>You have honed your forms of elemental expression to best suit your ideas. Choose one of the following damage types: cold, fire, or lightning. You gain resistance to that damage type.</p>
+			<p class="indent">Additionally, when you cast a spell using a spell slot that deals the chosen damage type, you emit a spectacular aura of artistry, which extends 5 feet from you in every direction (but not through total cover) and lasts until the end of your next turn. While the aura is active, each creature of your choice has resistance to your chosen damage type while within the aura, as you shape your favored elemental medium around them.</p>
+			<p class="indent">You can change your choice of damage type whenever you finish a long rest.</p>
+		</description>
+		<sheet>
+			<description>Whenever you finish a long rest, choose one of the following damage types: cold, fire, or lightning. You gain resistance to that damage type. Additionally, when you cast a spell using a spell slot that deals the chosen damage type, you emit a spectacular aura of artistry, which extends 5 feet from you in every direction (but not through total cover) and lasts until the end of your next turn. While the aura is active, each creature of your choice has resistance to your chosen damage type while within the aura, as you shape your favored elemental medium around them.</description>
+		</sheet>
+	</element>
+
+	<element name="Focused Expression" type="Archetype Feature" source="Unearthed Arcana: Mages of Strixhaven" id="ID_WOTC_UA20210608_ARCHETYPE_FEATURE_MAGE_OF_PRISMARI_FOCUSED_EXPRESSION">
+		<description>
+			<p><em>Level 10+ Mage of Prismari Feature</em></p>
+			<p>Honing your talents, you skillfully infuse your motions with even more potent expressions of elemental might. Once per turn when you deal damage to at least one target, you gain an additional effect determined by the damage type chosen for your Favored Medium feature:</p>
+			<p style="text-indent: -1em; margin-left: 1em"><strong>Cold.</strong> One of the targets of your choice takes an additional 1d6 cold damage and must make a Constitution saving throw against your spell save DC. On a failed save, the target’s speed is reduced by 10 feet until the end of its next turn, as ice mires it. A target can be affected by the ice only once per round.</p>
+			<p style="text-indent: -1em; margin-left: 1em"><strong>Fire.</strong> One of the targets of your choice takes an additional 1d6 fire damage. Fortifying flames then dance around one creature of your choice within 30 feet of you. The chosen creature gains 1d6 temporary hit points.</p>
+			<p style="text-indent: -1em; margin-left: 1em"><strong>Lightning.</strong> One of the targets of your choice takes an additional 1d6 lightning damage and must make a Dexterity saving throw against your spell save DC. On a failed save, the target is unable to take reactions until the end of its next turn, as residual lightning shocks its form.</p>
+		</description>
+		<sheet usage="1/Turn">
+			<description>When you deal damage to at least one target, you gain an additional effect determined by the damage type chosen for your Favored Medium feature: &#13;
+			• Cold. One of the targets of your choice takes an additional 1d6 cold damage and must make a Constitution saving throw against DC{{ua:focused expression:dc}}. On a failed save, the target’s speed is reduced by 10 feet until the end of its next turn, as ice mires it. A target can be affected by the ice only once per round. &#13;
+			• Fire. One of the targets of your choice takes an additional 1d6 fire damage. Fortifying flames then dance around one creature of your choice within 30 feet of you. The chosen creature gains 1d6 temporary hit points. &#13;
+			• Lightning. One of the targets of your choice takes an additional 1d6 lightning damage and must make a Dexterity saving throw against DC{{ua:focused expression:dc}}. On a failed save, the target is unable to take reactions until the end of its next turn, as residual lightning shocks its form.</description>
+		</sheet>
+		<rules>
+			<stat name="ua:focused expression:dc" value="druid:spellcasting:dc" bonus="class" requirements="ID_WOTC_UA20210608_ARCHETYPE_DRUID_MAGE_OF_PRISMARI"/>
+			<stat name="ua:focused expression:dc" value="sorcerer:spellcasting:dc" bonus="class" requirements="ID_WOTC_UA20210608_ARCHETYPE_SORCERER_MAGE_OF_PRISMARI"/>
+			<stat name="ua:focused expression:dc" value="wizard:spellcasting:dc" bonus="class" requirements="ID_WOTC_UA20210608_ARCHETYPE_WIZARD_MAGE_OF_PRISMARI"/>
+		</rules>
+	</element>
+
+	<element name="Impeccable Physicality" type="Archetype Feature" source="Unearthed Arcana: Mages of Strixhaven" id="ID_WOTC_UA20210608_ARCHETYPE_FEATURE_MAGE_OF_PRISMARI_IMPECCABLE_PHYSICALITY">
+		<description>
+			<p><em>Level 14+ Mage of Prismari Feature</em></p>
+			<p>Your relentless dedication and training have instilled an outstanding sense of precision and grace in your art. You gain proficiency in Dexterity saving throws if you do not already have it. Additionally, when you make a Dexterity saving throw, you can treat a d20 roll of a 9 or lower as a 10.</p>
+		</description>
+		<sheet>
+			<description>When you make a Dexterity saving throw, you can treat a d20 roll of a 9 or lower as a 10.</description>
+		</sheet>
+		<rules>
+			<grant type="Proficiency" id="ID_PROFICIENCY_SAVINGTHROW_DEXTERITY" />
+		</rules>
+	</element>
+
+	<!-- Mage of Quandrix -->
+	<!-- Sorcerer Specific Elements-->
+	<element name="Mage of Quandrix" type="Archetype" source="Unearthed Arcana: Mages of Strixhaven" id="ID_WOTC_UA20210608_ARCHETYPE_SORCERER_MAGE_OF_QUANDRIX">
+		<supports>Sorcerous Origin</supports>
+		<requirements>!ID_WOTC_UA20210608_ARCHETYPE_WIZARD_MAGE_OF_QUANDRIX</requirements>
+		<description>
+			<p><em>Sorcerer and Wizard Subclass</em></p>
+			<p>For those who become Mages of Quandrix, math and magic go hand-in-hand. Such individuals learn to break down natural phenomena into their core numerical components and, through manipulating those, alter reality on a whim. Their talents range from tangible physics, like multiplying plant growth and redistributing elements of probability and acceleration, to bizarrely theoretical exercises that warp the fundamentals of space and self.</p>
+			<h5>USING THIS SUBCLASS</h5>
+			<p>Upon selecting the Mage of Quandrix subclass, you gain two features: Quandrix Spells andFunctions of Probability.</p>
+			<p class="indent">In this subclass’s features, any reference to your class refers to the class from which you gained the subclass. If you’re a sorcerer, the magic of Quandrix is part of your sorcerous origin, and if you’re a wizard, the college represents your arcane tradition.</p>
+			<p class="indent">When you subsequently reach a level in your class that gives you a subclass feature, you gain one feature of your choice from the options presented here. Each feature has a class level prerequisite, as noted beneath its name. You must meet that prerequisite to gain the feature.</p>
+			<div element="ID_WOTC_UA20210608_ARCHETYPE_FEATURE_MAGE_OF_QUANDRIX_QUANDRIX_SPELLS_SORCERER" />
+			<div element="ID_WOTC_UA20210608_ARCHETYPE_FEATURE_MAGE_OF_QUANDRIX_FUNCTIONS_OF_PROBABILITY" />
+			<div element="ID_WOTC_UA20210608_ARCHETYPE_FEATURE_MAGE_OF_QUANDRIX_VELOCITY_SHIFT" />
+			<div element="ID_WOTC_UA20210608_ARCHETYPE_FEATURE_MAGE_OF_QUANDRIX_NULL_EQUATION" />
+			<div element="ID_WOTC_UA20210608_ARCHETYPE_FEATURE_MAGE_OF_QUANDRIX_QUANTUM_TUNNELING" />
+		</description>
+		<sheet display="false">
+			<description>For those who become Mages of Quandrix, math and magic go hand-in-hand.</description>
+		</sheet>
+		<rules>
+			<grant type="Archetype Feature" id="ID_WOTC_UA20210608_ARCHETYPE_FEATURE_MAGE_OF_QUANDRIX_QUANDRIX_SPELLS_SORCERER" />
+			<grant type="Archetype Feature" id="ID_WOTC_UA20210608_ARCHETYPE_FEATURE_MAGE_OF_QUANDRIX_FUNCTIONS_OF_PROBABILITY" />
+			<grant type="Archetype Feature" id="ID_WOTC_UA20210608_ARCHETYPE_FEATURE_MAGE_OF_QUANDRIX_VELOCITY_SHIFT" level="6" />
+			<select type="Archetype Feature" name="4th Feature (Mage of Quandrix)" supports="ID_WOTC_UA20210608_ARCHETYPE_FEATURE_MAGE_OF_QUANDRIX_NULL_EQUATION|ID_WOTC_UA20210608_ARCHETYPE_FEATURE_MAGE_OF_QUANDRIX_QUANTUM_TUNNELING" level="14" />
+			<grant type="Archetype Feature" id="ID_WOTC_UA20210608_ARCHETYPE_FEATURE_MAGE_OF_QUANDRIX_NULL_EQUATION" level="18" requirements="ID_WOTC_UA20210608_ARCHETYPE_FEATURE_MAGE_OF_QUANDRIX_QUANTUM_TUNNELING"/>
+			<grant type="Archetype Feature" id="ID_WOTC_UA20210608_ARCHETYPE_FEATURE_MAGE_OF_QUANDRIX_QUANTUM_TUNNELING" level="18" requirements="ID_WOTC_UA20210608_ARCHETYPE_FEATURE_MAGE_OF_QUANDRIX_NULL_EQUATION"/>
+		</rules>
+	</element>
+
+	<element name="Quandrix Spells" type="Archetype Feature" source="Unearthed Arcana: Mages of Strixhaven" id="ID_WOTC_UA20210608_ARCHETYPE_FEATURE_MAGE_OF_QUANDRIX_QUANDRIX_SPELLS_SORCERER">
+		<description>
+			<p><em>Level 1+ Mage of Quandrix Feature</em></p>
+			<p>You learn the cantrip <i>guidance</i> and the 1st-level spell <i>guiding bolt</i>. You learn additional spells when you reach certain levels in this class, as shown on the Quandrix Spells table.</p>
+			<p class="indent">Each of these spells counts as a class spell for you, but it doesn’t count against the number of spells you know. If you are a wizard, you can add these spells to your spellbook upon learning them, without expending any gold, and prepare them as normal.</p>
+			<h5>Quandrix Spells</h5>
+			<table>
+				<thead>
+					<tr><td>Class Level</td><td class="left">Spells</td></tr>
+				</thead>
+				<tr><td>3rd</td><td class="left"><i>enlarge/reduce, spike growth</i></td></tr>
+				<tr><td>5th</td><td class="left"><i>aura of vitality, haste</i></td></tr>
+				<tr><td>7th</td><td class="left"><i>control water, freedom of movement</i></td></tr>
+				<tr><td>9th</td><td class="left"><i>circle of power, passwall</i></td></tr>
+			</table>
+		</description>
+		<sheet display="false" />
+		<rules>
+			<grant type="Spell" id="ID_PHB_SPELL_GUIDANCE" spellcasting="Sorcerer" />
+			<grant type="Spell" id="ID_PHB_SPELL_GUIDING_BOLT" spellcasting="Sorcerer" />
+			<grant type="Spell" id="ID_PHB_SPELL_ENLARGE_REDUCE" level="3" spellcasting="Sorcerer" />
+			<grant type="Spell" id="ID_PHB_SPELL_SPIKE_GROWTH" level="3" spellcasting="Sorcerer" />
+			<grant type="Spell" id="ID_PHB_SPELL_AURA_OF_VITALITY" level="5" spellcasting="Sorcerer" />
+			<grant type="Spell" id="ID_PHB_SPELL_HASTE" level="5" spellcasting="Sorcerer" />
+			<grant type="Spell" id="ID_PHB_SPELL_CONTROL_WATER" level="7" spellcasting="Sorcerer" />
+			<grant type="Spell" id="ID_PHB_SPELL_FREEDOM_OF_MOVEMENT" level="7" spellcasting="Sorcerer" />
+			<grant type="Spell" id="ID_PHB_SPELL_CIRCLE_OF_POWER" level="9" spellcasting="Sorcerer" />
+			<grant type="Spell" id="ID_PHB_SPELL_PASSWALL" level="9" spellcasting="Sorcerer" />
+		</rules>
+	</element>
+
+	<!-- Wizard Specific Elements -->
+	<element name="Mage of Quandrix" type="Archetype" source="Unearthed Arcana: Mages of Strixhaven" id="ID_WOTC_UA20210608_ARCHETYPE_WIZARD_MAGE_OF_QUANDRIX">
+		<supports>Arcane Tradition</supports>
+		<requirements>!ID_WOTC_UA20210608_ARCHETYPE_SORCERER_MAGE_OF_QUANDRIX</requirements>
+		<compendium display="false" />
+		<description>
+			<p><em>Sorcerer and Wizard Subclass</em></p>
+			<p>For those who become Mages of Quandrix, math and magic go hand-in-hand. Such individuals learn to break down natural phenomena into their core numerical components and, through manipulating those, alter reality on a whim. Their talents range from tangible physics, like multiplying plant growth and redistributing elements of probability and acceleration, to bizarrely theoretical exercises that warp the fundamentals of space and self.</p>
+			<h5>USING THIS SUBCLASS</h5>
+			<p>Upon selecting the Mage of Quandrix subclass, you gain two features: Quandrix Spells andFunctions of Probability.</p>
+			<p class="indent">In this subclass’s features, any reference to your class refers to the class from which you gained the subclass. If you’re a sorcerer, the magic of Quandrix is part of your sorcerous origin, and if you’re a wizard, the college represents your arcane tradition.</p>
+			<p class="indent">When you subsequently reach a level in your class that gives you a subclass feature, you gain one feature of your choice from the options presented here. Each feature has a class level prerequisite, as noted beneath its name. You must meet that prerequisite to gain the feature.</p>
+			<div element="ID_WOTC_UA20210608_ARCHETYPE_FEATURE_MAGE_OF_QUANDRIX_QUANDRIX_SPELLS_WIZARD" />
+			<div element="ID_WOTC_UA20210608_ARCHETYPE_FEATURE_MAGE_OF_QUANDRIX_FUNCTIONS_OF_PROBABILITY" />
+			<div element="ID_WOTC_UA20210608_ARCHETYPE_FEATURE_MAGE_OF_QUANDRIX_VELOCITY_SHIFT" />
+			<div element="ID_WOTC_UA20210608_ARCHETYPE_FEATURE_MAGE_OF_QUANDRIX_NULL_EQUATION" />
+			<div element="ID_WOTC_UA20210608_ARCHETYPE_FEATURE_MAGE_OF_QUANDRIX_QUANTUM_TUNNELING" />
+		</description>
+		<sheet display="false">
+			<description>For those who become Mages of Quandrix, math and magic go hand-in-hand.</description>
+		</sheet>
+		<rules>
+			<grant type="Archetype Feature" id="ID_WOTC_UA20210608_ARCHETYPE_FEATURE_MAGE_OF_QUANDRIX_QUANDRIX_SPELLS_WIZARD" />
+			<grant type="Archetype Feature" id="ID_WOTC_UA20210608_ARCHETYPE_FEATURE_MAGE_OF_QUANDRIX_FUNCTIONS_OF_PROBABILITY" />
+			<grant type="Archetype Feature" id="ID_WOTC_UA20210608_ARCHETYPE_FEATURE_MAGE_OF_QUANDRIX_VELOCITY_SHIFT" level="6" />
+			<grant type="Archetype Feature" id="ID_WOTC_UA20210608_ARCHETYPE_FEATURE_MAGE_OF_QUANDRIX_NULL_EQUATION" level="10" />
+			<grant type="Archetype Feature" id="ID_WOTC_UA20210608_ARCHETYPE_FEATURE_MAGE_OF_QUANDRIX_QUANTUM_TUNNELING" level="14" />
+		</rules>
+	</element>
+
+	<element name="Quandrix Spells" type="Archetype Feature" source="Unearthed Arcana: Mages of Strixhaven" id="ID_WOTC_UA20210608_ARCHETYPE_FEATURE_MAGE_OF_QUANDRIX_QUANDRIX_SPELLS_WIZARD">
+		<compendium display="false" />
+		<description>
+			<p><em>Level 1+ Mage of Quandrix Feature</em></p>
+			<p>You learn the cantrip <i>guidance</i> and the 1st-level spell <i>guiding bolt</i>. You learn additional spells when you reach certain levels in this class, as shown on the Quandrix Spells table.</p>
+			<p class="indent">Each of these spells counts as a class spell for you, but it doesn’t count against the number of spells you know. If you are a wizard, you can add these spells to your spellbook upon learning them, without expending any gold, and prepare them as normal.</p>
+			<h5>Quandrix Spells</h5>
+			<table>
+				<thead>
+					<tr><td>Class Level</td><td class="left">Spells</td></tr>
+				</thead>
+				<tr><td>3rd</td><td class="left"><i>enlarge/reduce, spike growth</i></td></tr>
+				<tr><td>5th</td><td class="left"><i>aura of vitality, haste</i></td></tr>
+				<tr><td>7th</td><td class="left"><i>control water, freedom of movement</i></td></tr>
+				<tr><td>9th</td><td class="left"><i>circle of power, passwall</i></td></tr>
+			</table>
+		</description>
+		<sheet display="false" />
+		<rules>
+			<grant type="Spell" id="ID_PHB_SPELL_GUIDANCE" spellcasting="Wizard" />
+			<grant type="Spell" id="ID_PHB_SPELL_GUIDING_BOLT" spellcasting="Wizard" />
+			<grant type="Spell" id="ID_PHB_SPELL_ENLARGE_REDUCE" level="3" spellcasting="Wizard" />
+			<grant type="Spell" id="ID_PHB_SPELL_SPIKE_GROWTH" level="3" spellcasting="Wizard" />
+			<grant type="Spell" id="ID_PHB_SPELL_AURA_OF_VITALITY" level="5" spellcasting="Wizard" />
+			<grant type="Spell" id="ID_PHB_SPELL_HASTE" level="5" spellcasting="Wizard" />
+			<grant type="Spell" id="ID_PHB_SPELL_CONTROL_WATER" level="7" spellcasting="Wizard" />
+			<grant type="Spell" id="ID_PHB_SPELL_FREEDOM_OF_MOVEMENT" level="7" spellcasting="Wizard" />
+			<grant type="Spell" id="ID_PHB_SPELL_CIRCLE_OF_POWER" level="9" spellcasting="Wizard" />
+			<grant type="Spell" id="ID_PHB_SPELL_PASSWALL" level="9" spellcasting="Wizard" />
+		</rules>
+	</element>
+
+	<!-- Mage of Quandrix General Elements -->
+	<element name="Functions of Probability" type="Archetype Feature" source="Unearthed Arcana: Mages of Strixhaven" id="ID_WOTC_UA20210608_ARCHETYPE_FEATURE_MAGE_OF_QUANDRIX_FUNCTIONS_OF_PROBABILITY">
+		<description>
+			<p><em>Level 1+ Mage of Quandrix Feature</em></p>
+			<p>By iterating on the mathematical patterns of reality, you can nudge chance to tilt around a creature. When you cast a spell using a spell slot that targets at least one creature, you can choose that creature or another creature within 30 feet of it (including yourself) and add one of the following effects:</p>
+			<p style="text-indent: -1em; margin-left: 1em"><strong>Diminishing Function.</strong> The chosen creature must succeed on a Wisdom saving throw against your spell save DC, or the creature must roll a d6 and subtract the number rolled from the next attack roll it makes before the start of your next turn.</p>
+			<p style="text-indent: -1em; margin-left: 1em"><strong>Supplemental Function.</strong> Once before the start of your next turn, the chosen creature can roll a d6 and add the number rolled to an attack roll or a saving throw of its choice. The creature can roll the d6 after rolling the d20 but must decide before any effects of the roll occur.</p>
+		</description>
+		<sheet>
+			<description>When you cast a spell using a spell slot that targets at least one creature, you can choose that creature or another creature within 30 feet of it (including yourself) and add one of the following effects: &#13;
+			• Diminishing Function. The chosen creature must succeed on a Wisdom saving throw against DC{{ua:functions of probability:dc}}, or the creature must roll a d6 and subtract the number rolled from the next attack roll it makes before the start of your next turn. &#13;
+			• Supplemental Function. Once before the start of your next turn, the chosen creature can roll a d6 and add the number rolled to an attack roll or a saving throw of its choice. The creature can roll the d6 after rolling the d20 but must decide before any effects of the roll occur.</description>
+		</sheet>
+		<rules>
+			<stat name="ua:functions of probability:dc" value="sorcerer:spellcasting:dc" bonus="class" requirements="ID_WOTC_UA20210608_ARCHETYPE_SORCERER_MAGE_OF_QUANDRIX"/>
+			<stat name="ua:functions of probability:dc" value="wizard:spellcasting:dc" bonus="class" requirements="ID_WOTC_UA20210608_ARCHETYPE_WIZARD_MAGE_OF_QUANDRIX"/>
+		</rules>
+	</element>
+
+	<element name="Velocity Shift" type="Archetype Feature" source="Unearthed Arcana: Mages of Strixhaven" id="ID_WOTC_UA20210608_ARCHETYPE_FEATURE_MAGE_OF_QUANDRIX_VELOCITY_SHIFT">
+		<description>
+			<p><em>Level 6+ Mage of Quandrix Feature</em></p>
+			<p>You learn to manipulate kinetic formulas and alter the velocity of another creature. When a creature you can see starts its turn or moves to a space within 30 feet of you, you can use your reaction to force the creature to make a Charisma saving throw against your spell save DC, which it can choose to fail. On a failure, the creature is teleported to an unoccupied space of your choice that you can see within 30 feet of you.</p>
+			<p class="indent">You can use your reaction in this way a number of times equal to your proficiency bonus, and you regain all expended uses when you finish a long rest.</p>
+		</description>
+		<sheet action="Reaction" usage="{{proficiency}}/Long Rest">
+			<description>When a creature you can see starts its turn or moves to a space within 30 feet of you, you can force the creature to make a Charisma saving throw against DC{{ua:velocity shift:dc}}, which it can choose to fail. On a failure, the creature is teleported to an unoccupied space of your choice that you can see within 30 feet of you.</description>
+		</sheet>
+		<rules>
+			<stat name="ua:velocity shift:dc" value="sorcerer:spellcasting:dc" bonus="class" requirements="ID_WOTC_UA20210608_ARCHETYPE_SORCERER_MAGE_OF_QUANDRIX"/>
+			<stat name="ua:velocity shift:dc" value="wizard:spellcasting:dc" bonus="class" requirements="ID_WOTC_UA20210608_ARCHETYPE_WIZARD_MAGE_OF_QUANDRIX"/>
+		</rules>
+	</element>
+
+	<element name="Null Equation" type="Archetype Feature" source="Unearthed Arcana: Mages of Strixhaven" id="ID_WOTC_UA20210608_ARCHETYPE_FEATURE_MAGE_OF_QUANDRIX_NULL_EQUATION">
+		<description>
+			<p><em>Level 10+ Mage of Quandrix Feature</em></p>
+			<p>Through careful calculations, you beset your enemies with abstract equations that reduce their might. Once per turn, immediately after dealing damage to a creature, you can force the creature to make a Constitution saving throw against your spell save DC. On a failure, the creature has disadvantage on Strength and Dexterity saving throws, and its weapon attacks deal only half damage. These effects last until the start of your next turn.</p>
+			<p class="indent">You can use this feature a number of times equal to your proficiency bonus, and you regain all expended uses when you finish a long rest.</p>
+		</description>
+		<sheet usage="{{proficiency}}/Long Rest">
+			<description>Once per turn, immediately after dealing damage to a creature, you can force the creature to make a Constitution saving throw against DC{{ua:null equation:dc}}. On a failure, the creature has disadvantage on Strength and Dexterity saving throws, and its weapon attacks deal only half damage. These effects last until the start of your next turn.</description>
+		</sheet>
+		<rules>
+			<stat name="ua:null equation:dc" value="sorcerer:spellcasting:dc" bonus="class" requirements="ID_WOTC_UA20210608_ARCHETYPE_SORCERER_MAGE_OF_QUANDRIX"/>
+			<stat name="ua:null equation:dc" value="wizard:spellcasting:dc" bonus="class" requirements="ID_WOTC_UA20210608_ARCHETYPE_WIZARD_MAGE_OF_QUANDRIX"/>
+		</rules>
+	</element>
+
+	<element name="Quantum Tunneling" type="Archetype Feature" source="Unearthed Arcana: Mages of Strixhaven" id="ID_WOTC_UA20210608_ARCHETYPE_FEATURE_MAGE_OF_QUANDRIX_QUANTUM_TUNNELING">
+		<description>
+			<p><em>Level 14+ Mage of Quandrix Feature</em></p>
+			<p>Your mathematical expertise extends to altering the foundational equations of your very being. You gain resistance to bludgeoning, piercing, and slashing damage.</p>
+			<p class="indent">Additionally, you can move through other creatures and objects as if they were difficult terrain, but you take 1d10 force damage for every 5 feet you move while inside another creature or object. If you end your turn inside a creature or an object, you are shunted into the nearest unoccupied space you last occupied.</p>
+		</description>
+		<sheet>
+			<description>You can move through other creatures and objects as if they were difficult terrain, but you take 1d10 force damage for every 5 feet you move while inside another creature or object. If you end your turn inside a creature or an object, you are shunted into the nearest unoccupied space you last occupied.</description>
+		</sheet>
+		<rules>
+			<grant type="Condition" id="ID_INTERNAL_CONDITION_DAMAGE_RESISTANCE_BLUDGEONING" />
+			<grant type="Condition" id="ID_INTERNAL_CONDITION_DAMAGE_RESISTANCE_PIERCING" />
+			<grant type="Condition" id="ID_INTERNAL_CONDITION_DAMAGE_RESISTANCE_SLASHING" />
+		</rules>
+	</element>
+
+	<!-- Mage of Silverquill -->
+	<!-- Bard Specific Elements-->
+	<element name="Mage of Silverquill" type="Archetype" source="Unearthed Arcana: Mages of Strixhaven" id="ID_WOTC_UA20210608_ARCHETYPE_BARD_MAGE_OF_SILVERQUILL">
+		<supports>Bard College</supports>
+		<requirements>!ID_WOTC_UA20210608_ARCHETYPE_WARLOCK_MAGE_OF_SILVERQUILL,!ID_WOTC_UA20210608_ARCHETYPE_WIZARD_MAGE_OF_SILVERQUILL</requirements>
+		<description>
+			<p><em>Bard, Warlock, and Wizard Subclass</em></p>
+			<p>Mages of Silverquill hone the power of words. They channel the magic of light and shadow through words, whether spoken aloud, written, or signed through gestures. The words of a mage of Silverquill bring salvation to their allies and despair to their enemies.</p>
+			<h5>USING THIS SUBCLASS</h5>
+			<p>Upon selecting the Mage of Silverquill subclass, you gain two features: Eloquent Apprentice and Silvery Barbs.</p>
+			<p class="indent">In this subclass’s features, any reference to your class refers to the class from which you gained the subclass. If you’re a bard, the College of Silverquill counts as your college, if you’re a warlock, the college counts as your patron, and if you’re a wizard, the college counts as your tradition.</p>
+			<p class="indent">When you subsequently reach a level in your class that gives you a subclass feature, you gain one feature of your choice from the options presented here. Each feature has a class level prerequisite, as noted beneath its name. You must meet that prerequisite to gain the feature.</p>
+			<div element="ID_WOTC_UA20210608_ARCHETYPE_FEATURE_MAGE_OF_SILVERQUILL_ELOQUENT_APPRENTICE" />
+			<div element="ID_WOTC_UA20210608_ARCHETYPE_FEATURE_MAGE_OF_SILVERQUILL_SILVERY_BARBS" />
+			<div element="ID_WOTC_UA20210608_ARCHETYPE_FEATURE_MAGE_OF_SILVERQUILL_INKY_SHROUD" />
+			<div element="ID_WOTC_UA20210608_ARCHETYPE_FEATURE_MAGE_OF_SILVERQUILL_INFUSION_OF_ELOQUENCE" />
+			<div element="ID_WOTC_UA20210608_ARCHETYPE_FEATURE_MAGE_OF_SILVERQUILL_WORD_OF_POWER" />
+		</description>
+		<sheet display="false">
+			<description>Mages of Silverquill hone the power of words.</description>
+		</sheet>
+		<rules>
+			<grant type="Archetype Feature" id="ID_WOTC_UA20210608_ARCHETYPE_FEATURE_MAGE_OF_SILVERQUILL_ELOQUENT_APPRENTICE" />
+			<grant type="Archetype Feature" id="ID_WOTC_UA20210608_ARCHETYPE_FEATURE_MAGE_OF_SILVERQUILL_SILVERY_BARBS" />
+			<grant type="Archetype Feature" id="ID_WOTC_UA20210608_ARCHETYPE_FEATURE_MAGE_OF_SILVERQUILL_INKY_SHROUD" level="6" />
+			<select type="Archetype Feature" name="4th Feature (Mage of Silverquill)" supports="ID_WOTC_UA20210608_ARCHETYPE_FEATURE_MAGE_OF_SILVERQUILL_INFUSION_OF_ELOQUENCE|ID_WOTC_UA20210608_ARCHETYPE_FEATURE_MAGE_OF_SILVERQUILL_WORD_OF_POWER" level="14" />
+		</rules>
+	</element>
+
+	<element name="Sacred Flame" type="Archetype Feature" source="Unearthed Arcana: Mages of Strixhaven" id="ID_WOTC_UA20210608_ARCHETYPE_FEATURE_MAGE_OF_SILVERQUILL_ELOQUENT_APPRENTICE_BARD_SACRED_FLAME">
+		<supports>UA20210608 Eloquent Apprentice</supports>
+		<requirements>ID_WOTC_UA20210608_ARCHETYPE_BARD_MAGE_OF_SILVERQUILL</requirements>
+		<compendium display="false" />
+		<description>
+			<div class="reference">
+				<div element="ID_PHB_SPELL_SACRED_FLAME" />
+			</div>
+		</description>
+		<sheet display="false" />
+		<spellcasting name="Bard" extend="true">
+			<extend>ID_PHB_SPELL_SACRED_FLAME</extend>
+		</spellcasting>
+		<rules>
+			<select type="Spell" name="Spell (Inky Shroud)" supports="$(spellcasting:list), 0" default="ID_PHB_SPELL_SACRED_FLAME" spellcasting="Bard" />
+		</rules>
+	</element>
+
+	<element name="Vicious Mockery" type="Archetype Feature" source="Unearthed Arcana: Mages of Strixhaven" id="ID_WOTC_UA20210608_ARCHETYPE_FEATURE_MAGE_OF_SILVERQUILL_ELOQUENT_APPRENTICE_BARD_VICIOUS_MOCKERY">
+		<supports>UA20210608 Eloquent Apprentice</supports>
+		<requirements>ID_WOTC_UA20210608_ARCHETYPE_BARD_MAGE_OF_SILVERQUILL</requirements>
+		<compendium display="false" />
+		<description>
+			<div class="reference">
+				<div element="ID_PHB_SPELL_VICIOUS_MOCKERY" />
+			</div>
+		</description>
+		<sheet display="false" />
+		<spellcasting name="Bard" extend="true">
+			<extend>ID_PHB_SPELL_VICIOUS_MOCKERY</extend>
+		</spellcasting>
+		<rules>
+			<select type="Spell" name="Spell (Inky Shroud)" supports="$(spellcasting:list), 0" default="ID_PHB_SPELL_VICIOUS_MOCKERY" spellcasting="Bard" />
+		</rules>
+	</element>
+
+	<element name="Darkness" type="Archetype Feature" source="Unearthed Arcana: Mages of Strixhaven" id="ID_WOTC_UA20210608_ARCHETYPE_FEATURE_MAGE_OF_SILVERQUILL_INKY_SHROUD_BARD">
+		<compendium display="false" />
+		<description>
+			<div class="reference">
+				<div element="ID_PHB_SPELL_DARKNESS" />
+			</div>
+		</description>
+		<sheet display="false" />
+		<spellcasting name="Bard" extend="true">
+			<extend>ID_PHB_SPELL_DARKNESS</extend>
+		</spellcasting>
+		<rules>
+			<select type="Spell" name="Spell (Inky Shroud)" supports="$(spellcasting:list), $(spellcasting:slots)" default="ID_PHB_SPELL_DARKNESS" spellcasting="Bard" />
+		</rules>
+	</element>
+
+	<!-- <append id="ID_PHB_SPELL_DARKNESS">
+		<supports>UA20210608 Inky Shroud</supports>
+	</append> -->
+
+	<!-- Warlock Specific Elements-->
+	<element name="Mage of Silverquill" type="Archetype" source="Unearthed Arcana: Mages of Strixhaven" id="ID_WOTC_UA20210608_ARCHETYPE_WARLOCK_MAGE_OF_SILVERQUILL">
+		<supports>Otherworldly Patron</supports>
+		<requirements>!ID_WOTC_UA20210608_ARCHETYPE_BARD_MAGE_OF_SILVERQUILL,!ID_WOTC_UA20210608_ARCHETYPE_WIZARD_MAGE_OF_SILVERQUILL</requirements>
+		<compendium display="false" />
+		<description>
+			<p><em>Bard, Warlock, and Wizard Subclass</em></p>
+			<p>Mages of Silverquill hone the power of words. They channel the magic of light and shadow through words, whether spoken aloud, written, or signed through gestures. The words of a mage of Silverquill bring salvation to their allies and despair to their enemies.</p>
+			<h5>USING THIS SUBCLASS</h5>
+			<p>Upon selecting the Mage of Silverquill subclass, you gain two features: Eloquent Apprentice and Silvery Barbs.</p>
+			<p class="indent">In this subclass’s features, any reference to your class refers to the class from which you gained the subclass. If you’re a bard, the College of Silverquill counts as your college, if you’re a warlock, the college counts as your patron, and if you’re a wizard, the college counts as your tradition.</p>
+			<p class="indent">When you subsequently reach a level in your class that gives you a subclass feature, you gain one feature of your choice from the options presented here. Each feature has a class level prerequisite, as noted beneath its name. You must meet that prerequisite to gain the feature.</p>
+			<div element="ID_WOTC_UA20210608_ARCHETYPE_FEATURE_MAGE_OF_SILVERQUILL_ELOQUENT_APPRENTICE" />
+			<div element="ID_WOTC_UA20210608_ARCHETYPE_FEATURE_MAGE_OF_SILVERQUILL_SILVERY_BARBS" />
+			<div element="ID_WOTC_UA20210608_ARCHETYPE_FEATURE_MAGE_OF_SILVERQUILL_INKY_SHROUD" />
+			<div element="ID_WOTC_UA20210608_ARCHETYPE_FEATURE_MAGE_OF_SILVERQUILL_INFUSION_OF_ELOQUENCE" />
+			<div element="ID_WOTC_UA20210608_ARCHETYPE_FEATURE_MAGE_OF_SILVERQUILL_WORD_OF_POWER" />
+		</description>
+		<sheet display="false">
+			<description>Mages of Silverquill hone the power of words.</description>
+		</sheet>
+		<rules>
+			<grant type="Archetype Feature" id="ID_WOTC_UA20210608_ARCHETYPE_FEATURE_MAGE_OF_SILVERQUILL_ELOQUENT_APPRENTICE" />
+			<grant type="Archetype Feature" id="ID_WOTC_UA20210608_ARCHETYPE_FEATURE_MAGE_OF_SILVERQUILL_SILVERY_BARBS" />
+			<grant type="Archetype Feature" id="ID_WOTC_UA20210608_ARCHETYPE_FEATURE_MAGE_OF_SILVERQUILL_INKY_SHROUD" level="6" />
+			<grant type="Archetype Feature" id="ID_WOTC_UA20210608_ARCHETYPE_FEATURE_MAGE_OF_SILVERQUILL_INFUSION_OF_ELOQUENCE" level="10" />
+			<grant type="Archetype Feature" id="ID_WOTC_UA20210608_ARCHETYPE_FEATURE_MAGE_OF_SILVERQUILL_WORD_OF_POWER" level="14" />
+		</rules>
+	</element>
+
+	<element name="Sacred Flame" type="Archetype Feature" source="Unearthed Arcana: Mages of Strixhaven" id="ID_WOTC_UA20210608_ARCHETYPE_FEATURE_MAGE_OF_SILVERQUILL_ELOQUENT_APPRENTICE_WARLOCK_SACRED_FLAME">
+		<supports>UA20210608 Eloquent Apprentice</supports>
+		<requirements>ID_WOTC_UA20210608_ARCHETYPE_WARLOCK_MAGE_OF_SILVERQUILL</requirements>
+		<compendium display="false" />
+		<description>
+			<div class="reference">
+				<div element="ID_PHB_SPELL_SACRED_FLAME" />
+			</div>
+		</description>
+		<sheet display="false" />
+		<spellcasting name="Warlock" extend="true">
+			<extend>ID_PHB_SPELL_SACRED_FLAME</extend>
+		</spellcasting>
+		<rules>
+			<select type="Spell" name="Spell (Inky Shroud)" supports="$(spellcasting:list), 0" default="ID_PHB_SPELL_SACRED_FLAME" spellcasting="Warlock" />
+		</rules>
+	</element>
+
+	<element name="Vicious Mockery" type="Archetype Feature" source="Unearthed Arcana: Mages of Strixhaven" id="ID_WOTC_UA20210608_ARCHETYPE_FEATURE_MAGE_OF_SILVERQUILL_ELOQUENT_APPRENTICE_WARLOCK_VICIOUS_MOCKERY">
+		<supports>UA20210608 Eloquent Apprentice</supports>
+		<requirements>ID_WOTC_UA20210608_ARCHETYPE_WARLOCK_MAGE_OF_SILVERQUILL</requirements>
+		<compendium display="false" />
+		<description>
+			<div class="reference">
+				<div element="ID_PHB_SPELL_VICIOUS_MOCKERY" />
+			</div>
+		</description>
+		<sheet display="false" />
+		<spellcasting name="Warlock" extend="true">
+			<extend>ID_PHB_SPELL_VICIOUS_MOCKERY</extend>
+		</spellcasting>
+		<rules>
+			<select type="Spell" name="Spell (Inky Shroud)" supports="$(spellcasting:list), 0" default="ID_PHB_SPELL_VICIOUS_MOCKERY" spellcasting="Warlock" />
+		</rules>
+	</element>
+
+	<element name="Darkness" type="Archetype Feature" source="Unearthed Arcana: Mages of Strixhaven" id="ID_WOTC_UA20210608_ARCHETYPE_FEATURE_MAGE_OF_SILVERQUILL_INKY_SHROUD_WARLOCK">
+		<compendium display="false" />
+		<description>
+			<div class="reference">
+				<div element="ID_PHB_SPELL_DARKNESS" />
+			</div>
+		</description>
+		<sheet display="false" />
+		<spellcasting name="Warlock" extend="true">
+			<extend>ID_PHB_SPELL_DARKNESS</extend>
+		</spellcasting>
+		<rules>
+			<select type="Spell" name="Spell (Inky Shroud)" supports="$(spellcasting:list), $(spellcasting:slots)" default="ID_PHB_SPELL_DARKNESS" spellcasting="Warlock" />
+		</rules>
+	</element>
+
+	<!-- Wizard Specific Elements-->
+	<element name="Mage of Silverquill" type="Archetype" source="Unearthed Arcana: Mages of Strixhaven" id="ID_WOTC_UA20210608_ARCHETYPE_WIZARD_MAGE_OF_SILVERQUILL">
+		<supports>Arcane Tradition</supports>
+		<requirements>!ID_WOTC_UA20210608_ARCHETYPE_BARD_MAGE_OF_SILVERQUILL,!ID_WOTC_UA20210608_ARCHETYPE_WARLOCK_MAGE_OF_SILVERQUILL</requirements>
+		<compendium display="false" />
+		<description>
+			<p><em>Bard, Warlock, and Wizard Subclass</em></p>
+			<p>Mages of Silverquill hone the power of words. They channel the magic of light and shadow through words, whether spoken aloud, written, or signed through gestures. The words of a mage of Silverquill bring salvation to their allies and despair to their enemies.</p>
+			<h5>USING THIS SUBCLASS</h5>
+			<p>Upon selecting the Mage of Silverquill subclass, you gain two features: Eloquent Apprentice and Silvery Barbs.</p>
+			<p class="indent">In this subclass’s features, any reference to your class refers to the class from which you gained the subclass. If you’re a bard, the College of Silverquill counts as your college, if you’re a warlock, the college counts as your patron, and if you’re a wizard, the college counts as your tradition.</p>
+			<p class="indent">When you subsequently reach a level in your class that gives you a subclass feature, you gain one feature of your choice from the options presented here. Each feature has a class level prerequisite, as noted beneath its name. You must meet that prerequisite to gain the feature.</p>
+			<div element="ID_WOTC_UA20210608_ARCHETYPE_FEATURE_MAGE_OF_SILVERQUILL_ELOQUENT_APPRENTICE" />
+			<div element="ID_WOTC_UA20210608_ARCHETYPE_FEATURE_MAGE_OF_SILVERQUILL_SILVERY_BARBS" />
+			<div element="ID_WOTC_UA20210608_ARCHETYPE_FEATURE_MAGE_OF_SILVERQUILL_INKY_SHROUD" />
+			<div element="ID_WOTC_UA20210608_ARCHETYPE_FEATURE_MAGE_OF_SILVERQUILL_INFUSION_OF_ELOQUENCE" />
+			<div element="ID_WOTC_UA20210608_ARCHETYPE_FEATURE_MAGE_OF_SILVERQUILL_WORD_OF_POWER" />
+		</description>
+		<sheet display="false">
+			<description>Mages of Silverquill hone the power of words.</description>
+		</sheet>
+		<rules>
+			<grant type="Archetype Feature" id="ID_WOTC_UA20210608_ARCHETYPE_FEATURE_MAGE_OF_SILVERQUILL_ELOQUENT_APPRENTICE" />
+			<grant type="Archetype Feature" id="ID_WOTC_UA20210608_ARCHETYPE_FEATURE_MAGE_OF_SILVERQUILL_SILVERY_BARBS" />
+			<grant type="Archetype Feature" id="ID_WOTC_UA20210608_ARCHETYPE_FEATURE_MAGE_OF_SILVERQUILL_INKY_SHROUD" level="6" />
+			<grant type="Archetype Feature" id="ID_WOTC_UA20210608_ARCHETYPE_FEATURE_MAGE_OF_SILVERQUILL_INFUSION_OF_ELOQUENCE" level="10" />
+			<grant type="Archetype Feature" id="ID_WOTC_UA20210608_ARCHETYPE_FEATURE_MAGE_OF_SILVERQUILL_WORD_OF_POWER" level="14" />
+		</rules>
+	</element>
+
+	<element name="Sacred Flame" type="Archetype Feature" source="Unearthed Arcana: Mages of Strixhaven" id="ID_WOTC_UA20210608_ARCHETYPE_FEATURE_MAGE_OF_SILVERQUILL_ELOQUENT_APPRENTICE_WIZARD_SACRED_FLAME">
+		<supports>UA20210608 Eloquent Apprentice</supports>
+		<requirements>ID_WOTC_UA20210608_ARCHETYPE_WIZARD_MAGE_OF_SILVERQUILL</requirements>
+		<compendium display="false" />
+		<description>
+			<div class="reference">
+				<div element="ID_PHB_SPELL_SACRED_FLAME" />
+			</div>
+		</description>
+		<sheet display="false" />
+		<spellcasting name="Wizard" extend="true">
+			<extend>ID_PHB_SPELL_SACRED_FLAME</extend>
+		</spellcasting>
+		<rules>
+			<grant type="Spell" id="ID_PHB_SPELL_SACRED_FLAME" spellcasting="Wizard" />
+		</rules>
+	</element>
+
+	<element name="Vicious Mockery" type="Archetype Feature" source="Unearthed Arcana: Mages of Strixhaven" id="ID_WOTC_UA20210608_ARCHETYPE_FEATURE_MAGE_OF_SILVERQUILL_ELOQUENT_APPRENTICE_WIZARD_VICIOUS_MOCKERY">
+		<supports>UA20210608 Eloquent Apprentice</supports>
+		<requirements>ID_WOTC_UA20210608_ARCHETYPE_WIZARD_MAGE_OF_SILVERQUILL</requirements>
+		<compendium display="false" />
+		<description>
+			<div class="reference">
+				<div element="ID_PHB_SPELL_VICIOUS_MOCKERY" />
+			</div>
+		</description>
+		<sheet display="false" />
+		<spellcasting name="Wizard" extend="true">
+			<extend>ID_PHB_SPELL_VICIOUS_MOCKERY</extend>
+		</spellcasting>
+		<rules>
+			<grant type="Spell" id="ID_PHB_SPELL_VICIOUS_MOCKERY" spellcasting="Wizard" />
+		</rules>
+	</element>
+
+	<element name="Darkness" type="Archetype Feature" source="Unearthed Arcana: Mages of Strixhaven" id="ID_WOTC_UA20210608_ARCHETYPE_FEATURE_MAGE_OF_SILVERQUILL_INKY_SHROUD_WIZARD">
+		<compendium display="false" />
+		<description>
+			<div class="reference">
+				<div element="ID_PHB_SPELL_DARKNESS" />
+			</div>
+		</description>
+		<sheet display="false" />
+		<spellcasting name="Wizard" extend="true">
+			<extend>ID_PHB_SPELL_DARKNESS</extend>
+		</spellcasting>
+		<rules>
+			<grant type="Spell" id="ID_PHB_SPELL_DARKNESS" spellcasting="Wizard" />
+		</rules>
+	</element>
+
+	<!-- Mage of Silverquill General Elements -->
+	<element name="Eloquent Apprentice" type="Archetype Feature" source="Unearthed Arcana: Mages of Strixhaven" id="ID_WOTC_UA20210608_ARCHETYPE_FEATURE_MAGE_OF_SILVERQUILL_ELOQUENT_APPRENTICE">
+		<description>
+			<p><em>Level 1+ Mage of Silverquill Feature</em></p>
+			<p>You learn one cantrip of your choice, either <i>sacred flame</i> or <i>vicious mockery</i>. It doesn’t count against the number of cantrips you know, and it is added to your class spell list if it isn’t there already.</p>
+			<p class="indent">Additionally, you gain proficiency in your choice of two of the following skills: Deception, Intimidation, Performance, Persuasion, or Insight.</p>
+		</description>
+		<sheet display="false" />
+		<rules>
+			<select type="Archetype Feature" name="Cantrip (Eloquent Apprentice)" supports="UA20210608 Eloquent Apprentice" />
+			<select type="Proficiency" supports="ID_PROFICIENCY_SKILL_DECEPTION|ID_PROFICIENCY_SKILL_INTIMIDATION|ID_PROFICIENCY_SKILL_PERFORMANCE|ID_PROFICIENCY_SKILL_PERSUASION|ID_PROFICIENCY_SKILL_INSIGHT" />
+		</rules>
+	</element>
+
+	<element name="Silvery Barbs" type="Archetype Feature" source="Unearthed Arcana: Mages of Strixhaven" id="ID_WOTC_UA20210608_ARCHETYPE_FEATURE_MAGE_OF_SILVERQUILL_SILVERY_BARBS">
+		<description>
+			<p><em>Level 1+ Mage of Silverquill Feature</em></p>
+			<p>You can invoke words laced with magic to demoralize your foes and turn their misfortune into a boon to bolster your allies. Immediately after a creature you can see within 60 feet of you succeeds on an attack roll, an ability check, or a saving throw, you can use your reaction to demoralize the creature. Unless the creature is immune to being charmed, it rerolls the d20 and must use the lower roll. If the attack roll, ability check, or saving throw then fails, you can choose a different creature you can see within 60 feet of you (you can choose yourself). That creature is empowered, and can reroll one attack roll, ability check, or saving throw it makes within 1 minute and use the higher result. A creature can be empowered by only one use of this feature at a time.</p>
+			<p class="indent">Once a creature fails an attack roll, an ability check, or a saving throw because of a reroll forced by this feature, you can’t use the feature again until you finish a long rest, unless you expend a spell slot to use it again.</p>
+		</description>
+		<sheet action="Reaction">
+			<description>Immediately after a creature you can see within 60 feet of you succeeds on an attack roll, an ability check, or a saving throw, you can demoralize the creature. Unless the creature is immune to being charmed, it rerolls the d20 and must use the lower roll. If the attack roll, ability check, or saving throw then fails, you can choose a different creature you can see within 60 feet of you (you can choose yourself). That creature is empowered, and can reroll one attack roll, ability check, or saving throw it makes within 1 minute and use the higher result. A creature can be empowered by only one use of this feature at a time. &#13;
+			Once a creature fails an attack roll, an ability check, or a saving throw because of a reroll forced by this feature, you can’t use the feature again until you finish a long rest, unless you expend a spell slot to use it again.</description>
+		</sheet>
+	</element>
+
+	<element name="Inky Shroud" type="Archetype Feature" source="Unearthed Arcana: Mages of Strixhaven" id="ID_WOTC_UA20210608_ARCHETYPE_FEATURE_MAGE_OF_SILVERQUILL_INKY_SHROUD">
+		<description>
+			<p><em>Level 6+ Mage of Silverquill Feature</em></p>
+			<p>You learn the darkness spell, and it is added to your class spell list if it isn’t there already. If you are a wizard, you add it to your spellbook, if it’s not there already. </p>
+			<p class="indent">You can cast the spell without expending a spell slot, and you can’t do so again until you finish a long rest. When you cast the spell in this way, you can see normally through the darkness created, and when a creature you can see starts its turn in the darkness, you can deal 2d10 psychic damage to that creature.</p>
+			<p class="indent">You can also cast the spell normally, without the additional effects, by using spell slots you have of 2nd level or higher.</p>
+		</description>
+		<sheet usage="1/Long Rest">
+			<description>You can cast the darkness spell without expending a spell slot. When you cast the spell in this way, you can see normally through the darkness created, and when a creature you can see starts its turn in the darkness, you can deal 2d10 psychic damage to that creature.</description>
+		</sheet>
+		<rules>
+			<grant type="Archetype Feature" id="ID_WOTC_UA20210608_ARCHETYPE_FEATURE_MAGE_OF_SILVERQUILL_INKY_SHROUD_BARD" requirements="ID_WOTC_UA20210608_ARCHETYPE_BARD_MAGE_OF_SILVERQUILL"/>
+			<grant type="Archetype Feature" id="ID_WOTC_UA20210608_ARCHETYPE_FEATURE_MAGE_OF_SILVERQUILL_INKY_SHROUD_WARLOCK" requirements="ID_WOTC_UA20210608_ARCHETYPE_WARLOCK_MAGE_OF_SILVERQUILL"/>
+			<grant type="Archetype Feature" id="ID_WOTC_UA20210608_ARCHETYPE_FEATURE_MAGE_OF_SILVERQUILL_INKY_SHROUD_WIZARD" requirements="ID_WOTC_UA20210608_ARCHETYPE_WIZARD_MAGE_OF_SILVERQUILL"/>
+		</rules>
+	</element>
+
+	<element name="Infusion of Eloquence" type="Archetype Feature" source="Unearthed Arcana: Mages of Strixhaven" id="ID_WOTC_UA20210608_ARCHETYPE_FEATURE_MAGE_OF_SILVERQUILL_INFUSION_OF_ELOQUENCE">
+		<description>
+			<p><em>Level 10+ Mage of Silverquill Feature</em></p>
+			<p>When you cast a spell that deals damage, you can invoke additional words of power to change the spell’s damage type to your choice of psychic or radiant. Any creature damaged by the spell takes extra damage equal to your proficiency bonus and has its emotions swayed with despair or adoration, based on the damage type dealt: </p>
+			<p style="text-indent: -1em; margin-left: 1em"><strong>Psychic.</strong> The creature is frightened of you until the start of your next turn.</p>
+			<p style="text-indent: -1em; margin-left: 1em"><strong>Radiant.</strong> The creature is charmed by you until the start of your next turn.</p>
+			<p>You can use this feature a number of times equal to your proficiency bonus, and you regain all expended uses when you finish a long rest.</p>
+		</description>
+		<sheet usage="{{proficiency}}/Long Rest">
+			<description>When you cast a spell that deals damage, you can invoke additional words of power to change the spell’s damage type to your choice of psychic or radiant. Any creature damaged by the spell takes extra {{proficiency}} points of damage and has its emotions swayed with despair or adoration, based on the damage type dealt:  &#13;
+			Psychic. The creature is frightened of you until the start of your next turn. &#13;
+			Radiant. The creature is charmed by you until the start of your next turn.</description>
+		</sheet>
+	</element>
+
+	<element name="Word of Power" type="Archetype Feature" source="Unearthed Arcana: Mages of Strixhaven" id="ID_WOTC_UA20210608_ARCHETYPE_FEATURE_MAGE_OF_SILVERQUILL_WORD_OF_POWER">
+		<description>
+			<p><em>Level 14+ Mage of Silverquill Feature</em></p>
+			<p>You can invoke a word of power that is the pinnacle of your magical study. You gain the following options:</p>
+			<p style="text-indent: -1em; margin-left: 1em"><strong>Deadly Despair.</strong> When the target of your Silvery Barbs fails an attack roll, an ability check, or a saving throw because of the reroll, you can invoke a word of despair to give the target vulnerability to one damage type of your choice until the start of your next turn.</p>
+			<p style="text-indent: -1em; margin-left: 1em"><strong>Selfless Invocation.</strong> When a creature you can see within 60 feet of you takes damage, you can invoke a word of power using your reaction to grant the creature resistance to that damage, and you take an amount of psychic damage equal to the damage that creature takes.</p>
+		</description>
+		<sheet display="false" />
+		<rules>
+			<grant type="Archetype Feature" id="ID_WOTC_UA20210608_ARCHETYPE_FEATURE_MAGE_OF_SILVERQUILL_WORD_OF_POWER_DEADLY_DESPAIR" />
+			<grant type="Archetype Feature" id="ID_WOTC_UA20210608_ARCHETYPE_FEATURE_MAGE_OF_SILVERQUILL_WORD_OF_POWER_SELFLESS_INVOCATION" />
+		</rules>
+	</element>
+
+	<element name="Deadly Despair" type="Archetype Feature" source="Unearthed Arcana: Mages of Strixhaven" id="ID_WOTC_UA20210608_ARCHETYPE_FEATURE_MAGE_OF_SILVERQUILL_WORD_OF_POWER_DEADLY_DESPAIR">
+		<compendium display="false" />
+		<sheet>
+			<description>When the target of your Silvery Barbs fails an attack roll, an ability check, or a saving throw because of the reroll, you can invoke a word of despair to give the target vulnerability to one damage type of your choice until the start of your next turn.</description>
+		</sheet>
+	</element>
+
+	<element name="Selfless Invocation" type="Archetype Feature" source="Unearthed Arcana: Mages of Strixhaven" id="ID_WOTC_UA20210608_ARCHETYPE_FEATURE_MAGE_OF_SILVERQUILL_WORD_OF_POWER_SELFLESS_INVOCATION">
+		<compendium display="false" />
+		<sheet action="Reaction">
+			<description>When a creature you can see within 60 feet of you takes damage, you can invoke a word of power to grant the creature resistance to that damage, and you take an amount of psychic damage equal to the damage that creature takes.</description>
+		</sheet>
+	</element>
+
+	<!-- Mage of Witherbloom -->
+	<!-- Druid Specific Elements-->
+	<element name="Mage of Witherbloom" type="Archetype" source="Unearthed Arcana: Mages of Strixhaven" id="ID_WOTC_UA20210608_ARCHETYPE_DRUID_MAGE_OF_WITHERBLOOM">
+		<supports>Druid Circle</supports>
+		<requirements>!ID_WOTC_UA20210608_ARCHETYPE_WARLOCK_MAGE_OF_WITHERBLOOM</requirements>
+		<description>
+			<p><em>Druid and Warlock Subclass</em></p>
+			<p>Mages of Witherbloom draw their magic from the energy that endlessly flows from life to death, and back again. They see the duality of thriving life and inevitable death in all things, tapping and manipulating the transition of energy between these states. Some Witherbloom adherents focus on vital energies to nurture life and empower others, while others embrace the drain of vitality into decay to sap and strike down their foes.</p>
+			<h5>USING THIS SUBCLASS</h5>
+			<p>Upon selecting the Mage of Witherbloom subclass, you gain two features: Witherbloom Spells and Essence Tap.</p>
+			<p class="indent">In this subclass’s features, any reference to your class refers to the class from which you gained the subclass. If you’re a druid, the College of Witherbloom counts as your circle, and if you’re a warlock, the college counts as your patron.</p>
+			<p class="indent">When you subsequently reach a level in your class that gives you a subclass feature, you gain one feature of your choice from the options presented here. Each feature has a class level prerequisite, as noted beneath its name. You must meet that prerequisite to gain the feature.</p>
+			<div element="ID_WOTC_UA20210608_ARCHETYPE_FEATURE_MAGE_OF_WITHERBLOOM_WITHERBLOOM_SPELLS_DRUID" />
+			<div element="ID_WOTC_UA20210608_ARCHETYPE_FEATURE_MAGE_OF_WITHERBLOOM_ESSENCE_TAP" />
+			<div element="ID_WOTC_UA20210608_ARCHETYPE_FEATURE_MAGE_OF_WITHERBLOOM_WITHERBLOOM_BREW" />
+			<div element="ID_WOTC_UA20210608_ARCHETYPE_FEATURE_MAGE_OF_WITHERBLOOM_WITHERBLOOM_ADEPT" />
+			<div element="ID_WOTC_UA20210608_ARCHETYPE_FEATURE_MAGE_OF_WITHERBLOOM_WITHERING_VORTEX" />
+		</description>
+		<sheet display="false">
+			<description>Mages of Witherbloom draw their magic from the energy that endlessly flows from life to death, and back again.</description>
+		</sheet>
+		<rules>
+			<grant type="Archetype Feature" id="ID_WOTC_UA20210608_ARCHETYPE_FEATURE_MAGE_OF_WITHERBLOOM_WITHERBLOOM_SPELLS_DRUID" />
+			<grant type="Archetype Feature" id="ID_WOTC_UA20210608_ARCHETYPE_FEATURE_MAGE_OF_WITHERBLOOM_ESSENCE_TAP" />
+			<grant type="Archetype Feature" id="ID_WOTC_UA20210608_ARCHETYPE_FEATURE_MAGE_OF_WITHERBLOOM_WITHERBLOOM_BREW" level="6" />
+			<grant type="Archetype Feature" id="ID_WOTC_UA20210608_ARCHETYPE_FEATURE_MAGE_OF_WITHERBLOOM_WITHERBLOOM_ADEPT" level="10" />
+			<grant type="Archetype Feature" id="ID_WOTC_UA20210608_ARCHETYPE_FEATURE_MAGE_OF_WITHERBLOOM_WITHERING_VORTEX" level="14" />
+		</rules>
+	</element>
+
+	<element name="Witherbloom Spells" type="Archetype Feature" source="Unearthed Arcana: Mages of Strixhaven" id="ID_WOTC_UA20210608_ARCHETYPE_FEATURE_MAGE_OF_WITHERBLOOM_WITHERBLOOM_SPELLS_DRUID">
+		<description>
+			<p><em>Level 1+ Mage of Witherbloom Feature</em></p>
+			<p>You learn the cantrip <i>spare the dying</i> and the 1st-level spells <i>cure wounds</i> and <i>inflict wounds</i>. You learn additional spells when you reach certain levels in this class, as shown on the Witherbloom Spells table.</p>
+			<p class="indent">Each of these spells count as a class spell for you, but it doesn’t count against the number of spells you know. If you are a druid, you always have the spells prepared, and they don’t count against the number of spells you can prepare each day.</p>
+			<h5>Witherbloom Spells</h5>
+			<table>
+				<thead>
+					<tr><td>Class Level</td><td class="left">Spells</td></tr>
+				</thead>
+				<tr><td>3rd</td><td class="left"><i>lesser restoration, ray of enfeeblement</i></td></tr>
+				<tr><td>5th</td><td class="left"><i>revivify, vampiric touch</i></td></tr>
+				<tr><td>7th</td><td class="left"><i>blight, greater restoration</i></td></tr>
+				<tr><td>9th</td><td class="left"><i>antilife shell, mass cure wounds</i></td></tr>
+			</table>
+		</description>
+		<sheet display="false" />
+		<rules>
+			<grant type="Spell" id="ID_PHB_SPELL_SPARE_THE_DYING" spellcasting="Druid" prepared="true" />
+			<grant type="Spell" id="ID_PHB_SPELL_CURE_WOUNDS" spellcasting="Druid" prepared="true" />
+			<grant type="Spell" id="ID_PHB_SPELL_INFLICT_WOUNDS" spellcasting="Druid" prepared="true" />
+			<grant type="Spell" id="ID_PHB_SPELL_LESSER_RESTORATION" level="3" spellcasting="Druid" prepared="true" />
+			<grant type="Spell" id="ID_PHB_SPELL_RAY_OF_ENFEEBLEMENT" level="3" spellcasting="Druid" prepared="true" />
+			<grant type="Spell" id="ID_PHB_SPELL_REVIVIFY" level="5" spellcasting="Druid" prepared="true" />
+			<grant type="Spell" id="ID_PHB_SPELL_VAMPIRIC_TOUCH" level="5" spellcasting="Druid" prepared="true" />
+			<grant type="Spell" id="ID_PHB_SPELL_BLIGHT" level="7" spellcasting="Druid" prepared="true" />
+			<grant type="Spell" id="ID_PHB_SPELL_GREATER_RESTORATION" level="7" spellcasting="Druid" prepared="true" />
+			<grant type="Spell" id="ID_PHB_SPELL_ANTILIFE_SHELL" level="9" spellcasting="Druid" prepared="true" />
+			<grant type="Spell" id="ID_PHB_SPELL_MASS_CURE_WOUNDS" level="9" spellcasting="Druid" prepared="true" />
+		</rules>
+	</element>
+
+	<!-- Warlock Specific Elements-->
+	<element name="Mage of Witherbloom" type="Archetype" source="Unearthed Arcana: Mages of Strixhaven" id="ID_WOTC_UA20210608_ARCHETYPE_WARLOCK_MAGE_OF_WITHERBLOOM">
+		<supports>Otherworldly Patron</supports>
+		<requirements>!ID_WOTC_UA20210608_ARCHETYPE_DRUID_MAGE_OF_WITHERBLOOM</requirements>
+		<compendium display="false" />
+		<description>
+			<p><em>Druid and Warlock Subclass</em></p>
+			<p>Mages of Witherbloom draw their magic from the energy that endlessly flows from life to death, and back again. They see the duality of thriving life and inevitable death in all things, tapping and manipulating the transition of energy between these states. Some Witherbloom adherents focus on vital energies to nurture life and empower others, while others embrace the drain of vitality into decay to sap and strike down their foes.</p>
+			<h5>USING THIS SUBCLASS</h5>
+			<p>Upon selecting the Mage of Witherbloom subclass, you gain two features: Witherbloom Spells and Essence Tap.</p>
+			<p class="indent">In this subclass’s features, any reference to your class refers to the class from which you gained the subclass. If you’re a druid, the College of Witherbloom counts as your circle, and if you’re a warlock, the college counts as your patron.</p>
+			<p class="indent">When you subsequently reach a level in your class that gives you a subclass feature, you gain one feature of your choice from the options presented here. Each feature has a class level prerequisite, as noted beneath its name. You must meet that prerequisite to gain the feature.</p>
+			<div element="ID_WOTC_UA20210608_ARCHETYPE_FEATURE_MAGE_OF_WITHERBLOOM_WITHERBLOOM_SPELLS_WARLOCK" />
+			<div element="ID_WOTC_UA20210608_ARCHETYPE_FEATURE_MAGE_OF_WITHERBLOOM_ESSENCE_TAP" />
+			<div element="ID_WOTC_UA20210608_ARCHETYPE_FEATURE_MAGE_OF_WITHERBLOOM_WITHERBLOOM_BREW" />
+			<div element="ID_WOTC_UA20210608_ARCHETYPE_FEATURE_MAGE_OF_WITHERBLOOM_WITHERBLOOM_ADEPT" />
+			<div element="ID_WOTC_UA20210608_ARCHETYPE_FEATURE_MAGE_OF_WITHERBLOOM_WITHERING_VORTEX" />
+		</description>
+		<sheet display="false">
+			<description>Mages of Witherbloom draw their magic from the energy that endlessly flows from life to death, and back again.</description>
+		</sheet>
+		<rules>
+			<grant type="Archetype Feature" id="ID_WOTC_UA20210608_ARCHETYPE_FEATURE_MAGE_OF_WITHERBLOOM_WITHERBLOOM_SPELLS_WARLOCK" />
+			<grant type="Archetype Feature" id="ID_WOTC_UA20210608_ARCHETYPE_FEATURE_MAGE_OF_WITHERBLOOM_ESSENCE_TAP" />
+			<grant type="Archetype Feature" id="ID_WOTC_UA20210608_ARCHETYPE_FEATURE_MAGE_OF_WITHERBLOOM_WITHERBLOOM_BREW" level="6" />
+			<grant type="Archetype Feature" id="ID_WOTC_UA20210608_ARCHETYPE_FEATURE_MAGE_OF_WITHERBLOOM_WITHERBLOOM_ADEPT" level="10" />
+			<grant type="Archetype Feature" id="ID_WOTC_UA20210608_ARCHETYPE_FEATURE_MAGE_OF_WITHERBLOOM_WITHERING_VORTEX" level="14" />
+		</rules>
+	</element>
+
+	<element name="Witherbloom Spells" type="Archetype Feature" source="Unearthed Arcana: Mages of Strixhaven" id="ID_WOTC_UA20210608_ARCHETYPE_FEATURE_MAGE_OF_WITHERBLOOM_WITHERBLOOM_SPELLS_WARLOCK">
+		<compendium display="false" />
+		<description>
+			<p><em>Level 1+ Mage of Witherbloom Feature</em></p>
+			<p>You learn the cantrip <i>spare the dying</i> and the 1st-level spells <i>cure wounds</i> and <i>inflict wounds</i>. You learn additional spells when you reach certain levels in this class, as shown on the Witherbloom Spells table.</p>
+			<p class="indent">Each of these spells count as a class spell for you, but it doesn’t count against the number of spells you know. If you are a druid, you always have the spells prepared, and they don’t count against the number of spells you can prepare each day.</p>
+			<h5>Witherbloom Spells</h5>
+			<table>
+				<thead>
+					<tr><td>Class Level</td><td class="left">Spells</td></tr>
+				</thead>
+				<tr><td>3rd</td><td class="left"><i>lesser restoration, ray of enfeeblement</i></td></tr>
+				<tr><td>5th</td><td class="left"><i>revivify, vampiric touch</i></td></tr>
+				<tr><td>7th</td><td class="left"><i>blight, greater restoration</i></td></tr>
+				<tr><td>9th</td><td class="left"><i>antilife shell, mass cure wounds</i></td></tr>
+			</table>
+		</description>
+		<sheet display="false" />
+		<rules>
+			<grant type="Spell" id="ID_PHB_SPELL_SPARE_THE_DYING" spellcasting="Warlock" />
+			<grant type="Spell" id="ID_PHB_SPELL_CURE_WOUNDS" spellcasting="Warlock" />
+			<grant type="Spell" id="ID_PHB_SPELL_INFLICT_WOUNDS" spellcasting="Warlock" />
+			<grant type="Spell" id="ID_PHB_SPELL_LESSER_RESTORATION" level="3" spellcasting="Warlock" />
+			<grant type="Spell" id="ID_PHB_SPELL_RAY_OF_ENFEEBLEMENT" level="3" spellcasting="Warlock" />
+			<grant type="Spell" id="ID_PHB_SPELL_REVIVIFY" level="5" spellcasting="Warlock" />
+			<grant type="Spell" id="ID_PHB_SPELL_VAMPIRIC_TOUCH" level="5" spellcasting="Warlock" />
+			<grant type="Spell" id="ID_PHB_SPELL_BLIGHT" level="7" spellcasting="Warlock" />
+			<grant type="Spell" id="ID_PHB_SPELL_GREATER_RESTORATION" level="7" spellcasting="Warlock" />
+			<grant type="Spell" id="ID_PHB_SPELL_ANTILIFE_SHELL" level="9" spellcasting="Warlock" />
+			<grant type="Spell" id="ID_PHB_SPELL_MASS_CURE_WOUNDS" level="9" spellcasting="Warlock" />
+		</rules>
+	</element>
+
+	<!-- Mage of Witherbloom General Elements -->
+	<element name="Essence Tap" type="Archetype Feature" source="Unearthed Arcana: Mages of Strixhaven" id="ID_WOTC_UA20210608_ARCHETYPE_FEATURE_MAGE_OF_WITHERBLOOM_ESSENCE_TAP">
+		<description>
+			<p><em>Level 1+ Mage of Witherbloom Feature</em></p>
+			<p>As a bonus action, you can draw on a reservoir of life essence to empower yourself for 1 minute, or until you use this feature again. For the duration, you gain one of the following benefits of your choice:</p>
+			<p style="text-indent: -1em; margin-left: 1em"><strong>Overgrowth.</strong> When you choose this benefit, and as a bonus action on subsequent turns while the benefit lasts, you can expend and roll one Hit Die. You regain a number of hit points equal to the number rolled plus your spellcasting ability modifier.</p>
+			<p style="text-indent: -1em; margin-left: 1em"><strong>Withering Strike.</strong> When you deal damage, you can change the damage type to necrotic, and you ignore resistance to necrotic damage.</p>
+			<p>You can use this feature a number of times equal to your proficiency bonus, and you regain all expended uses when you finish a long rest.</p>
+		</description>
+		<sheet action="Bonus Action" usage="{{proficiency}}/Long Rest" >
+			<description>You can empower yourself for 1 minute, or until you use this feature again. For the duration, you gain one of the following benefits of your choice:
+			• Overgrowth. When you choose this benefit, and as a bonus action on subsequent turns while the benefit lasts, you can expend and roll one Hit Die. You regain a number of hit points equal to the number rolled plus {{ua:essence tap:ability}}.
+			• Withering Strike. When you deal damage, you can change the damage type to necrotic, and you ignore resistance to necrotic damage.</description>
+		</sheet>
+		<rules>
+			<stat name="ua:essence tap:ability" value="wisdom:modifier" requirements="ID_WOTC_UA20210608_ARCHETYPE_DRUID_MAGE_OF_WITHERBLOOM" bonus="ability"/>
+			<stat name="ua:essence tap:ability" value="charisma:modifier" requirements="ID_WOTC_UA20210608_ARCHETYPE_WARLOCK_MAGE_OF_WITHERBLOOM" bonus="ability"/>
+		</rules>
+	</element>
+
+	<element name="Witherbloom Brew" type="Archetype Feature" source="Unearthed Arcana: Mages of Strixhaven" id="ID_WOTC_UA20210608_ARCHETYPE_FEATURE_MAGE_OF_WITHERBLOOM_WITHERBLOOM_BREW">
+		<description>
+			<p><em>Level 6+ Mage of Witherbloom Feature</em></p>
+			<p>You gain proficiency with herbalism kits if you don’t already have it.</p>
+			<p class="indent">When you finish a long rest, you can use an herbalism kit and a pot or cauldron to create magical brews. You create a number of brews equal to your proficiency bonus. Each brew requires its own flask. A brew retains its magical potency for 24 hours or until it is used. For each brew, choose one of the following effects:</p>
+			<p style="text-indent: -1em; margin-left: 1em"><strong>Fortifying.</strong> When you create this brew, choose a damage type from the following list: cold, fire, necrotic, poison, or radiant. A creature can drink this brew or administer it to another creature as an action. The recipient gains resistance to the chosen damage type for 1 hour.</p>
+			<p style="text-indent: -1em; margin-left: 1em"><strong>Quickening.</strong> A creature can drink this brew or administer it to another creature as an action. The recipient regains 2d6 hit points, and one disease or condition from the following list affecting the recipient ends (brew user’s choice): charmed, frightened, paralyzed, poisoned, stunned.</p>
+			<p style="text-indent: -1em; margin-left: 1em"><strong>Toxifying.</strong> As an action, a creature can apply this brew to a simple or martial weapon. The next time the weapon or a piece of ammunition fired by it hits a creature within 1 hour, the target takes 2d6 poison damage and must succeed on a Constitution saving throw against your spell save DC or be poisoned for 1 minute.</p>
+		</description>
+		<sheet>
+			<description>When you finish a long rest, you can use an herbalism kit and a pot or cauldron to create magical brews. You create {{proficiency}} brews. Each brew requires its own flask. A brew retains its magical potency for 24 hours or until it is used. For each brew, choose one of the following effects:
+			• Fortifying. When you create this brew, choose a damage type from the following list: cold, fire, necrotic, poison, or radiant. A creature can drink this brew or administer it to another creature as an action. The recipient gains resistance to the chosen damage type for 1 hour.
+			• Quickening. A creature can drink this brew or administer it to another creature as an action. The recipient regains 2d6 hit points, and one disease or condition from the following list affecting the recipient ends (brew user’s choice): charmed, frightened, paralyzed, poisoned, stunned.
+			• Toxifying. As an action, a creature can apply this brew to a simple or martial weapon. The next time the weapon or a piece of ammunition fired by it hits a creature within 1 hour, the target takes 2d6 poison damage and must succeed on a Constitution saving throw against DC{{ua:witherbloom brew:dc}} or be poisoned for 1 minute.</description>
+		</sheet>
+		<rules>
+			<grant type="Proficiency" id="ID_PROFICIENCY_TOOL_PROFICIENCY_HERBALISM_KIT" />
+			<stat name="ua:witherbloom brew:dc" value="druid:spellcasting:dc" requirements="ID_WOTC_UA20210608_ARCHETYPE_DRUID_MAGE_OF_WITHERBLOOM" bonus="base"/>
+			<stat name="ua:witherbloom brew:dc" value="warlock:spellcasting:dc" requirements="ID_WOTC_UA20210608_ARCHETYPE_WARLOCK_MAGE_OF_WITHERBLOOM" bonus="base"/>
+		</rules>
+	</element>
+
+	<element name="Witherbloom Adept" type="Archetype Feature" source="Unearthed Arcana: Mages of Strixhaven" id="ID_WOTC_UA20210608_ARCHETYPE_FEATURE_MAGE_OF_WITHERBLOOM_WITHERBLOOM_ADEPT">
+		<description>
+			<p><em>Level 10+ Mage of Witherbloom Feature</em></p>
+			<p>Your connection to the flow of life force deepens. Once per turn when you deal necrotic damage or restore hit points using a spell, one target of the spell takes additional damage or regains additional hit points equal to your proficiency bonus.</p>
+		</description>
+		<sheet usage="1/Turn">
+			<description>When you deal necrotic damage or restore hit points using a spell, one target of the spell takes additional damage or regains additional hit points equal to {{proficiency}}.</description>
+		</sheet>
+	</element>
+
+	<element name="Withering Vortex" type="Archetype Feature" source="Unearthed Arcana: Mages of Strixhaven" id="ID_WOTC_UA20210608_ARCHETYPE_FEATURE_MAGE_OF_WITHERBLOOM_WITHERING_VORTEX">
+		<description>
+			<p><em>Level 14+ Mage of Witherbloom Feature</em></p>
+			<p>When you cast a spell using a spell slot that deals necrotic damage to any number of creatures that aren’t Undead or Constructs, choose one of the creatures that took damage. You drain an amount of life energy equal to half the damage dealt to the chosen creature. One creature other than yourself that you can see within 30 feet of you regains a number of hit points equal to the life energy drained.</p>
+			<p class="indent">You can use this feature a number of times equal to your proficiency bonus, and you regain all expended uses when you finish a long rest.</p>
+		</description>
+		<sheet usage="{{proficiency}}/Long Rest">
+			<description>When you cast a spell using a spell slot that deals necrotic damage to any number of creatures that aren’t Undead or Constructs, choose one of the creatures that took damage. You drain an amount of life energy equal to half the damage dealt to the chosen creature. One creature other than yourself that you can see within 30 feet of you regains a number of hit points equal to the life energy drained.</description>
+		</sheet>
+	</element>
+
+</elements>

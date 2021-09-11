@@ -1,0 +1,575 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<elements>
+	<info>
+		<name>Dark Gifts</name>
+		<update version="0.0.1">
+			<file name="dark-gifts.xml" url="https://raw.githubusercontent.com/AuroraLegacy/elements/master/supplements/van-richtens-guide-to-ravenloft/dark-gifts.xml" />
+		</update>
+	</info>
+	
+	<element name="Echoing Soul" type="Item" source="Van Richten's Guide To Ravenloft" id="ID_WOTC_VRGTR_ITEM_ECHOING_SOUL">
+		<description>
+			<p>Your soul isn’t your own or, at least, it wasn’t always yours. Whether you’ve lived past lives, your soul was swapped into a different body, or you have a link connecting you to another being, you experience echoes from another life. These echoes grant you knowledge, talents, or even languages you can’t always explain, but they also intrude on your perceptions and beliefs unexpectedly.</p>
+			<p class="indent">Roll on or choose an option from the Soul Echoes table to determine the nature of this Dark Gift. Additionally, you gain the traits that follow.</p>
+			<h5 class="caption">Soul Echoes</h5>
+			<table>
+				<thead>
+					<tr><td>d6</td><td>Echo</td></tr>
+				</thead>
+				<tr><td>1</td><td>My soul is linked with that of a person elsewhere, perhaps another domain, world, or plane.</td></tr>
+				<tr><td>2</td><td>I have lived many times before, my soul reincarnating each time I die rather than passing on.</td></tr>
+				<tr><td>3</td><td>My consciousness was removed from my original body and implanted in this one.</td></tr>
+				<tr><td>4</td><td>I was physically and spiritually merged with another being.</td></tr>
+				<tr><td>5</td><td>I share my body with an intangible, otherworldly force.</td></tr>
+				<tr><td>6</td><td>Time fractures around me, and I sometimes collide with my own past or future.</td></tr>
+			</table>
+			<p class="indent"><strong>Channeled Prowess. </strong>You gain proficiency in two skills of your choice.</p>
+			<p class="indent"><strong>Inherent Tongue. </strong>You can speak, read, and write one additional language of your choice.</p>
+			<p class="indent"><strong>Intrusive Echoes. </strong>Immediately after you make an attack roll, an ability check, or a saving throw and roll a 1 on the d20, your soul’s memories emerge and overtake your perceptions and experiences. You might see people around you as someone other than who they are, or you become disoriented by a double-experience of the world around you. Roll on the Intrusive Echoes table to determine the effect of these vivid memories and perceptions. Once one of effects occur, these intrusive echoes can’t manifest again until you finish a short or long rest.</p>
+			<h5 class="caption">Intrusive Echoes</h5>
+			<table>
+				<thead>
+					<tr><td>d6</td><td>Effect</td></tr>
+				</thead>
+				<tr><td>1</td><td>You are charmed by a creature you can see (of the DM’s choice) for 1 minute or until the creature damages you.</td></tr>
+				<tr><td>2</td><td>You are frightened by a creature you can see (of the DM’s choice) for 1 minute, or until the creature damages you.</td></tr>
+				<tr><td>3</td><td>You perceive another time or place around you until the end of your next turn. During this time, you are blinded to your actual surroundings.</td></tr>
+				<tr><td>4</td><td>You perceive a different time or place overlapping your surroundings. Your speed is halved until the end of your next turn.</td></tr>
+				<tr><td>5</td><td>Memories and sensations overwhelm you. You are incapacitated until the start of your next turn.</td></tr>
+				<tr><td>6</td><td>Your memory is one of triumph. You can reroll the ability check, attack roll, or saving throw that you just made. You must use the new roll.</td></tr>
+			</table>
+		</description>
+		<setters>
+			<set name="category">Supernatural Gifts</set>
+			<set name="type">Supernatural Gift</set>
+			<set name="slot">gift</set>
+		</setters>
+		<rules>
+			<select type="Proficiency" name="Skill Proficiency, Echoing Soul" supports="Skill" number="2" />
+			<select type="Language" name="Language (Echoing Soul)" supports="Standard||Exotic" />
+			<grant type="Racial Trait" id="ID_WOTC_VRGTR_DARK_GIFT_FEATURE_INTRUSIVE_ECHOES"/>
+		</rules>
+	</element>
+
+	<element name="Intrusive Echoes" type="Racial Trait" source="Van Richten's Guide To Ravenloft" id="ID_WOTC_VRGTR_DARK_GIFT_FEATURE_INTRUSIVE_ECHOES">
+		<description>
+			<p>Immediately after you make an attack roll, an ability check, or a saving throw and roll a 1 on the d20, your soul’s memories emerge and overtake your perceptions and experiences. You might see people around you as someone other than who they are, or you become disoriented by a double-experience of the world around you. Roll on the Intrusive Echoes table to determine the effect of these vivid memories and perceptions. Once one of the effects occur, these intrusive echoes can’t manifest again until you finish a short or long rest.</p>
+			<h5 class="caption">Intrusive Echoes</h5>
+			<table>
+				<thead>
+					<tr><td>d6</td><td>Effect</td></tr>
+				</thead>
+				<tr><td>1</td><td>You are charmed by a creature you can see (of the DM’s choice) for 1 minute or until the creature damages you.</td></tr>
+				<tr><td>2</td><td>You are frightened by a creature you can see (of the DM’s choice) for 1 minute, or until the creature damages you.</td></tr>
+				<tr><td>3</td><td>You perceive another time or place around you until the end of your next turn. During this time, you are blinded to your actual surroundings.</td></tr>
+				<tr><td>4</td><td>You perceive a different time or place overlapping your surroundings. Your speed is halved until the end of your next turn.</td></tr>
+				<tr><td>5</td><td>Memories and sensations overwhelm you. You are incapacitated until the start of your next turn.</td></tr>
+				<tr><td>6</td><td>Your memory is one of triumph. You can reroll the ability check, attack roll, or saving throw that you just made. You must use the new roll.</td></tr>
+			</table>
+		</description>
+		<sheet usage="1/Short or Long Rest">
+			<description>Immediately after you make an attack roll, an ability check, or a saving throw and roll a 1 on the d20, your soul’s memories emerge and overtake your perceptions and experiences. Roll on the Intrusive Echoes table to determine the effect of these vivid memories and perceptions.</description>
+		</sheet>
+	</element>
+
+	<element name="Gathered Whispers" type="Item" source="Van Richten's Guide To Ravenloft" id="ID_WOTC_VRGTR_ITEM_GATHERED_WHISPERS">
+		<description>
+			<p>You are haunted by spiritual beings, whether the souls of the departed or entities from another plane. Their voices endlessly whisper, taunt, or cajole, sometimes rising to unearthly howls. Only you can perceive the spirits, unless you allow them to speak through you. The spirits are intangible and invisible; anyone who can see invisible creatures sees only fleeting glimpses of these spirits as they haunt you.</p>
+			<p class="indent">Roll on or choose an option from the Whispering Spirits table to determine what haunts you. Additionally, you gain the traits that follow.</p>
+			<h5 class="caption">Whispering Spirits</h5>
+			<table>
+				<thead>
+					<tr><td>d6</td><td>Spirits</td></tr>
+				</thead>
+				<tr><td>1</td><td>A council of my dead ancestors watches over me.</td></tr>
+				<tr><td>2</td><td>Fiendish presences vie for my soul.</td></tr>
+				<tr><td>3</td><td>Unquiet souls are drawn to me and beg for peace.</td></tr>
+				<tr><td>4</td><td>The spirits of those I killed linger around me.</td></tr>
+				<tr><td>5</td><td>An alien intelligence intrudes upon my thoughts.</td></tr>
+				<tr><td>6</td><td>A sibling I don’t have shares my body.</td></tr>
+			</table>
+			<p class="indent"><strong>Spirit Whispers. </strong>You learn the <i>message</i> cantrip if you don’t already know it, and require no components to cast it. When you cast the spell, the messages are delivered by one of your whispering spirits rather than you or the target’s voice. Your spellcasting ability for this spell is Intelligence, Wisdom, or Charisma (your choice when you gain this Dark Gift).</p>
+			<p class="indent"><strong>Sudden Cacophony. </strong>When you are hit by an attack roll, you can use your reaction to channel your haunting spirits, letting their voices howl through you. If the attacker isn’t deafened, add your proficiency bonus to your AC against that attack, potentially causing it to miss. Once this trait causes an attack to miss, you can’t use the trait again until you finish a long rest.</p>
+			<p class="indent"><strong>Voices from Beyond. </strong>Immediately after you make an attack roll, an ability check, or a saving throw and roll a 1 on the d20, the haunting voices grow too loud to ignore. Roll on the Voices from Beyond table to determine the effect of these voices. Once one of these effects occurs, none of these haunting voices manifest again until you finish a short or long rest.</p>
+			<h5 class="caption">Voices From Beyond</h5>
+			<table>
+				<thead>
+					<tr><td>d4</td><td>Effect</td></tr>
+				</thead>
+				<tr><td>1</td><td>You have disadvantage on the next attack roll, ability check, or saving throw you make.</td></tr>
+				<tr><td>2</td><td>You are deafened by the voices for 1 minute.</td></tr>
+				<tr><td>3</td><td>You are frightened of the creature closest to you, other than yourself, until the end of your next turn. If multiple creatures are closest, the DM chooses which creature you are frightened of.</td></tr>
+				<tr><td>4</td><td>Within the next 10 minutes, you can ask your spirits about the results of a specific course of action that you plan to take within the next 30 minutes. You can receive an omen as if you had cast the augury spell. The omen manifests as whisperings from your spirits perceptible only to you.</td></tr>
+			</table>
+		</description>
+		<setters>
+			<set name="category">Supernatural Gifts</set>
+			<set name="type">Supernatural Gift</set>
+			<set name="slot">gift</set>
+		</setters>
+		<rules>
+			<grant type="Racial Trait" id="ID_WOTC_VRGTR_DARK_GIFT_FEATURE_SPIRIT_WHISPERS" />
+			<grant type="Racial Trait" id="ID_WOTC_VRGTR_DARK_GIFT_FEATURE_SUDDEN_CACOPHONY" />
+			<grant type="Racial Trait" id="ID_WOTC_VRGTR_DARK_GIFT_FEATURE_VOICES_FROM_BEYOND" />
+		</rules>
+	</element>
+
+	<element name="Spirit Whispers" type="Racial Trait" source="Van Richten's Guide To Ravenloft" id="ID_WOTC_VRGTR_DARK_GIFT_FEATURE_SPIRIT_WHISPERS">
+		<description>
+			<p>You learn the <i>message</i> cantrip if you don’t already know it, and require no components to cast it. When you cast the spell, the messages are delivered by one of your whispering spirits rather than you or the target’s voice. Your spellcasting ability for this spell is Intelligence, Wisdom, or Charisma (your choice when you gain this Dark Gift).</p>
+		</description>
+		<sheet>
+			<description>You learn the message cantrip and require no components to cast it. When you cast the spell, the messages are delivered by one of your whispering spirits rather than you or the target’s voice.</description>
+		</sheet>
+		<rules>
+			<grant type="Spell" id="ID_PHB_SPELL_MESSAGE" />
+		</rules>
+	</element>
+
+	<element name="Sudden Cacophony" type="Racial Trait" source="Van Richten's Guide To Ravenloft" id="ID_WOTC_VRGTR_DARK_GIFT_FEATURE_SUDDEN_CACOPHONY">
+		<description>
+			<p>When you are hit by an attack roll, you can use your reaction to channel your haunting spirits, letting their voices howl through you. If the attacker isn’t deafened, add your proficiency bonus to your AC against that attack, potentially causing it to miss. Once this trait causes an attack to miss, you can’t use the trait again until you finish a long rest.</p>
+		</description>
+		<sheet action="Reaction" usage="1/Long Rest">
+			<description>When you are hit by an attack roll, you can use your reaction to channel your haunting spirits, letting their voices howl through you. If the attacker isn’t deafened, add {{proficiency}} to your AC against that attack, potentially causing it to miss.</description>
+		</sheet>
+	</element>
+
+	<element name="Voices from Beyond" type="Racial Trait" source="Van Richten's Guide To Ravenloft" id="ID_WOTC_VRGTR_DARK_GIFT_FEATURE_VOICES_FROM_BEYOND">
+		<description>
+			<p>Immediately after you make an attack roll, an ability check, or a saving throw and roll a 1 on the d20, the haunting voices grow too loud to ignore. Roll on the Voices from Beyond table to determine the effect of these voices. Once one of these effects occurs, none of these haunting voices manifest again until you finish a short or long rest.</p>
+			<h5 class="caption">Voices from Beyond</h5>
+			<table>
+				<thead>
+					<tr><td>d4</td><td>Effect</td></tr>
+				</thead>
+				<tr><td>1</td><td>You have disadvantage on the next attack roll, ability check, or saving throw you make.</td></tr>
+				<tr><td>2</td><td>You are deafened by the voices for 1 minute.</td></tr>
+				<tr><td>3</td><td>You are frightened of the creature closest to you, other than yourself, until the end of your next turn. If multiple creatures are closest, the DM chooses which creature you are frightened of.</td></tr>
+				<tr><td>4</td><td>Within the next 10 minutes, you can ask your spirits about the results of a specific course of action that you plan to take within the next 30 minutes. You can receive an omen as if you had cast the augury spell. The omen manifests as whisperings from your spirits perceptible only to you.</td></tr>
+			</table>
+		</description>
+		<sheet usage="1/Short or Long Rest">
+			<description>Immediately after you make an attack roll, an ability check, or a saving throw and roll a 1 on the d20, the haunting voices grow too loud to ignore. Roll on the Voices from Beyond table to determine the effect of these voices.</description>
+		</sheet>
+	</element>
+
+	<element name="Living Shadow" type="Item" source="Van Richten's Guide To Ravenloft" id="ID_WOTC_VRGTR_ITEM_LIVING_SHADOW">
+		<description>
+			<p>The shadow you cast is animate and ever-present, even when lighting conditions would otherwise prevent it. Your shadow occasionally moves out of sync with you. Sometimes it appears to be undertaking random but mundane tasks, while at other times it acts out your darker impulses, threatening or even attacking other shadows. With effort, you can bend this shadow puppetry to your will.</p>
+			<p class="indent">Roll on or choose an option from the Shadow Quirk table to determine how your living shadow behaves. Additionally, you gain the traits that follow.</p>
+			<h5 class="caption">Shadow Quirk</h5>
+			<table>
+				<thead>
+					<tr><td>d6</td><td>Quirk</td></tr>
+				</thead>
+				<tr><td>1</td><td>My shadow often holds weapons or bears wounds that don’t exist.</td></tr>
+				<tr><td>2</td><td>When I’m distracted, my shadow panics and tries to get other people’s attention, as if it’s desperate to escape me.</td></tr>
+				<tr><td>3</td><td>When it’s not being watched, my shadow makes threatening gestures or creeps toward people.</td></tr>
+				<tr><td>4</td><td>My shadow’s movements mirror mine incorrectly—when I raise my left hand, my shadow moves its right.</td></tr>
+				<tr><td>5</td><td>My shadow fiddles with or occasionally breaks Tiny, nonmagical objects.</td></tr>
+				<tr><td>6</td><td>There’s a slight but noticeable delay between my movements and those of my shadow.</td></tr>
+			</table>
+			<p class="indent"><strong>Grasping Shadow. </strong>You learn the mage hand cantrip if you don’t already know it, and require no components to cast it. The hand created by the spell is shadowy but is not bound to your actual shadow. Your spellcasting ability for this spell is Intelligence, Wisdom, or Charisma (your choice when you gain this Dark Gift).</p>
+			<p class="indent"><strong>Shadow Strike. </strong>When you make a melee attack roll, you can increase your reach for that attack by 10 feet. Your shadow stretches and delivers the attack as if it were you. You can use this feature a number of times equal to your proficiency bonus, and you regain all expended uses when you finish a long rest.</p>
+			<p class="indent"><strong>Ominous Will. </strong>Immediately after you make an attack roll, an ability check, or a saving throw and roll a 1 on the d20, your shadow exerts a will of its own and might assist or hinder you or those around you. The next time you or a creature within 30 feet of you that you can see makes an attack roll, an ability check, or a saving throw, roll a d4. If the number is odd, reduce the total by the number rolled. If the number is even, increase the total by the number rolled. Once this effect occurs, it can’t happen again until you finish a short or long rest.</p>
+		</description>
+		<setters>
+			<set name="category">Supernatural Gifts</set>
+			<set name="type">Supernatural Gift</set>
+			<set name="slot">gift</set>
+		</setters>
+		<rules>
+			<grant type="Racial Trait" id="ID_WOTC_VRGTR_DARK_GIFT_FEATURE_GRASPING_SHADOW" />
+			<grant type="Racial Trait" id="ID_WOTC_VRGTR_DARK_GIFT_FEATURE_SHADOW_STRIKE" />
+			<grant type="Racial Trait" id="ID_WOTC_VRGTR_DARK_GIFT_FEATURE_OMINOUS_WILL" />
+		</rules>
+	</element>
+
+	<element name="Grasping Shadow" type="Racial Trait" source="Van Richten's Guide To Ravenloft" id="ID_WOTC_VRGTR_DARK_GIFT_FEATURE_GRASPING_SHADOW">
+		<description>
+			<p>You learn the <i>mage hand</i> cantrip if you don’t already know it, and require no components to cast it. The hand created by the spell is shadowy but is not bound to your actual shadow. Your spellcasting ability for this spell is Intelligence, Wisdom, or Charisma (your choice when you gain this Dark Gift).</p>
+		</description>
+		<sheet>
+			<description>You can cast <i>mage hand</i> without components. The hand created by the spell is shadowy but is not bound to your actual shadow.</description>
+		</sheet>
+		<rules>
+			<grant type="Spell" id="ID_PHB_SPELL_MAGE_HAND" />
+		</rules>
+	</element>
+
+	<element name="Shadow Strike" type="Racial Trait" source="Van Richten's Guide To Ravenloft" id="ID_WOTC_VRGTR_DARK_GIFT_FEATURE_SHADOW_STRIKE">
+		<description>
+			<p>When you make a melee attack roll, you can increase your reach for that attack by 10 feet. Your shadow stretches and delivers the attack as if it were you. You can use this feature a number of times equal to your proficiency bonus, and you regain all expended uses when you finish a long rest.</p>
+		</description>
+		<sheet usage="{{proficiency}}/Long Rest">
+			<description>When you make a melee attack roll, you can increase your reach for that attack by 10 feet. Your shadow stretches and delivers the attack as if it were you.</description>
+		</sheet>
+	</element>
+
+	<element name="Ominous Will" type="Racial Trait" source="Van Richten's Guide To Ravenloft" id="ID_WOTC_VRGTR_DARK_GIFT_FEATURE_OMINOUS_WILL">
+		<description>
+			<p>Immediately after you make an attack roll, an ability check, or a saving throw and roll a 1 on the d20, your shadow exerts a will of its own and might assist or hinder you or those around you. The next time you or a creature within 30 feet of you that you can see makes an attack roll, an ability check, or a saving throw, roll a d4. If the number is odd, reduce the total by the number rolled. If the number is even, increase the total by the number rolled. Once this effect occurs, it can’t happen again until you finish a short or long rest.</p>
+		</description>
+		<sheet usage="1/Short or Long Rest">
+			<description>Immediately after you make an attack roll, an ability check, or a saving throw and roll a 1 on the d20, your shadow exerts a will of its own and might assist or hinder you or those around you. The next time you or a creature within 30 feet of you that you can see makes an attack roll, an ability check, or a saving throw, roll a d4. If the number is odd, reduce the total by the number rolled. If the number is even, increase the total by the number rolled.</description>
+		</sheet>
+	</element>
+
+	<element name="Mist Walker" type="Item" source="Van Richten's Guide To Ravenloft" id="ID_WOTC_VRGTR_ITEM_MIST_WALKER">
+		<description>
+			<p>The Mists grip all who tread the Domains of Dread, but you know how to slip through their grasp. You can navigate the Mists successfully given enough time and a little luck, but this freedom comes with a price; if you remain in one area for too long, the Mists find you and drain your life force.</p>
+			<p class="indent">Roll on or choose an option from the Misty Travels table to determine how you developed this Dark Gift. Additionally, you gain the traits that follow.</p>
+			<h5 class="caption">Misty Travels</h5>
+			<table>
+				<thead>
+					<tr><td>d4</td><td>Origin</td></tr>
+				</thead>
+				<tr><td>1</td><td>You learned a secret about the nature of the Mists. Ever since, you can manipulate them, but the lands you walk have turned against you.</td></tr>
+				<tr><td>2</td><td>You fled into the Mists to escape someone or something that’s hunting you. You can never rest for long, knowing you’re still being pursued.</td></tr>
+				<tr><td>3</td><td>You’re part of an organization, a family, or an itinerant community with experience traveling the Mists. They taught you how to do the same.</td></tr>
+				<tr><td>4</td><td>The Mists stole you from your home and fractured your memories of where you’re from. You’ve been on a quest to find your way back ever since.</td></tr>
+			</table>
+			<p class="indent"><strong>Misty Step. </strong>You can cast the <i>misty step</i> spell, requiring no spell slot, and you must finish a long rest before you can cast it this way again. Your spellcasting ability for this spell is Intelligence, Wisdom, or Charisma (your choice when you gain this Dark Gift). If you have spell slots of 2nd level or higher, you can cast this spell with them.</p>
+			<p class="indent"><strong>Mist Traveler. </strong>When you enter the Mists intent on reaching a specific domain, you are treated as if you possess a Mist talisman keyed to that domain. To use this trait, you must know the name of the domain you have chosen as your destination, but you don’t need to have previously visited that land. This trait doesn’t allow you to bypass domain borders closed by a Darklord’s will.</p>
+			<p class="indent"><strong>Poisoned Roots. </strong>When you finish a long rest, the world around you in a 10-mile radius becomes a siphon that will eventually leech away your vitality. You can remain in the area safely for a number of weeks equal to your Constitution modifier (minimum of 1 week). Thereafter, each time you finish a long rest in the area, you must succeed on a DC 15 Constitution saving throw or gain 1 level of exhaustion that can’t be removed while you remain in the area.</p>
+		</description>
+		<setters>
+			<set name="category">Supernatural Gifts</set>
+			<set name="type">Supernatural Gift</set>
+			<set name="slot">gift</set>
+		</setters>
+		<rules>
+			<grant type="Racial Trait" id="ID_WOTC_VRGTR_DARK_GIFT_FEATURE_MISTY_STEP" />
+			<grant type="Racial Trait" id="ID_WOTC_VRGTR_DARK_GIFT_FEATURE_MIST_TRAVELER" />
+			<grant type="Racial Trait" id="ID_WOTC_VRGTR_DARK_GIFT_FEATURE_POISONED_ROOTS" />
+		</rules>
+	</element>
+
+	<element name="Misty Step" type="Racial Trait" source="Van Richten's Guide To Ravenloft" id="ID_WOTC_VRGTR_DARK_GIFT_FEATURE_MISTY_STEP">
+		<description>
+			<p>You can cast the <i>misty step</i> spell, requiring no spell slot, and you must finish a long rest before you can cast it this way again. Your spellcasting ability for this spell is Intelligence, Wisdom, or Charisma (your choice when you gain this Dark Gift). If you have spell slots of 2nd level or higher, you can cast this spell with them.</p>
+		</description>
+		<sheet usage="1/Long Rest">
+			<description>You can cast the <i>misty step</i> spell, requiring no spell slot. If you have spell slots of 2nd level or higher, you can cast this spell with them.</description>
+		</sheet>
+		<rules>
+			<grant type="Spell" id="ID_PHB_SPELL_MISTY_STEP" />
+		</rules>
+	</element>
+
+	<element name="Mist Traveler" type="Racial Trait" source="Van Richten's Guide To Ravenloft" id="ID_WOTC_VRGTR_DARK_GIFT_FEATURE_MIST_TRAVELER">
+		<description>
+			<p>When you enter the Mists intent on reaching a specific domain, you are treated as if you possess a Mist talisman keyed to that domain. To use this trait, you must know the name of the domain you have chosen as your destination, but you don’t need to have previously visited that land. This trait doesn’t allow you to bypass domain borders closed by a Darklord’s will.</p>
+		</description>
+		<sheet>
+			<description>When you enter the Mists intent on reaching a specific domain, you are treated as if you possess a Mist talisman keyed to that domain. To use this trait, you must know the name of the domain you have chosen as your destination, but you don’t need to have previously visited that land. This trait doesn’t allow you to bypass domain borders closed by a Darklord’s will.</description>
+		</sheet>
+	</element>
+
+	<element name="Poisoned Roots" type="Racial Trait" source="Van Richten's Guide To Ravenloft" id="ID_WOTC_VRGTR_DARK_GIFT_FEATURE_POISONED_ROOTS">
+		<description>
+			<p>When you finish a long rest, the world around you in a 10-mile radius becomes a siphon that will eventually leech away your vitality. You can remain in the area safely for a number of weeks equal to your Constitution modifier (minimum of 1 week). Thereafter, each time you finish a long rest in the area, you must succeed on a DC 15 Constitution saving throw or gain 1 level of exhaustion that can’t be removed while you remain in the area.</p>
+		</description>
+		<sheet>
+			<description>When you finish a long rest, the world around you in a 10-mile radius becomes a siphon that will eventually leech away your vitality. You can remain in the area safely for {{poisoned roots:time}} weeks. Thereafter, each time you finish a long rest in the area, you must succeed on a DC 15 Constitution saving throw or gain 1 level of exhaustion that can’t be removed while you remain in the area.</description>
+		</sheet>
+		<rules>
+			<stat name="poisoned roots:time" value="1" bonus="base" />
+			<stat name="poisoned roots:time" value="constitution:modifier" bonus="base" />
+		</rules>
+	</element>
+
+	<element name="Second Skin" type="Item" source="Van Richten's Guide To Ravenloft" id="ID_WOTC_VRGTR_ITEM_SECOND_SKIN">
+		<compendium display="false" />
+		<description>
+			<p>There is another side of you that most people never see. When you show this side of yourself, you might become another person entirely, a celestial-like avenger, or a walking nightmare. Whatever the specifics of this form, it exaggerates some drive or hidden nature within you.</p>
+			<p class="indent">Roll on or choose an option from the Second Form table to determine this other side of yourself. Additionally, you gain the traits that follow.</p>
+			<h5 class="caption">Second Form</h5>
+			<table>
+				<thead>
+					<tr><td>d6</td><td>Form</td></tr>
+				</thead>
+				<tr><td>1</td><td>An exaggerated version of your own form</td></tr>
+				<tr><td>2</td><td>Hybrid form of humanoid and beast</td></tr>
+				<tr><td>3</td><td>An angelic, a demonic, or an aberrant form</td></tr>
+				<tr><td>4</td><td>A vaguely human-shaped creature made of slime</td></tr>
+				<tr><td>5</td><td>A fey-like shape, either brooding or passionate</td></tr>
+				<tr><td>6</td><td>A body constructed of metal, stone, or machinery</td></tr>
+			</table>
+			<p class="indent"><strong>Transformation. </strong>You can cast the <i>alter self</i> spell to appear in your second form. When you do so, you gain the effects of that spell’s Change Appearance option and cannot end it to gain the benefits of a different option. Casting alter self in this way requires no spell slot, and you must finish a long rest before you can cast it this way again. Your spellcasting ability for this spell is Intelligence, Wisdom, or Charisma (your choice when you gain this Dark Gift). If you have spell slots of 2nd level or higher, you can cast this spell with them.</p>
+			<p class="indent">When you cast alter self using this feature, some cosmetic aspect of your second form remains after the spell ends. This visibly marks you unless you actively hide or disguise it. The mark is a perceptible change such as scaly skin, stunted wings, eyes without pupils, or horns. The mark fades after you finish a long rest.</p>
+			<p class="indent"><strong>Involuntary Change. </strong>Certain circumstances can activate your Dark Gift. After you experience this catalyst, at the start of your next turn you must succeed on a DC 15 Charisma saving throw or use your action to cast alter self as described in the Transformation trait, even if you have already used it.</p>
+			<p class="indent">Roll on or choose an option from the Change Catalyst table to determine what triggers your involuntary change.</p>
+			<h5 class="caption">Change Catalyst</h5>
+			<table>
+				<thead>
+					<tr><td>d6</td><td>Catalyst</td></tr>
+				</thead>
+				<tr><td>1</td><td>Seeing a particular phase of the moon</td></tr>
+				<tr><td>2</td><td>The smell of a certain type of flower</td></tr>
+				<tr><td>3</td><td>The sound of ringing temple bells</td></tr>
+				<tr><td>4</td><td>Hearing a particular melody</td></tr>
+				<tr><td>5</td><td>Touching pure silver with your bare skin</td></tr>
+				<tr><td>6</td><td>Seeing someone resembling a specific individual</td></tr>
+			</table>
+		</description>
+		<setters>
+			<set name="category">Supernatural Gifts</set>
+			<set name="type">Supernatural Gift</set>
+			<set name="slot">gift</set>
+		</setters>
+		<rules>
+			<grant type="Racial Trait" id="ID_WOTC_VRGTR_DARK_GIFT_FEATURE_TRANSFORMATION" />
+			<grant type="Racial Trait" id="ID_WOTC_VRGTR_DARK_GIFT_FEATURE_INVOLUNTARY_CHANGE" />
+		</rules>
+	</element>
+
+	<element name="Transformation" type="Racial Trait" source="Van Richten's Guide To Ravenloft" id="ID_WOTC_VRGTR_DARK_GIFT_FEATURE_TRANSFORMATION">
+		<description>
+			<p>You can cast the <i>alter self</i> spell to appear in your second form. When you do so, you gain the effects of that spell’s Change Appearance option and cannot end it to gain the benefits of a different option. Casting alter self in this way requires no spell slot, and you must finish a long rest before you can cast it this way again. Your spellcasting ability for this spell is Intelligence, Wisdom, or Charisma (your choice when you gain this Dark Gift). If you have spell slots of 2nd level or higher, you can cast this spell with them.</p>
+			<p class="indent">When you cast alter self using this feature, some cosmetic aspect of your second form remains after the spell ends. This visibly marks you unless you actively hide or disguise it. The mark is a perceptible change such as scaly skin, stunted wings, eyes without pupils, or horns. The mark fades after you finish a long rest.</p>
+		</description>
+		<sheet usage="1/Long Rest">
+			<description>You can cast the <i>alter self</i> spell to appear in your second form. When you do so, you gain the effects of that spell’s Change Appearance option and cannot end it to gain the benefits of a different option. Casting alter self in this way requires no spell slot. If you have spell slots of 2nd level or higher, you can cast this spell with them. When you cast alter self using this feature, some cosmetic aspect of your second form remains after the spell ends. This visibly marks you unless you actively hide or disguise it. The mark is a perceptible change such as scaly skin, stunted wings, eyes without pupils, or horns. The mark fades after you finish a long rest.</description>
+		</sheet>
+		<rules>
+			<grant type="Spell" id="ID_PHB_SPELL_ALTER_SELF" />
+		</rules>
+	</element>
+
+	<element name="Involuntary Change" type="Racial Trait" source="Van Richten's Guide To Ravenloft" id="ID_WOTC_VRGTR_DARK_GIFT_FEATURE_INVOLUNTARY_CHANGE">
+		<description>
+			<p>Certain circumstances can activate your Dark Gift. After you experience this catalyst, at the start of your next turn you must succeed on a DC 15 Charisma saving throw or use your action to cast alter self as described in the Transformation trait, even if you have already used it.</p>
+			<p class="indent">Roll on or choose an option from the Change Catalyst table to determine what triggers your involuntary change.</p>
+			<h5 class="caption">Change Catalyst</h5>
+			<table>
+				<thead>
+					<tr><td>d6</td><td>Catalyst</td></tr>
+				</thead>
+				<tr><td>1</td><td>Seeing a particular phase of the moon</td></tr>
+				<tr><td>2</td><td>The smell of a certain type of flower</td></tr>
+				<tr><td>3</td><td>The sound of ringing temple bells</td></tr>
+				<tr><td>4</td><td>Hearing a particular melody</td></tr>
+				<tr><td>5</td><td>Touching pure silver with your bare skin</td></tr>
+				<tr><td>6</td><td>Seeing someone resembling a specific individual</td></tr>
+			</table>
+		</description>
+		<sheet>
+			<description>Certain circumstances can activate your Dark Gift. After you experience this catalyst, at the start of your next turn you must succeed on a DC 15 Charisma saving throw or use your action to cast alter self as described in the Transformation trait, even if you have already used it. Roll on or choose an option from the Change Catalyst table to determine what triggers your involuntary change.</description>
+		</sheet>
+	</element>
+
+	<element name="Symbiotic Being" type="Item" source="Van Richten's Guide To Ravenloft" id="ID_WOTC_VRGTR_ITEM_SYMBIOTIC_BEING">
+		<compendium display="false" />
+		<description>
+			<p>A second being resides within your body along with you. It manifests physically somewhere on you and relies on you for its survival. At the same time, it offers you knowledge and other assistance, either of its own volition or because of your intertwined nature. The symbiote has its own personality and agenda, which might be at odds with yours. If you ignore the symbiote’s desires, it might strive to interfere with you. There is no way to be rid of the symbiote while you have this Dark Gift. Even if you go to drastic lengths, such as severing the part of your body where the symbiote resides, it reappears on your body in another location at the next midnight.</p>
+			<p class="indent">Roll on or choose an option from the Symbiotic Nature table to determine what sort of symbiotic being shares your body. Additionally, you gain the traits that follow.</p>
+			<h5 class="caption">Symbiotic Nature</h5>
+			<table>
+				<thead>
+					<tr><td>d6</td><td>Symbiote</td></tr>
+				</thead>
+				<tr><td>1</td><td>Tiny humanoid facial features protruding from your torso, palm, or the back of your head</td></tr>
+				<tr><td>2</td><td>An alien appendage inside an unhealing wound</td></tr>
+				<tr><td>3</td><td>A burrowing, worm-like being</td></tr>
+				<tr><td>4</td><td>An intrusive thought that inhabits your mind</td></tr>
+				<tr><td>5</td><td>A living tattoo</td></tr>
+				<tr><td>6</td><td>Crystal growths that replace a portion of your body</td></tr>
+			</table>
+			<p class="indent"><strong>Entwined Existence. </strong>Your symbiote is a separate entity with its own physical form bound to yours. It isn’t a separate creature and relies on you to survive. It has Intelligence, Wisdom, and Charisma scores. The DM sets the symbiote’s abilities or determines them randomly (roll 4d6 for each score, ignoring the lowest roll and totaling the rest). The symbiote can see and hear using your senses.</p>
+			<p class="indent">The symbiote speaks, reads, and understands two languages; one that you speak, as well as one appropriate to its nature. Choose one of the following skills: Arcana, Deception, History, Intimidation, Insight, Investigation, Nature, Religion, Perception, or Persuasion. You gain proficiency in that skill if you don’t already have it, representing the symbiote’s counsel and guidance.</p>
+			<p class="indent">If you die, so does your symbiote. If you are subsequently returned to life, your symbiote revives as well.</p>
+			<p class="indent"><strong>Sustained Symbiosis. </strong>Your symbiote has a vested interest in your survival and takes steps to ensure it. When you fail a saving throw, you can choose to have your symbiote expend one of your Hit Dice to roll it and add the number rolled to the saving throw, potentially turning the failure into a success. If it uses this feature on a death saving throw, you succeed on the save and regain 1 hit point regardless of the number rolled on the d20.</p>
+			<p class="indent">Once you succeed on a saving throw due to this trait, the symbiote can’t use it again until you finish a long rest.</p>
+			<p class="indent"><strong>Symbiotic Agenda. </strong>Your symbiote has an agenda that drives it, and it expects you to assist it in achieving those goals. How permissive or patient it is in resolving its agenda depends on its personality (work with your DM to determine these details). If you have an opportunity to advance its agenda and don’t act on it, the symbiote can try to force your hand. You must succeed on a Charisma saving throw (DC 12 + the symbiote’s Charisma modifier) or be charmed by the symbiote for 1d12 hours. While charmed, you must try to follow the symbiote’s commands. If you take damage that is not self-inflicted, you can repeat the saving throw, ending the effect on a success.</p>
+			<p class="indent">Roll or choose from the Symbiotic Agenda table to determine the symbiote’s goal, working with your DM to detail the specifics or create another agenda.</p>
+			<h5 class="caption">Symbiotic Agenda</h5>
+			<table>
+				<thead>
+					<tr><td>d6</td><td>Agenda</td></tr>
+				</thead>
+				<tr><td>1</td><td>The symbiote seeks to destroy a specific type of being, such as fiends, trolls, or paladins.</td></tr>
+				<tr><td>2</td><td>The symbiote craves knowledge and is determined to solve a mystery or learn a secret.</td></tr>
+				<tr><td>3</td><td>The symbiote wants to bring a prophecy to fruition or to thwart one.</td></tr>
+				<tr><td>4</td><td>The symbiote seeks to defend the servants and interests of a powerful being or organization.</td></tr>
+				<tr><td>5</td><td>The symbiote wants to keep you from harm at all costs and believes it knows what’s best for you.</td></tr>
+				<tr><td>6</td><td>The symbiote seeks to experience new sensations, the more bizarre the better.</td></tr>
+			</table>
+		</description>
+		<setters>
+			<set name="category">Supernatural Gifts</set>
+			<set name="type">Supernatural Gift</set>
+			<set name="slot">gift</set>
+		</setters>
+		<rules>
+			<grant type="Racial Trait" id="ID_WOTC_VRGTR_DARK_GIFT_FEATURE_ENTWINED_EXISTENCE" />
+			<grant type="Racial Trait" id="ID_WOTC_VRGTR_DARK_GIFT_FEATURE_SUSTAINED_SYMBIOSIS" />
+			<grant type="Racial Trait" id="ID_WOTC_VRGTR_DARK_GIFT_FEATURE_SYMBIOTIC_AGENDA" />
+		</rules>
+	</element>
+
+	<element name="Entwined Existence" type="Racial Trait" source="Van Richten's Guide To Ravenloft" id="ID_WOTC_VRGTR_DARK_GIFT_FEATURE_ENTWINED_EXISTENCE">
+		<description>
+			<p>Your symbiote is a separate entity with its own physical form bound to yours. It isn’t a separate creature and relies on you to survive. It has Intelligence, Wisdom, and Charisma scores. The DM sets the symbiote’s abilities or determines them randomly (roll 4d6 for each score, ignoring the lowest roll and totaling the rest). The symbiote can see and hear using your senses.</p>
+			<p class="indent">The symbiote speaks, reads, and understands two languages; one that you speak, as well as one appropriate to its nature. Choose one of the following skills: Arcana, Deception, History, Intimidation, Insight, Investigation, Nature, Religion, Perception, or Persuasion. You gain proficiency in that skill if you don’t already have it, representing the symbiote’s counsel and guidance.</p>
+			<p class="indent">If you die, so does your symbiote. If you are subsequently returned to life, your symbiote revives as well.</p>
+		</description>
+		<sheet display="false" />
+		<rules>
+			<select type="Proficiency" name="Skill Proficiency (Entwined Existence)" supports="ID_PROFICIENCY_SKILL_ARCANA | ID_PROFICIENCY_SKILL_DECEPTION | ID_PROFICIENCY_SKILL_HISTORY | ID_PROFICIENCY_SKILL_INTIMIDATION | ID_PROFICIENCY_SKILL_INSIGHT | ID_PROFICIENCY_SKILL_INVESTIGATION | ID_PROFICIENCY_SKILL_NATURE | ID_PROFICIENCY_SKILL_RELIGION | ID_PROFICIENCY_SKILL_PERCEPTION | ID_PROFICIENCY_SKILL_PERSUASION" />
+		</rules>
+	</element>
+
+	<element name="Sustained Symbiosis" type="Racial Trait" source="Van Richten's Guide To Ravenloft" id="ID_WOTC_VRGTR_DARK_GIFT_FEATURE_SUSTAINED_SYMBIOSIS">
+		<description>
+			<p>Your symbiote has a vested interest in your survival and takes steps to ensure it. When you fail a saving throw, you can choose to have your symbiote expend one of your Hit Dice to roll it and add the number rolled to the saving throw, potentially turning the failure into a success. If it uses this feature on a death saving throw, you succeed on the save and regain 1 hit point regardless of the number rolled on the d20.</p>
+			<p class="indent">Once you succeed on a saving throw due to this trait, the symbiote can’t use it again until you finish a long rest.</p>
+		</description>
+		<sheet usage="1/Long Rest">
+			<description>When you fail a saving throw, you can choose to have your symbiote expend one of your Hit Dice to roll it and add the number rolled to the saving throw, potentially turning the failure into a success. If it uses this feature on a death saving throw, you succeed on the save and regain 1 hit point regardless of the number rolled on the d20.</description>
+		</sheet>
+	</element>
+
+	<element name="Symbiotic Agenda" type="Racial Trait" source="Van Richten's Guide To Ravenloft" id="ID_WOTC_VRGTR_DARK_GIFT_FEATURE_SYMBIOTIC_AGENDA">
+		<description>
+			<p>Your symbiote has an agenda that drives it, and it expects you to assist it in achieving those goals. How permissive or patient it is in resolving its agenda depends on its personality (work with your DM to determine these details). If you have an opportunity to advance its agenda and don’t act on it, the symbiote can try to force your hand. You must succeed on a Charisma saving throw (DC 12 + the symbiote’s Charisma modifier) or be charmed by the symbiote for 1d12 hours. While charmed, you must try to follow the symbiote’s commands. If you take damage that is not self-inflicted, you can repeat the saving throw, ending the effect on a success.</p>
+			<p class="indent">Roll or choose from the Symbiotic Agenda table to determine the symbiote’s goal, working with your DM to detail the specifics or create another agenda.</p>
+			<h5 class="caption">Symbiotic Agenda</h5>
+			<table>
+				<thead>
+					<tr><td>d6</td><td>Agenda</td></tr>
+				</thead>
+				<tr><td>1</td><td>The symbiote seeks to destroy a specific type of being, such as fiends, trolls, or paladins.</td></tr>
+				<tr><td>2</td><td>The symbiote craves knowledge and is determined to solve a mystery or learn a secret.</td></tr>
+				<tr><td>3</td><td>The symbiote wants to bring a prophecy to fruition or to thwart one.</td></tr>
+				<tr><td>4</td><td>The symbiote seeks to defend the servants and interests of a powerful being or organization.</td></tr>
+				<tr><td>5</td><td>The symbiote wants to keep you from harm at all costs and believes it knows what’s best for you.</td></tr>
+				<tr><td>6</td><td>The symbiote seeks to experience new sensations, the more bizarre the better.</td></tr>
+			</table>
+		</description>
+		<sheet>
+			<description>If you have an opportunity to advance its agenda and don’t act on it, the symbiote can try to force your hand. You must succeed on a Charisma saving throw (DC 12 + the symbiote’s Charisma modifier) or be charmed by the symbiote for 1d12 hours. While charmed, you must try to follow the symbiote’s commands. If you take damage that is not self-inflicted, you can repeat the saving throw, ending the effect on a success.</description>
+		</sheet>
+	</element>
+
+	<element name="Touch of Death" type="Item" source="Van Richten's Guide To Ravenloft" id="ID_WOTC_VRGTR_ITEM_TOUCH_OF_DEATH">
+		<compendium display="false" />
+		<description>
+			<p>Your touch is pain, harming whoever you come in contact with. The deathly power within you is beyond your control, afflicting any who touch your bare skin. By the same token, you can deliver death to your enemies with your touch.</p>
+			<p class="indent">Roll on or choose an option from the Deadly Touch table to determine how this Dark Gift presents itself. Additionally, you gain the traits that follow.</p>
+			<h5 class="caption">Deadly Touch</h5>
+			<table>
+				<thead>
+					<tr><td>d6</td><td>Manifestation</td></tr>
+				</thead>
+				<tr><td>1</td><td>Your body is alchemically or biologically altered, infusing you with deadly chemicals.</td></tr>
+				<tr><td>2</td><td>The magic of a slighted druid or fey makes small plants wither and insects die in your presence.</td></tr>
+				<tr><td>3</td><td>You’re the harbinger of a grim prophecy. Any creature your touch damages is marked with a temporary scar of a group, fiend, deity, or other force that takes an interest in you.</td></tr>
+				<tr><td>4</td><td>You survived a near-death experience—but shouldn’t have. Ever since, death and ill omens follow you.</td></tr>
+				<tr><td>5</td><td>You are out of sync with time or reality. Anything you touch is warped by the distortion.</td></tr>
+				<tr><td>6</td><td>Every time you touch a creature, you hear the laughter of someone you once harmed.</td></tr>
+			</table>
+			<p class="indent"><strong>Death Touch. </strong>You can focus your deadly touch against your foes. As an action, make one unarmed strike. On a hit, the target takes an additional 1d10 necrotic damage. This damage increases by 1d10 when you reach 5th level (2d10), 11th level (3d10), and 17th level (4d10).</p>
+			<p class="indent"><strong>Inescapable Death. </strong>When you hit a target with an attack roll and deal necrotic damage, you ignore the target’s resistance to that damage.</p>
+			<p class="indent"><strong>Withering Contact. </strong>When you start your turn grappling a creature or grappled by it, the creature takes 1d10 necrotic damage.</p>
+		</description>
+		<setters>
+			<set name="category">Supernatural Gifts</set>
+			<set name="type">Supernatural Gift</set>
+			<set name="slot">gift</set>
+		</setters>
+		<rules>
+			<grant type="Racial Trait" id="ID_WOTC_VRGTR_DARK_GIFT_FEATURE_DEATH_TOUCH" />
+			<grant type="Racial Trait" id="ID_WOTC_VRGTR_DARK_GIFT_FEATURE_INESCAPABLE_DEATH" />
+			<grant type="Racial Trait" id="ID_WOTC_VRGTR_DARK_GIFT_FEATURE_WITHERING_CONTACT" />
+		</rules>
+	</element>
+
+	<element name="Death Touch" type="Racial Trait" source="Van Richten's Guide To Ravenloft" id="ID_WOTC_VRGTR_DARK_GIFT_FEATURE_DEATH_TOUCH">
+		<description>
+			<p>You can focus your deadly touch against your foes. As an action, make one unarmed strike. On a hit, the target takes an additional 1d10 necrotic damage. This damage increases by 1d10 when you reach 5th level (2d10), 11th level (3d10), and 17th level (4d10).</p>
+		</description>
+		<sheet action="Action">
+			<description>Make one unarmed strike. On a hit, the target takes an additional {{death touch:num die}}d10 necrotic damage.</description>
+		</sheet>
+		<rules>
+			<stat name="death touch:num die" value="1" />
+			<stat name="death touch:num die" value="1" level="5" />
+			<stat name="death touch:num die" value="1" level="11" />
+			<stat name="death touch:num die" value="1" level="17" />
+		</rules>
+	</element>
+
+	<element name="Inescapable Death" type="Racial Trait" source="Van Richten's Guide To Ravenloft" id="ID_WOTC_VRGTR_DARK_GIFT_FEATURE_INESCAPABLE_DEATH">
+		<description>
+			<p>When you hit a target with an attack roll and deal necrotic damage, you ignore the target’s resistance to that damage.</p>
+		</description>
+		<sheet>
+			<description>When you hit a target with an attack roll and deal necrotic damage, you ignore the target’s resistance to that damage.</description>
+		</sheet>
+	</element>
+
+	<element name="Withering Contact" type="Racial Trait" source="Van Richten's Guide To Ravenloft" id="ID_WOTC_VRGTR_DARK_GIFT_FEATURE_WITHERING_CONTACT">
+		<description>
+			<p>When you start your turn grappling a creature or grappled by it, the creature takes 1d10 necrotic damage.</p>
+		</description>
+		<sheet>
+			<description>When you start your turn grappling a creature or grappled by it, the creature takes 1d10 necrotic damage.</description>
+		</sheet>
+	</element>
+
+	<element name="Watchers" type="Item" source="Van Richten's Guide To Ravenloft" id="ID_WOTC_VRGTR_ITEM_WATCHERS">
+		<compendium display="false" />
+		<description>
+			<p>Something is always watching you and draws ethereal spirits that take the form of creatures made of shadowstuff, usually in the shape of Tiny beasts, that follow you and gather in your general vicinity. These creatures act like normal examples of their kind, but their behavior suggests a hint of malice. No matter what precautions you take, you can’t permanently drive these spirits away. They always return, wait just beyond the reach of deterrents, or later crawl out of your clothes and equipment.</p>
+			<p class="indent">Roll on or choose an option from the Watchers table to determine what sorts of forms the spirits typically take when they follow you.</p>
+			<h5 class="caption">Watchers</h5>
+			<table>
+				<thead>
+					<tr><td>d8</td><td>Watchers</td></tr>
+				</thead>
+				<tr><td>1</td><td><strong>Carrion Eaters. </strong>Jackals, ravens, vultures</td></tr>
+				<tr><td>2</td><td><strong>Inescapable Judgments. </strong>Animate tools of punishment, drifting eyeballs, religious iconography</td></tr>
+				<tr><td>3</td><td><strong>Night Wings. </strong>Bats, moths, owls</td></tr>
+				<tr><td>4</td><td><strong>Plague Carriers. </strong>Fleas, rats, squirrels</td></tr>
+				<tr><td>5</td><td><strong>Unnatural Observers. </strong>Animate objects, clockwork devices, otherworldly voyeurs</td></tr>
+				<tr><td>6</td><td><strong>Sea Skulkers. </strong>Crabs, eels, jellyfish</td></tr>
+				<tr><td>7</td><td><strong>Stray Souls. </strong>Ghost orbs, shadows, ectoplasmic wisps</td></tr>
+				<tr><td>8</td><td><strong>Venomous Vermin. </strong>Scorpions, serpents, spiders</td></tr>
+			</table>
+			<p class="indent"><strong>Borrowed Eyes. </strong>As an action, you can influence the presence guiding the watchers for 1 hour. For the duration, you gain advantage on Intelligence (Investigation) and Wisdom (Perception) checks, and you can’t be blinded. Once you use this feature, you can’t use it again until you finish a long rest.</p>
+			<p class="indent"><strong>Dread Presence. </strong>You have disadvantage on Charisma (Deception), Charisma (Performance), and Charisma (Persuasion) checks made against creatures that can see the watchers, and you have disadvantage on saving throws made against the scrying spell.</p>
+			<p class="indent">You can temporarily disperse or hide the watchers with some effort. With 1 minute of work and a successful DC 15 Charisma (Animal Handling) check, you can suppress your Borrowed Eyes and Dread Presence for 1 hour. Once you successfully suppress these features, you can’t do so again until you finish a long rest.</p>
+		</description>
+		<setters>
+			<set name="category">Supernatural Gifts</set>
+			<set name="type">Supernatural Gift</set>
+			<set name="slot">gift</set>
+		</setters>
+		<rules>
+			<grant type="Racial Trait" id="ID_WOTC_VRGTR_DARK_GIFT_FEATURE_BORROWED_EYES" />
+			<grant type="Racial Trait" id="ID_WOTC_VRGTR_DARK_GIFT_FEATURE_DREAD_PRESENCE" />
+		</rules>
+	</element>
+
+	<element name="Borrowed Eyes" type="Racial Trait" source="Van Richten's Guide To Ravenloft" id="ID_WOTC_VRGTR_DARK_GIFT_FEATURE_BORROWED_EYES">
+		<description>
+			<p>As an action, you can influence the presence guiding the watchers for 1 hour. For the duration, you gain advantage on Intelligence (Investigation) and Wisdom (Perception) checks, and you can’t be blinded. Once you use this feature, you can’t use it again until you finish a long rest.</p>
+		</description>
+		<sheet action="Action" usage="1/Long Rest">
+			<description>You can influence the presence guiding the watchers for 1 hour. For the duration, you gain advantage on Intelligence (Investigation) and Wisdom (Perception) checks, and you can’t be blinded.</description>
+		</sheet>
+	</element>
+
+	<element name="Dread Presence" type="Racial Trait" source="Van Richten's Guide To Ravenloft" id="ID_WOTC_VRGTR_DARK_GIFT_FEATURE_DREAD_PRESENCE">
+		<description>
+			<p>You have disadvantage on Charisma (Deception), Charisma (Performance), and Charisma (Persuasion) checks made against creatures that can see the watchers, and you have disadvantage on saving throws made against the scrying spell.</p>
+			<p class="indent">You can temporarily disperse or hide the watchers with some effort. With 1 minute of work and a successful DC 15 Charisma (Animal Handling) check, you can suppress your Borrowed Eyes and Dread Presence for 1 hour. Once you successfully suppress these features, you can’t do so again until you finish a long rest.</p>
+		</description>
+		<sheet usage="1/Long Rest">
+			<description>You have disadvantage on Charisma (Deception), Charisma (Performance), and Charisma (Persuasion) checks made against creatures that can see the watchers, and you have disadvantage on saving throws made against the scrying spell.&#13;
+			You can temporarily disperse or hide the watchers with some effort. With 1 minute of work and a successful DC 15 Charisma (Animal Handling) check, you can suppress your Borrowed Eyes and Dread Presence for 1 hour.</description>
+		</sheet>
+	</element>
+</elements>
