@@ -4,7 +4,7 @@
 		<name>Circle of Wildfire</name>
 		<description>The Circle of Wildfire from Tasha’s Cauldron of Everything</description>
 		<author url="http://dnd.wizards.com/products/tabletop-games/rpg-products/tashas-cauldron-everything">Tasha’s Cauldron of Everything</author>
-		<update version="0.0.1">
+		<update version="0.0.2">
 			<file name="druid-wildfire.xml" url="https://raw.githubusercontent.com/AuroraLegacy/elements/master/supplements/tashas-cauldron-of-everything/archetypes/druid-wildfire.xml" />
 		</update>
 	</info>
@@ -14,6 +14,9 @@
 			<p>Druids within the Circle of Wildfire understand that destruction is sometimes the precursor of creation, such as when a forest fire promotes later growth. These druids bond with a primal spirit that harbors both destructive and creative power, allowing the druids to create controlled flames that burn away one thing but give life to another.</p>
 			<div element="ID_WOTC_TCOE_ARCHETYPE_FEATURE_CIRCLE_OF_WILDFIRE_CIRCLE_SPELLS" />
 			<div element="ID_WOTC_TCOE_ARCHETYPE_FEATURE_CIRCLE_OF_WILDFIRE_SUMMON_WILDFIRE_SPIRIT" />
+			<div class="reference">
+				<div element="ID_WOTC_TCOE_INFORMATION_WILDFIRE_SPIRIT_STATBLOCK" />
+			</div>
 			<div element="ID_WOTC_TCOE_ARCHETYPE_FEATURE_CIRCLE_OF_WILDFIRE_ENHANCED_BOND" />
 			<div element="ID_WOTC_TCOE_ARCHETYPE_FEATURE_CIRCLE_OF_WILDFIRE_CAUTERIZING_FLAMES" />
 			<div element="ID_WOTC_TCOE_ARCHETYPE_FEATURE_CIRCLE_OF_WILDFIRE_BLAZING_REVIVAL" />
@@ -28,6 +31,7 @@
 		</rules>
 	</element>
 	<element name="Circle Spells" type="Archetype Feature" source="Tasha’s Cauldron of Everything" id="ID_WOTC_TCOE_ARCHETYPE_FEATURE_CIRCLE_OF_WILDFIRE_CIRCLE_SPELLS">
+		<requirements>!ID_INTERNAL_FEATURE_REPLACEMENT_DRUID_WILDFIRE_CIRCLE_SPELLS</requirements>
 		<description>
 			<p><em>2nd-level Circle of Wildfire feature</em></p>
 			<p>You have formed a bond with a wildfire spirit, a primal being of creation and destruction. Your link with this spirit grants you access to some spells when you reach certain levels in this class, as shown on the Circle of Wildfire Spells table.</p>
@@ -59,6 +63,7 @@
 		</rules>
 	</element>
 	<element name="Summon Wildfire Spirit" type="Archetype Feature" source="Tasha’s Cauldron of Everything" id="ID_WOTC_TCOE_ARCHETYPE_FEATURE_CIRCLE_OF_WILDFIRE_SUMMON_WILDFIRE_SPIRIT">
+		<requirements>!ID_INTERNAL_FEATURE_REPLACEMENT_DRUID_WILDFIRE_SUMMON_WILDFIRE_SPIRIT</requirements>
 		<description>
 			<p><em>2nd-level Circle of Wildfire feature</em></p>
 			<p>You can summon the primal spirit bound to your soul. As an action, you can expend one use of your Wild Shape feature to summon your wildfire spirit, rather than assuming a beast form.</p>
@@ -66,26 +71,9 @@
 			<p class="indent">The spirit is friendly to you and your companions and obeys your commands. See this creature’s game statistics in the Wildfire Spirit stat block, which uses your proficiency bonus (PB) in several places. You determine the spirit’s appearance. Some spirits take the form of a humanoid figure made of gnarled branches covered in flame, while others look like beasts wreathed in fire.</p>
 			<p class="indent">In combat, the spirit shares your initiative count, but it takes its turn immediately after yours. The only action it takes on its turn is the Dodge action, unless you take a bonus action on your turn to command it to take another action. That action can be one in its stat block or some other action. If you are incapacitated, the spirit can take any action of its choice, not just Dodge.</p>
 			<p class="indent">The spirit manifests for 1 hour, until it is reduced to 0 hit points, until you use this feature to summon the spirit again, or until you die.</p>
-			<h5>Wildfire Spirit</h5>
-			<p><em>Small elemental, any chaotic alignment</em></p>
-			<br/>
-			<p class="indent"><strong>Hit Points</strong> 5 + five times your level in this class</p>
-			<p class="indent"><strong>Armor Class</strong> 13 (natural armor)</p>
-			<p class="indent"><strong>Speed.</strong> 30 ft., fly 30 ft. (hover)</p>
-			<table style="text-align:center">
-				<thead>
-					<tr><td>STR</td><td>DEX</td><td>CON</td><td>INT</td><td>WIS</td><td>CHA</td></tr>
-				</thead>
-				<tr><td>10 (+0)</td><td>14 (+2)</td><td>14 (+2)</td><td>13 (+1)</td><td>15 (+2)</td><td>11 (+0)</td></tr>
-			</table>
-			<p class="indent"><strong>Damage Immunities</strong> fire</p>
-			<p class="indent"><strong>Condition Immunities</strong> charmed, frightened, grappled, prone, restrained</p>
-			<p class="indent"><strong>Senses</strong> darkvision 60 ft., passive Perception 12</p>
-			<p class="indent"><strong>Languages</strong> understands the languages you speak</p>
-			<h5 style="text-decoration:underline">Actions</h5>
-			<br/>
-			<p class="indent"><strong><em>Flame Seed.</em></strong> <em>Ranged Weapon Attack</em>: your spell attack modifier to hit, range 60 ft., one target you can see. <em>Hit</em>: 1d6 + PB fire damage.</p>
-			<p class="indent"><strong><em>Fiery Teleportation.</em></strong> The spirit and each willing creature of your choice within 5 feet of it teleport up to 15 feet to unoccupied spaces you can see. Then each creature within 5 feet of the space that the spirit left must succeed on a Dexterity saving throw against your spell save DC or take 1d6 + PB fire damage.</p>
+			<div class="reference">
+				<div element="ID_WOTC_TCOE_INFORMATION_WILDFIRE_SPIRIT_STATBLOCK" />
+			</div>
 		</description>
 		<sheet action="Action">
 			<description>You can expend one use of your Wild Shape feature to summon your wildfire spirit, rather than assuming a beast form. 
@@ -95,10 +83,11 @@
 			The spirit manifests for 1 hour, until it is reduced to 0 hit points, until you use this feature to summon the spirit again, or until you die.</description>
 		</sheet>
 		<rules>
-			<select type="Companion" name="Wildfire Spirit" supports="Wildfire Spirit" default="ID_WOTC_TCOE_COMPANION_WILDFIRE_SPIRIT" />
+			<select type="Companion" name="Wildfire Spirit" supports="Wildfire Spirit" />
 		</rules>
 	</element>
 	<element name="Enhanced Bond" type="Archetype Feature" source="Tasha’s Cauldron of Everything" id="ID_WOTC_TCOE_ARCHETYPE_FEATURE_CIRCLE_OF_WILDFIRE_ENHANCED_BOND">
+		<requirements>!ID_INTERNAL_FEATURE_REPLACEMENT_DRUID_WILDFIRE_ENHANCED_BOND</requirements>
 		<description>
 			<p><em>6th-level Circle of Wildfire feature</em></p>
 			<p>The bond with your wildfire spirit enhances your destructive and restorative spells. Whenever you cast a spell that deals fire damage or restores hit points while your wildfire spirit is summoned, roll a d8, and you gain a bonus equal to the number rolled to one damage or healing roll of the spell.</p>
@@ -110,6 +99,7 @@
 		</sheet>
 	</element>
 	<element name="Cauterizing Flames" type="Archetype Feature" source="Tasha’s Cauldron of Everything" id="ID_WOTC_TCOE_ARCHETYPE_FEATURE_CIRCLE_OF_WILDFIRE_CAUTERIZING_FLAMES">
+		<requirements>!ID_INTERNAL_FEATURE_REPLACEMENT_DRUID_WILDFIRE_CAUTERIZING_FLAMES</requirements>
 		<description>
 			<p><em>10th-level Circle of Wildfire feature</em></p>
 			<p>You gain the ability to turn death into magical flames that can heal or incinerate. When a Small or larger creature dies within 30 feet of you or your wildfire spirit, a harmless spectral flame springs forth in the dead creature’s space and flickers there for 1 minute. When a creature you can see enters that space, you can use your reaction to extinguish the spectral flame there and either heal the creature or deal fire damage to it. The healing or damage equals 2d10 + your Wisdom modifier.</p>
@@ -120,6 +110,7 @@
 		</sheet>
 	</element>
 	<element name="Blazing Revival" type="Archetype Feature" source="Tasha’s Cauldron of Everything" id="ID_WOTC_TCOE_ARCHETYPE_FEATURE_CIRCLE_OF_WILDFIRE_BLAZING_REVIVAL">
+		<requirements>!ID_INTERNAL_FEATURE_REPLACEMENT_DRUID_WILDFIRE_BLAZING_REVIVAL</requirements>
 		<description>
 			<p><em>14th-level Circle of Wildfire feature</em></p>
 			<p>The bond with your wildfire spirit can save you from death. If the spirit is within 120 feet of you when you are reduced to 0 hit points and thereby fall unconscious, you can cause the spirit to drop to 0 hit points. You then regain half your hit points and immediately rise to your feet.</p>
@@ -151,7 +142,7 @@
 			<set name="size">Small</set>
 			<set name="senses">darkvision 60 ft., passive Perception 12</set>
 			<set name="languages">understands the languages you speak</set>
-			<set name="alignment">any chaotic alignment</set>
+			<set name="alignment">unaligned</set>
 			<set name="challenge">1/4</set>
 			<set name="actions">ID_WOTC_TCOE_COMPANION_ACTION_WILDFIRE_SPIRIT_FLAME_SEED,ID_WOTC_TCOE_COMPANION_ACTION_WILDFIRE_SPIRIT_FIERY_TELEPORTATION</set>
 		</setters>
@@ -185,4 +176,42 @@
 			<description>The spirit and each willing creature of your choice within 5 feet of it teleport up to 15 feet to unoccupied spaces you can see. Then each creature within 5 feet of the space that the spirit left must succeed on a Dexterity saving throw against your spell save DC or take 1d6 + PB fire damage.</description>
 		</sheet>
 	</element>
+
+	<element name="Wildfire Spirit" type="Information" source="Tasha’s Cauldron of Everything" id="ID_WOTC_TCOE_INFORMATION_WILDFIRE_SPIRIT_STATBLOCK">
+		<description>
+			<p style="margin-bottom:-5px"><em>Small elemental</em></p>
+			<h4 style="margin-top:5px" />
+			<ul class="unstyled">
+				<li><strong>Armor Class</strong> 13 (natural armor)</li>
+				<li><strong>Hit Points</strong> 5 + five times your level in this class</li>
+				<li><strong>Speed</strong> 30 ft., fly 30 ft. (hover)</li>
+			</ul>
+			<table style="text-align:center;margin-top:10px;margin-bottom:10px">
+				<thead><tr><td>STR</td><td>DEX</td><td>CON</td><td>INT</td><td>WIS</td><td>CHA</td></tr></thead>
+				<tr><td>10 (+0)</td><td>14 (+2)</td><td>14 (+2)</td><td>13 (+1)</td><td>15 (+2)</td><td>11 (+0)</td></tr>
+			</table>
+			<ul class="unstyled">
+				<li><strong>Damage Immunities</strong> fire</li>
+				<li><strong>Condition Immunities</strong> charmed, frightened, grappled, prone, restrained</li>
+				<li><strong>Senses</strong> darkvision 60 ft., passive Perception 12</li>
+				<li><strong>Languages</strong> understands the languages you speak</li>
+				<li style="margin-bottom:-1em"><strong>Challenge</strong> —</li>
+				<li style="text-indent:100px; margin-top:-1em"><strong>Proficiency Bonus (PB)</strong> equals your bonus</li>
+			</ul>
+			<h4 style="margin-top:5px; margin-bottom:10px" />
+			<h4 style="margin-top:10px">Actions</h4>
+			<ul class="unstyled">
+				<li><strong><em>Flame Seed. </em></strong><em>Ranged Weapon Attack:</em> your spell attack modifier to hit, range 60 ft., one target you can see. <em>Hit:</em> 1d6 + PB fire damage.</li>
+				<p></p>
+				<li><strong><em>Fiery Teleportation. </em></strong>The spirit and each willing creature of your choice within 5 feet of it teleport up to 15 feet to unoccupied spaces you can see. Then each creature within 5 feet of the space that the spirit left must succeed on a Dexterity saving throw against your spell save DC or take 1d6 + PB fire damage.</li>
+			</ul>
+		</description>
+	</element>
+
+	<!--OCF Replacment Grants-->
+	<element name="Wildfire Circle Spells Feature Replacement" type="Grants" source="Internal" id="ID_INTERNAL_FEATURE_REPLACEMENT_DRUID_WILDFIRE_CIRCLE_SPELLS" />
+	<element name="Summon Wildfire Spirit Feature Replacement" type="Grants" source="Internal" id="ID_INTERNAL_FEATURE_REPLACEMENT_DRUID_WILDFIRE_SUMMON_WILDFIRE_SPIRIT" />
+	<element name="Wildfire Enhanced Bond Feature Replacement" type="Grants" source="Internal" id="ID_INTERNAL_FEATURE_REPLACEMENT_DRUID_WILDFIRE_ENHANCED_BOND" />
+	<element name="Wildfire Cauterizing Flames Feature Replacement" type="Grants" source="Internal" id="ID_INTERNAL_FEATURE_REPLACEMENT_DRUID_WILDFIRE_CAUTERIZING_FLAMES" />
+	<element name="Wildfire Blazing Revival Replacement" type="Grants" source="Internal" id="ID_INTERNAL_FEATURE_REPLACEMENT_DRUID_WILDFIRE_BLAZING_REVIVAL" />
 </elements>
