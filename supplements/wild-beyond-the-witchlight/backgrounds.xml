@@ -1,0 +1,164 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<elements>
+	<info>
+		<name></name>
+		<update version="0.0.1">
+			<file name="backgrounds.xml" url="https://raw.githubusercontent.com/AuroraLegacy/elements/master/supplements/wild-beyond-the-witchlight/backgrounds.xml" />
+		</update>
+	</info>
+
+	<!--Feylost Background-->
+	<element name="Feylost" type="Background" source="The Wild Beyond The Witchlight" id="ID_WOTC_WBW_BACKGROUND_FEYLOST">
+		<description>
+			<p>You were transformed in some small way by your stay in the Feywild and gained a fey mark, determined by rolling on the Fey Mark table.</p>
+			<ul class="unstyled">
+				<li><strong>Skill Proficiencies:</strong> Deception, Survival</li>
+				<li><strong>Tool Proficiencies:</strong> One type of musical instrument</li>
+				<li><strong>Languages:</strong> One choice of Elvish, Gnomish, Goblin, or Sylvan</li>
+				<li><strong>Equipment:</strong> A musical instrument (one of your choice), a set of traveler's clothes, three trinkets (each determined by rolling on the Feywild Trinkets table), and a pouch containing 8 gp.</li>
+			</ul>
+			<h5>FEY MARK</h5>
+			<p>You were transformed in some small way by your stay in the Feywild and gained a fey mark, determined by rolling on the Fey Mark table.</p>
+			<table>
+				<thead>
+					<tr><td class="col-10">d8</td><td>Fey Mark</td></tr>
+				</thead>
+				<tr><td>1</td><td>Your eyes swirl with iridescent colors.</td></tr>
+				<tr><td>2</td><td>You have a sweet scent, like that of nectar or honey.</td></tr>
+				<tr><td>3</td><td>You have long whiskers like those of a cat.</td></tr>
+				<tr><td>4</td><td>Your ears are covered with soft tufts of fur.</td></tr>
+				<tr><td>5</td><td>Your skin sparkles in moonlight.</td></tr>
+				<tr><td>6</td><td>Flowers either bloom or wilt (your choice) in your presence.</td></tr>
+				<tr><td>7</td><td>Your hair is made of vines or brambles and grows back to normal length within 1 hour of being cut.</td></tr>
+				<tr><td>8</td><td>You have a tail like that of a dog or another animal.</td></tr>
+			</table>
+			<h5>FEYWILD VISITOR</h5>
+			<p>Whenever you're sound asleep or in a deep trance during a long rest, a spirit of the Feywild might pay you a visit, if the DM wishes it. Determine the spirit's form by rolling on the Feywild Visitor table. No harm ever comes to you as a result of such visits, which can last for minutes or hours, and you remember each visit when you wake up. Conversations that occur with a visitor can contain any number of things, from messages and insights to nonsense and red herrings, at the DM's discretion. Such conversations are always conducted in a language you can understand, even if the Feywild visitor can't speak that language normally.</p>
+			<table>
+				<thead>
+					<tr><td class="col-10">d8</td><td>Feywild Visitor</td></tr>
+				</thead>
+				<tr><td>1</td><td>Awakened creature (a Beast or an ordinary plant that has had the awaken spell cast on it).</td></tr>
+				<tr><td>2</td><td>Centaur.</td></tr>
+				<tr><td>3</td><td>Dryad.</td></tr>
+				<tr><td>4</td><td>Faerie dragon.</td></tr>
+				<tr><td>5</td><td>Pixie.</td></tr>
+				<tr><td>6</td><td>Satyr.</td></tr>
+				<tr><td>7</td><td>Sprite.</td></tr>
+				<tr><td>8</td><td>Unicorn.</td></tr>
+			</table>
+			<div element="ID_WOTC_WBW_BACKGROUND_FEATURE_FEYWILD_CONNECTION" />
+		</description>
+		<setters>
+			<set name="short">Deception, Survival, Instrument, Language</set>
+		</setters>
+		<rules>
+			<grant type="Proficiency" id="ID_PROFICIENCY_SKILL_DECEPTION" />
+			<grant type="Proficiency" id="ID_PROFICIENCY_SKILL_SURVIVAL" />
+			<select type="Proficiency" name="Musical Intrument (Feylost)" supports="Musical Instrument" />
+			<select type="Language" name="Language (Feylost)" number="1" supports="ID_LANGUAGE_ELVISH|ID_LANGUAGE_GNOMISH|ID_LANGUAGE_GOBLIN|ID_LANGUAGE_SYLVAN" />
+			<grant type="Background Feature" id="ID_WOTC_WBW_BACKGROUND_FEATURE_FEYWILD_CONNECTION" requirements="!ID_INTERNAL_GRANT_OPTIONAL_BACKGROUND_FEATURE"/>
+			<select type="Background Feature" name="Variant Feature" supports="Optional Background Feature" optional="true" />
+			<select name="Fey Mark" type="List" optional="true">
+				<item id="1">Your eyes swirl with iridescent colors.</item>
+				<item id="2">You have a sweet scent, like that of nectar or honey.</item>
+				<item id="3">You have long whiskers like those of a cat.</item>
+				<item id="4">Your ears are covered with soft tufts of fur.</item>
+				<item id="5">Your skin sparkles in moonlight.</item>
+				<item id="6">Flowers either bloom or wilt (your choice) in your presence.</item>
+				<item id="7">Your hair is made of vines or brambles and grows back to normal length within 1 hour of being cut.</item>
+				<item id="8">You have a tail like that of a dog or another animal.</item>
+			</select>
+			<select name="Feywild Visitor" type="List" optional="true">
+				<item id="1">Awakened creature (a Beast or an ordinary plant that has had the awaken spell cast on it)</item>
+				<item id="2">Centaur</item>
+				<item id="3">Dryad</item>
+				<item id="4">Faerie dragon</item>
+				<item id="5">Pixie</item>
+				<item id="6">Satyr</item>
+				<item id="7">Sprite</item>
+				<item id="8">Unicorn</item>
+			</select>
+		</rules>
+	</element>
+
+	<element name="Feature: Feywild Connection" type="Background Feature" source="The Wild Beyond The Witchlight" id="ID_WOTC_WBW_BACKGROUND_FEATURE_FEYWILD_CONNECTION">
+		<supports>Background Feature</supports>
+		<description>
+			<p>Your mannerisms and knowledge of fey customs are recognized by natives of the Feywild, who see you as one of their own. Because of this, friendly Fey creatures are inclined to come to your aid if you are lost or need help in the Feywild.</p>
+		</description>
+		<sheet alt="Feywild Connection">
+			<description>Your mannerisms and knowledge of fey customs are recognized by natives of the Feywild, who see you as one of their own. Because of this, friendly Fey creatures are inclined to come to your aid if you are lost or need help in the Feywild.</description>
+		</sheet>
+	</element>
+
+
+
+
+	<!--Witchlight Hand Background-->
+	<element name="Witchlight Hand" type="Background" source="The Wild Beyond The Witchlight" id="ID_WOTC_WBW_BACKGROUND_WITCHLIGHT_HAND">
+		<description>
+			<p>Over the years, you have earned the friendship of another carnival fixture. Roll a d8 and consult the Carnival Companion table to determine whom or what you've befriended, or you can choose an option that you like. Work with your DM to flesh out this friendship. This companion hangs around you while you're in the carnival, but it won't voluntarily leave the carnival.</p>
+			<p class="indent">The DM can use the Witchlight hand stat block in chapter 1 to represent hands, performers, and animal trainers who serve as carnival companions. Statistics for the other companions appear in the Monster Manual.</p>
+			<ul class="unstyled">
+				<li><strong>Skill Proficiencies:</strong> Performance, Selight of Hand</li>
+				<li><strong>Tool Proficiencies:</strong> Disguise kit or one type of musical instrument</li>
+				<li><strong>Languages:</strong> One of your choice</li>
+				<li><strong>Equipment:</strong> A disguise kit or a musical instrument of your choice, a deck of cards, a carnival uniform or costume, one trinket (determined by rolling on the Feywild Trinkets), and a pouch containing 8 gp.</li>
+			</ul>
+			<h5>FEYWILD VISITOR</h5>
+			<p>Over the years, you have earned the friendship of another carnival fixture. Roll a d8 and consult the Carnival Companion table to determine whom or what you've befriended, or you can choose an option that you like. Work with your DM to flesh out this friendship. This companion hangs around you while you're in the carnival, but it won't voluntarily leave the carnival.</p>
+			<p class="indent">The DM can use the Witchlight hand stat block in chapter 1 (of the wild beyond the witchlight) to represent hands, performers, and animal trainers who serve as carnival companions. Statistics for the other companions appear in the Monster Manual.</p>
+			<table>
+				<thead>
+					<tr><td class="col-10">d8</td><td>Feywild Visitor</td></tr>
+				</thead>
+				<tr><td>1</td><td>Old, cantankerous Witchlight hand</td></tr>
+				<tr><td>2</td><td>Young, impressionable Witchlight hand.</td></tr>
+				<tr><td>3</td><td>Performer (such as an acrobat, a clown, or a musician)</td></tr>
+				<tr><td>4</td><td>Retired performer</td></tr>
+				<tr><td>5</td><td>Seasoned animal trainer</td></tr>
+				<tr><td>6</td><td>Old blink dog</td></tr>
+				<tr><td>7</td><td>Cheery sprite</td></tr>
+				<tr><td>8</td><td>Harmless, magical wisp of light (no stat block required) that has a flying speed of 30 feet, can hover, and sheds bright light in a 5-foot radius and dim light for an additional 5 feet</td></tr>
+			</table>
+			<div element="ID_WOTC_WBW_BACKGROUND_FEATURE_CARNIVAL_FIXTURE" />
+		</description>
+		<setters>
+			<set name="short">Performance, Sleight of Hand, Disguise kit or Instrument, Language</set>
+		</setters>
+		<rules>
+			<grant type="Proficiency" id="ID_PROFICIENCY_SKILL_PERFORMANCE" />
+			<grant type="Proficiency" id="ID_PROFICIENCY_SKILL_SLEIGHTOFHAND" />
+			<select type="Proficiency" name="Tool Proficiency (Feylost)" supports="Musical Instrument||Disguise Kit" />
+			<select type="Language" name="Language (Witchlight Hand)" number="1" supports="Standard||Exotic" />
+			<grant type="Background Feature" id="ID_WOTC_WBW_BACKGROUND_FEATURE_CARNIVAL_FIXTURE" requirements="!ID_INTERNAL_GRANT_OPTIONAL_BACKGROUND_FEATURE"/>
+			<select type="Background Feature" name="Variant Feature" supports="Optional Background Feature" optional="true" />
+			<select name="Carnical Companion" type="List" optional="true">
+				<item id="1">Old, cantankerous Witchlight hand</item>
+				<item id="2">Young, impressionable Witchlight hand</item>
+				<item id="3">Performer (such as an acrobat, a clown, or a musician)</item>
+				<item id="4">Retired performer</item>
+				<item id="5">Seasoned animal trainer</item>
+				<item id="6">Old blink dog</item>
+				<item id="7">Cheery sprite</item>
+				<item id="8">Harmless, magical wisp of light (no stat block required) that has a flying speed of 30 feet, can hover, and sheds bright light in a 5-foot radius and dim light for an additional 5 feet</item>
+			</select>
+		</rules>
+	</element>
+
+	
+	<append id="ID_PROFICIENCY_TOOL_PROFICIENCY_DISGUISE_KIT">
+		<supports>Disguise Kit</supports>
+	</append>
+
+	<element name="Feature: Feywild Connection" type="Background Feature" source="The Wild Beyond The Witchlight" id="ID_WOTC_WBW_BACKGROUND_FEATURE_CARNIVAL_FIXTURE">
+		<supports>Background Feature</supports>
+		<description>
+			<p>The Witchlight Carnival provides you with free, modest lodging and food. In addition, you may wander about the carnival and partake of its many wonders at no cost to you, provided you don't disrupt its shows or cause any other trouble.</p>
+		</description>
+		<sheet alt="Feywild Connection">
+			<description>The Witchlight Carnival provides you with free, modest lodging and food. In addition, you may wander about the carnival and partake of its many wonders at no cost to you, provided you don't disrupt its shows or cause any other trouble.</description>
+		</sheet>
+	</element>
+</elements>
