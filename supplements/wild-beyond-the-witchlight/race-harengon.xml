@@ -13,12 +13,12 @@
 			<h4>HARENGON TRAITS</h4>
 			<p>As a harengon, you have the following racial traits.</p>
 			<p class="indent"><strong><em>Creature Type.</em></strong> You are a Humanoid.</p>
-			<p class="indent"><strong><em>Size.</em></strong> You are Medium or Small. You choose the size when you gain this race.</p>
+			<p class="indent"><strong><em>Size.</em></strong> You are Medium or Small. You choose the size when you select this race.</p>
 			<p class="indent"><strong><em>Speed.</em></strong> Your walking speed is 30 feet.</p>
 			<p class="indent"><strong><em>Hare-Trigger.</em></strong> You can add your proficiency bonus to your initiative rolls.</p>
 			<p class="indent"><strong><em>Leporine Senses.</em></strong> You have proficiency in the Perception skill.</p>
 			<p class="indent"><strong><em>Lucky Footwork.</em></strong> When you fail a Dexterity saving throw, you can use your reaction to roll a d4 and add it to the result, potentially turning the failure into a success. You can't use this reaction if you're prone or your speed is 0.</p>
-			<p class="indent"><strong><em>Rabbit Hop.</em></strong> As a bonus action, you can jump a number of feet equal to five times your proficiency bonus, without provoking opportunity attacks. You can use it a number of times equal to your proficiency bonus, and you regain all expended uses when you finish a long rest.</p>
+			<p class="indent"><strong><em>Rabbit Hop.</em></strong> As a bonus action, you can jump a number of feet equal to five times your proficiency bonus, without provoking opportunity attacks. You can use this trait only if your speed is greater than 0. You can use it a number of times equal to your proficiency bonus, and you regain all expended uses when you finish a long rest.</p>
 		</description>
 		<sheet display="false" />
 		<rules>
@@ -71,10 +71,10 @@
 
 	<element name="Rabbit Hop" type="Racial Trait" source="The Wild Beyond The Witchlight" id="ID_WOTC_WBW_RACIAL_TRAIT_HARENGON_RABBIT_HOP">
 		<description>
-			<p>As a bonus action, you can jump a number of feet equal to five times your proficiency bonus, without provoking opportunity attacks. You can use it a number of times equal to your proficiency bonus, and you regain all expended uses when you finish a long rest.</p>
+			<p>As a bonus action, you can jump a number of feet equal to five times your proficiency bonus, without provoking opportunity attacks. You can use this trait only if your speed is greater than 0. You can use it a number of times equal to your proficiency bonus, and you regain all expended uses when you finish a long rest.</p>
 		</description>
 		<sheet action="Bonus Action" usage="{{proficiency}}/Long Rest">
-			<description>As a bonus action, you can jump {{rabbit hop:distance}} feet, without provoking opportunity attacks. You can use it a number of times equal to your proficiency bonus, and you regain all expended uses when you finish a long rest.</description>
+			<description>You can jump {{rabbit hop:distance}} feet, without provoking opportunity attacks. You can use this trait only if your speed is greater than 0.</description>
 		</sheet>
 		<rules>
 			<stat name="rabbit hop:distance" value="proficiency" />
