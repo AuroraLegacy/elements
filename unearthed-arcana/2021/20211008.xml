@@ -331,6 +331,137 @@
 		</rules>
 	</element>
 
+	<element name="Hadozee" type="Race" source="Unearthed Arcana: Travelers of the Multiverse" id="ID_WOTC_UA20211008_RACE_HADOZEE">
+		<description>
+      		<p>Hadozees are people with simian features that long ago adapted to live among the tall trees of their home world. They are natural climbers, with feet as dexterous as their hands, even to the extent of having opposable thumbs. Membranes of skin hang loosely from their arms and legs. When stretched taut, these membranes enable a hadozee to glide.</p>
+			<p class="indent">The first hadozees were hunted by large natural predators. To survive in this hostile environment, they developed an instinctual sense of community. Today, that same instinct compels many hadozees to cultivate friendships, knowing there is safety in numbers.</p>
+			<h4>HADOZEE TRAITS</h4>
+			<p>You have the following racial traits.</p>
+			<p class="indent"><strong><em>Creature Type.</em></strong> You are a Humanoid.</p>
+			<p class="indent"><strong><em>Size.</em></strong> You are Medium or Small. You choose the size when you select this race.</p>
+			<p class="indent"><strong><em>Speed.</em></strong> Your walking speed is 30 feet, and you have a climbing speed equal to your walking speed.</p>
+			<p class="indent"><strong><em>Dexterous Feet.</em></strong> You can take the Use an Object action as a bonus action.</p>
+			<p class="indent"><strong><em>Glide.</em></strong> If you are not incapacitated or wearing heavy armor, you can extend your skin membranes and glide. When you do so, you can perform the following aerial maneuvers:</p>
+			<ul>
+				<li>When you fall, you can move up to 5 feet horizontally for every 1 foot you descend.</li>
+				<li>When you would take damage from a fall, you can use your reaction to reduce the fall’s damage to 0.</li>
+			</ul>
+		</description>
+		<sheet display="false" />
+		<rules>
+			<select type="Racial Trait" name="Size (Hadozee)" supports="ID_INTERNAL_RACIAL_TRAIT_SMALL|ID_INTERNAL_RACIAL_TRAIT_MEDIUM" />
+			<stat name="innate speed" value="30" bonus="base" />
+			<stat name="speed:climb" value="speed" bonus="base"/>
+			<select type="Ability Score Improvement" name="Ability Score Improvement Option (Hadozee)" supports="Custom Ability Score Improvement Option" />
+			<grant type="Language" id="ID_LANGUAGE_COMMON" requirements="!ID_WOTC_TCOE_OPTION_CUSTOMIZED_LANGUAGE" />
+			<select type="Language" name="Customized Language" supports="Custom Race Language" requirements="ID_WOTC_TCOE_OPTION_CUSTOMIZED_LANGUAGE" />
+			<select type="Language" name="Language (Hadozee)" supports="Standard||Exotic" />
+			<grant type="Racial Trait" id="ID_WOTC_UA20211008_RACIAL_TRAIT_HADOZEE_DEXTEROUS_FEET" />
+			<grant type="Racial Trait" id="ID_WOTC_UA20211008_RACIAL_TRAIT_HADOZEE_GLIDE" />
+    </rules>
+	</element>
+
+  <element name="Dexterous Feet" type="Racial Trait" source="Unearthed Arcana: Travelers of the Multiverse" id="ID_WOTC_UA20211008_RACIAL_TRAIT_HADOZEE_DEXTEROUS_FEET">
+		<description>
+			<p>You can take the Use an Object action as a bonus action.</p>
+		</description>
+		<sheet action="Bonus Action">
+			<description>You can take the Use an Object action.</description>
+		</sheet>
+	</element>
+
+  <element name="Glide" type="Racial Trait" source="Unearthed Arcana: Travelers of the Multiverse" id="ID_WOTC_UA20211008_RACIAL_TRAIT_HADOZEE_GLIDE">
+		<description>
+			<p>If you are not incapacitated or wearing heavy armor, you can extend your skin membranes and glide. When you do so, you can perform the following aerial maneuvers:</p>
+			<ul>
+				<li>When you fall, you can move up to 5 feet horizontally for every 1 foot you descend.</li>
+				<li>When you would take damage from a fall, you can use your reaction to reduce the fall’s damage to 0.</li>
+			</ul>
+		</description>
+		<sheet>
+			<description>If you are not incapacitated or wearing heavy armor, you can glide. When you do so, you can perform the following aerial maneuvers:&#13;
+			• When you fall, you can move up to 5 feet horizontally for every 1 foot you descend.&#13;
+			• When you would take damage from a fall, you can use your reaction to reduce the fall’s damage to 0.</description>
+		</sheet>
+	</element>
+
+	<element name="Plasmoid" type="Race" source="Unearthed Arcana: Travelers of the Multiverse" id="ID_WOTC_UA20211008_RACE_PLASMOID">
+		<description>
+      		<p>Plasmoids are amorphous beings with no typical shape. In the presence of other folk, they often adopt a similar form, but there’s little chance of mistaking a plasmoid for anything else. They consume food by osmosis, the way an amoeba does, and excrete waste through tiny pores. They breathe by absorbing oxygen through another set of pores, and their limbs are strong and flexible enough to grasp and manipulate weapons and tools. Although most plasmoids are translucent gray, they can alter their color and translucence by absorbing dyes through their pores.</p>
+			<p class="indent">Plasmoids don’t have internal organs of the usual sort.</p>
+			<p class="indent">Their bodies are composed of cells, fibers, plasma-like ooze, and clusters of nerves called ganglia. These nerves enable a plasmoid to detect light, heat, texture, sound, pain, and vibrations. Plasmoids can stiffen the outer layers of their bodies to maintain a humanlike shape, so they can wear clothing and accessories. They speak by forcing air out of tubular cavities that constrict to produce sound.</p>
+			<p class="indent">When plasmoids sleep, they lose their rigidity and spread out and are sometimes mistaken for a rock or some other feature of the environment.</p>
+			<h4>PLASMOID TRAITS</h4>
+			<p>You have the following racial traits.</p>
+			<p><strong><em>Creature Type.</em></strong> You are an Ooze.</p>
+			<p class="indent"><strong><em>Size.</em></strong> You are Medium or Small. You choose the size when you gain this race.</p>
+			<p class="indent"><strong><em>Speed.</em></strong> Your walking speed is 30 feet.</p>
+			<p class="indent"><strong><em>Amorphous.</em></strong> You can squeeze through a space as narrow as 1 inch wide, provided you are wearing and carrying nothing. You also have advantage on ability checks you make to initiate or escape a grapple.</p>
+			<p class="indent"><strong><em>Darkvision.</em></strong> You can see in dim light within 60 feet of you as if it were bright light and in darkness as if it were dim light. You discern colors in that darkness only as shades of gray.</p>
+			<p class="indent"><strong><em>Hold Breath.</em></strong> You can hold your breath for 1 hour.</p>
+			<p class="indent"><strong><em>Natural Resilience.</em></strong> You have resistance to acid and poison damage, and you have advantage on saving throws against being poisoned.</p>
+			<p class="indent"><strong><em>Shape Self.</em></strong> If you are not incapacitated, you can reshape your body to give yourself a head, one or two arms, one or two legs, and makeshift hands and feet, or you can revert to a limbless blob (no action required).</p>
+			<p class="indent">As a bonus action, you can extrude a pseudopod that is up to 6 inches wide and 10 feet long or reabsorb it into your body. You can use this pseudopod to manipulate an object, open an unlocked door or container, stow or retrieve an item from an open container, or pour out the contents of a container. The pseudopod can’t attack, activate magic items, or carry more than 10 pounds.</p>
+		</description>
+		<sheet display="false" />
+		<rules>
+			<grant type="Racial Trait" id="ID_INTERNAL_RACIAL_TRAIT_TYPE_OOZE" />
+			<select type="Racial Trait" name="Size (Plasmoid)" supports="ID_INTERNAL_RACIAL_TRAIT_SMALL|ID_INTERNAL_RACIAL_TRAIT_MEDIUM" />
+			<stat name="innate speed" value="30" bonus="base" />
+			<select type="Ability Score Improvement" name="Ability Score Improvement Option (Plasmoid)" supports="Custom Ability Score Improvement Option" />
+			<grant type="Language" id="ID_LANGUAGE_COMMON" requirements="!ID_WOTC_TCOE_OPTION_CUSTOMIZED_LANGUAGE" />
+			<select type="Language" name="Customized Language" supports="Custom Race Language" requirements="ID_WOTC_TCOE_OPTION_CUSTOMIZED_LANGUAGE" />
+			<select type="Language" name="Language (Plasmoid)" supports="Standard||Exotic" />
+			<grant type="Vision" id="ID_VISION_DARKVISION" />
+			<grant type="Racial Trait" id="ID_WOTC_UA20211008_RACIAL_TRAIT_PLASMOID_AMORPHOUS" />
+			<grant type="Racial Trait" id="ID_WOTC_UA20211008_RACIAL_TRAIT_PLASMOID_HOLD_BREATH" />
+      		<grant type="Racial Trait" id="ID_WOTC_UA20211008_RACIAL_TRAIT_PLASMOID_NATURAL_RESILIENCE" />
+      		<grant type="Racial Trait" id="ID_WOTC_UA20211008_RACIAL_TRAIT_SHAPE_SELF" />
+    </rules>
+	</element>
+
+  <element name="Amorphous" type="Racial Trait" source="Unearthed Arcana: Travelers of the Multiverse" id="ID_WOTC_UA20211008_RACIAL_TRAIT_PLASMOID_AMORPHOUS">
+		<description>
+			<p>You can squeeze through a space as narrow as 1 inch wide, provided you are wearing and carrying nothing. You also have advantage on ability checks you make to initiate or escape a grapple.</p>
+		</description>
+		<sheet>
+			<description>You can squeeze through a space as narrow as 1 inch wide, provided you are wearing and carrying nothing. You also have advantage on ability checks you make to initiate or escape a grapple.</description>
+		</sheet>
+	</element>
+
+  <element name="Hold Breath" type="Racial Trait" source="Unearthed Arcana: Travelers of the Multiverse" id="ID_WOTC_UA20211008_RACIAL_TRAIT_PLASMOID_HOLD_BREATH">
+		<description>
+			<p>You can hold your breath for 1 hour</p>
+		</description>
+		<sheet>
+			<description>You can hold your breath for 1 hour</description>
+		</sheet>
+	</element>
+
+  <element name="Natural Resilience" type="Racial Trait" source="Unearthed Arcana: Travelers of the Multiverse" id="ID_WOTC_UA20211008_RACIAL_TRAIT_PLASMOID_NATURAL_RESILIENCE">
+		<description>
+			<p>You have resistance to acid and poison damage, and you have advantage on saving throws against being poisoned.</p>
+		</description>
+		<sheet>
+			<description>You have advantage on saving throws against being poisoned.</description>
+		</sheet>
+		<rules>
+			<grant type="Condition" id="ID_INTERNAL_CONDITION_DAMAGE_RESISTANCE_ACID" />
+			<grant type="Condition" id="ID_INTERNAL_CONDITION_DAMAGE_RESISTANCE_POISON" />
+		</rules>
+	</element>
+
+  <element name="Shape Self" type="Racial Trait" source="Unearthed Arcana: Travelers of the Multiverse" id="ID_WOTC_UA20211008_RACIAL_TRAIT_SHAPE_SELF">
+		<description>
+			<p>If you are not incapacitated, you can reshape your body to give yourself a head, one or two arms, one or two legs, and makeshift hands and feet, or you can revert to a limbless blob (no action required).</p>
+			<p class="indent">As a bonus action, you can extrude a pseudopod that is up to 6 inches wide and 10 feet long or reabsorb it into your body. You can use this pseudopod to manipulate an object, open an unlocked door or container, stow or retrieve an item from an open container, or pour out the contents of a container. The pseudopod can’t attack, activate magic items, or carry more than 10 pounds.</p>
+		</description>
+		<sheet>
+			<description>If you are not incapacitated, you can reshape your body to give yourself a head, one or two arms, one or two legs, and makeshift hands and feet, or you can revert to a limbless blob (no action required).&#13;
+			As a bonus action, you can extrude a pseudopod that is up to 6 inches wide and 10 feet long or reabsorb it into your body. You can use this pseudopod to manipulate an object, open an unlocked door or container, stow or retrieve an item from an open container, or pour out the contents of a container. The pseudopod can’t attack, activate magic items, or carry more than 10 pounds.</description>
+		</sheet>
+	</element>
+
 	<element name="Thri-Kreen" type="Race" source="Unearthed Arcana: Travelers of the Multiverse" id="ID_WOTC_UA20211008_RACE_THRIKREEN">
 		<description>
 			<p>Thri-kreen have insectile features and two pairs of arms. Their bodies are encased in protective chitin. They can alter the coloration of this carapace to blend in with their natural surroundings. </p>
