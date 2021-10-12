@@ -132,14 +132,47 @@
 			<p>When you succeed on a death save, you can regain a number of hit points equal to your proficiency bonus + your Intelligence, Wisdom, or Charisma modifier (choose when you select this race). You can’t use this trait again until you finish a long rest.</p>
 		</description>
 		<sheet usage="1/Long Rest">
-			<description>When you succeed on a death save, you can regain {{ua:radiant soul}} hit points.</description>
+			<description>When you succeed on a death save, you can regain {{ua:radiant soul:hp}} hit points.</description>
 		</sheet>
 		<rules>
-			<!-- <select type="Racial Trait" name="Ability Score (Radiant Soul)" supports="UA20211008 Radiant Soul" /> -->
-			<stat name="ua:radiant soul" value="proficiency" bonus="base" />
-			<stat name="ua:radiant soul" value="intelligence:modifier" bonus="ability" />
-			<stat name="ua:radiant soul" value="wisdom:modifier" bonus="ability" />
-			<stat name="ua:radiant soul" value="charisma:modifier" bonus="ability" />
+			<stat name="ua:radiant soul:hp" value="proficiency" bonus="base" />
+			<select type="Racial Trait" name="Ability Score (Radiant Soul)" supports="UA20211008 Radiant Soul" />
+		</rules>
+	</element>
+	<element name="Intelligence" type="Racial Trait" source="Unearthed Arcana: Travelers of the Multiverse" id="ID_WOTC_UA20211008_RACIAL_TRAIT_ASTRAL_ELF_RADIANT_SOUL_INTELLIGENCE">
+		<supports>UA20211008 Radiant Soul</supports>
+		<description>
+			<p>You add your Intelligence modifier to number of hit points you regain when using Radiant Soul trait.</p>
+		</description>
+		<sheet display="false">
+			<description>You add your Intelligence modifier to number of hit points you regain when using Radiant Soul trait.</description>
+		</sheet>
+		<rules>
+			<stat name="ua:radiant soul:hp" value="intelligence:modifier" bonus="ability" />
+		</rules>
+	</element>
+	<element name="Wisdom" type="Racial Trait" source="Unearthed Arcana: Travelers of the Multiverse" id="ID_WOTC_UA20211008_RACIAL_TRAIT_ASTRAL_ELF_RADIANT_SOUL_WISDOM">
+		<supports>UA20211008 Radiant Soul</supports>
+		<description>
+			<p>You add your Wisdom modifier to number of hit points you regain when using Radiant Soul trait.</p>
+		</description>
+		<sheet display="false">
+			<description>You add your Wisdom modifier to number of hit points you regain when using Radiant Soul trait.</description>
+		</sheet>
+		<rules>
+			<stat name="ua:radiant soul:hp" value="wisdom:modifier" bonus="ability" />
+		</rules>
+	</element>
+	<element name="Charisma" type="Racial Trait" source="Unearthed Arcana: Travelers of the Multiverse" id="ID_WOTC_UA20211008_RACIAL_TRAIT_ASTRAL_ELF_RADIANT_SOUL_CHARISMA">
+		<supports>UA20211008 Radiant Soul</supports>
+		<description>
+			<p>You add your Charisma modifier to number of hit points you regain when using Radiant Soul trait.</p>
+		</description>
+		<sheet display="false">
+			<description>You add your Charisma modifier to number of hit points you regain when using Radiant Soul trait.</description>
+		</sheet>
+		<rules>
+			<stat name="ua:radiant soul:hp" value="charisma:modifier" bonus="ability" />
 		</rules>
 	</element>
 
