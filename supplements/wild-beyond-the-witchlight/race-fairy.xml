@@ -2,7 +2,7 @@
 <elements>
 	<info>
 		<name>Fairy</name>
-		<update version="0.0.1">
+		<update version="0.0.2">
 			<file name="race-fairy.xml" url="https://raw.githubusercontent.com/AuroraLegacy/elements/master/supplements/wild-beyond-the-witchlight/race-fairy.xml" />
 		</update>
 	</info>
@@ -62,16 +62,9 @@
 		<description>
 			<p>You know the <i>druidcraft</i> cantrip.</p> 
 			<p class="indent">Starting at 3rd level, you can cast the <i>faerie fire</i> spell with this trait. Starting at 5th level, you can also cast the <i>enlarge/reduce</i> spell with this trait. Once you cast the <i>faerie fire</i> or <i>enlarge/reduce</i> with this trait, you can't cast that spell with it again until you finish a long rest. You can also cast either of those spells using any spell slots you have of the appropriate level.</p>
-			<p class="indent"> Intelligence, Wisdom, or Charisma is your spellcasting ability for these spells when you cast them with this trait (choose when you select this race).</p>
+			<p class="indent">Intelligence, Wisdom, or Charisma is your spellcasting ability for these spells when you cast them with this trait (choose when you select this race).</p>
 		</description>
-		<sheet>
-			<description>You know the druidcraft cantrip. &#13;
-			Your spellcasting ability for this spell is {{fairy magic:ability}}.</description>
-			<description level="3">You know the druidcraft cantrip, and you can cast the faerie fire spell once per long rest. You can also cast this spell using any spell slots you have of the appropriate level. &#13;
-			Your spellcasting ability for these spells is {{fairy magic:ability}}.</description>
-			<description level="5">You know the druidcraft cantrip, and you can cast the faerie fire and enlarge/reduce spells once per long rest. You can also cast either of those spells using any spell slots you have of the appropriate level. &#13;
-			Your spellcasting ability for these spells is {{fairy magic:ability}}.</description>
-		</sheet>
+		<sheet display="false" />
 		<rules>
 			<grant type="Spell" id="ID_PHB_SPELL_DRUIDCRAFT" />
 			<grant type="Spell" id="ID_PHB_SPELL_FAERIE_FIRE" level="3" />
@@ -79,34 +72,46 @@
 			<select type="Racial Trait" name="Spellcasting Ability (Fairy Magic)" supports="ID_WOTC_WBW_RACIAL_TRAIT_FAIRY_FAIRY_MAGIC_INTELLIGENCE|ID_WOTC_WBW_RACIAL_TRAIT_FAIRY_FAIRY_MAGIC_WISDOM|ID_WOTC_WBW_RACIAL_TRAIT_FAIRY_FAIRY_MAGIC_CHARISMA" />
 		</rules>
 	</element>
-	<element name="Intelligence (Fairy Magic)" type="Racial Trait" source="The Wild Beyond The Witchlight" id="ID_WOTC_WBW_RACIAL_TRAIT_FAIRY_FAIRY_MAGIC_INTELLIGENCE">
+	<element name="Intelligence" type="Racial Trait" source="The Wild Beyond The Witchlight" id="ID_WOTC_WBW_RACIAL_TRAIT_FAIRY_FAIRY_MAGIC_INTELLIGENCE">
 		<compendium display="false" />
 		<description>
 			<p>Your spellcasting ability for these spells is Intelligence.</p>
 		</description>
-		<sheet display="false" />
-		<rules>
-			<stat name="fairy magic:ability" value="Intelligence" inline="true"/>
-		</rules>
+		<sheet alt="Fairy Magic">
+			<description>You know the druidcraft cantrip. &#13;
+			Your spellcasting ability for this spell is Intelligence.</description>
+			<description level="3">You know the druidcraft cantrip, and you can cast the faerie fire spell once per long rest. You can also cast this spell using any spell slots you have of the appropriate level. &#13;
+			Your spellcasting ability for these spells is Intelligence.</description>
+			<description level="5">You know the druidcraft cantrip, and you can cast the faerie fire and enlarge/reduce spells once per long rest. You can also cast either of those spells using any spell slots you have of the appropriate level. &#13;
+			Your spellcasting ability for these spells is Intelligence.</description>
+		</sheet>
 	</element>
-	<element name="Wisdom (Fairy Magic)" type="Racial Trait" source="The Wild Beyond The Witchlight" id="ID_WOTC_WBW_RACIAL_TRAIT_FAIRY_FAIRY_MAGIC_WISDOM">
+	<element name="Wisdom" type="Racial Trait" source="The Wild Beyond The Witchlight" id="ID_WOTC_WBW_RACIAL_TRAIT_FAIRY_FAIRY_MAGIC_WISDOM">
 		<compendium display="false" />
 		<description>
 			<p>Your spellcasting ability for these spells is Wisdom.</p>
 		</description>
-		<sheet display="false" />
-		<rules>
-			<stat name="fairy magic:ability" value="Wisdom" inline="true"/>
-		</rules>
+		<sheet alt="Fairy Magic">
+			<description>You know the druidcraft cantrip. &#13;
+			Your spellcasting ability for this spell is Wisdom.</description>
+			<description level="3">You know the druidcraft cantrip, and you can cast the faerie fire spell once per long rest. You can also cast this spell using any spell slots you have of the appropriate level. &#13;
+			Your spellcasting ability for these spells is Wisdom.</description>
+			<description level="5">You know the druidcraft cantrip, and you can cast the faerie fire and enlarge/reduce spells once per long rest. You can also cast either of those spells using any spell slots you have of the appropriate level. &#13;
+			Your spellcasting ability for these spells is Wisdom.</description>
+		</sheet>
 	</element>
-	<element name="Charisma (Fairy Magic)" type="Racial Trait" source="The Wild Beyond The Witchlight" id="ID_WOTC_WBW_RACIAL_TRAIT_FAIRY_FAIRY_MAGIC_CHARISMA">
+	<element name="Charisma" type="Racial Trait" source="The Wild Beyond The Witchlight" id="ID_WOTC_WBW_RACIAL_TRAIT_FAIRY_FAIRY_MAGIC_CHARISMA">
 		<compendium display="false" />
 		<description>
 			<p>Your spellcasting ability for these spells is Charisma.</p>
 		</description>
-		<sheet display="false" />
-		<rules>
-			<stat name="fairy magic:ability" value="Charisma" inline="true"/>
-		</rules>
+		<sheet alt="Fairy Magic">
+			<description>You know the druidcraft cantrip. &#13;
+			Your spellcasting ability for this spell is Charisma.</description>
+			<description level="3">You know the druidcraft cantrip, and you can cast the faerie fire spell once per long rest. You can also cast this spell using any spell slots you have of the appropriate level. &#13;
+			Your spellcasting ability for these spells is Charisma.</description>
+			<description level="5">You know the druidcraft cantrip, and you can cast the faerie fire and enlarge/reduce spells once per long rest. You can also cast either of those spells using any spell slots you have of the appropriate level. &#13;
+			Your spellcasting ability for these spells is Charisma.</description>
+		</sheet>
 	</element>
 </elements>
