@@ -53,6 +53,7 @@
 		<rules>
 			<grant type="Archetype Feature" id="ID_WOTC_FTOD_ARCHETYPE_FEATURE_WAY_OF_THE_ASCENDANT_DRAGON_DRACONIC_DISCIPLE_DRACONIC_PRESENCE" />
 			<grant type="Archetype Feature" id="ID_WOTC_FTOD_ARCHETYPE_FEATURE_WAY_OF_THE_ASCENDANT_DRAGON_DRACONIC_DISCIPLE_DRACONIC_STRIKE" />
+			<grant type="Language" id="ID_LANGUAGE_DRACONIC" />
 			<select type="Language" name="Language (Tongue of Dragons)" supports="Standard||Exotic" />
 		</rules>
 	</element>
@@ -83,9 +84,12 @@
 			<p class="indent">You can use this feature a number of times equal to your proficiency bonus, and you regain all expended uses when you finish a long rest. While you have no uses available, you can spend 2 ki points to use this feature again.</p>
 		</description>
 		<sheet action="Attack" usage="{{proficiency}}/Long Rest">
-			<description>You can replace one of the attacks with an exhalation of draconic energy in either a 20-foot cone or a 30-foot line that is 5 feet wide (your choice). Choose a damage type: acid, cold, fire, lightning, or poison. Each creature in that area must make a Dexterity saving throw against DC{{ki:dc}}, taking damage of the chosen type equal to 2d{{martial arts:dice}} on a failed save, or half as much damage on a successful one. &#13;
+			<description>You can replace one of the attacks with an exhalation of draconic energy in either a 20-foot cone or a 30-foot line that is 5 feet wide (your choice). Choose a damage type: acid, cold, fire, lightning, or poison. Each creature in that area must make a Dexterity saving throw DC{{ki:dc}}, taking damage of the chosen type equal to 2d{{martial arts:dice}} on a failed save, or half as much damage on a successful one. &#13;
 			While you have no uses available, you can spend 2 ki points to use this feature again.</description>
-			<description level="11">You can replace one of the attacks with an exhalation of draconic energy in either a 20-foot cone or a 30-foot line that is 5 feet wide (your choice). Choose a damage type: acid, cold, fire, lightning, or poison. Each creature in that area must make a Dexterity saving throw against DC{{ki:dc}}, taking damage of the chosen type equal to 3d{{martial arts:dice}} on a failed save, or half as much damage on a successful one. &#13;
+			<description level="11">You can replace one of the attacks with an exhalation of draconic energy in either a 20-foot cone or a 30-foot line that is 5 feet wide (your choice). Choose a damage type: acid, cold, fire, lightning, or poison. Each creature in that area must make a Dexterity saving throw DC{{ki:dc}}, taking damage of the chosen type equal to 3d{{martial arts:dice}} on a failed save, or half as much damage on a successful one. &#13;
+			While you have no uses available, you can spend 2 ki points to use this feature again.</description>
+			<description level="17">You can replace one of the attacks with an exhalation of draconic energy in either a 20-foot cone or a 30-foot line that is 5 feet wide (your choice). Choose a damage type: acid, cold, fire, lightning, or poison. Each creature in that area must make a Dexterity saving throw DC{{ki:dc}}, taking damage of the chosen type equal to 3d{{martial arts:dice}} on a failed save, or half as much damage on a successful one. &#13;
+			You can spend 1 ki point to increase the breath to a 60-foot cone or a 90-foot line that is 5 feet wide (your choice). Each creature in that area takes 4d{{martial arts:dice}} damage on a failed save, or half as much damage on a successful one. &#13;
 			While you have no uses available, you can spend 2 ki points to use this feature again.</description>
 		</sheet>
 	</element>
@@ -111,8 +115,12 @@
 		</description>
 		<sheet action="Bonus Action" usage="1/Long Rest">
 			<description>You can create an aura of draconic power that radiates 10 feet from you for 1 minute. For the duration, you gain one of the following effects of your choice: &#13;
-			Frightful Presence. When you create this aura, and as a bonus action on subsequent turns, you can choose a creature within the aura. The target must succeed on a Wisdom saving throw against DC{{ki:dc}} or become frightened of you for 1 minute. The target can repeat the saving throw at the end of each of its turns, ending the effect on itself on a successful save. &#13;
-			Resistance. Choose a damage type when you activate this aura: acid, cold, fire, lightning, or poison. You and your allies within the aura have resistance to that damage. &#13;
+			• Frightful Presence. When you create this aura, and as a bonus action on subsequent turns, you can choose a creature within the aura. The target must succeed on a Wisdom saving throw against DC{{ki:dc}} or become frightened of you for 1 minute. The target can repeat the saving throw at the end of each of its turns, ending the effect on itself on a successful save. &#13;
+			• Resistance. Choose a damage type when you activate this aura: acid, cold, fire, lightning, or poison. You and your allies within the aura have resistance to that damage. &#13;
+			You can also expend 3 ki points to use this feature again.</description>
+			<description level="17">You can create an aura of draconic power that radiates 10 feet from you. When you do so choose any number of creatures you can see in your aura, each of those creatures must succeed on a Dexterity saving throw against your DC{{ki:dc}} or take 3d10 acid, cold, fire, lightning, or poison damage (your choice). For 1 minute, you gain one of the following effects of your choice: &#13;
+			• Frightful Presence. When you create this aura, and as a bonus action on subsequent turns, you can choose a creature within the aura. The target must succeed on a Wisdom saving throw DC{{ki:dc}} or become frightened of you for 1 minute. The target can repeat the saving throw at the end of each of its turns, ending the effect on itself on a successful save. &#13;
+			• Resistance. Choose a damage type when you activate this aura: acid, cold, fire, lightning, or poison. You and your allies within the aura have resistance to that damage. &#13;
 			You can also expend 3 ki points to use this feature again.</description>
 		</sheet>
 	</element>
@@ -125,11 +133,7 @@
 			<p class="indent" style="text-indent: -1em; margin-left: 1em"><b>Blindsight.</b> You gain blindsight out to 10 feet. Within that range, you can effectively see anything that isn’t behind total cover, even if you’re blinded or in darkness. Moreover, you can see an invisible creature within that range, unless the creature successfully hides from you.</p>
 			<p class="indent" style="text-indent: -1em; margin-left: 1em"><b>Explosive Fury.</b> When you activate your Aspect of the Wyrm, draconic fury explodes from you. Choose any number of creatures you can see in your aura. Each of those creatures must succeed on a Dexterity saving throw against your ki save DC or take 3d10 acid, cold, fire, lightning, or poison damage (your choice).</p>
 		</description>
-		<sheet>
-			<description>You gain the following benefits: &#13;
-			Augment Breath. When you use your Breath of the Dragon, you can spend 1 ki point to augment its shape and power. The exhalation of draconic energy becomes either a 60-foot cone or a 90-foot line that is 5 feet wide (your choice), and each creature in that area takes damage equal to 4d{{martial arts:dice}} on a failed save, or half as much damage on a successful one. &#13;
-			Explosive Fury. When you activate your Aspect of the Wyrm, draconic fury explodes from you. Choose any number of creatures you can see in your aura. Each of those creatures must succeed on a Dexterity saving throw against your DC{{ki:dc}} or take 3d10 acid, cold, fire, lightning, or poison damage (your choice).</description>
-		</sheet>
+		<sheet display="false" />
 		<rules>
 			<grant type="Vision" id="ID_VISION_BLINDSIGHT" />
 			<stat name="blindsight:range" value="10" bonus="base" />
