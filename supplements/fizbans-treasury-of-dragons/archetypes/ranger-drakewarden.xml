@@ -54,6 +54,7 @@
 		<sheet display="false" />
 		<rules>
 			<grant type="Spell" id="ID_PHB_SPELL_THAUMATURGY" spellcasting="Ranger"/>
+			<grant type="Language" id="ID_LANGUAGE_DRACONIC" />
 			<select type="Language" name="Language (Tongue of Dragons)" supports="Standard||Exotic" />
 		</rules>
 	</element>
@@ -94,13 +95,11 @@
 		</description>
 		<sheet>
 			<description>While your drake is summoned, you and the drake gain the following benefits: &#13;
-			Drake Mount. You can use the drake as a mount if your size is Medium or smaller. While you are riding your drake, it can’t use the flying speed of this feature. &#13;
-			Magic Fang. The drake’s Bite attack deals an extra 1d6 damage of the type chosen for the drake’s Draconic Essence. &#13;
-			Resistance. You gain resistance to the damage type chosen for the drake’s Draconic Essence.</description>
+			• Drake Mount. You can use the drake as a mount if your size is Medium or smaller. While you are riding your drake, it can’t use the flying speed of this feature. &#13;
+			• Resistance. You gain resistance to the damage type chosen for the drake’s Draconic Essence.</description>
 			<description level="15">While your drake is summoned, you and the drake gain the following benefits: &#13;
-			Drake Mount. You can use the drake as a mount if your size is Medium or smaller. &#13;
-			Magic Fang. The drake’s Bite attack deals an extra 2d6 damage of the type chosen for the drake’s Draconic Essence. &#13;
-			Resistance. You gain resistance to the damage type chosen for the drake’s Draconic Essence.</description>
+			• Drake Mount. You can use the drake as a mount if your size is Medium or smaller. &#13;
+			• Resistance. You gain resistance to the damage type chosen for the drake’s Draconic Essence.</description>
 		</sheet>
 	</element>
 
@@ -197,7 +196,7 @@
 			<set name="challenge">—</set>
 			<set name="proficiency">0</set>
 			<set name="traits">ID_WOTC_FTOD_COMPANION_TRAIT_DRAKEWARDEN_DRACONIC_ESSENCE</set>
-			<set name="actions">ID_WOTC_FTOD_COMPANION_ACTION_DRAKEWARDEN_BITE</set>
+			<set name="actions">ID_WOTC_FTOD_COMPANION_ACTION_DRAKEWARDEN_MAGIC_FANG</set>
 			<set name="reactions">ID_WOTC_FTOD_COMPANION_REACTION_DRAKEWARDEN_INFUSED_STRIKES</set>
 		</setters>
 		<rules>
@@ -240,7 +239,7 @@
 			<set name="challenge">—</set>
 			<set name="proficiency">0</set>
 			<set name="traits">ID_WOTC_FTOD_COMPANION_TRAIT_DRAKEWARDEN_DRACONIC_ESSENCE</set>
-			<set name="actions">ID_WOTC_FTOD_COMPANION_ACTION_DRAKEWARDEN_BITE</set>
+			<set name="actions">ID_WOTC_FTOD_COMPANION_ACTION_DRAKEWARDEN_EMPOWERED_BITE</set>
 			<set name="reactions">ID_WOTC_FTOD_COMPANION_REACTION_DRAKEWARDEN_INFUSED_STRIKES</set>
 		</setters>
 		<rules>
@@ -273,6 +272,22 @@
 		</description>
 		<sheet>
 			<description>Melee Weapon Attack: +3 plus PB to hit, reach 5 ft., one target. Hit: 1d6 plus PB piercing damage.</description>
+		</sheet>
+	</element>
+	<element name="Magic Fang" type="Companion Action" source="Fizban's Treasury of Dragons" id="ID_WOTC_FTOD_COMPANION_ACTION_DRAKEWARDEN_MAGIC_FANG">
+		<description>
+			<p><i>Melee Weapon Attack:</i> +3 plus PB to hit, reach 5 ft., one target. <i>Hit:</i> 1d6 plus PB piercing damage.</p>
+		</description>
+		<sheet>
+			<description>Melee Weapon Attack: +3 plus PB to hit, reach 5 ft., one target. Hit: 1d6 plus PB piercing damage plus 1d6 damage of the type chosen for its Draconic Essence.</description>
+		</sheet>
+	</element>
+	<element name="Empowered Bite" type="Companion Action" source="Fizban's Treasury of Dragons" id="ID_WOTC_FTOD_COMPANION_ACTION_DRAKEWARDEN_EMPOWERED_BITE">
+		<description>
+			<p><i>Melee Weapon Attack:</i> +3 plus PB to hit, reach 5 ft., one target. <i>Hit:</i> 1d6 plus PB piercing damage.</p>
+		</description>
+		<sheet>
+			<description>Melee Weapon Attack: +3 plus PB to hit, reach 5 ft., one target. Hit: 1d6 plus PB piercing damage plus 2d6 damage of the type chosen for its Draconic Essence.</description>
 		</sheet>
 	</element>
 	<element name="Infused Strikes" type="Companion Reaction" source="Fizban's Treasury of Dragons" id="ID_WOTC_FTOD_COMPANION_REACTION_DRAKEWARDEN_INFUSED_STRIKES">
