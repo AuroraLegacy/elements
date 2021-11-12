@@ -1,0 +1,789 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<elements>
+	<info>
+		<name>Magic Items and Hoard Magic Items</name>
+		<update version="0.0.1">
+			<file name="items-magic.xml" url="https://raw.githubusercontent.com/AuroraLegacy/elements/master/supplements/fizbans-treasury-of-dragons/items-magic.xml" />
+		</update>
+	</info>
+
+	<!--Magic Items-->
+	<element name="Amethyst Lodestone" type="Magic Item" source="Fizban's Treasury of Dragons" id="ID_WOTC_FTOD_MAGIC_ITEM_AMETHYST_LODESTONE">
+		<description>
+			<p>This fist-sized chunk of amethyst is infused with an amethyst dragon’s ability to bend gravitational forces. While you are carrying the lodestone, you have advantage on Strength saving throws.</p>
+			<p class="indent">The lodestone has 6 charges for the following properties, which you can use while you are holding the stone. The stone regains 1d6 expended charges daily at dawn.</p>
+			<p class="indent"><strong><em>Flight.</em></strong> As a bonus action, you can expend 1 charge to gain the power of flight for 10 minutes. For the duration, you gain a flying speed equal to your walking speed, and you can hover.</p>
+			<p class="indent"><strong><em>Gravitational Thrust.</em></strong> As an action, you can expend 1 charge to focus gravity around a creature you can see within 60 feet of you. The target must succeed on a DC 18 Strength saving throw or be pushed up to 20 feet in a direction of your choice.</p>
+			<p class="indent"><strong><em>Reverse Gravity.</em></strong> As an action, you can expend 3 charges to cast <em>reverse gravity</em> from the stone (save DC 18).</p>
+			<div class="reference">
+				<div element="ID_PHB_SPELL_REVERSE_GRAVITY" />
+			</div>
+		</description>
+		<setters>
+			<set name="keywords">fly, speed, reverse gravity</set>
+			<set name="category">Wondrous Items</set>
+			<set name="cost" currency="gp">0</set>
+			<set name="weight" lb="0"></set>
+			<set name="slot">misc</set>
+			<set name="type">Wondrous Item</set>
+			<set name="attunement">true</set>
+			<set name="rarity">Very Rare</set>
+		</setters>
+	</element>
+
+	<element name="Crystal Blade" type="Magic Item" source="Fizban's Treasury of Dragons" id="ID_WOTC_FTOD_MAGIC_ITEM_CRYSTAL_BLADE">
+		<description>
+			<p>This magic sword’s blade is fashioned from a horn or spine from a crystal dragon. When you hit with an attack roll using this sword, the target takes an extra 1d8 radiant damage.</p>
+			<p class="indent">The sword has 3 charges and regains 1d3 expended charges daily at dawn. When you hit a creature with an attack roll using the sword, you can expend 1 charge to regain a number of hit points equal to the extra radiant damage the sword dealt.</p>
+			<p class="indent">While you’re holding the sword, you can use a bonus action to cause it to shed bright light in a 30-foot radius and dim light for an additional 30 feet, to cause it to shed dim light in a 10-foot radius, or to douse the light.</p>
+		</description>
+		<setters>
+			<set name="keywords">sword, healing</set>
+			<set name="category">Magic Weapons</set>
+			<set name="cost" currency="gp">0</set>
+			<set name="attunement">true</set>
+			<set name="type" addition="Any Sword">Weapon</set>
+			<set name="rarity">Rare</set>
+			<set name="weapon">ID_INTERNAL_WEAPON_GROUP_SWORDS</set>
+			<set name="name-format">Crystal {{parent}}</set>
+		</setters>
+	</element>
+
+	<element name="Dragonhide Belt +1" type="Magic Item" source="Fizban's Treasury of Dragons" id="ID_WOTC_FTOD_MAGIC_ITEM_DRAGONHIDE_BELT_1">
+		<description>
+			<p>This finely detailed belt is made of dragonhide. While wearing it, you gain a +1 bonus to the saving throw DCs of your ki features. In addition, you can use an action to regain ki points equal to a roll of your Martial Arts die. You can’t use this action again until the next dawn.</p>
+		</description>
+		<setters>
+			<set name="keywords">ki</set>
+			<set name="category">Wondrous Items</set>
+			<set name="cost" currency="gp">0</set>
+			<set name="weight" lb="0"></set>
+			<set name="slot">waist</set>
+			<set name="type">Wondrous Item</set>
+			<set name="attunement" addition="by a Monk">true</set>
+			<set name="rarity">Uncommon</set>
+		</setters>
+		<rules>
+			<stat name="ki:dc" value="1" />
+		</rules>
+	</element>
+
+	<element name="Dragonhide Belt +2" type="Magic Item" source="Fizban's Treasury of Dragons" id="ID_WOTC_FTOD_MAGIC_ITEM_DRAGONHIDE_BELT_2">
+		<description>
+			<p>This finely detailed belt is made of dragonhide. While wearing it, you gain a +2 bonus to the saving throw DCs of your ki features. In addition, you can use an action to regain ki points equal to a roll of your Martial Arts die. You can’t use this action again until the next dawn.</p>
+		</description>
+		<setters>
+			<set name="keywords">ki</set>
+			<set name="category">Wondrous Items</set>
+			<set name="cost" currency="gp">0</set>
+			<set name="weight" lb="0"></set>
+			<set name="slot">waist</set>
+			<set name="type">Wondrous Item</set>
+			<set name="attunement" addition="by a Monk">true</set>
+			<set name="rarity">Rare</set>
+		</setters>
+		<rules>
+			<stat name="ki:dc" value="2" />
+		</rules>
+	</element>
+
+	<element name="Dragonhide Belt +3" type="Magic Item" source="Fizban's Treasury of Dragons" id="ID_WOTC_FTOD_MAGIC_ITEM_DRAGONHIDE_BELT_3">
+		<description>
+			<p>This finely detailed belt is made of dragonhide. While wearing it, you gain a +3 bonus to the saving throw DCs of your ki features. In addition, you can use an action to regain ki points equal to a roll of your Martial Arts die. You can’t use this action again until the next dawn.</p>
+		</description>
+		<setters>
+			<set name="keywords">ki</set>
+			<set name="category">Wondrous Items</set>
+			<set name="cost" currency="gp">0</set>
+			<set name="weight" lb="0"></set>
+			<set name="slot">waist</set>
+			<set name="type">Wondrous Item</set>
+			<set name="attunement" addition="by a Monk">true</set>
+			<set name="rarity">Very Rare</set>
+		</setters>
+		<rules>
+			<stat name="ki:dc" value="3" />
+		</rules>
+	</element>
+
+	<element name="Dragonlance" type="Magic Item" source="Fizban's Treasury of Dragons" id="ID_WOTC_FTOD_MAGIC_ITEM_DRAGONLANCE">
+		<description>
+			<p>A dragonlance is a renowned weapon forged from rare metal with the aid of powerful artifacts associated with Bahamut. Different lances are forged for use by foot soldiers (as pikes) and by riders (as lances), but the magical properties of the weapons are the same.</p>
+			<p class="indent">You gain a +3 bonus to attack and damage rolls made with this magic weapon.</p>
+			<p class="indent">When you hit a Dragon with this weapon, the Dragon takes an extra 3d6 force damage, and any Dragon of your choice that you can see within 30 feet of you can immediately use its reaction to make a melee attack.</p>
+		</description>
+		<setters>
+			<set name="keywords"></set>
+			<set name="category">Magic Weapons</set>
+			<set name="cost" currency="gp">0</set>
+			<set name="attunement">true</set>
+			<set name="type" addition="Lance or Pike">Weapon</set>
+			<set name="rarity">Legendary</set>
+			<set name="weapon">Lance||Pike</set>
+			<set name="enhancement">3</set>
+		</setters>
+	</element>
+
+	<element name="Dragon Wing Bow" type="Magic Item" source="Fizban's Treasury of Dragons" id="ID_WOTC_FTOD_MAGIC_ITEM_DRAGON_WING_BOW">
+		<description>
+			<p>The limb tips of this magic bow are shaped like a dragon’s wings, and the weapon is infused with the essence of a chromatic, gem, or metallic dragon’s breath. When you hit with an attack roll using this magic bow, the target takes an extra 1d6 damage of the same type as the breath infused in the bow— acid, cold, fire, force, lightning, necrotic, poison, psychic, radiant, or thunder.</p>
+			<p class="indent">If you load no ammunition in the weapon, it produces its own, automatically creating one piece of magic ammunition when you pull back the string. The ammunition created by the bow vanishes the instant after it hits or misses a target.</p>
+		</description>
+		<setters>
+			<set name="keywords">acid, cold, fire, force, lightning, necrotic, poison, psychic, radiant, thunder</set>
+			<set name="category">Magic Weapons</set>
+			<set name="cost" currency="gp">0</set>
+			<set name="attunement">true</set>
+			<set name="type" addition="Any Bow">Weapon</set>
+			<set name="rarity">Rare</set>
+			<set name="weapon">ID_INTERNAL_WEAPON_GROUP_BOWS||ID_INTERNAL_WEAPON_GROUP_CROSSBOWS</set>
+			<set name="name-format">Dragon Wing {{parent}}</set>
+		</setters>
+	</element>
+
+	<element name="Emerald Pen" type="Magic Item" source="Fizban's Treasury of Dragons" id="ID_WOTC_FTOD_MAGIC_ITEM_EMERALD_PEN">
+		<description>
+			<p>This pen is tipped with an emerald nib and requires no ink to write. While holding this pen, you can cast <em>illusory script</em> at will, requiring no material components.</p>
+			<div class="reference">
+				<div element="ID_PHB_SPELL_ILLUSORY_SCRIPT" />
+			</div>
+		</description>
+		<setters>
+			<set name="keywords">illusory script</set>
+			<set name="category">Wondrous Items</set>
+			<set name="cost" currency="gp">0</set>
+			<set name="weight" lb="0"></set>
+			<set name="slot">misc</set>
+			<set name="type">Wondrous Item</set>
+			<set name="attunement">false</set>
+			<set name="rarity">Uncommon</set>
+		</setters>
+		<rules>
+			<grant type="Spell" id="ID_PHB_SPELL_ILLUSORY_SCRIPT" />
+		</rules>
+	</element>
+
+	<element name="Flail of Tiamat" type="Magic Item" source="Fizban's Treasury of Dragons" id="ID_WOTC_FTOD_MAGIC_ITEM_FLAIL_OF_TIAMAT">
+		<description>
+			<p>This magic flail is made in the image of Tiamat, with five jagged heads shaped like the heads of five different chromatic dragons. You gain a +3 bonus to attack and damage rolls made with this flail. When you hit with an attack roll using it, the target takes an extra 5d4 damage of your choice of one of the following damage types: acid, cold, fire, lightning, or poison. While holding the flail, you can use an action and speak a command word to cause the heads to breathe multicolored flames in a 90-foot cone. Each creature in that area must make a DC 18 Dexterity saving throw. On a failed save, it takes 14d6 damage of one of the following damage types (your choice): acid, cold, fire, lightning, or poison. On a successful save, it takes half as much damage. Once this action is used, it can’t be used again until the next dawn.</p>
+		</description>
+		<setters>
+			<set name="keywords">acid, cold, fire, lightning, poison</set>
+			<set name="category">Magic Weapons</set>
+			<set name="cost" currency="gp">0</set>
+			<set name="attunement">true</set>
+			<set name="type" addition="Flail">Weapon</set>
+			<set name="rarity">Legendary</set>
+			<set name="weapon">Flail</set>
+			<set name="enhancement">3</set>
+		</setters>
+	</element>
+
+	<element name="Gold Canary Figurine of Wondrous Power" type="Magic Item" source="Fizban's Treasury of Dragons" id="ID_WOTC_FTOD_MAGIC_ITEM_GOLD_CANARY_FIGURINE_OF_WONDROUS_POWER">
+		<description>
+			<p>This gold statuette is carved in the likeness of a canary and is small enough to fit in a pocket. If you use an action to speak the command word and throw the figurine to a point on the ground within 60 feet of you, the figurine becomes a living creature in one of two forms (you choose). If there isn’t enough space for the creature where it would appear, the figurine doesn’t become a creature. The two forms are as follows:</p>
+			<p style="text-indent: -1em; margin-left: 1em"><strong>Giant Canary Form.</strong> The figurine becomes a <b>giant canary</b> (see the accompanying stat block) for up to 8 hours and can be ridden as a mount. Once the figurine has become a giant canary, it can’t be used this way again until the next dawn.</p>
+			<p style="text-indent: -1em; margin-left: 1em"><strong>Gold Dragon Form.</strong> While you are missing half or more of your hit points, you can speak a different command word and the figurine becomes an <b>adult gold dragon</b> (see its stat block in the <i>Monster Manual</i>) for up to 1 hour. The dragon can’t use any legendary actions or lair actions. Once the figurine has become an adult gold dragon, it can’t be used this way again until 1 year has passed.</p>
+			<p class="indent">In either form, the creature is friendly to you and your companions. It understands your languages and obeys your spoken commands. If you issue no commands, the creature defends itself but takes no other actions.</p>
+			<p class="indent">The creature exists for a duration specific to each form. At the end of the duration, the creature reverts to its figurine form. It reverts to a figurine early if it drops to 0 hit points or if you use an action to speak the command word again while touching it. When the creature becomes a figurine again, its property can’t be used again until a certain amount of time has passed, as specified in the description.</p>
+			<div class="reference">
+				<div element="ID_WOTC_FTOD_INFORMATION_GIANT_CANARY" />
+			</div>
+		</description>
+		<setters>
+			<set name="keywords">gold dragon</set>
+			<set name="category">Wondrous Items</set>
+			<set name="cost" currency="gp">0</set>
+			<set name="weight" lb="0"></set>
+			<set name="type">Wondrous Item</set>
+			<set name="attunement">false</set>
+			<set name="rarity">Legendary</set>
+		</setters>
+	</element>
+	<element name="Giant Canary" type="Information" source="Fizban's Treasury of Dragons" id="ID_WOTC_FTOD_INFORMATION_GIANT_CANARY">
+		<description>
+			<p style="margin-bottom:-5px"><em>Large Beast, Unaligned</em></p>
+			<h4 style="margin-top:5px" />
+			<ul class="unstyled">
+				<li><strong>Armor Class</strong> 12</li>
+				<li><strong>Hit Points</strong> 26 (4d10 + 4)</li>
+				<li><strong>Speed</strong> 30 ft., fly 60 ft</li>
+			</ul>
+			<table style="text-align:center;margin-top:10px;margin-bottom:10px">
+				<thead><tr><td>STR</td><td>DEX</td><td>CON</td><td>INT</td><td>WIS</td><td>CHA</td></tr></thead>
+				<tr><td>10 (+0)</td><td>14 (+2)</td><td>13 (+1)</td><td>2 (-4)</td><td>10 (+0)</td><td>6 (-2)</td></tr>
+			</table>
+			<ul class="unstyled">
+				<li><strong>Senses</strong> passive Perception 10</li>
+				<li><strong>Languages</strong> —</li>
+				<li><strong>Challenge</strong> 1/2 <strong>Proficiency Bonus</strong> +2</li>
+			</ul>
+			<h4 style="margin-top:5px; margin-bottom:10px" />
+			<h4 style="margin-top:10px">Actions</h4>
+			<ul class="unstyled">
+				<li><em><strong>Peck.</strong> Melee Weapon Attack:</em> +4 to hit, reach 5 ft., one target. <i>Hit:</i> 7 (1d10 + 2)</li>
+			</ul>
+		</description>
+	</element>
+
+	<element name="Platinum Scarf" type="Magic Item" source="Fizban's Treasury of Dragons" id="ID_WOTC_FTOD_MAGIC_ITEM_PLATIUM_SCARF">
+		<description>
+			<p>This scarf is made of sturdy cloth and covered in platinum-colored scales.</p>
+			<p class="indent">As an action, you can pull a scale from the scarf and speak a command word. When you do so, choose one of the following effects:</p> 
+			<p style="text-indent: -1em; margin-left: 1em"><strong>Breath of Life.</strong> The scale disappears, and you or a creature you touch regains 10d4 hit points.</p>
+			<p style="text-indent: -1em; margin-left: 1em"><strong>Platinum Shield.</strong> For 1 hour or until you dismiss it (no action required), the scale becomes a +1 shield, which you or another creature can use. A creature wielding the shield has immunity to radiant damage.</p>
+			<p style="text-indent: -1em; margin-left: 1em"><strong>Radiant Hammer.</strong> For 1 hour or until you dismiss it (no action required), the scale becomes a magic light hammer, which you or another creature can use. The weapon deals 2d4 radiant damage, instead of the bludgeoning damage normal for a light hammer. It deals an extra 2d4 radiant damage to chromatic dragons.</p>
+			<p class="indent">Once three scales have been pulled from the scarf, no more scales can be removed until the next dawn, when all the missing scales grow back. If you pull off a scale but don’t speak a command word, it disappears after 1 minute.</p>
+		</description>
+		<setters>
+			<set name="keywords">healing, shield, light hammer, radiant</set>
+			<set name="category">Wondrous Items</set>
+			<set name="cost" currency="gp">0</set>
+			<set name="weight" lb="0"></set>
+			<set name="slot">misc</set>
+			<set name="type">Wondrous Item</set>
+			<set name="attunement">true</set>
+			<set name="rarity">Legendary</set>
+		</setters>
+	</element>
+
+	<element name="Potion of Dragon's Majesty" type="Magic Item" source="Fizban's Treasury of Dragons" id="ID_WOTC_FTOD_MAGIC_ITEM_POTION_OF_DRAGONS_MAJESTY">		
+		<description>
+			<p>This potion looks like liquid gold, with a single scale from a chromatic, gem, or metallic dragon suspended in it. When you drink this potion, you transform into an adult dragon of the same kind as the dragon the scale came from. The transformation lasts for 1 hour. Any equipment you are wearing or carrying melds into your new form or falls to the ground (your choice). For the duration, you use the game statistics of the adult dragon instead of your own, but you retain your languages, personality, and memories. You can’t use a dragon’s Change Shape or its legendary or lair actions.</p>
+		</description>
+		<setters>
+			<set name="category">Potions</set>
+			<set name="weight" lb="0">0 lb.</set>
+			<set name="type">Potion</set>
+			<set name="rarity">Legendary</set>
+			<set name="stackable">false</set>
+		</setters>
+	</element>
+
+	<element name="Ruby Weave Gem" type="Magic Item" source="Fizban's Treasury of Dragons" id="ID_WOTC_FTOD_MAGIC_ITEM_RUBY_WEAVE_GEM">
+		<description>
+			<p>While you are holding this gem, you can use it as a spellcasting focus for your spells.</p>
+			<p class="indent">The gem has 3 charges and regains all expended charges daily at dawn. When you cast a spell while holding this gem, you can expend up to 3 charges to ignore the spell’s material components with a gold piece cost, up to 500 gp per charge expended.</p>
+			<p class="indent">When you finish a long rest, choose a spell from any class list. The spell you choose must be of a level you can cast. You know the chosen spell and can cast it with your spell slots of the appropriate level until the end of your next long rest.</p>
+		</description>
+		<setters>
+			<set name="keywords">spellcasting, focus</set>
+			<set name="category">Wondrous Items</set>
+			<set name="cost" currency="gp">0</set>
+			<set name="weight" lb="0"></set>
+			<set name="slot">onehand</set>
+			<set name="type">Wondrous Item</set>
+			<set name="attunement" addition="by a Spellcaster">true</set>
+			<set name="rarity">Legendary</set>
+		</setters>
+	</element>
+
+	<element name="Sapphire Buckler" type="Magic Item" source="Fizban's Treasury of Dragons" id="ID_WOTC_FTOD_MAGIC_ITEM_SAPPHIRE_BUCKLER">
+		<description>
+			<p>This crystalline blue shield is fashioned from a sapphire dragon’s scale and is created to aid in rooting out the influence of Aberrations. While wielding the shield, you have resistance to psychic and thunder damage. Also, when you take damage from a creature that is within 5 feet of you, you can use your reaction to deal 2d6 thunder damage to that creature.</p>
+			<p class="indent">As an action, you can use the shield to help you locate Aberrations until the end of your next turn. If any Aberrations are within 1 mile of you, the shield emits a low humming tone for a moment, and you know the direction of all Aberrations within that range. Once this property is used, it can’t be used again until the next dawn.</p>
+		</description>
+		<setters>
+			<set name="keywords">thunder, aberrations</set>
+			<set name="category">Magic Armor</set>
+			<set name="cost" currency="gp">0</set>
+			<set name="type" addition="Shield">Armor</set>
+			<set name="rarity">Very Rare</set>
+			<set name="armor">ID_INTERNAL_ARMOR_GROUP_SHIELD</set>
+		</setters>
+		<rules>
+			<grant type="Condition" id="ID_INTERNAL_CONDITION_DAMAGE_RESISTANCE_THUNDER" />
+			<grant type="Condition" id="ID_INTERNAL_CONDITION_DAMAGE_RESISTANCE_PSYCHIC" />
+		</rules>
+	</element>
+
+	<element name="Topaz Annihilator" type="Magic Item" source="Fizban's Treasury of Dragons" id="ID_WOTC_FTOD_MAGIC_ITEM_TOPAZ_ANNIHILATOR">
+		<description>
+			<p>This magic ranged weapon resembles a musket, but in lieu of any ammunition, it holds a glowing yellow scale from a topaz dragon in its heart.</p>
+			<p class="indent">The weapon has a normal range of 100 feet and a long range of 300 feet, and it has the two-handed property. It deals 2d6 necrotic damage on a hit. If this damage reduces a creature or object to 0 hit points, the target is reduced to dust. A creature reduced to dust can be restored to life only by a true resurrection or wish spell.</p>
+			<p class="indent">While the weapon is on your person, you can use an action to cast the <i>disintegrate</i> spell (save DC 18). Once this property is used, it can’t be used again until the next dawn.</p>
+			<div class="reference">
+				<div element="ID_PHB_SPELL_DISINTEGRATE" />
+			</div>
+		</description>
+		<setters>
+			<set name="keywords">musket, necrotic, disintegrate</set>
+			<set name="category">Magic Weapons</set>
+			<set name="cost" currency="gp">0</set>
+			<set name="attunement">true</set>
+			<set name="type" addition="Firearm">Weapon</set>
+			<set name="rarity">Legendary</set>
+			<set name="weapon">Musket</set>
+		</setters>
+	</element>
+
+	<!--Hoard Magic Items-->
+	<element name="Hoard Magic Items" type="Rule" source="Fizban's Treasury of Dragons" id="ID_WOTC_FTOD_INFORMATION_HOARD_MAGIC_ITEMS">
+		<description>
+			<p>Certain magic items can absorb the ambient magic of a dragon’s hoard. The mightier the dragon, the more powerful the item becomes when it is steeped in the dragon’s hoard. These items, called hoard items, have four states, which are summarized on the Hoard Item States table. A hoard item in its Slumbering state has certain base properties, and it gains additional properties when it enters the Stirring, Wakened, or Ascendant state.</p>
+			<h5>Hoard Item States</h5>
+			<table>
+				<thead>
+					<tr><td>Sate</td><td>Age</td></tr>
+				</thead>
+				<tr><td>Slumbering</td><td>—</td></tr>
+				<tr><td>Stirring</td><td>Young</td></tr>
+				<tr><td>Wakened</td><td>Adult</td></tr>
+				<tr><td>Ascendant</td><td>Ancient</td></tr>
+			</table>
+			<h4>Increasing Power</h4>
+			<p>A hoard item left to steep in a dragon’s hoard absorbs power from the hoard. Older dragons’ hoards are charged with more magic and can empower hoard items to higher states.</p>
+			<p class="indent">Ordinarily, a hoard item must steep in a dragon’s hoard for 1 year to reach the maximum possible state allowed by the age of the hoard’s dragon, as shown on the Hoard Item States table. For example, a hoard item that steeps in a young dragon’s hoard for 1 year enters its Stirring state, while one that steeps in an ancient dragon’s hoard for 1 year reaches the pinnacle of its power and enters its Ascendant state. If there are one or more hoard items steeping in a dragon’s hoard, the dragon is aware of them. The dragon also knows what these hoard items are and what state (Slumbering, Stirring, Wakened, or Ascendant) each of them is in.</p>
+			<p class="indent">When a dragon is slain, the magic surrounding its hoard becomes volatile. This allows a hoard item to steep more quickly in the hoard. A hoard item steeped in a dragon’s hoard for 8 hours rises one state (from Slumbering to Stirring, Stirring to Wakened, or Wakened to Ascendant), as long as the steeping begins within 1 hour of the dragon’s death and occurs within the dragon’s lair. Steeping in this way can’t raise the state of the item beyond the state associated with the dragon’s age—putting a Wakened item in a slain adult dragon’s hoard does not make it Ascendant, for example.</p>
+			<h4>Decreasing Power</h4>
+			<p>Just as hoard items can grow in power by absorbing the ambient magic of a dragon’s hoard, so too can these treasures fall back into slumber. If no creature is attuned to a hoard item and that item isn’t in a dragon’s hoard, the item decreases in power by one state every 30 days until it is Slumbering.</p>
+			<h4>Hoard Item Quirks</h4>
+			<p>Hoard items often manifest strange qualities beyond their intended function, regardless of the state they’re in. Roll once on the Draconic Quirks table to determine the quirk of a hoard item.</p>
+			<h5>Draconic Quirks</h5>
+			<table>
+				<thead>
+					<tr><td class="col-10">d8</td><td>Quirk</td></tr>
+				</thead>
+				<tr><td>1</td><td>When resting on the ground, the item points in the direction of the last hoard it steeped in.</td></tr>
+				<tr><td>2</td><td>The item’s bearer can speak and understand Draconic.</td></tr>
+				<tr><td>3</td><td>The item glows softly when within 60 feet of a Dragon or another hoard item.</td></tr>
+				<tr><td>4</td><td>The item’s bearer gains a swimming speed equal to their walking speed.</td></tr>
+				<tr><td>5</td><td>The item’s bearer has advantage on Intelligence (History) checks.</td></tr>
+				<tr><td>6</td><td>The item’s bearer has advantage on Charisma (Intimidation) checks made against non-Dragons.</td></tr>
+				<tr><td>7</td><td>The item grants its bearer resistance to the damage type of the breath weapon of the last dragon whose hoard the item steeped in.</td></tr>
+				<tr><td>8</td><td>The item’s bearer dreams of the dragon whose hoard the item last steeped in.</td></tr>
+			</table>
+		</description>
+	</element>
+
+	<element name="Dragon's Wrath Weapon (Slumbering)" type="Magic Item" source="Fizban's Treasury of Dragons" id="ID_WOTC_FTOD_MAGIC_ITEM_SLUMBERING_DRAGON'S_WRATH_WEAPON">
+		<compendium display="false" />
+		<description>
+			<p>This weapon is decorated with dragon heads, claws, wings, scales, or Draconic letters. When it steeps in a dragon’s hoard, it absorbs the energy of the dragon’s breath weapon and deals damage of that type with its special properties.</p>
+			<p><b><i>Slumbering.</i></b> Whenever you roll a 20 on your attack roll with this weapon, each creature of your choice within 5 feet of the target takes 5 damage of the type dealt by the dragon’s breath weapon.</p>
+			<div class="reference">
+				<div element="ID_WOTC_FTOD_INFORMATION_HOARD_MAGIC_ITEMS" />
+			</div>
+		</description>
+		<setters>
+			<set name="keywords">hoard, draconic</set>
+			<set name="category">Magic Weapons</set>
+			<set name="cost" currency="gp">0</set>
+			<set name="attunement">true</set>
+			<set name="type" addition="Any">Weapon</set>
+			<set name="rarity">Uncommon</set>
+			<set name="weapon">ID_INTERNAL_WEAPON_CATEGORY_SIMPLE_MELEE||ID_INTERNAL_WEAPON_CATEGORY_SIMPLE_RANGED||ID_INTERNAL_WEAPON_CATEGORY_MARTIAL_MELEE||ID_INTERNAL_WEAPON_CATEGORY_MARTIAL_RANGED</set>
+			<set name="name-format">Dragon's Wrath {{parent}} (Slumbering)</set>
+		</setters>
+	</element>
+	<element name="Dragon's Wrath Weapon (Stirring)" type="Magic Item" source="Fizban's Treasury of Dragons" id="ID_WOTC_FTOD_MAGIC_ITEM_STIRRING_DRAGON'S_WRATH_WEAPON">
+		<compendium display="false" />
+		<description>
+			<p>This weapon is decorated with dragon heads, claws, wings, scales, or Draconic letters. When it steeps in a dragon’s hoard, it absorbs the energy of the dragon’s breath weapon and deals damage of that type with its special properties.</p>
+			<p><b><i>Slumbering.</i></b> Whenever you roll a 20 on your attack roll with this weapon, each creature of your choice within 5 feet of the target takes 5 damage of the type dealt by the dragon’s breath weapon.</p>
+			<p><b><i>Stirring.</i></b> The Stirring weapon has the Slumbering property. In addition, you gain a +1 bonus to attack and damage rolls made using the weapon. On a hit, the weapon deals an extra 1d6 damage of the type dealt by the dragon’s breath weapon.</p>
+			<div class="reference">
+				<div element="ID_WOTC_FTOD_INFORMATION_HOARD_MAGIC_ITEMS" />
+			</div>
+		</description>
+		<setters>
+			<set name="keywords">hoard, draconic</set>
+			<set name="category">Magic Weapons</set>
+			<set name="cost" currency="gp">0</set>
+			<set name="attunement">true</set>
+			<set name="type" addition="Any">Weapon</set>
+			<set name="rarity">Rare</set>
+			<set name="weapon">ID_INTERNAL_WEAPON_CATEGORY_SIMPLE_MELEE||ID_INTERNAL_WEAPON_CATEGORY_SIMPLE_RANGED||ID_INTERNAL_WEAPON_CATEGORY_MARTIAL_MELEE||ID_INTERNAL_WEAPON_CATEGORY_MARTIAL_RANGED</set>
+			<set name="name-format">Dragon's Wrath {{parent}} (Stirring)</set>
+			<set name="enhancement">1</set>
+		</setters>
+	</element>
+	<element name="Dragon's Wrath Weapon (Wakened)" type="Magic Item" source="Fizban's Treasury of Dragons" id="ID_WOTC_FTOD_MAGIC_ITEM_WAKENED_DRAGON'S_WRATH_WEAPON">
+		<compendium display="false" />
+		<description>
+			<p>This weapon is decorated with dragon heads, claws, wings, scales, or Draconic letters. When it steeps in a dragon’s hoard, it absorbs the energy of the dragon’s breath weapon and deals damage of that type with its special properties.</p>
+			<p><b><i>Slumbering.</i></b> Whenever you roll a 20 on your attack roll with this weapon, each creature of your choice within 5 feet of the target takes 5 damage of the type dealt by the dragon’s breath weapon.</p>
+			<p><b><i>Stirring.</i></b> The Stirring weapon has the Slumbering property. In addition, you gain a +1 bonus to attack and damage rolls made using the weapon. On a hit, the weapon deals an extra 1d6 damage of the type dealt by the dragon’s breath weapon.</p>
+			<p><b><i>Wakened.</i></b> The Wakened weapon has the Slumbering property, and it improves on the Stirring property. The bonus to attack and damage rolls increases to +2, and the extra damage dealt by the weapon increases to 2d6.</p>
+			<p class="indent">As an action, you can unleash a 60-foot cone of destructive energy from the weapon. Each creature in that area must make a DC 16 Dexterity saving throw, taking 8d6 damage of the type dealt by the dragon’s breath weapon on a failed save, or half as much damage on a successful one. Once this action is used, it can’t be used again until the next dawn.</p>
+			<div class="reference">
+				<div element="ID_WOTC_FTOD_INFORMATION_HOARD_MAGIC_ITEMS" />
+			</div>
+		</description>
+		<setters>
+			<set name="keywords">hoard, draconic, breath weapon</set>
+			<set name="category">Magic Weapons</set>
+			<set name="cost" currency="gp">0</set>
+			<set name="attunement">true</set>
+			<set name="type" addition="Any">Weapon</set>
+			<set name="rarity">Very Rare</set>
+			<set name="weapon">ID_INTERNAL_WEAPON_CATEGORY_SIMPLE_MELEE||ID_INTERNAL_WEAPON_CATEGORY_SIMPLE_RANGED||ID_INTERNAL_WEAPON_CATEGORY_MARTIAL_MELEE||ID_INTERNAL_WEAPON_CATEGORY_MARTIAL_RANGED</set>
+			<set name="name-format">Dragon's Wrath {{parent}} (Wakened)</set>
+			<set name="enhancement">2</set>
+		</setters>
+	</element>
+	<element name="Dragon's Wrath Weapon (Ascendant)" type="Magic Item" source="Fizban's Treasury of Dragons" id="ID_WOTC_FTOD_MAGIC_ITEM_ASCENDANT_DRAGON'S_WRATH_WEAPON">
+		<description>
+			<p>This weapon is decorated with dragon heads, claws, wings, scales, or Draconic letters. When it steeps in a dragon’s hoard, it absorbs the energy of the dragon’s breath weapon and deals damage of that type with its special properties.</p>
+			<p><b><i>Slumbering.</i></b> Whenever you roll a 20 on your attack roll with this weapon, each creature of your choice within 5 feet of the target takes 5 damage of the type dealt by the dragon’s breath weapon.</p>
+			<p><b><i>Stirring.</i></b> The Stirring weapon has the Slumbering property. In addition, you gain a +1 bonus to attack and damage rolls made using the weapon. On a hit, the weapon deals an extra 1d6 damage of the type dealt by the dragon’s breath weapon.</p>
+			<p><b><i>Wakened.</i></b> The Wakened weapon has the Slumbering property, and it improves on the Stirring property. The bonus to attack and damage rolls increases to +2, and the extra damage dealt by the weapon increases to 2d6.</p>
+			<p class="indent">As an action, you can unleash a 60-foot cone of destructive energy from the weapon. Each creature in that area must make a DC 16 Dexterity saving throw, taking 8d6 damage of the type dealt by the dragon’s breath weapon on a failed save, or half as much damage on a successful one. Once this action is used, it can’t be used again until the next dawn.</p>
+			<p><b><i>Ascendant.</i></b> The Ascendant weapon has the Slumbering property, and it improves on the Stirring and Wakened properties. The bonus to attack and damage rolls increases to +3, and the extra damage dealt by the weapon increases to 3d6.</p>
+			<p class="indent">The cone of destructive energy the weapon creates increases to a 60-foot cone, the save DC increases to 18, and the damage increases to 12d6.</p>
+			<div class="reference">
+				<div element="ID_WOTC_FTOD_INFORMATION_HOARD_MAGIC_ITEMS" />
+			</div>
+		</description>
+		<setters>
+			<set name="keywords">hoard, draconic, breath weapon</set>
+			<set name="category">Magic Weapons</set>
+			<set name="cost" currency="gp">0</set>
+			<set name="attunement">true</set>
+			<set name="type" addition="Any">Weapon</set>
+			<set name="rarity">Legendary</set>
+			<set name="weapon">ID_INTERNAL_WEAPON_CATEGORY_SIMPLE_MELEE||ID_INTERNAL_WEAPON_CATEGORY_SIMPLE_RANGED||ID_INTERNAL_WEAPON_CATEGORY_MARTIAL_MELEE||ID_INTERNAL_WEAPON_CATEGORY_MARTIAL_RANGED</set>
+			<set name="name-format">Dragon's Wrath {{parent}} (Ascendant)</set>
+			<set name="enhancement">3</set>
+		</setters>
+	</element>
+
+	<element name="Dragon-Touched Focus (Slumbering)" type="Magic Item" source="Fizban's Treasury of Dragons" id="ID_WOTC_FTOD_MAGIC_ITEM_SLUMBERING_DRAGON_TOUCHED_FOCUS">
+		<compendium display="false" />
+		<description>
+			<p>This wondrous item can be a scepter, an orb, an amulet, a crystal, or another finely crafted object. It typically incorporates imagery of dragons’ wings, claws, teeth, or scales.</p>
+			<p><b><i>Slumbering.</i></b> You have advantage on initiative rolls. While you are holding the focus, it can function as a spellcasting focus for all your spells.</p>
+			<div class="reference">
+				<div element="ID_WOTC_FTOD_INFORMATION_HOARD_MAGIC_ITEMS" />
+			</div>
+		</description>
+		<setters>
+			<set name="keywords">hoard, draconic, spellcasting, advantage, initiative</set>
+			<set name="category">Wondrous Items</set>
+			<set name="cost" currency="gp">0</set>
+			<set name="weight" lb="0"></set>
+			<set name="slot">onehand</set>
+			<set name="type">Wondrous Item</set>
+			<set name="attunement" addition="by a Spellcaster">true</set>
+			<set name="rarity">Uncommon</set>
+		</setters>
+	</element>
+	<element name="Dragon-Touched Focus (Stirring)" type="Magic Item" source="Fizban's Treasury of Dragons" id="ID_WOTC_FTOD_MAGIC_ITEM_STIRRING_DRAGON_TOUCHED_FOCUS">
+		<compendium display="false" />
+		<description>
+			<p>This wondrous item can be a scepter, an orb, an amulet, a crystal, or another finely crafted object. It typically incorporates imagery of dragons’ wings, claws, teeth, or scales.</p>
+			<p><b><i>Slumbering.</i></b> You have advantage on initiative rolls. While you are holding the focus, it can function as a spellcasting focus for all your spells.</p>
+			<p><b><i>Stirring.</i></b> The Stirring focus has the Slumbering property, and it gains an additional property determined by the family of the dragon in whose hoard it became Stirring:</p>
+			<p style="text-indent: -1em; margin-left: 1em"><strong>Chromatic.</strong> Whenever you use a spell slot to cast a spell that deals acid, cold, fire, lightning, or poison damage, roll a d6, and you gain a bonus equal to the number rolled to one of the spell’s damage rolls.</p>
+			<p style="text-indent: -1em; margin-left: 1em"><strong>Gem.</strong> Whenever you use a spell slot to cast a spell, you can immediately teleport to an unoccupied space you can see within 15 feet of you.</p>
+			<p style="text-indent: -1em; margin-left: 1em"><strong>Metallic.</strong> When a creature you can see within 30 feet of you makes a saving throw, you can use your reaction to give that creature advantage on the saving throw.</p>
+			<div class="reference">
+				<div element="ID_WOTC_FTOD_INFORMATION_HOARD_MAGIC_ITEMS" />
+			</div>
+		</description>
+		<setters>
+			<set name="keywords">hoard, draconic, spellcasting, advantage, initiative</set>
+			<set name="category">Wondrous Items</set>
+			<set name="cost" currency="gp">0</set>
+			<set name="weight" lb="0"></set>
+			<set name="slot">onehand</set>
+			<set name="type">Wondrous Item</set>
+			<set name="attunement" addition="by a Spellcaster">true</set>
+			<set name="rarity">Rare</set>
+		</setters>
+	</element>
+	<element name="Dragon-Touched Focus (Wakened)" type="Magic Item" source="Fizban's Treasury of Dragons" id="ID_WOTC_FTOD_MAGIC_ITEM_WAKENED_DRAGON_TOUCHED_FOCUS">
+		<compendium display="false" />
+		<description>
+			<p>This wondrous item can be a scepter, an orb, an amulet, a crystal, or another finely crafted object. It typically incorporates imagery of dragons’ wings, claws, teeth, or scales.</p>
+			<p><b><i>Slumbering.</i></b> You have advantage on initiative rolls. While you are holding the focus, it can function as a spellcasting focus for all your spells.</p>
+			<p><b><i>Stirring.</i></b> The Stirring focus has the Slumbering property, and it gains an additional property determined by the family of the dragon in whose hoard it became Stirring:</p>
+			<p style="text-indent: -1em; margin-left: 1em"><strong>Chromatic.</strong> Whenever you use a spell slot to cast a spell that deals acid, cold, fire, lightning, or poison damage, roll a d6, and you gain a bonus equal to the number rolled to one of the spell’s damage rolls.</p>
+			<p style="text-indent: -1em; margin-left: 1em"><strong>Gem.</strong> Whenever you use a spell slot to cast a spell, you can immediately teleport to an unoccupied space you can see within 15 feet of you.</p>
+			<p style="text-indent: -1em; margin-left: 1em"><strong>Metallic.</strong> When a creature you can see within 30 feet of you makes a saving throw, you can use your reaction to give that creature advantage on the saving throw.</p>
+			<p><b><i>Wakened.</i></b> The Wakened focus has the Slumbering and Stirring properties, and while you are holding a Wakened focus, you can use it to cast certain spells. Once the item is used to cast a given spell, it can’t be used to cast that spell again until the next dawn. The spells are determined by the family of the dragon in whose hoard it became Wakened. An asterisk indicates a new spell that appears in chapter 2 of <i>Fizban's Treasury of Dragons</i>.</p>
+			<p style="text-indent: -1em; margin-left: 1em"><strong>Chromatic.</strong> <i>Hold monster, Rime’s binding ice*</i></p>
+			<p style="text-indent: -1em; margin-left: 1em"><strong>Gem.</strong> <i>Rary’s telepathic bond, Raulothim’s psychic lance*</i></p>
+			<p style="text-indent: -1em; margin-left: 1em"><strong>Metallic.</strong> <i>Fizban’s platinum shield,* legend lore</i></p>
+			<div class="reference">
+				<div element="ID_WOTC_FTOD_INFORMATION_HOARD_MAGIC_ITEMS" />
+			</div>
+		</description>
+		<setters>
+			<set name="keywords">hoard, draconic, spellcasting, advantage, initiative, spells</set>
+			<set name="category">Wondrous Items</set>
+			<set name="cost" currency="gp">0</set>
+			<set name="weight" lb="0"></set>
+			<set name="slot">onehand</set>
+			<set name="type">Wondrous Item</set>
+			<set name="attunement" addition="by a Spellcaster">true</set>
+			<set name="rarity">Very Rare</set>
+		</setters>
+	</element>
+	<element name="Dragon-Touched Focus (Ascendant)" type="Magic Item" source="Fizban's Treasury of Dragons" id="ID_WOTC_FTOD_MAGIC_ITEM_ASCENDANT_DRAGON_TOUCHED_FOCUS">
+		<description>
+			<p>This wondrous item can be a scepter, an orb, an amulet, a crystal, or another finely crafted object. It typically incorporates imagery of dragons’ wings, claws, teeth, or scales.</p>
+			<p><b><i>Slumbering.</i></b> You have advantage on initiative rolls. While you are holding the focus, it can function as a spellcasting focus for all your spells.</p>
+			<p><b><i>Stirring.</i></b> The Stirring focus has the Slumbering property, and it gains an additional property determined by the family of the dragon in whose hoard it became Stirring:</p>
+			<p style="text-indent: -1em; margin-left: 1em"><strong>Chromatic.</strong> Whenever you use a spell slot to cast a spell that deals acid, cold, fire, lightning, or poison damage, roll a d6, and you gain a bonus equal to the number rolled to one of the spell’s damage rolls.</p>
+			<p style="text-indent: -1em; margin-left: 1em"><strong>Gem.</strong> Whenever you use a spell slot to cast a spell, you can immediately teleport to an unoccupied space you can see within 15 feet of you.</p>
+			<p style="text-indent: -1em; margin-left: 1em"><strong>Metallic.</strong> When a creature you can see within 30 feet of you makes a saving throw, you can use your reaction to give that creature advantage on the saving throw.</p>
+			<p><b><i>Wakened.</i></b> The Wakened focus has the Slumbering and Stirring properties, and while you are holding a Wakened focus, you can use it to cast certain spells. Once the item is used to cast a given spell, it can’t be used to cast that spell again until the next dawn. The spells are determined by the family of the dragon in whose hoard it became Wakened. An asterisk indicates a new spell that appears in chapter 2 of <i>Fizban's Treasury of Dragons</i>.</p>
+			<p style="text-indent: -1em; margin-left: 1em"><strong>Chromatic.</strong> <i>Hold monster, Rime’s binding ice*</i></p>
+			<p style="text-indent: -1em; margin-left: 1em"><strong>Gem.</strong> <i>Rary’s telepathic bond, Raulothim’s psychic lance*</i></p>
+			<p style="text-indent: -1em; margin-left: 1em"><strong>Metallic.</strong> <i>Fizban’s platinum shield,* legend lore</i></p>
+			<p><b><i>Ascendant.</i></b> The Ascendant focus has the Slumbering, Stirring, and Wakened properties. In addition, when you cast a spell of 1st level or higher while holding this focus, you can treat the spell as if it were cast using a 9th-level spell slot. Once this property is used, it can’t be used again until the next dawn.</p>
+			<div class="reference">
+				<div element="ID_WOTC_FTOD_INFORMATION_HOARD_MAGIC_ITEMS" />
+			</div>
+		</description>
+		<setters>
+			<set name="keywords">hoard, draconic, spellcasting, advantage, initiative, spells</set>
+			<set name="category">Wondrous Items</set>
+			<set name="cost" currency="gp">0</set>
+			<set name="weight" lb="0"></set>
+			<set name="slot">onehand</set>
+			<set name="type">Wondrous Item</set>
+			<set name="attunement" addition="by a Spellcaster">true</set>
+			<set name="rarity">Legendary</set>
+		</setters>
+	</element>
+
+	<element name="Dragon Vessel (Slumbering)" type="Magic Item" source="Fizban's Treasury of Dragons" id="ID_WOTC_FTOD_MAGIC_ITEM_SLUMBERING_DRAGON_VESSEL">
+		<compendium display="false" />
+		<description>
+			<p>This vessel can be a potion bottle, drinking horn, or other container meant to hold a liquid.</p>
+			<p><b><i>Slumbering.</i></b> As a bonus action, if the vessel is empty, you can speak the command word to fill the vessel with one of the following (your choice): ale, olive oil, a potion of healing, or a potion of climbing. Once this property is used, it can’t be used until the next dawn. A potion you create in this way loses its magical properties if it isn’t imbibed within 24 hours.</p>
+			<div class="reference">
+				<div element="ID_WOTC_DMG_MAGIC_ITEM_POTION_OF_HEALING" />
+			</div>
+			<div class="reference">
+				<div element="ID_WOTC_DMG_MAGIC_ITEM_POTION_OF_CLIMBING" />
+			</div>
+			<div class="reference">
+				<div element="ID_WOTC_FTOD_INFORMATION_HOARD_MAGIC_ITEMS" />
+			</div>
+		</description>
+		<setters>
+			<set name="keywords">hoard, draconic, potion of healing, potion of climbing</set>
+			<set name="category">Wondrous Items</set>
+			<set name="cost" currency="gp">0</set>
+			<set name="weight" lb="0"></set>
+			<set name="type">Wondrous Item</set>
+			<set name="attunement">true</set>
+			<set name="rarity">Uncommon</set>
+		</setters>
+	</element>
+	<element name="Dragon Vessel (Stirring)" type="Magic Item" source="Fizban's Treasury of Dragons" id="ID_WOTC_FTOD_MAGIC_ITEM_STIRRING_DRAGON_VESSEL">
+		<compendium display="false" />
+		<description>
+			<p>This vessel can be a potion bottle, drinking horn, or other container meant to hold a liquid.</p>
+			<p><b><i>Slumbering.</i></b> As a bonus action, if the vessel is empty, you can speak the command word to fill the vessel with one of the following (your choice): ale, olive oil, a potion of healing, or a potion of climbing. Once this property is used, it can’t be used until the next dawn. A potion you create in this way loses its magical properties if it isn’t imbibed within 24 hours.</p>
+			<p><b><i>Stirring.</i></b> In addition to the options for a Slumbering vessel, you can fill a Stirring vessel with mead, a potion of fire breath, or a potion of healing (greater).</p>
+			<div class="reference">
+				<div element="ID_WOTC_DMG_MAGIC_ITEM_POTION_OF_HEALING" />
+			</div>
+			<div class="reference">
+				<div element="ID_WOTC_DMG_MAGIC_ITEM_POTION_OF_CLIMBING" />
+			</div>
+			<div class="reference">
+				<div element="ID_WOTC_DMG_MAGIC_ITEM_POTION_OF_FIRE_BREATH" />
+			</div>
+			<div class="reference">
+				<div element="ID_WOTC_DMG_MAGIC_ITEM_POTION_OF_GREATER_HEALING" />
+			</div>
+			<div class="reference">
+				<div element="ID_WOTC_FTOD_INFORMATION_HOARD_MAGIC_ITEMS" />
+			</div>
+		</description>
+		<setters>
+			<set name="keywords">hoard, draconic, potion of healing, potion of climbing, potion of fire breath, potion of greater healing</set>
+			<set name="category">Wondrous Items</set>
+			<set name="cost" currency="gp">0</set>
+			<set name="weight" lb="0"></set>
+			<set name="type">Wondrous Item</set>
+			<set name="attunement">true</set>
+			<set name="rarity">Rare</set>
+		</setters>
+	</element>
+	<element name="Dragon Vessel (Wakened)" type="Magic Item" source="Fizban's Treasury of Dragons" id="ID_WOTC_FTOD_MAGIC_ITEM_WAKENED_DRAGON_VESSEL">
+		<compendium display="false" />
+		<description>
+			<p>This vessel can be a potion bottle, drinking horn, or other container meant to hold a liquid.</p>
+			<p><b><i>Slumbering.</i></b> As a bonus action, if the vessel is empty, you can speak the command word to fill the vessel with one of the following (your choice): ale, olive oil, a potion of healing, or a potion of climbing. Once this property is used, it can’t be used until the next dawn. A potion you create in this way loses its magical properties if it isn’t imbibed within 24 hours.</p>
+			<p><b><i>Stirring.</i></b> In addition to the options for a Slumbering vessel, you can fill a Stirring vessel with mead, a potion of fire breath, or a potion of healing (greater).</p>
+			<p><b><i>Wakened.</i></b> In addition to the options for a Slumbering or Stirring vessel, you can fill a Wakened vessel with wine, a potion of flying, or a potion of healing (superior).</p>
+			<div class="reference">
+				<div element="ID_WOTC_DMG_MAGIC_ITEM_POTION_OF_HEALING" />
+			</div>
+			<div class="reference">
+				<div element="ID_WOTC_DMG_MAGIC_ITEM_POTION_OF_CLIMBING" />
+			</div>
+			<div class="reference">
+				<div element="ID_WOTC_DMG_MAGIC_ITEM_POTION_OF_FIRE_BREATH" />
+			</div>
+			<div class="reference">
+				<div element="ID_WOTC_DMG_MAGIC_ITEM_POTION_OF_GREATER_HEALING" />
+			</div>
+			<div class="reference">
+				<div element="ID_WOTC_DMG_MAGIC_ITEM_POTION_OF_FLYING" />
+			</div>
+			<div class="reference">
+				<div element="ID_WOTC_DMG_MAGIC_ITEM_POTION_OF_SUPERIOR_HEALING" />
+			</div>
+			<div class="reference">
+				<div element="ID_WOTC_FTOD_INFORMATION_HOARD_MAGIC_ITEMS" />
+			</div>
+		</description>
+		<setters>
+			<set name="keywords">hoard, draconic, potion of healing, potion of climbing, potion of fire breath, potion of greater healing, potion of flying, potion of superior healing</set>
+			<set name="category">Wondrous Items</set>
+			<set name="cost" currency="gp">0</set>
+			<set name="weight" lb="0"></set>
+			<set name="type">Wondrous Item</set>
+			<set name="attunement">true</set>
+			<set name="rarity">Very Rare</set>
+		</setters>
+	</element>
+	<element name="Dragon Vessel (Ascendant)" type="Magic Item" source="Fizban's Treasury of Dragons" id="ID_WOTC_FTOD_MAGIC_ITEM_ASCENDANT_DRAGON_VESSEL">
+		<description>
+			<p>This vessel can be a potion bottle, drinking horn, or other container meant to hold a liquid.</p>
+			<p><b><i>Slumbering.</i></b> As a bonus action, if the vessel is empty, you can speak the command word to fill the vessel with one of the following (your choice): ale, olive oil, a potion of healing, or a potion of climbing. Once this property is used, it can’t be used until the next dawn. A potion you create in this way loses its magical properties if it isn’t imbibed within 24 hours.</p>
+			<p><b><i>Stirring.</i></b> In addition to the options for a Slumbering vessel, you can fill a Stirring vessel with mead, a potion of fire breath, or a potion of healing (greater).</p>
+			<p><b><i>Wakened.</i></b> In addition to the options for a Slumbering or Stirring vessel, you can fill a Wakened vessel with wine, a potion of flying, or a potion of healing (superior).</p>
+			<p><b><i>Ascendant.</i></b> In addition to the options for other states, you can fill an Ascendant vessel with whiskey, a potion of healing (supreme), or a potion of dragon’s majesty.</p>
+			<div class="reference">
+				<div element="ID_WOTC_DMG_MAGIC_ITEM_POTION_OF_HEALING" />
+			</div>
+			<div class="reference">
+				<div element="ID_WOTC_DMG_MAGIC_ITEM_POTION_OF_CLIMBING" />
+			</div>
+			<div class="reference">
+				<div element="ID_WOTC_DMG_MAGIC_ITEM_POTION_OF_FIRE_BREATH" />
+			</div>
+			<div class="reference">
+				<div element="ID_WOTC_DMG_MAGIC_ITEM_POTION_OF_GREATER_HEALING" />
+			</div>
+			<div class="reference">
+				<div element="ID_WOTC_DMG_MAGIC_ITEM_POTION_OF_FLYING" />
+			</div>
+			<div class="reference">
+				<div element="ID_WOTC_DMG_MAGIC_ITEM_POTION_OF_SUPERIOR_HEALING" />
+			</div>
+			<div class="reference">
+				<div element="ID_WOTC_DMG_MAGIC_ITEM_POTION_OF_SUPREME_HEALING" />
+			</div>
+			<div class="reference">
+				<div element="ID_WOTC_FTOD_MAGIC_ITEM_POTION_OF_DRAGONS_MAJESTY" />
+			</div>
+			<div class="reference">
+				<div element="ID_WOTC_FTOD_INFORMATION_HOARD_MAGIC_ITEMS" />
+			</div>
+		</description>
+		<setters>
+			<set name="keywords">hoard, draconic, potion of healing, potion of climbing, potion of fire breath, potion of greater healing, potion of flying, potion of superior healing, potion of supreme healing, potion of dragon's majesty</set>
+			<set name="category">Wondrous Items</set>
+			<set name="cost" currency="gp">0</set>
+			<set name="weight" lb="0"></set>
+			<set name="type">Wondrous Item</set>
+			<set name="attunement">true</set>
+			<set name="rarity">Legendary</set>
+		</setters>
+	</element>
+
+	<element name="Scaled Ornament (Slumbering)" type="Magic Item" source="Fizban's Treasury of Dragons" id="ID_WOTC_FTOD_MAGIC_ITEM_SLUMBERING_SCALED_ORNAMENT">
+		<compendium display="false" />
+		<description>
+			<p>This ornament can be jewelry, a cloak, or another wearable accessory. It appears to be fashioned from a dragon’s scale, tooth, or claw, or it incorporates images in those shapes.</p>
+			<p><b><i>Slumbering.</i></b> You have advantage on saving throws you make to avoid being charmed or frightened or to end those conditions on you.</p>
+			<div class="reference">
+				<div element="ID_WOTC_FTOD_INFORMATION_HOARD_MAGIC_ITEMS" />
+			</div>
+		</description>
+		<setters>
+			<set name="keywords">hoard, dragon, draconic, advantage, saving throws, charmed, frightened</set>
+			<set name="category">Wondrous Items</set>
+			<set name="cost" currency="gp">0</set>
+			<set name="weight" lb="0">0 lb.</set>
+			<set name="slot">misc</set>
+			<set name="type">Wondrous Item</set>
+			<set name="attunement">true</set>
+			<set name="rarity">Uncommon</set>
+		</setters>
+	</element>
+	<element name="Scaled Ornament (Stirring)" type="Magic Item" source="Fizban's Treasury of Dragons" id="ID_WOTC_FTOD_MAGIC_ITEM_STIRRING_SCALED_ORNAMENT">
+		<compendium display="false" />
+		<description>
+			<p>This ornament can be jewelry, a cloak, or another wearable accessory. It appears to be fashioned from a dragon’s scale, tooth, or claw, or it incorporates images in those shapes.</p>
+			<p><b><i>Slumbering.</i></b> You have advantage on saving throws you make to avoid being charmed or frightened or to end those conditions on you.</p>
+			<p><b><i>Stirring.</i></b> You gain a +1 bonus to AC, and you can’t be charmed or frightened. Moreover, each creature of your choice within 30 feet of you has advantage on saving throws it makes to avoid being charmed or frightened or to end those conditions on itself.</p>
+			<div class="reference">
+				<div element="ID_WOTC_FTOD_INFORMATION_HOARD_MAGIC_ITEMS" />
+			</div>
+		</description>
+		<setters>
+			<set name="keywords">hoard, dragon, draconic, advantage, saving throws, charmed, frightened, ac, armor class, immunity, condition</set>
+			<set name="category">Wondrous Items</set>
+			<set name="cost" currency="gp">0</set>
+			<set name="weight" lb="0">0 lb.</set>
+			<set name="slot">misc</set>
+			<set name="type">Wondrous Item</set>
+			<set name="attunement">true</set>
+			<set name="rarity">Rare</set>
+		</setters>
+		<rules>
+			<stat name="ac:misc" value="1" />
+		</rules>
+	</element>
+	<element name="Scaled Ornament (Wakened)" type="Magic Item" source="Fizban's Treasury of Dragons" id="ID_WOTC_FTOD_MAGIC_ITEM_WAKENED_SCALED_ORNAMENT">
+		<compendium display="false" />
+		<description>
+			<p>This ornament can be jewelry, a cloak, or another wearable accessory. It appears to be fashioned from a dragon’s scale, tooth, or claw, or it incorporates images in those shapes.</p>
+			<p><b><i>Slumbering.</i></b> You have advantage on saving throws you make to avoid being charmed or frightened or to end those conditions on you.</p>
+			<p><b><i>Stirring.</i></b> You gain a +1 bonus to AC, and you can’t be charmed or frightened. Moreover, each creature of your choice within 30 feet of you has advantage on saving throws it makes to avoid being charmed or frightened or to end those conditions on itself.</p>
+			<p><b><i>Wakened.</i></b> The Wakened ornament has the Stirring property. In addition, when you would take damage of the type dealt by the breath of the dragon in whose hoard the ornament became Wakened, you can use your reaction to take no damage instead, and you regain hit points equal to the damage you would have taken. Once this property is used, it can’t be used again until the next dawn.</p>
+			<div class="reference">
+				<div element="ID_WOTC_FTOD_INFORMATION_HOARD_MAGIC_ITEMS" />
+			</div>
+		</description>
+		<setters>
+			<set name="keywords">hoard, dragon, draconic, advantage, saving throws, charmed, frightened, ac, armor class, immunity, condition, reaction, healing</set>
+			<set name="category">Wondrous Items</set>
+			<set name="cost" currency="gp">0</set>
+			<set name="weight" lb="0">0 lb.</set>
+			<set name="slot">misc</set>
+			<set name="type">Wondrous Item</set>
+			<set name="attunement">true</set>
+			<set name="rarity">Very Rare</set>
+		</setters>
+		<rules>
+			<stat name="ac:misc" value="1" />
+		</rules>
+	</element>
+	<element name="Scaled Ornament (Ascendant)" type="Magic Item" source="Fizban's Treasury of Dragons" id="ID_WOTC_FTOD_MAGIC_ITEM_ASCENDANT_SCALED_ORNAMENT">
+		<description>
+			<p>This ornament can be jewelry, a cloak, or another wearable accessory. It appears to be fashioned from a dragon’s scale, tooth, or claw, or it incorporates images in those shapes.</p>
+			<p><b><i>Slumbering.</i></b> You have advantage on saving throws you make to avoid being charmed or frightened or to end those conditions on you.</p>
+			<p><b><i>Stirring.</i></b> You gain a +1 bonus to AC, and you can’t be charmed or frightened. Moreover, each creature of your choice within 30 feet of you has advantage on saving throws it makes to avoid being charmed or frightened or to end those conditions on itself.</p>
+			<p><b><i>Wakened.</i></b> The Wakened ornament has the Stirring property. In addition, when you would take damage of the type dealt by the breath of the dragon in whose hoard the ornament became Wakened, you can use your reaction to take no damage instead, and you regain hit points equal to the damage you would have taken. Once this property is used, it can’t be used again until the next dawn.</p>
+			<p><b><i>Ascendant.</i></b> The Ascendant ornament has the Stirring and Wakened properties. In addition, while you are wearing the ornament, you gain a flying speed equal to your walking speed and can hover. While you are flying using this speed, spectral dragon wings appear on your back.</p>
+			<div class="reference">
+				<div element="ID_WOTC_FTOD_INFORMATION_HOARD_MAGIC_ITEMS" />
+			</div>
+		</description>
+		<setters>
+			<set name="keywords">hoard, dragon, draconic, advantage, saving throws, charmed, frightened, ac, armor class, immunity, condition, reaction, healing, flying, speed</set>
+			<set name="category">Wondrous Items</set>
+			<set name="cost" currency="gp">0</set>
+			<set name="weight" lb="0">0 lb.</set>
+			<set name="slot">misc</set>
+			<set name="type">Wondrous Item</set>
+			<set name="attunement">true</set>
+			<set name="rarity">Legendary</set>
+		</setters>
+		<rules>
+			<stat name="ac:misc" value="1" />
+			<stat name="speed:fly" value="speed" bonus="base" />
+		</rules>
+	</element>
+</elements>

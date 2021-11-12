@@ -1,0 +1,196 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<elements>
+	<info>
+		<name>Spells</name>
+		<description>The Spells from Fizban's Treasury of Dragons</description>
+		<author url="https://dnd.wizards.com/products/treasury-dragons">Fizban's Treasury of Dragons</author>
+		<update version="0.0.1">
+			<file name="spells.xml" url="https://raw.githubusercontent.com/AuroraLegacy/elements/master/supplements/fizbans-treasury-of-dragons/spells.xml" />
+		</update>
+	</info>
+	
+	<element name="Ashardalon's Stride" type="Spell" source="Fizban's Treasury of Dragons" id="ID_WOTC_FTOD_SPELL_ASHARDALONS_STRIDE">
+		<supports>Artificer, Ranger, Sorcerer, Wizard</supports>
+		<description>
+			<p>The billowing flames of a dragon blast from your feet, granting you explosive speed. For the duration, your speed increases by 20 feet and moving doesn’t provoke opportunity attacks.</p>
+			<p class="indent">When you move within 5 feet of a creature or an object that isn’t being worn or carried, it takes 1d6 fire damage from your trail of heat. A creature or object can take this damage only once during a turn.</p>
+			<p class="indent"><strong><em>At Higher Levels.</em></strong> When you cast this spell using a spell slot of 4th level or higher, increase your speed by 5 feet for each spell slot level above 3rd. The spell deals an additional 1d6 fire damage for each slot level above 3rd.</p>
+		</description>
+		<setters>
+			<set name="level">3</set>
+			<set name="school">Transmutation</set>
+			<set name="time">1 bonus action</set>
+			<set name="range">Self</set>
+			<set name="hasVerbalComponent">true</set>
+			<set name="hasSomaticComponent">true</set>
+			<set name="hasMaterialComponent">false</set>
+			<set name="duration">Concentration, up to 1 minute</set>
+			<set name="isConcentration">true</set>
+		</setters>
+	</element>
+	<element name="Draconic Transformation" type="Spell" source="Fizban's Treasury of Dragons" id="ID_WOTC_FTOD_SPELL_DRACONIC_TRANSFORMATION">
+		<supports>Druid, Sorcerer, Wizard</supports>
+		<description>
+			<p>With a roar, you draw on the magic of dragons to transform yourself, taking on draconic features. You gain the following benefits until the spell ends:</p>
+			<p style="text-indent: -1em; margin-left: 1em"><strong>Blindsight.</strong> You have blindsight with a range of 30 feet. Within that range, you can effectively see anything that isn’t behind total cover, even if you’re blinded or in darkness. Moreover, you can see an invisible creature, unless the creature successfully hides from you.</p>
+			<p style="text-indent: -1em; margin-left: 1em"><strong>Breath Weapon.</strong> When you cast this spell, and as a bonus action on subsequent turns for the duration, you can exhale shimmering energy in a 60-foot cone. Each creature in that area must make a Dexterity saving throw, taking 6d8 force damage on a failed save, or half as much damage on a successful one.</p>
+			<p style="text-indent: -1em; margin-left: 1em"><strong>Wings.</strong> Incorporeal wings sprout from your back, giving you a flying speed of 60 feet.</p>
+		</description>
+		<setters>
+			<set name="level">7</set>
+			<set name="school">Transmutation</set>
+			<set name="time">1 bonus action</set>
+			<set name="range">Self</set>
+			<set name="hasVerbalComponent">true</set>
+			<set name="hasSomaticComponent">true</set>
+			<set name="hasMaterialComponent">true</set>
+			<set name="materialComponent">a statuette of a dragon, worth at least 500 gp</set>
+			<set name="duration">Concentration, up to 1 minute</set>
+			<set name="isConcentration">true</set>
+		</setters>
+	</element>
+	<element name="Fizban's Platinum Shield" type="Spell" source="Fizban's Treasury of Dragons" id="ID_WOTC_FTOD_SPELL_FIZBANS_PLATINUM_SHIELD">
+		<supports>Sorcerer, Wizard</supports>
+		<description>
+			<p>You create a field of silvery light that surrounds a creature of your choice within range (you can choose yourself). The field sheds dim light out to 5 feet. While surrounded by the field, a creature gains the following benefits:</p>
+			<p style="text-indent: -1em; margin-left: 1em"><strong>Cover.</strong> The creature has half cover.</p>
+			<p style="text-indent: -1em; margin-left: 1em"><strong>Damage Resistance.</strong> The creature has resistance to acid, cold, fire, lightning, and poison damage.</p>
+			<p style="text-indent: -1em; margin-left: 1em"><strong>Evasion.</strong> If the creature is subjected to an effect that allows it to make a Dexterity saving throw to take only half damage, the creature instead takes no damage if it succeeds on the saving throw, and only half damage if it fails.</p>
+			<p class="indent">As a bonus action on subsequent turns, you can move the field to another creature within 60 feet of the field.</p>
+		</description>
+		<setters>
+			<set name="level">6</set>
+			<set name="school">Abjuration</set>
+			<set name="time">1 bonus action</set>
+			<set name="range">60 feet</set>
+			<set name="hasVerbalComponent">true</set>
+			<set name="hasSomaticComponent">true</set>
+			<set name="hasMaterialComponent">true</set>
+			<set name="materialComponent">a platinum-plated dragon scale, worth at least 500 gp</set>
+			<set name="duration">Concentration, up to 1 minute</set>
+			<set name="isConcentration">true</set>
+		</setters>
+	</element>
+	<element name="Nathair's Mischief" type="Spell" source="Fizban's Treasury of Dragons" id="ID_WOTC_FTOD_SPELL_NATHAIRS_MISCHIEF">
+		<supports>Bard, Sorcerer, Wizard, Wisdom, Dexterity, Spell Saving Throw</supports>
+		<description>
+			<p>You fill a 20-foot cube you can see within range with fey and draconic magic. Roll on the Mischievous Surge table to determine the magical effect produced, and roll again at the start of each of your turns until the spell ends. You can move the cube up to 10 feet before you roll.</p>
+			<h5>Mischievous Surge</h5>
+			<table>
+                <thead>
+                    <tr><td>d4</td><td>Effect</td></tr>
+                </thead>
+                <tr><td>1</td><td>The smell of apple pie fills the air, and each creature in the cube must succeed on a Wisdom saving throw or become charmed by you until the start of your next turn.</td></tr>
+                <tr><td>2</td><td>Bouquets of flowers appear all around, and each creature in the cube must succeed on a Dexterity saving throw or be blinded until the start of your next turn as the flowers spray water in their faces.</td></tr>
+                <tr><td>3</td><td>Each creature in the cube must succeed on a Wisdom saving throw or begin giggling until the start of your next turn. A giggling creature is incapacitated and uses all its movement to move in a random direction.</td></tr>
+                <tr><td>4</td><td>Drops of molasses hover in the cube, making it difficult terrain until the start of your next turn.</td></tr>
+            </table>
+		</description>
+		<setters>
+			<set name="level">2</set>
+			<set name="school">Illusion</set>
+			<set name="time">1 action</set>
+			<set name="range">60 feet</set>
+			<set name="hasVerbalComponent">false</set>
+			<set name="hasSomaticComponent">true</set>
+			<set name="hasMaterialComponent">true</set>
+			<set name="materialComponent">a piece of crust from an apple pie</set>
+			<set name="duration">Concentration, up to 1 minute</set>
+			<set name="isConcentration">true</set>
+		</setters>
+	</element>
+	<element name="Raulothim's Psychic Lance" type="Spell" source="Fizban's Treasury of Dragons" id="ID_WOTC_FTOD_SPELL_RAULOTHIMS_PSYCHIC_LANCE">
+		<supports>Bard, Sorcerer, Warlock, Wizard, Intelligence, Spell Saving Throw</supports>
+		<description>
+			<p>You unleash a shimmering lance of psychic power from your forehead at a creature that you can see within range. Alternatively, you can utter a creature’s name. If the named target is within range, it becomes the spell’s target even if you can’t see it. If the named target isn’t within range, the lance dissipates without effect.</p>
+			<p class="indent">The target must make an Intelligence saving throw. On a failed save, the target takes 7d6 psychic damage and is incapacitated until the start of your next turn. On a successful save, the creature takes half as much damage and isn’t incapacitated.</p>
+			<p class="indent"><strong><em>At Higher Levels.</em></strong> When you cast this spell using a spell slot of 5th level or higher, the damage increases by 1d6 for each slot level above 4th.</p>
+		</description>
+		<setters>
+			<set name="level">4</set>
+			<set name="school">Enchantment</set>
+			<set name="time">1 action</set>
+			<set name="range">120 feet</set>
+			<set name="hasVerbalComponent">true</set>
+			<set name="hasSomaticComponent">false</set>
+			<set name="hasMaterialComponent">false</set>
+			<set name="duration">Instantaneous</set>
+		</setters>
+	</element>
+	<element name="Rime's Binding Ice" type="Spell" source="Fizban's Treasury of Dragons" id="ID_WOTC_FTOD_SPELL_RIMES_BINDING_ICE">
+		<supports>Sorcerer, Wizard, Constitution, Spell Saving Throw</supports>
+		<description>
+			<p>A burst of cold energy emanates from you in a 30-foot cone. Each creature in that area must make a Constitution saving throw. On a failed save, a creature takes 3d8 cold damage and is hindered by ice formations for 1 minute, or until it or another creature within reach of it uses an action to break away the ice. A creature hindered by ice has its speed reduced to 0. On a successful save, a creature takes half as much damage and isn’t hindered by ice.</p>
+			<p class="indent"><strong><em>At Higher Levels.</em></strong> When you cast this spell using a spell slot of 3rd level or higher, increase the cold damage by 1d8 for each slot level above 2nd.</p>
+		</description>
+		<setters>
+			<set name="level">2</set>
+			<set name="school">Evocation</set>
+			<set name="time">1 action</set>
+			<set name="range">Self (30-foot cone)</set>
+			<set name="hasVerbalComponent">false</set>
+			<set name="hasSomaticComponent">true</set>
+			<set name="hasMaterialComponent">true</set>
+			<set name="materialComponent">a vial of meltwater</set>
+			<set name="duration">Instantaneous</set>
+		</setters>
+	</element>
+	<element name="Summon Draconic Spirit" type="Spell" source="Fizban's Treasury of Dragons" id="ID_WOTC_FTOD_SPELL_SUMMON_DRACONIC_SPIRIT">
+		<supports>Druid, Sorcerer, Wizard</supports>
+		<description>
+			<p>You call forth a draconic spirit. It manifests in an unoccupied space that you can see within range. This corporeal form uses the Draconic Spirit stat block. When you cast this spell, choose a family of dragon: chromatic, gem, or metallic. The creature resembles a dragon of the chosen family, which determines certain traits in its stat block. The creature disappears when it drops to 0 hit points or when the spell ends.</p>
+			<p class="indent">The creature is an ally to you and your companions. In combat, the creature shares your initiative count, but it takes its turn immediately after yours. It obeys your verbal commands (no action required by you). If you don’t issue any, it takes the Dodge action and uses its move to avoid danger.</p>
+			<p class="indent"><strong><em>At Higher Levels.</em></strong> When you cast this spell using a spell slot of 6th level or higher, use the higher level wherever the spell’s level appears in the stat </p>
+			<div class="reference">
+				<div element="ID_WOTC_FTOD_INFORMATION_SUMMON_DRACONIC_STATBLOCK" />
+			</div>
+		</description>
+		<setters>
+			<set name="level">5</set>
+			<set name="school">Conjuration</set>
+			<set name="time">1 action</set>
+			<set name="range">60 feet</set>
+			<set name="hasVerbalComponent">true</set>
+			<set name="hasSomaticComponent">true</set>
+			<set name="hasMaterialComponent">true</set>
+			<set name="materialComponent">an object with the image of a dragon engraved on it, worth at least 500gp</set>
+			<set name="duration">Concentration, up to 1 hour</set>
+			<set name="isConcentration">true</set>
+		</setters>
+	</element>
+
+	<!-- Summons Statblock -->
+	<element name="Draconic Spirit" type="Information" source="Fizban's Treasury of Dragons" id="ID_WOTC_FTOD_INFORMATION_SUMMON_DRACONIC_STATBLOCK">
+		<description>
+			<p style="margin-bottom:-5px"><em>Large Dragon, Neutral</em></p>
+			<h4 style="margin-top:5px" />
+			<ul class="unstyled">
+				<li><strong>Armor Class</strong> 14 + the level of the spell (natural armor)</li>
+				<li><strong>Hit Points</strong> 50 + 10 for each spell level above 5th (the dragon has a number of Hit Dice [d10s] equal to the level of the spell)</li>
+				<li><strong>Speed</strong> 30 ft., fly 60 ft., swim 30 ft.</li>
+			</ul>
+			<table style="text-align:center;margin-top:10px;margin-bottom:10px">
+				<thead><tr><td>STR</td><td>DEX</td><td>CON</td><td>INT</td><td>WIS</td><td>CHA</td></tr></thead>
+				<tr><td>19 (+4)</td><td>14 (+2)</td><td>17 (+3)</td><td>10 (+0)</td><td>14 (+2)</td><td>14 (+2)</td></tr>
+			</table>
+			<ul class="unstyled">
+				<li><strong>Damage Resistances (Chromatic and Metallic Only)</strong> acid, cold, fire, lightning, poison</li>
+				<li><strong>Damage Resistances (Gem Only)</strong> force, necrotic, psychic, radiant, thunder</li>
+				<li><strong>Condition Immunities</strong> charmed, frightened, poisoned</li>
+				<li><strong>Senses</strong> blindsight 30ft., darkvision 60 ft., passive Perception 12</li>
+				<li><strong>Languages</strong> Draconic, understands the languages you speak</li>
+				<li><strong>Challenge</strong> — <strong>Proficiency Bonus</strong> equals your bonus.</li>
+			</ul>
+			<h4 style="margin-top:5px; margin-bottom:10px" />
+			<ul class="unstyled">
+				<li><strong><em>Shared Resistances.</em></strong> When you summon the dragon, choose one of its damage resistances. You have resistance to the chosen damage type until the spell ends.</li>
+			</ul>
+			<h4 style="margin-top:10px">Actions</h4>
+			<ul class="unstyled">
+				<li><strong><em>Multiattack.</em></strong> The dragon makes a number of Rend equal to half this spell’s level (rounded down), and uses Breath Weapon.</li>
+				<li><em><strong>Rend.</strong> Melee Weapon Attack:</em> your spell attack modifier to hit, reach 10 ft., one target. <em>Hit:</em> 1d6 + 4 + the spell’s level piercing damage.</li>
+				<li><strong><em>Breath Weapon.</em></strong> The dragon exhales destructive energy in a 30-foot cone. Each creature in that area must make a Dexterity saving throw against your spell save DC. A creature takes 2d6 damage of a type this dragon has resistance to (your choice) on a failed save, or half as much damage on a successful one.</li>
+			</ul>
+		</description>
+	</element>
+</elements>
