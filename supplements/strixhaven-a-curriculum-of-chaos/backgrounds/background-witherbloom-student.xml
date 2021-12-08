@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<elements>
+	<info>
+		<name>Witherbloom Student Background</name>
+		<update version="0.0.1">
+			<file name="background-witherbloom-student.xml" url="https://raw.githubusercontent.com/AuroraLegacy/elements/master/supplements/strixhaven-a-curriculum-of-chaos/backgrounds/background-witherbloom-student.xml" />
+		</update>
+	</info>
+
+	<element name="Witherbloom Student" type="Background" source="source" id="ID_AUTHOR_SOURCE_BACKGROUND_WITHERBLOOM_STUDENT">
+		<description>
+			<p>You filled your childhood with rudimentary alchemical experiments, all in the hope of becoming a student of Witherbloom College. The life sciences are the focus of your reading, which include biology and necromancy. Brewing strange concoctions with medicinal properties, exploring the anatomies of monsters, and cataloging swamp flora are the kinds of studies you might pursue at Witherbloom College.</p>
+			<ul class="unstyled">
+				<li><strong>Skill Proficiencies:</strong> Nature, Survival</li>
+				<li><strong>Tool Proficiencies:</strong> Herbalism kit</li>
+				<li><strong>Languages:</strong> One of your choice</li>
+				<li><strong>Equipment:</strong> A bottle of black ink, an ink pen, a book about plant identification, an iron pot, an herbalism kit, a school uniform, and a pouch containing 15 gp</li>
+			</ul>
+			<div element="ID_AUTHOR_SOURCE_BACKGROUND_FEATURE_WITHERBLOOM_INITIATE" />
+			<h5>SUGGESTED CHARACTERISTICS</h5>
+			<p>Students of Witherbloom College are equally likely to be found picking herbs for a healing tincture or riding zombified swamp beasts through the bayou. The Witherbloom Personality Traits table suggests a variety of traits you might adopt for your character.</p>
+		</description>
+		<setters>
+			<set name="short">Nature, Survival, Herbalism Kit, Language</set>
+		</setters>
+		<rules>
+			<grant type="Proficiency" id="ID_PROFICIENCY_SKILL_NATURE" />
+			<grant type="Proficiency" id="ID_PROFICIENCY_SKILL_SURVIVAL" />
+			<grant type="Proficiency" id="ID_PROFICIENCY_TOOL_PROFICIENCY_HERBALISM_KIT" />
+			<grant type="Background Feature" id="ID_AUTHOR_SOURCE_BACKGROUND_FEATURE_WITHERBLOOM_INITIATE" requirements="!ID_INTERNAL_GRANT_OPTIONAL_BACKGROUND_FEATURE"/>
+			<select type="Background Feature" name="Variant Feature" supports="Optional Background Feature" optional="true" />
+			<select type="List" name="Personality Trait" optional="true" >
+				<item id="1">I love brewing up a new recipe, even if some might be repulsed by my choice of ingredients. Or the final product. Or both.</item>
+				<item id="2">My fashion sense is like my garden: withered, black, and weird.</item>
+				<item id="3">I’m going to befriend every single monster in this swamp if it’s the last thing I do.</item>
+				<item id="4">Everything in this world dies eventually. The question is, what will you do with the time you have left?</item>
+				<item id="5">I know we just met, but when you die, may I have your bones? For research.</item>
+				<item id="6">Don’t interrupt me; I’m brooding.</item>
+			</select>
+			<select type="List" name="Trinket" optional="true" >
+				<item id="1">A black bird-shaped mask, trimmed with glowing green thread</item>
+				<item id="2">A set of rabbit bones</item>
+				<item id="3">A pair of thick knee-high waders, stained with muck and moss</item>
+				<item id="4">A slimy green tentacle, which occasionally wriggles</item>
+				<item id="5">A notebook containing waterproof paper</item>
+				<item id="6">A necklace of five small vials, each filled with luminescent white liquid</item>
+			</select>
+		</rules>
+	</element>
+	
+	<element name="Feature: Witherbloom Initiate" type="Background Feature" source="source" id="ID_AUTHOR_SOURCE_BACKGROUND_FEATURE_WITHERBLOOM_INITIATE">
+		<description>
+			<p>You gain the Strixhaven Initiate feat and must choose Witherbloom within it.</p>
+			<p class="indent">In addition, if you have the Spellcasting or Pact Magic feature, the spells on the Quandrix Spells table are added to the spell list of your spellcasting class. (If you are a multiclass character with multiple spell lists, these spells are added to all of them.)</p>
+			<h5>Witherbloom Spells</h5>
+			<table>
+				<thead>
+					<tr><td>Spell Level</td><td>Spells</td></tr>
+				</thead>
+				<tr><td>1st</td><td><em>Cure Wounds, Inflict Wounds</em></td></tr>
+				<tr><td>2nd</td><td><em>Lesser Restoration, Wither and Bloom</em></td></tr>
+				<tr><td>3rd</td><td><em>Revivify, Vampiric Touch</em></td></tr>
+				<tr><td>4th</td><td><em>Blight, Death Ward</em></td></tr>
+				<tr><td>5th</td><td><em>Antilife Shell, Greater Restoration</em></td></tr>
+			</table>
+			<p>Consider customizing how your spells look when you cast them. Your Witherbloom spells might rely on material components or a spellcasting focus drawn from the swamp environment of Witherbloom, and your spells might take on an appearance suggesting those natural elements. Spectral shapes of swamp animals or plants might form amid your spell effects.</p>
+			<p class="indent">description</p>
+		</description>
+		<sheet alt="Witherbloom Initiate" display="false" />
+		<spellcasting all="true" extend="true">
+			<extend>ID_PHB_SPELL_CURE_WOUNDS</extend>
+			<extend>ID_PHB_SPELL_INFLICT_WOUNDS</extend>
+			<extend>ID_PHB_SPELL_LESSER_RESTORATION</extend>
+			<extend>ID_WOTC_SCOC_SPELL_WITHER_AND_BLOOM</extend>
+			<extend>ID_PHB_SPELL_REVIVIFY</extend>
+			<extend>ID_PHB_SPELL_VAMPIRIC_TOUCH</extend>
+			<extend>ID_PHB_SPELL_BLIGHT</extend>
+			<extend>ID_PHB_SPELL_CIRCLE_OF_DEATH</extend>
+			<extend>ID_PHB_SPELL_ANTILIFE_SHELL</extend>
+			<extend>ID_PHB_SPELL_GREATER_RESTORATION</extend>
+		</spellcasting>
+		<rules>
+			<grant type="Feat" id="ID_WOTC_SCOC_FEAT_STRIXHAVEN_INITIATE" />
+		</rules>
+	</element>
+</elements>

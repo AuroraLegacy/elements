@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<elements>
+	<info>
+		<name>Quandrix Student Background</name>
+		<update version="0.0.1">
+			<file name="background-quandrix-student.xml" url="https://raw.githubusercontent.com/AuroraLegacy/elements/master/supplements/strixhaven-a-curriculum-of-chaos/backgrounds/background-quandrix-student.xml" />
+		</update>
+	</info>
+
+	<element name="Quandrix Student" type="Background" source="source" id="ID_AUTHOR_SOURCE_BACKGROUND_QUANDRIX_STUDENT">
+		<description>
+			<p>In preparation to become a student of Quandrix College, you have spent years working through the college’s math problems for prospective students. Your interests concentrate on the mathematical principles and patterns found in the natural world. You might lean more toward mathematics or physics, or you delve into more abstract studies of metaphysics, arcana, or logic.</p>
+			<ul class="unstyled">
+				<li><strong>Skill Proficiencies:</strong> Arcana, Nature</li>
+				<li><strong>Tool Proficiencies:</strong> One type of artisan’s tools</li>
+				<li><strong>Languages:</strong> One of your choice</li>
+				<li><strong>Equipment:</strong> A bottle of black ink, an ink pen, an abacus, a book of arcane theory, a school uniform, and a pouch containing 15 gp</li>
+			</ul>
+			<div element="ID_AUTHOR_SOURCE_BACKGROUND_FEATURE_QUANDRIX_INITIATE" />
+			<h5>SUGGESTED CHARACTERISTICS</h5>
+			<p>With subjects ranging from the physical and tangible to the paradoxical and strange, the student body of Quandrix College includes an eclectic mix of individuals. The Quandrix Personality Traits table suggests a variety of traits you might adopt for your character.</p>
+		</description>
+		<setters>
+			<set name="short">Arcana, Nature, Artisan's Tool, Language</set>
+		</setters>
+		<rules>
+			<grant type="Proficiency" id="ID_PROFICIENCY_SKILL_ARCANA" />
+			<grant type="Proficiency" id="ID_PROFICIENCY_SKILL_NATURE" />
+			<select type="Proficiency" name="Tool Proficiency (Quandrix Student)" supports="Artisan Tool" />
+			<select type="Language" name="Language (Quandrix Student)" supports="Standard||Exotic" />
+			<grant type="Background Feature" id="ID_AUTHOR_SOURCE_BACKGROUND_FEATURE_QUANDRIX_INITIATE" requirements="!ID_INTERNAL_GRANT_OPTIONAL_BACKGROUND_FEATURE"/>
+			<select type="Background Feature" name="Variant Feature" supports="Optional Background Feature" optional="true" />
+			<select type="List" name="Personality Trait" optional="true" >
+				<item id="1">When I find a subject I’m interested in, I won’t stop studying until I know everything about it. It keeps me up at night.</item>
+				<item id="2">I hope this all makes sense to me one day. Until then, I’m going to keep faking it.</item>
+				<item id="3">Equations and patterns come naturally to my mind. I wish friendship came just as easily.</item>
+				<item id="4">I believe I’m always the smartest person in the room. And I’ll prove it, even if no one asks me to.</item>
+				<item id="5">If these classes have taught me anything, it’s that reality is a lie, and nothing matters. So why bother?</item>
+				<item id="6">Before I graduate, I want to achieve something mathematically impossible. I must leave a legacy!</item>
+			</select>
+			<select type="List" name="Trinket" optional="true" >
+				<item id="1">A small succulent in a dodecahedral clay pot</item>
+				<item id="2">A blue knit hat that looks a bit like a bottle folding in on itself</item>
+				<item id="3">A model hypercube carved from green crystal, showcasing the fourth dimension</item>
+				<item id="4">A crumpled test on the theory of gravity manipulation, with a failing grade on the front and the name of a famous Quandrix professor</item>
+				<item id="5">A blue tetrahedron that, when tapped twice, projects a recording of an old mathematics lecture</item>
+				<item id="6">A round bread roll cut so that someone could spread butter on both halves without ever lifting the knife</item>
+			</select>
+		</rules>
+	</element>
+
+	<element name="Feature: Quandrix Initiate" type="Background Feature" source="source" id="ID_AUTHOR_SOURCE_BACKGROUND_FEATURE_QUANDRIX_INITIATE">
+		<description>
+			<p>You gain the Strixhaven Initiate feat and must choose Quandrix within it.</p>
+			<p class="indent">In addition, if you have the Spellcasting or Pact Magic feature, the spells on the Quandrix Spells table are added to the spell list of your spellcasting class. (If you are a multiclass character with multiple spell lists, these spells are added to all of them.)</p>
+			<h5>Quandrix Spells</h5>
+			<table>
+				<thead>
+					<tr><td>Spell Level</td><td>Spells</td></tr>
+				</thead>
+				<tr><td>1st</td><td><em>Entangle, Guiding Bolt</em></td></tr>
+				<tr><td>2nd</td><td><em>Enlarge/Reduce, Vortex Warp</em></td></tr>
+				<tr><td>3rd</td><td><em>Aura of Vitality, Haste</em></td></tr>
+				<tr><td>4th</td><td><em>Control Water, Freedom of Movement</em></td></tr>
+				<tr><td>5th</td><td><em>Circle of Power, Passwall</em></td></tr>
+			</table>
+			<p>Consider customizing how your spells look when you cast them. Your Quandrix spells might manifest amid kaleidoscopic swirls of fractal patterns, amplifying the tiniest movements of your somatic components. When your magic creates or alters creatures, it might briefly surround the targets with shimmering fractal designs or tessellated patterns.</p>
+		</description>
+		<sheet alt="Quandrix Initiate" display="false" />
+		<spellcasting all="true" extend="true">
+			<extend>ID_PHB_SPELL_ENTANGLE</extend>
+			<extend>ID_PHB_SPELL_GUIDING_BOLT</extend>
+			<extend>ID_PHB_SPELL_ENLARGE_REDUCE</extend>
+			<extend>ID_WOTC_SCOC_SPELL_VORTEX_WARP</extend>
+			<extend>ID_PHB_SPELL_AURA_OF_VITALITY</extend>
+			<extend>ID_PHB_SPELL_HASTE</extend>
+			<extend>ID_PHB_SPELL_CONTROL_WATER</extend>
+			<extend>ID_PHB_SPELL_FREEDOM_OF_MOVEMENT</extend>
+			<extend>ID_PHB_SPELL_CIRCLE_OF_POWER</extend>
+			<extend>ID_PHB_SPELL_PASSWALL</extend>
+		</spellcasting>
+		<rules>
+			<grant type="Feat" id="ID_WOTC_SCOC_FEAT_STRIXHAVEN_INITIATE" />
+		</rules>
+	</element>
+</elements>

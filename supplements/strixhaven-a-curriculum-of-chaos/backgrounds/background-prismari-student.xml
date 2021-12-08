@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<elements>
+	<info>
+		<name>Prismari Student Background</name>
+		<update version="0.0.1">
+			<file name="background-prismari-student.xml" url="https://raw.githubusercontent.com/AuroraLegacy/elements/master/supplements/strixhaven-a-curriculum-of-chaos/backgrounds/background-prismari-student.xml" />
+		</update>
+	</info>
+
+	<element name="Prismari Student" type="Background" source="Strixhaven: A Curriculum Of Chaos" id="ID_WOTC_SCOC_BACKGROUND_PRISMARI_STUDENT">
+		<description>
+			<p>You are an artist, and you have been preparing to hone your craft according to the traditions of Prismari College. Whatever your medium—sculpture, dance, paint, music, drama, architecture, or any other field—you have grand visions of bringing your art to life in a fusion of magic and creativity.</p>
+			<ul class="unstyled">
+				<li><strong>Skill Proficiencies:</strong> Acrobatics, Performance</li>
+				<li><strong>Tool Proficiencies:</strong> One type of musical instrument or artisan’s tools</li>
+				<li><strong>Languages:</strong> One of your choice</li>
+				<li><strong>Equipment:</strong> A bottle of black ink, an ink pen, a set of artisan’s tools or a musical instrument (one of your choice), a school uniform, and a pouch containing 10 gp</li>
+			</ul>
+			<div element="ID_WOTC_SCOC_BACKGROUND_FEATURE_PRISMARI_INITIATE" />
+			<h5>SUGGESTED CHARACTERISTICS</h5>
+			<p>Though the curriculum of Prismari College attracts many outgoing and driven artists, the school has no shortage of shy scholars and lackadaisical blowhards among its ranks. The Prismari Personality Traits table suggests a variety of traits you might adopt for your character.</p>
+		</description>
+		<setters>
+			<set name="short">Acrobatics, Performance, Musical Instrument or Artisan’s Tools, Language</set>
+		</setters>
+		<rules>
+			<grant type="Proficiency" id="ID_PROFICIENCY_SKILL_ACROBATICS" />
+			<grant type="Proficiency" id="ID_PROFICIENCY_SKILL_PERFORMANCE" />
+			<select type="Proficiency" name="Tool Proficiency (Prismari Student)" supports="Musical Instrument||Artisan tools" />
+			<select type="Language" name="Language (Prismari Student)" supports="Standard||Exotic" />
+			<grant type="Background Feature" id="ID_WOTC_SCOC_BACKGROUND_FEATURE_PRISMARI_INITIATE" requirements="!ID_INTERNAL_GRANT_OPTIONAL_BACKGROUND_FEATURE"/>
+			<select type="Background Feature" name="Variant Feature" supports="Optional Background Feature" optional="true" />
+			<select type="List" name="Prismari Personality Trait" optional="true" >
+				<item id="1">I’m the life of the party, and I expect everyone’s attention when I walk into a room.</item>
+				<item id="2">Two weeks ago, I was enthralled with my latest project. Now, I think it’s garbage and deserves to be destroyed.</item>
+				<item id="3">I believe everyone has the ability to express their truest selves through art, and I’m happy to quietly push them in the right direction.</item>
+				<item id="4">Everyone is a critic, and I work to win them all over.</item>
+				<item id="5">I’m beset with such an overwhelming sense of ennui regarding my art. Nothing quite captures my attention anymore.</item>
+				<item id="6">Instead of confronting my negative emotions, I channel them into explosive artistic displays.</item>
+			</select>
+			<select type="List" name="Prismari Trinkets" optional="true" >
+				<item id="1">A pair of rose-tinted glasses with glittery frames</item>
+				<item id="2">A stoppered glass bottle that, when opened, plays a brassy orchestral piece</item>
+				<item id="3">A quartet of hovering water motes in a vial</item>
+				<item id="4">A bandolier of watercolor paints</item>
+				<item id="5">A tiara capped with a crystal that crackles with harmless lightning</item>
+				<item id="6">An iridescent quill</item>
+			</select>
+		</rules>
+	</element>
+
+	<element name="Feature: Prismari Initiate" type="Background Feature" source="Strixhaven: A Curriculum Of Chaos" id="ID_WOTC_SCOC_BACKGROUND_FEATURE_PRISMARI_INITIATE">
+		<description>
+			<p>You gain the Strixhaven Initiate feat and must choose Prismari within it.</p>
+			<p class="indent">In addition, if you have the Spellcasting or Pact Magic feature, the spells on the Prismari Spells table are added to the spell list of your spellcasting class. (If you are a multiclass character with multiple spell lists, these spells are added to all of them.)</p>
+			<h5>Prismari Spells</h5>
+			<table>
+				<thead>
+					<tr><td>Spell Level</td><td>Spells</td></tr>
+				</thead>
+				<tr><td>1st</td><td><em>Chromatic Orb, Thunderwave</em></td></tr>
+				<tr><td>2nd</td><td><em>Flaming Sphere, Kinetic Jaunt</em></td></tr>
+				<tr><td>3rd</td><td><em>Haste, Water Walk</em></td></tr>
+				<tr><td>4th</td><td><em>Freedom of Movement, Wall of Fire</em></td></tr>
+				<tr><td>5th</td><td><em>Cone of Cold, Conjure Elemental</em></td></tr>
+			</table>
+			<p>Consider customizing how your spells look when you cast them. You might wield your Prismari spells with dynamic, gestural movement—as much dance as somatic component. Even a blast of fire in your hands is a sculpted work of art; elemental forces make grand designs as you hurl spells. These forces might linger on your body or in your clothes as decorative elements after your spells are dissipated, as sparks dance in your hair and your touch leaves tracings of frost on whatever you touch.</p>
+		</description>
+		<sheet alt="Prismari Initiate" display="false" />
+		<spellcasting all="true" extend="true">
+			<extend>ID_PHB_SPELL_CHROMATIC_ORB</extend>
+			<extend>ID_PHB_SPELL_THUNDERWAVE</extend>
+			<extend>ID_PHB_SPELL_FLAMING_SPHERE</extend>
+			<extend>ID_WOTC_SCOC_SPELL_KINETIC_JAUNT</extend>
+			<extend>ID_PHB_SPELL_HASTE</extend>
+			<extend>ID_PHB_SPELL_WATER_WALK</extend>
+			<extend>ID_PHB_SPELL_FREEDOM_OF_MOVEMENT</extend>
+			<extend>ID_PHB_SPELL_WALL_OF_FIRE</extend>
+			<extend>ID_PHB_SPELL_CONE_OF_COLD</extend>
+			<extend>ID_PHB_SPELL_CONJURE_ELEMENTAL</extend>
+		</spellcasting>
+		<rules>
+			<grant type="Feat" id="ID_WOTC_SCOC_FEAT_STRIXHAVEN_INITIATE" />
+		</rules>
+	</element>
+</elements>

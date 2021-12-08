@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<elements>
+	<info>
+		<name>Silverquill Student Background</name>
+		<update version="0.0.1">
+			<file name="background-silverquill-student.xml" url="https://raw.githubusercontent.com/AuroraLegacy/elements/master/supplements/strixhaven-a-curriculum-of-chaos/backgrounds/background-silverquill-student.xml" />
+		</update>
+	</info>
+
+	<element name="Silverquill Student" type="Background" source="source" id="ID_AUTHOR_SOURCE_BACKGROUND_SILVERQUILL_STUDENT">
+		<description>
+			<p>You have spent years practicing your writing and oration in the hope of becoming a student of Silverquill College. Your studies focus on language, literature, and the power of words, both magical and otherwise. The metaphorical power of words to illuminate or conceal is joined with the literal ability of magic to do the same in your academic pursuits.</p>
+			<ul class="unstyled">
+				<li><strong>Skill Proficiencies:</strong> Intimidation, Persuasion</li>
+				<li><strong>Languages:</strong> Two of your choice</li>
+				<li><strong>Equipment:</strong> A bottle of black ink, an ink pen, a book of poetry, a school uniform, and a pouch containing 15 gp</li>
+			</ul>
+			<div element="ID_AUTHOR_SOURCE_BACKGROUND_FEATURE_SILVERQUILL_STUDENT" />
+			<h5>SUGGESTED CHARACTERISTICS</h5>
+			<p>With the college’s intense standards looming over them, Silverquill students range from cocky and cutthroat to overwhelmed perfectionists. The Silverquill Personality Traits table suggests a variety of traits you might adopt for your character.</p>
+		</description>
+		<setters>
+			<set name="short">Intimidation, Persuasion, 2 Languages</set>
+		</setters>
+		<rules>
+			<grant type="Proficiency" id="ID_PROFICIENCY_SKILL_INTIMIDATION" />
+			<grant type="Proficiency" id="ID_PROFICIENCY_SKILL_PERSUASION" />
+			<select type="Language" name="Language (Silverquill Student)" number="2" supports="Standard||Exotic" />
+			<grant type="Background Feature" id="ID_AUTHOR_SOURCE_BACKGROUND_FEATURE_SILVERQUILL_STUDENT" requirements="!ID_INTERNAL_GRANT_OPTIONAL_BACKGROUND_FEATURE"/>
+			<select type="Background Feature" name="Variant Feature" supports="Optional Background Feature" optional="true" />
+			<select type="List" name="Personality Trait" optional="true" >
+				<item id="1">I’ll say whatever I need to in order to maintain my high social status</item>
+				<item id="2">I prefer saying the blunt truth over a pretty lie, and I don’t particularly care whose feelings I hurt.</item>
+				<item id="3">I believe that uplifting my peers is the best way to succeed.</item>
+				<item id="4">I’ve mastered the art of using humor as a defense, and I always have a charming joke ready.</item>
+				<item id="5">I always wait before speaking, analyzing the situation for whichever angle is most advantageous to my goals.</item>
+				<item id="6">No one knows about the all-nighters I’ve pulled to keep my magic looking effortless, and I’m going to keep it that way.</item>
+			</select>
+			<select type="List" name="Trinket" optional="true" >
+				<item id="1">A black leather notebook filled with half-finished poems</item>
+				<item id="2">A set of flashcards detailing different colloquialisms and their meanings</item>
+				<item id="3">A canteen that makes any liquid drunk from it taste sweet</item>
+				<item id="4">A forged permission slip granting access to the special archives of Strixhaven’s libraries</item>
+				<item id="5">A stylish silver pin that references a famous series of novels about warlocks</item>
+				<item id="6">A stack of small pieces of parchment, each enchanted to stick to whatever surface it’s pressed against and peel off easily</item>
+			</select>
+		</rules>
+	</element>
+
+	<element name="Feature: Silverquill Student" type="Background Feature" source="source" id="ID_AUTHOR_SOURCE_BACKGROUND_FEATURE_SILVERQUILL_STUDENT">
+		<description>
+			<p>You gain the Strixhaven Initiate feat and must choose Silverquill within it.</p>
+			<p class="indent">In addition, if you have the Spellcasting or Pact Magic feature, the spells on the Quandrix Spells table are added to the spell list of your spellcasting class. (If you are a multiclass character with multiple spell lists, these spells are added to all of them.)</p>
+			<h5>Silverquill Spells</h5>
+			<table>
+				<thead>
+					<tr><td>Spell Level</td><td>Spells</td></tr>
+				</thead>
+				<tr><td>1st</td><td><em>Dissonant Whispers, Silvery Barbs</em></td></tr>
+				<tr><td>2nd</td><td><em>Calm Emotions, Darkness</em></td></tr>
+				<tr><td>3rd</td><td><em>Beacon of Hope, Daylight</em></td></tr>
+				<tr><td>4th</td><td><em>Compulsion, Confusion</em></td></tr>
+				<tr><td>5th</td><td><em>Dominate Person, Rary’s Telepathic Bond</em></td></tr>
+			</table>
+			<p>Consider customizing how your spells look when you cast them. Your Silverquill spells might be accompanied by visual effects resembling splotches of ink or radiating ripples of golden light. Any auditory effects of your spells often sound like amplified echoes of your own voice speaking the spells’ verbal components—even amid the crash of lightning or a fiery eruption.</p>
+		</description>
+		<sheet alt="Silverquill Student" display="false" />
+		<spellcasting all="true" extend="true">
+			<extend>ID_PHB_SPELL_DISSONANT_WHISPERS</extend>
+			<extend>ID_WOTC_SCOC_SPELL_SILVERY_BARBS</extend>
+			<extend>ID_PHB_SPELL_CALM_EMOTIONS</extend>
+			<extend>ID_PHB_SPELL_DARKNESS</extend>
+			<extend>ID_PHB_SPELL_BEACON_OF_HOPE</extend>
+			<extend>ID_PHB_SPELL_DAYLIGHT</extend>
+			<extend>ID_PHB_SPELL_COMPULSION</extend>
+			<extend>ID_PHB_SPELL_CONFUSION</extend>
+			<extend>ID_PHB_SPELL_DOMINATE_PERSON</extend>
+			<extend>ID_PHB_SPELL_RARYS_TELEPATHIC_BOND</extend>
+		</spellcasting>
+		<rules>
+			<grant type="Feat" id="ID_WOTC_SCOC_FEAT_STRIXHAVEN_INITIATE" />
+		</rules>
+	</element>
+</elements>
