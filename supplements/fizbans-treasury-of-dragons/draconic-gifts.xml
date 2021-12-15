@@ -1,0 +1,257 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<elements>
+	<info>
+		<update version="0.0.1">
+			<file name="draconic-gifts.xml" url="https://raw.githubusercontent.com/AuroraLegacy/elements/master/supplements/fizbans-treasury-of-dragons/draconic-gifts.xml" />
+		</update>
+	</info>
+	<element name="Draconic Familiar" type="Magic Item" source="Fizban's Treasury of Dragons" id="ID_WOTC_FTOD_MAGIC_ITEM_DRACONIC_FAMILIAR">
+		<description>
+			<p>You gain the aid of a draconic familiar, which might be a splinter of the consciousness of a dragon that invested you with power.</p>			
+			<p class="indent">You can cast the <i>find familiar</i> spell as a ritual without using any material components. When you cast the spell in this way, your familiar always takes the form of a <b>pseudodragon</b>.</p>
+			<p class="indent">Additionally, when you take the Attack action on your turn, you can forgo one of your own attacks to allow your pseudodragon familiar to make one attack of its own with its reaction.</p>
+			<div class="reference">
+				<div element="ID_PHB_SPELL_FIND_FAMILIAR" />
+			</div>
+			<div class="reference">
+				<div element="ID_WOTC_MM_COMPANION_PSEUDODRAGON" />
+			</div>
+		</description>
+		<setters>
+			<set name="keywords">find, pseudodragon, dragons, draconic gift</set>
+			<set name="category">Supernatural Gifts</set>
+			<set name="type">Draconic Gift</set>
+			<set name="rarity">Uncommon</set>
+			<set name="slot">gift</set>
+		</setters>
+		<rules>
+			<grant type="Racial Trait" id="ID_WOTC_FTOD_RACIAL_TRAIT_DRACONIC_FAMILIAR" />
+		</rules>
+	</element>	
+	<element name="Draconic Familiar" type="Racial Trait" source="Fizban's Treasury of Dragons" id="ID_WOTC_FTOD_RACIAL_TRAIT_DRACONIC_FAMILIAR">
+		<compendium display="false" />
+		<description>
+			<p>You gain the aid of a draconic familiar, which might be a splinter of the consciousness of a dragon that invested you with power.</p>			
+			<p class="indent">You can cast the <i>find familiar</i> spell as a ritual without using any material components. When you cast the spell in this way, your familiar always takes the form of a <b>pseudodragon</b>.</p>
+			<p class="indent">Additionally, when you take the Attack action on your turn, you can forgo one of your own attacks to allow your pseudodragon familiar to make one attack of its own with its reaction.</p>
+		</description>
+		<sheet>
+			<description>You can cast the find familiar spell as a ritual without using any material components. When you cast the spell in this way, your familiar always takes the form of a pseudodragon. &#13;
+			Additionally, when you take the Attack action on your turn, you can forgo one of your own attacks to allow your pseudodragon familiar to make one attack of its own with its reaction.</description>
+		</sheet>
+	</element>
+
+	<element name="Draconic Rebirth" type="Magic Item" source="Fizban's Treasury of Dragons" id="ID_WOTC_FTOD_MAGIC_ITEM_DRACONIC_REBIRTH">
+		<description>
+			<p>You become a dragonborn. You replace the racial traits of your original race with the traits of a chromatic, gem, or metallic dragonborn (detailed in <i>Fizban's Treasury of Dragons</i>). The kind of dragonborn you become matches the family of the dragon that is the source of this gift. You can keep any skill proficiencies you gained from your previous race, or you gain proficiency in two skills of your choice.</p>
+			<p><strong><em>Notes:</em></strong> This gift's mechanics aren't implemented in the Aurora Builder. But you can emulate mechanics of this gift by following these steps:</p>
+			<p class="indent"><b>1.</b> Replace your characters' current race with chromatic, gem, or metallic dragonborn.</p>
+			<p class="indent"><b>2.</b> Select and equip additional skill proficiency items that you can find under Additional Proficiency category of the Equipment section.</p>
+		</description>
+		<setters>
+			<set name="keywords">dragonborn, dragons, draconic gift</set>
+			<set name="category">Supernatural Gifts</set>
+			<set name="type">Draconic Gift</set>
+			<set name="rarity">Uncommon</set>
+			<set name="slot">gift</set>
+		</setters>
+	</element>
+
+	<element name="Draconic Senses" type="Magic Item" source="Fizban's Treasury of Dragons" id="ID_WOTC_FTOD_MAGIC_ITEM_DRACONIC_SENSES">
+		<description>
+			<p>You gain keen senses like a dragon’s.</p>
+			<p class="indent"><b><i>Blindsight.</i></b> You have blindsight to a range of 10 feet. Within that range, you can effectively see anything that isn’t behind total cover, even if you’re blinded or in darkness. Moreover, you can see invisible creatures within that range, unless the creatures successfully hide from you.</p>
+			<p class="indent"><b><i>Keen Senses.</i></b> You have advantage on Wisdom (Perception) checks.</p>
+		</description>
+		<setters>
+			<set name="keywords">dragonborn, blindsight, keen, dragons, draconic gift</set>
+			<set name="category">Supernatural Gifts</set>
+			<set name="type">Draconic Gift</set>
+			<set name="rarity">Rare</set>
+			<set name="slot">gift</set>
+		</setters>
+		<rules>
+			<grant type="Vision" id="ID_VISION_BLINDSIGHT" />
+			<stat name="blindsight:range" value="10" bonus="base" />
+			<grant type="Racial Trait" id="ID_WOTC_FTOD_RACIAL_TRAIT_DRACONIC_SENSES_KEEN_SENSES" />
+		</rules>
+	</element>	
+	<element name="Keen Senses" type="Racial Trait" source="Fizban's Treasury of Dragons" id="ID_WOTC_FTOD_RACIAL_TRAIT_DRACONIC_SENSES_KEEN_SENSES">
+		<compendium display="false" />
+		<description>
+			<p>You have advantage on Wisdom (Perception) checks.</p>
+		</description>
+		<sheet>
+			<description>You have advantage on Wisdom (Perception) checks.</description>
+		</sheet>
+	</element>
+
+	<element name="Echo of Dragonsight" type="Magic Item" source="Fizban's Treasury of Dragons" id="ID_WOTC_FTOD_MAGIC_ITEM_ECHO_OF_DRAGONSIGHT">
+		<description>
+			<p>You have begun to extend your awareness beyond the single world of the Material Plane that is your home.</p>			
+			<p class="indent">You can cast <i>contact other plane</i> as a ritual. The entity you contact is a dragon on another world in the Material Plane, so its knowledge of your world might be limited. Also, this dragon is an echo of the dragon who is the source of the gift, which might affect its attitude and behavior toward you.</p>
+			<div class="reference">
+				<div element="ID_PHB_SPELL_CONTACT_OTHER_PLANE" />
+			</div>
+		</description>
+		<setters>
+			<set name="keywords">contact other plane, dragons, draconic gift</set>
+			<set name="category">Supernatural Gifts</set>
+			<set name="type">Draconic Gift</set>
+			<set name="rarity">Very Rare</set>
+			<set name="slot">gift</set>
+		</setters>
+		<rules>
+			<grant type="Racial Trait" id="ID_WOTC_FTOD_RACIAL_TRAIT_ECHO_OF_DRAGONSIGHT" />
+		</rules>
+	</element>	
+	<element name="Echo of Dragonsight" type="Racial Trait" source="Fizban's Treasury of Dragons" id="ID_WOTC_FTOD_RACIAL_TRAIT_ECHO_OF_DRAGONSIGHT">
+		<compendium display="false" />
+		<description>
+			<p>You have begun to extend your awareness beyond the single world of the Material Plane that is your home.</p>			
+			<p class="indent">You can cast <i>contact other plane</i> as a ritual. The entity you contact is a dragon on another world in the Material Plane, so its knowledge of your world might be limited. Also, this dragon is an echo of the dragon who is the source of the gift, which might affect its attitude and behavior toward you.</p>
+		</description>
+		<sheet>
+			<description>You can cast contact other plane as a ritual. The entity you contact is a dragon on another world in the Material Plane, so its knowledge of your world might be limited. Also, this dragon is an echo of the dragon who is the source of the gift, which might affect its attitude and behavior toward you.</description>
+		</sheet>
+	</element>
+
+	<element name="Frightful Presence" type="Magic Item" source="Fizban's Treasury of Dragons" id="ID_WOTC_FTOD_MAGIC_ITEM_FRIGHTFUL_PRESENCE">
+		<description>
+			<p>Echoes of a dragon’s might linger around you, and you can call on them to inspire fear in those who stand against you.</p>			
+			<p class="indent">As a bonus action, you can manifest your frightful presence. Each creature of your choice that is within 120 feet of you and aware of you must make a Wisdom saving throw against a DC equal to 8 + your proficiency bonus + your Charisma modifier. A creature that fails becomes frightened of you for 1 minute. The creature can repeat the saving throw at the end of each of its turns, ending the effect on itself on a success.</p>
+			<p class="indent">Once you use this ability a number of times equal to your proficiency bonus, you can’t use it again until you finish a long rest.</p>
+		</description>
+		<setters>
+			<set name="keywords">frightened, bonus action, charisma, dragons, draconic gift</set>
+			<set name="category">Supernatural Gifts</set>
+			<set name="type">Draconic Gift</set>
+			<set name="rarity">Very Rare</set>
+			<set name="slot">gift</set>
+		</setters>
+		<rules>
+			<grant type="Racial Trait" id="ID_WOTC_FTOD_RACIAL_TRAIT_FRIGHTFUL_PRESENCE" />
+		</rules>
+	</element>	
+	<element name="Frightful Presence" type="Racial Trait" source="Fizban's Treasury of Dragons" id="ID_WOTC_FTOD_RACIAL_TRAIT_FRIGHTFUL_PRESENCE">
+		<compendium display="false" />
+		<description>
+			<p>Echoes of a dragon’s might linger around you, and you can call on them to inspire fear in those who stand against you.</p>			
+			<p class="indent">As a bonus action, you can manifest your frightful presence. Each creature of your choice that is within 120 feet of you and aware of you must make a Wisdom saving throw against a DC equal to 8 + your proficiency bonus + your Charisma modifier. A creature that fails becomes frightened of you for 1 minute. The creature can repeat the saving throw at the end of each of its turns, ending the effect on itself on a success.</p>
+			<p class="indent">Once you use this ability a number of times equal to your proficiency bonus, you can’t use it again until you finish a long rest.</p>
+		</description>
+		<sheet action="Bonus Action" usage="{{proficiency}}/Long Rest">
+			<description>You can manifest your frightful presence. Each creature of your choice that is within 120 feet of you and aware of you must make a Wisdom saving throw against a DC{{frightful presence gift:dc}}. A creature that fails becomes frightened of you for 1 minute. The creature can repeat the saving throw at the end of each of its turns, ending the effect on itself on a success.</description>
+		</sheet>
+		<rules>
+			<stat name="frightful presence gift:dc" value="8" bonus="base" />
+			<stat name="frightful presence gift:dc" value="proficiency" bonus="proficiency" />
+			<stat name="frightful presence gift:dc" value="charisma:modifier" bonus="ability" />
+		</rules>
+	</element>
+
+	<element name="Psionic Reach" type="Magic Item" source="Fizban's Treasury of Dragons" id="ID_WOTC_FTOD_MAGIC_ITEM_PSIONIC_REACH">
+		<description>
+			<p>The psionic energy of a gem dragon empowers your mind. You gain resistance to psychic damage.</p>			
+			<p class="indent">In addition, you learn the <i>telekinesis</i> spell. You can cast this spell without expending a spell slot. Once you cast this spell in this way, you can’t do so again until you finish a long rest. You can also cast this spell using spell slots you have of the appropriate level. The spellcasting ability is Intelligence, Wisdom, or Charisma when you cast the spell with this gift (choose when you gain the gift).</p>
+		</description>
+		<setters>
+			<set name="keywords">psychic, resistance, telekinesis, dragons, draconic gift</set>
+			<set name="category">Supernatural Gifts</set>
+			<set name="type">Draconic Gift</set>
+			<set name="rarity">Very Rare</set>
+			<set name="slot">gift</set>
+		</setters>
+		<rules>
+			<grant type="Condition" id="ID_INTERNAL_CONDITION_DAMAGE_RESISTANCE_PSYCHIC" />
+			<grant type="Spell" id="ID_PHB_SPELL_TELEKINESIS" />
+			<select name="Spellcasting Ability (Psionic Reach)" type="Racial Trait" supports="ID_WOTC_FTOD_RACIAL_TRAIT_PSIONIC_REACH_INTELLIGENCE|ID_WOTC_FTOD_RACIAL_TRAIT_PSIONIC_REACH_WISDOM|ID_WOTC_FTOD_RACIAL_TRAIT_PSIONIC_REACH_CHARISMA" />
+		</rules>
+	</element>	
+	<element name="Intelligence" type="Racial Trait" source="Fizban's Treasury of Dragons" id="ID_WOTC_FTOD_RACIAL_TRAIT_PSIONIC_REACH_INTELLIGENCE">
+		<compendium display="false" />
+		<description>
+			<p>The psionic energy of a gem dragon empowers your mind. You gain resistance to psychic damage.</p>			
+			<p class="indent">In addition, you learn the <i>telekinesis</i> spell. You can cast this spell without expending a spell slot. Once you cast this spell in this way, you can’t do so again until you finish a long rest. You can also cast this spell using spell slots you have of the appropriate level. The spellcasting ability is Intelligence, Wisdom, or Charisma when you cast the spell with this gift (choose when you gain the gift).</p>
+		</description>
+		<sheet alt="Psionic Reach" usage="1/Long Rest" >
+			<description>You learn the telekinesis spell. You can cast this spell without expending a spell slot. You can also cast this spell using spell slots you have of the appropriate level. The spellcasting ability is Intelligence when you cast the spell with this gift.</description>
+		</sheet>
+	</element>
+	<element name="Wisdom" type="Racial Trait" source="Fizban's Treasury of Dragons" id="ID_WOTC_FTOD_RACIAL_TRAIT_PSIONIC_REACH_WISDOM">
+		<compendium display="false" />
+		<description>
+			<p>The psionic energy of a gem dragon empowers your mind. You gain resistance to psychic damage.</p>			
+			<p class="indent">In addition, you learn the <i>telekinesis</i> spell. You can cast this spell without expending a spell slot. Once you cast this spell in this way, you can’t do so again until you finish a long rest. You can also cast this spell using spell slots you have of the appropriate level. The spellcasting ability is Wisdom, Wisdom, or Charisma when you cast the spell with this gift (choose when you gain the gift).</p>
+		</description>
+		<sheet alt="Psionic Reach" usage="1/Long Rest" >
+			<description>You learn the telekinesis spell. You can cast this spell without expending a spell slot. You can also cast this spell using spell slots you have of the appropriate level. The spellcasting ability is Wisdom when you cast the spell with this gift.</description>
+		</sheet>
+	</element>
+	<element name="Charisma" type="Racial Trait" source="Fizban's Treasury of Dragons" id="ID_WOTC_FTOD_RACIAL_TRAIT_PSIONIC_REACH_CHARISMA">
+		<compendium display="false" />
+		<description>
+			<p>The psionic energy of a gem dragon empowers your mind. You gain resistance to psychic damage.</p>			
+			<p class="indent">In addition, you learn the <i>telekinesis</i> spell. You can cast this spell without expending a spell slot. Once you cast this spell in this way, you can’t do so again until you finish a long rest. You can also cast this spell using spell slots you have of the appropriate level. The spellcasting ability is Charisma, Wisdom, or Charisma when you cast the spell with this gift (choose when you gain the gift).</p>
+		</description>
+		<sheet alt="Psionic Reach" usage="1/Long Rest" >
+			<description>You learn the telekinesis spell. You can cast this spell without expending a spell slot. You can also cast this spell using spell slots you have of the appropriate level. The spellcasting ability is Charisma when you cast the spell with this gift.</description>
+		</sheet>
+	</element>
+
+	<element name="Scaled Toughness" type="Magic Item" source="Fizban's Treasury of Dragons" id="ID_WOTC_FTOD_MAGIC_ITEM_SCALED_TOUGHNESS">
+		<description>
+			<p>Your skin toughens, making you resistant to certain types of physical harm. You gain resistance to piercing and slashing damage.</p>
+		</description>
+		<setters>
+			<set name="keywords">piercing, slashing, resistance, dragons, draconic gift</set>
+			<set name="category">Supernatural Gifts</set>
+			<set name="type">Draconic Gift</set>
+			<set name="rarity">Legendary</set>
+			<set name="slot">gift</set>
+		</setters>
+		<rules>
+			<grant type="Condition" id="ID_INTERNAL_CONDITION_DAMAGE_RESISTANCE_PIERCING" />
+			<grant type="Condition" id="ID_INTERNAL_CONDITION_DAMAGE_RESISTANCE_SLASHING" />
+		</rules>
+	</element>	
+
+	<element name="Tongue of the Dragon" type="Magic Item" source="Fizban's Treasury of Dragons" id="ID_WOTC_FTOD_MAGIC_ITEM_TONGUE_OF_THE_DRAGON">
+		<description>
+			<p>You gain some of the majestic presence of a dragon.</p>
+			<p class="indent"><b><i>Dragon’s Speech.</i></b> You can speak, read, and write Draconic.</p>
+			<p class="indent"><b><i>Dragon’s Voice.</i></b> As a bonus action, you can make your voice audible up to 300 feet away for 1 minute.</p>
+			<p class="indent"><b><i>Dragon’s Wiles.</i></b> You have advantage on Charisma (Persuasion) checks.</p>
+		</description>
+		<setters>
+			<set name="keywords">language, bonus action, advantage, persuasion, dragons, draconic gift</set>
+			<set name="category">Supernatural Gifts</set>
+			<set name="type">Draconic Gift</set>
+			<set name="rarity">Rare</set>
+			<set name="slot">gift</set>
+		</setters>
+		<rules>
+			<grant type="Language" id="ID_LANGUAGE_DRACONIC" />
+			<grant type="Racial Trait" id="ID_WOTC_FTOD_RACIAL_TRAIT_TONGUE_OF_THE_DRAGON_DRAGONS_VOICE" />
+			<grant type="Racial Trait" id="ID_WOTC_FTOD_RACIAL_TRAIT_TONGUE_OF_THE_DRAGON_DRAGONS_WILES" />
+		</rules>
+	</element>	
+	<element name="Dragon’s Voice" type="Racial Trait" source="Fizban's Treasury of Dragons" id="ID_WOTC_FTOD_RACIAL_TRAIT_TONGUE_OF_THE_DRAGON_DRAGONS_VOICE">
+		<compendium display="false" />
+		<description>
+			<p>As a bonus action, you can make your voice audible up to 300 feet away for 1 minute.</p>
+		</description>
+		<sheet action="Bonus Action">
+			<description>You can make your voice audible up to 300 feet away for 1 minute.</description>
+		</sheet>
+	</element>
+	<element name="Dragon’s Wiles" type="Racial Trait" source="Fizban's Treasury of Dragons" id="ID_WOTC_FTOD_RACIAL_TRAIT_TONGUE_OF_THE_DRAGON_DRAGONS_WILES">
+		<compendium display="false" />
+		<description>
+			<p>You have advantage on Charisma (Persuasion) checks.</p>
+		</description>
+		<sheet>
+			<description>You have advantage on Charisma (Persuasion) checks.</description>
+		</sheet>
+	</element>
+</elements>
