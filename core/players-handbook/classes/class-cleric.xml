@@ -8,7 +8,7 @@
 			<file name="class-cleric.xml" url="https://raw.githubusercontent.com/AuroraLegacy/elements/master/core/players-handbook/classes/class-cleric.xml" />
 		</update>
 	</info>
-	
+
 	<element name="Cleric" type="Class" source="Player’s Handbook" id="ID_WOTC_PHB_CLASS_CLERIC">
 		<description>
 			<p>Arms and eyes upraised toward the sun and a prayer on his lips, an elf begins to glow with an inner light that spills out to heal his battle-worn companions.</p>
@@ -106,9 +106,13 @@
 
 			<grant type="Class Feature" id="ID_WOTC_PHB_CLASS_FEATURE_CLERIC_SPELLCASTING_CLERIC" level="1" />
 			<grant type="Class Feature" id="ID_WOTC_PHB_CLASS_FEATURE_CLERIC_DIVINEDOMAIN" level="1" />
+			<select type="Class Feature" name="Optional Class Feature (level 1)" supports="Cleric Optional Class Feature Additional Spells" level="1" />
 			<grant type="Class Feature" id="ID_WOTC_PHB_CLASS_FEATURE_CLERIC_CHANNELDIVINITY" level="2" />
+			<select type="Class Feature" name="Optional Class Feature (level 2)" supports="Cleric Optional Class Feature Divine Power" level="2" />
 			<grant type="Class Feature" id="ID_WOTC_PHB_CLASS_FEATURE_CLERIC_ABILITYSCOREIMPROVEMENT_CLERIC" level="4" />
+			<select type="Class Feature" name="Optional Class Feature (level 4)" supports="Cleric Optional Class Feature Cantrip Versatility" level="4" />
 			<grant type="Class Feature" id="ID_WOTC_PHB_CLASS_FEATURE_CLERIC_DESTROYUNDEAD" level="5" />
+			<select type="Class Feature" name="Optional Class Feature (level 8)" supports="Cleric Optional Class Feature Blessed Strikes" level="8" />
 			<grant type="Class Feature" id="ID_WOTC_PHB_CLASS_FEATURE_CLERIC_DIVINEINTERVENTION" level="10" />
 		</rules>
 		<multiclass id="ID_WOTC_PHB_MULTICLASS_CLERIC">
@@ -523,7 +527,7 @@
 			<p>Starting at 17th level, you can call up visions of the past that relate to an object you hold or your immediate surroundings. You spend at least 1 minute in meditation and prayer, then receive dreamlike, shadowy glimpses of recent events. You can meditate in this way for a number of minutes equal to your Wisdom score and must maintain concentration during that time, as if you were casting a spell.</p>
 			<p class="indent">Once you use this feature, you can’t use it again until you finish a short or long rest.</p>
 			<p class="indent"><strong><em>Object Reading.</em></strong> Holding an object as you meditate, you can see visions of the object’s previous owner. After meditating for 1 minute, you learn how the owner acquired and lost the object, as well as the most recent significant event involving the object and that owner. If the object was owned by another creature in the recent past (within a number of days equal to your Wisdom score), you can spend 1 additional minute for each owner to learn the same information about that creature.</p>
-			<p class="indent"><strong><em>Area Reading.</em></strong> As you meditate, you see visions of recent events in your immediate vicinity (a room, street, tunnel, clearing, or the like, up to a 50-foot cube), going back a number of days equal to your Wisdom score. For each minute you meditate, you learn about one significant event, beginning with the most recent. Significant events typically involve powerful emotions, such as battles and betrayals, marriages and murders, births and funerals. However, they might also include more mundane events that are nevertheless important in your current situation.</p> 
+			<p class="indent"><strong><em>Area Reading.</em></strong> As you meditate, you see visions of recent events in your immediate vicinity (a room, street, tunnel, clearing, or the like, up to a 50-foot cube), going back a number of days equal to your Wisdom score. For each minute you meditate, you learn about one significant event, beginning with the most recent. Significant events typically involve powerful emotions, such as battles and betrayals, marriages and murders, births and funerals. However, they might also include more mundane events that are nevertheless important in your current situation.</p>
 		</description>
 		<sheet usage="1/Short Rest">
 			<description>You spend at least 1 minute in meditation and prayer, then receive dreamlike, shadowy glimpses of recent events. You can meditate in this way for {{wisdom:score}} minutes and must maintain concentration during that time, as if you were casting a spell.
@@ -531,7 +535,7 @@
 			Area Reading. As you meditate, you see visions of recent events in your immediate vicinity, going back {{wisdom:score}} days. For each minute you meditate, you learn about one significant event, beginning with the most recent. Significant events typically involve powerful emotions, such as battles and betrayals, marriages and murders, births and funerals. However, they might also include more mundane events that are nevertheless important in your current situation.</description>
 		</sheet>
 	</element>
-	
+
 	<element name="Light Domain" type="Archetype" source="Player’s Handbook" id="ID_WOTC_PHB_ARCHETYPE_CLERIC_LIGHT_DOMAIN">
 		<supports>Divine Domain</supports>
 		<description>
@@ -718,7 +722,7 @@
 		<description>
 			<p>At 8th level, you gain the ability to infuse your weapon strikes with divine energy. Once on each of your turns when you hit a creature with a weapon attack, you can cause the attack to deal an extra 1d8 cold, fire, or lightning damage (your choice) to the target. When you reach 14th level, the extra damage increases to 2d8.</p>
 		</description>
-		<sheet>		
+		<sheet>
 			<description>Once on each of your turn +1d8 cold, fire, or lightning damage with a weapon attack.</description>
 			<description level="14">Once on each of your turn +2d8 cold, fire, or lightning damage with a weapon attack.</description>
 		</sheet>
@@ -823,7 +827,7 @@
 		<description>
 			<p>At 8th level, you gain the ability to infuse your weapon strikes with divine energy. Once on each of your turns when you hit a creature with a weapon attack, you can cause the attack to deal an extra 1d8 thunder damage to the target. When you reach 14th level, the extra damage increases to 2d8.</p>
 		</description>
-		<sheet>			
+		<sheet>
 			<description>Once on each of your turn +1d8 thunder damage with a weapon attack.</description>
 			<description level="14">Once on each of your turn +2d8 thunder damage with a weapon attack.</description>
 		</sheet>
@@ -930,7 +934,7 @@
 			As a bonus action on your turn, you can move any number of them up to 30 feet, to a maximum range of 120 feet.</description>
 		</sheet>
 	</element>
-	
+
 	<element name="War Domain" type="Archetype" source="Player’s Handbook" id="ID_WOTC_PHB_ARCHETYPE_CLERIC_War_DOMAIN">
 		<supports>Divine Domain</supports>
 		<description>

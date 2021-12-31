@@ -11,7 +11,7 @@
 
 	<element name="Ranger" type="Class" source="Player’s Handbook" id="ID_WOTC_PHB_CLASS_RANGER">
 		<description>
-			<p class="flavor">A warrior who uses martial prowess and nature magic to combat threats on the edges of civilization.</p>			
+			<p class="flavor">A warrior who uses martial prowess and nature magic to combat threats on the edges of civilization.</p>
 			<p>Rough and wild looking, a human stalks alone through the shadows of trees, hunting the orcs he knows are planning a raid on a nearby farm. Clutching a shortsword in each hand, he becomes a whirlwind of steel, cutting down one enemy after another.</p>
 			<p class="indent">After tumbling away from a cone of freezing air, an elf finds her feet and draws back her bow to loose an arrow at the white dragon. Shrugging off the wave of fear that emanates from the dragon like the cold of its breath, she sends one arrow after another to find the gaps between the dragon’s thick scales.</p>
 			<p class="indent">Holding his hand high, a half-elf whistles to the hawk that circles high above him, calling the bird back to his side. Whispering instructions in Elvish, he points to the owlbear he’s been tracking and sends the hawk to distract the creature while he readies his bow.</p>
@@ -109,16 +109,19 @@
 			<grant type="Proficiency" id="ID_PROFICIENCY_SAVINGTHROW_STRENGTH" requirements="!ID_WOTC_PHB_MULTICLASS_RANGER" />
 			<grant type="Proficiency" id="ID_PROFICIENCY_SAVINGTHROW_DEXTERITY" requirements="!ID_WOTC_PHB_MULTICLASS_RANGER" />
 			<select type="Proficiency" name="Skill Proficiency (Ranger)" supports="Skill,Ranger" number="3" requirements="!ID_WOTC_PHB_MULTICLASS_RANGER" />
-			<grant type="Class Feature" id="ID_WOTC_CLASSFEATURE_RANGER_FAVORED_ENEMY" level="1"/>
-			<grant type="Class Feature" id="ID_WOTC_CLASSFEATURE_RANGER_NATURAL_EXPLORER" level="1"/>
+			<select type="Class Feature" name="Optional Class Feature (level 1)" supports="Ranger Optional Class Feature Explorer" level="1" />
+			<select type="Class Feature" name="Optional Class Feature (level 1)" supports="Ranger Optional Class Feature Favored Foe" level="1" />
 			<grant type="Class Feature" id="ID_WOTC_CLASSFEATURE_RANGER_FIGHTING_STYLE" level="2"/>
 			<grant type="Class Feature" id="ID_WOTC_CLASSFEATURE_RANGER_SPELLCASTING" level="2"/>
+			<select type="Class Feature" name="Optional Class Feature (level 2)" supports="Ranger Optional Class Feature Additional Spells" level="2" />
+			<select type="Class Feature" name="Optional Class Feature (level 2)" supports="Ranger Optional Class Feature Spellcasting Focus" level="2" />
 			<grant type="Class Feature" id="ID_WOTC_CLASSFEATURE_RANGER_RANGER_ARCHETYPE" level="3"/>
-			<grant type="Class Feature" id="ID_WOTC_CLASSFEATURE_RANGER_PRIMEVAL_AWARENESS" level="3"/>
+			<select type="Class Feature" name="Optional Class Feature (level 3)" supports="Ranger Optional Class Feature Awareness" level="3" />
 			<grant type="Class Feature" id="ID_WOTC_CLASSFEATURE_RANGER_ASI" level="4"/>
+			<select type="Class Feature" name="Optional Class Feature (level 4)" supports="Ranger Optional Class Feature Martial Versatility" level="4" />
 			<grant type="Class Feature" id="ID_WOTC_CLASSFEATURE_RANGER_EXTRA_ATTACK" level="5"/>
 			<grant type="Class Feature" id="ID_WOTC_CLASSFEATURE_RANGER_LANDS_STRIDE" level="8"/>
-			<grant type="Class Feature" id="ID_WOTC_CLASSFEATURE_RANGER_HIDE_IN_PLAIN_SIGHT" level="10"/>
+			<select type="Class Feature" name="Optional Class Feature (level 10)" supports="Ranger Optional Class Feature Nature Veil" level="10" />
 			<grant type="Class Feature" id="ID_WOTC_CLASSFEATURE_RANGER_VANISH" level="14"/>
 			<grant type="Class Feature" id="ID_WOTC_CLASSFEATURE_RANGER_FERAL_SENSES" level="18"/>
 			<grant type="Class Feature" id="ID_WOTC_CLASSFEATURE_RANGER_FOE_SLAYER" level="20"/>
@@ -141,7 +144,7 @@
 		</multiclass>
 	</element>
 	<element name="Favored Enemy" type="Class Feature" source="Player’s Handbook" id="ID_WOTC_CLASSFEATURE_RANGER_FAVORED_ENEMY">
-		<requirements>!ID_INTERNAL_FEATURE_REPLACEMENT_RANGER_FAVORED_ENEMY</requirements>
+		<supports>Ranger Optional Class Feature Favored Foe</supports>
 		<description>
 			<p>Beginning at 1st level, you have significant experience studying, tracking, hunting, and even talking to a certain type of enemy.</p>
 			<p class="indent">Choose a type of favored enemy: aberrations, beasts, celestials, constructs, dragons, elementals, fey, fiends, giants, monstrosities, oozes, plants, or undead. Alternatively, you can select two races of humanoid (such as gnolls and orcs) as favored enemies.</p>
@@ -155,7 +158,7 @@
 		<rules>
 			<select type="Class Feature" name="Favored Enemy" supports="Favored Enemy" level="1" />
 			<select type="Class Feature" name="Favored Enemy" supports="Favored Enemy" level="6" />
-			<select type="Class Feature" name="Favored Enemy" supports="Favored Enemy" level="14" />			
+			<select type="Class Feature" name="Favored Enemy" supports="Favored Enemy" level="14" />
 			<select type="Class Feature" name="Favored Enemy, Humanoid" supports="Humanoid Favored Enemy" number="2" level="1" requirements="ID_WOTC_PHB_CLASS_FEATURE_RANGER_FAVORED_ENEMY_HUMANOIDS_1" />
 			<select type="Class Feature" name="Favored Enemy, Humanoid" supports="Humanoid Favored Enemy" number="2" level="6" requirements="ID_WOTC_PHB_CLASS_FEATURE_RANGER_FAVORED_ENEMY_HUMANOIDS_2" />
 			<select type="Class Feature" name="Favored Enemy, Humanoid" supports="Humanoid Favored Enemy" number="2" level="14" requirements="ID_WOTC_PHB_CLASS_FEATURE_RANGER_FAVORED_ENEMY_HUMANOIDS_3" />
@@ -165,7 +168,7 @@
 		</rules>
 	</element>
 	<element name="Natural Explorer" type="Class Feature" source="Player’s Handbook" id="ID_WOTC_CLASSFEATURE_RANGER_NATURAL_EXPLORER">
-		<requirements>!ID_INTERNAL_FEATURE_REPLACEMENT_RANGER_NATURAL_EXPLORER</requirements>
+		<supports>Ranger Optional Class Feature Explorer</supports>
 		<description>
 			<p>You are particularly familiar with one type of natural environment and are adept at traveling and surviving in such regions. Choose one type of favored terrain: arctic, coast, desert, forest, grassland, mountain, swamp, or the Underdark. When you make an Intelligence or Wisdom check related to your favored terrain, your proficiency bonus is doubled if you are using a skill that you’re proficient in.</p>
 			<p class="indent">While traveling for an hour or more in your favored terrain, you gain the following benefits:</p>
@@ -269,7 +272,7 @@
 		</rules>
 	</element>
 	<element name="Primeval Awareness" type="Class Feature" source="Player’s Handbook" id="ID_WOTC_CLASSFEATURE_RANGER_PRIMEVAL_AWARENESS">
-		<requirements>!ID_INTERNAL_FEATURE_REPLACEMENT_RANGER_PRIMEVAL_AWARENESS</requirements>
+		<supports>Ranger Optional Class Feature Awareness</supports>
 		<description>
 			<p>Beginning at 3rd level, you can use your action and expend one ranger spell slot to focus your awareness on the region around you. For 1 minute per level of the spell slot you expend, you can sense whether the following types of creatures are present within 1 mile of you (or within up to 6 miles if you are in your favored terrain): aberrations, celestials, dragons, elementals, fey, fiends, and undead. This feature doesn’t reveal the creatures’ location or number.</p>
 		</description>
@@ -314,7 +317,7 @@
 		</sheet>
 	</element>
 	<element name="Hide in Plain Sight" type="Class Feature" source="Player’s Handbook" id="ID_WOTC_CLASSFEATURE_RANGER_HIDE_IN_PLAIN_SIGHT">
-		<requirements>!ID_INTERNAL_FEATURE_REPLACEMENT_RANGER_HIDE_IN_PLAIN_SIGHT</requirements>
+		<supports>Ranger Optional Class Feature Nature Veil</supports>
 		<description>
 			<p>Starting at 10th level, you can spend 1 minute creating camouflage for yourself. You must have access to fresh mud, dirt, plants, soot, and other naturally occurring materials with which to create your camouflage.</p>
 			<p class="indent">Once you are camouflaged in this way, you can try to hide by pressing yourself up against a solid surface, such as a tree or wall, that is at least as tall and wide as you are. You gain a +10 bonus to Dexterity (Stealth) checks as long as you remain there without moving or taking actions. Once you move or take an action or a reaction, you must camouflage yourself again to gain this benefit.</p>
@@ -338,7 +341,7 @@
 			<p class="indent">You are also aware of the location of any invisible creature within 30 feet of you, provided that the creature isn’t hidden from you and you aren’t blinded or deafened.</p>
 		</description>
 		<sheet>
-			<description>When you attack a creature you can’t see, your inability to see it doesn’t impose disadvantage on your attack rolls against it. 
+			<description>When you attack a creature you can’t see, your inability to see it doesn’t impose disadvantage on your attack rolls against it.
 			You are also aware of the location of any invisible creature within 30 feet of you, provided that the creature isn’t hidden from you and you aren’t blinded or deafened.</description>
 		</sheet>
 	</element>
@@ -361,73 +364,73 @@
 		<supports>Favored Enemy,Monster Type</supports>
 		<description>
 			<p>Beasts are nonhumanoid creatures that are a natural part of the fantasy ecology. Some of them have magical powers, but most are unintelligent and lack any society or language. Beasts include all varieties of ordinary animals, dinosaurs, and giant versions of animals.</p>
-		</description>		
+		</description>
 	</element>
 	<element name="Celestials" type="Class Feature" source="Player’s Handbook" id="ID_WOTC_CLASSFEATURE_RANGER_FAVORED_ENEMY_CELESTIALS">
 		<supports>Favored Enemy,Monster Type</supports>
 		<description>
 			<p>Celestials are creatures native to the Upper Planes. Many of them are the servants of deities, employed as messengers or agents in the mortal realm and throughout the planes. Celestials are good by nature, so the exceptional celestial who strays from a good alignment is a horrifying rarity. Celestials include angels, couatls, and pegasi.</p>
-		</description>		
+		</description>
 	</element>
 	<element name="Constructs" type="Class Feature" source="Player’s Handbook" id="ID_WOTC_CLASSFEATURE_RANGER_FAVORED_ENEMY_CONSTRUCTS">
 		<supports>Favored Enemy,Monster Type</supports>
 		<description>
 			<p>Constructs are made, not born. Some are programmed by their creators to follow a simple set of instructions, while others are imbued with sentience and capable of independent thought. Golems are the iconic constructs. Many creatures native to the outer plane of Mechanus, such as modrons, are constructs shaped from the raw material of the plane by the will of more powerful creatures.</p>
-		</description>		
+		</description>
 	</element>
 	<element name="Dragons" type="Class Feature" source="Player’s Handbook" id="ID_WOTC_CLASSFEATURE_RANGER_FAVORED_ENEMY_DRAGONS">
 		<supports>Favored Enemy,Monster Type</supports>
 		<description>
 			<p>Dragons are large reptilian creatures of ancient origin and tremendous power. True dragons, including the good metallic dragons and the evil chromatic dragons, are highly intelligent and have innate magic. Also in this category are creatures distantly related to true dragons, but less powerful, less intelligent, and less magical, such as wyverns and pseudodragons.</p>
-		</description>		
+		</description>
 	</element>
 	<element name="Elementals" type="Class Feature" source="Player’s Handbook" id="ID_WOTC_CLASSFEATURE_RANGER_FAVORED_ENEMY_ELEMENTALS">
 		<supports>Favored Enemy,Monster Type</supports>
 		<description>
 			<p>Elementals are creatures native to the elemental planes. Some creatures of this type are little more than animate masses of their respective elements, including the creatures simply called elementals. Others have biological forms infused with elemental energy. The races of genies, including djinn and efreet, form the most important civilizations on the elemental planes. Other elemental creatures include azers, invisible stalkers, and water weirds.</p>
-		</description>		
+		</description>
 	</element>
 	<element name="Fey" type="Class Feature" source="Player’s Handbook" id="ID_WOTC_CLASSFEATURE_RANGER_FAVORED_ENEMY_FEY">
 		<supports>Favored Enemy,Monster Type</supports>
 		<description>
 			<p>Fey are magical creatures closely tied to the forces of nature. They dwell in twilight groves and misty forests. In some worlds, they are closely tied to the Feywild, also called the Plane of Faerie. Some are also found in the Outer Planes, particularly the planes of Arborea and the Beastlands. Fey include dryads, pixies, and satyrs.</p>
-		</description>		
+		</description>
 	</element>
 	<element name="Fiends" type="Class Feature" source="Player’s Handbook" id="ID_WOTC_CLASSFEATURE_RANGER_FAVORED_ENEMY_FIENDS">
 		<supports>Favored Enemy,Monster Type</supports>
 		<description>
 			<p>Fiends are creatures of wickedness that are native to the Lower Planes. A few are the servants of deities, but many more labor under the leadership of archdevils and demon princes. Evil priests and mages sometimes summon fiends to the material world to do their bidding. If an evil celestial is a rarity, a good fiend is almost inconceivable. Fiends include demons, devils, hell hounds, rakshasas, and yugoloths.</p>
-		</description>		
+		</description>
 	</element>
 	<element name="Giants" type="Class Feature" source="Player’s Handbook" id="ID_WOTC_CLASSFEATURE_RANGER_FAVORED_ENEMY_GIANTS">
 		<supports>Favored Enemy,Monster Type</supports>
 		<description>
 			<p>Giants tower over humans and their kind. They are humanlike in shape, though some have multiple heads (ettins) or deformities (fomorians). The six varieties of true giant are hill giants, stone giants, frost giants, fire giants, cloud giants, and storm giants. Besides these, creatures such as ogres and trolls are giants.</p>
-		</description>		
+		</description>
 	</element>
 	<element name="Monstrosities" type="Class Feature" source="Player’s Handbook" id="ID_WOTC_CLASSFEATURE_RANGER_FAVORED_ENEMY_BEAST_MONSTROSITIES">
 		<supports>Favored Enemy,Monster Type</supports>
 		<description>
 			<p>Monstrosities are monsters in the strictest sensefrightening creatures that are not ordinary, not truly natural, and almost never benign. Some are the results of magical experimentation gone awry (such as owl bears), and others, are the product-of terrible curses (including minotaurs and yuan-ti). They defy categorization, and in some sense serve as a catch-all category for creatures that don’t fit into any other type.</p>
-		</description>		
+		</description>
 	</element>
 	<element name="Oozes" type="Class Feature" source="Player’s Handbook" id="ID_WOTC_CLASSFEATURE_RANGER_FAVORED_ENEMY_OOZES">
 		<supports>Favored Enemy,Monster Type</supports>
 		<description>
 			<p>Oozes are gelatinous creatures that rarely have a fixed shape. They are mostly subterranean, dwelling in caves and dungeons and feeding on refuse, carrion, or creatures unlucky enough to get in their way. Black puddings and gelatinous cubes are among the most recognizable oozes.</p>
-		</description>		
+		</description>
 	</element>
 	<element name="Plants" type="Class Feature" source="Player’s Handbook" id="ID_WOTC_CLASSFEATURE_RANGER_FAVORED_ENEMY_PLANTS">
 		<supports>Favored Enemy,Monster Type</supports>
 		<description>
 			<p>Plants in this context are vegetable creatures, not ordinary flora. Most of them are ambulatory, and some are carnivorous. The quintessential plants are the shambling mound and the treant. Fungal creatures such as the gas spore and the myconid also fall into this category.</p>
-		</description>		
+		</description>
 	</element>
 	<element name="Undead" type="Class Feature" source="Player’s Handbook" id="ID_WOTC_CLASSFEATURE_RANGER_FAVORED_ENEMY_UNDEAD">
 		<supports>Favored Enemy,Monster Type</supports>
 		<description>
 			<p>Undead are once-living creatures brought to a horrifying state of undeath through the practice of necromantic magic or some unholy curse. Undead include walking corpses, such as vampires and zombies, as well as bodiless spirits, such as ghosts and specters.</p>
-		</description>		
+		</description>
 	</element>
     <element name="Humanoids" type="Class Feature" source="Player’s Handbook" id="ID_WOTC_PHB_CLASS_FEATURE_RANGER_FAVORED_ENEMY_HUMANOIDS_1">
         <supports>Favored Enemy,Monster Type</supports>
@@ -673,7 +676,7 @@
 				<li>When you forage, you find twice as much food as you normally would.</li>
 				<li>While tracking other creatures, you also learn their exact number, their sizes, and how long ago they passed through the area.</li>
 			</ul>
-		</description>		
+		</description>
 	</element>
 	<element name="Coast" type="Class Feature" source="Player’s Handbook" id="ID_WOTC_CLASSFEATURE_RANGER_NATURAL_EXPLORER_FT_COAST">
 		<supports>Favored Terrain</supports>
@@ -688,7 +691,7 @@
 				<li>When you forage, you find twice as much food as you normally would.</li>
 				<li>While tracking other creatures, you also learn their exact number, their sizes, and how long ago they passed through the area.</li>
 			</ul>
-		</description>		
+		</description>
 	</element>
 	<element name="Desert" type="Class Feature" source="Player’s Handbook" id="ID_WOTC_CLASSFEATURE_RANGER_NATURAL_EXPLORER_FT_DESERT">
 		<supports>Favored Terrain</supports>
@@ -703,7 +706,7 @@
 				<li>When you forage, you find twice as much food as you normally would.</li>
 				<li>While tracking other creatures, you also learn their exact number, their sizes, and how long ago they passed through the area.</li>
 			</ul>
-		</description>		
+		</description>
 	</element>
 	<element name="Forest" type="Class Feature" source="Player’s Handbook" id="ID_WOTC_CLASSFEATURE_RANGER_NATURAL_EXPLORER_FT_FOREST">
 		<supports>Favored Terrain</supports>
@@ -718,7 +721,7 @@
 				<li>When you forage, you find twice as much food as you normally would.</li>
 				<li>While tracking other creatures, you also learn their exact number, their sizes, and how long ago they passed through the area.</li>
 			</ul>
-		</description>		
+		</description>
 	</element>
 	<element name="Grassland" type="Class Feature" source="Player’s Handbook" id="ID_WOTC_CLASSFEATURE_RANGER_NATURAL_EXPLORER_FT_GRASSLAND">
 		<supports>Favored Terrain</supports>
@@ -733,7 +736,7 @@
 				<li>When you forage, you find twice as much food as you normally would.</li>
 				<li>While tracking other creatures, you also learn their exact number, their sizes, and how long ago they passed through the area.</li>
 			</ul>
-		</description>		
+		</description>
 	</element>
 	<element name="Mountain" type="Class Feature" source="Player’s Handbook" id="ID_WOTC_CLASSFEATURE_RANGER_NATURAL_EXPLORER_FT_MOUNTAIN">
 		<supports>Favored Terrain</supports>
@@ -748,7 +751,7 @@
 				<li>When you forage, you find twice as much food as you normally would.</li>
 				<li>While tracking other creatures, you also learn their exact number, their sizes, and how long ago they passed through the area.</li>
 			</ul>
-		</description>		
+		</description>
 	</element>
 	<element name="Swamp" type="Class Feature" source="Player’s Handbook" id="ID_WOTC_CLASSFEATURE_RANGER_NATURAL_EXPLORER_FT_SWAMP">
 		<supports>Favored Terrain</supports>
@@ -763,7 +766,7 @@
 				<li>When you forage, you find twice as much food as you normally would.</li>
 				<li>While tracking other creatures, you also learn their exact number, their sizes, and how long ago they passed through the area.</li>
 			</ul>
-		</description>		
+		</description>
 	</element>
 	<element name="Underdark" type="Class Feature" source="Player’s Handbook" id="ID_WOTC_CLASSFEATURE_RANGER_NATURAL_EXPLORER_FT_UNDERDARK">
 		<supports>Favored Terrain</supports>
@@ -778,7 +781,7 @@
 				<li>When you forage, you find twice as much food as you normally would.</li>
 				<li>While tracking other creatures, you also learn their exact number, their sizes, and how long ago they passed through the area.</li>
 			</ul>
-		</description>		
+		</description>
 	</element>
 
 	<element name="Hunter" type="Archetype" source="Player’s Handbook" id="ID_WOTC_ARCHETYPE_RANGER_HUNTER">
@@ -840,7 +843,7 @@
 			<p>At 15th level, you gain one of the following features of your choice.</p>
 			<p class="indent"><strong><em>Evasion.</em></strong> You can nimbly dodge out of the way of certain area effects, such as a red dragon’s fiery breath or a lightning bolt spell. When you are subjected to an effect that allows you to make a Dexterity saving throw to take only half damage, you instead take no damage if you succeed on the saving throw, and only half damage if you fail.</p>
 			<p class="indent"><strong><em>Stand Against the Tide.</em></strong> When a hostile creature misses you with a melee attack, you can use your reaction to force that creature to repeat the same attack against another creature (other than itself) of your choice.</p>
-			<p class="indent"><strong><em>Uncanny Dodge.</em></strong> When an attacker that you can see hits you with an attack, you can use your reaction to halve the attack’s damage against you.</p>		
+			<p class="indent"><strong><em>Uncanny Dodge.</em></strong> When an attacker that you can see hits you with an attack, you can use your reaction to halve the attack’s damage against you.</p>
 		</description>
 		<sheet display="false" />
 		<rules>
@@ -875,7 +878,7 @@
 			<description>Once on each of your turns when you make a weapon attack, you can make another attack with the same weapon against a different creature that is within 5 feet of the original target and within range of your weapon.</description>
 		</sheet>
 	</element>
-	
+
 	<element name="Escape the Horde" type="Archetype Feature" source="Player’s Handbook" id="ID_WOTC_ARCHETYPEFEATURE_RANGER_DEFENSIVE_TACTICS_ESCAPE_THE_HORDE">
 		<supports>Defensive Tactics</supports>
 		<description>
@@ -903,7 +906,7 @@
 			<description>You have advantage on saving throws against being frightened.</description>
 		</sheet>
 	</element>
-	
+
 	<element name="Volley" type="Archetype Feature" source="Player’s Handbook" id="ID_WOTC_ARCHETYPEFEATURE_RANGER_MULTIATTACK_VOLLEY">
 		<supports>Multiattack</supports>
 		<description>
@@ -965,13 +968,14 @@
 		</sheet>
 		<rules>
 			<grant type="Archetype Feature" id="ID_WOTC_ARCHETYPEFEATURE_RANGER_RANGERS_COMPANION" level="3" />
+			<select type="Archetype Feature" name="Optional Archetype Feature (level 3)" supports="Ranger Optional Archetype Feature Companion" level="3" />
 			<grant type="Archetype Feature" id="ID_WOTC_ARCHETYPEFEATURE_RANGER_EXCEPTIONAL_TRAINING" level="7" />
 			<grant type="Archetype Feature" id="ID_WOTC_ARCHETYPEFEATURE_RANGER_BESTIAL_FURY" level="11" />
 			<grant type="Archetype Feature" id="ID_WOTC_ARCHETYPEFEATURE_RANGER_SHARE_SPELLS" level="15" />
 		</rules>
 	</element>
 	<element name="Ranger’s Companion" type="Archetype Feature" source="Player’s Handbook" id="ID_WOTC_ARCHETYPEFEATURE_RANGER_RANGERS_COMPANION">
-		<requirements>!ID_INTERNAL_FEATURE_REPLACEMENT_RANGER_BEAST_MASTER_RANGER_COMPANION</requirements>
+		<supports>Ranger Optional Archetype Feature Companion</supports>
 		<description>
 			<p>At 3rd level, you gain a beast companion that accompanies you on your adventures and is trained to fight alongside you. Choose a beast that is no larger than Medium and that has a challenge rating of 1/4 or lower (appendix D presents statistics for the hawk, mastiff, and panther as examples). Add your proficiency bonus to the beast’s AC, attack rolls, and damage rolls, as well as to any saving throws and skills it is proficient in. Its hit point maximum equals the hit point number in its stat block or four times your ranger level, whichever is higher. Like any creature, it can spend Hit Dice during a short rest to regain hit points.</p>
 			<p class="indent">The beast obeys your commands as best as it can. It takes its turn on your initiative. On your turn, you can verbally command the beast where to move (no action required by you). You can use your action to verbally command it to take the Attack, Dash, Disengage, or Help action. Once you have the Extra Attack feature, you can make one weapon attack yourself when you command the beast to take the Attack action. If you don’t issue a command, the beast takes the Dodge action.</p>
@@ -988,7 +992,7 @@
 			<select type="Companion" name="Ranger’s Companion" supports="Beast,(Tiny||Small||Medium),(1/4||1/8||0)" />
 			<stat name="companion:ac" value="proficiency" />
 			<stat name="companion:attack" value="proficiency" />
-			<stat name="companion:damage" value="proficiency" />			
+			<stat name="companion:damage" value="proficiency" />
 			<stat name="additional:hp:max" value="level:ranger" />
 			<stat name="additional:hp:max" value="level:ranger" />
 			<stat name="additional:hp:max" value="level:ranger" />
