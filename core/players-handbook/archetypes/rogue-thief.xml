@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<elements>
+	<info>
+		<update version="0.0.1">
+			<file name="rogue-thief.xml" url="https://raw.githubusercontent.com/AuroraLegacy/elements/master/core/players-handbook/archetypes/rogue-thief.xml" />
+		</update>
+	</info>
+
+	<element name="Thief" type="Archetype" source="Player’s Handbook" id="ID_WOTC_PHB_ARCHETYPE_THIEF">
+		<supports>Roguish Archetype</supports>
+		<description>
+			<p>You hone your skills in the larcenous arts. Burglars, bandits, cutpurses, and other criminals typically follow this archetype, but so do rogues who prefer to think of themselves as professional treasure seekers, explorers, delvers, and investigators. In addition to improving your agility and stealth, you learn skills useful for delving into ancient ruins, reading unfamiliar languages, and using magic items you normally couldn’t employ.</p>
+			<div element="ID_WOTC_PHB_ARCHETYPE_FEATURE_THIEF_FASTHANDS" />
+			<div element="ID_WOTC_PHB_ARCHETYPE_FEATURE_THIEF_SECONDSTORYWORK" />
+			<div element="ID_WOTC_PHB_ARCHETYPE_FEATURE_THIEF_SUPREMESNEAK" />
+			<div element="ID_WOTC_PHB_ARCHETYPE_FEATURE_THIEF_USEMAGICDEVICE" />
+			<div element="ID_WOTC_PHB_ARCHETYPE_FEATURE_THIEF_THIEFS_REFLEXES" />
+		</description>
+		<sheet display="false">
+			<description>You hone your skills in the larcenous arts.</description>
+		</sheet>
+		<rules>
+			<grant type="Archetype Feature" id="ID_WOTC_PHB_ARCHETYPE_FEATURE_THIEF_FASTHANDS" level="3"/>
+			<grant type="Archetype Feature" id="ID_WOTC_PHB_ARCHETYPE_FEATURE_THIEF_SECONDSTORYWORK" level="3"/>
+			<grant type="Archetype Feature" id="ID_WOTC_PHB_ARCHETYPE_FEATURE_THIEF_SUPREMESNEAK" level="9"/>
+			<grant type="Archetype Feature" id="ID_WOTC_PHB_ARCHETYPE_FEATURE_THIEF_USEMAGICDEVICE" level="13"/>
+			<grant type="Archetype Feature" id="ID_WOTC_PHB_ARCHETYPE_FEATURE_THIEF_THIEFS_REFLEXES" level="17"/>
+		</rules>
+	</element>
+	<element name="Fast Hands" type="Archetype Feature" source="Player’s Handbook" id="ID_WOTC_PHB_ARCHETYPE_FEATURE_THIEF_FASTHANDS">
+		<requirements>!ID_INTERNAL_FEATURE_REPLACEMENT_ROGUE_THIEF_FAST_HANDS</requirements>
+		<description>
+			<p>Starting at 3rd level, you can use the bonus action granted by your Cunning Action to make a Dexterity (Sleight of Hand) check, use your thieves’ tools to disarm a trap or open a lock, or take the Use an Object action.</p>
+		</description>
+		<sheet action="Bonus Action">
+			<description>You can make a Sleight of Hand check, use your thieves’ tools to disarm a trap or open a lock, or take the Use an Object action.</description>
+		</sheet>
+	</element>
+	<element name="Second-Story Work" type="Archetype Feature" source="Player’s Handbook" id="ID_WOTC_PHB_ARCHETYPE_FEATURE_THIEF_SECONDSTORYWORK">
+		<requirements>!ID_INTERNAL_FEATURE_REPLACEMENT_ROGUE_THIEF_SECOND_STORY_WORK</requirements>
+		<description>
+			<p>When you choose this archetype at 3rd level, you gain the ability to climb faster than normal; climbing no longer costs you extra movement.</p>
+			<p>In addition, when you make a running jump, the distance you cover increases by a number of feet equal to your Dexterity modifier.</p>
+		</description>
+		<sheet>
+			<description>Climbing no longer costs you extra movement. When you make a running jump, the distance you cover increases by {{dexterity:modifier}} feet.</description>
+		</sheet>
+	</element>
+	<element name="Supreme Sneak" type="Archetype Feature" source="Player’s Handbook" id="ID_WOTC_PHB_ARCHETYPE_FEATURE_THIEF_SUPREMESNEAK">
+		<requirements>!ID_INTERNAL_FEATURE_REPLACEMENT_ROGUE_THIEF_SUPREME_SNEAK</requirements>
+		<description>
+			<p>Starting at 9th level, you have advantage on a Dexterity (Stealth) check if you move no more than half your speed on the same turn.</p>
+		</description>
+		<sheet>
+			<description>You have advantage on a Stealth check if you move no more than half your speed on the same turn.</description>
+		</sheet>
+	</element>
+	<element name="Use Magic Device" type="Archetype Feature" source="Player’s Handbook" id="ID_WOTC_PHB_ARCHETYPE_FEATURE_THIEF_USEMAGICDEVICE">
+		<requirements>!ID_INTERNAL_FEATURE_REPLACEMENT_ROGUE_THIEF_USE_MAGIC_DEVICE</requirements>
+		<description>
+			<p>By 13th level, you have learned enough about the workings of magic that you can improvise the use of items even when they are not intended for you. You ignore all class, race, and level requirements on the use of magic items.</p>
+		</description>
+		<sheet>
+			<description>You ignore all class, race, and level requirements on the use of magic items.</description>
+		</sheet>
+		<rules>
+			<!-- create grant to circomvent the restrictions -->
+		</rules>
+	</element>
+	<element name="Thief’s Reflexes" type="Archetype Feature" source="Player’s Handbook" id="ID_WOTC_PHB_ARCHETYPE_FEATURE_THIEF_THIEFS_REFLEXES">
+		<requirements>!ID_INTERNAL_FEATURE_REPLACEMENT_ROGUE_THIEF_THIEFS_REFLEXES</requirements>
+		<description>
+			<p>When you reach 17th level, you have become adept at laying ambushes and quickly escaping danger. You can take two turns during the first round of any combat. You take your first turn at your normal initiative and your second turn at your initiative minus 10. You can’t use this feature when you are surprised.</p>
+		</description>
+		<sheet>
+			<description>You can take two turns during the first round of any combat. You take your first turn at your normal initiative and your second turn at your initiative minus 10. You can’t use this feature when you are surprised.</description>
+		</sheet>
+	</element>
+	
+	<!--Feature Replacement Grants-->
+	<element name="Fast Hands Feature Replacement" type="Grants" source="Internal" id="ID_INTERNAL_FEATURE_REPLACEMENT_ROGUE_THIEF_FAST_HANDS" />
+	<element name="Second-Story Work Feature Replacement" type="Grants" source="Internal" id="ID_INTERNAL_FEATURE_REPLACEMENT_ROGUE_THIEF_SECOND_STORY_WORK" />
+	<element name="Supreme Sneak Feature Replacement" type="Grants" source="Internal" id="ID_INTERNAL_FEATURE_REPLACEMENT_ROGUE_THIEF_SUPREME_SNEAK" />
+	<element name="Use Magic Device Feature Replacement" type="Grants" source="Internal" id="ID_INTERNAL_FEATURE_REPLACEMENT_ROGUE_THIEF_USE_MAGIC_DEVICE" />
+	<element name="Thief’s Reflexes Feature Replacement" type="Grants" source="Internal" id="ID_INTERNAL_FEATURE_REPLACEMENT_ROGUE_THIEF_THIEFS_REFLEXES" />
+</elements>

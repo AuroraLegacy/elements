@@ -1,0 +1,188 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<elements>
+	<info>
+		<update version="0.0.1">
+			<file name="ranger-hunter.xml" url="https://raw.githubusercontent.com/AuroraLegacy/elements/master/core/players-handbook/archetypes/ranger-hunter.xml" />
+		</update>
+	</info>
+
+	<element name="Hunter" type="Archetype" source="Player’s Handbook" id="ID_WOTC_ARCHETYPE_RANGER_HUNTER">
+		<supports>Ranger Archetype</supports>
+		<description>
+			<p>Emulating the Hunter archetype means accepting your place as a bulwark between civilization and the terrors of the wilderness. As you walk the Hunter’s path, you learn specialized techniques for fighting the threats you face, from rampaging ogres and hordes of orcs to towering giants and terrifying dragons.</p>
+			<div element="ID_WOTC_ARCHETYPEFEATURE_RANGER_HUNTERS_PREY" />
+			<div element="ID_WOTC_ARCHETYPEFEATURE_RANGER_DEFENSIVE_TACTICS" />
+			<div element="ID_WOTC_ARCHETYPEFEATURE_RANGER_MULTIATTACK" />
+			<div element="ID_WOTC_ARCHETYPEFEATURE_RANGER_SUPERIOR_HUNTERS_DEFENSE" />
+		</description>
+		<sheet display="false">
+			<description>Emulating the Hunter archetype means accepting your place as a bulwark between civilization and the terrors of the wilderness.</description>
+		</sheet>
+		<rules>
+			<grant type="Archetype Feature" id="ID_WOTC_ARCHETYPEFEATURE_RANGER_HUNTERS_PREY" level="3" />
+			<grant type="Archetype Feature" id="ID_WOTC_ARCHETYPEFEATURE_RANGER_DEFENSIVE_TACTICS" level="7" />
+			<grant type="Archetype Feature" id="ID_WOTC_ARCHETYPEFEATURE_RANGER_MULTIATTACK" level="11" />
+			<grant type="Archetype Feature" id="ID_WOTC_ARCHETYPEFEATURE_RANGER_SUPERIOR_HUNTERS_DEFENSE" level="15" />
+		</rules>
+	</element>
+	<element name="Hunter’s Prey" type="Archetype Feature" source="Player’s Handbook" id="ID_WOTC_ARCHETYPEFEATURE_RANGER_HUNTERS_PREY">
+		<requirements>!ID_INTERNAL_FEATURE_REPLACEMENT_RANGER_HUNTER_HUNTERS_PREY</requirements>
+		<description>
+			<p>At 3rd level, you gain one of the following features of your choice.</p>
+			<p class="indent"><strong><em>Colossus Slayer.</em></strong> Your tenacity can wear down the most potent foes. When you hit a creature with a weapon attack, the creature takes an extra 1d8 damage if it’s below its hit point maximum. You can deal this extra damage only once per turn.</p>
+			<p class="indent"><strong><em>Giant Killer.</em></strong> When a Large or larger creature within 5 feet of you hits or misses you with an attack, you can use your reaction to attack that creature immediately after its attack, provided that you can see the creature.</p>
+			<p class="indent"><strong><em>Horde Breaker.</em></strong> Once on each of your turns when you make a weapon attack, you can make another attack with the same weapon against a different creature that is within 5 feet of the original target and within range of your weapon.</p>
+		</description>
+		<sheet display="false" />
+		<rules>
+			<select type="Archetype Feature" name="Hunter’s Prey" supports="Hunters Pray" />
+		</rules>
+	</element>
+	<element name="Defensive Tactics" type="Archetype Feature" source="Player’s Handbook" id="ID_WOTC_ARCHETYPEFEATURE_RANGER_DEFENSIVE_TACTICS">
+		<requirements>!ID_INTERNAL_FEATURE_REPLACEMENT_RANGER_HUNTER_DEFENSIVE_TACTICS</requirements>
+		<description>
+			<p>At 7th level, you gain one of the following features of your choice.</p>
+			<p class="indent"><strong><em>Escape the Horde.</em></strong> Opportunity attacks against you are made with disadvantage.</p>
+			<p class="indent"><strong><em>Multiattack Defense.</em></strong> When a creature hits you with an attack, you gain a +4 bonus to AC against all subsequent attacks made by that creature for the rest of the turn.</p>
+			<p class="indent"><strong><em>Steel Will.</em></strong> You have advantage on saving throws against being frightened.</p>
+		</description>
+		<sheet display="false" />
+		<rules>
+			<select type="Archetype Feature" name="Defensive Tactics" supports="Defensive Tactics" />
+		</rules>
+	</element>
+	<element name="Multiattack" type="Archetype Feature" source="Player’s Handbook" id="ID_WOTC_ARCHETYPEFEATURE_RANGER_MULTIATTACK">
+		<requirements>!ID_INTERNAL_FEATURE_REPLACEMENT_RANGER_HUNTER_MULTIATTACK</requirements>
+		<description>
+			<p>At 11th level, you gain one of the following features of your choice.</p>
+			<p class="indent"><strong><em>Volley.</em></strong> You can use your action to make a ranged attack against any number of creatures within 10 feet of a point you can see within your weapon’s range. You must have ammunition for each target, as normal, and you make a separate attack roll for each target.</p>
+			<p class="indent"><strong><em>Whirlwind Attack.</em></strong> You can use your action to make a melee attack against any number of creatures within 5 feet of you, with a separate attack roll for each target.</p>
+		</description>
+		<sheet display="false" />
+		<rules>
+			<select type="Archetype Feature" name="Multiattack" supports="Multiattack" />
+		</rules>
+	</element>
+	<element name="Superior Hunter’s Defense" type="Archetype Feature" source="Player’s Handbook" id="ID_WOTC_ARCHETYPEFEATURE_RANGER_SUPERIOR_HUNTERS_DEFENSE">
+		<requirements>!ID_INTERNAL_FEATURE_REPLACEMENT_RANGER_HUNTER_SUPERIOR_HUNTERS_DEFENSE</requirements>
+		<description>
+			<p>At 15th level, you gain one of the following features of your choice.</p>
+			<p class="indent"><strong><em>Evasion.</em></strong> You can nimbly dodge out of the way of certain area effects, such as a red dragon’s fiery breath or a lightning bolt spell. When you are subjected to an effect that allows you to make a Dexterity saving throw to take only half damage, you instead take no damage if you succeed on the saving throw, and only half damage if you fail.</p>
+			<p class="indent"><strong><em>Stand Against the Tide.</em></strong> When a hostile creature misses you with a melee attack, you can use your reaction to force that creature to repeat the same attack against another creature (other than itself) of your choice.</p>
+			<p class="indent"><strong><em>Uncanny Dodge.</em></strong> When an attacker that you can see hits you with an attack, you can use your reaction to halve the attack’s damage against you.</p>		
+		</description>
+		<sheet display="false" />
+		<rules>
+			<select type="Archetype Feature" name="Superior Hunter’s Defense" supports="Superior Hunters Defense" />
+		</rules>
+	</element>
+
+	<element name="Colossus Slayer" type="Archetype Feature" source="Player’s Handbook" id="ID_WOTC_ARCHETYPEFEATURE_RANGER_HUNTERS_PREY_COLOSSUS_SLAYER">
+		<supports>Hunters Pray</supports>
+		<description>
+			<p>Your tenacity can wear down the most potent foes. When you hit a creature with a weapon attack, the creature takes an extra 1d8 damage if it’s below its hit point maximum. You can deal this extra damage only once per turn.</p>
+		</description>
+		<sheet usage="1/Turn">
+			<description>When you hit a creature with a weapon attack, the creature takes an extra 1d8 damage if it’s below its hp maximum.</description>
+		</sheet>
+	</element>
+	<element name="Giant Killer" type="Archetype Feature" source="Player’s Handbook" id="ID_WOTC_ARCHETYPEFEATURE_RANGER_HUNTERS_PREY_GIANT_KILLER">
+		<supports>Hunters Pray</supports>
+		<description>
+			<p>When a Large or larger creature within 5 feet of you hits or misses you with an attack, you can use your reaction to attack that creature immediately after its attack, provided that you can see the creature.</p>
+		</description>
+		<sheet action="Reaction">
+			<description>When a Large or larger creature within 5 feet of you hits or misses you with an attack, you can use your reaction to attack that creature immediately after its attack, provided that you can see the creature.</description>
+		</sheet>
+	</element>
+	<element name="Horde Breaker" type="Archetype Feature" source="Player’s Handbook" id="ID_WOTC_ARCHETYPEFEATURE_RANGER_HUNTERS_PREY_HORDE_BREAKER">
+		<supports>Hunters Pray</supports>
+		<description>
+			<p>Once on each of your turns when you make a weapon attack, you can make another attack with the same weapon against a different creature that is within 5 feet of the original target and within range of your weapon.</p>
+		</description>
+		<sheet>
+			<description>Once on each of your turns when you make a weapon attack, you can make another attack with the same weapon against a different creature that is within 5 feet of the original target and within range of your weapon.</description>
+		</sheet>
+	</element>
+	
+	<element name="Escape the Horde" type="Archetype Feature" source="Player’s Handbook" id="ID_WOTC_ARCHETYPEFEATURE_RANGER_DEFENSIVE_TACTICS_ESCAPE_THE_HORDE">
+		<supports>Defensive Tactics</supports>
+		<description>
+			<p>Opportunity attacks against you are made with disadvantage.</p>
+		</description>
+		<sheet>
+			<description>Opportunity attacks against you are made with disadvantage.</description>
+		</sheet>
+	</element>
+	<element name="Multiattack Defense" type="Archetype Feature" source="Player’s Handbook" id="ID_WOTC_ARCHETYPEFEATURE_RANGER_DEFENSIVE_TACTICS_MULTIATTACK_DEFENSE">
+		<supports>Defensive Tactics</supports>
+		<description>
+			<p>When a creature hits you with an attack, you gain a +4 bonus to AC against all subsequent attacks made by that creature for the rest of the turn.</p>
+		</description>
+		<sheet>
+			<description>When a creature hits you with an attack, you gain a +4 bonus to AC against all subsequent attacks made by that creature for the rest of the turn.</description>
+		</sheet>
+	</element>
+	<element name="Steel Will" type="Archetype Feature" source="Player’s Handbook" id="ID_WOTC_ARCHETYPEFEATURE_RANGER_DEFENSIVE_TACTICS_STEEL_WILL">
+		<supports>Defensive Tactics</supports>
+		<description>
+			<p>You have advantage on saving throws against being frightened.</p>
+		</description>
+		<sheet>
+			<description>You have advantage on saving throws against being frightened.</description>
+		</sheet>
+	</element>
+	
+	<element name="Volley" type="Archetype Feature" source="Player’s Handbook" id="ID_WOTC_ARCHETYPEFEATURE_RANGER_MULTIATTACK_VOLLEY">
+		<supports>Multiattack</supports>
+		<description>
+			<p>You can use your action to make a ranged attack against any number of creatures within 10 feet of a point you can see within your weapon’s range. You must have ammunition for each target, as normal, and you make a separate attack roll for each target.</p>
+		</description>
+		<sheet action="Action">
+			<description>You can make a ranged attack against any number of creatures within 10 feet of a point you can see within your weapon’s range. You must have ammunition for each target, as normal, and you make a separate attack roll for each target.</description>
+		</sheet>
+	</element>
+	<element name="Whirlwind Attack" type="Archetype Feature" source="Player’s Handbook" id="ID_WOTC_ARCHETYPEFEATURE_RANGER_MULTIATTACK_WHIRLWIND_ATTACK">
+		<supports>Multiattack</supports>
+		<description>
+			<p>You can use your action to make a melee attack against any number of creatures within 5 feet of you, with a separate attack roll for each target.</p>
+		</description>
+		<sheet action="Action">
+			<description>You can make a melee attack against any number of creatures within 5 feet of you, with a separate attack roll for each target.</description>
+		</sheet>
+	</element>
+
+	<element name="Evasion" type="Archetype Feature" source="Player’s Handbook" id="ID_WOTC_ARCHETYPEFEATURE_RANGER_SUPERIOR_HUNTERS_DEFENSE_EVASION">
+		<supports>Superior Hunters Defense</supports>
+		<description>
+			<p>You can nimbly dodge out of the way of certain area effects, such as a red dragon’s fiery breath or a lightning bolt spell. When you are subjected to an effect that allows you to make a Dexterity saving throw to take only half damage, you instead take no damage if you succeed on the saving throw, and only half damage if you fail.</p>
+		</description>
+		<sheet>
+			<description>When you are subjected to an effect that allows you to make a Dexterity saving throw to take only half damage, you instead take no damage if you succeed on the saving throw, and only half damage if you fail.</description>
+		</sheet>
+	</element>
+	<element name="Stand Against the Tide" type="Archetype Feature" source="Player’s Handbook" id="ID_WOTC_ARCHETYPEFEATURE_RANGER_SUPERIOR_HUNTERS_DEFENSE_STAND_AGAINST_THE_TIDE">
+		<supports>Superior Hunters Defense</supports>
+		<description>
+			<p>When a hostile creature misses you with a melee attack, you can use your reaction to force that creature to repeat the same attack against another creature (other than itself) of your choice.</p>
+		</description>
+		<sheet action="Reaction">
+			<description>When a hostile creature misses you with a melee attack, you can force that creature to repeat the same attack against another creature of your choice.</description>
+		</sheet>
+	</element>
+	<element name="Uncanny Dodge" type="Archetype Feature" source="Player’s Handbook" id="ID_WOTC_ARCHETYPEFEATURE_RANGER_SUPERIOR_HUNTERS_DEFENSE_UNCANNY_DODGE">
+		<supports>Superior Hunters Defense</supports>
+		<description>
+			<p>When an attacker that you can see hits you with an attack, you can use your reaction to halve the attack’s damage against you.</p>
+		</description>
+		<sheet action="Reaction">
+			<description>When an attacker that you can see hits you with an attack, you can halve the attack’s damage against you.</description>
+		</sheet>
+	</element>
+
+	<!--Feature Replacement Grants-->
+	<element name="Hunter’s Prey Feature Replacement" type="Grants" source="Internal" id="ID_INTERNAL_FEATURE_REPLACEMENT_RANGER_HUNTER_HUNTERS_PREY" />
+	<element name="Defensive Tactics Feature Replacement" type="Grants" source="Internal" id="ID_INTERNAL_FEATURE_REPLACEMENT_RANGER_HUNTER_DEFENSIVE_TACTICS" />
+	<element name="Multiattack Feature Replacement" type="Grants" source="Internal" id="ID_INTERNAL_FEATURE_REPLACEMENT_RANGER_HUNTER_MULTIATTACK" />
+	<element name="Superior Hunter’s Defense Feature Replacement" type="Grants" source="Internal" id="ID_INTERNAL_FEATURE_REPLACEMENT_RANGER_HUNTER_SUPERIOR_HUNTERS_DEFENSE" />
+</elements>

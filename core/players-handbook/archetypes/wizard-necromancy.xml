@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<elements>
+	<info>
+		<update version="0.0.1">
+			<file name="wizard-necromancy.xml" url="https://raw.githubusercontent.com/AuroraLegacy/elements/master/core/players-handbook/archetypes/wizard-necromancy.xml" />
+		</update>
+	</info>
+
+	<element name="School of Necromancy" type="Archetype" source="Player’s Handbook" id="ID_WOTC_PHB_ARCHETYPE_WIZARD_SCHOOL_OF_NECROMANCY">
+		<supports>Arcane Tradition</supports>
+		<description>
+			<p>The School of Necromancy explores the cosmic forces of life, death, and undeath. As you focus your studies in this tradition, you learn to manipulate the energy that animates all living things. As you progress, you learn to sap the life force from a creature as your magic destroys its body, transforming that vital energy into magical power you can manipulate.</p>
+			<p class="indent">Most people see necromancers as menacing, or even villainous, due to the close association with death. Not all necromancers are evil, but the forces they manipulate are considered taboo by many societies.</p>
+			<div element="ID_WOTC_PHB_ARCHETYPE_FEATURE_WIZARD_NECROMANCY_NECROMANCY_SAVANT" />
+			<div element="ID_WOTC_PHB_ARCHETYPE_FEATURE_WIZARD_NECROMANCY_GRIM_HARVEST" />
+			<div element="ID_WOTC_PHB_ARCHETYPE_FEATURE_WIZARD_NECROMANCY_UNDEAD_THRALLS" />
+			<div element="ID_WOTC_PHB_ARCHETYPE_FEATURE_WIZARD_NECROMANCY_INURED_TO_UNDEAD" />
+			<div element="ID_WOTC_PHB_ARCHETYPE_FEATURE_WIZARD_NECROMANCY_COMMAND_UNDEAD" />
+		</description>
+		<sheet display="false">
+			<description>The School of Necromancy explores the cosmic forces of life, death, and undeath.</description>
+		</sheet>
+		<rules>
+			<grant type="Archetype Feature" id="ID_WOTC_PHB_ARCHETYPE_FEATURE_WIZARD_NECROMANCY_NECROMANCY_SAVANT" level="2"/>
+			<grant type="Archetype Feature" id="ID_WOTC_PHB_ARCHETYPE_FEATURE_WIZARD_NECROMANCY_GRIM_HARVEST" level="2"/>
+			<grant type="Archetype Feature" id="ID_WOTC_PHB_ARCHETYPE_FEATURE_WIZARD_NECROMANCY_UNDEAD_THRALLS" level="6"/>
+			<grant type="Archetype Feature" id="ID_WOTC_PHB_ARCHETYPE_FEATURE_WIZARD_NECROMANCY_INURED_TO_UNDEAD" level="10"/>
+			<grant type="Archetype Feature" id="ID_WOTC_PHB_ARCHETYPE_FEATURE_WIZARD_NECROMANCY_COMMAND_UNDEAD" level="14"/>
+		</rules>
+	</element>
+	<element name="Necromancy Savant" type="Archetype Feature" source="Player’s Handbook" id="ID_WOTC_PHB_ARCHETYPE_FEATURE_WIZARD_NECROMANCY_NECROMANCY_SAVANT">
+		<requirements>!ID_INTERNAL_FEATURE_REPLACEMENT_WIZARD_NECROMANCY_NECROMANCY_SAVANT</requirements>
+		<description>
+			<p>Beginning when you select this school at 2nd level, the gold and time you must spend to copy a necromancy spell into your spellbook is halved.</p>
+		</description>
+		<sheet>
+			<description>The gold and time you must spend to copy a necromancy spell into your spellbook is halved.</description>
+		</sheet>
+	</element>
+	<element name="Grim Harvest" type="Archetype Feature" source="Player’s Handbook" id="ID_WOTC_PHB_ARCHETYPE_FEATURE_WIZARD_NECROMANCY_GRIM_HARVEST">	
+		<requirements>!ID_INTERNAL_FEATURE_REPLACEMENT_WIZARD_NECROMANCY_GRIM_HARVEST</requirements>
+		<description>
+			<p>At 2nd level, you gain the ability to reap life energy from creatures you kill with your spells. Once per turn when you kill one or more creatures with a spell of 1st level or higher, you regain hit points equal to twice the spell’s level, or three times its level if the spell belongs to the School of Necromancy. You don’t gain this benefit for killing constructs or undead.</p>
+		</description>
+		<sheet>
+			<description>Once per turn when you kill one or more creatures with a spell of 1st level or higher, you regain hp equal to twice the spell’s level, or three times its level if the spell belongs to the School of Necromancy. You don’t gain this benefit for killing constructs or undead.</description>
+		</sheet>
+	</element>
+	<element name="Undead Thralls" type="Archetype Feature" source="Player’s Handbook" id="ID_WOTC_PHB_ARCHETYPE_FEATURE_WIZARD_NECROMANCY_UNDEAD_THRALLS">
+		<requirements>!ID_INTERNAL_FEATURE_REPLACEMENT_WIZARD_NECROMANCY_UNDEAD_THRALLS</requirements>
+		<description>
+			<p>At 6th level, you add the animate dead spell to your spellbook if it is not there already. When you cast animate dead, you can target one additional corpse or pile of bones, creating another zombie or skeleton, as appropriate.</p>
+			<p class="indent">Whenever you create an undead using a necromancy spell, it has additional benefits:</p>
+			<ul>
+				<li>The creature’s hit point maximum is increased by an amount equal to your wizard level.</li>
+				<li>The creature adds your proficiency bonus to its weapon damage rolls.</li>
+			</ul>
+		</description>
+		<sheet>
+			<description>When you cast animate dead, you can target one additional corpse or pile of bones, creating another zombie or skeleton, as appropriate. The creature’s hp maximum is increased by {{level:wizard}} and adds {{proficiency}} to its weapon damage rolls.</description>
+		</sheet>
+		<rules>
+			<grant type="Spell" id="ID_PHB_SPELL_ANIMATE_DEAD" spellcasting="Wizard"/>
+		</rules>
+	</element>
+	<element name="Inured to Undead" type="Archetype Feature" source="Player’s Handbook" id="ID_WOTC_PHB_ARCHETYPE_FEATURE_WIZARD_NECROMANCY_INURED_TO_UNDEAD">
+		<requirements>!ID_INTERNAL_FEATURE_REPLACEMENT_WIZARD_NECROMANCY_INURED_TO_UNDEAD</requirements>
+		<description>
+			<p>Beginning at 10th level, you have resistance to necrotic damage, and your hit point maximum can't be reduced. You have spent so much time dealing with undead and the forces that animate them that you have become inured to some of their worst effects.</p>
+		</description>
+		<sheet>
+			<description>Your hp maximum can't be reduced.</description>
+		</sheet>
+		<rules>
+			<grant type="Condition" id="ID_INTERNAL_CONDITION_DAMAGE_RESISTANCE_NECROTIC" />
+		</rules>
+	</element>
+	<element name="Command Undead" type="Archetype Feature" source="Player’s Handbook" id="ID_WOTC_PHB_ARCHETYPE_FEATURE_WIZARD_NECROMANCY_COMMAND_UNDEAD">
+		<requirements>!ID_INTERNAL_FEATURE_REPLACEMENT_WIZARD_NECROMANCY_COMMAND_UNDEAD</requirements>
+		<description>
+			<p>Starting at 14th level, you can use magic to bring undead under your control, even those created by other wizards. As an action, you can choose one undead that you can see within 60 feet of you. That creature must make a Charisma saving throw against your wizard spell save DC. If it succeeds, you can’t use this feature on it again. If it fails, it becomes friendly to you and obeys your commands until you use this feature again.</p>
+			<p class="indent">Intelligent undead are harder to control in this way. If the target has an Intelligence of 8 or higher, it has advantage on the saving throw. If it fails the saving throw and has an Intelligence of 12 or higher, it can repeat the saving throw at the end of every hour until it succeeds and breaks free.</p>
+		</description>
+		<sheet action="Action">
+			<description>You can choose one undead that you can see within 60 feet of you. That creature must make a Charisma saving throw. If it succeeds, you can’t use this feature on it again. If it fails, it becomes friendly to you and obeys your commands until you use this feature again. Intelligent undead are harder to control in this way. If the target has an Intelligence of 8 or higher, it has advantage on the saving throw. If it fails the saving throw and has an Intelligence of 12 or higher, it can repeat the saving throw at the end of every hour until it succeeds and breaks free.</description>
+		</sheet>
+	</element>
+
+	<!--Feature Replacement Grants-->
+	<element name="Necromancy Savant Feature Replacement" type="Grants" source="Internal" id="ID_INTERNAL_FEATURE_REPLACEMENT_WIZARD_NECROMANCY_NECROMANCY_SAVANT" />
+	<element name="Grim Harvest Feature Replacement" type="Grants" source="Internal" id="ID_INTERNAL_FEATURE_REPLACEMENT_WIZARD_NECROMANCY_GRIM_HARVEST" />
+	<element name="Undead Thralls Feature Replacement" type="Grants" source="Internal" id="ID_INTERNAL_FEATURE_REPLACEMENT_WIZARD_NECROMANCY_UNDEAD_THRALLS" />
+	<element name="Inured to Undead Feature Replacement" type="Grants" source="Internal" id="ID_INTERNAL_FEATURE_REPLACEMENT_WIZARD_NECROMANCY_INURED_TO_UNDEAD" />
+	<element name="Command Undead Feature Replacement" type="Grants" source="Internal" id="ID_INTERNAL_FEATURE_REPLACEMENT_WIZARD_NECROMANCY_COMMAND_UNDEAD" />
+</elements>

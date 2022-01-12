@@ -1,0 +1,246 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<elements>
+	<info>
+		<update version="0.0.1">
+			<file name="sorcerer-draconic.xml" url="https://raw.githubusercontent.com/AuroraLegacy/elements/master/core/players-handbook/archetypes/sorcerer-draconic.xml" />
+		</update>
+	</info>
+
+	<element name="Draconic Bloodline" type="Archetype" source="Player’s Handbook" id="ID_WOTC_PHB_ARCHETYPE_DRACONIC_BLOODLINE">
+		<supports>Sorcerous Origin</supports>
+		<description>
+			<p>Your innate magic comes from draconic magic that was mingled with your blood or that of your ancestors. Most often, sorcerers with this origin trace their descent back to a mighty sorcerer of ancient times who made a bargain with a dragon or who might even have claimed a dragon parent. Some of these bloodlines are well established in the world, but most are obscure. Any given sorcerer could be the first of a new bloodline, as a result of a pact or some other exceptional circumstance.</p>
+			<div element="ID_WOTC_PHB_ARCHETYPE_FEATURE_DRAGON_ANCESTOR"/>
+			<div element="ID_WOTC_PHB_ARCHETYPE_FEATURE_DRACONIC_RESILIENCE"/>
+			<div element="ID_WOTC_PHB_ARCHETYPE_FEATURE_ELEMENTAL_AFFINITY"/>
+			<div element="ID_WOTC_PHB_ARCHETYPE_FEATURE_DRAGON_WINGS"/>
+			<div element="ID_WOTC_PHB_ARCHETYPE_FEATURE_DRACONIC_PRESENCE"/>
+		</description>
+		<sheet display="false">
+			<description>Your innate magic comes from draconic magic that was mingled with your blood or that of your ancestors.</description>
+		</sheet>
+		<rules>
+			<grant type="Archetype Feature" id="ID_WOTC_PHB_ARCHETYPE_FEATURE_DRAGON_ANCESTOR" level="1" />
+			<grant type="Archetype Feature" id="ID_WOTC_PHB_ARCHETYPE_FEATURE_DRACONIC_RESILIENCE" level="1" />
+			<grant type="Archetype Feature" id="ID_WOTC_PHB_ARCHETYPE_FEATURE_ELEMENTAL_AFFINITY" level="6" />
+			<grant type="Archetype Feature" id="ID_WOTC_PHB_ARCHETYPE_FEATURE_DRAGON_WINGS" level="14" />
+			<grant type="Archetype Feature" id="ID_WOTC_PHB_ARCHETYPE_FEATURE_DRACONIC_PRESENCE" level="18" />
+		</rules>
+	</element>
+	<element name="Dragon Ancestor" type="Archetype Feature" source="Player’s Handbook" id="ID_WOTC_PHB_ARCHETYPE_FEATURE_DRAGON_ANCESTOR">
+		<requirements>!ID_INTERNAL_FEATURE_REPLACEMENT_SORCERER_DRACONIC_DRAGON_ANCESTOR</requirements>
+		<supports>Draconic Bloodline</supports>
+		<description>
+			<p>At 1st level, you choose one type of dragon as your ancestor. The damage type associated with each dragon is used by features you gain later.</p>
+			<h5 class="caption">DRACONIC ANCESTRY</h5>
+			<table>
+				<thead>
+					<tr><td>Dragon</td><td>Damage Type</td></tr>
+				</thead>
+				<tr><td>Black</td><td>Acid</td></tr>
+				<tr><td>Blue</td><td>Lightning</td></tr>
+				<tr><td>Brass</td><td>Fire</td></tr>
+				<tr><td>Bronze</td><td>Lightning</td></tr>
+				<tr><td>Copper</td><td>Acid</td></tr>
+				<tr><td>Gold</td><td>Fire</td></tr>
+				<tr><td>Green</td><td>Poison</td></tr>
+				<tr><td>Red</td><td>Fire</td></tr>
+				<tr><td>Silver</td><td>Cold</td></tr>
+				<tr><td>White</td><td>Cold</td></tr>
+			</table>
+			<p>You can speak, read, and write Draconic. Additionally, whenever you make a Charisma check when interacting with dragons, your proficiency bonus is doubled if it applies to the check.</p>
+		</description>
+		<sheet>
+			<description>Whenever you make a Charisma check when interacting with dragons, your proficiency bonus is doubled if it applies to the check.</description>
+		</sheet>
+		<rules>
+			<grant type="Language" id="ID_LANGUAGE_DRACONIC" />
+			<select type="Archetype Feature" name="Dragon Ancestor (Draconic Bloodline)" supports="Dragon Ancestor" />
+		</rules>
+	</element>
+	<element name="Draconic Resilience" type="Archetype Feature" source="Player’s Handbook" id="ID_WOTC_PHB_ARCHETYPE_FEATURE_DRACONIC_RESILIENCE">
+		<requirements>!ID_INTERNAL_FEATURE_REPLACEMENT_SORCERER_DRACONIC_DRACONIC_RESILIENCE</requirements>
+		<supports>Draconic Bloodline</supports>
+		<description>
+			<p>As magic flows through your body, it causes physical traits of your dragon ancestors to emerge. At 1st level, your hit point maximum increases by 1 and increases by 1 again whenever you gain a level in this class.</p>
+			<p class="indent">Additionally, parts of your skin are covered by a thin sheen of dragon-like scales. When you aren’t wearing armor, your AC equals 13 + your Dexterity modifier.</p>
+		</description>
+		<sheet>
+			<description>When you aren’t wearing armor, your AC equals {{ac:draconic resilience}}.</description>
+		</sheet>
+		<rules>
+			<stat name="hp" value="level:sorcerer" />
+			<stat name="ac:draconic resilience" value="13" />
+			<stat name="ac:draconic resilience" value="dexterity:modifier" />
+			<stat name="ac:calculation" value="ac:draconic resilience" bonus="calculation" equipped="[armor:none]" alt="Draconic Resilience (Sorcerer)" />
+		</rules>
+	</element>
+	<element name="Elemental Affinity" type="Archetype Feature" source="Player’s Handbook" id="ID_WOTC_PHB_ARCHETYPE_FEATURE_ELEMENTAL_AFFINITY">
+		<requirements>!ID_INTERNAL_FEATURE_REPLACEMENT_SORCERER_DRACONIC_ELEMENTAL_AFFINITY</requirements>
+		<supports>Draconic Bloodline</supports>
+		<description>
+			<p>Starting at 6th level, when you cast a spell that deals damage of the type associated with your draconic ancestry, you can add your Charisma modifier to one damage roll of that spell. At the same time, you can spend 1 sorcery point to gain resistance to that damage type for 1 hour.</p>
+		</description>
+		<sheet>
+			<description>When you cast a spell that deals {{dragon ancestor damage type}} damage, add {{charisma:modifier}} to one damage roll of that spell. At the same time, you can spend 1 sorcery point to gain {{dragon ancestor damage type}} resistance for 1 hour.</description>
+		</sheet>
+	</element>
+	<element name="Dragon Wings" type="Archetype Feature" source="Player’s Handbook" id="ID_WOTC_PHB_ARCHETYPE_FEATURE_DRAGON_WINGS">
+		<requirements>!ID_INTERNAL_FEATURE_REPLACEMENT_SORCERER_DRACONIC_DRAGON_WINGS</requirements>
+		<supports>Draconic Bloodline</supports>
+		<description>
+			<p>At 14th level, you gain the ability to sprout a pair of dragon wings from your back, gaining a flying speed equal to your current speed. You can create these wings as a bonus action on your turn. They last until you dismiss them as a bonus action on your turn.</p>
+			<p class="indent">You can’t manifest your wings while wearing armor unless the armor is made to accommodate them, and clothing not made to accommodate your wings might be destroyed when you manifest them.</p>
+		</description>
+		<sheet action="Bonus Action">
+			<description>Sprout a pair of dragon wings from your back, gaining a {{speed}} ft. flying speed. They last until you dismiss them as a bonus action on your turn.</description>
+		</sheet>
+	</element>
+	<element name="Draconic Presence" type="Archetype Feature" source="Player’s Handbook" id="ID_WOTC_PHB_ARCHETYPE_FEATURE_DRACONIC_PRESENCE">
+		<requirements>!ID_INTERNAL_FEATURE_REPLACEMENT_SORCERER_DRACONIC_DRACONIC_PRESENCE</requirements>
+		<supports>Draconic Bloodline</supports>
+		<description>
+			<p>Beginning at 18th level, you can channel the dread presence of your dragon ancestor, causing those around you to become awestruck or frightened. As an action, you can spend 5 sorcery points to draw on this power and exude an aura of awe or fear (your choice) to a distance of 60 feet. For 1 minute or until you lose your concentration (as if you were casting a concentration spell), each hostile creature that starts its turn in this aura must succeed on a Wisdom saving throw or be charmed (if you chose awe) or frightened (if you chose fear) until the aura ends. A creature that succeeds on this saving throw is immune to your aura for 24 hours.</p>
+		</description>
+		<sheet action="Action">
+			<description>You can spend 5 sorcery points to draw on this power and exude an aura of awe or fear to a distance of 60 feet. For 1 minute or until you lose your concentration, each hostile creature that starts its turn in this aura must succeed on a Wisdom saving throw or be charmed or frightened until the aura ends. A creature that succeeds on this saving throw is immune to your aura for 24 hours.</description>
+		</sheet>
+	</element>
+	<element name="Black Dragon" type="Archetype Feature" source="Player’s Handbook" id="ID_WOTC_PHB_ARCHETYPE_FEATURE_DRAGON_ANCESTOR_BLACK">
+		<supports>Dragon Ancestor</supports>
+		<description>
+			<p>You choose the black dragon as your ancestor. The acid damage type is used by features you gain later.</p>
+		</description>
+		<sheet>
+			<description>The black dragon as your ancestor.</description>
+		</sheet>
+		<rules>
+			<!-- <stat inline="true" name="dragon ancestor" value="Black Dragon" /> -->
+			<stat inline="true" name="dragon ancestor damage type" value="Acid" />
+		</rules>
+	</element>
+	<element name="Blue Dragon" type="Archetype Feature" source="Player’s Handbook" id="ID_WOTC_PHB_ARCHETYPE_FEATURE_DRAGON_ANCESTOR_BLUE">
+		<supports>Dragon Ancestor</supports>
+		<description>
+			<p>You choose the blue dragon as your ancestor. The lightning damage type is used by features you gain later.</p>
+		</description>
+		<sheet>
+			<description>The blue dragon as your ancestor.</description>
+		</sheet>
+		<rules>
+			<!-- <stat inline="true" name="dragon ancestor" value="Blue Dragon" /> -->
+			<stat inline="true" name="dragon ancestor damage type" value="Lightning" />
+		</rules>
+	</element>
+	<element name="Brass Dragon" type="Archetype Feature" source="Player’s Handbook" id="ID_WOTC_PHB_ARCHETYPE_FEATURE_DRAGON_ANCESTOR_BRASS">
+		<supports>Dragon Ancestor</supports>
+		<description>
+			<p>You choose the brass dragon as your ancestor. The fire damage type is used by features you gain later.</p>
+		</description>
+		<sheet>
+			<description>The brass dragon as your ancestor.</description>
+		</sheet>
+		<rules>
+			<!-- <stat inline="true" name="dragon ancestor" value="Brass Dragon" /> -->
+			<stat inline="true" name="dragon ancestor damage type" value="Fire" />
+		</rules>
+	</element>
+	<element name="Bronze Dragon" type="Archetype Feature" source="Player’s Handbook" id="ID_WOTC_PHB_ARCHETYPE_FEATURE_DRAGON_ANCESTOR_BRONZE">
+		<supports>Dragon Ancestor</supports>
+		<description>
+			<p>You choose the bronze dragon as your ancestor. The lightning damage type is used by features you gain later.</p>
+		</description>
+		<sheet>
+			<description>The bronze dragon as your ancestor.</description>
+		</sheet>
+		<rules>
+			<!-- <stat inline="true" name="dragon ancestor" value="Bronze Dragon" /> -->
+			<stat inline="true" name="dragon ancestor damage type" value="Lightning" />
+		</rules>
+	</element>
+	<element name="Copper Dragon" type="Archetype Feature" source="Player’s Handbook" id="ID_WOTC_PHB_ARCHETYPE_FEATURE_DRAGON_ANCESTOR_COPPER">
+		<supports>Dragon Ancestor</supports>
+		<description>
+			<p>You choose the copper dragon as your ancestor. The acid damage type is used by features you gain later.</p>
+		</description>
+		<sheet>
+			<description>The copper dragon as your ancestor.</description>
+		</sheet>
+		<rules>
+			<!-- <stat inline="true" name="dragon ancestor" value="Copper Dragon" /> -->
+			<stat inline="true" name="dragon ancestor damage type" value="Acid" />
+		</rules>
+	</element>
+	<element name="Gold Dragon" type="Archetype Feature" source="Player’s Handbook" id="ID_WOTC_PHB_ARCHETYPE_FEATURE_DRAGON_ANCESTOR_GOLD">
+		<supports>Dragon Ancestor</supports>
+		<description>
+			<p>You choose the gold dragon as your ancestor. The fire damage type is used by features you gain later.</p>
+		</description>
+		<sheet>
+			<description>The gold dragon as your ancestor.</description>
+		</sheet>
+		<rules>
+			<!-- <stat inline="true" name="dragon ancestor" value="Gold Dragon" /> -->
+			<stat inline="true" name="dragon ancestor damage type" value="Fire" />
+		</rules>
+	</element>
+	<element name="Green Dragon" type="Archetype Feature" source="Player’s Handbook" id="ID_WOTC_PHB_ARCHETYPE_FEATURE_DRAGON_ANCESTOR_GREEN">
+		<supports>Dragon Ancestor</supports>
+		<description>
+			<p>You choose the green dragon as your ancestor. The poison damage type is used by features you gain later.</p>
+		</description>
+		<sheet>
+			<description>The green dragon as your ancestor.</description>
+		</sheet>
+		<rules>
+			<!-- <stat inline="true" name="dragon ancestor" value="Green Dragon" /> -->
+			<stat inline="true" name="dragon ancestor damage type" value="Poison" />
+		</rules>
+	</element>
+	<element name="Red Dragon" type="Archetype Feature" source="Player’s Handbook" id="ID_WOTC_PHB_ARCHETYPE_FEATURE_DRAGON_ANCESTOR_RED">
+		<supports>Dragon Ancestor</supports>
+		<description>
+			<p>You choose the red dragon as your ancestor. The fire damage type is used by features you gain later.</p>
+		</description>
+		<sheet>
+			<description>The red dragon as your ancestor.</description>
+		</sheet>
+		<rules>
+			<!-- <stat inline="true" name="dragon ancestor" value="Red Dragon" /> -->
+			<stat inline="true" name="dragon ancestor damage type" value="Fire" />
+		</rules>
+	</element>
+	<element name="Silver Dragon" type="Archetype Feature" source="Player’s Handbook" id="ID_WOTC_PHB_ARCHETYPE_FEATURE_DRAGON_ANCESTOR_SILVER">
+		<supports>Dragon Ancestor</supports>
+		<description>
+			<p>You choose the silver dragon as your ancestor. The cold damage type is used by features you gain later.</p>
+		</description>
+		<sheet>
+			<description>The silver dragon as your ancestor.</description>
+		</sheet>
+		<rules>
+			<!-- <stat inline="true" name="dragon ancestor" value="Silver Dragon" /> -->
+			<stat inline="true" name="dragon ancestor damage type" value="Cold" />
+		</rules>
+	</element>
+	<element name="White Dragon" type="Archetype Feature" source="Player’s Handbook" id="ID_WOTC_PHB_ARCHETYPE_FEATURE_DRAGON_ANCESTOR_WHITE">
+		<supports>Dragon Ancestor</supports>
+		<description>
+			<p>You choose the white dragon as your ancestor. The cold damage type is used by features you gain later.</p>
+		</description>
+		<sheet>
+			<description>The white dragon as your ancestor.</description>
+		</sheet>
+		<rules>
+			<!-- <stat inline="true" name="dragon ancestor" value="White Dragon" /> -->
+			<stat inline="true" name="dragon ancestor damage type" value="Cold" />
+		</rules>
+	</element>
+	
+	<!--Feature Replacement Grants-->
+	<element name="Dragon Ancestor Feature Replacement" type="Grants" source="Internal" id="ID_INTERNAL_FEATURE_REPLACEMENT_SORCERER_DRACONIC_DRAGON_ANCESTOR" />
+	<element name="Draconic Resilience Feature Replacement" type="Grants" source="Internal" id="ID_INTERNAL_FEATURE_REPLACEMENT_SORCERER_DRACONIC_DRACONIC_RESILIENCE" />
+	<element name="Elemental Affinity Feature Replacement" type="Grants" source="Internal" id="ID_INTERNAL_FEATURE_REPLACEMENT_SORCERER_DRACONIC_ELEMENTAL_AFFINITY" />
+	<element name="Dragon Wings Feature Replacement" type="Grants" source="Internal" id="ID_INTERNAL_FEATURE_REPLACEMENT_SORCERER_DRACONIC_DRAGON_WINGS" />
+	<element name="Draconic Presence Feature Replacement" type="Grants" source="Internal" id="ID_INTERNAL_FEATURE_REPLACEMENT_SORCERER_DRACONIC_DRACONIC_PRESENCE" />
+</elements>

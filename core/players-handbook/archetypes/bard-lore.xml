@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<elements>
+	<info>
+		<update version="0.0.1">
+			<file name="bard-lore.xml" url="https://raw.githubusercontent.com/AuroraLegacy/elements/master/core/players-handbook/archetypes/bard-lore.xml" />
+		</update>
+	</info>
+
+	<element name="College of Lore" type="Archetype" source="Player’s Handbook" id="ID_WOTC_PHB_ARCHETYPE_COLLEGE_OF_LORE">
+		<supports>Bard College</supports>
+		<description>
+			<p>Bards of the College of Lore know something about most things, collecting bits of knowledge from sources as diverse as scholarly tomes and peasant tales. Whether singing folk ballads in taverns or elaborate compositions in royal courts, these bards use their gifts to hold audiences spellbound. When the applause dies down, the audience members might find themselves questioning everything they held to be true, from their faith in the priesthood of the local temple to their loyalty to the king.</p>
+			<p class="indent">The loyalty of these bards lies in the pursuit of beauty and truth, not in fealty to a monarch or following the tenets of a deity. A noble who keeps such a bard as a herald or advisor knows that the bard would rather be honest than politic.</p>
+			<p class="indent">The college’s members gather in libraries and sometimes in actual colleges, complete with classrooms and dormitories, to share their lore with one another. They also meet at festivals or affairs of state, where they can expose corruption, unravel lies, and poke fun at self-important figures of authority.</p>
+			<div element="ID_WOTC_PHB_ARCHETYPE_FEATURE_BARD_LORE_BONUS_PROFICIENCIES" />
+			<div element="ID_WOTC_PHB_ARCHETYPE_FEATURE_BARD_LORE_CUTTING_WORDS" />
+			<div element="ID_WOTC_PHB_ARCHETYPE_FEATURE_BARD_LORE_ADDITIONAL_MAGICAL_SECRETS" />
+			<div element="ID_WOTC_PHB_ARCHETYPE_FEATURE_BARD_LORE_PEERLESS_SKILL" />
+		</description>
+		<sheet display="false">
+			<description>Bards of the College of Lore know something about most things, collecting bits of knowledge from sources as diverse as scholarly tomes and peasant tales.</description>
+		</sheet>
+		<rules>
+			<grant type="Archetype Feature" id="ID_WOTC_PHB_ARCHETYPE_FEATURE_BARD_LORE_BONUS_PROFICIENCIES" level="3" />
+			<grant type="Archetype Feature" id="ID_WOTC_PHB_ARCHETYPE_FEATURE_BARD_LORE_CUTTING_WORDS" level="3" />
+			<grant type="Archetype Feature" id="ID_WOTC_PHB_ARCHETYPE_FEATURE_BARD_LORE_ADDITIONAL_MAGICAL_SECRETS" level="6" />
+			<grant type="Archetype Feature" id="ID_WOTC_PHB_ARCHETYPE_FEATURE_BARD_LORE_PEERLESS_SKILL" level="14" />
+		</rules>
+	</element>
+	<element name="Bonus Proficiencies" type="Archetype Feature" source="Player’s Handbook" id="ID_WOTC_PHB_ARCHETYPE_FEATURE_BARD_LORE_BONUS_PROFICIENCIES">
+		<requirements>!ID_INTERNAL_FEATURE_REPLACEMENT_BARD_LORE_BONUS_PROFICIENCIES</requirements>
+		<description>
+			<p>When you join the College of Lore at 3rd level, you gain proficiency with three skills of your choice.</p>
+		</description>
+		<sheet display="false" />
+		<rules>
+			<select type="Proficiency" name="Bonus Proficiencies (Bard)" supports="Skill,Bard" number="3" level="3"/>
+		</rules>
+	</element>
+	<element name="Cutting Words" type="Archetype Feature" source="Player’s Handbook" id="ID_WOTC_PHB_ARCHETYPE_FEATURE_BARD_LORE_CUTTING_WORDS">
+		<requirements>!ID_INTERNAL_FEATURE_REPLACEMENT_BARD_LORE_CUTTING_WORDS</requirements>
+		<description>
+			<p>Also at 3rd level, you learn how to use your wit to distract, confuse, and otherwise sap the confidence and competence of others. When a creature that you can see within 60 feet of you makes an attack roll, an ability check, or a damage roll, you can use your reaction to expend one of your uses of Bardic Inspiration, rolling a Bardic Inspiration die and subtracting the number rolled from the creature’s roll. You can choose to use this feature after the creature makes its roll, but before the GM determines whether the attack roll or ability check succeeds or fails, or before the creature deals its damage. The creature is immune if it can’t hear you or if it’s immune to being charmed.</p>
+		</description>
+		<sheet action="Reaction">
+			<description>When a creature that you can see within 60 feet of you makes an attack roll, an ability check, or a damage roll, you can use your reaction to expend one of your uses of Bardic Inspiration, rolling a Bardic Inspiration die and subtracting the number rolled from the creature’s roll. You can choose to use this feature after the creature makes its roll, but before the GM determines whether the attack roll or ability check succeeds or fails, or before the creature deals its damage. The creature is immune if it can’t hear you or if it’s immune to being charmed.</description>
+		</sheet>
+	</element>
+	<element name="Additional Magical Secrets" type="Archetype Feature" source="Player’s Handbook" id="ID_WOTC_PHB_ARCHETYPE_FEATURE_BARD_LORE_ADDITIONAL_MAGICAL_SECRETS">
+		<requirements>!ID_INTERNAL_FEATURE_REPLACEMENT_BARD_LORE_ADDITIONAL_MAGICAL_SECRETS</requirements>
+		<description>
+			<p>At 6th level, you learn two spells of your choice from any class. A spell you choose must be of a level you can cast, as shown on the Bard table, or a cantrip. The chosen spells count as bard spells for you but don’t count against the number of bard spells you know.</p>
+		</description>
+		<sheet display="false" />
+		<rules>
+			<select type="Spell" name="Additional Magic Secrets" supports="(0)||($(spellcasting:slots))" number="2" level="6" spellcasting="Bard"/>
+		</rules>
+	</element>
+	<element name="Peerless Skill" type="Archetype Feature" source="Player’s Handbook" id="ID_WOTC_PHB_ARCHETYPE_FEATURE_BARD_LORE_PEERLESS_SKILL">
+		<requirements>!ID_INTERNAL_FEATURE_REPLACEMENT_BARD_LORE_PEERLESS_SKILL</requirements>
+		<description>
+			<p>Starting at 14th level, when you make an ability check, you can expend one use of Bardic Inspiration. Roll a Bardic Inspiration die and add the number rolled to your ability check. You can choose to do so after you roll the die for the ability check, but before the GM tells you whether you succeed or fail.</p>
+		</description>
+		<sheet>
+			<description>When you make an ability check, you can expend one use of Bardic Inspiration. Roll a Bardic Inspiration die and add the number rolled to your ability check. You can choose to do so after you roll the die for the ability check, but before the GM tells you whether you succeed or fail.</description>
+		</sheet>
+	</element>
+
+	<!--Feature Replacement Grants-->
+	<element name="Bonus Proficiencies Feature Replacement" type="Grants" source="Internal" id="ID_INTERNAL_FEATURE_REPLACEMENT_BARD_LORE_BONUS_PROFICIENCIES" />
+	<element name="Cutting Words Feature Replacement" type="Grants" source="Internal" id="ID_INTERNAL_FEATURE_REPLACEMENT_BARD_LORE_CUTTING_WORDS" />
+	<element name="Additional Magical Secrets Feature Replacement" type="Grants" source="Internal" id="ID_INTERNAL_FEATURE_REPLACEMENT_BARD_LORE_ADDITIONAL_MAGICAL_SECRETS" />
+	<element name="Peerless Skill Feature Replacement" type="Grants" source="Internal" id="ID_INTERNAL_FEATURE_REPLACEMENT_BARD_LORE_PEERLESS_SKILL" />
+</elements>
