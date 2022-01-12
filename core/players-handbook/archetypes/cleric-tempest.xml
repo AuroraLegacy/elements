@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<elements>
+	<info>
+		<update version="0.0.1">
+			<file name="cleric-tempest.xml" url="https://raw.githubusercontent.com/AuroraLegacy/elements/master/core/players-handbook/archetypes/cleric-tempest.xml" />
+		</update>
+	</info>
+
+	<element name="Tempest Domain" type="Archetype" source="Player’s Handbook" id="ID_WOTC_PHB_ARCHETYPE_CLERIC_TEMPEST_DOMAIN">
+		<supports>Divine Domain</supports>
+		<description>
+			<p>Gods whose portfolios include the Tempest domain - including Talos, Umberlee, Kord, Zeboim, the Devourer, Zeus, and Thor—govern storms, sea, and sky. They include gods of lightning and thunder, gods of earthquakes, some fire gods, and certain gods of violence, physical strength, and courage. In some pantheons, a god of this domain rules over other deities and is known for swift justice delivered by thunderbolts. In the pantheons of seafaring people, gods of this domain are ocean deities and the patrons of sailors. Tempest gods send their clerics to inspire fear in the common folk, either to keep those folk on the path of righteousness or to encourage them to offer sacrifices of propitiation to ward off divine wrath.</p>
+			<h5 class="caption">TEMPEST DOMAIN SPELLS</h5>
+			<table>
+				<thead>
+					<tr><td>Cleric Level</td><td>Spells</td></tr>
+				</thead>
+				<tr><td>1st</td><td><em>fog cloud, thunderwave</em></td></tr>
+				<tr><td>3rd</td><td><em>gust of wind, shatter</em></td></tr>
+				<tr><td>5th</td><td><em>call lightning, sleet storm</em></td></tr>
+				<tr><td>7th</td><td><em>control water, ice storm</em></td></tr>
+				<tr><td>9th</td><td><em>destructive wave, insect plague</em></td></tr>
+			</table>
+			<div element="ID_WOTC_PHB_ARCHETYPE_FEATURE_TEMPEST_DOMAIN_BONUS_PROFICIENCIES" />
+			<div element="ID_WOTC_PHB_ARCHETYPE_FEATURE_TEMPEST_DOMAIN_WRATH_OF_THE_STORM" />
+			<div element="ID_WOTC_PHB_ARCHETYPE_FEATURE_TEMPEST_DOMAIN_CD_DESTRUCTIVE_WRATH" />
+			<div element="ID_WOTC_PHB_ARCHETYPE_FEATURE_TEMPEST_DOMAIN_THUNDERBOLT_STRIKE" />
+			<div element="ID_WOTC_PHB_ARCHETYPE_FEATURE_TEMPEST_DOMAIN_DIVINE_STRIKE" />
+			<div element="ID_WOTC_PHB_ARCHETYPE_FEATURE_TEMPEST_DOMAIN_STORMBORN" />
+		</description>
+		<sheet display="false">
+			<description>Gods whose portfolios include the Tempest domain govern storms, sea, and sky.</description>
+		</sheet>
+		<rules>
+			<grant type="Spell" id="ID_PHB_SPELL_FOG_CLOUD" level="1" spellcasting="Cleric" prepared="true" />
+			<grant type="Spell" id="ID_PHB_SPELL_THUNDERWAVE" level="1" spellcasting="Cleric" prepared="true" />
+			<grant type="Spell" id="ID_PHB_SPELL_GUST_OF_WIND" level="3" spellcasting="Cleric" prepared="true" />
+			<grant type="Spell" id="ID_PHB_SPELL_SHATTER" level="3" spellcasting="Cleric" prepared="true" />
+			<grant type="Spell" id="ID_PHB_SPELL_CALL_LIGHTNING" level="5" spellcasting="Cleric" prepared="true" />
+			<grant type="Spell" id="ID_PHB_SPELL_SLEET_STORM" level="5" spellcasting="Cleric" prepared="true" />
+			<grant type="Spell" id="ID_PHB_SPELL_CONTROL_WATER" level="7" spellcasting="Cleric" prepared="true" />
+			<grant type="Spell" id="ID_PHB_SPELL_ICE_STORM" level="7" spellcasting="Cleric" prepared="true" />
+			<grant type="Spell" id="ID_PHB_SPELL_DESTRUCTIVE_WAVE" level="9" spellcasting="Cleric" prepared="true" />
+			<grant type="Spell" id="ID_PHB_SPELL_INSECT_PLAGUE" level="9" spellcasting="Cleric" prepared="true" />
+			<grant type="Archetype Feature" id="ID_WOTC_PHB_ARCHETYPE_FEATURE_TEMPEST_DOMAIN_BONUS_PROFICIENCIES" level="1"/>
+			<grant type="Archetype Feature" id="ID_WOTC_PHB_ARCHETYPE_FEATURE_TEMPEST_DOMAIN_WRATH_OF_THE_STORM" level="1"/>
+			<grant type="Archetype Feature" id="ID_WOTC_PHB_ARCHETYPE_FEATURE_TEMPEST_DOMAIN_CD_DESTRUCTIVE_WRATH" level="2"/>
+			<grant type="Archetype Feature" id="ID_WOTC_PHB_ARCHETYPE_FEATURE_TEMPEST_DOMAIN_THUNDERBOLT_STRIKE" level="6"/>
+			<grant type="Archetype Feature" id="ID_WOTC_PHB_ARCHETYPE_FEATURE_TEMPEST_DOMAIN_DIVINE_STRIKE" level="8"/>
+			<grant type="Archetype Feature" id="ID_WOTC_PHB_ARCHETYPE_FEATURE_TEMPEST_DOMAIN_STORMBORN" level="17"/>
+		</rules>
+	</element>
+	<element name="Bonus Proficiencies" type="Archetype Feature" source="Player’s Handbook" id="ID_WOTC_PHB_ARCHETYPE_FEATURE_TEMPEST_DOMAIN_BONUS_PROFICIENCIES">
+		<requirements>!ID_INTERNAL_FEATURE_REPLACEMENT_CLERIC_TEMPEST_DOMAIN_BONUS_PROFICIENCIES</requirements>
+		<description>
+			<p>At 1st level, you gain proficiency with martial weapons and heavy armor.</p>
+		</description>
+		<sheet display="false">
+			<description>You gain proficiency with martial weapons and heavy armor.</description>
+		</sheet>
+		<rules>
+			<grant type="Proficiency" id="ID_PROFICIENCY_WEAPON_PROFICIENCY_MARTIAL_WEAPONS" />
+			<grant type="Proficiency" id="ID_PROFICIENCY_ARMOR_PROFICIENCY_HEAVY_ARMOR" />
+		</rules>
+	</element>
+	<element name="Wrath of the Storm" type="Archetype Feature" source="Player’s Handbook" id="ID_WOTC_PHB_ARCHETYPE_FEATURE_TEMPEST_DOMAIN_WRATH_OF_THE_STORM">
+		<requirements>!ID_INTERNAL_FEATURE_REPLACEMENT_CLERIC_TEMPEST_DOMAIN_WRATH_OF_THE_STORM</requirements>
+		<description>
+			<p>Also at 1st level, you can thunderously rebuke attackers. When a creature within 5 feet of you that you can see hits you with an attack, you can use your reaction to cause the creature to make a Dexterity saving throw. The creature takes 2d8 lightning or thunder damage (your choice) on a failed saving throw, and half as much damage on a successful one.</p>
+			<p class="indent">You can use this feature a number of times equal to your Wisdom modifier (a minimum of once). You regain all expended uses when you finish a long rest.</p>
+		</description>
+		<sheet action="Reaction" usage="{{wrath of the storm:count}}/Long Rest.">
+			<description>When a creature within 5 feet of you that you can see hits you with an attack, you can use your reaction to cause the creature to make a Dexterity saving throw. The creature takes 2d8 lightning or thunder damage on a failed saving throw, and half as much damage on a successful one.</description>
+		</sheet>
+		<rules>
+			<stat name="wrath of the storm:count" value="1" bonus="wrath of the storm"/>
+			<stat name="wrath of the storm:count" value="wisdom:modifier" bonus="wrath of the storm"/>
+		</rules>
+	</element>
+	<element name="Channel Divinity: Destructive Wrath" type="Archetype Feature" source="Player’s Handbook" id="ID_WOTC_PHB_ARCHETYPE_FEATURE_TEMPEST_DOMAIN_CD_DESTRUCTIVE_WRATH">
+		<requirements>!ID_INTERNAL_FEATURE_REPLACEMENT_CLERIC_TEMPEST_DOMAIN_CD_DESTRUCTIVE_WRATH</requirements>
+		<description>
+			<p>Starting at 2nd level, you can use your Channel Divinity to wield the power of the storm with unchecked ferocity.</p>
+			<p class="indent">When you roll lightning or thunder damage, you can use your Channel Divinity to deal maximum damage, instead of rolling.</p>
+		</description>
+		<sheet alt="Destructive Wrath" action="Action" usage="Channel Divinity">
+			<description>When you roll lightning or thunder damage, you can use your Channel Divinity to deal maximum damage, instead of rolling.</description>
+		</sheet>
+	</element>
+	<element name="Thunderbolt Strike" type="Archetype Feature" source="Player’s Handbook" id="ID_WOTC_PHB_ARCHETYPE_FEATURE_TEMPEST_DOMAIN_THUNDERBOLT_STRIKE">
+		<requirements>!ID_INTERNAL_FEATURE_REPLACEMENT_CLERIC_TEMPEST_DOMAIN_THUNDERBOLT_STRIKE</requirements>
+		<description>
+			<p>At 6th level, when you deal lightning damage to a Large or smaller creature, you can also push it up to 10 feet away from you.</p>
+		</description>
+		<sheet>
+			<description>When you deal lightning damage to a Large or smaller creature, you can also push it up to 10 feet away from you.</description>
+		</sheet>
+	</element>
+	<element name="Divine Strike" type="Archetype Feature" source="Player’s Handbook" id="ID_WOTC_PHB_ARCHETYPE_FEATURE_TEMPEST_DOMAIN_DIVINE_STRIKE">
+		<requirements>!ID_INTERNAL_FEATURE_REPLACEMENT_CLERIC_DIVINE_STRIKE_OR_POTENT_SPELLCASTING</requirements>
+		<description>
+			<p>At 8th level, you gain the ability to infuse your weapon strikes with divine energy. Once on each of your turns when you hit a creature with a weapon attack, you can cause the attack to deal an extra 1d8 thunder damage to the target. When you reach 14th level, the extra damage increases to 2d8.</p>
+		</description>
+		<sheet>			
+			<description>Once on each of your turn +1d8 thunder damage with a weapon attack.</description>
+			<description level="14">Once on each of your turn +2d8 thunder damage with a weapon attack.</description>
+		</sheet>
+	</element>
+	<element name="Stormborn" type="Archetype Feature" source="Player’s Handbook" id="ID_WOTC_PHB_ARCHETYPE_FEATURE_TEMPEST_DOMAIN_STORMBORN">
+		<requirements>!ID_INTERNAL_FEATURE_REPLACEMENT_CLERIC_TEMPEST_DOMAIN_STORMBORN</requirements>
+		<description>
+			<p>At 17th level, you have a flying speed equal to your current walking speed whenever you are not underground or indoors.</p>
+		</description>
+		<sheet>
+			<description>You have a flying speed of {{speed}} ft. whenever you are not underground or indoors.</description>
+		</sheet>
+	</element>
+	
+	<!--Feature Replacement Grants-->
+	<element name="Bonus Proficiencies Feature Replacement" type="Grants" source="Internal" id="ID_INTERNAL_FEATURE_REPLACEMENT_CLERIC_TEMPEST_DOMAIN_BONUS_PROFICIENCIES" />
+	<element name="Wrath of the Storm Feature Replacement" type="Grants" source="Internal" id="ID_INTERNAL_FEATURE_REPLACEMENT_CLERIC_TEMPEST_DOMAIN_WRATH_OF_THE_STORM" />
+	<element name="Channel Divinity: Destructive Wrath Feature Replacement" type="Grants" source="Internal" id="ID_INTERNAL_FEATURE_REPLACEMENT_CLERIC_TEMPEST_DOMAIN_CD_DESTRUCTIVE_WRATH" />
+	<element name="Thunderbolt Strike Feature Replacement" type="Grants" source="Internal" id="ID_INTERNAL_FEATURE_REPLACEMENT_CLERIC_TEMPEST_DOMAIN_THUNDERBOLT_STRIKE" />
+	<element name="Stormborn Feature Replacement" type="Grants" source="Internal" id="ID_INTERNAL_FEATURE_REPLACEMENT_CLERIC_TEMPEST_DOMAIN_STORMBORN" />
+</elements>

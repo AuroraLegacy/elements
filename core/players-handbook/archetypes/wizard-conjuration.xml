@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<elements>
+	<info>
+		<update version="0.0.1">
+			<file name="wizard-conjuration.xml" url="https://raw.githubusercontent.com/AuroraLegacy/elements/master/core/players-handbook/archetypes/wizard-conjuration.xml" />
+		</update>
+	</info>
+
+	<element name="School of Conjuration" type="Archetype" source="Player’s Handbook" id="ID_WOTC_PHB_ARCHETYPE_WIZARD_SCHOOL_OF_CONJURATION">
+		<supports>Arcane Tradition</supports>
+		<description>
+			<p>As a conjurer, you favor spells that produce objects and creatures out of thin air. You can conjure billowing clouds of killing fog or summon creatures from elsewhere to fight on your behalf. As your mastery grows, you learn spells of transportation and can teleport yourself across vast distances, even to other planes of existence, in an instant.</p>
+			<div element="ID_WOTC_PHB_ARCHETYPE_FEATURE_WIZARD_CONJURATION_CONJURATION_SAVANT" />
+			<div element="ID_WOTC_PHB_ARCHETYPE_FEATURE_WIZARD_CONJURATION_MINOR_CONJURATION" />
+			<div element="ID_WOTC_PHB_ARCHETYPE_FEATURE_WIZARD_CONJURATION_BENIGN_TRANSPOSITION" />
+			<div element="ID_WOTC_PHB_ARCHETYPE_FEATURE_WIZARD_CONJURATION_FOCUSED_CONJURATION" />
+			<div element="ID_WOTC_PHB_ARCHETYPE_FEATURE_WIZARD_CONJURATION_DURABLE_SUMMONS" />
+		</description>
+		<sheet display="false">
+			<description>As a conjurer, you favor spells that produce objects and creatures out of thin air.</description>
+		</sheet>
+		<rules>
+			<grant type="Archetype Feature" id="ID_WOTC_PHB_ARCHETYPE_FEATURE_WIZARD_CONJURATION_CONJURATION_SAVANT" level="2"/>
+			<grant type="Archetype Feature" id="ID_WOTC_PHB_ARCHETYPE_FEATURE_WIZARD_CONJURATION_MINOR_CONJURATION" level="2"/>
+			<grant type="Archetype Feature" id="ID_WOTC_PHB_ARCHETYPE_FEATURE_WIZARD_CONJURATION_BENIGN_TRANSPOSITION" level="6"/>
+			<grant type="Archetype Feature" id="ID_WOTC_PHB_ARCHETYPE_FEATURE_WIZARD_CONJURATION_FOCUSED_CONJURATION" level="10"/>
+			<grant type="Archetype Feature" id="ID_WOTC_PHB_ARCHETYPE_FEATURE_WIZARD_CONJURATION_DURABLE_SUMMONS" level="14"/>
+		</rules>
+	</element>
+	<element name="Conjuration Savant" type="Archetype Feature" source="Player’s Handbook" id="ID_WOTC_PHB_ARCHETYPE_FEATURE_WIZARD_CONJURATION_CONJURATION_SAVANT">
+		<requirements>!ID_INTERNAL_FEATURE_REPLACEMENT_WIZARD_CONJURATION_CONJURATION_SAVANT</requirements>
+		<description>
+			<p>Beginning when you select this school at 2nd level, the gold and time you must spend to copy a conjuration spell into your spellbook is halved.</p>
+		</description>
+		<sheet>
+			<description>The gold and time you must spend to copy a conjuration spell into your spellbook is halved.</description>
+		</sheet>
+	</element>
+	<element name="Minor Conjuration" type="Archetype Feature" source="Player’s Handbook" id="ID_WOTC_PHB_ARCHETYPE_FEATURE_WIZARD_CONJURATION_MINOR_CONJURATION">
+		<requirements>!ID_INTERNAL_FEATURE_REPLACEMENT_WIZARD_CONJURATION_MINOR_CONJURATION</requirements>
+		<description>
+			<p>Starting at 2nd level when you select this school, you can use your action to conjure up an inanimate object in your hand or on the ground in an unoccupied space that you can see within 10 feet of you. This object can be no larger than 3 feet on a side and weigh no more than 10 pounds, and its form must be that of a nonmagical object that you have seen. The object is visibly magical, radiating dim light out to 5 feet.</p>
+			<p class="indent">The object disappears after 1 hour, when you use this feature again, or if it takes or deals any damage.</p>
+		</description>
+		<sheet action="Action">
+			<description>You can conjure up an inanimate object in your hand or on the ground in an unoccupied space that you can see within 10 feet of you. This object can be no larger than 3 feet on a side and weigh no more than 10 pounds, and its form must be that of a nonmagical object that you have seen. The object is visibly magical, radiating dim light out to 5 feet. The object disappears after 1 hour, when you use this feature again, or if it takes or deals any damage.</description>
+		</sheet>
+	</element>
+	<element name="Benign Transposition" type="Archetype Feature" source="Player’s Handbook" id="ID_WOTC_PHB_ARCHETYPE_FEATURE_WIZARD_CONJURATION_BENIGN_TRANSPOSITION">
+		<requirements>!ID_INTERNAL_FEATURE_REPLACEMENT_WIZARD_CONJURATION_BENIGN_TRANSPOSITION</requirements>
+		<description>
+			<p>Starting at 6th level, you can use your action to teleport up to 30 feet to an unoccupied space that you can see. Alternatively, you can choose a space within range that is occupied by a Small or Medium creature. If that creature is willing, you both teleport, swapping places.</p>
+			<p class="indent">Once you use this feature, you can’t use it again until you finish a long rest or you cast a conjuration spell of 1st level or higher.</p>
+		</description>
+		<sheet action="Action" usage="1/Long Rest">
+			<description>Teleport up to 30 feet to an unoccupied space that you can see. Alternatively, you can choose a space within range that is occupied by a Small or Medium creature. If that creature is willing, you both teleport, swapping places. Recharges when you cast a conjuration spell of 1st level or higher.</description>
+		</sheet>
+	</element>
+	<element name="Focused Conjuration" type="Archetype Feature" source="Player’s Handbook" id="ID_WOTC_PHB_ARCHETYPE_FEATURE_WIZARD_CONJURATION_FOCUSED_CONJURATION">
+		<requirements>!ID_INTERNAL_FEATURE_REPLACEMENT_WIZARD_CONJURATION_FOCUSED_CONJURATION</requirements>
+		<description>
+			<p>Beginning at 10th level, while you are concentrating on a conjuration spell, your concentration can’t be broken as a result of taking damage.</p>
+		</description>
+		<sheet>
+			<description>While you are concentrating on a conjuration spell, your concentration can’t be broken as a result of taking damage.</description>
+		</sheet>
+	</element>
+	<element name="Durable Summons" type="Archetype Feature" source="Player’s Handbook" id="ID_WOTC_PHB_ARCHETYPE_FEATURE_WIZARD_CONJURATION_DURABLE_SUMMONS">
+		<requirements>!ID_INTERNAL_FEATURE_REPLACEMENT_WIZARD_CONJURATION_DURABLE_SUMMONS</requirements>
+		<description>
+			<p>Starting at 14th level, any creature that you summon or create with a conjuration spell has 30 temporary hit points.</p>
+		</description>
+		<sheet>
+			<description>Any creature that you summon or create with a conjuration spell has 30 temporary hp.</description>
+		</sheet>
+	</element>
+
+	<!--Feature Replacement Grants-->
+	<element name="Conjuration Savant Feature Replacement" type="Grants" source="Internal" id="ID_INTERNAL_FEATURE_REPLACEMENT_WIZARD_CONJURATION_CONJURATION_SAVANT" />
+	<element name="Minor Conjuration Feature Replacement" type="Grants" source="Internal" id="ID_INTERNAL_FEATURE_REPLACEMENT_WIZARD_CONJURATION_MINOR_CONJURATION" />
+	<element name="Benign Transposition Feature Replacement" type="Grants" source="Internal" id="ID_INTERNAL_FEATURE_REPLACEMENT_WIZARD_CONJURATION_BENIGN_TRANSPOSITION" />
+	<element name="Focused Conjuration Feature Replacement" type="Grants" source="Internal" id="ID_INTERNAL_FEATURE_REPLACEMENT_WIZARD_CONJURATION_FOCUSED_CONJURATION" />
+	<element name="Durable Summons Feature Replacement" type="Grants" source="Internal" id="ID_INTERNAL_FEATURE_REPLACEMENT_WIZARD_CONJURATION_DURABLE_SUMMONS" />
+</elements>

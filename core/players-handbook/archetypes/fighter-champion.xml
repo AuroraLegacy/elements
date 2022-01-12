@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<elements>
+	<info>
+		<update version="0.0.1">
+			<file name="fighter-champion.xml" url="https://raw.githubusercontent.com/AuroraLegacy/elements/master/core/players-handbook/archetypes/fighter-champion.xml" />
+		</update>
+	</info>
+
+	<!-- Champion Archetype -->
+	<element name="Champion" type="Archetype" source="Player’s Handbook" id="ID_WOTC_PHB_ARCHETYPE_CHAMPION">
+		<supports>Martial Archetype</supports>
+		<description>
+			<p>The archetypal Champion focuses on the development of raw physical power honed to deadly perfection. Those who model themselves on this archetype combine rigorous training with physical excellence to deal devastating blows.</p>
+			<div element="ID_WOTC_PHB_ARCHETYPE_FEATURE_IMPROVEDCRITICAL"/>
+			<div element="ID_WOTC_PHB_ARCHETYPE_FEATURE_REMARKABLEATHLETE"/>
+			<div element="ID_WOTC_PHB_ARCHETYPE_FEATURE_ADDITIONALFIGHTINGSTYLE"/>
+			<div element="ID_WOTC_PHB_ARCHETYPE_FEATURE_SUPERIORCRITICAL"/>
+			<div element="ID_WOTC_PHB_ARCHETYPE_FEATURE_SURVIVOR"/>
+		</description>
+		<sheet display="false">
+			<description>The archetypal Champion focuses on the development of raw physical power honed to deadly perfection.</description>
+		</sheet>
+		<rules>
+			<grant type="Archetype Feature" id="ID_WOTC_PHB_ARCHETYPE_FEATURE_IMPROVEDCRITICAL" level="3" />
+			<grant type="Archetype Feature" id="ID_WOTC_PHB_ARCHETYPE_FEATURE_REMARKABLEATHLETE" level="7" />
+			<grant type="Archetype Feature" id="ID_WOTC_PHB_ARCHETYPE_FEATURE_ADDITIONALFIGHTINGSTYLE" level="10" />
+			<grant type="Archetype Feature" id="ID_WOTC_PHB_ARCHETYPE_FEATURE_SUPERIORCRITICAL" level="15" />
+			<grant type="Archetype Feature" id="ID_WOTC_PHB_ARCHETYPE_FEATURE_SURVIVOR" level="18" />
+		</rules>
+	</element>
+	<element name="Improved Critical" type="Archetype Feature" source="Player’s Handbook" id="ID_WOTC_PHB_ARCHETYPE_FEATURE_IMPROVEDCRITICAL">
+		<requirements>!ID_INTERNAL_FEATURE_REPLACEMENT_FIGHTER_CHAMPION_IMPROVED_CRITICAL</requirements>
+		<description>
+			<p>Beginning when you choose this archetype at 3rd level, your weapon attacks score a critical hit on a roll of 19 or 20.</p>
+		</description>
+		<sheet>
+			<description>Your weapon attacks score a critical hit on a roll of 19 or 20.</description>
+		</sheet>
+	</element>
+	<element name="Remarkable Athlete" type="Archetype Feature" source="Player’s Handbook" id="ID_WOTC_PHB_ARCHETYPE_FEATURE_REMARKABLEATHLETE">
+		<requirements>!ID_INTERNAL_FEATURE_REPLACEMENT_FIGHTER_CHAMPION_REMARKABLE_ATHLETE</requirements>
+		<description>
+			<p>Starting at 7th level, you can add half your proficiency bonus (round up) to any Strength, Dexterity, or Constitution check you make that doesn’t already use your proficiency bonus.</p>
+			<p class="indent">In addition, when you make a running long jump, the distance you can cover increases by a number of feet equal to your Strength modifier.</p>
+		</description>
+		<sheet>
+			<description>When you make a running long jump, the distance you can cover increases by {{strength:modifier}} feet.</description>
+		</sheet>
+		<rules>
+			<stat name="acrobatics:misc" value="proficiency:half:up" requirements="!ID_PROFICIENCY_SKILL_ACROBATICS" />
+			<stat name="athletics:misc" value="proficiency:half:up" requirements="!ID_PROFICIENCY_SKILL_ATHLETICS" />
+			<stat name="sleight of hand:misc" value="proficiency:half:up" requirements="!ID_PROFICIENCY_SKILL_SLEIGHTOFHAND" />
+			<stat name="stealth:misc" value="proficiency:half:up" requirements="!ID_PROFICIENCY_SKILL_STEALTH" />
+		</rules>
+	</element>
+	<element name="Additional Fighting Style" type="Archetype Feature" source="Player’s Handbook" id="ID_WOTC_PHB_ARCHETYPE_FEATURE_ADDITIONALFIGHTINGSTYLE">
+		<requirements>!ID_INTERNAL_FEATURE_REPLACEMENT_FIGHTER_CHAMPION_ADDITIONAL_FIGHTING_STYLE</requirements>
+		<description>
+			<p>At 10th level, you can choose a second option from the Fighting Style class feature.</p>
+		</description>
+		<sheet>
+			<description>You adopt a second style of fighting as your specialty.</description>
+		</sheet>
+		<rules>
+			<select type="Class Feature" name="Additional Fighting Style" supports="Fighting Style, Fighter" level="10"/>
+		</rules>
+	</element>
+	<element name="Superior Critical" type="Archetype Feature" source="Player’s Handbook" id="ID_WOTC_PHB_ARCHETYPE_FEATURE_SUPERIORCRITICAL">
+		<requirements>!ID_INTERNAL_FEATURE_REPLACEMENT_FIGHTER_CHAMPION_SUPERIOR_CRITICAL</requirements>
+		<description>
+			<p>Starting at 15th level, your weapon attacks score a critical hit on a roll of 18–20.</p>
+		</description>
+		<sheet>
+			<description>Your weapon attacks score a critical hit on a roll of 18–20.</description>
+		</sheet>
+	</element>
+	<element name="Survivor" type="Archetype Feature" source="Player’s Handbook" id="ID_WOTC_PHB_ARCHETYPE_FEATURE_SURVIVOR">
+		<requirements>!ID_INTERNAL_FEATURE_REPLACEMENT_FIGHTER_CHAMPION_SURVIVOR</requirements>
+		<description>
+			<p>At 18th level, you attain the pinnacle of resilience in battle. At the start of each of your turns, you regain hit points equal to 5 + your Constitution modifier if you have no more than half of your hit points left. You don’t gain this benefit if you have 0 hit points.</p>
+		</description>
+		<sheet>
+			<description>At the start of each of your turns, you regain {{survivor:hp}} hp if you have no more than half of your hp left. You don’t gain this benefit if you have 0 hp.</description>
+		</sheet>
+		<rules>
+			<stat name="survivor:hp" value="5" />
+			<stat name="survivor:hp" value="constitution:modifier" />
+		</rules>
+	</element>
+
+	<!--Feature Replacement Grants-->
+	<element name="Improved Critical Feature Replacement" type="Grants" source="Internal" id="ID_INTERNAL_FEATURE_REPLACEMENT_FIGHTER_CHAMPION_IMPROVED_CRITICAL" />
+	<element name="Remarkable Athlete Feature Replacement" type="Grants" source="Internal" id="ID_INTERNAL_FEATURE_REPLACEMENT_FIGHTER_CHAMPION_REMARKABLE_ATHLETE" />
+	<element name="Additional Fighting Style Feature Replacement" type="Grants" source="Internal" id="ID_INTERNAL_FEATURE_REPLACEMENT_FIGHTER_CHAMPION_ADDITIONAL_FIGHTING_STYLE" />
+	<element name="Superior Critical Feature Replacement" type="Grants" source="Internal" id="ID_INTERNAL_FEATURE_REPLACEMENT_FIGHTER_CHAMPION_SUPERIOR_CRITICAL" />
+	<element name="Survivor Feature Replacement" type="Grants" source="Internal" id="ID_INTERNAL_FEATURE_REPLACEMENT_FIGHTER_CHAMPION_SURVIVOR" />
+</elements>
