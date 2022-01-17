@@ -4,7 +4,7 @@
 		<name>Feats</name>
 		<description>The Feats from Tasha’s Cauldron of Everything</description>
 		<author url="http://dnd.wizards.com/products/tabletop-games/rpg-products/tashas-cauldron-everything">Tasha’s Cauldron of Everything</author>
-		<update version="0.0.5">
+		<update version="0.0.6">
 			<file name="feats.xml" url="https://raw.githubusercontent.com/AuroraLegacy/elements/master/supplements/tashas-cauldron-of-everything/feats.xml" />
 		</update>
 	</info>
@@ -71,14 +71,45 @@
 		<prerequisite>Spellcasting or Pact Magic feature</prerequisite>
 		<description>
 			<p><em>Prerequisite: Spellcasting or Pact Magic feature</em></p>
-			<p>Studying occult lore, you have unlocked eldritch power within yourself: you learn one Eldritch Invocation option of your choice from the warlock class. If the invocation has a prerequisite of any kind, you can choose that invocation only if you’re a warlock who meets the prerequisite.</p>
+			<p>Studying occult lore, you learn one Eldritch Invocation option of your choice from the warlock class. Your spellcasting ability for the invocation is Intelligence, Wisdom, or Charisma (choose when you select this feat). If the invocation has a prerequisite of any kind, you can choose that invocation only if you’re a warlock who meets the prerequisite.</p>
 			<p class="indent">Whenever you gain a level, you can replace the invocation with another one from the warlock class.</p>
 		</description>
 		<sheet display="false" />
 		<rules>
+			<select type="Feat Feature" name="Spellcasting Ability (Eldritch Adept)" supports="Eldritch Adept Spellcasting Ability" />
 			<select type="Class Feature" name="Eldritch Invocation, Eldritch Adept" supports="Eldritch Invocation" requirements="ID_WOTC_PHB_CLASS_WARLOCK||ID_WOTC_PHB_MULTICLASS_WARLOCK"/>
 			<select type="Class Feature" name="Eldritch Invocation, Eldritch Adept" supports="Eldritch Adept" requirements="!(ID_WOTC_PHB_CLASS_WARLOCK|ID_WOTC_PHB_MULTICLASS_WARLOCK)"/>
 		</rules>
+	</element>
+	<element name="Intelligence" type="Feat Feature" source="Tasha’s Cauldron of Everything" id="ID_WOTC_TCOE_FEAT_ELDRITCH_ADEPT_INTELLIGENCE">
+		<compendium display="false" />
+		<supports>Eldritch Adept Spellcasting Ability</supports>
+		<description>
+			<p>Your spellcasting ability for the selected invocation is Intelligence.</p>
+		</description>
+		<sheet alt="Eldritch Adept">
+			<description>Your spellcasting ability for the selected invocation is Intelligence.</description>
+		</sheet>
+	</element>
+	<element name="Wisdom" type="Feat Feature" source="Tasha’s Cauldron of Everything" id="ID_WOTC_TCOE_FEAT_ELDRITCH_ADEPT_WISDOM">
+		<compendium display="false" />
+		<supports>Eldritch Adept Spellcasting Ability</supports>
+		<description>
+			<p>Your spellcasting ability for the selected invocation is Wisdom.</p>
+		</description>
+		<sheet alt="Eldritch Adept">
+			<description>Your spellcasting ability for the selected invocation is Wisdom.</description>
+		</sheet>
+	</element>
+	<element name="Charisma" type="Feat Feature" source="Tasha’s Cauldron of Everything" id="ID_WOTC_TCOE_FEAT_ELDRITCH_ADEPT_CHARISMA">
+		<compendium display="false" />
+		<supports>Eldritch Adept Spellcasting Ability</supports>
+		<description>
+			<p>Your spellcasting ability for the selected invocation is Charisma.</p>
+		</description>
+		<sheet alt="Eldritch Adept">
+			<description>Your spellcasting ability for the selected invocation is Charisma.</description>
+		</sheet>
 	</element>
 	<append id="ID_WOTC_PHB_CLASS_FEATURE_ELDRITCH_INVOCATION_ARMOR_OF_SHADOWS">
 		<supports>Eldritch Adept</supports>
