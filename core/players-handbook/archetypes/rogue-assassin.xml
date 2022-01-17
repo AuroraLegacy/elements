@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<elements>
+	<info>
+		<update version="0.0.1">
+			<file name="rogue-assassin.xml" url="https://raw.githubusercontent.com/AuroraLegacy/elements/master/core/players-handbook/archetypes/rogue-assassin.xml" />
+		</update>
+	</info>
+
+	<element name="Assassin" type="Archetype" source="Player’s Handbook" id="ID_WOTC_PHB_ARCHETYPE_ASSASSIN">
+		<supports>Roguish Archetype</supports>
+		<description>
+			<p>You focus your training on the grim art of death. Those who adhere to this archetype are diverse: hired killers, spies, bounty hunters, and even specially anointed priests trained to exterminate the enemies of their deity. Stealth, poison, and disguise help you eliminate your foes with deadly efficiency.</p>
+			<div element="ID_WOTC_PHB_ARCHETYPE_FEATURE_BONUSPROFICIENCIES" />
+			<div element="ID_WOTC_PHB_ARCHETYPE_FEATURE_ASSASSINATE" />
+			<div element="ID_WOTC_PHB_ARCHETYPE_FEATURE_INFILTRATIONEXPERTISE" />
+			<div element="ID_WOTC_PHB_ARCHETYPE_FEATURE_IMPOSTER" />
+			<div element="ID_WOTC_PHB_ARCHETYPE_FEATURE_DEATHSTRIKE" />
+		</description>
+		<sheet display="false">
+			<description>You focus your training on the grim art of death.</description>
+		</sheet>
+		<rules>
+			<grant type="Archetype Feature" id="ID_WOTC_PHB_ARCHETYPE_FEATURE_BONUSPROFICIENCIES" level="3"/>
+			<grant type="Archetype Feature" id="ID_WOTC_PHB_ARCHETYPE_FEATURE_ASSASSINATE" level="3"/>
+			<grant type="Archetype Feature" id="ID_WOTC_PHB_ARCHETYPE_FEATURE_INFILTRATIONEXPERTISE" level="9"/>
+			<grant type="Archetype Feature" id="ID_WOTC_PHB_ARCHETYPE_FEATURE_IMPOSTER" level="13"/>
+			<grant type="Archetype Feature" id="ID_WOTC_PHB_ARCHETYPE_FEATURE_DEATHSTRIKE" level="17"/>
+		</rules>
+	</element>
+	<element name="Bonus Proficiencies" type="Archetype Feature" source="Player’s Handbook" id="ID_WOTC_PHB_ARCHETYPE_FEATURE_BONUSPROFICIENCIES">
+		<requirements>!ID_INTERNAL_FEATURE_REPLACEMENT_ROGUE_ASSASSIN_BONUS_PROFICIENCIES</requirements>
+		<description>
+			<p>When you choose this archetype at 3rd level, you gain proficiency with the disguise kit and the poisoner’s kit.</p>
+		</description>
+		<sheet display="false"/>
+		<rules>
+			<grant type="Proficiency" id="ID_PROFICIENCY_TOOL_PROFICIENCY_DISGUISE_KIT" />
+			<grant type="Proficiency" id="ID_PROFICIENCY_TOOL_PROFICIENCY_POISONERS_KIT" />
+		</rules>
+	</element>
+	<element name="Assassinate" type="Archetype Feature" source="Player’s Handbook" id="ID_WOTC_PHB_ARCHETYPE_FEATURE_ASSASSINATE">
+		<requirements>!ID_INTERNAL_FEATURE_REPLACEMENT_ROGUE_ASSASSIN_ASSASSINATE</requirements>
+		<description>
+			<p>Starting at 3rd level, you are at your deadliest when you get the drop on your enemies. You have advantage on attack rolls against any creature that hasn’t taken a turn in the combat yet. In addition, any hit you score against a creature that is surprised is a critical hit.</p>
+		</description>
+		<sheet>
+			<description>You have advantage on attack rolls against any creature that hasn’t taken a turn in the combat yet. In addition, any hit you score against a creature that is surprised is a critical hit.</description>
+		</sheet>
+	</element>
+	<element name="Infiltration Expertise" type="Archetype Feature" source="Player’s Handbook" id="ID_WOTC_PHB_ARCHETYPE_FEATURE_INFILTRATIONEXPERTISE">
+		<requirements>!ID_INTERNAL_FEATURE_REPLACEMENT_ROGUE_ASSASSIN_INFILTRATION_EXPERTISE</requirements>
+		<description>
+			<p>Starting at 9th level, you can unfailingly create false identities for yourself. You must spend seven days and 25 gp to establish the history, profession, and affiliations for an identity. You can’t establish an identity that belongs to someone else. For example, you might acquire appropriate clothing, letters of introduction, and officiallooking certification to establish yourself as a member of a trading house from a remote city so you can insinuate yourself into the company of other wealthy merchants.</p>
+			<p>Thereafter, if you adopt the new identity as a disguise, other creatures believe you to be that person until given an obvious reason not to.</p>
+		</description>
+		<sheet>
+			<description>You can unfailingly create false identities for yourself. You must spend seven days and 25 gp to establish the history, profession, and affiliations for an identity. You can’t establish an identity that belongs to someone else.</description>
+		</sheet>
+	</element>
+	<element name="Imposter" type="Archetype Feature" source="Player’s Handbook" id="ID_WOTC_PHB_ARCHETYPE_FEATURE_IMPOSTER">
+		<requirements>!ID_INTERNAL_FEATURE_REPLACEMENT_ROGUE_ASSASSIN_IMPOSTER</requirements>
+		<description>
+			<p>At 13th level, you gain the ability to unerringly mimic another person’s speech, writing, and behavior. You must spend at least three hours studying these three components of the person’s behavior, listening to speech, examining handwriting, and observing mannerisms.</p>
+			<p>Your ruse is indiscernible to the casual observer. If a wary creature suspects something is amiss, you have advantage on any Charisma (Deception) check you make to avoid detection.</p>
+		</description>
+		<sheet>
+			<description>You gain the ability to unerringly mimic another person’s speech, writing, and behavior. Your ruse is indiscernible to the casual observer. If a wary creature suspects something is amiss, you have advantage on any Deception check you make to avoid detection.</description>
+		</sheet>
+	</element>
+	<element name="Death Strike" type="Archetype Feature" source="Player’s Handbook" id="ID_WOTC_PHB_ARCHETYPE_FEATURE_DEATHSTRIKE">
+		<requirements>!ID_INTERNAL_FEATURE_REPLACEMENT_ROGUE_ASSASSIN_DEATH_STRIKE</requirements>
+		<description>
+			<p>Starting at 17th level, you become a master of instant death. When you attack and hit a creature that is surprised, it must make a Constitution saving throw (DC 8 + your Dexterity modifier + your proficiency bonus). On a failed save, double the damage of your attack against the creature.</p>
+		</description>
+		<sheet>
+			<description>When you attack and hit a creature that is surprised, it must make a DC{{death strike:dc}} Constitution save. On a failed save, double the damage of your attack against the creature.</description>
+		</sheet>
+		<rules>
+			<stat name="death strike:dc" value="8" />
+			<stat name="death strike:dc" value="proficiency" />
+			<stat name="death strike:dc" value="dexterity:modifier" />
+		</rules>
+	</element>
+	
+	<!--Feature Replacement Grants-->
+	<element name="Bonus Proficiencies Feature Replacement" type="Grants" source="Internal" id="ID_INTERNAL_FEATURE_REPLACEMENT_ROGUE_ASSASSIN_BONUS_PROFICIENCIES" />
+	<element name="Assassinate Feature Replacement" type="Grants" source="Internal" id="ID_INTERNAL_FEATURE_REPLACEMENT_ROGUE_ASSASSIN_ASSASSINATE" />
+	<element name="Infiltration Expertise Feature Replacement" type="Grants" source="Internal" id="ID_INTERNAL_FEATURE_REPLACEMENT_ROGUE_ASSASSIN_INFILTRATION_EXPERTISE" />
+	<element name="Imposter Feature Replacement" type="Grants" source="Internal" id="ID_INTERNAL_FEATURE_REPLACEMENT_ROGUE_ASSASSIN_IMPOSTER" />
+	<element name="Death Strike Feature Replacement" type="Grants" source="Internal" id="ID_INTERNAL_FEATURE_REPLACEMENT_ROGUE_ASSASSIN_DEATH_STRIKE" />
+</elements>

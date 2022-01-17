@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<elements>
+	<info>
+		<update version="0.0.1">
+			<file name="barbarian-berserker.xml" url="https://raw.githubusercontent.com/AuroraLegacy/elements/master/core/players-handbook/archetypes/barbarian-berserker.xml" />
+		</update>
+	</info>
+
+	<element name="Path of the Berserker" type="Archetype" source="Player’s Handbook" id="ID_WOTC_PHB_ARCHETYPE_PATH_OF_THE_BERSERKER">
+		<supports>Primal Path</supports>
+		<description>
+			<p>For some barbarians, rage is a means to an end—that end being violence. The Path of the Berserker is a path of untrammeled fury, slick with blood. As you enter the berserker’s rage, you thrill in the chaos of battle, heedless of your own health or well-being.</p>
+			<div element="ID_WOTC_PHB_ARCHETYPE_FEATURE_PATH_OF_THE_BERSERKER_FRENZY" />
+			<div element="ID_WOTC_PHB_ARCHETYPE_FEATURE_PATH_OF_THE_BERSERKER_MINDLESS_RAGE" />
+			<div element="ID_WOTC_PHB_ARCHETYPE_FEATURE_PATH_OF_THE_BERSERKER_INTIMIDATING_PRESENCE" />
+			<div element="ID_WOTC_PHB_ARCHETYPE_FEATURE_PATH_OF_THE_BERSERKER_RETALIATION" />
+		</description>
+		<sheet display="false">
+			<description>The Path of the Berserker is a path of untrammeled fury, slick with blood.</description>
+		</sheet>
+		<rules>
+			<grant type="Archetype Feature" id="ID_WOTC_PHB_ARCHETYPE_FEATURE_PATH_OF_THE_BERSERKER_FRENZY" level="3" />
+			<grant type="Archetype Feature" id="ID_WOTC_PHB_ARCHETYPE_FEATURE_PATH_OF_THE_BERSERKER_MINDLESS_RAGE" level="6" />
+			<grant type="Archetype Feature" id="ID_WOTC_PHB_ARCHETYPE_FEATURE_PATH_OF_THE_BERSERKER_INTIMIDATING_PRESENCE" level="10" />
+			<grant type="Archetype Feature" id="ID_WOTC_PHB_ARCHETYPE_FEATURE_PATH_OF_THE_BERSERKER_RETALIATION" level="14" />
+		</rules>
+	</element>
+	<element name="Frenzy" type="Archetype Feature" source="Player’s Handbook" id="ID_WOTC_PHB_ARCHETYPE_FEATURE_PATH_OF_THE_BERSERKER_FRENZY">
+		<requirements>!ID_INTERNAL_FEATURE_REPLACEMENT_BARBARIAN_BERSERKER_FRENZY</requirements>
+		<description>
+			<p>Starting when you choose this path at 3rd level, you can go into a frenzy when you rage. If you do so, for the duration of your rage you can make a single melee weapon attack as a bonus action on each of your turns after this one. When your rage ends, you suffer one level of exhaustion (as described in appendix A).</p>
+		</description>
+		<sheet>
+			<description>For the duration of your rage you can make a single melee weapon attack as a bonus action on each of your turns after this one. When your rage ends, you suffer one level of exhaustion.</description>
+		</sheet>
+	</element>
+	<element name="Mindless Rage" type="Archetype Feature" source="Player’s Handbook" id="ID_WOTC_PHB_ARCHETYPE_FEATURE_PATH_OF_THE_BERSERKER_MINDLESS_RAGE">
+		<requirements>!ID_INTERNAL_FEATURE_REPLACEMENT_BARBARIAN_BERSERKER_MINDLESS_RAGE</requirements>
+		<description>
+			<p>Beginning at 6th level, you can’t be charmed or frightened while raging. If you are charmed or frightened when you enter your rage, the effect is suspended for the duration of the rage.</p>
+		</description>
+		<sheet>
+			<description>You can’t be charmed or frightened while raging. If you are charmed or frightened when you enter your rage, the effect is suspended for the duration of the rage.</description>
+		</sheet>
+	</element>
+	<element name="Intimidating Presence" type="Archetype Feature" source="Player’s Handbook" id="ID_WOTC_PHB_ARCHETYPE_FEATURE_PATH_OF_THE_BERSERKER_INTIMIDATING_PRESENCE">
+		<requirements>!ID_INTERNAL_FEATURE_REPLACEMENT_BARBARIAN_BERSERKER_INTIMIDATING_PRESENCE</requirements>
+		<description>
+			<p>Beginning at 10th level, you can use your action to frighten someone with your menacing presence. When you do so, choose one creature that you can see within 30 feet of you. If the creature can see or hear you, it must succeed on a Wisdom saving throw (DC equal to 8 + your proficiency bonus + your Charisma modifier) or be frightened of you until the end of your next turn. On subsequent turns, you can use your action to extend the duration of this effect on the frightened creature until the end of your next turn. This effect ends if the creature ends its turn out of line of sight or more than 60 feet away from you.</p>
+			<p class="indent">If the creature succeeds on its saving throw, you can't use this feature on that creature again for 24 hours.</p>
+		</description>
+		<sheet action="Action">
+			<description>Choose one creature that you can see within 30 feet of you. If the creature can see or hear you, it must succeed on a DC{{intimidating presence:dc}} Wisdom saving throw or be frightened of you until the end of your next turn. On subsequent turns, you can use your action to extend the duration of this effect on the frightened creature until the end of your next turn. This effect ends if the creature ends its turn out of line of sight or more than 60 feet away from you.
+			If the creature succeeds on its saving throw, you can't use this feature on that creature again for 24 hours.</description>
+		</sheet>
+		<rules>
+			<stat name="intimidating presence:dc" value="8" />
+			<stat name="intimidating presence:dc" value="proficiency" />
+			<stat name="intimidating presence:dc" value="charisma:modifier" />
+		</rules>
+	</element>
+	<element name="Retaliation" type="Archetype Feature" source="Player’s Handbook" id="ID_WOTC_PHB_ARCHETYPE_FEATURE_PATH_OF_THE_BERSERKER_RETALIATION">
+		<requirements>!ID_INTERNAL_FEATURE_REPLACEMENT_BARBARIAN_BERSERKER_RETALIATION</requirements>
+		<description>
+			<p>Starting at 14th level, when you take damage from a creature that is within 5 feet of you, you can use your reaction to make a melee weapon attack against that creature.</p>
+		</description>
+		<sheet action="Reaction">
+			<description>When you take damage from a creature that is within 5 feet of you, you can use your reaction to make a melee weapon attack against that creature.</description>
+		</sheet>
+	</element>
+
+	<!--Feature Replacement Grants-->
+	<element name="Frenzy Feature Replacement" type="Grants" source="Internal" id="ID_INTERNAL_FEATURE_REPLACEMENT_BARBARIAN_BERSERKER_FRENZY" />
+	<element name="Mindless Rage Feature Replacement" type="Grants" source="Internal" id="ID_INTERNAL_FEATURE_REPLACEMENT_BARBARIAN_BERSERKER_MINDLESS_RAGE" />
+	<element name="Intimidating Presence Feature Replacement" type="Grants" source="Internal" id="ID_INTERNAL_FEATURE_REPLACEMENT_BARBARIAN_BERSERKER_INTIMIDATING_PRESENCE" />
+	<element name="Retaliation Feature Replacement" type="Grants" source="Internal" id="ID_INTERNAL_FEATURE_REPLACEMENT_BARBARIAN_BERSERKER_RETALIATION" />
+</elements>

@@ -1,0 +1,150 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<elements>
+	<info>
+		<name></name>
+		<update version="0.0.1">
+			<file name="paladin-ancients.xml" url="https://raw.githubusercontent.com/AuroraLegacy/elements/master/core/players-handbook/archetypes/paladin-ancients.xml" />
+		</update>
+	</info>
+
+	<element name="Oath of the Ancients" type="Archetype" source="Player’s Handbook" id="ID_WOTC_PHB_ARCHETYPE_PALADIN_OATH_OF_THE_ANCIENTS">
+		<supports>Sacred Oath</supports>
+		<description>
+			<p>The Oath of the Ancients is as old as the race of elves and the rituals of the druids. Sometimes called fey knights, green knights, or horned knights, paladins who swear this oath cast their lot with the side of the light in the cosmic struggle against darkness because they love the beautiful and life-giving things of the world, not necessarily because they believe in principles of honor, courage, and justice. They adorn their armor and clothing with images of growing things—leaves, antlers, or flowers—to reflect their commitment to preserving life and light in the world.</p>
+			<h5 class="caption">TENETS OF THE ANCIENTS</h5>
+			<p>The tenets of the Oath of the Ancients have been preserved for uncounted centuries. This oath emphasizes the principles of good above any concerns of law or chaos. Its four central principles are simple.</p>
+			<p class="indent"><b><i>Kindle the Light.</i></b> Through your acts of mercy, kindness, and forgiveness, kindle the light of hope in the world, beating back despair.</p>
+			<p class="indent"><b><i>Shelter the Light.</i></b> Where there is good, beauty, love, and laughter in the world, stand against the wickedness that would swallow it. Where life flourishes, stand against the forces that would render it barren.</p>
+			<p class="indent"><b><i>Preserve Your Own Light.</i></b> Delight in song and laughter, in beauty and art. If you allow the light to die in your own heart, you can’t preserve it in the world.</p>
+			<p class="indent"><b><i>Be the Light.</i></b> Be a glorious beacon for all who live in despair. Let the light of your joy and courage shine forth in all your deeds.</p>
+			<div element="ID_WOTC_PHB_ARCHETYPE_FEATURE_OOTA_OATH_SPELLS" />
+			<div element="ID_WOTC_PHB_ARCHETYPE_FEATURE_OOTA_CHANNEL_DIVINITY" />
+			<div element="ID_WOTC_PHB_ARCHETYPE_FEATURE_OOTA_AURA_OF_WARDING" />
+			<div element="ID_WOTC_PHB_ARCHETYPE_FEATURE_OOTA_UNDYING_SENTINEL" />
+			<div element="ID_WOTC_PHB_ARCHETYPE_FEATURE_OOTA_ELDER_CHAMPION" />
+		</description>
+		<sheet display="false" />
+		<rules>
+			<grant type="Archetype Feature" id="ID_WOTC_PHB_ARCHETYPE_FEATURE_OOTA_OATH_SPELLS" level="3" />
+			<grant type="Archetype Feature" id="ID_WOTC_PHB_ARCHETYPE_FEATURE_OOTA_CHANNEL_DIVINITY" level="3" />
+			<grant type="Archetype Feature" id="ID_WOTC_PHB_ARCHETYPE_FEATURE_OOTA_AURA_OF_WARDING" level="7" />
+			<grant type="Archetype Feature" id="ID_WOTC_PHB_ARCHETYPE_FEATURE_OOTA_UNDYING_SENTINEL" level="15" />
+			<grant type="Archetype Feature" id="ID_WOTC_PHB_ARCHETYPE_FEATURE_OOTA_ELDER_CHAMPION" level="20" />
+		</rules>
+	</element>
+	<element name="Oath Spells" type="Archetype Feature" source="Player’s Handbook" id="ID_WOTC_PHB_ARCHETYPE_FEATURE_OOTA_OATH_SPELLS">
+		<requirements>!ID_INTERNAL_FEATURE_REPLACEMENT_PALADIN_OOTA_OATH_SPELLS</requirements>
+		<description>
+			<p>You gain oath spells at the paladin levels listed.</p>
+			<h5 class="caption">OATH OF THE ANCIENTS SPELLS</h5>
+			<table>
+				<thead>
+					<tr><td>Paladin Level</td><td>Spells</td></tr>
+				</thead>
+				<tr><td>3rd</td><td><em>ensnaring strike, speak with animals</em></td></tr>
+				<tr><td>5th</td><td><em>moonbeam, misty step</em></td></tr>
+				<tr><td>9th</td><td><em>plant growth, protection from energy</em></td></tr>
+				<tr><td>13th</td><td><em>ice storm, stoneskin</em></td></tr>
+				<tr><td>17th</td><td><em>commune with nature, tree stride</em></td></tr>
+			</table>
+		</description>
+		<sheet display="false" />
+		<rules>
+			<grant type="Spell" id="ID_PHB_SPELL_ENSNARING_STRIKE" level="3" spellcasting="Paladin" prepared="true"/>
+			<grant type="Spell" id="ID_PHB_SPELL_SPEAK_WITH_ANIMALS" level="3" spellcasting="Paladin" prepared="true"/>
+			<grant type="Spell" id="ID_PHB_SPELL_MOONBEAM" level="5" spellcasting="Paladin" prepared="true"/>
+			<grant type="Spell" id="ID_PHB_SPELL_MISTY_STEP" level="5" spellcasting="Paladin" prepared="true"/>
+			<grant type="Spell" id="ID_PHB_SPELL_PLANT_GROWTH" level="9" spellcasting="Paladin" prepared="true"/>
+			<grant type="Spell" id="ID_PHB_SPELL_PROTECTION_FROM_ENERGY" level="9" spellcasting="Paladin" prepared="true"/>
+			<grant type="Spell" id="ID_PHB_SPELL_ICE_STORM" level="13" spellcasting="Paladin" prepared="true"/>
+			<grant type="Spell" id="ID_PHB_SPELL_STONESKIN" level="13" spellcasting="Paladin" prepared="true"/>
+			<grant type="Spell" id="ID_PHB_SPELL_COMMUNE_WITH_NATURE" level="17" spellcasting="Paladin" prepared="true"/>
+			<grant type="Spell" id="ID_PHB_SPELL_TREE_STRIDE" level="17" spellcasting="Paladin" prepared="true"/>
+		</rules>
+	</element>
+	<element name="Channel Divinity" type="Archetype Feature" source="Player’s Handbook" id="ID_WOTC_PHB_ARCHETYPE_FEATURE_OOTA_CHANNEL_DIVINITY">
+		<requirements>!ID_INTERNAL_FEATURE_REPLACEMENT_PALADIN_OOTA_CHANNEL_DIVINITY</requirements>
+		<description>
+			<p>When you take this oath at 3rd level, you gain the following two Channel Divinity options.</p>
+			<p class="indent"><b><i>Nature’s Wrath.</i></b> You can use your Channel Divinity to invoke primeval forces to ensnare a foe. As an action, you can cause spectral vines to spring up and reach for a creature within 10 feet of you that you can see. The creature must succeed on a Strength or Dexterity saving throw (its choice) or be restrained. While restrained by the vines, the creature repeats the saving throw at the end of each of its turns. On a success, it frees itself and the vines vanish.</p>
+			<p class="indent"><b><i>Turn the Faithless.</i></b> You can use your Channel Divinity to utter ancient words that are painful for fey and fiends to hear. As an action, you present your holy symbol, and each fey or fiend within 30 feet of you that can hear you must make a Wisdom saving throw. On a failed save, the creature is turned for 1 minute or until it takes damage.</p>
+			<p class="indent">A turned creature must spend its turns trying to move as far away from you as it can, and it can’t willingly move to a space within 30 feet of you. It also can’t take reactions. For its action, it can use only the Dash action or try to escape from an effect that prevents it from moving. If there’s nowhere to move, the creature can use the Dodge action.</p>
+			<p class="indent">If the creature’s true form is concealed by an illusion, shapeshifting, or other effect, that form is revealed while it is turned.</p>
+		</description>
+		<sheet display="false" />
+		<rules>
+			<grant type="Archetype Feature" id="ID_WOTC_PHB_ARCHETYPE_FEATURE_OOTA_CHANNEL_DIVINITY_NATURES_WRATH" />
+			<grant type="Archetype Feature" id="ID_WOTC_PHB_ARCHETYPE_FEATURE_OOTA_CHANNEL_DIVINITY_TURN_THE_FAITHLESS" />
+		</rules>
+	</element>
+	<element name="Channel Divinity: Nature’s Wrath" type="Archetype Feature" source="Player’s Handbook" id="ID_WOTC_PHB_ARCHETYPE_FEATURE_OOTA_CHANNEL_DIVINITY_NATURES_WRATH">
+		<description>
+			<p>You can use your Channel Divinity to invoke primeval forces to ensnare a foe. As an action, you can cause spectral vines to spring up and reach for a creature within 10 feet of you that you can see. The creature must succeed on a Strength or Dexterity saving throw (its choice) or be restrained. While restrained by the vines, the creature repeats the saving throw at the end of each of its turns. On a success, it frees itself and the vines vanish.</p>
+		</description>
+		<sheet alt="Nature’s Wrath" action="Action" usage="Channel Divinity">
+			<description>You can cause spectral vines to spring up and reach for a creature within 10 feet of you that you can see. The creature must succeed on a Strength or Dexterity saving throw (its choice) or be restrained. While restrained by the vines, the creature repeats the saving throw at the end of each of its turns. On a success, it frees itself and the vines vanish.</description>
+		</sheet>
+	</element>
+	<element name="Channel Divinity: Turn the Faithless" type="Archetype Feature" source="Player’s Handbook" id="ID_WOTC_PHB_ARCHETYPE_FEATURE_OOTA_CHANNEL_DIVINITY_TURN_THE_FAITHLESS">
+		<description>
+			<p>You can use your Channel Divinity to utter ancient words that are painful for fey and fiends to hear. As an action, you present your holy symbol, and each fey or fiend within 30 feet of you that can hear you must make a Wisdom saving throw. On a failed save, the creature is turned for 1 minute or until it takes damage.</p>
+			<p class="indent">A turned creature must spend its turns trying to move as far away from you as it can, and it can’t willingly move to a space within 30 feet of you. It also can’t take reactions. For its action, it can use only the Dash action or try to escape from an effect that prevents it from moving. If there’s nowhere to move, the creature can use the Dodge action.</p>
+			<p class="indent">If the creature’s true form is concealed by an illusion, shapeshifting, or other effect, that form is revealed while it is turned.</p>
+		</description>
+		<sheet alt="Turn the Faithless" action="Action" usage="Channel Divinity">
+			<description>You present your holy symbol, and each fey or fiend within 30 feet of you that can hear you must make a Wisdom saving throw. On a failed save, the creature is turned for 1 minute or until it takes damage.
+			A turned creature must spend its turns trying to move as far away from you as it can, and it can’t willingly move to a space within 30 feet of you. It also can’t take reactions. For its action, it can use only the Dash action or try to escape from an effect that prevents it from moving. If there’s nowhere to move, the creature can use the Dodge action.
+			If the creature’s true form is concealed by an illusion, shapeshifting, or other effect, that form is revealed while it is turned.</description>
+		</sheet>
+	</element>
+	<element name="Aura of Warding" type="Archetype Feature" source="Player’s Handbook" id="ID_WOTC_PHB_ARCHETYPE_FEATURE_OOTA_AURA_OF_WARDING">
+		<requirements>!ID_INTERNAL_FEATURE_REPLACEMENT_PALADIN_OOTA_AURA_OF_WARDING</requirements>
+		<description>
+			<p>Beginning at 7th level, ancient magic lies so heavily upon you that it forms an eldritch ward. You and friendly creatures within 10 feet of you have resistance to damage from spells.</p>
+			<p class="indent">At 18th level, the range of this aura increases to 30 feet.</p>
+		</description>
+		<sheet>
+			<description>You and friendly creatures within {{aura of warding:range}} feet of you have resistance to damage from spells.</description>
+		</sheet>
+		<rules>
+			<stat name="aura of warding:range" value="10" />
+			<stat name="aura of warding:range" value="30" level="18" />
+		</rules>
+	</element>
+	<element name="Undying Sentinel" type="Archetype Feature" source="Player’s Handbook" id="ID_WOTC_PHB_ARCHETYPE_FEATURE_OOTA_UNDYING_SENTINEL">
+		<requirements>!ID_INTERNAL_FEATURE_REPLACEMENT_PALADIN_OOTA_UNDYING_SENTINEL</requirements>
+		<description>
+			<p>Starting at 15th level, when you are reduced to 0 hit points and are not killed outright, you can choose to drop to 1 hit point instead. Once you use this ability, you can’t use it again until you finish a long rest.</p>
+			<p class="indent">Additionally, you suffer none of the drawbacks of old age, and you can’t be aged magically.</p>
+		</description>
+		<sheet usage="1/Long Rest">
+			<description>When you are reduced to 0 hit points and are not killed outright, you can choose to drop to 1 hit point instead.
+			You suffer none of the drawbacks of old age, and you can’t be aged magically.</description>
+		</sheet>
+	</element>
+	<element name="Elder Champion" type="Archetype Feature" source="Player’s Handbook" id="ID_WOTC_PHB_ARCHETYPE_FEATURE_OOTA_ELDER_CHAMPION">
+		<requirements>!ID_INTERNAL_FEATURE_REPLACEMENT_PALADIN_OOTA_ELDER_CHAMPION</requirements>
+		<description>
+			<p>At 20th level, you can assume the form of an ancient force of nature, taking on an appearance you choose. For example, your skin might turn green or take on a bark-like texture, your hair might become leafy or mosslike, or you might sprout antlers or a lion-like mane. Using your action, you undergo a transformation. For 1 minute, you gain the following benefits:</p>
+			<ul>
+				<li>At the start of each of your turns, you regain 10 hit points.</li>
+				<li>Whenever you cast a paladin spell that has a casting time of 1 action, you can cast it using a bonus action instead.</li>
+				<li>Enemy creatures within 10 feet of you have disadvantage on saving throws against your paladin spells and Channel Divinity options.</li>
+			</ul>
+			<p class="indent">Once you use this feature, you can’t use it again until you finish a long rest.</p>
+		</description>
+		<sheet usage="1/Long Rest">
+			<description>For 1 minute you gain the following benefits:
+			At the start of each of your turns, you regain 10 hp
+			Whenever you cast a paladin spell that has a casting time of 1 action, you can cast it using a bonus action instead.
+			Enemy creatures within 10 feet of you have disadvantage on saving throws against your paladin spells and Channel Divinity options.</description>
+		</sheet>
+	</element>
+
+	<!--Feature Replacement Grants-->
+	<element name="Oath Spells" type="Grants" source="Internal" id="ID_INTERNAL_FEATURE_REPLACEMENT_PALADIN_OOTA_OATH_SPELLS" />
+	<element name="OOTA Channel Divinity" type="Grants" source="Internal" id="ID_INTERNAL_FEATURE_REPLACEMENT_PALADIN_OOTA_CHANNEL_DIVINITY" />
+	<element name="Aura of Warding Feature Replacement" type="Grants" source="Internal" id="ID_INTERNAL_FEATURE_REPLACEMENT_PALADIN_OOTA_AURA_OF_WARDING" />
+	<element name="Undying Sentinel Feature Replacement" type="Grants" source="Internal" id="ID_INTERNAL_FEATURE_REPLACEMENT_PALADIN_OOTA_UNDYING_SENTINEL" />
+	<element name="Elder Champion Feature Replacement" type="Grants" source="Internal" id="ID_INTERNAL_FEATURE_REPLACEMENT_PALADIN_OOTA_ELDER_CHAMPION" />
+</elements>

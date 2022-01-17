@@ -1,0 +1,163 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<elements>
+	<info>
+		<update version="0.0.1">
+			<file name="fighter-eldritch-knight.xml" url="https://raw.githubusercontent.com/AuroraLegacy/elements/master/core/players-handbook/archetypes/fighter-eldritch-knight.xml" />
+		</update>
+	</info>
+
+	<!-- Eldritch Knight Archetype -->
+	<element name="Eldritch Knight" type="Archetype" source="Player’s Handbook" id="ID_WOTC_PHB_ARCHETYPE_FIGHTER_ELDRITCH_KNIGHT">
+		<supports>Martial Archetype</supports>
+		<description>
+			<p>The archetypal Eldritch Knight combines the martial mastery common to all fighters with a careful study of magic. Eldritch Knights use magical techniques similar to those practiced by wizards. They focus their study on two of the eight schools of magic: abjuration and evocation. Abjuration spells grant an Eldritch Knight additional protection in battle, and evocation spells deal damage to many foes at once, extending the fighter’s reach in combat. These knights learn a comparatively small number of spells, committing them to memory instead of keeping them in a spellbook.</p>
+			<div element="ID_WOTC_PHB_ARCHETYPE_FEATURE_ELDRITCH_KNIGHT_SPELLCASTING"/>
+			<div element="ID_WOTC_PHB_ARCHETYPE_FEATURE_ELDRITCH_KNIGHT_WEAPON_BOND"/>
+			<div element="ID_WOTC_PHB_ARCHETYPE_FEATURE_ELDRITCH_KNIGHT_WAR_MAGIC"/>
+			<div element="ID_WOTC_PHB_ARCHETYPE_FEATURE_ELDRITCH_KNIGHT_ELDRITCH_STRIKE"/>
+			<div element="ID_WOTC_PHB_ARCHETYPE_FEATURE_ELDRITCH_KNIGHT_ARCANE_CHARGE"/>
+			<div element="ID_WOTC_PHB_ARCHETYPE_FEATURE_ELDRITCH_KNIGHT_IMPROVED_WAR_MAGIC"/>
+		</description>
+		<sheet display="false">
+			<description>The archetypal Eldritch Knight combines the martial mastery common to all fighters with a careful study of magic.</description>
+		</sheet>
+		<rules>
+			<grant type="Archetype Feature" id="ID_WOTC_PHB_ARCHETYPE_FEATURE_ELDRITCH_KNIGHT_SPELLCASTING" level="3"/>
+			<grant type="Archetype Feature" id="ID_WOTC_PHB_ARCHETYPE_FEATURE_ELDRITCH_KNIGHT_WEAPON_BOND" level="3"/>
+			<grant type="Archetype Feature" id="ID_WOTC_PHB_ARCHETYPE_FEATURE_ELDRITCH_KNIGHT_WAR_MAGIC" level="7"/>
+			<grant type="Archetype Feature" id="ID_WOTC_PHB_ARCHETYPE_FEATURE_ELDRITCH_KNIGHT_ELDRITCH_STRIKE" level="10"/>
+			<grant type="Archetype Feature" id="ID_WOTC_PHB_ARCHETYPE_FEATURE_ELDRITCH_KNIGHT_ARCANE_CHARGE" level="15"/>
+			<grant type="Archetype Feature" id="ID_WOTC_PHB_ARCHETYPE_FEATURE_ELDRITCH_KNIGHT_IMPROVED_WAR_MAGIC" level="18"/>
+		</rules>
+	</element>
+	<element name="Spellcasting" type="Archetype Feature" source="Player’s Handbook" id="ID_WOTC_PHB_ARCHETYPE_FEATURE_ELDRITCH_KNIGHT_SPELLCASTING">
+		<requirements>!ID_INTERNAL_FEATURE_REPLACEMENT_FIGHTER_ELDRITCH_KNIGHT_SPELLCASTING</requirements>
+		<description>
+			<p>When you reach 3rd level, you augment your martial prowess with the ability to cast spells. See chapter 10 for the general rules of spellcasting and chapter 11 for the wizard spell list.</p>
+			<p class="indent"><strong><em>Cantrips.</em></strong> You learn two cantrips of your choice from the wizard spell list. You learn an additional wizard cantrip of your choice at 10th level.</p>
+			<p class="indent"><strong><em>Spell Slots.</em></strong> The Eldritch Knight Spellcasting table shows how many spell slots you have to cast your wizard spells of 1st level and higher. To cast one of these spells, you must expend a slot of the spell’s level or higher. You regain all expended spell slots when you finish a long rest.</p>
+			<p class="indent">For example, if you know the 1st-level spell shield and have a 1st-level and a 2nd-level spell slot available, you can cast shield using either slot.</p>
+			<p class="indent"><strong><em>Spells Known of 1st-Level and Higher.</em></strong> You know three 1st-level wizard spells of your choice, two of which you must choose from the abjuration and evocation spells on the wizard spell list.</p>
+			<p class="indent">The Spells Known column of the Eldritch Knight Spellcasting table shows when you learn more wizard spells of 1st level or higher. Each of these spells must be an abjuration or evocation spell of your choice, and must be of a level for which you have spell slots. For instance, when you reach 7th level in this class, you can learn one new spell of 1st or 2nd level.</p>
+			<p class="indent">The spells you learn at 8th, 14th, and 20th level can come from any school of magic.</p>
+			<p class="indent">Whenever you gain a level in this class, you can replace one of the wizard spells you know with another spell of your choice from the wizard spell list. The new spell must be of a level for which you have spell slots, and it must be an abjuration or evocation spell, unless you’re replacing the spell you gained at 3rd, 8th, 14th, or 20th level from any school of magic.</p>
+			<p class="indent"><strong><em>Spellcasting Ability.</em></strong> Intelligence is your spellcasting ability for your wizard spells, since you learn your spells through study and memorization. You use your Intelligence whenever a spell refers to your spellcasting ability. In addition, you use your Intelligence modifier when setting the saving throw DC for a wizard spell you cast and when making an attack roll with one.</p>
+			<center>
+				<p><strong>Spell save DC</strong> = 8 + your proficiency bonus + your Intelligence modifier</p>
+				<p><strong>Spell attack modifier</strong> = your proficiency bonus + your Intelligence modifier</p>
+			</center>
+			<h5 class="caption">ELDRITCH KNIGHT SPELLCASTING</h5>
+			<table class="class-features">
+				<thead>
+					<tr><td class="col-10">Fighter Level</td><td class="col-10">Cantrips Known</td><td class="col-10">Spells Known</td><td>1st</td><td>2nd</td><td>3rd</td><td>4th</td></tr>
+				</thead>
+				<tr><td> 3rd</td><td>2</td><td> 3</td><td>2</td><td>—</td><td>—</td><td>—</td></tr>
+				<tr><td> 4th</td><td>2</td><td> 4</td><td>3</td><td>—</td><td>—</td><td>—</td></tr>
+				<tr><td> 5th</td><td>2</td><td> 4</td><td>3</td><td>—</td><td>—</td><td>—</td></tr>
+				<tr><td> 6th</td><td>2</td><td> 4</td><td>3</td><td>—</td><td>—</td><td>—</td></tr>
+				<tr><td> 7th</td><td>2</td><td> 5</td><td>4</td><td>2</td><td>—</td><td>—</td></tr>
+				<tr><td> 8th</td><td>2</td><td> 6</td><td>4</td><td>2</td><td>—</td><td>—</td></tr>
+				<tr><td> 9th</td><td>2</td><td> 6</td><td>4</td><td>2</td><td>—</td><td>—</td></tr>
+				<tr><td>10th</td><td>3</td><td> 7</td><td>4</td><td>3</td><td>—</td><td>—</td></tr>
+				<tr><td>11th</td><td>3</td><td> 8</td><td>4</td><td>3</td><td>—</td><td>—</td></tr>
+				<tr><td>12th</td><td>3</td><td> 8</td><td>4</td><td>3</td><td>—</td><td>—</td></tr>
+				<tr><td>13th</td><td>3</td><td> 9</td><td>4</td><td>3</td><td>2</td><td>—</td></tr>
+				<tr><td>14th</td><td>3</td><td>10</td><td>4</td><td>3</td><td>2</td><td>—</td></tr>
+				<tr><td>15th</td><td>3</td><td>10</td><td>4</td><td>3</td><td>2</td><td>—</td></tr>
+				<tr><td>16th</td><td>3</td><td>11</td><td>4</td><td>3</td><td>3</td><td>—</td></tr>
+				<tr><td>17th</td><td>3</td><td>11</td><td>4</td><td>3</td><td>3</td><td>—</td></tr>
+				<tr><td>18th</td><td>3</td><td>11</td><td>4</td><td>3</td><td>3</td><td>—</td></tr>
+				<tr><td>19th</td><td>3</td><td>12</td><td>4</td><td>3</td><td>3</td><td>1</td></tr>
+				<tr><td>20th</td><td>3</td><td>13</td><td>4</td><td>3</td><td>3</td><td>1</td></tr>
+			</table>
+		</description>
+		<sheet display="false">
+			<description>You augment your martial prowess with the ability to cast spells.</description>
+		</sheet>
+		<spellcasting name="Eldritch Knight" ability="Intelligence" prepare="false" allowReplace="true">
+			<list>Wizard,(Abjuration||Evocation)</list>
+		</spellcasting>
+		<rules>
+			<grant type="Grants" id="ID_INTERNAL_GRANT_MULTICLASS_SPELLCASTING_SLOTS_THIRD" requirements="ID_INTERNAL_GRANT_MULTICLASS"/>
+			<stat name="eldritch knight:spellcasting:slots:1" value="2" level="3" />
+			<stat name="eldritch knight:spellcasting:slots:1" value="1" level="4" />
+			<stat name="eldritch knight:spellcasting:slots:1" value="1" level="7" />
+			<stat name="eldritch knight:spellcasting:slots:2" value="2" level="7" />
+			<stat name="eldritch knight:spellcasting:slots:2" value="1" level="10" />
+			<stat name="eldritch knight:spellcasting:slots:3" value="2" level="13" />
+			<stat name="eldritch knight:spellcasting:slots:3" value="1" level="16" />
+			<stat name="eldritch knight:spellcasting:slots:4" value="1" level="19" />
+			<select type="Spell" name="Cantrip (Eldritch Knight)" supports="Wizard, 0" level="3" number="2" spellcasting="Eldritch Knight" />
+			<select type="Spell" name="Cantrip (Eldritch Knight)" supports="Wizard, 0" level="10" number="1" spellcasting="Eldritch Knight" />
+			<select type="Spell" name="Spellcasting (Eldritch Knight)" supports="($(spellcasting:list)||Wizard), 1" level="3" number="1" spellcasting="Eldritch Knight" />
+			<select type="Spell" name="Spellcasting (Eldritch Knight)" supports="$(spellcasting:list), 1" level="3" number="2" spellcasting="Eldritch Knight" />
+			<select type="Spell" name="Spellcasting (Eldritch Knight)" supports="$(spellcasting:list), $(spellcasting:slots)" level="4" spellcasting="Eldritch Knight"/>
+			<select type="Spell" name="Spellcasting (Eldritch Knight)" supports="$(spellcasting:list), $(spellcasting:slots)" level="7" spellcasting="Eldritch Knight"/>
+			<select type="Spell" name="Spellcasting (Eldritch Knight)" supports="(Wizard||$(spellcasting:list)), $(spellcasting:slots)" level="8" spellcasting="Eldritch Knight"/>
+			<select type="Spell" name="Spellcasting (Eldritch Knight)" supports="$(spellcasting:list), $(spellcasting:slots)" level="10" spellcasting="Eldritch Knight"/>
+			<select type="Spell" name="Spellcasting (Eldritch Knight)" supports="$(spellcasting:list), $(spellcasting:slots)" level="11" spellcasting="Eldritch Knight"/>
+			<select type="Spell" name="Spellcasting (Eldritch Knight)" supports="$(spellcasting:list), $(spellcasting:slots)" level="13" spellcasting="Eldritch Knight"/>
+			<select type="Spell" name="Spellcasting (Eldritch Knight)" supports="(Wizard||$(spellcasting:list)), $(spellcasting:slots)" level="14" spellcasting="Eldritch Knight"/>
+			<select type="Spell" name="Spellcasting (Eldritch Knight)" supports="$(spellcasting:list), $(spellcasting:slots)" level="16" spellcasting="Eldritch Knight"/>
+			<select type="Spell" name="Spellcasting (Eldritch Knight)" supports="$(spellcasting:list), $(spellcasting:slots)" level="19" spellcasting="Eldritch Knight"/>
+			<select type="Spell" name="Spellcasting (Eldritch Knight)" supports="(Wizard||$(spellcasting:list)), $(spellcasting:slots)" level="20" spellcasting="Eldritch Knight"/>
+		</rules>
+	</element>
+	<element name="Weapon Bond" type="Archetype Feature" source="Player’s Handbook" id="ID_WOTC_PHB_ARCHETYPE_FEATURE_ELDRITCH_KNIGHT_WEAPON_BOND">
+		<requirements>!ID_INTERNAL_FEATURE_REPLACEMENT_FIGHTER_ELDRITCH_KNIGHT_WEAPON_BOND</requirements>
+		<description>
+			<p>At 3rd level, you learn a ritual that creates a magical bond between yourself and one weapon. You perform the ritual over the course of 1 hour, which can be done during a short rest. The weapon must be within your reach throughout the ritual, at the conclusion of which you touch the weapon and forge the bond.</p>
+			<p class="indent">Once you have bonded a weapon to yourself, you can’t be disarmed of that weapon unless you are incapacitated. If it is on the same plane of existence, you can summon that weapon as a bonus action on your turn, causing it to teleport instantly to your hand.</p>
+			<p class="indent">You can have up to two bonded weapons, but can summon only one at a time with your bonus action. If you attempt to bond with a third weapon, you must break the bond with one of the other two.</p>
+		</description>
+		<sheet>
+			<description>You perform a ritual over the course of 1 hour, which can be done during a short rest. The weapon must be within your reach throughout the ritual, at the conclusion of which you touch the weapon and forge the bond.
+			Once you have bonded a weapon to yourself, you can’t be disarmed of that weapon unless you are incapacitated. If it is on the same plane of existence, you can summon that weapon as a bonus action on your turn, causing it to teleport instantly to your hand.
+			You can have up to two bonded weapons, but can summon only one at a time with your bonus action. If you attempt to bond with a third weapon, you must break the bond with one of the other two.</description>
+		</sheet>
+	</element>
+	<element name="War Magic" type="Archetype Feature" source="Player’s Handbook" id="ID_WOTC_PHB_ARCHETYPE_FEATURE_ELDRITCH_KNIGHT_WAR_MAGIC">
+		<requirements>!ID_INTERNAL_FEATURE_REPLACEMENT_FIGHTER_ELDRITCH_KNIGHT_WAR_MAGIC</requirements>
+		<description>
+			<p>Beginning at 7th level, when you use your action to cast a cantrip, you can make one weapon attack as a bonus action.</p>
+		</description>
+		<sheet action="Bonus Action">
+			<description>When you use your action to cast a cantrip, you can make one weapon attack.</description>
+		</sheet>
+	</element>
+	<element name="Eldritch Strike" type="Archetype Feature" source="Player’s Handbook" id="ID_WOTC_PHB_ARCHETYPE_FEATURE_ELDRITCH_KNIGHT_ELDRITCH_STRIKE">
+		<requirements>!ID_INTERNAL_FEATURE_REPLACEMENT_FIGHTER_ELDRITCH_KNIGHT_ELDRITCH_STRIKE</requirements>
+		<description>
+			<p>At 10th level, you learn how to make your weapon strikes undercut a creature’s resistance to your spells. When you hit a creature with a weapon attack, that creature has disadvantage on the next saving throw it makes against a spell you cast before the end of your next turn.</p>
+		</description>
+		<sheet>
+			<description>When you hit a creature with a weapon attack, that creature has disadvantage on the next saving throw it makes against a spell you cast before the end of your next turn.</description>
+		</sheet>
+	</element>
+	<element name="Arcane Charge" type="Archetype Feature" source="Player’s Handbook" id="ID_WOTC_PHB_ARCHETYPE_FEATURE_ELDRITCH_KNIGHT_ARCANE_CHARGE">
+		<requirements>!ID_INTERNAL_FEATURE_REPLACEMENT_FIGHTER_ELDRITCH_KNIGHT_ARCANE_CHARGE</requirements>
+		<description>
+			<p>At 15th level, you gain the ability to teleport up to 30 feet to an unoccupied space you can see when you use your Action Surge. You can teleport before or after the additional action.</p>
+		</description>
+		<sheet>
+			<description>You can teleport up to 30 feet to an unoccupied space you can see when you use your Action Surge. You can teleport before or after the additional action.</description>
+		</sheet>
+	</element>
+	<element name="Improved War Magic" type="Archetype Feature" source="Player’s Handbook" id="ID_WOTC_PHB_ARCHETYPE_FEATURE_ELDRITCH_KNIGHT_IMPROVED_WAR_MAGIC">
+		<requirements>!ID_INTERNAL_FEATURE_REPLACEMENT_FIGHTER_ELDRITCH_KNIGHT_IMPROVED_WAR_MAGIC</requirements>
+		<description>
+			<p>Starting at 18th level, when you use your action to cast a spell, you can make one weapon attack as a bonus action.</p>
+		</description>
+		<sheet>
+			<description>When you use your action to cast a spell, you can make one weapon attack as a bonus action.</description>
+		</sheet>
+	</element>
+
+	<!--Feature Replacement Grants-->
+	<element name="Spellcasting Feature Replacement" type="Grants" source="Internal" id="ID_INTERNAL_FEATURE_REPLACEMENT_FIGHTER_ELDRITCH_KNIGHT_SPELLCASTING" />
+	<element name="Weapon Bond Feature Replacement" type="Grants" source="Internal" id="ID_INTERNAL_FEATURE_REPLACEMENT_FIGHTER_ELDRITCH_KNIGHT_WEAPON_BOND" />
+	<element name="War Magic Feature Replacement" type="Grants" source="Internal" id="ID_INTERNAL_FEATURE_REPLACEMENT_FIGHTER_ELDRITCH_KNIGHT_WAR_MAGIC" />
+	<element name="Eldritch Strike Feature Replacement" type="Grants" source="Internal" id="ID_INTERNAL_FEATURE_REPLACEMENT_FIGHTER_ELDRITCH_KNIGHT_ELDRITCH_STRIKE" />
+	<element name="Arcane Charge Feature Replacement" type="Grants" source="Internal" id="ID_INTERNAL_FEATURE_REPLACEMENT_FIGHTER_ELDRITCH_KNIGHT_ARCANE_CHARGE" />
+	<element name="Improved War Magic Feature Replacement" type="Grants" source="Internal" id="ID_INTERNAL_FEATURE_REPLACEMENT_FIGHTER_ELDRITCH_KNIGHT_IMPROVED_WAR_MAGIC" />
+</elements>

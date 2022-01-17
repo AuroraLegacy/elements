@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<elements>
+	<info>
+		<update version="0.0.1">
+			<file name="wizard-illusion.xml" url="https://raw.githubusercontent.com/AuroraLegacy/elements/master/core/players-handbook/archetypes/wizard-illusion.xml" />
+		</update>
+	</info>
+
+	<element name="School of Illusion" type="Archetype" source="Player’s Handbook" id="ID_WOTC_PHB_ARCHETYPE_WIZARD_SCHOOL_OF_ILLUSION">
+		<supports>Arcane Tradition</supports>
+		<description>
+			<p>You focus your studies on magic that dazzles the senses, befuddles the mind, and tricks even the wisest folk. Your magic is subtle, but the illusions crafted by your keen mind make the impossible seem real. Some illusionists—including many gnome wizards—are benign tricksters who use their spells to entertain. Others are more sinister masters of deception, using their illusions to frighten and fool others for their personal gain.</p>
+			<div element="ID_WOTC_PHB_ARCHETYPE_FEATURE_WIZARD_ILLUSION_ILLUSION_SAVANT" />
+			<div element="ID_WOTC_PHB_ARCHETYPE_FEATURE_WIZARD_ILLUSION_IMPROVED_MINOR_ILLUSION" />
+			<div element="ID_WOTC_PHB_ARCHETYPE_FEATURE_WIZARD_ILLUSION_MALLEABLE_ILLUSIONS" />
+			<div element="ID_WOTC_PHB_ARCHETYPE_FEATURE_WIZARD_ILLUSION_ILLUSORY_SELF" />
+			<div element="ID_WOTC_PHB_ARCHETYPE_FEATURE_WIZARD_ILLUSION_ILLUSORY_REALITY" />
+		</description>
+		<sheet display="false">
+			<description>You focus your studies on magic that dazzles the senses, befuddles the mind, and tricks even the wisest folk.</description>
+		</sheet>
+		<rules>
+			<grant type="Archetype Feature" id="ID_WOTC_PHB_ARCHETYPE_FEATURE_WIZARD_ILLUSION_ILLUSION_SAVANT" level="2"/>
+			<grant type="Archetype Feature" id="ID_WOTC_PHB_ARCHETYPE_FEATURE_WIZARD_ILLUSION_IMPROVED_MINOR_ILLUSION" level="2"/>
+			<grant type="Archetype Feature" id="ID_WOTC_PHB_ARCHETYPE_FEATURE_WIZARD_ILLUSION_MALLEABLE_ILLUSIONS" level="6"/>
+			<grant type="Archetype Feature" id="ID_WOTC_PHB_ARCHETYPE_FEATURE_WIZARD_ILLUSION_ILLUSORY_SELF" level="10"/>
+			<grant type="Archetype Feature" id="ID_WOTC_PHB_ARCHETYPE_FEATURE_WIZARD_ILLUSION_ILLUSORY_REALITY" level="14"/>
+		</rules>
+	</element>
+	<element name="Illusion Savant" type="Archetype Feature" source="Player’s Handbook" id="ID_WOTC_PHB_ARCHETYPE_FEATURE_WIZARD_ILLUSION_ILLUSION_SAVANT">
+		<requirements>!ID_INTERNAL_FEATURE_REPLACEMENT_WIZARD_ILLUSION_ILLUSION_SAVANT</requirements>
+		<description>
+			<p>Beginning when you select this school at 2nd level, the gold and time you must spend to copy an illusion spell into your spellbook is halved.</p>
+		</description>
+		<sheet>
+			<description>The gold and time you must spend to copy an illusion spell into your spellbook is halved.</description>
+		</sheet>
+	</element>
+	<element name="Improved Minor Illusion" type="Archetype Feature" source="Player’s Handbook" id="ID_WOTC_PHB_ARCHETYPE_FEATURE_WIZARD_ILLUSION_IMPROVED_MINOR_ILLUSION">
+		<requirements>!ID_INTERNAL_FEATURE_REPLACEMENT_WIZARD_ILLUSION_IMPROVED_MINOR_ILLUSION</requirements>
+		<description>
+			<p>When you choose this school at 2nd level, you learn the minor illusion cantrip. If you already know this cantrip, you learn a different wizard cantrip of your choice. The cantrip doesn’t count against your number of cantrips known.</p>
+			<p class="indent">When you cast minor illusion, you can create both a sound and an image with a single casting of the spell.</p>
+		</description>
+		<sheet>
+			<description>When you cast minor illusion, you can create both a sound and an image with a single casting of the spell.</description>
+		</sheet>
+		<rules>
+			<select type="Spell" name="Improved Minor Illusion" supports="Wizard,0" spellcasting="Wizard" default="ID_PHB_SPELL_MINOR_ILLUSION" default-behaviour="force" />
+		</rules>
+	</element>
+	<element name="Malleable Illusions" type="Archetype Feature" source="Player’s Handbook" id="ID_WOTC_PHB_ARCHETYPE_FEATURE_WIZARD_ILLUSION_MALLEABLE_ILLUSIONS">
+		<requirements>!ID_INTERNAL_FEATURE_REPLACEMENT_WIZARD_ILLUSION_MALLEABLE_ILLUSIONS</requirements>
+		<description>
+			<p>Starting at 6th level, when you cast an illusion spell that has a duration of 1 minute or longer, you can use your action to change the nature of that illusion (using the spell’s normal parameters for the illusion), provided that you can see the illusion.</p>
+		</description>
+		<sheet action="Action">
+			<description>When you cast an illusion spell that has a duration of 1 minute or longer, you can change the nature of that illusion, provided that you can see the illusion.</description>
+		</sheet>
+	</element>
+	<element name="Illusory Self" type="Archetype Feature" source="Player’s Handbook" id="ID_WOTC_PHB_ARCHETYPE_FEATURE_WIZARD_ILLUSION_ILLUSORY_SELF">
+		<requirements>!ID_INTERNAL_FEATURE_REPLACEMENT_WIZARD_ILLUSION_ILLUSORY_SELF</requirements>
+		<description>
+			<p>Beginning at 10th level, you can create an illusory duplicate of yourself as an instant, almost instinctual reaction to danger. When a creature makes an attack roll against you, you can use your reaction to interpose the illusory duplicate between the attacker and yourself. The attack automatically misses you, then the illusion dissipates.</p>
+			<p class="indent">Once you use this feature, you can’t use it again until you finish a short or long rest.</p>
+		</description>
+		<sheet action="Reaction" usage="1/Short Rest">
+			<description>When a creature makes an attack roll against you, you can interpose the illusory duplicate between the attacker and yourself. The attack automatically misses you, then the illusion dissipates.</description>
+		</sheet>
+	</element>
+	<element name="Illusory Reality" type="Archetype Feature" source="Player’s Handbook" id="ID_WOTC_PHB_ARCHETYPE_FEATURE_WIZARD_ILLUSION_ILLUSORY_REALITY">
+		<requirements>!ID_INTERNAL_FEATURE_REPLACEMENT_WIZARD_ILLUSION_ILLUSORY_REALITY</requirements>
+		<description>
+			<p>By 14th level, you have learned the secret of weaving shadow magic into your illusions to give them a semireality. When you cast an illusion spell of 1st level or higher, you can choose one inanimate, nonmagical object that is part of the illusion and make that object real. You can do this on your turn as a bonus action while the spell is ongoing. The object remains real for 1 minute. For example, you can create an illusion of a bridge over a chasm and then make it real long enough for your allies to cross.</p>
+			<p class="indent">The object can’t deal damage or otherwise directly harm anyone.</p>
+		</description>
+		<sheet action="Bonus Action">
+			<description>When you cast an illusion spell of 1st level or higher, you can choose one inanimate, nonmagical object that is part of the illusion and make that object real. The object remains real for 1 minute. For example, you can create an illusion of a bridge over a chasm and then make it real long enough for your allies to cross. The object can’t deal damage or otherwise directly harm anyone.</description>
+		</sheet>
+	</element>
+	
+	<!--Feature Replacement Grants-->
+	<element name="Illusion Savant Feature Replacement" type="Grants" source="Internal" id="ID_INTERNAL_FEATURE_REPLACEMENT_WIZARD_ILLUSION_ILLUSION_SAVANT" />
+	<element name="Improved Minor Illusion Feature Replacement" type="Grants" source="Internal" id="ID_INTERNAL_FEATURE_REPLACEMENT_WIZARD_ILLUSION_IMPROVED_MINOR_ILLUSION" />
+	<element name="Malleable Illusions Feature Replacement" type="Grants" source="Internal" id="ID_INTERNAL_FEATURE_REPLACEMENT_WIZARD_ILLUSION_MALLEABLE_ILLUSIONS" />
+	<element name="Illusory Self Feature Replacement" type="Grants" source="Internal" id="ID_INTERNAL_FEATURE_REPLACEMENT_WIZARD_ILLUSION_ILLUSORY_SELF" />
+	<element name="Illusory Reality Feature Replacement" type="Grants" source="Internal" id="ID_INTERNAL_FEATURE_REPLACEMENT_WIZARD_ILLUSION_ILLUSORY_REALITY" />
+</elements>

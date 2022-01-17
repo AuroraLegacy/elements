@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<elements>
+	<info>
+		<update version="0.0.1">
+			<file name="cleric-trickery.xml" url="https://raw.githubusercontent.com/AuroraLegacy/elements/master/core/players-handbook/archetypes/cleric-trickery.xml" />
+		</update>
+	</info>
+
+	<element name="Trickery Domain" type="Archetype" source="Player’s Handbook" id="ID_WOTC_PHB_ARCHETYPE_CLERIC_Trickery_DOMAIN">
+		<supports>Divine Domain</supports>
+		<description>
+			<p>Gods of trickery—such as Tymora, Beshaba, Olidammara, the Traveler, Garl Glittergold, and Loki—are mischief-makers and instigators who stand as a constant challenge to the accepted order among both gods and mortals. They’re patrons of thieves, scoundrels, gamblers, rebels, and liberators. Their clerics are a disruptive force in the world, puncturing pride, mocking tyrants, stealing from the rich, freeing captives, and flouting hollow traditions. They prefer subterfuge, pranks, deception, and theft rather than direct confrontation.</p>
+			<h5 class="caption">TRICKERY DOMAIN SPELLS</h5>
+			<table>
+				<thead>
+					<tr><td>Cleric Level</td><td>Spells</td></tr>
+				</thead>
+				<tr><td>1st</td><td><em>charm person, disguise self</em></td></tr>
+				<tr><td>3rd</td><td><em>mirror image, pass without trace</em></td></tr>
+				<tr><td>5th</td><td><em>blink, dispel magic</em></td></tr>
+				<tr><td>7th</td><td><em>dimension door, polymorph</em></td></tr>
+				<tr><td>9th</td><td><em>dominate person, modify memory</em></td></tr>
+			</table>
+			<div element="ID_WOTC_PHB_ARCHETYPE_FEATURE_TRICKERY_DOMAIN_BLESSING_OF_THE_TRICKSTER" />
+			<div element="ID_WOTC_PHB_ARCHETYPE_FEATURE_TRICKERY_DOMAIN_CD_INVOKE_DUPLICITY" />
+			<div element="ID_WOTC_PHB_ARCHETYPE_FEATURE_TRICKERY_DOMAIN_CD_CLOAK_OF_SHADOWS" />
+			<div element="ID_WOTC_PHB_ARCHETYPE_FEATURE_TRICKERY_DOMAIN_DIVINE_STRIKE" />
+			<div element="ID_WOTC_PHB_ARCHETYPE_FEATURE_TRICKERY_DOMAIN_IMPROVED_DUPLICITY" />
+		</description>
+		<sheet display="false">
+			<description>Gods of trickery are mischief-makers and instigators who stand as a constant challenge to the accepted order among both gods and mortals.</description>
+		</sheet>
+		<rules>
+			<grant type="Spell" id="ID_PHB_SPELL_CHARM_PERSON" level="1" spellcasting="Cleric" prepared="true" />
+			<grant type="Spell" id="ID_PHB_SPELL_DISGUISE_SELF" level="1" spellcasting="Cleric" prepared="true" />
+			<grant type="Spell" id="ID_PHB_SPELL_MIRROR_IMAGE" level="3" spellcasting="Cleric" prepared="true" />
+			<grant type="Spell" id="ID_PHB_SPELL_PASS_WITHOUT_TRACE" level="3" spellcasting="Cleric" prepared="true" />
+			<grant type="Spell" id="ID_PHB_SPELL_BLINK" level="5" spellcasting="Cleric" prepared="true" />
+			<grant type="Spell" id="ID_PHB_SPELL_DISPEL_MAGIC" level="5" spellcasting="Cleric" prepared="true" />
+			<grant type="Spell" id="ID_PHB_SPELL_DIMENSION_DOOR" level="7" spellcasting="Cleric" prepared="true" />
+			<grant type="Spell" id="ID_PHB_SPELL_POLYMORPH" level="7" spellcasting="Cleric" prepared="true" />
+			<grant type="Spell" id="ID_PHB_SPELL_DOMINATE_PERSON" level="9" spellcasting="Cleric" prepared="true" />
+			<grant type="Spell" id="ID_PHB_SPELL_MODIFY_MEMORY" level="9" spellcasting="Cleric" prepared="true" />
+			<grant type="Archetype Feature" id="ID_WOTC_PHB_ARCHETYPE_FEATURE_TRICKERY_DOMAIN_BLESSING_OF_THE_TRICKSTER" level="1"/>
+			<grant type="Archetype Feature" id="ID_WOTC_PHB_ARCHETYPE_FEATURE_TRICKERY_DOMAIN_CD_INVOKE_DUPLICITY" level="2"/>
+			<grant type="Archetype Feature" id="ID_WOTC_PHB_ARCHETYPE_FEATURE_TRICKERY_DOMAIN_CD_CLOAK_OF_SHADOWS" level="6"/>
+			<grant type="Archetype Feature" id="ID_WOTC_PHB_ARCHETYPE_FEATURE_TRICKERY_DOMAIN_DIVINE_STRIKE" level="8"/>
+			<grant type="Archetype Feature" id="ID_WOTC_PHB_ARCHETYPE_FEATURE_TRICKERY_DOMAIN_IMPROVED_DUPLICITY" level="17"/>
+		</rules>
+	</element>
+	<element name="Blessing of the Trickster" type="Archetype Feature" source="Player’s Handbook" id="ID_WOTC_PHB_ARCHETYPE_FEATURE_TRICKERY_DOMAIN_BLESSING_OF_THE_TRICKSTER">
+		<requirements>!ID_INTERNAL_FEATURE_REPLACEMENT_CLERIC_TRICKERY_DOMAIN_BLESSING_OF_THE_TRICKSTER</requirements>
+		<description>
+			<p>Starting when you choose this domain at 1st level, you can use your action to touch a willing creature other than yourself to give it advantage on Dexterity (Stealth) checks. This blessing lasts for 1 hour or until you use this feature again.</p>
+		</description>
+		<sheet action="Action">
+			<description>You can touch a willing creature other than yourself to give it advantage on Stealth checks. This blessing lasts for 1 hour or until you use this feature again.</description>
+		</sheet>
+	</element>
+	<element name="Channel Divinity: Invoke Duplicity" type="Archetype Feature" source="Player’s Handbook" id="ID_WOTC_PHB_ARCHETYPE_FEATURE_TRICKERY_DOMAIN_CD_INVOKE_DUPLICITY">
+		<requirements>!ID_INTERNAL_FEATURE_REPLACEMENT_CLERIC_TRICKERY_DOMAIN_CD_INVOKE_DUPLICITY</requirements>
+		<description>
+			<p>Starting at 2nd level, you can use your Channel Divinity to create an illusory duplicate of yourself. As an action, you create a perfect illusion of yourself that lasts for 1 minute, or until you lose your concentration (as if you were concentrating on a spell).</p>
+			<p class="indent">The illusion appears in an unoccupied space that you can see within 30 feet of you. As a bonus action on your turn, you can move the illusion up to 30 feet to a space you can see, but it must remain within 120 feet of you.</p>
+			<p class="indent">For the duration, you can cast spells as though you were in the illusion’s space, but you must use your own senses. Additionally, when both you and your illusion are within 5 feet of a creature that can see the illusion, you have advantage on attack rolls against that creature, given how distracting the illusion is to the target.</p>
+		</description>
+		<sheet alt="Invoke Duplicity" action="Action" usage="Channel Divinity">
+			<description>You create a perfect illusion of yourself that lasts for 1 minute, or until you lose your concentration.
+			The illusion appears in an unoccupied space that you can see within 30 feet of you. As a bonus action on your turn, you can move the illusion up to 30 feet to a space you can see, but it must remain within 120 feet of you.
+			For the duration, you can cast spells as though you were in the illusion’s space, but you must use your own senses. Additionally, when both you and your illusion are within 5 feet of a creature that can see the illusion, you have advantage on attack rolls against that creature, given how distracting the illusion is to the target.</description>
+		</sheet>
+	</element>
+	<element name="Channel Divinity: Cloak of Shadows" type="Archetype Feature" source="Player’s Handbook" id="ID_WOTC_PHB_ARCHETYPE_FEATURE_TRICKERY_DOMAIN_CD_CLOAK_OF_SHADOWS">
+		<requirements>!ID_INTERNAL_FEATURE_REPLACEMENT_CLERIC_TRICKERY_DOMAIN_CD_CLOAK_OF_SHADOWS</requirements>
+		<description>
+			<p>Starting at 6th level, you can use your Channel Divinity to vanish.</p>
+			<p class="indent">As an action, you become invisible until the end of your next turn. You become visible if you attack or cast a spell.</p>
+		</description>
+		<sheet alt="Cloak of Shadows" action="Action" usage="Channel Divinity">
+			<description>You become invisible until the end of your next turn. You become visible if you attack or cast a spell.</description>
+		</sheet>
+	</element>
+	<element name="Divine Strike" type="Archetype Feature" source="Player’s Handbook" id="ID_WOTC_PHB_ARCHETYPE_FEATURE_TRICKERY_DOMAIN_DIVINE_STRIKE">
+		<requirements>!ID_INTERNAL_FEATURE_REPLACEMENT_CLERIC_DIVINE_STRIKE_OR_POTENT_SPELLCASTING</requirements>
+		<description>
+			<p>At 8th level, you gain the ability to infuse your weapon strikes with poison—a gift from your deity. Once on each of your turns when you hit a creature with a weapon attack, you can cause the attack to deal an extra 1d8 poison damage to the target. When you reach 14th level, the extra damage increases to 2d8.</p>
+		</description>
+		<sheet>
+			<description>Once on each of your turn +1d8 poison damage with a weapon attack.</description>
+			<description level="14">Once on each of your turn +2d8 poison damage with a weapon attack.</description>
+		</sheet>
+	</element>
+	<element name="Improved Duplicity" type="Archetype Feature" source="Player’s Handbook" id="ID_WOTC_PHB_ARCHETYPE_FEATURE_TRICKERY_DOMAIN_IMPROVED_DUPLICITY">
+		<requirements>!ID_INTERNAL_FEATURE_REPLACEMENT_CLERIC_TRICKERY_DOMAIN_IMPROVED_DUPLICITY</requirements>
+		<description>
+			<p>At 17th level, you can create up to four duplicates of yourself, instead of one, when you use Invoke Duplicity. As a bonus action on your turn, you can move any number of them up to 30 feet, to a maximum range of 120 feet.</p>
+			<div class="reference">
+				<div element="ID_WOTC_PHB_ARCHETYPE_FEATURE_TRICKERY_DOMAIN_CD_INVOKE_DUPLICITY" />
+			</div>
+		</description>
+		<sheet>
+			<description>You can create up to four duplicates of yourself, instead of one, when you use Invoke Duplicity.
+			As a bonus action on your turn, you can move any number of them up to 30 feet, to a maximum range of 120 feet.</description>
+		</sheet>
+	</element>
+	
+	<!--Feature Replacement Grants-->
+	<element name="Blessing of the Trickster Feature Replacement" type="Grants" source="Internal" id="ID_INTERNAL_FEATURE_REPLACEMENT_CLERIC_TRICKERY_DOMAIN_BLESSING_OF_THE_TRICKSTER" />
+	<element name="Channel Divinity: Invoke Duplicity Feature Replacement" type="Grants" source="Internal" id="ID_INTERNAL_FEATURE_REPLACEMENT_CLERIC_TRICKERY_DOMAIN_CD_INVOKE_DUPLICITY" />
+	<element name="Channel Divinity: Cloak of Shadows Feature Replacement" type="Grants" source="Internal" id="ID_INTERNAL_FEATURE_REPLACEMENT_CLERIC_TRICKERY_DOMAIN_CD_CLOAK_OF_SHADOWS" />
+	<element name="Improved Duplicity Feature Replacement" type="Grants" source="Internal" id="ID_INTERNAL_FEATURE_REPLACEMENT_CLERIC_TRICKERY_DOMAIN_IMPROVED_DUPLICITY" />
+</elements>

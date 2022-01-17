@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<elements>
+	<info>
+		<update version="0.0.1">
+			<file name="monk-shadow.xml" url="https://raw.githubusercontent.com/AuroraLegacy/elements/master/core/players-handbook/archetypes/monk-shadow.xml" />
+		</update>
+	</info>
+
+	<element name="Way of Shadow" type="Archetype" source="Player’s Handbook" id="ID_WOTC_PHB_ARCHETYPE_MONK_WAY_OF_SHADOW">
+		<supports>Monastic Tradition</supports>
+		<description>
+			<p>Monks of the Way of Shadow follow a tradition that values stealth and subterfuge. These monks might be called ninjas or shadowdancers, and they serve as spies and assassins. Sometimes the members of a ninja monastery are family members, forming a clan sworn to secrecy about their arts and missions. Other monasteries are more like thieves’ guilds, hiring out their services to nobles, rich merchants, or anyone else who can pay their fees. Regardless of their methods, the heads of these monasteries expect the unquestioning obedience of their students.</p>
+			<div element="ID_WOTC_PHB_ARCHETYPE_FEATURE_WAY_OF_SHADOW_SHADOW_ARTS" />
+			<div element="ID_WOTC_PHB_ARCHETYPE_FEATURE_WAY_OF_SHADOW_SHADOW_STEP" />
+			<div element="ID_WOTC_PHB_ARCHETYPE_FEATURE_WAY_OF_SHADOW_CLOAK_OF_SHADOWS" />
+			<div element="ID_WOTC_PHB_ARCHETYPE_FEATURE_WAY_OF_SHADOW_OPPORTUNIST" />
+		</description>
+		<sheet display="false">
+			<description>Monks of the Way of Shadow follow a tradition that values stealth and subterfuge.</description>
+		</sheet>
+		<rules>
+			<grant type="Archetype Feature" id="ID_WOTC_PHB_ARCHETYPE_FEATURE_WAY_OF_SHADOW_SHADOW_ARTS" level="3"/>
+			<grant type="Archetype Feature" id="ID_WOTC_PHB_ARCHETYPE_FEATURE_WAY_OF_SHADOW_SHADOW_STEP" level="6"/>
+			<grant type="Archetype Feature" id="ID_WOTC_PHB_ARCHETYPE_FEATURE_WAY_OF_SHADOW_CLOAK_OF_SHADOWS" level="11"/>
+			<grant type="Archetype Feature" id="ID_WOTC_PHB_ARCHETYPE_FEATURE_WAY_OF_SHADOW_OPPORTUNIST" level="17"/>
+		</rules>
+	</element>
+	<element name="Shadow Arts" type="Archetype Feature" source="Player’s Handbook" id="ID_WOTC_PHB_ARCHETYPE_FEATURE_WAY_OF_SHADOW_SHADOW_ARTS">
+		<requirements>!ID_INTERNAL_FEATURE_REPLACEMENT_MONK_WAY_OF_SHADOW_SHADOW_ARTS</requirements>
+		<description>
+			<p>Starting when you choose this tradition at 3rd level, you can use your ki to duplicate the effects of certain spells. As an action, you can spend 2 ki points to cast darkness, darkvision, pass without trace, or silence, without providing material components. Additionally, you gain the minor illusion cantrip if you don’t already know it.</p>
+		</description>
+		<sheet action="Action" usage="Ki">
+			<description>You can spend 2 ki points to cast darkness, darkvision, pass without trace, or silence, without providing material components. Additionally, you gain the minor illusion cantrip if you don’t already know it.</description>
+		</sheet>
+		<rules>
+			<grant type="Spell" id="ID_PHB_SPELL_MINOR_ILLUSION" />
+		</rules>
+	</element>
+	<element name="Shadow Step" type="Archetype Feature" source="Player’s Handbook" id="ID_WOTC_PHB_ARCHETYPE_FEATURE_WAY_OF_SHADOW_SHADOW_STEP">
+		<requirements>!ID_INTERNAL_FEATURE_REPLACEMENT_MONK_WAY_OF_SHADOW_SHADOW_STEP</requirements>
+		<description>
+			<p>At 6th level, you gain the ability to step from one shadow into another. When you are in dim light or darkness, as a bonus action you can teleport up to 60 feet to an unoccupied space you can see that is also in dim light or darkness. You then have advantage on the first melee attack you make before the end of the turn.</p>
+		</description>
+		<sheet action="Bonus Action">
+			<description>When you are in dim light or darkness, you can teleport up to 60 feet to an unoccupied space you can see that is also in dim light or darkness. You then have advantage on the first melee attack you make before the end of the turn.</description>
+		</sheet>
+	</element>
+	<element name="Cloak of Shadows" type="Archetype Feature" source="Player’s Handbook" id="ID_WOTC_PHB_ARCHETYPE_FEATURE_WAY_OF_SHADOW_CLOAK_OF_SHADOWS">
+		<requirements>!ID_INTERNAL_FEATURE_REPLACEMENT_MONK_WAY_OF_SHADOW_CLOAK_OF_SHADOWS</requirements>
+		<description>
+			<p>By 11th level, you have learned to become one with the shadows. When you are in an area of dim light or darkness, you can use your action to become invisible. You remain invisible until you make an attack, cast a spell, or are in an area of bright light.</p>
+		</description>
+		<sheet action="Action">
+			<description>When you are in an area of dim light or darkness, you can become invisible. You remain invisible until you make an attack, cast a spell, or are in an area of bright light.</description>
+		</sheet>
+	</element>
+	<element name="Opportunist" type="Archetype Feature" source="Player’s Handbook" id="ID_WOTC_PHB_ARCHETYPE_FEATURE_WAY_OF_SHADOW_OPPORTUNIST">
+		<requirements>!ID_INTERNAL_FEATURE_REPLACEMENT_MONK_WAY_OF_SHADOW_OPPORTUNIST</requirements>
+		<description>
+			<p>At 17th level, you can exploit a creature’s momentary distraction when it is hit by an attack. Whenever a creature within 5 feet of you is hit by an attack made by a creature other than you, you can use your reaction to make a melee attack against that creature.</p>
+		</description>
+		<sheet action="Reaction">
+			<description>Whenever a creature within 5 feet of you is hit by an attack made by a creature other than you, you can make a melee attack against that creature.</description>
+		</sheet>
+	</element>
+
+	<!--Feature Replacement Grants-->
+	<element name="Shadow Arts Feature Replacement" type="Grants" source="Internal" id="ID_INTERNAL_FEATURE_REPLACEMENT_MONK_WAY_OF_SHADOW_SHADOW_ARTS" />
+	<element name="Shadow Step Feature Replacement" type="Grants" source="Internal" id="ID_INTERNAL_FEATURE_REPLACEMENT_MONK_WAY_OF_SHADOW_SHADOW_STEP" />
+	<element name="Cloak of Shadows Feature Replacement" type="Grants" source="Internal" id="ID_INTERNAL_FEATURE_REPLACEMENT_MONK_WAY_OF_SHADOW_CLOAK_OF_SHADOWS" />
+	<element name="Opportunist Feature Replacement" type="Grants" source="Internal" id="ID_INTERNAL_FEATURE_REPLACEMENT_MONK_WAY_OF_SHADOW_OPPORTUNIST" />
+</elements>
