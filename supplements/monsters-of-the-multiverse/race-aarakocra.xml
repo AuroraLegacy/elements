@@ -1,4 +1,4 @@
-zzzzzzzzz<?xml version="1.0" encoding="utf-8" ?>
+<?xml version="1.0" encoding="utf-8" ?>
 <elements>
 	<info>
 		<name>Aarakocra from Monsters of the Multiverse</name>
@@ -26,14 +26,14 @@ zzzzzzzzz<?xml version="1.0" encoding="utf-8" ?>
 		</setters>
 		<rules>
 			<select type="Ability Score Improvement" name="Ability Score Improvement Option (Aarakocra)" supports="Custom Ability Score Improvement Option" />
-			<stat name="innate speed" value="40" bonus="base" />
+			<stat name="innate speed" value="30" bonus="base" />
 			<grant type="Size" id="ID_SIZE_MEDIUM" />
 			<grant type="Language" id="ID_LANGUAGE_COMMON" requirements="!ID_WOTC_TCOE_OPTION_CUSTOMIZED_LANGUAGE" />
 			<select type="Language" name="Customized Language" supports="Custom Race Language"  requirements="ID_WOTC_TCOE_OPTION_CUSTOMIZED_LANGUAGE" />
 			<select type="Language" name="Language (Aarakocra)" supports="Standard||Exotic" />
 			<grant type="Racial Trait" id="ID_WOTC_MOTM_RACIAL_TRAIT_AARAKOCRA_FLIGHT" />
 			<grant type="Racial Trait" id="ID_WOTC_MOTM_RACIAL_TRAIT_AARAKOCRA_TALONS" />
-			<grant type="Racial Trait" id="ID_WOTC_MOTM_RACIAL_TRAIT_AARAKOCRA_WIND_CALLER" />
+			<grant type="Racial Trait" id="ID_WOTC_MOTM_RACIAL_TRAIT_AARAKOCRA_WIND_CALLER" level="3" />
 		</rules>
 	</element>
 	<element name="Flight" type="Racial Trait" source="Monsters of the Multiverse" id="ID_WOTC_MOTM_RACIAL_TRAIT_AARAKOCRA_FLIGHT">
@@ -44,7 +44,7 @@ zzzzzzzzz<?xml version="1.0" encoding="utf-8" ?>
 			<description>Because of your wings, you have a flying speed equal to your walking speed. You can’t use this flying speed if you’re wearing medium or heavy armor.</description>
 		</sheet>
 		<rules>
-			<stat name="innate speed:fly" value="innate speed" bonus="base" equipped="![armor:medium],![armor:heavy]" />
+			<stat name="innate speed:fly" value="speed" bonus="base" equipped="![armor:medium],![armor:heavy]" />
 		</rules>
 	</element>
 	<element name="Talons" type="Racial Trait" source="Monsters of the Multiverse" id="ID_WOTC_MOTM_RACIAL_TRAIT_AARAKOCRA_TALONS">
