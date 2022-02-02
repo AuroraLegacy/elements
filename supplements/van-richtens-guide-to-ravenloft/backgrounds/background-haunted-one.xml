@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<elements>
+	<info>
+		<name></name>
+		<update version="0.0.1">
+			<file name="background-haunted-one.xml" url="https://raw.githubusercontent.com/AuroraLegacy/elements/master/supplements/van-richtens-guide-to-ravenloft/backgrounds/background-haunted-one.xml" />
+		</update>
+	</info>
+	
+	<element name="Haunted One" type="Background" source="Van Richten's Guide To Ravenloft" id="ID_WOTC_VRGTR_BACKGROUND_HAUNTED_ONE">
+		<description>
+			<p>You are haunted by something so terrible that you dare not speak of it. You’ve tried to bury it and run away from it, to no avail. Whatever this thing is that haunts you can’t be slain with a sword or banished with a spell. It might come to you as a shadow on the wall, a bloodcurdling nightmare, a memory that refuses to die, or a demonic whisper in the dark. The burden has taken its toll, isolating you from most people and making you question your sanity. You must find a way to overcome it before it destroys you.</p>
+			<ul class="unstyled">
+				<li><strong>Skill Proficiencies:</strong> Choose two from among Arcana, Investigation, Religion, or Survival</li>
+				<li><strong>Languages:</strong> Choose two, one of which must be Abyssal, Celestial, Deep Speech, Draconic, Infernal, Primordial, Sylvan, or Undercommon</li>
+				<li><strong>Equipment:</strong> A monster hunter’s pack (containing a chest, a crowbar, a hammer, three wooden stakes, a holy symbol, a flask of holy water, a set of manacles, a steel mirror, a flask of oil, a tinderbox, and 3 torches), one trinket of special significance, a set of common clothes, and 1 sp.</li>
+			</ul>
+			<h5>HARROWING EVENT</h5>
+			<p>Prior to becoming an adventurer, your path in life was defined by one dark moment, one fateful decision, or one tragedy. Now you feel a darkness threatening to consume you, and you fear there may be no hope of escape. Choose a harrowing event that haunts you, or roll one on the Harrowing Events table.</p>
+			<h5>Harrowing Event</h5>
+			<table>
+				<thead>
+					<tr><td>d10</td><td>Event</td></tr>
+				</thead>
+				<tr><td>1</td><td>A monster that slaughtered dozens of innocent people spared your life, and you don’t know why.</td></tr>
+				<tr><td>2</td><td>You were born under a dark star. You can feel it watching you, coldly and distantly. Sometimes it beckons you in the dead of night.</td></tr>
+				<tr><td>3</td><td>An apparition that has haunted your family for generations now haunts you. You don’t know what it wants, and it won’t leave you alone.</td></tr>
+				<tr><td>4</td><td>Your family has a history of practicing the dark arts. You dabbled once and felt something horrible clutch at your soul, whereupon you fled in terror.</td></tr>
+				<tr><td>5</td><td>An oni took your sibling one cold, dark night, and you were unable to stop it.</td></tr>
+				<tr><td>6</td><td>You were cursed with lycanthropy and later cured. You are now haunted by the innocents you slaughtered.</td></tr>
+				<tr><td>7</td><td>A hag kidnapped and raised you. You escaped, but the hag still has a magical hold over you and fills your mind with evil thoughts.</td></tr>
+				<tr><td>8</td><td>You opened an eldritch tome and saw things unfit for a sane mind. You burned the book, but its words and images are burned into your psyche.</td></tr>
+				<tr><td>9</td><td>A fiend possessed you as a child. You were locked away but escaped. The fiend is still inside you, but now you try to keep it bottled up.</td></tr>
+				<tr><td>10</td><td>You did terrible things to avenge the murder of someone you loved. You became a monster, and it haunts your waking dreams.</td></tr>
+			</table>
+			<div element="ID_WOTC_VRGTR_BACKGROUND_FEATURE_HEART_OF_DARKNESS" />
+		</description>
+		<setters>
+			<set name="short">2 Skills from Arcana/Investigation/Religion/Survival, 1 Exotic and 1 other Language</set>
+		</setters>
+		<rules>
+			<grant type="Background Feature" id="ID_WOTC_VRGTR_BACKGROUND_FEATURE_HEART_OF_DARKNESS" requirements="!ID_INTERNAL_GRANT_OPTIONAL_BACKGROUND_FEATURE"/>
+			<select type="Background Feature" name="Variant Feature" supports="Optional Background Feature" optional="true" />
+			<select type="List" name="Harrowing Event">
+				<item id="1">A monster that slaughtered dozens of innocent people spared your life, and you don’t know why.</item>
+				<item id="2">You were born under a dark star. You can feel it watching you, coldly and distantly. Sometimes it beckons you in the dead of night.</item>
+				<item id="3">An apparition that has haunted your family for generations now haunts you. You don’t know what it wants, and it won’t leave you alone.</item>
+				<item id="4">Your family has a history of practicing the dark arts. You dabbled once and felt something horrible clutch at your soul, whereupon you fled in terror.</item>
+				<item id="5">An oni took your sibling one cold, dark night, and you were unable to stop it.</item>
+				<item id="6">You were cursed with lycanthropy and later cured. You are now haunted by the innocents you slaughtered.</item>
+				<item id="7">A hag kidnapped and raised you. You escaped, but the hag still has a magical hold over you and fills your mind with evil thoughts.</item>
+				<item id="8">You opened an eldritch tome and saw things unfit for a sane mind. You burned the book, but its words and images are burned into your psyche.</item>
+				<item id="9">A fiend possessed you as a child. You were locked away but escaped. The fiend is still inside you, but now you try to keep it bottled up.</item>
+				<item id="10">You did terrible things to avenge the murder of someone you loved. You became a monster, and it haunts your waking dreams.</item>
+			</select>
+			<select type="Proficiency" name="Skill Proficiency (Haunted One)" number="2" supports="ID_PROFICIENCY_SKILL_ARCANA | ID_PROFICIENCY_SKILL_INVESTIGATION | ID_PROFICIENCY_SKILL_RELIGION | ID_PROFICIENCY_SKILL_SURVIVAL" />
+			<select type="Language" name="Exotic Language (Haunted One)" supports="ID_LANGUAGE_ABYSSAL|ID_LANGUAGE_CELESTIAL|ID_LANGUAGE_DEEP_SPEECH|ID_LANGUAGE_DRACONIC|ID_LANGUAGE_INFERNAL|ID_LANGUAGE_PRIMORDIAL|ID_LANGUAGE_SYLVAN|ID_LANGUAGE_UNDERCOMMON" />
+			<select type="Language" name="Language (Haunted One)" supports="Standard||Exotic" />
+		</rules>
+	</element>
+
+	<element name="Feature: Heart of Darkness" type="Background Feature" source="Van Richten's Guide To Ravenloft" id="ID_WOTC_VRGTR_BACKGROUND_FEATURE_HEART_OF_DARKNESS">
+		<description>
+			<p>Those who look into your eyes can see that you have faced unimaginable horror and that you are no stranger to darkness. Though they might fear you, commoners will extend you every courtesy and do their utmost to help you. Unless you have shown yourself to be a danger to them, they will even take up arms to fight alongside you, should you find yourself facing an enemy alone.</p>
+		</description>
+		<sheet alt="Heart of Darkness">
+			<description>Those who look into your eyes can see that you have faced unimaginable horror and that you are no stranger to darkness. Though they might fear you, commoners will extend you every courtesy and do their utmost to help you. Unless you have shown yourself to be a danger to them, they will even take up arms to fight alongside you, should you find yourself facing an enemy alone.</description>
+		</sheet>
+	</element>
+</elements>
