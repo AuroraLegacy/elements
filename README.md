@@ -9,9 +9,10 @@ Please take a moment to review the [contributing guidelines](https://github.com/
 Go to the _Additional Content_ tab in Aurora, enter the URL of the index file, and have Aurora download the content to the custom folder for you. When these files get updated, Aurora will be able to keep content files up to date automatically. <br>
 More information about extending the content can be found [here](http://aurorabuilder.com/content/ "Additional Content") (could be taken down at a later time).
 
-- https://raw.githubusercontent.com/AuroraLegacy/elements/master/core.index **(strongly recommended)**
-- https://raw.githubusercontent.com/AuroraLegacy/elements/master/supplements.index
-- https://raw.githubusercontent.com/AuroraLegacy/elements/master/unearthed-arcana.index
+**The below indexes are designed to work together as a package. There have been numerous updates to core files that make most content released after November of 2020 incompatible with any archives provided by the original developer.**
+- https://raw.githubusercontent.com/AuroraLegacy/elements/master/core.index **(Required)**
+- https://raw.githubusercontent.com/AuroraLegacy/elements/master/supplements.index **(Strongly Recommended, Requires Core)**
+- https://raw.githubusercontent.com/AuroraLegacy/elements/master/unearthed-arcana.index **Requires Core)**
 
 _**Warning:**_ Users who previously used content from now archived Aurora repository, must first delete following folders and files in "_custom_" folder (you can open it through the Additional Content tab's "Content Folder" button), before using links above: "core" folder, "_supplements_" folder, "_unearthed-arcana_" folder, "_core.index_" file, "_supplements.index_" file, "_unearthed-arcana.index_" file.
 

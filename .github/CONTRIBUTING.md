@@ -57,9 +57,8 @@ Next, make sure the content contribution falls in the [project scope](#scope) an
 ### Out of the Project Scope
 
 * personal homebrew content
-* content from reddit <sup>1</sup>, D&D Wiki <sup>2</sup>, DMs Guild, D&D Beyond, and other sites that allow uses to post uncurated homebrew content.
+* content from reddit <sup>1</sup>, D&D Wiki <sup>2</sup>, DMs Guild, D&D Beyond, and other sites that allow users to post uncurated homebrew content.
 * content from other franchises converted to 5e (e.g. lord of the rings, pokemon, final fantasy, etc).
-* content that has  
 
 <sup>1</sup> There is a community repository for content from reddit [here](https://github.com/community-elements/elements-reddit).<br>
 <sup>2</sup> There is a community repository for content from D&D Wiki [here](https://github.com/community-elements/elements-dndwiki).
