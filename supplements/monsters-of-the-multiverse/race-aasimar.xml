@@ -44,17 +44,30 @@
 			<select type="Ability Score Improvement" name="Ability Score Improvement Option (Aasimar)" supports="Custom Ability Score Improvement Option" />
 			<stat name="innate speed" value="30" bonus="base" />
 			<select type="Size" name="Size (Aasimar)" supports="ID_SIZE_SMALL||ID_SIZE_MEDIUM" />
+			<grant type="Vision" id="ID_VISION_DARKVISION" />
+
 			<grant type="Language" id="ID_LANGUAGE_COMMON" requirements="!ID_WOTC_TCOE_OPTION_CUSTOMIZED_LANGUAGE" />
 			<select type="Language" name="Customized Language" supports="Custom Race Language"  requirements="ID_WOTC_TCOE_OPTION_CUSTOMIZED_LANGUAGE" />
 			<select type="Language" name="Language (Aasimar)" supports="Standard||Exotic" />
-			<grant type="Condition" id="ID_INTERNAL_CONDITION_DAMAGE_RESISTANCE_NECROTIC" />
-			<grant type="Condition" id="ID_INTERNAL_CONDITION_DAMAGE_RESISTANCE_RADIANT" />
-			<grant type="Vision" id="ID_VISION_DARKVISION" />
+			
+			<grant type="Racial Trait" id="ID_WOTC_MOTM_RACIAL_TRAIT_AASIMAR_CELESTIAL_RESISTANCE" />
 			<grant type="Racial Trait" id="ID_WOTC_MOTM_RACIAL_TRAIT_AASIMAR_HEALING_HANDS" />
 			<grant type="Racial Trait" id="ID_WOTC_MOTM_RACIAL_TRAIT_AASIMAR_LIGHT_BEARER" />
 			<grant type="Racial Trait" id="ID_WOTC_MOTM_RACIAL_TRAIT_AASIMAR_CELESTIAL_REVELATION" level="3" />
 		</rules>
 	</element>
+
+	<element name="Celestial Resistance" type="Racial Trait" source="Monsters of the Multiverse" id="ID_WOTC_MOTM_RACIAL_TRAIT_AASIMAR_CELESTIAL_RESISTANCE">
+		<description>
+			<p>You have resistance to necrotic damage and radiant damage.</p>
+		</description>
+		<sheet display="false" />
+		<rules>
+			<grant type="Condition" id="ID_INTERNAL_CONDITION_DAMAGE_RESISTANCE_NECROTIC" />
+			<grant type="Condition" id="ID_INTERNAL_CONDITION_DAMAGE_RESISTANCE_RADIANT" />
+		</rules>
+	</element>
+
 	<element name="Healing Hands" type="Racial Trait" source="Monsters of the Multiverse" id="ID_WOTC_MOTM_RACIAL_TRAIT_AASIMAR_HEALING_HANDS">
 		<description>
 			<p>You know the <i>light</i> cantrip. Charisma is your spellcasting ability for it.</p>
@@ -66,6 +79,7 @@
 			<grant type="Spell" id="ID_PHB_SPELL_LIGHT" />
 		</rules>
 	</element>
+
 	<element name="Light Bearer" type="Racial Trait" source="Monsters of the Multiverse" id="ID_WOTC_MOTM_RACIAL_TRAIT_AASIMAR_LIGHT_BEARER">
 		<description>
 			<p>You have talons that you can use to make unarmed strikes. When you hit with them, the strike deals ld6 + your Strength modifier slashing damage, instead of the bludgeoning damage normal for an unarmed strike.</p>
@@ -74,6 +88,7 @@
 			<description>You have talons that you can use to make unarmed strikes. When you hit with them, the strike deals ld6 + {{strength:modifier}} slashing damage, instead of the bludgeoning damage normal for an unarmed strike.</description>
 		</sheet>
 	</element>
+
 	<element name="Celestial Revelation" type="Racial Trait" source="Monsters of the Multiverse" id="ID_WOTC_MOTM_RACIAL_TRAIT_AASIMAR_CELESTIAL_REVELATION">
 		<description>
 			<p>When you reach 3rd level, choose one of the revelation options below. Thereafter, you can use a bonus action to unleash the celestial energy within yourself, gaining the benefits of that revelation. Your transformation lasts for 1 minute or until you end it as a bonus action. Once you transform using your revelation below, you can’t use it again until you finish a long rest:</p>
@@ -85,6 +100,7 @@
 			<select type="Racial Trait" name="Celestial Revelation" supports="CelestialRevelation" />
 		</rules>
 	</element>
+
 	<element name="Necrotic Shroud" type="Racial Trait" source="Monsters of the Multiverse" id="ID_WOTC_MOTM_RACIAL_TRAIT_AASIMAR_CELESTIAL_REVELATION_NECROTIC_SHROUD">
 		<supports>CelestialRevelation</supports>
 		<description>
@@ -100,6 +116,7 @@
 			<stat name="necroticshroud:dc" value="proficiency" />
 		</rules>
 	</element>
+
 	<element name="Radiant Consumption" type="Racial Trait" source="Monsters of the Multiverse" id="ID_WOTC_MOTM_RACIAL_TRAIT_AASIMAR_CELESTIAL_REVELATION_RADIANT_CONSUMPTION">
 		<supports>CelestialRevelation</supports>
 		<description>
@@ -110,6 +127,7 @@
 			Searing light temporarily radiates from your eyes and mouth. For the duration, you shed bright light in a 10-foot radius and dim light for an additional 10 feet, and at the end of each of your turns, each creature within 10 feet of you takes {{proficiency}} radiant damage. Until the transformation ends, once on each of your turns, you can deal an extra {{proficiency}} radiant damage to one target when you deal damage to it with an attack or a spell.</description>
 		</sheet>
 	</element>
+
 	<element name="Radiant Soul" type="Racial Trait" source="Monsters of the Multiverse" id="ID_WOTC_MOTM_RACIAL_TRAIT_AASIMAR_CELESTIAL_REVELATION_RADIANT_SOUL">
 		<supports>CelestialRevelation</supports>
 		<description>
