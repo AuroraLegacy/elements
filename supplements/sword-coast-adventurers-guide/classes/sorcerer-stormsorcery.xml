@@ -4,7 +4,7 @@
 		<name>Storm Sorcery</name>
 		<description>Storm Sorcery archetype from the Sword Coast Adventurer’s Guide.</description>
 		<author url="http://dnd.wizards.com/products/tabletop-games/rpg-products/sc-adventurers-guide">Wizards of the Coast</author>
-		<update version="0.0.4">
+		<update version="0.0.5">
 			<file name="sorcerer-stormsorcery.xml" url="https://raw.githubusercontent.com/AuroraLegacy/elements/master/supplements/sword-coast-adventurers-guide/classes/sorcerer-stormsorcery.xml" />
 		</update>
 	</info>
@@ -33,6 +33,7 @@
 			<grant type="Archetype Feature" id="ID_WOTC_SCAG_ARCHETYPE_FEATURE_STORM_SORCERY_WIND_SOUL" level="18"/>
 		</rules>
 	</element>
+
 	<element name="Wind Speaker" type="Archetype Feature" source="Sword Coast Adventurer’s Guide" id="ID_WOTC_SCAG_ARCHETYPE_FEATURE_STORM_SORCERY_WIND_SPEAKER">
 		<description>
 			<p>The arcane magic you command is infused with elemental air. You can speak, read, and write Primordial. (Knowing this language allows you to understand and be understood by those who speak its dialects: Aquan, Auran, Ignan, and Terran.)</p>
@@ -45,6 +46,7 @@
 			<grant type="Language" id="ID_LANGUAGE_PRIMORDIAL" />
 		</rules>
 	</element>
+
 	<element name="Tempestuous Magic" type="Archetype Feature" source="Sword Coast Adventurer’s Guide" id="ID_WOTC_SCAG_ARCHETYPE_FEATURE_STORM_SORCERY_TEMPESTUOUS_MAGIC">
 		<description>
 			<p>Starting at 1st level, you can use a bonus action on your turn to cause whirling gusts of elemental air to briefly surround you, immediately before or after you cast a spell of 1st level or higher. Doing so allows you to fly up to 10 feet without provoking opportunity attacks.</p>
@@ -53,18 +55,20 @@
 			<description>On your turn, immediately before or after you cast a spell of 1st level or higher, fly up to 10 feet without provoking opportunity attacks.</description>
 		</sheet>
 	</element>
+
 	<element name="Heart of the Storm" type="Archetype Feature" source="Sword Coast Adventurer’s Guide" id="ID_WOTC_SCAG_ARCHETYPE_FEATURE_STORM_SORCERY_HEART_OF_THE_STORM">
 		<description>
 			<p>At 6th level, you gain resistance to lightning and thunder damage. In addition, whenever you start casting a spell of 1st level or higher that deals lightning or thunder damage, stormy magic erupts from you. This eruption causes creatures of your choice that you can see within 10 feet of you to take lightning or thunder damage (choose each time this ability activates) equal to half your sorcerer level.</p>
 		</description>
 		<sheet>
-			<description>Whenever you start casting a spell of 1st level or higher that deals lightning or thunder damage. Creatures of your choice that you can see within 10 feet of you to take {{level:sorcerer:half}} lightning or thunder damage.</description>
+			<description>Whenever you start casting a spell of 1st level or higher that deals lightning or thunder damage. Creatures of your choice that you can see within 10 feet of you take {{level:sorcerer:half}} lightning or thunder damage.</description>
 		</sheet>
 		<rules>
 			<grant type="Condition" id="ID_INTERNAL_CONDITION_DAMAGE_RESISTANCE_LIGHTNING" />
 			<grant type="Condition" id="ID_INTERNAL_CONDITION_DAMAGE_RESISTANCE_THUNDER" />
 		</rules>
 	</element>
+
 	<element name="Storm Guide" type="Archetype Feature" source="Sword Coast Adventurer’s Guide" id="ID_WOTC_SCAG_ARCHETYPE_FEATURE_STORM_SORCERY_STORM_GUIDE">
 		<description>
 			<p>At 6th level, you gain the ability to subtly control the weather around you.</p>
@@ -72,9 +76,10 @@
 			<p class="indent">If it is windy, you can use a bonus action each round to choose the direction that the wind blows in a 100-foot-radius sphere centered on you. The wind blows in that direction until the end of your next turn. This feature doesn't alter the speed of the wind.</p>
 		</description>
 		<sheet>
-			<description>If it is raining, you can use an action to cause the rain to stop falling in a 20-foot-radius sphere centered on you. If it is windy, you can use a bonus action each round to choose the direction that the wind blows in a 100-foot-radius sphere centered on you.</description>
+			<description>If it is raining, you can use an action to cause the rain to stop falling in a 20-foot-radius sphere centered on you. You can end this effect as a bonus action. If it is windy, you can use a bonus action each round to choose the direction that the wind blows in a 100-foot-radius sphere centered on you.</description>
 		</sheet>
 	</element>
+
 	<element name="Storm’s Fury" type="Archetype Feature" source="Sword Coast Adventurer’s Guide" id="ID_WOTC_SCAG_ARCHETYPE_FEATURE_STORM_SORCERY_STORMS_FURY">
 		<description>
 			<p>Starting at 14th level, when you are hit by a melee attack, you can use your reaction to deal lightning damage to the attacker. The damage equals your sorcerer level. The attacker must also make a Strength saving throw against your sorcerer spell save DC. On a failed save, the attacker is pushed in a straight line up to 20 feet away from you.</p>
@@ -83,13 +88,14 @@
 			<description>When you are hit by a melee attack, you can use your reaction to deal {{level:sorcerer}} lightning damage to the attacker. The attacker must also make a DC{{spellcasting:dc:cha}} Strength saving throw. On a failed save, the attacker is pushed in a straight line up to 20 feet away from you.</description>
 		</sheet>
 	</element>
+
 	<element name="Wind Soul" type="Archetype Feature" source="Sword Coast Adventurer’s Guide" id="ID_WOTC_SCAG_ARCHETYPE_FEATURE_STORM_SORCERY_WIND_SOUL">
 		<description>
 			<p>At 18th level, you gain immunity to lightning and thunder damage.</p>
 			<p class="indent">You also gain a magical flying speed of 60 feet. As an action, you can reduce your flying speed to 30 feet for 1 hour and choose a number of creatures within 30 feet of you equal to 3 + your Charisma modifier. The chosen creatures gain a magical flying speed of 30 feet for 1 hour. Once you reduce your flying speed in this way, you can't do so again until you finish a short or long rest.</p>
 		</description>
-		<sheet>
-			<description>You gain a magical flying speed of 60 feet. As an action, you can reduce your flying speed to 30 feet for 1 hour and choose {{wind soul:creatures}} creatures within 30 feet of you that gain a magical flying speed of 30 feet for 1 hour. (1/LR)</description>
+		<sheet action="Action" usage="1/Short Rest">
+			<description>You can reduce your flying speed to 30 feet for 1 hour and choose {{wind soul:creatures}} creatures within 30 feet of you that gain a magical flying speed of 30 feet for 1 hour.</description>
 		</sheet>
 		<rules>
 			<stat name="speed:fly" value="60" bonus="base" />
@@ -99,4 +105,5 @@
 			<grant type="Condition" id="ID_INTERNAL_CONDITION_DAMAGE_IMMUNITY_THUNDER" />
 		</rules>
 	</element>
+
 </elements>

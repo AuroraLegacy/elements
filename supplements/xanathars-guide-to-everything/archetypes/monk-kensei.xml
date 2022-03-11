@@ -4,7 +4,7 @@
         <name>Kensei</name>
         <description>The Kensei archetype from Xanathar’s Guide to Everything</description>
         <author url="http://dnd.wizards.com/products/tabletop-games/rpg-products/xanathars-guide-everything">Xanathar’s Guide to Everything</author>
-        <update version="0.0.3">
+        <update version="0.0.4">
             <file name="monk-kensei.xml" url="https://raw.githubusercontent.com/AuroraLegacy/elements/master/supplements/xanathars-guide-to-everything/archetypes/monk-kensei.xml" />
         </update>
     </info>
@@ -29,6 +29,7 @@
             <grant type="Archetype Feature" id="ID_WOTC_XGTE_ARCHETYPE_FEATURE_KENSEI_UNERRING_ACCURACY" level="17" />
         </rules>
     </element>
+
     <element name="Path of the Kensei" type="Archetype Feature" source="Xanathar’s Guide to Everything" id="ID_WOTC_XGTE_ARCHETYPE_FEATURE_KENSEI_PATH_OF_THE_KENSEI">
         <description>
             <p>When you choose this tradition at 3rd level, your special martial arts training leads you to master the use of certain weapons. This path also includes instruction in the deft strokes of calligraphy or painting. You gain the following benefits.</p>
@@ -37,9 +38,7 @@
             <p class="indent"><b><i>Kensei’s Shot. </i></b>You can use a bonus action on your turn to make your ranged attacks with a kensei weapon more deadly. When you do so, any target you hit with a ranged attack using a kensei weapon takes an extra 1d4 damage of the weapons type. You retain this benefit until the end of the current turn.</p>
             <p class="indent"><b><i>Way of the Brush. </i></b>You gain proficiency with your choice of calligrapher's supplies or painter's supplies.</p>
         </description>
-        <sheet>
-            <description>Your kensei weapons are monk weapons.</description>
-        </sheet>
+		<sheet display="false" />
         <rules>
             <select type="Proficiency" name="Way of the Brush (Kensei)" supports="ID_PROFICIENCY_TOOL_PROFICIENCY_CALLIGRAPHERS_SUPPLIES|ID_PROFICIENCY_TOOL_PROFICIENCY_PAINTERS_SUPPLIES"/>
             <select type="Archetype Feature" name="Kensei Weapon, Melee" supports="Kensei Weapon,Melee" level="3" />
@@ -56,8 +55,8 @@
 		<description>
 			<p>If you make an unarmed strike as part of the Attack action on your turn and are holding a kensei weapon, you can use it to defend yourself if it is a melee weapon. You gain a +2 bonus to AC until the start of your next turn, while the weapon is in your hand and you aren't incapacitated.</p>
 		</description>
-		<sheet usage="Kensei Weapon">
-			<description>If you make an unarmed strike as part of the Attack action on your turn, you can use a melee kensei weapon to defend yourself. You gain a +2 bonus to AC until the start of your next turn, while the weapon is in your hand and you aren't incapacitated.</description>
+		<sheet action="Attack">
+			<description>When you make an unarmed strike on your turn, you can use a melee kensei weapon to defend yourself. You gain a +2 bonus to AC until the start of your next turn, while the weapon is in your hand and you aren't incapacitated.</description>
 		</sheet>
 	</element>
 	<element name="Kensei’s Shot" type="Archetype Feature" source="Xanathar’s Guide to Everything" id="ID_WOTC_XGTE_ARCHETYPE_FEATURE_KENSEI_PATH_OF_THE_KENSEI_KENSEIS_SHOT">
@@ -65,40 +64,56 @@
 		<description>
 			<p>You can use a bonus action on your turn to make your ranged attacks with a kensei weapon more deadly. When you do so, any target you hit with a ranged attack using a kensei weapon takes an extra 1d4 damage of the weapons type. You retain this benefit until the end of the current turn.</p>
 		</description>
-		<sheet action="Bonus Action" usage="Kensei Weapon">
-			<description>Until the end of the current turn, any target you hit with a ranged attack using a kensei weapon takes an extra 1d4 damage of the weapons type.</description>
+		<sheet action="Bonus Action">
+			<description>Until the end of the current turn, you deal extra 1d4 damage when you hit with a ranged attack using a kensei weapon.</description>
 		</sheet>
 	</element>
+
     <element name="One with the Blade" type="Archetype Feature" source="Xanathar’s Guide to Everything" id="ID_WOTC_XGTE_ARCHETYPE_FEATURE_KENSEI_ONE_WITH_THE_BLADE">
         <description>
             <p>At 6th level, you extend your ki into your kensei weapons, granting you the following benefits.</p>
-            <p class="indent"><b><i>Magic Kensei Weapons. </i></b>Your attacks with your kensei weapons count as magical for the purpose of overcoming resistance and immunity to nonmagical attacks and damage.</p>
-            <p class="indent"><b><i>Deft Strike. </i></b>When you hit a target with a kensei weapon, you can spend 1 ki point to cause the weapon to deal extra damage to the target equal to your Martial Arts die. You can use this feature only once on each of your turns.</p>
+            <p class="indent"><b><i>Magic Kensei Weapons.</i></b> Your attacks with your kensei weapons count as magical for the purpose of overcoming resistance and immunity to nonmagical attacks and damage.</p>
+            <p class="indent"><b><i>Deft Strike.</i></b> When you hit a target with a kensei weapon, you can spend 1 ki point to cause the weapon to deal extra damage to the target equal to your Martial Arts die. You can use this feature only once on each of your turns.</p>
         </description>
-        <sheet usage="1/Turn">
-            <description>Attacks with kensei weapons are considered magical. When you hit a target with a kensei weapon, spend 1 ki point to cause an extra {{martial arts:dice}} damage.</description>
+        <sheet alt="Magic Kensei Weapons">
+            <description>Your attacks with your kensei weapons count as magical for the purpose of overcoming resistance and immunity.</description>
         </sheet>
-    </element>
+		<rules>
+			<grant type="Archetype Feature" id="ID_WOTC_XGTE_ARCHETYPE_FEATURE_KENSEI_ONE_WITH_THE_BLADE_DEFT_STRIKE" />
+		</rules>
+	</element>
+
+	<element name="Deft Strike" type="Archetype Feature" source="Xanathar’s Guide to Everything" id="ID_WOTC_XGTE_ARCHETYPE_FEATURE_KENSEI_ONE_WITH_THE_BLADE_DEFT_STRIKE">
+		<compendium display="false" />
+		<description>
+			<p>When you hit a target with a kensei weapon, you can spend 1 ki point to cause the weapon to deal extra damage to the target equal to your Martial Arts die. You can use this feature only once on each of your turns.</p>
+		</description>
+        <sheet usage="1/Round">
+			<description>When you hit a target with a kensei weapon, spend 1 ki point to cause an extra {{martial arts:dice}} damage.</description>
+		</sheet>
+	</element>
+
     <element name="Sharpen the Blade" type="Archetype Feature" source="Xanathar’s Guide to Everything" id="ID_WOTC_XGTE_ARCHETYPE_FEATURE_KENSEI_SHARPEN_THE_BLADE">
         <description>
             <p>At 11th level, you gain the ability to augment your weapons further with your ki. As a bonus action, you can expend up to 3 ki points to grant one kensei weapon you touch a bonus to attack and damage rolls when you attack with it. The bonus equals the number of ki points you spent. This bonus lasts for 1 minute or until you use this feature again. This feature has no effect on a magic weapon that already has a bonus to attack and damage rolls.</p>
         </description>
         <sheet action="Bonus Action" usage="Ki">
-            <description>Expend up to 3 ki point to grant one kensei weapon you touch a bonus to attack and damage, equal to the ki points spent, for 1 minute. (no effect on magic weapons that already have a bonus)</description>
+            <description>Expend up to 3 ki point to grant one kensei weapon you touch a bonus to attack and damage, equal to the ki points spent, for 1 minute. This has no effect on a magic weapon that already has a bonus to attack and damage.</description>
         </sheet>
     </element>
+
     <element name="Unerring Accuracy" type="Archetype Feature" source="Xanathar’s Guide to Everything" id="ID_WOTC_XGTE_ARCHETYPE_FEATURE_KENSEI_UNERRING_ACCURACY">
         <description>
             <p>At 17th level, your mastery of weapons grants you extraordinary accuracy. If you miss with an attack roll using a monk weapon on your turn, you can reroll it. You can use this feature only once on each of your turns.</p>
         </description>
-        <sheet usage="1/Turn">
-            <description>Reroll if you miss with a monk weapon.</description>
+        <sheet usage="1/Round">
+            <description>One your turn, reroll if you miss with a monk weapon.</description>
         </sheet>
     </element>
-
     
 	<!-- Kensei Weapons -->    
 	<element name="Kensei Weapon (Club)" type="Archetype Feature" source="Xanathar’s Guide to Everything" id="ID_WOTC_XGTE_ARCHETYPE_FEATURE_KENSEI_WEAPON_CLUB">
+		<compendium display="false" />
 		<supports>Kensei Weapon, Melee</supports>
         <description>
 			<p>You gain proficiency with this weapon if you don’t already have it, and it is a monk weapon for you.</p>
@@ -108,6 +123,7 @@
 		</rules>
 	</element>
 	<element name="Kensei Weapon (Dagger)" type="Archetype Feature" source="Xanathar’s Guide to Everything" id="ID_WOTC_XGTE_ARCHETYPE_FEATURE_KENSEI_WEAPON_DAGGER">
+		<compendium display="false" />
 		<supports>Kensei Weapon, Melee</supports>
         <description>
 			<p>You gain proficiency with this weapon if you don’t already have it, and it is a monk weapon for you.</p>
@@ -117,6 +133,7 @@
 		</rules>
 	</element>
 	<element name="Kensei Weapon (Greatclub)" type="Archetype Feature" source="Xanathar’s Guide to Everything" id="ID_WOTC_XGTE_ARCHETYPE_FEATURE_KENSEI_WEAPON_GREATCLUB">
+		<compendium display="false" />
 		<supports>Kensei Weapon, Melee</supports>
         <description>
 			<p>You gain proficiency with this weapon if you don’t already have it, and it is a monk weapon for you.</p>
@@ -126,6 +143,7 @@
 		</rules>
 	</element>
 	<element name="Kensei Weapon (Handaxe)" type="Archetype Feature" source="Xanathar’s Guide to Everything" id="ID_WOTC_XGTE_ARCHETYPE_FEATURE_KENSEI_WEAPON_HANDAXE">
+		<compendium display="false" />
 		<supports>Kensei Weapon, Melee</supports>
         <description>
 			<p>You gain proficiency with this weapon if you don’t already have it, and it is a monk weapon for you.</p>
@@ -135,6 +153,7 @@
 		</rules>
 	</element>
 	<element name="Kensei Weapon (Javelin)" type="Archetype Feature" source="Xanathar’s Guide to Everything" id="ID_WOTC_XGTE_ARCHETYPE_FEATURE_KENSEI_WEAPON_JAVELIN">
+		<compendium display="false" />
 		<supports>Kensei Weapon, Melee</supports>
         <description>
 			<p>You gain proficiency with this weapon if you don’t already have it, and it is a monk weapon for you.</p>
@@ -144,6 +163,7 @@
 		</rules>
 	</element>
 	<element name="Kensei Weapon (Light Hammer)" type="Archetype Feature" source="Xanathar’s Guide to Everything" id="ID_WOTC_XGTE_ARCHETYPE_FEATURE_KENSEI_WEAPON_LIGHTHAMMER">
+		<compendium display="false" />
 		<supports>Kensei Weapon, Melee</supports>
         <description>
 			<p>You gain proficiency with this weapon if you don’t already have it, and it is a monk weapon for you.</p>
@@ -153,6 +173,7 @@
 		</rules>
 	</element>
 	<element name="Kensei Weapon (Mace)" type="Archetype Feature" source="Xanathar’s Guide to Everything" id="ID_WOTC_XGTE_ARCHETYPE_FEATURE_KENSEI_WEAPON_MACE">
+		<compendium display="false" />
 		<supports>Kensei Weapon, Melee</supports>
         <description>
 			<p>You gain proficiency with this weapon if you don’t already have it, and it is a monk weapon for you.</p>
@@ -162,6 +183,7 @@
 		</rules>
 	</element>
 	<element name="Kensei Weapon (Quarterstaff)" type="Archetype Feature" source="Xanathar’s Guide to Everything" id="ID_WOTC_XGTE_ARCHETYPE_FEATURE_KENSEI_WEAPON_QUARTERSTAFF">
+		<compendium display="false" />
 		<supports>Kensei Weapon, Melee</supports>
         <description>
 			<p>You gain proficiency with this weapon if you don’t already have it, and it is a monk weapon for you.</p>
@@ -171,6 +193,7 @@
 		</rules>
 	</element>
 	<element name="Kensei Weapon (Sickle)" type="Archetype Feature" source="Xanathar’s Guide to Everything" id="ID_WOTC_XGTE_ARCHETYPE_FEATURE_KENSEI_WEAPON_SICKLE">
+		<compendium display="false" />
 		<supports>Kensei Weapon, Melee</supports>
         <description>
 			<p>You gain proficiency with this weapon if you don’t already have it, and it is a monk weapon for you.</p>
@@ -180,6 +203,7 @@
 		</rules>
 	</element>
 	<element name="Kensei Weapon (Spear)" type="Archetype Feature" source="Xanathar’s Guide to Everything" id="ID_WOTC_XGTE_ARCHETYPE_FEATURE_KENSEI_WEAPON_SPEAR">
+		<compendium display="false" />
 		<supports>Kensei Weapon, Melee</supports>
         <description>
 			<p>You gain proficiency with this weapon if you don’t already have it, and it is a monk weapon for you.</p>
@@ -189,6 +213,7 @@
 		</rules>
 	</element>
 	<element name="Kensei Weapon (Crossbow, Light)" type="Archetype Feature" source="Xanathar’s Guide to Everything" id="ID_WOTC_XGTE_ARCHETYPE_FEATURE_KENSEI_WEAPON_CROSSBOW_LIGHT">
+		<compendium display="false" />
 		<supports>Kensei Weapon, Ranged</supports>
         <description>
 			<p>You gain proficiency with this weapon if you don’t already have it, and it is a monk weapon for you.</p>
@@ -198,6 +223,7 @@
 		</rules>
 	</element>
 	<element name="Kensei Weapon (Dart)" type="Archetype Feature" source="Xanathar’s Guide to Everything" id="ID_WOTC_XGTE_ARCHETYPE_FEATURE_KENSEI_WEAPON_DART">
+		<compendium display="false" />
 		<supports>Kensei Weapon, Ranged</supports>
         <description>
 			<p>You gain proficiency with this weapon if you don’t already have it, and it is a monk weapon for you.</p>
@@ -207,6 +233,7 @@
 		</rules>
 	</element>
 	<element name="Kensei Weapon (Shortbow)" type="Archetype Feature" source="Xanathar’s Guide to Everything" id="ID_WOTC_XGTE_ARCHETYPE_FEATURE_KENSEI_WEAPON_SHORTBOW">
+		<compendium display="false" />
 		<supports>Kensei Weapon, Ranged</supports>
         <description>
 			<p>You gain proficiency with this weapon if you don’t already have it, and it is a monk weapon for you.</p>
@@ -216,6 +243,7 @@
 		</rules>
 	</element>
 	<element name="Kensei Weapon (Sling)" type="Archetype Feature" source="Xanathar’s Guide to Everything" id="ID_WOTC_XGTE_ARCHETYPE_FEATURE_KENSEI_WEAPON_SLING">
+		<compendium display="false" />
 		<supports>Kensei Weapon, Ranged</supports>
         <description>
 			<p>You gain proficiency with this weapon if you don’t already have it, and it is a monk weapon for you.</p>
@@ -225,6 +253,7 @@
 		</rules>
 	</element>
 	<element name="Kensei Weapon (Battleaxe)" type="Archetype Feature" source="Xanathar’s Guide to Everything" id="ID_WOTC_XGTE_ARCHETYPE_FEATURE_KENSEI_WEAPON_BATTLEAXE">
+		<compendium display="false" />
 		<supports>Kensei Weapon, Melee</supports>
         <description>
 			<p>You gain proficiency with this weapon if you don’t already have it, and it is a monk weapon for you.</p>
@@ -234,6 +263,7 @@
 		</rules>
 	</element>
 	<element name="Kensei Weapon (Flail)" type="Archetype Feature" source="Xanathar’s Guide to Everything" id="ID_WOTC_XGTE_ARCHETYPE_FEATURE_KENSEI_WEAPON_FLAIL">
+		<compendium display="false" />
 		<supports>Kensei Weapon, Melee</supports>
         <description>
 			<p>You gain proficiency with this weapon if you don’t already have it, and it is a monk weapon for you.</p>
@@ -243,6 +273,7 @@
 		</rules>
 	</element>
 	<!-- <element name="Kensei Weapon (Glaive)" type="Archetype Feature" source="Xanathar’s Guide to Everything" id="ID_WOTC_XGTE_ARCHETYPE_FEATURE_KENSEI_WEAPON_GLAIVE">
+		<compendium display="false" />
 		<supports>Kensei Weapon, Melee, Heavy</supports>
         <description>
 			<p>You gain proficiency with this weapon if you don’t already have it, and it is a monk weapon for you.</p>
@@ -252,6 +283,7 @@
 		</rules>
 	</element> -->
 	<!-- <element name="Kensei Weapon (Greataxe)" type="Archetype Feature" source="Xanathar’s Guide to Everything" id="ID_WOTC_XGTE_ARCHETYPE_FEATURE_KENSEI_WEAPON_GREATAXE">
+		<compendium display="false" />
 		<supports>Kensei Weapon, Melee, Heavy</supports>
         <description>
 			<p>You gain proficiency with this weapon if you don’t already have it, and it is a monk weapon for you.</p>
@@ -261,6 +293,7 @@
 		</rules>
 	</element> -->
 	<!-- <element name="Kensei Weapon (Greatsword)" type="Archetype Feature" source="Xanathar’s Guide to Everything" id="ID_WOTC_XGTE_ARCHETYPE_FEATURE_KENSEI_WEAPON_GREATSWORD">
+		<compendium display="false" />
 		<supports>Kensei Weapon, Melee, Heavy</supports>
         <description>
 			<p>You gain proficiency with this weapon if you don’t already have it, and it is a monk weapon for you.</p>
@@ -270,6 +303,7 @@
 		</rules>
 	</element> -->
 	<!-- <element name="Kensei Weapon (Halberd)" type="Archetype Feature" source="Xanathar’s Guide to Everything" id="ID_WOTC_XGTE_ARCHETYPE_FEATURE_KENSEI_WEAPON_HALBERD">
+		<compendium display="false" />
 		<supports>Kensei Weapon, Melee, Heavy</supports>
         <description>
 			<p>You gain proficiency with this weapon if you don’t already have it, and it is a monk weapon for you.</p>
@@ -279,6 +313,7 @@
 		</rules>
 	</element> -->
 	<!-- <element name="Kensei Weapon (Lance)" type="Archetype Feature" source="Xanathar’s Guide to Everything" id="ID_WOTC_XGTE_ARCHETYPE_FEATURE_KENSEI_WEAPON_LANCE">
+		<compendium display="false" />
 		<supports>Kensei Weapon, Melee, Special</supports>
         <description>
 			<p>You gain proficiency with this weapon if you don’t already have it, and it is a monk weapon for you.</p>
@@ -288,6 +323,7 @@
 		</rules>
 	</element> -->
 	<element name="Kensei Weapon (Longsword)" type="Archetype Feature" source="Xanathar’s Guide to Everything" id="ID_WOTC_XGTE_ARCHETYPE_FEATURE_KENSEI_WEAPON_LONGSWORD">
+		<compendium display="false" />
 		<supports>Kensei Weapon, Melee</supports>
         <description>
 			<p>You gain proficiency with this weapon if you don’t already have it, and it is a monk weapon for you.</p>
@@ -297,6 +333,7 @@
 		</rules>
 	</element>
 	<!-- <element name="Kensei Weapon (Maul)" type="Archetype Feature" source="Xanathar’s Guide to Everything" id="ID_WOTC_XGTE_ARCHETYPE_FEATURE_KENSEI_WEAPON_MAUL">
+		<compendium display="false" />
 		<supports>Kensei Weapon, Melee, Heavy</supports>
         <description>
 			<p>You gain proficiency with this weapon if you don’t already have it, and it is a monk weapon for you.</p>
@@ -306,6 +343,7 @@
 		</rules>
 	</element> -->
 	<element name="Kensei Weapon (Morningstar)" type="Archetype Feature" source="Xanathar’s Guide to Everything" id="ID_WOTC_XGTE_ARCHETYPE_FEATURE_KENSEI_WEAPON_MORNINGSTAR">
+		<compendium display="false" />
 		<supports>Kensei Weapon, Melee</supports>
         <description>
 			<p>You gain proficiency with this weapon if you don’t already have it, and it is a monk weapon for you.</p>
@@ -315,6 +353,7 @@
 		</rules>
 	</element>
 	<!-- <element name="Kensei Weapon (Pike)" type="Archetype Feature" source="Xanathar’s Guide to Everything" id="ID_WOTC_XGTE_ARCHETYPE_FEATURE_KENSEI_WEAPON_PIKE">
+		<compendium display="false" />
 		<supports>Kensei Weapon, Melee, Heavy</supports>
         <description>
 			<p>You gain proficiency with this weapon if you don’t already have it, and it is a monk weapon for you.</p>
@@ -324,6 +363,7 @@
 		</rules>
 	</element> -->
 	<element name="Kensei Weapon (Rapier)" type="Archetype Feature" source="Xanathar’s Guide to Everything" id="ID_WOTC_XGTE_ARCHETYPE_FEATURE_KENSEI_WEAPON_RAPIER">
+		<compendium display="false" />
 		<supports>Kensei Weapon, Melee</supports>
         <description>
 			<p>You gain proficiency with this weapon if you don’t already have it, and it is a monk weapon for you.</p>
@@ -333,6 +373,7 @@
 		</rules>
 	</element>
 	<element name="Kensei Weapon (Scimitar)" type="Archetype Feature" source="Xanathar’s Guide to Everything" id="ID_WOTC_XGTE_ARCHETYPE_FEATURE_KENSEI_WEAPON_SCIMITAR">
+		<compendium display="false" />
 		<supports>Kensei Weapon, Melee</supports>
         <description>
 			<p>You gain proficiency with this weapon if you don’t already have it, and it is a monk weapon for you.</p>
@@ -342,6 +383,7 @@
 		</rules>
 	</element>
 	<element name="Kensei Weapon (Shortsword)" type="Archetype Feature" source="Xanathar’s Guide to Everything" id="ID_WOTC_XGTE_ARCHETYPE_FEATURE_KENSEI_WEAPON_SHORTSWORD">
+		<compendium display="false" />
 		<supports>Kensei Weapon, Melee</supports>
         <description>
 			<p>You gain proficiency with this weapon if you don’t already have it, and it is a monk weapon for you.</p>
@@ -351,6 +393,7 @@
 		</rules>
 	</element>
 	<element name="Kensei Weapon (Trident)" type="Archetype Feature" source="Xanathar’s Guide to Everything" id="ID_WOTC_XGTE_ARCHETYPE_FEATURE_KENSEI_WEAPON_TRIDENT">
+		<compendium display="false" />
 		<supports>Kensei Weapon, Melee</supports>
         <description>
 			<p>You gain proficiency with this weapon if you don’t already have it, and it is a monk weapon for you.</p>
@@ -360,6 +403,7 @@
 		</rules>
 	</element>
 	<element name="Kensei Weapon (War Pick)" type="Archetype Feature" source="Xanathar’s Guide to Everything" id="ID_WOTC_XGTE_ARCHETYPE_FEATURE_KENSEI_WEAPON_WAR_PICK">
+		<compendium display="false" />
 		<supports>Kensei Weapon, Melee</supports>
         <description>
 			<p>You gain proficiency with this weapon if you don’t already have it, and it is a monk weapon for you.</p>
@@ -369,6 +413,7 @@
 		</rules>
 	</element>
 	<element name="Kensei Weapon (Warhammer)" type="Archetype Feature" source="Xanathar’s Guide to Everything" id="ID_WOTC_XGTE_ARCHETYPE_FEATURE_KENSEI_WEAPON_WARHAMMER">
+		<compendium display="false" />
 		<supports>Kensei Weapon, Melee</supports>
         <description>
 			<p>You gain proficiency with this weapon if you don’t already have it, and it is a monk weapon for you.</p>
@@ -378,6 +423,7 @@
 		</rules>
 	</element>
 	<element name="Kensei Weapon (Whip)" type="Archetype Feature" source="Xanathar’s Guide to Everything" id="ID_WOTC_XGTE_ARCHETYPE_FEATURE_KENSEI_WEAPON_WHIP">
+		<compendium display="false" />
 		<supports>Kensei Weapon, Melee</supports>
         <description>
 			<p>You gain proficiency with this weapon if you don’t already have it, and it is a monk weapon for you.</p>
@@ -387,6 +433,7 @@
 		</rules>
 	</element>
 	<element name="Kensei Weapon (Blowgun)" type="Archetype Feature" source="Xanathar’s Guide to Everything" id="ID_WOTC_XGTE_ARCHETYPE_FEATURE_KENSEI_WEAPON_BLOWGUN">
+		<compendium display="false" />
 		<supports>Kensei Weapon, Ranged</supports>
         <description>
 			<p>You gain proficiency with this weapon if you don’t already have it, and it is a monk weapon for you.</p>
@@ -396,6 +443,7 @@
 		</rules>
 	</element>
 	<element name="Kensei Weapon (Crossbow, Hand)" type="Archetype Feature" source="Xanathar’s Guide to Everything" id="ID_WOTC_XGTE_ARCHETYPE_FEATURE_KENSEI_WEAPON_CROSSBOW_HAND">
+		<compendium display="false" />
 		<supports>Kensei Weapon, Ranged</supports>
         <description>
 			<p>You gain proficiency with this weapon if you don’t already have it, and it is a monk weapon for you.</p>
@@ -405,6 +453,7 @@
 		</rules>
 	</element>
 	<!-- <element name="Kensei Weapon (Crossbow, Heavy)" type="Archetype Feature" source="Xanathar’s Guide to Everything" id="ID_WOTC_XGTE_ARCHETYPE_FEATURE_KENSEI_WEAPON_CROSSBOW_HEAVY">
+		<compendium display="false" />
 		<supports>Kensei Weapon, Ranged, Heavy</supports>
         <description>
 			<p>You gain proficiency with this weapon if you don’t already have it, and it is a monk weapon for you.</p>
@@ -414,6 +463,7 @@
 		</rules>
 	</element> -->
 	<element name="Kensei Weapon (Longbow)" type="Archetype Feature" source="Xanathar’s Guide to Everything" id="ID_WOTC_XGTE_ARCHETYPE_FEATURE_KENSEI_WEAPON_LONGBOW">
+		<compendium display="false" />
 		<supports>Kensei Weapon, Ranged, Heavy</supports>
         <description>
 			<p>You gain proficiency with this weapon if you don’t already have it, and it is a monk weapon for you.</p>
@@ -423,6 +473,7 @@
 		</rules>
 	</element>
 	<element name="Kensei Weapon (Pistol)" type="Archetype Feature" source="Xanathar’s Guide to Everything" id="ID_WOTC_XGTE_ARCHETYPE_FEATURE_KENSEI_WEAPON_PISTOL">
+		<compendium display="false" />
 		<requirements>ID_WOTC_DMG_OPTION_FIREARMS</requirements>
 		<supports>Kensei Weapon, Ranged</supports>
         <description>
@@ -433,6 +484,7 @@
 		</rules>
 	</element>
 	<element name="Kensei Weapon (Musket)" type="Archetype Feature" source="Xanathar’s Guide to Everything" id="ID_WOTC_XGTE_ARCHETYPE_FEATURE_KENSEI_WEAPON_MUSKET">
+		<compendium display="false" />
 		<requirements>ID_WOTC_DMG_OPTION_FIREARMS</requirements>
 		<supports>Kensei Weapon, Ranged</supports>
         <description>
@@ -443,6 +495,7 @@
 		</rules>
 	</element>
 	<element name="Kensei Weapon (Pistol, Automatic)" type="Archetype Feature" source="Xanathar’s Guide to Everything" id="ID_WOTC_XGTE_ARCHETYPE_FEATURE_KENSEI_WEAPON_PISTOL_AUTOMATIC">
+		<compendium display="false" />
 		<requirements>ID_WOTC_DMG_OPTION_FIREARMS</requirements>
 		<supports>Kensei Weapon, Ranged</supports>
         <description>
@@ -453,6 +506,7 @@
 		</rules>
 	</element>
 	<element name="Kensei Weapon (Revolver)" type="Archetype Feature" source="Xanathar’s Guide to Everything" id="ID_WOTC_XGTE_ARCHETYPE_FEATURE_KENSEI_WEAPON_REVOLVER">
+		<compendium display="false" />
 		<requirements>ID_WOTC_DMG_OPTION_FIREARMS</requirements>
 		<supports>Kensei Weapon, Ranged</supports>
         <description>
@@ -463,6 +517,7 @@
 		</rules>
 	</element>
 	<element name="Kensei Weapon (Rifle, Automatic)" type="Archetype Feature" source="Xanathar’s Guide to Everything" id="ID_WOTC_XGTE_ARCHETYPE_FEATURE_KENSEI_WEAPON_RIFLE_AUTOMATIC">
+		<compendium display="false" />
 		<requirements>ID_WOTC_DMG_OPTION_FIREARMS</requirements>
 		<supports>Kensei Weapon, Ranged</supports>
         <description>
@@ -473,6 +528,7 @@
 		</rules>
 	</element>
 	<element name="Kensei Weapon (Rifle, Hunting)" type="Archetype Feature" source="Xanathar’s Guide to Everything" id="ID_WOTC_XGTE_ARCHETYPE_FEATURE_KENSEI_WEAPON_RIFLE_HUNTING">
+		<compendium display="false" />
 		<requirements>ID_WOTC_DMG_OPTION_FIREARMS</requirements>
 		<supports>Kensei Weapon, Ranged</supports>
         <description>
@@ -483,6 +539,7 @@
 		</rules>
 	</element>
 	<element name="Kensei Weapon (Shotgun)" type="Archetype Feature" source="Xanathar’s Guide to Everything" id="ID_WOTC_XGTE_ARCHETYPE_FEATURE_KENSEI_WEAPON_SHOTGUN">
+		<compendium display="false" />
 		<requirements>ID_WOTC_DMG_OPTION_FIREARMS</requirements>
 		<supports>Kensei Weapon, Ranged</supports>
         <description>
@@ -493,6 +550,7 @@
 		</rules>
 	</element>
 	<element name="Kensei Weapon (Laser Pistol)" type="Archetype Feature" source="Xanathar’s Guide to Everything" id="ID_WOTC_XGTE_ARCHETYPE_FEATURE_KENSEI_WEAPON_LASER_PISTOL">
+		<compendium display="false" />
 		<requirements>ID_WOTC_DMG_OPTION_FIREARMS</requirements>
 		<supports>Kensei Weapon, Ranged</supports>
         <description>
@@ -503,6 +561,7 @@
 		</rules>
 	</element>
 	<element name="Kensei Weapon (Antimatter Rifle)" type="Archetype Feature" source="Xanathar’s Guide to Everything" id="ID_WOTC_XGTE_ARCHETYPE_FEATURE_KENSEI_WEAPON_ANTIMATTER_RIFLE">
+		<compendium display="false" />
 		<requirements>ID_WOTC_DMG_OPTION_FIREARMS</requirements>
 		<supports>Kensei Weapon, Ranged</supports>
         <description>
@@ -513,6 +572,7 @@
 		</rules>
 	</element>
 	<element name="Kensei Weapon (Laser Rifle)" type="Archetype Feature" source="Xanathar’s Guide to Everything" id="ID_WOTC_XGTE_ARCHETYPE_FEATURE_KENSEI_WEAPON_LASER_RIFLE">
+		<compendium display="false" />
 		<requirements>ID_WOTC_DMG_OPTION_FIREARMS</requirements>
 		<supports>Kensei Weapon, Ranged</supports>
         <description>
@@ -522,4 +582,5 @@
 			<grant type="Proficiency" id="ID_WOTC_DMG_PROFICIENCY_WEAPON_FUTURISTIC_FIREARMS_LASER_RIFLE" />
 		</rules>
 	</element>
+
 </elements>
