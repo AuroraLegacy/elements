@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<elements>
+	<info>
+		<name>Tabaxi from Monsters of the Multiverse</name>
+		<update version="0.0.1">
+			<file name="race-tabaxi.xml" url="https://raw.githubusercontent.com/AuroraLegacy/elements/master/supplements/monsters-of-the-multiverse/race-tabaxi.xml" />
+		</update>
+	</info>
+
+	<element name="Tabaxi" type="Race" source="Monsters of the Multiverse" id="ID_WOTC_MOTM_RACE_TABAXI">
+		<description>
+			<p>Created by the Cat Lord- a divine being of the Upper Planes-to blend the qualities of humanoids and cats, tabaxi are a varied people in both attitude and appearance. In some lands, tabaxi live like the cats they resemble, naturally curious and at home in playful environments. In other places, tabaxi live as other folk do, not exhibiting the feline behavior the Cat Lord intended. </p>
+			<p class="indent">Tabaxi's appearance is as varied as their attitudes. Some tabaxi have features or patterning in their fur like tigers, jaguars, or other big cats, while others have appearances more like a house cat. Still others have unique patterns or might style their fur to their preferences- or might even be hairless! </p>
+			<h4>Tabaxi Traits</h4>
+			<p>As a tabaxi, you have the following racial traits. </p>
+			<p class="indent"><strong><em>Creature Type.</em></strong> You are a Humanoid.</p>
+			<p class="indent"><strong><em>Size.</em></strong> You are Medium or Small. You choose the size when you select this race.</p>
+			<p class="indent"><strong><em>Speed.</em></strong> Your walking speed is 30 feet.</p>
+			<p class="indent"><strong><em>Cat's Claws.</em></strong> You can use your claws to make unarmed strikes. When you hit with them, the strike deals ld6 + your Strength modifier slashing damage, instead of the bludgeoning damage normal for an unarmed strike. </p>
+			<p class="indent"><strong><em>Cat's Talent.</em></strong> You have proficiency in the Perception and Stealth skills. </p>
+			<p class="indent"><strong><em>Darkvision.</em></strong> You can see in dim light within 60 feet of you as if it were bright light, and in darkness as if it were dim light. You discern colors in that darkness only as shades of gray.</p>
+			<p class="indent"><strong><em>Feline Agility.</em></strong> Your reflexes and agility allow you to move with a burst of speed. When you move on your turn in combat, you can double your speed until the end of the turn. Once you use this trait, you can't use it again until you move 0 feet on one of your turns.</p>
+		</description>
+		<sheet display="false" />
+		<rules>
+			<select type="Ability Score Improvement" name="Ability Score Improvement Option (Tabaxi)" supports="Custom Ability Score Improvement Option" />
+			<select type="Racial Trait" name="Size (Tabaxi)" supports="ID_INTERNAL_RACIAL_TRAIT_SMALL|ID_INTERNAL_RACIAL_TRAIT_MEDIUM" />
+			<stat name="innate speed" value="30" bonus="base" />
+			<grant type="Vision" id="ID_VISION_DARKVISION" />
+
+			<grant type="Language" id="ID_LANGUAGE_COMMON" requirements="!ID_WOTC_TCOE_OPTION_CUSTOMIZED_LANGUAGE" />
+			<select type="Language" name="Customized Language" supports="Custom Race Language"  requirements="ID_WOTC_TCOE_OPTION_CUSTOMIZED_LANGUAGE" />
+			<select type="Language" name="Language (Tabaxi)" supports="Standard||Exotic" />
+
+			<grant type="Racial Trait" id="ID_WOTC_MOTM_RACIAL_TRAIT_TABAXI_CATS_CLAWS" />
+			<grant type="Racial Trait" id="ID_WOTC_MOTM_RACIAL_TRAIT_TABAXI_CATS_TALENT" />
+			<grant type="Racial Trait" id="ID_WOTC_MOTM_RACIAL_TRAIT_TABAXI_FELINE_AGILITY" />
+		</rules>
+	</element>
+
+	<element name="Cat's Claws" type="Racial Trait" source="Monsters of the Multiverse" id="ID_WOTC_MOTM_RACIAL_TRAIT_TABAXI_CATS_CLAWS">
+		<description>
+			<p>You can use your claws to make unarmed strikes. When you hit with them, the strike deals ld6 + your Strength modifier slashing damage, instead of the bludgeoning damage normal for an unarmed strike.</p>
+		</description>
+		<sheet>
+			<description>You can use your claws to make unarmed strikes. When you hit with them, the strike deals ld6 + your Strength modifier slashing damage, instead of the bludgeoning damage normal for an unarmed strike.</description>
+		</sheet>
+	</element>
+
+	<element name="Cat's Talent" type="Racial Trait" source="Monsters of the Multiverse" id="ID_WOTC_MOTM_RACIAL_TRAIT_TABAXI_CATS_TALENT">
+		<description>
+			<p>You have proficiency in the Perception and Stealth skills. </p>
+		</description>
+		<sheet display="false" />
+		<rules>
+			<grant type="Proficiency" id="ID_PROFICIENCY_SKILL_PERCEPTION" requirements="!ID_WOTC_TCOE_OPTION_CUSTOMIZED_PROFICIENCY" />
+			<grant type="Proficiency" id="ID_PROFICIENCY_SKILL_SURVIVAL" requirements="!ID_WOTC_TCOE_OPTION_CUSTOMIZED_PROFICIENCY" />
+			<select type="Proficiency" name="Customized Skill Proficiency (Cat's Talent)" supports="Skill" number="2" requirements="ID_WOTC_TCOE_OPTION_CUSTOMIZED_PROFICIENCY" />
+		</rules>
+	</element>
+
+	<element name="Feline Agility" type="Racial Trait" source="Monsters of the Multiverse" id="ID_WOTC_MOTM_RACIAL_TRAIT_TABAXI_FELINE_AGILITY">
+		<description>
+			<p> Your reflexes and agility allow you to move with a burst of speed. When you move on your turn in combat, you can double your speed until the end of the turn. Once you use this trait, you can't use it again until you move 0 feet on one of your turns. </p>
+		</description>
+		<sheet>
+			<description>When you move on your turn in combat, you can double your speed until the end of the turn. Once you use this trait, you can't use it again until you move 0 feet on one of your turns.</description>
+		</sheet>
+	</element>
+</elements>

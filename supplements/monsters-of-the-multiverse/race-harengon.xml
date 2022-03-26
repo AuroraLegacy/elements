@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<elements>
+	<info>
+		<name>Harengon from Monsters of the Multiverse</name>
+		<update version="0.0.1">
+			<file name="race-harengon.xml" url="https://raw.githubusercontent.com/AuroraLegacy/elements/master/supplements/monsters-of-the-multiverse/race-harengon.xml" />
+		</update>
+	</info>
+	<element name="Harengon" type="Race" source="Monsters of the Multiverse" id="ID_WOTC_MOTM_RACE_HARENGON">
+		<description>
+			<p>Harengons originated in the Feywild, where they spoke Sylvan and embodied the spirit of freedom and travel. In time, these rabbitfolk hopped into other worlds, bringing the fey realm's exuberance with them and learning new languages as they went.</p>
+			<p class="indent">Harengons are bipedal, with the characteristic long feet of the rabbits they resemble and fur in a variety of colors. They share the keen senses and powerful legs of leporine creatures and are full of energy, like a wound-up spring. Harengons are blessed with a little fey luck, and they often find themselves a few fortunate feet away from dangers during adventures.</p>
+			<h4>HARENGON TRAITS</h4>
+			<p>As a harengon, you have the following racial traits.</p>
+			<p class="indent"><strong><em>Creature Type.</em></strong> You are a Humanoid.</p>
+			<p class="indent"><strong><em>Size.</em></strong> You are Medium or Small. You choose the size when you select this race.</p>
+			<p class="indent"><strong><em>Speed.</em></strong> Your walking speed is 30 feet.</p>
+			<p class="indent"><strong><em>Hare-Trigger.</em></strong> You can add your proficiency bonus to your initiative rolls.</p>
+			<p class="indent"><strong><em>Leporine Senses.</em></strong> You have proficiency in the Perception skill.</p>
+			<p class="indent"><strong><em>Lucky Footwork.</em></strong> When you fail a Dexterity saving throw, you can use your reaction to roll a d4 and add it to the result, potentially turning the failure into a success. You can't use this reaction if you're prone or your speed is 0.</p>
+			<p class="indent"><strong><em>Rabbit Hop.</em></strong> As a bonus action, you can jump a number of feet equal to five times your proficiency bonus, without provoking opportunity attacks. You can use this trait only if your speed is greater than 0. You can use it a number of times equal to your proficiency bonus, and you regain all expended uses when you finish a long rest.</p>
+		</description>
+		<sheet display="false" />
+		<rules>
+			<select type="Ability Score Improvement" name="Ability Score Improvement Option (Harengon)" supports="Custom Ability Score Improvement Option" />
+			<select type="Racial Trait" name="Size (Harengon)" supports="ID_INTERNAL_RACIAL_TRAIT_SMALL|ID_INTERNAL_RACIAL_TRAIT_MEDIUM" />
+			<stat name="innate speed" value="30" bonus="base" />
+
+			<grant type="Language" id="ID_LANGUAGE_COMMON" requirements="!ID_WOTC_TCOE_OPTION_CUSTOMIZED_LANGUAGE" />
+			<select type="Language" name="Customized Language" supports="Custom Race Language" requirements="ID_WOTC_TCOE_OPTION_CUSTOMIZED_LANGUAGE" />
+			<select type="Language" name="Language (Harengon)" supports="Standard||Exotic" />
+
+			<grant type="Racial Trait" id="ID_WOTC_MOTM_RACIAL_TRAIT_HARENGON_HARE_TRIGGER" />
+			<grant type="Racial Trait" id="ID_WOTC_MOTM_RACIAL_TRAIT_HARENGON_LEPORINE_SENSES" />
+			<grant type="Racial Trait" id="ID_WOTC_MOTM_RACIAL_TRAIT_HARENGON_LUCKY_FOOTWORK" />
+			<grant type="Racial Trait" id="ID_WOTC_MOTM_RACIAL_TRAIT_HARENGON_RABBIT_HOP" />
+		</rules>
+	</element>
+
+	<element name="Hare-Trigger" type="Racial Trait" source="Monsters of the Multiverse" id="ID_WOTC_MOTM_RACIAL_TRAIT_HARENGON_HARE_TRIGGER">
+		<description>
+			<p>You add your proficiency bonus to your initiative rolls.</p>
+		</description>
+		<sheet display="false">
+			<description>You add your proficiency bonus to your initiative rolls.</description>
+		</sheet>
+		<rules>
+			<stat name="initiative" value="proficiency" />
+		</rules>
+	</element>
+
+	<element name="Leporine Senses" type="Racial Trait" source="Monsters of the Multiverse" id="ID_WOTC_MOTM_RACIAL_TRAIT_HARENGON_LEPORINE_SENSES">
+		<description>
+			<p>You have proficiency in the Perception skill.</p>
+		</description>
+		<sheet display="false">
+			<description>You have proficiency in the Perception skill.</description>
+		</sheet>
+		<rules>
+			<grant type="Proficiency" id="ID_PROFICIENCY_SKILL_PERCEPTION"  requirements="!ID_WOTC_TCOE_OPTION_CUSTOMIZED_PROFICIENCY" />
+			<select type="Proficiency" name="Customized Skill Proficiency" supports="Skill" requirements="ID_WOTC_TCOE_OPTION_CUSTOMIZED_PROFICIENCY" />
+		</rules>
+	</element>
+
+	<element name="Lucky Footwork" type="Racial Trait" source="Monsters of the Multiverse" id="ID_WOTC_MOTM_RACIAL_TRAIT_HARENGON_LUCKY_FOOTWORK">
+		<description>
+			<p>When you fail a Dexterity saving throw, you can use your reaction to roll a d4 and add it to the result, potentially turning the failure into a success. You can't use this reaction if you're prone or your speed is 0.</p>
+		</description>
+		<sheet action="Reaction">
+			<description>When you fail a Dexterity saving throw, you can roll a d4 and add it to the result, potentially turning the failure into a success. You can't use this reaction if you're prone or your speed is 0.</description>
+		</sheet>
+	</element>
+
+	<element name="Rabbit Hop" type="Racial Trait" source="Monsters of the Multiverse" id="ID_WOTC_MOTM_RACIAL_TRAIT_HARENGON_RABBIT_HOP">
+		<description>
+			<p>As a bonus action, you can jump a number of feet equal to five times your proficiency bonus, without provoking opportunity attacks. You can use this trait only if your speed is greater than 0. You can use it a number of times equal to your proficiency bonus, and you regain all expended uses when you finish a long rest.</p>
+		</description>
+		<sheet action="Bonus Action" usage="{{proficiency}}/Long Rest">
+			<description>You can jump {{rabbit hop:distance}} feet, without provoking opportunity attacks. You can use this trait only if your speed is greater than 0.</description>
+		</sheet>
+		<rules>
+			<stat name="rabbit hop:distance" value="proficiency" />
+			<stat name="rabbit hop:distance" value="proficiency" />
+			<stat name="rabbit hop:distance" value="proficiency" />
+			<stat name="rabbit hop:distance" value="proficiency" />
+			<stat name="rabbit hop:distance" value="proficiency" />
+		</rules>
+	</element>
+</elements>
