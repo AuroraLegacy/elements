@@ -4,7 +4,7 @@
         <name>Storm Herald</name>
         <description>The Storm Herald from Xanathar’s Guide to Everything</description>
         <author url="http://dnd.wizards.com/products/tabletop-games/rpg-products/xanathars-guide-everything">Xanathar’s Guide to Everything</author>
-        <update version="0.0.6">
+        <update version="0.0.7">
             <file name="barbarian-stormherald.xml" url="https://raw.githubusercontent.com/AuroraLegacy/elements/master/supplements/xanathars-guide-to-everything/archetypes/barbarian-stormherald.xml" />
         </update>
     </info>
@@ -19,9 +19,7 @@
             <div element="ID_WOTC_XGTE_ARCHETYPE_FEATURE_STORM_HERALD_SHIELDING_STORM" />
             <div element="ID_WOTC_XGTE_ARCHETYPE_FEATURE_STORM_HERALD_RAGING_STORM" />
         </description>
-        <sheet display="true">
-            <description>Storm heralds are typically elite champions who train alongside druids, rangers, and others sworn to protect nature.</description>
-        </sheet>
+		<sheet display="false" />
         <rules>
             <grant type="Archetype Feature" id="ID_WOTC_XGTE_ARCHETYPE_FEATURE_STORM_HERALD_STORM_AURA" level="3" />
             <grant type="Archetype Feature" id="ID_WOTC_XGTE_ARCHETYPE_FEATURE_STORM_HERALD_STORM_SOUL" level="6" />
@@ -38,7 +36,9 @@
             <p class="indent"><b><i>Sea. </i></b>When this effect is activated, you can choose one other creature you can see in your aura. The target must make a Dexterity saving throw. The target takes 1d6 lightning damage on a failed save, or half as much damage on a successful one. The damage increases when you reach certain levels in this class, increasing to 2d6 at 10th level, 3d6 at 15th level, and 4d6 at 20th level.</p>
             <p class="indent"><b><i>Tundra. </i></b>When this effect is activated, each creature of your choice in your aura gains 2 temporary hit points, as icy spirits inure it to suffering. The temporary hit points increase when you reach certain levels in this class, increasing to 3 at 5th level, 4 at 10th level, 5 at 15th level, and 6 at 20th level.</p>
         </description>
-        <sheet />
+        <sheet action="Rage">
+            <description>You create magical aura that extends 10 feet from you in every direction, but not through total cover. Your aura has an effect that activates when you enter your rage, and you can activate the effect again on each of your turns as a bonus action.</description>
+        </sheet>
         <rules>
             <select type="Archetype Feature" name="Storm Aura" supports="Storm Herald Storm Aura" level="3" />
             <stat name="storm aura:dc" value="8"/>
@@ -54,7 +54,7 @@
             <p>When this effect is activated, all other creatures in your aura take 2 fire damage each. The damage increases when you reach certain levels in this class, increasing to 3 at 5th level, 4 at 10th level, 5 at 15th level, and 6 at 20th level.</p>
         </description>
         <sheet>
-            <description>When this effect is activated, all other creatures in your aura take {{storm aura:desert:fire damage}} fire damage each.</description>
+            <description>When activated, all other creatures in your aura take {{storm aura:desert:fire damage}} fire damage each.</description>
         </sheet>
         <rules>
             <stat name="storm aura:desert:fire damage" value="2" />
@@ -70,10 +70,10 @@
             <p>When this effect is activated, you can choose one other creature you can see in your aura. The target must make a Dexterity saving throw. The target takes 1d6 lightning damage on a failed save, or half as much damage on a successful one. The damage increases when you reach certain levels in this class, increasing to 2d6 at 10th level, 3d6 at 15th level, and 4d6 at 20th level.</p>
         </description>
         <sheet>
-            <description>When activated, choose one creature in your aura. It makes a DC{{storm aura:dc}} dexterity saving throw, and takes 1d6 lightning damage on a fail, or half damage on a succes.</description>
-            <description level="10">When activated, choose one creature in your aura. It makes a DC{{storm aura:dc}} dexterity saving throw, and takes 2d6 lightning damage on a fail, or half damage on a succes.</description>
-            <description level="15">When activated, choose one creature in your aura. It makes a DC{{storm aura:dc}} dexterity saving throw, and takes 3d6 lightning damage on a fail, or half damage on a succes.</description>
-            <description level="20">When activated, choose one creature in your aura. It makes a DC{{storm aura:dc}} dexterity saving throw, and takes 4d6 lightning damage on a fail, or half damage on a succes.</description>
+            <description>When activated, choose one creature in your aura. It makes a DC{{storm aura:dc}} Dexterity saving throw, and takes 1d6 lightning damage on a fail, or half damage on a success.</description>
+            <description level="10">When activated, choose one creature in your aura. It makes a DC{{storm aura:dc}} Dexterity saving throw, and takes 2d6 lightning damage on a fail, or half damage on a success.</description>
+            <description level="15">When activated, choose one creature in your aura. It makes a DC{{storm aura:dc}} Dexterity saving throw, and takes 3d6 lightning damage on a fail, or half damage on a success.</description>
+            <description level="20">When activated, choose one creature in your aura. It makes a DC{{storm aura:dc}} Dexterity saving throw, and takes 4d6 lightning damage on a fail, or half damage on a success.</description>
         </sheet>
     </element>
     <element name="Tundra" type="Archetype Feature" source="Xanathar’s Guide to Everything" id="ID_WOTC_XGTE_ARCHETYPE_FEATURE_STORM_HERALD_STORM_AURA_TUNDRA">
@@ -101,7 +101,6 @@
             <description>The storm grants you benefits even when your aura isn’t active. The benefits are based on the environment you chose for your Storm Aura.</description>
         </sheet>
         <rules>
-            <!-- grant desert storm soul element with requirement that you have the desert storm aura element -->
             <grant type="Archetype Feature" id="ID_WOTC_XGTE_ARCHETYPE_FEATURE_STORM_HERALD_STORM_SOUL_DESERT" requirements="ID_WOTC_XGTE_ARCHETYPE_FEATURE_STORM_HERALD_STORM_AURA_DESERT" />
             <grant type="Archetype Feature" id="ID_WOTC_XGTE_ARCHETYPE_FEATURE_STORM_HERALD_STORM_SOUL_SEA" requirements="ID_WOTC_XGTE_ARCHETYPE_FEATURE_STORM_HERALD_STORM_AURA_SEA"/>
             <grant type="Archetype Feature" id="ID_WOTC_XGTE_ARCHETYPE_FEATURE_STORM_HERALD_STORM_SOUL_TUNDRA" requirements="ID_WOTC_XGTE_ARCHETYPE_FEATURE_STORM_HERALD_STORM_AURA_TUNDRA"/>
@@ -111,8 +110,8 @@
         <description>
             <p>You gain resistance to fire damage, and you don’t suffer the effects of extreme heat, as described in the Dungeon Master’s Guide. Moreover, as an action, you can touch a flammable object that isn’t being worn or carried by anyone else and set it on fire.</p>
         </description>
-        <sheet>
-            <description>You have resistance to fire damage, and you don’t suffer the effects of extreme heat. Action: You can touch a flammable object that isn’t being worn or carried by anyone else and set it on fire.</description>
+        <sheet action="Action">
+            <description>You can touch a flammable object that isn’t being worn or carried by anyone else and set it on fire. Additionally, you don’t suffer the effects of extreme heat.</description>
         </sheet>
 		<rules>
 			<grant type="Condition" id="ID_INTERNAL_CONDITION_DAMAGE_RESISTANCE_FIRE" />
@@ -123,7 +122,7 @@
             <p>You gain resistance to lightning damage, and you can breathe underwater. You also gain a swimming speed of 30 feet.</p>
         </description>
         <sheet>
-            <description>You have resistance to lightning damage, and you can breathe underwater. You also have a swimming speed of 30 feet.</description>
+            <description>You can breathe underwater.</description>
         </sheet>
         <rules>
             <stat name="speed:swim" value="30" bonus="base" />
@@ -134,8 +133,8 @@
         <description>
             <p>You gain resistance to cold damage, and you don’t suffer the effects of extreme cold, as described in the Dungeon Master’s Guide. Moreover, as an action, you can touch water and turn a 5-foot cube of it into ice, which melts after 1 minute. This action fails if a creature is in the cube.</p>
         </description>
-        <sheet>
-            <description>You have resistance to cold damage, and you don't suffer the effects of extreme cold. Action: Turn a 5ft-cube of water into ice on touch. It melts after 1 minute, and fails if a creature is inside it.</description>
+        <sheet action="Action">
+            <description>You can turn a 5ft-cube of water into ice on touch, if there's no creatures inside the cube. It melts after 1 minute. Additionally, you don't suffer the effects of extreme cold.</description>
         </sheet>
 		<rules>
 			<grant type="Condition" id="ID_INTERNAL_CONDITION_DAMAGE_RESISTANCE_COLD" />

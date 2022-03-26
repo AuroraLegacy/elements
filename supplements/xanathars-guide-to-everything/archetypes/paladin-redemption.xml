@@ -4,10 +4,11 @@
 		<name>Oath of Redemption</name>
 		<description>The Oath of Redemption from Xanathar’s Guide to Everything</description>
 		<author url="http://dnd.wizards.com/products/tabletop-games/rpg-products/xanathars-guide-everything">Xanathar’s Guide to Everything</author>
-		<update version="0.1.2">
+		<update version="0.1.3">
 			<file name="paladin-redemption.xml" url="https://raw.githubusercontent.com/AuroraLegacy/elements/master/supplements/xanathars-guide-to-everything/archetypes/paladin-redemption.xml" />
 		</update>
 	</info>
+
 	<element name="Oath of Redemption" type="Archetype" source="Xanathar’s Guide to Everything" id="ID_WOTC_XGTE_ARCHETYPE_OATH_OF_REDEMPTION">
 		<supports>Sacred Oath</supports>
 		<description>
@@ -37,100 +38,106 @@
 		</rules>
 	</element>
 	
-  <element name="Oath Spells" type="Archetype Feature" source="Sword Coast Adventurer’s Guide" id="ID_WOTC_XGTE_ARCHETYPE_FEATURE_OATH_OF_REDEMPTION_OATH_SPELLS">
-    <description>
-      <p>You gain oath spells at the paladin levels listed in the Oath of Redemption Spells table. See the Sacred Oath class feature for how oath spells work.</p>
-      <h5>Oath of Redemption Spells</h5>
-      <table>
-        <thead>
-          <tr><td>Paladin Level</td><td>Spells</td></tr>
-        </thead>
-        <tr><td>3rd</td><td><em>sanctuary, sleep</em></td></tr>
-        <tr><td>5th</td><td><em>calm emotions, hold person</em></td></tr>
-        <tr><td>9th</td><td><em>counterspell, hypnotic pattern</em></td></tr>
-        <tr><td>13th</td><td><em>Otiluke’s resilient sphere, stoneskin</em></td></tr>
-        <tr><td>17th</td><td><em>hold monster, wall of force</em></td></tr>
-      </table>     
-	</description>
-    <sheet>
-      <description>You gain oath spells at the paladin levels listed in the Oath of Redemption Spells table.</description>
-    </sheet>
-    <rules>
-		<grant type="Spell" id="ID_PHB_SPELL_SANCTUARY" level="3" spellcasting="Paladin" prepared="true" />
-		<grant type="Spell" id="ID_PHB_SPELL_SLEEP" level="3" spellcasting="Paladin" prepared="true" />
-		<grant type="Spell" id="ID_PHB_SPELL_CALM_EMOTIONS" level="5" spellcasting="Paladin" prepared="true" />
-		<grant type="Spell" id="ID_PHB_SPELL_HOLD_PERSON" level="5" spellcasting="Paladin" prepared="true" />
-		<grant type="Spell" id="ID_PHB_SPELL_COUNTERSPELL" level="9" spellcasting="Paladin" prepared="true" />
-		<grant type="Spell" id="ID_PHB_SPELL_HYPNOTIC_PATTERN" level="9" spellcasting="Paladin" prepared="true" />
-		<grant type="Spell" id="ID_PHB_SPELL_OTILUKES_RESILIENT_SPHERE" level="13" spellcasting="Paladin" prepared="true" />
-		<grant type="Spell" id="ID_PHB_SPELL_STONESKIN" level="13" spellcasting="Paladin" prepared="true" />
-		<grant type="Spell" id="ID_PHB_SPELL_HOLD_MONSTER" level="17" spellcasting="Paladin" prepared="true" />
-		<grant type="Spell" id="ID_PHB_SPELL_WALL_OF_FORCE" level="17" spellcasting="Paladin" prepared="true" />
-	</rules>
-  </element>
-  <element name="Channel Divinity" type="Archetype Feature" source="Sword Coast Adventurer’s Guide" id="ID_WOTC_XGTE_ARCHETYPE_FEATURE_OATH_OF_REDEMPTION_CHANNEL_DIVINITY">
-    <description>
-	  <p>When you take this oath at 3rd level, you gain the following two Channel Divinity options.</p>
-      <p class="indent"><b><i>Emissary of Peace. </i></b>You can use your Channel Divinity to augment your presence with divine power. As a bonus action, you grant yourself a +5 bonus to Charisma (Persuasion) checks for the next 10 minutes.</p>
-      <p class="indent"><b><i>Rebuke the Violent. </i></b>You can use your Channel Divinity to rebuke those who use violence. Immediately after an attacker within 30 feet of you deals damage with an attack against a creature other than you, you can use your reaction to force the attacker to make a Wisdom saving throw. On a failed save, the attacker takes radiant damage equal to the damage it just dealt. On a successful save, it takes half as much damage.</p>
-    </description>
-    <sheet>
-      <description>Emissary of Peace and Rebuke the Violent</description>
-    </sheet>
-	<rules>
-		<grant type="Archetype Feature" id="ID_WOTC_XGTE_ARCHETYPE_FEATURE_OATH_OF_REDEMPTION_CHANNEL_DIVINITY_EMISSARY_OF_PEACE" />
-		<grant type="Archetype Feature" id="ID_WOTC_XGTE_ARCHETYPE_FEATURE_OATH_OF_REDEMPTION_CHANNEL_DIVINITY_REBUKE_THE_VIOLENT" />
-	</rules>
-  </element>
-  <element name="Channel Divinity: Emissary of Peace" type="Archetype Feature" source="Player’s Handbook" id="ID_WOTC_XGTE_ARCHETYPE_FEATURE_OATH_OF_REDEMPTION_CHANNEL_DIVINITY_EMISSARY_OF_PEACE">
-    <description>
-      <p>You can use your Channel Divinity to augment your presence with divine power. As a bonus action, you grant yourself a +5 bonus to Charisma (Persuasion) checks for the next 10 minutes.</p>
-    </description>
-    <sheet alt="Emissary of Peace" action="Bonus Action" usage="Channel Divinity">
-      <description>You grant yourself a +5 bonus to Persuasion checks for the next 10 minutes.</description>
-    </sheet>
-  </element>
-  <element name="Channel Divinity: Rebuke the Violent" type="Archetype Feature" source="Player’s Handbook" id="ID_WOTC_XGTE_ARCHETYPE_FEATURE_OATH_OF_REDEMPTION_CHANNEL_DIVINITY_REBUKE_THE_VIOLENT">
-    <description>
-      <p>You can use your Channel Divinity to rebuke those who use violence. Immediately after an attacker within 30 feet of you deals damage with an attack against a creature other than you, you can use your reaction to force the attacker to make a Wisdom saving throw. On a failed save, the attacker takes radiant damage equal to the damage it just dealt. On a successful save, it takes half as much damage.</p>
-    </description>
-    <sheet alt="Rebuke the Violent" action="Reaction" usage="Channel Divinity">
-      <description>Immediately after an attacker within 30 feet of you deals damage with an attack against a creature other than you, you can use your reaction to force the attacker to make a Wisdom saving throw. On a failed save, the attacker takes radiant damage equal to the damage it just dealt. On a successful save, it takes half as much damage.</description>
-    </sheet>
-  </element>
-  <element name="Aura of the Guardian" type="Archetype Feature" source="Sword Coast Adventurer’s Guide" id="ID_WOTC_XGTE_ARCHETYPE_FEATURE_OATH_OF_REDEMPTION_AURA_OF_THE_GUARDIAN">
-    <description>
-      <p>Starting at 7th level, you can shield others from harm at the cost of your own health. When a creature within 10 feet of you takes damage, you can use your reaction to magically take that damage, instead of that creature taking it. This feature doesn't transfer any other effects that might accompany the damage, and this damage can't be reduced in any way.</p>
-      <p class="indent">At 18th level, the range of this aura increases to 30 feet.</p>
-    </description>
-    <sheet>
-      <description>When a creature within {{aura of the guardian:aura}} feet of you takes damage, you can use your reaction to magically take that damage, instead of that creature taking it. This feature doesn't transfer any other effects that might accompany the damage, and this damage can't be reduced in any way.</description>
-    </sheet>
-    <rules>
-		<stat name="aura of the guardian:aura" value="10" bonus="aura of the guardian" />
-		<stat name="aura of the guardian:aura" value="30" bonus="aura of the guardian" level="18" />
-	</rules>
-  </element>
-  <element name="Protective Spirit" type="Archetype Feature" source="Sword Coast Adventurer’s Guide" id="ID_WOTC_XGTE_ARCHETYPE_FEATURE_OATH_OF_REDEMPTION_PROTECTIVE_SPIRIT">
-    <description>
-      <p>Starting at 15th level, a holy presence mends your wounds in battle. You regain hit points equal to 1d6 + half your paladin level if you end your turn in combat with fewer than half of your hit points remaining and you aren't incapacitated.</p>
-      <p class="indent"></p>
-    </description>
-    <sheet>
-      <description>You regain 1d6+{{level:paladin:half}} hit points if you end your turn in combat with fewer than half of your hit points remaining and you aren't incapacitated.</description>
-    </sheet>
-  </element>
-  <element name="Emissary of Redemption" type="Archetype Feature" source="Sword Coast Adventurer’s Guide" id="ID_WOTC_XGTE_ARCHETYPE_FEATURE_OATH_OF_REDEMPTION_EMISSARY_OF_REDEMPTION">
-    <description>
-      <p>At 20th level, you become an avatar of peace, which gives you two benefits:</p>
-	  <ul>
-	  	<li>You have resistance to all damage dealt by other creatures (their attacks, spells, and other effects).</li>
-	  	<li>Whenever a creature hits you with an attack, it takes radiant damage equal to half the damage you take from the attack.</li>
-	  </ul>
-      <p>If you attack a creature, cast a spell on it, or deal damage to it by any means but this feature, neither benefit works against that creature until you finish a long rest.</p>
-    </description>
-    <sheet>
-      <description>You have resistance to all damage dealt by other creatures. Whenever a creature hits you with an attack, it takes radiant damage equal to half the damage you take from the attack.</description>
-    </sheet>
-  </element>
+	<element name="Oath Spells" type="Archetype Feature" source="Xanathar’s Guide to Everything" id="ID_WOTC_XGTE_ARCHETYPE_FEATURE_OATH_OF_REDEMPTION_OATH_SPELLS">
+		<description>
+			<p>You gain oath spells at the paladin levels listed in the Oath of Redemption Spells table. See the Sacred Oath class feature for how oath spells work.</p>
+			<h5>Oath of Redemption Spells</h5>
+			<table>
+				<thead>
+					<tr><td>Paladin Level</td><td>Spells</td></tr>
+				</thead>
+				<tr><td>3rd</td><td><em>sanctuary, sleep</em></td></tr>
+				<tr><td>5th</td><td><em>calm emotions, hold person</em></td></tr>
+				<tr><td>9th</td><td><em>counterspell, hypnotic pattern</em></td></tr>
+				<tr><td>13th</td><td><em>Otiluke’s resilient sphere, stoneskin</em></td></tr>
+				<tr><td>17th</td><td><em>hold monster, wall of force</em></td></tr>
+			</table>     
+		</description>
+		<sheet display="false">
+			<description>You gain oath spells at the paladin levels listed in the Oath of Redemption Spells table.</description>
+		</sheet>
+		<rules>
+			<grant type="Spell" id="ID_PHB_SPELL_SANCTUARY" level="3" spellcasting="Paladin" prepared="true" />
+			<grant type="Spell" id="ID_PHB_SPELL_SLEEP" level="3" spellcasting="Paladin" prepared="true" />
+			<grant type="Spell" id="ID_PHB_SPELL_CALM_EMOTIONS" level="5" spellcasting="Paladin" prepared="true" />
+			<grant type="Spell" id="ID_PHB_SPELL_HOLD_PERSON" level="5" spellcasting="Paladin" prepared="true" />
+			<grant type="Spell" id="ID_PHB_SPELL_COUNTERSPELL" level="9" spellcasting="Paladin" prepared="true" />
+			<grant type="Spell" id="ID_PHB_SPELL_HYPNOTIC_PATTERN" level="9" spellcasting="Paladin" prepared="true" />
+			<grant type="Spell" id="ID_PHB_SPELL_OTILUKES_RESILIENT_SPHERE" level="13" spellcasting="Paladin" prepared="true" />
+			<grant type="Spell" id="ID_PHB_SPELL_STONESKIN" level="13" spellcasting="Paladin" prepared="true" />
+			<grant type="Spell" id="ID_PHB_SPELL_HOLD_MONSTER" level="17" spellcasting="Paladin" prepared="true" />
+			<grant type="Spell" id="ID_PHB_SPELL_WALL_OF_FORCE" level="17" spellcasting="Paladin" prepared="true" />
+		</rules>
+	</element>
+
+	<element name="Channel Divinity" type="Archetype Feature" source="Xanathar’s Guide to Everything" id="ID_WOTC_XGTE_ARCHETYPE_FEATURE_OATH_OF_REDEMPTION_CHANNEL_DIVINITY">
+		<compendium display="false" />
+		<description>
+		<p>When you take this oath at 3rd level, you gain the following two Channel Divinity options.</p>
+			<p class="indent"><b><i>Emissary of Peace. </i></b>You can use your Channel Divinity to augment your presence with divine power. As a bonus action, you grant yourself a +5 bonus to Charisma (Persuasion) checks for the next 10 minutes.</p>
+			<p class="indent"><b><i>Rebuke the Violent. </i></b>You can use your Channel Divinity to rebuke those who use violence. Immediately after an attacker within 30 feet of you deals damage with an attack against a creature other than you, you can use your reaction to force the attacker to make a Wisdom saving throw. On a failed save, the attacker takes radiant damage equal to the damage it just dealt. On a successful save, it takes half as much damage.</p>
+		</description>
+		<sheet display="false" />
+		<rules>
+			<grant type="Archetype Feature" id="ID_WOTC_XGTE_ARCHETYPE_FEATURE_OATH_OF_REDEMPTION_CHANNEL_DIVINITY_EMISSARY_OF_PEACE" />
+			<grant type="Archetype Feature" id="ID_WOTC_XGTE_ARCHETYPE_FEATURE_OATH_OF_REDEMPTION_CHANNEL_DIVINITY_REBUKE_THE_VIOLENT" />
+		</rules>
+	</element>
+
+	<element name="Channel Divinity: Emissary of Peace" type="Archetype Feature" source="Xanathar’s Guide to Everything" id="ID_WOTC_XGTE_ARCHETYPE_FEATURE_OATH_OF_REDEMPTION_CHANNEL_DIVINITY_EMISSARY_OF_PEACE">
+		<description>
+			<p>You can use your Channel Divinity to augment your presence with divine power. As a bonus action, you grant yourself a +5 bonus to Charisma (Persuasion) checks for the next 10 minutes.</p>
+		</description>
+		<sheet alt="Emissary of Peace" action="Bonus Action" usage="Channel Divinity">
+			<description>You grant yourself a +5 bonus to Charisma (Persuasion) checks for the next 10 minutes.</description>
+		</sheet>
+	</element>
+
+	<element name="Channel Divinity: Rebuke the Violent" type="Archetype Feature" source="Xanathar’s Guide to Everything" id="ID_WOTC_XGTE_ARCHETYPE_FEATURE_OATH_OF_REDEMPTION_CHANNEL_DIVINITY_REBUKE_THE_VIOLENT">
+		<description>
+			<p>You can use your Channel Divinity to rebuke those who use violence. Immediately after an attacker within 30 feet of you deals damage with an attack against a creature other than you, you can use your reaction to force the attacker to make a Wisdom saving throw. On a failed save, the attacker takes radiant damage equal to the damage it just dealt. On a successful save, it takes half as much damage.</p>
+		</description>
+		<sheet alt="Rebuke the Violent" action="Reaction" usage="Channel Divinity">
+			<description>Immediately after an attacker within 30 feet of you deals damage with an attack against a creature other than you, you can force the attacker to make a Wisdom saving throw. On a failed save, the attacker takes radiant damage equal to the damage it just dealt. On a successful save, it takes half as much damage.</description>
+		</sheet>
+	</element>
+
+	<element name="Aura of the Guardian" type="Archetype Feature" source="Xanathar’s Guide to Everything" id="ID_WOTC_XGTE_ARCHETYPE_FEATURE_OATH_OF_REDEMPTION_AURA_OF_THE_GUARDIAN">
+		<description>
+			<p>Starting at 7th level, you can shield others from harm at the cost of your own health. When a creature within 10 feet of you takes damage, you can use your reaction to magically take that damage, instead of that creature taking it. This feature doesn't transfer any other effects that might accompany the damage, and this damage can't be reduced in any way.</p>
+			<p class="indent">At 18th level, the range of this aura increases to 30 feet.</p>
+		</description>
+		<sheet action="Reaction">
+			<description>When a creature within {{aura of the guardian:aura}} feet of you takes damage, you can take that damage, instead of that creature taking it. This feature doesn't transfer any other effects that might accompany the damage, and this damage can't be reduced in any way.</description>
+		</sheet>
+		<rules>
+			<stat name="aura of the guardian:aura" value="10" bonus="aura of the guardian" />
+			<stat name="aura of the guardian:aura" value="30" bonus="aura of the guardian" level="18" />
+		</rules>
+	</element>
+
+	<element name="Protective Spirit" type="Archetype Feature" source="Xanathar’s Guide to Everything" id="ID_WOTC_XGTE_ARCHETYPE_FEATURE_OATH_OF_REDEMPTION_PROTECTIVE_SPIRIT">
+		<description>
+			<p>Starting at 15th level, a holy presence mends your wounds in battle. You regain hit points equal to 1d6 + half your paladin level if you end your turn in combat with fewer than half of your hit points remaining and you aren't incapacitated.</p>
+			<p class="indent"></p>
+		</description>
+		<sheet>
+			<description>You regain 1d6+{{level:paladin:half}} hit points if you end your turn in combat with fewer than half of your hit points remaining and you aren't incapacitated.</description>
+		</sheet>
+	</element>
+
+	<element name="Emissary of Redemption" type="Archetype Feature" source="Xanathar’s Guide to Everything" id="ID_WOTC_XGTE_ARCHETYPE_FEATURE_OATH_OF_REDEMPTION_EMISSARY_OF_REDEMPTION">
+		<description>
+			<p>At 20th level, you become an avatar of peace, which gives you two benefits:</p>
+			<ul>
+				<li>You have resistance to all damage dealt by other creatures (their attacks, spells, and other effects).</li>
+				<li>Whenever a creature hits you with an attack, it takes radiant damage equal to half the damage you take from the attack.</li>
+			</ul>
+			<p>If you attack a creature, cast a spell on it, or deal damage to it by any means but this feature, neither benefit works against that creature until you finish a long rest.</p>
+		</description>
+		<sheet>
+			<description>You have resistance to all damage dealt by other creatures. Whenever a creature hits you with an attack, it takes radiant damage equal to half the damage you take from the attack. If you attack a creature, cast a spell on it, or deal damage to it by any means but this feature, neither benefit works against that creature until you finish a long rest.</description>
+		</sheet>
+	</element>
+
 </elements>
