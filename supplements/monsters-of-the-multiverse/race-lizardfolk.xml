@@ -9,9 +9,9 @@
 	
 	<element name="Lizardfolk" type="Race" source="Monsters of the Multiverse" id="ID_WOTC_MOTM_RACE_LIZARDFOLK">
 		<description>
-			<p>The saurian lizardfolk are thought by some sages to be distant cousins of dragon born and kobolds. Despite their resemblance to those other scaled folk, however, lizardfolk are their own people and have lived on the worlds of the Material Plane since the worlds' creation. Gifted by the gods with remarkable physical defenses and a mystical connection to the natural world, lizardfolk can survive with just their wits in situations that would be deadly for other folk. Because of that fact, many lizardfolk myths state that their people were placed by the gods in the Material Plane to guard its natural wonders. </p>
+			<p>The saurian lizardfolk are thought by some sages to be distant cousins of dragonborn and kobolds. Despite their resemblance to those other scaled folk, however, lizardfolk are their own people and have lived on the worlds of the Material Plane since the worlds' creation. Gifted by the gods with remarkable physical defenses and a mystical connection to the natural world, lizardfolk can survive with just their wits in situations that would be deadly for other folk. Because of that fact, many lizardfolk myths state that their people were placed by the gods in the Material Plane to guard its natural wonders. </p>
 			<p class="indent">Lizardfolk have colorful scales and exhibit a wide array of scale patterns. Their individual facial features are as varied as those of lizards.</p>
-			<h4>Lizardfolk Traits</h4>
+			<h4>LIZARDFOLK TRAITS</h4>
 			<p>As a lizardfolk, you have the following racial traits.</p>
 			<p class="indent"><strong><em>Creature Type.</em></strong> You are a Humanoid.</p>
 			<p class="indent"><strong><em>Size.</em></strong> You are Medium.</p>
@@ -30,7 +30,7 @@
 			<stat name="innate speed:swim" value="innate speed" bonus="base" />
 
 			<grant type="Language" id="ID_LANGUAGE_COMMON" requirements="!ID_WOTC_TCOE_OPTION_CUSTOMIZED_LANGUAGE" />
-			<select type="Language" name="Customized Language" supports="Custom Race Language"  requirements="ID_WOTC_TCOE_OPTION_CUSTOMIZED_LANGUAGE" />
+			<select type="Language" name="Customized Language (Lizardfolk)" supports="Custom Race Language"  requirements="ID_WOTC_TCOE_OPTION_CUSTOMIZED_LANGUAGE" />
 			<select type="Language" name="Language (Lizardfolk)" supports="Standard||Exotic" />
 			
 			<grant type="Racial Trait" id="ID_WOTC_MOTM_RACIAL_TRAIT_LIZARDFOLK_BITE" />
@@ -64,12 +64,8 @@
 			<p>You can throw yourself into a feeding frenzy. As a bonus action, you can make a special attack with your Bite. If the attack hits, it deals its normal damage, and you gain temporary hit points equal to your proficiency bonus. You can use this trait a number of times equal to your proficiency bonus, and you regain all expended uses when you finish a long rest.</p>
 		</description>
 		<sheet action="Bonus Action" usage="{{proficiency}}/Long Rest">
-			<description>You can make a special attack with your Bite. If the attack hits, it deals its normal damage, and you gain {{hungry jaws:hp}} temporary hit points.</description>
+			<description>You can make a special attack with your Bite. If the attack hits, it deals its normal damage, and you gain {{proficiency}} temporary hit points.</description>
 		</sheet>
-		<rules>
-			<stat name="hungry jaws:hp" value="proficiency" />
-			<stat name="hungry jaws:hp" value="proficiency" />
-		</rules>
 	</element>
 
 	<element name="Natural Armor" type="Racial Trait" source="Monsters of the Multiverse" id="ID_WOTC_MOTM_RACIAL_TRAIT_LIZARDFOLK_NATURAL_ARMOR">
@@ -77,14 +73,12 @@
 			<p>You have tough, scaly skin. When you aren't wearing armor, your base AC is 13 + your Dexterity modifier. You can use your natural armor to determine your AC if the armor you wear would leave you with a lower AC. A shield's benefits apply as normal while you use your natural armor.</p>
 		</description>
 		<sheet>
-			<description>When you aren't wearing armor, your base AC is {{ac:natural armor lizardfolk}}. You can use your natural armor to determine your AC if the armor you wear would leave you with a lower AC. A shield's benefits apply as normal while you use your natural armor.</description>
+			<description>When you aren't wearing armor, your base AC is {{ac:natural armor:lizardfolk}}. You can use your natural armor to determine your AC if the armor you wear would leave you with a lower AC. A shield's benefits apply as normal while you use your natural armor.</description>
 		</sheet>
 		<rules>
-			<stat name="ac:natural armor lizardfolk:base" value="13" />
-			<stat name="ac:natural armor lizardfolk:dexterity" value="dexterity:modifier" />
-			<stat name="ac:natural armor lizardfolk" value="ac:natural armor lizardfolk:base" />
-			<stat name="ac:natural armor lizardfolk" value="ac:natural armor lizardfolk:dexterity" />
-			<stat name="ac:calculation" value="ac:natural armor lizardfolk" bonus="calculation" equipped="[armor:none]" alt="Natural Armor (Lizardfolk)" />
+			<stat name="ac:natural armor:lizardfolk" value="13" bonus="base" />
+			<stat name="ac:natural armor:lizardfolk" value="dexterity:modifier" bonus="ability" />
+			<stat name="ac:calculation" value="ac:natural armor:lizardfolk" bonus="calculation" alt="Natural Armor (Lizardfolk)" />
 		</rules>
 	</element>
 
