@@ -1,0 +1,173 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<elements>
+	<info>
+		<name>Eladrin from Monsters of the Multiverse</name>
+		<update version="0.0.1">
+			<file name="race-eladrin.xml" url="https://raw.githubusercontent.com/AuroraLegacy/elements/master/supplements/monsters-of-the-multiverse/race-eladrin.xml" />
+		</update>
+	</info>
+
+	<element name="Eladrin" type="Race" source="Monsters of the Multiverse" id="ID_WOTC_MOTM_RACE_ELADRIN">
+		<description>
+			<p>Eladrin are elves of the Feywild, a realm of perilous beauty and boundless magic. Using that magic, eladrin can step from one place to another in the blink of an eye, and each eladrin resonates with emotions captured in the Feywild in the form of seasons—affinities that affect the eladrin's mood and appearance. An eladrin's season can change, though some remain in one season forever. Choose your season or roll on the Eladrin Seasons table. Your Trance trait lets you change your season.</p>
+			<p class="indent">Like other elves, eladrin can live to be over 750 years old.</p>
+			<h5>Eladrin Seasons</h5>
+			<table>
+				<thead>
+					<tr><td>d4</td><td>Season</td></tr>
+				</thead>
+				<tr><td>1</td><td><b>Autumn:</b> peace and goodwill, when summer's harvest is shared with all</td></tr>
+				<tr><td>2</td><td><b>Winter:</b> contemplation and dolor, when the vibrant energy of the world slumbers</td></tr>
+				<tr><td>3</td><td><b>Spring:</b> cheerfulness and celebration , marked by merriment and hope as winter's sorrow passes</td></tr>
+				<tr><td>4</td><td><b>Summer:</b> boldness and aggression, a time of unfettered energy and calls to action</td></tr>
+			</table>
+			<h4>ELADRIN TRAITS</h4>
+			<p>As an eladrin, you have the following racial traits. </p>
+			<p class="indent"><strong><em>Creature Type.</em></strong> You are a Humanoid. You are also considered an elf for any prerequisite or effect that requires you to be an elf.</p>
+			<p class="indent"><strong><em>Size.</em></strong> You are Medium.</p>
+			<p class="indent"><strong><em>Speed.</em></strong> Your walking speed is 30 feet.</p>
+			<p class="indent"><strong><em>Darkvision.</em></strong> You can see in dim light within 60 feet of you as if it were bright light, and in darkness as if it were dim light. You discern colors in that darkness only as shades of gray.</p>
+			<p class="indent"><strong><em>Fey Ancestry.</em></strong> You have advantage on saving throws you make to avoid or end the charmed condition on yourself. </p>
+			<p class="indent"><strong><em>Fey Step.</em></strong> As a bonus action, you can magically teleport up to 30 feet to an unoccupied space you can see. You can use this trait a number of times equal to your proficiency bonus, and you regain all expended uses when you finish a long rest.</p>
+			<p class="indent">When you reach 3rd level, your Fey Step gains an additional effect based on your season; if the effect requires a saving throw, the DC equals 8 + your proficiency bonus + your Intelligence, Wisdom, or Charisma modifier (choose when you select this race):</p>
+			<ul class="unstyled">
+				<li style="margin-left:1em;text-indent:-1em;"><strong>Autumn.</strong> Immediately after you use your Fey Step, up to two creatures of your choice that you can see within 10 feet of you must succeed on a Wisdom saving throw or be charmed by you for 1 minute, or until you or your companions deal any damage to the creatures.</li>
+				<li style="margin-left:1em;text-indent:-1em;"><strong>Winter.</strong> When you use your Fey Step, one creature of your choice that you can see within 5 feet of you before you teleport must succeed on a Wisdom saving throw or be frightened of you until the end of your next turn.</li>
+				<li style="margin-left:1em;text-indent:-1em;"><strong>Spring.</strong> When you use your Fey Step, you can touch one willing creature within 5 feet of you. That creature then teleports instead of you, appearing in an unoccupied space of your choice that you can see within 30 feet of you.</li>
+				<li style="margin-left:1em;text-indent:-1em;"><strong>Summer.</strong> Immediately after you use your Fey Step, each creature of your choice that you can see within 5 feet of you takes fire damage equal to your proficiency bonus.</li>
+			</ul>
+			<br />
+			<p class="indent"><strong><em>Keen Senses.</em></strong> You have proficiency in the Perception skill.</p>
+			<p class="indent"><strong><em>Trance.</em></strong> You don't need to sleep, and magic can't put you to sleep. You can finish a long rest in 4 hours if you spend those hours in a trancelike meditation, during which you retain consciousness. </p>	
+			<p class="indent">Whenever you finish this trance, you can gain two proficiencies that you don't have, each one with a weapon or a tool of your choice selected from the Player's Handbook. You mystically acquire these proficiencies by drawing them from shared elven memory, and you retain them until you finish your next long rest. </p>	
+		</description>
+		<sheet display="false" />
+		<rules>
+			<select type="Ability Score Improvement" name="Ability Score Improvement Option (Eladrin)" supports="Custom Ability Score Improvement Option" />
+			<grant type="Size" id="ID_SIZE_MEDIUM" />
+			<stat name="innate speed" value="30" bonus="base" />
+			<grant type="Grants" id="ID_INTERNAL_RACIAL_TRAIT_TYPE_HUMANOID_ELF" />
+			<grant type="Vision" id="ID_VISION_DARKVISION" />
+
+			<grant type="Language" id="ID_LANGUAGE_COMMON" requirements="!ID_WOTC_TCOE_OPTION_CUSTOMIZED_LANGUAGE" />
+			<select type="Language" name="Customized Language (Eladrin)" supports="Custom Race Language"  requirements="ID_WOTC_TCOE_OPTION_CUSTOMIZED_LANGUAGE" />
+			<select type="Language" name="Language (Eladrin)" supports="Standard||Exotic" />
+			
+			<grant type="Racial Trait" id="ID_WOTC_MOTM_RACIAL_TRAIT_ELADRIN_FEY_ANCESTRY" />
+			<grant type="Racial Trait" id="ID_WOTC_MOTM_RACIAL_TRAIT_ELADRIN_FEY_STEP" />
+			<grant type="Racial Trait" id="ID_WOTC_MOTM_RACIAL_TRAIT_ELADRIN_KEEN_SENSES" />
+			<grant type="Racial Trait" id="ID_WOTC_MOTM_RACIAL_TRAIT_ELADRIN_TRANCE" />
+		</rules>
+	</element>
+
+	<element name="Fey Ancestry" type="Racial Trait" source="Monsters of the Multiverse" id="ID_WOTC_MOTM_RACIAL_TRAIT_ELADRIN_FEY_ANCESTRY">
+		<description>
+			<p>You have advantage on saving throws you make to avoid or end the charmed condition on yourself.</p>
+		</description>
+		<sheet>
+			<description>You have advantage on saving throws you make to avoid or end the charmed condition on yourself.</description>
+		</sheet>
+	</element>
+
+	<element name="Fey Step" type="Racial Trait" source="Monsters of the Multiverse" id="ID_WOTC_MOTM_RACIAL_TRAIT_ELADRIN_FEY_STEP">
+		<description>
+			<p>As a bonus action, you can magically teleport up to 30 feet to an unoccupied space you can see. You can use this trait a number of times equal to your proficiency bonus, and you regain all expended uses when you finish a long rest.</p>
+			<p class="indent">When you reach 3rd level, your Fey Step gains an additional effect based on your season; if the effect requires a saving throw, the DC equals 8 + your proficiency bonus + your Intelligence, Wisdom, or Charisma modifier (choose when you select this race):</p>
+		</description>
+		<sheet action="Bonus Action" usage="{{proficiency}}/Long Rest">
+			<description>You can magically teleport up to 30 feet to an unoccupied space you can see.</description>
+		</sheet>
+		<rules>
+			<select type="Racial Trait" name="Spellcasting Ability (Fey Step)" supports="ID_WOTC_MOTM_RACIAL_TRAIT_ELADRIN_FEY_ANCESTRY_INTELLIGENCE|ID_WOTC_MOTM_RACIAL_TRAIT_ELADRIN_FEY_ANCESTRY_WISDOM|ID_WOTC_MOTM_RACIAL_TRAIT_ELADRIN_FEY_ANCESTRY_CHARISMA" />
+			<stat name="fey step:dc" value="8" bonus="base"/>
+			<stat name="fey step:dc" value="proficiency" bonus="proficiency"/>
+			<select type="Racial Trait" name="Season (Fey Step)" supports="ID_WOTC_MOTM_RACIAL_TRAIT_ELADRIN_FEY_STEP_AUTUMN|ID_WOTC_MOTM_RACIAL_TRAIT_ELADRIN_FEY_STEP_WINTER|ID_WOTC_MOTM_RACIAL_TRAIT_ELADRIN_FEY_STEP_SPRING|ID_WOTC_MOTM_RACIAL_TRAIT_ELADRIN_FEY_STEP_SUMMER" level="3"/>
+		</rules>
+	</element>
+
+	<element name="Intelligence" type="Racial Trait" source="Monsters of the Multiverse" id="ID_WOTC_MOTM_RACIAL_TRAIT_ELADRIN_FEY_ANCESTRY_INTELLIGENCE">
+		<compendium display="false" />
+		<description>
+			<p>When you reach 3rd level, your Fey Step gains an additional effect based on your season; if the effect requires a saving throw, the DC equals 8 + your proficiency bonus + your Intelligence modifier.</p>
+		</description>
+		<sheet display="false" />
+		<rules>
+			<stat name="fey step:dc" value="intelligence:modifier" bonus="ability"/>
+		</rules>
+	</element>
+	<element name="Wisdom" type="Racial Trait" source="Monsters of the Multiverse" id="ID_WOTC_MOTM_RACIAL_TRAIT_ELADRIN_FEY_ANCESTRY_WISDOM">
+		<compendium display="false" />
+		<description>
+			<p>When you reach 3rd level, your Fey Step gains an additional effect based on your season; if the effect requires a saving throw, the DC equals 8 + your proficiency bonus + your Wisdom modifier.</p>
+		</description>
+		<sheet display="false" />
+		<rules>
+			<stat name="fey step:dc" value="wisdom:modifier" bonus="ability"/>
+		</rules>
+	</element>
+	<element name="Charisma" type="Racial Trait" source="Monsters of the Multiverse" id="ID_WOTC_MOTM_RACIAL_TRAIT_ELADRIN_FEY_ANCESTRY_CHARISMA">
+		<compendium display="false" />
+		<description>
+			<p>When you reach 3rd level, your Fey Step gains an additional effect based on your season; if the effect requires a saving throw, the DC equals 8 + your proficiency bonus + your Charisma modifier.</p>
+		</description>
+		<sheet display="false" />
+		<rules>
+			<stat name="fey step:dc" value="charisma:modifier" bonus="ability"/>
+		</rules>
+	</element>
+
+	<element name="Autumn" type="Racial Trait" source="Monsters of the Multiverse" id="ID_WOTC_MOTM_RACIAL_TRAIT_ELADRIN_FEY_STEP_AUTUMN">
+		<description>
+			<p>Immediately after you use your Fey Step, up to two creatures of your choice that you can see within 10 feet of you must succeed on a Wisdom saving throw or be charmed by you for 1 minute, or until you or your companions deal any damage to the creatures.</p>
+		</description>
+		<sheet>
+			<description>Immediately after you use your Fey Step, up to two creatures of your choice that you can see within 10 feet of you must succeed on a DC {{fey step:dc}} Wisdom saving throw or be charmed by you for 1 minute, or until you or your companions deal any damage to the creatures.</description>
+		</sheet>
+	</element>
+	<element name="Winter" type="Racial Trait" source="Monsters of the Multiverse" id="ID_WOTC_MOTM_RACIAL_TRAIT_ELADRIN_FEY_STEP_WINTER">
+		<description>
+			<p>When you use your Fey Step, one creature of your choice that you can see within 5 feet of you before you teleport must succeed on a Wisdom saving throw or be frightened of you until the end of your next turn.</p>
+		</description>
+		<sheet>
+			<description>When you use your Fey Step, one creature of your choice that you can see within 5 feet of you before you teleport must succeed on a DC {{fey step:dc}} Wisdom saving throw or be frightened of you until the end of your next turn.</description>
+		</sheet>
+	</element>
+	<element name="Spring" type="Racial Trait" source="Monsters of the Multiverse" id="ID_WOTC_MOTM_RACIAL_TRAIT_ELADRIN_FEY_STEP_SPRING">
+		<description>
+			<p>When you use your Fey Step, you can touch one willing creature within 5 feet of you. That creature then teleports instead of you, appearing in an unoccupied space of your choice that you can see within 30 feet of you.</p>
+		</description>
+		<sheet>
+			<description>When you use your Fey Step, you can touch one willing creature within 5 feet of you. That creature then teleports instead of you, appearing in an unoccupied space of your choice that you can see within 30 feet of you.</description>
+		</sheet>
+	</element>
+	<element name="Summer" type="Racial Trait" source="Monsters of the Multiverse" id="ID_WOTC_MOTM_RACIAL_TRAIT_ELADRIN_FEY_STEP_SUMMER">
+		<description>
+			<p>Immediately after you use your Fey Step, each creature of your choice that you can see within 5 feet of you takes fire damage equal to your proficiency bonus.</p>
+		</description>
+		<sheet>
+			<description>Immediately after you use your Fey Step, each creature of your choice that you can see within 5 feet of you takes {{proficiency}} fire damage.</description>
+		</sheet>
+	</element>
+
+	<element name="Keen Senses" type="Racial Trait" source="Monsters of the Multiverse" id="ID_WOTC_MOTM_RACIAL_TRAIT_ELADRIN_KEEN_SENSES">
+		<description>
+			<p>You have proficiency in the Perception skill.</p>
+		</description>
+		<sheet display="false" />
+		<rules>
+			<grant type="Proficiency" id="ID_PROFICIENCY_SKILL_PERCEPTION" requirements="!ID_WOTC_TCOE_OPTION_CUSTOMIZED_PROFICIENCY" />
+			<select type="Proficiency" name="Customized Skill Proficiency (Keen Senses)" supports="Skill" requirements="ID_WOTC_TCOE_OPTION_CUSTOMIZED_PROFICIENCY" />
+		</rules>
+	</element>
+
+	<element name="Trance" type="Racial Trait" source="Monsters of the Multiverse" id="ID_WOTC_MOTM_RACIAL_TRAIT_ELADRIN_TRANCE">
+		<description>
+			<p> You don't need to sleep, and magic can't put you to sleep. You can finish a long rest in 4 hours if you spend those hours in a trancelike meditation, during which you retain consciousness. </p>	
+			<p class="indent">Whenever you finish this trance, you can gain two proficiencies that you don't have, each one with a weapon or a tool of your choice selected from the Player's Handbook. You mystically acquire these proficiencies by drawing them from shared elven memory, and you retain them until you finish your next long rest. </p>	
+		</description>
+		<sheet>
+			<description>You don't need to sleep, and magic can't put you to sleep. You can finish a long rest in 4 hours if you spend those hours in a trancelike meditation, during which you retain consciousness.&#13;
+			Whenever you finish this trance, you can gain two proficiencies that you don't have, each one with a weapon or a tool of your choice selected from the Player's Handbook. You retain them until you finish your next long rest.</description>
+		</sheet>
+	</element>
+</elements>

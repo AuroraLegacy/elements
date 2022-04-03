@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<elements>
+	<info>
+		<name>Tortle from Monsters of the Multiverse</name>
+		<update version="0.0.1">
+			<file name="race-tortle.xml" url="https://raw.githubusercontent.com/AuroraLegacy/elements/master/supplements/monsters-of-the-multiverse/race-tortle.xml" />
+		</update>
+	</info>
+
+	<element name="Tortle" type="Race" source="Monsters of the Multiverse" id="ID_WOTC_MOTM_RACE_TORTLE">
+		<description>
+			<p>Tortles have a saying: "We wear our homes on our backs." These turtle folk live on many worlds, most often journeying up and down coasts, along waterways, and across the sea. Tortles don't have a unified story of how they were created, but they all have a sense of being mystically connected to the natural world. Carrying their shelter on their backs gives tortles a special feeling of security wherever they go, for even if they visit a far, unknown country, they have a place to lay their heads.</p>
+			<p class="indent">Tortles exhibit the same range of coloration and patterns found among turtles, and many tortles enjoy adorning their shells in distinctive ways.</p>
+			<h4>TORTLE TRAITS</h4>
+			<p>As a tortle, you have the following racial traits. </p>
+			<p class="indent"><strong><em>Creature Type.</em></strong> You are a Humanoid.</p>
+			<p class="indent"><strong><em>Size.</em></strong> You are Medium or Small. You choose the size when you select this race.</p>
+			<p class="indent"><strong><em>Speed.</em></strong> Your walking speed is 30 feet.</p>
+			<p class="indent"><strong><em>Claws.</em></strong> You have claws that you can use to make unarmed strikes. When you hit with them, the strike deals 1d6 + your Strength modifier slashing damage, instead of the bludgeoning damage normal for an unarmed strike.</p>
+			<p class="indent"><strong><em>Hold Breath.</em></strong> You can hold your breath for up to 1 hour.</p>
+			<p class="indent"><strong><em>Natural Armor.</em></strong>  Your shell provides you a base AC of 17 (your Dexterity modifier doesn't affect this number). You can't wear light, medium, or heavy armor, but if you are using a shield, you can apply the shield's bonus as normal.</p>
+			<p class="indent"><strong><em>Nature's Intuition.</em></strong> Thanks to your mystical connection to nature, you gain proficiency with one of the following skills of your choice: Animal Handling, Medicine, Nature, Perception, Stealth, or Survival.</p>
+			<p class="indent"><strong><em>Shell Defense.</em></strong> You can withdraw into your shell as an action. Until you emerge, you gain a +4 bonus to your AC, and you have advantage on Strength and Constitution saving throws. While in your shell, you are prone, your speed is O and can't increase, you have disadvantage on Dexterity saving throws, you can't take reactions, and the only action you can take is a bonus action to emerge from your shell.</p>
+		</description>
+		<sheet display="false" />
+		<rules>
+			<select type="Ability Score Improvement" name="Ability Score Improvement Option (Tortle)" supports="Custom Ability Score Improvement Option" />
+			<select type="Racial Trait" name="Size (Tortle)" supports="ID_INTERNAL_RACIAL_TRAIT_SMALL|ID_INTERNAL_RACIAL_TRAIT_MEDIUM" />
+			<stat name="innate speed" value="30" bonus="base" />
+
+			<grant type="Language" id="ID_LANGUAGE_COMMON" requirements="!ID_WOTC_TCOE_OPTION_CUSTOMIZED_LANGUAGE" />
+			<select type="Language" name="Customized Language" supports="Custom Race Language"  requirements="ID_WOTC_TCOE_OPTION_CUSTOMIZED_LANGUAGE" />
+			<select type="Language" name="Language (Tortle)" supports="Standard||Exotic" />
+
+			<grant type="Racial Trait" id="ID_WOTC_MOTM_RACIAL_TRAIT_TORTLE_CLAWS" />
+			<grant type="Racial Trait" id="ID_WOTC_MOTM_RACIAL_TRAIT_TORTLE_HOLD_BREATH" />
+			<grant type="Racial Trait" id="ID_WOTC_MOTM_RACIAL_TRAIT_TORTLE_NATURAL_ARMOR" />
+			<grant type="Racial Trait" id="ID_WOTC_MOTM_RACIAL_TRAIT_TORTLE_NATURES_INTUITION" />
+			<grant type="Racial Trait" id="ID_WOTC_MOTM_RACIAL_TRAIT_TORTLE_SHELL_DEFENSE" />
+		</rules>
+	</element>
+
+	<element name="Claws" type="Racial Trait" source="Monsters of the Multiverse" id="ID_WOTC_MOTM_RACIAL_TRAIT_TORTLE_CLAWS">
+		<description>
+			<p>You have claws that you can use to make unarmed strikes. When you hit with them, the strike deals 1d6 + your Strength modifier slashing damage, instead of the bludgeoning damage normal for an unarmed strike.</p>
+		</description>
+		<sheet>
+			<description>You have claws that you can use to make unarmed strikes. When you hit with them, the strike deals 1d6 + {{strength:modifier}} slashing damage.</description>
+		</sheet>
+	</element>
+
+	<element name="Hold Breath" type="Racial Trait" source="Monsters of the Multiverse" id="ID_WOTC_MOTM_RACIAL_TRAIT_TORTLE_HOLD_BREATH">
+		<description>
+			<p>You can hold your breath for up to 1 hour.</p>
+		</description>
+		<sheet>
+			<description>You can hold your breath for up to 1 hour.</description>
+		</sheet>
+	</element>
+	
+	<element name="Natural Armor" type="Racial Trait" source="Monsters of the Multiverse" id="ID_WOTC_MOTM_RACIAL_TRAIT_TORTLE_NATURAL_ARMOR">
+		<description>
+			<p>Your shell provides you a base AC of 17 (your Dexterity modifier doesn't affect this number). You can't wear light, medium, or heavy armor, but if you are using a shield, you can apply the shield's bonus as normal.</p>
+		</description>
+		<sheet>
+			<description>Your shell provides you a base AC of 17 (your Dexterity modifier doesn't affect this number). You can't wear light, medium, or heavy armor, but if you are using a shield, you can apply the shield's bonus as normal.</description>
+		</sheet>
+		<rules>
+			<stat name="ac:natural armor:tortle" value="17" bonus="base" />
+			<stat name="ac:calculation" value="ac:natural armor:tortle" bonus="calculation" equipped="![armor:any]" alt="Natural Armor (Tortle)" />
+		</rules>
+	</element>
+
+	<element name="Nature's Intuition" type="Racial Trait" source="Monsters of the Multiverse" id="ID_WOTC_MOTM_RACIAL_TRAIT_TORTLE_NATURES_INTUITION">
+		<description>
+			<p>Thanks to your mystical connection to nature, you gain proficiency with one of the following skills of your choice: Animal Handling, Medicine, Nature, Perception, Stealth, or Survival.</p>
+		</description>
+		<sheet display="false" />
+		<rules>
+			<select type="Proficiency" name="Nature's Intuition" supports="ID_PROFICIENCY_SKILL_ANIMALHANDLING|ID_PROFICIENCY_SKILL_MEDICINE|ID_PROFICIENCY_SKILL_NATURE|ID_PROFICIENCY_SKILL_PERCEPTION|ID_PROFICIENCY_SKILL_SURVIVAL|ID_PROFICIENCY_SKILL_STEALTH" requirements="!ID_WOTC_TCOE_OPTION_CUSTOMIZED_PROFICIENCY" />
+			<select type="Proficiency" name="Customized Skill Proficiency (Nature's Intuition)" supports="Skill" requirements="ID_WOTC_TCOE_OPTION_CUSTOMIZED_PROFICIENCY" />
+		</rules>
+	</element>
+
+	<element name="Shell Defense" type="Racial Trait" source="Monsters of the Multiverse" id="ID_WOTC_MOTM_RACIAL_TRAIT_TORTLE_SHELL_DEFENSE">
+		<description>
+			<p>You can withdraw into your shell as an action. Until you emerge, you gain a +4 bonus to your AC, and you have advantage on Strength and Constitution saving throws. While in your shell, you are prone, your speed is 0 and can't increase, you have disadvantage on Dexterity saving throws, you can't take reactions, and the only action you can take is a bonus action to emerge from your shell.</p>
+		</description>
+		<sheet action="Action">
+			<description>You can withdraw into your shell. Until you emerge, you gain a +4 bonus to your AC, and you have advantage on Strength and Constitution saving throws. While in your shell, you are prone, your speed is 0 and can't increase, you have disadvantage on Dexterity saving throws, you can't take reactions, and the only action you can take is a bonus action to emerge from your shell.</description>
+		</sheet>
+	</element>
+</elements>

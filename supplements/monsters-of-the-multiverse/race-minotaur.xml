@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<elements>
+	<info>
+		<name>Minotaur from Monsters of the Multiverse</name>
+		<update version="0.0.1">
+			<file name="race-minotaur.xml" url="https://raw.githubusercontent.com/AuroraLegacy/elements/master/supplements/monsters-of-the-multiverse/race-minotaur.xml" />
+		</update>
+	</info>
+
+	<element name="Minotaur" type="Race" source="Monsters of the Multiverse" id="ID_WOTC_MOTM_RACE_MINOTAUR">
+		<description>
+			<p>Minotaurs are barrel-chested humanoids with heads resembling those of bulls. Blessed with a supernaturally strong sense of direction, minotaurs make great navigators. Some sages believe minotaurs were first created by the Lady of Pain to patrol the magical mazes that she uses to trap her foes. </p>
+			<p class="indent">Minotaur horns range in size from about 1 foot long to easily three times that length. Minotaurs often carve their horns to sharpen their edges, etch symbols of power into them, or sheathe them in bronze to prevent them from shattering during battle.</p>
+			<p class="indent">Thick hair extends down minotaurs' necks and powerful backs, and some have long patches of hair on their chins and cheeks. Their legs end in heavy, cloven hooves, and they have long, tufted tails.</p>
+			<h4>MINOTAUR TRAITS</h4>
+			<p>As a minotaur, you have the following racial traits.</p>
+			<p class="indent"><strong><em>Creature Type.</em></strong> You are a Humanoid.</p>
+			<p class="indent"><strong><em>Size.</em></strong> You are Medium.</p>
+			<p class="indent"><strong><em>Speed.</em></strong> Your walking speed is 30 feet.</p>
+			<p class="indent"><strong><em>Horns.</em></strong> You have horns that you can use to make unarmed strikes. When you hit with them, the strike deals 1d6 + your Strength modifier piercing damage, instead of the bludgeoning damage normal for an unarmed strike.</p>
+			<p class="indent"><strong><em>Goring Rush.</em></strong> Immediately after you take the Dash action on your turn and move at least 20 feet, you can make one melee attack with your Horns as a bonus action.</p>
+			<p class="indent"><strong><em>Hammering Horns.</em></strong> Immediately after you hit a creature with a melee attack as part of the Attack action on your turn, you can use a bonus action to attempt to push that target with your horns. The target must be within 5 feet of you and no more than one size larger than you. Unless it succeeds on a Strength saving throw against a DC equal to 8 + your proficiency bonus+ your Strength modifier, you push it up to 10 feet away from you.</p>
+			<p class="indent"><strong><em>Labyrinthine Recall.</em></strong> You always know which direction is north, and you have advantage on any Wisdom (Survival) check you make to navigate or track.</p>
+		</description>
+		<sheet display="false" />
+		<rules>
+			<select type="Ability Score Improvement" name="Ability Score Improvement Option (Minotaur)" supports="Custom Ability Score Improvement Option" />
+			<grant type="Size" id="ID_SIZE_MEDIUM" />
+			<stat name="innate speed" value="30" bonus="base" />
+
+			<grant type="Language" id="ID_LANGUAGE_COMMON" requirements="!ID_WOTC_TCOE_OPTION_CUSTOMIZED_LANGUAGE" />
+			<select type="Language" name="Customized Language (Minotaur)" supports="Custom Race Language"  requirements="ID_WOTC_TCOE_OPTION_CUSTOMIZED_LANGUAGE" />
+			<select type="Language" name="Language (Minotaur)" supports="Standard||Exotic" />
+
+			<grant type="Racial Trait" id="ID_WOTC_MOTM_RACIAL_TRAIT_MINOTAUR_HORNS" />
+			<grant type="Racial Trait" id="ID_WOTC_MOTM_RACIAL_TRAIT_MINOTAUR_GORING_RUSH" />
+			<grant type="Racial Trait" id="ID_WOTC_MOTM_RACIAL_TRAIT_MINOTAUR_HAMMERING_HORNS" />
+			<grant type="Racial Trait" id="ID_WOTC_MOTM_RACIAL_TRAIT_MINOTAUR_LABYRINTHINE_RECALL" />
+		</rules>
+	</element>
+
+	<element name="Horns" type="Racial Trait" source="Monsters of the Multiverse" id="ID_WOTC_MOTM_RACIAL_TRAIT_MINOTAUR_HORNS">
+		<description>
+			<p>You have horns that you can use to make unarmed strikes. When you hit with them, the strike deals 1d6 + your Strength modifier piercing damage, instead of the bludgeoning damage normal for an unarmed strike.</p>
+		</description>
+		<sheet>
+			<description>You have horns that you can use to make unarmed strikes. When you hit with them, the strike deals 1d6 + {{strength:modifier}} piercing damage.</description>
+		</sheet>
+	</element>
+
+	<element name="Goring Rush" type="Racial Trait" source="Monsters of the Multiverse" id="ID_WOTC_MOTM_RACIAL_TRAIT_MINOTAUR_GORING_RUSH">
+		<description>
+			<p>Immediately after you take the Dash action on your turn and move at least 20 feet, you can make one melee attack with your Horns as a bonus action.</p>
+		</description>
+		<sheet>
+			<description>Immediately after you take the Dash action on your turn and move at least 20 feet, you can make one melee attack with your Horns as a bonus action.</description>
+		</sheet>
+	</element>
+
+	<element name="Hammering Horns" type="Racial Trait" source="Monsters of the Multiverse" id="ID_WOTC_MOTM_RACIAL_TRAIT_MINOTAUR_HAMMERING_HORNS">
+		<description>
+			<p>Immediately after you hit a creature with a melee attack as part of the Attack action on your turn, you can use a bonus action to attempt to push that target with your horns. The target must be within 5 feet of you and no more than one size larger than you. Unless it succeeds on a Strength saving throw against a DC equal to 8 + your proficiency bonus+ your Strength modifier, you push it up to 10 feet away from you.</p>
+		</description>
+		<sheet>
+			<description>Immediately after you hit a creature with a melee attack on your turn, you can use a bonus action to attempt to push that target. The target must be within 5 feet of you and no more than one size larger than you. Unless it succeeds on a Strength saving throw against a DC{{hammering horns:dc}}, you push it up to 10 feet away from you.</description>
+		</sheet>
+		<rules>
+			<stat name="hammering horns:dc" value="8" />
+			<stat name="hammering horns:dc" value="proficiency" />
+			<stat name="hammering horns:dc" value="strength:modifier" />
+		</rules>
+	</element>
+
+	<element name="Labyrinthine Recall" type="Racial Trait" source="Monsters of the Multiverse" id="ID_WOTC_MOTM_RACIAL_TRAIT_MINOTAUR_LABYRINTHINE_RECALL">
+		<description>
+			<p>You always know which direction is north, and you have advantage on any Wisdom (Survival) check you make to navigate or track.</p>
+		</description>
+		<sheet>
+			<description>You always know which direction is north, and you have advantage on any Wisdom (Survival) check you make to navigate or track.</description>
+		</sheet>
+	</element>
+</elements>

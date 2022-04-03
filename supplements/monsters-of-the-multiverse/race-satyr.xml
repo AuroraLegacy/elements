@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<elements>
+	<info>
+		<name>Satyr from Monsters of the Multiverse</name>
+		<update version="0.0.1">
+			<file name="race-satyr.xml" url="https://raw.githubusercontent.com/AuroraLegacy/elements/master/supplements/monsters-of-the-multiverse/race-satyr.xml" />
+		</update>
+	</info>
+
+	<element name="Satyr" type="Race" source="Monsters of the Multiverse" id="ID_WOTC_MOTM_RACE_SATYR">
+		<description>
+			<p>Originating in the Feywild—a realm of pure emotion—satyrs thrive on the energy of merriment. They resemble elves but have goatlike legs, cloven hooves, and ram or goat horns. The magic of the fey realm has given them an innate ability to perform, to delight, and to resist magical intrusion. While they're usually found in the Feywild, satyrs do wander to other planes of existence, most often to the Material Plane. There they seek to bring a bit of their home plane's splendor to other worlds. </p>
+			<h4>SATYR TRAITS</h4>
+			<p>As a satyr, you have the following racial traits.</p>
+			<p class="indent"><strong><em>Creature Type.</em></strong> You are a Fey.</p>
+			<p class="indent"><strong><em>Size.</em></strong> You are Medium.</p>
+			<p class="indent"><strong><em>Speed.</em></strong> Your walking speed is 35 feet.</p>
+			<p class="indent"><strong><em>Ram.</em></strong> You can use your head and horns to make unarmed strikes. When you hit with them, the strike deals 1d6 + your Strength modifier bludgeoning damage, instead of the bludgeoning damage normal for an unarmed strike.</p>
+			<p class="indent"><strong><em>Magic Resistance.</em></strong> You have advantage on saving throws against spells.</p>
+			<p class="indent"><strong><em>Mirthful Leaps.</em></strong> Whenever you make a long jump or a high jump, you can roll a d8 and add the number rolled to the number of feet you cover, even when making a standing jump. This extra distance costs movement as normal.</p>
+			<p class="indent"><strong><em>Reveler.</em></strong> As an embodiment of revelry, you have proficiency in the Performance and Persuasion skills, and you have proficiency with one musical instrument of your choice.</p>
+		</description>
+		<sheet display="false" />
+		<rules>
+			<select type="Ability Score Improvement" name="Ability Score Improvement Option (Satyr)" supports="Custom Ability Score Improvement Option" />
+			<grant type="Size" id="ID_SIZE_MEDIUM" />
+			<stat name="innate speed" value="35" bonus="base" />
+			<grant type="Racial Trait" id="ID_INTERNAL_RACIAL_TRAIT_TYPE_FEY" />
+
+			<grant type="Language" id="ID_LANGUAGE_COMMON" requirements="!ID_WOTC_TCOE_OPTION_CUSTOMIZED_LANGUAGE" />
+			<select type="Language" name="Customized Language (Satyr)" supports="Custom Race Language"  requirements="ID_WOTC_TCOE_OPTION_CUSTOMIZED_LANGUAGE" />
+			<select type="Language" name="Language (Satyr)" supports="Standard||Exotic" />
+
+			<grant type="Racial Trait" id="ID_WOTC_MOTM_RACIAL_TRAIT_SATYR_RAM" />
+			<grant type="Racial Trait" id="ID_WOTC_MOTM_RACIAL_TRAIT_SATYR_MAGIC_RESISTANCE" />
+			<grant type="Racial Trait" id="ID_WOTC_MOTM_RACIAL_TRAIT_SATYR_MIRTHFUL_LEAPS" />
+			<grant type="Racial Trait" id="ID_WOTC_MOTM_RACIAL_TRAIT_SATYR_REVELER" />
+		</rules>
+	</element>
+
+	<element name="Ram" type="Racial Trait" source="Monsters of the Multiverse" id="ID_WOTC_MOTM_RACIAL_TRAIT_SATYR_RAM">
+		<description>
+			<p>You can use your head and horns to make unarmed strikes. When you hit with them, the strike deals 1d6 + your Strength modifier bludgeoning damage, instead of the bludgeoning damage normal for an unarmed strike.</p>
+		</description>
+		<sheet>
+			<description>You can use your head and horns to make unarmed strikes. When you hit with them, the strike deals 1d6 + {{strength:modifier}} bludgeoning damage.</description>
+		</sheet>
+	</element>
+	
+	<element name="Magic Resistance" type="Racial Trait" source="Monsters of the Multiverse" id="ID_WOTC_MOTM_RACIAL_TRAIT_SATYR_MAGIC_RESISTANCE">
+		<description>
+			<p>You have advantage on saving throws against spells.</p>
+		</description>
+		<sheet>
+			<description>You have advantage on saving throws against spells.</description>
+		</sheet>
+	</element>
+
+	<element name="Mirthful Leaps" type="Racial Trait" source="Monsters of the Multiverse" id="ID_WOTC_MOTM_RACIAL_TRAIT_SATYR_MIRTHFUL_LEAPS">
+		<description>
+			<p>Whenever you make a long jump or a high jump, you can roll a d8 and add the number rolled to the number of feet you cover, even when making a standing jump. This extra distance costs movement as normal.</p>
+		</description>
+		<sheet>
+			<description>Whenever you make a long jump or a high jump, you can roll a d8 and add the number rolled to the number of feet you cover, even when making a standing jump. This extra distance costs movement as normal.</description>
+		</sheet>
+	</element>
+
+	<element name="Reveler" type="Racial Trait" source="Monsters of the Multiverse" id="ID_WOTC_MOTM_RACIAL_TRAIT_SATYR_REVELER">
+		<description>
+			<p>As an embodiment of revelry, you have proficiency in the Performance and Persuasion skills, and you have proficiency with one musical instrument of your choice.</p>
+		</description>
+		<sheet display="false" />
+		<rules>
+			<grant type="Proficiency" id="ID_PROFICIENCY_SKILL_PERFORMANCE" requirements="!ID_WOTC_TCOE_OPTION_CUSTOMIZED_PROFICIENCY" />
+			<grant type="Proficiency" id="ID_PROFICIENCY_SKILL_PERSUASION" requirements="!ID_WOTC_TCOE_OPTION_CUSTOMIZED_PROFICIENCY" />
+			<select type="Proficiency" name="Customized Skill Proficiency (Reveler)" supports="Skill" number="2" requirements="ID_WOTC_TCOE_OPTION_CUSTOMIZED_PROFICIENCY" />
+
+			<select type="Proficiency" name="Musical Instrument Proficiency (Reveler)" supports="Musical Instrument" requirements="!ID_WOTC_TCOE_OPTION_CUSTOMIZED_PROFICIENCY" />
+			<select type="Proficiency" name="Simple Weapon or Tool (Reveler)" supports="Simple||Tool" requirements="ID_WOTC_TCOE_OPTION_CUSTOMIZED_PROFICIENCY" />
+		</rules>
+	</element>
+</elements>

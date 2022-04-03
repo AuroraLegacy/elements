@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<elements>
+	<info>
+		<name>Aarakocra from Monsters of the Multiverse</name>
+		<update version="0.0.1">
+			<file name="race-aarakocra.xml" url="https://raw.githubusercontent.com/AuroraLegacy/elements/master/supplements/monsters-of-the-multiverse/race-aarakocra.xml" />
+		</update>
+	</info>
+
+	<element name="Aarakocra" type="Race" source="Monsters of the Multiverse" id="ID_WOTC_MOTM_RACE_AARAKOCRA">
+		<description>
+			<p>A winged people who originated on the Elemental Plane of Air, aarakocra soar through the sky wherever they wander. The first aarakocra served the Wind Dukes of Aaqa—mighty beings of air—and were imbued with a measure of their masters’ power over winds. Their descendants still command echoes of that power.</p>
+			<p class="indent">From below, aarakocra look like large birds and thus are sometimes called birdfolk. Only when they roost on a branch or walk across the ground is their Humanoid nature clear. Standing upright, aarakocra are typically about 5 feet tall, and they have long, narrow legs that taper to sharp talons. Feathers cover their bodies—usually red, orange, yellow, brown, or gray. Their heads are also avian, often resembling those of parrots or eagles.</p>
+			<h4>AARAKOCRA TRAITS</h4>
+			<p>As an aarakocra, you have the following racial traits.</p>
+			<p class="indent"><strong><em>Creature Type.</em></strong> You are a Humanoid.</p>
+			<p class="indent"><strong><em>Size.</em></strong> Your size is Medium.</p>
+			<p class="indent"><strong><em>Speed.</em></strong> Your walking speed is 30 feet.</p>
+			<p class="indent"><strong><em>Flight.</em></strong> Because of your wings, you have a flying speed equal to your walking speed. You can’t use this flying speed if you’re wearing medium or heavy armor.</p>
+			<p class="indent"><strong><em>Talons.</em></strong> You have talons that you can use to make unarmed strikes. When you hit with them, the strike deals 1d6 + your Strength modifier slashing damage, instead of the bludgeoning damage normal for an unarmed strike.</p>
+			<p class="indent"><strong><em>Wind Caller.</em></strong> Starting at 3rd level, you can cast the <i>gust of wind</i> spell with this trait, without requiring a material component. Once you cast the spell with this trait, you can’t do so again until you finish a long rest. You can also cast the spell using any spell slots you have of 2nd level or higher.</p>
+			<p class="indent">Intelligence, Wisdom, or Charisma is your spellcasting ability for it when you cast <i>gust of wind</i> with this trait (choose when you select this race).</p>
+		</description>
+		<sheet display="false" />
+		<rules>
+			<select type="Ability Score Improvement" name="Ability Score Improvement Option (Aarakocra)" supports="Custom Ability Score Improvement Option" />
+			<stat name="innate speed" value="30" bonus="base" />
+			<grant type="Size" id="ID_SIZE_MEDIUM" />
+
+			<grant type="Language" id="ID_LANGUAGE_COMMON" requirements="!ID_WOTC_TCOE_OPTION_CUSTOMIZED_LANGUAGE" />
+			<select type="Language" name="Customized Language (Aarakocra)" supports="Custom Race Language"  requirements="ID_WOTC_TCOE_OPTION_CUSTOMIZED_LANGUAGE" />
+			<select type="Language" name="Language (Aarakocra)" supports="Standard||Exotic" />
+
+			<grant type="Racial Trait" id="ID_WOTC_MOTM_RACIAL_TRAIT_AARAKOCRA_FLIGHT" />
+			<grant type="Racial Trait" id="ID_WOTC_MOTM_RACIAL_TRAIT_AARAKOCRA_TALONS" />
+			<grant type="Racial Trait" id="ID_WOTC_MOTM_RACIAL_TRAIT_AARAKOCRA_WIND_CALLER" level="3" />
+		</rules>
+	</element>
+	<element name="Flight" type="Racial Trait" source="Monsters of the Multiverse" id="ID_WOTC_MOTM_RACIAL_TRAIT_AARAKOCRA_FLIGHT">
+		<description>
+			<p>Because of your wings, you have a flying speed equal to your walking speed. You can’t use this flying speed if you’re wearing medium or heavy armor.</p>
+		</description>
+		<sheet>
+			<description>Because of your wings, you have a flying speed equal to {{innate speed}}. You can’t use this flying speed if you’re wearing medium or heavy armor.</description>
+		</sheet>
+		<rules>
+			<stat name="innate speed:fly" value="innate speed" bonus="base" equipped="![armor:medium],![armor:heavy]" />
+		</rules>
+	</element>
+
+	<element name="Talons" type="Racial Trait" source="Monsters of the Multiverse" id="ID_WOTC_MOTM_RACIAL_TRAIT_AARAKOCRA_TALONS">
+		<description>
+			<p>You have talons that you can use to make unarmed strikes. When you hit with them, the strike deals 1d6 + your Strength modifier slashing damage, instead of the bludgeoning damage normal for an unarmed strike.</p>
+		</description>
+		<sheet>
+			<description>You can use talons for unarmed strikes. When you hit with them, you deal 1d6 + {{strength:modifier}} slashing damage.</description>
+		</sheet>
+	</element>
+
+	<element name="Wind Caller" type="Racial Trait" source="Monsters of the Multiverse" id="ID_WOTC_MOTM_RACIAL_TRAIT_AARAKOCRA_WIND_CALLER">
+		<description>
+			<p>Starting at 3rd level, you can cast the <i>gust of wind</i> spell with this trait, without requiring a material component. Once you cast the spell with this trait, you can’t do so again until you finish a long rest. You can also cast the spell using any spell slots you have of 2nd level or higher.</p>
+			<p class="indent">Intelligence, Wisdom, or Charisma is your spellcasting ability for it when you cast <i>gust of wind</i> with this trait (choose when you select this race).</p>
+		</description>
+		<sheet display="false" />
+		<rules>
+			<grant type="Spell" id="ID_PHB_SPELL_GUST_OF_WIND" />
+			<select type="Racial Trait" name="Spellcasting Ability (Wind Caller)" supports="ID_WOTC_MOTM_RACIAL_TRAIT_AARAKOCRA_WIND_CALLER_INTELLIGENCE|ID_WOTC_MOTM_RACIAL_TRAIT_AARAKOCRA_WIND_CALLER_WISDOM|ID_WOTC_MOTM_RACIAL_TRAIT_AARAKOCRA_WIND_CALLER_CHARISMA" />
+		</rules>
+	</element>
+	<element name="Intelligence" type="Racial Trait" source="Monsters of the Multiverse" id="ID_WOTC_MOTM_RACIAL_TRAIT_AARAKOCRA_WIND_CALLER_INTELLIGENCE">
+		<compendium display="false" />
+		<description>
+			<p>Intelligence is your spellcasting ability for the <i>gust of wind</i> spell.</p>
+		</description>
+		<sheet alt="Wind Caller">
+			<description>You can cast the gust of wind spell, without requiring a material component. Once you cast the spell with this trait, you can’t do so again until you finish a long rest. You can also cast the spell using any spell slots you have of 2nd level or higher.&#13;
+			Intelligence is your spellcasting ability for this spell.</description>
+		</sheet>
+	</element>
+	<element name="Wisdom" type="Racial Trait" source="Monsters of the Multiverse" id="ID_WOTC_MOTM_RACIAL_TRAIT_AARAKOCRA_WIND_CALLER_WISDOM">
+		<compendium display="false" />
+		<description>
+			<p>Wisdom is your spellcasting ability for the <i>gust of wind</i> spell.</p>
+		</description>
+		<sheet alt="Wind Caller">
+			<description>You can cast the gust of wind spell, without requiring a material component. Once you cast the spell with this trait, you can’t do so again until you finish a long rest. You can also cast the spell using any spell slots you have of 2nd level or higher.&#13;
+			Wisdom is your spellcasting ability for this spell.</description>
+		</sheet>
+	</element>
+	<element name="Charisma" type="Racial Trait" source="Monsters of the Multiverse" id="ID_WOTC_MOTM_RACIAL_TRAIT_AARAKOCRA_WIND_CALLER_CHARISMA">
+		<compendium display="false" />
+		<description>
+			<p>Charisma is your spellcasting ability for the <i>gust of wind</i> spell.</p>
+		</description>
+		<sheet alt="Wind Caller">
+			<description>You can cast the gust of wind spell, without requiring a material component. Once you cast the spell with this trait, you can’t do so again until you finish a long rest. You can also cast the spell using any spell slots you have of 2nd level or higher.&#13;
+			Charisma is your spellcasting ability for this spell.</description>
+		</sheet>
+	</element>
+</elements>
