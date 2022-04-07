@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<elements>
+	<info>
+		<name>Orc from Monsters of the Multiverse</name>
+		<update version="0.0.1">
+			<file name="race-orc.xml" url="https://raw.githubusercontent.com/AuroraLegacy/elements/master/supplements/monsters-of-the-multiverse/race-orc.xml" />
+		</update>
+	</info>
+
+	<element name="Orc" type="Race" source="Monsters of the Multiverse" id="ID_WOTC_MOTM_RACE_ORC">
+		<description>
+			<p>Orcs trace their creation to the one-eyed god Gruumsh, an unstoppable warrior and powerful leader. The divine qualities of Gruumsh resonate within orcs, granting them a reflection of his toughness and tenacity that can't be matched, and the god equipped his children to be able to live above or below ground.  </p>
+			<p class="indent">On some worlds, such as Eberron, orcs were among the first defenders of the natural order from the encroachments of Fiends and other extraplanar threats. Gruumsh's blessings have made orcs tireless guardians and mighty allies wherever they are found, even when they turn their devotion to other gods.</p>
+			<h4>ORC TRAITS</h4>
+			<p>As an orc, you have the following racial traits.</p>
+			<p class="indent"><strong><em>Creature Type.</em></strong> You are a Humanoid.</p>
+			<p class="indent"><strong><em>Size.</em></strong> You are Medium.</p>
+			<p class="indent"><strong><em>Speed.</em></strong> Your walking speed is 30 feet.</p>
+			<p class="indent"><strong><em>Adrenaline Rush.</em></strong> You can take the Dash action as a bonus action. You can use this trait a number of times equal to your proficiency bonus, and you regain all expended uses when you finish a long rest.</p>
+			<p class="indent">Whenever you use this trait, you gain a number of temporary hit points equal to your proficiency bonus. </p>
+			<p class="indent"><strong><em>Darkvision.</em></strong> You can see in dim light within 60 feet of you as if it were bright light, and in darkness as if it were dim light. You discern colors in that darkness only as shades of gray.</p>
+			<p class="indent"><strong><em>Powerful Build.</em></strong> You count as one size larger when determining your carrying capacity and the weight you can push, drag, or lift.</p>
+			<p class="indent"><strong><em>Relentless Endurance.</em></strong> When you are reduced to 0 hit points but not killed outright, you can drop to 1 hit point instead. Once you use this trait, you can't do so again until you finish a long rest.</p>
+		</description>
+		<sheet display="false" />
+		<rules>
+			<select type="Ability Score Improvement" name="Ability Score Improvement Option (Orc)" supports="Custom Ability Score Improvement Option" />
+			<grant type="Size" id="ID_SIZE_MEDIUM" />
+			<stat name="innate speed" value="30" bonus="base" />
+			<grant type="Vision" id="ID_VISION_DARKVISION" />
+
+			<grant type="Language" id="ID_LANGUAGE_COMMON" requirements="!ID_WOTC_TCOE_OPTION_CUSTOMIZED_LANGUAGE" />
+			<select type="Language" name="Customized Language (Orc)" supports="Custom Race Language"  requirements="ID_WOTC_TCOE_OPTION_CUSTOMIZED_LANGUAGE" />
+			<select type="Language" name="Language (Orc)" supports="Standard||Exotic" />
+
+			<grant type="Racial Trait" id="ID_WOTC_MOTM_RACIAL_TRAIT_ORC_ADRENALINE_RUSH" />
+			<grant type="Racial Trait" id="ID_WOTC_MOTM_RACIAL_TRAIT_ORC_POWERFUL_BUILD" />
+			<grant type="Racial Trait" id="ID_WOTC_MOTM_RACIAL_TRAIT_ORC_RELENTLESS_ENDURANCE" />
+		</rules>
+	</element>
+
+	<element name="Adrenaline Rush" type="Racial Trait" source="Monsters of the Multiverse" id="ID_WOTC_MOTM_RACIAL_TRAIT_ORC_ADRENALINE_RUSH">
+		<description>
+			<p>You can take the Dash action as a bonus action. You can use this trait a number of times equal to your proficiency bonus, and you regain all expended uses when you finish a long rest.</p>
+			<p class="indent">Whenever you use this trait, you gain a number of temporary hit points equal to your proficiency bonus.</p>
+		</description>
+		<sheet action="Bonus Action" usage="{{proficiency}}/Long Rest" >
+			<description>You can take the Dash action as a bonus action. Whenever you use this trait, you gain {{proficiency}} temporary hit points.</description>
+		</sheet>
+	</element>
+
+	<element name="Powerful Build" type="Racial Trait" source="Monsters of the Multiverse" id="ID_WOTC_MOTM_RACIAL_TRAIT_ORC_POWERFUL_BUILD">
+		<description>
+			<p>You count as one size larger when determining your carrying capacity and the weight you can push, drag, or lift.</p>
+		</description>
+		<sheet>
+			<description>You count as one size larger when determining your carrying capacity and the weight you can push, drag, or lift.</description>
+		</sheet>
+		<rules>
+			<grant type="Grants" id="ID_INTERNAL_GRANTS_WEIGHT_CAPACITY_COUNTS_AS_LARGER" />
+		</rules>
+	</element>
+
+	<element name="Relentless Endurance" type="Racial Trait" source="Monsters of the Multiverse" id="ID_WOTC_MOTM_RACIAL_TRAIT_ORC_RELENTLESS_ENDURANCE">
+		<description>
+			<p>When you are reduced to 0 hit points but not killed outright, you can drop to 1 hit point instead. Once you use this trait, you can't do so again until you finish a long rest.</p>
+		</description>
+		<sheet usage="1/Long Rest" >
+			<description>When you are reduced to 0 hit points but not killed outright, you can drop to 1 hit point instead.</description>
+		</sheet>
+	</element>
+</elements>

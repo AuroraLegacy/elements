@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<elements>
+	<info>
+		<name>Bugbear from Monsters of the Multiverse</name>
+		<update version="0.0.1">
+			<file name="race-bugbear.xml" url="https://raw.githubusercontent.com/AuroraLegacy/elements/master/supplements/monsters-of-the-multiverse/race-bugbear.xml" />
+		</update>
+	</info>
+
+	<element name="Bugbear" type="Race" source="Monsters of the Multiverse" id="ID_WOTC_MOTM_RACE_BUGBEAR">
+		<description>
+			<p>Neither bugs nor bears, bugbears are the hulking cousins of goblins and hobgoblins. With roots in the Feywild, early bugbears resided in hidden places, in hard-to-reach and shadowed spaces. Long ago and from out of the corner of your eye, they came to the Material Plane, urged to spread throughout the multiverse by the conquering god Maglubiyet. Centuries later, they still bear a fey gift for lurking just out of sight, and many of them have sneaked away from that god’s influence.</p>
+			<p class="indent">They are long of limb and covered in coarse hair, with wedge-shaped ears and pointed teeth. Despite their formidable build, bugbears are quiet skulkers, thanks to a fey magic that allows them to hide in spaces seemingly too small for them.</p>
+			<h4>BUGBEAR TRAITS</h4>
+			<p>As an bugbear, you have the following racial traits.</p>
+			<p class="indent"><strong><em>Creature Type.</em></strong> You are a Humanoid. You are also considered a goblinoid for any prerequisite or effect that requires you to be a goblinoid.</p>
+			<p class="indent"><strong><em>Size.</em></strong> Your size is Medium.</p>
+			<p class="indent"><strong><em>Speed.</em></strong> Your walking speed is 30 feet.</p>
+			<p class="indent"><strong><em>Darkvision.</em></strong> You can see in dim light within 60 feet of you as if it were bright light and in darkness as if it were dim light. You discern colors in that darkness only as shades of gray.</p>
+			<p class="indent"><strong><em>Fey Ancestry.</em></strong> You have advantage on saving throws you make to avoid or end the charmed condition on yourself.</p>
+			<p class="indent"><strong><em>Long-Limbed.</em></strong> When you make a melee attack on your turn, your reach for it is 5 feet greater than normal.</p>
+			<p class="indent"><strong><em>Powerful Build.</em></strong> You count as one size larger when determining your carrying capacity and the weight you can push, drag, or lift.</p>
+			<p class="indent"><strong><em>Sneaky.</em></strong> You are proficient in the Stealth skill. In addition, without squeezing, you can move through and stop in a space large enough for a Small creature.</p>
+			<p class="indent"><strong><em>Surprise Attack.</em></strong> If you hit a creature with an attack roll, the creature takes an extra 2d6 damage if it hasn’t taken a turn yet in the current combat.</p>
+		</description>
+		<sheet display="false" />
+		<rules>
+			<select type="Ability Score Improvement" name="Ability Score Improvement Option (Bugbear)" supports="Custom Ability Score Improvement Option" />
+			<grant type="Vision" id="ID_VISION_DARKVISION" />
+			<stat name="innate speed" value="30" bonus="base" />
+			<grant type="Size" id="ID_SIZE_MEDIUM" />
+			<grant type="Racial Trait" id="ID_INTERNAL_RACIAL_TRAIT_TYPE_HUMANOID_GOBLINOID" />
+
+			<grant type="Language" id="ID_LANGUAGE_COMMON" requirements="!ID_WOTC_TCOE_OPTION_CUSTOMIZED_LANGUAGE" />
+			<select type="Language" name="Customized Language (Bugbear)" supports="Custom Race Language"  requirements="ID_WOTC_TCOE_OPTION_CUSTOMIZED_LANGUAGE" />
+			<select type="Language" name="Language (Bugbear)" supports="Standard||Exotic" />
+			
+			<grant type="Racial Trait" id="ID_WOTC_MOTM_RACIAL_TRAIT_BUGBEAR_FEY_ANCESTRY" />
+			<grant type="Racial Trait" id="ID_WOTC_MOTM_RACIAL_TRAIT_BUGBEAR_LONG_LIMBED" />
+			<grant type="Racial Trait" id="ID_WOTC_MOTM_RACIAL_TRAIT_BUGBEAR_POWERFUL_BUILD" />
+			<grant type="Racial Trait" id="ID_WOTC_MOTM_RACIAL_TRAIT_BUGBEAR_SNEAKY" />
+			<grant type="Racial Trait" id="ID_WOTC_MOTM_RACIAL_TRAIT_BUGBEAR_SURPRISE_ATTACK" />
+		</rules>
+	</element>
+
+	<element name="Fey Ancestry" type="Racial Trait" source="Monsters of the Multiverse" id="ID_WOTC_MOTM_RACIAL_TRAIT_BUGBEAR_FEY_ANCESTRY">
+		<description>
+			<p>You have advantage on saving throws you make to avoid or end the charmed condition on yourself.</p>
+		</description>
+		<sheet>
+			<description>You have advantage on saving throws you make to avoid or end the charmed condition on yourself.</description>
+		</sheet>
+	</element>
+
+	<element name="Long Limbed" type="Racial Trait" source="Monsters of the Multiverse" id="ID_WOTC_MOTM_RACIAL_TRAIT_BUGBEAR_LONG_LIMBED">
+		<description>
+			<p>When you make a melee attack on your turn, your reach for it is 5 feet greater than normal.</p>
+		</description>
+		<sheet>
+			<description>When you make a melee attack on your turn, your reach for it is 5 feet greater than normal.</description>
+		</sheet>
+	</element>
+
+	<element name="Powerful Build" type="Racial Trait" source="Monsters of the Multiverse" id="ID_WOTC_MOTM_RACIAL_TRAIT_BUGBEAR_POWERFUL_BUILD">
+		<description>
+			<p>You count as one size larger when determining your carrying capacity and the weight you can push, drag, or lift.</p>
+		</description>
+		<sheet>
+			<description>You count as one size larger when determining your carrying capacity and the weight you can push, drag, or lift.</description>
+		</sheet>
+		<rules>
+			<grant type="Grants" id="ID_INTERNAL_GRANTS_WEIGHT_CAPACITY_COUNTS_AS_LARGER" />
+		</rules>
+	</element>
+
+	<element name="Sneaky" type="Racial Trait" source="Monsters of the Multiverse" id="ID_WOTC_MOTM_RACIAL_TRAIT_BUGBEAR_SNEAKY">
+		<description>
+			<p>You are proficient in the Stealth skill. In addition, without squeezing, you can move through and stop in a space large enough for a Small creature.</p>
+		</description>
+		<sheet>
+			<description>Without squeezing, you can move through and stop in a space large enough for a Small creature.</description>
+		</sheet>
+		<rules>
+			<grant type="Proficiency" id="ID_PROFICIENCY_SKILL_STEALTH" />
+		</rules>
+	</element>
+
+	<element name="Surprise Attack" type="Racial Trait" source="Monsters of the Multiverse" id="ID_WOTC_MOTM_RACIAL_TRAIT_BUGBEAR_SURPRISE_ATTACK">
+		<description>
+			<p>If you hit a creature with an attack roll, the creature takes an extra 2d6 damage if it hasn’t taken a turn yet in the current combat.</p>
+		</description>
+		<sheet>
+			<description>If you hit a creature with an attack roll, the creature takes an extra 2d6 damage if it hasn’t taken a turn yet in the current combat.</description>
+		</sheet>
+	</element>
+</elements>

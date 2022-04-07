@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<elements>
+	<info>
+		<name>Duergar from Monsters of the Multiverse</name>
+		<update version="0.0.1">
+			<file name="race-duergar.xml" url="https://raw.githubusercontent.com/AuroraLegacy/elements/master/supplements/monsters-of-the-multiverse/race-duergar.xml" />
+		</update>
+	</info>
+
+	<element name="Duergar" type="Race" source="Monsters of the Multiverse" id="ID_WOTC_MOTM_RACE_DUERGAR">
+		<description>
+			<p>Duergar are dwarves whose ancestors were transformed by centuries living in the deepest places of the Underdark. That chthonic realm is saturated with strange magical energy, and over generations, early duergar absorbed traces of it. They were further altered when mind flayers and other Aberrations invaded and performed horrific experiments on them. Fueled by Underdark magic, those experiments left early duergar with psionic powers, which have been passed down to their descendants. In time, they liberated themselves from their aberrant tyrants and forged a new life for themselves in the Underdark and beyond.</p>
+			<p class="indent">Like other dwarves, duergar typically have a life span of 350 years.</p>
+			<h4>DUERGAR TRAITS</h4>
+			<p>As a duergar, you have the following racial traits.</p>
+			<p class="indent"><strong><em>Creature Type.</em></strong> You are a Humanoid. You are also considered a dwarf for any prerequisite or effect that requires you to be a dwarf.</p>
+			<p class="indent"><strong><em>Size.</em></strong> You are Medium.</p>
+			<p class="indent"><strong><em>Speed.</em></strong> Your walking speed is 30 feet.</p>
+			<p class="indent"><strong><em>Darkvision.</em></strong> You can see in dim light within 120 feet of you as if it were bright light, and in darkness as if it were dim light. You discern colors in that darkness only as shades of gray.</p>
+			<p class="indent"><strong><em>Duergar Magic.</em></strong> Starting at 3rd level, you can cast the <i>enlarge/reduce</i> spell on yourself with this trait, without requiring a material component. Starting at 5th level, you can also cast the <i>invisibility</i> spell on yourself with this trait, without requiring a material component. Once you cast either of these spells with this trait, you can't cast that spell with it again until you finish a long rest. You can also cast these spells using spell slots you have of the appropriate level.</p>
+			<p class="indent">Intelligence, Wisdom, or Charisma is your spellcasting ability for these spells when you cast them with this trait (choose when you select this race).</p>
+			<p class="indent"><strong><em>Dwarven Resilience.</em></strong> You have advantage on saving throws you make to avoid or end the poisoned condition on yourself. You also have resistance to poison damage.</p>
+			<p class="indent"><strong><em>Psionic Fortitude.</em></strong> You have advantage on saving throws you make to avoid or end the charmed or stunned condition on yourself.</p>
+		</description>
+		<sheet display="false" />
+		<rules>
+			<select type="Ability Score Improvement" name="Ability Score Improvement Option (Duergar)" supports="Custom Ability Score Improvement Option" />
+			<grant type="Size" id="ID_SIZE_MEDIUM" />
+			<stat name="innate speed" value="30" bonus="base" />
+			<grant type="Vision" id="ID_VISION_DARKVISION" />
+			<stat name="darkvision:range" value="120" bonus="base" />
+			<grant type="Grants" id="ID_INTERNAL_RACIAL_TRAIT_TYPE_HUMANOID_DWARF" />
+
+			<grant type="Language" id="ID_LANGUAGE_COMMON" requirements="!ID_WOTC_TCOE_OPTION_CUSTOMIZED_LANGUAGE" />
+			<select type="Language" name="Customized Language (Duergar)" supports="Custom Race Language"  requirements="ID_WOTC_TCOE_OPTION_CUSTOMIZED_LANGUAGE" />
+			<select type="Language" name="Language (Duergar)" supports="Standard||Exotic" />
+			
+			<grant type="Racial Trait" id="ID_WOTC_MOTM_RACIAL_TRAIT_DUERGAR_DUERGAR_MAGIC" level="3" />
+			<grant type="Racial Trait" id="ID_WOTC_MOTM_RACIAL_TRAIT_DUERGAR_DWARVEN_RESILIENCE" />
+			<grant type="Racial Trait" id="ID_WOTC_MOTM_RACIAL_TRAIT_DUERGAR_PSIONIC_FORTITUDE" />
+		</rules>
+	</element>
+
+	<element name="Duergar Magic" type="Racial Trait" source="Monsters of the Multiverse" id="ID_WOTC_MOTM_RACIAL_TRAIT_DUERGAR_DUERGAR_MAGIC">
+		<description>
+			<p>Starting at 3rd level, you can cast the <i>enlarge/reduce</i> spell on yourself with this trait, without requiring a material component. Starting at 5th level, you can also cast the <i>invisibility</i> spell on yourself with this trait, without requiring a material component. Once you cast either of these spells with this trait, you can't cast that spell with it again until you finish a long rest. You can also cast these spells using spell slots you have of the appropriate level.</p>
+			<p class="indent">Intelligence, Wisdom, or Charisma is your spellcasting ability for these spells when you cast them with this trait (choose when you select this race).</p>
+		</description>
+		<sheet display="false" />
+		<rules>
+			<grant type="Spell" id="ID_PHB_SPELL_ENLARGE_REDUCE" level="3" />
+			<grant type="Spell" id="ID_PHB_SPELL_INVISIBILITY" level="5" />
+			<select type="Racial Trait" name="Spellcasting Ability (Duergar Magic)" supports="ID_WOTC_MOTM_RACIAL_TRAIT_DUERGAR_DUERGAR_MAGIC_INTELLIGENCE|ID_WOTC_MOTM_RACIAL_TRAIT_DUERGAR_DUERGAR_MAGIC_WISDOM|ID_WOTC_MOTM_RACIAL_TRAIT_DUERGAR_DUERGAR_MAGIC_CHARISMA" />
+		</rules>
+	</element>
+
+	<element name="Intelligence" type="Racial Trait" source="Monsters of the Multiverse" id="ID_WOTC_MOTM_RACIAL_TRAIT_DUERGAR_DUERGAR_MAGIC_INTELLIGENCE">
+		<compendium display="false" />
+		<description>
+			<p>Your spellcasting ability for these spells is Intelligence.</p>
+		</description>
+		<sheet alt="Duergar Magic">
+			<description>You can cast the enlarge/reduce spell on yourself with this trait one per long rest, without requiring a material component. You can also cast this spell using spell slots you have of the appropriate level.&#13;
+			Your spellcasting ability for this spell is Intelligence.</description>
+			<description level="5">You can cast the enlarge/reduce spell and the invisibility spell on yourself with this trait one each per long rest, without requiring a material component. You can also cast these spells using spell slots you have of the appropriate level.&#13;
+			Your spellcasting ability for these spells is Intelligence.</description>
+		</sheet>
+	</element>
+	<element name="Wisdom" type="Racial Trait" source="Monsters of the Multiverse" id="ID_WOTC_MOTM_RACIAL_TRAIT_DUERGAR_DUERGAR_MAGIC_WISDOM">
+		<compendium display="false" />
+		<description>
+			<p>Your spellcasting ability for these spells is Wisdom.</p>
+		</description>
+		<sheet alt="Duergar Magic">
+			<description>You can cast the enlarge/reduce spell on yourself with this trait one per long rest, without requiring a material component. You can also cast this spell using spell slots you have of the appropriate level.&#13;
+			Your spellcasting ability for this spell is Wisdom.</description>
+			<description level="5">You can cast the enlarge/reduce spell and the invisibility spell on yourself with this trait one each per long rest, without requiring a material component. You can also cast these spells using spell slots you have of the appropriate level.&#13;
+			Your spellcasting ability for these spells is Wisdom.</description>
+		</sheet>
+	</element>
+	<element name="Charisma" type="Racial Trait" source="Monsters of the Multiverse" id="ID_WOTC_MOTM_RACIAL_TRAIT_DUERGAR_DUERGAR_MAGIC_CHARISMA">
+		<compendium display="false" />
+		<description>
+			<p>Your spellcasting ability for these spells is Charisma.</p>
+		</description>
+		<sheet alt="Duergar Magic">
+			<description>You can cast the enlarge/reduce spell on yourself with this trait one per long rest, without requiring a material component. You can also cast this spell using spell slots you have of the appropriate level.&#13;
+			Your spellcasting ability for this spell is Charisma.</description>
+			<description level="5">You can cast the enlarge/reduce spell and the invisibility spell on yourself with this trait one each per long rest, without requiring a material component. You can also cast these spells using spell slots you have of the appropriate level.&#13;
+			Your spellcasting ability for these spells is Charisma.</description>
+		</sheet>
+	</element>
+
+	<element name="Dwarven Resilience" type="Racial Trait" source="Monsters of the Multiverse" id="ID_WOTC_MOTM_RACIAL_TRAIT_DUERGAR_DWARVEN_RESILIENCE">
+		<description>
+			<p>You have advantage on saving throws you make to avoid or end the poisoned condition on yourself. You also have resistance to poison damage.</p>
+		</description>
+		<sheet>
+			<description>You have advantage on saving throws you make to avoid or end the poisoned condition on yourself.</description>
+		</sheet>
+		<rules>
+			<grant type="Condition" id="ID_INTERNAL_CONDITION_DAMAGE_RESISTANCE_POISON" />
+		</rules>
+	</element>
+
+	<element name="Psionic Fortitude" type="Racial Trait" source="Monsters of the Multiverse" id="ID_WOTC_MOTM_RACIAL_TRAIT_DUERGAR_PSIONIC_FORTITUDE">
+		<description>
+			<p>You have advantage on saving throws you make to avoid or end the charmed or stunned condition on yourself.</p>
+		</description>
+		<sheet>
+			<description>You have advantage on saving throws you make to avoid or end the charmed or stunned condition on yourself.</description>
+		</sheet>
+	</element>
+</elements>

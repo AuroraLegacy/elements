@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<elements>
+	<info>
+		<name>Yuan-Ti from Monsters of the Multiverse</name>
+		<update version="0.0.1">
+			<file name="race-yuanti.xml" url="https://raw.githubusercontent.com/AuroraLegacy/elements/master/supplements/monsters-of-the-multiverse/race-yuanti.xml" />
+		</update>
+	</info>
+	
+	<element name="Yuan-ti" type="Race" source="Monsters of the Multiverse" id="ID_WOTC_MOTM_RACE_YUANTI">
+		<description>
+			<p>Yuan-ti were originally humans who transformed themselves into serpent folk through ancient rituals. Most yuan-ti were corrupted into monsters by those rites, but some yuan-ti instead became a new people who mix characteristics of humans and snakes.</p>
+			<p class="indent">Blessed with resistance to magical and poisonous effects by the rituals that created them, each of these yuan-ti manifests their serpentine heritage in a variety of ways: a forked tongue, snake eyes, a snakelike nose, or some other ophidian characteristic. However a yuan-ti looks, they have the power to pursue great good or evil in the multiverse.</p>
+			<h4>YUAN-TI TRAITS</h4>
+			<p>As a yuan-ti, you have the following racial traits.</p>
+			<p class="indent"><strong><em>Creature Type.</em></strong> You are a Humanoid.</p>
+			<p class="indent"><strong><em>Size.</em></strong> You are Medium or Small. You choose the size when you select this race.</p>
+			<p class="indent"><strong><em>Speed.</em></strong> Your walking speed is 30 feet.</p>
+			<p class="indent"><strong><em>Darkvision.</em></strong> You can see in dim light within 60 feet of you as if it were bright light, and in darkness as if it were dim light. You discern colors in that darkness only as shades of gray.</p>
+			<p class="indent"><strong><em>Magic Resistance.</em></strong> You have advantage on saving throws against spells.</p>
+			<p class="indent"><strong><em>Poison Resilience.</em></strong> You have advantage on saving throws you make to avoid or end the poisoned condition on yourself. You also have resistance to poison damage.</p>
+			<p class="indent"><strong><em>Serpentine Spellcasting.</em></strong> You know the <i>poison spray</i> cantrip. You can cast <i>animal friendship</i> an unlimited number of times with this trait, but you can target only snakes with it. Starting at 3rd level, you can also cast <i>suggestion</i> with this trait. Once you cast it, you can’t do so again until you finish a long rest. You can also cast it using any spell slots you have of 2nd level or higher.</p>
+			<p class="indent">Intelligence, Wisdom, or Charisma is your spellcasting ability for these spells when you cast them with this trait (choose when you select this race).</p>
+		</description>
+		<sheet display="false" />
+		<rules>
+			<select type="Ability Score Improvement" name="Ability Score Improvement Option (Yuan-ti)" supports="Custom Ability Score Improvement Option" />
+			<select type="Racial Trait" name="Size (Yuan-ti)" supports="ID_INTERNAL_RACIAL_TRAIT_SMALL|ID_INTERNAL_RACIAL_TRAIT_MEDIUM" />
+			<stat name="innate speed" value="30" bonus="base" />
+			<grant type="Vision" id="ID_VISION_DARKVISION" />
+
+			<grant type="Language" id="ID_LANGUAGE_COMMON" requirements="!ID_WOTC_TCOE_OPTION_CUSTOMIZED_LANGUAGE" />
+			<select type="Language" name="Customized Language (Yuan-ti)" supports="Custom Race Language"  requirements="ID_WOTC_TCOE_OPTION_CUSTOMIZED_LANGUAGE" />
+			<select type="Language" name="Language (Yuan-ti)" supports="Standard||Exotic" />
+
+			<grant type="Racial Trait" id="ID_WOTC_MOTM_RACIAL_TRAIT_YUANTI_MAGIC_RESISTANCE" />
+			<grant type="Racial Trait" id="ID_WOTC_MOTM_RACIAL_TRAIT_YUANTI_POISON_RESILIENCE" />
+			<grant type="Racial Trait" id="ID_WOTC_MOTM_RACIAL_TRAIT_YUANTI_SERPENTINE_SPELLCASTING" />
+		</rules>
+	</element>
+
+	<element name="Magic Resistance" type="Racial Trait" source="Monsters of the Multiverse" id="ID_WOTC_MOTM_RACIAL_TRAIT_YUANTI_MAGIC_RESISTANCE">
+		<description>
+			<p>You have advantage on saving throws against spells.</p>
+		</description>
+		<sheet>
+			<description>You have advantage on saving throws against spells.</description>
+		</sheet>
+	</element>
+
+	<element name="Poison Resilience" type="Racial Trait" source="Monsters of the Multiverse" id="ID_WOTC_MOTM_RACIAL_TRAIT_YUANTI_POISON_RESILIENCE">
+		<description>
+			<p>You have advantage on saving throws you make to avoid or end the poisoned condition on yourself. You also have resistance to poison damage.</p>
+		</description>
+		<sheet>
+			<description>You have advantage on saving throws you make to avoid or end the poisoned condition on yourself.</description>
+		</sheet>
+		<rules>
+			<grant type="Condition" id="ID_INTERNAL_CONDITION_DAMAGE_RESISTANCE_POISON" />
+		</rules>
+	</element>
+
+	<element name="Serpentine Spellcasting" type="Racial Trait" source="Monsters of the Multiverse" id="ID_WOTC_MOTM_RACIAL_TRAIT_YUANTI_SERPENTINE_SPELLCASTING">
+		<description>
+			<p>You know the <i>poison spray</i> cantrip. You can cast <i>animal friendship</i> an unlimited number of times with this trait, but you can target only snakes with it. Starting at 3rd level, you can also cast <i>suggestion</i> with this trait. Once you cast it, you can’t do so again until you finish a long rest. You can also cast it using any spell slots you have of 2nd level or higher.</p>
+			<p class="indent">Intelligence, Wisdom, or Charisma is your spellcasting ability for these spells when you cast them with this trait (choose when you select this race).</p>
+		</description>
+		<sheet display="false" />
+		<rules>
+			<grant type="Spell" id="ID_PHB_SPELL_POISON_SPRAY" />
+			<grant type="Spell" id="ID_PHB_SPELL_SUGGESTION" level="3" />
+			<select type="Racial Trait" name="Spellcasting Ability (Serpentine Spellcasting)" supports="ID_WOTC_MOTM_RACIAL_TRAIT_YUANTI_SERPENTINE_SPELLCASTING_INTELLIGENCE|ID_WOTC_MOTM_RACIAL_TRAIT_YUANTI_SERPENTINE_SPELLCASTING_WISDOM|ID_WOTC_MOTM_RACIAL_TRAIT_YUANTI_SERPENTINE_SPELLCASTING_CHARISMA" />
+		</rules>
+	</element>
+	<element name="Intelligence" type="Racial Trait" source="Monsters of the Multiverse" id="ID_WOTC_MOTM_RACIAL_TRAIT_YUANTI_SERPENTINE_SPELLCASTING_INTELLIGENCE">
+		<compendium display="false" />
+		<description>
+			<p>Your spellcasting ability for these spells is Intelligence.</p>
+		</description>
+		<sheet alt="Serpentine Spellcasting">
+			<description>You know the poison spray cantrip. You can cast animal friendship an unlimited number of times with this trait, but you can target only snakes with it.&#13;
+			Your spellcasting ability for these spells is Intelligence.</description>
+			<description level="3">You know the poison spray cantrip. You can cast animal friendship an unlimited number of times with this trait, but you can target only snakes with it.&#13;
+			You can cast suggestion with this trait once per long rest. You can also cast it using any spell slots you have of 2nd level or higher.&#13;
+			Your spellcasting ability for these spells is Intelligence.</description>
+		</sheet>
+	</element>
+	<element name="Wisdom" type="Racial Trait" source="Monsters of the Multiverse" id="ID_WOTC_MOTM_RACIAL_TRAIT_YUANTI_SERPENTINE_SPELLCASTING_WISDOM">
+		<compendium display="false" />
+		<description>
+			<p>Your spellcasting ability for these spells is Wisdom.</p>
+		</description>
+		<sheet alt="Serpentine Spellcasting">
+			<description>You know the poison spray cantrip. You can cast animal friendship an unlimited number of times with this trait, but you can target only snakes with it.&#13;
+			Your spellcasting ability for these spells is Wisdom.</description>
+			<description level="3">You know the poison spray cantrip. You can cast animal friendship an unlimited number of times with this trait, but you can target only snakes with it.&#13;
+			You can cast suggestion with this trait once per long rest. You can also cast it using any spell slots you have of 2nd level or higher.&#13;
+			Your spellcasting ability for these spells is Wisdom.</description>
+		</sheet>
+	</element>
+	<element name="Charisma" type="Racial Trait" source="Monsters of the Multiverse" id="ID_WOTC_MOTM_RACIAL_TRAIT_YUANTI_SERPENTINE_SPELLCASTING_CHARISMA">
+		<compendium display="false" />
+		<description>
+			<p>Your spellcasting ability for these spells is Charisma.</p>
+		</description>
+		<sheet alt="Serpentine Spellcasting">
+			<description>You know the poison spray cantrip. You can cast animal friendship an unlimited number of times with this trait, but you can target only snakes with it.&#13;
+			Your spellcasting ability for these spells is Charisma.</description>
+			<description level="3">You know the poison spray cantrip. You can cast animal friendship an unlimited number of times with this trait, but you can target only snakes with it.&#13;
+			You can cast suggestion with this trait once per long rest. You can also cast it using any spell slots you have of 2nd level or higher.&#13;
+			Your spellcasting ability for these spells is Charisma.</description>
+		</sheet>
+	</element>
+</elements>

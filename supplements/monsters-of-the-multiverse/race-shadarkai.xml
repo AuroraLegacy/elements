@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<elements>
+	<info>
+		<name>Shadar-Kai from Monsters of the Multiverse</name>
+		<update version="0.0.1">
+			<file name="race-shadarkai.xml" url="https://raw.githubusercontent.com/AuroraLegacy/elements/master/supplements/monsters-of-the-multiverse/race-shadarkai.xml" />
+		</update>
+	</info>
+
+	<element name="Shadar-Kai" type="Race" source="Monsters of the Multiverse" id="ID_WOTC_MOTM_RACE_SHADARKAI">
+		<description>
+			<p>Shadar-kai are the elves of the Shadowfell, originally drawn to that dread realm by the Raven Queen. Over the centuries, some of them have continued to serve her, while others have ventured into the Material Plane to forge their own destinies.</p>
+			<p class="indent">Once shadar-kai were Fey like the rest of their elven kin; now they exist in a state between life and death, thanks to being transformed by the Shadowfell's grim energy</p>
+			<p class="indent">Shadar-kai have ashen skin tones, and while they're in the Shadowfell, they also become wizened, reflecting the somber nature of that gloomy plane. </p>
+			<p class="indent">Like other elves, shadar-kai can live to be over 750 years old. </p>
+			<h4>SHADAR-KAI TRAITS</h4>
+			<p>As a shadar-kai, you have the following racial traits.</p>
+			<p class="indent"><strong><em>Creature Type.</em></strong> You are a Humanoid. You are also considered an elf for any prerequisite or effect that requires you to be an elf. </p>
+			<p class="indent"><strong><em>Size.</em></strong> You are Medium.</p>
+			<p class="indent"><strong><em>Speed.</em></strong> Your walking speed is 30 feet.</p>
+			<p class="indent"><strong><em>Blessing of the Raven Queen.</em></strong> As a bonus action, you can magically teleport up to 30 feet to an unoccupied space you can see. You can use this trait a number of times equal to your proficiency bonus, and you regain all expended uses when you finish a long rest. </p>
+			<p class="indent">Starting at 3rd level, you also gain resistance to all damage when you teleport using this trait. The resistance lasts until the start of your next turn. During that time, you appear ghostly and translucent. </p>
+			<p class="indent"><strong><em>Darkvision.</em></strong> You can see in dim light within 60 feet of you as if it were bright light, and in darkness as if it were dim light. You discern colors in that darkness only as shades of gray.</p>
+			<p class="indent"><strong><em>Fey Ancestry.</em></strong> You have advantage on saving throws you make to avoid or end the charmed condition on yourself. </p>
+			<p class="indent"><strong><em>Keen Senses.</em></strong> You have proficiency in the Perception skill.</p>
+			<p class="indent"><strong><em>Necrotic Resistance.</em></strong> You have resistance to necrotic damage.</p>
+			<p class="indent"><strong><em>Trance.</em></strong> You don't need to sleep, and magic can't put you to sleep. You can finish a long rest in 4 hours if you spend those hours in a trancelike meditation, during which you retain consciousness. </p>	
+			<p class="indent">Whenever you finish this trance, you can gain two proficiencies that you don't have, each one with a weapon or a tool of your choice selected from the Player's Handbook. You mystically acquire these proficiencies by drawing them from shared elven memory, and you retain them until you finish your next long rest. </p>	
+		</description>
+		<sheet display="false" />
+		<rules>
+			<select type="Ability Score Improvement" name="Ability Score Improvement Option (Shadar-Kai)" supports="Custom Ability Score Improvement Option" />
+			<grant type="Size" id="ID_SIZE_MEDIUM" />
+			<stat name="innate speed" value="30" bonus="base" />
+			<grant type="Grants" id="ID_INTERNAL_RACIAL_TRAIT_TYPE_HUMANOID_ELF" />
+			<grant type="Vision" id="ID_VISION_DARKVISION" />
+
+			<grant type="Language" id="ID_LANGUAGE_COMMON" requirements="!ID_WOTC_TCOE_OPTION_CUSTOMIZED_LANGUAGE" />
+			<select type="Language" name="Customized Language (Shadar-Kai)" supports="Custom Race Language"  requirements="ID_WOTC_TCOE_OPTION_CUSTOMIZED_LANGUAGE" />
+			<select type="Language" name="Language (Shadar-Kai)" supports="Standard||Exotic" />
+
+			<grant type="Racial Trait" id="ID_WOTC_MOTM_RACIAL_TRAIT_SHADARKAI_BLESSING_OF_THE_RAVEN_QUEEN" />
+			<grant type="Racial Trait" id="ID_WOTC_MOTM_RACIAL_TRAIT_SHADARKAI_FEY_ANCESTRY" />
+			<grant type="Racial Trait" id="ID_WOTC_MOTM_RACIAL_TRAIT_SHADARKAI_KEEN_SENSES" />
+			<grant type="Racial Trait" id="ID_WOTC_MOTM_RACIAL_TRAIT_SHADARKAI_NECROTIC_RESISTANCE" />
+			<grant type="Racial Trait" id="ID_WOTC_MOTM_RACIAL_TRAIT_SHADARKAI_TRANCE" />
+		</rules>
+	</element>
+
+	<element name="Blessing of the Raven Queen" type="Racial Trait" source="Monsters of the Multiverse" id="ID_WOTC_MOTM_RACIAL_TRAIT_SHADARKAI_BLESSING_OF_THE_RAVEN_QUEEN">
+		<description>
+			<p>As a bonus action, you can magically teleport up to 30 feet to an unoccupied space you can see. You can use this trait a number of times equal to your proficiency bonus, and you regain all expended uses when you finish a long rest. </p>
+			<p class="indent">Starting at 3rd level, you also gain resistance to all damage when you teleport using this trait. The resistance lasts until the start of your next turn. During that time, you appear ghostly and translucent. </p>
+		</description>
+		<sheet action="Bonus Action" usage="{{proficiency}}/Long Rest" >
+			<description>You can magically teleport up to 30 feet to an unoccupied space you can see.</description>
+			<description level="3">You can magically teleport up to 30 feet to an unoccupied space you can see.  When you teleport using this trait, you gain resistance to all damage until the start of your next turn.</description>
+		</sheet>
+	</element>
+
+	<element name="Fey Ancestry" type="Racial Trait" source="Monsters of the Multiverse" id="ID_WOTC_MOTM_RACIAL_TRAIT_SHADARKAI_FEY_ANCESTRY">
+		<description>
+			<p>You have advantage on saving throws you make to avoid or end the charmed condition on yourself.</p>
+		</description>
+		<sheet>
+			<description>You have advantage on saving throws you make to avoid or end the charmed condition on yourself.</description>
+		</sheet>
+	</element>
+
+	<element name="Keen Senses" type="Racial Trait" source="Monsters of the Multiverse" id="ID_WOTC_MOTM_RACIAL_TRAIT_SHADARKAI_KEEN_SENSES">
+		<description>
+			<p>You have proficiency in the Perception skill.</p>
+		</description>
+		<sheet display="false" />
+		<rules>
+			<grant type="Proficiency" id="ID_PROFICIENCY_SKILL_PERCEPTION" requirements="!ID_WOTC_TCOE_OPTION_CUSTOMIZED_PROFICIENCY" />
+			<select type="Proficiency" name="Customized Skill Proficiency (Keen Senses)" supports="Skill" requirements="ID_WOTC_TCOE_OPTION_CUSTOMIZED_PROFICIENCY" />
+		</rules>
+	</element>
+
+	<element name="Necrotic Resistance" type="Racial Trait" source="Monsters of the Multiverse" id="ID_WOTC_MOTM_RACIAL_TRAIT_SHADARKAI_NECROTIC_RESISTANCE">
+		<description>
+			<p>You have resistance to necrotic damage.</p>
+		</description>
+		<sheet display="false" />
+		<rules>
+			<grant type="Condition" id="ID_INTERNAL_CONDITION_DAMAGE_RESISTANCE_NECROTIC" />
+		</rules>
+	</element>
+
+	<element name="Trance" type="Racial Trait" source="Monsters of the Multiverse" id="ID_WOTC_MOTM_RACIAL_TRAIT_SHADARKAI_TRANCE">
+		<description>
+			<p> You don't need to sleep, and magic can't put you to sleep. You can finish a long rest in 4 hours if you spend those hours in a trancelike meditation, during which you retain consciousness. </p>	
+			<p class="indent">Whenever you finish this trance, you can gain two proficiencies that you don't have, each one with a weapon or a tool of your choice selected from the Player's Handbook. You mystically acquire these proficiencies by drawing them from shared elven memory, and you retain them until you finish your next long rest. </p>	
+		</description>
+		<sheet>
+			<description>You don't need to sleep, and magic can't put you to sleep. You can finish a long rest in 4 hours if you spend those hours in a trancelike meditation, during which you retain consciousness.&#13;
+			Whenever you finish this trance, you can gain two proficiencies that you don't have, each one with a weapon or a tool of your choice selected from the Player's Handbook. You retain them until you finish your next long rest.</description>
+		</sheet>
+	</element>
+</elements>

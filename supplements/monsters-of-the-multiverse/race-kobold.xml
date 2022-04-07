@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<elements>
+	<info>
+		<name>Orc from Monsters of the Multiverse</name>
+		<update version="0.0.1">
+			<file name="race-kobold.xml" url="https://raw.githubusercontent.com/AuroraLegacy/elements/master/supplements/monsters-of-the-multiverse/race-kobold.xml" />
+		</update>
+	</info>
+
+	<element name="Kobold" type="Race" source="Monsters of the Multiverse" id="ID_WOTC_MOTM_RACE_KOBOLD">
+		<description>
+			<p>Some of the smallest draconic creatures in the multiverse, kobolds display their draconic ancestry in the glint of their scales and in their roars. Legends tell of the first kobolds emerging from the Underdark near the lairs of the earliest dragons. In some lands, kobolds serve chromatic or metallic dragons-even worshiping them as divine beings. In other places, kobolds know too well how dangerous those dragons can be and help others defend against draconic destruction.</p>
+			<p class="indent">Whatever their relationship to dragons, kobold scales tend to be rust colored, although the occasional kobold sports a scale color more akin to that of a chromatic or a metallic dragon. A kobold's cry can express a range of emotion: anger, resolve, elation, fear, and more. Regardless of the emotion expressed, their cry resonates with draconic power.</p>
+			<h4>KOBOLD TRAITS</h4>
+			<p>As a kobold, you have the following racial traits. </p>
+			<p class="indent"><strong><em>Creature Type.</em></strong> You are a Humanoid.</p>
+			<p class="indent"><strong><em>Size.</em></strong> You are Small.</p>
+			<p class="indent"><strong><em>Speed.</em></strong> Your walking speed is 30 feet.</p>
+			<p class="indent"><strong><em>Darkvision.</em></strong> You can see in dim light within 60 feet of you as if it were bright light, and in darkness as if it were dim light. You discern colors in that darkness only as shades of gray.</p>
+			<p class="indent"><strong><em>Draconic Cry.</em></strong> As a bonus action, you let out a cry at your enemies within 10 feet of you. Until the start of your next turn, you and your allies have advantage on attack rolls against any of those enemies who could hear you. You can use this trait a number of times equal to your proficiency bonus, and you regain all expended uses when you finish a long rest.</p>
+			<p class="indent"><strong><em>Kobold Legacy.</em></strong> Kobolds' connection to dragons can manifest in unpredictable ways in an individual kobold. Choose one of the following legacy options for your kobold:</p>
+			<ul class="unstyled">
+				<li style="margin-left:1em;text-indent:-1em;"><strong>Craftiness.</strong> You have proficiency in one of the following skills of your choice: Arcana, Investigation, Medicine, Sleight of Hand, or Survival.</li>
+				<li style="margin-left:1em;text-indent:-1em;"><strong>Defiance.</strong> You have advantage on saving throws to avoid or end the frightened condition on yourself.</li>
+				<li style="margin-left:1em;text-indent:-1em;"><strong>Draconic Sorcery.</strong> You know one cantrip of your choice from the sorcerer spell list. Intelligence, Wisdom, or Charisma is your spellcasting ability for that cantrip (choose when you select this race).</li>
+			</ul>
+		</description>
+		<sheet display="false" />
+		<rules>
+			<select type="Ability Score Improvement" name="Ability Score Improvement Option (Kobold)" supports="Custom Ability Score Improvement Option" />
+			<grant type="Size" id="ID_SIZE_SMALL" />
+			<stat name="innate speed" value="30" bonus="base" />
+			<grant type="Vision" id="ID_VISION_DARKVISION" />
+
+			<grant type="Language" id="ID_LANGUAGE_COMMON" requirements="!ID_WOTC_TCOE_OPTION_CUSTOMIZED_LANGUAGE" />
+			<select type="Language" name="Customized Language (Kobold)" supports="Custom Race Language"  requirements="ID_WOTC_TCOE_OPTION_CUSTOMIZED_LANGUAGE" />
+			<select type="Language" name="Language (Kobold)" supports="Standard||Exotic" />
+			
+			<grant type="Racial Trait" id="ID_WOTC_MOTM_RACIAL_TRAIT_KOBOLD_DRACONIC_CRY" />
+			<grant type="Racial Trait" id="ID_WOTC_MOTM_RACIAL_TRAIT_KOBOLD_KOBOLD_LEGACY" />
+		</rules>
+	</element>
+
+	<element name="Draconic Cry" type="Racial Trait" source="Monsters of the Multiverse" id="ID_WOTC_MOTM_RACIAL_TRAIT_KOBOLD_DRACONIC_CRY">
+		<description>
+			<p>As a bonus action, you let out a cry at your enemies within 10 feet of you. Until the start of your next turn, you and your allies have advantage on attack rolls against any of those enemies who could hear you. You can use this trait a number of times equal to your proficiency bonus, and you regain all expended uses when you finish a long rest.</p>
+		</description>
+		<sheet action="Bonus Action" usage="{{proficiency}}/Long Rest" >
+			<description>You can let out a cry at your enemies within 10 feet of you. Until the start of your next turn, you and your allies have advantage on attack rolls against any of those enemies who could hear you.</description>
+		</sheet>
+	</element>
+
+	<element name="Kobold Legacy" type="Racial Trait" source="Monsters of the Multiverse" id="ID_WOTC_MOTM_RACIAL_TRAIT_KOBOLD_KOBOLD_LEGACY">
+		<description>
+			<p>Kobolds' connection to dragons can manifest in unpredictable ways in an individual kobold. Choose one of the following legacy options for your kobold:</p>
+			<ul class="unstyled">
+				<li style="margin-left:1em;text-indent:-1em;"><strong>Craftiness.</strong> You have proficiency in one of the following skills of your choice: Arcana, Investigation, Medicine, Sleight of Hand, or Survival.</li>
+				<li style="margin-left:1em;text-indent:-1em;"><strong>Defiance.</strong> You have advantage on saving throws to avoid or end the frightened condition on yourself.</li>
+				<li style="margin-left:1em;text-indent:-1em;"><strong>Draconic Sorcery.</strong> You know one cantrip of your choice from the sorcerer spell list. Intelligence, Wisdom, or Charisma is your spellcasting ability for that cantrip (choose when you select this race).</li>
+			</ul>
+		</description>
+		<sheet display="false" />
+		<rules>
+			<select type="Racial Trait" name="Kobold Legacy" supports="Kobold Legacy" />
+		</rules>
+	</element>
+
+	<element name="Craftiness" type="Racial Trait" source="Monsters of the Multiverse" id="ID_WOTC_MOTM_RACIAL_TRAIT_KOBOLD_KOBOLD_LEGACY_CRAFTINESS">
+		<supports>Kobold Legacy</supports>
+		<description>
+			<p>You have proficiency in one of the following skills of your choice: Arcana, Investigation, Medicine, Sleight of Hand, or Survival.</p>
+		</description>
+		<sheet display="false" />
+		<rules>
+			<select type="Proficiency" name="Craftiness" supports="ID_PROFICIENCY_SKILL_ARCANA|ID_PROFICIENCY_SKILL_INVESTIGATION|ID_PROFICIENCY_SKILL_MEDICINE|ID_PROFICIENCY_SKILL_SLEIGHTOFHAND|ID_PROFICIENCY_SKILL_SURVIVAL" requirements="!ID_WOTC_TCOE_OPTION_CUSTOMIZED_PROFICIENCY" />
+			<select type="Proficiency" name="Customized Skill Proficiency (Craftiness)" supports="Skill" requirements="ID_WOTC_TCOE_OPTION_CUSTOMIZED_PROFICIENCY" />
+		</rules>
+	</element>
+
+	<element name="Defiance" type="Racial Trait" source="Monsters of the Multiverse" id="ID_WOTC_MOTM_RACIAL_TRAIT_KOBOLD_KOBOLD_LEGACY_DEFIANCE">
+		<supports>Kobold Legacy</supports>
+		<description>
+			<p>You have advantage on saving throws to avoid or end the frightened condition on yourself.</p>
+		</description>
+		<sheet>
+			<description>You have advantage on saving throws to avoid or end the frightened condition on yourself.</description>
+		</sheet>
+	</element>
+
+	<element name="Draconic Sorcery" type="Racial Trait" source="Monsters of the Multiverse" id="ID_WOTC_MOTM_RACIAL_TRAIT_KOBOLD_KOBOLD_LEGACY_DRACONIC_SORCERY">
+		<supports>Kobold Legacy</supports>
+		<description>
+			<p>You know one cantrip of your choice from the sorcerer spell list. Intelligence, Wisdom, or Charisma is your spellcasting ability for that cantrip (choose when you select this race).</p>
+		</description>
+		<sheet display="false" />
+		<rules>
+			<select type="Spell" name="Cantrip (Draconic Sorcery)" supports="0,Sorcerer" />
+			<select type="Racial Trait" name="Spellcasting Ability (Draconic Sorcery)" supports="ID_WOTC_MOTM_RACIAL_TRAIT_KOBOLD_KOBOLD_LEGACY_DRACONIC_SORCERY_INTELLIGENCE|ID_WOTC_MOTM_RACIAL_TRAIT_KOBOLD_KOBOLD_LEGACY_DRACONIC_SORCERY_WISDOM|ID_WOTC_MOTM_RACIAL_TRAIT_KOBOLD_KOBOLD_LEGACY_DRACONIC_SORCERY_CHARISMA" />
+		</rules>
+	</element>
+	<element name="Intelligence" type="Racial Trait" source="Monsters of the Multiverse" id="ID_WOTC_MOTM_RACIAL_TRAIT_KOBOLD_KOBOLD_LEGACY_DRACONIC_SORCERY_INTELLIGENCE">
+		<compendium display="false" />
+		<description>
+			<p>Your spellcasting ability for the sorcerer cantrip is Intelligence.</p>
+		</description>
+		<sheet alt="Draconic Sorcery">
+			<description>Your spellcasting ability for the sorcerer cantrip is Intelligence.</description>
+		</sheet>
+	</element>
+	<element name="Wisdom" type="Racial Trait" source="Monsters of the Multiverse" id="ID_WOTC_MOTM_RACIAL_TRAIT_KOBOLD_KOBOLD_LEGACY_DRACONIC_SORCERY_WISDOM">
+		<compendium display="false" />
+		<description>
+			<p>Your spellcasting ability for the sorcerer cantrip is Wisdom.</p>
+		</description>
+		<sheet alt="Draconic Sorcery">
+			<description>Your spellcasting ability for the sorcerer cantrip is Wisdom.</description>
+		</sheet>
+	</element>
+	<element name="Charisma" type="Racial Trait" source="Monsters of the Multiverse" id="ID_WOTC_MOTM_RACIAL_TRAIT_KOBOLD_KOBOLD_LEGACY_DRACONIC_SORCERY_CHARISMA">
+		<compendium display="false" />
+		<description>
+			<p>Your spellcasting ability for the sorcerer cantrip is Charisma.</p>
+		</description>
+		<sheet alt="Draconic Sorcery">
+			<description>Your spellcasting ability for the sorcerer cantrip is Charisma.</description>
+		</sheet>
+	</element>
+</elements>

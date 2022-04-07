@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<elements>
+	<info>
+		<name>Fairy from Monsters of the Multiverse</name>
+		<update version="0.0.1">
+			<file name="race-fairy.xml" url="https://raw.githubusercontent.com/AuroraLegacy/elements/master/supplements/monsters-of-the-multiverse/race-fairy.xml" />
+		</update>
+	</info>
+	<element name="Fairy" type="Race" source="Monsters of the Multiverse" id="ID_WOTC_MOTM_RACE_FAIRY">
+		<description>
+			<p>The Feywild is home to many fantastic peoples, including fairies. Fairies are a wee folk, but not nearly as much so as their pixie and sprite friends. The first fairies spoke Elvish, Goblin, or Sylvan, and encounters with human visitors prompted many of them to learn Common as well.</p>
+			<p class="indent">Infused with the magic of the Feywild, most fairies look like Small elves with insectile wings, but each fairy has a special physical characteristic that sets the fairy apart. For your fairy, roll on the Fey Characteristic table or choose an option from it. The Feywild is a wild place, so come up with your own characteristic if none of these fit your character.</p>
+			<h5>Fey Characteristics</h5>
+			<table>
+				<thead>
+					<tr><td class="col-10" style="text-align:center">d8</td><td>Characteristic</td></tr>
+				</thead>
+				<tr><td style="text-align:center">1</td><td>Your wings are like those of a bird.</td></tr>
+				<tr><td style="text-align:center">2</td><td>You have shimmering, multicolored skin.</td></tr>
+				<tr><td style="text-align:center">3</td><td>You have exceptionally large ears.</td></tr>
+				<tr><td style="text-align:center">4</td><td>A glittering mist constantly surrounds you.</td></tr>
+				<tr><td style="text-align:center">5</td><td>You have a small spectral horn on your forehead, like a little unicorn horn.</td></tr>
+				<tr><td style="text-align:center">6</td><td>Your legs are insectile.</td></tr>
+				<tr><td style="text-align:center">7</td><td>You smell like fresh brownies.</td></tr>
+				<tr><td style="text-align:center">8</td><td>A noticeable, harmless chill surrounds you.</td></tr>
+			</table>
+			<h4>FAIRY TRAITS</h4>
+			<p>As a fairy, you have the following racial traits.</p>
+			<p class="indent"><strong><em>Creature Type.</em></strong> You are a Fey.</p>
+			<p class="indent"><strong><em>Size.</em></strong> You are Small.</p>
+			<p class="indent"><strong><em>Speed.</em></strong> Your walking speed is 30 feet.</p>
+			<p class="indent"><strong><em>Fairy Magic.</em></strong> You know the <i>druidcraft</i> cantrip.</p> 
+			<p class="indent">Starting at 3rd level, you can cast the <i>faerie fire</i> spell with this trait. Starting at 5th level, you can also cast the <i>enlarge/reduce</i> spell with this trait. Once you cast the <i>faerie fire</i> or <i>enlarge/reduce</i> with this trait, you can't cast that spell with it again until you finish a long rest. You can also cast either of those spells using any spell slots you have of the appropriate level.</p>
+			<p class="indent">Intelligence, Wisdom, or Charisma is your spellcasting ability for these spells when you cast them with this trait (choose when you select this race).</p>
+			<p class="indent"><strong><em>Flight.</em></strong> You have a flying speed equal to your walking speed. You can't use this flying speed if you're wearing medium or heavy armor.</p>
+		</description>
+		<sheet display="false" />
+		<rules>
+			<select type="Ability Score Improvement" name="Ability Score Improvement Option (Fairy)" supports="Custom Ability Score Improvement Option" />
+			<grant type="Racial Trait" id="ID_INTERNAL_RACIAL_TRAIT_TYPE_FEY" />
+			<grant type="Racial Trait" id="ID_INTERNAL_RACIAL_TRAIT_SMALL" />
+			<stat name="innate speed" value="30" bonus="base" />
+
+			<grant type="Language" id="ID_LANGUAGE_COMMON" requirements="!ID_WOTC_TCOE_OPTION_CUSTOMIZED_LANGUAGE" />
+			<select type="Language" name="Customized Language" supports="Custom Race Language" requirements="ID_WOTC_TCOE_OPTION_CUSTOMIZED_LANGUAGE" />
+			<select type="Language" name="Language (Fairy)" supports="Standard||Exotic" />
+
+			<grant type="Racial Trait" id="ID_WOTC_MOTM_RACIAL_TRAIT_FAIRY_FLIGHT" />
+			<grant type="Racial Trait" id="ID_WOTC_MOTM_RACIAL_TRAIT_FAIRY_FAIRY_MAGIC" />
+		</rules>
+	</element>
+	
+	<element name="Flight" type="Racial Trait" source="Monsters of the Multiverse" id="ID_WOTC_MOTM_RACIAL_TRAIT_FAIRY_FLIGHT">
+		<description>
+			<p>You have a flying speed equal to your walking speed. You can't use this flying speed if you're wearing medium or heavy armor.</p>
+		</description>
+		<sheet>
+			<description>You have a flying speed of {{innate speed}} feet. You can't use this flying speed if you're wearing medium or heavy armor.</description>
+		</sheet>
+		<rules>
+			<stat name="innate speed:fly" value="innate speed" bonus="base" equipped="![armor:medium],![armor:heavy]" />
+		</rules>
+	</element>
+
+	<element name="Fairy Magic" type="Racial Trait" source="Monsters of the Multiverse" id="ID_WOTC_MOTM_RACIAL_TRAIT_FAIRY_FAIRY_MAGIC">
+		<description>
+			<p>You know the <i>druidcraft</i> cantrip.</p> 
+			<p class="indent">Starting at 3rd level, you can cast the <i>faerie fire</i> spell with this trait. Starting at 5th level, you can also cast the <i>enlarge/reduce</i> spell with this trait. Once you cast the <i>faerie fire</i> or <i>enlarge/reduce</i> with this trait, you can't cast that spell with it again until you finish a long rest. You can also cast either of those spells using any spell slots you have of the appropriate level.</p>
+			<p class="indent">Intelligence, Wisdom, or Charisma is your spellcasting ability for these spells when you cast them with this trait (choose when you select this race).</p>
+		</description>
+		<sheet display="false" />
+		<rules>
+			<grant type="Spell" id="ID_PHB_SPELL_DRUIDCRAFT" />
+			<grant type="Spell" id="ID_PHB_SPELL_FAERIE_FIRE" level="3" />
+			<grant type="Spell" id="ID_PHB_SPELL_ENLARGE_REDUCE" level="5" />
+			<select type="Racial Trait" name="Spellcasting Ability (Fairy Magic)" supports="ID_WOTC_MOTM_RACIAL_TRAIT_FAIRY_FAIRY_MAGIC_INTELLIGENCE|ID_WOTC_MOTM_RACIAL_TRAIT_FAIRY_FAIRY_MAGIC_WISDOM|ID_WOTC_MOTM_RACIAL_TRAIT_FAIRY_FAIRY_MAGIC_CHARISMA" />
+		</rules>
+	</element>
+	<element name="Intelligence" type="Racial Trait" source="Monsters of the Multiverse" id="ID_WOTC_MOTM_RACIAL_TRAIT_FAIRY_FAIRY_MAGIC_INTELLIGENCE">
+		<compendium display="false" />
+		<description>
+			<p>Your spellcasting ability for these spells is Intelligence.</p>
+		</description>
+		<sheet alt="Fairy Magic">
+			<description>You know the druidcraft cantrip. &#13;
+			Your spellcasting ability for this spell is Intelligence.</description>
+			<description level="3">You know the druidcraft cantrip, and you can cast the faerie fire spell once per long rest. You can also cast this spell using any spell slots you have of the appropriate level. &#13;
+			Your spellcasting ability for these spells is Intelligence.</description>
+			<description level="5">You know the druidcraft cantrip, and you can cast the faerie fire and enlarge/reduce spells once per long rest. You can also cast either of those spells using any spell slots you have of the appropriate level. &#13;
+			Your spellcasting ability for these spells is Intelligence.</description>
+		</sheet>
+	</element>
+	<element name="Wisdom" type="Racial Trait" source="Monsters of the Multiverse" id="ID_WOTC_MOTM_RACIAL_TRAIT_FAIRY_FAIRY_MAGIC_WISDOM">
+		<compendium display="false" />
+		<description>
+			<p>Your spellcasting ability for these spells is Wisdom.</p>
+		</description>
+		<sheet alt="Fairy Magic">
+			<description>You know the druidcraft cantrip. &#13;
+			Your spellcasting ability for this spell is Wisdom.</description>
+			<description level="3">You know the druidcraft cantrip, and you can cast the faerie fire spell once per long rest. You can also cast this spell using any spell slots you have of the appropriate level. &#13;
+			Your spellcasting ability for these spells is Wisdom.</description>
+			<description level="5">You know the druidcraft cantrip, and you can cast the faerie fire and enlarge/reduce spells once per long rest. You can also cast either of those spells using any spell slots you have of the appropriate level. &#13;
+			Your spellcasting ability for these spells is Wisdom.</description>
+		</sheet>
+	</element>
+	<element name="Charisma" type="Racial Trait" source="Monsters of the Multiverse" id="ID_WOTC_MOTM_RACIAL_TRAIT_FAIRY_FAIRY_MAGIC_CHARISMA">
+		<compendium display="false" />
+		<description>
+			<p>Your spellcasting ability for these spells is Charisma.</p>
+		</description>
+		<sheet alt="Fairy Magic">
+			<description>You know the druidcraft cantrip. &#13;
+			Your spellcasting ability for this spell is Charisma.</description>
+			<description level="3">You know the druidcraft cantrip, and you can cast the faerie fire spell once per long rest. You can also cast this spell using any spell slots you have of the appropriate level. &#13;
+			Your spellcasting ability for these spells is Charisma.</description>
+			<description level="5">You know the druidcraft cantrip, and you can cast the faerie fire and enlarge/reduce spells once per long rest. You can also cast either of those spells using any spell slots you have of the appropriate level. &#13;
+			Your spellcasting ability for these spells is Charisma.</description>
+		</sheet>
+	</element>
+</elements>
