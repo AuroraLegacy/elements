@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <elements>
 	<info>
-		<update version="0.1.0">
+		<update version="0.1.1">
 			<file name="class-artificer.xml" url="https://raw.githubusercontent.com/AuroraLegacy/elements/master/supplements/eberron-rising-from-the-last-war/class-artificer.xml" />
 		</update>
 	</info>
@@ -824,7 +824,7 @@
 			</ul>
 			<p class="indent">You can use this energy a number of times equal to your Intelligence modifier (minimum of once), but you can do so no more than once on a turn. You regain all expended uses when you finish a long rest.</p>
 		</description>
-		<sheet>
+		<sheet alt="Arcane Jolt" usage="{{arcane jolt usage:intelligence}}/Long Rest">
 			<description>When either you hit a target with a magic weapon attack or your steel defender hits a target, you can create one of the following effects:
 			The target takes an extra {{arcane jolt damage:dice:amount}}d6 force damage.
 			Choose one creature or object you can see within 30 feet of the target restoring {{arcane jolt healing:dice:amount}}d6 hit points to it.</description>
@@ -832,6 +832,8 @@
 		<rules>
 			<stat name="arcane jolt damage:dice:amount" value="2" />
 			<stat name="arcane jolt healing:dice:amount" value="2" />
+			<stat name="arcane jolt usage:intelligence" value="1" bonus="base" />
+			<stat name="arcane jolt usage:intelligence" value="intelligence:modifier" bonus="base" />
 		</rules>
 	</element>
 	<element name="Improved Defender" type="Archetype Feature" source="Eberron: Rising from the Last War" id="ID_WOTC_ERLW_ARCHETYPE_FEATURE_BATTLE_SMITH_IMPROVED_DEFENDER">
