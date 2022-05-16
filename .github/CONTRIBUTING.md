@@ -28,18 +28,50 @@ A content issue might be one of the following:
 <a name="pull-requests"></a>
 ## Pull Requests
 
-Good pull requests are a great help. They should remain focused in scope and avoid containing unrelated commits. Make sure to **not** create one from your master branch, instead create a new branch for it.
+Good pull requests are a great help. They should remain focused in scope and avoid containing unrelated commits. Make sure to **not** create one from your master branch, instead create a new branch for it.  All pull requests will go through the [review process](#review-process).  Small, focused pull requests are typically quicker to review and merge, but it is better to combine pull requests when making multiple changes within the same file(s) or focus.
 
-Please ask first before embarking on any significant pull request (e.g. adding significant content, refactoring files), otherwise you risk spending a lot of time working on something that the project's developer might not want to merge into the repository.
+Please ask first before embarking on any significant pull request (Example: adding significant content, refactoring files), otherwise you risk spending a lot of time working on something that the project's developer might not want to merge into the repository.
 
 Next, make sure the content contribution falls in the [project scope](#scope) and adheres to the following guidelines to make checking and testing contributes easier and less time consuming.
 
+* Name your pull request with the format `[Source Abbreviation] %Specific Title%`. Use `[MISC]` when modifying files from multiple sources (Example: `[PHB] Fireball description fixes`)
 * Give your commits a meaningful name instead of just _updated file1.xml_
-* When making changes to an existing file, increment the version (e.g. from 0.1.2 to 0.1.3)
+* When making changes to an existing file, increment the version (Example: from 0.1.2 to 0.1.3)
 * Indent (tabs) the files properly to make them readable
 * Make sure the IDs of new elements only contain alphanumeric characters and underscores (`[A-Z]`, `[0-9]`, `_`) and no spaces or other special characters.
 * Make sure to check and test your files - for example: when making a class make sure you've tested it with all archetype combinations for levels 1-20
 * Ensure the contribution is complete and ready to be checked and merged. If you're working on something large, you can create an issue with a todo list to communicate your progress.
+
+<br>
+
+<a name="review-process"></a>
+## Review Process
+
+All pull requests require 2 or more reviews depending on the complexity and the number of files/lines being changed. It is uncommon that a file will be perfect when starting the review process, thus submitting an empty review may require an additional review before merge.
+
+A good review will be different depending on the element(s) being changed or added. Below is a basic list of things to check for:
+
+Overall:
+* Check that the file does not contain errors on launch and appears in the app
+* Check the element(s) and see that the description is as close to the source material as possible
+* Check that sources/spells are in italics
+* Read every description for common copy paste issues (Examples: `l` instead of `1`, random spaces in the middle of words, random spaces around punctuation)
+* Check the sheet for `==UNKNOWN_VALUE==` where a variable should be
+* Check that unnecessary elements are hidden from the compendium (Example: helper elements for selecting spellcasting ability, duplicate growing items within the same source)
+* Check that the version number increases 1 time per updated file
+* Check that new files have correct links
+* Check IDs for proper format and all upper case
+
+Races / Subraces / Classes / Archetypes:
+* Load the element(s) at lv 1, lv 20, and the level before and after a feature is added or text is changed (best to just step through every level and see the sheet)
+
+Armor / Weapons / Items / Magic Items:
+* Check that magic equipment only appears for the appropriate type of armor/weapon
+* Check that features/bonuses are added/removed when toggling equip/attune
+
+Spells
+* Check that the correct supports are present 
+
 
 <br>
 
@@ -58,7 +90,7 @@ Next, make sure the content contribution falls in the [project scope](#scope) an
 
 * personal homebrew content
 * content from reddit <sup>1</sup>, D&D Wiki <sup>2</sup>, DMs Guild, D&D Beyond, and other sites that allow users to post uncurated homebrew content.
-* content from other franchises converted to 5e (e.g. lord of the rings, pokemon, final fantasy, etc).
+* content from other franchises converted to 5e (Example: lord of the rings, pokemon, final fantasy, etc).
 
 <sup>1</sup> There is a community repository for content from reddit [here](https://github.com/community-elements/elements-reddit).<br>
 <sup>2</sup> There is a community repository for content from D&D Wiki [here](https://github.com/community-elements/elements-dndwiki).

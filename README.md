@@ -20,6 +20,8 @@ _**Warning:**_ Users who previously used content from now archived Aurora reposi
 ## Disclaimer
 Aurora Legacy repository is intended as a place for easily-accessible Aurora Builder content (xml) files of products you already own. Please ensure you only access content in accordance with your local laws.
 
+All images are property of the respected owners and are stored for static links.
+
 Project's contact email: aurorabuilderlegacy@gmail.com. Aurora Legacy is a fan project, and isn't affiliated with the Aurora Builder or Wizards of the Coast.
 
 ## Other Community Driven Repositories
