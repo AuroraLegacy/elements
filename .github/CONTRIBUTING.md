@@ -28,7 +28,7 @@ A content issue might be one of the following:
 <a name="pull-requests"></a>
 ## Pull Requests
 
-Good pull requests are a great help. They should remain focused in scope and avoid containing unrelated commits. Make sure to **not** create one from your master branch, instead create a new branch for it.  All pull requests will go through the [review process](#review-process).  Small, focused pull requests are typically quicker to review and merge, but it is better to combine pull requests when making multiple changes within the same file(s) or focus.
+Good pull requests are a great help. They should remain focused in scope and avoid containing unrelated commits. Make sure to **not** create one from your master branch, instead create a new branch for it. All pull requests will go through the [review process](#review-process). Small, focused pull requests are typically quicker to review and merge, but it is better to combine pull requests when making multiple changes within the same file(s) or focus.
 
 Please ask on the [project discord server](https://discord.gg/3n5uakXT2a "Project Discord Server") or in a github issue before embarking on any significant pull request (Example: adding significant content, refactoring files), otherwise you risk spending a lot of time working on something that the project's developer might not want to merge into the repository.
 
