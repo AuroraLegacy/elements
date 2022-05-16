@@ -3,7 +3,7 @@ Visit the [website](http://www.aurorabuilder.com "Aurora Website") for more info
 
 # Aurora Legacy Project
 The goal of Aurora Legacy is to continually support Aurora Builder app with updates to content files.  <br>
-[Project Discord Server](https://discord.gg/3n5uakXT2a "Project Discord Server")  <br>
+[Project's Discord Server](https://discord.gg/3n5uakXT2a "Project Discord Server"), where you can find the announcements, discuss relevant news and receive help with your homebrew files.  <br>
 Please take a moment to review the [contributing guidelines](https://github.com/AuroraLegacy/elements/blob/master/.github/CONTRIBUTING.md) when creating an issue, making a content request, or submitting a pull request.
 
 ## Extending Content

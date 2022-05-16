@@ -48,7 +48,7 @@ Next, make sure the content contribution falls in the [project scope](#scope) an
 ## Review Process
 
 Anyone is welcome to assist in the review process and it is a huge help.
-All pull requests require 2 or more reviews depending on the complexity and the number of files/lines being changed. It is uncommon that a file will be perfect when starting the review process.  Approving a pull request with problems or requesting changes without appropriate context may cause a review to be ignored as part of the review process.
+All pull requests require 2 or more reviews depending on the complexity and the number of files/lines being changed. It is uncommon that a file will be perfect when starting the review process. Approving a pull request with problems or requesting changes without appropriate context may cause a review to be ignored as part of the review process.
 
 A good review will be different depending on the element(s) being changed or added. Below is a basic list of things to check for:
 
