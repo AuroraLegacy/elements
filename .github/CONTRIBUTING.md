@@ -39,8 +39,8 @@ Next, make sure the content contribution falls in the [project scope](#scope) an
 * When making changes to an existing file, increment the version (Example: from 0.1.2 to 0.1.3)
 * Indent (tabs) the files properly to make them readable
 * Make sure the IDs of new elements only contain alphanumeric characters and underscores (`[A-Z]`, `[0-9]`, `_`) and no spaces or other special characters.
-* Make sure to check and test your files - for example: when making a class make sure you've tested it with all archetype combinations for levels 1-20
-* Ensure the contribution is complete and ready to be checked and merged. If you're working on something large, you can create an issue with a todo list to communicate your progress.
+* Make sure to check and test your files - See [review process](#review-process)
+* Ensure the contribution is complete and ready to be checked and merged before opening a pull request. If you're working on something large, you can create an issue with a todo list to communicate your progress.
 
 <br>
 
@@ -63,7 +63,7 @@ A good review will be different depending on the element(s) being changed or add
 * Check IDs for proper format and all upper case
 
 #### Races / Subraces / Classes / Archetypes:
-* Load the element(s) at lv 1, lv 20, and the level before and after a feature is added or text is changed (best to just step through every level and see the sheet)
+* Load the element(s) at lv 1, lv 20, and the level before and after a feature is added or text is changed (it is best to just step through every level and see the sheet)
 
 #### Armor / Weapons / Items / Magic Items:
 * Check that magic equipment only appears for the appropriate type of armor/weapon
