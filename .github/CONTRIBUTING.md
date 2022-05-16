@@ -51,7 +51,7 @@ All pull requests require 2 or more reviews depending on the complexity and the 
 
 A good review will be different depending on the element(s) being changed or added. Below is a basic list of things to check for:
 
-Overall:
+#### Overall:
 * Check that the file does not contain errors on launch and appears in the app
 * Check the element(s) and see that the description is as close to the source material as possible
 * Check that sources/spells are in italics
@@ -62,14 +62,14 @@ Overall:
 * Check that new files have correct links
 * Check IDs for proper format and all upper case
 
-Races / Subraces / Classes / Archetypes:
+#### Races / Subraces / Classes / Archetypes:
 * Load the element(s) at lv 1, lv 20, and the level before and after a feature is added or text is changed (best to just step through every level and see the sheet)
 
-Armor / Weapons / Items / Magic Items:
+#### Armor / Weapons / Items / Magic Items:
 * Check that magic equipment only appears for the appropriate type of armor/weapon
 * Check that features/bonuses are added/removed when toggling equip/attune
 
-Spells
+#### Spells
 * Check that the correct supports are present 
 
 
