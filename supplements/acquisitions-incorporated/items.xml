@@ -2,7 +2,7 @@
 <elements>
 	<info>
         <name>Items</name>
-		<update version="0.0.3">
+		<update version="0.0.4">
 			<file name="items.xml" url="https://raw.githubusercontent.com/AuroraLegacy/elements/master/supplements/acquisitions-incorporated/items.xml" />
 		</update>
 	</info>
@@ -81,7 +81,9 @@
 		</setters>
 		<rules>
 			<stat name="strength:save:misc" value="1" />
-			<grant type="Vision" id="ID_VISION_DARKVISION" />
+			<grant type="Vision" id="ID_VISION_LESSER_DARKVISION" />
+			<stat name="darkvision:range" value="30" bonus="Dimensional Loop" />
+			<stat name="darkvision:range" value="30" requirements="!(ID_VISION_DARKVISION||ID_VISION_SUPERIORDARKVISION)" />
 		</rules>
 	</element>
 	<element name="Far Gear" type="Magic Item" source="Acquisitions Incorporated" id="ID_WOTC_ACQINC_MAGIC_ITEM_FAR_GEAR">
