@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<elements>
+	<info>
+		<update version="0.0.1">
+			<file name="monk-open-hand.xml" url="https://raw.githubusercontent.com/AuroraLegacy/elements/master/core/players-handbook/archetypes/monk-open-hand.xml" />
+		</update>
+	</info>
+
+	<element name="Way of the Open Hand" type="Archetype" source="Player’s Handbook" id="ID_WOTC_PHB_ARCHETYPE_WAY_OF_THE_OPEN_HAND">
+		<supports>Monastic Tradition</supports>
+		<description>
+			<p>Monks of the Way of the Open Hand are the ultimate masters of martial arts combat, whether armed or unarmed. They learn techniques to push and trip their opponents, manipulate ki to heal damage to their bodies, and practice advanced meditation that can protect them from harm.</p>
+			<div element="ID_WOTC_PHB_ARCHETYPE_FEATURE_WAYOFTHEOPENHAND_OPEN_HAND_TECHNIQUE" />
+			<div element="ID_WOTC_PHB_ARCHETYPE_FEATURE_WAYOFTHEOPENHAND_WHOLENESS_OF_BODY" />
+			<div element="ID_WOTC_PHB_ARCHETYPE_FEATURE_WAYOFTHEOPENHAND_TRANQUILITY" />
+			<div element="ID_WOTC_PHB_ARCHETYPE_FEATURE_WAYOFTHEOPENHAND_QUIVERING_PALM" />
+		</description>
+		<sheet display="false">
+			<description>The ultimate masters of martial arts combat, whether armed or unarmed.</description>
+		</sheet>
+		<rules>
+			<grant type="Archetype Feature" id="ID_WOTC_PHB_ARCHETYPE_FEATURE_WAYOFTHEOPENHAND_OPEN_HAND_TECHNIQUE" level="3"/>
+			<grant type="Archetype Feature" id="ID_WOTC_PHB_ARCHETYPE_FEATURE_WAYOFTHEOPENHAND_WHOLENESS_OF_BODY" level="6"/>
+			<grant type="Archetype Feature" id="ID_WOTC_PHB_ARCHETYPE_FEATURE_WAYOFTHEOPENHAND_TRANQUILITY" level="11"/>
+			<grant type="Archetype Feature" id="ID_WOTC_PHB_ARCHETYPE_FEATURE_WAYOFTHEOPENHAND_QUIVERING_PALM" level="17"/>
+		</rules>
+	</element>
+	<element name="Open Hand Technique" type="Archetype Feature" source="Player’s Handbook" id="ID_WOTC_PHB_ARCHETYPE_FEATURE_WAYOFTHEOPENHAND_OPEN_HAND_TECHNIQUE">
+		<requirements>!ID_INTERNAL_FEATURE_REPLACEMENT_MONK_WAY_OF_THE_OPEN_HAND_OPEN_HAND_TECHNIQUE</requirements>
+		<description>
+			<p>Starting when you choose this tradition at 3rd level, you can manipulate your enemy’s ki when you harness your own. Whenever you hit a creature with one of the attacks granted by your Flurry of Blows, you can impose one of the following effects on that target:</p>
+			<ul>
+				<li>It must succeed on a Dexterity saving throw or be knocked prone.</li>
+				<li>It must make a Strength saving throw. If it fails, you can push it up to 15 feet away from you.</li>
+				<li>It can’t take reactions until the end of your next turn.</li>
+			</ul>
+		</description>
+		<sheet>
+			<description>Whenever you hit a creature with one of the attacks granted by your Flurry of Blows, you can impose one of the following effects on that target: knock prone DEX Save, Push 15 feet STR Save, It can’t take reactions until the end of your next turn.</description>
+		</sheet>
+	</element>
+	<element name="Wholeness of Body" type="Archetype Feature" source="Player’s Handbook" id="ID_WOTC_PHB_ARCHETYPE_FEATURE_WAYOFTHEOPENHAND_WHOLENESS_OF_BODY">
+		<requirements>!ID_INTERNAL_FEATURE_REPLACEMENT_MONK_WAY_OF_THE_OPEN_HAND_WHOLENESS_OF_BODY</requirements>
+		<description>
+			<p>At 6th level, you gain the ability to heal yourself. As an action, you can regain hit points equal to three times your monk level. You must finish a long rest before you can use this feature again.</p>
+		</description>
+		<sheet action="Action" usage="1/Long Rest">
+			<description>You can regain {{monk:wholeness of body}} hit points.</description>
+		</sheet>
+		<rules>
+			<stat name="monk:wholeness of body" value="level:monk" />
+			<stat name="monk:wholeness of body" value="level:monk" />
+			<stat name="monk:wholeness of body" value="level:monk" />
+		</rules>
+	</element>
+	<element name="Tranquility" type="Archetype Feature" source="Player’s Handbook" id="ID_WOTC_PHB_ARCHETYPE_FEATURE_WAYOFTHEOPENHAND_TRANQUILITY">
+		<requirements>!ID_INTERNAL_FEATURE_REPLACEMENT_MONK_WAY_OF_THE_OPEN_HAND_TRANQUILITY</requirements>
+		<description>
+			<p>Beginning at 11th level, you can enter a special meditation that surrounds you with an aura of peace. At the end of a long rest, you gain the effect of a sanctuary spell that lasts until the start of your next long rest (the spell can end early as normal). The saving throw DC for the spell equals 8 + your Wisdom modifier + your proficiency bonus.</p>
+		</description>
+		<sheet>
+			<description>At the end of a long rest, you gain the effect of a sanctuary spell that lasts until the start of your next long rest (the spell can end early as normal). The saving throw DC for the spell equals {{tranquility:dc}}.</description>
+		</sheet>
+		<rules>
+			<stat name="tranquility:dc" value="8" />
+			<stat name="tranquility:dc" value="proficiency" />
+			<stat name="tranquility:dc" value="wisdom:modifier" />
+		</rules>
+	</element>
+	<element name="Quivering Palm" type="Archetype Feature" source="Player’s Handbook" id="ID_WOTC_PHB_ARCHETYPE_FEATURE_WAYOFTHEOPENHAND_QUIVERING_PALM">
+		<requirements>!ID_INTERNAL_FEATURE_REPLACEMENT_MONK_WAY_OF_THE_OPEN_HAND_QUIVERING_PALM</requirements>
+		<description>
+			<p>At 17th level, you gain the ability to set up lethal vibrations in someone’s body. When you hit a creature with an unarmed strike, you can spend 3 ki points to start these imperceptible vibrations, which last for a number of days equal to your monk level. The vibrations are harmless unless you use your action to end them. To do so, you and the target must be on the same plane of existence. When you use this action, the creature must make a Constitution saving throw. If it fails, it is reduced to 0 hit points. If it succeeds, it takes 10d10 necrotic damage.</p>
+			<p class="indent">You can have only one creature under the effect of this feature at a time. You can choose to end the vibrations harmlessly without using an action.</p>
+		</description>
+		<sheet>
+			<description>When you hit a creature with an unarmed strike, you can spend 3 ki points to start these imperceptible vibrations, which last for {{level:monk}} days. The vibrations are harmless unless you use your action to end them. To do so, you and the target must be on the same plane of existence. When you use this action, the creature must make a Constitution saving throw. If it fails, it is reduced to 0 hit points. If it succeeds, it takes 10d10 necrotic damage.
+			You can have only one creature under the effect of this feature at a time. You can choose to end the vibrations harmlessly without using an action.</description>
+		</sheet>
+	</element>
+	
+	<!--Feature Replacement Grants-->
+	<element name="Open Hand Technique Feature Replacement" type="Grants" source="Internal" id="ID_INTERNAL_FEATURE_REPLACEMENT_MONK_WAY_OF_THE_OPEN_HAND_OPEN_HAND_TECHNIQUE" />
+	<element name="Wholeness of Body Feature Replacement" type="Grants" source="Internal" id="ID_INTERNAL_FEATURE_REPLACEMENT_MONK_WAY_OF_THE_OPEN_HAND_WHOLENESS_OF_BODY" />
+	<element name="Tranquility Feature Replacement" type="Grants" source="Internal" id="ID_INTERNAL_FEATURE_REPLACEMENT_MONK_WAY_OF_THE_OPEN_HAND_TRANQUILITY" />
+	<element name="Quivering Palm Feature Replacement" type="Grants" source="Internal" id="ID_INTERNAL_FEATURE_REPLACEMENT_MONK_WAY_OF_THE_OPEN_HAND_QUIVERING_PALM" />
+</elements>

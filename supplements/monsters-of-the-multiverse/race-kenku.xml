@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<elements>
+	<info>
+		<name>Kenku from Monsters of the Multiverse</name>
+		<update version="0.0.1">
+			<file name="race-kenku.xml" url="https://raw.githubusercontent.com/AuroraLegacy/elements/master/supplements/monsters-of-the-multiverse/race-kenku.xml" />
+		</update>
+	</info>
+
+	<element name="Kenku" type="Race" source="Monsters of the Multiverse" id="ID_WOTC_MOTM_RACE_KENKU">
+		<description>
+			<p>Feathered folk who resemble ravens, kenku are blessed with keen observation and supernaturally accurate memories. None of them can remember the origin of the first kenku, however, and they often joke that there are as many kenku origin stories as there are kenku. Some of them paint their genesis as a curse, being a flightless bird people doomed to mimic other people's creations. Other kenku recite cryptic but beautiful poems about their advent being a blessed event in which they were sent into the multiverse to observe and catalog its many wonders. </p>
+			<p class="indent">Whatever their true origin, kenku are most often found in the Shadowfell and the Material Plane, and they tend to have the coloration typical of ravens.</p>
+			<h4>KENKU TRAITS</h4>
+			<p>As a kenku, you have the following racial traits</p>
+			<p class="indent"><strong><em>Creature Type.</em></strong> You are a Humanoid.</p>
+			<p class="indent"><strong><em>Size.</em></strong> You are Medium or Small. You choose the size when you select this race.</p>
+			<p class="indent"><strong><em>Speed.</em></strong> Your walking speed is 30 feet.</p>
+			<p class="indent"><strong><em>Expert Duplication.</em></strong> When you copy writing or craftwork produced by yourself or someone else, you have advantage on any ability checks you make to produce an exact duplicate.</p>
+			<p class="indent"><strong><em>Kenku Recall.</em></strong> Thanks to your supernaturally good memory, you have proficiency in two skills of your choice.</p>
+			<p class="indent">Moreover, when you make an ability check using any skill in which you have proficiency, you can give yourself advantage on the check before rolling the d20. You can give yourself advantage in this way a number of times equal to your proficiency bonus, and you regain all expended uses when you finish a long rest.</p>
+			<p class="indent"><strong><em>Mimicry.</em></strong> You can accurately mimic sounds you have heard, including voices. A creature that hears the sounds you make can tell they are imitations only with a successful Wisdom (Insight) check against a DC of 8 + your proficiency bonus + your Charisma modifier.</p>
+		</description>
+		<sheet display="false" />
+		<rules>
+			<select type="Ability Score Improvement" name="Ability Score Improvement Option (Kenku)" supports="Custom Ability Score Improvement Option" />
+			<select type="Racial Trait" name="Size (Kenku)" supports="ID_INTERNAL_RACIAL_TRAIT_SMALL|ID_INTERNAL_RACIAL_TRAIT_MEDIUM" />
+			<stat name="innate speed" value="30" bonus="base" />
+
+			<grant type="Language" id="ID_LANGUAGE_COMMON" requirements="!ID_WOTC_TCOE_OPTION_CUSTOMIZED_LANGUAGE" />
+			<select type="Language" name="Customized Language (Kenku)" supports="Custom Race Language"  requirements="ID_WOTC_TCOE_OPTION_CUSTOMIZED_LANGUAGE" />
+			<select type="Language" name="Language (Kenku)" supports="Standard||Exotic" />
+			
+			<grant type="Racial Trait" id="ID_WOTC_MOTM_RACIAL_TRAIT_KENKU_EXPERT_DUPLICATION" />
+			<grant type="Racial Trait" id="ID_WOTC_MOTM_RACIAL_TRAIT_KENKU_KENKU_RECALL" />
+			<grant type="Racial Trait" id="ID_WOTC_MOTM_RACIAL_TRAIT_KENKU_MIMICRY" />
+		</rules>
+	</element>
+	
+	<element name="Expert Duplication" type="Racial Trait" source="Monsters of the Multiverse" id="ID_WOTC_MOTM_RACIAL_TRAIT_KENKU_EXPERT_DUPLICATION">
+		<description>
+			<p>When you copy writing or craftwork produced by yourself or someone else, you have advantage on any ability checks you make to produce an exact duplicate.</p>
+		</description>
+		<sheet>
+			<description>When you copy writing or craftwork produced by yourself or someone else, you have advantage on any ability checks you make to produce an exact duplicate.</description>
+		</sheet>
+	</element>
+
+	<element name="Kenku Recall" type="Racial Trait" source="Monsters of the Multiverse" id="ID_WOTC_MOTM_RACIAL_TRAIT_KENKU_KENKU_RECALL">
+		<description>
+			<p>Thanks to your supernaturally good memory, you have proficiency in two skills of your choice.</p>
+			<p class="indent">Moreover, when you make an ability check using any skill in which you have proficiency, you can give yourself advantage on the check before rolling the d20. You can give yourself advantage in this way a number of times equal to your proficiency bonus, and you regain all expended uses when you finish a long rest.</p>
+		</description>
+		<sheet usage="{{proficiency}}/Long Rest">
+			<description>When you make an ability check using any skill in which you have proficiency, you can give yourself advantage on the check before rolling the d20.</description>
+		</sheet>
+		<rules>
+			<select type="Proficiency" name="Skill Proficiency (Kenku Recall)" number="2" supports="Skill" />
+		</rules>
+	</element>
+
+	<element name="Mimicry" type="Racial Trait" source="Monsters of the Multiverse" id="ID_WOTC_MOTM_RACIAL_TRAIT_KENKU_MIMICRY">
+		<description>
+			<p>You can accurately mimic sounds you have heard, including voices. A creature that hears the sounds you make can tell they are imitations only with a successful Wisdom (Insight) check against a DC of 8 + your proficiency bonus + your Charisma modifier.</p>
+		</description>
+		<sheet>
+			<description>You can accurately mimic sounds you have heard, including voices. A creature that hears the sounds you make can tell they are imitations only with a successful Wisdom (Insight) check DC {{mimicry:dc}}.</description>
+		</sheet>
+		<rules>
+			<stat name="mimicry:dc" value="8" />
+			<stat name="mimicry:dc" value="proficiency" />
+			<stat name="mimicry:dc" value="charisma:modifier" />
+		</rules>
+	</element>
+</elements>

@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<elements>
+	<info>
+		<name>Hobgoblin from Monsters of the Multiverse</name>
+		<update version="0.0.1">
+			<file name="race-hobgoblin.xml" url="https://raw.githubusercontent.com/AuroraLegacy/elements/master/supplements/monsters-of-the-multiverse/race-hobgoblin.xml" />
+		</update>
+	</info>
+
+	<element name="Hobgoblin" type="Race" source="Monsters of the Multiverse" id="ID_WOTC_MOTM_RACE_HOBGOBLIN">
+		<description>
+			<p>Hobgoblins trace their origins to the ancient courts of the Feywild, where they first appeared with their goblin and bugbear kin. Many of them were driven from the Feywild by the conquering god Maglubiyet, who marshaled them as soldiers, but the fey realm left its mark; wherever they are in the multiverse, they continue to channel an aspect of the Feywild's rule of reciprocity, which creates a mystical bond between the giver and the receiver of a gift.</p>
+			<p class="indent">On some worlds, such bonds lead hobgoblins to form communities with deep ties to one another. In Eberron and the Forgotten Realms, vast hobgoblin legions have emerged, with ranks of devoted soldiers famed for their unity.</p>
+			<p class="indent">Hobgoblins are generally taller than their goblin cousins but not quite as big as bugbears. They have curved, pointed ears and noses that turn bright red or blue during displays of emotion.</p>
+			<h4>HOBGOBLIN TRAITS</h4>
+			<p>As a hobgoblin, you have the following racial traits. </p>
+			<p class="indent"><strong><em>Creature Type.</em></strong> You are a Humanoid. You are also considered a goblinoid for any prerequisite or effect that requires you to be a goblinoid.</p>
+			<p class="indent"><strong><em>Size.</em></strong> You are Medium.</p>
+			<p class="indent"><strong><em>Speed.</em></strong> Your walking speed is 30 feet.</p>
+			<p class="indent"><strong><em>Darkvision.</em></strong> You can see in dim light within 60 feet of you as if it were bright light, and in darkness as if it were dim light. You discern colors in that darkness only as shades of gray.</p>
+			<p class="indent"><strong><em>Fey Ancestry.</em></strong> You have advantage on saving throws you make to avoid or end the charmed condition on yourself.</p>
+			<p class="indent"><strong><em>Fey Gift.</em></strong> You can use this trait to take the Help action as a bonus action, and you can do so a number of times equal to your proficiency bonus. You regain all expended uses when you finish a long rest.</p>
+			<p class="indent">Starting at 3rd level, choose one of the options below each time you take the Help action with this trait:</p>
+			<ul class="unstyled">
+				<li style="margin-left:1em;text-indent:-1em;"><strong>Hospitality.</strong> You and the creature you help each gain a number of temporary hit points equal to 1d6 plus your proficiency bonus.</li>
+				<li style="margin-left:1em;text-indent:-1em;"><strong>Passage.</strong> You and the creature you help each increase your walking speeds by 10 feet until the start of your next turn.</li>
+				<li style="margin-left:1em;text-indent:-1em;"><strong>Spite.</strong> Until the start of your next turn, the first time the creature you help hits a target with an attack roll, that target has disadvantage on the next attack roll it makes within the next minute.</li>
+			</ul>
+			<br />
+			<p class="indent"><strong><em>Fortune from the Many.</em></strong> If you miss with an attack roll or fail an ability check or a saving throw, you can draw on your bonds of reciprocity to gain a bonus to the roll equal to the number of allies you can see within 30 feet of you (maximum bonus of +3). You can use this trait a number of times equal to your proficiency bonus, and you regain all expended uses when you finish a long rest.</p>
+		</description>
+		<sheet display="false" />
+		<rules>
+			<select type="Ability Score Improvement" name="Ability Score Improvement Option (Hobgoblin)" supports="Custom Ability Score Improvement Option" />
+			<grant type="Size" id="ID_SIZE_MEDIUM" />
+			<stat name="innate speed" value="30" bonus="base" />
+			<grant type="Vision" id="ID_VISION_DARKVISION" />
+			<grant type="Racial Trait" id="ID_INTERNAL_RACIAL_TRAIT_TYPE_HUMANOID_GOBLINOID" />
+
+			<grant type="Language" id="ID_LANGUAGE_COMMON" requirements="!ID_WOTC_TCOE_OPTION_CUSTOMIZED_LANGUAGE" />
+			<select type="Language" name="Customized Language (Hobgoblin)" supports="Custom Race Language"  requirements="ID_WOTC_TCOE_OPTION_CUSTOMIZED_LANGUAGE" />
+			<select type="Language" name="Language (Hobgoblin)" supports="Standard||Exotic" />
+			
+			<grant type="Racial Trait" id="ID_WOTC_MOTM_RACIAL_TRAIT_HOBGOBLIN_FEY_ANCESTRY" />
+			<grant type="Racial Trait" id="ID_WOTC_MOTM_RACIAL_TRAIT_HOBGOBLIN_FORTUNE_FROM_THE_MANY" />
+			<grant type="Racial Trait" id="ID_WOTC_MOTM_RACIAL_TRAIT_HOBGOBLIN_FEY_GIFT" />
+		</rules>
+	</element>
+
+	<element name="Fey Ancestry" type="Racial Trait" source="Monsters of the Multiverse" id="ID_WOTC_MOTM_RACIAL_TRAIT_HOBGOBLIN_FEY_ANCESTRY">
+		<description>
+			<p>You have advantage on saving throws you make to avoid or end the charmed condition on yourself.</p>
+		</description>
+		<sheet>
+			<description>You have advantage on saving throws you make to avoid or end the charmed condition on yourself.</description>
+		</sheet>
+	</element>
+
+	<element name="Fey Gift" type="Racial Trait" source="Monsters of the Multiverse" id="ID_WOTC_MOTM_RACIAL_TRAIT_HOBGOBLIN_FEY_GIFT">
+		<description>
+			<p>You can use this trait to take the Help action as a bonus action, and you can do so a number of times equal to your proficiency bonus. You regain all expended uses when you finish a long rest.</p>
+			<p class="indent">Starting at 3rd level, choose one of the options below each time you take the Help action with this trait:</p>
+			<ul class="unstyled">
+				<li style="margin-left:2em;text-indent:-1em;"><strong>Hospitality.</strong> You and the creature you help each gain a number of temporary hit points equal to 1d6 plus your proficiency bonus.</li>
+				<li style="margin-left:2em;text-indent:-1em;"><strong>Passage.</strong> You and the creature you help each increase your walking speeds by 10 feet until the start of your next turn.</li>
+				<li style="margin-left:2em;text-indent:-1em;"><strong>Spite.</strong> Until the start of your next turn, the first time the creature you help hits a target with an attack roll, that target has disadvantage on the next attack roll it makes within the next minute.</li>
+			</ul>
+		</description>
+		<sheet usage="{{proficiency}}/Long Rest">
+			<description>You can take the Help action as a bonus action.</description>
+			<description action="Bonus Action" level="3">You can take the Help action and add one of the following effects:&#13;
+			• Hospitality. You and the creature you help each gain a number of temporary hit points equal to 1d6 + {{proficiency}}.&#13;
+			• Passage. You and the creature you help each increase your walking speeds by 10 feet until the start of your next turn.&#13;
+			• Spite. Until the start of your next turn, the first time the creature you help hits a target with an attack roll, that target has disadvantage on the next attack roll it makes within the next minute.</description>
+		</sheet>
+	</element>
+
+	<element name="Fortune from the Many" type="Racial Trait" source="Monsters of the Multiverse" id="ID_WOTC_MOTM_RACIAL_TRAIT_HOBGOBLIN_FORTUNE_FROM_THE_MANY">
+		<description>
+			<p>If you miss with an attack roll or fail an ability check or a saving throw, you can draw on your bonds of reciprocity to gain a bonus to the roll equal to the number of allies you can see within 30 feet of you (maximum bonus of +3). You can use this trait a number of times equal to your proficiency bonus, and you regain all expended uses when you finish a long rest.</p>
+		</description>
+		<sheet usage="{{proficiency}}/Long Rest">
+			<description>If you miss with an attack roll or fail an ability check or a saving throw, you can draw on your bonds of reciprocity to gain a bonus to the roll equal to the number of allies you can see within 30 feet of you (maximum bonus of +3).</description>
+		</sheet>
+	</element>
+</elements>

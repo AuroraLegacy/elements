@@ -2,10 +2,11 @@
 <elements>
 	<info>
 		<name>Arcane Archer</name>
-		<update version="0.0.9">
+		<update version="0.1.0">
 			<file name="fighter-arcanearcher.xml" url="https://raw.githubusercontent.com/AuroraLegacy/elements/master/supplements/xanathars-guide-to-everything/archetypes/fighter-arcanearcher.xml" />
 		</update>
 	</info>
+
 	<element name="Arcane Archer" type="Archetype" source="Xanathar’s Guide to Everything" id="ID_WOTC_XGTE_ARCHETYPE_FIGHTER_ARCANE_ARCHER">
 		<supports>Martial Archetype</supports>
 		<description>
@@ -30,6 +31,7 @@
 			<grant type="Archetype Feature" id="ID_WOTC_XGTE_ARCHETYPE_FEATURE_ARCANE_ARCHER_EVER_READY_SHOT" level="15"/>
 		</rules>
 	</element>
+
 	<element name="Arcane Archer Lore" type="Archetype Feature" source="Xanathar’s Guide to Everything" id="ID_WOTC_XGTE_ARCHETYPE_FEATURE_ARCANE_ARCHER_ARCANE_ARCHER_LORE">
 		<description>
 			<p>At 3rd level, you learn magical theory or some of the secrets of nature—typical for practitioners of this elven martial tradition. You choose to gain proficiency in either the Arcana or the Nature skill, and you choose to learn either the prestidigitation or the druidcraft cantrip.</p>
@@ -42,6 +44,7 @@
 			<select type="Spell" name="Arcane Archer Lore" supports="ID_PHB_SPELL_PRESTIDIGITATION|ID_PHB_SPELL_DRUIDCRAFT" />
 		</rules>
 	</element>
+
 	<element name="Arcane Shot" type="Archetype Feature" source="Xanathar’s Guide to Everything" id="ID_WOTC_XGTE_ARCHETYPE_FEATURE_ARCANE_ARCHER_ARCANE_SHOT">
 		<description>
 			<p>At 3rd level, you learn to unleash special magical effects with some of your shots. When you gain this feature, you learn two Arcane Shot options of your choice.</p>
@@ -49,7 +52,7 @@
 			<p class="indent">You gain an additional Arcane Shot option of your choice when you reach certain levels in this class: 7th, 10th, 15th, and 18th level. Each option also improves when you become an 18th—level fighter.</p>
 		</description>
 		<sheet usage="2/Short Rest">
-			<description>1/turn use one of you Arcane Shot options when you hit with an arrow, unless the option doesn't inolve an attack roll.</description>
+			<description>Once per turn, you can use one of your Arcane Shot options as part of the Attack action.</description>
 		</sheet>
 		<rules>
 			<select type="Archetype Feature" name="Arcane Shot (level 3)" supports="Arcane Shot,Arcane Archer" number="2" level="3" />
@@ -58,23 +61,21 @@
 			<select type="Archetype Feature" name="Arcane Shot (level 15)" supports="Arcane Shot,Arcane Archer" level="15" />
 			<select type="Archetype Feature" name="Arcane Shot (level 18)" supports="Arcane Shot,Arcane Archer" level="18" />
 
-			<stat name="arcane shot:dc:base" value="8" bonus="base" />
-			<stat name="arcane shot:dc:proficiency" value="proficiency" bonus="proficiency" />
-			<stat name="arcane shot:dc:ability" value="intelligence:modifier" bonus="ability" />
-
-			<stat name="arcane shot:dc" value="arcane shot:dc:base" />
-			<stat name="arcane shot:dc" value="arcane shot:dc:proficiency" />
-			<stat name="arcane shot:dc" value="arcane shot:dc:ability" />
+			<stat name="arcane shot:dc" value="8" bonus="base" />
+			<stat name="arcane shot:dc" value="proficiency" bonus="proficiency" />
+			<stat name="arcane shot:dc" value="intelligence:modifier" bonus="ability" />
 		</rules>
 	</element>
+
 	<element name="Magic Arrow" type="Archetype Feature" source="Xanathar’s Guide to Everything" id="ID_WOTC_XGTE_ARCHETYPE_FEATURE_ARCANE_ARCHER_MAGIC_ARROW">
 		<description>
 			<p>At 7th level, you gain the ability to infuse arrows with magic. Whenever you fire a nonmagical arrow from a shortbow or longbow, you can make it magical for the purpose of overcoming resistance and immunity to nonmagical attacks and damage. The magic fades from the arrow immediately after it hits or misses its target.</p>
 		</description>
 		<sheet>
-			<description>Your arrow attacks are considered magical.</description>
+			<description>Your shortbow or longbow attacks are considered magical.</description>
 		</sheet>
 	</element>
+
 	<element name="Curving Shot" type="Archetype Feature" source="Xanathar’s Guide to Everything" id="ID_WOTC_XGTE_ARCHETYPE_FEATURE_ARCANE_ARCHER_CURVING_SHOT">
 		<description>
 			<p>At 7th level, you learn how to direct an errant arrow toward a new target. When you make an attack roll with a magic arrow and miss, you can use a bonus action to reroll the attack roll against a different target within 60 feet of the original target.</p>
@@ -83,14 +84,16 @@
 			<description>When missing with an arrow, reroll the attack against a different target within 60ft of the original.</description>
 		</sheet>
 	</element>
+
 	<element name="Ever-ready Shot" type="Archetype Feature" source="Xanathar’s Guide to Everything" id="ID_WOTC_XGTE_ARCHETYPE_FEATURE_ARCANE_ARCHER_EVER_READY_SHOT">
 		<description>
 			<p>Starting at 15th level, your magical archery is available whenever battle starts. If you roll initiative and have no uses of Arcane Shot remaining, you regain one use of it.</p>
 		</description>
 		<sheet>
-			<description>When rolling initiative without Arcane Shots left, regain 1.</description>
+			<description>When you roll initiative and have no uses of Arcane Shot remaining, you regain 1 use of it.</description>
 		</sheet>
 	</element>
+
 	<!-- Arcane Shot Options -->
 	<element name="Banishing Arrow" type="Archetype Feature" source="Xanathar’s Guide to Everything" id="ID_WOTC_XGTE_ARCHETYPE_FEATURE_ARCANE_SHOT_BANISHING_ARROW">
 		<supports>Arcane Shot, Arcane Archer</supports>
@@ -103,6 +106,7 @@
 			<description level="18">A creature hit by this arrow takes an extra 2d6 force damage, and must make a DC{{arcane shot:dc}} Charisma saving throw or be banished to a harmless location in the feywild until the end of its next turn.</description>
 		</sheet>
 	</element>
+
 	<element name="Beguiling Arrow" type="Archetype Feature" source="Xanathar’s Guide to Everything" id="ID_WOTC_XGTE_ARCHETYPE_FEATURE_ARCANE_SHOT_BEGUILING_ARROW">
 		<supports>Arcane Shot, Arcane Archer</supports>
 		<description>
@@ -114,6 +118,7 @@
 			<description level="18">A creature hit by this arrow takes an extra 4d6 psychic damage, and must make a DC{{arcane shot:dc}} Wisdom save, or become charmed by a chosen ally within 30ft of it.</description>
 		</sheet>
 	</element>
+
 	<element name="Bursting Arrow" type="Archetype Feature" source="Xanathar’s Guide to Everything" id="ID_WOTC_XGTE_ARCHETYPE_FEATURE_ARCANE_SHOT_BURSTING_ARROW">
 		<supports>Arcane Shot, Arcane Archer</supports>
 		<description>
@@ -125,6 +130,7 @@
 			<description level="18">After this arrow hits a creature, it and all others within 10ft of it take 4d6 force damage each.</description>
 		</sheet>
 	</element>
+
 	<element name="Enfeebling Arrow" type="Archetype Feature" source="Xanathar’s Guide to Everything" id="ID_WOTC_XGTE_ARCHETYPE_FEATURE_ARCANE_SHOT_ENFEEBLING_ARROW">
 		<supports>Arcane Shot, Arcane Archer</supports>
 		<description>
@@ -136,17 +142,19 @@
 			<description level="18">A creature hit by this arrow takes an extra 4d6 necrotic damage, and must make a DC{{arcane shot:dc}} Constitution saving throw, or its weapon damage is halved until the start of its next turn.</description>
 		</sheet>
 	</element>
+
 	<element name="Grasping Arrow" type="Archetype Feature" source="Xanathar’s Guide to Everything" id="ID_WOTC_XGTE_ARCHETYPE_FEATURE_ARCANE_SHOT_GRASPING_ARROW">
 		<supports>Arcane Shot, Arcane Archer</supports>
 		<description>
-			<p>When this arrow strikes its target, conjuration magic creates grasping, poisonous bramsbles, which wrap around the target. The creature hit by the arrow takes an extra 2d6 poison damage, its speed is reduced by 10 feet, and it takes 2d6 slashing damage the first time on each turn it moves 1 foot or more without teleporting. The target or any creature that can reach it can use its action to remove the brambles with a successful Strength (Athletics) check against your Arcane Shot save DC. Otherwise, the brambles last for 1 minute or until you use this option again.</p>
+			<p>When this arrow strikes its target, conjuration magic creates grasping, poisonous brambles, which wrap around the target. The creature hit by the arrow takes an extra 2d6 poison damage, its speed is reduced by 10 feet, and it takes 2d6 slashing damage the first time on each turn it moves 1 foot or more without teleporting. The target or any creature that can reach it can use its action to remove the brambles with a successful Strength (Athletics) check against your Arcane Shot save DC. Otherwise, the brambles last for 1 minute or until you use this option again.</p>
 			<p class="indent">The poison damage and slashing damage both increase to 4d6 when you reach 18th level in this class.</p>
 		</description>
 		<sheet>
-			<description level="3">A creature hit by this arrow is wrapped in poisonous brambles, it takes an extra 2d6 poison damage, its speed is reduced by 10ft, and it takes 2d6 slashing damge the first time on each turn it moves 1ft without teleporting. It or any close enough, can use an action to remove the brambles by succeeding a DC{{arcane shot:dc}} Athletics check. Otherwse the brambles last for 1 minute or until you use this option again.</description>
-			<description level="18">A creature hit by this arrow is wrapped in poisonous brambles, it takes an extra 4d6 poison damage, its speed is reduced by 10ft, and it takes 4d6 slashing damge the first time on each turn it moves 1ft without teleporting. It or any close enough, can use an action to remove the brambles by succeeding a DC{{arcane shot:dc}} Athletics check. Otherwse the brambles last for 1 minute or until you use this option again.</description>
+			<description level="3">A creature hit by this arrow is wrapped in poisonous brambles, it takes an extra 2d6 poison damage, its speed is reduced by 10ft, and it takes 2d6 slashing damage the first time on each turn it moves 1ft or more without teleporting. It or any close enough creature, can use an action to remove the brambles by succeeding on a DC{{arcane shot:dc}} Athletics check. Otherwise the brambles last for 1 minute or until you use this option again.</description>
+			<description level="18">A creature hit by this arrow is wrapped in poisonous brambles, it takes an extra 4d6 poison damage, its speed is reduced by 10ft, and it takes 4d6 slashing damage the first time on each turn it moves 1ft or more without teleporting. It or any close enough creature, can use an action to remove the brambles by succeeding on a DC{{arcane shot:dc}} Athletics check. Otherwise the brambles last for 1 minute or until you use this option again.</description>
 		</sheet>
 	</element>
+
 	<element name="Piercing Arrow" type="Archetype Feature" source="Xanathar’s Guide to Everything" id="ID_WOTC_XGTE_ARCHETYPE_FEATURE_ARCANE_SHOT_PIERCING_ARROW">
 		<supports>Arcane Shot, Arcane Archer</supports>
 		<description>
@@ -154,10 +162,11 @@
 			<p class="indent">The piercing damage increases to 2d6 when you reach 18th level in this class.</p>
 		</description>
 		<sheet>
-			<description level="3">When using this arrow, it becomes ethereal. You make no attack roll, instead the arrow shoots forward in a 1ft wide, 30ft long line. It passes through objects and ignores cover. Each creature in the line makes a DC{{arcane shot:dc}} Dexterity saving throw. On a fail it takes normal damage and an extra 1d6 piercing. On a succes it takes half damage.</description>
-			<description level="18">When using this arrow, it becomes ethereal. You make no attack roll, instead the arrow shoots forward in a 1ft wide, 30ft long line. It passes through objects and ignores cover. Each creature in the line makes a DC{{arcane shot:dc}} Dexterity saving throw. On a fail it takes normal damage and an extra 2d6 piercing. On a succes it takes half damage.</description>
+			<description level="3">Instead of making an attack, the arrow shoots forward in a 1 foot wide, 30 feet long line, before disappearing. It passes harmlessly through objects, ignoring cover. Each creature in the line makes a DC{{arcane shot:dc}} Dexterity saving throw. On a fail it takes normal damage and an extra 1d6 piercing damage. On a success it takes half as much damage.</description>
+			<description level="18">Instead of making an attack, the arrow shoots forward in a 1 foot wide, 30 feet long line, before disappearing. It passes harmlessly through objects, ignoring cover. Each creature in the line makes a DC{{arcane shot:dc}} Dexterity saving throw. On a fail it takes normal damage and an extra 2d6 piercing damage. On a success it takes half as much damage.</description>
 		</sheet>
 	</element>
+
 	<element name="Seeking Arrow" type="Archetype Feature" source="Xanathar’s Guide to Everything" id="ID_WOTC_XGTE_ARCHETYPE_FEATURE_ARCANE_SHOT_SEEKING_ARROW">
 		<supports>Arcane Shot, Arcane Archer</supports>
 		<description>
@@ -165,10 +174,11 @@
 			<p class="indent">The force damage increases to 2d6 when you reach 18th level in this class.</p>
 		</description>
 		<sheet>
-			<description level="3">When using this arrow, don't make an attack roll. Instead choose 1 creature you have seen in the past minute. The arrow flies toward it, ingnoring up to three-quarters cover. The target makes a DC{{arcane shot:dc}} Dexterity saving throw. On a fail it takes normal damage and an extra 1d6 force damage, and you learn its location. On a succes it takes half damage, and you don't learn its location.</description>
-			<description level="18">When using this arrow, don't make an attack roll. Instead choose 1 creature you have seen in the past minute. The arrow flies toward it, ingnoring up to three-quarters cover. The target makes a DC{{arcane shot:dc}} Dexterity saving throw. On a fail it takes normal damage and an extra 2d6 force damage, and you learn its location. On a succes it takes half damage, and you don't learn its location.</description>
+			<description level="3">When using this arrow, you don't make an attack roll. Instead choose 1 creature you have seen in the past minute. The arrow flies toward it, ignoring three-quarters cover and half cover. If the target is within range and there is a path large enough for the arrow to travel to the target, the target makes a DC{{arcane shot:dc}} Dexterity saving throw. On a fail, it takes normal damage and an extra 1d6 force damage, and you learn its location. On a success, it takes half damage, and you don't learn its location.</description>
+			<description level="18">When using this arrow, you don't make an attack roll. Instead choose 1 creature you have seen in the past minute. The arrow flies toward it, ignoring three-quarters cover and half cover. If the target is within range and there is a path large enough for the arrow to travel to the target, the target makes a DC{{arcane shot:dc}} Dexterity saving throw. On a fail, it takes normal damage and an extra 2d6 force damage, and you learn its location. On a success, it takes half damage, and you don't learn its location.</description>
 		</sheet>
 	</element>
+
 	<element name="Shadow Arrow" type="Archetype Feature" source="Xanathar’s Guide to Everything" id="ID_WOTC_XGTE_ARCHETYPE_FEATURE_ARCANE_SHOT_SHADOW_ARROW">
 		<supports>Arcane Shot, Arcane Archer</supports>
 		<description>
@@ -180,4 +190,5 @@
 			<description level="18">A creature hit by this arrow takes an extra 4d6 psychic damage, and must make a DC{{arcane shot:dc}} Wisdom saving throw or is unable to see anything farther than 5ft away until the start of your next turn.</description>
 		</sheet>
 	</element>
+
 </elements>

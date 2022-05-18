@@ -1,0 +1,1128 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<elements>
+	<info>
+		<name>Unearthed Arcana: Heroes of Krynn</name>
+		<update version="0.0.2">
+			<file name="20220308.xml" url="https://raw.githubusercontent.com/AuroraLegacy/elements/master/unearthed-arcana/2022/20220308.xml" />
+		</update>
+	</info>
+
+	<element name="Unearthed Arcana: Heroes of Krynn" type="Source" source="Core" id="ID_WOTC_SOURCE_UNEARTHED_ARCANA_20220308">
+		<description>
+			<p>In today’s Unearthed Arcana, we explore character options from the Dragonlance setting. This playtest document presents the kender race, the Lunar Magic sorcerer subclass, the Knight of Solamnia and Mage of High Sorcery backgrounds, and a collection of new feats, all for use in Dungeons &amp; Dragons.</p>
+		</description>
+		<setters>
+			<set name="abbreviation">UA20220308</set>
+			<set name="url">https://dnd.wizards.com/articles/unearthed-arcana/heroes-krynn</set>
+			<set name="author" abbreviation="WOTC" url="http://dnd.wizards.com">Wizards of the Coast</set>
+			<set name="official">true</set>
+			<set name="playtest">true</set>
+			<set name="release">20220308</set>
+		</setters>
+	</element>
+
+	<!--Kender Race-->
+	<element name="Kender" type="Race" source="Unearthed Arcana: Heroes of Krynn" id="ID_WOTC_UA20220308_RACE_KENDER">
+		<description>
+			<p>Native to the world of Krynn, Kender are diminutive Humanoids that look like humans with pointed ears and diverse appearances. Kender have a supernatural curiosity that drives them on to adventures big and small. This curiosity is said to be connected to the whimsical magic of the Feywild, that some believe kender have a high affinity for. Due to their curiosity, many kender have found themselves falling through gates and portals to other planes and worlds.</p>
+			<p class="indent">Unknown to most mortals, a magical phenomenon surrounds a kender. Spurred by their curiosity and love for trinkets, curios, and keepsakes, a kender’s pouches or pockets will be magically filled with these objects. No one knows where these objects come from, not even the kender.This has led many kender to be mislabeled as thieves when they fish these items out of their pockets.</p>
+			<h4>Kender Traits</h4>
+			<p>As a kender, you have the following racial traits.</p>
+			<p class="indent"><strong><em>Creature Type.</em></strong> You are a Humanoid.</p>
+			<p class="indent"><strong><em>Size.</em></strong> You are Small.</p>
+			<p class="indent"><strong><em>Speed.</em></strong> Your walking speed is 30 feet.</p>
+			<p class="indent"><strong><em>Brave.</em></strong> You have advantage on saving throws you make to avoid or end the frightened condition on yourself.</p>
+			<p class="indent"><strong><em>Kender Ace.</em></strong> Starting at 3rd level, you possess a magical ability to pull an item out of a bag or another container; as a bonus action, you can reach into a container you’re carrying and roll on the Kender Aces table to determine what item you pull out. The object glimmers softly and disappears after 1 hour. You can use this bonus action a number of times equal to your proficiency bonus, and you regain all expended uses when you finish a long rest.</p>
+			<h5>Kender Aces</h5>
+			<table>
+				<thead>
+					<tr><td>d6</td><td>Item</td></tr>
+				</thead>
+				<tr><td>1</td><td>5d6 gold pieces</td></tr>
+				<tr><td>2</td><td>1 simple weapon of your choice that has the light property</td></tr>
+				<tr><td>3</td><td>1 item of your choice from the Adventuring Gear table in the <i>Player’s Handbook</i>. The item must cost no more than 1 gp and weigh no more than 1 lb.</td></tr>
+				<tr><td>4</td><td>1 random item from the Trinkets table in the <i>Player’s Handbook</i>.</td></tr>
+				<tr><td>5</td><td>Your choice of a crowbar or a grappling hook</td></tr>
+				<tr><td>6</td><td>1 item of your choice from the Tools table in the <i>Player’s Handbook</i>. The item must cost no more than 10 gp.</td></tr>
+			</table>
+			<p class="indent"><strong><em>Taunt.</em></strong> You have a supernatural ability to home in on a creature’s emotional raw nerves and craft a taunt that flusters that creature. As a bonus action, you can unleash a barrage of insults at a creature within 60 feet of you that can hear and understand you. The target must succeed on a Wisdom saving throw (DC equal to 8 + your proficiency bonus + your Charisma modifier), or it has disadvantage on attack rolls until the start of your next turn.</p>
+			<p class="indent">You can use this bonus action a number of times equal to your proficiency bonus, and you regain all expended uses when you finish a long rest.</p>
+		</description>
+		<sheet display="false" />
+		<rules>
+			<select type="Ability Score Improvement" name="Ability Score Improvement Option (Kender)" supports="Custom Ability Score Improvement Option" />
+			<grant type="Size" id="ID_SIZE_SMALL" />
+			<stat name="innate speed" value="30" bonus="base" />
+
+			<grant type="Language" id="ID_LANGUAGE_COMMON" requirements="!ID_WOTC_TCOE_OPTION_CUSTOMIZED_LANGUAGE" />
+			<select type="Language" name="Customized Language (Kender)" supports="Custom Race Language" requirements="ID_WOTC_TCOE_OPTION_CUSTOMIZED_LANGUAGE" />
+
+			<grant type="Racial Trait" id="ID_WOTC_UA20220308_RACIAL_TRAIT_KENDER_BRAVE" />
+			<grant type="Racial Trait" id="ID_WOTC_UA20220308_RACIAL_TRAIT_KENDER_KENDER_ACE" level="3" />
+			<grant type="Racial Trait" id="ID_WOTC_UA20220308_RACIAL_TRAIT_KENDER_TAUNT" />
+		</rules>
+	</element>
+
+	<element name="Brave" type="Racial Trait" source="Unearthed Arcana: Heroes of Krynn" id="ID_WOTC_UA20220308_RACIAL_TRAIT_KENDER_BRAVE">
+		<description>
+			<p>You have advantage on saving throws you make to avoid or end the frightened condition on yourself.</p>
+		</description>
+		<sheet>
+			<description>You have advantage on saving throws you make to avoid or end the frightened condition on yourself.</description>
+		</sheet>
+	</element>
+
+	<element name="Kender Ace" type="Racial Trait" source="Unearthed Arcana: Heroes of Krynn" id="ID_WOTC_UA20220308_RACIAL_TRAIT_KENDER_KENDER_ACE">
+		<description>
+			<p>Starting at 3rd level, you possess a magical ability to pull an item out of a bag or another container; as a bonus action, you can reach into a container you’re carrying and roll on the Kender Aces table to determine what item you pull out. The object glimmers softly and disappears after 1 hour. You can use this bonus action a number of times equal to your proficiency bonus, and you regain all expended uses when you finish a long rest.</p>
+			<h5>Kender Aces</h5>
+			<table>
+				<thead>
+					<tr><td>d6</td><td>Item</td></tr>
+				</thead>
+				<tr><td>1</td><td>5d6 gold pieces</td></tr>
+				<tr><td>2</td><td>1 simple weapon of your choice that has the light property</td></tr>
+				<tr><td>3</td><td>1 item of your choice from the Adventuring Gear table in the <i>Player’s Handbook</i>. The item must cost no more than 1 gp and weigh no more than 1 lb.</td></tr>
+				<tr><td>4</td><td>1 random item from the Trinkets table in the <i>Player’s Handbook</i>.</td></tr>
+				<tr><td>5</td><td>Your choice of a crowbar or a grappling hook.</td></tr>
+				<tr><td>6</td><td>1 item of your choice from the Tools table in the <i>Player’s Handbook</i>. The item must cost no more than 10 gp.</td></tr>
+			</table>
+		</description>
+		<sheet action="Bonus Action" usage="{{proficiency}}/Long Rest">
+			<description>You can pull out an item from container you're carrying. The object disappears after 1 hour. Roll d6 to determine the item:&#13;
+			1 - 5d6 gp.&#13;
+			2 - 1 simple light weapon.&#13;
+			3 - 1 item from the Adventuring Gear table, worth 1 gp or less and weighing 1lb or less.&#13;
+			4 - random item from the Trinkets table.&#13;
+			5 - a crowbar or a grappling hook&#13;
+			6 - 1 item from the Tools table, worth 10 gp or less.</description>
+		</sheet>
+	</element>
+
+	<element name="Taunt" type="Racial Trait" source="Unearthed Arcana: Heroes of Krynn" id="ID_WOTC_UA20220308_RACIAL_TRAIT_KENDER_TAUNT">
+		<description>
+			<p>You have a supernatural ability to home in on a creature’s emotional raw nerves and craft a taunt that flusters that creature. As a bonus action, you can unleash a barrage of insults at a creature within 60 feet of you that can hear and understand you. The target must succeed on a Wisdom saving throw (DC equal to 8 + your proficiency bonus + your Charisma modifier), or it has disadvantage on attack rolls until the start of your next turn.</p>
+			<p class="indent">You can use this bonus action a number of times equal to your proficiency bonus, and you regain all expended uses when you finish a long rest.</p>
+		</description>
+		<sheet action="Bonus Action" usage="{{proficiency}}/Long Rest">
+			<description>You can unleash a barrage of insults at a creature within 60 feet of you that can hear and understand you. The target must succeed on a DC {{ua:kender taunt:dc}} Wisdom saving throw, or it has disadvantage on attack rolls until the start of your next turn.</description>
+		</sheet>
+		<rules>
+			<stat name="ua:kender taunt:dc" value="8" />
+			<stat name="ua:kender taunt:dc" value="proficiency" />
+			<stat name="ua:kender taunt:dc" value="charisma:modifier" />
+		</rules>
+	</element>
+
+	<!--Sorcerer Subclass-->
+	<element name="Lunar Magic" type="Archetype" source="Unearthed Arcana: Heroes of Krynn" id="ID_WOTC_UA20220308_ARCHETYPE_SORCERER_LUNAR_MAGIC">
+		<supports>Sorcerous Origin</supports>
+		<description>
+			<p>On many worlds, the moon is a revered celestial body with magical properties. On Krynn, the gods of magic are associated with the world's three moons. On the world of Toril, the god Selûne uses the light of the moon to battle darkness. On Eberron, scholars of the Draconic Prophecy decipher ancient secrets from the waxing and waning of that world's twelve moons.</p>
+			<p class="indent">You, or someone from your lineage, has been exposed to the concentrated magic of the moon (or moons) of your world, imbuing you with lunar magic. Perhaps your ancestor was involved in a druidic ritual involving an eclipse, or maybe a mystical fragment of a moon crashed near you. However you came to have your magic, your connection to the moon is obvious when you cast sorcerer spells. Consult the Manifestations of Lunar Magic table, then choose or randomly determine how your connection to the moon manifests while you cast your sorcerer spells.</p>
+			<h5>MANIFESTATIONS OF LUNAR MAGIC</h5>
+			<table>
+				<thead>
+					<tr><td>d4</td><td>Manifestation</td></tr>
+				</thead>
+				<tr><td>1</td><td>You glow with faint light that matches the color of a moon from your world.</td></tr>
+				<tr><td>2</td><td>Your pupils shift in shape, matching the current phase of a moon from your world.</td></tr>
+				<tr><td>3</td><td>Spectral manifestations of the moon (or moons) of your world orbit you.</td></tr>
+				<tr><td>4</td><td>Your shadow is limned in faint light, as if it were a lunar body during a solar eclipse.</td></tr>
+			</table>
+			<div element="ID_WOTC_UA20220308_ARCHETYPE_FEATURE_LUNAR_MAGIC_MOON_FIRE" />
+			<div element="ID_WOTC_UA20220308_ARCHETYPE_FEATURE_LUNAR_MAGIC_LUNAR_EMBODIMENT" />
+			<div element="ID_WOTC_UA20220308_ARCHETYPE_FEATURE_LUNAR_MAGIC_LUNAR_BOONS" />
+			<div element="ID_WOTC_UA20220308_ARCHETYPE_FEATURE_LUNAR_MAGIC_WAXING_AND_WANING" />
+			<div element="ID_WOTC_UA20220308_ARCHETYPE_FEATURE_LUNAR_MAGIC_LUNAR_EMPOWERMENT" />
+			<div element="ID_WOTC_UA20220308_ARCHETYPE_FEATURE_LUNAR_MAGIC_LUNAR_PHENOMENON" />
+		</description>
+		<sheet display="false" />
+		<rules>
+			<grant type="Archetype Feature" id="ID_WOTC_UA20220308_ARCHETYPE_FEATURE_LUNAR_MAGIC_MOON_FIRE" level="1" />
+			<grant type="Archetype Feature" id="ID_WOTC_UA20220308_ARCHETYPE_FEATURE_LUNAR_MAGIC_LUNAR_EMBODIMENT" level="1" />
+			<grant type="Archetype Feature" id="ID_WOTC_UA20220308_ARCHETYPE_FEATURE_LUNAR_MAGIC_LUNAR_BOONS" level="6" />
+			<grant type="Archetype Feature" id="ID_WOTC_UA20220308_ARCHETYPE_FEATURE_LUNAR_MAGIC_WAXING_AND_WANING" level="9" />
+			<grant type="Archetype Feature" id="ID_WOTC_UA20220308_ARCHETYPE_FEATURE_LUNAR_MAGIC_LUNAR_EMPOWERMENT" level="14" />
+			<grant type="Archetype Feature" id="ID_WOTC_UA20220308_ARCHETYPE_FEATURE_LUNAR_MAGIC_LUNAR_PHENOMENON" level="18" />
+		</rules>
+	</element>
+
+	<element name="Moon Fire" type="Archetype Feature" source="Unearthed Arcana: Heroes of Krynn" id="ID_WOTC_UA20220308_ARCHETYPE_FEATURE_LUNAR_MAGIC_MOON_FIRE">
+		<description>
+			<p><em>1st-Level Lunar Magic Feature</em></p>
+			<p>You can call down the radiant light of the moon on command. You learn the <i>sacred flame</i> spell, which doesn’t count against the number of sorcerer cantrips you know. When you cast the spell, you can target one creature as normal or target two creatures within range that are within 5 feet of each other.</p>
+		</description>
+		<sheet>
+			<description>When you cast the sacred flame spell, you can target one creature as normal or target two creatures within range that are within 5 feet of each other.</description>
+		</sheet>
+		<rules>
+			<grant type="Spell" id="ID_PHB_SPELL_SACRED_FLAME" spellcasting="Sorcerer" />
+		</rules>
+	</element>
+
+	<element name="Lunar Embodiment" type="Archetype Feature" source="Unearthed Arcana: Heroes of Krynn" id="ID_WOTC_UA20220308_ARCHETYPE_FEATURE_LUNAR_MAGIC_LUNAR_EMBODIMENT">
+		<description>
+			<p><em>1st-Level Lunar Magic Feature</em></p>
+			<p>You learn additional spells when you reach certain levels in this class, as shown on the Lunar Spells table. Each of these spells counts as a sorcerer spell for you, but it doesn’t count against the number of sorcerer spells you know.</p>
+			<h5>Lunar Spells</h5>
+			<table>
+				<thead>
+					<tr><td>Sorcerer Level</td><td>Full Moon Spells</td><td>New Moon Spells</td><td>Crescent Moon Spells</td></tr>
+				</thead>
+				<tr><td>1st</td><td>faerie fire</td><td>dissonant whispers</td><td>sanctuary</td></tr>
+				<tr><td>3rd</td><td>moonbeam</td><td>darkness</td><td>blindness/deafness</td></tr>
+				<tr><td>5th</td><td>death ward</td><td>bestow curse</td><td>phantom steed</td></tr>
+				<tr><td>7th</td><td>freedom of movement</td><td>Evard’s black tentacles</td><td>hallucinatory terrain</td></tr>
+				<tr><td>9th</td><td>mass cure wounds</td><td>mislead</td><td>dream</td></tr>
+			</table>
+			<p class="indent">Whenever you finish a long rest, you can choose what lunar phase manifests its power through your magic: Full Moon, New Moon, or Crescent Moon. While in the chosen phase, spells of the associated phase in the Lunar Spells table can be cast once without expending a spell slot. Once you cast a spell in this way, you can’t do so again until you finish a long rest.</p>
+		</description>
+		<sheet>
+			<description>Whenever you finish a long rest, you can choose what lunar phase manifests its power through your magic.</description>
+		</sheet>
+		<rules>
+			<select type="Archetype Feature" name="Lunar Phase" supports="UA Lunar Embodiment" />
+
+			<grant type="Spell" id="ID_PHB_SPELL_FAERIE_FIRE" level="1" spellcasting="Sorcerer" />
+			<grant type="Spell" id="ID_PHB_SPELL_DISSONANT_WHISPERS" level="1" spellcasting="Sorcerer" />
+			<grant type="Spell" id="ID_PHB_SPELL_SANCTUARY" level="1" spellcasting="Sorcerer" />
+
+			<grant type="Spell" id="ID_PHB_SPELL_MOONBEAM" level="3" spellcasting="Sorcerer" />
+			<grant type="Spell" id="ID_PHB_SPELL_DARKNESS" level="3" spellcasting="Sorcerer" />
+			<grant type="Spell" id="ID_PHB_SPELL_BLINDNESS_DEAFNESS" level="3" spellcasting="Sorcerer" />
+
+			<grant type="Spell" id="ID_PHB_SPELL_DEATH_WARD" level="5" spellcasting="Sorcerer" />
+			<grant type="Spell" id="ID_PHB_SPELL_BESTOW_CURSE" level="5" spellcasting="Sorcerer" />
+			<grant type="Spell" id="ID_PHB_SPELL_PHANTOM_STEED" level="5" spellcasting="Sorcerer" />
+
+			<grant type="Spell" id="ID_PHB_SPELL_FREEDOM_OF_MOVEMENT" level="7" spellcasting="Sorcerer" />
+			<grant type="Spell" id="ID_PHB_SPELL_EVARDS_BLACK_TENTACLES" level="7" spellcasting="Sorcerer" />
+			<grant type="Spell" id="ID_PHB_SPELL_HALLUCINATORY_TERRAIN" level="7" spellcasting="Sorcerer" />
+
+			<grant type="Spell" id="ID_PHB_SPELL_MASS_CURE_WOUNDS" level="9" spellcasting="Sorcerer" />
+			<grant type="Spell" id="ID_PHB_SPELL_MISLEAD" level="9" spellcasting="Sorcerer" />
+			<grant type="Spell" id="ID_PHB_SPELL_DREAM" level="9" spellcasting="Sorcerer" />
+		</rules>
+	</element>
+
+	<element name="Full Moon" type="Archetype Feature" source="Unearthed Arcana: Heroes of Krynn" id="ID_WOTC_UA20220308_ARCHETYPE_FEATURE_LUNAR_MAGIC_LUNAR_EMBODIMENT_FULL_MOON">
+		<supports>UA Lunar Embodiment</supports>
+		<compendium display="false" />
+		<description>
+			<p>You manifest the full moon.</p>
+		</description>
+		<sheet>
+			<description>You can cast faerie fire once without expending a spell slot.</description>
+			<description level="3">You can cast faerie fire and moonbeam once each without expending a spell slot.</description>
+			<description level="5">You can cast faerie fire, moonbeam, and death ward once each without expending a spell slot.</description>
+			<description level="7">You can cast faerie fire, moonbeam, death ward, and freedom of movement once each without expending a spell slot.</description>
+			<description level="9">You can cast faerie fire, moonbeam, death ward, freedom of movement, and mass cure wounds once each without expending a spell slot.</description>
+		</sheet>
+	</element>
+
+	<element name="New Moon" type="Archetype Feature" source="Unearthed Arcana: Heroes of Krynn" id="ID_WOTC_UA20220308_ARCHETYPE_FEATURE_LUNAR_MAGIC_LUNAR_EMBODIMENT_NEW_MOON">
+		<supports>UA Lunar Embodiment</supports>
+		<compendium display="false" />
+		<description>
+			<p>You manifest the new moon.</p>
+		</description>
+		<sheet>
+			<description>You can cast dissonant whispers once without expending a spell slot.</description>
+			<description level="3">You can cast dissonant whispers and darkness once each without expending a spell slot.</description>
+			<description level="5">You can cast dissonant whispers, darkness, and bestow curse once each without expending a spell slot.</description>
+			<description level="7">You can cast dissonant whispers, darkness, bestow curse, and Evard’s black tentacles once each without expending a spell slot.</description>
+			<description level="9">You can cast dissonant whispers, darkness, bestow curse, Evard’s black tentacles, and mislead once each without expending a spell slot.</description>
+		</sheet>
+	</element>
+
+	<element name="Crescent Moon" type="Archetype Feature" source="Unearthed Arcana: Heroes of Krynn" id="ID_WOTC_UA20220308_ARCHETYPE_FEATURE_LUNAR_MAGIC_LUNAR_EMBODIMENT_CRESCENT_MOON">
+		<supports>UA Lunar Embodiment</supports>
+		<compendium display="false" />
+		<description>
+			<p>You manifest the crescent moon.</p>
+		</description>
+		<sheet>
+			<description>You can cast sanctuary once without expending a spell slot.</description>
+			<description level="3">You can cast sanctuary and blindness/deafness once each without expending a spell slot.</description>
+			<description level="5">You can cast sanctuary, blindness/deafness, and phantom steed once each without expending a spell slot.</description>
+			<description level="7">You can cast sanctuary, blindness/deafness, phantom steed, and hallucinatory terrain once each without expending a spell slot.</description>
+			<description level="9">You can cast sanctuary, blindness/deafness, phantom steed, hallucinatory terrain, and dream once each without expending a spell slot.</description>
+		</sheet>
+	</element>
+
+	<element name="Lunar Boons" type="Archetype Feature" source="Unearthed Arcana: Heroes of Krynn" id="ID_WOTC_UA20220308_ARCHETYPE_FEATURE_LUNAR_MAGIC_LUNAR_BOONS">
+		<description>
+			<p><em>6th-Level Lunar Magic Feature</em></p>
+			<p>Lunar phases influence your metamagic. Each lunar phase is associated with spells of the following schools of magic:</p>
+			<p class="indent"><strong><em>Full Moon.</em></strong> Abjuration and conjuration spells</p>
+			<p class="indent"><strong><em>New Moon.</em></strong> Evocation and necromancy spells</p>
+			<p class="indent"><strong><em>Crescent Moon.</em></strong> Divination and transmutation spells</p>
+			<p class="indent">Whenever you use Metamagic on a spell from the Lunar Spells table or a spell of a school of magic associated with the lunar phase you are in, you can reduce the sorcery points spent by 1 (minimum 0). You can reduce the sorcery points spent for your Metamagic a number of times equal to your proficiency bonus, and you regain all expended uses when you finish a long rest.</p>
+		</description>
+		<sheet display="false" />
+		<rules>
+			<grant type="Archetype Feature" id="ID_WOTC_UA20220308_ARCHETYPE_FEATURE_LUNAR_MAGIC_LUNAR_BOONS_FULL" requirements="ID_WOTC_UA20220308_ARCHETYPE_FEATURE_LUNAR_MAGIC_LUNAR_EMBODIMENT_FULL_MOON" />
+			<grant type="Archetype Feature" id="ID_WOTC_UA20220308_ARCHETYPE_FEATURE_LUNAR_MAGIC_LUNAR_BOONS_NEW" requirements="ID_WOTC_UA20220308_ARCHETYPE_FEATURE_LUNAR_MAGIC_LUNAR_EMBODIMENT_NEW_MOON" />
+			<grant type="Archetype Feature" id="ID_WOTC_UA20220308_ARCHETYPE_FEATURE_LUNAR_MAGIC_LUNAR_BOONS_CRESCENT" requirements="ID_WOTC_UA20220308_ARCHETYPE_FEATURE_LUNAR_MAGIC_LUNAR_EMBODIMENT_CRESCENT_MOON" />
+		</rules>
+	</element>
+
+	<element name="Lunar Boons (Full Moon)" type="Archetype Feature" source="Unearthed Arcana: Heroes of Krynn" id="ID_WOTC_UA20220308_ARCHETYPE_FEATURE_LUNAR_MAGIC_LUNAR_BOONS_FULL">
+		<compendium display="false" />
+		<description>
+			<p>Whenever you use Metamagic on a spell from the Lunar Spells table or a spell from the abjuration or conjuration schools of magic, you can reduce the sorcery points spent by 1 (minimum 0).</p>
+		</description>
+		<sheet alt="Lunar Boons" usage="{{proficiency}}/Long Rest">
+			<description>Whenever you use Metamagic on a spell from the Lunar Spells table or a spell from the abjuration or conjuration schools of magic, you can reduce the sorcery points spent by 1 (minimum 0).</description>
+		</sheet>
+	</element>
+
+	<element name="Lunar Boons (New Moon)" type="Archetype Feature" source="Unearthed Arcana: Heroes of Krynn" id="ID_WOTC_UA20220308_ARCHETYPE_FEATURE_LUNAR_MAGIC_LUNAR_BOONS_NEW">
+		<compendium display="false" />
+		<description>
+			<p>Whenever you use Metamagic on a spell from the Lunar Spells table or a spell from the evocation or necromancy schools of magic, you can reduce the sorcery points spent by 1 (minimum 0).</p>
+		</description>
+		<sheet alt="Lunar Boons" usage="{{proficiency}}/Long Rest">
+			<description>Whenever you use Metamagic on a spell from the Lunar Spells table or a spell from the evocation or necromancy schools of magic, you can reduce the sorcery points spent by 1 (minimum 0).</description>
+		</sheet>
+	</element>
+
+	<element name="Lunar Boons (Crescent Moon)" type="Archetype Feature" source="Unearthed Arcana: Heroes of Krynn" id="ID_WOTC_UA20220308_ARCHETYPE_FEATURE_LUNAR_MAGIC_LUNAR_BOONS_CRESCENT">
+		<compendium display="false" />
+		<description>
+			<p>Whenever you use Metamagic on a spell from the Lunar Spells table or a spell from the divination or transmutation schools of magic, you can reduce the sorcery points spent by 1 (minimum 0).</p>
+		</description>
+		<sheet alt="Lunar Boons" usage="{{proficiency}}/Long Rest">
+			<description>Whenever you use Metamagic on a spell from the Lunar Spells table or a spell from the divination or transmutation schools of magic, you can reduce the sorcery points spent by 1 (minimum 0).</description>
+		</sheet>
+	</element>
+
+	<element name="Waxing and Waning" type="Archetype Feature" source="Unearthed Arcana: Heroes of Krynn" id="ID_WOTC_UA20220308_ARCHETYPE_FEATURE_LUNAR_MAGIC_WAXING_AND_WANING">
+		<p><em>6th-Level Lunar Magic Feature</em></p>
+		<description>
+			<p>You gain greater control over the phases of your lunar magic. As a bonus action, you can spend 1 sorcery point to change your lunar phase for a different one.</p>
+		</description>
+		<sheet action="Bonus Action">
+			<description>You can spend 1 sorcery point to change your lunar phase for a different one.</description>
+		</sheet>
+	</element>
+
+	<element name="Lunar Empowerment" type="Archetype Feature" source="Unearthed Arcana: Heroes of Krynn" id="ID_WOTC_UA20220308_ARCHETYPE_FEATURE_LUNAR_MAGIC_LUNAR_EMPOWERMENT">
+		<description>
+			<p><em>14th-Level Lunar Magic Feature</em></p>
+			<p>The power of a lunar phase saturates your being. Whenever you choose a lunar phase to affect your magic, you also gain the following benefit associated with that phase:</p>
+			<p class="indent"><strong><em>Full Moon.</em></strong> You shed bright light in a 10-foot radius and dim light for an additional 10 feet. In addition, you and creatures of your choice have advantage on saving throws while within the bright light you shed.</p>
+			<p class="indent"><strong><em>New Moon.</em></strong> You have advantage on Dexterity (Stealth) checks. In addition, while you are in dim light or darkness, attack rolls have disadvantage against you.</p>
+			<p class="indent"><strong><em>Crescent Moon.</em></strong> You have resistance to necrotic and radiant damage.</p>
+		</description>
+		<sheet display="false" />
+		<rules>
+			<grant type="Archetype Feature" id="ID_WOTC_UA20220308_ARCHETYPE_FEATURE_LUNAR_MAGIC_LUNAR_EMPOWERMENT_FULL_MOON" />
+			<grant type="Archetype Feature" id="ID_WOTC_UA20220308_ARCHETYPE_FEATURE_LUNAR_MAGIC_LUNAR_EMPOWERMENT_NEW_MOON" />
+			<grant type="Archetype Feature" id="ID_WOTC_UA20220308_ARCHETYPE_FEATURE_LUNAR_MAGIC_LUNAR_EMPOWERMENT_CRESCENT_MOON" />
+		</rules>
+	</element>
+
+	<element name="Full Moon Empowerment" type="Archetype Feature" source="Unearthed Arcana: Heroes of Krynn" id="ID_WOTC_UA20220308_ARCHETYPE_FEATURE_LUNAR_MAGIC_LUNAR_EMPOWERMENT_FULL_MOON">
+		<requirements>ID_WOTC_UA20220308_ARCHETYPE_FEATURE_LUNAR_MAGIC_LUNAR_EMBODIMENT_FULL_MOON</requirements>
+		<compendium display="false" />
+		<description>
+			<p>You shed bright light in a 10-foot radius and dim light for an additional 10 feet. In addition, you and creatures of your choice have advantage on saving throws while within the bright light you shed.</p>
+		</description>
+		<sheet alt="Lunar Empowerment">
+			<description>You shed bright light in a 10-foot radius and dim light for an additional 10 feet. You and creatures of your choice have advantage on saving throws while within the bright light you shed.</description>
+		</sheet>
+	</element>
+
+	<element name="New Moon Empowerment" type="Archetype Feature" source="Unearthed Arcana: Heroes of Krynn" id="ID_WOTC_UA20220308_ARCHETYPE_FEATURE_LUNAR_MAGIC_LUNAR_EMPOWERMENT_NEW_MOON">
+		<requirements>ID_WOTC_UA20220308_ARCHETYPE_FEATURE_LUNAR_MAGIC_LUNAR_EMBODIMENT_NEW_MOON</requirements>
+		<compendium display="false" />
+		<description>
+			<p>You have advantage on Dexterity (Stealth) checks. In addition, while you are in dim light or darkness, attack rolls have disadvantage against you.</p>
+		</description>
+		<sheet alt="Lunar Empowerment">
+			<description>You have advantage on Dexterity (Stealth) checks. While you are in dim light or darkness, attack rolls have disadvantage against you.</description>
+		</sheet>
+	</element>
+
+	<element name="Crescent Moon Empowerment" type="Archetype Feature" source="Unearthed Arcana: Heroes of Krynn" id="ID_WOTC_UA20220308_ARCHETYPE_FEATURE_LUNAR_MAGIC_LUNAR_EMPOWERMENT_CRESCENT_MOON">
+		<requirements>ID_WOTC_UA20220308_ARCHETYPE_FEATURE_LUNAR_MAGIC_LUNAR_EMBODIMENT_CRESCENT_MOON</requirements>
+		<compendium display="false" />
+		<description>
+			<p>You have resistance to necrotic and radiant damage.</p>
+		</description>
+		<sheet display="false" />
+		<rules>
+			<grant type="Condition" id="ID_INTERNAL_CONDITION_DAMAGE_RESISTANCE_NECROTIC" />
+			<grant type="Condition" id="ID_INTERNAL_CONDITION_DAMAGE_RESISTANCE_RADIANT" />
+		</rules>
+	</element>
+
+	<element name="Lunar Phenomenon" type="Archetype Feature" source="Unearthed Arcana: Heroes of Krynn" id="ID_WOTC_UA20220308_ARCHETYPE_FEATURE_LUNAR_MAGIC_LUNAR_PHENOMENON">
+		<description>
+			<p><em>18th-Level Lunar Magic Feature</em></p>
+			<p>Your lunar phase magic bursts. As a bonus action, you can tap into a special power of the lunar phase you are currently in. Alternatively, as part of the bonus action you take to change your lunar phase using your Waxing and Waning feature, you can immediately use the power of the lunar phase you are entering:</p>
+			<p class="indent"><strong><em>Full Moon.</em></strong> You radiate intense moonlight for a moment. Each creature of your choice within 30 feet of you must succeed on a Constitution saving throw against your spell save DC or be blinded until the end of its next turn. In addition, one creature of your choice in that area regains 3d8 hit points.</p>
+			<p class="indent"><strong><em>New Moon.</em></strong> You momentarily emanate an oppressive gloom. Each creature of your choice within 30 feet of you must succeed on a Dexterity saving throw against your spell save DC or take 3d10 necrotic damage and have its speed reduced to 0 until the end of its next turn. In addition, you become invisible until the end of your next turn, or until you make an attack or cast a spell. </p>
+			<p class="indent"><strong><em>Crescent Moon.</em></strong> You slip through light and darkness. You can magically teleport to an unoccupied space you can see within 60 feet of yourself. In addition, you also gain resistance to all damage until the start of your next turn.</p>
+			<p class="indent">Once you use a phase’s bonus action, you can’t do so again until you finish a long rest, unless you spend 5 sorcery points to use it again.</p>
+		</description>
+		<sheet display="false" />
+		<rules>
+			<grant type="Archetype Feature" id="ID_WOTC_UA20220308_ARCHETYPE_FEATURE_LUNAR_MAGIC_LUNAR_PHENOMENON_FULL_MOON" />
+			<grant type="Archetype Feature" id="ID_WOTC_UA20220308_ARCHETYPE_FEATURE_LUNAR_MAGIC_LUNAR_PHENOMENON_NEW_MOON" />
+			<grant type="Archetype Feature" id="ID_WOTC_UA20220308_ARCHETYPE_FEATURE_LUNAR_MAGIC_LUNAR_PHENOMENON_CRESCENT_MOON" />
+		</rules>
+	</element>
+
+	<element name="Full Moon Phenomenon" type="Archetype Feature" source="Unearthed Arcana: Heroes of Krynn" id="ID_WOTC_UA20220308_ARCHETYPE_FEATURE_LUNAR_MAGIC_LUNAR_PHENOMENON_FULL_MOON">
+		<requirements>ID_WOTC_UA20220308_ARCHETYPE_FEATURE_LUNAR_MAGIC_LUNAR_EMBODIMENT_FULL_MOON</requirements>
+		<compendium display="false" />
+		<description>
+			<p>You radiate intense moonlight for a moment. Each creature of your choice within 30 feet of you must succeed on a Constitution saving throw against your spell save DC or be blinded until the end of its next turn. In addition, one creature of your choice in that area regains 3d8 hit points.</p>
+		</description>
+		<sheet alt="Lunar Phenomenon" action="Bonus Action" usage="1/Long Rest">
+			<description>You can use a special power of the lunar phase you are currently in or the lunar phase you're entering when using Waxing and Waning feature:&#13;
+			Each creature of your choice within 30 feet of you must succeed on a DC {{sorcerer:spellcasting:dc}} Constitution saving throw or be blinded until the end of its next turn. In addition, one creature of your choice in that area regains 3d8 hit points. You can spend 5 sorcery points to use this feature again.</description>
+		</sheet>
+	</element>
+
+	<element name="New Moon Phenomenon" type="Archetype Feature" source="Unearthed Arcana: Heroes of Krynn" id="ID_WOTC_UA20220308_ARCHETYPE_FEATURE_LUNAR_MAGIC_LUNAR_PHENOMENON_NEW_MOON">
+		<requirements>ID_WOTC_UA20220308_ARCHETYPE_FEATURE_LUNAR_MAGIC_LUNAR_EMBODIMENT_NEW_MOON</requirements>
+		<compendium display="false" />
+		<description>
+			<p>You momentarily emanate an oppressive gloom. Each creature of your choice within 30 feet of you must succeed on a Dexterity saving throw against your spell save DC or take 3d10 necrotic damage and have its speed reduced to 0 until the end of its next turn. In addition, you become invisible until the end of your next turn, or until you make an attack or cast a spell. </p>
+		</description>
+		<sheet alt="Lunar Phenomenon" action="Bonus Action" usage="1/Long Rest">
+			<description>You can use a special power of the lunar phase you are currently in or the lunar phase you're entering when using Waxing and Waning feature:&#13;
+			Each creature of your choice within 30 feet of you must succeed on a DC {{sorcerer:spellcasting:dc}} Dexterity saving throw or take 3d10 necrotic damage and have its speed reduced to 0 until the end of its next turn. In addition, you become invisible until the end of your next turn, or until you make an attack or cast a spell. You can spend 5 sorcery points to use this feature again.</description>
+		</sheet>
+	</element>
+
+	<element name="Crescent Moon Phenomenon" type="Archetype Feature" source="Unearthed Arcana: Heroes of Krynn" id="ID_WOTC_UA20220308_ARCHETYPE_FEATURE_LUNAR_MAGIC_LUNAR_PHENOMENON_CRESCENT_MOON">
+		<requirements>ID_WOTC_UA20220308_ARCHETYPE_FEATURE_LUNAR_MAGIC_LUNAR_EMBODIMENT_CRESCENT_MOON</requirements>
+		<compendium display="false" />
+		<description>
+			<p>You slip through light and darkness. You can magically teleport to an unoccupied space you can see within 60 feet of yourself. In addition, you also gain resistance to all damage until the start of your next turn.</p>
+		</description>
+		<sheet alt="Lunar Phenomenon" action="Bonus Action" usage="1/Long Rest">
+			<description>You can use a special power of the lunar phase you are currently in or the lunar phase you're entering when using Waxing and Waning feature:&#13;
+			You can teleport to an unoccupied space you can see within 60 feet of yourself and gain resistance to all damage until the start of your next turn. You can spend 5 sorcery points to use this feature again.</description>
+		</sheet>
+	</element>
+
+	<!--Backgrounds-->
+	<element name="Knight of Solamnia" type="Background" source="Unearthed Arcana: Heroes of Krynn" id="ID_WOTC_UA20220308_BACKGROUND_KNIGHT_OF_SOLAMNIA">
+		<description>
+			<p>You have trained to be a valorous warrior known as a Knight of Solamnia. Strict rules guide your every action, and you work to uphold them as you strive to defend the weak and oppose all forms of evil. Your honor is as important to you as your life.</p>
+			<p class="indent"></p>
+			<ul class="unstyled">
+				<li><strong>Skill Proficiencies:</strong> Athletics, Survival</li>
+				<li><strong>Tool Proficiencies:</strong> One type of musical instrument</li>
+				<li><strong>Languages:</strong> One of your choice</li>
+				<li><strong>Equipment:</strong> An insignia of rank, a deck of cards, a set of common clothes, and a pouch containing 10 gp</li>
+			</ul>
+			<div element="ID_WOTC_UA20220308_BACKGROUND_FEATURE_SQUIRE_OF_SOLAMNIA" />
+			<h5>BUILDING A KNIGHT OF SOLAMNIA CHARACTER</h5>
+			<p>Any class or subclass that has martial prowess can be a good fit in the Knights of Solamnia. Fighters and paladins make up the bulk of the knighthood’s forces. Clerics (often with the War domain) can also be found among the knights' ranks.</p>
+			<p>For a more unusual take on a Knight of Solamnia character, consider playing a bard of the College of Valor (or the College of Swords from <i>Xanathar’s Guide to Everything</i>) or a barbarian devoted to the ideals of the nature god Habbakuk (perhaps adopting the Path of the Zealot from <i>Xanathar’s Guide to Everything</i>)</p>
+			<p class="indent"><strong><em>Suggested Characteristics.</em></strong> Adventurers who dedicate themselves to protecting the innocent and upholding honorable virtues are welcomed among the Knights of Solamnia. The Knight of Solamnia Personality Traits table suggests various traits you might adopt for your character.</p>
+			<h5>Knight of Solamnia Personality Traits</h5>
+			<table>
+				<thead>
+					<tr><td>d6</td><td>Personality Trait</td></tr>
+				</thead>
+				<tr><td>1</td><td>I pledge my sword to the greater good. If I must perish in pursuit of that good, so be it.</td></tr>
+				<tr><td>2</td><td>My comrades-in-arms are my family. I’ll do whatever it takes to keep them safe.</td></tr>
+				<tr><td>3</td><td>The protection of innocent people comes first. All other concerns come second.</td></tr>
+				<tr><td>4</td><td>I joined the knights for the free meals, but their lessons grew on me over time.</td></tr>
+				<tr><td>5</td><td>I wish my deeds to become the stuff of legends just like those of the knighthood's heroic founders.</td></tr>
+				<tr><td>6</td><td>A dishonorable act drove me to become a knight. I have acted with honor ever since.</td></tr>
+			</table>
+			<p class="indent"><strong><em>Knight of Solamnia Trinkets.</em></strong> When you make your character, you may roll once on the Knight of Solamnia Trinkets table, instead of on the Trinkets table in the <i>Player’s Handbook</i>, for your starting trinket.</p>
+			<h5>Knight of Solamnia Trinkets</h5>
+			<table>
+				<thead>
+					<tr><td>d6</td><td>Trinket</td></tr>
+				</thead>
+				<tr><td>1</td><td>A flat silver disk you record your heroics upon</td></tr>
+				<tr><td>2</td><td>A piece of a fallen knight's armor</td></tr>
+				<tr><td>3</td><td>A pendant featuring a crown, a rose, a sword, or combination of all three</td></tr>
+				<tr><td>4</td><td>The pommel of your mentor's sword</td></tr>
+				<tr><td>5</td><td>A meaningful favor from someone you defended perhaps a handkerchief or glove</td></tr>
+				<tr><td>6</td><td>A brass locket with a sketch of a silver dragon inside</td></tr>
+			</table>
+		</description>
+		<setters>
+			<set name="short">Athletics, Survival, Musical Instrument, Language</set>
+		</setters>
+		<rules>
+			<grant type="Background Feature" id="ID_WOTC_UA20220308_BACKGROUND_FEATURE_SQUIRE_OF_SOLAMNIA" requirements="!ID_INTERNAL_GRANT_OPTIONAL_BACKGROUND_FEATURE"/>
+			<select type="Background Feature" name="Variant Feature" supports="Optional Background Feature" optional="true" />
+			<select type="List" name="Personality Trait" number="2" optional="true" >
+				<item id="1">I pledge my sword to the greater good. If I must perish in pursuit of that good, so be it.</item>
+				<item id="2">My comrades-in-arms are my family. I’ll do whatever it takes to keep them safe.</item>
+				<item id="3">The protection of innocent people comes first. All other concerns come second.</item>
+				<item id="4">I joined the knights for the free meals, but their lessons grew on me over time.</item>
+				<item id="5">I wish my deeds to become the stuff of legends just like those of the knighthood's heroic founders.</item>
+				<item id="6">A dishonorable act drove me to become a knight. I have acted with honor ever since.</item>
+			</select>
+			<grant type="Proficiency" id="ID_PROFICIENCY_SKILL_ATHLETICS" />
+			<grant type="Proficiency" id="ID_PROFICIENCY_SKILL_SURVIVAL" />
+			<select type="Language" name="Language (Knight of Solamnia)" supports="Standard||Exotic" />
+			<select type="Proficiency" name="Musical Instrument Proficiency (Knight of Solamnia)" supports="Musical Instrument" />
+		</rules>
+	</element>
+
+	<element name="Feature: Squire of Solamnia" type="Background Feature" source="Unearthed Arcana: Heroes of Krynn" id="ID_WOTC_UA20220308_BACKGROUND_FEATURE_SQUIRE_OF_SOLAMNIA">
+		<supports>Background Feature</supports>
+		<description>
+			<p>You gain the Squire of Solamnia feat.</p>
+			<p class="indent">In addition, the Knights of Solamnia provide you free, modest lodging and food at any of their fortresses or encampments.</p>
+		</description>
+		<sheet alt="Squire of Solamnia">
+			<description>The Knights of Solamnia provide you free, modest lodging and food at any of their fortresses or encampments.</description>
+		</sheet>
+		<rules>
+			<grant type="Feat" id="ID_WOTC_UA20220308_FEAT_SQUIRE_OF_SOLAMNIA" />
+		</rules>
+	</element>
+
+	<element name="Mage of High Sorcery" type="Background" source="Unearthed Arcana: Heroes of Krynn" id="ID_WOTC_UA20220308_BACKGROUND_MAGE_OF_HIGH_SORCERY">
+		<description>
+			<p>Your talent for magic came to the attention of the Mages of High Sorcery, an organization of spellcasters that study magic and prevent its misuse. You've trained among the Mages, but whether or not you'll face the dangerous tests required to become a true member of the group remains to be determined. Your passion for studying magic has likely already predisposed you toward one of the organization's three orders: the benevolent Order of the White Robes, the balance-pursuing Order of the Red Robes, or the ruthless Order of the Black Robes.</p>
+			<p class="indent">In the world of Krynn, many refer to the Mages of High Sorcery as the Wizards of High Sorcery. The organization accepts more than wizards, though, with bards, sorcerers, warlocks, and other spellcasters included among their ranks.</p>
+			<ul class="unstyled">
+				<li><strong>Skill Proficiencies:</strong> Arcana, History</li>
+				<li><strong>Languages:</strong> Two of your choice</li>
+				<li><strong>Equipment:</strong> A bottle of colored ink, an ink pen, a set of common clothes, and a pouch containing 10 gp</li>
+			</ul>
+			<div element="ID_WOTC_UA20220308_BACKGROUND_FEATURE_INITIATE_OF_HIGH_SORCERY" />
+			<h5>BUILDING A MAGE OF HIGH SORCERY CHARACTER</h5>
+			<p>Mages of High Sorcery are typically bards, wizards, or warlocks and might have any subclass. Spellcasters who gain their magic through devotion or who possess innate magic are less likely to be welcomed among the traditionalist mages. Nevertheless, the Mages of High Sorcery are shrewd, and they rarely let unique opportunities or individuals pass them by. Even members of martial classes who train in magic might find a rare place among the group's three orders.</p>
+			<p class="indent"><strong><em>Suggested Characteristics.</em></strong> The study of magic drives the Mages of High Sorcery. Consider which of the group's three orders you aspire to join. The Mage of High Sorcery Personality Traits table suggests traits you might adopt for your character.</p>
+			<h5>Mage of High Sorcery Personality Traits</h5>
+			<table>
+				<thead>
+					<tr><td>d6</td><td>Personality Trait</td></tr>
+				</thead>
+				<tr><td>1</td><td>I wish to use my knowledge of magic to better people’s lives.</td></tr>
+				<tr><td>2</td><td>My study of magic might reveal all manner of secrets.</td></tr>
+				<tr><td>3</td><td>Magic is a means to power, and I will use it to pursue my ambitions.</td></tr>
+				<tr><td>4</td><td>I learned magic so I'd be able to protect those I care about.</td></tr>
+				<tr><td>5</td><td>I use my magic to maintain the balance between all things.</td></tr>
+				<tr><td>6</td><td>Whether in the past, present, or future, I will be the greatest mage ever known.</td></tr>
+			</table>
+			<p class="indent"><strong><em>Mage of High Sorcery Trinkets.</em></strong> When you make your character, you may roll once on the Mage of High Sorcery Trinkets table, instead of on the Trinkets table in the <i>Player’s Handbook</i>, for your starting trinket.</p>
+			<h5>Mage of High Sorcery Trinkets</h5>
+			<table>
+				<thead>
+					<tr><td>d6</td><td>Trinket</td></tr>
+				</thead>
+				<tr><td>1</td><td>An unopened letter from your first teacher</td></tr>
+				<tr><td>2</td><td>A broken wand made of black, red, or white wood</td></tr>
+				<tr><td>3</td><td>A scroll bearing an incomprehensible formula</td></tr>
+				<tr><td>4</td><td>A purposeless device covered in colored stones that can fold into various enigmatic shapes</td></tr>
+				<tr><td>5</td><td>A pouch or spell book emblazoned with the triple moon symbol of the Mages of High Sorcery</td></tr>
+				<tr><td>6</td><td>A lens through which you can see Krynn's invisible black moon, Nuitari</td></tr>
+			</table>
+		</description>
+		<setters>
+			<set name="short">Arcana, History, 2 Languages</set>
+		</setters>
+		<rules>
+			<grant type="Background Feature" id="ID_WOTC_UA20220308_BACKGROUND_FEATURE_INITIATE_OF_HIGH_SORCERY" requirements="!ID_INTERNAL_GRANT_OPTIONAL_BACKGROUND_FEATURE"/>
+			<select type="Background Feature" name="Variant Feature" supports="Optional Background Feature" optional="true" />
+			<select type="List" name="Personality Trait" number="2" optional="true" >
+				<item id="1">I wish to use my knowledge of magic to better people’s lives.</item>
+				<item id="2">My study of magic might reveal all manner of secrets.</item>
+				<item id="3">Magic is a means to power, and I will use it to pursue my ambitions.</item>
+				<item id="4">I learned magic so I'd be able to protect those I care about.</item>
+				<item id="5">I use my magic to maintain the balance between all things.</item>
+				<item id="6">Whether in the past, present, or future, I will be the greatest mage ever known.</item>
+			</select>
+			<grant type="Proficiency" id="ID_PROFICIENCY_SKILL_ARCANA" />
+			<grant type="Proficiency" id="ID_PROFICIENCY_SKILL_HISTORY" />
+			<select type="Language" name="Language (Mage of High Sorcery)" number="2" supports="Standard||Exotic" />
+		</rules>
+	</element>
+
+	<element name="Feature: Initiate of High Sorcery" type="Background Feature" source="Unearthed Arcana: Heroes of Krynn" id="ID_WOTC_UA20220308_BACKGROUND_FEATURE_INITIATE_OF_HIGH_SORCERY">
+		<supports>Background Feature</supports>
+		<description>
+			<p>You gain the Initiate of High Sorcery feat.</p>
+			<p class="indent">In addition, the Mages of High Sorcery provide you with free, modest lodging and food indefinitely at any occupied Tower of High Sorcery and for one night at the home of an organization member.</p>
+		</description>
+		<sheet alt="Initiate of High Sorcery">
+			<description>The Mages of High Sorcery provide you with free, modest lodging and food indefinitely at any occupied Tower of High Sorcery and for one night at the home of an organization member.</description>
+		</sheet>
+		<rules>
+			<grant type="Feat" id="ID_WOTC_UA20220308_FEAT_INITIATE_OF_HIGH_SORCERY" />
+		</rules>
+	</element>
+
+	<!--Feats-->
+	<element name="Adept of the Black Robes" type="Feat" source="Unearthed Arcana: Heroes of Krynn" id="ID_WOTC_UA20220308_FEAT_ADEPT_OF_THE_BLACK_ROBES">
+		<prerequisite>4th level, High Sorcery Initiate Feat, Any Non-Good Alignment</prerequisite>
+		<requirements>[level:4],ID_WOTC_UA20220308_FEAT_INITIATE_OF_HIGH_SORCERY</requirements>
+		<description>
+			<p>Your ambition and loyalty to the Order of the Black Robes has been recognized, granting you these benefits:</p>
+			<p class="indent"><strong><em>Ambitious Magic.</em></strong> You learn one 2nd-level spell of your choice. The 2nd-level spell must be from the evocation or necromancy school of magic. You can cast this feat’s 2nd-level spell without a spell slot, and you must finish a long rest before you can cast it in this way again. You can also cast this spell using spell slots you have of the appropriate level. The spell’s spellcasting ability is the one chosen when you gained the Initiate of High Sorcery feat.</p>
+			<p class="indent"><strong><em>Life Channel.</em></strong> You can channel your lifeforce into the power of your magic. When a creature you can see within 60 feet of you fails on a saving throw against a spell you cast, you can expend a number of Hit Dice equal to the level of the spell. Roll a number of Hit Die equal to half the number of Hit Dice expended (rounded up) and the damage the triggering creature takes increases by an amount equal to the total rolled of those dice.</p>
+		</description>
+		<sheet display="false" />
+		<rules>
+			<grant type="Feat Feature" id="ID_WOTC_UA20220308_FEAT_FEATURE_ADEPT_OF_THE_BLACK_ROBES_AMBITIOUS_MAGIC_INTELLIGENCE" requirements="ID_WOTC_UA20220308_FEAT_FEATURE_INITIATE_OF_HIGH_SORCERY_INTELLIGENCE" />
+			<grant type="Feat Feature" id="ID_WOTC_UA20220308_FEAT_FEATURE_ADEPT_OF_THE_BLACK_ROBES_AMBITIOUS_MAGIC_WISDOM" requirements="ID_WOTC_UA20220308_FEAT_FEATURE_INITIATE_OF_HIGH_SORCERY_WISDOM" />
+			<grant type="Feat Feature" id="ID_WOTC_UA20220308_FEAT_FEATURE_ADEPT_OF_THE_BLACK_ROBES_AMBITIOUS_MAGIC_CHARISMA" requirements="ID_WOTC_UA20220308_FEAT_FEATURE_INITIATE_OF_HIGH_SORCERY_CHARISMA" />
+			<grant type="Feat Feature" id="ID_WOTC_UA20220308_FEAT_FEATURE_ADEPT_OF_THE_BLACK_ROBES_LIFE_CHANNEL" />
+		</rules>
+	</element>
+
+	<element name="Ambitious Magic" type="Feat Feature" source="Unearthed Arcana: Heroes of Krynn" id="ID_WOTC_UA20220308_FEAT_FEATURE_ADEPT_OF_THE_BLACK_ROBES_AMBITIOUS_MAGIC_INTELLIGENCE">
+		<compendium display="false" />
+		<description>
+			<p>You learn one 2nd-level spell of your choice. The 2nd-level spell must be from the evocation or necromancy school of magic. You can cast this feat’s 2nd-level spell without a spell slot, and you must finish a long rest before you can cast it in this way again. You can also cast this spell using spell slots you have of the appropriate level. The spell’s spellcasting ability is the one chosen when you gained the Initiate of High Sorcery feat.</p>
+		</description>
+		<sheet>
+			<description>You can cast this feat’s 2nd-level spell without a spell slot, and you must finish a long rest before you can cast it in this way again. You can also cast this spell using spell slots you have of the appropriate level.&#13;
+			The spell’s spellcasting ability is Intelligence.</description>
+		</sheet>
+		<rules>
+			<select type="Spell" name="2nd Level Spell (Ambitious Magic)" supports="2,(Evocation||Necromancy)" />
+		</rules>
+	</element>
+
+	<element name="Ambitious Magic" type="Feat Feature" source="Unearthed Arcana: Heroes of Krynn" id="ID_WOTC_UA20220308_FEAT_FEATURE_ADEPT_OF_THE_BLACK_ROBES_AMBITIOUS_MAGIC_WISDOM">
+		<compendium display="false" />
+		<description>
+			<p>You learn one 2nd-level spell of your choice. The 2nd-level spell must be from the evocation or necromancy school of magic. You can cast this feat’s 2nd-level spell without a spell slot, and you must finish a long rest before you can cast it in this way again. You can also cast this spell using spell slots you have of the appropriate level. The spell’s spellcasting ability is the one chosen when you gained the Initiate of High Sorcery feat.</p>
+		</description>
+		<sheet>
+			<description>You can cast this feat’s 2nd-level spell without a spell slot, and you must finish a long rest before you can cast it in this way again. You can also cast this spell using spell slots you have of the appropriate level.&#13;
+			The spell’s spellcasting ability is Wisdom.</description>
+		</sheet>
+		<rules>
+			<select type="Spell" name="2nd Level Spell (Ambitious Magic)" supports="2,(Evocation||Necromancy)" />
+		</rules>
+	</element>
+
+	<element name="Ambitious Magic" type="Feat Feature" source="Unearthed Arcana: Heroes of Krynn" id="ID_WOTC_UA20220308_FEAT_FEATURE_ADEPT_OF_THE_BLACK_ROBES_AMBITIOUS_MAGIC_CHARISMA">
+		<compendium display="false" />
+		<description>
+			<p>You learn one 2nd-level spell of your choice. The 2nd-level spell must be from the evocation or necromancy school of magic. You can cast this feat’s 2nd-level spell without a spell slot, and you must finish a long rest before you can cast it in this way again. You can also cast this spell using spell slots you have of the appropriate level. The spell’s spellcasting ability is the one chosen when you gained the Initiate of High Sorcery feat.</p>
+		</description>
+		<sheet>
+			<description>You can cast this feat’s 2nd-level spell without a spell slot, and you must finish a long rest before you can cast it in this way again. You can also cast this spell using spell slots you have of the appropriate level.&#13;
+			The spell’s spellcasting ability is Charisma.</description>
+		</sheet>
+		<rules>
+			<select type="Spell" name="2nd Level Spell (Ambitious Magic)" supports="2,(Evocation||Necromancy)" />
+		</rules>
+	</element>
+
+	<element name="Life Channel" type="Feat Feature" source="Unearthed Arcana: Heroes of Krynn" id="ID_WOTC_UA20220308_FEAT_FEATURE_ADEPT_OF_THE_BLACK_ROBES_LIFE_CHANNEL">
+		<compendium display="false" />
+		<description>
+			<p>You can channel your lifeforce into the power of your magic. When a creature you can see within 60 feet of you fails on a saving throw against a spell you cast, you can expend a number of Hit Dice equal to the level of the spell. Roll a number of Hit Die equal to half the number of Hit Dice expended (rounded up) and the damage the triggering creature takes increases by an amount equal to the total rolled of those dice.</p>
+		</description>
+		<sheet>
+			<description>When a creature you can see within 60 feet of you fails on a saving throw against a spell you cast, you can expend a number of Hit Dice equal to the level of the spell. Roll a number of Hit Die equal to half the number of Hit Dice expended (rounded up) and the damage the triggering creature takes increases by an amount equal to the total rolled of those dice.</description>
+		</sheet>
+	</element>
+
+	<element name="Adept of the Red Robes" type="Feat" source="Unearthed Arcana: Heroes of Krynn" id="ID_WOTC_UA20220308_FEAT_ADEPT_OF_THE_RED_ROBES">
+		<prerequisite>4th level, High Sorcery Initiate Feat</prerequisite>
+		<requirements>[level:4],ID_WOTC_UA20220308_FEAT_INITIATE_OF_HIGH_SORCERY</requirements>
+		<description>
+			<p>Your pursuit of truth and dedication to maintaining the balance between all things has been recognized by the Order of the Red Robes, granting you these benefits:</p>
+			<p class="indent"><strong><em>Insightful Magic.</em></strong> You learn one 2nd-level spell of your choice. The 2nd-level spell must be from the divination or transmutation school of magic. You can cast this feat’s 2nd-level spell without a spell slot, and you must finish a long rest before you can cast it in this way again. You can also cast this spell using spell slots you have of the appropriate level. The spell’s spellcasting ability is the one chosen when you gained the Initiate of High Sorcery feat.</p>
+			<p class="indent"><strong><em>Magical Balance.</em></strong> When you make an attack roll, an ability check, or a saving throw, and roll a 9 or lower on the d20, you can use your reaction to balance fate and treat the roll as a 10. You can use this reaction a number of times equal to your proficiency bonus, and you regain all expended uses when you finish a long rest.</p>
+		</description>
+		<sheet display="false" />
+		<rules>
+			<grant type="Feat Feature" id="ID_WOTC_UA20220308_FEAT_FEATURE_ADEPT_OF_THE_RED_ROBES_INSIGHTFUL_MAGIC_INTELLIGENCE" requirements="ID_WOTC_UA20220308_FEAT_FEATURE_INITIATE_OF_HIGH_SORCERY_INTELLIGENCE" />
+			<grant type="Feat Feature" id="ID_WOTC_UA20220308_FEAT_FEATURE_ADEPT_OF_THE_RED_ROBES_INSIGHTFUL_MAGIC_WISDOM" requirements="ID_WOTC_UA20220308_FEAT_FEATURE_INITIATE_OF_HIGH_SORCERY_WISDOM" />
+			<grant type="Feat Feature" id="ID_WOTC_UA20220308_FEAT_FEATURE_ADEPT_OF_THE_RED_ROBES_INSIGHTFUL_MAGIC_CHARISMA" requirements="ID_WOTC_UA20220308_FEAT_FEATURE_INITIATE_OF_HIGH_SORCERY_CHARISMA" />
+			<grant type="Feat Feature" id="ID_WOTC_UA20220308_FEAT_FEATURE_ADEPT_OF_THE_RED_ROBES_MAGICAL_BALANCE" />
+		</rules>
+	</element>
+
+	<element name="Insightful Magic" type="Feat Feature" source="Unearthed Arcana: Heroes of Krynn" id="ID_WOTC_UA20220308_FEAT_FEATURE_ADEPT_OF_THE_RED_ROBES_INSIGHTFUL_MAGIC_INTELLIGENCE">
+		<compendium display="false" />
+		<description>
+			<p>You learn one 2nd-level spell of your choice. The 2nd-level spell must be from the divination or transmutation school of magic. You can cast this feat’s 2nd-level spell without a spell slot, and you must finish a long rest before you can cast it in this way again. You can also cast this spell using spell slots you have of the appropriate level. The spell’s spellcasting ability is the one chosen when you gained the Initiate of High Sorcery feat.</p>
+		</description>
+		<sheet>
+			<description>You can cast this feat’s 2nd-level spell without a spell slot, and you must finish a long rest before you can cast it in this way again. You can also cast this spell using spell slots you have of the appropriate level.&#13;
+			The spell’s spellcasting ability is Intelligence.</description>
+		</sheet>
+		<rules>
+			<select type="Spell" name="2nd Level Spell (Insightful Magic)" supports="2,(Divination||Transmutation)" />
+		</rules>
+	</element>
+		
+	<element name="Insightful Magic" type="Feat Feature" source="Unearthed Arcana: Heroes of Krynn" id="ID_WOTC_UA20220308_FEAT_FEATURE_ADEPT_OF_THE_RED_ROBES_INSIGHTFUL_MAGIC_WISDOM">
+		<compendium display="false" />
+		<description>
+			<p>You learn one 2nd-level spell of your choice. The 2nd-level spell must be from the divination or transmutation school of magic. You can cast this feat’s 2nd-level spell without a spell slot, and you must finish a long rest before you can cast it in this way again. You can also cast this spell using spell slots you have of the appropriate level. The spell’s spellcasting ability is the one chosen when you gained the Initiate of High Sorcery feat.</p>
+		</description>
+		<sheet>
+			<description>You can cast this feat’s 2nd-level spell without a spell slot, and you must finish a long rest before you can cast it in this way again. You can also cast this spell using spell slots you have of the appropriate level.&#13;
+			The spell’s spellcasting ability is Wisdom.</description>
+		</sheet>
+		<rules>
+			<select type="Spell" name="2nd Level Spell (Insightful Magic)" supports="2,(Divination||Transmutation)" />
+		</rules>
+	</element>
+
+	<element name="Insightful Magic" type="Feat Feature" source="Unearthed Arcana: Heroes of Krynn" id="ID_WOTC_UA20220308_FEAT_FEATURE_ADEPT_OF_THE_RED_ROBES_INSIGHTFUL_MAGIC_CHARISMA">
+		<compendium display="false" />
+		<description>
+			<p>You learn one 2nd-level spell of your choice. The 2nd-level spell must be from the divination or transmutation school of magic. You can cast this feat’s 2nd-level spell without a spell slot, and you must finish a long rest before you can cast it in this way again. You can also cast this spell using spell slots you have of the appropriate level. The spell’s spellcasting ability is the one chosen when you gained the Initiate of High Sorcery feat.</p>
+		</description>
+		<sheet>
+			<description>You can cast this feat’s 2nd-level spell without a spell slot, and you must finish a long rest before you can cast it in this way again. You can also cast this spell using spell slots you have of the appropriate level.&#13;
+			The spell’s spellcasting ability is Charisma.</description>
+		</sheet>
+		<rules>
+			<select type="Spell" name="2nd Level Spell (Insightful Magic)" supports="2,(Divination||Transmutation)" />
+		</rules>
+	</element>
+
+	<element name="Magical Balance" type="Feat Feature" source="Unearthed Arcana: Heroes of Krynn" id="ID_WOTC_UA20220308_FEAT_FEATURE_ADEPT_OF_THE_RED_ROBES_MAGICAL_BALANCE">
+		<compendium display="false" />
+		<description>
+			<p>When you make an attack roll, an ability check, or a saving throw, and roll a 9 or lower on the d20, you can use your reaction to balance fate and treat the roll as a 10. You can use this reaction a number of times equal to your proficiency bonus, and you regain all expended uses when you finish a long rest.</p>
+		</description>
+		<sheet action="Reaction" usage="{{proficiency}}/Long Rest">
+			<description>When you make an attack roll, an ability check, or a saving throw, and roll a 9 or lower on the d20, you can treat the roll as a 10.</description>
+		</sheet>
+	</element>
+
+	<element name="Adept of the White Robes" type="Feat" source="Unearthed Arcana: Heroes of Krynn" id="ID_WOTC_UA20220308_FEAT_ADEPT_OF_THE_WHITE_ROBES">
+		<prerequisite>4th level, High Sorcery Initiate Feat, Any Non-Evil Alignment</prerequisite>
+		<requirements>[level:4],ID_WOTC_UA20220308_FEAT_INITIATE_OF_HIGH_SORCERY</requirements>
+		<description>
+			<p>Your oath to use magic to make the world a better place has been recognized by the Order of the White Robes, granting you these benefits:</p>
+			<p class="indent"><strong><em>Protective Magic.</em></strong> You learn one 2nd-level spell of your choice. The 2nd-level spell must be from the abjuration or conjuration school of magic. You can cast this feat’s 2nd-level spell without a spell slot, and you must finish a long rest before you can cast it in this way again. You can also cast this spell using spell slots you have of the appropriate level. The spell’s spellcasting ability is the one chosen when you gained the Initiate of High Sorcery feat.</p>
+			<p class="indent"><strong><em>Protective Ward.</em></strong> When you or a creature you can see within 30 feet of you takes damage, you can use your reaction to expend a spell slot and weave protective magic around the target. Roll a number of d4s equal to the level of the spell slot expended and reduce the damage the target takes by the total rolled on those dice + your spellcasting ability modifier. </p>
+		</description>
+		<sheet display="false" />
+		<rules>
+			<grant type="Feat Feature" id="ID_WOTC_UA20220308_FEAT_FEATURE_ADEPT_OF_THE_WHITE_ROBES_PROTECTIVE_MAGIC_INTELLIGENCE" requirements="ID_WOTC_UA20220308_FEAT_FEATURE_INITIATE_OF_HIGH_SORCERY_INTELLIGENCE" />
+			<grant type="Feat Feature" id="ID_WOTC_UA20220308_FEAT_FEATURE_ADEPT_OF_THE_WHITE_ROBES_PROTECTIVE_MAGIC_WISDOM" requirements="ID_WOTC_UA20220308_FEAT_FEATURE_INITIATE_OF_HIGH_SORCERY_WISDOM" />
+			<grant type="Feat Feature" id="ID_WOTC_UA20220308_FEAT_FEATURE_ADEPT_OF_THE_WHITE_ROBES_PROTECTIVE_MAGIC_CHARISMA" requirements="ID_WOTC_UA20220308_FEAT_FEATURE_INITIATE_OF_HIGH_SORCERY_CHARISMA" />
+			<grant type="Feat Feature" id="ID_WOTC_UA20220308_FEAT_FEATURE_ADEPT_OF_THE_WHITE_ROBES_PROTECTIVE_WARD" />
+		</rules>
+	</element>
+
+	<element name="Protective Magic" type="Feat Feature" source="Unearthed Arcana: Heroes of Krynn" id="ID_WOTC_UA20220308_FEAT_FEATURE_ADEPT_OF_THE_WHITE_ROBES_PROTECTIVE_MAGIC_INTELLIGENCE">
+		<compendium display="false" />
+		<description>
+			<p>You learn one 2nd-level spell of your choice. The 2nd-level spell must be from the abjuration or conjuration school of magic. You can cast this feat’s 2nd-level spell without a spell slot, and you must finish a long rest before you can cast it in this way again. You can also cast this spell using spell slots you have of the appropriate level. The spell’s spellcasting ability is the one chosen when you gained the Initiate of High Sorcery feat.</p>
+		</description>
+		<sheet>
+			<description>You can cast this feat’s 2nd-level spell without a spell slot, and you must finish a long rest before you can cast it in this way again. You can also cast this spell using spell slots you have of the appropriate level.&#13;
+			The spell’s spellcasting ability is Intelligence.</description>
+		</sheet>
+		<rules>
+			<select type="Spell" name="2nd Level Spell (Protective Magic)" supports="2,(Abjuration||Conjuration)" />
+			<stat name="ua:adept of the white robes:ability" value="intelligence:modifier" bonus="ability" />
+		</rules>
+	</element>
+
+	<element name="Protective Magic" type="Feat Feature" source="Unearthed Arcana: Heroes of Krynn" id="ID_WOTC_UA20220308_FEAT_FEATURE_ADEPT_OF_THE_WHITE_ROBES_PROTECTIVE_MAGIC_WISDOM">
+		<compendium display="false" />
+		<description>
+			<p>You learn one 2nd-level spell of your choice. The 2nd-level spell must be from the abjuration or conjuration school of magic. You can cast this feat’s 2nd-level spell without a spell slot, and you must finish a long rest before you can cast it in this way again. You can also cast this spell using spell slots you have of the appropriate level. The spell’s spellcasting ability is the one chosen when you gained the Initiate of High Sorcery feat.</p>
+		</description>
+		<sheet>
+			<description>You can cast this feat’s 2nd-level spell without a spell slot, and you must finish a long rest before you can cast it in this way again. You can also cast this spell using spell slots you have of the appropriate level.&#13;
+			The spell’s spellcasting ability is Wisdom.</description>
+		</sheet>
+		<rules>
+			<select type="Spell" name="2nd Level Spell (Protective Magic)" supports="2,(Abjuration||Conjuration)" />
+			<stat name="ua:adept of the white robes:ability" value="wisdom:modifier" bonus="ability" />
+		</rules>
+	</element>
+
+	<element name="Protective Magic" type="Feat Feature" source="Unearthed Arcana: Heroes of Krynn" id="ID_WOTC_UA20220308_FEAT_FEATURE_ADEPT_OF_THE_WHITE_ROBES_PROTECTIVE_MAGIC_CHARISMA">
+		<compendium display="false" />
+		<description>
+			<p>You learn one 2nd-level spell of your choice. The 2nd-level spell must be from the abjuration or conjuration school of magic. You can cast this feat’s 2nd-level spell without a spell slot, and you must finish a long rest before you can cast it in this way again. You can also cast this spell using spell slots you have of the appropriate level. The spell’s spellcasting ability is the one chosen when you gained the Initiate of High Sorcery feat.</p>
+		</description>
+		<sheet>
+			<description>You can cast this feat’s 2nd-level spell without a spell slot, and you must finish a long rest before you can cast it in this way again. You can also cast this spell using spell slots you have of the appropriate level.&#13;
+			The spell’s spellcasting ability is Charisma.</description>
+		</sheet>
+		<rules>
+			<select type="Spell" name="2nd Level Spell (Protective Magic)" supports="2,(Abjuration||Conjuration)" />
+			<stat name="ua:adept of the white robes:ability" value="charisma:modifier" bonus="ability" />
+		</rules>
+	</element>
+
+	<element name="Protective Ward" type="Feat Feature" source="Unearthed Arcana: Heroes of Krynn" id="ID_WOTC_UA20220308_FEAT_FEATURE_ADEPT_OF_THE_WHITE_ROBES_PROTECTIVE_WARD">
+		<compendium display="false" />
+		<description>
+			<p>When you or a creature you can see within 30 feet of you takes damage, you can expend a spell slot and weave protective magic around the target. Roll a number of d4s equal to the level of the spell slot expended and reduce the damage the target takes by the total rolled on those dice + your spellcasting ability modifier.</p>
+		</description>
+		<sheet action="Reaction">
+			<description>When you or a creature you can see within 30 feet of you takes damage, you can expend a spell slot and weave protective magic around the target. Roll a number of d4s equal to the level of the spell slot expended and reduce the damage the target takes by the total rolled on those dice + {{ua:adept of the white robes:ability}}.</description>
+		</sheet>
+	</element>
+
+	<element name="Divine Communications" type="Feat" source="Unearthed Arcana: Heroes of Krynn" id="ID_WOTC_UA20220308_FEAT_DIVINE_COMMUNICATIONS">
+		<prerequisite>4th Level, Divinely Favored Feat</prerequisite>
+		<requirements>[level:4],ID_WOTC_UA20220308_FEAT_DIVINELY_FAVORED</requirements>
+		<description>
+			<p></p>
+			<p class="indent"><strong><em>Ability Score Increase.</em></strong> Increase the ability score of the spellcasting ability chosen when you gained the Divinely Favored feat by 1, to a maximum of 20.</p>
+			<p class="indent"><strong><em>Celestial Tongues.</em></strong> You learn to speak, read, and write Celestial, and two other languages of your choice.</p>
+			<p class="indent"><strong><em>Divine Omens.</em></strong> You can cast the <i>augury</i> and <i>commune</i> spell without a spell slot, and you must finish 1d4 long rests before you can cast it in this way again. You can also cast the spell using spell slots you have of the appropriate level. The spell’s spellcasting ability is the one chosen when you gained the Divinely Favored feat.</p>
+		</description>
+		<sheet display="false" />
+		<rules>
+			<stat name="intelligence" value="1" requirements="ID_WOTC_UA20220308_FEAT_FEATURE_DIVINELY_FAVORED_INTELLIGENCE" />
+			<stat name="wisdom" value="1" requirements="ID_WOTC_UA20220308_FEAT_FEATURE_DIVINELY_FAVORED_WISDOM" />
+			<stat name="charisma" value="1" requirements="ID_WOTC_UA20220308_FEAT_FEATURE_DIVINELY_FAVORED_CHARISMA" />
+			<grant type="Language" id="ID_LANGUAGE_CELESTIAL" />
+			<select type="Language" name="Language (Divine Communications)" number="2" supports="Standard||Exotic" />
+			<grant type="Spell" id="ID_PHB_SPELL_AUGURY" />
+			<grant type="Spell" id="ID_PHB_SPELL_COMMUNE" />
+			<grant type="Feat Feature" id="ID_WOTC_UA20220308_FEAT_DIVINE_COMMUNICATIONS_INTELLIGENCE" requirements="ID_WOTC_UA20220308_FEAT_FEATURE_DIVINELY_FAVORED_INTELLIGENCE" />
+			<grant type="Feat Feature" id="ID_WOTC_UA20220308_FEAT_DIVINE_COMMUNICATIONS_WISDOM" requirements="ID_WOTC_UA20220308_FEAT_FEATURE_DIVINELY_FAVORED_WISDOM" />
+			<grant type="Feat Feature" id="ID_WOTC_UA20220308_FEAT_DIVINE_COMMUNICATIONS_CHARISMA" requirements="ID_WOTC_UA20220308_FEAT_FEATURE_DIVINELY_FAVORED_CHARISMA" />
+		</rules>
+	</element>
+	
+	<element name="Divine Omens" type="Feat Feature" source="Unearthed Arcana: Heroes of Krynn" id="ID_WOTC_UA20220308_FEAT_DIVINE_COMMUNICATIONS_INTELLIGENCE">
+		<compendium display="false" />
+		<description>
+			<p>Your spellcasting ability is Intelligence.</p>
+		</description>
+		<sheet alt="Divine Omens" usage="1/1d4 Long Rests">
+			<description>You can cast the augury and commune spell once each without a spell slot. You can also cast the spell using spell slots you have of the appropriate level.&#13;
+			Your spellcasting ability is Intelligence.</description>
+		</sheet>
+	</element>
+
+	<element name="Divine Omens" type="Feat Feature" source="Unearthed Arcana: Heroes of Krynn" id="ID_WOTC_UA20220308_FEAT_DIVINE_COMMUNICATIONS_WISDOM">
+		<compendium display="false" />
+		<description>
+			<p>Your spellcasting ability is Wisdom.</p>
+		</description>
+		<sheet alt="Divine Omens" usage="1/1d4 Long Rests">
+			<description>You can cast the augury and commune spell once each without a spell slot. You can also cast the spell using spell slots you have of the appropriate level.&#13;
+			Your spellcasting ability is Wisdom.</description>
+		</sheet>
+	</element>
+
+	<element name="Divine Omens" type="Feat Feature" source="Unearthed Arcana: Heroes of Krynn" id="ID_WOTC_UA20220308_FEAT_DIVINE_COMMUNICATIONS_CHARISMA">
+		<compendium display="false" />
+		<description>
+			<p>Your spellcasting ability is Charisma.</p>
+		</description>
+		<sheet alt="Divine Omens" usage="1/1d4 Long Rests">
+			<description>You can cast the augury and commune spell once each without a spell slot. You can also cast the spell using spell slots you have of the appropriate level.&#13;
+			Your spellcasting ability is Charisma.</description>
+		</sheet>
+	</element>
+
+	<element name="Divinely Favored" type="Feat" source="Unearthed Arcana: Heroes of Krynn" id="ID_WOTC_UA20220308_FEAT_DIVINELY_FAVORED">
+		<description>
+			<p>A god has chosen you to carry a spark of their divine power.</p>
+			<p class="indent">You learn the thaumaturgy cantrip and one 1st-level spell based on the alignment of your character, as specified in the Alignment Spells table.</p>
+			<p class="indent">You can cast the chosen 1st-level spell without a spell slot, and you must finish a long rest before you can cast it in this way again. You can also cast the spell using any spell slots you have.</p>
+			<p class="indent">Your spellcasting ability for this feat’s spells is Intelligence, Wisdom, or Charisma (choose when you select this feat).</p>
+			<h5>Alignment Spells</h5>
+			<table>
+				<thead>
+					<tr><td>Alignment</td><td>1st-level Spell</td></tr>
+				</thead>
+				<tr><td>Evil</td><td>Choose one 1st-level warlock or wizard spell.</td></tr>
+				<tr><td>Good</td><td>Choose one 1st-level cleric or wizard spell.</td></tr>
+				<tr><td>Neutral</td><td>Choose one 1st-level druid or wizard spell.</td></tr>
+			</table>
+			<p class="indent">In addition, you can use a holy symbol as a spellcasting focus for any spell you cast that uses the spellcasting ability you choose when you select this feat.</p>
+		</description>
+		<sheet display="false" />
+		<rules>
+			<grant type="Spell" id="ID_PHB_SPELL_THAUMATURGY" />
+			<select type="Feat Feature" name="Alignment (Divinely Favored)" supports="ID_WOTC_UA20220308_FEAT_FEATURE_DIVINELY_FAVORED_EVIL|ID_WOTC_UA20220308_FEAT_FEATURE_DIVINELY_FAVORED_GOOD|ID_WOTC_UA20220308_FEAT_FEATURE_DIVINELY_FAVORED_NEUTRAL" />
+			<select type="Feat Feature" name="Spellcasting Ability (Divinely Favored)" supports="ID_WOTC_UA20220308_FEAT_FEATURE_DIVINELY_FAVORED_INTELLIGENCE|ID_WOTC_UA20220308_FEAT_FEATURE_DIVINELY_FAVORED_WISDOM|ID_WOTC_UA20220308_FEAT_FEATURE_DIVINELY_FAVORED_CHARISMA" />
+		</rules>
+	</element>
+
+	<element name="Evil" type="Feat Feature" source="Unearthed Arcana: Heroes of Krynn" id="ID_WOTC_UA20220308_FEAT_FEATURE_DIVINELY_FAVORED_EVIL">
+		<compendium display="false" />
+		<description>
+			<p>Choose one 1st-level warlock or wizard spell.</p>
+		</description>
+		<sheet display="false" />
+		<rules>
+			<select type="Spell" name="Alignment Spell (Divinely Favored)" supports="1,(Warlock||Wizard)" />
+		</rules>
+	</element>
+
+	<element name="Good" type="Feat Feature" source="Unearthed Arcana: Heroes of Krynn" id="ID_WOTC_UA20220308_FEAT_FEATURE_DIVINELY_FAVORED_GOOD">
+		<compendium display="false" />
+		<description>
+			<p>Choose one 1st-level cleric or wizard spell.</p>
+		</description>
+		<sheet display="false" />
+		<rules>
+			<select type="Spell" name="Alignment Spell (Divinely Favored)" supports="1,(Cleric||Wizard)" />
+		</rules>
+	</element>
+
+	<element name="Neutral" type="Feat Feature" source="Unearthed Arcana: Heroes of Krynn" id="ID_WOTC_UA20220308_FEAT_FEATURE_DIVINELY_FAVORED_NEUTRAL">
+		<compendium display="false" />
+		<description>
+			<p>Choose one 1st-level druid or wizard spell.</p>
+		</description>
+		<sheet display="false" />
+		<rules>
+			<select type="Spell" name="Alignment Spell (Divinely Favored)" supports="1,(Druid||Wizard)" />
+		</rules>
+	</element>
+
+	<element name="Intelligence" type="Feat Feature" source="Unearthed Arcana: Heroes of Krynn" id="ID_WOTC_UA20220308_FEAT_FEATURE_DIVINELY_FAVORED_INTELLIGENCE">
+		<compendium display="false" />
+		<description>
+			<p>Your spellcasting ability for this feat’s spells is Intelligence.</p>
+		</description>
+		<sheet alt="Divinely Favored">
+			<description>You can cast the chosen 1st-level spell without a spell slot, and you must finish a long rest before you can cast it in this way again. You can also cast the spell using any spell slots you have.&#13;
+			Your spellcasting ability for this feat’s spells is Intelligence, and you can use a holy symbol as a spellcasting focus for any Intelligence spell.</description>
+		</sheet>
+	</element>
+
+	<element name="Wisdom" type="Feat Feature" source="Unearthed Arcana: Heroes of Krynn" id="ID_WOTC_UA20220308_FEAT_FEATURE_DIVINELY_FAVORED_WISDOM">
+		<compendium display="false" />
+		<description>
+			<p>Your spellcasting ability for this feat’s spells is Wisdom.</p>
+		</description>
+		<sheet alt="Divinely Favored">
+			<description>You can cast the chosen 1st-level spell without a spell slot, and you must finish a long rest before you can cast it in this way again. You can also cast the spell using any spell slots you have.&#13;
+			Your spellcasting ability for this feat’s spells is Wisdom, and you can use a holy symbol as a spellcasting focus for any Wisdom spell.</description>
+		</sheet>
+	</element>
+
+	<element name="Charisma" type="Feat Feature" source="Unearthed Arcana: Heroes of Krynn" id="ID_WOTC_UA20220308_FEAT_FEATURE_DIVINELY_FAVORED_CHARISMA">
+		<compendium display="false" />
+		<description>
+			<p>Your spellcasting ability for your this feat’s is Charisma.</p>
+		</description>
+		<sheet alt="Divinely Favored">
+			<description>You can cast the chosen 1st-level spell without a spell slot, and you must finish a long rest before you can cast it in this way again. You can also cast the spell using any spell slots you have.&#13;
+			Your spellcasting ability for your this feat’s is Charisma, and you can use a holy symbol as a spellcasting focus for any Charisma spell.</description>
+		</sheet>
+	</element>
+
+	<element name="Initiate of High Sorcery" type="Feat" source="Unearthed Arcana: Heroes of Krynn" id="ID_WOTC_UA20220308_FEAT_INITIATE_OF_HIGH_SORCERY">
+		<prerequisite>Apprentice of High Sorcery</prerequisite>
+		<description>
+			<p>You've received training from magic-users affiliated with the Mages of High Sorcery.</p>
+			<p class="indent">Choose one of the three moons of Krynn, each of which is associated with a distinct type of magic: the black moon, Nuitari; the red moon, Lunitari; or the white moon Solinari. You learn one cantrip and one 1st-level spell based on the moon you choose, as specified in the Lunar Spells table.</p>
+			<p class="indent">You can cast the chosen 1st-level spell without a spell slot, and you must finish a long rest before you can cast it in this way again. You can also cast the spell using any spell slots you have.</p>
+			<p class="indent">Your spellcasting ability for this feat’s spells is Intelligence, Wisdom, or Charisma (choose when you select this feat).</p>
+			<h5>Lunar Spells</h5>
+			<table>
+				<thead>
+					<tr><td>Moon</td><td>Cantrips</td><td>1st-level Spell</td></tr>
+				</thead>
+				<tr><td>Nuitari</td><td>Choose one from chill touch, mage hand, and vicious mockery</td><td>Choose one 1st-level wizard spell from the evocation or necromancy school of magic.</td></tr>
+				<tr><td>Lunitari</td><td>Choose one from guidance, message, and prestidigitation</td><td>Choose one 1st-level wizard spell from the school of divination or transmutation.</td></tr>
+				<tr><td>Solinari</td><td>Choose one from produce flame, resistance, and spare the dying</td><td>Choose one 1st-level wizard spell from the abjuration or conjuration school of magic.</td></tr>
+			</table>
+		</description>
+		<sheet display="false" />
+		<rules>
+			<select type="Feat Feature" name="Spellcasting Ability (Initiate of High Sorcery)" supports="ID_WOTC_UA20220308_FEAT_FEATURE_INITIATE_OF_HIGH_SORCERY_INTELLIGENCE|ID_WOTC_UA20220308_FEAT_FEATURE_INITIATE_OF_HIGH_SORCERY_WISDOM|ID_WOTC_UA20220308_FEAT_FEATURE_INITIATE_OF_HIGH_SORCERY_CHARISMA" />
+			<select type="Feat Feature" name="Krynn Moon (Initiate of High Sorcery)" supports="ID_WOTC_UA20220308_FEAT_FEATURE_INITIATE_OF_HIGH_SORCERY_NUITARI|ID_WOTC_UA20220308_FEAT_FEATURE_INITIATE_OF_HIGH_SORCERY_LUNITARI|ID_WOTC_UA20220308_FEAT_FEATURE_INITIATE_OF_HIGH_SORCERY_SOLINARI" />
+		</rules>
+	</element>
+
+	<element name="Intelligence" type="Feat Feature" source="Unearthed Arcana: Heroes of Krynn" id="ID_WOTC_UA20220308_FEAT_FEATURE_INITIATE_OF_HIGH_SORCERY_INTELLIGENCE">
+		<compendium display="false" />
+		<description>
+			<p>Your spellcasting ability for this feat’s spells is Intelligence.</p>
+		</description>
+		<sheet alt="Initiate of High Sorcery">
+			<description>You can cast the chosen 1st-level spell without a spell slot, and you must finish a long rest before you can cast it in this way again. You can also cast the spell using any spell slots you have.&#13;
+			Your spellcasting ability for this feat’s spells is Intelligence.</description>
+		</sheet>
+	</element>
+
+	<element name="Wisdom" type="Feat Feature" source="Unearthed Arcana: Heroes of Krynn" id="ID_WOTC_UA20220308_FEAT_FEATURE_INITIATE_OF_HIGH_SORCERY_WISDOM">
+		<compendium display="false" />
+		<description>
+			<p>Your spellcasting ability for this feat’s spells is Wisdom.</p>
+		</description>
+		<sheet alt="Initiate of High Sorcery">
+			<description>You can cast the chosen 1st-level spell without a spell slot, and you must finish a long rest before you can cast it in this way again. You can also cast the spell using any spell slots you have.&#13;
+			Your spellcasting ability for this feat’s spells is Wisdom.</description>
+		</sheet>
+	</element>
+
+	<element name="Charisma" type="Feat Feature" source="Unearthed Arcana: Heroes of Krynn" id="ID_WOTC_UA20220308_FEAT_FEATURE_INITIATE_OF_HIGH_SORCERY_CHARISMA">
+		<compendium display="false" />
+		<description>
+			<p>Your spellcasting ability for this feat’s spells is Charisma.</p>
+		</description>
+		<sheet alt="Initiate of High Sorcery">
+			<description>You can cast the chosen 1st-level spell without a spell slot, and you must finish a long rest before you can cast it in this way again. You can also cast the spell using any spell slots you have.&#13;
+			Your spellcasting ability for this feat’s spells is Charisma.</description>
+		</sheet>
+	</element>
+
+	<element name="Nuitari" type="Feat Feature" source="Unearthed Arcana: Heroes of Krynn" id="ID_WOTC_UA20220308_FEAT_FEATURE_INITIATE_OF_HIGH_SORCERY_NUITARI">
+		<compendium display="false" />
+		<description>
+			<p>Choose one cantrip from <i>chill touch</i>, <i>mage hand</i>, and <i>vicious mockery</i> and choose one 1st-level wizard spell from the evocation or necromancy school of magic.</p>
+		</description>
+		<sheet display="false" />
+		<rules>
+			<select type="Spell" name="Cantrip (Initiate of High Sorcery)" supports="ID_PHB_SPELL_CHILL_TOUCH|ID_PHB_SPELL_MAGE_HAND|ID_PHB_SPELL_VICIOUS_MOCKERY" />
+			<select type="Spell" name="1st Level Spell (Initiate of High Sorcery)" supports="1,(Evocation||Necromancy),Wizard" />
+		</rules>
+	</element>
+
+	<element name="Lunitari" type="Feat Feature" source="Unearthed Arcana: Heroes of Krynn" id="ID_WOTC_UA20220308_FEAT_FEATURE_INITIATE_OF_HIGH_SORCERY_LUNITARI">
+		<compendium display="false" />
+		<description>
+			<p>Choose one cantrip from <i>guidance</i>, <i>message</i>, and <i>prestidigitation</i> and choose one 1st-level wizard spell from the divination or transmutation school of magic.</p>
+		</description>
+		<sheet display="false" />
+		<rules>
+			<select type="Spell" name="Cantrip (Initiate of High Sorcery)" supports="ID_PHB_SPELL_GUIDANCE|ID_PHB_SPELL_MESSAGE|ID_PHB_SPELL_PRESTIDIGITATION" />
+			<select type="Spell" name="1st Level Spell (Initiate of High Sorcery)" supports="1,(Divination||Transmutation),Wizard" />
+		</rules>
+	</element>
+
+	<element name="Solinari" type="Feat Feature" source="Unearthed Arcana: Heroes of Krynn" id="ID_WOTC_UA20220308_FEAT_FEATURE_INITIATE_OF_HIGH_SORCERY_SOLINARI">
+		<compendium display="false" />
+		<description>
+			<p>Choose one cantrip from <i>produce flame</i>, <i>resistance</i>, and <i>spare the dying</i> and choose one 1st-level wizard spell from the abjuration or conjuration school of magic.</p>
+		</description>
+		<sheet display="false" />
+		<rules>
+			<select type="Spell" name="Cantrip (Initiate of High Sorcery)" supports="ID_PHB_SPELL_PRODUCE_FLAME|ID_PHB_SPELL_RESISTANCE|ID_PHB_SPELL_SPARE_THE_DYING" />
+			<select type="Spell" name="1st Level Spell (Initiate of High Sorcery)" supports="1,(Abjuration||Conjuration),Wizard" />
+		</rules>
+	</element>
+
+	<element name="Knight of the Crown" type="Feat" source="Unearthed Arcana: Heroes of Krynn" id="ID_WOTC_UA20220308_FEAT_KNIGHT_OF_THE_CROWN">
+		<prerequisite>4th Level, Squire of Solamnia Feat</prerequisite>
+		<requirements>[level:4], ID_WOTC_UA20220308_FEAT_SQUIRE_OF_SOLAMNIA</requirements>
+		<description>
+			<p>You are a Knight of Solamnia aligned with the Order of the Crown, a group that extols the virtues of cooperation, loyalty, and obedience. You excel in group combat and gain these benefits:</p>
+			<p class="indent"><strong><em>Ability Score Increase.</em></strong> Increase your Strength or Dexterity score by 1, to a maximum of 20.</p>
+			<p class="indent"><strong><em>Tactical Teamwork.</em></strong> When a creature you can see within 30 feet of you makes an attack roll against another creature that is within 5 feet of you, you can use your reaction to grant advantage on the attack roll. You can use this reaction a number of times equal to your proficiency bonus, and you regain all expended uses when you finish a long rest.</p>
+		</description>
+		<sheet alt="Tactical Teamwork" action="Reaction" usage="{{proficiency}}/Long Rest">
+			<description>When a creature you can see within 30 feet of you makes an attack roll against another creature that is within 5 feet of you, you can grant advantage on the attack roll.</description>
+		</sheet>
+		<rules>
+			<select type="Ability Score Improvement" name="Ability Score Increase (Knight of the Crown)" supports="ID_PHB_FEAT_ASI_STRENGTH|ID_PHB_FEAT_ASI_DEXTERITY" />
+		</rules>
+	</element>
+
+	<element name="Knight of the Sword" type="Feat" source="Unearthed Arcana: Heroes of Krynn" id="ID_WOTC_UA20220308_FEAT_KNIGHT_OF_THE_SWORD">
+		<prerequisite>4th Level, Squire of Solamnia Feat</prerequisite>
+		<requirements>[level:4], ID_WOTC_UA20220308_FEAT_SQUIRE_OF_SOLAMNIA</requirements>
+		<description>
+			<p>You are a Knight of Solamnia aligned with the Order of the Sword, a group devoted to heroism and courage. Bravery steels your spirit, granting you these benefits:</p>
+			<p class="indent"><strong><em>Disciplined Spirit.</em></strong> You gain proficiency in Intelligence, Wisdom, or Charisma saving throws (your choice when you take this feat).</p>
+			<p class="indent"><strong><em>Willpower.</em></strong> Immediately after you or a creature you can see within 30 feet of you fail an Intelligence, Wisdom, or Charisma saving throw, you can expend a Hit Die. The saving throw increases by an amount equal to a roll of that Hit Die, potentially turning a failure into a success. Once you turn a failed saving throw into a successful one using this feat, you can’t do so again until you finish a long rest.</p>
+		</description>
+		<sheet alt="Willpower">
+			<description>Immediately after you or a creature you can see within 30 feet of you fail an Intelligence, Wisdom, or Charisma saving throw, you can expend a Hit Die. The saving throw increases by an amount equal to a roll of that Hit Die, potentially turning a failure into a success. Once you turn a failed saving throw into a successful one using this feat, you can’t do so again until you finish a long rest.</description>
+		</sheet>
+		<rules>
+			<select type="Proficiency" name="Saving Throw Proficiency (Knight of the Sword)" supports="ID_PROFICIENCY_SAVINGTHROW_INTELLIGENCE|ID_PROFICIENCY_SAVINGTHROW_WISDOM|ID_PROFICIENCY_SAVINGTHROW_CHARISMA" />
+		</rules>
+	</element>
+
+	<element name="Knight of the Rose" type="Feat" source="Unearthed Arcana: Heroes of Krynn" id="ID_WOTC_UA20220308_FEAT_KNIGHT_OF_THE_ROSE">
+		<prerequisite>4th Level, Squire of Solamnia Feat</prerequisite>
+		<requirements>[level:4], ID_WOTC_UA20220308_FEAT_SQUIRE_OF_SOLAMNIA</requirements>
+		<description>
+			<p>You are a Knight of Solamnia aligned with the Order of the Rose, a group known for leadership, justice, and wisdom. Your resolve grants you these benefits:</p>
+			<p class="indent"><strong><em>Ability Score Increase.</em></strong> Increase your Constitution or Charisma score by 1, to a maximum of 20.</p>
+			<p class="indent"><strong><em>Bolstering Rally.</em></strong> When you roll initiative, you can choose up to three other creatures you can see within 30 ft. of you. Each creature can gain temporary hit points equal to a roll of your Hit Die + your proficiency bonus + the ability modifier of the ability score increased by this feat. You can use this feature a number of times equal to your proficiency bonus, and you regain all expended uses when you finish a long rest.</p>
+		</description>
+		<sheet alt="Bolstering Rally" usage="{{proficiency}}/Long Rest">
+			<description>When you roll initiative, you can choose up to three other creatures you can see within 30 ft. of you. Each creature can gain temporary hit points equal to a roll of your Hit Die + {{ua:bolstering rally:thp}}.</description>
+		</sheet>
+		<rules>
+			<select type="Ability Score Improvement" name="Ability Score Increase (Knight of the Rose)" supports="ID_WOTC_UA20220308_FEAT_FEATURE_KNIGHT_OF_THE_ROSE_CONSTITUTION|ID_WOTC_UA20220308_FEAT_FEATURE_KNIGHT_OF_THE_ROSE_CHARISMA" />
+			<stat name="ua:bolstering rally:thp" value="proficiency" />
+		</rules>
+	</element>
+
+	<element name="Constitution" type="Ability Score Improvement" source="Unearthed Arcana: Heroes of Krynn" id="ID_WOTC_UA20220308_FEAT_FEATURE_KNIGHT_OF_THE_ROSE_CONSTITUTION">
+		<compendium display="false" />
+		<description>
+			<p>Increase Constitution Score by 1.</p>
+		</description>
+		<sheet>
+			<description></description>
+		</sheet>
+		<rules>
+			<stat name="constitution" value="1"/>
+			<stat name="ua:bolstering rally:thp" value="constitution:modifier" />
+		</rules>
+	</element>
+
+	<element name="Charisma" type="Ability Score Improvement" source="Unearthed Arcana: Heroes of Krynn" id="ID_WOTC_UA20220308_FEAT_FEATURE_KNIGHT_OF_THE_ROSE_CHARISMA">
+		<compendium display="false" />
+		<description>
+			<p>Increase Charisma Score by 1.</p>
+		</description>
+		<sheet display="false" />
+		<rules>
+			<stat name="charisma" value="1"/>
+			<stat name="ua:bolstering rally:thp" value="charisma:modifier" />
+		</rules>
+	</element>
+
+	<element name="Squire of Solamnia" type="Feat" source="Unearthed Arcana: Heroes of Krynn" id="ID_WOTC_UA20220308_FEAT_SQUIRE_OF_SOLAMNIA">
+		<prerequisite>Squireship in the Knights of Solamnia</prerequisite>
+		<description>
+			<p>Your training in the ways of the Knights of Solamnia grants you these benefits:</p>
+			<p class="indent"><strong><em>Martial Training.</em></strong> You gain proficiency with medium armor and martial weapons.</p>
+			<p class="indent"><strong><em>Defensive Rider.</em></strong> You have advantage on saving throws made to avoid falling off a mount.</p>
+			<p class="indent"><strong><em>Encouraging Rally.</em></strong> When another creature you can see within 30 feet of you makes a saving throw, you can use your reaction to inspire them. If the target can hear you and understand you, it gains advantage on the saving throw. Once you use this reaction, you can’t do so again until you finish a long rest.</p>
+		</description>
+		<sheet display="false" />
+		<rules>
+			<grant type="Proficiency" id="ID_PROFICIENCY_ARMOR_PROFICIENCY_MEDIUM_ARMOR" />
+			<grant type="Proficiency" id="ID_PROFICIENCY_WEAPON_PROFICIENCY_MARTIAL_WEAPONS" />
+			<grant type="Feat" id="ID_WOTC_UA20220308_FEAT_FEATURE_SQUIRE_OF_SOLAMNIA_DEFENSIVE_RIDER" />
+			<grant type="Feat" id="ID_WOTC_UA20220308_FEAT_FEATURE_SQUIRE_OF_SOLAMNIA_ENCOURAGING_RALLY" />
+		</rules>
+	</element>
+
+	<element name="Defensive Rider" type="Feat Feature" source="Unearthed Arcana: Heroes of Krynn" id="ID_WOTC_UA20220308_FEAT_FEATURE_SQUIRE_OF_SOLAMNIA_DEFENSIVE_RIDER">
+		<compendium display="false" />
+		<description>
+			<p>You have advantage on saving throws made to avoid falling off a mount.</p>
+		</description>
+		<sheet>
+			<description>You have advantage on saving throws made to avoid falling off a mount.</description>
+		</sheet>
+	</element>
+
+	<element name="Encouraging Rally" type="Feat Feature" source="Unearthed Arcana: Heroes of Krynn" id="ID_WOTC_UA20220308_FEAT_FEATURE_SQUIRE_OF_SOLAMNIA_ENCOURAGING_RALLY">
+		<compendium display="false" />
+		<description>
+			<p>When another creature you can see within 30 feet of you makes a saving throw, you can use your reaction to inspire them. If the target can hear you and understand you, it gains advantage on the saving throw. Once you use this reaction, you can’t do so again until you finish a long rest.</p>
+		</description>
+		<sheet action="Reaction" usage="1/Long Rest">
+			<description>When another creature you can see within 30 feet of you makes a saving throw, you can use your reaction to inspire them. If the target can hear you and understand you, it gains advantage on the saving throw.</description>
+		</sheet>
+	</element>
+</elements>

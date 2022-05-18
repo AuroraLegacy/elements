@@ -1,0 +1,534 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<elements>
+	<info>
+		<name>Curse of Strahd: Optional Backgrounds</name>
+		<description>A Collection of Backgrounds for Season 4 of the Adventurers League as part of the Curse of Strahd storyline</description>
+		<update version="0.0.1">
+			<file name="curse-of-strahd.xml" url="https://raw.githubusercontent.com/AuroraLegacy/elements/master/supplements/adventurers-league/curse-of-strahd.xml" />
+		</update>
+	</info>	
+
+	<element name="Adventurers League: Curse of Strahd" type="Source" source="Core" id="ID_WOTC_SOURCE_AL_CURSE_OF_STRAHD">
+		<description>
+			<![CDATA[<p>The D&amp;D Adventurers League is an ongoing official campaign for Dungeons &amp; Dragons. It uses the fifth edition Dungeons &amp; Dragons rules, and features the Forgotten Realms setting. You can play D&amp;D Adventurers League games literally anywhere. Players use the fifth edition rules to create a character and bring that character to games anywhere D&amp;D Adventurers League play is happening.</p>]]>
+		</description>
+		<setters>
+			<set name="abbreviation">ALCOS</set>
+			<set name="url">http://dnd.wizards.com/playevents/organized-play</set>
+			<set name="author" abbreviation="WOTC" url="http://dnd.wizards.com">Wizards of the Coast</set>
+			<set name="official">true</set>
+			<set name="supplement">true</set>
+			<set name="league">true</set>
+			<set name="release">20160315</set>
+		</setters>
+	</element>
+
+	<element name="Black Fist Double Agent" type="Background" source="Adventurers League: Curse of Strahd" id="ID_WOTC_ALCOS_BACKGROUND_BLACK_FIST_DOUBLE_AGENT">
+		<description>
+			<p>You are an informant for the Tears of Virulence who now lord over Phlan, but are also a double agent for original town guard of Phlan, the Black Fists. For the Tears you’ve been tasked with ferreting out the secrets of Phlan's criminal underworld, insurgency, and the common peoples of Phlan. In exchange for reporting on the activities of dissenters, criminals, and other rebel elements, the Tears of Virulence leave you alone to conduct your affairs in peace.</p>
+			<p class="indent">In reality you work for the deposed Black Fists, sharing misinformation with the Tears of Virulence that often helps the Black Fists and other Phlan insurgents. </p>
+			<p class="indent">Since the evacuation of Phlan, you are even busier today than you ever were previously, as the number of dissenters among the refugees grows daily, while you are afforded many opportunities to spy on the peoples of Mulmaster and Elventree, to the pleasure of your contact(s) within the Tears of Virulence.</p>
+			<p class="indent"><b>Skill Proficiencies:</b> Deception, Insight</p>
+			<p class="indent"><b>Tool Proficiencies:</b> Disguise Kit, and one type of artisan’s tools or gaming set</p>
+			<p class="indent"><b>Equipment:</b> Disguise kit, common clothes, a Tears of Virulence emblem, a writ of free agency signed by the Lord Regent, a set of artisan’s tools or gaming set you are proficient with, and a pouch with 15 gp (payment for services rendered).</p>
+			<p class="indent"><b>Lifestyle:</b> Moderate</p>
+			<div element="ID_WOTC_ALCOS_BACKGROUND_BLACK_FIST_DOUBLE_AGENT_FEATURE_DOUBLE_AGENT" />
+		</description>
+		<setters>
+			<set name="short">Deception, Insight, Disguise Kit, Artisan’s Tool or Gaming Set</set>
+		</setters>
+		<rules>
+			<grant type="Proficiency" id="ID_PROFICIENCY_SKILL_DECEPTION" />
+			<grant type="Proficiency" id="ID_PROFICIENCY_SKILL_INSIGHT" />
+			<select type="Proficiency" name="Additional Proficiency (Black Fist Double Agent)" supports="Artisan tools||Gaming sSet"/>
+			<grant type="Proficiency" id="ID_PROFICIENCY_TOOL_PROFICIENCY_DISGUISE_KIT" />
+			<grant type="Background Feature" id="ID_WOTC_ALCOS_BACKGROUND_BLACK_FIST_DOUBLE_AGENT_FEATURE_DOUBLE_AGENT" />
+			<select name="Personality Trait" type="List" number="2">
+				<item id="1">People are only as trustworthy as you are valuable to them. Always strive to be the most valuable person around.</item>
+				<item id="2">My eloquence and sophistication are tools I use to avoid arousing suspicion myself.</item>
+				<item id="3">I am a thrill-seeker, excited by covert and dangerous missions.</item>
+				<item id="4">I live by my wits and always check every lock twice, just to be certain.</item>
+				<item id="5">I never admit to my mistakes lest they be used against me.</item>
+				<item id="6">I take every effort to be unnoticeable and blend into the crowd. Passersby rarely give me a second look.</item>
+				<item id="7">I am prepared for any eventuality; including the day my usefulness as a spy comes to an end.</item>
+				<item id="8">I always make certain to know my enemy before acting, lest I bite off more than I can chew.</item>
+			</select>
+			<select name="Ideal" type="List">
+				<item id="1">Suspicious: In my experience, everybody has something to hide, and what they hide can usually hurt me. (Any)</item>
+				<item id="2">Secretive: I trade in secrets, and am not about to let any of mine slip. (Any)</item>
+				<item id="3">Hedonist: Life is short. I live my life to the fullest, as I know any day could be my last. (Chaotic)</item>
+				<item id="4">Selfless: I use my position to help the downtrodden avoid persecution from the authorities. (Good)</item>
+				<item id="5">Patriotic: I am a loyal supporter of Phlan and its leaders, and see my role as a solemn duty and necessary evil to prevent anarchy. (Lawful)</item>
+				<item id="6">Manipulative: I use my knowledge to blackmail and manipulate others to my own benefit. (Evil)</item>
+			</select>
+			<select name="Bond" type="List">
+				<item id="1">I was framed for a crime I did not commit, and seek to bring the true culprit to justice.</item>
+				<item id="2">I am a part of an underground network that smuggles innocent civilians out of the city prior to being raided by the authorities.</item>
+				<item id="3">I miss the glory days of Phlan, before the coming of the dragon.</item>
+				<item id="4">I seek to prove myself worthy of joining the Black Fist as a member of their order.</item>
+				<item id="5">My sister was killed by a Tear of Virulence, and now I feed them false information whenever possible.</item>
+				<item id="6">My family was wrongly imprisoned, and I act as an informant in order to secure their release.</item>
+			</select>
+			<select name="Flaw" type="List">
+				<item id="1">I think too highly of myself, and have an exaggerated sense of self-importance.</item>
+				<item id="2">I have difficulty trusting strangers. I see spies and informants everywhere.</item>
+				<item id="3">Years of getting away with minor crimes has left me believing that I am above the law, and have diplomatic immunity above my station.</item>
+				<item id="4">Years of seeing innocent people suffer have left me despondent and pessimistic for the future.</item>
+				<item id="5">My desire for vengeance often gets me into trouble.</item>
+				<item id="6">I am spendthrift, and share my wealth with the patrons of my favorite tavern.</item>
+			</select>
+		</rules>
+	</element>
+	<element name="Feature: Double Agent" type="Background Feature" source="Adventurers League: Curse of Strahd" id="ID_WOTC_ALCOS_BACKGROUND_BLACK_FIST_DOUBLE_AGENT_FEATURE_DOUBLE_AGENT">
+		<supports>Background Feature</supports>
+		<description>
+			<p>You have a reliable and trusty contact within the Tears of Virulence garrison in Phlan to whom you pass information and secrets. In exchange, you can get away with minor criminal offenses within the town of Phlan. In addition, your Black Fists contacts can help you secure an audience with the Lord Regent, the Lord Sage, members of the Black Fists, or deposed nobles and authority figures who are sympathetic to the Phlan refugees and insurgents.</p>
+		</description>
+		<sheet alt="Double Agent" />
+	</element>    
+
+	<element name="Dragon Casualty" type="Background" source="Adventurers League: Curse of Strahd" id="ID_WOTC_ALCOS_BACKGROUND_DRAGON_CASUALTY">
+		<description>
+			<p>When the Maimed Virulence descended upon Phlan, you were one of the unfortunate casualties of war. Captured during the initial assault, you have spent the last year of your life as a plaything of a capricious and malevolent overlord.</p>
+			<p class="indent">While many of your fellow prisoners fell to the dragon's insatiable fury over the coming months, you and your fellow "survivors" were spared only for a worse fate as one of the dragon's magical experiments, leaving you and those who survived the torture scarred and disfigured.</p>
+			<p class="indent">What reasons the dragon had for releasing you few survivors, nobody knows. You only fear that those who died under his terrible claw were the lucky ones, and you and your fellow Dragonscarred are doomed for a fate worse than death.</p>
+			<p class="indent"><b>Skill Proficiencies:</b> Intimidation, Survival</p>
+			<p class="indent"><b>Tool Proficiencies:</b> Special (see origin below)</p>
+			<p class="indent"><b>Languages:</b> Draconic</p>
+			<p class="indent"><b>Equipment:</b> A dagger, tattered rags, a loaf of moldy bread, a small cast-off scale belonging to Vorgansharax – the Maimed Virulence, and a pouch with 5 gp of various coins (salvaged during your escape from Phlan).</p>
+			<p class="indent"><b>Lifestyle:</b> Wretched</p>
+			<h4>Origin</h4>
+			<p>Prior to the coordinated attack by the Maimed Virulence and her rebel Black Fist supporters, you were once a citizen or visitor to Phlan. While the trauma of your recent ordeal has greatly altered your motivations and perception of the world, your former life still clings to you and colors your mannerisms, behaviors, and outlook on life. Choose one entry on the following table (or roll randomly) to determine your former occupation prior to your incarceration and torture. Your choice determines your tool proficiency from this background.</p>
+			<table>
+				<thead>
+					<tr><td class="col-10">d8</td><td>Origin (Occupation)</td><td>Tool Proficiency</td></tr>
+				</thead>
+				<tr><td>1</td><td>Dockworker / Fisherman</td><td>Vehicles (water)</td></tr>
+				<tr><td>2</td><td>Tradesperson / Merchant</td><td>Artisans' Tools</td></tr>
+				<tr><td>3</td><td>Black Fist Soldier</td><td>Gaming set or Vehicles (land)</td></tr>
+				<tr><td>4</td><td>Adventurer / Visitor</td><td>Vehicles (land)</td></tr>
+				<tr><td>5</td><td>Entertainer</td><td>Musical Instrument</td></tr>
+				<tr><td>6</td><td>Scholar / Healer</td><td>Alchemists Supplies or Herbalism Kit</td></tr>
+				<tr><td>1</td><td>Criminal</td><td>Thieves' Tools, Forgery Kit, or Disguise Kit</td></tr>
+				<tr><td>8</td><td>Unskilled Laborer</td><td>Gaming Set</td></tr>
+			</table>
+			<div element="ID_WOTC_ALCOS_BACKGROUND_DRAGON_CASUALTY_FEATURE_DRAGONSCARRED" />
+			<h5>DISFIGUREMENT (OPTIONAL)</h5>
+			<p>In addition to extensive scarring, you may choose one of the following options to represent your disfigurement. This disfigurement is purely cosmetic, misshapen, and horrific to look upon.</p>
+			<table>
+				<thead>
+					<tr><td class="col-10">d6</td><td>Disfigurement</td></tr>
+				</thead>
+				<tr><td>1</td><td>Small non-functional wing(s) or alternately - misshapen, wing-like membranes along one or both arms</td></tr>
+				<tr><td>2</td><td>Elongated, claw-like hand(s) and/or feet</td></tr>
+				<tr><td>3</td><td>Painful green scales randomly embedded in skin</td></tr>
+				<tr><td>4</td><td>Bulbous, reptilian eye(s)</td></tr>
+				<tr><td>5</td><td>Enlarged dorsal spines</td></tr>
+				<tr><td>6</td><td>Hair replaced with small irregular spines</td></tr>
+			</table>
+		</description>
+		<setters>
+			<set name="short">Intimidation, Survival, Tool (Special), Draconic</set>
+		</setters>
+		<rules>
+			<grant type="Proficiency" id="ID_PROFICIENCY_SKILL_INTIMIDATION" />
+			<grant type="Proficiency" id="ID_PROFICIENCY_SKILL_SURVIVAL" />
+			<grant type="Language" id="ID_LANGUAGE_DRACONIC" />
+			<grant type="Background Feature" id="ID_WOTC_ALCOS_BACKGROUND_DRAGON_CASUALTY_FEATURE_DRAGONSCARRED" />
+			<select type="Background Feature" name="Origin (Occupation)" supports="Dragon Casualty Occupation" />
+			<select name="Personality Trait" type="List" number="2">
+				<item id="1">I am driven to escape my past, and rarely stay in one place long.</item>
+				<item id="2">I know secrets of the Maimed Virulence, but fear the harm that may befall me should others learn them.</item>
+				<item id="3">Speaking of my ordeal helps sooth the still open wounds in my soul.</item>
+				<item id="4">My former life is meaningless, and was ripped to shreds by the claws of Vorgansharax. All that matters now is what I do with the future.</item>
+				<item id="5">I have faced the worst a dragon can deliver and survived. I am fearless, and my resolve unshakable.</item>
+				<item id="6">I am haunted my tortured past, and wake at night screaming at half-remembered horrors.</item>
+				<item id="7">I sleep with my back to a wall or tree, and a weapon within arm’s reach.</item>
+				<item id="8">I am slow to trust, but incredibly loyal to those who have earned it.</item>
+			</select>
+			<select name="Ideal" type="List">
+				<item id="1">Survivor. No matter the cost, I will take any action necessary to survive (Any).</item>
+				<item id="2">Independence. When in trouble, the only person I can rely on is myself (Chaotic).</item>
+				<item id="3">Compassionate. I have suffered long at the hands of a Dragon, and take pity and compassion on the suffering of others (Good).</item>
+				<item id="4">Secretive. I am withdrawn, and hide my monstrous appearance for fear of drawing unwanted attention (Chaotic).</item>
+				<item id="5">Justice. I have been wronged, and will not allow the same fate to befall others (Lawful).</item>
+				<item id="6">Sycophant. During my ordeal, I became a willing servant of the Maimed Virulence, and spy on his behalf (Evil).</item>
+			</select>
+			<select name="Bond" type="List">
+				<item id="1">I have sworn vengeance on the Maimed Virulence and those that follow him.</item>
+				<item id="2">I long to reunite with friends and family who may dwell among the Phlan Refugees, and protect them.</item>
+				<item id="3">While a prisoner of the Maimed Virulence, I overheard rumors of an item or treasure the Dragon seeks. I will have that treasure for myself!</item>
+				<item id="4">I seek to reclaim and rebuild my former life to the best of my ability.</item>
+				<item id="5">I have been reborn as a child of Vorgansharax. I will claim my birthright as his chosen heir and successor.</item>
+				<item id="6">I attribute my survival to the work of the divine, and seek to prove myself worthy of the honor.</item>
+			</select>
+			<select name="Flaw" type="List">
+				<item id="1">I have been touched with dragon-greed, and have a lust for wealth which can never be satisfied.</item>
+				<item id="2">I secretly believe others are plotting to harm me.</item>
+				<item id="3">I no longer enjoy the simple pleasures in life. Food is but ashes and bile in my throat.</item>
+				<item id="4">Anyone who refuses to celebrate my celebrity does not deserve my company.</item>
+				<item id="5">I am paranoid and overly suspicious of others. Anyone may be an agent of the Maimed Virulence.</item>
+				<item id="6">Once I make up my mind, I follow my chosen course of action regardless of the consequences.</item>
+			</select>
+		</rules>
+	</element>
+	<element name="Feature: Dragonscarred" type="Background Feature" source="Adventurers League: Curse of Strahd" id="ID_WOTC_ALCOS_BACKGROUND_DRAGON_CASUALTY_FEATURE_DRAGONSCARRED">
+		<supports>Background Feature</supports>
+		<description>
+			<p>Over a period of several months you were subject to magical and mundane torture at the claws of Vorgansharaxse and his minions. These experiments have left you horribly disfigured but mark you as a survivor of the Maimed Virulence.</p>
+			<p class="indent">This affords you a measure of fame and notoriety, for those who know of your harrowing ordeal are keen to hear the tale personally but makes it difficult to disguise your appearance and hide from prying eyes. You can parlay this attention into access to people and places you might not otherwise have, for you and your companions. Nobles, scholars, mages, and those who seek to ferret out the secrets of the Maimed Virulence would all be keen to hear your tale of survival, and learn what secrets (if any) you might possess, and/or study your affliction with great interest.</p>
+			<p class="indent">However, you fear that your afflictions are not completely mundane and that the Maimed Virulence may as yet have some nefarious reason for allowing your escape, as your scars burn with acidic fury and seem to writhe beneath your skin at times.</p>
+		</description>
+	</element>
+	<element name="Dockworker / Fisherman" type="Background Feature" source="Adventurers League: Curse of Strahd" id="ID_WOTC_ALCOS_BACKGROUND_DRAGON_CASUALTY_FEATURE_OCCUPATION_1">
+		<supports>Dragon Casualty Occupation</supports>
+		<description>
+			<p>Prior to the coordinated attack by the Maimed Virulence and her rebel Black Fist supporters, you were once a citizen or visitor to Phlan. While the trauma of your recent ordeal has greatly altered your motivations and perception of the world, your former life still clings to you and colors your mannerisms, behaviors, and outlook on life.</p>
+		</description>
+		<sheet display="false" />
+		<rules>
+			<grant type="Proficiency" id="ID_PROFICIENCY_TOOL_PROFICIENCY_VEHICLES_WATER" />
+		</rules>
+	</element>
+	<element name="Tradesperson / Merchant" type="Background Feature" source="Adventurers League: Curse of Strahd" id="ID_WOTC_ALCOS_BACKGROUND_DRAGON_CASUALTY_FEATURE_OCCUPATION_2">
+		<supports>Dragon Casualty Occupation</supports>
+		<description>
+			<p>Prior to the coordinated attack by the Maimed Virulence and her rebel Black Fist supporters, you were once a citizen or visitor to Phlan. While the trauma of your recent ordeal has greatly altered your motivations and perception of the world, your former life still clings to you and colors your mannerisms, behaviors, and outlook on life.</p>
+		</description>
+		<sheet display="false" />
+		<rules>
+			<select type="Proficiency" name="Tool Proficiency (Dragon Casualty Occupation)" supports="Artisan tools"/>
+		</rules>
+	</element>
+	<element name="Black Fist Soldier" type="Background Feature" source="Adventurers League: Curse of Strahd" id="ID_WOTC_ALCOS_BACKGROUND_DRAGON_CASUALTY_FEATURE_OCCUPATION_3">
+		<supports>Dragon Casualty Occupation</supports>
+		<description>
+			<p>Prior to the coordinated attack by the Maimed Virulence and her rebel Black Fist supporters, you were once a citizen or visitor to Phlan. While the trauma of your recent ordeal has greatly altered your motivations and perception of the world, your former life still clings to you and colors your mannerisms, behaviors, and outlook on life.</p>
+		</description>
+		<sheet display="false" />
+		<rules>
+			<select type="Proficiency" name="Tool Proficiency (Dragon Casualty Occupation)" supports="Gaming Set||ID_PROFICIENCY_TOOL_PROFICIENCY_VEHICLES_LAND"/>
+		</rules>
+	</element>
+	<element name="Adventurer / Visitor" type="Background Feature" source="Adventurers League: Curse of Strahd" id="ID_WOTC_ALCOS_BACKGROUND_DRAGON_CASUALTY_FEATURE_OCCUPATION_4">
+		<supports>Dragon Casualty Occupation</supports>
+		<description>
+			<p>Prior to the coordinated attack by the Maimed Virulence and her rebel Black Fist supporters, you were once a citizen or visitor to Phlan. While the trauma of your recent ordeal has greatly altered your motivations and perception of the world, your former life still clings to you and colors your mannerisms, behaviors, and outlook on life.</p>
+		</description>
+		<sheet display="false" />
+		<rules>
+			<grant type="Proficiency" id="ID_PROFICIENCY_TOOL_PROFICIENCY_VEHICLES_LAND" />
+		</rules>
+	</element>
+	<element name="Entertainer" type="Background Feature" source="Adventurers League: Curse of Strahd" id="ID_WOTC_ALCOS_BACKGROUND_DRAGON_CASUALTY_FEATURE_OCCUPATION_5">
+		<supports>Dragon Casualty Occupation</supports>
+		<description>
+			<p>Prior to the coordinated attack by the Maimed Virulence and her rebel Black Fist supporters, you were once a citizen or visitor to Phlan. While the trauma of your recent ordeal has greatly altered your motivations and perception of the world, your former life still clings to you and colors your mannerisms, behaviors, and outlook on life.</p>
+		</description>
+		<sheet display="false" />
+		<rules>
+			<select type="Proficiency" name="Tool Proficiency (Dragon Casualty Occupation)" supports="Musical Instrument"/>
+		</rules>
+	</element>
+	<element name="Scholar / Healer" type="Background Feature" source="Adventurers League: Curse of Strahd" id="ID_WOTC_ALCOS_BACKGROUND_DRAGON_CASUALTY_FEATURE_OCCUPATION_6">
+		<supports>Dragon Casualty Occupation</supports>
+		<description>
+			<p>Prior to the coordinated attack by the Maimed Virulence and her rebel Black Fist supporters, you were once a citizen or visitor to Phlan. While the trauma of your recent ordeal has greatly altered your motivations and perception of the world, your former life still clings to you and colors your mannerisms, behaviors, and outlook on life.</p>
+		</description>
+		<sheet display="false" />
+		<rules>
+			<select type="Proficiency" name="Tool Proficiency (Dragon Casualty Occupation)" supports="ID_PROFICIENCY_TOOL_PROFICIENCY_ALCHEMISTS_SUPPLIES|ID_PROFICIENCY_TOOL_PROFICIENCY_HERBALISM_KIT" />
+		</rules>
+	</element>
+	<element name="Criminal" type="Background Feature" source="Adventurers League: Curse of Strahd" id="ID_WOTC_ALCOS_BACKGROUND_DRAGON_CASUALTY_FEATURE_OCCUPATION_7">
+		<supports>Dragon Casualty Occupation</supports>
+		<description>
+			<p>Prior to the coordinated attack by the Maimed Virulence and her rebel Black Fist supporters, you were once a citizen or visitor to Phlan. While the trauma of your recent ordeal has greatly altered your motivations and perception of the world, your former life still clings to you and colors your mannerisms, behaviors, and outlook on life.</p>
+		</description>
+		<sheet display="false" />
+		<rules>
+			<select type="Proficiency" name="Tool Proficiency (Dragon Casualty Occupation)" supports="ID_PROFICIENCY_TOOL_PROFICIENCY_THIEVES_TOOLS|ID_PROFICIENCY_TOOL_PROFICIENCY_FORGERY_KIT|ID_PROFICIENCY_TOOL_PROFICIENCY_DISGUISE_KIT" />
+		</rules>
+	</element>
+	<element name="Unskilled Laborer" type="Background Feature" source="Adventurers League: Curse of Strahd" id="ID_WOTC_ALCOS_BACKGROUND_DRAGON_CASUALTY_FEATURE_OCCUPATION_8">
+		<supports>Dragon Casualty Occupation</supports>
+		<description>
+			<p>Prior to the coordinated attack by the Maimed Virulence and her rebel Black Fist supporters, you were once a citizen or visitor to Phlan. While the trauma of your recent ordeal has greatly altered your motivations and perception of the world, your former life still clings to you and colors your mannerisms, behaviors, and outlook on life.</p>
+		</description>
+		<sheet display="false" />
+		<rules>
+			<select type="Proficiency" name="Tool Proficiency (Dragon Casualty Occupation)" supports="Gaming Set"/>
+		</rules>
+	</element>
+
+	<element name="Iron Route Bandit" type="Background" source="Adventurers League: Curse of Strahd" id="ID_WOTC_ALCOS_BACKGROUND_IRON_ROUTE_BACKGROUND">
+		<description>
+			<p>The Iron Route, once the primary trade route between Phlan and Zhentil Keep, used to be a site of extensive banditry until the Phlan’s recent occupation. Your time as an erstwhile bandit has given you plenty of experience in the saddle and a knack for acquiring and appraising other people’s mounts, pets, and vehicles among other things. This particular set of skills has become very lucrative for you by working for the underground as a horse thief for a local guild of thieves and other shadowy organizations.</p>
+			<p class="indent"><b>Skill Proficiencies:</b> Stealth, Animal Handling</p>
+			<p class="indent"><b>Tool Proficiencies:</b> One type of gaming set, vehicles (land)</p>
+			<p class="indent"><b>Equipment:</b> A set of dark common clothes, pack saddle, burglar’s pack and a belt pouch containing 5 gp.</p>
+			<p class="indent"><b>Lifestyle:</b> Poor</p>
+			<div element="ID_WOTC_ALCOS_BACKGROUND_IRON_ROUTE_BANDIT_FEATURE_BLACK_MARKET_BREEDER" />
+		</description>
+		<setters>
+			<set name="short">Stealth, Animal Handling, Gaming Set, Vehicles (Land)</set>
+		</setters>
+		<rules>
+			<grant type="Proficiency" id="ID_PROFICIENCY_SKILL_STEALTH" />
+			<grant type="Proficiency" id="ID_PROFICIENCY_SKILL_ANIMALHANDLING" />
+			<select type="Proficiency" name="Gaming Set (Iron Route Bandit)" supports="Gaming Set"/>
+			<grant type="Proficiency" id="ID_PROFICIENCY_TOOL_PROFICIENCY_VEHICLES_LAND" />
+			<grant type="Background Feature" id="ID_WOTC_ALCOS_BACKGROUND_IRON_ROUTE_BANDIT_FEATURE_BLACK_MARKET_BREEDER" />
+			<select name="Personality Trait" type="List" number="2">
+				<item id="1">If people leave their gear unsecured, they must not want it very much.</item>
+				<item id="2">I feel more comfortable sleeping under the open sky.</item>
+				<item id="3">I always pre-plan my escape should things go bad; I always like to have an exit strategy.</item>
+				<item id="4">I tend to give animal owners breeding and care advice whether or not they want it.</item>
+				<item id="5">I lost a pet as a child and sadly reflect on it to this day.</item>
+				<item id="6">I always form a powerful, emotional bond with my mount.</item>
+				<item id="7">I recoil at the thought of killing someone else’s pet or mount.</item>
+				<item id="8">I prefer to hang to the back of a scuffle or discussion. Better to have my enemies in front of me.</item>
+			</select>
+			<select name="Ideal" type="List">
+				<item id="1">Loyalty: Never bite the hand that feeds. (Good)</item>
+				<item id="2">Unpredictability: Keep your enemy guessing and off-balance like a confused deer. (Chaotic)</item>
+				<item id="3">Power: I strive to become leader of the pack at all costs. (Lawful)</item>
+				<item id="4">Freedom: I bow to no one I don’t respect. (Chaotic)</item>
+				<item id="5">Resourcefulness: Our wits are our most valuable resource in troubled times. (Any)</item>
+				<item id="6">Unity: Lone wolves fail where the pack succeeds. (Any)</item>
+			</select>
+			<select name="Bond" type="List">
+				<item id="1">I cannot leave a harmed animal behind; I must save it or put it out of its misery.</item>
+				<item id="2">I leave behind my own personal calling cards when I do a job.</item>
+				<item id="3">I do not trust people who do not have a pet, mount, or furry companion.</item>
+				<item id="4">The pelt I wear on my back was from an animal that died saving my life, I will always cherish it.</item>
+				<item id="5">If my pet does not like you, I do not like you!</item>
+				<item id="6">Once you’ve ridden with me and fought by my side, I’ll be there for you odds be damned.</item>
+			</select>
+			<select name="Flaw" type="List">
+				<item id="1">I talk to animals; I believe they understand me, even if they do not.</item>
+				<item id="2">I growl at and bite anyone who gets too close to my food while I am eating.</item>
+				<item id="3">I strongly dislike enclosed spaces and require intoxication or firm encouragement to enter them.</item>
+				<item id="4">I robbed the wrong caravan once. The owner is a powerful merchant who holds a grudge.</item>
+				<item id="5">I’m an inveterate gambler.</item>
+				<item id="6">I judge people based on how well they stand their ground in a fight. I got not time for cowards…</item>
+			</select>
+		</rules>
+	</element>
+	<element name="Feature: Black-Market Breeder" type="Background Feature" source="Adventurers League: Curse of Strahd" id="ID_WOTC_ALCOS_BACKGROUND_IRON_ROUTE_BANDIT_FEATURE_BLACK_MARKET_BREEDER">
+		<supports>Background Feature</supports>
+		<description>
+			<p>You know how to find people who are always looking for stolen animals &amp; vehicles, whether to provide for animal pit fights, or to supply some desperate rogues the means to get away faster on mounts during an illegal job. This contact not only provides you with information of what such animals &amp; vehicles are in high demand in the area, but also offer to give you favors and information (DM choice) if you bring such animals &amp; vehicles to them.</p>
+		</description>
+	</element>
+
+	<element name="Phlan Insurgent" type="Background" source="Adventurers League: Curse of Strahd" id="ID_WOTC_ALCOS_BACKGROUND_PHLAN_INSURGENT">
+		<description>
+			<p>The taking of Phlan by Vorgansharax is a clear memory in your mind. You were going about your everyday business when the green dragon’s forces spilled out of the sewers and assailed your home. Many of Phlan’s citizens, young and old alike, were captured, killed, or offered as tribute to the Maimed Virulence. You, yourself were one of those captured. But, either with the help of adventurers or through your own wits and sheer determination, you escaped.</p>
+			<p class="indent">Rather than flee the region, you’ve chosen to stay and fight. Finding refuge outside the town and the deadly thicket surrounding it, you strike out against the Tears of the Virulence and their monstrous allies. You’ve learned to survive in dire and desperate circumstances, with supplies running low and the arrival of reinforcements uncertain. You’ve grown accustomed to acting under the cover of night, dealing what blows you can to avenge the friends and family you lost within the currently occupied Phlan. You will drive Vorgansharax out, or you die trying.</p>
+			<p class="indent"><b>Skill Proficiencies:</b> Stealth, Survival</p>
+			<p class="indent"><b>Tool Proficiencies:</b> One type of artisan's tools, vehicles (land)</p>
+			<p class="indent"><b>Equipment:</b> A bag of caltrops (20), a small trinket that connects you to the life you once had before the occupation of Phlan, a healer's kit, a set of dark common clothes that includes a cloak and hood, and a belt pouch containing 5 gp.</p>
+			<p class="indent"><b>Lifestyle:</b> Poor</p>
+			<h4>Origin</h4>
+			<p>Removed from your life as a townsperson, you’ve adapted to rough life in the wilds surrounding Phlan. The trade you practiced still influences your outlook, the manner in which you approach situations, and the way you contribute to the resistance movement against the Maimed Virulence. You can roll on the following table to determine what your occupation was before the fall, or choose one that best fits your character (select from either the general column or the specific column, but not both).</p>
+			<table>
+				<thead>
+					<tr><td>d8</td><td>Origin (General)</td><td>Origin (Specific)</td></tr>
+				</thead>
+				<tr><td>1</td><td>Fisher</td><td>Stojanow River worker</td></tr>
+				<tr><td>2</td><td>Hunter</td><td>Twilight Marsh worker</td></tr>
+				<tr><td>3</td><td>Craftsperson</td><td>Mantor’s Library scribe</td></tr>
+				<tr><td>4</td><td>Priest/Priestess</td><td>Clergy of Ilmater</td></tr>
+				<tr><td>5</td><td>Cook</td><td>Laughing Goblin server</td></tr>
+				<tr><td>6</td><td>City Watch</td><td>Black Fist guard</td></tr>
+				<tr><td>1</td><td>Servant</td><td>House Sokol retainer</td></tr>
+				<tr><td>8</td><td>Unskilled laborer</td><td>Bay of Phlan dockworker</td></tr>
+			</table>
+			<div element="ID_WOTC_ALCOS_BACKGROUND_PHLAN_INSURGENT_FEATURE_GUERILLA" />
+			<h5>SUGGESTED CHARACTERISTICS</h5>
+			<p>You have given up the life you knew as a citizen of Phlan. However, the Maimed Virulence’s invasion resonates deep inside you. Perhaps you have a few friends or family members who were able to escape with you. Or, perhaps, everyone you held dear either perished or went missing during the fall. You may know of someone who is, against all odds, surviving within the thicket and you long to liberate them from a life of peril within the town.</p>
+		</description>
+		<setters>
+			<set name="short">Stealth, Survival, Artisan’s Tool, Vehicles (Land)</set>
+		</setters>
+		<rules>
+			<grant type="Proficiency" id="ID_PROFICIENCY_SKILL_STEALTH" />
+			<grant type="Proficiency" id="ID_PROFICIENCY_SKILL_SURVIVAL" />
+			<select type="Proficiency" name="Tool Proficiency (Phlan Insurgent)" supports="Artisan tools"/>
+			<grant type="Proficiency" id="ID_PROFICIENCY_TOOL_PROFICIENCY_VEHICLES_LAND" />
+			<grant type="Background Feature" id="ID_WOTC_ALCOS_BACKGROUND_PHLAN_INSURGENT_FEATURE_GUERILLA" />
+			<select name="Personality Trait" type="List" number="2">
+				<item id="1">My patience knows no bounds, so long as my goal is in sight.</item>
+				<item id="2">In life and in struggle, the ends justify my actions.</item>
+				<item id="3">If you aren’t helping me, you’d best at least stay out of my way.</item>
+				<item id="4">I long for the life that was taken away from me.</item>
+				<item id="5">Friends and family perished, tragically, before my eyes. I hope never to undergo that again.</item>
+				<item id="6">Making the right choices in life are important to me. The choices I make might save not just my life, but the lives of others as well.</item>
+				<item id="7">I can never allow my foes to get the drop on me.</item>
+				<item id="8">Time is a precious resource that I must spend wisely.</item>
+			</select>
+			<select name="Ideal" type="List">
+				<item id="1">Leadership: The oppressed need someone to inspire them to courageous acts. (Good)</item>
+				<item id="2">Unpredictability: Keeping the enemy guessing and off-balance is my tactical strength. (Chaos)</item>
+				<item id="3">Determination: Threats to my home must be eliminated at all costs. (Any)</item>
+				<item id="4">Freedom: Those who are enslaved and unjustly imprisoned deserve my aid. (Good)</item>
+				<item id="5">Resourcefulness: Our wits are our most valuable resource in troubled times. (Any)</item>
+				<item id="6">Unity: Working together, we can overcome all obstacles, even the most seemingly insurmountable ones. (Any)</item>
+			</select>
+			<select name="Bond" type="List">
+				<item id="1">I’ll never let my fellow insurgents down. They are my only remaining friends.</item>
+				<item id="2">I was separated from a loved one during my escape from town. I will find them.</item>
+				<item id="3">One of the Tears of the Virulence was a trusted friend, until the day they betrayed the city. They will pay harshly for their transgressions.</item>
+				<item id="4">An item I hold close is my last remaining connection to the family I lost during the fall.</item>
+				<item id="5">The dragon who took my past life away from me will feel the full extent of my vengeance.</item>
+				<item id="6">The knowledge in Mantor’s Library is an irreplaceable treasure that must be protected.</item>
+			</select>
+			<select name="Flaw" type="List">
+				<item id="1">I have no respect for those who flee. I harbor a deep grudge against the citizens who abandoned Phlan.</item>
+				<item id="2">Ale is the only way I can escape the desperation of my circumstances.</item>
+				<item id="3">It doesn’t take much to get me into a fight.</item>
+				<item id="4">Being an insurgent means doing things that aren’t always ethical. I’m still learning to live with that.</item>
+				<item id="5">My desire to liberate Phlan oftentimes clouds my judgement, despite my best efforts.</item>
+				<item id="6">I relentlessly despise the Maimed Virulence and his allies. I’d abandon other goals in order to strike out at them.</item>
+			</select>
+		</rules>
+	</element>
+	<element name="Feature: Guerilla" type="Background Feature" source="Adventurers League: Curse of Strahd" id="ID_WOTC_ALCOS_BACKGROUND_PHLAN_INSURGENT_FEATURE_GUERILLA">
+		<supports>Background Feature</supports>
+		<description>
+			<p>You’ve come to know the surrounding forests, streams, caves, and other natural features in which you can take refuge or set up ambushes. You can quickly survey your environment for advantageous features. Additionally, you can scavenge around your natural surroundings to cobble together simple supplies (such as improvised torches, rope, patches of fabric, etc.) that are consumed after use.</p>
+		</description>
+		<sheet alt="Guerilla" />
+	</element>
+
+	<element name="Stojanow Prisoner" type="Background" source="Adventurers League: Curse of Strahd" id="ID_WOTC_ALCOS_BACKGROUND_STOJANOW_PRISONER">
+		<description>
+			<p><i>"We need to leave, now!”</i></p>
+			<p>Those words still haunt your dreams at night. When everyone was fleeing Phlan, you choose to stay. Whether out of an emotional attachment, or pursuit of riches, you made the decision that would affect the rest of your life.</p>
+			<p class="indent">Food became scarcer for those without connections. You became a beggar and to stay alive you bartered information to any interested party with food or gold to spare. You were good at what you did, and thought you were invincible. That changed when you were captured by the Tears of Virulence, the soldiers of Vorgansharax, the Maimed Virulence, for selling secrets to those bent on overthrowing the dragon. They locked you in the cells of Stojanow Gate. The first weeks you hoped to stay alive. As the weeks turned into months, and the interrogations continued you began to pray for death.</p>
+			<p class="indent"><b>Skill Proficiencies:</b> Deception, Perception</p>
+			<p class="indent"><b>Tool Proficiencies:</b> One type of gaming set, thieves' tools</p>
+			<p class="indent"><b>Equipment:</b> A small knife, a set of common clothes, a trinket from the life you stayed behind to defend, a belt pouch with 10 gp.</p>
+			<p class="indent"><b>Lifestyle:</b> Poor</p>
+			<div element="ID_WOTC_ALCOS_BACKGROUND_STOJANOW_PRISONER_FEATURE_EXCONVICT" />
+		</description>
+		<setters>
+			<set name="short">Deception, Perception, Gaming Set, Thieves’ Tools</set>
+		</setters>
+		<rules>
+			<grant type="Proficiency" id="ID_PROFICIENCY_SKILL_DECEPTION" />
+			<grant type="Proficiency" id="ID_PROFICIENCY_SKILL_PERCEPTION" />
+			<select type="Proficiency" name="Gaming Set (Stojanow Prisoner)" supports="Gaming Set"/>
+			<grant type="Proficiency" id="ID_PROFICIENCY_TOOL_PROFICIENCY_THIEVES_TOOLS" />
+			<grant type="Background Feature" id="ID_WOTC_ALCOS_BACKGROUND_STOJANOW_PRISONER_FEATURE_EXCONVICT" />
+			<select name="Personality Trait" type="List" number="2">
+				<item id="1">I am a bully; others will suffer as I have.</item>
+				<item id="2">I always say yes even when I mean no; it’s just easier.</item>
+				<item id="3">I aim to misbehave.</item>
+				<item id="4">I go out of my way to frustrate or anger those in power.</item>
+				<item id="5">I strive to obey the law. I will never again make the mistake of going against authority.</item>
+				<item id="6">I always plan everything out. The one time I let others plan things it did not end well for me.</item>
+				<item id="7">I take blame to protect others from pain.</item>
+				<item id="8">I hoard information, you never know what may come in handy.</item>
+			</select>
+			<select name="Ideal" type="List">
+				<item id="1">Loss: I freely give those who offend me what was so brutally denied me, death. (Chaos)</item>
+				<item id="2">Dedication: I never betray those who trust me. (Law)</item>
+				<item id="3">Vengeance: I use any means to get information I need; I have been well taught. (Evil)</item>
+				<item id="4">Redemption: Everyone deserves a second chance. (Good)</item>
+				<item id="5">Resilience: I can survive any challenge (Any)</item>
+				<item id="6">Leadership: The best teams are made up of those that society has discarded.</item>
+			</select>
+			<select name="Bond" type="List">
+				<item id="1">I take up arms to help establish a free Phlan.</item>
+				<item id="2">The horrors of my time in Stojanow haunt my dreams, only after a day of hard work can I find sleep.</item>
+				<item id="3">I am indebted to those who freed me from prison, I will repay this debt.</item>
+				<item id="4">My torturer survived the attack that set me free, I will find him/her.</item>
+				<item id="5">I will not rest while others suffer fates similar to mine.</item>
+				<item id="6">I am searching for a way to heal the scars of Stojanow, both physical and emotional.</item>
+			</select>
+			<select name="Flaw" type="List">
+				<item id="1">During stressful times, I find myself crying for no reason.</item>
+				<item id="2">My nerve endings are shot from the interrogations; I am numb to all but the harshest touch.</item>
+				<item id="3">I am incapable of standing up for myself.</item>
+				<item id="4">I folded under the torture, and gave information that I promised would be kept secret. My life would be in jeopardy if others found out.</item>
+				<item id="5">Survival is worth more than friendship.</item>
+				<item id="6">The ghosts from my past hinder my actions.</item>
+			</select>
+		</rules>
+	</element>
+	<element name="Feature: Ex-Convict" type="Background Feature" source="Adventurers League: Curse of Strahd" id="ID_WOTC_ALCOS_BACKGROUND_STOJANOW_PRISONER_FEATURE_EXCONVICT">
+		<supports>Background Feature</supports>
+		<description>
+			<p>The knowledge gained during your incarceration lets you gain insight into local guards and jailors. You know which will accept bribes, or look the other way for you. You can also seek shelter for yourself from authorities with other criminals in the area.</p>
+		</description>
+		<sheet alt="Ex-Convict" />
+	</element>
+
+	<element name="Ticklebelly Nomad" type="Background" source="Adventurers League: Curse of Strahd" id="ID_WOTC_ALCOS_BACKGROUND_TICKLEBELLY_NOMAD">
+		<description>
+			<p>You were born into a nomadic tribe that called the Ticklebelly Hills home. You migrated from location to location, living off the land with your tribe. The tribe would seasonally travel south into the Grass Sea and the Giant’s Cairn, north into the Dragonspine Mountains, and even occasionally east across the Stojanow River to the borders of the Quivering forest.</p>
+			<p class="indent">In your migrations, your people have come to know the stone giant tribes that populate the Giant’s Cairn. The dragon cultists came to the hills one day—magic-users wearing purple and riding horrid beasts, black-clad warriors wearing wicked masks, and even soldiers from the nearby town of Phlan. Then the dragon called Vorgansharax arrived and laired in the hills, causing horrid thickets to grow and animals to act unusually. The cultists began raiding nomad camps for victims to offer to the wyrm. Eventually, the dragon moved on to attack Phlan, but life was never again the same for the nomads of the Ticklebelly Hills.</p>
+			<p class="indent"><b>Skill Proficiencies:</b> Nature, Animal Handling</p>
+			<p class="indent"><b>Tool Proficiencies:</b> Herbalism kit</p>
+			<p class="indent"><b>Languages:</b> Giant</p>
+			<p class="indent"><b>Equipment:</b> Herbalism kit, a small article of jewelry that is distinct to your tribe, a hunting trap, a set of common clothes, and a belt pouch containing 5 gp.</p>
+			<p class="indent"><b>Lifestyle:</b> Poor</p>
+			<div element="ID_WOTC_ALCOS_BACKGROUND_TICKLEBELLY_NOMAD_FEATURE_AT_HOME_IN_THE_WILD" />
+			<h5>SUGGESTED CHARACTERISTICS</h5>
+			<p>Ticklebelly nomads only venture into civilization when necessary. You are social within your tribe, with tribes of other nomads, and even with the stone giant tribes that populate the Giant’s Cairn. However, other communities tend to either put you on your guard or put you in a state of wonder. Was it this wonder that enticed you into a life of adventuring? On the other hand, you are fiercely protective of and dedicated to your tribe. Perhaps it was this dedication that led you to venture out; either of your own will or at the behest of your tribe’s leaders.</p>
+		</description>
+		<setters>
+			<set name="short">Nature, Animal Handling, Herbalism Kit, Giant</set>
+		</setters>
+		<rules>
+			<grant type="Proficiency" id="ID_PROFICIENCY_SKILL_NATURE" />
+			<grant type="Proficiency" id="ID_PROFICIENCY_SKILL_ANIMALHANDLING" />
+			<grant type="Proficiency" id="ID_PROFICIENCY_TOOL_PROFICIENCY_HERBALISM_KIT" />
+			<grant type="Language" id="ID_LANGUAGE_GIANT" />
+			<grant type="Background Feature" id="ID_WOTC_ALCOS_BACKGROUND_TICKLEBELLY_NOMAD_FEATURE_AT_HOME_IN_THE_WILD" />
+			<select name="Personality Trait" type="List" number="2">
+				<item id="1">I eagerly inject myself into the unknown.</item>
+				<item id="2">Villages, towns, and cities do not suit me. I’d rather be out in the wilderness any day.</item>
+				<item id="3">I accomplish my tasks efficiently, using as few resources as possible.</item>
+				<item id="4">It’s difficult for me to remain in one place for long.</item>
+				<item id="5">I loudly brag about my tribe every chance I get.</item>
+				<item id="6">Having walked among giants, I am fearless in the face of bigger creatures.</item>
+				<item id="7">I am quiet and reserved, but observant. Nothing escapes my attention.</item>
+				<item id="8">My word is my bond. I see a promise to completion, even if it conflicts with my beliefs.</item>
+			</select>
+			<select name="Ideal" type="List">
+				<item id="1">Kinship: Family is most important in life. Though I may be far from my own, the bonds of family must be protected in others’ lives as well. (Good)</item>
+				<item id="2">Preservation: Nature must not be despoiled by encroaching civilization. (Any)</item>
+				<item id="3">Wanderlust: One must expand their horizons by seeing the world and exploring. (Chaos)</item>
+				<item id="4">Isolation: My tribe and its ways must be protected and shielded from outside influence. (Neutral)</item>
+				<item id="5">Protection: Threats to the land and to the people must be dealt with at any and all costs. (Law)</item>
+				<item id="6">Belonging: All creatures have a place in the world, so I strive to help others find theirs. (Good)</item>
+			</select>
+			<select name="Bond" type="List">
+				<item id="1">I ache to return to my tribe and the family I left, but cannot until my obligations are fulfilled.</item>
+				<item id="2">The dragon cultists that invaded my homeland stole away one of my tribe’s people. I will not know rest until I’ve found them.</item>
+				<item id="3">The dragon’s presence in the hills destroyed valuable territory and resulted in deaths within my tribe. The creature must pay for what it has done.</item>
+				<item id="4">I carry a trinket that spiritually and emotionally ties me to my people and my home.</item>
+				<item id="5">I discovered a strange relic in the hills during my tribe’s wanderings. I must discover what it is.</item>
+				<item id="6">One of the stone giant clans from the Giant’s Cairn has graced me with a mark of kinship.</item>
+			</select>
+			<select name="Flaw" type="List">
+				<item id="1">I throw myself and my friends into situations rarely ever thinking about consequences.</item>
+				<item id="2">Unfamiliar people and surroundings put me on edge.</item>
+				<item id="3">I have absolutely no patience for slowpokes and those who prove indecisive.</item>
+				<item id="4">My desire to experience new things causes me to make unsafe choices.</item>
+				<item id="5">I am overly protective of nature, sometimes to the detriment of my companions and myself.</item>
+				<item id="6">My lack of worldliness often proves my undoing in social, commercial, and hostile situations.</item>
+			</select>
+		</rules>
+	</element>
+	<element name="Feature: At Home in the Wild" type="Background Feature" source="Adventurers League: Curse of Strahd" id="ID_WOTC_ALCOS_BACKGROUND_TICKLEBELLY_NOMAD_FEATURE_AT_HOME_IN_THE_WILD">
+		<supports>Background Feature</supports>
+		<description>
+			<p>The wilderness is your home and you are comfortable dwelling in it. You can find a place to hide, rest, or recuperate when out in the wild. This place of rest is secure enough to conceal you from most natural threats. Threats that are supernatural, magical, or are actively seeking you out might do so with difficulty depending on the nature of the threat (as determined by the DM). However, this feature doesn’t shield or conceal you from scrying, mental probing, nor from threats that don’t necessarily require the five senses to find you.</p>
+		</description>
+		<sheet alt="At Home in the Wild" />
+	</element>
+</elements>

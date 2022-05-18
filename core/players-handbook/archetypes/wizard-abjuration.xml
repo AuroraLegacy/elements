@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<elements>
+	<info>
+		<update version="0.0.1">
+			<file name="wizard-abjuration.xml" url="https://raw.githubusercontent.com/AuroraLegacy/elements/master/core/players-handbook/archetypes/wizard-abjuration.xml" />
+		</update>
+	</info>
+
+	<element name="School of Abjuration" type="Archetype" source="Player’s Handbook" id="ID_WOTC_PHB_ARCHETYPE_WIZARD_SCHOOL_OF_ABJURATION">
+		<supports>Arcane Tradition</supports>
+		<description>
+			<p>The School of Abjuration emphasizes magic that blocks, banishes, or protects. Detractors of this school say that its tradition is about denial, negation rather than positive assertion. You understand, however, that ending harmful effects, protecting the weak, and banishing evil influences is anything but a philosophical void. It is a proud and respected vocation.</p>
+			<p class="indent">Called abjurers, members of this school are sought when baleful spirits require exorcism, when important locations must be guarded against magical spying, and when portals to other planes of existence must be closed.</p>
+			<div element="ID_WOTC_PHB_ARCHETYPE_FEATURE_WIZARD_ABJURATION_ABJURATION_SAVANT" />
+			<div element="ID_WOTC_PHB_ARCHETYPE_FEATURE_WIZARD_ABJURATION_ARCANE_WARD" />
+			<div element="ID_WOTC_PHB_ARCHETYPE_FEATURE_WIZARD_ABJURATION_PROJECTED_WARD" />
+			<div element="ID_WOTC_PHB_ARCHETYPE_FEATURE_WIZARD_ABJURATION_IMPROVED_ABJURATION" />
+			<div element="ID_WOTC_PHB_ARCHETYPE_FEATURE_WIZARD_ABJURATION_SPELL_RESISTANCE" />
+		</description>
+		<sheet display="false">
+			<description>The School of Abjuration emphasizes magic that blocks, banishes, or protects. Detractors of this school say that its tradition is about denial, negation rather than positive assertion.</description>
+		</sheet>
+		<rules>
+			<grant type="Archetype Feature" id="ID_WOTC_PHB_ARCHETYPE_FEATURE_WIZARD_ABJURATION_ABJURATION_SAVANT" level="2"/>
+			<grant type="Archetype Feature" id="ID_WOTC_PHB_ARCHETYPE_FEATURE_WIZARD_ABJURATION_ARCANE_WARD" level="2"/>
+			<grant type="Archetype Feature" id="ID_WOTC_PHB_ARCHETYPE_FEATURE_WIZARD_ABJURATION_PROJECTED_WARD" level="6"/>
+			<grant type="Archetype Feature" id="ID_WOTC_PHB_ARCHETYPE_FEATURE_WIZARD_ABJURATION_IMPROVED_ABJURATION" level="10"/>
+			<grant type="Archetype Feature" id="ID_WOTC_PHB_ARCHETYPE_FEATURE_WIZARD_ABJURATION_SPELL_RESISTANCE" level="14"/>
+		</rules>
+	</element>
+	<element name="Abjuration Savant" type="Archetype Feature" source="Player’s Handbook" id="ID_WOTC_PHB_ARCHETYPE_FEATURE_WIZARD_ABJURATION_ABJURATION_SAVANT">
+		<requirements>!ID_INTERNAL_FEATURE_REPLACEMENT_WIZARD_ABJURATION_ABJURATION_SAVANT</requirements>
+		<description>
+			<p>Beginning when you select this school at 2nd level, the gold and time you must spend to copy an abjuration spell into your spellbook is halved.</p>
+		</description>
+		<sheet>
+			<description>The gold and time you must spend to copy an abjuration spell into your spellbook is halved.</description>
+		</sheet>
+	</element>
+	<element name="Arcane Ward" type="Archetype Feature" source="Player’s Handbook" id="ID_WOTC_PHB_ARCHETYPE_FEATURE_WIZARD_ABJURATION_ARCANE_WARD">
+		<requirements>!ID_INTERNAL_FEATURE_REPLACEMENT_WIZARD_ABJURATION_ARCANE_WARD</requirements>
+		<description>
+			<p>Starting at 2nd level, you can weave magic around yourself for protection. When you cast an abjuration spell of 1st level or higher, you can simultaneously use a strand of the spell’s magic to create a magical ward on yourself that lasts until you finish a long rest. The ward has hit points equal to twice your wizard level + your Intelligence modifier. Whenever you take damage, the ward takes the damage instead. If this damage reduces the ward to 0 hit points, you take any remaining damage.</p>
+			<p class="indent">While the ward has 0 hit points, it can’t absorb damage, but its magic remains. Whenever you cast an abjuration spell of 1st level or higher, the ward regains a number of hit points equal to twice the level of the spell.</p>
+			<p class="indent">Once you create the ward, you can't create it again until you finish a long rest.</p>
+		</description>
+		<sheet usage="1/Long Rest">
+			<description>When you cast an abjuration spell of 1st level or higher, you can create a magical ward on yourself that lasts until you finish a long rest. The ward has {{arcane ward:hp}} hp. Whenever you take damage, the ward takes the damage instead. If this damage reduces the ward to 0 hp, you take any remaining damage.
+			While the ward has 0 hp, it can’t absorb damage, but its magic remains. Whenever you cast an abjuration spell of 1st level or higher, the ward regains a number of hp equal to twice the level of the spell.</description>
+		</sheet>
+		<rules>
+			<stat name="arcane ward:hp" value="level:wizard" />
+			<stat name="arcane ward:hp" value="level:wizard" />
+			<stat name="arcane ward:hp" value="intelligence:modifier" />
+		</rules>
+	</element>
+	<element name="Projected Ward" type="Archetype Feature" source="Player’s Handbook" id="ID_WOTC_PHB_ARCHETYPE_FEATURE_WIZARD_ABJURATION_PROJECTED_WARD">
+		<requirements>!ID_INTERNAL_FEATURE_REPLACEMENT_WIZARD_ABJURATION_PROJECTED_WARD</requirements>
+		<description>
+			<p>Starting at 6th level, when a creature that you can see within 30 feet of you takes damage, you can use your reaction to cause your Arcane Ward to absorb that damage. If this damage reduces the ward to 0 hit points, the warded creature takes any remaining damage.</p>
+		</description>
+		<sheet action="Reaction">
+			<description>When a creature that you can see within 30 feet of you takes damage, you can cause your Arcane Ward to absorb that damage. If this damage reduces the ward to 0 hp, the warded creature takes any remaining damage.</description>
+		</sheet>
+	</element>
+	<element name="Improved Abjuration" type="Archetype Feature" source="Player’s Handbook" id="ID_WOTC_PHB_ARCHETYPE_FEATURE_WIZARD_ABJURATION_IMPROVED_ABJURATION">
+		<requirements>!ID_INTERNAL_FEATURE_REPLACEMENT_WIZARD_ABJURATION_IMPROVED_ABJURATION</requirements>
+		<description>
+			<p>Beginning at 10th level, when you cast an abjuration spell that requires you to make an ability check as a part of casting that spell (as in counterspell and dispel magic), you add your proficiency bonus to that ability check.</p>
+		</description>
+		<sheet>
+			<description>When you cast an abjuration spell that requires you to make an ability check as a part of casting that spell, you add {{proficiency}} to that ability check.</description>
+		</sheet>
+	</element>
+	<element name="Spell Resistance" type="Archetype Feature" source="Player’s Handbook" id="ID_WOTC_PHB_ARCHETYPE_FEATURE_WIZARD_ABJURATION_SPELL_RESISTANCE">
+		<requirements>!ID_INTERNAL_FEATURE_REPLACEMENT_WIZARD_ABJURATION_SPELL_RESISTANCE</requirements>
+		<description>
+			<p>Starting at 14th level, you have advantage on saving throws against spells.</p>
+			<p class="indent">Furthermore, you have resistance against the damage of spells.</p>
+		</description>
+		<sheet>
+			<description>You have advantage on saving throws against spells.
+			You have resistance against the damage of spells.</description>
+		</sheet>
+	</element>
+	
+	<!--Feature Replacement Grants-->
+	<element name="Abjuration Savant Feature Replacement" type="Grants" source="Internal" id="ID_INTERNAL_FEATURE_REPLACEMENT_WIZARD_ABJURATION_ABJURATION_SAVANT" />
+	<element name="Arcane Ward Feature Replacement" type="Grants" source="Internal" id="ID_INTERNAL_FEATURE_REPLACEMENT_WIZARD_ABJURATION_ARCANE_WARD" />
+	<element name="Projected Ward Feature Replacement" type="Grants" source="Internal" id="ID_INTERNAL_FEATURE_REPLACEMENT_WIZARD_ABJURATION_PROJECTED_WARD" />
+	<element name="Improved Abjuration Feature Replacement" type="Grants" source="Internal" id="ID_INTERNAL_FEATURE_REPLACEMENT_WIZARD_ABJURATION_IMPROVED_ABJURATION" />
+	<element name="Spell Resistance Feature Replacement" type="Grants" source="Internal" id="ID_INTERNAL_FEATURE_REPLACEMENT_WIZARD_ABJURATION_SPELL_RESISTANCE" />
+</elements>

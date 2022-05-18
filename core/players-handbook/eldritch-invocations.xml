@@ -1,0 +1,504 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<elements>
+	<info>
+		<name></name>
+		<update version="0.0.1">
+			<file name="eldritch-invocations.xml" url="https://raw.githubusercontent.com/AuroraLegacy/elements/master/core/players-handbook/eldritch-invocations.xml" />
+		</update>
+	</info>
+
+	<!-- Eldritch Invocations -->
+	<element name="Agonizing Blast" type="Class Feature" source="Player’s Handbook" id="ID_WOTC_PHB_CLASS_FEATURE_ELDRITCH_INVOCATION_AGONIZING_BLAST">
+		<supports>Eldritch Invocation</supports>
+		<prerequisite>eldritch blast cantrip</prerequisite>
+		<requirements>ID_PHB_SPELL_ELDRITCH_BLAST</requirements>
+		<description>
+			<p><em>Prerequisite: eldritch blast cantrip</em></p>
+			<p>When you cast <em>eldritch blast</em>, add your Charisma modifier to the damage it deals on a hit.</p>
+			<div class="reference">
+				<div element="ID_PHB_SPELL_ELDRITCH_BLAST" />
+			</div>
+		</description>
+		<sheet>
+			<description>When you cast eldritch blast, add {{agonizing blast:damage}} to the damage it deals on a hit.</description>
+		</sheet>
+		<rules>
+			<stat name="agonizing blast:damage" value="charisma:modifier" bonus="base" />
+		</rules>
+	</element>
+	<element name="Armor of Shadows" type="Class Feature" source="Player’s Handbook" id="ID_WOTC_PHB_CLASS_FEATURE_ELDRITCH_INVOCATION_ARMOR_OF_SHADOWS">
+		<supports>Eldritch Invocation</supports>
+		<description>
+			<p>You can cast <em>mage armor</em> on yourself at will, without expending a spell slot or material components.</p>
+			<div class="reference">
+				<div element="ID_PHB_SPELL_MAGE_ARMOR" />
+			</div>
+		</description>
+		<sheet>
+			<description>You can cast mage armor on yourself at will, without expending a spell slot or material components.</description>
+		</sheet>
+		<rules>
+			<grant type="Spell" id="ID_PHB_SPELL_MAGE_ARMOR" />
+		</rules>
+	</element>
+	<element name="Ascendant Step" type="Class Feature" source="Player’s Handbook" id="ID_WOTC_PHB_CLASS_FEATURE_ELDRITCH_INVOCATION_ASCENDANT_STEP">
+		<supports>Eldritch Invocation</supports>
+		<prerequisite>9th level</prerequisite>
+		<requirements>[level:9]</requirements>
+		<description>
+			<p><em>Prerequisite: 9th level</em></p>
+			<p>You can cast <em>levitate</em> on yourself at will, without expending a spell slot or material components.</p>
+			<div class="reference">
+				<div element="ID_PHB_SPELL_LEVITATE" />
+			</div>
+		</description>
+		<sheet>
+			<description>You can cast levitate on yourself at will, without expending a spell slot or material components.</description>
+		</sheet>
+		<rules>
+			<grant type="Spell" id="ID_PHB_SPELL_LEVITATE" />
+		</rules>
+	</element>
+	<element name="Beast Speech" type="Class Feature" source="Player’s Handbook" id="ID_WOTC_PHB_CLASS_FEATURE_ELDRITCH_INVOCATION_BEAST_SPEECH">
+		<supports>Eldritch Invocation</supports>
+		<description>
+			<p>You can cast <em>speak with animals</em> at will, without expending a spell slot.</p>
+			<div class="reference">
+				<div element="ID_PHB_SPELL_SPEAK_WITH_ANIMALS" />
+			</div>
+		</description>
+		<sheet>
+			<description>You can cast speak with animals at will, without expending a spell slot.</description>
+		</sheet>
+		<rules>
+			<grant type="Spell" id="ID_PHB_SPELL_SPEAK_WITH_ANIMALS" />
+		</rules>
+	</element>
+	<element name="Beguiling Influence" type="Class Feature" source="Player’s Handbook" id="ID_WOTC_PHB_CLASS_FEATURE_ELDRITCH_INVOCATION_BEGUILING_INFLUENCE">
+		<supports>Eldritch Invocation</supports>
+		<description>
+			<p>You gain proficiency in the Deception and Persuasion skills.</p>
+		</description>
+		<sheet display="false">
+			<description>You gain proficiency in the Deception and Persuasion skills.</description>
+		</sheet>
+		<rules>
+			<grant type="Proficiency" id="ID_PROFICIENCY_SKILL_DECEPTION" />
+			<grant type="Proficiency" id="ID_PROFICIENCY_SKILL_PERSUASION" />
+		</rules>
+	</element>
+	<element name="Bewitching Whispers" type="Class Feature" source="Player’s Handbook" id="ID_WOTC_PHB_CLASS_FEATURE_ELDRITCH_INVOCATION_BEWITCHING_WHISPERS">
+		<supports>Eldritch Invocation</supports>
+		<prerequisite>7th level</prerequisite>
+		<requirements>[level:7]</requirements>
+		<description>
+			<p><em>Prerequisite: 7th level</em></p>
+			<p>You can cast <em>compulsion</em> once using a warlock spell slot. You can’t do so again until you finish a long rest.</p>
+			<div class="reference">
+				<div element="ID_PHB_SPELL_COMPULSION" />
+			</div>
+		</description>
+		<sheet usage="1/Long Rest">
+			<description>You can cast compulsion once using a warlock spell slot.</description>
+		</sheet>
+		<rules>
+			<grant type="Spell" id="ID_PHB_SPELL_COMPULSION" />
+		</rules>
+	</element>
+	<element name="Book of Ancient Secrets" type="Class Feature" source="Player’s Handbook" id="ID_WOTC_PHB_CLASS_FEATURE_ELDRITCH_INVOCATION_BOOK_OF_ANCIENT_SECRETS">
+		<supports>Eldritch Invocation, Pact of the Tome</supports>
+		<prerequisite>Pact of the Tome feature</prerequisite>
+		<requirements>ID_WOTC_PHB_CLASS_FEATURE_WARLOCK_PACT_BOON_PACT_OF_THE_TOME</requirements>
+		<description>
+			<p><em>Prerequisite: Pact of the Tome feature</em></p>
+			<p>You can now inscribe magical rituals in your Book of Shadows. Choose two 1st-level spells that have the ritual tag from any class’s spell list (the two needn’t be from the same list). The spells appear in the book and don’t count against the number of spells you know. With your Book of Shadows in hand, you can cast the chosen spells as rituals. You can’t cast the spells except as rituals, unless you’ve learned them by some other means. You can also cast a warlock spell you know as a ritual if it has the ritual tag.</p>
+			<p class="indent">On your adventures, you can add other ritual spells to your Book of Shadows. When you find such a spell, you can add it to the book if the spell’s level is equal to or less than half your warlock level (rounded up) and if you can spare the time to transcribe the spell. For each level of the spell, the transcription process takes 2 hours and costs 50 gp for the rare inks needed to inscribe it.</p>
+		</description>
+		<sheet>
+			<description>With your Book of Shadows in hand, you can cast the chosen spells as rituals.
+			On your adventures, you can add other ritual spells to your Book of Shadows. When you find such a spell, you can add it to the book if the spell’s level is equal to or less than {{level:warlock:half:up}} and if you can spare the time to transcribe the spell. For each level of the spell, the transcription process takes 2 hours and costs 50 gp for the rare inks needed to inscribe it.</description>
+		</sheet>
+		<rules>
+			<select type="Spell" name="Book of Ancient Secrets" supports="1,Ritual" number="2" spellcasting="Warlock"/>
+		</rules>
+	</element>
+	<element name="Chains of Carceri" type="Class Feature" source="Player’s Handbook" id="ID_WOTC_PHB_CLASS_FEATURE_ELDRITCH_INVOCATION_CHAINS_OF_CARCERI">
+		<supports>Eldritch Invocation, Pact of the Chain</supports>
+		<prerequisite>15th level, Pact of the Chain feature</prerequisite>
+		<requirements>[level:15],ID_WOTC_PHB_CLASS_FEATURE_WARLOCK_PACT_BOON_PACT_OF_THE_CHAIN</requirements>
+		<description>
+			<p><em>Prerequisite: 15th level, Pact of the Chain feature</em></p>
+			<p>You can cast <em>hold monster</em> at will—targeting a celestial, fiend, or elemental—without expending a spell slot or material components. You must finish a long rest before you can use this invocation on the same creature again.</p>
+			<div class="reference">
+				<div element="ID_PHB_SPELL_HOLD_MONSTER" />
+			</div>
+		</description>
+		<sheet>
+			<description>You can cast hold monster at will—targeting a celestial, fiend, or elemental—without expending a spell slot or material components. You must finish a long rest before you can use this invocation on the same creature again.</description>
+		</sheet>
+		<rules>
+			<grant type="Spell" id="ID_PHB_SPELL_HOLD_MONSTER" />
+		</rules>
+	</element>
+	<element name="Devil’s Sight" type="Class Feature" source="Player’s Handbook" id="ID_WOTC_PHB_CLASS_FEATURE_ELDRITCH_INVOCATION_DEVILS_SIGHT">
+		<supports>Eldritch Invocation</supports>
+		<description>
+			<p>You can see normally in darkness, both magical and nonmagical, to a distance of 120 feet.</p>
+		</description>
+		<sheet>
+			<description>You can see normally in darkness, both magical and nonmagical, to a distance of 120 feet.</description>
+		</sheet>
+	</element>
+	<element name="Dreadful Word" type="Class Feature" source="Player’s Handbook" id="ID_WOTC_PHB_CLASS_FEATURE_ELDRITCH_INVOCATION_DREADFUL_WORD">
+		<supports>Eldritch Invocation</supports>
+		<prerequisite>7th level</prerequisite>
+		<requirements>[level:7]</requirements>
+		<description>
+			<p><em>Prerequisite: 7th level</em></p>
+			<p>You can cast <em>confusion</em> once using a warlock spell slot. You can’t do so again until you finish a long rest.</p>
+			<div class="reference">
+				<div element="ID_PHB_SPELL_CONFUSION" />
+			</div>
+		</description>
+		<sheet usage="1/Long Rest">
+			<description>You can cast confusion once using a warlock spell slot.</description>
+		</sheet>
+		<rules>
+			<grant type="Spell" id="ID_PHB_SPELL_CONFUSION" />
+		</rules>
+	</element>
+	<element name="Eldritch Sight" type="Class Feature" source="Player’s Handbook" id="ID_WOTC_PHB_CLASS_FEATURE_ELDRITCH_INVOCATION_ELDRITCH_SIGHT">
+		<supports>Eldritch Invocation</supports>
+		<description>
+			<p>You can cast <em>detect magic</em> at will, without expending a spell slot.</p>
+			<div class="reference">
+				<div element="ID_PHB_SPELL_DETECT_MAGIC" />
+			</div>
+		</description>
+		<sheet>
+			<description>You can cast detect magic at will, without expending a spell slot.</description>
+		</sheet>
+		<rules>
+			<grant type="Spell" id="ID_PHB_SPELL_DETECT_MAGIC" />
+		</rules>
+	</element>
+	<element name="Eldritch Spear" type="Class Feature" source="Player’s Handbook" id="ID_WOTC_PHB_CLASS_FEATURE_ELDRITCH_INVOCATION_Eldritch_Spear">
+		<supports>Eldritch Invocation</supports>
+		<prerequisite>eldritch blast cantrip</prerequisite>
+		<requirements>ID_PHB_SPELL_ELDRITCH_BLAST</requirements>
+		<description>
+			<p><em>Prerequisite: eldritch blast cantrip</em></p>
+			<p>When you cast <em>eldritch blast</em>, its range is 300 feet.</p>
+			<div class="reference">
+				<div element="ID_PHB_SPELL_ELDRITCH_BLAST" />
+			</div>
+		</description>
+		<sheet>
+			<description>When you cast eldritch blast, its range is 300 feet.</description>
+		</sheet>
+		<rules>
+			<!-- implement alter spell: <stat target="ID_PHB_SPELL_ELDRITCH_BLAST" field="range" value="300 feet" />-->
+		</rules>
+	</element>
+	<element name="Eyes of the Rune Keeper" type="Class Feature" source="Player’s Handbook" id="ID_WOTC_PHB_CLASS_FEATURE_ELDRITCH_INVOCATION_EYES_OF_THE_RUNEKEEPER">
+		<supports>Eldritch Invocation</supports>
+		<description>
+			<p>You can read all writing.</p>
+		</description>
+		<sheet>
+			<description>You can read all writing.</description>
+		</sheet>
+	</element>
+	<element name="Fiendish Vigor" type="Class Feature" source="Player’s Handbook" id="ID_WOTC_PHB_CLASS_FEATURE_ELDRITCH_INVOCATION_FIENDISH_VIGOR">
+		<supports>Eldritch Invocation</supports>
+		<description>
+			<p>You can cast <em>false life</em> on yourself at will as a 1st-level spell, without expending a spell slot or material components.</p>
+			<div class="reference">
+				<div element="ID_PHB_SPELL_FALSE_LIFE" />
+			</div>
+		</description>
+		<sheet>
+			<description>You can cast false life on yourself at will, without expending a spell slot or material components.</description>
+		</sheet>
+		<rules>
+			<grant type="Spell" id="ID_PHB_SPELL_FALSE_LIFE" />
+		</rules>
+	</element>
+	<element name="Gaze of Two Minds" type="Class Feature" source="Player’s Handbook" id="ID_WOTC_PHB_CLASS_FEATURE_ELDRITCH_INVOCATION_GAZE_OF_TWO_MINDS">
+		<supports>Eldritch Invocation</supports>
+		<description>
+			<p>You can use your action to touch a willing humanoid and perceive through its senses until the end of your next turn. As long as the creature is on the same plane of existence as you, you can use your action on subsequent turns to maintain this connection, extending the duration until the end of your next turn. While perceiving through the other creature’s senses, you benefit from any special senses possessed by that creature, and you are blinded and deafened to your own surroundings.</p>
+		</description>
+		<sheet action="Action">
+			<description>You can touch a willing humanoid and perceive through its senses until the end of your next turn. As long as the creature is on the same plane of existence as you, you can use your action on subsequent turns to maintain this connection, extending the duration until the end of your next turn. While perceiving through the other creature’s senses, you benefit from any special senses possessed by that creature, and you are blinded and deafened to your own surroundings.</description>
+		</sheet>
+	</element>
+	<element name="Lifedrinker" type="Class Feature" source="Player’s Handbook" id="ID_WOTC_PHB_CLASS_FEATURE_ELDRITCH_INVOCATION_LIFEDRINKER">
+		<supports>Eldritch Invocation, Pact of the Blade</supports>
+		<prerequisite>12th level, Pact of the Blade feature</prerequisite>
+		<requirements>[level:12],ID_WOTC_PHB_CLASS_FEATURE_WARLOCK_PACT_BOON_PACT_OF_THE_BLADE</requirements>
+		<description>
+			<p><em>Prerequisite: 12th level, Pact of the Blade feature</em></p>
+			<p>When you hit a creature with your pact weapon, the creature takes extra necrotic damage equal to your Charisma modifier (minimum 1).</p>
+		</description>
+		<sheet>
+			<description>When you hit a creature with your pact weapon, the creature takes {{lifedrinker:damage}} extra necrotic damage.</description>
+		</sheet>
+		<rules>
+			<stat name="lifedrinker:damage" value="1" bonus="modifier"/>
+			<stat name="lifedrinker:damage" value="charisma:modifier" bonus="modifier"/>
+		</rules>
+	</element>
+	<element name="Mask of Many Faces" type="Class Feature" source="Player’s Handbook" id="ID_WOTC_PHB_CLASS_FEATURE_ELDRITCH_INVOCATION_MASK_OF_MANY_FACES">
+		<supports>Eldritch Invocation</supports>
+		<description>
+			<p>You can cast <em>disguise self</em> at will, without expending a spell slot.</p>
+			<div class="reference">
+				<div element="ID_PHB_SPELL_DISGUISE_SELF" />
+			</div>
+		</description>
+		<sheet>
+			<description>You can cast disguise self at will, without expending a spell slot.</description>
+		</sheet>
+		<rules>
+			<grant type="Spell" id="ID_PHB_SPELL_DISGUISE_SELF" />
+		</rules>
+	</element>
+	<element name="Master of Myriad Forms" type="Class Feature" source="Player’s Handbook" id="ID_WOTC_PHB_CLASS_FEATURE_ELDRITCH_INVOCATION_MASTER_OF_MYRIAD_FORMS">
+		<supports>Eldritch Invocation</supports>
+		<prerequisite>15th level</prerequisite>
+		<requirements>[level:15]</requirements>
+		<description>
+			<p><em>Prerequisite: 15th level</em></p>
+			<p>You can cast <em>alter self</em> at will, without expending a spell slot.</p>
+			<div class="reference">
+				<div element="ID_PHB_SPELL_ALTER_SELF" />
+			</div>
+		</description>
+		<sheet>
+			<description>You can cast alter self at will, without expending a spell slot.</description>
+		</sheet>
+		<rules>
+			<grant type="Spell" id="ID_PHB_SPELL_ALTER_SELF" />
+		</rules>
+	</element>
+	<element name="Minions of Chaos" type="Class Feature" source="Player’s Handbook" id="ID_WOTC_PHB_CLASS_FEATURE_ELDRITCH_INVOCATION_MINIONS_OF_CHAOS">
+		<supports>Eldritch Invocation</supports>
+		<prerequisite>9th level</prerequisite>
+		<requirements>[level:9]</requirements>
+		<description>
+			<p><em>Prerequisite: 9th level</em></p>
+			<p>You can cast <em>conjure elemental</em> once using a warlock spell slot. You can’t do so again until you finish a long rest.</p>
+			<div class="reference">
+				<div element="ID_PHB_SPELL_CONJURE_ELEMENTAL" />
+			</div>
+		</description>
+		<sheet usage="1/Long Rest">
+			<description>You can cast conjure elemental once using a warlock spell slot.</description>
+		</sheet>
+		<rules>
+			<grant type="Spell" id="ID_PHB_SPELL_CONJURE_ELEMENTAL" />
+		</rules>
+	</element>
+	<element name="Mire the Mind" type="Class Feature" source="Player’s Handbook" id="ID_WOTC_PHB_CLASS_FEATURE_ELDRITCH_INVOCATION_MIRE_THE_MIND">
+		<supports>Eldritch Invocation</supports>
+		<prerequisite>5th level</prerequisite>
+		<requirements>[level:5]</requirements>
+		<description>
+			<p><em>Prerequisite: 5th level</em></p>
+			<p>You can cast <em>slow</em> once using a warlock spell slot. You can’t do so again until you finish a long rest.</p>
+			<div class="reference">
+				<div element="ID_PHB_SPELL_SLOW" />
+			</div>
+		</description>
+		<sheet usage="1/Long Rest">
+			<description>You can cast slow once using a warlock spell slot.</description>
+		</sheet>
+		<rules>
+			<grant type="Spell" id="ID_PHB_SPELL_SLOW" />
+		</rules>
+	</element>
+	<element name="Misty Visions" type="Class Feature" source="Player’s Handbook" id="ID_WOTC_PHB_CLASS_FEATURE_ELDRITCH_INVOCATION_MISTY_VISIONS">
+		<supports>Eldritch Invocation</supports>
+		<description>
+			<p>You can cast <em>silent image</em> at will, without expending a spell slot or material components.</p>
+			<div class="reference">
+				<div element="ID_PHB_SPELL_SILENT_IMAGE" />
+			</div>
+		</description>
+		<sheet>
+			<description>You can cast silent image at will, without expending a spell slot or material components.</description>
+		</sheet>
+		<rules>
+			<grant type="Spell" id="ID_PHB_SPELL_SILENT_IMAGE" />
+		</rules>
+	</element>
+	<element name="One with Shadows" type="Class Feature" source="Player’s Handbook" id="ID_WOTC_PHB_CLASS_FEATURE_ELDRITCH_INVOCATION_ONE_WITH_SHADOWS">
+		<supports>Eldritch Invocation</supports>
+		<prerequisite>5th level</prerequisite>
+		<requirements>[level:5]</requirements>
+		<description>
+			<p><em>Prerequisite: 5th level</em></p>
+			<p>When you are in an area of dim light or darkness, you can use your action to become invisible until you move or take an action or a reaction.</p>
+		</description>
+		<sheet action="Action">
+			<description>When you are in an area of dim light or darkness, you can become invisible until you move or take an action or a reaction.</description>
+		</sheet>
+	</element>
+	<element name="Otherworldly Leap" type="Class Feature" source="Player’s Handbook" id="ID_WOTC_PHB_CLASS_FEATURE_ELDRITCH_INVOCATION_OTHERWORLDLY_LEAP">
+		<supports>Eldritch Invocation</supports>
+		<prerequisite>9th level</prerequisite>
+		<requirements>[level:9]</requirements>
+		<description>
+			<p><em>Prerequisite: 9th level</em></p>
+			<p>You can cast <em>jump</em> on yourself at will, without expending a spell slot or material components.</p>
+			<div class="reference">
+				<div element="ID_PHB_SPELL_JUMP" />
+			</div>
+		</description>
+		<sheet>
+			<description>You can cast jump on yourself at will, without expending a spell slot or material components.</description>
+		</sheet>
+		<rules>
+			<grant type="Spell" id="ID_PHB_SPELL_JUMP" />
+		</rules>
+	</element>
+	<element name="Repelling Blast" type="Class Feature" source="Player’s Handbook" id="ID_WOTC_PHB_CLASS_FEATURE_ELDRITCH_INVOCATION_REPELLING_BLAST">
+		<supports>Eldritch Invocation</supports>
+		<prerequisite>eldritch blast cantrip</prerequisite>
+		<requirements>ID_PHB_SPELL_ELDRITCH_BLAST</requirements>
+		<description>
+			<p><em>Prerequisite: eldritch blast cantrip</em></p>
+			<p>When you hit a creature with <em>eldritch blast</em>, you can push the creature up to 10 feet away from you in a straight line.</p>
+			<div class="reference">
+				<div element="ID_PHB_SPELL_ELDRITCH_BLAST" />
+			</div>
+		</description>
+		<sheet>
+			<description>When you hit a creature with eldritch blast, you can push the creature up to 10 feet away from you in a straight line.</description>
+		</sheet>
+	</element>
+	<element name="Sculptor of Flesh" type="Class Feature" source="Player’s Handbook" id="ID_WOTC_PHB_CLASS_FEATURE_ELDRITCH_INVOCATION_SCULPTOR_OF_FLESH">
+		<supports>Eldritch Invocation</supports>
+		<prerequisite>7th level</prerequisite>
+		<requirements>[level:7]</requirements>
+		<description>
+			<p><em>Prerequisite: 7th level</em></p>
+			<p>You can cast <em>polymorph</em> once using a warlock spell slot. You can’t do so again until you finish a long rest.</p>
+			<div class="reference">
+				<div element="ID_PHB_SPELL_POLYMORPH" />
+			</div>
+		</description>
+		<sheet usage="1/Long Rest">
+			<description>You can cast polymorph once using a warlock spell slot.</description>
+		</sheet>
+		<rules>
+			<grant type="Spell" id="ID_PHB_SPELL_POLYMORPH" />
+		</rules>
+	</element>
+	<element name="Sign of Ill Omen" type="Class Feature" source="Player’s Handbook" id="ID_WOTC_PHB_CLASS_FEATURE_ELDRITCH_INVOCATION_SIGN_OF_ILL_OMEN">
+		<supports>Eldritch Invocation</supports>
+		<prerequisite>5th level</prerequisite>
+		<requirements>[level:5]</requirements>
+		<description>
+			<p><em>Prerequisite: 5th level</em></p>
+			<p>You can cast <em>bestow curse</em> once using a warlock spell slot. You can’t do so again until you finish a long rest.</p>
+			<div class="reference">
+				<div element="ID_PHB_SPELL_BESTOW_CURSE" />
+			</div>
+		</description>
+		<sheet usage="1/Long Rest">
+			<description>You can cast bestow curse once using a warlock spell slot.</description>
+		</sheet>
+		<rules>
+			<grant type="Spell" id="ID_PHB_SPELL_BESTOW_CURSE" />
+		</rules>
+	</element>
+	<element name="Thief of Five Fates" type="Class Feature" source="Player’s Handbook" id="ID_WOTC_PHB_CLASS_FEATURE_ELDRITCH_INVOCATION_THIEF_OF_FIVE_FATES">
+		<supports>Eldritch Invocation</supports>
+		<description>
+			<p>You can cast <em>bane</em> once using a warlock spell slot. You can’t do so again until you finish a long rest.</p>
+			<div class="reference">
+				<div element="ID_PHB_SPELL_BANE" />
+			</div>
+		</description>
+		<sheet usage="1/Long Rest">
+			<description>You can cast bane once using a warlock spell slot.</description>
+		</sheet>
+		<rules>
+			<grant type="Spell" id="ID_PHB_SPELL_BANE" />
+		</rules>
+	</element>
+	<element name="Thirsting Blade" type="Class Feature" source="Player’s Handbook" id="ID_WOTC_PHB_CLASS_FEATURE_ELDRITCH_INVOCATION_THIRSTING_BLADE">
+		<supports>Eldritch Invocation, Pact of the Blade</supports>
+		<prerequisite>5th level, Pact of the Blade feature</prerequisite>
+		<requirements>[level:5],ID_WOTC_PHB_CLASS_FEATURE_WARLOCK_PACT_BOON_PACT_OF_THE_BLADE</requirements>
+		<description>
+			<p><em>Prerequisite: 5th level, Pact of the Blade feature</em></p>
+			<p>You can attack with your pact weapon twice, instead of once, whenever you take the Attack action on your turn.</p>
+		</description>
+		<sheet>
+			<description>You can attack with your pact weapon twice, instead of once, whenever you take the Attack action on your turn.</description>
+		</sheet>
+	</element>
+	<element name="Visions of Distant Realms" type="Class Feature" source="Player’s Handbook" id="ID_WOTC_PHB_CLASS_FEATURE_ELDRITCH_INVOCATION_VISIONS_OF_DISTANT_REALMS">
+		<supports>Eldritch Invocation</supports>
+		<prerequisite>15th level</prerequisite>
+		<requirements>[level:15]</requirements>
+		<description>
+			<p><em>Prerequisite: 15th level</em></p>
+			<p>You can cast <em>arcane eye</em> at will, without expending a spell slot.</p>
+			<div class="reference">
+				<div element="ID_PHB_SPELL_ARCANE_EYE" />
+			</div>
+		</description>
+		<sheet>
+			<description>You can cast arcane eye at will, without expending a spell slot.</description>
+		</sheet>
+		<rules>
+			<grant type="Spell" id="ID_PHB_SPELL_ARCANE_EYE" />
+		</rules>
+	</element>
+	<element name="Voice of the Chain Master" type="Class Feature" source="Player’s Handbook" id="ID_WOTC_PHB_CLASS_FEATURE_ELDRITCH_INVOCATION_VOICE_OF_THE_CHAIN_MASTER">
+		<supports>Eldritch Invocation, Pact of the Chain</supports>
+		<prerequisite>Pact of the Chain feature</prerequisite>
+		<requirements>ID_WOTC_PHB_CLASS_FEATURE_WARLOCK_PACT_BOON_PACT_OF_THE_CHAIN</requirements>
+		<description>
+			<p><em>Prerequisite: Pact of the Chain feature</em></p>
+			<p>You can communicate telepathically with your familiar and perceive through your familiar’s senses as long as you are on the same plane of existence. Additionally, while perceiving through your familiar’s senses, you can also speak through your familiar in your own voice, even if your familiar is normally incapable of speech.</p>
+		</description>
+		<sheet>
+			<description>You can communicate telepathically with your familiar and perceive through your familiar’s senses as long as you are on the same plane of existence. Additionally, while perceiving through your familiar’s senses, you can also speak through your familiar in your own voice, even if your familiar is normally incapable of speech.</description>
+		</sheet>
+	</element>
+	<element name="Whispers of the Grave" type="Class Feature" source="Player’s Handbook" id="ID_WOTC_PHB_CLASS_FEATURE_ELDRITCH_INVOCATION_WHISPERS_OF_THE_GRAVE">
+		<supports>Eldritch Invocation</supports>
+		<prerequisite>9th level</prerequisite>
+		<requirements>[level:9]</requirements>
+		<description>
+			<p><em>Prerequisite: 9th level</em></p>
+			<p>You can cast <em>speak with dead</em> at will, without expending a spell slot.</p>
+			<div class="reference">
+				<div element="ID_PHB_SPELL_SPEAK_WITH_DEAD" />
+			</div>
+		</description>
+		<sheet>
+			<description>You can cast speak with dead at will, without expending a spell slot.</description>
+		</sheet>
+		<rules>
+			<grant type="Spell" id="ID_PHB_SPELL_SPEAK_WITH_DEAD" />
+		</rules>
+	</element>
+	<element name="Witch Sight" type="Class Feature" source="Player’s Handbook" id="ID_WOTC_PHB_CLASS_FEATURE_ELDRITCH_INVOCATION_WITCH_SIGHT">
+		<supports>Eldritch Invocation</supports>
+		<prerequisite>15th level</prerequisite>
+		<requirements>[level:15]</requirements>
+		<description>
+			<p><em>Prerequisite: 15th level</em></p>
+			<p>You can see the true form of any shapechanger or creature concealed by illusion or transmutation magic while the creature is within 30 feet of you and within line of sight.</p>
+		</description>
+		<sheet>
+			<description>You can see the true form of any shapechanger or creature concealed by illusion or transmutation magic while the creature is within 30 feet of you and within line of sight.</description>
+		</sheet>
+	</element>
+</elements>

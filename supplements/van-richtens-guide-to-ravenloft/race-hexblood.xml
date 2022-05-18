@@ -2,7 +2,7 @@
 <elements>
 	<info>
 		<name>Hexblood</name>
-		<update version="0.0.1">
+		<update version="0.0.3">
 			<file name="race-hexblood.xml" url="https://raw.githubusercontent.com/AuroraLegacy/elements/master/supplements/van-richtens-guide-to-ravenloft/race-hexblood.xml" />
 		</update>
 	</info>
@@ -66,6 +66,9 @@
 		<description>
 			<p>If you replace a race with this lineage, you can keep the following elements of that race: any skill proficiencies you gained from it and any climbing, flying, or swimming speed you gained from it.</p>
 			<p class="indent">If you don’t keep any of those elements or you choose this lineage at character creation, you gain proficiency in two skills of your choice.</p>
+			<p><strong><em>Notes:</em></strong> This trait's mechanics aren't implemented in the Aurora Builder. But you can emulate mechanics of this trait with following options:</p>
+			<p class="indent"><b>Skill Proficiencies.</b> You can recover lost skill proficiencies by selecting and equipping items from Additional Proficiency category of the Equipment section.</p>
+			<p class="indent"><b>Speed.</b> You can regain lost speed by selecting and equipping items from Additional Features category of the Equipment section.</p>
 		</description>
 		<sheet display="false" />
 		<rules>
@@ -92,49 +95,44 @@
 
 	<element name="Hex Magic" type="Racial Trait" source="Van Richten's Guide To Ravenloft" id="ID_WOTC_VRGTR_RACIAL_TRAIT_HEXBLOOD_HEX_MAGIC">
 		<description>
-			<p>You can cast the disguise self and hex spells with this trait. Once you cast either of these spells with this trait, you can’t cast that spell with it again until you finish a long rest. You can also cast these spells using any spell slots you have.</p>
+			<p>You can cast the <i>disguise self</i> and <i>hex</i> spells with this trait. Once you cast either of these spells with this trait, you can’t cast that spell with it again until you finish a long rest. You can also cast these spells using any spell slots you have.</p>
 			<p class="indent">Intelligence, Wisdom, or Charisma is your spellcasting ability for these spells (choose the ability when you gain this lineage).</p>
 		</description>
-		<sheet>
-			<description>You can cast the <i>disguise self</i> and <i>hex</i> spells with this trait. Your spellcasting ability for these spells is {{hex magic:ability}}. Once you cast either of these spells with this trait, you can’t cast that spell with it again until you finish a long rest. You can also cast these spells using any spell slots you have.</description>
-		</sheet>
-	<rules>
+		<sheet display="false" />
+		<rules>
 			<select type="Racial Trait" name="Spellcasting Ability (Hex Magic)" supports="ID_WOTC_VRGTR_RACIAL_TRAIT_HEXBLOOD_HEX_MAGIC_INTELLIGENCE | ID_WOTC_VRGTR_RACIAL_TRAIT_HEXBLOOD_HEX_MAGIC_WISDOM | ID_WOTC_VRGTR_RACIAL_TRAIT_HEXBLOOD_HEX_MAGIC_CHARISMA" />
 			<grant type="Spell" id="ID_PHB_SPELL_DISGUISE_SELF" />
 			<grant type="Spell" id="ID_PHB_SPELL_HEX" />
 		</rules>
 	</element>
 
-	<element name="Intelligence (Hex Magic)" type="Racial Trait" source="Van Richten's Guide To Ravenloft" id="ID_WOTC_VRGTR_RACIAL_TRAIT_HEXBLOOD_HEX_MAGIC_INTELLIGENCE">
+	<element name="Intelligence" type="Racial Trait" source="Van Richten's Guide To Ravenloft" id="ID_WOTC_VRGTR_RACIAL_TRAIT_HEXBLOOD_HEX_MAGIC_INTELLIGENCE">
 		<compendium display="false" />
 		<description>
 			<p>Your spellcasting ability for these spells is Intelligence.</p>
 		</description>
-		<sheet display="false" />
-		<rules>
-			<stat name="hex magic:ability" value="Intelligence" inline="true"/>
-		</rules>
+		<sheet alt="Hex Magic">
+			<description>You can cast the <i>disguise self</i> and <i>hex</i> spells with this trait. Once you cast either of these spells with this trait, you can’t cast that spell with it again until you finish a long rest. You can also cast these spells using any spell slots you have. Your spellcasting ability for these spells is Intelligence.</description>
+		</sheet>
 	</element>
 
-	<element name="Wisdom (Hex Magic)" type="Racial Trait" source="Van Richten's Guide To Ravenloft" id="ID_WOTC_VRGTR_RACIAL_TRAIT_HEXBLOOD_HEX_MAGIC_WISDOM">
+	<element name="Wisdom" type="Racial Trait" source="Van Richten's Guide To Ravenloft" id="ID_WOTC_VRGTR_RACIAL_TRAIT_HEXBLOOD_HEX_MAGIC_WISDOM">
 		<compendium display="false" />
 		<description>
 			<p>Your spellcasting ability for these spells is Wisdom.</p>
 		</description>
-		<sheet display="false" />
-		<rules>
-			<stat name="hex magic:ability" value="Wisdom" inline="true"/>
-		</rules>
+		<sheet alt="Hex Magic">
+			<description>You can cast the <i>disguise self</i> and <i>hex</i> spells with this trait. Once you cast either of these spells with this trait, you can’t cast that spell with it again until you finish a long rest. You can also cast these spells using any spell slots you have. Your spellcasting ability for these spells is Wisdom.</description>
+		</sheet>
 	</element>
 
-	<element name="Charisma (Hex Magic)" type="Racial Trait" source="Van Richten's Guide To Ravenloft" id="ID_WOTC_VRGTR_RACIAL_TRAIT_HEXBLOOD_HEX_MAGIC_CHARISMA">
+	<element name="Charisma" type="Racial Trait" source="Van Richten's Guide To Ravenloft" id="ID_WOTC_VRGTR_RACIAL_TRAIT_HEXBLOOD_HEX_MAGIC_CHARISMA">
 		<compendium display="false" />
 		<description>
 			<p>Your spellcasting ability for these spells is Charisma.</p>
 		</description>
-		<sheet display="false" />
-		<rules>
-			<stat name="hex magic:ability" value="Charisma" inline="true"/>
-		</rules>
+		<sheet alt="Hex Magic">
+			<description>You can cast the <i>disguise self</i> and <i>hex</i> spells with this trait. Once you cast either of these spells with this trait, you can’t cast that spell with it again until you finish a long rest. You can also cast these spells using any spell slots you have. Your spellcasting ability for these spells is Charisma.</description>
+		</sheet>
 	</element>
 </elements>

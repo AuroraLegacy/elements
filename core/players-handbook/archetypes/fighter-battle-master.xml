@@ -1,0 +1,265 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<elements>
+	<info>
+		<update version="0.0.1">
+			<file name="fighter-battle-master.xml" url="https://raw.githubusercontent.com/AuroraLegacy/elements/master/core/players-handbook/archetypes/fighter-battle-master.xml" />
+		</update>
+	</info>
+
+	<!-- Battle Master Archetype -->
+	<element name="Battle Master" type="Archetype" source="Player’s Handbook" id="ID_WOTC_PHB_ARCHETYPE_FIGHTER_BATTLE_MASTER">
+		<supports>Martial Archetype</supports>
+		<description>
+			<p>Those who emulate the archetypal Battle Master employ martial techniques passed down through generations. To a Battle Master, combat is an academic field, sometimes including subjects beyond battle such as weaponsmithing and calligraphy. Not every fighter absorbs the lessons of history, theory, and artistry that are reflected in the Battle Master archetype, but those who do are well-rounded fighters of great skill and knowledge.</p>
+			<div element="ID_WOTC_PHB_ARCHETYPE_FEATURE_BATTLE_MASTER_COMBAT_SUPERIORITY"/>
+			<div element="ID_WOTC_PHB_ARCHETYPE_FEATURE_BATTLE_MASTER_STUDENT_OF_WAR"/>
+			<div element="ID_WOTC_PHB_ARCHETYPE_FEATURE_BATTLE_MASTER_KNOW_YOUR_ENEMY"/>
+			<div element="ID_WOTC_PHB_ARCHETYPE_FEATURE_BATTLE_MASTER_IMPROVED_COMBAT_SUPERIORITY"/>
+			<div element="ID_WOTC_PHB_ARCHETYPE_FEATURE_BATTLE_MASTER_RELENTLESS"/>
+		</description>
+		<sheet display="false">
+			<description>Those who emulate the archetypal Battle Master employ martial techniques passed down through generations.</description>
+		</sheet>
+		<rules>
+			<grant type="Archetype Feature" id="ID_WOTC_PHB_ARCHETYPE_FEATURE_BATTLE_MASTER_COMBAT_SUPERIORITY" level="3"/>
+			<grant type="Archetype Feature" id="ID_WOTC_PHB_ARCHETYPE_FEATURE_BATTLE_MASTER_STUDENT_OF_WAR" level="3"/>
+			<grant type="Archetype Feature" id="ID_WOTC_PHB_ARCHETYPE_FEATURE_BATTLE_MASTER_KNOW_YOUR_ENEMY" level="7"/>
+			<grant type="Archetype Feature" id="ID_WOTC_PHB_ARCHETYPE_FEATURE_BATTLE_MASTER_IMPROVED_COMBAT_SUPERIORITY" level="10"/>
+			<grant type="Archetype Feature" id="ID_WOTC_PHB_ARCHETYPE_FEATURE_BATTLE_MASTER_RELENTLESS" level="15"/>
+		</rules>
+	</element>
+	<element name="Combat Superiority" type="Archetype Feature" source="Player’s Handbook" id="ID_WOTC_PHB_ARCHETYPE_FEATURE_BATTLE_MASTER_COMBAT_SUPERIORITY">
+		<requirements>!ID_INTERNAL_FEATURE_REPLACEMENT_FIGHTER_BATTLE_MASTER_COMBAT_SUPERIORITY</requirements>
+		<description>
+			<p>When you choose this archetype at 3rd level, you learn maneuvers that are fueled by special dice called superiority dice.</p>
+			<p class="indent"><strong><em>Maneuvers.</em></strong> You learn three maneuvers of your choice, which are detailed under “Maneuvers” below. Many maneuvers enhance an attack in some way. You can use only one maneuver per attack. You learn two additional maneuvers of your choice at 7th, 10th, and 15th level. Each time you learn new maneuvers, you can also replace one maneuver you know with a different one.</p>
+			<p class="indent"><strong><em>Superiority Dice.</em></strong> You have four superiority dice, which are d8s. A superiority die is expended when you use it. You regain all of your expended superiority dice when you finish a short or long rest. You gain another superiority die at 7th level and one more at 15th level.</p>
+			<p class="indent"><strong><em>Saving Throws.</em></strong> Some of your maneuvers require your target to make a saving throw to resist the maneuver’s effects. The saving throw DC is calculated as follows:</p>
+			<center>
+				<p><strong>Maneuver save DC</strong> = 8 + your proficiency bonus + your Strength or Dexterity modifier (your choice).</p>
+			</center>
+		</description>
+		<sheet>
+			<description>You learn maneuvers that are fueled by special dice called superiority dice. You have {{superiority dice:amount}} superiority dice which are d{{superiority dice:size}}s. DC {{superiority dice:dc}}</description>
+		</sheet>
+		<rules>
+			<stat name="superiority dice:amount" value="4" />
+			<stat name="superiority dice:amount" value="1" level="7" />
+			<stat name="superiority dice:amount" value="1" level="15" />
+			<stat name="superiority dice:size" value="8" bonus="size"/>
+			<stat name="superiority dice:dc" value="8" />
+			<stat name="superiority dice:dc" value="proficiency" />
+			<stat name="superiority dice:dc:ability" value="strength:modifier" bonus="ability"/>
+			<stat name="superiority dice:dc:ability" value="dexterity:modifier" bonus="ability"/>
+			<stat name="superiority dice:dc" value="superiority dice:dc:ability" />
+			<select type="Archetype Feature" name="Combat Superiority (Level 3)" supports="Maneuver,Battle Master" number="3" />
+			<select type="Archetype Feature" name="Combat Superiority (Level 7)" supports="Maneuver,Battle Master" number="2" level="7" />
+			<select type="Archetype Feature" name="Combat Superiority (Level 10)" supports="Maneuver,Battle Master" number="2" level="10" />
+			<select type="Archetype Feature" name="Combat Superiority (Level 15)" supports="Maneuver,Battle Master" number="2" level="15" />
+		</rules>
+	</element>
+	<element name="Student of War" type="Archetype Feature" source="Player’s Handbook" id="ID_WOTC_PHB_ARCHETYPE_FEATURE_BATTLE_MASTER_STUDENT_OF_WAR">
+		<requirements>!ID_INTERNAL_FEATURE_REPLACEMENT_FIGHTER_BATTLE_MASTER_STUDENT_OF_WAR</requirements>
+		<description>
+			<p>At 3rd level, you gain proficiency with one type of artisan’s tools of your choice.</p>
+		</description>
+		<sheet display="false" />
+		<rules>
+			<select type="Proficiency" name="Student of War" supports="Artisan tools" />
+		</rules>
+	</element>
+	<element name="Know Your Enemy" type="Archetype Feature" source="Player’s Handbook" id="ID_WOTC_PHB_ARCHETYPE_FEATURE_BATTLE_MASTER_KNOW_YOUR_ENEMY">
+		<requirements>!ID_INTERNAL_FEATURE_REPLACEMENT_FIGHTER_BATTLE_MASTER_KNOW_YOUR_ENEMY</requirements>
+		<description>
+			<p>Starting at 7th level, if you spend at least 1 minute observing or interacting with another creature outside combat, you can learn certain information about its capabilities compared to your own. The DM tells you if the creature is your equal, superior, or inferior in regard to two of the following characteristics of your choice:</p>
+			<ul>
+				<li>Strength score</li>
+				<li>Dexterity score</li>
+				<li>Constitution score</li>
+				<li>Armor Class</li>
+				<li>Current hit points</li>
+				<li>Total class levels (if any)</li>
+				<li>Fighter class levels (if any)</li>
+			</ul>
+		</description>
+		<sheet>
+			<description>Spend at least 1 minute observing or interacting with another creature outside combat, you can learn certain information about its capabilities compared to your own.</description>
+		</sheet>
+	</element>
+	<element name="Improved Combat Superiority" type="Archetype Feature" source="Player’s Handbook" id="ID_WOTC_PHB_ARCHETYPE_FEATURE_BATTLE_MASTER_IMPROVED_COMBAT_SUPERIORITY">
+		<requirements>!ID_INTERNAL_FEATURE_REPLACEMENT_FIGHTER_BATTLE_MASTER_IMPROVED_COMBAT_SUPERIORITY</requirements>
+		<description>
+			<p>At 10th level, your superiority dice turn into d10s. At 18th level, they turn into d12s.</p>
+		</description>
+		<sheet display="false">
+			<description>Your superiority dice turn into d10s.</description>
+			<description level="18">Your superiority dice turn into d12s.</description>
+		</sheet>
+		<rules>
+			<stat name="superiority dice:size" value="10" level="10" bonus="size"/>
+			<stat name="superiority dice:size" value="12" level="18" bonus="size"/>
+		</rules>
+	</element>
+	<element name="Relentless" type="Archetype Feature" source="Player’s Handbook" id="ID_WOTC_PHB_ARCHETYPE_FEATURE_BATTLE_MASTER_RELENTLESS">
+		<requirements>!ID_INTERNAL_FEATURE_REPLACEMENT_FIGHTER_BATTLE_MASTER_RELENTLESS</requirements>
+		<description>
+			<p>Starting at 15th level, when you roll initiative and have no superiority dice remaining, you regain 1 superiority die.</p>
+		</description>
+		<sheet>
+			<description>When you roll initiative and have no superiority dice remaining, you regain 1 superiority die.</description>
+		</sheet>
+	</element>
+
+	<!-- Combat Maneuvers -->
+	<element name="Commander’s Strike" type="Archetype Feature" source="Player’s Handbook" id="ID_WOTC_PHB_ARCHETYPE_FEATURE_MANEUVER_COMMANDERS_STRIKE">
+		<supports>Maneuver, Battle Master</supports>
+		<description>
+			<p>When you take the Attack action on your turn, you can forgo one of your attacks and use a bonus action to direct one of your companions to strike. When you do so, choose a friendly creature who can see or hear you and expend one superiority die. That creature can immediately use its reaction to make one weapon attack, adding the superiority die to the attack’s damage roll.</p>
+		</description>
+		<sheet>
+			<description>When you take the Attack action on your turn, you can forgo one of your attacks and use a bonus action to direct one of your companions to strike. When you do so, choose a friendly creature who can see or hear you and expend one superiority die. That creature can immediately use its reaction to make one weapon attack, adding the superiority die to the attack’s damage roll.</description>
+		</sheet>
+	</element>
+	<element name="Disarming Attack" type="Archetype Feature" source="Player’s Handbook" id="ID_WOTC_PHB_ARCHETYPE_FEATURE_MANEUVER_DISARMING_ATTACK">
+		<supports>Maneuver, Battle Master</supports>
+		<description>
+			<p>When you hit a creature with a weapon attack, you can expend one superiority die to attempt to disarm the target, forcing it to drop one item of your choice that it’s holding. You add the superiority die to the attack’s damage roll, and the target must make a Strength saving throw. On a failed save, it drops the object you choose. The object lands at its feet.</p>
+		</description>
+		<sheet>
+			<description>When you hit a creature with a weapon attack, you can expend one superiority die to attempt to disarm the target, forcing it to drop one item of your choice that it’s holding. You add the superiority die to the attack’s damage roll, and the target must make a Strength saving throw. On a failed save, it drops the object you choose. The object lands at its feet.</description>
+		</sheet>
+	</element>
+	<element name="Distracting Strike" type="Archetype Feature" source="Player’s Handbook" id="ID_WOTC_PHB_ARCHETYPE_FEATURE_MANEUVER_DISTRACTING_STRIKE">
+		<supports>Maneuver, Battle Master</supports>
+		<description>
+			<p>When you hit a creature with a weapon attack, you can expend one superiority die to distract the creature, giving your allies an opening. You add the superiority die to the attack’s damage roll. The next attack roll against the target by an attacker other than you has advantage if the attack is made before the start of your next turn.</p>
+		</description>
+		<sheet>
+			<description>When you hit a creature with a weapon attack, you can expend one superiority die to distract the creature, giving your allies an opening. You add the superiority die to the attack’s damage roll. The next attack roll against the target by an attacker other than you has advantage if the attack is made before the start of your next turn.</description>
+		</sheet>
+	</element>
+	<element name="Evasive Footwork" type="Archetype Feature" source="Player’s Handbook" id="ID_WOTC_PHB_ARCHETYPE_FEATURE_MANEUVER_EVASIVE_FOOTWORK">
+		<supports>Maneuver, Battle Master</supports>
+		<description>
+			<p>When you move, you can expend one superiority die, rolling the die and adding the number rolled to your AC until you stop moving.</p>
+		</description>
+		<sheet>
+			<description>When you move, you can expend one superiority die, rolling the die and adding the number rolled to your AC until you stop moving.</description>
+		</sheet>
+	</element>
+	<element name="Feinting Attack" type="Archetype Feature" source="Player’s Handbook" id="ID_WOTC_PHB_ARCHETYPE_FEATURE_MANEUVER_FEINTING_ATTACK">
+		<supports>Maneuver, Battle Master</supports>
+		<description>
+			<p>You can expend one superiority die and use a bonus action on your turn to feint, choosing one creature within 5 feet of you as your target. You have advantage on your next attack roll against that creature this turn. If that attack hits, add the superiority die to the attack’s damage roll.</p>
+		</description>
+		<sheet>
+			<description>You can expend one superiority die and use a bonus action on your turn to feint, choosing one creature within 5 feet of you as your target. You have advantage on your next attack roll against that creature this turn. If that attack hits, add the superiority die to the attack’s damage roll.</description>
+		</sheet>
+	</element>
+	<element name="Goading Attack" type="Archetype Feature" source="Player’s Handbook" id="ID_WOTC_PHB_ARCHETYPE_FEATURE_MANEUVER_GOADING_ATTACK">
+		<supports>Maneuver, Battle Master</supports>
+		<description>
+			<p>When you hit a creature with a weapon attack, you can expend one superiority die to attempt to goad the target into attacking you. You add the superiority die to the attack’s damage roll, and the target must make a Wisdom saving throw. On a failed save, the target has disadvantage on all attack rolls against targets other than you until the end of your next turn.</p>
+		</description>
+		<sheet>
+			<description>When you hit a creature with a weapon attack, you can expend one superiority die to attempt to goad the target into attacking you. You add the superiority die to the attack’s damage roll, and the target must make a Wisdom saving throw. On a failed save, the target has disadvantage on all attack rolls against targets other than you until the end of your next turn.</description>
+		</sheet>
+	</element>
+	<element name="Lunging Attack" type="Archetype Feature" source="Player’s Handbook" id="ID_WOTC_PHB_ARCHETYPE_FEATURE_MANEUVER_LUNGING_ATTACK">
+		<supports>Maneuver, Battle Master</supports>
+		<description>
+			<p>When you make a melee weapon attack on your turn, you can expend one superiority die to increase your reach for that attack by 5 feet. If you hit, you add the superiority die to the attack’s damage roll.</p>
+		</description>
+		<sheet>
+			<description>When you make a melee weapon attack on your turn, you can expend one superiority die to increase your reach for that attack by 5 feet. If you hit, you add the superiority die to the attack’s damage roll.</description>
+		</sheet>
+	</element>
+	<element name="Maneuvering Attack" type="Archetype Feature" source="Player’s Handbook" id="ID_WOTC_PHB_ARCHETYPE_FEATURE_MANEUVER_MANEUVERING_ATTACK">
+		<supports>Maneuver, Battle Master</supports>
+		<description>
+			<p>When you hit a creature with a weapon attack, you can expend one superiority die to maneuver one of your comrades into a more advantageous position. You add the superiority die to the attack’s damage roll, and you choose a friendly creature who can see or hear you. That creature can use its reaction to move up to half its speed without provoking opportunity attacks from the target of your attack.</p>
+		</description>
+		<sheet>
+			<description>When you hit a creature with a weapon attack, you can expend one superiority die to maneuver one of your comrades into a more advantageous position. You add the superiority die to the attack’s damage roll, and you choose a friendly creature who can see or hear you. That creature can use its reaction to move up to half its speed without provoking opportunity attacks from the target of your attack.</description>
+		</sheet>
+	</element>
+	<element name="Menacing Attack" type="Archetype Feature" source="Player’s Handbook" id="ID_WOTC_PHB_ARCHETYPE_FEATURE_MANEUVER_MENACING_ATTACK">
+		<supports>Maneuver, Battle Master</supports>
+		<description>
+			<p>When you hit a creature with a weapon attack, you can expend one superiority die to attempt to frighten the target. You add the superiority die to the attack’s damage roll, and the target must make a Wisdom saving throw. On a failed save, it is frightened of you until the end of your next turn.</p>
+		</description>
+		<sheet>
+			<description>When you hit a creature with a weapon attack, you can expend one superiority die to attempt to frighten the target. You add the superiority die to the attack’s damage roll, and the target must make a Wisdom saving throw. On a failed save, it is frightened of you until the end of your next turn.</description>
+		</sheet>
+	</element>
+	<element name="Parry" type="Archetype Feature" source="Player’s Handbook" id="ID_WOTC_PHB_ARCHETYPE_FEATURE_MANEUVER_PARRY">
+		<supports>Maneuver, Battle Master</supports>
+		<description>
+			<p>When another creature damages you with a melee attack, you can use your reaction and expend one superiority die to reduce the damage by the number you roll on your superiority die + your Dexterity modifier.</p>
+		</description>
+		<sheet action="Reaction">
+			<description>When another creature damages you with a melee attack, you can expend one superiority die to reduce the damage by the number you roll on your superiority die + {{dexterity:modifier}}.</description>
+		</sheet>
+	</element>
+	<element name="Precision Attack" type="Archetype Feature" source="Player’s Handbook" id="ID_WOTC_PHB_ARCHETYPE_FEATURE_MANEUVER_PRECISION_ATTACK">
+		<supports>Maneuver, Battle Master</supports>
+		<description>
+			<p>When you make a weapon attack roll against a creature, you can expend one superiority die to add it to the roll. You can use this maneuver before or after making the attack roll, but before any effects of the attack are applied.</p>
+		</description>
+		<sheet>
+			<description>When you make a weapon attack roll against a creature, you can expend one superiority die to add it to the roll. You can use this maneuver before or after making the attack roll, but before any effects of the attack are applied.</description>
+		</sheet>
+	</element>
+	<element name="Pushing Attack" type="Archetype Feature" source="Player’s Handbook" id="ID_WOTC_PHB_ARCHETYPE_FEATURE_MANEUVER_PUSHING_ATTACK">
+		<supports>Maneuver, Battle Master</supports>
+		<description>
+			<p>When you hit a creature with a weapon attack, you can expend one superiority die to attempt to drive the target back. You add the superiority die to the attack's damage roll, and if the target is Large or smaller, it must make a Strength saving throw. On a failed save, you push the target up to 15 feet away from you.</p>
+		</description>
+		<sheet>
+			<description>When you hit a creature with a weapon attack, you can expend one superiority die to attempt to drive the target back. You add the superiority die to the attack's damage roll, and if the target is Large or smaller, it must make a Strength saving throw. On a failed save, you push the target up to 15 feet away from you.</description>
+		</sheet>
+	</element>
+	<element name="Rally" type="Archetype Feature" source="Player’s Handbook" id="ID_WOTC_PHB_ARCHETYPE_FEATURE_MANEUVER_RALLY">
+		<supports>Maneuver, Battle Master</supports>
+		<description>
+			<p>On your turn, you can use a bonus action and expend one superiority die to bolster the resolve of one of your companions. When you do so, choose a friendly creature who can see or hear you. That creature gains temporary hit points equal to the superiority die roll + your Charisma modifier.</p>
+		</description>
+		<sheet action="Bonus Action">
+			<description>On your turn, you can expend one superiority die. When you do so, choose a friendly creature who can see or hear you. That creature gains temporary hp equal to the superiority die roll + {{charisma:modifier}}.</description>
+		</sheet>
+	</element>
+	<element name="Riposte" type="Archetype Feature" source="Player’s Handbook" id="ID_WOTC_PHB_ARCHETYPE_FEATURE_MANEUVER_RIPOSTE">
+		<supports>Maneuver, Battle Master</supports>
+		<description>
+			<p>When a creature misses you with a melee attack, you can use your reaction and expend one superiority die to make a melee weapon attack against the creature. If you hit, you add the superiority die to the attack's damage roll.</p>
+		</description>
+		<sheet action="Reaction">
+			<description>When a creature misses you with a melee attack, you can expend one superiority die to make a melee weapon attack against the creature. If you hit, you add the superiority die to the attack's damage roll.</description>
+		</sheet>
+	</element>
+	<element name="Sweeping Attack" type="Archetype Feature" source="Player’s Handbook" id="ID_WOTC_PHB_ARCHETYPE_FEATURE_MANEUVER_SWEEPING_ATTACK">
+		<supports>Maneuver, Battle Master</supports>
+		<description>
+			<p>When you hit a creature with a melee weapon attack, you can expend one superiority die to attempt to damage another creature with the same attack. Choose another creature within 5 feet of the original target and within your reach. If the original attack roll would hit the second creature, it takes damage equal to the number you roll on your superiority die. The damage is of the same type dealt by the original attack.</p>
+		</description>
+		<sheet>
+			<description>When you hit a creature with a melee weapon attack, you can expend one superiority die to attempt to damage another creature with the same attack. Choose another creature within 5 feet of the original target and within your reach. If the original attack roll would hit the second creature, it takes damage equal to the number you roll on your superiority die. The damage is of the same type dealt by the original attack.</description>
+		</sheet>
+	</element>
+	<element name="Trip Attack" type="Archetype Feature" source="Player’s Handbook" id="ID_WOTC_PHB_ARCHETYPE_FEATURE_MANEUVER_TRIP_ATTACK">
+		<supports>Maneuver, Battle Master</supports>
+		<description>
+			<p>When you hit a creature with a weapon attack, you can expend one superiority die to attempt to knock the target down. You add the superiority die to the attack’s damage roll, and if the target is Large or smaller, it must make a Strength saving throw. On a failed save, you knock the target prone.</p>
+		</description>
+		<sheet>
+			<description>When you hit a creature with a weapon attack, you can expend one superiority die to attempt to knock the target down. You add the superiority die to the attack’s damage roll, and if the target is Large or smaller, it must make a Strength saving throw. On a failed save, you knock the target prone.</description>
+		</sheet>
+	</element>
+	
+	<!--Feature Replacement Grants-->
+	<element name="Combat Superiority Feature Replacement" type="Grants" source="Internal" id="ID_INTERNAL_FEATURE_REPLACEMENT_FIGHTER_BATTLE_MASTER_COMBAT_SUPERIORITY" />
+	<element name="Student of War Feature Replacement" type="Grants" source="Internal" id="ID_INTERNAL_FEATURE_REPLACEMENT_FIGHTER_BATTLE_MASTER_STUDENT_OF_WAR" />
+	<element name="Know Your Enemy Feature Replacement" type="Grants" source="Internal" id="ID_INTERNAL_FEATURE_REPLACEMENT_FIGHTER_BATTLE_MASTER_KNOW_YOUR_ENEMY" />
+	<element name="Improved Combat Superiority Feature Replacement" type="Grants" source="Internal" id="ID_INTERNAL_FEATURE_REPLACEMENT_FIGHTER_BATTLE_MASTER_IMPROVED_COMBAT_SUPERIORITY" />
+	<element name="Relentless Feature Replacement" type="Grants" source="Internal" id="ID_INTERNAL_FEATURE_REPLACEMENT_FIGHTER_BATTLE_MASTER_RELENTLESS" />
+</elements>

@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<elements>
+	<info>
+		<name>Deep Gnome</name>
+		<update version="0.0.1">
+			<file name="race-deep-gnome.xml" url="https://raw.githubusercontent.com/AuroraLegacy/elements/master/supplements/monsters-of-the-multiverse/race-deep-gnome.xml" />
+		</update>
+	</info>
+
+	<element name="Deep Gnome" type="Race" source="Monsters of the Multiverse" id="ID_WOTC_MOTM_RACE_DEEP_GNOME">
+		<description>
+			<p>Deep gnomes, or svirfneblin, are natives of the Underdark and are suffused with that subterranean realm's magic. They can supernaturally camouflage themselves, and their svirfneblin magic renders them difficult to locate. These abilities have enabled them to survive for generations among the perils of the Underdark.</p>
+			<p class="indent">Like other gnomes, deep gnomes can live for centuries, up to 500 years.</p>
+			<h4>DEEP GNOME TRAITS</h4>
+			<p>As a deep gnome, you have the following racial traits.</p>
+			<p class="indent"><strong><em>Creature Type.</em></strong> You are a Humanoid. You are also considered a gnome for any prerequisite or effect that requires you to be a gnome.</p>
+			<p class="indent"><strong><em>Size.</em></strong> You are Medium.</p>
+			<p class="indent"><strong><em>Speed.</em></strong> Your walking speed is 30 feet.</p>
+			<p class="indent"><strong><em>Darkvision.</em></strong> You can see in dim light within 120 feet of you as if it were bright light, and in darkness as if it were dim light. You discern colors in that darkness only as shades of gray.</p>
+			<p class="indent"><strong><em>Gift of the Svirfneblin.</em></strong> Starting at 3rd level, you can cast the <i>disguise self</i> spell with this trait. Starting at 5th level, you can also cast the <i>nondetection</i> spell with it, without requiring a material component. Once you cast either of these spells with this trait, you can't cast that spell with it again until you finish a long rest. You can also cast these spells using spell slots you have of the appropriate level.</p>
+			<p class="indent">Intelligence, Wisdom, or Charisma is your spellcasting ability for these spells when you cast them with this trait (choose when you select this race). None of these spells require spell components when you cast them with this trait.</p>
+			<p class="indent"><strong><em>Gnomish Magic Resistance.</em></strong> You have advantage on Intelligence, Wisdom, and Charisma saving throws against spells.</p>
+			<p class="indent"><strong><em>Svirfneblin Camouflage.</em></strong> When you make a Dexterity (Stealth) check, you can make the check with advantage. You can use this trait a number of times equal to your proficiency bonus, and you regain all expended uses when you finish a long rest.</p>
+		</description>
+		<sheet display="false" />
+		<rules>
+			<select type="Ability Score Improvement" name="Ability Score Improvement Option (Deep Gnome)" supports="Custom Ability Score Improvement Option" />
+			<grant type="Size" id="ID_SIZE_MEDIUM" />
+			<stat name="innate speed" value="30" bonus="base" />
+			<grant type="Vision" id="ID_VISION_DARKVISION" />
+			<stat name="darkvision:range" value="120" bonus="base" />
+			<grant type="Grants" id="ID_INTERNAL_RACIAL_TRAIT_TYPE_HUMANOID_GNOME" />
+
+			<grant type="Language" id="ID_LANGUAGE_COMMON" requirements="!ID_WOTC_TCOE_OPTION_CUSTOMIZED_LANGUAGE" />
+			<select type="Language" name="Customized Language (Deep Gnome)" supports="Custom Race Language"  requirements="ID_WOTC_TCOE_OPTION_CUSTOMIZED_LANGUAGE" />
+			<select type="Language" name="Language (Deep Gnome)" supports="Standard||Exotic" />
+			
+			<grant type="Racial Trait" id="ID_WOTC_MOTM_RACIAL_TRAIT_DEEP_GNOME_GIFT_OF_THE_SVIRFNEBLIN" level="3"/>
+			<grant type="Racial Trait" id="ID_WOTC_MOTM_RACIAL_TRAIT_DEEP_GNOME_GNOMISH_MAGIC_RESISTANCE" />
+			<grant type="Racial Trait" id="ID_WOTC_MOTM_RACIAL_TRAIT_DEEP_GNOME_SVIRFNEBLIN_CAMOUFLAGE" />
+		</rules>
+	</element>
+
+	<element name="Gift of the Svirfneblin" type="Racial Trait" source="Monsters of the Multiverse" id="ID_WOTC_MOTM_RACIAL_TRAIT_DEEP_GNOME_GIFT_OF_THE_SVIRFNEBLIN">
+		<description>
+			<p>Starting at 3rd level, you can cast the <i>disguise self</i> spell with this trait. Starting at 5th level, you can also cast the <i>nondetection</i> spell with it, without requiring a material component. Once you cast either of these spells with this trait, you can't cast that spell with it again until you finish a long rest. You can also cast these spells using spell slots you have of the appropriate level.</p>
+			<p class="indent">Intelligence, Wisdom, or Charisma is your spellcasting ability for these spells when you cast them with this trait (choose when you select this race). None of these spells require spell components when you cast them with this trait.</p>
+		</description>
+		<sheet display="false" />
+		<rules>
+			<grant type="Spell" id="ID_PHB_SPELL_DISGUISE_SELF" level="3"/>
+			<grant type="Spell" id="ID_PHB_SPELL_NONDETECTION" level="5"/>
+			<select type="Racial Trait" name="Spellcasting Ability (Gift of the Svirfneblin)" supports="ID_WOTC_MOTM_RACIAL_TRAIT_DEEP_GNOME_GIFT_OF_THE_SVIRFNEBLIN_INTELLIGENCE|ID_WOTC_MOTM_RACIAL_TRAIT_DEEP_GNOME_GIFT_OF_THE_SVIRFNEBLIN_WISDOM|ID_WOTC_MOTM_RACIAL_TRAIT_DEEP_GNOME_GIFT_OF_THE_SVIRFNEBLIN_CHARISMA" />
+		</rules>
+	</element>
+	<element name="Intelligence" type="Racial Trait" source="Monsters of the Multiverse" id="ID_WOTC_MOTM_RACIAL_TRAIT_DEEP_GNOME_GIFT_OF_THE_SVIRFNEBLIN_INTELLIGENCE">
+		<compendium display="false" />
+		<description>
+			<p>Your spellcasting ability for these spells is Intelligence.</p>
+		</description>
+		<sheet alt="Gift of the Svirfneblin">
+			<description>You can cast the disguise self spell with this trait once per long rest. You can also cast this spell using spell slots you have of the appropriate level.&#13;
+			Your spellcasting ability for this spell is Intelligence.</description>
+			<description level="5">You can cast the disguise self spell and the nondetection spell with it once each per long rest, without requiring a material component. You can also cast these spells using spell slots you have of the appropriate level.&#13;
+			Your spellcasting ability for these spells is Intelligence.</description>
+		</sheet>
+	</element>
+	<element name="Wisdom" type="Racial Trait" source="Monsters of the Multiverse" id="ID_WOTC_MOTM_RACIAL_TRAIT_DEEP_GNOME_GIFT_OF_THE_SVIRFNEBLIN_WISDOM">
+		<compendium display="false" />
+		<description>
+			<p>Your spellcasting ability for these spells is Wisdom.</p>
+		</description>
+		<sheet alt="Gift of the Svirfneblin">
+			<description>You can cast the disguise self spell with this trait once per long rest. You can also cast this spell using spell slots you have of the appropriate level.&#13;
+			Your spellcasting ability for this spell is Wisdom.</description>
+			<description level="5">You can cast the disguise self spell and the nondetection spell with it once each per long rest, without requiring a material component. You can also cast these spells using spell slots you have of the appropriate level.&#13;
+			Your spellcasting ability for these spells is Wisdom.</description>
+		</sheet>
+	</element>
+	<element name="Charisma" type="Racial Trait" source="Monsters of the Multiverse" id="ID_WOTC_MOTM_RACIAL_TRAIT_DEEP_GNOME_GIFT_OF_THE_SVIRFNEBLIN_CHARISMA">
+		<compendium display="false" />
+		<description>
+			<p>Your spellcasting ability for these spells is Charisma.</p>
+		</description>
+		<sheet alt="Gift of the Svirfneblin">
+			<description>You can cast the disguise self spell with this trait once per long rest. You can also cast this spell using spell slots you have of the appropriate level.&#13;
+			Your spellcasting ability for this spell is Charisma.</description>
+			<description level="5">You can cast the disguise self spell and the nondetection spell with it once each per long rest, without requiring a material component. You can also cast these spells using spell slots you have of the appropriate level.&#13;
+			Your spellcasting ability for these spells is Charisma.</description>
+		</sheet>
+	</element>
+
+	<element name="Gnomish Magic Resistance" type="Racial Trait" source="Monsters of the Multiverse" id="ID_WOTC_MOTM_RACIAL_TRAIT_DEEP_GNOME_GNOMISH_MAGIC_RESISTANCE">
+		<description>
+			<p>You have advantage on Intelligence, Wisdom, and Charisma saving throws against spells.</p>
+		</description>
+		<sheet>
+			<description>You have advantage on Intelligence, Wisdom, and Charisma saving throws against spells.</description>
+		</sheet>
+	</element>
+
+	<element name="Svirfneblin Camouflage" type="Racial Trait" source="Monsters of the Multiverse" id="ID_WOTC_MOTM_RACIAL_TRAIT_DEEP_GNOME_SVIRFNEBLIN_CAMOUFLAGE">
+		<description>
+			<p>When you make a Dexterity (Stealth) check, you can make the check with advantage. You can use this trait a number of times equal to your proficiency bonus, and you regain all expended uses when you finish a long rest.</p>
+		</description>
+		<sheet usage="{{proficiency}}/Long Rest">
+			<description>When you make a Dexterity (Stealth) check, you can make the check with advantage.</description>
+		</sheet>
+	</element>
+</elements>

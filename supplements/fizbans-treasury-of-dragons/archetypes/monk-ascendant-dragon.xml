@@ -1,0 +1,141 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<elements>
+	<info>
+		<name>Way of the Ascendant Dragon</name>
+		<description>The Way of the Ascendant Dragon from Fizban's Treasury of Dragons</description>
+		<author url="https://dnd.wizards.com/products/treasury-dragons">Fizban's Treasury of Dragons</author>
+		<update version="0.0.1">
+			<file name="monk-ascendant-dragon.xml" url="https://raw.githubusercontent.com/AuroraLegacy/elements/master/supplements/fizbans-treasury-of-dragons/archetypes/monk-ascendant-dragon.xml" />
+		</update>
+	</info>
+	<element name="Way of the Ascendant Dragon" type="Archetype" source="Fizban's Treasury of Dragons" id="ID_WOTC_FTOD_ARCHETYPE_MONK_WAY_OF_THE_ASCENDANT_DRAGON">
+		<supports>Monastic Tradition</supports>
+		<description>
+			<p>The dragon god Bahamut is known to travel the Material Plane in the guise of a young monk, and legend says that he founded the first monastery of the Way of the Ascendant Dragon in this guise. The fundamental teaching of this tradition holds that by emulating dragons, a monk becomes a more integrated part of the world and its magic. By altering their spirit to resonate with draconic might, monks who follow this tradition augment their prowess in battle, bolster their allies, and can even soar through the air on draconic wings. But all this power is in service of a greater goal: achieving a spiritual unity with the essence of the Material Plane.</p>
+			<p class="indent">As a follower of the Way of the Ascendant Dragon, you decide how you unlocked the power of dragons within yourself. The Ascendant Dragon Origin table offers a number of possibilities.</p>
+			<h5>Ascendant Dragon Origin</h5>
+			<table>
+				<thead>
+					<tr><td class="col-10">d6</td><td>Origin</td></tr>
+				</thead>
+				<tr><td>1</td><td>You honed your abilities by aligning your spirit with a dragon’s world-altering power.</td></tr>
+				<tr><td>2</td><td>A dragon personally took an active role in shaping your inner energy.</td></tr>
+				<tr><td>3</td><td>You studied at a monastery that traces its teachings back centuries or more to a single dragon’s instruction, or one that is devoted to a dragon god.</td></tr>
+				<tr><td>4</td><td>You spent long stretches meditating in the region around an ancient dragon’s lair, absorbing that lair’s ambient magic.</td></tr>
+				<tr><td>5</td><td>You found a scroll written in Draconic that contained inspiring new techniques.</td></tr>
+				<tr><td>6</td><td>After a dream featuring a five-handed dragonborn, you awoke with the mystical breath of dragons.</td></tr>
+			</table>
+			<div element="ID_WOTC_FTOD_ARCHETYPE_FEATURE_WAY_OF_THE_ASCENDANT_DRAGON_DRACONIC_DISCIPLE" />
+			<div element="ID_WOTC_FTOD_ARCHETYPE_FEATURE_WAY_OF_THE_ASCENDANT_DRAGON_BREATH_OF_THE_DRAGON" />
+			<div element="ID_WOTC_FTOD_ARCHETYPE_FEATURE_WAY_OF_THE_ASCENDANT_DRAGON_WINGS_UNFURLED" />
+			<div element="ID_WOTC_FTOD_ARCHETYPE_FEATURE_WAY_OF_THE_ASCENDANT_DRAGON_ASPECT_OF_THE_WYRM" />
+			<div element="ID_WOTC_FTOD_ARCHETYPE_FEATURE_WAY_OF_THE_ASCENDANT_DRAGON_ASCENDANT_ASPECT" />
+		</description>
+		<sheet display="false" />
+		<rules>
+			<grant type="Archetype Feature" id="ID_WOTC_FTOD_ARCHETYPE_FEATURE_WAY_OF_THE_ASCENDANT_DRAGON_DRACONIC_DISCIPLE" level="3" />
+			<grant type="Archetype Feature" id="ID_WOTC_FTOD_ARCHETYPE_FEATURE_WAY_OF_THE_ASCENDANT_DRAGON_BREATH_OF_THE_DRAGON" level="3" />
+			<grant type="Archetype Feature" id="ID_WOTC_FTOD_ARCHETYPE_FEATURE_WAY_OF_THE_ASCENDANT_DRAGON_WINGS_UNFURLED" level="6" />
+			<grant type="Archetype Feature" id="ID_WOTC_FTOD_ARCHETYPE_FEATURE_WAY_OF_THE_ASCENDANT_DRAGON_ASPECT_OF_THE_WYRM" level="11" />
+			<grant type="Archetype Feature" id="ID_WOTC_FTOD_ARCHETYPE_FEATURE_WAY_OF_THE_ASCENDANT_DRAGON_ASCENDANT_ASPECT" level="17" />
+		</rules>
+	</element>
+	
+	<element name="Draconic Disciple" type="Archetype Feature" source="Fizban's Treasury of Dragons" id="ID_WOTC_FTOD_ARCHETYPE_FEATURE_WAY_OF_THE_ASCENDANT_DRAGON_DRACONIC_DISCIPLE">
+		<description>
+			<p><em>3rd-Level Way of the Ascendant Dragon Feature</em></p>
+			<p>You can channel draconic power to magnify your presence and imbue your unarmed strikes with the essence of a dragon’s breath. You gain the following benefits:</p>
+			<p style="text-indent: -1em; margin-left: 1em"><b>Draconic Presence.</b> If you fail a Charisma (Intimidation) or Charisma (Persuasion) check, you can use your reaction to reroll the check, as you tap into the mighty presence of dragons. Once this feature turns a failure into a success, you can’t use it again until you finish a long rest.</p>
+			<p class="indent" style="text-indent: -1em; margin-left: 1em"><b>Draconic Strike.</b> When you damage a target with an unarmed strike, you can change the damage type to acid, cold, fire, lightning, or poison.</p>
+			<p class="indent" style="text-indent: -1em; margin-left: 1em"><b>Tongue of Dragons.</b> You learn to speak, read, and write Draconic or one other language of your choice.</p>
+		</description>
+		<sheet display="false" />
+		<rules>
+			<grant type="Archetype Feature" id="ID_WOTC_FTOD_ARCHETYPE_FEATURE_WAY_OF_THE_ASCENDANT_DRAGON_DRACONIC_DISCIPLE_DRACONIC_PRESENCE" />
+			<grant type="Archetype Feature" id="ID_WOTC_FTOD_ARCHETYPE_FEATURE_WAY_OF_THE_ASCENDANT_DRAGON_DRACONIC_DISCIPLE_DRACONIC_STRIKE" />
+			<select type="Language" name="Language (Tongue of Dragons)" supports="Standard||Exotic" />
+		</rules>
+	</element>
+	<element name="Draconic Presence" type="Archetype Feature" source="Fizban's Treasury of Dragons" id="ID_WOTC_FTOD_ARCHETYPE_FEATURE_WAY_OF_THE_ASCENDANT_DRAGON_DRACONIC_DISCIPLE_DRACONIC_PRESENCE">
+		<compendium display="false" />
+		<description>
+			<p><b>Draconic Presence.</b> If you fail a Charisma (Intimidation) or Charisma (Persuasion) check, you can use your reaction to reroll the check, as you tap into the mighty presence of dragons. Once this feature turns a failure into a success, you can’t use it again until you finish a long rest.</p>
+		</description>
+		<sheet action="Reaction">
+			<description>If you fail a Charisma (Intimidation) or Charisma (Persuasion) check, you can reroll the check. Once this feature turns a failure into a success, you can’t use it again until you finish a long rest.</description>
+		</sheet>
+	</element>
+	<element name="Draconic Strike" type="Archetype Feature" source="Fizban's Treasury of Dragons" id="ID_WOTC_FTOD_ARCHETYPE_FEATURE_WAY_OF_THE_ASCENDANT_DRAGON_DRACONIC_DISCIPLE_DRACONIC_STRIKE">
+		<compendium display="false" />
+		<description>
+			<p><b>Draconic Strike.</b> When you damage a target with an unarmed strike, you can change the damage type to acid, cold, fire, lightning, or poison.</p>
+		</description>
+		<sheet>
+			<description>When you damage a target with an unarmed strike, you can change the damage type to acid, cold, fire, lightning, or poison.</description>
+		</sheet>
+	</element>
+
+	<element name="Breath of the Dragon" type="Archetype Feature" source="Fizban's Treasury of Dragons" id="ID_WOTC_FTOD_ARCHETYPE_FEATURE_WAY_OF_THE_ASCENDANT_DRAGON_BREATH_OF_THE_DRAGON">
+		<description>
+			<p><em>3rd-Level Way of the Ascendant Dragon Feature</em></p>
+			<p>You can channel destructive waves of energy, like those created by the dragons you emulate. When you take the Attack action on your turn, you can replace one of the attacks with an exhalation of draconic energy in either a 20-foot cone or a 30-foot line that is 5 feet wide (your choice). Choose a damage type: acid, cold, fire, lightning, or poison. Each creature in that area must make a Dexterity saving throw against your ki save DC, taking damage of the chosen type equal to two rolls of your Martial Arts die on a failed save, or half as much damage on a successful one.</p>
+			<p class="indent">At 11th level, the damage of this feature increases to three rolls of your Martial Arts die.</p>
+			<p class="indent">You can use this feature a number of times equal to your proficiency bonus, and you regain all expended uses when you finish a long rest. While you have no uses available, you can spend 2 ki points to use this feature again.</p>
+		</description>
+		<sheet action="Attack" usage="{{proficiency}}/Long Rest">
+			<description>You can replace one of the attacks with an exhalation of draconic energy in either a 20-foot cone or a 30-foot line that is 5 feet wide (your choice). Choose a damage type: acid, cold, fire, lightning, or poison. Each creature in that area must make a Dexterity saving throw DC{{ki:dc}}, taking damage of the chosen type equal to 2d{{martial arts:dice}} on a failed save, or half as much damage on a successful one. &#13;
+			While you have no uses available, you can spend 2 ki points to use this feature again.</description>
+			<description level="11">You can replace one of the attacks with an exhalation of draconic energy in either a 20-foot cone or a 30-foot line that is 5 feet wide (your choice). Choose a damage type: acid, cold, fire, lightning, or poison. Each creature in that area must make a Dexterity saving throw DC{{ki:dc}}, taking damage of the chosen type equal to 3d{{martial arts:dice}} on a failed save, or half as much damage on a successful one. &#13;
+			While you have no uses available, you can spend 2 ki points to use this feature again.</description>
+			<description level="17">You can replace one of the attacks with an exhalation of draconic energy in either a 20-foot cone or a 30-foot line that is 5 feet wide (your choice). Choose a damage type: acid, cold, fire, lightning, or poison. Each creature in that area must make a Dexterity saving throw DC{{ki:dc}}, taking damage of the chosen type equal to 3d{{martial arts:dice}} on a failed save, or half as much damage on a successful one. &#13;
+			You can spend 1 ki point to increase the breath to a 60-foot cone or a 90-foot line that is 5 feet wide (your choice). Each creature in that area takes 4d{{martial arts:dice}} damage on a failed save, or half as much damage on a successful one. &#13;
+			While you have no uses available, you can spend 2 ki points to use this feature again.</description>
+		</sheet>
+	</element>
+
+	<element name="Wings Unfurled" type="Archetype Feature" source="Fizban's Treasury of Dragons" id="ID_WOTC_FTOD_ARCHETYPE_FEATURE_WAY_OF_THE_ASCENDANT_DRAGON_WINGS_UNFURLED">
+		<description>
+			<p><em>6th-Level Way of the Ascendant Dragon Feature</em></p>
+			<p>When you use your Step of the Wind, you can unfurl spectral draconic wings from your back that vanish at the end of your turn. While the wings exist, you have a flying speed equal to your walking speed.</p>
+			<p class="indent">You can use this feature a number of times equal to your proficiency bonus, and you regain all expended uses when you finish a long rest.</p>
+		</description>
+		<sheet action="Step of the Wind" usage="{{proficiency}}/Long Rest">
+			<description>You can unfurl spectral draconic wings from your back that vanish at the end of your turn. While the wings exist, you have a flying speed of {{speed}} feet.</description>
+		</sheet>
+	</element>
+
+	<element name="Aspect of the Wyrm" type="Archetype Feature" source="Fizban's Treasury of Dragons" id="ID_WOTC_FTOD_ARCHETYPE_FEATURE_WAY_OF_THE_ASCENDANT_DRAGON_ASPECT_OF_THE_WYRM">
+		<description>
+			<p><em>11th-Level Way of the Ascendant Dragon Feature</em></p>
+			<p>The power of your draconic spirit now radiates from you, warding your allies or inspiring fear in your enemies. As a bonus action, you can create an aura of draconic power that radiates 10 feet from you for 1 minute. For the duration, you gain one of the following effects of your choice:</p>
+			<p style="text-indent: -1em; margin-left: 1em"><b>Frightful Presence.</b> When you create this aura, and as a bonus action on subsequent turns, you can choose a creature within the aura. The target must succeed on a Wisdom saving throw against your ki save DC or become frightened of you for 1 minute. The target can repeat the saving throw at the end of each of its turns, ending the effect on itself on a successful save.</p>
+			<p class="indent" style="text-indent: -1em; margin-left: 1em"><b>Resistance.</b> Choose a damage type when you activate this aura: acid, cold, fire, lightning, or poison. You and your allies within the aura have resistance to that damage.</p>
+			<p>Once you create this aura, you can’t create it again until you finish a long rest, unless you expend 3 ki points to create it again.</p>
+		</description>
+		<sheet action="Bonus Action" usage="1/Long Rest">
+			<description>You can create an aura of draconic power that radiates 10 feet from you for 1 minute. For the duration, you gain one of the following effects of your choice: &#13;
+			• Frightful Presence. When you create this aura, and as a bonus action on subsequent turns, you can choose a creature within the aura. The target must succeed on a Wisdom saving throw against DC{{ki:dc}} or become frightened of you for 1 minute. The target can repeat the saving throw at the end of each of its turns, ending the effect on itself on a successful save. &#13;
+			• Resistance. Choose a damage type when you activate this aura: acid, cold, fire, lightning, or poison. You and your allies within the aura have resistance to that damage. &#13;
+			You can also expend 3 ki points to use this feature again.</description>
+			<description level="17">You can create an aura of draconic power that radiates 10 feet from you. When you do so choose any number of creatures you can see in your aura, each of those creatures must succeed on a Dexterity saving throw against your DC{{ki:dc}} or take 3d10 acid, cold, fire, lightning, or poison damage (your choice). For 1 minute, you gain one of the following effects of your choice: &#13;
+			• Frightful Presence. When you create this aura, and as a bonus action on subsequent turns, you can choose a creature within the aura. The target must succeed on a Wisdom saving throw DC{{ki:dc}} or become frightened of you for 1 minute. The target can repeat the saving throw at the end of each of its turns, ending the effect on itself on a successful save. &#13;
+			• Resistance. Choose a damage type when you activate this aura: acid, cold, fire, lightning, or poison. You and your allies within the aura have resistance to that damage. &#13;
+			You can also expend 3 ki points to use this feature again.</description>
+		</sheet>
+	</element>
+
+	<element name="Ascendant Aspect" type="Archetype Feature" source="Fizban's Treasury of Dragons" id="ID_WOTC_FTOD_ARCHETYPE_FEATURE_WAY_OF_THE_ASCENDANT_DRAGON_ASCENDANT_ASPECT">
+		<description>
+			<p><em>17th-Level Way of the Ascendant Dragon Feature</em></p>
+			<p>Your draconic spirit reaches its peak. You gain the following benefits:</p>
+			<p style="text-indent: -1em; margin-left: 1em"><b>Augment Breath.</b> When you use your Breath of the Dragon, you can spend 1 ki point to augment its shape and power. The exhalation of draconic energy becomes either a 60-foot cone or a 90-foot line that is 5 feet wide (your choice), and each creature in that area takes damage equal to four rolls of your Martial Arts die on a failed save, or half as much damage on a successful one.</p>
+			<p class="indent" style="text-indent: -1em; margin-left: 1em"><b>Blindsight.</b> You gain blindsight out to 10 feet. Within that range, you can effectively see anything that isn’t behind total cover, even if you’re blinded or in darkness. Moreover, you can see an invisible creature within that range, unless the creature successfully hides from you.</p>
+			<p class="indent" style="text-indent: -1em; margin-left: 1em"><b>Explosive Fury.</b> When you activate your Aspect of the Wyrm, draconic fury explodes from you. Choose any number of creatures you can see in your aura. Each of those creatures must succeed on a Dexterity saving throw against your ki save DC or take 3d10 acid, cold, fire, lightning, or poison damage (your choice).</p>
+		</description>
+		<sheet display="false" />
+		<rules>
+			<grant type="Vision" id="ID_VISION_BLINDSIGHT" />
+			<stat name="blindsight:range" value="10" bonus="base" />
+		</rules>
+	</element>
+</elements>

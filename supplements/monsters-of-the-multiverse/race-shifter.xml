@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<elements>
+	<info>
+		<name>Shifter from Monsters of the Multiverse</name>
+		<update version="0.0.1">
+			<file name="race-shifter.xml" url="https://raw.githubusercontent.com/AuroraLegacy/elements/master/supplements/monsters-of-the-multiverse/race-shifter.xml" />
+		</update>
+	</info>
+
+	<element name="Shifter" type="Race" source="Monsters of the Multiverse" id="ID_WOTC_MOTM_RACE_SHIFTER">
+		<description>
+			<p>Shifters are sometimes called weretouched, as they are descendants of people who contracted full or partial lycanthropy. Humanoids with a bestial aspect, shifters can't fully change shape, but they can temporarily enhance their animalistic features by entering a state they call shifting.</p>
+			<p class="indent">Shifters are similar to humans in height and build but are typically more lithe and flexible. Their facial features have a bestial cast, often with large eyes and pointed ears; most shifters also have prominent canine teeth. They grow fur-like hair on nearly every part of their bodies. While a shifter's appearance might remind an onlooker of an animal, they remain clearly identifiable as shifters even when at their most feral. </p>
+			<p class="indent">Most shifters resemble a particular kind of lycanthrope. You can choose the kind of lycanthrope in your past, or you can determine it randomly by rolling on the Lycanthrope Ancestor table. The table also provides a suggestion for the Shifting option you might have as a result of your ancestry. </p>
+			<h5>LYCANTHROPE ANCESTOR</h5>
+			<table>
+				<thead>
+					<tr><td>d6</td><td>Ancestor</td><td>Suggested Shifting Option</td></tr>
+				</thead>
+				<tr><td>1</td><td>Werebear</td><td>Beasthide</td></tr>
+				<tr><td>2</td><td>Wereboar</td><td>Beasthide</td></tr>
+				<tr><td>3</td><td>Wererat</td><td>Swiftstride</td></tr>
+				<tr><td>4</td><td>Weretiger</td><td>Swiftstride</td></tr>
+				<tr><td>5</td><td>Werewolf (wolflike)</td><td>Longtooth</td></tr>
+				<tr><td>6</td><td>Werewolf (doglike)</td><td>Wildhunt</td></tr>
+			</table>
+			<h4>SHIFTER TRAITS</h4>
+			<p>As a shifter, you have the following racial traits.</p>
+			<p class="indent"><strong><em>Creature Type.</em></strong> You are a Humanoid.</p>
+			<p class="indent"><strong><em>Size.</em></strong> You are Medium.</p>
+			<p class="indent"><strong><em>Speed.</em></strong> Your walking speed is 30 feet.</p>
+			<p class="indent"><strong><em>Bestial Instincts.</em></strong> Channeling the beast within, you have proficiency in one of the following skills of your choice: Acrobatics, Athletics, Intimidation, or Survival. </p>
+			<p class="indent"><strong><em>Darkvision.</em></strong> You can see in dim light within 60 feet of you as if it were bright light, and in darkness as if it were dim light. You discern colors in that darkness only as shades of gray.</p>
+			<p class="indent"><strong><em>Shifting.</em></strong> As a bonus action, you can assume a more bestial appearance. This transformation lasts for 1 minute, until you die, or until you revert to your normal appearance as a bonus action. When you shift, you gain temporary hit points equal to 2 x your proficiency bonus. You can shift a number of times equal to your proficiency bonus, and you regain all expended uses when you finish a long rest. </p>
+			<p class="indent"> Whenever you shift, you gain an additional benefit based on one of the following options (choose when you select this race): </p>
+			<ul class="unstyled">
+				<li style="margin-left:1em;text-indent:-1em;"><strong>Beasthide.</strong> You gain 1d6 additional temporary hit points. While shifted, you have a +1 bonus to your Armor Class.</li>
+				<li style="margin-left:1em;text-indent:-1em;"><strong>Longtooth.</strong> When you shift and as a bonus action on your other turns while shifted, you can use your elongated fangs to make an unarmed strike. If you hit with your fangs, you can deal piercing damage equal to 1d6 + your Strength modifier, instead of the bludgeoning damage normal for an unarmed strike.</li>
+				<li style="margin-left:1em;text-indent:-1em;"><strong>Swiftstride.</strong> While shifted, your walking speed increases by 10 feet. Additionally, you can move up to 10 feet as a reaction when a creature ends its turn within 5 feet of you. This reactive movement doesn't provoke opportunity attacks.</li>
+				<li style="margin-left:1em;text-indent:-1em;"><strong>Wildhunt.</strong> While shifted, you have advantage on Wisdom checks, and no creature within 30 feet of you can make an attack roll with advantage against you unless you're incapacitated.</li>
+			</ul>
+		</description>
+		<sheet display="false" />
+		<rules>
+			<select type="Ability Score Improvement" name="Ability Score Improvement Option (Shifter)" supports="Custom Ability Score Improvement Option" />
+			<grant type="Size" id="ID_SIZE_MEDIUM" />
+			<stat name="innate speed" value="30" bonus="base" />
+			<grant type="Vision" id="ID_VISION_DARKVISION" />
+
+			<grant type="Language" id="ID_LANGUAGE_COMMON" requirements="!ID_WOTC_TCOE_OPTION_CUSTOMIZED_LANGUAGE" />
+			<select type="Language" name="Customized Language (Shifter)" supports="Custom Race Language"  requirements="ID_WOTC_TCOE_OPTION_CUSTOMIZED_LANGUAGE" />
+			<select type="Language" name="Language (Shifter)" supports="Standard||Exotic" />
+
+			<grant type="Racial Trait" id="ID_WOTC_MOTM_RACIAL_TRAIT_SHIFTER_BESTIAL_INSTINCTS" />
+			<grant type="Racial Trait" id="ID_WOTC_MOTM_RACIAL_TRAIT_SHIFTER_SHIFTING" />
+		</rules>
+	</element>
+
+	<element name="Bestial Instincts" type="Racial Trait" source="Monsters of the Multiverse" id="ID_WOTC_MOTM_RACIAL_TRAIT_SHIFTER_BESTIAL_INSTINCTS">
+		<description>
+			<p>Channeling the beast within, you have proficiency in one of the following skills of your choice: Acrobatics, Athletics, Intimidation, or Survival.</p>
+		</description>
+		<sheet display="false" />
+		<rules>
+			<select type="Proficiency" name="Bestial Instincts" supports="ID_PROFICIENCY_SKILL_ACROBATICS|ID_PROFICIENCY_SKILL_ATHLETICS|ID_PROFICIENCY_SKILL_INTIMIDATION|ID_PROFICIENCY_SKILL_SURVIVAL" requirements="!ID_WOTC_TCOE_OPTION_CUSTOMIZED_PROFICIENCY" />
+			<select type="Proficiency" name="Customized Skill Proficiency (Bestial Instincts)" supports="Skill" requirements="ID_WOTC_TCOE_OPTION_CUSTOMIZED_PROFICIENCY" />
+		</rules>
+	</element>
+
+	<element name="Shifting" type="Racial Trait" source="Monsters of the Multiverse" id="ID_WOTC_MOTM_RACIAL_TRAIT_SHIFTER_SHIFTING">
+		<description>
+			<p>As a bonus action, you can assume a more bestial appearance. This transformation lasts for 1 minute, until you die, or until you revert to your normal appearance as a bonus action. When you shift, you gain temporary hit points equal to 2 x your proficiency bonus. You can shift a number of times equal to your proficiency bonus, and you regain all expended uses when you finish a long rest. </p>
+			<p class="indent">Whenever you shift, you gain an additional benefit based on one of the following options (choose when you select this race): </p>
+			<ul class="unstyled">
+				<li style="margin-left:1em;text-indent:-1em;"><strong>Beasthide.</strong> You gain 1d6 additional temporary hit points. While shifted, you have a +1 bonus to your Armor Class.</li>
+				<li style="margin-left:1em;text-indent:-1em;"><strong>Longtooth.</strong> When you shift and as a bonus action on your other turns while shifted, you can use your elongated fangs to make an unarmed strike. If you hit with your fangs, you can deal piercing damage equal to 1d6 + your Strength modifier, instead of the bludgeoning damage normal for an unarmed strike.</li>
+				<li style="margin-left:1em;text-indent:-1em;"><strong>Swiftstride.</strong> While shifted, your walking speed increases by 10 feet. Additionally, you can move up to 10 feet as a reaction when a creature ends its turn within 5 feet of you. This reactive movement doesn't provoke opportunity attacks.</li>
+				<li style="margin-left:1em;text-indent:-1em;"><strong>Wildhunt.</strong> While shifted, you have advantage on Wisdom checks, and no creature within 30 feet of you can make an attack roll with advantage against you unless you're incapacitated.</li>
+			</ul>
+		</description>
+		<sheet action="Bonus Action" usage="{{proficiency}}/Long Rest" >
+			<description>You can transform for 1 minute, until you die, or until you revert to your normal appearance as a bonus action. When you shift, you gain {{shifting:hp}} temporary hit points and following benefit:</description>
+		</sheet>
+		<rules>
+			<stat name="shifting:hp" value="proficiency" />
+			<stat name="shifting:hp" value="proficiency" />
+			<select type="Racial Trait" name="Shifting Type" supports="Shifting Type" />
+		</rules>
+	</element>
+
+	<element name="Beasthide" type="Racial Trait" source="Monsters of the Multiverse" id="ID_WOTC_MOTM_RACIAL_TRAIT_SHIFTER_SHIFTING_BEASTHIDE">
+		<supports>Shifting Type</supports>
+		<description>
+			<p>You gain 1d6 additional temporary hit points. While shifted, you have a +1 bonus to your Armor Class.</p>
+		</description>
+		<sheet>
+			<description>You gain 1d6 additional temporary hit points. While shifted, you have a +1 bonus to your Armor Class.</description>
+		</sheet>
+	</element>
+
+	<element name="Longtooth" type="Racial Trait" source="Monsters of the Multiverse" id="ID_WOTC_MOTM_RACIAL_TRAIT_SHIFTER_SHIFTING_LONGTOOTH">
+		<supports>Shifting Type</supports>
+		<description>
+			<p>When you shift and as a bonus action on your other turns while shifted, you can use your elongated fangs to make an unarmed strike. If you hit with your fangs, you can deal piercing damage equal to 1d6 + your Strength modifier, instead of the bludgeoning damage normal for an unarmed strike.</p>
+		</description>
+		<sheet>
+			<description>When you shift and as a bonus action on your other turns while shifted, you can use your elongated fangs to make an unarmed strike. If you hit with your fangs, you deal 1d6 + {{strength:modifier}} piercing damage.</description>
+		</sheet>
+	</element>
+
+	<element name="Swiftstride" type="Racial Trait" source="Monsters of the Multiverse" id="ID_WOTC_MOTM_RACIAL_TRAIT_SHIFTER_SHIFTING_SWIFTSTRIDE">
+		<supports>Shifting Type</supports>
+		<description>
+			<p>While shifted, your walking speed increases by 10 feet. Additionally, you can move up to 10 feet as a reaction when a creature ends its turn within 5 feet of you. This reactive movement doesn't provoke opportunity attacks.</p>
+		</description>
+		<sheet>
+			<description>While shifted, your walking speed increases by 10 feet. Additionally, you can move up to 10 feet as a reaction when a creature ends its turn within 5 feet of you. This reactive movement doesn't provoke opportunity attacks.</description>
+		</sheet>
+		<!-- when we change how speed works, i would like to have this sheet description say "While shifted, your walking speed becomes {{swiftstride:speed}} feet.", where "swiftstride:speed" equals "speed" + 10. -->
+	</element>
+
+	<element name="Wildhunt" type="Racial Trait" source="Monsters of the Multiverse" id="ID_WOTC_MOTM_RACIAL_TRAIT_SHIFTER_SHIFTING_WILDHUNT">
+		<supports>Shifting Type</supports>
+		<description>
+			<p>While shifted, you have advantage on Wisdom checks, and no creature within 30 feet of you can make an attack roll with advantage against you unless you're incapacitated.</p>
+		</description>
+		<sheet>
+			<description>While shifted, you have advantage on Wisdom checks, and no creature within 30 feet of you can make an attack roll with advantage against you unless you're incapacitated.</description>
+		</sheet>
+	</element>
+</elements>

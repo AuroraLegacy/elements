@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<elements>
+	<info>
+		<name></name>
+		<update version="0.0.1">
+			<file name="background-investigator.xml" url="https://raw.githubusercontent.com/AuroraLegacy/elements/master/supplements/van-richtens-guide-to-ravenloft/backgrounds/background-investigator.xml" />
+		</update>
+	</info>
+	
+	<element name="Investigator" type="Background" source="Van Richten's Guide To Ravenloft" id="ID_WOTC_VRGTR_BACKGROUND_INVESTIGATOR">
+		<description>
+			<p>You relentlessly seek the truth. Perhaps you’re motivated by belief in the law and a sense of universal justice, or maybe that very law has failed you and you seek to make things right. You could have witnessed something remarkable or terrible, and now you must know more about this hidden truth. Or maybe you’re a detective for hire, uncovering secrets for well-paying clients. Whether the mysteries you’re embroiled in are local crimes or realm-spanning conspiracies, you’re driven by a personal need to hunt down even the most elusive clues and reveal what others would keep hidden in the shadows.</p>
+			<ul class="unstyled">
+				<li><strong>Skill Proficiencies:</strong> Choose two from among Insight, Investigation, or Perception</li>
+				<li><strong>Tool Proficiencies:</strong> Disguise kit, Thieves’ tools</li>
+				<li><strong>Equipment:</strong> A magnifying glass, evidence from a past case, a set of common clothes, and 10 gp</li>
+			</ul>
+			<h5>Path to Mystery</h5>
+			<p>Your first case influenced the types of mysteries you’re interested in. Why was this case so impactful, personal, or traumatic? Whom did it affect besides you? Why and how did you get involved? Was it solved? How did it set you on the path to investigating other mysteries? Roll on or choose details from the First Case table to develop the mystery that started your career as an investigator.</p>
+			<table>
+				<thead>
+					<tr><td>d8</td><td>Case</td></tr>
+				</thead>
+				<tr><td>1</td><td>A friend was wrongfully accused of murder. You tracked down the actual killer, proving your friend’s innocence and starting your career as a detective.</td></tr>
+				<tr><td>2</td><td>You’re told you went missing for weeks. When you were found, you had no memory of being gone. Now you search to discover what happened to you.</td></tr>
+				<tr><td>3</td><td>You helped a spirit find peace by finding its missing corpse. Ever since, other spectral clients have sought you out to help them find rest.</td></tr>
+				<tr><td>4</td><td>You revealed that the monsters terrorizing your home were illusions created by a cruel mage. The magic-user escaped, but you’ve continued to uncover magical hoaxes.</td></tr>
+				<tr><td>5</td><td>You were wrongfully accused and convicted of a crime. You managed to escape and seek to help others avoid the experience you suffered, even while still being pursued by the law.</td></tr>
+				<tr><td>6</td><td>You survived the destructive use of a magic device that wiped out your home. Members of a secret organization found you. You now work with them, tracking down dangerous supernatural phenomena and preventing them from doing harm.</td></tr>
+				<tr><td>7</td><td>You found evidence of a conspiracy underpinning society. You tried to expose this mysterious cabal, but no one believed you. You’re still trying to prove what you know is true.</td></tr>
+				<tr><td>8</td><td>You got a job with an agency that investigates crimes that local law enforcement can’t solve. You often wonder which you value more, the truth or your pay.</td></tr>
+			</table>
+			<div element="ID_WOTC_VRGTR_BACKGROUND_FEATURE_OFFICIAL_INQUIRY" />
+		</description>
+		<setters>
+			<set name="short">2 Skills from Insight/Investigation/Perception, Disguise kit, Thieves’ tools</set>
+		</setters>
+		<rules>
+			<grant type="Background Feature" id="ID_WOTC_VRGTR_BACKGROUND_FEATURE_OFFICIAL_INQUIRY" requirements="!ID_INTERNAL_GRANT_OPTIONAL_BACKGROUND_FEATURE"/>
+			<select type="Background Feature" name="Variant Feature" supports="Optional Background Feature" optional="true" />
+			<select type="List" name="First Case">
+				<item id="1">A friend was wrongfully accused of murder. You tracked down the actual killer, proving your friend’s innocence and starting your career as a detective.</item>
+				<item id="2">You’re told you went missing for weeks. When you were found, you had no memory of being gone. Now you search to discover what happened to you.</item>
+				<item id="3">You helped a spirit find peace by finding its missing corpse. Ever since, other spectral clients have sought you out to help them find rest.</item>
+				<item id="4">You revealed that the monsters terrorizing your home were illusions created by a cruel mage. The magic-user escaped, but you’ve continued to uncover magical hoaxes.</item>
+				<item id="5">You were wrongfully accused and convicted of a crime. You managed to escape and seek to help others avoid the experience you suffered, even while still being pursued by the law.</item>
+				<item id="6">You survived the destructive use of a magic device that wiped out your home. Members of a secret organization found you. You now work with them, tracking down dangerous supernatural phenomena and preventing them from doing harm.</item>
+				<item id="7">You found evidence of a conspiracy underpinning society. You tried to expose this mysterious cabal, but no one believed you. You’re still trying to prove what you know is true.</item>
+				<item id="8">You got a job with an agency that investigates crimes that local law enforcement can’t solve. You often wonder which you value more, the truth or your pay.</item>
+			</select>
+			<select type="Proficiency" name="Skill Proficiency (Investigator)" number="2" supports="ID_PROFICIENCY_SKILL_INSIGHT | ID_PROFICIENCY_SKILL_INVESTIGATION | ID_PROFICIENCY_SKILL_PERCEPTION" />
+			<grant type="Proficiency" id="ID_PROFICIENCY_TOOL_PROFICIENCY_THIEVES_TOOLS" />
+			<grant type="Proficiency" id="ID_PROFICIENCY_TOOL_PROFICIENCY_DISGUISE_KIT" />
+		</rules>
+	</element>
+
+	<element name="Feature: Official Inquiry" type="Background Feature" source="Van Richten's Guide To Ravenloft" id="ID_WOTC_VRGTR_BACKGROUND_FEATURE_OFFICIAL_INQUIRY">
+		<description>
+			<p>You’re experienced at gaining access to people and places to get the information you need. Through a combination of fast-talking, determination, and official-looking documentation, you can gain access to a place or an individual related to a crime you’re investigating. Those who aren’t involved in your investigation avoid impeding you or pass along your requests. Additionally, local law enforcement has firm opinions about you, viewing you as either a nuisance or one of their own.</p>
+		</description>
+		<sheet alt="Official Inquiry">
+			<description>You’re experienced at gaining access to people and places to get the information you need. Through a combination of fast-talking, determination, and official-looking documentation, you can gain access to a place or an individual related to a crime you’re investigating. Those who aren’t involved in your investigation avoid impeding you or pass along your requests. Additionally, local law enforcement has firm opinions about you, viewing you as either a nuisance or one of their own.</description>
+		</sheet>
+	</element>
+</elements>

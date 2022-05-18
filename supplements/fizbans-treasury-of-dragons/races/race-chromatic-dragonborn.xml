@@ -1,0 +1,180 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<elements>
+	<info>
+		<name>Chromatic Dragonborn</name>
+		<description>The Chromatic Dragonborn from Fizban's Treasury of Dragons</description>
+		<author url="https://dnd.wizards.com/products/treasury-dragons">Fizban's Treasury of Dragons</author>
+		<update version="0.0.1">
+			<file name="race-chromatic-dragonborn.xml" url="https://raw.githubusercontent.com/AuroraLegacy/elements/master/supplements/fizbans-treasury-of-dragons/races/race-chromatic-dragonborn.xml" />
+		</update>
+	</info>
+	<element name="Dragonborn (Chromatic)" type="Race" source="Fizban's Treasury of Dragons" id="ID_WOTC_FTOD_RACE_CHROMATIC_DRAGONBORN">
+		<description>
+			<p>Dragonborn with chromatic ancestry claim the raw elemental power of chromatic dragons. The vibrant colors of black, blue, green, red, and white dragons gleam in those dragonborn’s scaled skin and in the deadly energy of their breath weapons. Theirs is the raw elemental fury of the volcano, of biting arctic winds, and of raging lightning storms, as well as the subtle whisper of swamp and forest, toxic and corrosive.</p>
+			<h4>CHROMATIC DRAGONBORN TRAITS</h4>
+			<p>You have the following racial traits.</p>
+			<p class="indent"><strong><em>Creature Type.</em></strong> You are a Humanoid.</p>
+			<p class="indent"><strong><em>Size.</em></strong> You are Medium.</p>
+			<p class="indent"><strong><em>Speed.</em></strong> Your walking speed is 30 feet.</p>
+			<p class="indent"><strong><em>Chromatic Ancestry.</em></strong> You have a chromatic dragon ancestor, granting you a special magical affinity. Choose one kind of dragon from the Chromatic Ancestry table. This determines the damage type for your other traits, as shown in the table.</p>
+			<p class="indent"><strong><em>Breath Weapon.</em></strong> When you take the Attack action on your turn, you can replace one of your attacks with an exhalation of magical energy in a 30-foot line that is 5 feet wide. Each creature in that area must make a Dexterity saving throw (DC = 8 + your Constitution modifier + your proficiency bonus). On a failed save, the creature takes 1d10 damage of the type associated with your Chromatic Ancestry. On a successful save, it takes half as much damage. This damage increases by 1d10 when you reach 5th level (2d10), 11th level (3d10), and 17th level (4d10).</p>
+			<p class="indent">You can use your Breath Weapon a number of times equal to your proficiency bonus, and you regain all expended uses when you finish a long rest.</p>
+			<p class="indent"><strong><em>Draconic Resistance.</em></strong> You have resistance to the damage type associated with your Chromatic Ancestry.</p>
+			<p class="indent"><strong><em>Chromatic Warding.</em></strong> Starting at 5th level, as an action, you can channel your draconic energy to protect yourself. For 1 minute, you become immune to the damage type associated with your Chromatic Ancestry. Once you use this trait, you can’t do so again until you finish a long rest.</p>
+			<h5>Chromatic Ancestry</h5>
+			<table>
+				<thead>
+					<tr><td>Dragon</td><td>Damage Type</td></tr>
+				</thead>
+				<tr><td>Black</td><td>Acid</td></tr>
+				<tr><td>Blue</td><td>Lightning</td></tr>
+				<tr><td>Green</td><td>Poison</td></tr>
+				<tr><td>Red</td><td>Fire</td></tr>
+				<tr><td>White</td><td>Cold</td></tr>
+			</table>
+		</description>
+		<sheet display="false" alt="Chromatic Dragonborn" />
+		<rules>
+			<select type="Ability Score Improvement" name="Ability Score Improvement Option (Chromatic Dragonborn)" supports="Custom Ability Score Improvement Option" />
+			<stat name="innate speed" value="30" bonus="base" />
+			<grant type="Size" id="ID_SIZE_MEDIUM" />
+			<grant type="Language" id="ID_LANGUAGE_COMMON" requirements="!ID_WOTC_TCOE_OPTION_CUSTOMIZED_LANGUAGE" />
+			<select type="Language" name="Customized Language" supports="Custom Race Language"  requirements="ID_WOTC_TCOE_OPTION_CUSTOMIZED_LANGUAGE" />
+			<select type="Language" name="Language (Chromatic Dragonborn)" supports="Standard||Exotic" />
+			<grant type="Grants" id="ID_INTERNAL_GRANT_RACE_DRAGONBORN"/>
+			<grant type="Racial Trait" id="ID_WOTC_FTOD_RACIAL_TRAIT_CHROMATIC_DRAGONBORN_CHROMATIC_ANCESTRY" />
+			<grant type="Racial Trait" id="ID_WOTC_FTOD_RACIAL_TRAIT_CHROMATIC_DRAGONBORN_BREATH_WEAPON" />
+			<grant type="Racial Trait" id="ID_WOTC_FTOD_RACIAL_TRAIT_CHROMATIC_DRAGONBORN_DRACONIC_RESISTANCE" />
+			<grant type="Racial Trait" id="ID_WOTC_FTOD_RACIAL_TRAIT_CHROMATIC_DRAGONBORN_CHROMATIC_WARDING" level="5" />
+		</rules>
+	</element>
+	<element name="Chromatic Ancestry" type="Racial Trait" source="Fizban's Treasury of Dragons" id="ID_WOTC_FTOD_RACIAL_TRAIT_CHROMATIC_DRAGONBORN_CHROMATIC_ANCESTRY">
+		<description>
+			<p>You have a chromatic dragon ancestor, granting you a special magical affinity. Choose one kind of dragon from the Chromatic Ancestry table. This determines the damage type for your other traits, as shown in the table.</p>
+			<h5>Chromatic Ancestry</h5>
+			<table>
+				<thead>
+					<tr><td>Dragon</td><td>Damage Type</td></tr>
+				</thead>
+				<tr><td>Black</td><td>Acid</td></tr>
+				<tr><td>Blue</td><td>Lightning</td></tr>
+				<tr><td>Green</td><td>Poison</td></tr>
+				<tr><td>Red</td><td>Fire</td></tr>
+				<tr><td>White</td><td>Cold</td></tr>
+			</table>
+		</description>
+		<sheet display="false" />
+		<rules>
+			<select type="Racial Trait" name="Chromatic Ancestry" supports="Chromatic Ancestry" />
+		</rules>
+	</element>
+	<element name="Black" type="Racial Trait" source="Fizban's Treasury of Dragons" id="ID_WOTC_FTOD_RACIAL_TRAIT_CHROMATIC_DRAGONBORN_CHROMATIC_ANCESTRY_BLACK">
+		<supports>Chromatic Ancestry</supports>
+		<compendium display="false" />
+		<description>
+			<div element="ID_WOTC_FTOD_RACIAL_TRAIT_CHROMATIC_DRAGONBORN_CHROMATIC_ANCESTRY" />
+		</description>
+		<sheet alt="Chromatic Ancestry">
+			<description>Your ancestor was a black dragon. Your Chromatic Ancestry damage type is acid.</description>
+		</sheet>
+		<rules>
+			<stat name="chromatic ancestry:damage type" value="Acid" inline="true" />
+		</rules>
+	</element>
+	<element name="Blue" type="Racial Trait" source="Fizban's Treasury of Dragons" id="ID_WOTC_FTOD_RACIAL_TRAIT_CHROMATIC_DRAGONBORN_CHROMATIC_ANCESTRY_BLUE">
+		<supports>Chromatic Ancestry</supports>
+		<compendium display="false" />
+		<description>
+			<div element="ID_WOTC_FTOD_RACIAL_TRAIT_CHROMATIC_DRAGONBORN_CHROMATIC_ANCESTRY" />
+		</description>
+		<sheet alt="Chromatic Ancestry">
+			<description>Your ancestor was a blue dragon. Your Chromatic Ancestry damage type is lightning.</description>
+		</sheet>
+		<rules>
+			<stat name="chromatic ancestry:damage type" value="Lightning" inline="true" />
+		</rules>
+	</element>
+	<element name="Green" type="Racial Trait" source="Fizban's Treasury of Dragons" id="ID_WOTC_FTOD_RACIAL_TRAIT_CHROMATIC_DRAGONBORN_CHROMATIC_ANCESTRY_GREEN">
+		<supports>Chromatic Ancestry</supports>
+		<compendium display="false" />
+		<description>
+			<div element="ID_WOTC_FTOD_RACIAL_TRAIT_CHROMATIC_DRAGONBORN_CHROMATIC_ANCESTRY" />
+		</description>
+		<sheet alt="Chromatic Ancestry">
+			<description>Your ancestor was a green dragon. Your Chromatic Ancestry damage type is poison.</description>
+		</sheet>
+		<rules>
+			<stat name="chromatic ancestry:damage type" value="Poison" inline="true" />
+		</rules>
+	</element>
+	<element name="Red" type="Racial Trait" source="Fizban's Treasury of Dragons" id="ID_WOTC_FTOD_RACIAL_TRAIT_CHROMATIC_DRAGONBORN_CHROMATIC_ANCESTRY_RED">
+		<supports>Chromatic Ancestry</supports>
+		<compendium display="false" />
+		<description>
+			<div element="ID_WOTC_FTOD_RACIAL_TRAIT_CHROMATIC_DRAGONBORN_CHROMATIC_ANCESTRY" />
+		</description>
+		<sheet alt="Chromatic Ancestry">
+			<description>Your ancestor was a red dragon. Your Chromatic Ancestry damage type is fire.</description>
+		</sheet>
+		<rules>
+			<stat name="chromatic ancestry:damage type" value="Fire" inline="true" />
+		</rules>
+	</element>
+	<element name="White" type="Racial Trait" source="Fizban's Treasury of Dragons" id="ID_WOTC_FTOD_RACIAL_TRAIT_CHROMATIC_DRAGONBORN_CHROMATIC_ANCESTRY_WHITE">
+		<supports>Chromatic Ancestry</supports>
+		<compendium display="false" />
+		<description>
+			<div element="ID_WOTC_FTOD_RACIAL_TRAIT_CHROMATIC_DRAGONBORN_CHROMATIC_ANCESTRY" />
+		</description>
+		<sheet alt="Chromatic Ancestry">
+			<description>Your ancestor was a white dragon. Your Chromatic Ancestry damage type is cold.</description>
+		</sheet>
+		<rules>
+			<stat name="chromatic ancestry:damage type" value="Cold" inline="true" />
+		</rules>
+	</element>
+
+	<element name="Breath Weapon" type="Racial Trait" source="Fizban's Treasury of Dragons" id="ID_WOTC_FTOD_RACIAL_TRAIT_CHROMATIC_DRAGONBORN_BREATH_WEAPON">
+		<description>
+			<p>When you take the Attack action on your turn, you can replace one of your attacks with an exhalation of magical energy in a 30-foot line that is 5 feet wide. Each creature in that area must make a Dexterity saving throw (DC = 8 + your Constitution modifier + your proficiency bonus). On a failed save, the creature takes 1d10 damage of the type associated with your Chromatic Ancestry. On a successful save, it takes half as much damage. This damage increases by 1d10 when you reach 5th level (2d10), 11th level (3d10), and 17th level (4d10).</p>
+			<p class="indent">You can use your Breath Weapon a number of times equal to your proficiency bonus, and you regain all expended uses when you finish a long rest.</p>
+		</description>
+		<sheet action="Attack" usage="{{proficiency}}/Long Rest">
+			<description>You can replace one of your attacks with an exhalation of a magical energy in a 30-foot line that is 5 feet wide. Each creature in the area must make a Dexterity saving throw against a DC{{breath weapon:dc}}. On a failed save, the creature takes {{breath weapon:dice count}}d10 {{chromatic ancestry:damage type}} damage, or half as much damage on a successful one.</description>
+		</sheet>
+		<rules>
+			<stat name="breath weapon:dc" value="8" />
+			<stat name="breath weapon:dc" value="constitution:modifier" />
+			<stat name="breath weapon:dc" value="proficiency" />
+			<stat name="breath weapon:dice count" value="1" level="1" bonus="base" />
+			<stat name="breath weapon:dice count" value="2" level="5" bonus="base" />
+			<stat name="breath weapon:dice count" value="3" level="11" bonus="base" />
+			<stat name="breath weapon:dice count" value="4" level="17" bonus="base" />
+		</rules>
+	</element>
+
+	<element name="Draconic Resistance" type="Racial Trait" source="Fizban's Treasury of Dragons" id="ID_WOTC_FTOD_RACIAL_TRAIT_CHROMATIC_DRAGONBORN_DRACONIC_RESISTANCE">
+		<description>
+			<p>You have resistance to the damage type associated with your Chromatic Ancestry.</p>
+		</description>
+		<sheet display="false">
+			<description>You have resistance to {{chromatic ancestry:damage type}} damage.</description>
+		</sheet>
+		<rules>
+			<grant type="Condition" id="ID_INTERNAL_CONDITION_DAMAGE_RESISTANCE_ACID" requirements="ID_WOTC_FTOD_RACIAL_TRAIT_CHROMATIC_DRAGONBORN_CHROMATIC_ANCESTRY_BLACK" />
+			<grant type="Condition" id="ID_INTERNAL_CONDITION_DAMAGE_RESISTANCE_LIGHTNING" requirements="ID_WOTC_FTOD_RACIAL_TRAIT_CHROMATIC_DRAGONBORN_CHROMATIC_ANCESTRY_BLUE" />
+			<grant type="Condition" id="ID_INTERNAL_CONDITION_DAMAGE_RESISTANCE_FIRE" requirements="ID_WOTC_FTOD_RACIAL_TRAIT_CHROMATIC_DRAGONBORN_CHROMATIC_ANCESTRY_RED" />
+			<grant type="Condition" id="ID_INTERNAL_CONDITION_DAMAGE_RESISTANCE_POISON" requirements="ID_WOTC_FTOD_RACIAL_TRAIT_CHROMATIC_DRAGONBORN_CHROMATIC_ANCESTRY_GREEN" />
+			<grant type="Condition" id="ID_INTERNAL_CONDITION_DAMAGE_RESISTANCE_COLD" requirements="ID_WOTC_FTOD_RACIAL_TRAIT_CHROMATIC_DRAGONBORN_CHROMATIC_ANCESTRY_WHITE" />
+		</rules>
+	</element>
+
+	<element name="Chromatic Warding" type="Racial Trait" source="Fizban's Treasury of Dragons" id="ID_WOTC_FTOD_RACIAL_TRAIT_CHROMATIC_DRAGONBORN_CHROMATIC_WARDING">
+		<description>
+			<p>Starting at 5th level, as an action, you can channel your draconic energy to protect yourself. For 1 minute, you become immune to the damage type associated with your Chromatic Ancestry. Once you use this trait, you can’t do so again until you finish a long rest.</p>
+		</description>
+		<sheet action="Action" usage="1/Long Rest">
+			<description>You can channel your draconic energies to protect yourself. For 1 minute, you become immune to the {{chromatic ancestry:damage type}} damage.</description>
+		</sheet>
+	</element>
+</elements>

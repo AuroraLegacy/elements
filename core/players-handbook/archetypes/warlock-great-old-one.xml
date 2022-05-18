@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<elements>
+	<info>
+		<update version="0.0.1">
+			<file name="warlock-great-old-one.xml" url="https://raw.githubusercontent.com/AuroraLegacy/elements/master/core/players-handbook/archetypes/warlock-great-old-one.xml" />
+		</update>
+	</info>
+
+	<element name="The Great Old One" type="Archetype" source="Player’s Handbook" id="ID_WOTC_PHB_ARCHETYPE_OTHERWORLDLY_PATRON_THE_GREAT_OLD_ONE">
+		<supports>Otherworldly Patron</supports>
+		<description>
+			<p>Your patron is a mysterious entity whose nature is utterly foreign to the fabric of reality. It might come from the Far Realm, the space beyond reality, or it could be one of the elder gods known only in legends. Its motives are incomprehensible to mortals, and its knowledge so immense and ancient that even the greatest libraries pale in comparison to the vast secrets it holds. The Great Old One might be unaware of your existence or entirely indifferent to you, but the secrets you have learned allow you to draw your magic from it.</p>
+			<p class="indent">Entities of this type include Ghaunadar, called That Which Lurks; Tharizdun, the Chained God; Dendar, the Night Serpent; Zargon, the Returner; Great Cthulhu; and other unfathomable beings.</p>
+			<div element="ID_WOTC_PHB_ARCHETYPE_FEATURE_GREATOLDONE_EXPANDED_SPELL_LIST"/>
+			<div element="ID_WOTC_PHB_ARCHETYPE_FEATURE_GREATOLDONE_AWAKEND_MIND"/>
+			<div element="ID_WOTC_PHB_ARCHETYPE_FEATURE_GREATOLDONE_ENTROPIC_WARD"/>
+			<div element="ID_WOTC_PHB_ARCHETYPE_FEATURE_GREATOLDONE_THOUGHT_SHIELD"/>
+			<div element="ID_WOTC_PHB_ARCHETYPE_FEATURE_GREATOLDONE_CREATE_THRALL"/>
+		</description>
+		<sheet display="false">
+			<description>Your patron is a mysterious entity whose nature is utterly foreign to the fabric of reality.</description>
+		</sheet>
+		<rules>
+			<grant type="Archetype Feature" id="ID_WOTC_PHB_ARCHETYPE_FEATURE_GREATOLDONE_EXPANDED_SPELL_LIST" level="1" />
+			<grant type="Archetype Feature" id="ID_WOTC_PHB_ARCHETYPE_FEATURE_GREATOLDONE_AWAKEND_MIND" level="1" />
+			<grant type="Archetype Feature" id="ID_WOTC_PHB_ARCHETYPE_FEATURE_GREATOLDONE_ENTROPIC_WARD" level="6" />
+			<grant type="Archetype Feature" id="ID_WOTC_PHB_ARCHETYPE_FEATURE_GREATOLDONE_THOUGHT_SHIELD" level="10" />
+			<grant type="Archetype Feature" id="ID_WOTC_PHB_ARCHETYPE_FEATURE_GREATOLDONE_CREATE_THRALL" level="14" />
+		</rules>
+	</element>
+	<element name="Expanded Spell List" type="Archetype Feature" source="Player’s Handbook" id="ID_WOTC_PHB_ARCHETYPE_FEATURE_GREATOLDONE_EXPANDED_SPELL_LIST">
+		<requirements>!ID_INTERNAL_FEATURE_REPLACEMENT_WARLOCK_GREAT_OLD_ONE_EXPANDED_SPELL_LIST</requirements>
+		<description>
+			<p>The Great Old One lets you choose from an expanded list of spells when you learn a warlock spell. The following spells are added to the warlock spell list for you.</p>
+			<h5 class="caption">GREAT OLD ONE EXPANDED SPELLS</h5>
+			<table>
+				<thead>
+					<tr><td>Spell Level</td><td>Spells</td></tr>
+				</thead>
+				<tr><td>1st</td><td><em>dissonant whispers, Tasha's hideous laughter</em></td></tr>
+				<tr><td>2nd</td><td><em>detect thoughts, phantasmal force</em></td></tr>
+				<tr><td>3rd</td><td><em>clairvoyance, sending</em></td></tr>
+				<tr><td>4th</td><td><em>dominate beast, Evard’s black tentacles</em></td></tr>
+				<tr><td>5th</td><td><em>dominate person, telekinesis</em></td></tr>
+			</table>
+		</description>
+		<sheet display="false">
+			<description>The Great Old One lets you choose from an expanded list of spells when you learn a warlock spell.</description>
+		</sheet>
+		<spellcasting name="Warlock" extend="true">
+			<extend>ID_PHB_SPELL_DISSONANT_WHISPERS</extend>
+			<extend>ID_PHB_SPELL_TASHAS_HIDEOUS_LAUGHTER</extend>
+			<extend>ID_PHB_SPELL_DETECT_THOUGHTS</extend>
+			<extend>ID_PHB_SPELL_PHANTASMAL_FORCE</extend>
+			<extend>ID_PHB_SPELL_CLAIRVOYANCE</extend>
+			<extend>ID_PHB_SPELL_SENDING</extend>
+			<extend>ID_PHB_SPELL_DOMINATE_BEAST</extend>
+			<extend>ID_PHB_SPELL_EVARDS_BLACK_TENTACLES</extend>
+			<extend>ID_PHB_SPELL_DOMINATE_PERSON</extend>
+			<extend>ID_PHB_SPELL_TELEKINESIS</extend>
+		</spellcasting>
+	</element>
+	<element name="Awakend Mind" type="Archetype Feature" source="Player’s Handbook" id="ID_WOTC_PHB_ARCHETYPE_FEATURE_GREATOLDONE_AWAKEND_MIND">
+		<requirements>!ID_INTERNAL_FEATURE_REPLACEMENT_WARLOCK_GREATOLDONE_AWAKEND_MIND</requirements>
+		<description>
+			<p>Starting at 1st level, your alien knowledge gives you the ability to touch the minds of other creatures. You can communicate telepathically with any creature you can see within 30 feet of you. You don’t need to share a language with the creature for it to understand your telepathic utterances, but the creature must be able to understand at least one language.</p>
+		</description>
+		<sheet>
+			<description>You can communicate telepathically with any creature you can see within 30 feet of you. You don’t need to share a language with the creature for it to understand your telepathic utterances, but the creature must be able to understand at least one language.</description>
+		</sheet>
+	</element>
+	<element name="Entropic Ward" type="Archetype Feature" source="Player’s Handbook" id="ID_WOTC_PHB_ARCHETYPE_FEATURE_GREATOLDONE_ENTROPIC_WARD">
+		<requirements>!ID_INTERNAL_FEATURE_REPLACEMENT_WARLOCK_GREATOLDONE_ENTROPIC_WARD</requirements>
+		<description>
+			<p>At 6th level, you learn to magically ward yourself against attack and to turn an enemy’s failed strike into good luck for yourself. When a creature makes an attack roll against you, you can use your reaction to impose disadvantage on that roll. If the attack misses you, your next attack roll against the creature has advantage if you make it before the end of your next turn.</p>
+			<p class="indent">Once you use this feature, you can’t use it again until you finish a short or long rest.</p>
+		</description>
+		<sheet action="Reaction" usage="1/Short Rest">
+			<description>When a creature makes an attack roll against you, you can impose disadvantage on that roll. If the attack misses you, your next attack roll against the creature has advantage if you make it before the end of your next turn.</description>
+		</sheet>
+	</element>
+	<element name="Thought Shield" type="Archetype Feature" source="Player’s Handbook" id="ID_WOTC_PHB_ARCHETYPE_FEATURE_GREATOLDONE_THOUGHT_SHIELD">
+		<requirements>!ID_INTERNAL_FEATURE_REPLACEMENT_WARLOCK_GREATOLDONE_THOUGHT_SHIELD</requirements>
+		<description>
+			<p>Starting at 10th level, your thoughts can’t be read by telepathy or other means unless you allow it. You also have resistance to psychic damage, and whenever a creature deals psychic damage to you, that creature takes the same amount of damage that you do.</p>
+		</description>
+		<sheet>
+			<description>Whenever a creature deals psychic damage to you, that creature takes the same amount of damage that you do.</description>
+		</sheet>
+		<rules>
+			<grant type="Condition" id="ID_INTERNAL_CONDITION_DAMAGE_RESISTANCE_PSYCHIC" />
+		</rules>
+	</element>
+	<element name="Create Thrall" type="Archetype Feature" source="Player’s Handbook" id="ID_WOTC_PHB_ARCHETYPE_FEATURE_GREATOLDONE_CREATE_THRALL">
+		<requirements>!ID_INTERNAL_FEATURE_REPLACEMENT_WARLOCK_GREATOLDONE_CREATE_THRALL</requirements>
+		<description>
+			<p>At 14th level, you gain the ability to infect a humanoid’s mind with the alien magic of your patron. You can use your action to touch an incapacitated humanoid. That creature is then charmed by you until a remove curse spell is cast on it, the charmed condition is removed from it, or you use this feature again.</p>
+			<p class="indent">You can communicate telepathically with the charmed creature as long as the two of you are on the same plane of existence.</p>
+		</description>
+		<sheet action="Action">
+			<description>You can touch an incapacitated humanoid. That creature is then charmed by you until a remove curse spell is cast on it, the charmed condition is removed from it, or you use this feature again. You can communicate telepathically with the charmed creature as long as the two of you are on the same plane of existence.</description>
+		</sheet>
+	</element>
+
+	<!--Feature Replacement Grants-->
+	<element name="Expanded Spell List Feature Replacement" type="Grants" source="Internal" id="ID_INTERNAL_FEATURE_REPLACEMENT_WARLOCK_GREAT_OLD_ONE_EXPANDED_SPELL_LIST" />
+	<element name="Awakend Mind Feature Replacement" type="Grants" source="Internal" id="ID_INTERNAL_FEATURE_REPLACEMENT_WARLOCK_GREATOLDONE_AWAKEND_MIND" />
+	<element name="Entropic Ward Feature Replacement" type="Grants" source="Internal" id="ID_INTERNAL_FEATURE_REPLACEMENT_WARLOCK_GREATOLDONE_ENTROPIC_WARD" />
+	<element name="Thought Shield Feature Replacement" type="Grants" source="Internal" id="ID_INTERNAL_FEATURE_REPLACEMENT_WARLOCK_GREATOLDONE_THOUGHT_SHIELD" />
+	<element name="Create Thrall Feature Replacement" type="Grants" source="Internal" id="ID_INTERNAL_FEATURE_REPLACEMENT_WARLOCK_GREATOLDONE_CREATE_THRALL" />
+</elements>

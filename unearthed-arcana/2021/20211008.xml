@@ -1,0 +1,573 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<elements>
+	<info>
+		<name>Unearthed Arcana: Travelers of the Multiverse</name>
+		<update version="0.0.2">
+			<file name="20211008.xml" url="https://raw.githubusercontent.com/AuroraLegacy/elements/master/unearthed-arcana/2021/20211008.xml" />
+		</update>
+	</info>
+
+	<element name="Unearthed Arcana: Travelers of the Multiverse" type="Source" source="Core" id="ID_WOTC_SOURCE_UNEARTHED_ARCANA_20211008">
+		<description>
+			<p>Journey to the far corners of the multiverse as one of the playable races in today’s Unearthed Arcana! This playtest document presents six races for Dungeons &amp; Dragons: astral elf, autognome, giff, hadozee, plasmoid, and thri-kreen.</p>
+		</description>
+		<setters>
+			<set name="abbreviation">UA20211008</set>
+			<set name="url">https://dnd.wizards.com/articles/unearthed-arcana/travelers-multiverse</set>
+			<set name="author" abbreviation="WOTC" url="http://dnd.wizards.com">Wizards of the Coast</set>
+			<set name="official">true</set>
+			<set name="playtest">true</set>
+			<set name="release">20211008</set>
+		</setters>
+	</element>
+
+	<element name="Astral Elf" type="Race" source="Unearthed Arcana: Travelers of the Multiverse" id="ID_WOTC_UA20211008_RACE_ASTRAL_ELF">
+		<description>
+			<p>Long ago, groups of elves ventured from the Feywild to the Astral Plane to be closer to their gods. Life in the Silver Void has imbued their souls with a spark of divine light. That light manifests as a starry gleam in an astral elf’s eyes.</p>
+			<p class="indent">Because nothing ages in the Astral Plane, astral elves from that plane are thousands of years old, and their longevity gives them an unusual perspective on time. Some are prone to melancholy, while others display an absence of feeling. Many look for creative ways to occupy themselves. Whether they choose to live in quiet contemplation or strike out to explore the reaches of the multiverse, they tend to see things through the lens of time as having little or no meaning to them. </p>
+			<p class="indent">Astral elves who don’t dwell on the Astral Plane can live to be over 750 years old. </p>
+			<h4>ASTRAL ELF TRAITS</h4>
+			<p>You have the following racial traits.</p>
+			<p class="indent"><strong><em>Creature Type.</em></strong> You are a Humanoid.</p>
+			<p class="indent"><strong><em>Size.</em></strong> You are Medium.</p>
+			<p class="indent"><strong><em>Speed.</em></strong> Your walking speed is 30 feet.</p>
+			<p class="indent"><strong><em>Astral Fire.</em></strong> You know one of the following cantrips of your choice: <i>dancing lights, light,</i> or <i>sacred flame</i>. Intelligence, Wisdom, or Charisma is your spellcasting ability for it (choose when you select this race). </p>
+			<p class="indent"><strong><em>Darkvision.</em></strong> You can see in dim light within 60 feet of you as if it were bright light and in darkness as if it were dim light. You discern colors in that darkness only as shades of gray. </p>
+			<p class="indent"><strong><em>Fey Ancestry.</em></strong> You have advantage on saving throws you make to avoid or end the charmed condition on yourself. </p>
+			<p class="indent"><strong><em>Keen Senses.</em></strong> You have proficiency in the Perception skill.</p>
+			<p class="indent"><strong><em>Radiant Soul.</em></strong> When you succeed on a death save, you can regain a number of hit points equal to your proficiency bonus + your Intelligence, Wisdom, or Charisma modifier (choose when you select this race). You can’t use this trait again until you finish a long rest.</p>
+			<p class="indent"><strong><em>Trance.</em></strong> You don’t need to sleep, and magic can’t put you to sleep. You can finish a long rest in 4 hours if you spend those hours in a trancelike meditation, during which you remain conscious.</p>
+			<p class="indent"><strong><em>Trance Proficiencies.</em></strong> Whenever you finish a long rest using your Trance trait, you gain two proficiencies, each one with a weapon or a tool of your choice (selected from the “Equipment” chapter of the <i>Player’s Handbook</i>). You mystically acquire these proficiencies by drawing them from shared elven memory, and you retain them until you finish your next long rest.</p>
+		</description>
+		<sheet display="false" />
+		<rules>
+			<select type="Ability Score Improvement" name="Ability Score Improvement Option (Astral Elf)" supports="Custom Ability Score Improvement Option" />
+			<stat name="innate speed" value="30" bonus="base" />
+			<grant type="Size" id="ID_SIZE_MEDIUM" />
+			<grant type="Language" id="ID_LANGUAGE_COMMON" requirements="!ID_WOTC_TCOE_OPTION_CUSTOMIZED_LANGUAGE" />
+			<select type="Language" name="Customized Language" supports="Custom Race Language"  requirements="ID_WOTC_TCOE_OPTION_CUSTOMIZED_LANGUAGE" />
+			<select type="Language" name="Language (Astral Elf)" supports="Standard||Exotic" />
+			<grant type="Vision" id="ID_VISION_DARKVISION" />
+			<grant type="Grants" id="ID_INTERNAL_GRANT_RACE_ELF"/>
+			<grant type="Racial Trait" id="ID_WOTC_UA20211008_RACIAL_TRAIT_ASTRAL_ELF_ASTRAL_FIRE" />
+			<grant type="Racial Trait" id="ID_WOTC_UA20211008_RACIAL_TRAIT_ASTRAL_ELF_FEY_ANCESTRY" />
+			<grant type="Racial Trait" id="ID_WOTC_UA20211008_RACIAL_TRAIT_ASTRAL_ELF_KEEN_SENSES" />
+			<grant type="Racial Trait" id="ID_WOTC_UA20211008_RACIAL_TRAIT_ASTRAL_ELF_RADIANT_SOUL"/>
+			<grant type="Racial Trait" id="ID_WOTC_UA20211008_RACIAL_TRAIT_ASTRAL_ELF_TRANCE"/>
+			<grant type="Racial Trait" id="ID_WOTC_UA20211008_RACIAL_TRAIT_ASTRAL_ELF_TRANCE_PROFICIENCIES"/>
+		</rules>
+	</element>
+
+	<element name="Astral Fire" type="Racial Trait" source="Unearthed Arcana: Travelers of the Multiverse" id="ID_WOTC_UA20211008_RACIAL_TRAIT_ASTRAL_ELF_ASTRAL_FIRE">
+		<description>
+			<p>You know one of the following cantrips of your choice: <i>dancing lights, light,</i> or <i>sacred flame</i>. Intelligence, Wisdom, or Charisma is your spellcasting ability for it (choose when you select this race).</p>
+		</description>
+		<sheet display="false" />
+		<rules>
+			<select type="Spell" name="Cantrip (Astral Fire)" supports="ID_PHB_SPELL_DANCING_LIGHTS|ID_PHB_SPELL_LIGHT|ID_PHB_SPELL_SACRED_FLAME" />
+			<select type="Racial Trait" name="Spellcasting Ability (Astral Fire)" supports="UA20211008 Astral Fire" />
+		</rules>
+	</element>
+	<element name="Intelligence" type="Racial Trait" source="Unearthed Arcana: Travelers of the Multiverse" id="ID_WOTC_UA20211008_RACIAL_TRAIT_ASTRAL_ELF_ASTRAL_FIRE_INTELLIGENCE">
+		<supports>UA20211008 Astral Fire</supports>
+		<description>
+			<p>Your spellcasting ability for chosen cantrip is Intelligence.</p>
+		</description>
+		<sheet alt="Astral Fire">
+			<description>Your spellcasting ability for chosen cantrip is Intelligence.</description>
+		</sheet>
+	</element>
+	<element name="Wisdom" type="Racial Trait" source="Unearthed Arcana: Travelers of the Multiverse" id="ID_WOTC_UA20211008_RACIAL_TRAIT_ASTRAL_ELF_ASTRAL_FIRE_WISDOM">
+		<supports>UA20211008 Astral Fire</supports>
+		<description>
+			<p>Your spellcasting ability for chosen cantrip is Wisdom.</p>
+		</description>
+		<sheet alt="Astral Fire">
+			<description>Your spellcasting ability for chosen cantrip is Wisdom.</description>
+		</sheet>
+	</element>
+	<element name="Charisma" type="Racial Trait" source="Unearthed Arcana: Travelers of the Multiverse" id="ID_WOTC_UA20211008_RACIAL_TRAIT_ASTRAL_ELF_ASTRAL_FIRE_CHARISMA">
+		<supports>UA20211008 Astral Fire</supports>
+		<description>
+			<p>Your spellcasting ability for chosen cantrip is Charisma.</p>
+		</description>
+		<sheet alt="Astral Fire">
+			<description>Your spellcasting ability for chosen cantrip is Charisma.</description>
+		</sheet>
+	</element>
+
+	<element name="Fey Ancestry" type="Racial Trait" source="Unearthed Arcana: Travelers of the Multiverse" id="ID_WOTC_UA20211008_RACIAL_TRAIT_ASTRAL_ELF_FEY_ANCESTRY">
+		<description>
+			<p>You have advantage on saving throws you make to avoid or end the charmed condition on yourself.</p>
+		</description>
+		<sheet>
+			<description>You have advantage on saving throws you make to avoid or end the charmed condition on yourself.</description>
+		</sheet>
+	</element>
+
+	<element name="Keen Senses" type="Racial Trait" source="Unearthed Arcana: Travelers of the Multiverse" id="ID_WOTC_UA20211008_RACIAL_TRAIT_ASTRAL_ELF_KEEN_SENSES">
+		<description>
+			<p>You have proficiency in the Perception skill.</p>
+		</description>
+		<sheet display="false">
+			<description>You have proficiency in the Perception skill.</description>
+		</sheet>
+		<rules>
+			<grant type="Proficiency" id="ID_PROFICIENCY_SKILL_PERCEPTION" />
+		</rules>
+	</element>
+
+	<element name="Radiant Soul" type="Racial Trait" source="Unearthed Arcana: Travelers of the Multiverse" id="ID_WOTC_UA20211008_RACIAL_TRAIT_ASTRAL_ELF_RADIANT_SOUL">
+		<description>
+			<p>When you succeed on a death save, you can regain a number of hit points equal to your proficiency bonus + your Intelligence, Wisdom, or Charisma modifier (choose when you select this race). You can’t use this trait again until you finish a long rest.</p>
+		</description>
+		<sheet usage="1/Long Rest">
+			<description>When you succeed on a death save, you can regain {{ua:radiant soul:hp}} hit points.</description>
+		</sheet>
+		<rules>
+			<stat name="ua:radiant soul:hp" value="proficiency" bonus="base" />
+			<select type="Racial Trait" name="Ability Score (Radiant Soul)" supports="UA20211008 Radiant Soul" />
+		</rules>
+	</element>
+	<element name="Intelligence" type="Racial Trait" source="Unearthed Arcana: Travelers of the Multiverse" id="ID_WOTC_UA20211008_RACIAL_TRAIT_ASTRAL_ELF_RADIANT_SOUL_INTELLIGENCE">
+		<supports>UA20211008 Radiant Soul</supports>
+		<description>
+			<p>You add your Intelligence modifier to number of hit points you regain when using Radiant Soul trait.</p>
+		</description>
+		<sheet display="false">
+			<description>You add your Intelligence modifier to number of hit points you regain when using Radiant Soul trait.</description>
+		</sheet>
+		<rules>
+			<stat name="ua:radiant soul:hp" value="intelligence:modifier" bonus="ability" />
+		</rules>
+	</element>
+	<element name="Wisdom" type="Racial Trait" source="Unearthed Arcana: Travelers of the Multiverse" id="ID_WOTC_UA20211008_RACIAL_TRAIT_ASTRAL_ELF_RADIANT_SOUL_WISDOM">
+		<supports>UA20211008 Radiant Soul</supports>
+		<description>
+			<p>You add your Wisdom modifier to number of hit points you regain when using Radiant Soul trait.</p>
+		</description>
+		<sheet display="false">
+			<description>You add your Wisdom modifier to number of hit points you regain when using Radiant Soul trait.</description>
+		</sheet>
+		<rules>
+			<stat name="ua:radiant soul:hp" value="wisdom:modifier" bonus="ability" />
+		</rules>
+	</element>
+	<element name="Charisma" type="Racial Trait" source="Unearthed Arcana: Travelers of the Multiverse" id="ID_WOTC_UA20211008_RACIAL_TRAIT_ASTRAL_ELF_RADIANT_SOUL_CHARISMA">
+		<supports>UA20211008 Radiant Soul</supports>
+		<description>
+			<p>You add your Charisma modifier to number of hit points you regain when using Radiant Soul trait.</p>
+		</description>
+		<sheet display="false">
+			<description>You add your Charisma modifier to number of hit points you regain when using Radiant Soul trait.</description>
+		</sheet>
+		<rules>
+			<stat name="ua:radiant soul:hp" value="charisma:modifier" bonus="ability" />
+		</rules>
+	</element>
+
+	<element name="Trance" type="Racial Trait" source="Unearthed Arcana: Travelers of the Multiverse" id="ID_WOTC_UA20211008_RACIAL_TRAIT_ASTRAL_ELF_TRANCE">
+		<description>
+			<p>You don’t need to sleep, and magic can’t put you to sleep. You can finish a long rest in 4 hours if you spend those hours in a trancelike meditation, during which you remain conscious.</p>
+		</description>
+		<sheet>
+			<description>You don’t need to sleep, and magic can’t put you to sleep. You can finish a long rest in 4 hours if you spend those hours in a trancelike meditation, during which you remain conscious.</description>
+		</sheet>
+	</element>
+
+	<element name="Trance Proficiencies" type="Racial Trait" source="Unearthed Arcana: Travelers of the Multiverse" id="ID_WOTC_UA20211008_RACIAL_TRAIT_ASTRAL_ELF_TRANCE_PROFICIENCIES">
+		<description>
+			<p>Whenever you finish a long rest using your Trance trait, you gain two proficiencies, each one with a weapon or a tool of your choice (selected from the “Equipment” chapter of the <i>Player’s Handbook</i>). You mystically acquire these proficiencies by drawing them from shared elven memory, and you retain them until you finish your next long rest.</p>
+		</description>
+		<sheet>
+			<description>Whenever you finish a long rest using your Trance trait, you gain two proficiencies, each one with a weapon or a tool. You retain them until you finish your next long rest.</description>
+		</sheet>
+		<rules>
+			<select type="Proficiency" name="Trance Proficiencies" supports="Weapon||Tool" number="2" optional="true" />
+		</rules>
+	</element>
+
+	<element name="Autognome" type="Race" source="Unearthed Arcana: Travelers of the Multiverse" id="ID_WOTC_UA20211008_RACE_AUTOGNOME">
+		<description>
+			<p>Autognomes are mechanical beings built by rock gnomes in their image, usually with a particular purpose in mind. For example, a gnome might build an autognome to be a steadfast colleague or a loyal companion. Sometimes, because of a malfunction or a unique circumstance, an autognome becomes separated from its creator and strikes out on its own. </p>
+			<p class="indent">An autognome bears a resemblance to its creator, and most autognomes are programmed to speak and understand Gnomish. The internal components used in an autognome’s manufacture can vary wildly; one autognome might have an actual beating heart in its chest cavity, while another might be powered by stardust or intricate clockwork gears.</p>
+			<p class="indent">Roll on the Autognome History table or choose an entry to determine what event set your autognome on the path to adventure. If nothing on the table appeals to you, work with your DM to create an origin story for your autognome.</p>
+			<p class="indent">Like gnomes, autognomes can live for centuries, up to 500 years.</p>
+			<h5>Autognome History</h5>
+			<table>
+				<thead>
+					<tr><td class="col-10" style="text-align:center">d8</td><td>Story</td></tr>
+				</thead>
+				<tr><td style="text-align:center">1</td><td>Your creator gave you autonomy and urged you to follow your dreams.</td></tr>
+				<tr><td style="text-align:center">2</td><td>Your creator died, leaving you to fend for yourself.</td></tr>
+				<tr><td style="text-align:center">3</td><td>A temporary malfunction caused you to harm your creator, and you fled rather than face reprisal. </td></tr>
+				<tr><td style="text-align:center">4</td><td>A glitch caused you to forget your original programming. You don’t remember who made you or where you came from.</td></tr>
+				<tr><td style="text-align:center">5</td><td>You were stolen from your creator and long to return to them.</td></tr>
+				<tr><td style="text-align:center">6</td><td>You didn’t like how you were being treated by your creator, so you ran away from home.</td></tr>
+				<tr><td style="text-align:center">7</td><td>Your creator built you to complete a special mission.</td></tr>
+				<tr><td style="text-align:center">8</td><td>You felt trapped in the role for which you were built and abandoned your creator, determined to find a greater purpose.</td></tr>
+			</table>
+			<h4>AUTOGNOME TRAITS</h4>
+			<p>You have the following racial traits.</p>
+			<p class="indent"><strong><em>Creature Type.</em></strong> You are a Construct.</p>
+			<p class="indent"><strong><em>Size.</em></strong> You are Small.</p>
+			<p class="indent"><strong><em>Speed.</em></strong> Your walking speed is 30 feet.</p>
+			<p class="indent"><strong><em>Armored Casing.</em></strong> You are encased in thin metal or some other durable material. While you aren’t wearing armor, your base Armor Class is 13 + your Dexterity modifier.</p>
+			<p class="indent"><strong><em>Built for Success.</em></strong> You can add a d4 to one attack roll, ability check, or saving throw you make, and you can do so after seeing the d20 but before the effects of the roll are resolved. You can use this trait a number of times equal to your proficiency bonus, and you regain all expended uses when you finish a long rest.</p>
+			<p class="indent"><strong><em>Mechanical Nature.</em></strong> You have resistance to poison damage and immunity to disease, and you have advantage on saving throws against being paralyzed or poisoned. You don’t need to eat, drink, or breathe. </p>
+			<p class="indent"><strong><em>Sentry’s Rest.</em></strong> When you take a long rest, you spend at least 6 hours in an inactive, motionless state, instead of sleeping. In this state, you appear inert, but you aren’t unconscious.</p>
+			<p class="indent"><strong><em>Specialized Design.</em></strong> You gain two tool proficiencies of your choice.</p>
+			<p class="indent"><strong><em>True Life.</em></strong> If the <i>mending spell</i> is cast on you, you can expend a Hit Die, roll it, and regain a number of hit points equal to the roll plus your Constitution modifier (minimum of 1 hit point).</p>
+			<p class="indent">In addition, your creator designed you to benefit from common spells that preserve life but that normally don’t affect Constructs: <i>cure wounds, healing word,</i> and <i>spare the dying.</i></p>
+		</description>
+		<sheet display="false" />
+		<rules>
+			<select type="Ability Score Improvement" name="Ability Score Improvement Option (Autognome)" supports="Custom Ability Score Improvement Option" />
+			<grant type="Racial Trait" id="ID_INTERNAL_RACIAL_TRAIT_TYPE_CONSTRUCT" />
+			<stat name="innate speed" value="30" bonus="base" />
+			<grant type="Size" id="ID_SIZE_SMALL" />
+			<grant type="Language" id="ID_LANGUAGE_COMMON" requirements="!ID_WOTC_TCOE_OPTION_CUSTOMIZED_LANGUAGE" />
+			<select type="Language" name="Customized Language" supports="Custom Race Language"  requirements="ID_WOTC_TCOE_OPTION_CUSTOMIZED_LANGUAGE" />
+			<select type="Language" name="Language (Autognome)" supports="Standard||Exotic" />
+			<grant type="Racial Trait" id="ID_WOTC_UA20211008_RACIAL_TRAIT_AUTOGNOME_ARMORED_CASING" />
+			<grant type="Racial Trait" id="ID_WOTC_UA20211008_RACIAL_TRAIT_AUTOGNOME_BUILT_FOR_SUCCESS" />
+			<grant type="Racial Trait" id="ID_WOTC_UA20211008_RACIAL_TRAIT_AUTOGNOME_MECHANICAL_NATURE" />
+			<grant type="Racial Trait" id="ID_WOTC_UA20211008_RACIAL_TRAIT_AUTOGNOME_SENTRYS_REST"/>
+			<grant type="Racial Trait" id="ID_WOTC_UA20211008_RACIAL_TRAIT_AUTOGNOME_SPECIALIZED_DESIGN"/>
+			<grant type="Racial Trait" id="ID_WOTC_UA20211008_RACIAL_TRAIT_AUTOGNOME_TRUE_LIFE"/>
+		</rules>
+	</element>
+
+	<element name="Armored Casing" type="Racial Trait" source="Unearthed Arcana: Travelers of the Multiverse" id="ID_WOTC_UA20211008_RACIAL_TRAIT_AUTOGNOME_ARMORED_CASING">
+		<description>
+			<p>You are encased in thin metal or some other durable material. While you aren’t wearing armor, your base Armor Class is 13 + your Dexterity modifier.</p>
+		</description>
+		<sheet>
+			<description>While you aren’t wearing armor, your base Armor Class is {{ua:armor casing:ac}}.</description>
+		</sheet>
+		<rules>
+			<stat name="ua:armor casing:ac" value="13" bonus="base" />
+			<stat name="ua:armor casing:ac" value="dexterity:modifier" bonus="ability" />
+			<stat name="ac:calculation" value="ua:armor casing:ac" bonus="calculation" equipped="[armor:none]" />
+		</rules>
+	</element>
+
+	<element name="Built for Success" type="Racial Trait" source="Unearthed Arcana: Travelers of the Multiverse" id="ID_WOTC_UA20211008_RACIAL_TRAIT_AUTOGNOME_BUILT_FOR_SUCCESS">
+		<description>
+			<p>You can add a d4 to one attack roll, ability check, or saving throw you make, and you can do so after seeing the d20 but before the effects of the roll are resolved. You can use this trait a number of times equal to your proficiency bonus, and you regain all expended uses when you finish a long rest.</p>
+		</description>
+		<sheet usage="{{proficiency}}/Long Rest">
+			<description>You can add a d4 to one attack roll, ability check, or saving throw you make, and you can do so after seeing the d20 but before the effects of the roll are resolved.</description>
+		</sheet>
+	</element>
+
+	<element name="Mechanical Nature" type="Racial Trait" source="Unearthed Arcana: Travelers of the Multiverse" id="ID_WOTC_UA20211008_RACIAL_TRAIT_AUTOGNOME_MECHANICAL_NATURE">
+		<description>
+			<p>You have resistance to poison damage and immunity to disease, and you have advantage on saving throws against being paralyzed or poisoned. You don’t need to eat, drink, or breathe. </p>
+		</description>
+		<sheet>
+			<description>You have immunity to disease, and you have advantage on saving throws against being paralyzed or poisoned. You don’t need to eat, drink, or breathe. </description>
+		</sheet>
+		<rules>
+			<grant type="Condition" id="ID_INTERNAL_CONDITION_DAMAGE_RESISTANCE_POISON" />
+		</rules>
+	</element>
+
+	<element name="Sentry’s Rest" type="Racial Trait" source="Unearthed Arcana: Travelers of the Multiverse" id="ID_WOTC_UA20211008_RACIAL_TRAIT_AUTOGNOME_SENTRYS_REST">
+		<description>
+			<p>When you take a long rest, you spend at least 6 hours in an inactive, motionless state, instead of sleeping. In this state, you appear inert, but you aren’t unconscious.</p>
+		</description>
+		<sheet>
+			<description>When you take a long rest, you spend at least 6 hours in an inactive, motionless state, instead of sleeping. In this state, you appear inert, but you aren’t unconscious.</description>
+		</sheet>
+	</element>
+
+	<element name="Specialized Design" type="Racial Trait" source="Unearthed Arcana: Travelers of the Multiverse" id="ID_WOTC_UA20211008_RACIAL_TRAIT_AUTOGNOME_SPECIALIZED_DESIGN">
+		<description>
+			<p>You gain two tool proficiencies of your choice.</p>
+		</description>
+		<sheet display="false">
+			<description>You gain two tool proficiencies of your choice.</description>
+		</sheet>
+		<rules>
+			<select type="Proficiency" name="Tool Proficiency (Specialized Design)" supports="Tool" number="2" />
+		</rules>
+	</element>
+
+	<element name="True Life" type="Racial Trait" source="Unearthed Arcana: Travelers of the Multiverse" id="ID_WOTC_UA20211008_RACIAL_TRAIT_AUTOGNOME_TRUE_LIFE">
+		<description>
+			<p>If the <i>mending</i> spell is cast on you, you can expend a Hit Die, roll it, and regain a number of hit points equal to the roll plus your Constitution modifier (minimum of 1 hit point).</p>
+			<p class="indent">In addition, your creator designed you to benefit from common spells that preserve life but that normally don’t affect Constructs: <i>cure wounds, healing word,</i> and <i>spare the dying.</i></p>
+		</description>
+		<sheet>
+			<description>If the mending spell is cast on you, you can expend a Hit Die, roll it, and regain a number of hit points equal to the roll plus {{constitution:modifier}} (minimum of 1 hit point). &#13;
+			In addition, you're able to gain benefit from cure wounds, healing word, and spare the dying spells.</description>
+		</sheet>
+	</element>
+
+	<element name="Giff" type="Race" source="Unearthed Arcana: Travelers of the Multiverse" id="ID_WOTC_UA20211008_RACE_GIFF">
+		<description>
+			<p>Giff are tall, broad-shouldered folk with hippo-like features. Some have smooth skin, while others have short bristles on their faces and the tops of their heads. As beings of impressive size and unforgettable appearance, giff are noticed wherever they go.</p>
+			<p class="indent">Storytelling is a rich tradition among giff, and it’s not uncommon to see a giff recounting their past exploits to an enraptured crowd. Having a friendly giff nearby when a tavern brawl erupts can also be useful, for a giff can usually more than hold their own when pleasant revelry devolves into fisticuffs.</p>
+			<p class="indent">The giff are split into two camps concerning how their name is pronounced. Half of them say it with a hard g, half with a soft g. Disagreements over the correct pronunciation often blossom into hard feelings, loud arguments, and headbutting contests, but rarely escalate beyond that.</p>
+			<h4>GIFF TRAITS</h4>
+			<p>You have the following racial traits.</p>
+			<p class="indent"><strong><em>Creature Type.</em></strong> You are a Humanoid.</p>
+			<p class="indent"><strong><em>Size.</em></strong> You are Medium.</p>
+			<p class="indent"><strong><em>Speed.</em></strong> Your walking speed is 30 feet, and you have a swimming speed equal to your walking speed.</p>
+			<p class="indent"><strong><em>Damage Dealer.</em></strong> Like a hippopotamus in a crystalware shop, you are naturally adept at damaging things. When you roll a 1 on a damage die for a melee attack, you can reroll the die and use the new roll. You can do so no more than once per turn.</p>
+			<p class="indent"><strong><em>Hippo Build.</em></strong> You have advantage on Strength-based ability checks and Strength saving throws. In addition, you count as one size larger when determining your carrying capacity and the weight you can push, drag, or lift.</p>
+		</description>
+		<sheet display="false" />
+		<rules>
+			<select type="Ability Score Improvement" name="Ability Score Improvement Option (Giff)" supports="Custom Ability Score Improvement Option" />
+			<stat name="innate speed" value="30" bonus="base" />
+			<stat name="speed:swim" value="speed" bonus="base" />
+			<grant type="Size" id="ID_SIZE_MEDIUM" />
+			<grant type="Language" id="ID_LANGUAGE_COMMON" requirements="!ID_WOTC_TCOE_OPTION_CUSTOMIZED_LANGUAGE" />
+			<select type="Language" name="Customized Language" supports="Custom Race Language"  requirements="ID_WOTC_TCOE_OPTION_CUSTOMIZED_LANGUAGE" />
+			<select type="Language" name="Language (Giff)" supports="Standard||Exotic" />
+			<grant type="Racial Trait" id="ID_WOTC_UA20211008_RACIAL_TRAIT_GIFF_DAMAGE_DEALER" />
+			<grant type="Racial Trait" id="ID_WOTC_UA20211008_RACIAL_TRAIT_GIFF_HIPPO_BUILD" />
+		</rules>
+	</element>
+
+	<element name="Damage Dealer" type="Racial Trait" source="Unearthed Arcana: Travelers of the Multiverse" id="ID_WOTC_UA20211008_RACIAL_TRAIT_GIFF_DAMAGE_DEALER">
+		<description>
+			<p>Like a hippopotamus in a crystalware shop, you are naturally adept at damaging things. When you roll a 1 on a damage die for a melee attack, you can reroll the die and use the new roll. You can do so no more than once per turn.</p>
+		</description>
+		<sheet usage="1/Turn">
+			<description>When you roll a 1 on a damage die for a melee attack, you can reroll the die and use the new roll.</description>
+		</sheet>
+	</element>
+
+	<element name="Hippo Build" type="Racial Trait" source="Unearthed Arcana: Travelers of the Multiverse" id="ID_WOTC_UA20211008_RACIAL_TRAIT_GIFF_HIPPO_BUILD">
+		<description>
+			<p>You have advantage on Strength-based ability checks and Strength saving throws. In addition, you count as one size larger when determining your carrying capacity and the weight you can push, drag, or lift.</p>
+		</description>
+		<sheet>
+			<description>You have advantage on Strength-based ability checks and Strength saving throws.</description>
+		</sheet>
+		<rules>
+			<grant type="Grants" id="ID_INTERNAL_GRANTS_WEIGHT_CAPACITY_COUNTS_AS_LARGER" />
+		</rules>
+	</element>
+
+	<element name="Hadozee" type="Race" source="Unearthed Arcana: Travelers of the Multiverse" id="ID_WOTC_UA20211008_RACE_HADOZEE">
+		<description>
+      		<p>Hadozees are people with simian features that long ago adapted to live among the tall trees of their home world. They are natural climbers, with feet as dexterous as their hands, even to the extent of having opposable thumbs. Membranes of skin hang loosely from their arms and legs. When stretched taut, these membranes enable a hadozee to glide.</p>
+			<p class="indent">The first hadozees were hunted by large natural predators. To survive in this hostile environment, they developed an instinctual sense of community. Today, that same instinct compels many hadozees to cultivate friendships, knowing there is safety in numbers.</p>
+			<h4>HADOZEE TRAITS</h4>
+			<p>You have the following racial traits.</p>
+			<p class="indent"><strong><em>Creature Type.</em></strong> You are a Humanoid.</p>
+			<p class="indent"><strong><em>Size.</em></strong> You are Medium or Small. You choose the size when you select this race.</p>
+			<p class="indent"><strong><em>Speed.</em></strong> Your walking speed is 30 feet, and you have a climbing speed equal to your walking speed.</p>
+			<p class="indent"><strong><em>Dexterous Feet.</em></strong> You can take the Use an Object action as a bonus action.</p>
+			<p class="indent"><strong><em>Glide.</em></strong> If you are not incapacitated or wearing heavy armor, you can extend your skin membranes and glide. When you do so, you can perform the following aerial maneuvers:</p>
+			<ul>
+				<li>When you fall, you can move up to 5 feet horizontally for every 1 foot you descend.</li>
+				<li>When you would take damage from a fall, you can use your reaction to reduce the fall’s damage to 0.</li>
+			</ul>
+		</description>
+		<sheet display="false" />
+		<rules>
+			<select type="Racial Trait" name="Size (Hadozee)" supports="ID_INTERNAL_RACIAL_TRAIT_SMALL|ID_INTERNAL_RACIAL_TRAIT_MEDIUM" />
+			<stat name="innate speed" value="30" bonus="base" />
+			<stat name="speed:climb" value="speed" bonus="base"/>
+			<select type="Ability Score Improvement" name="Ability Score Improvement Option (Hadozee)" supports="Custom Ability Score Improvement Option" />
+			<grant type="Language" id="ID_LANGUAGE_COMMON" requirements="!ID_WOTC_TCOE_OPTION_CUSTOMIZED_LANGUAGE" />
+			<select type="Language" name="Customized Language" supports="Custom Race Language" requirements="ID_WOTC_TCOE_OPTION_CUSTOMIZED_LANGUAGE" />
+			<select type="Language" name="Language (Hadozee)" supports="Standard||Exotic" />
+			<grant type="Racial Trait" id="ID_WOTC_UA20211008_RACIAL_TRAIT_HADOZEE_DEXTEROUS_FEET" />
+			<grant type="Racial Trait" id="ID_WOTC_UA20211008_RACIAL_TRAIT_HADOZEE_GLIDE" />
+    </rules>
+	</element>
+
+  <element name="Dexterous Feet" type="Racial Trait" source="Unearthed Arcana: Travelers of the Multiverse" id="ID_WOTC_UA20211008_RACIAL_TRAIT_HADOZEE_DEXTEROUS_FEET">
+		<description>
+			<p>You can take the Use an Object action as a bonus action.</p>
+		</description>
+		<sheet action="Bonus Action">
+			<description>You can take the Use an Object action.</description>
+		</sheet>
+	</element>
+
+  <element name="Glide" type="Racial Trait" source="Unearthed Arcana: Travelers of the Multiverse" id="ID_WOTC_UA20211008_RACIAL_TRAIT_HADOZEE_GLIDE">
+		<description>
+			<p>If you are not incapacitated or wearing heavy armor, you can extend your skin membranes and glide. When you do so, you can perform the following aerial maneuvers:</p>
+			<ul>
+				<li>When you fall, you can move up to 5 feet horizontally for every 1 foot you descend.</li>
+				<li>When you would take damage from a fall, you can use your reaction to reduce the fall’s damage to 0.</li>
+			</ul>
+		</description>
+		<sheet>
+			<description>If you are not incapacitated or wearing heavy armor, you can glide. When you do so, you can perform the following aerial maneuvers:&#13;
+			• When you fall, you can move up to 5 feet horizontally for every 1 foot you descend.&#13;
+			• When you would take damage from a fall, you can use your reaction to reduce the fall’s damage to 0.</description>
+		</sheet>
+	</element>
+
+	<element name="Plasmoid" type="Race" source="Unearthed Arcana: Travelers of the Multiverse" id="ID_WOTC_UA20211008_RACE_PLASMOID">
+		<description>
+      		<p>Plasmoids are amorphous beings with no typical shape. In the presence of other folk, they often adopt a similar form, but there’s little chance of mistaking a plasmoid for anything else. They consume food by osmosis, the way an amoeba does, and excrete waste through tiny pores. They breathe by absorbing oxygen through another set of pores, and their limbs are strong and flexible enough to grasp and manipulate weapons and tools. Although most plasmoids are translucent gray, they can alter their color and translucence by absorbing dyes through their pores.</p>
+			<p class="indent">Plasmoids don’t have internal organs of the usual sort. Their bodies are composed of cells, fibers, plasma-like ooze, and clusters of nerves called ganglia. These nerves enable a plasmoid to detect light, heat, texture, sound, pain, and vibrations. Plasmoids can stiffen the outer layers of their bodies to maintain a humanlike shape, so they can wear clothing and accessories. They speak by forcing air out of tubular cavities that constrict to produce sound.</p>
+			<p class="indent">When plasmoids sleep, they lose their rigidity and spread out and are sometimes mistaken for a rock or some other feature of the environment.</p>
+			<h4>PLASMOID TRAITS</h4>
+			<p>You have the following racial traits.</p>
+			<p><strong><em>Creature Type.</em></strong> You are an Ooze.</p>
+			<p class="indent"><strong><em>Size.</em></strong> You are Medium or Small. You choose the size when you gain this race.</p>
+			<p class="indent"><strong><em>Speed.</em></strong> Your walking speed is 30 feet.</p>
+			<p class="indent"><strong><em>Amorphous.</em></strong> You can squeeze through a space as narrow as 1 inch wide, provided you are wearing and carrying nothing. You also have advantage on ability checks you make to initiate or escape a grapple.</p>
+			<p class="indent"><strong><em>Darkvision.</em></strong> You can see in dim light within 60 feet of you as if it were bright light and in darkness as if it were dim light. You discern colors in that darkness only as shades of gray.</p>
+			<p class="indent"><strong><em>Hold Breath.</em></strong> You can hold your breath for 1 hour.</p>
+			<p class="indent"><strong><em>Natural Resilience.</em></strong> You have resistance to acid and poison damage, and you have advantage on saving throws against being poisoned.</p>
+			<p class="indent"><strong><em>Shape Self.</em></strong> If you are not incapacitated, you can reshape your body to give yourself a head, one or two arms, one or two legs, and makeshift hands and feet, or you can revert to a limbless blob (no action required).</p>
+			<p class="indent">As a bonus action, you can extrude a pseudopod that is up to 6 inches wide and 10 feet long or reabsorb it into your body. You can use this pseudopod to manipulate an object, open an unlocked door or container, stow or retrieve an item from an open container, or pour out the contents of a container. The pseudopod can’t attack, activate magic items, or carry more than 10 pounds.</p>
+		</description>
+		<sheet display="false" />
+		<rules>
+			<grant type="Racial Trait" id="ID_INTERNAL_RACIAL_TRAIT_TYPE_OOZE" />
+			<select type="Racial Trait" name="Size (Plasmoid)" supports="ID_INTERNAL_RACIAL_TRAIT_SMALL|ID_INTERNAL_RACIAL_TRAIT_MEDIUM" />
+			<stat name="innate speed" value="30" bonus="base" />
+			<select type="Ability Score Improvement" name="Ability Score Improvement Option (Plasmoid)" supports="Custom Ability Score Improvement Option" />
+			<grant type="Language" id="ID_LANGUAGE_COMMON" requirements="!ID_WOTC_TCOE_OPTION_CUSTOMIZED_LANGUAGE" />
+			<select type="Language" name="Customized Language" supports="Custom Race Language" requirements="ID_WOTC_TCOE_OPTION_CUSTOMIZED_LANGUAGE" />
+			<select type="Language" name="Language (Plasmoid)" supports="Standard||Exotic" />
+			<grant type="Vision" id="ID_VISION_DARKVISION" />
+			<grant type="Racial Trait" id="ID_WOTC_UA20211008_RACIAL_TRAIT_PLASMOID_AMORPHOUS" />
+			<grant type="Racial Trait" id="ID_WOTC_UA20211008_RACIAL_TRAIT_PLASMOID_HOLD_BREATH" />
+      		<grant type="Racial Trait" id="ID_WOTC_UA20211008_RACIAL_TRAIT_PLASMOID_NATURAL_RESILIENCE" />
+      		<grant type="Racial Trait" id="ID_WOTC_UA20211008_RACIAL_TRAIT_SHAPE_SELF" />
+    </rules>
+	</element>
+
+  <element name="Amorphous" type="Racial Trait" source="Unearthed Arcana: Travelers of the Multiverse" id="ID_WOTC_UA20211008_RACIAL_TRAIT_PLASMOID_AMORPHOUS">
+		<description>
+			<p>You can squeeze through a space as narrow as 1 inch wide, provided you are wearing and carrying nothing. You also have advantage on ability checks you make to initiate or escape a grapple.</p>
+		</description>
+		<sheet>
+			<description>You can squeeze through a space as narrow as 1 inch wide, provided you are wearing and carrying nothing. You also have advantage on ability checks you make to initiate or escape a grapple.</description>
+		</sheet>
+	</element>
+
+  <element name="Hold Breath" type="Racial Trait" source="Unearthed Arcana: Travelers of the Multiverse" id="ID_WOTC_UA20211008_RACIAL_TRAIT_PLASMOID_HOLD_BREATH">
+		<description>
+			<p>You can hold your breath for 1 hour</p>
+		</description>
+		<sheet>
+			<description>You can hold your breath for 1 hour</description>
+		</sheet>
+	</element>
+
+  <element name="Natural Resilience" type="Racial Trait" source="Unearthed Arcana: Travelers of the Multiverse" id="ID_WOTC_UA20211008_RACIAL_TRAIT_PLASMOID_NATURAL_RESILIENCE">
+		<description>
+			<p>You have resistance to acid and poison damage, and you have advantage on saving throws against being poisoned.</p>
+		</description>
+		<sheet>
+			<description>You have advantage on saving throws against being poisoned.</description>
+		</sheet>
+		<rules>
+			<grant type="Condition" id="ID_INTERNAL_CONDITION_DAMAGE_RESISTANCE_ACID" />
+			<grant type="Condition" id="ID_INTERNAL_CONDITION_DAMAGE_RESISTANCE_POISON" />
+		</rules>
+	</element>
+
+  <element name="Shape Self" type="Racial Trait" source="Unearthed Arcana: Travelers of the Multiverse" id="ID_WOTC_UA20211008_RACIAL_TRAIT_SHAPE_SELF">
+		<description>
+			<p>If you are not incapacitated, you can reshape your body to give yourself a head, one or two arms, one or two legs, and makeshift hands and feet, or you can revert to a limbless blob (no action required).</p>
+			<p class="indent">As a bonus action, you can extrude a pseudopod that is up to 6 inches wide and 10 feet long or reabsorb it into your body. You can use this pseudopod to manipulate an object, open an unlocked door or container, stow or retrieve an item from an open container, or pour out the contents of a container. The pseudopod can’t attack, activate magic items, or carry more than 10 pounds.</p>
+		</description>
+		<sheet>
+			<description>If you are not incapacitated, you can reshape your body to give yourself a head, one or two arms, one or two legs, and makeshift hands and feet, or you can revert to a limbless blob (no action required).&#13;
+			As a bonus action, you can extrude a pseudopod that is up to 6 inches wide and 10 feet long or reabsorb it into your body. You can use this pseudopod to manipulate an object, open an unlocked door or container, stow or retrieve an item from an open container, or pour out the contents of a container. The pseudopod can’t attack, activate magic items, or carry more than 10 pounds.</description>
+		</sheet>
+	</element>
+
+	<element name="Thri-Kreen" type="Race" source="Unearthed Arcana: Travelers of the Multiverse" id="ID_WOTC_UA20211008_RACE_THRIKREEN">
+		<description>
+			<p>Thri-kreen have insectile features and two pairs of arms. Their bodies are encased in protective chitin. They can alter the coloration of this carapace to blend in with their natural surroundings. </p>
+			<p class="indent">Although thri-kreen don’t sleep, they do require periods of inactivity to revitalize themselves. During these periods, they are fully conscious and aware of what’s happening around them. </p>
+			<p class="indent">Thri-kreen speak by clacking their mandibles and waving their antennae, indicating to other thri-kreen what they are thinking and feeling. Other creatures find this method of communication difficult to interpret and impossible to duplicate. To interact with other folk, thri-kreen rely on a form of telepathy.</p>
+			<h4>THRIKREEN TRAITS</h4>
+			<p>You have the following racial traits.</p>
+			<p class="indent"><strong><em>Creature Type.</em></strong> You are a Monstrosity.</p>
+			<p class="indent"><strong><em>Size.</em></strong> You are Medium or Small. You choose the size when you select this race.</p>
+			<p class="indent"><strong><em>Speed.</em></strong> Your walking speed is 30 feet.</p>
+			<p class="indent"><strong><em>Chameleon Carapace.</em></strong> While you aren’t wearing armor, your carapace gives you a base Armor Class of 13 + your Dexterity modifier.</p>
+			<p class="indent">As an action, you can change the color of your carapace to match the color and texture of your surroundings, giving you advantage on Dexterity (Stealth) checks made to hide in those surroundings.</p>
+			<p class="indent"><strong><em>Darkvision.</em></strong> You can see in dim light within 60 feet of you as if it were bright light and in darkness as if it were dim light. You discern colors in that darkness only as shades of gray.</p>
+			<p class="indent"><strong><em>Secondary Arms.</em></strong> You have two slightly smaller secondary arms below your primary pair of arms. The secondary arms function like your primary arms, with the following exceptions: </p>
+			<ul>
+				<li>You can use a secondary arm to wield a weapon that has the light property, but you can’t use a secondary arm to wield other kinds of weapons. </li>
+				<li>You can’t wield a shield with a secondary arm. </li>
+			</ul>
+			<p class="indent"><strong><em>Sleepless Revitalization.</em></strong> You do not require sleep and can choose to remain conscious during a long rest, though you must still refrain from strenuous activity to gain the benefit of the rest.</p>
+			<p class="indent"><strong><em>Thri-kreen Telepathy.</em></strong> You have the magical ability to communicate mentally with any number of willing creatures you can see within 120 feet of you. A contacted creature doesn’t need to share a language with you, but it must be able to understand at least one language. Your telepathic link to a creature is broken if you and the creature move more than 120 feet apart, if either of you is incapacitated, or if either of you mentally breaks the contact (no action required).</p>
+		</description>
+		<sheet display="false" />
+		<rules>
+			<select type="Ability Score Improvement" name="Ability Score Improvement Option (Thri-Kreen)" supports="Custom Ability Score Improvement Option" />
+			<grant type="Racial Trait" id="ID_INTERNAL_RACIAL_TRAIT_TYPE_MONSTROSITY" />
+			<stat name="innate speed" value="30" bonus="base" />
+			<select type="Racial Trait" name="Size (Thri-Kreen)" supports="ID_INTERNAL_RACIAL_TRAIT_SMALL|ID_INTERNAL_RACIAL_TRAIT_MEDIUM" />
+			<grant type="Language" id="ID_LANGUAGE_COMMON" requirements="!ID_WOTC_TCOE_OPTION_CUSTOMIZED_LANGUAGE" />
+			<select type="Language" name="Customized Language" supports="Custom Race Language"  requirements="ID_WOTC_TCOE_OPTION_CUSTOMIZED_LANGUAGE" />
+			<select type="Language" name="Language (Thri-Kreen)" supports="Standard||Exotic" />
+			<grant type="Vision" id="ID_VISION_DARKVISION" />
+			<grant type="Racial Trait" id="ID_WOTC_UA20211008_RACIAL_TRAIT_THRIKREEN_CHAMELEON_CARAPACE" />
+			<grant type="Racial Trait" id="ID_WOTC_UA20211008_RACIAL_TRAIT_THRIKREEN_SECONDARY_ARMS" />
+			<grant type="Racial Trait" id="ID_WOTC_UA20211008_RACIAL_TRAIT_THRIKREEN_SLEEPLESS_REVITALIZATION" />
+			<grant type="Racial Trait" id="ID_WOTC_UA20211008_RACIAL_TRAIT_THRIKREEN_THRIKREEN_TELEPATHY"/>
+		</rules>
+	</element>
+
+	<element name="Chameleon Carapace" type="Racial Trait" source="Unearthed Arcana: Travelers of the Multiverse" id="ID_WOTC_UA20211008_RACIAL_TRAIT_THRIKREEN_CHAMELEON_CARAPACE">
+		<description>
+			<p>While you aren’t wearing armor, your carapace gives you a base Armor Class of 13 + your Dexterity modifier.</p>
+			<p class="indent">As an action, you can change the color of your carapace to match the color and texture of your surroundings, giving you advantage on Dexterity (Stealth) checks made to hide in those surroundings.</p>
+		</description>
+		<sheet action="Action">
+			<description>You can change the color of your carapace to match the color and texture of your surroundings, giving you advantage on Dexterity (Stealth) checks made to hide in those surroundings. &#13;
+			In addition, while you aren’t wearing armor, your base Armor Class is {{ua:chameleon carapace:ac}}.</description>
+		</sheet>
+		<rules>
+			<stat name="ua:chameleon carapace:ac" value="13" bonus="base" />
+			<stat name="ua:chameleon carapace:ac" value="dexterity:modifier" bonus="ability" />
+			<stat name="ac:calculation" value="ua:chameleon carapace:ac" bonus="calculation" equipped="[armor:none]" />
+		</rules>
+	</element>
+
+	<element name="Secondary Arms" type="Racial Trait" source="Unearthed Arcana: Travelers of the Multiverse" id="ID_WOTC_UA20211008_RACIAL_TRAIT_THRIKREEN_SECONDARY_ARMS">
+		<description>
+			<p>You have two slightly smaller secondary arms below your primary pair of arms. The secondary arms function like your primary arms, with the following exceptions: </p>
+			<ul>
+				<li>You can use a secondary arm to wield a weapon that has the light property, but you can’t use a secondary arm to wield other kinds of weapons. </li>
+				<li>You can’t wield a shield with a secondary arm. </li>
+			</ul>
+		</description>
+		<sheet>
+			<description>You have two secondary arms that function like your primary arms, with the following exceptions: &#13;
+			• You can only wield a weapon that has light property with a secondary arm. &#13;
+			• You can’t wield a shield with a secondary arm.</description>
+		</sheet>
+	</element>
+
+	<element name="Sleepless Revitalization" type="Racial Trait" source="Unearthed Arcana: Travelers of the Multiverse" id="ID_WOTC_UA20211008_RACIAL_TRAIT_THRIKREEN_SLEEPLESS_REVITALIZATION">
+		<description>
+			<p>You do not require sleep and can choose to remain conscious during a long rest, though you must still refrain from strenuous activity to gain the benefit of the rest. </p>
+		</description>
+		<sheet>
+			<description>You do not require sleep and can choose to remain conscious during a long rest, though you must still refrain from strenuous activity to gain the benefit of the rest. </description>
+		</sheet>
+	</element>
+
+	<element name="Thri-kreen Telepathy" type="Racial Trait" source="Unearthed Arcana: Travelers of the Multiverse" id="ID_WOTC_UA20211008_RACIAL_TRAIT_THRIKREEN_THRIKREEN_TELEPATHY">
+		<description>
+			<p>You have the magical ability to communicate mentally with any number of willing creatures you can see within 120 feet of you. A contacted creature doesn’t need to share a language with you, but it must be able to understand at least one language. Your telepathic link to a creature is broken if you and the creature move more than 120 feet apart, if either of you is incapacitated, or if either of you mentally breaks the contact (no action required).</p>
+		</description>
+		<sheet>
+			<description>You have the magical ability to communicate mentally with any number of willing creatures you can see within 120 feet of you. A contacted creature doesn’t need to share a language with you, but it must be able to understand at least one language. Your telepathic link to a creature is broken if you and the creature move more than 120 feet apart, if either of you is incapacitated, or if either of you mentally breaks the contact (no action required).</description>
+		</sheet>
+	</element>
+
+</elements>
