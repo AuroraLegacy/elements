@@ -96,44 +96,20 @@
 
 	<element name="Natural Weapons" type="Racial Trait" source="Van Richten's Guide to Ravenloft" id="ID_WOTC_VRGTR_RACIAL_TRAIT_WERERAVEN_WEAPONS">
 		<description>
-			<p>In your Raven or Hybrid Form you gain one natural weapons which you are considered proficienct with:</p> 
-			<ul>
-				<li>The peck of a wereraven deals 1 piercing damage in raven form (no ability modifier applies to this damage), or ld4 piercing damage in hybrid form (the character's ability modifier applies to this damage). This attack carries the curse of wereraven lycanthropy. (Attack and damage rolls for the wereraven's beak are based on whichever is higher of the character's Strength and Dexterity.)</li>
-			</ul>
+			<p>In your Raven or Hybrid Form you gain one natural weapons which you are considered proficient with.</p> 
+			<p class="indent">The peck of a wereraven deals 1 piercing damage in raven form (no ability modifier applies to this damage), or 1d4 piercing damage in hybrid form (the character's ability modifier applies to this damage). This attack carries the curse of wereraven lycanthropy. (Attack and damage rolls for the wereraven's beak are based on whichever is higher of the character's Strength and Dexterity.)</p>
 		</description>
-		<sheet display="false" />
+		<sheet usage="Raven or Hybrid Form">
+			<description>Beak: Melee Weapon Attack +{{wereraven weapon:modifier}} to hit, 1 or 1d4  + {{wereraven weapon hit:modifier}} piercing damage. If the target is a humanoid, it must succeed on a DC 10 Constitution saving throw or be cursed with wereraven lycanthropy.</description>
+		</sheet>
 		<rules>
-			<select type="Racial Trait" name="Natural Weapons" supports="ID_WOTC_VRGTR_RACIAL_TRAIT_WERERAVEN_WEAPONS_DEX|ID_WOTC_VRGTR_RACIAL_TRAIT_WERERAVEN_WEAPONS_STRENGTH" />
+			<stat name="wereraven weapon hit:modifier" value="strength:modifier" bonus="ability" />
+			<stat name="wereraven weapon hit:modifier" value="dexterity:modifier" bonus="ability" />
+			<stat name="wereraven weapon:modifier" value="wereraven weapon hit:modifier" />
+			<stat name="wereraven weapon:modifier" value="proficiency" />
 		</rules>
 	</element>
 
-	<element name="Natural Weapons, Strength" type="Racial Trait" source="Van Richten's Guide to Ravenloft" id="ID_WOTC_VRGTR_RACIAL_TRAIT_WERERAVEN_WEAPONS_STRENGTH">
-		<description>
-			<p></p>
-		</description>
-		<sheet>
-			<description>Beak: +{{wereraven weapon hit:modifier}} Melee Weapon Attack, 1 or 1d4  + {{wereraven weapon:modifier}} piercing damage. If the target is a humanoid, it must succeed on a DC 10 Constitution saving throw or be cursed with wereraven lycanthropy.</description>
-		</sheet>
-		<rules>
-			<stat name="wereraven weapon:modifier" value="strength:modifier" bonus="wereraven strength" />
-			<stat name="wereraven weapon hit:modifier" value="strength:modifier" bonus="wereraven weapon hit" />
-			<stat name="wereraven weapon hit:modifier" value="proficiency" />
-		</rules>
-	</element>
-
-	<element name="Natural Weapons, Dexterity" type="Racial Trait" source="Van Richten's Guide to Ravenloft" id="ID_WOTC_VRGTR_RACIAL_TRAIT_WERERAVEN_WEAPONS_DEX">
-		<description>
-			<p></p>
-		</description>
-		<sheet>
-			<description>Beak: +{{wereraven weapon hit:modifier}} Melee Weapon Attack, 1 or 1d4  + {{wereraven weapon:modifier}} piercing damage. If the target is a humanoid, it must succeed on a DC 10 Constitution saving throw or be cursed with wereraven lycanthropy.</description>
-		</sheet>
-		<rules>
-			<stat name="wereraven weapon:modifier" value="dexterity:modifier" bonus="wereraven strength" />
-			<stat name="wereraven weapon hit:modifier" value="dexterity:modifier" bonus="wereraven weapon hit" />
-			<stat name="wereraven weapon hit:modifier" value="proficiency" />
-		</rules>
-	</element>
 
 	<element name="Multiattack" type="Racial Trait" source="Van Richten's Guide to Ravenloft" id="ID_WOTC_VRGTR_RACIAL_TRAIT_WERERAVEN_MULTIATTACK">
 		<description>
