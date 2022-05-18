@@ -1,19 +1,20 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <elements>
-
-<info>
-        <name>Wereraven Lycanthrope Option</name>
-        <update version="0.0.1">
-            <file name="lycanthrope-wereraven.xml" url="https://raw.githubusercontent.com/AuroraLegacy/elements/master/supplements/van-richtens-guide-to-ravenloft/lycanthrope-wereraven.xml" />
-        </update>
-</info>
-<!-- Wereraven -->
+	<info>
+		<name>Wereraven Lycanthropy Option</name>
+		<update version="0.0.1">
+			<file name="lycanthrope-wereraven.xml" url="https://raw.githubusercontent.com/AuroraLegacy/elements/master/supplements/van-richtens-guide-to-ravenloft/lycanthrope-wereraven.xml" />
+		</update>
+	</info>
 
 	<element name="Wereraven" type="Racial Trait" source="Van Richten's Guide to Ravenloft" id="ID_WOTC_VRGTR_RACIAL_TRAIT_WERERAVEN">
 		<supports>Lycanthropy</supports>
 		<description>
 			<p>Wereravens are secretive, cautious lycanthropes that seek to blend into society and subtly oppose evil. As avowed foes of malevolent beings, wereravens are stalked by wicked forces. Knowing this, wereravens rarely reveal their hybrid forms. Nevertheless, folktales tell of eerie, raven-winged figures who appear prior to disasters and share mysterious prophecies. Such stories are true, in a way, as where wereravens tread, evil pursues.</p>
 			<p class="indent">Wereraven employ light weapons to avoid spreading their curse to those who would abuse it.</p>
+			<h4>Wereraven Lycanthropy</h4>
+			<p>The lycanthropes entry in the <i>Monster Manual</i> has rules for characters afflicted with different forms of lycanthropy. The following text applies to wereraven characters specifically.</p>
+			<p class="indent">A character cursed with wereraven lycanthropy gains a Dexterity of 15 if their score isn't already higher. Attack and damage rolls for the wereraven's beak are based on whichever is higher of the character's Strength and Dexterity. The peck of a wereraven deals 1 piercing damage in raven form (no ability modifier applies to this damage), or 1d4 piercing damage in hybrid form (the character's ability modifier applies to this damage). This attack carries the curse of wereraven lycanthropy.</p>
 			<div element="ID_WOTC_VRGTR_RACIAL_TRAIT_WERERAVEN_SHAPESHIFTER" />
 			<div element="ID_WOTC_VRGTR_RACIAL_TRAIT_WERERAVEN_MIMICRY" />
 			<div element="ID_WOTC_VRGTR_RACIAL_TRAIT_WERERAVEN_REGENERATION" />
@@ -25,7 +26,8 @@
 		</description>
 		<sheet display ="false" />
 		<rules>
-			<grant type="Racial Trait" id="ID_WOTC_VRGTR_RACIAL_TRAIT_WERERAVEN_SHAPESHIFTER" />
+			<stat name="dexterity:score:set" value="15" bonus="base" />
+			<grant type="Racial Trait" id="ID_WOTC_VRGTR_RACIAL_TRAIT_WERERAVEN_CHANGE_SHAPE" />
 			<grant type="Racial Trait" id="ID_WOTC_VRGTR_RACIAL_TRAIT_WERERAVEN_MIMICRY" />
 			<grant type="Racial Trait" id="ID_WOTC_VRGTR_RACIAL_TRAIT_WERERAVEN_REGENERATION" />
 			<grant type="Racial Trait" id="ID_WOTC_VRGTR_RACIAL_TRAIT_WERERAVEN_SPEED" />
@@ -37,21 +39,21 @@
 
 	</element>
 
-	<element name="Shapeshifter" type="Racial Trait" source="Van Richten's Guide to Ravenloft" id="ID_WOTC_VRGTR_RACIAL_TRAIT_WERERAVEN_SHAPESHIFTER">
+	<element name="Change Shape" type="Racial Trait" source="Van Richten's Guide to Ravenloft" id="ID_WOTC_VRGTR_RACIAL_TRAIT_WERERAVEN_CHANGE_SHAPE">
 		<description>
-			<p>The wereraven polymorphs into a raven humanoid hybrid or into a Tiny raven, or back into its humanoid form. Its statistics, other than its size and speed, are the same in each form. Any equipment it is wearing or carrying isn't transformed. It reverts to its humanoid form if it dies.</p>
+			<p>The wereraven polymorphs into a raven-humanoid hybrid or into a Tiny raven, or back into its humanoid form. Its statistics, other than its size and speed, are the same in each form. Any equipment it is wearing or carrying isn't transformed. It reverts to its humanoid form if it dies.</p>
 		</description>
 		<sheet action="Action">
-			<description>You can transform into a tiny raven or your hybrid form. End the transformation if you die.</description>
+			<description>You can polymorph into a hybrid form, a raven form, or back to your humanoid form. Any equipment you're wearing or carrying isn't transformed. You revert to your humanoid form when you die.</description>
 		</sheet>
 	</element>
 
 	<element name="Mimicry" type="Racial Trait" source="Van Richten's Guide to Ravenloft" id="ID_WOTC_VRGTR_RACIAL_TRAIT_WERERAVEN_MIMICRY">
 		<description>
-			<p>The wereraven can mimic simple sounds it has heard, such as a person whispering, a baby crying, or an animal chattering.A creature that hears the sounds can tell they are imitations with a successful DC 10 Wisdom (Insight) check.</p>
+			<p>The wereraven can mimic simple sounds it has heard, such as a person whispering, a baby crying, or an animal chattering. A creature that hears the sounds can tell they are imitations with a successful DC 10 Wisdom (Insight) check.</p>
 		</description>
 		<sheet>
-			<description>The wereraven can mimic simple sounds it has heard, such as a person whispering, a baby crying, or an animal chattering.A creature that hears the sounds can tell they are imitations with a successful DC 10 Wisdom (Insight) check.</description>
+			<description>You can mimic simple sounds you heard. A creature that hears the sounds can tell they are imitations with a successful DC 10 Wisdom (Insight) check.</description>
 		</sheet>
 	</element>
 
@@ -60,7 +62,7 @@
 			<p>The wereraven regains 10 hit points at the start of its turn. If the wereraven takes damage from a silvered weapon or a spell, this trait doesn't function at the start of the wereraven's next turn. The wereraven dies only if it starts its turn with 0 hit points and doesn't regenerate.</p>
 		</description>
 		<sheet>
-			<description>The wereraven regains 10 hit points at the start of its turn. If the wereraven takes damage from a silvered weapon or a spell, this trait doesn't function at the start of the wereraven's next turn. The wereraven dies only if it starts its turn with 0 hit points and doesn't regenerate.</description>
+			<description>You regain 10 hit points at the start of your turn. If you take damage from a silvered weapon or a spell, this trait doesn't function at the start of your next turn. You die only if you start your turn with 0 hit points and don't regenerate.</description>
 		</sheet>
 	</element>
 
@@ -69,47 +71,24 @@
 			<p>30 ft. in humanoid form; 10 ft walking, fly 5O ft. in raven form; 30 ft., fly 5O ft. in hybrid form.</p>
 		</description>
 		<sheet usage="Raven or Hybrid Form">
-			<description>You have a walking speed of 30 ft. in humanoid form; 10 ft walking, fly 5O ft. in raven form; 30 ft., fly 5O ft. in hybrid form.</description>
+			<description>While in your raven form you have 10 ft. walking speed and 50 ft. flying speed; while in your hybrid form you have 30 ft. walking speed and 50 ft. flying speed.</description>
 		</sheet>
 	</element>
-
-	<element name="Wereraven Dexterity" type="Racial Trait" source="Van Richten's Guide to Ravenloft" id="ID_WOTC_VRGTR_RACIAL_TRAIT_WERERAVEN_DEXTERITY">
-		<description>
-			<p>A character cursed with wereraven lycanthropy gains a Dexterity of 15 if their score isn't already higher.</p>
-		</description>
-		<sheet display="false" />
-		<rules>
-			<stat name="dexterity:score:set" value="15" bonus="base" />
-		</rules>
-	</element>
-
-	<element name="Wereraven Resistance" type="Racial Trait" source="Van Richten's Guide to Ravenloft" id="ID_WOTC_VRGTR_RACIAL_TRAIT_WERERAVEN_RESISTANCE">
-		<description>
-			<p>You are immune to bludgeoning, piercing, and slashing damage from non magical weapons that aren't silvered in Raven or Hybrid Form.</p>
-		</description>
-		<sheet usage="Raven or Hybrid Form">
-			<description>You are immune to bludgeoning, piercing, and slashing damage from non magical weapons that aren't silvered.</description>
-		</sheet>
-	</element>
-
-
 
 	<element name="Natural Weapons" type="Racial Trait" source="Van Richten's Guide to Ravenloft" id="ID_WOTC_VRGTR_RACIAL_TRAIT_WERERAVEN_WEAPONS">
 		<description>
-			<p>In your Raven or Hybrid Form you gain one natural weapons which you are considered proficient with.</p> 
-			<p class="indent">The peck of a wereraven deals 1 piercing damage in raven form (no ability modifier applies to this damage), or 1d4 piercing damage in hybrid form (the character's ability modifier applies to this damage). This attack carries the curse of wereraven lycanthropy. (Attack and damage rolls for the wereraven's beak are based on whichever is higher of the character's Strength and Dexterity.)</p>
+			<p>Attack and damage rolls for the wereraven's beak are based on whichever is higher of the character's Strength and Dexterity. The peck of a wereraven deals 1 piercing damage in raven form (no ability modifier applies to this damage), or 1d4 piercing damage in hybrid form (the character's ability modifier applies to this damage). This attack carries the curse of wereraven lycanthropy.</p>
 		</description>
-		<sheet usage="Raven or Hybrid Form">
-			<description>Beak: Melee Weapon Attack +{{wereraven weapon:modifier}} to hit, 1 or 1d4  + {{wereraven weapon hit:modifier}} piercing damage. If the target is a humanoid, it must succeed on a DC 10 Constitution saving throw or be cursed with wereraven lycanthropy.</description>
+		<sheet usage="Raven or Hybrid Form" alt="Beak">
+			<description>Melee Weapon Attack: +{{wereraven:beak}} to hit, reach 5 ft., one target. 1 (in raven form) or 1d4 + {{wereraven:beak:ability}} (in hybrid form) piercing damage. If the target is a humanoid, it must succeed on a DC 10 Constitution saving throw or be cursed with wereraven lycanthropy.</description>
 		</sheet>
 		<rules>
-			<stat name="wereraven weapon hit:modifier" value="strength:modifier" bonus="ability" />
-			<stat name="wereraven weapon hit:modifier" value="dexterity:modifier" bonus="ability" />
-			<stat name="wereraven weapon:modifier" value="wereraven weapon hit:modifier" />
-			<stat name="wereraven weapon:modifier" value="proficiency" />
+			<stat name="wereraven:beak:ability" value="strength:modifier" bonus="ability" />
+			<stat name="wereraven:beak:ability" value="dexterity:modifier" bonus="ability" />
+			<stat name="wereraven:beak" value="wereraven:beak:ability" bonus="ability"/>
+			<stat name="wereraven:beak" value="proficiency" bonus="proficiency"/>
 		</rules>
 	</element>
-
 
 	<element name="Multiattack" type="Racial Trait" source="Van Richten's Guide to Ravenloft" id="ID_WOTC_VRGTR_RACIAL_TRAIT_WERERAVEN_MULTIATTACK">
 		<description>

@@ -1,14 +1,13 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <elements>
-    
-    <info>
-		<name>Werebat - Waterdeep Dungeon of the Mad Mage</name>
+	<info>
+		<name>Werebat Lycanthropy Option</name>
 		<update version="0.0.1">
 			<file name="lycanthrope-werebat.xml" url="https://raw.githubusercontent.com/AuroraLegacy/elements/master/supplements/waterdeep-dungeon-of-the-mad-mage/lycanthrope-werebat.xml" />
 		</update>
 	</info>
 	
-    <element name="Werebat" type="Racial Trait" source="Waterdeep: Dungeon of the Mad Mage" id="ID_WOTC_WDMM_RACIAL_TRAIT_werebat">
+	<element name="Werebat" type="Racial Trait" source="Waterdeep: Dungeon of the Mad Mage" id="ID_WOTC_WDMM_RACIAL_TRAIT_WEREBAT">
 		<supports>Lycanthropy</supports>
 		<description>
 			<p>A werebat is a humanoid afflicted with a rare form of lycanthropy that enables it to transform into a giant bator a bat-humanoid hybrid. (See the Monster Manual formore information on lycanthropy.) Most werebats are of goblin stock.</p>
@@ -25,8 +24,9 @@
 			<div element="ID_WOTC_WDMM_RACIAL_TRAIT_WEREBAT_MULTIATTACK" />
 			<div element="ID_WOTC_WDMM_RACIAL_TRAIT_WEREBAT_WEAPONS" />
 		</description>
-		<sheet display ="false" />
+		<sheet display="false" />
 		<rules>
+			<stat name="dexterity:score:set" value="17" bonus="base" />
 			<grant type="Racial Trait" id="ID_WOTC_WDMM_RACIAL_TRAIT_WEREBAT_BLOOD_DRINKERS" />
 			<grant type="Racial Trait" id="ID_WOTC_WDMM_RACIAL_TRAIT_WEREBAT_RESISTANCE" />
 			<grant type="Racial Trait" id="ID_WOTC_WDMM_RACIAL_TRAIT_WEREBAT_DEXTERITY" />
@@ -75,47 +75,47 @@
 			<p>Speed 30 ft. (climb 30 ft., fly 60 ft. in bat or hybrid form)</p>
 		</description>
 		<sheet usage="Bat or Hybrid Form">
-			<description>Speed 30 ft. (climb 30 ft., fly 60 ft. in bat or hybrid form)</description>
+			<description>While in your bat or hybrid form you have 30 ft. walking speed, 30 ft. climbing speed and 60 ft. flying speed.</description>
 		</sheet>
 	</element>
-<!-- Shapechanger -->
-    <element name="Shapechanger" type="Racial Trait" source="Waterdeep: Dungeon of the Mad Mage" id="ID_WOTC_WDMM_RACIAL_TRAIT_WEREBAT_SHAPECHANGER">
+
+	<element name="Shapechanger" type="Racial Trait" source="Waterdeep: Dungeon of the Mad Mage" id="ID_WOTC_WDMM_RACIAL_TRAIT_WEREBAT_SHAPECHANGER">
 		<description>
-			<p>The werebat can use its action to polymorph into a Medium bat-humanoid hybrid, or into a Large giant bat, or back into its true form, which is humanoid. Its statistics, other than its size, are the same in each form. Any equipment it is wearing or carrying isn't t ransformed. It reverts to its true form if it dies.</p>
+			<p>The werebat can use its action to polymorph into a Medium bat-humanoid hybrid, or into a Large giant bat, or back into its true form, which is humanoid. Its statistics, other than its size, are the same in each form. Any equipment it is wearing or carrying isn't transformed. It reverts to its true form if it dies.</p>
 		</description>
 		<sheet action="Action">
-			<description>You can transform into a tiny raven or your hybrid form. End the transformation if you die.</description>
+			<description>You can polymorph into a Medium hybrid form, a Large bat form, or back to your humanoid form. Any equipment you're wearing or carrying isn't transformed. You revert to your humanoid form when you die.</description>
 		</sheet>
 	</element>
 <!-- Echolocation -->
         <element name="Echolocation" type="Racial Trait" source="Waterdeep: Dungeon of the Mad Mage" id="ID_WOTC_WDMM_RACIAL_TRAIT_WEREBAT_ECHOLOCATION">
 		<description>
-			<p>(Bat or Hybrid Form Only). The werebat has blindsight out to a range of 60 feet as long as it's not deafened.</p>
+			<p>The werebat has blindsight out to a range of 60 feet as long as it's not deafened.</p>
 		</description>
-		<sheet usage="Bat or Hybrid Form">
-			<description>The werebat has blindsight out to a range of 60 feet as long as it's not deafened.</description>
+		<sheet usage="Bat or Hybrid Form" alt="Echolocation">
+			<description>You gain blindsight out to a range of 60 feet as long as you're not deafened.</description>
 		</sheet>
 	</element>
-<!-- Keen Hearing -->
-    <element name="Keen Hearing" type="Racial Trait" source="Waterdeep: Dungeon of the Mad Mage" id="ID_WOTC_WDMM_RACIAL_TRAIT_WEREBAT_KEEN_HEARING">
+
+	<element name="Keen Hearing" type="Racial Trait" source="Waterdeep: Dungeon of the Mad Mage" id="ID_WOTC_WDMM_RACIAL_TRAIT_WEREBAT_KEEN_HEARING">
 		<description>
 			<p>The werebat has advantage on Wisdom (Perception) checks that rely on hearing.</p>
 		</description>
 		<sheet>
-			<description>The werebat has advantage on Wisdom (Perception) checks that rely on hearing.</description>
+			<description>You have advantage on Wisdom (Perception) checks that rely on hearing.</description>
 		</sheet>
 	</element>
-<!-- Nimble Escape -->
-    <element name="Nimble Escape" type="Racial Trait" source="Waterdeep: Dungeon of the Mad Mage" id="ID_WOTC_WDMM_RACIAL_TRAIT_WEREBAT_NIMBLE_ESCAPE">
+
+	<element name="Nimble Escape (Humanoid Form Only)" type="Racial Trait" source="Waterdeep: Dungeon of the Mad Mage" id="ID_WOTC_WDMM_RACIAL_TRAIT_WEREBAT_NIMBLE_ESCAPE">
 		<description>
-			<p><b><i>(Humanoid Form Only)</i></b> The werebat can take the Disengage or Hide action as a bonus action on each of its turns.</p>
+			<p>The werebat can take the Disengage or Hide action as a bonus action on each of its turns.</p>
 		</description>
 		<sheet action="Bonus Action" usage="Humanoid Form">
 			<description>You can take the Disengage or Hide action on each of your turns.</description>
 		</sheet>
 	</element>
-<!-- Sunlight Sensitivity -->
-    <element name="Sunlight Sensitivity" type="Racial Trait" source="Waterdeep: Dungeon of the Mad Mage" id="ID_WOTC_WDMM_RACIAL_TRAIT_WEREBAT_SUNLIGHT_SENSITIVITY">
+
+	<element name="Sunlight Sensitivity" type="Racial Trait" source="Waterdeep: Dungeon of the Mad Mage" id="ID_WOTC_WDMM_RACIAL_TRAIT_WEREBAT_SUNLIGHT_SENSITIVITY">
         <description>
             <p>While in sunlight, the werebat has disadvantage on attack rolls, as well as on Wisdom (Perception) checks that rely on sight. You also have darkvision with a range of 60 ft.</p>
         </description>
@@ -125,9 +125,9 @@
         <rules>
             <grant type="Vision" id="ID_VISION_DARKVISION" />
         </rules>
-    </element>
-<!-- Multiattack -->
-    <element name="Multiattack" type="Racial Trait" source="Waterdeep: Dungeon of the Mad Mage" id="ID_WOTC_WDMM_RACIAL_TRAIT_WEREBAT_MULTIATTACK">
+	</element>
+
+	<element name="Multiattack" type="Racial Trait" source="Waterdeep: Dungeon of the Mad Mage" id="ID_WOTC_WDMM_RACIAL_TRAIT_WEREBAT_MULTIATTACK">
 		<description>
 			<p><b><i>(Humanoid or Hybrid Form Only). </i></b>In humanoid form, the werebat makes two scimitar attacks or two shortbow attacks. In hybrid form, it can make one bite attack and one scimitar attack.</p>
 		</description>
@@ -135,20 +135,21 @@
 			<description>In humanoid form, the werebat makes two light weapon attacks. In hybrid form, it can make one bite attack and one weapon attack. The werebat makes two weapon attacks, one of which can be with its light weapon.</description>
 		</sheet>
 	</element>
-<!-- Weapons -->
-    <element name="Natural Weapons" type="Racial Trait" source="Waterdeep: Dungeon of the Mad Mage" id="ID_WOTC_WDMM_RACIAL_TRAIT_WEREBAT_WEAPONS">
+
+	<element name="Natural Weapons" type="Racial Trait" source="Waterdeep: Dungeon of the Mad Mage" id="ID_WOTC_WDMM_RACIAL_TRAIT_WEREBAT_NATURAL_WEAPONS">
 		<description>
-			<p>In your Bat or Hybrid Form you gain one natural weapons which you are considered proficient with.</p> 
-			<p class="indent">Attack and damage rolls for the werebat's bite are based on whichever is higher of the character's Strength and Dexterity. The bite of a werebat deals 1d6 piercing damage plus Strength or Dexterity modifier. This attack carries the curse of werebat lycanthropy. </p>
+			<p class="indent">Attack and damage rolls for the werebat's bite are based on whichever is higher of the character's Strength and Dexterity. The bite of a werebat deals 1d6 piercing damage in hybrid or bat form (the character's ability modifier applies to this damage), and the werebat gains temporary hit points equal to the
+damage dealt. This attack carries the curse of werebat lycanthropy.</p>
 		</description>
-		<sheet usage="Raven or Hybrid Form">
-			<description>Bite: Melee Weapon Attack +{{werebat weapon:modifier}} to hit, reach 5 ft., one creature. Hit: 1d6 + {{werebat weapon hit:modifier}} piercing damage, and the werebat gains temporary hit points equal to the damage dealt. If the target is a humanoid, it must succeed on a DC l0 Constitution saving throw or be cursed with werebat lycanthropy.</description>
+		<sheet usage="Bat or Hybrid Form" alt="Bite">
+			<description>Melee Weapon Attack: +{{werebat:bite}} to hit, reach 5 ft., one target. 1d6 + {{werebat:bite:ability}} piercing damage, and you gain temporary hit points equal to the
+damage dealt. If the target is a humanoid, it must succeed on a DC 10 Constitution saving throw or be cursed with werebat lycanthropy.</description>
 		</sheet>
 		<rules>
-			<stat name="werebat weapon hit:modifier" value="strength:modifier" bonus="ability" />
-			<stat name="werebat weapon hit:modifier" value="dexterity:modifier" bonus="ability" />
-			<stat name="werebat weapon:modifier" value="werebat weapon hit:modifier" />
-			<stat name="werebat weapon:modifier" value="proficiency" />
+			<stat name="werebat:bite:ability" value="strength:modifier" bonus="ability" />
+			<stat name="werebat:bite:ability" value="dexterity:modifier" bonus="ability" />
+			<stat name="werebat:bite" value="wereraven:beak:ability" bonus="ability"/>
+			<stat name="werebat:bite" value="proficiency" bonus="proficiency"/>
 		</rules>
 	</element>
 </elements>
