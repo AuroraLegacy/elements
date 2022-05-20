@@ -12,30 +12,17 @@
 		<description>
 			<p>A werebat is a humanoid afflicted with a rare form of lycanthropy that enables it to transform into a giant bator a bat-humanoid hybrid. (See the Monster Manual formore information on lycanthropy.) Most werebats are of goblin stock.</p>
 			<p class="indent"><b><i>Deep Dwellers.</i></b> Werebats are shunned even by goblin society because of their need to feed on blood to survive. They prefer to lair in dark places, such as attics and caves, and typically adopt nocturnal hunting habits.</p>
-			<div element="ID_WOTC_WDMM_RACIAL_TRAIT_WEREBAT_BLOOD_DRINKERS" />
-			<div element="ID_WOTC_WDMM_RACIAL_TRAIT_WEREBAT_RESISTANCE" />
-			<div element="ID_WOTC_WDMM_RACIAL_TRAIT_WEREBAT_DEXTERITY" />
-			<div element="ID_WOTC_WDMM_RACIAL_TRAIT_WEREBAT_SPEED" />
-			<div element="ID_WOTC_WDMM_RACIAL_TRAIT_WEREBAT_SHAPECHANGER" />
-			<div element="ID_WOTC_WDMM_RACIAL_TRAIT_WEREBAT_ECHOLOCATION" />
-			<div element="ID_WOTC_WDMM_RACIAL_TRAIT_WEREBAT_KEEN_HEARING" />
-			<div element="ID_WOTC_WDMM_RACIAL_TRAIT_WEREBAT_NIMBLE_ESCAPE" />
-			<div element="ID_WOTC_WDMM_RACIAL_TRAIT_WEREBAT_SUNLIGHT_SENSITIVITY" />
-			<div element="ID_WOTC_WDMM_RACIAL_TRAIT_WEREBAT_WEAPONS" />
+			<div element="ID_WOTC_WDMM_STATBLOCK_WEREBAT" />
 		</description>
 		<sheet display="false" />
 		<rules>
 			<stat name="dexterity:score:set" value="17" bonus="base" />
-			<grant type="Racial Trait" id="ID_WOTC_WDMM_RACIAL_TRAIT_WEREBAT_BLOOD_DRINKERS" />
-			<grant type="Racial Trait" id="ID_WOTC_WDMM_RACIAL_TRAIT_WEREBAT_RESISTANCE" />
-			<grant type="Racial Trait" id="ID_WOTC_WDMM_RACIAL_TRAIT_WEREBAT_DEXTERITY" />
 			<grant type="Racial Trait" id="ID_WOTC_WDMM_RACIAL_TRAIT_WEREBAT_SPEED" />
 			<grant type="Racial Trait" id="ID_WOTC_WDMM_RACIAL_TRAIT_WEREBAT_SHAPECHANGER" />
 			<grant type="Racial Trait" id="ID_WOTC_WDMM_RACIAL_TRAIT_WEREBAT_ECHOLOCATION" />
 			<grant type="Racial Trait" id="ID_WOTC_WDMM_RACIAL_TRAIT_WEREBAT_KEEN_HEARING" />
 			<grant type="Racial Trait" id="ID_WOTC_WDMM_RACIAL_TRAIT_WEREBAT_NIMBLE_ESCAPE" />
 			<grant type="Racial Trait" id="ID_WOTC_WDMM_RACIAL_TRAIT_WEREBAT_SUNLIGHT_SENSITIVITY" />
-			<grant type="Racial Trait" id="ID_WOTC_WDMM_RACIAL_TRAIT_WEREBAT_WEAPONS" />
 		</rules>
 	</element>
 	
@@ -104,12 +91,10 @@
 
 	<element name="Natural Weapons" type="Racial Trait" source="Waterdeep: Dungeon of the Mad Mage" id="ID_WOTC_WDMM_RACIAL_TRAIT_WEREBAT_NATURAL_WEAPONS">
 		<description>
-			<p class="indent">Attack and damage rolls for the werebat's bite are based on whichever is higher of the character's Strength and Dexterity. The bite of a werebat deals 1d6 piercing damage in hybrid or bat form (the character's ability modifier applies to this damage), and the werebat gains temporary hit points equal to the
-damage dealt. This attack carries the curse of werebat lycanthropy.</p>
+			<p class="indent">Attack and damage rolls for the werebat's bite are based on whichever is higher of the character's Strength and Dexterity. The bite of a werebat deals 1d6 piercing damage in hybrid or bat form (the character's ability modifier applies to this damage), and the werebat gains temporary hit points equal to the damage dealt. This attack carries the curse of werebat lycanthropy.</p>
 		</description>
 		<sheet usage="Bat or Hybrid Form" alt="Bite">
-			<description>Melee Weapon Attack: +{{werebat:bite}} to hit, reach 5 ft., one target. 1d6 + {{werebat:bite:ability}} piercing damage, and you gain temporary hit points equal to the
-damage dealt. If the target is a humanoid, it must succeed on a DC 10 Constitution saving throw or be cursed with werebat lycanthropy.</description>
+			<description>Melee Weapon Attack: +{{werebat:bite}} to hit, reach 5 ft., one target. 1d6 + {{werebat:bite:ability}} piercing damage, and you gain temporary hit points equal to the damage dealt. If the target is a humanoid, it must succeed on a DC 10 Constitution saving throw or be cursed with werebat lycanthropy.</description>
 		</sheet>
 		<rules>
 			<stat name="werebat:bite:ability" value="strength:modifier" bonus="ability" />
@@ -118,4 +103,21 @@ damage dealt. If the target is a humanoid, it must succeed on a DC 10 Constituti
 			<stat name="werebat:bite" value="proficiency" bonus="proficiency"/>
 		</rules>
 	</element>
+
+	<element name="Werebat Traits" type="Information" source="Waterdeep: Dungeon of the Mad Mage" id="ID_WOTC_WDMM_STATBLOCK_WEREBAT">
+		<description>
+			<h4 style="margin-top:5px" />
+			<ul class="unstyled">
+				<li><strong>Speed</strong> 30 ft. (climb 30 ft., fly 60 ft. in bat or hybrid form)</li>
+				<li><strong><em>Shapechanger. </em></strong>The werebat can use its action to polymorph into a Medium bat-humanoid hybrid, or into a Large giant bat, or back into its true form, which is humanoid. Its statistics, other than its size, are the same in each form. Any equipment it is wearing or carrying isn't transformed. It reverts to its true form if it dies.</li>
+				<li><strong><em>Immunities. </em></strong>You are immune to bludgeoning, piercing, and slashing damage from nonmagical weapons that aren't silvered.</li>
+				<li><strong><em>Echolocation. </em></strong><em>(Bat or Hybrid Form Only.)</em> The werebat has blindsight out to a range of 60 feet as long as it's not deafened.</li>
+				<li><strong><em>Keen Hearing. </em></strong>The werebat has advantage on Wisdom (Perception) checks that rely on hearing.</li>
+				<li><strong><em>Nimble Escape. </em></strong><em>(Humanoid Form Only)</em> The werebat can take the Disengage or Hide action as a bonus action on each of its turns.</li>
+				<li><strong><em>Sunlight Sensitivity. </em></strong>While in sunlight, the werebat has disadvantage on attack rolls, as well as on Wisdom (Perception) checks that rely on sight.</li>
+				<li><strong><em>Natural Weapons. </em></strong>Attack and damage rolls for the werebat's bite are based on whichever is higher of the character's Strength and Dexterity. The bite of a werebat deals 1d6 piercing damage in hybrid or bat form (the character's ability modifier applies to this damage), and the werebat gains temporary hit points equal to the damage dealt. This attack carries the curse of werebat lycanthropy.</li>
+			</ul>
+		</description>
+	</element>
+
 </elements>
