@@ -1,0 +1,135 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<elements>
+	<info>
+		<name>Wereraven Lycanthropy Option</name>
+		<update version="0.0.1">
+			<file name="lycanthropy-wereraven.xml" url="https://raw.githubusercontent.com/AuroraLegacy/elements/master/supplements/van-richtens-guide-to-ravenloft/lycanthropy-wereraven.xml" />
+		</update>
+	</info>
+
+	<element name="Wereraven" type="Racial Trait" source="Van Richten's Guide to Ravenloft" id="ID_WOTC_VRGTR_RACIAL_TRAIT_WERERAVEN">
+		<supports>Lycanthropy</supports>
+		<description>
+			<p>Wereravens are secretive, cautious lycanthropes that seek to blend into society and subtly oppose evil. As avowed foes of malevolent beings, wereravens are stalked by wicked forces. Knowing this, wereravens rarely reveal their hybrid forms. Nevertheless, folktales tell of eerie, raven-winged figures who appear prior to disasters and share mysterious prophecies. Such stories are true, in a way, as where wereravens tread, evil pursues.</p>
+			<p class="indent">Wereraven employ light weapons to avoid spreading their curse to those who would abuse it.</p>
+			<h4>WERERAVEN LYCANTHROPY</h4>
+			<p>The lycanthropes entry in the <i>Monster Manual</i> has rules for characters afflicted with different forms of lycanthropy. A player character who becomes a werebat gains the following traits:</p>
+			<p class="indent"><b><i>Dexterity.</i></b> A character cursed with wereraven lycanthropy gains a Dexterity of 15 if their score isn't already higher.</p>
+			<p class="indent"><b><i>Speed (Raven or Hybrid Form Only).</i></b> You have 10 feet walking speed, 50 feet flying speed in raven form; and 30 feet walking speed, 50 feet flying speed in hybrid form.</p>
+			<p class="indent"><b><i>Mimicry.</i></b> You can mimic simple sounds you heard, such as a person whispering, a baby crying, or an animal chattering. A creature that hears the sounds can tell they are imitations with a successful DC 10 Wisdom (Insight) check.</p>
+			<p class="indent"><b><i>Regeneration.</i></b> You regain 10 hit points at the start of your turn. If you take damage from a silvered weapon or a spell, this trait doesn't function at the start of your next turn. You die only if you start your turn with 0 hit points and don't regenerate.</p>
+			<p class="indent"><b><i>Natural Weapons (Raven or Hybrid Form Only).</i></b> Attack and damage rolls for the wereraven's beak are based on whichever is higher of the character's Strength and Dexterity. The peck of a wereraven deals 1 piercing damage in raven form (no ability modifier applies to this damage), or 1d4 piercing damage in hybrid form (the character's ability modifier applies to this damage). This attack carries the curse of wereraven lycanthropy.</p>
+			<p class="indent"><b><i>Change Shape.</i></b> You can use your action to polymorph into a Medium raven-humanoid hybrid form, a Tiny raven form, or back to your humanoid form. Your statistics, other than your size and speed, are the same in each form. Any equipment you're wearing or carrying isn't transformed. You revert to your humanoid form when you die.</p>
+			<div class="reference">
+				<div element="ID_WOTC_VRGTR_INFORMATION_WERERAVEN_STATBLOCK" />
+			</div>
+		</description>
+		<sheet display ="false" />
+		<rules>
+			<stat name="dexterity:score:set" value="15" bonus="base" />
+			<grant type="Racial Trait" id="ID_WOTC_VRGTR_RACIAL_TRAIT_WERERAVEN_SPEED" />
+			<grant type="Racial Trait" id="ID_WOTC_VRGTR_RACIAL_TRAIT_WERERAVEN_MIMICRY" />
+			<grant type="Racial Trait" id="ID_WOTC_VRGTR_RACIAL_TRAIT_WERERAVEN_REGENERATION" />
+			<grant type="Racial Trait" id="ID_WOTC_VRGTR_RACIAL_TRAIT_WERERAVEN_WEAPONS" />
+			<grant type="Racial Trait" id="ID_WOTC_VRGTR_RACIAL_TRAIT_WERERAVEN_CHANGE_SHAPE" />
+		</rules>
+	</element>
+
+	<element name="Wereraven Speed" type="Racial Trait" source="Van Richten's Guide to Ravenloft" id="ID_WOTC_VRGTR_RACIAL_TRAIT_WERERAVEN_SPEED">
+		<compendium display="false" />
+		<description>
+			<p>30 ft. in humanoid form; 10 ft. walking, fly 50 ft. in raven form; 30 ft., fly 50 ft. in hybrid form.</p>
+		</description>
+		<sheet usage="Raven or Hybrid Form">
+			<description>You have 10 ft. walking speed and 50 ft. flying speed in raven form; and you have 30 ft. walking speed and 50 ft. flying speed in hybrid form.</description>
+		</sheet>
+	</element>
+
+	<element name="Mimicry" type="Racial Trait" source="Van Richten's Guide to Ravenloft" id="ID_WOTC_VRGTR_RACIAL_TRAIT_WERERAVEN_MIMICRY">
+		<compendium display="false" />
+		<description>
+			<p>The wereraven can mimic simple sounds it has heard, such as a person whispering, a baby crying, or an animal chattering. A creature that hears the sounds can tell they are imitations with a successful DC 10 Wisdom (Insight) check.</p>
+		</description>
+		<sheet>
+			<description>You can mimic simple sounds you heard. A creature that hears the sounds can tell they are imitations with a successful DC 10 Wisdom (Insight) check.</description>
+		</sheet>
+	</element>
+
+	<element name="Regeneration" type="Racial Trait" source="Van Richten's Guide to Ravenloft" id="ID_WOTC_VRGTR_RACIAL_TRAIT_WERERAVEN_REGENERATION">
+		<compendium display="false" />
+		<description>
+			<p>The wereraven regains 10 hit points at the start of its turn. If the wereraven takes damage from a silvered weapon or a spell, this trait doesn't function at the start of the wereraven's next turn. The wereraven dies only if it starts its turn with 0 hit points and doesn't regenerate.</p>
+		</description>
+		<sheet>
+			<description>You regain 10 hit points at the start of your turn. If you take damage from a silvered weapon or a spell, this trait doesn't function at the start of your next turn. You die only if you start your turn with 0 hit points and don't regenerate.</description>
+		</sheet>
+	</element>
+
+	<element name="Natural Weapons" type="Racial Trait" source="Van Richten's Guide to Ravenloft" id="ID_WOTC_VRGTR_RACIAL_TRAIT_WERERAVEN_WEAPONS">
+		<compendium display="false" />
+		<description>
+			<p>Attack and damage rolls for the wereraven's beak are based on whichever is higher of the character's Strength and Dexterity. The peck of a wereraven deals 1 piercing damage in raven form (no ability modifier applies to this damage), or 1d4 piercing damage in hybrid form (the character's ability modifier applies to this damage). This attack carries the curse of wereraven lycanthropy.</p>
+		</description>
+		<sheet usage="Raven or Hybrid Form" alt="Beak">
+			<description>Melee Weapon Attack: +{{wereraven:beak}} to hit, reach 5 ft., one target. 1 (in raven form) or 1d4 + {{wereraven:beak:ability}} (in hybrid form) piercing damage. If the target is a humanoid, it must succeed on a DC 10 Constitution saving throw or be cursed with wereraven lycanthropy.</description>
+		</sheet>
+		<rules>
+			<stat name="wereraven:beak:ability" value="strength:modifier" bonus="ability" />
+			<stat name="wereraven:beak:ability" value="dexterity:modifier" bonus="ability" />
+			<stat name="wereraven:beak" value="wereraven:beak:ability" bonus="ability"/>
+			<stat name="wereraven:beak" value="proficiency" bonus="proficiency"/>
+		</rules>
+	</element>
+
+	<element name="Change Shape" type="Racial Trait" source="Van Richten's Guide to Ravenloft" id="ID_WOTC_VRGTR_RACIAL_TRAIT_WERERAVEN_CHANGE_SHAPE">
+		<compendium display="false" />
+		<description>
+			<p>The wereraven polymorphs into a raven-humanoid hybrid or into a Tiny raven, or back into its humanoid form. Its statistics, other than its size and speed, are the same in each form. Any equipment it is wearing or carrying isn't transformed. It reverts to its humanoid form if it dies.</p>
+		</description>
+		<sheet action="Action">
+			<description>You can polymorph into a Medium hybrid form, a Tiny raven form, or back to your humanoid form. Any equipment you're wearing or carrying isn't transformed. You revert to your humanoid form when you die.</description>
+		</sheet>
+	</element>
+
+	<element name="Wereraven" type="Information" source="Van Richten's Guide to Ravenloft" id="ID_WOTC_VRGTR_INFORMATION_WERERAVEN_STATBLOCK">
+		<description>
+			<p style="margin-bottom:-5px"><em>Medium Humanoid (Human, Shapechanger)</em></p>
+			<h4 style="margin-top:5px" />
+			<ul class="unstyled">
+				<li><strong>Armor Class</strong> 12</li>
+				<li><strong>Hit Points</strong> 31 (7d8)</li>
+				<li><strong>Speed</strong> 30 ft. in humanoid form; 10 ft., fly 50 ft. in raven form; 30 ft., fly 50 ft. in hybrid form</li>
+			</ul>
+			<table style="text-align:center;margin-top:10px;margin-bottom:10px">
+				<thead><tr><td>STR</td><td>DEX</td><td>CON</td><td>INT</td><td>WIS</td><td>CHA</td></tr></thead>
+				<tr><td>10 (+0)</td><td>15 (+2)</td><td>11 (+0)</td><td>13 (+1)</td><td>15 (+2)</td><td>14 (+2)</td></tr>
+			</table>
+			<ul class="unstyled">
+				<li><strong>Skills</strong> Insight +4, Perception +6</li>
+				<li><strong>Senses</strong> passive Perception 16</li>
+				<li><strong>Languages</strong> Common (can't speak in raven form)</li>
+				<li style="margin-bottom:-1em"><strong>Challenge</strong> 2 (450 XP)</li>
+				<li style="text-align:right; margin-top:-1em"><strong>Proficiency Bonus (PB)</strong> +2</li>
+			</ul>
+			<h4 style="margin-top:5px; margin-bottom:10px" />
+			<ul class="unstyled">
+				<li><strong><em>Mimicry.</em></strong> The wereraven can mimic simple sounds it has heard, such as a person whispering, a baby crying, or an animal chattering. A creature that hears the sounds can tell they are imitations with a successful DC 10 Wisdom (Insight) check.</li>
+				<p></p>
+				<li><strong><em>Regeneration.</em></strong> The wereraven regains 10 hit points at the start of its turn. If the wereraven takes damage from a silvered weapon or a spell, this trait doesn't function at the start of the wereraven's next turn. The wereraven dies only if it starts its turn with 0 hit points and doesn't regenerate.</li>
+			</ul>
+			<h4 style="margin-top:10px">Actions</h4>
+			<ul class="unstyled">
+				<li><strong><em>Multiattack (Humanoid or Hybrid Form Only).</em></strong> The wereraven makes two weapon attacks, one of which can be with its hand crossbow.</li>
+				<p></p>
+				<li><strong><em>Beak (Raven or Hybrid Form Only).</em></strong><em> Melee Weapon Attack:</em> +4 to hit, reach 5 ft., one creature. <em>Hit:</em> 1 piercing damage in raven form, or 4 (1d4 + 2) piercing damage in hybrid form. If the target is a humanoid, it must succeed on a DC 10 Constitution saving throw or be cursed with wereraven lycanthropy.</li>
+				<p></p>
+				<li><strong><em>Shortsword (Humanoid or Hybrid Form Only).</em></strong><em> Melee Weapon Attack:</em> +4 to hit, reach 5 ft., one target. Hit: 5 (1d6 + 2) piercing damage.</li>
+				<p></p>
+				<li><strong><em>Hand Crossbow (Humanoid or Hybrid Form Only).</em></strong><em> Ranged Weapon Attack:</em> +4 to hit, range 30/120 ft., one target. Hit: 5 (1d6 + 2) piercing damage.</li>
+				<p></p>
+				<li><strong><em>Change Shape.</em></strong> The wereraven polymorphs into a raven-humanoid hybrid or into a Tiny raven, or back into its humanoid form. Its statistics, other than its size and speed, are the same in each form. Any equipment it is wearing or carrying isn't transformed. It reverts to its humanoid form if it dies.</li>
+			</ul>
+		</description>
+	</element>
+
+</elements>
