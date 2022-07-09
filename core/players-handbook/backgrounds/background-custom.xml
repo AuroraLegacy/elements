@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<elements>
+	<info>
+		<name>Custom Background</name>
+		<description>Custom Background</description>
+		<author url="http://dnd.wizards.com/products/tabletop-games/rpg-products/rpg_playershandbook">Wizards of the Coast</author>
+		<update version="0.0.1">
+			<file name="background-custom.xml" url="https://raw.githubusercontent.com/AuroraLegacy/elements/master/core/players-handbook/backgrounds/background-custom.xml" />
+		</update>
+	</info>
+
+	<element name="Custom Background" type="Background" source="Player’s Handbook" id="ID_WOTC_PHB_BACKGROUND_CUSTOM">
+		<description>
+			<p>You might want to tweak some of the features of a background so it better fits your character or the campaign setting. To customize a background, you can replace one feature with any other one, choose any two skills, and choose a total of two tool proficiencies or languages from the sample backgrounds. You can either use the equipment package from your background or spend coin on gear as described in chapter 5. (If you spend coin, you can’t also take the equipment package suggested for your class.) Finally, choose two personality traits, one ideal, one bond, and one flaw. If you can’t find a feature that matches your desired background, work with your DM to create one.</p>
+			<ul>
+				<li><strong>Skill Proficiencies:</strong> You can select any two skills to be proficient with.</li>
+				<li><strong>Tool Proficiencies and Languages:</strong> You can select up to 2 tool proficiencies or languages.</li>
+				<li><strong>Background Feature:</strong> You can pick any background feature.</li>
+				<li><strong>Equipment:</strong> Use the equipment package from another background.</li>
+			</ul>
+			<p class="indent"><i><b><u>Note:</u></b></i> Some Backgrounds, for example <i>Azorius Functionary</i>, grant a second Background Feature, if you play in a campaign where similar Backgrounds are used, you can choose a second Background Feature from an optional selection. Otherwise, make sure to ask your DM if secondary Background Feature is available to your character as part of the Custom Background.</p>
+			<p class="indent"><i><b><u>Note 2:</u></b></i> Custom Background doesn't include any selections for personality traits, ideals, bonds or flaws, you can input them manually in <b>Backstory</b> tab of <b>Manage</b> menu.</p>
+		</description>
+		<setters>
+			<set name="short">2 Skills, and up to 2 Tool Proficiencies or Languages</set>
+		</setters>
+		<rules>
+			<select type="Proficiency" name="Skill Proficiency (Custom Background)" number="2" supports="Skill" />
+			<select type="Background Feature" name="1st Tool Proficiency or Language" supports="Tool Language Select" optional="true" />
+			<select type="Background Feature" name="2nd Tool Proficiency or Language" supports="Tool Language Select 2" optional="true" />
+			<select type="Background Feature" name="Background Feature" supports="Background Feature" />
+			<select type="Background Feature" name="2nd Background Feature" supports="2nd Background Feature" optional="true" />
+		</rules>
+	</element>
+
+	<element name="Tool Proficiency" type="Background Feature" source="Player’s Handbook" id="ID_WOTC_PHB_BACKGROUND_CUSTOM_TOOL_SELECT">
+		<supports>Tool Language Select</supports>
+		<compendium display="false" />
+		<sheet display="false" />
+		<rules>
+			<select type="Proficiency" name="Tool Proficiency (Custom Background)" supports="Tool" />
+		</rules>
+	</element>
+
+	<element name="Additional Language" type="Background Feature" source="Player’s Handbook" id="ID_WOTC_PHB_BACKGROUND_CUSTOM_LANGUAGE_SELECT">
+		<supports>Tool Language Select</supports>
+		<compendium display="false" />
+		<sheet display="false" />
+		<rules>
+			<select type="Language" name="Language (Custom Background)" supports="Standard||Exotic" />
+		</rules>
+	</element>
+
+	<element name="Tool Proficiency" type="Background Feature" source="Player’s Handbook" id="ID_WOTC_PHB_BACKGROUND_CUSTOM_TOOL_SELECT_2">
+		<supports>Tool Language Select 2</supports>
+		<compendium display="false" />
+		<sheet display="false" />
+		<rules>
+			<select type="Proficiency" name="Tool Proficiency (Custom Background)" supports="Tool" />
+		</rules>
+	</element>
+
+	<element name="Additional Language" type="Background Feature" source="Player’s Handbook" id="ID_WOTC_PHB_BACKGROUND_CUSTOM_LANGUAGE_SELECT_2">
+		<supports>Tool Language Select 2</supports>
+		<compendium display="false" />
+		<sheet display="false" />
+		<rules>
+			<select type="Language" name="Language (Custom Background)" supports="Standard||Exotic" />
+		</rules>
+	</element>
+</elements>
