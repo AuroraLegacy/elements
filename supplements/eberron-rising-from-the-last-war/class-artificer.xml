@@ -826,12 +826,11 @@
 		</description>
 		<sheet usage="{{arcane jolt:usage}}/Long Rest">
 			<description>When either you hit a target with a magic weapon attack or your steel defender hits a target, you can create one of the following effects:
-			The target takes an extra {{arcane jolt damage:dice:amount}}d6 force damage.
-			Choose one creature or object you can see within 30 feet of the target restoring {{arcane jolt healing:dice:amount}}d6 hit points to it.</description>
+			The target takes an extra {{arcane jolt:dice:amount}}d6 force damage.
+			Choose one creature or object you can see within 30 feet of the target restoring {{arcane jolt:dice:amount}}d6 hit points to it.</description>
 		</sheet>
 		<rules>
-			<stat name="arcane jolt damage:dice:amount" value="2" />
-			<stat name="arcane jolt healing:dice:amount" value="2" />
+			<stat name="arcane jolt:dice:amount" value="2" bonus="base" />
 			<stat name="arcane jolt:usage" value="1" bonus="base" />
 			<stat name="arcane jolt:usage" value="intelligence:modifier" bonus="base" />
 		</rules>
@@ -849,8 +848,7 @@
 			<description>Whenever your steel defender uses its Deflect Attack, the attacker takes 1d4+{{intelligence:modifier}} force damage.</description>
 		</sheet>
 		<rules>
-			<stat name="arcane jolt damage:dice:amount" value="2" />
-			<stat name="arcane jolt healing:dice:amount" value="2" />
+			<stat name="arcane jolt:dice:amount" value="4" bonus="base" />
 			<stat name="companion:ac" value="2" />
 		</rules>
 	</element>
