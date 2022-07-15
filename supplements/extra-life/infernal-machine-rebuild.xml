@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <elements>
-    <info>
-        <name>Infernal Machine Rebuild</name>
-        <update version="0.0.1">
-            <file name="infernal-machine-rebuild.xml" url="https://raw.githubusercontent.com/AuroraLegacy/elements/master/supplements/extra-life/infernal-machine-rebuild.xml" />
-        </update>
-    </info>
-    
+	<info>
+		<name>Infernal Machine Rebuild</name>
+		<update version="0.0.1">
+			<file name="infernal-machine-rebuild.xml" url="https://raw.githubusercontent.com/AuroraLegacy/elements/master/supplements/extra-life/infernal-machine-rebuild.xml" />
+		</update>
+	</info>
+	
 <element name="Infernal Machine Rebuild" type="Source" source="Core" id="ID_SOURCE_INFERNAL_MACHINE_REBUILD">
 		<description>
 		<p>A fallen clock tower holds components from an ancient artifact. Upon discovery of the components, competing agents look to launch expeditions to uncover additional components scattered across distant places—and times. The now-lost Temple of Moloch and the construction site of the legendary Tomb of Horrors are two of those locations. However great the risks, finding the components demands the effort, for whoever does so can reassemble the fabled <i>Infernal Machine of Lum the Mad</i>!</p>
@@ -23,177 +23,198 @@
 		</setters>
 	</element>  
 
-    <element name="Blood of the Lycanthrope" type="Item" source="Infernal Machine Rebuild" id="ID_WOTC_IMR_ITEM_BLOOD_OF_THE_LYCANTHROPE">
-        <description>
-            <p>This poison is created from blood harvested from a dead or incapacitated lycanthrope in its animal or hybrid form. A creature subjected to this poison must succeed on a DC 12 Constitution saving throw or be cursed with lycanthropy (see the <i>Monster Manual</i>). The curse lasts until removed by the <i>remove curse</i> spell or similar magic.</p>
-            <p class="indent">The type of lycanthropy depends on the lycanthrope used to create the poison. To determine the type of lycanthropy randomly, roll a d6:</p>
-            <table>
-                <thead>
-                    <tr><td>d6</td><td>Lycanthropy</td></tr>
-                </thead>
-                <tr><td>1-3</td><td>Wererat</td></tr>
-                <tr><td>4-5</td><td>Werewolf</td></tr>
-                <tr><td>6</td><td>Wereboar</td></tr>
-            </table>
-            <div class="reference">
+	<element name="Blood of the Lycanthrope" type="Item" source="Infernal Machine Rebuild" id="ID_WOTC_IMR_ITEM_BLOOD_OF_THE_LYCANTHROPE">
+		<description>
+			<p>This poison is created from blood harvested from a dead or incapacitated lycanthrope in its animal or hybrid form. A creature subjected to this poison must succeed on a DC 12 Constitution saving throw or be cursed with lycanthropy (see the <i>Monster Manual</i>). The curse lasts until removed by the <i>remove curse</i> spell or similar magic.</p>
+			<p class="indent">The type of lycanthropy depends on the lycanthrope used to create the poison. To determine the type of lycanthropy randomly, roll a d6:</p>
+			<table>
+				<thead>
+					<tr><td>d6</td><td>Lycanthropy</td></tr>
+				</thead>
+				<tr><td>1-3</td><td>Wererat</td></tr>
+				<tr><td>4-5</td><td>Werewolf</td></tr>
+				<tr><td>6</td><td>Wereboar</td></tr>
+			</table>
+			<div class="reference">
 				<div element="ID_INTERNAL_SUPPORT_POISON_INJURY" />
 			</div>
-        </description>
-        <setters>
-            <set name="keywords">poison,injury</set>
+		</description>
+		<setters>
+			<set name="keywords">poison,injury</set>
 			<set name="category">Poison</set>
 			<set name="cost" currency="gp">0</set>
 			<set name="weight" lb="0">—</set>
 			<set name="stackable">true</set>
-        </setters>
-    </element>
+		</setters>
+	</element>
 
-    <element name="Dust of the Mummy" type="Item" source="Infernal Machine Rebuild" id="ID_WOTC_IMR_ITEM_DUST_OF_THE_MUMMY">
-        <description>
-            <p>This poison is created during a mummy's embalming process, distilled from the dead creature's removed organs. A creature subjected to this poison must succeed on a DC 12 Constitution saving throw or be cursed with mummy rot. The cursed creature can't regain hit points, and its hit point maximum decreases by 10 (3d6) for every 24 hours that elapse. If the curse reduces the creature's hit point maximum to 0, the creature dies, and its body turns to dust. The curse lasts until removed by the <i>remove curse</i> spell or similar magic.</p>
-            <div class="reference">
+	<element name="Dust of the Mummy" type="Item" source="Infernal Machine Rebuild" id="ID_WOTC_IMR_ITEM_DUST_OF_THE_MUMMY">
+		<description>
+			<p>This poison is created during a mummy's embalming process, distilled from the dead creature's removed organs. A creature subjected to this poison must succeed on a DC 12 Constitution saving throw or be cursed with mummy rot. The cursed creature can't regain hit points, and its hit point maximum decreases by 10 (3d6) for every 24 hours that elapse. If the curse reduces the creature's hit point maximum to 0, the creature dies, and its body turns to dust. The curse lasts until removed by the <i>remove curse</i> spell or similar magic.</p>
+			<div class="reference">
 				<div element="ID_INTERNAL_SUPPORT_POISON_INHALED" />
 			</div>
-        </description>
-        <setters>
-            <set name="keywords">poison,inhale</set>
+		</description>
+		<setters>
+			<set name="keywords">poison,inhale</set>
 			<set name="category">Poison</set>
 			<set name="cost" currency="gp">0</set>
 			<set name="weight" lb="0">—</set>
 			<set name="stackable">true</set>
-        </setters>
-    </element>
+		</setters>
+	</element>
 
-    <element name="Thessaltoxin" type="Item" source="Infernal Machine Rebuild" id="ID_WOTC_IMR_ITEM_THESSALTOXIN">
-        <description>
-            <p>This poison was first created using blood harvested from the artificer Thessalar. A creature subjected to the poison must succeed on a DC 15 Constitution saving throw or take on a new form as if affected by the <i>polymorph</i> spell. The creature's new form is a random beast or a creature it has seen within the last 24 hours (as chosen by the DM). This transformation lasts until the end of the target's next long rest. This effect is not subject to <i>dispel magic</i> or <i>remove curse</i>, but a <i>greater restoration</i> spell restores the creature to its original form.</p>
-            <div class="reference">
+	<element name="Thessaltoxin" type="Item" source="Infernal Machine Rebuild" id="ID_WOTC_IMR_ITEM_THESSALTOXIN">
+		<description>
+			<p>This poison was first created using blood harvested from the artificer Thessalar. A creature subjected to the poison must succeed on a DC 15 Constitution saving throw or take on a new form as if affected by the <i>polymorph</i> spell. The creature's new form is a random beast or a creature it has seen within the last 24 hours (as chosen by the DM). This transformation lasts until the end of the target's next long rest. This effect is not subject to <i>dispel magic</i> or <i>remove curse</i>, but a <i>greater restoration</i> spell restores the creature to its original form.</p>
+			<div class="reference">
 				<div element="ID_INTERNAL_SUPPORT_POISON_INGESTED" />
 				<div element="ID_INTERNAL_SUPPORT_POISON_INJURY" />
 			</div>
-        </description>
-        <setters>
-            <set name="keywords">poison,ingest,injury</set>
+		</description>
+		<setters>
+			<set name="keywords">poison,ingest,injury</set>
 			<set name="category">Poison</set>
 			<set name="cost" currency="gp">0</set>
 			<set name="weight" lb="0">—</set>
 			<set name="stackable">true</set>
-        </setters>
-    </element>    
+		</setters>
+	</element>    
 
-    <element name="Blood of the Lycanthrope Antidote" type="Magic Item" source="Infernal Machine Rebuild" id="ID_WOTC_IMR_MAGIC_ITEM_BLOOD_OF_THE_LYCANTHROPE_ANTIDOTE">
-        <description>
-            <p>This clear potion has dark red flecks within, resembling clotted blood. When you drink this potion, it removes the curse of lycanthropy from you if that curse was imposed by a lycanthrope's bite or similar effect.</p>
-        </description>
-        <setters>
-            <set name="category">Potions</set>
+	<element name="Blood of the Lycanthrope Antidote" type="Magic Item" source="Infernal Machine Rebuild" id="ID_WOTC_IMR_MAGIC_ITEM_BLOOD_OF_THE_LYCANTHROPE_ANTIDOTE">
+		<description>
+			<p>This clear potion has dark red flecks within, resembling clotted blood. When you drink this potion, it removes the curse of lycanthropy from you if that curse was imposed by a lycanthrope's bite or similar effect.</p>
+		</description>
+		<setters>
+			<set name="category">Potions</set>
 			<set name="weight" lb="0">—</set>
 			<set name="type">Potion</set>
 			<set name="rarity">Uncommon</set>
 			<set name="stackable">true</set>
-        </setters>
-    </element>    
+		</setters>
+	</element>    
 
-    <element name="Bridle of Capturing" type="Magic Item" source="Infernal Machine Rebuild" id="ID_WOTC_IMR_MAGIC_ITEM_BRIDLE_OF_CAPTURING">
-        <description>
-            <p>This fine leather bridle tugs at the hand when first held, as though it longs to reach out for a beast nearby. When you hold one end of the bridle, you can use an action to speak its command word, causing the other end to lash out at a beast you can see within 20 feet of you. The target must succeed on a DC 17 Charisma saving throw or have the bridle tie itself around its neck, then fall under your command as if subjected to the <i>dominate beast</i> spell. Once the targeted is affected, you do not need to hold the other end of the bridle to command it. With a successful saving throw, the target becomes immune to the bridle's power until the next dawn.</p>
-            <p class="indent">A creature controlled by the bridle can be released by the creature that bound it as a bonus action. A creature controlled by the bridle can make a DC 17 Charisma check each day at dawn. On a success, the creature is no longer affected by the bridle.</p>
-        </description>
-        <setters>
-            <set name="category">Wondrous Items</set>
-            <set name="cost" currency="gp">0</set>
-            <set name="weight" lb="0">—</set>
-            <set name="type">Wondrous Item</set>
-            <set name="rarity">Rare</set>
-        </setters>
-    </element>
+	<element name="Bridle of Capturing" type="Magic Item" source="Infernal Machine Rebuild" id="ID_WOTC_IMR_MAGIC_ITEM_BRIDLE_OF_CAPTURING">
+		<description>
+			<p>This fine leather bridle tugs at the hand when first held, as though it longs to reach out for a beast nearby. When you hold one end of the bridle, you can use an action to speak its command word, causing the other end to lash out at a beast you can see within 20 feet of you. The target must succeed on a DC 17 Charisma saving throw or have the bridle tie itself around its neck, then fall under your command as if subjected to the <i>dominate beast</i> spell. Once the targeted is affected, you do not need to hold the other end of the bridle to command it. With a successful saving throw, the target becomes immune to the bridle's power until the next dawn.</p>
+			<p class="indent">A creature controlled by the bridle can be released by the creature that bound it as a bonus action. A creature controlled by the bridle can make a DC 17 Charisma check each day at dawn. On a success, the creature is no longer affected by the bridle.</p>
+		</description>
+		<setters>
+			<set name="category">Wondrous Items</set>
+			<set name="cost" currency="gp">0</set>
+			<set name="weight" lb="0">—</set>
+			<set name="type">Wondrous Item</set>
+			<set name="rarity">Rare</set>
+		</setters>
+	</element>
 
 <!-- Claws of the Umber Hulk added in PoA, details are the same-->
 <!-- Helm of Underwater Action added in GoS, details are the same-->
 <!-- Paper Bird added in WDH, details are the same-->
 <!-- Pot of Awakening added in XGE, details are the same-->
 
+<!-- Ioun Stone of Vitality -->
+	<element name="Ioun Stone, Vitality" type="Magic Item" source="Infernal Machine Rebuild" id="ID_WOTC_IMR_MAGIC_ITEM_IOUN_STONE_VITALITY">
+		<description>
+			<p>You gain a +1 bonus to death saving throws while this luminous green-and-blue marbled sphere orbits your head.</p>
+
+			<p>An <em>Ioun stone</em> is named after Ioun, a god of knowledge and prophecy revered on some worlds. Many types of <em>Ioun stone</em> exist, each type a distinct combination of shape and color.</p>
+			<p class="indent">When you use an action to toss one of these stones into the air, the stone orbits your head at a distance of 1d3 feet and confers a benefit to you. Thereafter, another creature must use an action to grasp or net the stone to separate it from you, either by making a successful attack roll against AC 24 or a successful DC 24 Dexterity (Acrobatics) check. You can use an action to seize and stow the stone, ending its effect.</p>
+			<p class="indent">A stone has AC 24, 10 hit points, and resistance to all damage. It is considered to be an object that is being worn while it orbits your head.</p>
+		</description>
+		<setters>
+			<set name="keywords">ioun</set>
+			<set name="category">Wondrous Items</set>
+			<set name="cost" currency="gp">0</set>
+			<set name="weight" lb="0">0 lb.</set>
+			<set name="slot">misc</set>
+			<set name="type">Wondrous Item</set>
+			<set name="attunement">true</set>
+			<set name="rarity">Very Rare</set>
+		</setters>
+	</element>
+
 <!-- Mummy Rot Antidote -->
-    <element name="Mummy Rot Antidote" type="Magic Item" source="Infernal Machine Rebuild" id="ID_WOTC_IMR_MAGIC_ITEM_MUMMY_ROT_ANTIDOTE">
-        <description>
-            <p>White dust swirls constantly within this pale gray potion. When you drink the potion, it cures you of mummy rot.</p>
-        </description>
-        <setters>
-            <set name="category">Potions</set>
-            <set name="cost" currency="gp">0</set>
-            <set name="weight" lb="0">—</set>
-            <set name="type">Potion</set>
-            <set name="rarity">Uncommon</set>
-            <set name="stackable">true</set>
-        </setters>
-    </element>
+	<element name="Mummy Rot Antidote" type="Magic Item" source="Infernal Machine Rebuild" id="ID_WOTC_IMR_MAGIC_ITEM_MUMMY_ROT_ANTIDOTE">
+		<description>
+			<p>White dust swirls constantly within this pale gray potion. When you drink the potion, it cures you of mummy rot.</p>
+		</description>
+		<setters>
+			<set name="category">Potions</set>
+			<set name="cost" currency="gp">0</set>
+			<set name="weight" lb="0">—</set>
+			<set name="type">Potion</set>
+			<set name="rarity">Uncommon</set>
+			<set name="stackable">true</set>
+		</setters>
+	</element>
 
-    <element name="Thessaltoxin Antidote" type="Magic Item" source="Infernal Machine Rebuild" id="ID_WOTC_IMR_MAGIC_ITEM_THESSALTOXIN_ANTIDOTE">
-        <description>
-            <p>This potion appears to change color and texture each time you look at it. When you drink the potion, it ends the <i>polymorph</i> effect imposed by thessaltoxin.</p>
-        </description>
-        <setters>
-            <set name="category">Potions</set>
-            <set name="cost" currency="gp">0</set>
-            <set name="weight" lb="0">—</set>
-            <set name="type">Potion</set>
-            <set name="rarity">Uncommon</set>
-            <set name="stackable">true</set>
-        </setters>
-    </element>
+	<element name="Thessaltoxin Antidote" type="Magic Item" source="Infernal Machine Rebuild" id="ID_WOTC_IMR_MAGIC_ITEM_THESSALTOXIN_ANTIDOTE">
+		<description>
+			<p>This potion appears to change color and texture each time you look at it. When you drink the potion, it ends the <i>polymorph</i> effect imposed by thessaltoxin.</p>
+		</description>
+		<setters>
+			<set name="category">Potions</set>
+			<set name="cost" currency="gp">0</set>
+			<set name="weight" lb="0">—</set>
+			<set name="type">Potion</set>
+			<set name="rarity">Uncommon</set>
+			<set name="stackable">true</set>
+		</setters>
+	</element>
 
-    <element name="The Infernal Machine of Lum the Mad" type="Magic Item" source="Infernal Machine Rebuild" id="ID_WOTC_IMR_MAGIC_ITEM_THE_INFERNAL_MACHINE_OF_LUM_THE_MAD">
-        <description>
-            <p>This strange device was once thought to have been built by gods long forgotten and to have survived the eons since their passing, for it is incredibly ancient and crafted by means unlike anything known today. However, its true origins derive from a planar craft that crashed in the Barrier Peaks, for the <i>Infernal Machine</i> once functioned as this craft's central command console.</p>
-            <p class="indent">Explorers who discovered the crash site removed the command console and brought it back to civilization, not understanding its true purpose or powers. In later years, the console came into the possession of Baron Lum. By experimenting with its many controls, he was able to achieve astounding and destructive magical effects in the building of his empire, and so the artifact came to be known as the <i>Infernal Machine of Lum the Mad</i>. Yet with Lum's eventual defeat, his great machine was destroyed.</p>
-            <p class="indent">The <i>Infernal Machine</i> is a delicate, intricate, bulky, and heavy device, weighing some 5,500 pounds. It can be operated using a control panel containing sixty levers, forty dials, twenty switches, and a number of jeweled components. These controls generate all kinds of powers and effects, as noted below.</p>
-            <p class="indent"><b><i>Silver Wire.</i></b> The <i>Infernal Machine</i>'s great size makes it largely immobile. To make ongoing use of the machine (such as while adventuring), it can be connected to its attuned user by a silver wire, a supply of which can always be produced from the machine's inner workings. This silver wire shares the same general nature as the silvery cord of an <i>astral projection</i> spell, connecting to the body of the user and trailing behind them. When so attached, the wire becomes invisible, astral, and extends to virtually infinite length.</p>
-            <p class="indent">As long as the wire remains intact, the attuned user can make full use of the <i>Infernal Machine</i>'s powers, with their effects centered around the user. If the wire is cut—something that can happen only when an effect specifically states that it can cut an <i>astral projection</i>'s silvery cord—the user suffers a sudden burst of feedback from the machine that kills them instantly.</p>
-            <p class="indent">Any effect of the <i>Infernal Machine</i> that requires concentration can be concentrated on by a remote user. The <i>Infernal Machine</i>'s effects have a spell save DC of 14 or the attuned user's spell save DC, whichever is higher.</p>
-            <p class="indent"><b><i>Summon Monster.</i></b> When first used by Baron Lum, the <i>Infernal Machine</i> was known for its ability to unleash terrible monsters within the world. Specific combinations of its controls can still recreate the effects of various spells of the conjuration school, as follows:</p>
-            <p class="indent">1/day: <i>conjure animals</i>, <i>summon lesser demons</i></p>
-            <p class="indent">1/7 days: <i>conjure minor elementals</i>, <i>conjure woodland beings</i>, <i>summon greater demon</i></p>
-            <p class="indent">1/month: <i>conjure elemental</i>, <i>conjure fey</i></p>
-            <p class="indent"><b><i>Wish.</i></b> The <i>Infernal Machine</i> has the ability to bend the nature of reality, with the proper combination of controls recreating the effect of a <i>wish</i> spell (including all side effects). Due to the complex nature of its programming, this feature can be used only once per month. Each time this effect is used, there is a cumulative 10 percent chance of the <i>Infernal Machine</i> malfunctioning, necessitating seven days' worth of repairs and reprogramming, as well as the expenditure of 500 gp in parts, before it can be used again. When these repairs are done, the cumulative chance of malfunction returns to 10 percent.</p>
-            <p class="indent"><b><i>Random Properties.</i></b> There are far more possible combinations for the <i>Infernal Machine</i>'s controls than can ever be known or matrixed—especially as the controls shift position and reset themselves over time. At the end of each long rest of the user attuned to it, the <i>Infernal Machine</i> generates 1d4 + 1 random beneficial properties and 1d4 + 1 detrimental properties. Roll for each of these properties on the Infernal Machine Properties table. To keep things interesting, the DM might roll secretly for detrimental properties, revealing those properties only during the course of play.</p>
-            <p class="indent">Once set, these properties last until the end of the attuned user's next long rest.</p>
-            <p class="indent"><b><i>Destroying the Machine.</i></b> The <i>Infernal Machine of Lum the Mad</i> is self-repairing of anything short of catastrophic damage, and how it was disabled in Lum's time remains a mystery. It is rumored that if one specific combination of controls is set, the <i>Infernal Machine</i> will enter a repair mode, allowing unfettered access to its inner workings—and preventing it from restoring itself if it is attacked. Alternatively, other combinations of controls might cause the <i>Infernal Machine</i> to teleport its most critical components to some hiding place deep in space and time, rendering it inoperable until those components are found again.</p>
-        </description>
-        <setters>
-            <set name="category">Wondrous Items</set>
-            <set name="cost" currency="gp">0</set>
-            <set name="weight" lb="5,500">5,500 lb.</set>
-            <set name="type">Wondrous Item</set>
-            <set name="rarity">Artifact</set>
-            <set name="attunement">true</set>
-        </setters>
-    </element>
+	<element name="The Infernal Machine of Lum the Mad" type="Magic Item" source="Infernal Machine Rebuild" id="ID_WOTC_IMR_MAGIC_ITEM_THE_INFERNAL_MACHINE_OF_LUM_THE_MAD">
+		<description>
+			<p>This strange device was once thought to have been built by gods long forgotten and to have survived the eons since their passing, for it is incredibly ancient and crafted by means unlike anything known today. However, its true origins derive from a planar craft that crashed in the Barrier Peaks, for the <i>Infernal Machine</i> once functioned as this craft's central command console.</p>
+			<p class="indent">Explorers who discovered the crash site removed the command console and brought it back to civilization, not understanding its true purpose or powers. In later years, the console came into the possession of Baron Lum. By experimenting with its many controls, he was able to achieve astounding and destructive magical effects in the building of his empire, and so the artifact came to be known as the <i>Infernal Machine of Lum the Mad</i>. Yet with Lum's eventual defeat, his great machine was destroyed.</p>
+			<p class="indent">The <i>Infernal Machine</i> is a delicate, intricate, bulky, and heavy device, weighing some 5,500 pounds. It can be operated using a control panel containing sixty levers, forty dials, twenty switches, and a number of jeweled components. These controls generate all kinds of powers and effects, as noted below.</p>
+			<p class="indent"><b><i>Silver Wire.</i></b> The <i>Infernal Machine</i>'s great size makes it largely immobile. To make ongoing use of the machine (such as while adventuring), it can be connected to its attuned user by a silver wire, a supply of which can always be produced from the machine's inner workings. This silver wire shares the same general nature as the silvery cord of an <i>astral projection</i> spell, connecting to the body of the user and trailing behind them. When so attached, the wire becomes invisible, astral, and extends to virtually infinite length.</p>
+			<p class="indent">As long as the wire remains intact, the attuned user can make full use of the <i>Infernal Machine</i>'s powers, with their effects centered around the user. If the wire is cut—something that can happen only when an effect specifically states that it can cut an <i>astral projection</i>'s silvery cord—the user suffers a sudden burst of feedback from the machine that kills them instantly.</p>
+			<p class="indent">Any effect of the <i>Infernal Machine</i> that requires concentration can be concentrated on by a remote user. The <i>Infernal Machine</i>'s effects have a spell save DC of 14 or the attuned user's spell save DC, whichever is higher.</p>
+			<p class="indent"><b><i>Summon Monster.</i></b> When first used by Baron Lum, the <i>Infernal Machine</i> was known for its ability to unleash terrible monsters within the world. Specific combinations of its controls can still recreate the effects of various spells of the conjuration school, as follows:</p>
+			<p class="indent">1/day: <i>conjure animals</i>, <i>summon lesser demons</i></p>
+			<p class="indent">1/7 days: <i>conjure minor elementals</i>, <i>conjure woodland beings</i>, <i>summon greater demon</i></p>
+			<p class="indent">1/month: <i>conjure elemental</i>, <i>conjure fey</i></p>
+			<p class="indent"><b><i>Wish.</i></b> The <i>Infernal Machine</i> has the ability to bend the nature of reality, with the proper combination of controls recreating the effect of a <i>wish</i> spell (including all side effects). Due to the complex nature of its programming, this feature can be used only once per month. Each time this effect is used, there is a cumulative 10 percent chance of the <i>Infernal Machine</i> malfunctioning, necessitating seven days' worth of repairs and reprogramming, as well as the expenditure of 500 gp in parts, before it can be used again. When these repairs are done, the cumulative chance of malfunction returns to 10 percent.</p>
+			<p class="indent"><b><i>Random Properties.</i></b> There are far more possible combinations for the <i>Infernal Machine</i>'s controls than can ever be known or matrixed—especially as the controls shift position and reset themselves over time. At the end of each long rest of the user attuned to it, the <i>Infernal Machine</i> generates 1d4 + 1 random beneficial properties and 1d4 + 1 detrimental properties. Roll for each of these properties on the Infernal Machine Properties table. To keep things interesting, the DM might roll secretly for detrimental properties, revealing those properties only during the course of play.</p>
+			<p class="indent">Once set, these properties last until the end of the attuned user's next long rest.</p>
+			<p class="indent"><b><i>Destroying the Machine.</i></b> The <i>Infernal Machine of Lum the Mad</i> is self-repairing of anything short of catastrophic damage, and how it was disabled in Lum's time remains a mystery. It is rumored that if one specific combination of controls is set, the <i>Infernal Machine</i> will enter a repair mode, allowing unfettered access to its inner workings—and preventing it from restoring itself if it is attacked. Alternatively, other combinations of controls might cause the <i>Infernal Machine</i> to teleport its most critical components to some hiding place deep in space and time, rendering it inoperable until those components are found again.</p>
+		</description>
+		<setters>
+			<set name="category">Wondrous Items</set>
+			<set name="cost" currency="gp">0</set>
+			<set name="weight" lb="5,500">5,500 lb.</set>
+			<set name="type">Wondrous Item</set>
+			<set name="rarity">Artifact</set>
+			<set name="attunement">true</set>
+		</setters>
+	</element>
 
 <!-- Ruinblade -->
-    <element name="Ruinblade" type="Magic Item" source="Infernal Machine Rebuild" id="ID_WOTC_IMR_MAGIC_ITEM_RUINBLADE">
-        <description>
-            <p><em>Ruinblade</em> is a unique weapon possessed by Moghadam, the architect of the Tomb of Horrors. A symbol of his authority, Moghadam carries the weapon during the time frame of the adventure to intimidate the tomb's workers. (In later years, after Acererak trapped Moghadam in the completed tomb as an undead archwraith, Moghadam was able to use the weapon as his own phylactery.)</p>
-            <p class="indent">A small jade version of the green devil face of the Tomb of Horrors is fashioned into the hilt of the weapon, with the blade extending from its open mouth. The blade always appears ruined and rusting, and causes its surroundings to appear reflected in the blade as if in a state of decay.</p>
-            <p class="indent">You gain a +2 bonus to attack and damage rolls made with this magic weapon. When you hit an undead creature with it, the attack deals an extra 1d8 force damage.</p>
-            <p class="indent">In addition, the weapon has the following properties:</p>
-            <p class="indent"><b><i>Blighted Ruin.</i></b> You can cast the <i>blight spell</i> from the weapon (DC 15). Once used, this property of the weapon can't be used until the next dawn.</p>
-            <p class="indent"><b><i>Destructive Ruin.</i></b> You can cast the <i>disintegrate</i> spell from the weapon, but can target only a nonmagical object or a creation of magical force. Once used, this property of the weapon can't be used until dawn seven days later.</p>
-            <p class="indent"><b><i>Curse.</i></b> This weapon is cursed, and becoming attuned to it extends the curse to you. Until the curse is broken with a <i>remove curse</i> spell or similar magic, you are unwilling to part with the weapon.</p>
-            <p class="indent">The weapon must take direct part in the destruction of 1,000 gp worth of materials and objects every seven days, or a conflict arises between you and the weapon at the end of the seventh day.</p>
-            <p class="indent"><i><b>Sentience.</b> Ruinblade</i> is a sentient lawful evil weapon with an Intelligence of 15, a Wisdom of 8, and a Charisma of 16. It has hearing and darkvision out to a range of 120 feet.</p>
-            <p class="indent">The weapon can speak, read, and understand Common, and can communicate with its wielder telepathically. Its voice is a rough, ruined echo. While you are attuned to it, <em>Ruinblade</em> also understands every language you know.</p>
-            <p class="indent"><i><b>Personality.</b> Ruinblade</i> speaks either with a dolorous or frenetic tone, depending on its mood. That mood improves when the sword is actively engaged in acts of destruction, but worsens if the blade is left inactive too long.</p>
-            <p class="indent">The weapon's purpose is to ruin and unmake existing objects, so that its owner can rebuild the world from a blank slate. It thus encourages its wielder to engage in constant destruction, claiming that this will allow the creation of a more superior vision from the ruin of what came before.</p>
-        </description>
-        <setters>
-            <set name="category">Magic Weapons</set>
-            <set name="cost" currency="gp">0</set>
-            <set name="type" addition="greatsword">Weapon</set>
-            <set name="rarity">Legendary</set>
-            <set name="enhancement">2</set>
-            <set name="weapon">Greatsword</set>
-            <set name="attunement">true</set>
-        </setters>
-    </element>
+	<element name="Ruinblade" type="Magic Item" source="Infernal Machine Rebuild" id="ID_WOTC_IMR_MAGIC_ITEM_RUINBLADE">
+		<description>
+			<p><em>Ruinblade</em> is a unique weapon possessed by Moghadam, the architect of the Tomb of Horrors. A symbol of his authority, Moghadam carries the weapon during the time frame of the adventure to intimidate the tomb's workers. (In later years, after Acererak trapped Moghadam in the completed tomb as an undead archwraith, Moghadam was able to use the weapon as his own phylactery.)</p>
+			<p class="indent">A small jade version of the green devil face of the Tomb of Horrors is fashioned into the hilt of the weapon, with the blade extending from its open mouth. The blade always appears ruined and rusting, and causes its surroundings to appear reflected in the blade as if in a state of decay.</p>
+			<p class="indent">You gain a +2 bonus to attack and damage rolls made with this magic weapon. When you hit an undead creature with it, the attack deals an extra 1d8 force damage.</p>
+			<p class="indent">In addition, the weapon has the following properties:</p>
+			<p class="indent"><b><i>Blighted Ruin.</i></b> You can cast the <i>blight spell</i> from the weapon (DC 15). Once used, this property of the weapon can't be used until the next dawn.</p>
+			<p class="indent"><b><i>Destructive Ruin.</i></b> You can cast the <i>disintegrate</i> spell from the weapon, but can target only a nonmagical object or a creation of magical force. Once used, this property of the weapon can't be used until dawn seven days later.</p>
+			<p class="indent"><b><i>Curse.</i></b> This weapon is cursed, and becoming attuned to it extends the curse to you. Until the curse is broken with a <i>remove curse</i> spell or similar magic, you are unwilling to part with the weapon.</p>
+			<p class="indent">The weapon must take direct part in the destruction of 1,000 gp worth of materials and objects every seven days, or a conflict arises between you and the weapon at the end of the seventh day.</p>
+			<p class="indent"><i><b>Sentience.</b> Ruinblade</i> is a sentient lawful evil weapon with an Intelligence of 15, a Wisdom of 8, and a Charisma of 16. It has hearing and darkvision out to a range of 120 feet.</p>
+			<p class="indent">The weapon can speak, read, and understand Common, and can communicate with its wielder telepathically. Its voice is a rough, ruined echo. While you are attuned to it, <em>Ruinblade</em> also understands every language you know.</p>
+			<p class="indent"><i><b>Personality.</b> Ruinblade</i> speaks either with a dolorous or frenetic tone, depending on its mood. That mood improves when the sword is actively engaged in acts of destruction, but worsens if the blade is left inactive too long.</p>
+			<p class="indent">The weapon's purpose is to ruin and unmake existing objects, so that its owner can rebuild the world from a blank slate. It thus encourages its wielder to engage in constant destruction, claiming that this will allow the creation of a more superior vision from the ruin of what came before.</p>
+		</description>
+		<setters>
+			<set name="category">Magic Weapons</set>
+			<set name="cost" currency="gp">0</set>
+			<set name="type" addition="greatsword">Weapon</set>
+			<set name="rarity">Legendary</set>
+			<set name="enhancement">2</set>
+			<set name="weapon">Greatsword</set>
+			<set name="attunement">true</set>
+		</setters>
+	</element>
  
 </elements>
