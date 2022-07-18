@@ -2,7 +2,7 @@
 <elements>
 	<info>
 		<name>Bard</name>
-		<update version="0.5.0">
+		<update version="0.5.1">
 			<file name="class-bard.xml" url="https://raw.githubusercontent.com/AuroraLegacy/elements/master/core/players-handbook/classes/class-bard.xml" />
 		</update>
 	</info>
@@ -233,7 +233,7 @@
 			<description>You can add half your proficiency bonus ({{proficiency:half}}), rounded down, to any ability check you make that doesn’t already include your proficiency bonus.</description>
 		</sheet>
 		<rules>
-			<stat name="initiative" value="proficiency:half" bonus="proficiency" />
+			<stat name="initiative" value="proficiency:half" bonus="proficiency" requirements="!ID_INTERNAL_GRANT_JACK_OF_ALL_TRADES_DISABLE" />
 			<stat name="acrobatics:misc" value="proficiency:half" requirements="!ID_PROFICIENCY_SKILL_ACROBATICS"/>
 			<stat name="animal handling:misc" value="proficiency:half" requirements="!ID_PROFICIENCY_SKILL_ANIMALHANDLING"/>
 			<stat name="arcana:misc" value="proficiency:half" requirements="!ID_PROFICIENCY_SKILL_ARCANA"/>
@@ -350,6 +350,9 @@
 			<description>When you roll initiative and have no uses of Bardic Inspiration left, you regain one use.</description>
 		</sheet>
 	</element>
+
+	<!--Jack of All Trades grant to disable when needed-->
+	<element name="Disable Jack of All Trades" type="Grants" source="Internal" id="ID_INTERNAL_GRANT_JACK_OF_ALL_TRADES_DISABLE" />
 
 	<!--Feature Replacement Grants-->
 	<element name="Bardic Inspiration Feature Replacement" type="Grants" source="Internal" id="ID_INTERNAL_FEATURE_REPLACEMENT_BARD_BARDIC_INSPIRATION" />

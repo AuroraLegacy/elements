@@ -1,0 +1,797 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<elements>
+	<info>
+		<name>Unearthed Arcana: Heroes of Krynn Revisited</name>
+		<update version="0.0.1">
+			<file name="20220425.xml" url="https://raw.githubusercontent.com/AuroraLegacy/elements/master/unearthed-arcana/2022/20220425.xml" />
+		</update>
+	</info>
+
+	<element name="Unearthed Arcana: Heroes of Krynn Revisited" type="Source" source="Core" id="ID_WOTC_SOURCE_UNEARTHED_ARCANA_20220425">
+		<description>
+			<p>In today’s <i>Unearthed Arcana</i>, we continue our exploration of character options from the Dragonlance setting. After studying your feedback, we’ve revised the kender race, the Knight of Solamnia and Mage of High Sorcery backgrounds, and several feats for characters from the world of Krynn. You can find this new Dungeons &amp; Dragons playtest material in the PDF below.</p>
+		</description>
+		<setters>
+			<set name="abbreviation">UA20220425</set>
+			<set name="url">https://dnd.wizards.com/unearthed-arcana/heroes-krynn-revisited</set>
+			<set name="author" abbreviation="WOTC" url="http://dnd.wizards.com">Wizards of the Coast</set>
+			<set name="official">true</set>
+			<set name="playtest">true</set>
+			<set name="release">20220425</set>
+		</setters>
+	</element>
+
+	<!--Kender Race-->
+	<element name="Kender" type="Race" source="Unearthed Arcana: Heroes of Krynn Revisited" id="ID_WOTC_UA20220425_RACE_KENDER">
+		<description>
+			<p>During the mythical origins of Krynn, Reorx, god of craft, indulged in an age of unfettered creation. Many peoples sprang from his divine forge, but not all among them remained as the god created them. Altered by unbridled magic, a group of gnomes were transformed and gifted almost supernatural curiosity and fearlessness. These were the first kender.</p>
+			<p class="indent">Originating on the world of Krynn, kender are diminutive Humanoids that look like humans with pointed ears and diverse appearances. Kender have a supernatural curiosity that drives them to adventure. Due to this inquisitiveness, many kender find themselves falling through portals to other planes and worlds.</p>
+			<p class="indent">Kender sometimes amass impressive collections of curiosities. Some might collect mundane knickknacks or relics from magical sites, while others might become professional thieves.</p>
+			<h4>Kender Traits</h4>
+			<p>As a kender, you have the following racial traits.</p>
+			<p class="indent"><strong><em>Creature Type.</em></strong> You are a Humanoid.</p>
+			<p class="indent"><strong><em>Size.</em></strong> You are Small.</p>
+			<p class="indent"><strong><em>Speed.</em></strong> Your walking speed is 30 feet.</p>
+			<p class="indent"><strong><em>Fearless.</em></strong> You are immune to the frightened condition.</p>
+			<p class="indent"><strong><em>Kender Curiosity.</em></strong> Thanks to the mystical origin of your people, you gain proficiency with one of the following skills of your choice: Insight, Investigation, Sleight of Hand, Stealth, or Survival.</p>
+			<p class="indent"><strong><em>Taunt.</em></strong> You have an extraordinary ability to fluster creatures. As a bonus action, you can unleash a string of provoking words at a creature within 60 feet of you that can hear and understand you. The target must succeed on a Wisdom saving throw or it has disadvantage on attack rolls against targets other than you until the start of your next turn. The DC equals 8 + your proficiency bonus + your Intelligence, Wisdom, or Charisma modifier (choose when you select this race).</p>
+			<p class="indent">You can use this bonus action a number of times equal to your proficiency bonus, and you regain all expended uses when you finish a long rest.</p>
+		</description>
+		<sheet display="false" />
+		<rules>
+			<select type="Ability Score Improvement" name="Ability Score Improvement Option (Kender)" supports="Custom Ability Score Improvement Option" />
+			<grant type="Size" id="ID_SIZE_SMALL" />
+			<stat name="innate speed" value="30" bonus="base" />
+
+			<grant type="Language" id="ID_LANGUAGE_COMMON" requirements="!ID_WOTC_TCOE_OPTION_CUSTOMIZED_LANGUAGE" />
+			<select type="Language" name="Customized Language (Kender)" supports="Custom Race Language" requirements="ID_WOTC_TCOE_OPTION_CUSTOMIZED_LANGUAGE" />
+
+			<grant type="Racial Trait" id="ID_WOTC_UA20220425_RACIAL_TRAIT_KENDER_FEARLESS" />
+			<grant type="Racial Trait" id="ID_WOTC_UA20220425_RACIAL_TRAIT_KENDER_KENDER_CURIOSITY" />
+			<grant type="Racial Trait" id="ID_WOTC_UA20220425_RACIAL_TRAIT_KENDER_TAUNT" />
+		</rules>
+	</element>
+
+	<element name="Fearless" type="Racial Trait" source="Unearthed Arcana: Heroes of Krynn Revisited" id="ID_WOTC_UA20220425_RACIAL_TRAIT_KENDER_FEARLESS">
+		<description>
+			<p>You are immune to the frightened condition.</p>
+		</description>
+		<sheet>
+			<description>You are immune to the frightened condition.</description>
+		</sheet>
+	</element>
+
+	<element name="Kender Curiosity" type="Racial Trait" source="Unearthed Arcana: Heroes of Krynn Revisited" id="ID_WOTC_UA20220425_RACIAL_TRAIT_KENDER_KENDER_CURIOSITY">
+		<description>
+			<p>Thanks to the mystical origin of your people, you gain proficiency with one of the following skills of your choice: Insight, Investigation, Sleight of Hand, Stealth, or Survival.</p>
+		</description>
+		<sheet display="false" />
+		<rules>
+			<select type="Proficiency" name="Skill Proficiency (Kender Curiosity)" supports="ID_PROFICIENCY_SKILL_INSIGHT|ID_PROFICIENCY_SKILL_INVESTIGATION|ID_PROFICIENCY_SKILL_SLEIGHTOFHAND|ID_PROFICIENCY_SKILL_STEALTH|ID_PROFICIENCY_SKILL_SURVIVAL" requirements="!ID_WOTC_TCOE_OPTION_CUSTOMIZED_PROFICIENCY" />
+			<select type="Proficiency" name="Customized Skill Proficiency (Kender Curiosity)" supports="Skill" requirements="ID_WOTC_TCOE_OPTION_CUSTOMIZED_PROFICIENCY" />
+		</rules>
+	</element>
+
+	<element name="Taunt" type="Racial Trait" source="Unearthed Arcana: Heroes of Krynn Revisited" id="ID_WOTC_UA20220425_RACIAL_TRAIT_KENDER_TAUNT">
+		<description>
+			<p>You have an extraordinary ability to fluster creatures. As a bonus action, you can unleash a string of provoking words at a creature within 60 feet of you that can hear and understand you. The target must succeed on a Wisdom saving throw or it has disadvantage on attack rolls against targets other than you until the start of your next turn. The DC equals 8 + your proficiency bonus + your Intelligence, Wisdom, or Charisma modifier (choose when you select this race).</p>
+			<p class="indent">You can use this bonus action a number of times equal to your proficiency bonus, and you regain all expended uses when you finish a long rest.</p>
+		</description>
+		<sheet action="Bonus Action" usage="{{proficiency}}/Long Rest">
+			<description>You can unleash a string of provoking words at a creature within 60 feet of you that can hear and understand you. The target must succeed on a DC {{ua:kender taunt:dc}} Wisdom saving throw, or it has disadvantage on attack rolls against targets other than you until the start of your next turn.</description>
+		</sheet>
+		<rules>
+			<select type="Racial Trait" name="Ability Modifier (Taunt)" supports="ID_WOTC_UA20220425_RACIAL_TRAIT_KENDER_TAUNT_INTELLIGENCE|ID_WOTC_UA20220425_RACIAL_TRAIT_KENDER_TAUNT_WISDOM|ID_WOTC_UA20220425_RACIAL_TRAIT_KENDER_TAUNT_CHARISMA" />
+			<stat name="ua:kender taunt:dc" value="8" bonus="base" />
+			<stat name="ua:kender taunt:dc" value="proficiency" bonus="proficiency" />
+		</rules>
+	</element>
+
+	<element name="Intelligence" type="Racial Trait" source="Unearthed Arcana: Heroes of Krynn Revisited" id="ID_WOTC_UA20220425_RACIAL_TRAIT_KENDER_TAUNT_INTELLIGENCE">
+		<compendium display="false" />
+		<description>
+			<p>You use your Intelligence modifier for DC of the Taunt Racial Trait.</p>
+		</description>
+		<sheet display="false" />
+		<rules>
+			<stat name="ua:kender taunt:dc" value="intelligence:modifier" bonus="ability"/>
+		</rules>
+	</element>
+
+	<element name="Wisdom" type="Racial Trait" source="Unearthed Arcana: Heroes of Krynn Revisited" id="ID_WOTC_UA20220425_RACIAL_TRAIT_KENDER_TAUNT_WISDOM">
+		<compendium display="false" />
+		<description>
+			<p>You use your Wisdom modifier for DC of the Taunt Racial Trait.</p>
+		</description>
+		<sheet display="false" />
+		<rules>
+			<stat name="ua:kender taunt:dc" value="wisdom:modifier" bonus="ability"/>
+		</rules>
+	</element>
+
+	<element name="Charisma" type="Racial Trait" source="Unearthed Arcana: Heroes of Krynn Revisited" id="ID_WOTC_UA20220425_RACIAL_TRAIT_KENDER_TAUNT_CHARISMA">
+		<compendium display="false" />
+		<description>
+			<p>You use your Charisma modifier for DC of the Taunt Racial Trait.</p>
+		</description>
+		<sheet display="false" />
+		<rules>
+			<stat name="ua:kender taunt:dc" value="charisma:modifier" bonus="ability"/>
+		</rules>
+	</element>
+
+	<!--Backgrounds-->
+	<element name="Bonus Feats" type="Information" source="Unearthed Arcana: Spells and Magic Tattoos" id="ID_WOTC_UA20220425_INFORMATION_BONUS_FEATS">
+		<description>
+			<p>Whatever background you choose for your War of the Lance character, you gain bonus feats, as detailed below. Characters involved in this conflict are forced into remarkable situations and changed by their experiences.</p>
+			<h3>1st-Level Bonus Feat</h3>
+			<p>If you select the Knight of Solamnia or the Mage of High Sorcery background, you gain the bonus feat specified in that background. If the background you choose doesn’t provide a feat, you gain a bonus feat of your choice from the following list (a parenthesis tells you where to find the feat):</p>
+			<ul>
+				<li>Divinely Favored (this document)</li>
+				<li>Skilled (Player’s Handbook)</li>
+				<li>Tough (Player’s Handbook)</li>
+			</ul>
+			<h3>4th-Level Bonus Feat</h3>
+			<p>At 4th level, you gain another bonus feat of your choice from either the 1st-level list above or the following list (a parenthesis tells you where to find the feat):</p>
+			<ul>
+				<li>Adept of the Black Robes (this document)</li>
+				<li>Adept of the Red Robes (this document)</li>
+				<li>Adept of the White Robes (this document)</li>
+				<li>Alert (Player’s Handbook)</li>
+				<li>Knight of the Crown (this document)</li>
+				<li>Knight of the Rose (this document)</li>
+				<li>Knight of the Sword (this document)</li>
+				<li>Mobile (Player’s Handbook)</li>
+				<li>Sentinel (Player’s Handbook)</li>
+				<li>War Caster (Player’s Handbook)</li>
+			</ul>
+			<p>You gain this bonus feat at 4th level regardless of your background—even if you have the Knight of Solamnia or Mage of High Sorcery background. You must meet all prerequisites if the feat you choose has any.</p>
+		</description>
+	</element>
+	
+	<element name="Knight of Solamnia" type="Background" source="Unearthed Arcana: Heroes of Krynn Revisited" id="ID_WOTC_UA20220425_BACKGROUND_KNIGHT_OF_SOLAMNIA">
+		<description>
+			<p>You have trained to be a valorous warrior known as a Knight of Solamnia. Strict rules guide your every action, and you work to uphold them as you strive to defend the weak and oppose all forms of evil. Your honor is as important to you as your life.</p>
+			<p class="indent"></p>
+			<ul class="unstyled">
+				<li><strong>Skill Proficiencies:</strong> Athletics, Survival</li>
+				<li><strong>Languages:</strong> Two of your choice</li>
+				<li><strong>Equipment:</strong> An insignia of rank, a deck of cards, a set of common clothes, and a pouch containing 10 gp</li>
+			</ul>
+			<div element="ID_WOTC_UA20220425_BACKGROUND_FEATURE_SQUIRE_OF_SOLAMNIA" />
+			<h5>BUILDING A KNIGHT OF SOLAMNIA CHARACTER</h5>
+			<p>Any class or subclass that has martial prowess can be a good fit in the Knights of Solamnia. Fighters and paladins make up the bulk of the knighthood’s forces. Clerics (often with the War domain) can also be found among the knights' ranks.</p>
+			<p class="indent">For a more unusual take on a Knight of Solamnia character, consider playing a bard of the College of Valor (or the College of Swords from <i>Xanathar’s Guide to Everything</i>) or a barbarian devoted to the ideals of the nature god Habbakuk (perhaps adopting the Path of the Zealot from <i>Xanathar’s Guide to Everything</i>)</p>
+			<p class="indent"><strong><em>Suggested Characteristics.</em></strong> Adventurers who dedicate themselves to protecting the innocent and upholding honorable virtues are welcomed among the Knights of Solamnia. The Knight of Solamnia Personality Traits table suggests various traits you might adopt for your character.</p>
+			<h5>Knight of Solamnia Personality Traits</h5>
+			<table>
+				<thead>
+					<tr><td>d6</td><td>Personality Trait</td></tr>
+				</thead>
+				<tr><td>1</td><td>I pledge my sword to the greater good. If I must perish in pursuit of that good, so be it.</td></tr>
+				<tr><td>2</td><td>My comrades-in-arms are my family. I’ll do whatever it takes to keep them safe.</td></tr>
+				<tr><td>3</td><td>The protection of innocent people comes first. All other concerns come second.</td></tr>
+				<tr><td>4</td><td>I joined the knights for the free meals, but their lessons grew on me over time.</td></tr>
+				<tr><td>5</td><td>I wish my deeds to become the stuff of legends just like those of the knighthood's heroic founders.</td></tr>
+				<tr><td>6</td><td>A dishonorable act drove me to become a knight. I have acted with honor ever since.</td></tr>
+			</table>
+			<p class="indent"><strong><em>Knight of Solamnia Trinkets.</em></strong> When you make your character, you may roll once on the Knight of Solamnia Trinkets table, instead of on the Trinkets table in the <i>Player’s Handbook</i>, for your starting trinket.</p>
+			<h5>Knight of Solamnia Trinkets</h5>
+			<table>
+				<thead>
+					<tr><td>d6</td><td>Trinket</td></tr>
+				</thead>
+				<tr><td>1</td><td>A flat silver disk you record your heroics upon</td></tr>
+				<tr><td>2</td><td>A piece of a fallen knight's armor</td></tr>
+				<tr><td>3</td><td>A pendant featuring a crown, a rose, a sword, or combination of all three</td></tr>
+				<tr><td>4</td><td>The pommel of your mentor's sword</td></tr>
+				<tr><td>5</td><td>A meaningful favor from someone you defended perhaps a handkerchief or glove</td></tr>
+				<tr><td>6</td><td>A brass locket with a sketch of a silver dragon inside</td></tr>
+			</table>
+		</description>
+		<setters>
+			<set name="short">Athletics, Survival, 2 Languages</set>
+		</setters>
+		<rules>
+			<grant type="Background Feature" id="ID_WOTC_UA20220425_BACKGROUND_FEATURE_SQUIRE_OF_SOLAMNIA" requirements="!ID_INTERNAL_GRANT_OPTIONAL_BACKGROUND_FEATURE"/>
+			<select type="Background Feature" name="Variant Feature" supports="Optional Background Feature" optional="true" />
+			<select type="List" name="Personality Trait" number="2" optional="true" >
+				<item id="1">I pledge my sword to the greater good. If I must perish in pursuit of that good, so be it.</item>
+				<item id="2">My comrades-in-arms are my family. I’ll do whatever it takes to keep them safe.</item>
+				<item id="3">The protection of innocent people comes first. All other concerns come second.</item>
+				<item id="4">I joined the knights for the free meals, but their lessons grew on me over time.</item>
+				<item id="5">I wish my deeds to become the stuff of legends just like those of the knighthood's heroic founders.</item>
+				<item id="6">A dishonorable act drove me to become a knight. I have acted with honor ever since.</item>
+			</select>
+			<grant type="Proficiency" id="ID_PROFICIENCY_SKILL_ATHLETICS" />
+			<grant type="Proficiency" id="ID_PROFICIENCY_SKILL_SURVIVAL" />
+			<select type="Language" name="Language (Knight of Solamnia)" supports="Standard||Exotic" number="2" />
+		</rules>
+	</element>
+
+	<element name="Feature: Squire of Solamnia" type="Background Feature" source="Unearthed Arcana: Heroes of Krynn Revisited" id="ID_WOTC_UA20220425_BACKGROUND_FEATURE_SQUIRE_OF_SOLAMNIA">
+		<supports>Background Feature</supports>
+		<description>
+			<p>You gain the Squire of Solamnia feat.</p>
+			<p class="indent">In addition, the Knights of Solamnia provide you free, modest lodging and food at any of their fortresses or encampments.</p>
+		</description>
+		<sheet alt="Squire of Solamnia">
+			<description>The Knights of Solamnia provide you free, modest lodging and food at any of their fortresses or encampments.</description>
+		</sheet>
+		<rules>
+			<grant type="Feat" id="ID_WOTC_UA20220425_FEAT_SQUIRE_OF_SOLAMNIA" />
+		</rules>
+	</element>
+
+	<element name="Mage of High Sorcery" type="Background" source="Unearthed Arcana: Heroes of Krynn Revisited" id="ID_WOTC_UA20220425_BACKGROUND_MAGE_OF_HIGH_SORCERY">
+		<description>
+			<p>Your talent for magic came to the attention of the Mages of High Sorcery, an organization of spellcasters that study magic and prevent its misuse. You've trained among the Mages, but whether or not you'll face the dangerous tests required to become a true member of the group remains to be determined. Your passion for studying magic has likely already predisposed you toward one of the organization's three orders: the benevolent Order of the White Robes, the balance-pursuing Order of the Red Robes, or the ruthless Order of the Black Robes.</p>
+			<p class="indent">In the world of Krynn, many refer to the Mages of High Sorcery as the Wizards of High Sorcery. The organization accepts more than wizards, though, with bards, sorcerers, warlocks, and other spellcasters included among their ranks.</p>
+			<ul class="unstyled">
+				<li><strong>Skill Proficiencies:</strong> Arcana, History</li>
+				<li><strong>Languages:</strong> Two of your choice</li>
+				<li><strong>Equipment:</strong> A bottle of colored ink, an ink pen, a set of common clothes, and a pouch containing 10 gp</li>
+			</ul>
+			<div element="ID_WOTC_UA20220425_BACKGROUND_FEATURE_INITIATE_OF_HIGH_SORCERY" />
+			<h5>BUILDING A MAGE OF HIGH SORCERY CHARACTER</h5>
+			<p>Mages of High Sorcery are typically bards, wizards, or warlocks and might have any subclass. Spellcasters who gain their magic through devotion or who possess innate magic are less likely to be welcomed among the traditionalist mages. Nevertheless, the Mages of High Sorcery are shrewd, and they rarely let unique opportunities or individuals pass them by. Even members of martial classes who train in magic might find a rare place among the group's three orders.</p>
+			<p class="indent"><strong><em>Suggested Characteristics.</em></strong> The study of magic drives the Mages of High Sorcery. Consider which of the group's three orders you aspire to join. The Mage of High Sorcery Personality Traits table suggests traits you might adopt for your character.</p>
+			<h5>Mage of High Sorcery Personality Traits</h5>
+			<table>
+				<thead>
+					<tr><td>d6</td><td>Personality Trait</td></tr>
+				</thead>
+				<tr><td>1</td><td>I wish to use my knowledge of magic to better people’s lives.</td></tr>
+				<tr><td>2</td><td>My study of magic might reveal all manner of secrets.</td></tr>
+				<tr><td>3</td><td>Magic is a means to power, and I will use it to pursue my ambitions.</td></tr>
+				<tr><td>4</td><td>I learned magic so I'd be able to protect those I care about.</td></tr>
+				<tr><td>5</td><td>I use my magic to maintain the balance between all things.</td></tr>
+				<tr><td>6</td><td>Whether in the past, present, or future, I will be the greatest mage ever known.</td></tr>
+			</table>
+			<p class="indent"><strong><em>Mage of High Sorcery Trinkets.</em></strong> When you make your character, you may roll once on the Mage of High Sorcery Trinkets table, instead of on the Trinkets table in the <i>Player’s Handbook</i>, for your starting trinket.</p>
+			<h5>Mage of High Sorcery Trinkets</h5>
+			<table>
+				<thead>
+					<tr><td>d6</td><td>Trinket</td></tr>
+				</thead>
+				<tr><td>1</td><td>An unopened letter from your first teacher</td></tr>
+				<tr><td>2</td><td>A broken wand made of black, red, or white wood</td></tr>
+				<tr><td>3</td><td>A scroll bearing an incomprehensible formula</td></tr>
+				<tr><td>4</td><td>A purposeless device covered in colored stones that can fold into various enigmatic shapes</td></tr>
+				<tr><td>5</td><td>A pouch or spell book emblazoned with the triple moon symbol of the Mages of High Sorcery</td></tr>
+				<tr><td>6</td><td>A lens through which you can see Krynn's invisible black moon, Nuitari</td></tr>
+			</table>
+		</description>
+		<setters>
+			<set name="short">Arcana, History, 2 Languages</set>
+		</setters>
+		<rules>
+			<grant type="Background Feature" id="ID_WOTC_UA20220425_BACKGROUND_FEATURE_INITIATE_OF_HIGH_SORCERY" requirements="!ID_INTERNAL_GRANT_OPTIONAL_BACKGROUND_FEATURE"/>
+			<select type="Background Feature" name="Variant Feature" supports="Optional Background Feature" optional="true" />
+			<select type="List" name="Personality Trait" number="2" optional="true" >
+				<item id="1">I wish to use my knowledge of magic to better people’s lives.</item>
+				<item id="2">My study of magic might reveal all manner of secrets.</item>
+				<item id="3">Magic is a means to power, and I will use it to pursue my ambitions.</item>
+				<item id="4">I learned magic so I'd be able to protect those I care about.</item>
+				<item id="5">I use my magic to maintain the balance between all things.</item>
+				<item id="6">Whether in the past, present, or future, I will be the greatest mage ever known.</item>
+			</select>
+			<grant type="Proficiency" id="ID_PROFICIENCY_SKILL_ARCANA" />
+			<grant type="Proficiency" id="ID_PROFICIENCY_SKILL_HISTORY" />
+			<select type="Language" name="Language (Mage of High Sorcery)" number="2" supports="Standard||Exotic" />
+		</rules>
+	</element>
+
+	<element name="Feature: Initiate of High Sorcery" type="Background Feature" source="Unearthed Arcana: Heroes of Krynn Revisited" id="ID_WOTC_UA20220425_BACKGROUND_FEATURE_INITIATE_OF_HIGH_SORCERY">
+		<supports>Background Feature</supports>
+		<description>
+			<p>You gain the Initiate of High Sorcery feat.</p>
+			<p class="indent">In addition, the Mages of High Sorcery provide you with free, modest lodging and food indefinitely at any occupied Tower of High Sorcery and for one night at the home of an organization member.</p>
+		</description>
+		<sheet alt="Initiate of High Sorcery">
+			<description>The Mages of High Sorcery provide you with free, modest lodging and food indefinitely at any occupied Tower of High Sorcery and for one night at the home of an organization member.</description>
+		</sheet>
+		<rules>
+			<grant type="Feat" id="ID_WOTC_UA20220425_FEAT_INITIATE_OF_HIGH_SORCERY" />
+		</rules>
+	</element>
+
+	<!--Feats-->
+	<element name="Adept of the Black Robes" type="Feat" source="Unearthed Arcana: Heroes of Krynn Revisited" id="ID_WOTC_UA20220425_FEAT_ADEPT_OF_THE_BLACK_ROBES">
+		<prerequisite>4th level, Initiate of High Sorcery (Nuitari) Feat</prerequisite>
+		<requirements>[level:4],ID_WOTC_UA20220425_FEAT_FEATURE_INITIATE_OF_HIGH_SORCERY_NUITARI||ID_WOTC_UA20220425_FEAT_INITIATE_OF_HIGH_SORCERY,ID_WOTC_UA20220425_GRANTS_FEAT_UNLOCKER</requirements>
+		<description>
+			<p>You chose the moon Nuitari to influence your magic, and your ambition and loyalty to the Order of the Black Robes has been recognized, granting you these benefits:</p>
+			<p class="indent"><strong><em>Ambitious Magic.</em></strong> You learn one 2nd-level spell of your choice. The 2nd-level spell must be from the enchantment or necromancy school of magic. You can cast this feat’s 2nd-level spell without a spell slot, and you must finish a long rest before you can cast it in this way again. You can also cast this spell using spell slots you have of the appropriate level. The spell’s spellcasting ability is the one chosen when you gained the Initiate of High Sorcery feat.</p>
+			<p class="indent"><strong><em>Life Channel.</em></strong> You can channel your lifeforce into the power of your magic. When a creature you can see within 60 feet of you fails a saving throw against a spell that deals damage that you cast, you can expend a number of Hit Dice equal to the level of the spell. Roll the expended Hit Dice and add them together. The damage that the creature takes increases by an amount equal to that total.</p>
+		</description>
+		<sheet display="false" />
+		<rules>
+			<grant type="Feat Feature" id="ID_WOTC_UA20220425_FEAT_FEATURE_ADEPT_OF_THE_BLACK_ROBES_AMBITIOUS_MAGIC_INTELLIGENCE" requirements="ID_WOTC_UA20220425_FEAT_FEATURE_INITIATE_OF_HIGH_SORCERY_INTELLIGENCE" />
+			<grant type="Feat Feature" id="ID_WOTC_UA20220425_FEAT_FEATURE_ADEPT_OF_THE_BLACK_ROBES_AMBITIOUS_MAGIC_WISDOM" requirements="ID_WOTC_UA20220425_FEAT_FEATURE_INITIATE_OF_HIGH_SORCERY_WISDOM" />
+			<grant type="Feat Feature" id="ID_WOTC_UA20220425_FEAT_FEATURE_ADEPT_OF_THE_BLACK_ROBES_AMBITIOUS_MAGIC_CHARISMA" requirements="ID_WOTC_UA20220425_FEAT_FEATURE_INITIATE_OF_HIGH_SORCERY_CHARISMA" />
+			<grant type="Feat Feature" id="ID_WOTC_UA20220425_FEAT_FEATURE_ADEPT_OF_THE_BLACK_ROBES_LIFE_CHANNEL" />
+		</rules>
+	</element>
+
+	<element name="Ambitious Magic" type="Feat Feature" source="Unearthed Arcana: Heroes of Krynn Revisited" id="ID_WOTC_UA20220425_FEAT_FEATURE_ADEPT_OF_THE_BLACK_ROBES_AMBITIOUS_MAGIC_INTELLIGENCE">
+		<compendium display="false" />
+		<description>
+			<p>You learn one 2nd-level spell of your choice. The 2nd-level spell must be from the enchantment or necromancy school of magic. You can cast this feat’s 2nd-level spell without a spell slot, and you must finish a long rest before you can cast it in this way again. You can also cast this spell using spell slots you have of the appropriate level. The spell’s spellcasting ability is the one chosen when you gained the Initiate of High Sorcery feat.</p>
+		</description>
+		<sheet>
+			<description>You can cast this feat’s 2nd-level spell without a spell slot, and you must finish a long rest before you can cast it in this way again. You can also cast this spell using spell slots you have of the appropriate level.&#13;
+			The spell’s spellcasting ability is Intelligence.</description>
+		</sheet>
+		<rules>
+			<select type="Spell" name="2nd Level Spell (Ambitious Magic)" supports="2,(Enchantment||Necromancy)" />
+		</rules>
+	</element>
+
+	<element name="Ambitious Magic" type="Feat Feature" source="Unearthed Arcana: Heroes of Krynn Revisited" id="ID_WOTC_UA20220425_FEAT_FEATURE_ADEPT_OF_THE_BLACK_ROBES_AMBITIOUS_MAGIC_WISDOM">
+		<compendium display="false" />
+		<description>
+			<p>You learn one 2nd-level spell of your choice. The 2nd-level spell must be from the enchantment or necromancy school of magic. You can cast this feat’s 2nd-level spell without a spell slot, and you must finish a long rest before you can cast it in this way again. You can also cast this spell using spell slots you have of the appropriate level. The spell’s spellcasting ability is the one chosen when you gained the Initiate of High Sorcery feat.</p>
+		</description>
+		<sheet>
+			<description>You can cast this feat’s 2nd-level spell without a spell slot, and you must finish a long rest before you can cast it in this way again. You can also cast this spell using spell slots you have of the appropriate level.&#13;
+			The spell’s spellcasting ability is Wisdom.</description>
+		</sheet>
+		<rules>
+			<select type="Spell" name="2nd Level Spell (Ambitious Magic)" supports="2,(Enchantment||Necromancy)" />
+		</rules>
+	</element>
+
+	<element name="Ambitious Magic" type="Feat Feature" source="Unearthed Arcana: Heroes of Krynn Revisited" id="ID_WOTC_UA20220425_FEAT_FEATURE_ADEPT_OF_THE_BLACK_ROBES_AMBITIOUS_MAGIC_CHARISMA">
+		<compendium display="false" />
+		<description>
+			<p>You learn one 2nd-level spell of your choice. The 2nd-level spell must be from the enchantment or necromancy school of magic. You can cast this feat’s 2nd-level spell without a spell slot, and you must finish a long rest before you can cast it in this way again. You can also cast this spell using spell slots you have of the appropriate level. The spell’s spellcasting ability is the one chosen when you gained the Initiate of High Sorcery feat.</p>
+		</description>
+		<sheet>
+			<description>You can cast this feat’s 2nd-level spell without a spell slot, and you must finish a long rest before you can cast it in this way again. You can also cast this spell using spell slots you have of the appropriate level.&#13;
+			The spell’s spellcasting ability is Charisma.</description>
+		</sheet>
+		<rules>
+			<select type="Spell" name="2nd Level Spell (Ambitious Magic)" supports="2,(Enchantment||Necromancy)" />
+		</rules>
+	</element>
+
+	<element name="Life Channel" type="Feat Feature" source="Unearthed Arcana: Heroes of Krynn Revisited" id="ID_WOTC_UA20220425_FEAT_FEATURE_ADEPT_OF_THE_BLACK_ROBES_LIFE_CHANNEL">
+		<compendium display="false" />
+		<description>
+			<p>You can channel your lifeforce into the power of your magic. When a creature you can see within 60 feet of you fails a saving throw against a spell that deals damage that you cast, you can expend a number of Hit Dice equal to the level of the spell. Roll the expended Hit Dice and add them together. The damage that the creature takes increases by an amount equal to that total.</p>
+		</description>
+		<sheet>
+			<description>When a creature you can see within 60 feet of you fails a saving throw against a spell that deals damage that you cast, you can expend a number of Hit Dice equal to the level of the spell. Roll the expended Hit Dice and add them together. The damage that the creature takes increases by an amount equal to that total.</description>
+		</sheet>
+	</element>
+
+	<element name="Adept of the Red Robes" type="Feat" source="Unearthed Arcana: Heroes of Krynn Revisited" id="ID_WOTC_UA20220425_FEAT_ADEPT_OF_THE_RED_ROBES">
+		<prerequisite>4th level, Initiate of High Sorcery (Lunitari) Feat</prerequisite>
+		<requirements>[level:4],ID_WOTC_UA20220425_FEAT_FEATURE_INITIATE_OF_HIGH_SORCERY_LUNITARI||ID_WOTC_UA20220425_FEAT_INITIATE_OF_HIGH_SORCERY,ID_WOTC_UA20220425_GRANTS_FEAT_UNLOCKER</requirements>
+		<description>
+			<p>You chose the moon Lunitari to influence your magic, and your dedication to maintaining the balance between all things has been recognized by the Order of the Red Robes, granting you these benefits:</p>
+			<p class="indent"><strong><em>Insightful Magic.</em></strong> You learn one 2nd-level spell of your choice. The 2nd-level spell must be from the illusion or transmutation school of magic. You can cast this feat’s 2nd-level spell without a spell slot, and you must finish a long rest before you can cast it in this way again. You can also cast this spell using spell slots you have of the appropriate level. The spell’s spellcasting ability is the one chosen when you gained the Initiate of High Sorcery feat.</p>
+			<p class="indent"><strong><em>Magical Balance.</em></strong> When you make an attack roll or an ability check and roll a 9 or lower on the d20, you can balance fate and treat the roll as a 10. You can balance fate in this way a number of times equal to your proficiency bonus, and you regain all expended uses when you finish a long rest.</p>
+		</description>
+		<sheet display="false" />
+		<rules>
+			<grant type="Feat Feature" id="ID_WOTC_UA20220425_FEAT_FEATURE_ADEPT_OF_THE_RED_ROBES_INSIGHTFUL_MAGIC_INTELLIGENCE" requirements="ID_WOTC_UA20220425_FEAT_FEATURE_INITIATE_OF_HIGH_SORCERY_INTELLIGENCE" />
+			<grant type="Feat Feature" id="ID_WOTC_UA20220425_FEAT_FEATURE_ADEPT_OF_THE_RED_ROBES_INSIGHTFUL_MAGIC_WISDOM" requirements="ID_WOTC_UA20220425_FEAT_FEATURE_INITIATE_OF_HIGH_SORCERY_WISDOM" />
+			<grant type="Feat Feature" id="ID_WOTC_UA20220425_FEAT_FEATURE_ADEPT_OF_THE_RED_ROBES_INSIGHTFUL_MAGIC_CHARISMA" requirements="ID_WOTC_UA20220425_FEAT_FEATURE_INITIATE_OF_HIGH_SORCERY_CHARISMA" />
+			<grant type="Feat Feature" id="ID_WOTC_UA20220425_FEAT_FEATURE_ADEPT_OF_THE_RED_ROBES_MAGICAL_BALANCE" />
+		</rules>
+	</element>
+
+	<element name="Insightful Magic" type="Feat Feature" source="Unearthed Arcana: Heroes of Krynn Revisited" id="ID_WOTC_UA20220425_FEAT_FEATURE_ADEPT_OF_THE_RED_ROBES_INSIGHTFUL_MAGIC_INTELLIGENCE">
+		<compendium display="false" />
+		<description>
+			<p>You learn one 2nd-level spell of your choice. The 2nd-level spell must be from the illusion or transmutation school of magic. You can cast this feat’s 2nd-level spell without a spell slot, and you must finish a long rest before you can cast it in this way again. You can also cast this spell using spell slots you have of the appropriate level. The spell’s spellcasting ability is the one chosen when you gained the Initiate of High Sorcery feat.</p>
+		</description>
+		<sheet>
+			<description>You can cast this feat’s 2nd-level spell without a spell slot, and you must finish a long rest before you can cast it in this way again. You can also cast this spell using spell slots you have of the appropriate level.&#13;
+			The spell’s spellcasting ability is Intelligence.</description>
+		</sheet>
+		<rules>
+			<select type="Spell" name="2nd Level Spell (Insightful Magic)" supports="2,(Illusion||Transmutation)" />
+		</rules>
+	</element>
+		
+	<element name="Insightful Magic" type="Feat Feature" source="Unearthed Arcana: Heroes of Krynn Revisited" id="ID_WOTC_UA20220425_FEAT_FEATURE_ADEPT_OF_THE_RED_ROBES_INSIGHTFUL_MAGIC_WISDOM">
+		<compendium display="false" />
+		<description>
+			<p>You learn one 2nd-level spell of your choice. The 2nd-level spell must be from the illusion or transmutation school of magic. You can cast this feat’s 2nd-level spell without a spell slot, and you must finish a long rest before you can cast it in this way again. You can also cast this spell using spell slots you have of the appropriate level. The spell’s spellcasting ability is the one chosen when you gained the Initiate of High Sorcery feat.</p>
+		</description>
+		<sheet>
+			<description>You can cast this feat’s 2nd-level spell without a spell slot, and you must finish a long rest before you can cast it in this way again. You can also cast this spell using spell slots you have of the appropriate level.&#13;
+			The spell’s spellcasting ability is Wisdom.</description>
+		</sheet>
+		<rules>
+			<select type="Spell" name="2nd Level Spell (Insightful Magic)" supports="2,(Illusion||Transmutation)" />
+		</rules>
+	</element>
+
+	<element name="Insightful Magic" type="Feat Feature" source="Unearthed Arcana: Heroes of Krynn Revisited" id="ID_WOTC_UA20220425_FEAT_FEATURE_ADEPT_OF_THE_RED_ROBES_INSIGHTFUL_MAGIC_CHARISMA">
+		<compendium display="false" />
+		<description>
+			<p>You learn one 2nd-level spell of your choice. The 2nd-level spell must be from the illusion or transmutation school of magic. You can cast this feat’s 2nd-level spell without a spell slot, and you must finish a long rest before you can cast it in this way again. You can also cast this spell using spell slots you have of the appropriate level. The spell’s spellcasting ability is the one chosen when you gained the Initiate of High Sorcery feat.</p>
+		</description>
+		<sheet>
+			<description>You can cast this feat’s 2nd-level spell without a spell slot, and you must finish a long rest before you can cast it in this way again. You can also cast this spell using spell slots you have of the appropriate level.&#13;
+			The spell’s spellcasting ability is Charisma.</description>
+		</sheet>
+		<rules>
+			<select type="Spell" name="2nd Level Spell (Insightful Magic)" supports="2,(Illusion||Transmutation)" />
+		</rules>
+	</element>
+
+	<element name="Magical Balance" type="Feat Feature" source="Unearthed Arcana: Heroes of Krynn Revisited" id="ID_WOTC_UA20220425_FEAT_FEATURE_ADEPT_OF_THE_RED_ROBES_MAGICAL_BALANCE">
+		<compendium display="false" />
+		<description>
+			<p>When you make an attack roll or an ability check and roll a 9 or lower on the d20, you can balance fate and treat the roll as a 10. You can balance fate in this way a number of times equal to your proficiency bonus, and you regain all expended uses when you finish a long rest.</p>
+		</description>
+		<sheet usage="{{proficiency}}/Long Rest">
+			<description>When you make an attack roll or an ability check and roll a 9 or lower on the d20, you can treat the roll as a 10.</description>
+		</sheet>
+	</element>
+
+	<element name="Adept of the White Robes" type="Feat" source="Unearthed Arcana: Heroes of Krynn Revisited" id="ID_WOTC_UA20220425_FEAT_ADEPT_OF_THE_WHITE_ROBES">
+		<prerequisite>4th level, Initiate of High Sorcery (Solinari) Feat</prerequisite>
+		<requirements>[level:4],ID_WOTC_UA20220425_FEAT_FEATURE_INITIATE_OF_HIGH_SORCERY_SOLINARI||ID_WOTC_UA20220425_FEAT_INITIATE_OF_HIGH_SORCERY,ID_WOTC_UA20220425_GRANTS_FEAT_UNLOCKER</requirements>
+		<description>
+			<p>You chose the moon Solinari to influence your magic, and your oath to use magic to make the world a better place has been recognized by the Order of the White Robes, granting you these benefits:</p>
+			<p class="indent"><strong><em>Protective Magic.</em></strong> You learn one 2nd-level spell of your choice. The 2nd-level spell must be from the abjuration or divination school of magic. You can cast this feat’s 2nd-level spell without a spell slot, and you must finish a long rest before you can cast it in this way again. You can also cast this spell using spell slots you have of the appropriate level. The spell’s spellcasting ability is the one chosen when you gained the Initiate of High Sorcery feat.</p>
+			<p class="indent"><strong><em>Protective Ward.</em></strong> When you or a creature you can see within 30 feet of you takes damage, you can use your reaction to expend a spell slot and weave protective magic around the target. Roll a number of d6s equal to the level of the spell slot expended and reduce the damage the target takes by the total rolled on those dice + your spellcasting ability modifier. </p>
+		</description>
+		<sheet display="false" />
+		<rules>
+			<grant type="Feat Feature" id="ID_WOTC_UA20220425_FEAT_FEATURE_ADEPT_OF_THE_WHITE_ROBES_PROTECTIVE_MAGIC_INTELLIGENCE" requirements="ID_WOTC_UA20220425_FEAT_FEATURE_INITIATE_OF_HIGH_SORCERY_INTELLIGENCE" />
+			<grant type="Feat Feature" id="ID_WOTC_UA20220425_FEAT_FEATURE_ADEPT_OF_THE_WHITE_ROBES_PROTECTIVE_MAGIC_WISDOM" requirements="ID_WOTC_UA20220425_FEAT_FEATURE_INITIATE_OF_HIGH_SORCERY_WISDOM" />
+			<grant type="Feat Feature" id="ID_WOTC_UA20220425_FEAT_FEATURE_ADEPT_OF_THE_WHITE_ROBES_PROTECTIVE_MAGIC_CHARISMA" requirements="ID_WOTC_UA20220425_FEAT_FEATURE_INITIATE_OF_HIGH_SORCERY_CHARISMA" />
+			<grant type="Feat Feature" id="ID_WOTC_UA20220425_FEAT_FEATURE_ADEPT_OF_THE_WHITE_ROBES_PROTECTIVE_WARD" />
+		</rules>
+	</element>
+
+	<element name="Protective Magic" type="Feat Feature" source="Unearthed Arcana: Heroes of Krynn Revisited" id="ID_WOTC_UA20220425_FEAT_FEATURE_ADEPT_OF_THE_WHITE_ROBES_PROTECTIVE_MAGIC_INTELLIGENCE">
+		<compendium display="false" />
+		<description>
+			<p>You learn one 2nd-level spell of your choice. The 2nd-level spell must be from the abjuration or divination school of magic. You can cast this feat’s 2nd-level spell without a spell slot, and you must finish a long rest before you can cast it in this way again. You can also cast this spell using spell slots you have of the appropriate level. The spell’s spellcasting ability is the one chosen when you gained the Initiate of High Sorcery feat.</p>
+		</description>
+		<sheet>
+			<description>You can cast this feat’s 2nd-level spell without a spell slot, and you must finish a long rest before you can cast it in this way again. You can also cast this spell using spell slots you have of the appropriate level.&#13;
+			The spell’s spellcasting ability is Intelligence.</description>
+		</sheet>
+		<rules>
+			<select type="Spell" name="2nd Level Spell (Protective Magic)" supports="2,(Abjuration||Divination)" />
+			<stat name="ua:adept of the white robes:ability" value="intelligence:modifier" bonus="ability" />
+		</rules>
+	</element>
+
+	<element name="Protective Magic" type="Feat Feature" source="Unearthed Arcana: Heroes of Krynn Revisited" id="ID_WOTC_UA20220425_FEAT_FEATURE_ADEPT_OF_THE_WHITE_ROBES_PROTECTIVE_MAGIC_WISDOM">
+		<compendium display="false" />
+		<description>
+			<p>You learn one 2nd-level spell of your choice. The 2nd-level spell must be from the abjuration or divination school of magic. You can cast this feat’s 2nd-level spell without a spell slot, and you must finish a long rest before you can cast it in this way again. You can also cast this spell using spell slots you have of the appropriate level. The spell’s spellcasting ability is the one chosen when you gained the Initiate of High Sorcery feat.</p>
+		</description>
+		<sheet>
+			<description>You can cast this feat’s 2nd-level spell without a spell slot, and you must finish a long rest before you can cast it in this way again. You can also cast this spell using spell slots you have of the appropriate level.&#13;
+			The spell’s spellcasting ability is Wisdom.</description>
+		</sheet>
+		<rules>
+			<select type="Spell" name="2nd Level Spell (Protective Magic)" supports="2,(Abjuration||Divination)" />
+			<stat name="ua:adept of the white robes:ability" value="wisdom:modifier" bonus="ability" />
+		</rules>
+	</element>
+
+	<element name="Protective Magic" type="Feat Feature" source="Unearthed Arcana: Heroes of Krynn Revisited" id="ID_WOTC_UA20220425_FEAT_FEATURE_ADEPT_OF_THE_WHITE_ROBES_PROTECTIVE_MAGIC_CHARISMA">
+		<compendium display="false" />
+		<description>
+			<p>You learn one 2nd-level spell of your choice. The 2nd-level spell must be from the abjuration or divination school of magic. You can cast this feat’s 2nd-level spell without a spell slot, and you must finish a long rest before you can cast it in this way again. You can also cast this spell using spell slots you have of the appropriate level. The spell’s spellcasting ability is the one chosen when you gained the Initiate of High Sorcery feat.</p>
+		</description>
+		<sheet>
+			<description>You can cast this feat’s 2nd-level spell without a spell slot, and you must finish a long rest before you can cast it in this way again. You can also cast this spell using spell slots you have of the appropriate level.&#13;
+			The spell’s spellcasting ability is Charisma.</description>
+		</sheet>
+		<rules>
+			<select type="Spell" name="2nd Level Spell (Protective Magic)" supports="2,(Abjuration||Divination)" />
+			<stat name="ua:adept of the white robes:ability" value="charisma:modifier" bonus="ability" />
+		</rules>
+	</element>
+
+	<element name="Protective Ward" type="Feat Feature" source="Unearthed Arcana: Heroes of Krynn Revisited" id="ID_WOTC_UA20220425_FEAT_FEATURE_ADEPT_OF_THE_WHITE_ROBES_PROTECTIVE_WARD">
+		<compendium display="false" />
+		<description>
+			<p>When you or a creature you can see within 30 feet of you takes damage, you can expend a spell slot and weave protective magic around the target. Roll a number of d6s equal to the level of the spell slot expended and reduce the damage the target takes by the total rolled on those dice + your spellcasting ability modifier.</p>
+		</description>
+		<sheet action="Reaction">
+			<description>When you or a creature you can see within 30 feet of you takes damage, you can expend a spell slot and weave protective magic around the target. Roll a number of d6s equal to the level of the spell slot expended and reduce the damage the target takes by the total rolled on those dice + {{ua:adept of the white robes:ability}}.</description>
+		</sheet>
+	</element>
+
+	<element name="Divinely Favored" type="Feat" source="Unearthed Arcana: Heroes of Krynn Revisited" id="ID_WOTC_UA20220425_FEAT_DIVINELY_FAVORED">
+		<description>
+			<p>A god has chosen you to carry a spark of their divine power.</p>
+			<p class="indent">You learn one cantrip of your choice from the cleric spell list and one 1st-level spell based on the alignment of your character, as specified in the Alignment Spells table below. You also learn the <i>augury</i> spell.</p>
+			<p class="indent">You can cast the chosen 1st-level spell and the <i>augury</i> spell without a spell slot, and you must finish a long rest before you can cast either of these spells in this way again. You can also cast these spells using spell slots you have of the appropriate level.</p>
+			<p class="indent">Your spellcasting ability for this feat’s spells is Intelligence, Wisdom, or Charisma (choose when you select this feat).</p>
+			<h5>Alignment Spells</h5>
+			<table>
+				<thead>
+					<tr><td>Alignment</td><td>1st-level Spell</td></tr>
+				</thead>
+				<tr><td>Evil</td><td>Choose one 1st-level warlock spell.</td></tr>
+				<tr><td>Good</td><td>Choose one 1st-level cleric spell.</td></tr>
+				<tr><td>Neutral</td><td>Choose one 1st-level druid spell.</td></tr>
+			</table>
+			<p class="indent">In addition, you can use a holy symbol as a spellcasting focus for any spell you cast that uses the spellcasting ability you choose when you select this feat.</p>
+		</description>
+		<sheet display="false" />
+		<rules>
+			<select type="Spell" name="Cleric Cantrip (Divinely Favored)" supports="0,Cleric" />
+			<grant type="Spell" id="ID_PHB_SPELL_AUGURY" />
+			<select type="Feat Feature" name="Alignment (Divinely Favored)" supports="ID_WOTC_UA20220425_FEAT_FEATURE_DIVINELY_FAVORED_EVIL|ID_WOTC_UA20220425_FEAT_FEATURE_DIVINELY_FAVORED_GOOD|ID_WOTC_UA20220425_FEAT_FEATURE_DIVINELY_FAVORED_NEUTRAL" />
+			<select type="Feat Feature" name="Spellcasting Ability (Divinely Favored)" supports="ID_WOTC_UA20220425_FEAT_FEATURE_DIVINELY_FAVORED_INTELLIGENCE|ID_WOTC_UA20220425_FEAT_FEATURE_DIVINELY_FAVORED_WISDOM|ID_WOTC_UA20220425_FEAT_FEATURE_DIVINELY_FAVORED_CHARISMA" />
+		</rules>
+	</element>
+
+	<element name="Evil" type="Feat Feature" source="Unearthed Arcana: Heroes of Krynn Revisited" id="ID_WOTC_UA20220425_FEAT_FEATURE_DIVINELY_FAVORED_EVIL">
+		<compendium display="false" />
+		<description>
+			<p>Choose one 1st-level warlock spell.</p>
+		</description>
+		<sheet display="false" />
+		<rules>
+			<select type="Spell" name="Alignment Spell (Divinely Favored)" supports="1,Warlock" />
+		</rules>
+	</element>
+
+	<element name="Good" type="Feat Feature" source="Unearthed Arcana: Heroes of Krynn Revisited" id="ID_WOTC_UA20220425_FEAT_FEATURE_DIVINELY_FAVORED_GOOD">
+		<compendium display="false" />
+		<description>
+			<p>Choose one 1st-level cleric spell.</p>
+		</description>
+		<sheet display="false" />
+		<rules>
+			<select type="Spell" name="Alignment Spell (Divinely Favored)" supports="1,Cleric" />
+		</rules>
+	</element>
+
+	<element name="Neutral" type="Feat Feature" source="Unearthed Arcana: Heroes of Krynn Revisited" id="ID_WOTC_UA20220425_FEAT_FEATURE_DIVINELY_FAVORED_NEUTRAL">
+		<compendium display="false" />
+		<description>
+			<p>Choose one 1st-level druid spell.</p>
+		</description>
+		<sheet display="false" />
+		<rules>
+			<select type="Spell" name="Alignment Spell (Divinely Favored)" supports="1,Druid" />
+		</rules>
+	</element>
+
+	<element name="Intelligence" type="Feat Feature" source="Unearthed Arcana: Heroes of Krynn Revisited" id="ID_WOTC_UA20220425_FEAT_FEATURE_DIVINELY_FAVORED_INTELLIGENCE">
+		<compendium display="false" />
+		<description>
+			<p>Your spellcasting ability for this feat’s spells is Intelligence.</p>
+		</description>
+		<sheet alt="Divinely Favored">
+			<description>You can cast the chosen 1st-level spell and the augury spell without a spell slot,and you must finish a long rest before you can cast either of these spells in this way again. You can also cast these spells using spell slots you have of the appropriate level.&#13;
+			Your spellcasting ability for this feat’s spells is Intelligence, and you can use a holy symbol as a spellcasting focus for any Intelligence spell.</description>
+		</sheet>
+	</element>
+
+	<element name="Wisdom" type="Feat Feature" source="Unearthed Arcana: Heroes of Krynn Revisited" id="ID_WOTC_UA20220425_FEAT_FEATURE_DIVINELY_FAVORED_WISDOM">
+		<compendium display="false" />
+		<description>
+			<p>Your spellcasting ability for this feat’s spells is Wisdom.</p>
+		</description>
+		<sheet alt="Divinely Favored">
+			<description>You can cast the chosen 1st-level spell and the augury spell without a spell slot,and you must finish a long rest before you can cast either of these spells in this way again. You can also cast these spells using spell slots you have of the appropriate level.&#13;
+			Your spellcasting ability for this feat’s spells is Wisdom, and you can use a holy symbol as a spellcasting focus for any Wisdom spell.</description>
+		</sheet>
+	</element>
+
+	<element name="Charisma" type="Feat Feature" source="Unearthed Arcana: Heroes of Krynn Revisited" id="ID_WOTC_UA20220425_FEAT_FEATURE_DIVINELY_FAVORED_CHARISMA">
+		<compendium display="false" />
+		<description>
+			<p>Your spellcasting ability for your this feat’s is Charisma.</p>
+		</description>
+		<sheet alt="Divinely Favored">
+			<description>You can cast the chosen 1st-level spell and the augury spell without a spell slot,and you must finish a long rest before you can cast either of these spells in this way again. You can also cast these spells using spell slots you have of the appropriate level.&#13;
+			Your spellcasting ability for your this feat’s is Charisma, and you can use a holy symbol as a spellcasting focus for any Charisma spell.</description>
+		</sheet>
+	</element>
+
+	<element name="Initiate of High Sorcery" type="Feat" source="Unearthed Arcana: Heroes of Krynn Revisited" id="ID_WOTC_UA20220425_FEAT_INITIATE_OF_HIGH_SORCERY">
+		<prerequisite>Sorcerer or Wizard Class or Mage of High Sorcery Background</prerequisite>
+		<requirements>ID_WOTC_PHB_CLASS_SORCERER||ID_WOTC_PHB_CLASS_WIZARD||ID_WOTC_UA20220425_BACKGROUND_MAGE_OF_HIGH_SORCERY||ID_WOTC_UA20220425_GRANTS_FEAT_UNLOCKER</requirements>
+		<description>
+			<p>You've received training from magic-users affiliated with the Mages of High Sorcery.</p>
+			<p class="indent">Choose one of the three moons of Krynn to influence your magic: the black moon, Nuitari; the red moon, Lunitari; or the white moon Solinari. You learn one cantrip of your choice from the wizard spell list and two 1st-level spells based on the moon you choose, as specified in the Lunar Spells table.</p>
+			<p class="indent">You can cast each of the chosen 1st-level spells without a spell slot, and you must finish a long rest before you can cast it in this way again. You can also cast the spells using any spell slots you have.</p>
+			<p class="indent">Your spellcasting ability for this feat’s spells is Intelligence, Wisdom, or Charisma (choose when you select this feat).</p>
+			<h5>Lunar Spells</h5>
+			<table>
+				<thead>
+					<tr><td>Moon</td><td>1st-level Spell</td></tr>
+				</thead>
+				<tr><td>Nuitari</td><td>Choose two from <i>dissonant whispers</i>, <i>false life</i>, <i>hex</i>, and <i>ray of sickness</i>.</td></tr>
+				<tr><td>Lunitari</td><td>Choose two from <i>color spray</i>, <i>disguise self</i>, <i>feather fall</i>, and <i>longstrider</i>.</td></tr>
+				<tr><td>Solinari</td><td>Choose two from <i>comprehend languages</i>, <i>detect evil and good</i>, <i>protection from evil and good</i>, and <i>shield</i>.</td></tr>
+			</table>
+		</description>
+		<sheet display="false" />
+		<rules>
+			<select type="Spell" name="Cantrip (Initiate of High Sorcery)" supports="0,Wizard" />
+			<select type="Feat Feature" name="Spellcasting Ability (Initiate of High Sorcery)" supports="ID_WOTC_UA20220425_FEAT_FEATURE_INITIATE_OF_HIGH_SORCERY_INTELLIGENCE|ID_WOTC_UA20220425_FEAT_FEATURE_INITIATE_OF_HIGH_SORCERY_WISDOM|ID_WOTC_UA20220425_FEAT_FEATURE_INITIATE_OF_HIGH_SORCERY_CHARISMA" />
+			<select type="Feat Feature" name="Krynn Moon (Initiate of High Sorcery)" supports="ID_WOTC_UA20220425_FEAT_FEATURE_INITIATE_OF_HIGH_SORCERY_NUITARI|ID_WOTC_UA20220425_FEAT_FEATURE_INITIATE_OF_HIGH_SORCERY_LUNITARI|ID_WOTC_UA20220425_FEAT_FEATURE_INITIATE_OF_HIGH_SORCERY_SOLINARI" />
+		</rules>
+	</element>
+
+	<element name="Intelligence" type="Feat Feature" source="Unearthed Arcana: Heroes of Krynn Revisited" id="ID_WOTC_UA20220425_FEAT_FEATURE_INITIATE_OF_HIGH_SORCERY_INTELLIGENCE">
+		<compendium display="false" />
+		<description>
+			<p>Your spellcasting ability for this feat’s spells is Intelligence.</p>
+		</description>
+		<sheet alt="Initiate of High Sorcery">
+			<description>You can cast each of the chosen 1st-level spells without a spell slot, and you must finish a long rest before you can cast it in this way again. You can also cast the spells using any spell slots you have.&#13;
+			Your spellcasting ability for this feat’s spells is Intelligence.</description>
+		</sheet>
+	</element>
+
+	<element name="Wisdom" type="Feat Feature" source="Unearthed Arcana: Heroes of Krynn Revisited" id="ID_WOTC_UA20220425_FEAT_FEATURE_INITIATE_OF_HIGH_SORCERY_WISDOM">
+		<compendium display="false" />
+		<description>
+			<p>Your spellcasting ability for this feat’s spells is Wisdom.</p>
+		</description>
+		<sheet alt="Initiate of High Sorcery">
+			<description>You can cast each of the chosen 1st-level spells without a spell slot, and you must finish a long rest before you can cast it in this way again. You can also cast the spells using any spell slots you have.&#13;
+			Your spellcasting ability for this feat’s spells is Wisdom.</description>
+		</sheet>
+	</element>
+
+	<element name="Charisma" type="Feat Feature" source="Unearthed Arcana: Heroes of Krynn Revisited" id="ID_WOTC_UA20220425_FEAT_FEATURE_INITIATE_OF_HIGH_SORCERY_CHARISMA">
+		<compendium display="false" />
+		<description>
+			<p>Your spellcasting ability for this feat’s spells is Charisma.</p>
+		</description>
+		<sheet alt="Initiate of High Sorcery">
+			<description>You can cast each of the chosen 1st-level spells without a spell slot, and you must finish a long rest before you can cast it in this way again. You can also cast the spells using any spell slots you have.&#13;
+			Your spellcasting ability for this feat’s spells is Charisma.</description>
+		</sheet>
+	</element>
+
+	<element name="Nuitari" type="Feat Feature" source="Unearthed Arcana: Heroes of Krynn Revisited" id="ID_WOTC_UA20220425_FEAT_FEATURE_INITIATE_OF_HIGH_SORCERY_NUITARI">
+		<compendium display="false" />
+		<description>
+			<p>Choose two from <i>dissonant whispers</i>, <i>false life</i>, <i>hex</i>, and <i>ray of sickness</i>.</p>
+		</description>
+		<sheet display="false" />
+		<rules>
+			<select type="Spell" name="1st Level Spell (Initiate of High Sorcery)" supports="ID_PHB_SPELL_DISSONANT_WHISPERS|ID_PHB_SPELL_FALSE_LIFE|ID_PHB_SPELL_HEX|ID_PHB_SPELL_RAY_OF_SICKNESS" number="2" />
+		</rules>
+	</element>
+
+	<element name="Lunitari" type="Feat Feature" source="Unearthed Arcana: Heroes of Krynn Revisited" id="ID_WOTC_UA20220425_FEAT_FEATURE_INITIATE_OF_HIGH_SORCERY_LUNITARI">
+		<compendium display="false" />
+		<description>
+			<p>Choose two from <i>color spray</i>, <i>disguise self</i>, <i>feather fall</i>, and <i>longstrider</i>.</p>
+		</description>
+		<sheet display="false" />
+		<rules>
+			<select type="Spell" name="1st Level Spell (Initiate of High Sorcery)" supports="ID_PHB_SPELL_COLOR_SPRAY|ID_PHB_SPELL_DISGUISE_SELF|ID_PHB_SPELL_FEATHER_FALL|ID_PHB_SPELL_LONGSTRIDER" number="2" />
+		</rules>
+	</element>
+
+	<element name="Solinari" type="Feat Feature" source="Unearthed Arcana: Heroes of Krynn Revisited" id="ID_WOTC_UA20220425_FEAT_FEATURE_INITIATE_OF_HIGH_SORCERY_SOLINARI">
+		<compendium display="false" />
+		<description>
+			<p>Choose two from <i>comprehend languages</i>, <i>detect evil and good</i>, <i>protection from evil and good</i>, and <i>shield</i>.</p>
+		</description>
+		<sheet display="false" />
+		<rules>
+			<select type="Spell" name="1st Level Spell (Initiate of High Sorcery)" supports="ID_PHB_SPELL_COMPREHEND_LANGUAGES|ID_PHB_SPELL_DETECT_EVIL_AND_GOOD|ID_PHB_SPELL_PROTECTION_FROM_EVIL_AND_GOOD|ID_PHB_SPELL_SHIELD" number="2" />
+		</rules>
+	</element>
+
+	<element name="Knight of the Crown" type="Feat" source="Unearthed Arcana: Heroes of Krynn Revisited" id="ID_WOTC_UA20220425_FEAT_KNIGHT_OF_THE_CROWN">
+		<prerequisite>4th Level, Squire of Solamnia Feat</prerequisite>
+		<requirements>([level:4]||ID_WOTC_UA20220425_GRANTS_FEAT_UNLOCKER), ID_WOTC_UA20220425_FEAT_SQUIRE_OF_SOLAMNIA</requirements>
+		<description>
+			<p>You are a Knight of Solamnia aligned with the Order of the Crown, a group that extols the virtues of cooperation, loyalty, and obedience. You excel in group combat and gain these benefits:</p>
+			<p class="indent"><strong><em>Ability Score Increase.</em></strong> Increase your Strength or Dexterity score by 1, to a maximum of 20.</p>
+			<p class="indent"><strong><em>Crown Maneuvers.</em></strong> You learn the Distracting Strike or the Goading Attack maneuver from the Battle Master subclass of the fighter in the Player’s Handbook (choose the maneuver when you gain this feat). If the maneuver requires a saving throw, the save’s DC equals 8 + your proficiency bonus + your Strength or Dexterity modifier (your choice). Whenever you finish a long rest, you can replace the maneuver you learned from this feat with the other maneuver offered by it.</p>
+			<p class="indent"><strong><em>Superiority Dice.</em></strong> You gain two superiority dice, which you add to the dice you have from the Squire of Solamnia feat. All the dice are now d8s.</p>
+		</description>
+		<sheet display="false" />
+		<rules>
+			<select type="Ability Score Improvement" name="Ability Score Increase (Knight of the Crown)" supports="ID_PHB_FEAT_ASI_STRENGTH|ID_PHB_FEAT_ASI_DEXTERITY" />
+
+			<stat name="ua:squire of solamnia:dice:amount" value="2"/>
+			<stat name="ua:squire of solamnia:dice:size" value="8" bonus="base" />
+		</rules>
+	</element>
+
+	<element name="Knight of the Sword" type="Feat" source="Unearthed Arcana: Heroes of Krynn Revisited" id="ID_WOTC_UA20220425_FEAT_KNIGHT_OF_THE_SWORD">
+		<prerequisite>4th Level, Squire of Solamnia Feat</prerequisite>
+		<requirements>([level:4]||ID_WOTC_UA20220425_GRANTS_FEAT_UNLOCKER), ID_WOTC_UA20220425_FEAT_SQUIRE_OF_SOLAMNIA</requirements>
+		<description>
+			<p>You are a Knight of Solamnia aligned with the Order of the Sword, a group devoted to heroism and courage. Bravery steels your spirit, granting you these benefits:</p>
+			<p class="indent"><strong><em>Ability Score Increase.</em></strong> Increase your Intelligence, Wisdom, or Charisma score by 1, to a maximum of 20.</p>
+			<p class="indent"><strong><em>Sword Maneuvers.</em></strong> You learn the Maneuvering Attack or the Menacing Attack maneuver from the Battle Master subclass of the fighter in the Player’s Handbook (choose the maneuver when you gain this feat). If the maneuver requires a saving throw, the save’s DC equals 8 + your proficiency bonus + your Strength or Dexterity modifier (your choice). Whenever you finish a long rest, you can replace the maneuver you learned from this feat with the other maneuver offered by it.</p>
+			<p class="indent"><strong><em>Superiority Dice.</em></strong> You gain two superiority dice, which you add to the dice you have from the Squire of Solamnia feat. All the dice are now d8s.</p>
+		</description>
+		<sheet display="false" />
+		<rules>
+			<select type="Ability Score Improvement" name="Ability Score Increase (Knight of the Sword)" supports="ID_PHB_FEAT_ASI_INTELLIGENCE|ID_PHB_FEAT_ASI_WISDOM|ID_PHB_FEAT_ASI_CHARISMA" />
+
+			<stat name="ua:squire of solamnia:dice:amount" value="2"/>
+			<stat name="ua:squire of solamnia:dice:size" value="8" bonus="base" />
+		</rules>
+	</element>
+
+	<element name="Knight of the Rose" type="Feat" source="Unearthed Arcana: Heroes of Krynn Revisited" id="ID_WOTC_UA20220425_FEAT_KNIGHT_OF_THE_ROSE">
+		<prerequisite>4th Level, Squire of Solamnia Feat</prerequisite>
+		<requirements>([level:4]||ID_WOTC_UA20220425_GRANTS_FEAT_UNLOCKER), ID_WOTC_UA20220425_FEAT_SQUIRE_OF_SOLAMNIA</requirements>
+		<description>
+			<p>You are a Knight of Solamnia aligned with the Order of the Rose, a group known for leadership, justice, and wisdom. Your resolve grants you these benefits:</p>
+			<p class="indent"><strong><em>Ability Score Increase.</em></strong> Increase your Constitution or Charisma score by 1, to a maximum of 20.</p>
+			<p class="indent"><strong><em>Rose Maneuvers.</em></strong> You learn the Commander’s Strike or Rally maneuver from the Battle Master subclass of the fighter in the Player’s Handbook (choose the maneuver when you gain this feat). Whenever you finish a long rest, you can replace the maneuver you learned from this feat with the other maneuver offered by it.</p>
+			<p class="indent"><strong><em>Superiority Dice.</em></strong> You gain two superiority dice, which you add to the dice you have from the Squire of Solamnia feat. All the dice are now d8s.</p>
+		</description>
+		<sheet display="false" />
+		<rules>
+			<select type="Ability Score Improvement" name="Ability Score Increase (Knight of the Rose)" supports="ID_PHB_FEAT_ASI_CONSTITUTION|ID_PHB_FEAT_ASI_CHARISMA" />
+
+			<stat name="ua:squire of solamnia:dice:amount" value="2"/>
+			<stat name="ua:squire of solamnia:dice:size" value="8" bonus="base" />
+		</rules>
+	</element>
+
+	<element name="Squire of Solamnia" type="Feat" source="Unearthed Arcana: Heroes of Krynn Revisited" id="ID_WOTC_UA20220425_FEAT_SQUIRE_OF_SOLAMNIA">
+		<prerequisite>Fighter or Paladin Class or Knight of Solamnia Background</prerequisite>
+		<requirements>ID_WOTC_PHB_CLASS_FIGHTER||ID_WOTC_PHB_CLASS_PALADIN||ID_WOTC_UA20220425_BACKGROUND_KNIGHT_OF_SOLAMNIA||ID_WOTC_UA20220425_GRANTS_FEAT_UNLOCKER</requirements>
+		<description>
+			<p>Your training in the ways of the Knights of Solamnia grants you these benefits:</p>
+			<p class="indent"><strong><em>Mount Up.</em></strong> Mounting or dismounting costs you only 5 feet of movement.</p>
+			<p class="indent"><strong><em>Squire Maneuvers.</em></strong> You learn the Lunging Attack, Precision Attack, or Pushing Attack maneuver from the Battle Master subclass of the fighter in the Player’s Handbook (choose the maneuver when you gain this feat). If the maneuver requires a saving throw, the save’s DC equals 8 + your proficiency bonus + your Strength or Dexterity modifier (your choice). Whenever you finish a long rest, you can replace the maneuver you learned from this feat with the other maneuver offered by it.</p>
+			<p class="indent"><strong><em>Superiority Dice.</em></strong> You gain a number of superiority dice equal to your proficiency bonus. These dice are d6s, and you can use them only with the maneuver you gain from this feat and with any maneuvers you gain from feats that have this feat as a prerequisite. A superiority die is expended when you use it, and you regain all expended superiority dice when you finish a long rest.</p>
+		</description>
+		<sheet alt="Squire Maneuvers" usage="{{ua:squire of solamnia:dice:amount}}d{{ua:squire of solamnia:dice:size}}/Long Rest">
+			<description>If the maneuver requires a saving throw, the save DC is {{ua:squire of solamnia:dc}}.&#13;
+			Whenever you finish a long rest, you can replace the maneuvers you learned from this feat and feats that have this feat as a prerequisite with the other maneuvers offered by them.</description>
+		</sheet>
+		<rules>
+			<stat name="ua:squire of solamnia:ability" value="strength:modifier" bonus="ability" />
+			<stat name="ua:squire of solamnia:ability" value="dexterity:modifier" bonus="ability" />
+
+			<stat name="ua:squire of solamnia:dc" value="8" bonus="base"/>
+			<stat name="ua:squire of solamnia:dc" value="proficiency" bonus="proficiency"/>
+			<stat name="ua:squire of solamnia:dc" value="ua:squire of solamnia:ability" bonus="ability"/>
+
+			<stat name="ua:squire of solamnia:dice:amount" value="proficiency"/>
+			<stat name="ua:squire of solamnia:dice:size" value="6" bonus="base"/>
+
+			<select type="Archetype Feature" name="Maneuver (Squire of Solamnia)" supports="ID_WOTC_PHB_ARCHETYPE_FEATURE_MANEUVER_LUNGING_ATTACK|ID_WOTC_PHB_ARCHETYPE_FEATURE_MANEUVER_PRECISION_ATTACK|ID_WOTC_PHB_ARCHETYPE_FEATURE_MANEUVER_PUSHING_ATTACK" />
+			<select type="Archetype Feature" name="Maneuver (Knight of the Crown)" supports="ID_WOTC_PHB_ARCHETYPE_FEATURE_MANEUVER_DISTRACTING_STRIKE|ID_WOTC_PHB_ARCHETYPE_FEATURE_MANEUVER_GOADING_ATTACK" requirements="ID_WOTC_UA20220425_FEAT_KNIGHT_OF_THE_CROWN" />
+			<select type="Archetype Feature" name="Maneuver (Knight of the Sword)" supports="ID_WOTC_PHB_ARCHETYPE_FEATURE_MANEUVER_MANEUVERING_ATTACK|ID_WOTC_PHB_ARCHETYPE_FEATURE_MANEUVER_MENACING_ATTACK" requirements="ID_WOTC_UA20220425_FEAT_KNIGHT_OF_THE_SWORD" />
+			<select type="Archetype Feature" name="Maneuver (Knight of the Rose)" supports="ID_WOTC_PHB_ARCHETYPE_FEATURE_MANEUVER_COMMANDERS_STRIKE|ID_WOTC_PHB_ARCHETYPE_FEATURE_MANEUVER_RALLY" requirements="ID_WOTC_UA20220425_FEAT_KNIGHT_OF_THE_ROSE" />
+		</rules>
+	</element>
+	
+	<!-- Feat Unlocker -->
+	<element name="Feat Unlocker" type="Item" source="Unearthed Arcana: Heroes of Krynn Revisited" id="ID_WOTC_UA20220425_ITEM_FEAT_UNLOCKER">
+		<compendium display="false" />
+		<description>
+			<p>Once equipped, this item allows you to ignore prerequisites for <i>Squire of Solamnia</i> and <i>Initiate of High Sorcery</i> Feats.</p>
+			<p><b>Note:</b> Other Feats, like <i>Knight of the Rose</i> or <i>Adept of the White Robes</i>, can't be fully unlocked with this item, because their features are based on <i>Squire of Solamnia</i> and <i>Initiate of High Sorcery</i> features. Instead, this item allows you to ignore level prerequisite for those Feats, and <i>Adept of the Black Robes</i>, <i>Adept of the Red Robes</i> and <i>Adept of the White Robes</i> no longer require specific Krynn Moon to be selected.</p>
+		</description>
+		<setters>
+			<set name="category">Additional Feature</set>
+			<set name="slot">misc</set>
+			<set name="inventory-hidden">true</set>
+		</setters>
+		<rules>
+			<grant type="Grants" id="ID_WOTC_UA20220425_GRANTS_FEAT_UNLOCKER" />
+		</rules>
+	</element>
+
+	<element name="Feat Unlocker" type="Grants" source="Unearthed Arcana: Heroes of Krynn Revisited" id="ID_WOTC_UA20220425_GRANTS_FEAT_UNLOCKER" />
+</elements>
