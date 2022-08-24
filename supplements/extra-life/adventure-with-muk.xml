@@ -75,6 +75,7 @@
 		</sheet>
 	</element>
 	<element name="Birdsquirrel" type="Companion" source="Adventure with Muk" id="ID_WOTC_AWM_COMPANION_BIRDSQUIRREL">
+		<supports>Familiar, Variant Familiar</supports>
 		<description />
 		<setters>
 			<set name="strength">6</set>
@@ -132,6 +133,50 @@
 		</description>
 		<sheet>
 			<description>Melee Weapon Attack: +4 to hit, reach 5 ft., one target. Hit: 1 (1d4 + 2) slashing damage.</description>
+		</sheet>
+	</element>
+	<element name="Boontu Monkey" type="Companion" source="Adventure with Muk" id="ID_WOTC_AWM_COMPANION_BOONTU_MONKEY">
+		<supports>Familiar, Variant Familiar</supports>
+		<description />
+		<setters>
+			<set name="strength">8</set>
+			<set name="dexterity">14</set>
+			<set name="constitution">11</set>
+			<set name="intelligence">5</set>
+			<set name="wisdom">12</set>
+			<set name="charisma">6</set>
+			<set name="ac">12</set>
+			<set name="hp">3</set>
+			<set name="speed">20 ft., climb 20 ft.</set>
+			<set name="languages">—</set>
+			<set name="type">Beast</set>
+			<set name="size">Tiny</set>
+			<set name="alignment">unaligned</set>
+			<set name="challenge">0</set>
+			<set name="traits">ID_WOTC_AWM_COMPANION_TRAIT_BOONTU_MONKEY_PACK_TACTICS</set>
+			<set name="actions">ID_WOTC_AWM_COMPANION_ACTION_BOONTU_MONKEY_BITE</set>
+		</setters>
+		<rules>
+			<stat name="companion:ac" value="12" />
+			<stat name="companion:hp:max" value="3" bonus="base" />
+			<stat name="companion:speed" value="20" bonus="base" />
+			<stat name="companion:speed:climb" value="20" bonus="base" />
+		</rules>
+	</element>
+	<element name="Pack Tactics" type="Companion Trait" source="Adventure with Muk" id="ID_WOTC_AWM_COMPANION_TRAIT_BOONTU_MONKEY_PACK_TACTICS">
+		<description>
+			<p>The boontu monkey has advantage on an attack roll against a creature if at least one of the boontu monkey's allies is within 5 feet of the creature and the ally isn't incapacitated.</p>
+		</description>
+		<sheet>
+			<description>The boontu monkey has advantage on an attack roll against a creature if at least one of the boontu monkey's allies is within 5 feet of the creature and the ally isn't incapacitated.</description>
+		</sheet>
+	</element>
+	<element name="Bite" type="Companion Action" source="Adventure with Muk" id="ID_WOTC_AWM_COMPANION_ACTION_BOONTU_MONKEY_BITE">
+		<description>
+			<p>Melee Weapon Attack: +1 to hit, reach 5 ft., one target. Hit: 1 (1d4 - 1) piercing damage.</p>
+		</description>
+		<sheet>
+			<description>Melee Weapon Attack: +1 to hit, reach 5 ft., one target. Hit: 1 (1d4 - 1) piercing damage.</description>
 		</sheet>
 	</element>
 </elements>
