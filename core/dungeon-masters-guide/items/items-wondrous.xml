@@ -2,7 +2,7 @@
 <elements>
 	<info>
 		<name>Wondrous Items</name>
-		<update version="0.1.2">
+		<update version="0.1.3">
 			<file name="items-wondrous.xml" url="https://raw.githubusercontent.com/AuroraLegacy/elements/master/core/dungeon-masters-guide/items/items-wondrous.xml" />
 		</update>
 	</info>
@@ -346,6 +346,9 @@
 			<set name="type">Wondrous Item</set>
 			<set name="rarity">Uncommon</set>
 		</setters>
+		<rules>
+			<stat name="speed:swim" value="60" bonus="base" />
+		</rules>
 	</element>
 	<element name="Decanter of Endless Water" type="Magic Item" source="Dungeon Master’s Guide" id="ID_WOTC_DMG_MAGIC_ITEM_DECANTER_OF_ENDLESS_WATER">
 		<description>
@@ -741,7 +744,8 @@
 			<set name="rarity">Uncommon</set>
 		</setters>
 		<rules>
-			<grant type="Vision" id="ID_VISION_DARKVISION" />
+			<grant type="Vision" id="ID_VISION_LESSER_DARKVISION" />
+			<stat name="darkvision:range" value="60" />
 		</rules>
 	</element>
 	<element name="Hat of Disguise" type="Magic Item" source="Dungeon Master’s Guide" id="ID_WOTC_DMG_MAGIC_ITEM_HAT_OF_DISGUISE">
