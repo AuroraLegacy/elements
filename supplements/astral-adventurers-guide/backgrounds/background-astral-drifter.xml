@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<elements>
+	<info>
+		<name>Astral Drifter</name>
+		<description></description>
+		<author url="https://dnd.wizards.com/products/spelljammer">Astral Adventurer's Guide</author>
+		<update version="0.0.1">
+			<file name="background-astral-drifter.xml" url="https://raw.githubusercontent.com/AuroraLegacy/elements/master/supplements/astral-adventurers-guide/backgrounds/background-astral-drifter.xml" />
+		</update>
+	</info>
+
+	<element name="Astral Drifter" type="Background" source="Astral Adventurer's Guide" id="ID_WOTC_AAG_BACKGROUND_ASTRAL_DRIFTER">
+		<description>
+			<p>For longer than you can remember, you have traversed the Astral Sea. There, you experienced first hand the wonders of the Silver Void: you stopped aging and no longer felt hunger or thirst. Driven by wanderlust, you drifted from one part of the Astral Sea to another, like a mote of dust on the wind. You have lost count of the decades that have passed since you arrived here.</p>			
+			<p class="indent">In your travels, you have camped on the petrified hulks of dead gods and narrowly escaped the psychic winds that sweep across the Astral Sea while also avoiding prolonged contact with the plane’s most dangerous denizens.</p>			
+			<ul class="unstyled">
+				<li><strong>Skill Proficiencies:</strong> Insight, Religion</li>
+				<li><strong>Languages:</strong> Two of your choice (Celestial or Gith recommended)</li>
+				<li><strong>Equipment:</strong> A set of traveler’s clothes, a diary, an ink pen, a bottle of ink, and a pouch containing 10 gp</li>
+			</ul>
+			<h3>Longevity</h3>
+			<p>You are 20d6 years older than you look, because you have spent that much time in the Astral Sea without aging.</p>			
+			<div element="ID_WOTC_AAG_BACKGROUND_FEATURE_ASTRAL_DRIFTER_DIVINE_CONTACT" />
+		</description>
+		<setters>
+			<set name="short">Insight, Religion, 2 Languages</set>
+		</setters>
+		<rules>
+			<grant type="Proficiency" id="ID_PROFICIENCY_SKILL_INSIGHT" />
+			<grant type="Proficiency" id="ID_PROFICIENCY_SKILL_RELIGION" />
+			<select type="Language" name="Language (Astral Drifter)" supports="Standard||Exotic" number="2" />
+			<grant type="Background Feature" id="ID_WOTC_AAG_BACKGROUND_FEATURE_ASTRAL_DRIFTER_DIVINE_CONTACT" requirements="!ID_INTERNAL_GRANT_OPTIONAL_BACKGROUND_FEATURE"/>
+			<select type="Background Feature" name="Variant Feature" supports="Optional Background Feature" optional="true" />
+		</rules>
+	</element>
+
+	<element name="Feature: Divine Contact" type="Background Feature" source="Astral Adventurer's Guide" id="ID_WOTC_AAG_BACKGROUND_FEATURE_ASTRAL_DRIFTER_DIVINE_CONTACT">
+		<supports>Background Feature</supports>
+		<description>
+			<p>You gain the Magic Initiate feat from the <i>Player’s Handbook</i> and must choose cleric for the feat.</p>
+			<p>In the Astral Sea, you crossed paths with a wandering deity. The encounter was brief and nonviolent, yet it made a lasting impression on you. This deity saw fit to share one secret or obscure bit of cosmic lore with you. Work with your DM to determine the details of this knowledge and its impact on the campaign.</p>
+			<p>Roll on the Divine Contact table to determine which deity you encountered, or work with your DM to identify a more suitable choice.</p>
+			<h5>Longevity</h5>
+			<table>
+				<thead>
+					<tr><td>d10</td><td>Wandering Deity</td></tr>
+				</thead>
+				<tr><td>1</td><td>Corellon, god of art and magic (chaotic good)</td></tr>
+				<tr><td>2</td><td>Tymora, god of good fortune (chaotic good)</td></tr>
+				<tr><td>3</td><td>Fharlanghn, god of horizons and travel (neutral good)</td></tr>
+				<tr><td>4</td><td>Istus, god of fate and destiny (neutral)</td></tr>
+				<tr><td>5</td><td>Nuada, god of war and warriors (neutral)</td></tr>
+				<tr><td>6</td><td>Zivilyn, god of wisdom (neutral)</td></tr>
+				<tr><td>7</td><td>Arawn, god of life and death (neutral evil)</td></tr>
+				<tr><td>8</td><td>Hecate, god of magic and moons (chaotic evil)</td></tr>
+				<tr><td>9</td><td>Celestian, god of stars and wanderers (neutral)</td></tr>
+				<tr><td>10</td><td>Ptah, god of knowledge and secrets (lawful neutral)</td></tr>
+			</table>			
+		</description>
+		<sheet alt="Divine Contact">
+			<description>In the Astral Sea, you crossed paths with a wandering deity. The encounter was brief and nonviolent, yet it made a lasting impression on you. This deity saw fit to share one secret or obscure bit of cosmic lore with you. Work with your DM to determine the details of this knowledge and its impact on the campaign.</description>
+		</sheet>
+		<rules>
+			<grant type="Feat" id="ID_PHB_FEAT_MAGICINITIATE" />
+		</rules>
+	</element>
+</elements>

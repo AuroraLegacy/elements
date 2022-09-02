@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<elements>
+	<info>
+		<name>Wildspacer</name>
+		<description></description>
+		<author url="https://dnd.wizards.com/products/spelljammer">Astral Adventurer's Guide</author>
+		<update version="0.0.1">
+			<file name="background-wildspacer.xml" url="https://raw.githubusercontent.com/AuroraLegacy/elements/master/supplements/astral-adventurers-guide/backgrounds/background-wildspacer.xml" />
+		</update>
+	</info>
+
+	<element name="Wildspacer" type="Background" source="Astral Adventurer's Guide" id="ID_WOTC_AAG_BACKGROUND_WILDSPACER">
+		<description>
+			<p>You were raised in the void of Wildspace—home to asteroid miners, moon farmers, and other hardy folk. Perhaps you grew up in a far-flung settlement such as the Rock of Bral (described in chapter 3 of the <i>Astral Adventurer's Guide</i>), or you spent your early years on the crew of a spelljamming ship, performing helpful chores such as swabbing the deck, loading and offloading cargo, and scraping barnacles off the hull.</p>			
+			<p class="indent">Whatever your history, life in Wildspace has toughened you so well that you are as brave as a miniature giant space hamster when it comes to facing the terrors and other challenges of the airless night.</p>			
+			<ul class="unstyled">
+				<li><strong>Skill Proficiencies:</strong> Athletics, Survival</li>
+				<li><strong>Tool Proficiencies:</strong> Navigator’s tools, vehicles (space)</li>
+				<li><strong>Equipment:</strong> A belaying pin (club), a set of traveler’s clothes, a grappling hook, 50 feet of hempen rope, and a pouch containing 10 gp</li>
+			</ul>
+			<h3>Close Encounter</h3>
+			<p>You had a harrowing encounter with one of Wildspace’s many terrors. You escaped with your life, but the encounter left you with a scar or two, or perhaps a recurring nightmare. Roll on the Close Encounter table to determine which creature nearly got the best of you. Creatures marked with an asterisk appear in <i>Boo’s Astral Menagerie</i>; the others are described in the Monster Manual.</p>			
+			<h5>Close Encounter</h5>
+			<table>
+				<thead>
+					<tr><td>d10</td><td>Creature</td></tr>
+				</thead>
+				<tr><td>1</td><td>Beholder</td></tr>
+				<tr><td>2</td><td>Cosmic horror*</td></tr>
+				<tr><td>3</td><td>Feyr*</td></tr>
+				<tr><td>4</td><td>Lunar dragon*</td></tr>
+				<tr><td>5</td><td>Mind flayer</td></tr>
+				<tr><td>6</td><td>Neh-thalggu*</td></tr>
+				<tr><td>7</td><td>Neogi*</td></tr>
+				<tr><td>8</td><td>Space clown*</td></tr>
+				<tr><td>9</td><td>Vampirate*</td></tr>
+				<tr><td>10</td><td>Void scavver*</td></tr>
+			</table>
+			<div element="ID_WOTC_AAG_BACKGROUND_FEATURE_WILDSPACER_WILDSPACE_ADAPTATION" />
+		</description>
+		<setters>
+			<set name="short">Athletics, Survival, Navigator’s tools, Vehicles (space)</set>
+		</setters>
+		<rules>
+			<grant type="Proficiency" id="ID_PROFICIENCY_SKILL_ATHLETICS" />
+			<grant type="Proficiency" id="ID_PROFICIENCY_SKILL_SURVIVAL" />
+			<grant type="Proficiency" id="ID_PROFICIENCY_TOOL_PROFICIENCY_NAVIGATORS_TOOLS" />
+			<grant type="Proficiency" id="ID_WOTC_AAG_PROFICIENCY_TOOL_PROFICIENCY_VEHICLES_SPACE" />
+			<select type="Language" name="Language (Wildspacer)" supports="Standard||Exotic" number="2" />
+			<grant type="Background Feature" id="ID_WOTC_AAG_BACKGROUND_FEATURE_WILDSPACER_WILDSPACE_ADAPTATION" requirements="!ID_INTERNAL_GRANT_OPTIONAL_BACKGROUND_FEATURE"/>
+			<select type="Background Feature" name="Variant Feature" supports="Optional Background Feature" optional="true" />
+		</rules>
+	</element>
+	
+	<element name="Feature: Wildspace Adaptation" type="Background Feature" source="Astral Adventurer's Guide" id="ID_WOTC_AAG_BACKGROUND_FEATURE_WILDSPACER_WILDSPACE_ADAPTATION">
+		<supports>Background Feature</supports>
+		<description>
+			<p>You gain the Tough feat from the <i>Player’s Handbook</i>. In addition, you learned how to adapt to zero gravity. Being weightless doesn’t give you disadvantage on any of your melee attack rolls (see “Weightlessness” in chapter 2 of the <i>Astral Adventurer's Guide</i>).</p>
+		</description>
+		<sheet alt="Wildspace Adaptation">
+			<description>You learned how to adapt to zero gravity. Being weightless doesn’t give you disadvantage on any of your melee attack rolls.</description>
+		</sheet>
+		<rules>
+			<grant type="Feat" id="ID_PHB_FEAT_TOUGH" />
+		</rules>
+	</element>
+</elements>

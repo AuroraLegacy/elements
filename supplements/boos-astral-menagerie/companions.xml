@@ -1,0 +1,397 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<elements>
+	<info>
+		<name>Companion</name>
+		<description>Creatures from Boo’s Astral Menagerie, that fit rules for Companions or Familiars</description>
+		<update version="0.0.1">
+			<file name="companions.xml" url="https://raw.githubusercontent.com/AuroraLegacy/elements/master/supplements/boos-astral-menagerie/companions.xml" />
+		</update>
+	</info>
+
+	<!-- Companions -->
+	<element name="Space Guppy" type="Companion" source="Boo’s Astral Menagerie" id="ID_WOTC_BAM_COMPANION_SPACE_GUPPY">
+		<description>
+			<p>Space guppies are 2- to 3-foot-long, fish-like creatures that glide through Wildspace and the Astral Sea. Chwinga astronauts, sprites, and other Tiny creatures occasionally use space guppies as mounts.</p>
+        </description>
+		<setters>
+			<set name="size">Small</set>
+			<set name="type">Beast</set>
+			<set name="alignment">Unaligned</set>
+			<set name="ac">13</set>
+			<set name="hp">3 (1d6)</set>
+			<set name="speed">0 ft., fly 30 ft.</set>
+			<set name="strength">3</set>
+			<set name="dexterity">16</set>
+			<set name="constitution">10</set>
+			<set name="intelligence">1</set>
+			<set name="wisdom">10</set>
+			<set name="charisma">1</set>
+			<set name="senses">darkvision 60 ft., passive Perception 10</set>
+			<set name="languages">—</set>
+			<set name="challenge">0</set>
+			<set name="traits">ID_WOTC_BAM_COMPANION_TRAIT_SPACE_GUPPY_AIR_ENVELOPE,ID_WOTC_BAM_COMPANION_TRAIT_SPACE_GUPPY_FLYBY</set>
+			<set name="actions">ID_WOTC_BAM_COMPANION_ACTION_SPACE_GUPPY_TAIL_SLAP</set>
+		</setters>
+		<rules>
+			<stat name="companion:ac" value="13" />
+			<stat name="companion:hp:max" value="3" bonus="base" />
+			<stat name="companion:speed" value="0" bonus="base" />
+			<stat name="companion:speed:fly" value="30" bonus="base" />
+		</rules>
+	</element>
+	<element name="Air Envelope" type="Companion Trait" source="Boo’s Astral Menagerie" id="ID_WOTC_MM_COMPANION_TRAIT_SPACE_GUPPY_AIR_ENVELOPE">
+		<description>
+			<p>If it has at least 1 hit point, the guppy can generate an air envelope around itself when in a vacuum. This air envelope can sustain the guppy and one other Tiny creature in its space indefinitely.</p>
+		</description>
+		<sheet>
+			<description>If it has at least 1 hit point, the guppy can generate an air envelope around itself when in a vacuum. This air envelope can sustain the guppy and one other Tiny creature in its space indefinitely.</description>
+		</sheet>
+	</element>
+	<element name="Flyby" type="Companion Trait" source="Boo’s Astral Menagerie" id="ID_WOTC_BAM_COMPANION_TRAIT_SPACE_GUPPY_FLYBY">
+		<description>
+			<p>The guppy doesn't provoke opportunity attacks when it flies out of an enemy's reach.</p>
+		</description>
+		<sheet>
+			<description>The guppy doesn't provoke opportunity attacks when it flies out of an enemy's reach.</description>
+		</sheet>
+	</element>
+	<element name="Tail Slap" type="Companion Action" source="Boo’s Astral Menagerie" id="ID_WOTC_BAM_COMPANION_ACTION_SPACE_GUPPY_TAIL_SLAP">
+		<description>
+			<p><i>Melee Weapon Attack:</i> +5 to hit, reach 5 ft., one target. <i>Hit:</i> 1 bludgeoning damage.</p>
+		</description>
+		<sheet>
+			<description>Melee Weapon Attack: +5 to hit, reach 5 ft., one target. Hit: 1 bludgeoning damage.</description>
+		</sheet>
+	</element>
+
+	<element name="Space Mollymawk" type="Companion" source="Boo’s Astral Menagerie" id="ID_WOTC_BAM_COMPANION_SPACE_MOLLYMAWK">
+		<description>
+			<p>Space mollymawks are as common in Wildspace as albatrosses are on the Material Plane. They perch on the hulls of spelljamming ships and move from one ship's air envelope to another's when they need to.</p>
+			<p class="indent">A fully grown specimen is 3 feet tall with a 10-foot wingspan, and it eats whatever it can scavenge. If it finds a reliable food source, it lingers in the area (usually around a ship) until the food becomes scarce. Superstitious Wildspace voyagers consider it bad luck to kill a space mollymawk.</p>
+        </description>
+		<setters>
+			<set name="size">Small</set>
+			<set name="type">Beast</set>
+			<set name="alignment">Unaligned</set>
+			<set name="ac">12</set>
+			<set name="hp">3 (1d6)</set>
+			<set name="speed">10 ft., fly 50 ft.</set>
+			<set name="strength">6</set>
+			<set name="dexterity">14</set>
+			<set name="constitution">11</set>
+			<set name="intelligence">3</set>
+			<set name="wisdom">12</set>
+			<set name="charisma">3</set>
+			<set name="skills">Perception +5</set>
+			<set name="senses">passive Perception 15</set>
+			<set name="languages">—</set>
+			<set name="challenge">0</set>
+			<set name="traits">ID_WOTC_BAM_COMPANION_TRAIT_SPACE_MOLLYMAWK_FLYBY,ID_WOTC_BAM_COMPANION_TRAIT_SPACE_MOLLYMAWK_HOLD_BREATH</set>
+			<set name="actions">ID_WOTC_BAM_COMPANION_ACTION_SPACE_MOLLYMAWK_BITE</set>
+		</setters>
+		<rules>
+			<stat name="companion:ac" value="12" />
+			<stat name="companion:hp:max" value="3" bonus="base" />
+			<stat name="companion:speed" value="10" bonus="base" />
+			<stat name="companion:speed:fly" value="50" bonus="base" />
+			<stat name="companion:perception:proficiency" value="companion:proficiency" bonus="base" />
+			<stat name="companion:perception:proficiency" value="companion:proficiency" bonus="double" />
+		</rules>
+	</element>
+	<element name="Flyby" type="Companion Trait" source="Boo’s Astral Menagerie" id="ID_WOTC_BAM_COMPANION_TRAIT_SPACE_MOLLYMAWK_FLYBY">
+		<description>
+			<p>The mollymawk doesn't provoke opportunity attacks when it flies out of an enemy's reach.</p>
+		</description>
+		<sheet>
+			<description>The mollymawk doesn't provoke opportunity attacks when it flies out of an enemy's reach.</description>
+		</sheet>
+	</element>
+	<element name="Hold Breath" type="Companion Trait" source="Boo’s Astral Menagerie" id="ID_WOTC_MM_COMPANION_TRAIT_SPACE_MOLLYMAWK_HOLD_BREATH">
+		<description>
+			<p>The mollymawk can hold its breath for 15 minutes.</p>
+		</description>
+		<sheet>
+			<description>The mollymawk can hold its breath for 15 minutes.</description>
+		</sheet>
+	</element>
+	<element name="Bite" type="Companion Action" source="Boo’s Astral Menagerie" id="ID_WOTC_BAM_COMPANION_ACTION_SPACE_MOLLYMAWK_BITE">
+		<description>
+			<p><i>Melee Weapon Attack:</i> +4 to hit, reach 5 ft., one target. <i>Hit:</i> 4 (1d4 + 2) piercing damage.</p>
+		</description>
+		<sheet>
+			<description>Melee Weapon Attack: +4 to hit, reach 5 ft., one target. Hit: 4 (1d4 + 2) piercing damage.</description>
+		</sheet>
+	</element>
+
+	<element name="Space Swine" type="Companion" source="Boo’s Astral Menagerie" id="ID_WOTC_BAM_COMPANION_SPACE_SWINE">
+		<description>
+			<p>Space swine are a species of winged boar bred by dohwars for a variety of uses. They can serve as mounts for Small creatures, and they also make fine trackers and capable beasts of burden. Space swine that are trained for battle are typically outfitted with half-plate barding and are referred to as death squealers.</p>
+			<p class="indent">A fully grown specimen stands 3 feet high at the shoulder and is 5 to 6 feet long. Space swine eat just about anything, but they prefer truffles. A space swine also tastes delicious when roasted and served with applesauce.</p>
+        </description>
+		<setters>
+			<set name="size">Medium</set>
+			<set name="type">Beast</set>
+			<set name="alignment">Unaligned</set>
+			<set name="ac">11</set>
+			<set name="hp">22 (4d8 + 4)</set>
+			<set name="speed">40 ft., fly 40 ft.</set>
+			<set name="strength">12</set>
+			<set name="dexterity">12</set>
+			<set name="constitution">12</set>
+			<set name="intelligence">4</set>
+			<set name="wisdom">10</set>
+			<set name="charisma">3</set>
+			<set name="skills">Perception +4, Survival +4</set>
+			<set name="senses">passive Perception 14</set>
+			<set name="languages">—</set>
+			<set name="challenge">1/4</set>
+			<set name="actions">ID_WOTC_BAM_COMPANION_ACTION_SPACE_SWINE_BITE</set>
+		</setters>
+		<rules>
+			<stat name="companion:ac" value="11" />
+			<stat name="companion:hp:max" value="22" bonus="base" />
+			<stat name="companion:speed" value="40" bonus="base" />
+			<stat name="companion:speed:fly" value="40" bonus="base" />
+			<stat name="companion:perception:proficiency" value="companion:proficiency" bonus="base" />
+			<stat name="companion:perception:proficiency" value="companion:proficiency" bonus="double" />
+			<stat name="companion:survival:proficiency" value="companion:proficiency" bonus="base" />
+			<stat name="companion:survival:proficiency" value="companion:proficiency" bonus="double" />
+		</rules>
+	</element>
+	<element name="Bite" type="Companion Action" source="Boo’s Astral Menagerie" id="ID_WOTC_BAM_COMPANION_ACTION_SPACE_SWINE_BITE">
+		<description>
+			<p><i>Melee Weapon Attack:</i> +3 to hit, reach 5 ft., one target. <i>Hit:</i> 4 (1d6 + 1) piercing damage.</p>
+		</description>
+		<sheet>
+			<description>Melee Weapon Attack: +3 to hit, reach 5 ft., one target. Hit: 4 (1d6 + 1) piercing damage.</description>
+		</sheet>
+	</element>
+
+	<!-- Familiars -->
+	<element name="Chwinga Astronaut" type="Companion" source="Boo’s Astral Menagerie" id="ID_WOTC_BAM_COMPANION_CHWINGA_ASTRONAUT">
+		<supports>Variant Familiar</supports>
+		<description>
+			<p>Chwingas that live in Wildspace usually dwell on habitable moons and asteroids, though they occasionally stow away on spelljamming ships or ride around on space guppies. Using its Magical Gift ability, a chwinga astronaut can bestow one of the following charms in place of those described in the chapter 7 of <i>Dungeon Master's Guide</i>.</p>
+			<div class="reference">
+				<div element="ID_WOTC_BAM_MAGIC_ITEM_CHARM_OF_AIR_BUBBLES" />
+			</div>
+			<div class="reference">
+				<div element="ID_WOTC_AAG_SPELL_AIR_BUBBLE" />
+			</div>
+			<div class="reference">
+				<div element="ID_WOTC_BAM_MAGIC_ITEM_CHARM_OF_INSTANT_TOOLS" />
+			</div>
+        </description>
+		<setters>
+			<set name="size">Tiny</set>
+			<set name="type">Elemental</set>
+			<set name="alignment">typically Neutral</set>
+			<set name="ac">15</set>
+			<set name="hp">7 (3d4)</set>
+			<set name="speed">20 ft., climb 20 ft., swim 20 ft.</set>
+			<set name="strength">1</set>
+			<set name="dexterity">20</set>
+			<set name="constitution">10</set>
+			<set name="intelligence">14</set>
+			<set name="wisdom">16</set>
+			<set name="charisma">16</set>
+			<set name="skills">Acrobatics +7, Perception +7, Stealth +7</set>
+			<set name="senses">blindsight 60 ft., passive Perception 17</set>
+			<set name="languages">—</set>
+			<set name="challenge">0</set>
+			<set name="traits">ID_WOTC_BAM_COMPANION_TRAIT_CHWINGA_ASTRONAUT_EVASION,ID_WOTC_BAM_COMPANION_TRAIT_CHWINGA_ASTRONAUT_UNUSUAL_NATURE</set>
+			<set name="actions">ID_WOTC_BAM_COMPANION_ACTION_CHWINGA_ASTRONAUT_MAGICAL_GIFT,ID_WOTC_BAM_COMPANION_ACTION_CHWINGA_ASTRONAUT_NATURAL_SHELTER,ID_WOTC_BAM_COMPANION_ACTION_CHWINGA_ASTRONAUT_SPELLCASTING</set>
+		</setters>
+		<rules>
+			<stat name="companion:ac" value="15" />
+			<stat name="companion:hp:max" value="7" bonus="base" />
+			<stat name="companion:speed" value="20" bonus="base" />
+			<stat name="companion:speed:climb" value="20" bonus="base" />
+			<stat name="companion:speed:swim" value="20" bonus="base" />
+			<stat name="companion:acrobatics:proficiency" value="companion:proficiency" bonus="base" />
+			<stat name="companion:perception:proficiency" value="companion:proficiency" bonus="base" />
+			<stat name="companion:perception:proficiency" value="companion:proficiency" bonus="double" />
+			<stat name="companion:stealth:proficiency" value="companion:proficiency" bonus="base" />
+		</rules>
+	</element>
+	<element name="Evasion" type="Companion Trait" source="Boo’s Astral Menagerie" id="ID_WOTC_MM_COMPANION_TRAIT_CHWINGA_ASTRONAUT_EVASION">
+		<description>
+			<p>When the chwinga is subjected to an effect that allows it to make a Dexterity saving throw to take only half damage, it instead takes no damage if it succeeds on the saving throw, and only half damage if it fails, provided it isn't incapacitated.</p>
+		</description>
+		<sheet>
+			<description>When the chwinga is subjected to an effect that allows it to make a Dexterity saving throw to take only half damage, it instead takes no damage if it succeeds on the saving throw, and only half damage if it fails, provided it isn't incapacitated.</description>
+		</sheet>
+	</element>
+	<element name="Unusual Nature" type="Companion Trait" source="Boo’s Astral Menagerie" id="ID_WOTC_BAM_COMPANION_TRAIT_CHWINGA_ASTRONAUT_UNUSUAL_NATURE">
+		<description>
+			<p>The chwinga doesn't require air, food, or drink. When it dies, it turns into a tiny pile of moondust, a cloud of glittering spores, a statuette resembling its former self, a chunk of ice, or a sponge shaped like a dodecahedron (DM's choice).</p>
+		</description>
+		<sheet>
+			<description>The chwinga doesn't require air, food, or drink. When it dies, it turns into a tiny pile of moondust, a cloud of glittering spores, a statuette resembling its former self, a chunk of ice, or a sponge shaped like a dodecahedron (DM's choice).</description>
+		</sheet>
+	</element>
+	<element name="Magical Gift (1/Day)" type="Companion Action" source="Boo’s Astral Menagerie" id="ID_WOTC_BAM_COMPANION_ACTION_CHWINGA_ASTRONAUT_MAGICAL_GIFT">
+		<description>
+			<p>The chwinga targets a Humanoid it can see within 5 feet of itself. The target gains a supernatural charm of the DM's choice (see chapter 7 of <i>Dungeon Master's Guide</i> for more information on supernatural charms).</p>
+		</description>
+		<sheet alt="Magical Gift" usage="1/Day">
+			<description>The chwinga targets a Humanoid it can see within 5 feet of itself. The target gains a supernatural charm of the DM's choice.</description>
+		</sheet>
+	</element>
+	<element name="Natural Shelter" type="Companion Action" source="Boo’s Astral Menagerie" id="ID_WOTC_BAM_COMPANION_ACTION_CHWINGA_ASTRONAUT_NATURAL_SHELTER">
+		<description>
+			<p>The chwinga takes shelter inside a rock, a bush, a tree, or a natural source of fresh water in its space. The chwinga can't be targeted by any attack, spell, or other effect while it is magically protected in this way, and the shelter doesn't impair the chwinga's blindsight. The chwinga can use its action to emerge from a shelter. If its shelter is destroyed, the chwinga is forced out and appears in the shelter's space, but is otherwise unharmed.</p>
+		</description>
+		<sheet>
+			<description>The chwinga takes shelter inside a rock, a bush, a tree, or a natural source of fresh water in its space. The chwinga can't be targeted by any attack, spell, or other effect while it is magically protected in this way, and the shelter doesn't impair the chwinga's blindsight. The chwinga can use its action to emerge from a shelter. If its shelter is destroyed, the chwinga is forced out and appears in the shelter's space, but is otherwise unharmed.</description>
+		</sheet>
+	</element>
+	<element name="Spellcasting" type="Companion Action" source="Boo’s Astral Menagerie" id="ID_WOTC_BAM_COMPANION_ACTION_CHWINGA_ASTRONAUT_SPELLCASTING">
+		<description>
+			<p>The chwinga casts one of the following spells, requiring no material or verbal components and using Charisma as the spellcasting ability:</p>
+			<ul class="unstyled">
+				<li>At will: <i>druidcraft, guidance, pass without trace, resistance</i></li>
+			</ul>
+		</description>
+		<sheet>
+			<description>The chwinga can cast druidcraft, guidance, pass without trace and resistance spells at will, requiring no material or verbal components and using Charisma as the spellcasting ability.</description>
+		</sheet>
+	</element>
+
+	<element name="Space Hamster" type="Companion" source="Boo’s Astral Menagerie" id="ID_WOTC_BAM_COMPANION_SPACE_HAMSTER">
+		<supports>Variant Familiar</supports>
+		<description>
+			<p>The first space hamsters were created by wizards who used magic to shrink giant space hamsters to wee size, leading their creators to refer to them as miniature giant space hamsters. The magic also made the space hamsters smarter and telepathic.</p>
+			<p class="indent">These benign rodents are native to Wildspace, though countless numbers of them have found their way to worlds throughout the Material Plane, where they are known simply as hamsters. They keep their telepathic ability hidden from most other creatures they come near.</p>
+        </description>
+		<setters>
+			<set name="size">Tiny</set>
+			<set name="type">Monstrosity</set>
+			<set name="alignment">typically Neutral Good</set>
+			<set name="ac">15</set>
+			<set name="hp">10 (4d4)</set>
+			<set name="speed">20 ft., burrow 5 ft.</set>
+			<set name="strength">1</set>
+			<set name="dexterity">20</set>
+			<set name="constitution">10</set>
+			<set name="intelligence">6</set>
+			<set name="wisdom">12</set>
+			<set name="charisma">6</set>
+			<set name="skills">Perception +3, Stealth +7</set>
+			<set name="senses">passive Perception 13</set>
+			<set name="languages">telepathy 5 ft.</set>
+			<set name="challenge">1/4</set>
+			<set name="actions">ID_WOTC_BAM_COMPANION_ACTION_SPACE_HAMSTER_BITE,ID_WOTC_BAM_COMPANION_ACTION_SPACE_HAMSTER_GO_FOR_THE_EYES,ID_WOTC_BAM_COMPANION_ACTION_SPACE_HAMSTER_ESCAPE</set>
+		</setters>
+		<rules>
+			<stat name="companion:ac" value="15" />
+			<stat name="companion:hp:max" value="10" bonus="base" />
+			<stat name="companion:speed" value="20" bonus="base" />
+			<stat name="companion:speed:burrow" value="5" bonus="base" />
+			<stat name="companion:perception:proficiency" value="companion:proficiency" bonus="base" />
+			<stat name="companion:stealth:proficiency" value="companion:proficiency" bonus="base" />
+		</rules>
+	</element>
+	<element name="Bite" type="Companion Action" source="Boo’s Astral Menagerie" id="ID_WOTC_BAM_COMPANION_ACTION_SPACE_HAMSTER_BITE">
+		<description>
+			<p><i>Melee Weapon Attack:</i> +7 to hit, reach 5 ft., one target. <i>Hit:</i> 1 piercing damage.</p>
+		</description>
+		<sheet>
+			<description>Melee Weapon Attack: +7 to hit, reach 5 ft., one target. Hit: 1 piercing damage.</description>
+		</sheet>
+	</element>
+	<element name="Go for the Eyes (Recharge 6)" type="Companion Action" source="Boo’s Astral Menagerie" id="ID_WOTC_BAM_COMPANION_ACTION_SPACE_HAMSTER_GO_FOR_THE_EYES">
+		<description>
+			<p><i>Melee Weapon Attack:</i> +7 to hit, reach 5 ft., one creature. <i>Hit:</i> 8 (1d6 + 5) piercing damage, and the target must succeed on a DC 15 Dexterity saving throw or be blinded until the start of the hamster's next turn.</p>
+		</description>
+		<sheet alt="Go for the Eyes" usage="Recharge 6">
+			<description>Melee Weapon Attack: +7 to hit, reach 5 ft., one creature. Hit: 8 (1d6 + 5) piercing damage, and the target must succeed on a DC 15 Dexterity saving throw or be blinded until the start of the hamster's next turn.</description>
+		</sheet>
+	</element>
+	<element name="Escape (Bonus Action)" type="Companion Action" source="Boo’s Astral Menagerie" id="ID_WOTC_BAM_COMPANION_ACTION_SPACE_HAMSTER_ESCAPE">
+		<description>
+			<p>The hamster takes the Dash or Disengage action.</p>
+		</description>
+		<sheet alt="Escape" action="Bonus Action">
+			<description>The hamster takes the Dash or Disengage action.</description>
+		</sheet>
+	</element>
+
+	<element name="Jammer Leech" type="Companion" source="Boo’s Astral Menagerie" id="ID_WOTC_BAM_COMPANION_JAMMER_LEECH">
+		<supports>Variant Familiar</supports>
+		<description>
+			<p>The first space hamsters were created by wizards who used magic to shrink giant space hamsters to wee size, leading their creators to refer to them as miniature giant space hamsters. The magic also made the space hamsters smarter and telepathic.</p>
+			<p class="indent">These benign rodents are native to Wildspace, though countless numbers of them have found their way to worlds throughout the Material Plane, where they are known simply as hamsters. They keep their telepathic ability hidden from most other creatures they come near.</p>
+        </description>
+		<setters>
+			<set name="size">Tiny</set>
+			<set name="type">Plant</set>
+			<set name="alignment">Unaligned</set>
+			<set name="ac">12 (natural armor)</set>
+			<set name="hp">27 (5d4 + 15)</set>
+			<set name="speed">10 ft.</set>
+			<set name="strength">11</set>
+			<set name="dexterity">1</set>
+			<set name="constitution">16</set>
+			<set name="intelligence">1</set>
+			<set name="wisdom">10</set>
+			<set name="charisma">1</set>
+			<set name="conditionImmunities">charmed, frightened, prone</set>			
+			<set name="senses">darkvision 30 ft., passive Perception 10</set>
+			<set name="languages">—</set>
+			<set name="challenge">1</set>
+			<set name="traits">ID_WOTC_BAM_COMPANION_TRAIT_JAMMER_LEECH_SPELLJAMMER_OVERLOAD,ID_WOTC_BAM_COMPANION_TRAIT_JAMMER_LEECH_UNUSUAL_NATURE</set>
+			<set name="actions">ID_WOTC_BAM_COMPANION_ACTION_JAMMER_LEECH_SPIKED_TENTACLE,ID_WOTC_BAM_COMPANION_ACTION_JAMMER_LEECH_ATTACH_TO_HULL</set>
+			<set name="reactions">ID_WOTC_BAM_COMPANION_REACTION_JAMMER_LEECH_MAGICAL_DISCHARGE</set>
+		</setters>
+		<rules>
+			<stat name="companion:ac" value="15" />
+			<stat name="companion:hp:max" value="10" bonus="base" />
+			<stat name="companion:speed" value="20" bonus="base" />
+			<stat name="companion:speed:burrow" value="5" bonus="base" />
+			<stat name="companion:perception:proficiency" value="companion:proficiency" bonus="base" />
+			<stat name="companion:stealth:proficiency" value="companion:proficiency" bonus="base" />
+		</rules>
+	</element>
+	<element name="Spelljammer Overload" type="Companion Trait" source="Boo’s Astral Menagerie" id="ID_WOTC_BAM_COMPANION_TRAIT_JAMMER_LEECH_SPELLJAMMER_OVERLOAD">
+		<description>
+			<p>If the leech is reduced to 0 hit points while attached to a ship that has a <i>spelljamming helm</i>, the creature attuned to that helm must make a DC 13 Constitution saving throw. On a failed save, the creature takes 10 (4d4) psychic damage and is incapacitated for 1 minute. On a successful save, the creature takes half as much damage and is incapacitated until the end of its next turn.</p>
+		</description>
+		<sheet>
+			<description>If the leech is reduced to 0 hit points while attached to a ship that has a spelljamming helm, the creature attuned to that helm must make a DC 13 Constitution saving throw. On a failed save, the creature takes 10 (4d4) psychic damage and is incapacitated for 1 minute. On a successful save, the creature takes half as much damage and is incapacitated until the end of its next turn.</description>
+		</sheet>
+	</element>
+	<element name="Unusual Nature" type="Companion Trait" source="Boo’s Astral Menagerie" id="ID_WOTC_BAM_COMPANION_TRAIT_JAMMER_LEECH_UNUSUAL_NATURE">
+		<description>
+			<p>The leech doesn't require air or sleep.</p>
+		</description>
+		<sheet>
+			<description>The leech doesn't require air or sleep.</description>
+		</sheet>
+	</element>
+	<element name="Spiked Tentacle" type="Companion Action" source="Boo’s Astral Menagerie" id="ID_WOTC_BAM_COMPANION_ACTION_JAMMER_LEECH_SPIKED_TENTACLE">
+		<description>
+			<p><i>Melee Weapon Attack:</i> +2 to hit, reach 5 ft., one target <i>Hit:</i> 2 (1d4) piercing damage.</p>
+		</description>
+		<sheet>
+			<description>Melee Weapon Attack: +2 to hit, reach 5 ft., one target Hit: 2 (1d4) piercing damage.</description>
+		</sheet>
+	</element>
+	<element name="Attach to Hull (Bonus Action)" type="Companion Action" source="Boo’s Astral Menagerie" id="ID_WOTC_BAM_COMPANION_ACTION_JAMMER_LEECH_ATTACH_TO_HULL">
+		<description>
+			<p>The leech attaches itself to a ship's hull in its space, dealing 2 (1d4) piercing damage to the ship (ignoring the ship's damage threshold). This damage can't be repaired until the leech is scraped off the hull. While the leech is attached, its speed is 0, and it can detach itself as a bonus action. As an action, a creature within reach of the leech can to try to scrape it off the hull, doing so with a successful DC 18 Strength check. On a failed check, the action is wasted as the leech remains attached to the hull. Removing the leech in this way deals no damage to the leech or the ship.</p>
+		</description>
+		<sheet alt="Attach to Hull" action="Bonus Action">
+			<description>The leech attaches itself to a ship's hull in its space, dealing 2 (1d4) piercing damage to the ship (ignoring the ship's damage threshold). This damage can't be repaired until the leech is scraped off the hull. While the leech is attached, its speed is 0, and it can detach itself as a bonus action. As an action, a creature within reach of the leech can to try to scrape it off the hull, doing so with a successful DC 18 Strength check. On a failed check, the action is wasted as the leech remains attached to the hull. Removing the leech in this way deals no damage to the leech or the ship.</description>
+		</sheet>
+	</element>
+	<element name="Escape (1/Day)" type="Companion Reaction" source="Boo’s Astral Menagerie" id="ID_WOTC_BAM_COMPANION_REACTION_JAMMER_LEECH_MAGICAL_DISCHARGE">
+		<description>
+			<p>When it takes damage, the leech can discharge a bolt of magical energy from its eye that targets one creature it can see within 30 feet of itself. The target must succeed on a DC 13 Dexterity saving throw or take 10 (3d6) force damage and be stunned until the end of its next turn.</p>
+		</description>
+		<sheet alt="Escape" usage="1/Day">
+			<description>When it takes damage, the leech can discharge a bolt of magical energy from its eye that targets one creature it can see within 30 feet of itself. The target must succeed on a DC 13 Dexterity saving throw or take 10 (3d6) force damage and be stunned until the end of its next turn.</description>
+		</sheet>
+	</element>
+
+</elements>
