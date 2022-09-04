@@ -1,0 +1,186 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<elements>
+	<info>
+		<name>Adventure with Muk</name>
+		<update version="0.0.1">
+			<file name="adventure-with-muk.xml" url="https://raw.githubusercontent.com/AuroraLegacy/elements/master/supplements/extra-life/adventure-with-muk.xml" />
+		</update>
+	</info>
+
+	<element name="Adventure with Muk" type="Source" source="Core" id="ID_SOURCE_ADVENTURE_WITH_MUK">
+		<description>
+			<p>Meet Muk, the very bravest goblin, and his best friend Birdsquirrel. Adventure your way through the Dankwood and search for a great treasure that is rumored to be hidden far beyond.</p>
+			<p>For players of all levels.</p>
+			<p>This activity book includes enjoyable adventure hooks written by D&amp;D’s Adam Lee, puzzles, unique Dankwood goblin character sheets developed by D&amp;D’s Chris Lindsay, modified monster stat blocks and more! Each page is made to be colored and enjoyed, so let the adventure begin!</p>
+			<p>Best of all, ALL monies that Wizards of the Coast receives from sales of this PDF are donated to Extra Life. Your purchase of this adventure goes to a truly great cause!</p>
+		</description>
+		<setters>
+			<set name="abbreviation">AWM</set>
+			<set name="url">https://www.dmsguild.com/product/294712/Adventure-with-Muk-5e</set>
+			<set name="image">https://raw.githubusercontent.com/AuroraLegacy/elements/master/supplements/extra-life/EL-AWM.jpg</set>
+			<set name="author" abbreviation="WOTC" url="http://dnd.wizards.com">Wizards of the Coast</set>
+			<set name="official">true</set>
+			<set name="supplement">true</set>
+			<set name="release">20191112</set>
+		</setters>
+	</element>
+
+	<element name="Dankwood Goblin" type="Race" source="Adventure with Muk" id="ID_WOTC_AWM_RACE_DANKWOOD_GOBLIN">
+		<description>
+			<p class="flavor">Ahh the Dankwood goblins! I have adventured far and wide in my time and never have I met such unique and interesting goblins as these. Perhaps it is the magical nature of the Dankwood itself as this forest was once rumored to have been the ancient sanctum of a powerful Netherese wizard, but who is to say? This world is a wondrous one and everywhere you go, something new is there to dazzle and amaze!</p>
+			<p style="text-align:right">–Guardian Leafy Skiptoes</p>
+			<p>Dankwood goblins are much like any other run-of-the-mill goblin but they are much more gentle and artistic than the savage and uncouth goblins of the world.</p>
+			<p class="indent">They are inquisitive and have a magical bond with the small forest creatures with which they are often friends. They are fast and nimble and love to explore. Because of this they make great adventurers and guides.</p>
+			<h4>DANKWOOD GOBLIN TRAITS</h4>
+			<p class="indent" style="margin-top:15px"><b><i>Ability Score Increase. </i></b>Your Dexterity score increases by 2 and your Wisdom score increases by 1.</p>
+			<p class="indent"><b><i>Age. </i></b>Dankwood goblins reach adulthood at age 8 and live up to 60 years.</p>
+			<p class="indent"><b><i>Alignment. </i></b>Dankwood goblins are typically neutral or neutral good, though some mischievous dankwood goblins are chaotic neutral.</p>
+			<p class="indent"><b><i>Size. </i></b>Dankwood goblins are between 3 and 4 feet tall and weigh between 40 and 80 pounds. Your size is Small.</p>
+			<p class="indent"><b><i>Speed. </i></b> Your base walking speed is 30 feet.</p>
+			<p class="indent"><b><i>Darkvision. </i></b>You can see in dim light within 60 feet of you as if it were bright light, and in darkness as if it were dim light. You can’t discern color in darkness, only shades of gray.</p>
+			<p class="indent"><b><i>Speak with Small Beasts. </i></b>Through sounds and gestures, you can communicate simple ideas with Small or smaller beasts. Dankwood goblins love animals and often keep squirrels, badgers, rabbits, moles, woodpeckers, and other creatures as beloved pets.</p>
+			<p class="indent"><b><i>Nimble Escape. </i></b>You can take the Disengage or Hide action as a bonus action on each of your turns.</p>
+			<p class="indent"><b><i>Languages. </i></b>You can speak, read, and write Common and Goblin.</p>
+		</description>
+		<sheet display="false"/>
+		<rules>
+			<stat name="dexterity" value="2" requirements="!ID_WOTC_TCOE_OPTION_CUSTOMIZED_ASI" />
+			<stat name="wisdom" value="1" requirements="!ID_WOTC_TCOE_OPTION_CUSTOMIZED_ASI" />
+			<select type="Ability Score Improvement" name="Custom Ability Score Improvement +2 (Dankwood Goblin)" supports="Custom Ability Score Increase 2" requirements="ID_WOTC_TCOE_OPTION_CUSTOMIZED_ASI" />
+			<select type="Ability Score Improvement" name="Custom Ability Score Improvement +1 (Dankwood Goblin)" supports="Custom Ability Score Increase 1" requirements="ID_WOTC_TCOE_OPTION_CUSTOMIZED_ASI" />
+			<stat name="innate speed" value="30" bonus="base"/>
+			<grant type="Size" id="ID_SIZE_SMALL" />
+			<grant type="Vision" id="ID_VISION_DARKVISION" />
+			<grant type="Language" id="ID_LANGUAGE_COMMON" requirements="!ID_WOTC_TCOE_OPTION_CUSTOMIZED_LANGUAGE" />
+			<grant type="Language" id="ID_LANGUAGE_GOBLIN" requirements="!ID_WOTC_TCOE_OPTION_CUSTOMIZED_LANGUAGE" />
+			<select type="Language" name="Customized Language" supports="Custom Race Language" number="2" requirements="ID_WOTC_TCOE_OPTION_CUSTOMIZED_LANGUAGE" />
+			<grant type="Racial Trait" id="ID_WOTC_AWM_RACIAL_TRAIT_DANKWOOD_GOBLIN_SPEAK_WITH_SMALL_BEASTS" />
+			<grant type="Racial Trait" id="ID_WOTC_AWM_RACIAL_TRAIT_DANKWOOD_GOBLIN_NIMBLE_ESCAPE" />
+		</rules>
+	</element>
+	<element name="Speak with Small Beasts" type="Racial Trait" source="Adventure with Muk" id="ID_WOTC_AWM_RACIAL_TRAIT_DANKWOOD_GOBLIN_SPEAK_WITH_SMALL_BEASTS">
+		<description>
+			<p>Through sounds and gestures, you can communicate simple ideas with Small or smaller beasts. Dankwood goblins love animals and often keep squirrels, badgers, rabbits, moles, woodpeckers, and other creatures as beloved pets.</p>
+		</description>
+		<sheet>
+			<description>Through sounds and gestures, you can communicate simple ideas with Small or smaller beasts.</description>
+		</sheet>
+	</element>
+	<element name="Nimble Escape" type="Racial Trait" source="Adventure with Muk" id="ID_WOTC_AWM_RACIAL_TRAIT_DANKWOOD_GOBLIN_NIMBLE_ESCAPE">
+		<description>
+			<p>You can take the Disengage or Hide action as a bonus action on each of your turns.</p>
+		</description>
+		<sheet>
+			<description>You can take the Disengage or Hide action as a bonus action on each of your turns.</description>
+		</sheet>
+	</element>
+
+	<element name="Birdsquirrel" type="Companion" source="Adventure with Muk" id="ID_WOTC_AWM_COMPANION_BIRDSQUIRREL">
+		<description />
+		<setters>
+			<set name="size">Tiny</set>
+			<set name="type">Beast</set>
+			<set name="alignment">unaligned</set>
+			<set name="ac">13</set>
+			<set name="hp">10</set>
+			<set name="speed">20 ft., climb 20 ft., fly 30 ft.</set>
+			<set name="strength">6</set>
+			<set name="dexterity">14</set>
+			<set name="constitution">13</set>
+			<set name="intelligence">4</set>
+			<set name="wisdom">12</set>
+			<set name="charisma">6</set>
+			<set name="languages">—</set>
+			<set name="challenge">1/4</set>
+			<set name="traits">ID_WOTC_AWM_COMPANION_TRAIT_BIRDSQUIRREL_PACK_TACTICS</set>
+			<set name="actions">ID_WOTC_AWM_COMPANION_ACTION_BIRDSQUIRREL_MULTIATTACK,ID_WOTC_AWM_COMPANION_ACTION_BIRDSQUIRREL_BITE,ID_WOTC_AWM_COMPANION_ACTION_BIRDSQUIRREL_CLAWS</set>
+		</setters>
+		<rules>
+			<stat name="companion:ac" value="13" />
+			<stat name="companion:hp:max" value="10" bonus="base" />
+			<stat name="companion:initiative" value="-5" />
+			<stat name="companion:speed" value="20" bonus="base" />
+			<stat name="companion:speed:climb" value="20" bonus="base" />
+			<stat name="companion:speed:fly" value="30" bonus="base" />
+		</rules>
+	</element>
+	<element name="Pack Tactics" type="Companion Trait" source="Adventure with Muk" id="ID_WOTC_AWM_COMPANION_TRAIT_BIRDSQUIRREL_PACK_TACTICS">
+		<description>
+			<p>Birdsquirrel has advantage on an attack roll against a creature if at least one of the Birdsquirrel's allies is within 5 feet of the creature and the ally isn't incapacitated.</p>
+		</description>
+		<sheet>
+			<description>Birdsquirrel has advantage on an attack roll against a creature if at least one of the Birdsquirrel's allies is within 5 feet of the creature and the ally isn't incapacitated.</description>
+		</sheet>
+	</element>
+	<element name="Multiattack" type="Companion Action" source="Adventure with Muk" id="ID_WOTC_AWM_COMPANION_ACTION_BIRDSQUIRREL_MULTIATTACK">
+		<description>
+			<p>Birdsquirrel makes two attacks: one with its bite and one with its claws.</p>
+		</description>
+		<sheet>
+			<description>Birdsquirrel makes two attacks: one with its bite and one with its claws.</description>
+		</sheet>
+	</element>
+	<element name="Bite" type="Companion Action" source="Adventure with Muk" id="ID_WOTC_AWM_COMPANION_ACTION_BIRDSQUIRREL_BITE">
+		<description>
+			<p>Melee Weapon Attack: +4 to hit, reach 5 ft., one target. Hit: 3 (1d6 + 2) piercing damage.</p>
+		</description>
+		<sheet>
+			<description>Melee Weapon Attack: +4 to hit, reach 5 ft., one target. Hit: 3 (1d6 + 2) piercing damage.</description>
+		</sheet>
+	</element>
+	<element name="Claws" type="Companion Action" source="Adventure with Muk" id="ID_WOTC_AWM_COMPANION_ACTION_BIRDSQUIRREL_CLAWS">
+		<description>
+			<p>Melee Weapon Attack: +4 to hit, reach 5 ft., one target. Hit: 1 (1d4 + 2) slashing damage.</p>
+		</description>
+		<sheet>
+			<description>Melee Weapon Attack: +4 to hit, reach 5 ft., one target. Hit: 1 (1d4 + 2) slashing damage.</description>
+		</sheet>
+	</element>
+
+	<element name="Boontu Monkey" type="Companion" source="Adventure with Muk" id="ID_WOTC_AWM_COMPANION_BOONTU_MONKEY">
+		<description>
+			<p>Boontu monkeys are skittish and furtive creatures that are greedy and are always on the lookout for food. Although they are greedy, they never eat the sacred golden nuts from the boontu tree in which they live.</p>
+			<p class="indent">Some say that they were once greedy thieves that were turned to monkeys by a powerful dryad who caught them stealing the nuts from her sacred tree.</p>
+		</description>
+		<setters>
+			<set name="size">Tiny</set>
+			<set name="type">Beast</set>
+			<set name="alignment">unaligned</set>
+			<set name="ac">12</set>
+			<set name="hp">3</set>
+			<set name="speed">20 ft., climb 20 ft.</set>
+			<set name="strength">8</set>
+			<set name="dexterity">14</set>
+			<set name="constitution">11</set>
+			<set name="intelligence">5</set>
+			<set name="wisdom">12</set>
+			<set name="charisma">6</set>
+			<set name="languages">—</set>
+			<set name="challenge">0</set>
+			<set name="traits">ID_WOTC_AWM_COMPANION_TRAIT_BOONTU_MONKEY_PACK_TACTICS</set>
+			<set name="actions">ID_WOTC_AWM_COMPANION_ACTION_BOONTU_MONKEY_BITE</set>
+		</setters>
+		<rules>
+			<stat name="companion:ac" value="12" />
+			<stat name="companion:hp:max" value="3" bonus="base" />
+			<stat name="companion:speed" value="20" bonus="base" />
+			<stat name="companion:speed:climb" value="20" bonus="base" />
+		</rules>
+	</element>
+	<element name="Pack Tactics" type="Companion Trait" source="Adventure with Muk" id="ID_WOTC_AWM_COMPANION_TRAIT_BOONTU_MONKEY_PACK_TACTICS">
+		<description>
+			<p>The boontu monkey has advantage on an attack roll against a creature if at least one of the boontu monkey's allies is within 5 feet of the creature and the ally isn't incapacitated.</p>
+		</description>
+		<sheet>
+			<description>The boontu monkey has advantage on an attack roll against a creature if at least one of the boontu monkey's allies is within 5 feet of the creature and the ally isn't incapacitated.</description>
+		</sheet>
+	</element>
+	<element name="Bite" type="Companion Action" source="Adventure with Muk" id="ID_WOTC_AWM_COMPANION_ACTION_BOONTU_MONKEY_BITE">
+		<description>
+			<p>Melee Weapon Attack: +1 to hit, reach 5 ft., one target. Hit: 1 (1d4 - 1) piercing damage.</p>
+		</description>
+		<sheet>
+			<description>Melee Weapon Attack: +1 to hit, reach 5 ft., one target. Hit: 1 (1d4 - 1) piercing damage.</description>
+		</sheet>
+	</element>
+</elements>
