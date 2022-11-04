@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<elements>
+	<info>
+		<name>Hadozee</name>
+		<description></description>
+		<author url="https://dnd.wizards.com/products/spelljammer">Astral Adventurer's Guide</author>
+		<update version="0.0.1">
+			<file name="race-hadozee.xml" url="https://raw.githubusercontent.com/AuroraLegacy/elements/master/supplements/astral-adventurers-guide/races/race-hadozee.xml" />
+		</update>
+	</info>
+
+	<element name="Hadozee" type="Race" source="Astral Adventurer's Guide" id="ID_WOTC_AAG_RACE_HADOZEE">
+		<description>
+			<p>Hadozees’ progenitors were mammals no bigger than housecats. Hunted by larger natural predators, they took to the trees and evolved wing-like flaps that enabled them to glide from branch to branch.</p>
+			<p class="indent">Today, hadozees are sapient, bipedal beings eager to leave behind the fearsome predators of their homeworld and explore other worlds.</p>
+			<p class="indent">In addition to being natural climbers, hadozees have feet that are as dexterous as their hands, even to the extent of having opposable thumbs. Membranes of skin hang loosely from their arms and legs. When stretched taut, these membranes enable hadozees to glide. Hadozees wrap these wings around themselves to keep warm.</p>
+			<h4>HADOZEE TRAITS</h4>
+			<p>You have the following racial traits.</p>
+			<p class="indent"><strong><em>Creature Type.</em></strong> You are a Humanoid.</p>
+			<p class="indent"><strong><em>Size.</em></strong> You are Medium or Small. You choose the size when you select this race.</p>
+			<p class="indent"><strong><em>Speed.</em></strong> Your walking speed is 30 feet, and you have a climbing speed equal to your walking speed.</p>
+			<p class="indent"><strong><em>Dexterous Feet.</em></strong> As a bonus action, you can use your feet to manipulate an object, open or close a door or container, or pick up or set down a Tiny object.</p>
+			<p class="indent"><strong><em>Glide.</em></strong> When you fall at least 10 feet above the ground, you can use your reaction to extend your skin membranes to glide horizontally a number of feet equal to your walking speed, and you take 0 damage from the fall. You determine the direction of the glide.</p>
+			<p class="indent"><strong><em>Hadozee Resilience.</em></strong> The magic that runs in your veins heightens your natural defenses. When you take damage, you can use your reaction to roll a d6. Add your proficiency bonus to the number rolled, and reduce the damage you take by an amount equal to that total (minimum of 0 damage).</p>
+			<p class="indent">You can use this trait a number of times equal to your proficiency bonus. You regain all expended uses when you finish a long rest.</p>
+		</description>
+		<sheet display="false" />
+		<rules>
+			<select type="Racial Trait" name="Size (Hadozee)" supports="ID_INTERNAL_RACIAL_TRAIT_SMALL|ID_INTERNAL_RACIAL_TRAIT_MEDIUM" />
+			<stat name="innate speed" value="30" bonus="base" />
+			<stat name="speed:climb" value="speed" bonus="base"/>
+			<select type="Ability Score Improvement" name="Ability Score Improvement Option (Hadozee)" supports="Custom Ability Score Improvement Option" />
+			<grant type="Language" id="ID_LANGUAGE_COMMON" requirements="!ID_WOTC_TCOE_OPTION_CUSTOMIZED_LANGUAGE" />
+			<select type="Language" name="Customized Language (Hadozee)" supports="Custom Race Language" requirements="ID_WOTC_TCOE_OPTION_CUSTOMIZED_LANGUAGE" />
+			<select type="Language" name="Language (Hadozee)" supports="Standard||Exotic" />
+			<grant type="Racial Trait" id="ID_WOTC_AAG_RACIAL_TRAIT_HADOZEE_DEXTEROUS_FEET" />
+			<grant type="Racial Trait" id="ID_WOTC_AAG_RACIAL_TRAIT_HADOZEE_GLIDE" />
+			<grant type="Racial Trait" id="ID_WOTC_AAG_RACIAL_TRAIT_HADOZEE_HADOZEE_RESILIENCE" />
+		</rules>
+	</element>
+
+	<element name="Dexterous Feet" type="Racial Trait" source="Astral Adventurer's Guide" id="ID_WOTC_AAG_RACIAL_TRAIT_HADOZEE_DEXTEROUS_FEET">
+		<description>
+			<p>As a bonus action, you can use your feet to manipulate an object, open or close a door or container, or pick up or set down a Tiny object.</p>
+		</description>
+		<sheet action="Bonus Action">
+			<description>You can use your feet to manipulate an object, open or close a door or container, or pick up or set down a Tiny object.</description>
+		</sheet>
+	</element>
+
+	<element name="Glide" type="Racial Trait" source="Astral Adventurer's Guide" id="ID_WOTC_AAG_RACIAL_TRAIT_HADOZEE_GLIDE">
+		<description>
+			<p>When you fall at least 10 feet above the ground, you can use your reaction to extend your skin membranes to glide horizontally a number of feet equal to your walking speed, and you take 0 damage from the fall. You determine the direction of the glide.</p>
+		</description>
+		<sheet action="Reaction">
+			<description>When you fall at least 10 feet above the ground, you can extend your skin membranes to glide {{speed}} ft. horizontally, and you take 0 damage from the fall. You determine the direction of the glide.</description>
+		</sheet>
+	</element>
+
+	<element name="Hadozee Resilience" type="Racial Trait" source="Astral Adventurer's Guide" id="ID_WOTC_AAG_RACIAL_TRAIT_HADOZEE_HADOZEE_RESILIENCE">
+		<description>
+			<p>The magic that runs in your veins heightens your natural defenses. When you take damage, you can use your reaction to roll a d6. Add your proficiency bonus to the number rolled, and reduce the damage you take by an amount equal to that total (minimum of 0 damage).</p>
+			<p class="indent">You can use this trait a number of times equal to your proficiency bonus. You regain all expended uses when you finish a long rest.</p>
+		</description>
+		<sheet action="Reaction" usage="{{proficiency}}/Long Rest">
+			<description>When you take damage, you can roll a d6. Add {{proficiency}} to the number rolled, and reduce the damage you take by an amount equal to that total (minimum of 0 damage).</description>
+		</sheet>
+	</element>
+</elements>
