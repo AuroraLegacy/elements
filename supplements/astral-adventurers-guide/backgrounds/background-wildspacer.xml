@@ -4,7 +4,7 @@
 		<name>Wildspacer</name>
 		<description></description>
 		<author url="https://dnd.wizards.com/products/spelljammer">Astral Adventurer's Guide</author>
-		<update version="0.0.1">
+		<update version="0.0.2">
 			<file name="background-wildspacer.xml" url="https://raw.githubusercontent.com/AuroraLegacy/elements/master/supplements/astral-adventurers-guide/backgrounds/background-wildspacer.xml" />
 		</update>
 	</info>
@@ -37,6 +37,9 @@
 				<tr><td>10</td><td>Void scavver*</td></tr>
 			</table>
 			<div element="ID_WOTC_AAG_BACKGROUND_FEATURE_WILDSPACER_WILDSPACE_ADAPTATION" />
+			<div class="reference">
+				<div element="ID_PHB_FEAT_TOUGH" />
+			</div>
 		</description>
 		<setters>
 			<set name="short">Athletics, Survival, Navigator’s tools, Vehicles (space)</set>
@@ -56,12 +59,16 @@
 		<supports>Background Feature</supports>
 		<description>
 			<p>You gain the Tough feat from the <i>Player’s Handbook</i>. In addition, you learned how to adapt to zero gravity. Being weightless doesn’t give you disadvantage on any of your melee attack rolls (see “Weightlessness” in chapter 2 of the <i>Astral Adventurer's Guide</i>).</p>
+			<div class="reference">
+				<div element="ID_PHB_FEAT_TOUGH" />
+			</div>
 		</description>
 		<sheet alt="Wildspace Adaptation">
 			<description>You learned how to adapt to zero gravity. Being weightless doesn’t give you disadvantage on any of your melee attack rolls.</description>
 		</sheet>
 		<rules>
 			<grant type="Feat" id="ID_PHB_FEAT_TOUGH" />
+			<grant type="Grants" id="ID_INTERNAL_GRANTS_BACKGROUND_WITH_A_FEAT" />
 		</rules>
 	</element>
 </elements>
