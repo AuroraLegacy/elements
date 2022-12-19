@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<elements>
+	<info>
+		<name>Kender</name>
+		<update version="0.0.1">
+			<file name="race-kender.xml" url="https://raw.githubusercontent.com/AuroraLegacy/elements/master/supplements/dragonlance-shadow-of-the-dragon-queen/race-kender.xml" />
+		</update>
+	</info>
+
+	<element name="Kender" type="Race" source="Dragonlance: Shadow of the Dragon Queen" id="ID_WOTC_DSDQ_RACE_KENDER">
+		<description>
+			<p>During the mythical origins of Krynn, Reorx, god of craft, indulged in an age of unfettered creation. Many peoples sprang from his divine forge, but not all among them remained as the god created them. Altered by unbridled magic, a group of gnomes were transformed and given almost supernatural curiosity and fearlessness. These were the first kender.</p>
+			<p class="indent">Originating on the world of Krynn, kender are diminutive Humanoids who look like humans with pointed ears and diverse appearances. Kender have a supernatural curiosity that drives them to adventure. Due to this inquisitiveness, many kender find themselves falling through portals to other planes and worlds.</p>
+			<p class="indent">Kender sometimes amass impressive collections of curiosities. Some might collect mundane knickknacks or relics from magical sites, while others might become professional thieves.</p>
+			<h4>Kender Traits</h4>
+			<p>As a kender, you have the following racial traits.</p>
+			<p class="indent"><strong><em>Creature Type.</em></strong> You are a Humanoid.</p>
+			<p class="indent"><strong><em>Size.</em></strong> You are Small.</p>
+			<p class="indent"><strong><em>Speed.</em></strong> Your walking speed is 30 feet.</p>
+			<p class="indent"><strong><em>Fearless.</em></strong> You have advantage on saving throws you make to avoid or end the frightened condition on yourself. When you fail a saving throw to avoid or end the frightened condition on yourself, you can choose to succeed instead. Once you succeed on a saving throw this way, you can't do so again until you finish a long rest.</p>
+			<p class="indent"><strong><em>Kender Aptitude.</em></strong> Thanks to the mystical origin of your people, you gain proficiency with one of the following skills of your choice: Insight, Investigation, Sleight of Hand, Stealth, or Survival.</p>
+			<p class="indent"><strong><em>Taunt.</em></strong> You have an extraordinary ability to fluster creatures. As a bonus action, you can unleash a string of provoking words at a creature within 60 feet of yourself that can hear and understand you. The target must succeed on a Wisdom saving throw, or it has disadvantage on attack rolls against targets other than you until the start of your next turn. The DC equals 8 + your proficiency bonus + your Intelligence, Wisdom, or Charisma modifier (choose when you select this race).</p>
+			<p class="indent">You can use this bonus action a number of times equal to your proficiency bonus, and you regain all expended uses when you finish a long rest.</p>
+		</description>
+		<sheet display="false" />
+		<rules>
+			<select type="Ability Score Improvement" name="Ability Score Improvement Option (Kender)" supports="Custom Ability Score Improvement Option" />
+			<grant type="Size" id="ID_SIZE_SMALL" />
+			<stat name="innate speed" value="30" bonus="base" />
+
+			<grant type="Language" id="ID_LANGUAGE_COMMON" requirements="!ID_WOTC_TCOE_OPTION_CUSTOMIZED_LANGUAGE" />
+			<select type="Language" name="Customized Language (Kender)" supports="Custom Race Language" requirements="ID_WOTC_TCOE_OPTION_CUSTOMIZED_LANGUAGE" />
+
+			<grant type="Racial Trait" id="ID_WOTC_DSDQ_RACIAL_TRAIT_KENDER_FEARLESS" />
+			<grant type="Racial Trait" id="ID_WOTC_DSDQ_RACIAL_TRAIT_KENDER_KENDER_APTITUDE" />
+			<grant type="Racial Trait" id="ID_WOTC_DSDQ_RACIAL_TRAIT_KENDER_TAUNT" />
+		</rules>
+	</element>
+
+	<element name="Fearless" type="Racial Trait" source="Dragonlance: Shadow of the Dragon Queen" id="ID_WOTC_DSDQ_RACIAL_TRAIT_KENDER_FEARLESS">
+		<description>
+			<p>You have advantage on saving throws you make to avoid or end the frightened condition on yourself. When you fail a saving throw to avoid or end the frightened condition on yourself, you can choose to succeed instead. Once you succeed on a saving throw this way, you can't do so again until you finish a long rest.</p>
+		</description>
+		<sheet>
+			<description>You have advantage on saving throws you make to avoid or end the frightened condition on yourself. When you fail a saving throw to avoid or end the frightened condition on yourself, you can choose to succeed instead. Once you succeed on a saving throw this way, you can't do so again until you finish a long rest.</description>
+		</sheet>
+	</element>
+
+	<element name="Kender Aptitude" type="Racial Trait" source="Dragonlance: Shadow of the Dragon Queen" id="ID_WOTC_DSDQ_RACIAL_TRAIT_KENDER_KENDER_APTITUDE">
+		<description>
+			<p>Thanks to the mystical origin of your people, you gain proficiency with one of the following skills of your choice: Insight, Investigation, Sleight of Hand, Stealth, or Survival.</p>
+		</description>
+		<sheet display="false" />
+		<rules>
+			<select type="Proficiency" name="Skill Proficiency (Kender Aptitude)" supports="ID_PROFICIENCY_SKILL_INSIGHT|ID_PROFICIENCY_SKILL_INVESTIGATION|ID_PROFICIENCY_SKILL_SLEIGHTOFHAND|ID_PROFICIENCY_SKILL_STEALTH|ID_PROFICIENCY_SKILL_SURVIVAL" />
+		</rules>
+	</element>
+
+	<element name="Taunt" type="Racial Trait" source="Dragonlance: Shadow of the Dragon Queen" id="ID_WOTC_DSDQ_RACIAL_TRAIT_KENDER_TAUNT">
+		<description>
+			<p>You have an extraordinary ability to fluster creatures. As a bonus action, you can unleash a string of provoking words at a creature within 60 feet of yourself that can hear and understand you. The target must succeed on a Wisdom saving throw, or it has disadvantage on attack rolls against targets other than you until the start of your next turn. The DC equals 8 + your proficiency bonus + your Intelligence, Wisdom, or Charisma modifier (choose when you select this race).</p>
+			<p class="indent">You can use this bonus action a number of times equal to your proficiency bonus, and you regain all expended uses when you finish a long rest.</p>
+		</description>
+		<sheet action="Bonus Action" usage="{{proficiency}}/Long Rest">
+			<description>You can unleash a string of provoking words at a creature within 60 feet of you that can hear and understand you. The target must succeed on a DC {{kender:taunt:dc}} Wisdom saving throw, or it has disadvantage on attack rolls against targets other than you until the start of your next turn.</description>
+		</sheet>
+		<rules>
+			<stat name="kender:taunt:dc" value="8" />
+			<stat name="kender:taunt:dc" value="proficiency" />
+			<select type="Racial Trait" name="Ability (Taunt)" supports="ID_WOTC_DSDQ_RACIAL_TRAIT_KENDER_TAUNT_INTELLIGENCE|ID_WOTC_DSDQ_RACIAL_TRAIT_KENDER_TAUNT_WISDOM|ID_WOTC_DSDQ_RACIAL_TRAIT_KENDER_TAUNT_CHARISMA" />
+		</rules>
+	</element>
+	<element name="Intelligence" type="Racial Trait" source="Dragonlance: Shadow of the Dragon Queen" id="ID_WOTC_DSDQ_RACIAL_TRAIT_KENDER_TAUNT_INTELLIGENCE">
+		<compendium display="false" />
+		<description>
+			<p>You use Intelligence modifier for Taunt trait.</p>
+		</description>
+		<sheet display="false" />
+		<rules>
+			<stat name="kender:taunt:dc" value="intelligence:modifier" />
+		</rules>
+	</element>
+	<element name="Wisdom" type="Racial Trait" source="Dragonlance: Shadow of the Dragon Queen" id="ID_WOTC_DSDQ_RACIAL_TRAIT_KENDER_TAUNT_WISDOM">
+		<compendium display="false" />
+		<description>
+			<p>You use Wisdom modifier for Taunt trait.</p>
+		</description>
+		<sheet display="false" />
+		<rules>
+			<stat name="kender:taunt:dc" value="wisdom:modifier" />
+		</rules>
+	</element>
+	<element name="Charisma" type="Racial Trait" source="Dragonlance: Shadow of the Dragon Queen" id="ID_WOTC_DSDQ_RACIAL_TRAIT_KENDER_TAUNT_CHARISMA">
+		<compendium display="false" />
+		<description>
+			<p>You use Charisma modifier for Taunt trait.</p>
+		</description>
+		<sheet display="false" />
+		<rules>
+			<stat name="kender:taunt:dc" value="charisma:modifier" />
+		</rules>
+	</element>
+
+</elements>

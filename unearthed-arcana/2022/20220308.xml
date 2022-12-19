@@ -2,7 +2,7 @@
 <elements>
 	<info>
 		<name>Unearthed Arcana: Heroes of Krynn</name>
-		<update version="0.0.2">
+		<update version="0.0.3">
 			<file name="20220308.xml" url="https://raw.githubusercontent.com/AuroraLegacy/elements/master/unearthed-arcana/2022/20220308.xml" />
 		</update>
 	</info>
@@ -142,7 +142,7 @@
 			<grant type="Archetype Feature" id="ID_WOTC_UA20220308_ARCHETYPE_FEATURE_LUNAR_MAGIC_MOON_FIRE" level="1" />
 			<grant type="Archetype Feature" id="ID_WOTC_UA20220308_ARCHETYPE_FEATURE_LUNAR_MAGIC_LUNAR_EMBODIMENT" level="1" />
 			<grant type="Archetype Feature" id="ID_WOTC_UA20220308_ARCHETYPE_FEATURE_LUNAR_MAGIC_LUNAR_BOONS" level="6" />
-			<grant type="Archetype Feature" id="ID_WOTC_UA20220308_ARCHETYPE_FEATURE_LUNAR_MAGIC_WAXING_AND_WANING" level="9" />
+			<grant type="Archetype Feature" id="ID_WOTC_UA20220308_ARCHETYPE_FEATURE_LUNAR_MAGIC_WAXING_AND_WANING" level="6" />
 			<grant type="Archetype Feature" id="ID_WOTC_UA20220308_ARCHETYPE_FEATURE_LUNAR_MAGIC_LUNAR_EMPOWERMENT" level="14" />
 			<grant type="Archetype Feature" id="ID_WOTC_UA20220308_ARCHETYPE_FEATURE_LUNAR_MAGIC_LUNAR_PHENOMENON" level="18" />
 		</rules>
@@ -299,8 +299,8 @@
 	</element>
 
 	<element name="Waxing and Waning" type="Archetype Feature" source="Unearthed Arcana: Heroes of Krynn" id="ID_WOTC_UA20220308_ARCHETYPE_FEATURE_LUNAR_MAGIC_WAXING_AND_WANING">
-		<p><em>6th-Level Lunar Magic Feature</em></p>
 		<description>
+			<p><em>6th-Level Lunar Magic Feature</em></p>
 			<p>You gain greater control over the phases of your lunar magic. As a bonus action, you can spend 1 sorcery point to change your lunar phase for a different one.</p>
 		</description>
 		<sheet action="Bonus Action">
@@ -453,6 +453,9 @@
 				<tr><td>5</td><td>A meaningful favor from someone you defended perhaps a handkerchief or glove</td></tr>
 				<tr><td>6</td><td>A brass locket with a sketch of a silver dragon inside</td></tr>
 			</table>
+			<div class="reference">
+				<div element="ID_WOTC_UA20220308_FEAT_SQUIRE_OF_SOLAMNIA" />
+			</div>
 		</description>
 		<setters>
 			<set name="short">Athletics, Survival, Musical Instrument, Language</set>
@@ -480,12 +483,16 @@
 		<description>
 			<p>You gain the Squire of Solamnia feat.</p>
 			<p class="indent">In addition, the Knights of Solamnia provide you free, modest lodging and food at any of their fortresses or encampments.</p>
+			<div class="reference">
+				<div element="ID_WOTC_UA20220308_FEAT_SQUIRE_OF_SOLAMNIA" />
+			</div>
 		</description>
 		<sheet alt="Squire of Solamnia">
 			<description>The Knights of Solamnia provide you free, modest lodging and food at any of their fortresses or encampments.</description>
 		</sheet>
 		<rules>
 			<grant type="Feat" id="ID_WOTC_UA20220308_FEAT_SQUIRE_OF_SOLAMNIA" />
+			<grant type="Grants" id="ID_INTERNAL_GRANTS_BACKGROUND_WITH_A_FEAT" />
 		</rules>
 	</element>
 
@@ -527,6 +534,9 @@
 				<tr><td>5</td><td>A pouch or spell book emblazoned with the triple moon symbol of the Mages of High Sorcery</td></tr>
 				<tr><td>6</td><td>A lens through which you can see Krynn's invisible black moon, Nuitari</td></tr>
 			</table>
+			<div class="reference">
+				<div element="ID_WOTC_UA20220308_FEAT_INITIATE_OF_HIGH_SORCERY" />
+			</div>
 		</description>
 		<setters>
 			<set name="short">Arcana, History, 2 Languages</set>
@@ -553,12 +563,16 @@
 		<description>
 			<p>You gain the Initiate of High Sorcery feat.</p>
 			<p class="indent">In addition, the Mages of High Sorcery provide you with free, modest lodging and food indefinitely at any occupied Tower of High Sorcery and for one night at the home of an organization member.</p>
+			<div class="reference">
+				<div element="ID_WOTC_UA20220308_FEAT_INITIATE_OF_HIGH_SORCERY" />
+			</div>
 		</description>
 		<sheet alt="Initiate of High Sorcery">
 			<description>The Mages of High Sorcery provide you with free, modest lodging and food indefinitely at any occupied Tower of High Sorcery and for one night at the home of an organization member.</description>
 		</sheet>
 		<rules>
 			<grant type="Feat" id="ID_WOTC_UA20220308_FEAT_INITIATE_OF_HIGH_SORCERY" />
+			<grant type="Grants" id="ID_INTERNAL_GRANTS_BACKGROUND_WITH_A_FEAT" />
 		</rules>
 	</element>
 
@@ -981,7 +995,7 @@
 	<element name="Nuitari" type="Feat Feature" source="Unearthed Arcana: Heroes of Krynn" id="ID_WOTC_UA20220308_FEAT_FEATURE_INITIATE_OF_HIGH_SORCERY_NUITARI">
 		<compendium display="false" />
 		<description>
-			<p>Choose one cantrip from <i>chill touch</i>, <i>mage hand</i>, and <i>vicious mockery</i> and choose one 1st-level wizard spell from the evocation or necromancy school of magic.</p>
+			<p>The black moon. Choose one cantrip from <i>chill touch</i>, <i>mage hand</i>, and <i>vicious mockery</i> and choose one 1st-level wizard spell from the evocation or necromancy school of magic.</p>
 		</description>
 		<sheet display="false" />
 		<rules>
@@ -993,7 +1007,7 @@
 	<element name="Lunitari" type="Feat Feature" source="Unearthed Arcana: Heroes of Krynn" id="ID_WOTC_UA20220308_FEAT_FEATURE_INITIATE_OF_HIGH_SORCERY_LUNITARI">
 		<compendium display="false" />
 		<description>
-			<p>Choose one cantrip from <i>guidance</i>, <i>message</i>, and <i>prestidigitation</i> and choose one 1st-level wizard spell from the divination or transmutation school of magic.</p>
+			<p>The red moon. Choose one cantrip from <i>guidance</i>, <i>message</i>, and <i>prestidigitation</i> and choose one 1st-level wizard spell from the divination or transmutation school of magic.</p>
 		</description>
 		<sheet display="false" />
 		<rules>
@@ -1005,7 +1019,7 @@
 	<element name="Solinari" type="Feat Feature" source="Unearthed Arcana: Heroes of Krynn" id="ID_WOTC_UA20220308_FEAT_FEATURE_INITIATE_OF_HIGH_SORCERY_SOLINARI">
 		<compendium display="false" />
 		<description>
-			<p>Choose one cantrip from <i>produce flame</i>, <i>resistance</i>, and <i>spare the dying</i> and choose one 1st-level wizard spell from the abjuration or conjuration school of magic.</p>
+			<p>The white moon. Choose one cantrip from <i>produce flame</i>, <i>resistance</i>, and <i>spare the dying</i> and choose one 1st-level wizard spell from the abjuration or conjuration school of magic.</p>
 		</description>
 		<sheet display="false" />
 		<rules>
