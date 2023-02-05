@@ -2,7 +2,7 @@
 <elements>
 	<info>
 		<name>Tiefling</name>
-		<update version="0.2.6">
+		<update version="0.2.7">
 			<file name="race-tiefling.xml" url="https://raw.githubusercontent.com/AuroraLegacy/elements/master/core/players-handbook/races/race-tiefling.xml" />
 		</update>
 	</info>
@@ -53,9 +53,9 @@
 			<grant type="Size" id="ID_SIZE_MEDIUM" />
 			<grant type="Vision" id="ID_VISION_DARKVISION" />
 			<grant type="Language" id="ID_LANGUAGE_COMMON" requirements="!ID_WOTC_TCOE_OPTION_CUSTOMIZED_LANGUAGE" />
-			<grant type="Language" id="ID_LANGUAGE_INFERNAL" requirements="!ID_WOTC_TCOE_OPTION_CUSTOMIZED_LANGUAGE" />
+			<grant type="Language" id="ID_LANGUAGE_INFERNAL" requirements="!(ID_WOTC_TCOE_OPTION_CUSTOMIZED_LANGUAGE|ID_INTERNAL_LANGUAGE_REPLACEMENT_TIEFLING_INFERNAL)" />
 			<select type="Language" name="Customized Language" supports="Custom Race Language" number="2" requirements="ID_WOTC_TCOE_OPTION_CUSTOMIZED_LANGUAGE" />
-			<grant type="Racial Trait" id="ID_RACIAL_TRAIT_HELLISH_RESISTANCE" />
+			<grant type="Racial Trait" id="ID_RACIAL_TRAIT_HELLISH_RESISTANCE" requirements="!ID_INTERNAL_RACIAL_TRAIT_REPLACEMENT_TIEFLING_HELLISH_RESISTANCE" />
 			<grant type="Racial Trait" id="ID_RACIAL_TRAIT_INFERNAL_LEGACY" requirements="!ID_INTERNAL_GRANTS_TIEFLING_SUBRACE"/>
 			<select type="Sub Race" name="Tiefling Subrace" supports="Tiefling" optional="true" />
 		</rules>
@@ -88,4 +88,8 @@
 	</element>
 	<!-- an element that you should grant in a subrace so that you can override stats/infernal legacy -->
 	<element name="Tiefling Subrace" type="Grants" source="Internal" id="ID_INTERNAL_GRANTS_TIEFLING_SUBRACE" />
+	<!-- an element that you should grant in a racial trait for a subrace so that you can override hellish resistance -->
+	<element name="Hellish Resistance Replacement" type="Grants" source="Internal" id="ID_INTERNAL_RACIAL_TRAIT_REPLACEMENT_TIEFLING_HELLISH_RESISTANCE" />
+	<!-- an element that you should grant in a subrace so that you can replace infernal with another language -->
+	<element name="Infernal Language Replacement (Tiefling)" type="Grants" source="Internal" id="ID_INTERNAL_LANGUAGE_REPLACEMENT_TIEFLING_INFERNAL" />
 </elements>
