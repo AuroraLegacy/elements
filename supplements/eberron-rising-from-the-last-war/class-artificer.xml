@@ -5,7 +5,7 @@
 			<file name="class-artificer.xml" url="https://raw.githubusercontent.com/AuroraLegacy/elements/master/supplements/eberron-rising-from-the-last-war/class-artificer.xml" />
 		</update>
 	</info>
-	
+
 	<element name="Artificer" type="Class" source="Eberron: Rising from the Last War" id="ID_WOTC_ERLW_CLASS_ARTIFICER">
 		<description>
 			<p>Masters of unlocking magic in everyday objects, artificers are supreme inventors. They see magic as a complex system waiting to be decoded and controlled. Artificers use tools to channel arcane power, crafting magical objects. To cast a spell, an artificer could use alchemist’s supplies to create a potent elixir, calligrapher’s supplies to inscribe a sigil of power on an ally’s armor, or tinker’s tools to craft a temporary charm. The magic of artificers is tied to their tools and their talents.</p>
@@ -96,6 +96,8 @@
 		</setters>
 		<sheet display="false" />
 		<rules>
+			<grant type="Grants" id="ID_INTERNAL_GRANT_ARTIFICER_CLASS"/>
+
 			<grant type="Proficiency" id="ID_PROFICIENCY_ARMOR_PROFICIENCY_LIGHT_ARMOR" />
 			<grant type="Proficiency" id="ID_PROFICIENCY_ARMOR_PROFICIENCY_MEDIUM_ARMOR" />
 			<grant type="Proficiency" id="ID_PROFICIENCY_ARMOR_PROFICIENCY_SHIELDS" />
@@ -125,12 +127,13 @@
 		</rules>
 		<multiclass id="ID_WOTC_ERLW_MULTICLASS_ARTIFICER">
 			<prerequisite>Intelligence 13</prerequisite>
-			<requirements>[int:13],!ID_WOTC_UA20190228_CLASS_ARTIFICER,!ID_WOTC_UA20190228_MULTICLASS_ARTIFICER, !ID_WOTC_UA_CLASS_ARTIFICER, !ID_WOTC_UA_MULTICLASS_ARTIFICER, !ID_WOTC_TCOE_CLASS_ARTIFICER</requirements>
+			<requirements>[int:13],!ID_INTERNAL_GRANT_ARTIFICER_CLASS</requirements>
 			<setters>
 				<set name="multiclass proficiencies">light armor, medium armor, shields, thieves’ tools, tinker’s tools.</set>
 			</setters>
 			<rules>
 				<grant type="Grants" id="ID_INTERNAL_GRANT_MULTICLASS" />
+				<grant type="Grants" id="ID_INTERNAL_GRANT_ARTIFICER_MULTICLASS"/>
 			</rules>
 		</multiclass>
 	</element>
@@ -186,7 +189,7 @@
 			<p>You can cast an artificer spell as a ritual if that spell has the ritual tag and you have the spell prepared.</p>
 		</description>
 		<sheet display="false">
-			<description>You produce your artificer spell effects through your tools. You must have a spellcasting focus—specifically thieves’ tools or some kind of artisan’s tool—in hand when you cast any spell. 
+			<description>You produce your artificer spell effects through your tools. You must have a spellcasting focus—specifically thieves’ tools or some kind of artisan’s tool—in hand when you cast any spell.
 			You can also use any item bearing one of your infusions as a spellcasting focus.</description>
 		</sheet>
 		<spellcasting name="Artificer" ability="Intelligence" prepare="true">
@@ -220,7 +223,7 @@
 			<p>At 2nd level, you gain the ability to imbue mundane items with certain magical infusions. The magic items you create with this feature are effectively prototypes of permanent items.</p>
 			<h5>INFUSIONS KNOWN</h5>
 			<p>When you gain this feature, pick four artificer infusions to learn, choosing from the "Artificer Infusions" section at the end of the class’s description. You learn additional infusions of your choice when you reach certain levels in this class, as shown in the Infusions Known column of the Artificer table.</p>
-			<p class="indent">Whenever you gain a level in this class, you can replace one of the artificer infusions you learned with a new one.</p>	
+			<p class="indent">Whenever you gain a level in this class, you can replace one of the artificer infusions you learned with a new one.</p>
 			<h5>INFUSING AN ITEM</h5>
 			<p>Whenever you finish a long rest, you can touch a nonmagical object and imbue it with one of your artificer infusions, turning it into a magic item. An infusion works on only certain kinds of objects, as specified in the infusion’s description. If the item requires attunement, you can attune yourself to it the instant you infuse the item. If you decide to attune to the item later, you must do so using the normal process for attunement (see "Attunement" in chapter 7 of the Dungeon Master’s Guide).</p>
 			<p class="indent">Your infusion remains in an item indefinitely, but when you die, the infusion vanishes after a number of days have passed equal to your Intelligence modifier (minimum of 1 day). The infusion also vanishes if you give up your knowledge of the infusion for another one.</p>
@@ -534,7 +537,7 @@
 		<rules>
 			<select name="Feat (Level 16)" type="Feat" />
 		</rules>
-	</element> 
+	</element>
 	<element name="Ability Score Improvement" type="Class Feature" source="Eberron: Rising from the Last War" id="ID_WOTC_ERLW_CLASS_FEATURE_ABILITY_19">
 		<compendium display="false" />
 		<supports>Improvement Option, Eberron Artificer, 19</supports>
