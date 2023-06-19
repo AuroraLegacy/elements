@@ -20,9 +20,7 @@
 			<div element="ID_WOTC_ERLW_ARCHETYPE_FEATURE_BATTLE_SMITH_ARCANE_JOLT" />
 			<div element="ID_WOTC_ERLW_ARCHETYPE_FEATURE_BATTLE_SMITH_IMPROVED_DEFENDER" />
 		</description>
-		<sheet display="false">
-			<description>Armies require protection, and someone has to put things back together if defenses fail.</description>
-		</sheet>
+		<sheet display="false" />
 		<rules>
 			<grant type="Archetype Feature" id="ID_WOTC_ERLW_ARCHETYPE_FEATURE_BATTLE_SMITH_TOOL_PROFICIENCY" level="3" />
 			<grant type="Archetype Feature" id="ID_WOTC_ERLW_ARCHETYPE_FEATURE_BATTLE_SMITH_BATTLE_SMITH_SPELLS" level="3" />
@@ -38,9 +36,7 @@
 		<description>
 			<p>When you adopt this specialization at 3rd level, you gain proficiency with smith’s tools. If you already have this proficiency, you gain proficiency with one other type of artisan’s tools of your choice.</p>
 		</description>
-		<sheet display="false">
-			<description>You gain proficiency with smith’s tools. If you already have this proficiency, you gain proficiency with one other type of artisan’s tools of your choice.</description>
-		</sheet>
+		<sheet display="false" />
 		<rules>
 			<select type="Proficiency" name="Tool Proficiency, Battle Smith" supports="Tool" default="ID_PROFICIENCY_TOOL_PROFICIENCY_SMITHS_TOOLS" />
 		</rules>
@@ -61,9 +57,7 @@
 				<tr><td>17th</td><td><em>banishing smite, mass cure wounds</em></td></tr>
 			</table>			
 		</description>
-		<sheet display="false">
-			<description>You always have certain spells prepared after you reach particular levels in this class, as shown in the Battle Smith Spells table. These spells count as artificer spells for you, but they don’t count against the number of artificer spells you prepare.</description>
-		</sheet>
+		<sheet display="false" />
 		<rules>
 			<grant type="Spell" id="ID_PHB_SPELL_HEROISM" spellcasting="Artificer" level="3" prepared="true" />
 			<grant type="Spell" id="ID_PHB_SPELL_SHIELD" spellcasting="Artificer" level="3" prepared="true" />
@@ -98,12 +92,12 @@
 		<description>
 			<p>By 3rd level, your tinkering has borne you a faithful companion, a steel defender. It is friendly to you and your companions, and it obeys your commands. See this creature’s game statistics in the Steel Defender stat block, which uses your proficiency bonus (PB) in several places. You determine the creature’s appearance and whether it has two legs or four; your choice has no effect on its game statistics.</p>
 			<p class="indent">In combat, the defender shares your initiative count, but it takes its turn immediately after yours. It can move and use its reaction on its own, but the only action it takes on its turn is the Dodge action, unless you take a bonus action on your turn to command it to take another action. That action can be one in its stat block or some other action. If you are incapacitated, the defender can take any action of its choice, not just Dodge.</p>
-			<p class="indent">If the mending spell is cast on it, it regains 2d6 hit points. If it has died within the last hour, you can use your smith’s tools as an action to revive it, provided you are within 5 feet of it and you expend a spell slot of 1st level or higher. The steel defender returns to life after 1 minute with all its hit points restored.</p>
+			<p class="indent">If the <i>mending spell</i> is cast on it, it regains 2d6 hit points. If it has died within the last hour, you can use your smith’s tools as an action to revive it, provided you are within 5 feet of it and you expend a spell slot of 1st level or higher. The steel defender returns to life after 1 minute with all its hit points restored.</p>
 			<p class="indent">At the end of a long rest, you can create a new steel defender if you have your smith’s tools with you. If you already have a steel defender from this feature, the first one immediately perishes. The defender also perishes if you die.</p>
 		</description>
 		<sheet>
-			<description>In combat, the defender shares your initiative count, but it takes its turn immediately after yours. It can move and use its reaction on its own, but the only action it takes on its turn is the Dodge action, unless you take a bonus action on your turn to command it to take another action. That action can be one in its stat block or some other action. If you are incapacitated, the defender can take any action of its choice, not just Dodge.
-			If the mending spell is cast on it, it regains 2d6 hit points. If it has died within the last hour, you can use your smith’s tools as an action to revive it, provided you are within 5 feet of it and you expend a spell slot of 1st level or higher. The steel defender returns to life after 1 minute with all its hit points restored.
+			<description>In combat, the defender shares your initiative count, but it takes its turn immediately after yours. It can move and use its reaction on its own, but the only action it takes on its turn is the Dodge action, unless you take a bonus action on your turn to command it to take another action. That action can be one in its stat block or some other action. If you are incapacitated, the defender can take any action of its choice, not just Dodge. &#13;
+			If the mending spell is cast on it, it regains 2d6 hit points. If it has died within the last hour, you can use your smith’s tools as an action to revive it, provided you are within 5 feet of it and you expend a spell slot of 1st level or higher. The steel defender returns to life after 1 minute with all its hit points restored. &#13;
 			At the end of a long rest, you can create a new steel defender if you have your smith’s tools with you.</description>
 		</sheet>
 		<rules>
@@ -115,9 +109,7 @@
 		<description>
 			<p>Starting at 5th level, you can attack twice, rather than once, whenever you take the Attack action on your turn.</p>
 		</description>
-		<sheet>
-			<description>You can attack twice, rather than once, whenever you take the Attack action on your turn.</description>
-		</sheet>
+		<sheet display="false" />
 		<rules>
 			<stat name="extra attack:count" value="2" level="5" bonus="extra attack" />
 		</rules>
@@ -133,8 +125,8 @@
 			<p class="indent">You can use this energy a number of times equal to your Intelligence modifier (minimum of once), but you can do so no more than once on a turn. You regain all expended uses when you finish a long rest.</p>
 		</description>
 		<sheet usage="{{arcane jolt:usage}}/Long Rest">
-			<description>When either you hit a target with a magic weapon attack or your steel defender hits a target, you can create one of the following effects:
-			The target takes an extra {{arcane jolt:dice:amount}}d6 force damage.
+			<description>When either you hit a target with a magic weapon attack or your steel defender hits a target, you can create one of the following effects: &#13;
+			The target takes an extra {{arcane jolt:dice:amount}}d6 force damage. &#13;
 			Choose one creature or object you can see within 30 feet of the target restoring {{arcane jolt:dice:amount}}d6 hit points to it.</description>
 		</sheet>
 		<rules>
@@ -157,7 +149,7 @@
 			<description>Whenever your steel defender uses its Deflect Attack, the attacker takes 1d4+{{intelligence:modifier}} force damage.</description>
 		</sheet>
 		<rules>
-			<stat name="arcane jolt:dice:amount" value="2" />
+			<stat name="arcane jolt:dice:amount" value="4" bonus="base" />
 			<stat name="companion:ac" value="2" />
 		</rules>
 	</element>
@@ -179,24 +171,24 @@
 			<p><b>Proficiency Bonus (PB)</b> equals your bonus</p>
 		</description>
 		<setters>
+			<set name="size">Medium</set>
+			<set name="type">Construct</set>
+			<set name="alignment">neutral</set>
+			<set name="ac">15 (natural armor)</set>
+			<set name="hp">2 + your Intelligence modifier + five times your artificer level (the defender has a number of Hit Dice [d8s] equal to your artificer level)</set>
+			<set name="speed">40 ft.</set>
 			<set name="strength">14</set>
 			<set name="dexterity">12</set>
 			<set name="constitution">14</set>
 			<set name="intelligence">4</set>
 			<set name="wisdom">10</set>
 			<set name="charisma">6</set>
-			<set name="ac">15 (natural armor)</set>
-			<set name="hp">2 + your Intelligence modifier + five times your artificer level (the defender has a number of Hit Dice [d8s] equal to your artificer level)</set>
-			<set name="speed">40 ft.</set>
-			<set name="immunities">poison</set>
-			<set name="conditionImmunities">charmed, exhaustion, poisoned</set>			
 			<set name="saves">Dex +1 plus PB, Con +2 plus PB</set>
 			<set name="skills">Athletics +2 plus PB, Perception +0 plus PB × 2</set>
+			<set name="immunities">poison</set>
+			<set name="conditionImmunities">charmed, exhaustion, poisoned</set>
 			<set name="senses">darkvision 60 ft., passive Perception 10 plus PB×2</set>
 			<set name="languages">understands the languages you speak</set>
-			<set name="type">Construct</set>
-			<set name="size">Medium</set>
-			<set name="alignment">neutral</set>
 			<set name="challenge">1</set>
 			<set name="traits">ID_WOTC_ERLW_COMPANION_TRAIT_STEEL_DEFENDER_VIGILANT</set>
 			<set name="actions">ID_WOTC_ERLW_COMPANION_ACTION_STEEL_DEFENDER_FORCE_EMPOWERED_REND,ID_WOTC_ERLW_COMPANION_ACTION_STEEL_DEFENDER_REPAIR</set>
