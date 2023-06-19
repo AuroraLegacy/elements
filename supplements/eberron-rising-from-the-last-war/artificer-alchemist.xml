@@ -18,9 +18,7 @@
 			<div element="ID_WOTC_ERLW_ARCHETYPE_FEATURE_ALCHEMIST_RESTORATIVE_REAGENTS" />
 			<div element="ID_WOTC_ERLW_ARCHETYPE_FEATURE_ALCHEMIST_CHEMICAL_MASTERY" />
 		</description>
-		<sheet display="false">
-			<description>An Alchemist is an expert at combining reagents to produce mystical effects.</description>
-		</sheet>
+		<sheet display="false" />
 		<rules>
 			<grant type="Archetype Feature" id="ID_WOTC_ERLW_ARCHETYPE_FEATURE_ALCHEMIST_TOOL_PROFICIENCY" level="3" />
 			<grant type="Archetype Feature" id="ID_WOTC_ERLW_ARCHETYPE_FEATURE_ALCHEMIST_ALCHEMIST_SPELLS" level="3" />
@@ -35,9 +33,7 @@
 		<description>
 			<p>When you adopt this specialization at 3rd level, you gain proficiency with alchemist’s supplies. If you already have this proficiency, you gain proficiency with one other type of artisan’s tools of your choice.</p>
 		</description>
-		<sheet display="false">
-			<description>You gain proficiency with alchemist’s supplies. If you already have this proficiency, you gain proficiency with one other type of artisan’s tools of your choice.</description>
-		</sheet>
+		<sheet display="false" />
 		<rules>
 			<select type="Proficiency" name="Tool Proficiency, Alchemist" supports="Tool" default="ID_PROFICIENCY_TOOL_PROFICIENCY_ALCHEMISTS_SUPPLIES" />
 		</rules>
@@ -58,9 +54,7 @@
 				<tr><td>17th</td><td><em>cloudkill, raise dead</em></td></tr>
 			</table>
 		</description>
-		<sheet display="false">
-			<description>You always have certain spells prepared after you reach particular levels in this class, as shown in the Alchemist Spells table. These spells count as artificer spells for you, but they don’t count against the number of artificer spells you prepare.</description>
-		</sheet>
+		<sheet display="false" />
 		<rules>
 			<grant type="Spell" id="ID_PHB_SPELL_HEALING_WORD" spellcasting="Artificer" level="3" prepared="true" />
 			<grant type="Spell" id="ID_PHB_SPELL_RAY_OF_SICKNESS" spellcasting="Artificer" level="3" prepared="true" />
@@ -77,10 +71,10 @@
 	<element name="Experimental Elixir" type="Archetype Feature" source="Eberron: Rising from the Last War" id="ID_WOTC_ERLW_ARCHETYPE_FEATURE_ALCHEMIST_EXPERIMENTAL_ELIXIR">
 		<requirements>!ID_INTERNAL_FEATURE_REPLACEMENT_ERLW_ARTIFICER_ALCHEMIST_EXPERIMENTAL_ELIXIR</requirements>
 		<description>
-			<p>Beginning at 3rd level, whenever you finish a long rest, you can magically produce an experimental elixir in an empty flask you touch. Roll on the Experimental Elixir table for the elixir’s effect, which is triggered when someone drinks the elixir. As an action, a creature can drink the elixir or administer it to an incapacitated creature.</p>
-			<p class="indent">Creating an experimental elixir requires you to have alchemist supplies on your person, and any elixir you create with this feature lasts until it is drunk or until the end of your next long rest.</p>
+			<p>Beginning at 3rd level, whenever you finish a long rest, you can magically produce an <i>experimental elixir</i> in an empty flask you touch. Roll on the Experimental Elixir table for the elixir’s effect, which is triggered when someone drinks the elixir. As an action, a creature can drink the elixir or administer it to an incapacitated creature.</p>
+			<p class="indent">Creating an <i>experimental elixir</i> requires you to have alchemist supplies on your person, and any elixir you create with this feature lasts until it is drunk or until the end of your next long rest.</p>
 			<p class="indent">When you reach certain levels in this class, you can make more elixirs at the end of a long rest: two at 6th level and three at 15th level. Roll for each elixir’s effect separately. Each elixir requires its own flask.</p>
-			<p class="indent">You can create additional experimental elixirs by expending a spell slot of 1st level or higher for each one. When you do so, you use your action to create the elixir in an empty flask you touch, and you choose the elixir’s effect from the Experimental Elixir table.</p>
+			<p class="indent">You can create additional <i>experimental elixirs</i> by expending a spell slot of 1st level or higher for each one. When you do so, you use your action to create the elixir in an empty flask you touch, and you choose the elixir’s effect from the Experimental Elixir table.</p>
 			<p><strong>Experimental Elixir</strong></p>
 			<table>
 				<thead>
@@ -95,8 +89,8 @@
 			</table>
 		</description>
 		<sheet>
-			<description>Whenever you finish a long rest, you can magically produce up to {{experimental elixir:count}} elixirs, each in an empty flask you touch.
-			Any elixir you create with this feature lasts until it is drunk or until the end of your next long rest.
+			<description>Whenever you finish a long rest, you can magically produce up to {{experimental elixir:count}} elixirs, each in an empty flask you touch. &#13;
+			Any elixir you create with this feature lasts until it is drunk or until the end of your next long rest. &#13;
 			You can create additional experimental elixirs by expending a spell slot of 1st level or higher for each one.</description>
 		</sheet>
 		<rules>
@@ -123,12 +117,12 @@
 		<description>
 			<p>Starting at 9th level, you can incorporate restorative reagents into some of your works:</p>
 			<ul>
-				<li>Whenever a creature drinks an experimental elixir you created, the creature gains temporary hit points equal to 2d6 + your Intelligence modifier (minimum of 1 temporary hit point).</li>
-				<li>You can cast lesser restoration without expending a spell slot and without preparing the spell, provided you use alchemist’s supplies as the spellcasting focus. You can do so a number of times equal to your Intelligence modifier (minimum of once), and you regain all expended uses when you finish a long rest.</li>
+				<li>Whenever a creature drinks an <i>experimental elixir</i> you created, the creature gains temporary hit points equal to 2d6 + your Intelligence modifier (minimum of 1 temporary hit point).</li>
+				<li>You can cast <i>lesser restoration</i> without expending a spell slot and without preparing the spell, provided you use alchemist’s supplies as the spellcasting focus. You can do so a number of times equal to your Intelligence modifier (minimum of once), and you regain all expended uses when you finish a long rest.</li>
 			</ul>
 		</description>
 		<sheet>
-			<description>Whenever a creature drinks an experimental elixir you created, the creature gains 2d6+{{intelligence:modifier}} temporary hp.
+			<description>Whenever a creature drinks an experimental elixir you created, the creature gains 2d6+{{intelligence:modifier}} temporary hp. &#13;
 			You can cast lesser restoration {{restorative reagents:usage}} times per long rest without expending a spell slot and without preparing the spell, provided you use alchemist’s supplies as the spellcasting focus.</description>
 		</sheet>
 		<rules>
@@ -142,11 +136,11 @@
 			<p>By 15th level, you have been exposed to so many chemicals that they pose little risk to you, and you can use them to quickly end certain ailments:</p>
 			<ul>
 				<li>You gain resistance to acid damage and poison damage, and you are immune to the poisoned condition.</li>
-				<li>You can cast greater restoration and heal without expending a spell slot, without preparing the spell, and without material components, provided you use alchemist’s supplies as the spellcasting focus. Once you cast either spell with this feature, you can’t cast that spell with it again until you finish a long rest.</li>
+				<li>You can cast <i>greater restoration</i> and <i>heal</i> without expending a spell slot, without preparing the spell, and without material components, provided you use alchemist’s supplies as the spellcasting focus. Once you cast either spell with this feature, you can’t cast that spell with it again until you finish a long rest.</li>
 			</ul>
 		</description>
 		<sheet usage="1/Long Rest">
-			<description>You are immune to the poisoned condition.
+			<description>You are immune to the poisoned condition. &#13;
 			You can cast greater restoration and heal without expending a spell slot, without preparing the spell, and without material components, provided you use alchemist’s supplies as the spellcasting focus.</description>
 		</sheet>
 		<rules>
