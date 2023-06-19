@@ -18,9 +18,7 @@
 			<div element="ID_WOTC_ERLW_ARCHETYPE_FEATURE_ARTILLERIST_EXPLOSIVE_CANNON" />
 			<div element="ID_WOTC_ERLW_ARCHETYPE_FEATURE_ARTILLERIST_FORTIFIED_POSITION" />
 		</description>
-		<sheet display="false">
-			<description>An Artillerist specializes in using magic to hurl energy, projectiles, and explosions on a battlefield.</description>
-		</sheet>
+		<sheet display="false" />
 		<rules>
 			<grant type="Archetype Feature" id="ID_WOTC_ERLW_ARCHETYPE_FEATURE_ARTILLERIST_TOOL_PROFICIENCY" level="3" />
 			<grant type="Archetype Feature" id="ID_WOTC_ERLW_ARCHETYPE_FEATURE_ARTILLERIST_ARTILLERIST_SPELLS" level="3" />
@@ -35,9 +33,7 @@
 		<description>
 			<p>When you adopt this specialization at 3rd level, you gain proficiency with woodcarver’s tools. If you already have this proficiency, you gain proficiency with one other type of artisan’s tools of your choice.</p>
 		</description>
-		<sheet display="false">
-			<description>You gain proficiency with woodcarver’s tools. If you already have this proficiency, you gain proficiency with one other type of artisan’s tools of your choice.</description>
-		</sheet>
+		<sheet display="false" />
 		<rules>
 			<select type="Proficiency" name="Tool Proficiency, Artillerist" supports="Tool" default="ID_PROFICIENCY_TOOL_PROFICIENCY_WOODCARVERS_TOOLS" />
 		</rules>
@@ -58,9 +54,7 @@
 				<tr><td>17th</td><td><em>cone of cold, wall of force</em></td></tr>
 			</table>
 		</description>
-		<sheet display="false">
-			<description>You always have certain spells prepared after you reach particular levels in this class, as shown in the Artillerist Spells table. These spells count as artificer spells for you, but they don’t count against the number of artificer spells you prepare.</description>
-		</sheet>
+		<sheet display="false" />
 		<rules>
 			<grant type="Spell" id="ID_PHB_SPELL_SHIELD" spellcasting="Artificer" level="3" prepared="true" />
 			<grant type="Spell" id="ID_PHB_SPELL_THUNDERWAVE" spellcasting="Artificer" level="3" prepared="true" />
@@ -79,7 +73,7 @@
 		<description>
 			<p>At 3rd level, you learn how to create a magical cannon. Using woodcarver’s tools or smith’s tools, you can take an action to magically create a Small or Tiny eldritch cannon in an unoccupied space on a horizontal surface within 5 feet of you. A Small eldritch cannon occupies its space, and a Tiny one can be held in one hand.</p>
 			<p class="indent">Once you create a cannon, you can’t do so again until you finish a long rest or until you expend a spell slot to create one. You can have only one cannon at a time and can’t create one while your cannon is present.</p>
-			<p class="indent">The cannon is a magical object. Regardless of size, the cannon has an AC of 18 and a number of hit points equal to five times your artificer level. It is immune to poison damage and psychic damage. If it is forced to make an ability check or a saving throw, treat all its ability scores as 10 (+0). If the mending spell is cast on it, it regains 2d6 hit points. It disappears if it is reduced to 0 hit points or after 1 hour. You can dismiss it early as an action.</p>
+			<p class="indent">The cannon is a magical object. Regardless of size, the cannon has an AC of 18 and a number of hit points equal to five times your artificer level. It is immune to poison damage and psychic damage. If it is forced to make an ability check or a saving throw, treat all its ability scores as 10 (+0). If the <i>mending</i> spell is cast on it, it regains 2d6 hit points. It disappears if it is reduced to 0 hit points or after 1 hour. You can dismiss it early as an action.</p>
 			<p class="indent">When you create the cannon, you determine its appearance and whether it has legs. You also decide which type it is, choosing from the options on the Eldritch Cannons table. On each of your turns, you can take a bonus action to cause the cannon to activate if you are within 60 feet of it. As part of the same bonus action, you can direct the cannon to walk or climb up to 15 feet to an unoccupied space, provided it has legs.</p>
 			<p><strong>ELDRITCH CANNONS</strong></p>
 			<table>
@@ -92,10 +86,19 @@
 			</table>
 		</description>
 		<sheet action="Action">
-			<description>You can magically create an eldritch cannon in an unoccupied space on a horizontal surface within 5 feet of you.
-			Once you create a cannon, you can’t do so again until you finish a long rest or until you expend a spell slot to create one.</description>
+			<description>You can magically create an eldritch cannon in an unoccupied space on a horizontal surface within 5 feet of you. When you create the cannon, you determine its appearance and whether it has legs. &#13;
+			The cannon is a magical object. The cannon has an AC of 18 and {{eldritch cannon:hp}} hit points. It is immune to poison damage and psychic damage. All of its ability scores are 10 (+0). If the mending spell is cast on it, it regains 2d6 hit points. It disappears if it is reduced to 0 hit points or after 1 hour. You can dismiss it early as an action. Once you create a cannon, you can’t do so again until you finish a long rest or until you expend a spell slot to create one. &#13;
+			On your turn, you can take a bonus action to activate the cannon if you are within 60 feet of it. As part of this bonus action, the cannon can walk or climb up to 15 feet to an unoccupied space, provided it has legs.</description>
+			<description level="15">You can magically create two eldritch cannons in an unoccupied spaces on a horizontal surface within 5 feet of you. When you create the cannons, you determine their appearances and whether they have legs. &#13;
+			The cannon is a magical object. The cannon has an AC of 18 and {{eldritch cannon:hp}} hit points. It is immune to poison damage and psychic damage. All of its ability scores are 10 (+0). If the mending spell is cast on it, it regains 2d6 hit points. It disappears if it is reduced to 0 hit points or after 1 hour. You can dismiss it early as an action. Once you use this feature, you can’t do so again until you finish a long rest, you can alternatively spend a spell slot to create one cannon. &#13;
+			On your turn, you can take a bonus action to activate one or both cannons if you are within 60 feet of them. As part of this bonus action, the cannons can walk or climb up to 15 feet to an unoccupied space, provided they have legs.</description>
 		</sheet>
 		<rules>
+			<stat name="eldritch cannon:hp" value="level:artificer" />
+			<stat name="eldritch cannon:hp" value="level:artificer" />
+			<stat name="eldritch cannon:hp" value="level:artificer" />
+			<stat name="eldritch cannon:hp" value="level:artificer" />
+			<stat name="eldritch cannon:hp" value="level:artificer" />
 			<grant type="Archetype Feature" id="ID_WOTC_ERLW_ARCHETYPE_FEATURE_ARTILLERIST_ELDRITCH_CANNON_FLAMETHROWER" />
 			<grant type="Archetype Feature" id="ID_WOTC_ERLW_ARCHETYPE_FEATURE_ARTILLERIST_ELDRITCH_CANNON_FORCE_BALLISTA" />
 			<grant type="Archetype Feature" id="ID_WOTC_ERLW_ARCHETYPE_FEATURE_ARTILLERIST_ELDRITCH_CANNON_PROTECTOR" />
@@ -110,7 +113,7 @@
 			<description>The cannon exhales fire in an adjacent 15-foot cone that you designate. Each creature in that area must make a Dexterity saving throw, taking {{flamethrower cannon:dice:amount}}d8 fire damage on a failed save or half as much damage on a successful one. The fire ignites any flammable objects in the area that aren’t being worn or carried.</description>
 		</sheet>
 		<rules>
-			<stat name="flamethrower cannon:dice:amount" value="2" />
+			<stat name="flamethrower cannon:dice:amount" value="2" bonus="base" />
 		</rules>
 	</element>
 	<element name="Force Ballista" type="Archetype Feature" source="Eberron: Rising from the Last War" id="ID_WOTC_ERLW_ARCHETYPE_FEATURE_ARTILLERIST_ELDRITCH_CANNON_FORCE_BALLISTA">
@@ -122,7 +125,7 @@
 			<description>Make a ranged spell attack, originating from the cannon, at one creature or object within 120 feet of it. On a hit, the target takes {{force ballista cannon:dice:amount}}d8 force damage, and if the target is a creature, it is pushed up to 5 feet away from the cannon.</description>
 		</sheet>
 		<rules>
-			<stat name="force ballista cannon:dice:amount" value="2" />
+			<stat name="force ballista cannon:dice:amount" value="2" bonus="base" />
 		</rules>
 	</element>
 	<element name="Protector" type="Archetype Feature" source="Eberron: Rising from the Last War" id="ID_WOTC_ERLW_ARCHETYPE_FEATURE_ARTILLERIST_ELDRITCH_CANNON_PROTECTOR">
@@ -136,7 +139,7 @@
 		<rules>
 			<stat name="protector cannon:temporary hp" value="1" bonus="base" />
 			<stat name="protector cannon:temporary hp" value="intelligence:modifier" bonus="base" />
-			<stat name="protector cannon:dice:amount" value="1" />
+			<stat name="protector cannon:dice:amount" value="1" bonus="base" />
 		</rules>
 	</element>
 	<element name="Arcane Firearm" type="Archetype Feature" source="Eberron: Rising from the Last War" id="ID_WOTC_ERLW_ARCHETYPE_FEATURE_ARTILLERIST_ARCANE_FIREARM">
@@ -146,8 +149,8 @@
 			<p class="indent">You can use your arcane firearm as a spellcasting focus for your artificer spells. When you cast an artificer spell through the firearm, roll a d8, and you gain a bonus to one of the spell’s damage rolls equal to the number rolled.</p>
 		</description>
 		<sheet>
-			<description>When you finish a long rest, you can use woodcarver’s tools to carve special sigils into a wand, staff, or rod and thereby turn it into your arcane firearm.
-			When you cast an artificer spell through the firearm, roll a d8, and you gain a bonus to one of the spell’s damage rolls equal to the number rolled.</description>
+			<description>When you finish a long rest, you can use woodcarver’s tools to carve special sigils into a wand, staff, or rod and thereby turn it into your arcane firearm. The sigils disappear from the object if you later carve them on a different item. &#13;
+			You can use arcane firearm as a spellcasting focus for artificer spells. When you cast an artificer spell through the firearm, roll a d8, and you gain a bonus to one of the spell’s damage rolls equal to the number rolled.</description>
 		</sheet>
 	</element>
 	<element name="Explosive Cannon" type="Archetype Feature" source="Eberron: Rising from the Last War" id="ID_WOTC_ERLW_ARCHETYPE_FEATURE_ARTILLERIST_EXPLOSIVE_CANNON">
@@ -163,9 +166,9 @@
 			<description>You can command the cannon to detonate if you are within 60 feet of it. Doing so destroys the cannon and forces each creature within 20 feet of it to make a Dexterity saving throw, taking 3d8 force damage on a failed save or half as much damage on a successful one.</description>
 		</sheet>
 		<rules>	
-			<stat name="flamethrower cannon:dice:amount" value="1" />
-			<stat name="force ballista cannon:dice:amount" value="1" />
-			<stat name="protector cannon:dice:amount" value="1" />
+			<stat name="flamethrower cannon:dice:amount" value="3" bonus="base" />
+			<stat name="force ballista cannon:dice:amount" value="3" bonus="base" />
+			<stat name="protector cannon:dice:amount" value="2" bonus="base" />
 		</rules>
 	</element>
 	<element name="Fortified Position" type="Archetype Feature" source="Eberron: Rising from the Last War" id="ID_WOTC_ERLW_ARCHETYPE_FEATURE_ARTILLERIST_FORTIFIED_POSITION">
@@ -178,8 +181,7 @@
 			</ul>
 		</description>
 		<sheet>
-			<description>You and your allies have half cover while within 10 feet of an Eldritch Cannon
-			You can now have two cannons at the same time. You can create two with the same action, and you can activate both of them with the same bonus action.</description>
+			<description>You and your allies have half cover while within 10 feet of an Eldritch Cannon.</description>
 		</sheet>
 	</element>
 
