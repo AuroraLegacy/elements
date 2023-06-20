@@ -96,8 +96,6 @@
 		</setters>
 		<sheet display="false" />
 		<rules>
-			<grant type="Grants" id="ID_INTERNAL_GRANT_ARTIFICER_CLASS"/>
-
 			<grant type="Proficiency" id="ID_PROFICIENCY_ARMOR_PROFICIENCY_LIGHT_ARMOR" />
 			<grant type="Proficiency" id="ID_PROFICIENCY_ARMOR_PROFICIENCY_MEDIUM_ARMOR" />
 			<grant type="Proficiency" id="ID_PROFICIENCY_ARMOR_PROFICIENCY_SHIELDS" />
@@ -127,13 +125,12 @@
 		</rules>
 		<multiclass id="ID_WOTC_ERLW_MULTICLASS_ARTIFICER">
 			<prerequisite>Intelligence 13</prerequisite>
-			<requirements>[int:13],!ID_INTERNAL_GRANT_ARTIFICER_CLASS</requirements>
+			<requirements>[int:13],!(ID_WOTC_UA_CLASS_ARTIFICER||ID_WOTC_UA_MULTICLASS_ARTIFICER||ID_WOTC_UA20190228_CLASS_ARTIFICER||ID_WOTC_UA20190228_MULTICLASS_ARTIFICER||ID_WOTC_TCOE_CLASS_ARTIFICER||ID_WOTC_TCOE_MULTICLASS_ARTIFICER)</requirements>
 			<setters>
 				<set name="multiclass proficiencies">light armor, medium armor, shields, thieves’ tools, tinker’s tools.</set>
 			</setters>
 			<rules>
 				<grant type="Grants" id="ID_INTERNAL_GRANT_MULTICLASS" />
-				<grant type="Grants" id="ID_INTERNAL_GRANT_ARTIFICER_MULTICLASS"/>
 			</rules>
 		</multiclass>
 	</element>
