@@ -227,9 +227,13 @@
 			<p class="indent">You can infuse more than one nonmagical object at the end of a long rest; the maximum number of objects appears in the Infused Items column of the Artificer table. You must touch each of the objects, and each of your infusions can be in only one object at a time. Moreover, no object can bear more than one of your infusions at a time. If you try to exceed your maximum number of infusions, the oldest infusion immediately ends, and then the new infusion applies. If an infusion ends on an item that contains other things, like a bag of holding, its contents harmlessly appear in and around its space.</p>
 		</description>
 		<sheet>
-			<description>Whenever you finish a long rest, you can touch a nonmagical object and imbue it with one of your artificer infusions, turning it into a magic item.
-			Your infusion remains in an item indefinitely, but when you die, the infusion vanishes after {{item infusions:decay}} days have passed.
-			You can infuse up to {{item infusions:max}} nonmagical objects at the end of a long rest.</description>
+			<description>You must have thieves’ tools or artisan’s tools. You touch a Tiny nonmagical object as an action and give it one of the following magical properties of your choice: &#13;
+			The object sheds bright light in a 5-foot radius and dim light for an additional 5 feet. &#13;
+			Whenever tapped by a creature, the object emits a recorded message (no more than 6 seconds long) that can be heard up to 10 feet away. &#13;
+			The object continuously emits your choice of an odor or a nonverbal sound. The chosen phenomenon is perceivable up to 10 feet away. &#13;
+			A static visual effect appears on one of the object’s surfaces. &#13;
+			The chosen property lasts indefinitely. As an action, you can touch the object and end the property early. &#13;
+			You can bestow magic on up to {{magical tinkering:objects}} objects.</description>
 		</sheet>
 		<rules>
 			<select type="Class Feature" name="Artificer Infusion" supports="Artificer Infusion, !TCOE Base" number="4" level="2" />
@@ -313,7 +317,7 @@
 			<p class="indent">You can use this feature a number of times equal to your Intelligence modifier (minimum of once). You regain all expended uses when you finish a long rest.</p>
 		</description>
 		<sheet action="Reaction" usage="{{flash of genius:usage}}/Long Rest">
-			<description>When you or another creature you can see within 30 feet of you makes an ability check or a saving throw, you can use your reaction to add {{intelligence:modifier}} to the roll.</description>
+			<description>When you or another creature you can see within 30 feet of you makes an ability check or a saving throw, you can add {{intelligence:modifier}} to the roll.</description>
 		</sheet>
 		<rules>
 			<stat name="flash of genius:usage" value="1" bonus="base" />
@@ -344,7 +348,7 @@
 			<p class="indent">While holding the object, a creature can take an action to produce the spell’s effect from it, using your spellcasting ability modifier. If the spell requires concentration, the creature must concentrate. The spell stays in the object until it’s been used a number of times equal to twice your Intelligence modifier (minimum of twice) or until you use this feature again to store a spell in an object.</p>
 		</description>
 		<sheet>
-			<description>Whenever you finish a long rest, you can touch one simple or martial weapon or one item that you can use as a spellcasting focus, and you store a spell in it, choosing a 1st- or 2nd-level spell from the artificer spell list that requires 1 action to cast.
+			<description>Whenever you finish a long rest, you can touch one simple or martial weapon or one item that you can use as a spellcasting focus to store a spell in it, choosing a 1st- or 2nd-level spell from the artificer spell list that requires 1 action to cast. &#13;
 			While holding the object, a creature can take an action to produce the spell’s effect from it, using your spellcasting ability modifier. If the spell requires concentration, the creature must concentrate. The spell stays in the object until it’s been used {{spell storing item:charges}} times or until you use this feature again to store a spell in an object.</description>
 		</sheet>
 		<rules>
@@ -392,8 +396,8 @@
 				<li>If you’re reduced to 0 hit points but not killed outright, you can use your reaction to end one of your artificer infusions, causing you to drop to 1 hit point instead of 0.</li>
 			</ul>
 		</description>
-		<sheet action="Reaction">
-			<description>You gain a +1 bonus to all saving throws per magic item you are currently attuned to.
+		<sheet>
+			<description>You gain a +1 bonus to all saving throws per magic item you are currently attuned to. &#13;
 			If you’re reduced to 0 hit points but not killed outright, you can use your reaction to end one of your artificer infusions, causing you to drop to 1 hit point instead of 0.</description>
 		</sheet>
 		<rules>
