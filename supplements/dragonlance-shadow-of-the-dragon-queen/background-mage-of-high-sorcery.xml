@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<elements>
+	<info>
+		<name>Mage of High Sorcery Background</name>
+		<update version="0.0.1">
+			<file name="background-mage-of-high-sorcery.xml" url="https://raw.githubusercontent.com/AuroraLegacy/elements/master/supplements/dragonlance-shadow-of-the-dragon-queen/backgrounds/background-mage-of-high-sorcery.xml" />
+		</update>
+	</info>
+
+	<element name="Mage of High Sorcery" type="Background" source="Dragonlance: Shadow of the Dragon Queen" id="ID_WOTC_DSDQ_BACKGROUND_MAGE_OF_HIGH_SORCERY">
+		<prerequisite>Dragonlance Campaign</prerequisite>
+		<description>
+		<p><em>Prerequisite: Dragonlance Campaign</em></p>
+			<p>Your talent for magic came to the attention of the Mages of High Sorcery, an organization of spellcasters that study magic and prevent its misuse. You've trained among the Mages, but whether or not you'll face the dangerous tests required to become a true member of the group remains to be determined. Your passion for studying magic has likely already predisposed you toward one of the organization's three orders: the benevolent Order of the White Robes, the balance-pursuing Order of the Red Robes, or the ruthless Order of the Black Robes.</p>
+			<p class="indent">In the world of Krynn, many refer to the Mages of High Sorcery as the Wizards of High Sorcery. The organization accepts more than wizards, though, with sorcerers, warlocks, and other spellcasters included among their ranks.</p>
+			<ul class="unstyled">
+				<li><strong>Skill Proficiencies:</strong> Arcana, History</li>
+				<li><strong>Languages:</strong> Two of your choice</li>
+				<li><strong>Equipment:</strong> A bottle of colored ink, an ink pen, a set of common clothes, and a pouch containing 10 gp</li>
+			</ul>
+			<div element="ID_WOTC_DSDQ_BACKGROUND_FEATURE_INITIATE_OF_HIGH_SORCERY" />
+			<h5>BUILDING A MAGE OF HIGH SORCERY CHARACTER</h5>
+			<p>Mages of High Sorcery are typically sorcerers, warlocks, wizards, or wizards and might have any subclass. Spellcasters who gain their magic through devotion or who possess innate magic are less likely to be welcomed among the traditionalist mages. Nevertheless, the Mages of High Sorcery are shrewd, and they rarely let unique opportunities or individuals pass them by. Even members of martial classes who train in magic might find a rare place among the group's three orders.</p>
+			<p class="indent"><strong><em>Mage of High Sorcery Trinkets.</em></strong> When you make your character, you may roll once on the Mage of High Sorcery Trinkets table, instead of on the Trinkets table in the <i>Player’s Handbook</i>, for your starting trinket.</p>
+			<h5>Mage of High Sorcery Trinkets</h5>
+			<table>
+				<thead>
+					<tr><td>d6</td><td>Trinket</td></tr>
+				</thead>
+				<tr><td>1</td><td>An unopened letter from your first teacher</td></tr>
+				<tr><td>2</td><td>A broken wand made of black, red, or white wood</td></tr>
+				<tr><td>3</td><td>A scroll bearing an incomprehensible formula</td></tr>
+				<tr><td>4</td><td>A purposeless device covered in colored stones that can fold into various enigmatic shapes</td></tr>
+				<tr><td>5</td><td>A pouch or spell book emblazoned with the triple moon symbol of the Mages of High Sorcery</td></tr>
+				<tr><td>6</td><td>A lens through which you can see Krynn's invisible black moon, Nuitari</td></tr>
+			</table>
+			<div class="reference">
+				<div element="ID_WOTC_DSDQ_FEAT_INITIATE_OF_HIGH_SORCERY" />
+			</div>
+		</description>
+		<setters>
+			<set name="short">Arcana, History, 2 Languages</set>
+		</setters>
+		<rules>
+			<grant type="Background Feature" id="ID_WOTC_DSDQ_BACKGROUND_FEATURE_INITIATE_OF_HIGH_SORCERY" requirements="!ID_INTERNAL_GRANT_OPTIONAL_BACKGROUND_FEATURE"/>
+			<select type="Background Feature" name="Variant Feature" supports="Optional Background Feature" optional="true" />
+			<grant type="Proficiency" id="ID_PROFICIENCY_SKILL_ARCANA" />
+			<grant type="Proficiency" id="ID_PROFICIENCY_SKILL_HISTORY" />
+			<select type="Language" name="Language (Mage of High Sorcery)" number="2" supports="Standard||Exotic" />
+		</rules>
+	</element>
+
+	<element name="Feature: Initiate of High Sorcery" type="Background Feature" source="Dragonlance: Shadow of the Dragon Queen" id="ID_WOTC_DSDQ_BACKGROUND_FEATURE_INITIATE_OF_HIGH_SORCERY">
+		<supports>Background Feature</supports>
+		<description>
+			<p>You gain the Initiate of High Sorcery feat.</p>
+			<p class="indent">In addition, the Mages of High Sorcery provide you with free, modest lodging and food indefinitely at any occupied Tower of High Sorcery and for one night at the home of an organization member.</p>
+			<div class="reference">
+				<div element="ID_WOTC_DSDQ_FEAT_INITIATE_OF_HIGH_SORCERY" />
+			</div>
+		</description>
+		<sheet alt="Initiate of High Sorcery">
+			<description>The Mages of High Sorcery provide you with free, modest lodging and food indefinitely at any occupied Tower of High Sorcery and for one night at the home of an organization member.</description>
+		</sheet>
+		<rules>
+			<grant type="Feat" id="ID_WOTC_DSDQ_FEAT_INITIATE_OF_HIGH_SORCERY" />
+			<grant type="Grants" id="ID_INTERNAL_GRANTS_BACKGROUND_WITH_A_FEAT" />
+		</rules>
+	</element>
+</elements>
