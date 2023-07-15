@@ -1,0 +1,165 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<elements>
+	<info>
+		<name>Alchemist Artificer Archetype</name>
+		<update version="0.0.1">
+			<file name="artificer-alchemist.xml" url="https://raw.githubusercontent.com/AuroraLegacy/elements/master/supplements/tashas-cauldron-of-everything/archetypes/artificer-alchemist.xml" />
+		</update>
+	</info>
+
+	<element name="Alchemist" type="Archetype" source="Tasha’s Cauldron of Everything" id="ID_WOTC_TCOE_ARCHETYPE_ARTIFICER_ALCHEMIST">
+		<supports>Artificer Specialist, TCOE Base</supports>
+		<description>
+			<p>An Alchemist is an expert at combining reagents to produce mystical effects. Alchemists use their creations to give life and to leech it away. Alchemy is the oldest of artificer traditions, and its versatility has long been valued during times of war and peace.</p>
+			<div element="ID_WOTC_TCOE_ARCHETYPE_FEATURE_ALCHEMIST_TOOL_PROFICIENCY" />
+			<div element="ID_WOTC_TCOE_ARCHETYPE_FEATURE_ALCHEMIST_ALCHEMIST_SPELLS" />
+			<div element="ID_WOTC_TCOE_ARCHETYPE_FEATURE_ALCHEMIST_EXPERIMENTAL_ELIXIR" />
+			<div element="ID_WOTC_TCOE_ARCHETYPE_FEATURE_ALCHEMIST_ALCHEMICAL_SAVANT" />
+			<div element="ID_WOTC_TCOE_ARCHETYPE_FEATURE_ALCHEMIST_RESTORATIVE_REAGENTS" />
+			<div element="ID_WOTC_TCOE_ARCHETYPE_FEATURE_ALCHEMIST_CHEMICAL_MASTERY" />
+		</description>
+		<sheet display="false" />
+		<rules>
+			<grant type="Archetype Feature" id="ID_WOTC_TCOE_ARCHETYPE_FEATURE_ALCHEMIST_TOOL_PROFICIENCY" level="3" />
+			<grant type="Archetype Feature" id="ID_WOTC_TCOE_ARCHETYPE_FEATURE_ALCHEMIST_ALCHEMIST_SPELLS" level="3" />
+			<grant type="Archetype Feature" id="ID_WOTC_TCOE_ARCHETYPE_FEATURE_ALCHEMIST_EXPERIMENTAL_ELIXIR" level="3" />
+			<grant type="Archetype Feature" id="ID_WOTC_TCOE_ARCHETYPE_FEATURE_ALCHEMIST_ALCHEMICAL_SAVANT" level="5" />
+			<grant type="Archetype Feature" id="ID_WOTC_TCOE_ARCHETYPE_FEATURE_ALCHEMIST_RESTORATIVE_REAGENTS" level="9" />
+			<grant type="Archetype Feature" id="ID_WOTC_TCOE_ARCHETYPE_FEATURE_ALCHEMIST_CHEMICAL_MASTERY" level="15" />
+		</rules>
+	</element>
+	<element name="Tool Proficiency" type="Archetype Feature" source="Tasha’s Cauldron of Everything" id="ID_WOTC_TCOE_ARCHETYPE_FEATURE_ALCHEMIST_TOOL_PROFICIENCY">
+		<requirements>!ID_INTERNAL_FEATURE_REPLACEMENT_TCOE_ARTIFICER_ALCHEMIST_TOOL_PROFICIENCY</requirements>
+		<description>
+			<p><em>3rd-level Alchemist feature</em></p>
+			<p>You gain proficiency with alchemist's supplies. If you already have this proficiency, you gain proficiency with one other type of artisan’s tools of your choice.</p>
+		</description>
+		<sheet display="false" />
+		<rules>
+			<select type="Proficiency" name="Tool Proficiency (Alchemist)" supports="Artisan tools" default="ID_PROFICIENCY_TOOL_PROFICIENCY_ALCHEMISTS_SUPPLIES" />
+		</rules>
+	</element>
+	<element name="Alchemist Spells" type="Archetype Feature" source="Tasha’s Cauldron of Everything" id="ID_WOTC_TCOE_ARCHETYPE_FEATURE_ALCHEMIST_ALCHEMIST_SPELLS">
+		<requirements>!ID_INTERNAL_FEATURE_REPLACEMENT_TCOE_ARTIFICER_ALCHEMIST_SPELLS</requirements>
+		<description>
+			<p><em>3rd-level Alchemist feature</em></p>
+			<p>You always have certain spells prepared after you reach particular levels in this class, as shown in the Alchemist Spells table. These spells count as artificer spells for you, but they don’t count against the number of artificer spells you prepare.</p>
+			<h5 class="caption">ALCHEMIST SPELLS</h5>
+			<table>
+				<thead>
+					<tr><td>Artificer Level</td><td>Spells</td></tr>
+				</thead>
+				<tr><td>3rd</td><td><em>healing word, ray of sickness</em></td></tr>
+				<tr><td>5th</td><td><em>flaming sphere, Melf’s acid arrow</em></td></tr>
+				<tr><td>9th</td><td><em>gaseous form, mass healing word</em></td></tr>
+				<tr><td>13th</td><td><em>blight, death ward</em></td></tr>
+				<tr><td>17th</td><td><em>cloudkill, raise dead</em></td></tr>
+			</table>
+		</description>
+		<sheet display="false" />
+		<rules>
+			<grant type="Spell" id="ID_PHB_SPELL_HEALING_WORD" spellcasting="Artificer" level="3" prepared="true" />
+			<grant type="Spell" id="ID_PHB_SPELL_RAY_OF_SICKNESS" spellcasting="Artificer" level="3" prepared="true" />
+			<grant type="Spell" id="ID_PHB_SPELL_FLAMING_SPHERE" spellcasting="Artificer" level="5" prepared="true" />
+			<grant type="Spell" id="ID_PHB_SPELL_MELFS_ACID_ARROW" spellcasting="Artificer" level="5" prepared="true" />
+			<grant type="Spell" id="ID_PHB_SPELL_GASEOUS_FORM" spellcasting="Artificer" level="9" prepared="true" />
+			<grant type="Spell" id="ID_PHB_SPELL_MASS_HEALING_WORD" spellcasting="Artificer" level="9" prepared="true" />
+			<grant type="Spell" id="ID_PHB_SPELL_BLIGHT" spellcasting="Artificer" level="13" prepared="true" />
+			<grant type="Spell" id="ID_PHB_SPELL_DEATH_WARD" spellcasting="Artificer" level="13" prepared="true" />
+			<grant type="Spell" id="ID_PHB_SPELL_CLOUDKILL" spellcasting="Artificer" level="17" prepared="true" />
+			<grant type="Spell" id="ID_PHB_SPELL_RAISE_DEAD" spellcasting="Artificer" level="17" prepared="true" />
+		</rules>
+	</element>
+	<element name="Experimental Elixir" type="Archetype Feature" source="Tasha’s Cauldron of Everything" id="ID_WOTC_TCOE_ARCHETYPE_FEATURE_ALCHEMIST_EXPERIMENTAL_ELIXIR">
+		<requirements>!ID_INTERNAL_FEATURE_REPLACEMENT_TCOE_ARTIFICER_ALCHEMIST_EXPERIMENTAL_ELIXIR</requirements>
+		<description>
+			<p><em>3rd-level Alchemist feature</em></p>
+			<p>Whenever you finish a long rest, you can magically produce an <i>experimental elixir</i> in an empty flask you touch. Roll on the Experimental Elixir table for the elixir’s effect, which is triggered when someone drinks the elixir. As an action, a creature can drink the elixir or administer it to an incapacitated creature.</p>
+			<p class="indent">You can create additional <i>experimental elixir</i> by expending a spell slot of 1st level or higher for each one. When you do so, you use your action to create the elixir in an empty flask you touch, and you choose the elixir's effect from the Experimental Elixir table.</p>
+			<p class="indent">Creating an <i>experimental elixir</i> requires you to have alchemist supplies on your person, and any elixir you create with this feature lasts until it is drunk or until the end of your next long rest.</p>
+			<p class="indent">When you reach certain levels in this class, you can make more elixirs at the end of a long rest: two at 6th level and three at 15th level. Roll for each elixir’s effect separately. Each elixir requires its own flask.</p>
+			<p><strong>Experimental Elixir</strong></p>
+			<table>
+				<thead>
+					<tr><td>d6</td><td>Effect</td></tr>
+				</thead>
+				<tr><td>1</td><td><strong>Healing.</strong> The drinker regains a number of hit points equal to 2d4 + your Intelligence modifier.</td></tr>
+				<tr><td>2</td><td><strong>Swiftness.</strong> The drinker’s walking speed increases by 10 feet for 1 hour.</td></tr>
+				<tr><td>3</td><td><strong>Resilience.</strong> The drinker gains a +1 bonus to AC for 10 minutes.</td></tr>
+				<tr><td>4</td><td><strong>Boldness.</strong> The drinker can roll a d4 and add the number rolled to every attack roll and saving throw they make for the next minute.</td></tr>
+				<tr><td>5</td><td><strong>Flight.</strong> The drinker gains a flying speed of 10 feet for 10 minutes.</td></tr>
+				<tr><td>6</td><td><strong>Transformation.</strong> The drinker’s body is transformed as if by the alter self spell. The drinker determines the transformation caused by the spell, the effects of which last for 10 minutes.</td></tr>
+			</table>
+		</description>
+		<sheet>
+			<description>Whenever you finish a long rest, you can magically produce up to {{experimental elixir:count}} elixirs, each in an empty flask you touch. &#13;
+			Any elixir you create with this feature lasts until it is drunk or until the end of your next long rest. &#13;
+			You can create additional experimental elixirs by expending a spell slot of 1st level or higher for each one.</description>
+		</sheet>
+		<rules>
+			<stat name="experimental elixir:count" value="1" bonus="base" />
+			<stat name="experimental elixir:count" value="2" bonus="base" level="6" />
+			<stat name="experimental elixir:count" value="3" bonus="base" level="15" />
+		</rules>
+	</element>
+	<element name="Alchemical Savant" type="Archetype Feature" source="Tasha’s Cauldron of Everything" id="ID_WOTC_TCOE_ARCHETYPE_FEATURE_ALCHEMIST_ALCHEMICAL_SAVANT">
+		<requirements>!ID_INTERNAL_FEATURE_REPLACEMENT_TCOE_ARTIFICER_ALCHEMIST_ALCHEMICAL_SAVANT</requirements>
+		<description>
+			<p><em>5th-level Alchemist feature</em></p>
+			<p>You've developed masterful command of magical chemicals, enhancing the healing and damage you create through them. Whenever you cast a spell using your alchemist's supplies as the spellcasting focus, you gain a bonus to one roll of the spell. That roll must restore hit points or be a damage roll that deals acid, fire, necrotic, or poison damage, and the bonus equals your Intelligence modifier (minimum of +1).</p>
+		</description>
+		<sheet>
+			<description>Whenever you cast a spell using your alchemist’s supplies, you gain a +{{alchemical savant:bonus}} bonus to one roll of the spell. That roll must restore hit points or be a damage roll that deals acid, fire, necrotic, or poison damage.</description>
+		</sheet>
+		<rules>
+			<stat name="alchemical savant:bonus" value="1" bonus="base" />
+			<stat name="alchemical savant:bonus" value="intelligence:modifier" bonus="base" />
+		</rules>
+	</element>
+	<element name="Restorative Reagents" type="Archetype Feature" source="Tasha’s Cauldron of Everything" id="ID_WOTC_TCOE_ARCHETYPE_FEATURE_ALCHEMIST_RESTORATIVE_REAGENTS">
+		<requirements>!ID_INTERNAL_FEATURE_REPLACEMENT_TCOE_ARTIFICER_ALCHEMIST_RESTORATIVE_REAGENTS</requirements>
+		<description>
+			<p><em>9th-level Alchemist feature</em></p>
+			<p>You can incorporate restorative reagents into some of your works:</p>
+			<ul>
+				<li>Whenever a creature drinks an <i>experimental elixir</i> you created, the creature gains temporary hit points equal to 2d6 + your Intelligence modifier (minimum of 1 temporary hit point).</li>
+				<li>You can cast <i>lesser restoration</i> without expending a spell slot and without preparing the spell, provided you use alchemist’s supplies as the spellcasting focus. You can do so a number of times equal to your Intelligence modifier (minimum of once), and you regain all expended uses when you finish a long rest.</li>
+			</ul>
+		</description>
+		<sheet>
+			<description>Whenever a creature drinks an experimental elixir you created, the creature gains 2d6+{{intelligence:modifier}} temporary hp. &#13;
+			You can cast lesser restoration {{restorative reagents:usage}} times per long rest without expending a spell slot and without preparing the spell, provided you use alchemist’s supplies as the spellcasting focus.</description>
+		</sheet>
+		<rules>
+			<stat name="restorative reagents:usage" value="1" bonus="base" />
+			<stat name="restorative reagents:usage" value="intelligence:modifier" bonus="base" />
+		</rules>
+	</element>
+	<element name="Chemical Mastery" type="Archetype Feature" source="Tasha’s Cauldron of Everything" id="ID_WOTC_TCOE_ARCHETYPE_FEATURE_ALCHEMIST_CHEMICAL_MASTERY">
+		<requirements>!ID_INTERNAL_FEATURE_REPLACEMENT_TCOE_ARTIFICER_ALCHEMIST_CHEMICAL_MASTERY</requirements>
+		<description>
+			<p><em>15th-level Alchemist feature</em></p>
+			<p>You have been exposed to so many chemicals that they pose little risk to you, and you can use them to quickly end certain ailments:</p>
+			<ul>
+				<li>You gain resistance to acid damage and poison damage, and you are immune to the poisoned condition.</li>
+				<li>You can cast <i>greater restoration</i> and <i>heal</i> without expending a spell slot, without preparing the spell, and without material components, provided you use alchemist’s supplies as the spellcasting focus. Once you cast either spell with this feature, you can’t cast that spell with it again until you finish a long rest.</li>
+			</ul>
+		</description>
+		<sheet>
+			<description>You are immune to the poisoned condition. &#13;
+			You can cast greater restoration and heal once per long rest without expending a spell slot, without preparing the spell, and without material components, provided you use alchemist’s supplies as the spellcasting focus.</description>
+		</sheet>
+		<rules>
+			<grant type="Condition" id="ID_INTERNAL_CONDITION_DAMAGE_RESISTANCE_ACID" />
+			<grant type="Condition" id="ID_INTERNAL_CONDITION_DAMAGE_RESISTANCE_POISON" />
+		</rules>
+	</element>
+
+	<!--Feature Replacement Grants-->
+	<element name="Tool Proficiency Feature Replacement" type="Grants" source="Internal" id="ID_INTERNAL_FEATURE_REPLACEMENT_TCOE_ARTIFICER_ALCHEMIST_TOOL_PROFICIENCY" />
+	<element name="Alchemist Spells Feature Replacement" type="Grants" source="Internal" id="ID_INTERNAL_FEATURE_REPLACEMENT_TCOE_ARTIFICER_ALCHEMIST_SPELLS" />
+	<element name="Experimental Elixir Feature Replacement" type="Grants" source="Internal" id="ID_INTERNAL_FEATURE_REPLACEMENT_TCOE_ARTIFICER_ALCHEMIST_EXPERIMENTAL_ELIXIR" />
+	<element name="Alchemical Savant Feature Replacement" type="Grants" source="Internal" id="ID_INTERNAL_FEATURE_REPLACEMENT_TCOE_ARTIFICER_ALCHEMIST_ALCHEMICAL_SAVANT" />
+	<element name="Restorative Reagents Feature Replacement" type="Grants" source="Internal" id="ID_INTERNAL_FEATURE_REPLACEMENT_TCOE_ARTIFICER_ALCHEMIST_RESTORATIVE_REAGENTS" />
+	<element name="Chemical Mastery Feature Replacement" type="Grants" source="Internal" id="ID_INTERNAL_FEATURE_REPLACEMENT_TCOE_ARTIFICER_ALCHEMIST_CHEMICAL_MASTERY" />
+</elements>
