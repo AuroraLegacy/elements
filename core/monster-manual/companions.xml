@@ -2,11 +2,11 @@
 <elements>
     <info>
         <name>Companions</name>
-        <update version="0.0.4">
+        <update version="0.0.5">
             <file name="companions.xml" url="https://raw.githubusercontent.com/AuroraLegacy/elements/master/companions.xml" />
         </update>
     </info>
-        
+
 	<element name="Imp" type="Companion" source="Monster Manual" id="ID_WOTC_MM_COMPANION_IMP">
 		<supports>Familiar, Variant Familiar</supports>
 		<description>
@@ -303,5 +303,318 @@
 			<description>The sprite magically turns invisible until it attacks or casts a spell, or until its concentration ends (as if concentrating on a spell). Any equipment the sprite wears or carries is invisible with it.</description>
 		</sheet>
 	</element>
-    
+
+	<element name="Plesiosaurus" type="Companion" source="Monster Manual" id="ID_WOTC_MM_COMPANION_PLESIOSAURUS">
+		<setters>
+			<set name="size">Large</set>
+			<set name="type">Beast</set>
+			<set name="alignment">unaligned</set>
+			<set name="ac">13 (natural armor)</set>
+			<set name="hp">68 (8d10 + 24)</set>
+			<set name="speed">20 ft., swim 40 ft.</set>
+			<set name="strength">18</set>
+			<set name="dexterity">15</set>
+			<set name="constitution">16</set>
+			<set name="intelligence">2</set>
+			<set name="wisdom">12</set>
+			<set name="charisma">5</set>
+			<set name="skills">Perception +3, Stealth +4</set>
+			<set name="senses">passive Perception 13</set>
+			<set name="languages">—</set>
+			<set name="challenge">2</set>
+			<set name="traits">ID_WOTC_MM_COMPANION_TRAIT_PLESIOSAURUS_HOLD_BREATH</set>
+			<set name="actions">ID_WOTC_MM_COMPANION_ACTION_PLESIOSAURUS_BITE</set>
+		</setters>
+		<rules>
+			<stat name="companion:ac" value="13" />
+			<stat name="companion:hp:max" value="68" bonus="base" />
+			<stat name="companion:speed" value="20" bonus="base" />
+			<stat name="companion:speed:swim" value="40" bonus="base" />
+			<stat name="companion:perception:proficiency" value="companion:proficiency" bonus="base" />
+			<stat name="companion:stealth:proficiency" value="companion:proficiency" bonus="base" />
+		</rules>
+	</element>
+	<element name="Hold Breath" type="Companion Trait" source="Monster Manual" id="ID_WOTC_MM_COMPANION_TRAIT_PLESIOSAURUS_HOLD_BREATH">
+		<description>
+			<p>The plesiosaurus can hold its breath for 1 hour.</p>
+		</description>
+		<sheet>
+			<description>The plesiosaurus can hold its breath for 1 hour.</description>
+		</sheet>
+	</element>
+	<element name="Bite" type="Companion Action" source="Monster Manual" id="ID_WOTC_MM_COMPANION_ACTION_PLESIOSAURUS_BITE">
+		<description>
+			<p>Melee Weapon Attack: +6 to hit, reach 10 ft., one target. Hit: 14 (3d6 + 4) piercing damage.</p>
+		</description>
+		<sheet>
+			<description>Melee Weapon Attack: +6 to hit, reach 10 ft., one target. Hit: 14 (3d6 + 4) piercing damage.</description>
+		</sheet>
+	</element>
+	<element name="Plesiosaurus" type="Information" source="Monster Manual" id="ID_WOTC_MM_INFORMATION_PLESIOSAURUS">
+		<description>
+			<p style="margin-bottom:-5px"><em>Large beast, unaligned</em></p>
+			<h4 style="margin-top:5px" />
+			<ul class="unstyled">
+				<li><strong>Armor Class</strong> 13 (natural armor)</li>
+				<li><strong>Hit Points</strong> 68 (8d10 + 24)</li>
+				<li><strong>Speed</strong> 20 ft., swim 40 ft.</li>
+			</ul>
+			<table style="text-align:center;margin-top:10px;margin-bottom:10px">
+				<thead><tr><td>STR</td><td>DEX</td><td>CON</td><td>INT</td><td>WIS</td><td>CHA</td></tr></thead>
+				<tr><td>18 (+4)</td><td>15 (+2)</td><td>16 (+3)</td><td>2 (-4)</td><td>12 (+1)</td><td>5 (-3)</td></tr>
+			</table>
+			<ul class="unstyled">
+				<li><strong>Skills</strong> Perception +3, Stealth +4</li>
+				<li><strong>Senses</strong> passive Perception 13</li>
+				<li><strong>Languages</strong> —</li>
+				<li><strong>Challenge</strong> 2 (450 XP)</li>
+			</ul>
+			<h4 style="margin-top:5px; margin-bottom:10px" />
+			<ul class="unstyled">
+				<li><strong><em>Hold Breath.</em></strong> The plesiosaurus can hold its breath for 1 hour.</li>
+			</ul>
+			<h4 style="margin-top:10px">Actions</h4>
+			<ul class="unstyled">
+				<li><strong><em>Bite. </em></strong><em>Melee Weapon Attack:</em> +6 to hit, reach 10 ft., one target. <em>Hit:</em> 14 (3d6 + 4) piercing damage.</li>
+			</ul>
+		</description>
+	</element>
+
+	<element name="Pteranodon" type="Companion" source="Monster Manual" id="ID_WOTC_MM_COMPANION_PTERANODON">
+		<setters>
+			<set name="size">Medium</set>
+			<set name="type">Beast</set>
+			<set name="alignment">unaligned</set>
+			<set name="ac">13 (natural armor)</set>
+			<set name="hp">13 (3d8)</set>
+			<set name="speed">10 ft., fly 60 ft.</set>
+			<set name="strength">12</set>
+			<set name="dexterity">15</set>
+			<set name="constitution">10</set>
+			<set name="intelligence">2</set>
+			<set name="wisdom">9</set>
+			<set name="charisma">5</set>
+			<set name="skills">Perception +1</set>
+			<set name="senses">passive Perception 11</set>
+			<set name="languages">—</set>
+			<set name="challenge">1/4</set>
+			<set name="traits">ID_WOTC_MM_COMPANION_TRAIT_PTERANODON_FLYBY</set>
+			<set name="actions">ID_WOTC_MM_COMPANION_ACTION_PTERANODON_BITE</set>
+		</setters>
+		<rules>
+			<stat name="companion:ac" value="13" />
+			<stat name="companion:hp:max" value="68" bonus="base" />
+			<stat name="companion:speed" value="10" bonus="base" />
+			<stat name="companion:speed:fly" value="60" bonus="base" />
+			<stat name="companion:perception:proficiency" value="companion:proficiency" bonus="base" />
+		</rules>
+	</element>
+	<element name="Flyby" type="Companion Trait" source="Monster Manual" id="ID_WOTC_MM_COMPANION_TRAIT_PTERANODON_FLYBY">
+		<description>
+			<p>The pteranodon doesn't provoke opportunity attacks when it flies out of an enemy's reach.</p>
+		</description>
+		<sheet>
+			<description>The pteranodon doesn't provoke opportunity attacks when it flies out of an enemy's reach.</description>
+		</sheet>
+	</element>
+	<element name="Bite" type="Companion Action" source="Monster Manual" id="ID_WOTC_MM_COMPANION_ACTION_PTERANODON_BITE">
+		<description>
+			<p>Melee Weapon Attack: +3 to hit, reach 5 ft., one target. Hit: 6 (2d4 + 1) piercing damage</p>
+		</description>
+		<sheet>
+			<description>Melee Weapon Attack: +3 to hit, reach 5 ft., one target. Hit: 6 (2d4 + 1) piercing damage</description>
+		</sheet>
+	</element>
+	<element name="Pteranodon" type="Information" source="Monster Manual" id="ID_WOTC_MM_INFORMATION_PTERANODON">
+		<description>
+			<p style="margin-bottom:-5px"><em>Medium beast, unaligned</em></p>
+			<h4 style="margin-top:5px" />
+			<ul class="unstyled">
+				<li><strong>Armor Class</strong> 13 (natural armor)</li>
+				<li><strong>Hit Points</strong> 13 (3d8)</li>
+				<li><strong>Speed</strong> 10 ft., fly 60 ft.</li>
+			</ul>
+			<table style="text-align:center;margin-top:10px;margin-bottom:10px">
+				<thead><tr><td>STR</td><td>DEX</td><td>CON</td><td>INT</td><td>WIS</td><td>CHA</td></tr></thead>
+				<tr><td>12 (+1)</td><td>15 (+2)</td><td>10 (+0)</td><td>2 (-4)</td><td>- (-1)</td><td>5 (-3)</td></tr>
+			</table>
+			<ul class="unstyled">
+				<li><strong>Skills</strong> Perception +1</li>
+				<li><strong>Senses</strong> passive Perception 11</li>
+				<li><strong>Languages</strong> —</li>
+				<li><strong>Challenge</strong> 1/4 (50 XP)</li>
+			</ul>
+			<h4 style="margin-top:5px; margin-bottom:10px" />
+			<ul class="unstyled">
+				<li><strong><em>Flyby.</em></strong> The pteranodon doesn't provoke an opportunity attack when it flies out of an enemy's reach.</li>
+			</ul>
+			<h4 style="margin-top:10px">Actions</h4>
+			<ul class="unstyled">
+				<li><strong><em>Bite. </em></strong><em>Melee Weapon Attack:</em> +3 to hit, reach 5 ft., one target. <em>Hit:</em> 6 (2d4 + 1) piercing damage.</li>
+			</ul>
+		</description>
+	</element>
+
+	<element name="Triceratops" type="Companion" source="Monster Manual" id="ID_WOTC_MM_COMPANION_TRICERATOPS">
+		<setters>
+			<set name="size">Huge</set>
+			<set name="type">Beast</set>
+			<set name="alignment">unaligned</set>
+			<set name="ac">13 (natural armor)</set>
+			<set name="hp">95 (10d12 + 30)</set>
+			<set name="speed">50 ft.</set>
+			<set name="strength">22</set>
+			<set name="dexterity">9</set>
+			<set name="constitution">17</set>
+			<set name="intelligence">2</set>
+			<set name="wisdom">11</set>
+			<set name="charisma">5</set>
+			<set name="senses">passive Perception 10</set>
+			<set name="languages">—</set>
+			<set name="challenge">5</set>
+			<set name="traits">ID_WOTC_MM_COMPANION_TRAIT_TRICERATOPS_TRAMPLING_CHARGE</set>
+			<set name="actions">ID_WOTC_MM_COMPANION_ACTION_TRICERATOPS_GORE,ID_WOTC_MM_COMPANION_ACTION_TRICERATOPS_STOMP</set>
+		</setters>
+		<rules>
+			<stat name="companion:ac" value="13" />
+			<stat name="companion:hp:max" value="95" bonus="base" />
+			<stat name="companion:speed" value="50" bonus="base" />
+		</rules>
+	</element>
+	<element name="Trampling Charge" type="Companion Trait" source="Monster Manual" id="ID_WOTC_MM_COMPANION_TRAIT_TRICERATOPS_TRAMPLING_CHARGE">
+		<description>
+			<p>If the triceratops moves at least 20 feet straight toward a creature and then hits it with a gore attack on the same turn, that target must succeed on a DC 13 Strength saving throw or be knocked prone. If the target is prone, the triceratops can make one stomp attack against it as a bonus action.</p>
+		</description>
+		<sheet>
+			<description>If the triceratops moves at least 20 feet straight toward a creature and then hits it with a gore attack on the same turn, that target must succeed on a DC 13 Strength saving throw or be knocked prone. If the target is prone, the triceratops can make one stomp attack against it as a bonus action.</description>
+		</sheet>
+	</element>
+	<element name="Gore" type="Companion Action" source="Monster Manual" id="ID_WOTC_MM_COMPANION_ACTION_TRICERATOPS_GORE">
+		<description>
+			<p>Melee Weapon Attack: +9 to hit, reach 5 ft., one target. Hit: 24 (4d8 + 6) piercing damage.</p>
+		</description>
+		<sheet>
+			<description>Melee Weapon Attack: +9 to hit, reach 5 ft., one target. Hit: 24 (4d8 + 6) piercing damage.</description>
+		</sheet>
+	</element>
+	<element name="Stomp" type="Companion Action" source="Monster Manual" id="ID_WOTC_MM_COMPANION_ACTION_TRICERATOPS_STOMP">
+		<description>
+			<p>Melee Weapon Attack: +9 to hit, reach 5 ft., one prone creature. Hit: 22 (3d10 + 6) bludgeoning damage.</p>
+		</description>
+		<sheet>
+			<description>Melee Weapon Attack: +9 to hit, reach 5 ft., one prone creature. Hit: 22 (3d10 + 6) bludgeoning damage.</description>
+		</sheet>
+	</element>
+	<element name="Triceratops" type="Information" source="Monster Manual" id="ID_WOTC_MM_INFORMATION_TRICERATOPS">
+		<description>
+			<p style="margin-bottom:-5px"><em>Huge beast, unaligned</em></p>
+			<h4 style="margin-top:5px" />
+			<ul class="unstyled">
+				<li><strong>Armor Class</strong> 13 (natural armor)</li>
+				<li><strong>Hit Points</strong> 95 (10d12 + 30)</li>
+				<li><strong>Speed</strong> 50 ft.</li>
+			</ul>
+			<table style="text-align:center;margin-top:10px;margin-bottom:10px">
+				<thead><tr><td>STR</td><td>DEX</td><td>CON</td><td>INT</td><td>WIS</td><td>CHA</td></tr></thead>
+				<tr><td>22 (+6)</td><td>9 (-1)</td><td>17 (+3)</td><td>2 (-4)</td><td>11 (+0)</td><td>5 (-3)</td></tr>
+			</table>
+			<ul class="unstyled">
+				<li><strong>Senses</strong> passive Perception 10</li>
+				<li><strong>Languages</strong> —</li>
+				<li><strong>Challenge</strong> 5 (1,800 XP)</li>
+			</ul>
+			<h4 style="margin-top:5px; margin-bottom:10px" />
+			<ul class="unstyled">
+				<li><strong><em>Trampling Charge.</em></strong> If the triceratops moves at least 20 feet straight toward a creature and then hits it with a gore attack on the same turn, that target must succeed on a DC 13 Strength saving throw or be knocked prone. If the target is prone, the triceratops can make one stomp attack against it as a bonus action.</li>
+			</ul>
+			<h4 style="margin-top:10px">Actions</h4>
+			<ul class="unstyled">
+				<li><strong><em>Gore. </em></strong><em>Melee Weapon Attack:</em> +9 to hit, reach 5 ft., one target. <em>Hit:</em> 24 (4d8 + 6) piercing damage.</li>
+				<p></p>
+				<li><strong><em>Stomp. </em></strong><em>Melee Weapon Attack:</em> +9 to hit, reach 5 ft., one prone creature. <em>Hit:</em>  22 (3d10 + 6) bludgeoning damage.</li>
+			</ul>
+		</description>
+	</element>
+
+	<element name="Tyrannosaurus Rex" type="Companion" source="Monster Manual" id="ID_WOTC_MM_COMPANION_TYRANNOSAURUS_REX">
+		<setters>
+			<set name="size">Huge</set>
+			<set name="type">Beast</set>
+			<set name="alignment">unaligned</set>
+			<set name="ac">13 (natural armor)</set>
+			<set name="hp">136 (13d12 + 52)</set>
+			<set name="speed">50 ft.</set>
+			<set name="strength">25</set>
+			<set name="dexterity">10</set>
+			<set name="constitution">19</set>
+			<set name="intelligence">2</set>
+			<set name="wisdom">12</set>
+			<set name="charisma">9</set>
+			<set name="skills">Perception +4</set>
+			<set name="senses">passive Perception 14</set>
+			<set name="languages">—</set>
+			<set name="challenge">8</set>
+			<set name="actions">ID_WOTC_MM_COMPANION_ACTION_TYRANNOSAURUS_REX_MULTIATTACK,ID_WOTC_MM_COMPANION_ACTION_TYRANNOSAURUS_REX_BITE,ID_WOTC_MM_COMPANION_ACTION_TYRANNOSAURUS_REX_TAIL</set>
+		</setters>
+		<rules>
+			<stat name="companion:ac" value="13" />
+			<stat name="companion:hp:max" value="136" bonus="base" />
+			<stat name="companion:speed" value="50" bonus="base" />
+			<stat name="companion:perception:proficiency" value="companion:proficiency" bonus="base" />
+		</rules>
+	</element>
+	<element name="Multiattack" type="Companion Action" source="Monster Manual" id="ID_WOTC_MM_COMPANION_ACTION_TYRANNOSAURUS_REX_MULTIATTACK">
+		<description>
+			<p>The tyrannosaurus makes two attacks: one with its bite and one with its tail. It can't make both attacks against the same target.</p>
+		</description>
+		<sheet>
+			<description>The tyrannosaurus makes two attacks: one with its bite and one with its tail. It can't make both attacks against the same target.</description>
+		</sheet>
+	</element>
+	<element name="Bite" type="Companion Action" source="Monster Manual" id="ID_WOTC_MM_COMPANION_ACTION_TYRANNOSAURUS_REX_BITE">
+		<description>
+			<p>Melee Weapon Attack: +10 to hit, reach 10 ft., one target. Hit: 33 (4d12 + 7) piercing damage. If the target is a Medium or smaller creature, it is grappled (escape DC 17). Until this grapple ends, the target is restrained, and the tyrannosaurus can't bite another target.</p>
+		</description>
+		<sheet>
+			<description>Melee Weapon Attack: +10 to hit, reach 10 ft., one target. Hit: 33 (4d12 + 7) piercing damage. If the target is a Medium or smaller creature, it is grappled (escape DC 17). Until this grapple ends, the target is restrained, and the tyrannosaurus can't bite another target.</description>
+		</sheet>
+	</element>
+	<element name="Tail" type="Companion Action" source="Monster Manual" id="ID_WOTC_MM_COMPANION_ACTION_TYRANNOSAURUS_REX_TAIL">
+		<description>
+			<p>Melee Weapon Attack: +10 to hit, reach 10 ft., one target. Hit: 20 (3d8 + 7) bludgeoning damage.</p>
+		</description>
+		<sheet>
+			<description>Melee Weapon Attack: +10 to hit, reach 10 ft., one target. Hit: 20 (3d8 + 7) bludgeoning damage.</description>
+		</sheet>
+	</element>
+	<element name="Tyrannosaurus Rex" type="Information" source="Monster Manual" id="ID_WOTC_MM_INFORMATION_TYRANNOSAURUS_REX">
+		<description>
+			<p style="margin-bottom:-5px"><em>Huge beast, unaligned</em></p>
+			<h4 style="margin-top:5px" />
+			<ul class="unstyled">
+				<li><strong>Armor Class</strong> 13 (natural armor)</li>
+				<li><strong>Hit Points</strong> 136 (13d12 + 52)</li>
+				<li><strong>Speed</strong> 50 ft.</li>
+			</ul>
+			<table style="text-align:center;margin-top:10px;margin-bottom:10px">
+				<thead><tr><td>STR</td><td>DEX</td><td>CON</td><td>INT</td><td>WIS</td><td>CHA</td></tr></thead>
+				<tr><td>25 (+7)</td><td>10 (+0)</td><td>19 (+4)</td><td>2 (-4)</td><td>12 (+1)</td><td>9 (-1)</td></tr>
+			</table>
+			<ul class="unstyled">
+				<li><strong>Skills</strong> Perception +4</li>
+				<li><strong>Senses</strong> passive Perception 1</li>
+				<li><strong>Languages</strong> —</li>
+				<li><strong>Challenge</strong> 8 (3,900 XP)</li>
+			</ul>
+			<h4 style="margin-top:10px">Actions</h4>
+			<ul class="unstyled">
+				<li><strong><em>Multiattack.</em></strong> The tyrannosaurus makes two attacks: one with its bite and one with its tail. It can’t make both attacks against the same target.</li>
+				<p></p>
+				<li><strong><em>Bite. </em></strong><em>Melee Weapon Attack:</em> +10 to hit, reach 10 ft., one target. <em>Hit:</em> 33 (4d12 + 7) piercing damage. If the target is a Medium or smaller creature, it is grappled (escape DC 17). Until this grapple ends, the target is restrained, and the tyrannosaurus can’t bite another target.</li>
+				<p></p>
+				<li><strong><em>Tail. </em></strong><em>Melee Weapon Attack:</em> +10 to hit, reach 10 ft., one target. <em>Hit:</em> 20 (3d8 + 7) bludgeoning damage.</li>
+			</ul>
+		</description>
+	</element>
+
 </elements>

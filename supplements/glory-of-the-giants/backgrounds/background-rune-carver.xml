@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<elements>
+	<info>
+		<update version="0.0.1">
+			<file name="background-rune-carver.xml" url="https://raw.githubusercontent.com/AuroraLegacy/elements/master/supplements/glory-of-the-giants/backgrounds/background-rune-carver.xml" />
+		</update>
+	</info>
+	<element name="Rune Carver" type="Background" source="Bigby Presents: Glory of the Giants" id="ID_WOTC_GOTG_BACKGROUND_RUNE_CARVER">
+		<description>
+			<p>You've dedicated your life to studying runecraft. Whether you were taught by a master rune carver or learned by poring over ancient engravings, you can tap into the supernatural power held within runes.</p>
+			<p class="indent">The art of runecraft was initially created by giants, but over time, the practice has been adopted by many peoples. As such, though Giant runes are the most commonly used, many rune carvers incorporate symbols from their native languages into the craft.</p>
+			<ul class="unstyled">
+				<li><strong>Skill Proficiencies:</strong> History, Perception</li>
+				<li><strong>Tool Proficiencies:</strong> One set of artisan's tools</li>
+				<li><strong>Languages:</strong> Giant</li>
+				<li><strong>Equipment:</strong> A set of artisan's tools (one of your choice), a small knife, a whetstone, a set of common clothes, and a pouch containing 10 gp</li>
+			</ul>
+			<h5>RUNE STYLES</h5>
+			<p>Each rune carver has a unique style and preferred medium. To determine how you make your runes, you can roll on the Rune Style table.</p>
+			<p><strong>Rune Style</strong></p>
+			<table>
+				<thead>
+					<tr><td class="col-10">d6</td><td>Style</td></tr>
+				</thead>
+				<tr><td>1</td><td>You inscribe runes in wax or clay with a fine metal needle.</td></tr>
+				<tr><td>2</td><td>You whittle pieces of wood into small figurines you mark with runes.</td></tr>
+				<tr><td>3</td><td>You engrave runes onto glass beads and thread them onto necklaces and bracelets.</td></tr>
+				<tr><td>4</td><td>You stitch runes into the hems of clothing.</td></tr>
+				<tr><td>5</td><td>You carve runes on a set of animal bones you can throw in different formations.</td></tr>
+				<tr><td>6</td><td>You draw runes into candles, melting the wax to smooth over the engravings.</td></tr>
+			</table>
+			<h5>BUILDING A RUNE CARVER CHARACTER</h5>
+			<p>Scholarly pursuits, ancient mysteries, or a fateful encounter might inspire a character to pursue the secrets of a rune carver.</p>
+			<div element="ID_WOTC_GOTG_BACKGROUND_FEATURE_RUNE_CARVER_RUNE_SHAPER" />
+			<h5>SUGGESTED CHARACTERISTICS</h5>
+			<p>The Rune Carver Personality Traits table suggests a variety of traits you might adopt for your character.</p>
+			<table>
+				<thead>
+					<tr><td class="col-10">d6</td><td>Personality Trait</td></tr>
+				</thead>
+				<tr><td>1</td><td>Is it practical to learn an ancient language that is rarely spoken? No. But is it fun? Very.</td></tr>
+				<tr><td>2</td><td>I learned one of my ancestors was a lauded rune carver whose story was lost to time. I seek to rekindle that legacy.</td></tr>
+				<tr><td>3</td><td>The old, traditional markings of runecraft look so boring. Why not give my runes some flair?</td></tr>
+				<tr><td>4</td><td>In my studies of runes, I strive to understand how great civilizations of the past fell, so I can prevent it from happening to societies of the present.</td></tr>
+				<tr><td>5</td><td>Life may be a whirlwind of chaos, but whenever I create my runes, I feel at peace.</td></tr>
+				<tr><td>6</td><td>My brain struggles to process words written in ink, but the feeling of carved runes makes my mind sing.</td></tr>
+			</table>
+		</description>
+		<setters>
+			<set name="short">History, Perception, Artisan's Tool, Giant Language</set>
+		</setters>
+		<rules>
+			<grant type="Proficiency" id="ID_PROFICIENCY_SKILL_HISTORY" />
+			<grant type="Proficiency" id="ID_PROFICIENCY_SKILL_PERCEPTION" />
+			<select type="Proficiency" name="Tool Proficiency (Rune Carver)" supports="Artisan tools" />
+			<grant type="Language" id="ID_LANGUAGE_GIANT" />
+			<grant type="Background Feature" id="ID_WOTC_GOTG_BACKGROUND_FEATURE_RUNE_CARVER_RUNE_SHAPER" requirements="!ID_INTERNAL_GRANT_OPTIONAL_BACKGROUND_FEATURE"/>
+			<select type="Background Feature" name="Variant Feature" supports="Optional Background Feature" optional="true" />
+			<select type="List" name="Personality Trait" number="2">
+				<item id="1">Is it practical to learn an ancient language that is rarely spoken? No. But is it fun? Very.</item>
+				<item id="2">I learned one of my ancestors was a lauded rune carver whose story was lost to time. I seek to rekindle that legacy.</item>
+				<item id="3">The old, traditional markings of runecraft look so boring. Why not give my runes some flair?</item>
+				<item id="4">In my studies of runes, I strive to understand how great civilizations of the past fell, so I can prevent it from happening to societies of the present.</item>
+				<item id="5">Life may be a whirlwind of chaos, but whenever I create my runes, I feel at peace.</item>
+				<item id="6">My brain struggles to process words written in ink, but the feeling of carved runes makes my mind sing.</item>
+			</select>
+		</rules>
+	</element>
+	<element name="Feature: Rune Shaper" type="Background Feature" source="Eberron: Rising from the Last War" id="ID_WOTC_GOTG_BACKGROUND_FEATURE_RUNE_CARVER_RUNE_SHAPER">
+		<supports>Background Feature</supports>
+		<description>
+			<p>You gain the Rune Shaper feat.</p>
+		</description>
+		<sheet display="false" />
+		<rules>
+			<grant type="Feat" id="ID_WOTC_GOTG_FEAT_RUNE_SHAPER" />
+		</rules>
+	</element>
+</elements>
