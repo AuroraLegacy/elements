@@ -3,7 +3,7 @@
 	<info>
 		<name>Internal</name>
 		<description>Elements that should've been part of the app itself</description>
-		<update version="0.1.2">
+		<update version="0.1.3">
 			<file name="internal.xml" url="https://raw.githubusercontent.com/AuroraLegacy/elements/master/core/internal.xml" />
 		</update>
 	</info>
@@ -1154,4 +1154,23 @@
 	<append id="ID_PROFICIENCY_GAMING_SET_PROFICIENCY_THREE_DRAGON_ANTE_SET">
 		<supports>Tool</supports>
 	</append>
+
+	<!--DDB Boomerang-->
+	<element name="Boomerang" type="Weapon" source="Internal" id="ID__WEAPON_BOOMERANG">
+		<supports>ID_INTERNAL_WEAPON_CATEGORY_SIMPLE_RANGED, ID_INTERNAL_DAMAGE_TYPE_BLUDGEONING, ID_INTERNAL_WEAPON_PROPERTY_THROWN</supports>
+		<description>
+			<p>The boomerang is a ranged weapon, and any creature proficient with the javelin is also proficient with this weapon.</p>
+			<p class="indent">On a miss, a boomerang returns to the thrower's hand.</p>
+		</description>
+		<setters>
+			<set name="category">Weapons</set>
+			<set name="cost" currency="gp">0</set>
+			<set name="weight" lb="2">2 lb.</set>
+			<set name="slot">onehand</set>
+			<set name="range">60/120</set>
+			<set name="damage" type="bludgeoning">1d4</set>
+			<set name="proficiency">ID_PROFICIENCY_WEAPON_PROFICIENCY_JAVELIN</set>
+			<set name="sourceUrl">https://www.dndbeyond.com/equipment/boomerang</set>
+		</setters>
+	</element>
 </elements>
