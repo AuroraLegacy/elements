@@ -10,11 +10,18 @@ Please take a moment to review the [contributing guidelines](https://github.com/
 Go to the _Additional Content_ tab in Aurora, enter the URL of the index file, and have Aurora download the content to the custom folder for you. When these files get updated, Aurora will be able to keep content files up to date automatically. <br>
 More information about extending the content can be found [here](http://aurorabuilder.com/content/ "Additional Content") (could be taken down at a later time).
 
+### Option 1: **Recommended**
+All in one index
+- https://raw.githubusercontent.com/AuroraLegacy/elements/master/AuroraLegacy.index
+
+### Option 2:
+Individual indexes
 - https://raw.githubusercontent.com/AuroraLegacy/elements/master/core.index **(Required)**
 - https://raw.githubusercontent.com/AuroraLegacy/elements/master/supplements.index **(Requires Core)**
 - https://raw.githubusercontent.com/AuroraLegacy/elements/master/unearthed-arcana.index **(Requires Core)**
+- https://raw.githubusercontent.com/AuroraLegacy/elements/master/collab.index **(Requires Core)**
 
-_**Warning:**_ Users who previously used content from now archived Aurora repository, must first delete following folders and files in "_custom_" folder (you can open it through the Additional Content tab's "Content Folder" button), before using links above: "core" folder, "_supplements_" folder, "_unearthed-arcana_" folder, "_core.index_" file, "_supplements.index_" file, "_unearthed-arcana.index_" file.
+_**Warning**_ Users who previously used content from now archived Aurora repository, must first delete following folders and files in "_custom_" folder (you can open it through the Additional Content tab's "Content Folder" button), before using links above: "core" folder, "_supplements_" folder, "_unearthed-arcana_" folder, "_core.index_" file, "_supplements.index_" file, "_unearthed-arcana.index_" file.
 
 **Additionally**, old characters can require re-selecting some options, due to changes in new files (that includes errata, and general fixes).
 

@@ -69,7 +69,7 @@ A good review will be different depending on the element(s) being changed or add
 * Check that features/bonuses are added/removed when toggling equip/attune
 
 #### Spells
-* Check that the correct supports are present 
+* Check that the correct supports are present
 
 
 <br>
@@ -81,8 +81,11 @@ A good review will be different depending on the element(s) being changed or add
 
 * Official Core Rulebooks and Supplements <sup>1</sup>
 * Unearthed Arcana <sup>1</sup> (Playtest Material)
+* Small releases provided on official sites like D&D Beyond. <sup>1</sup> <sup>2</sup>
+* Collaborations between Wizards of the Coast and a third party. <sup>1</sup> <sup>2</sup>
 
-<sup>1</sup> some official and playtest material might require features not supported by the Aurora Builder, these materials will be reviewed on case-by-case basis<br>
+<sup>1</sup> some material might require features not supported by the Aurora Builder, these materials will be reviewed on case-by-case basis<br>
+<sup>2</sup> this material is being approved on a case-by-case basis
 
 <a name="scope-out"></a>
 ### Out of the Project Scope
