@@ -85,8 +85,8 @@ A good review will be different depending on the element(s) being changed or add
 * Collaborations between Wizards of the Coast and a third party. <sup>1</sup> <sup>2</sup> <sup>3</sup>
 
 <sup>1</sup> some material might require features not supported by the Aurora Builder, these materials will be reviewed on case-by-case basis<br>
-<sup>2</sup> this material is being approved on a case-by-case basis
-<sup>3</sup> mostly will be categorized under Third Party due to the lesser known and generally unallowed nature of the material
+<sup>2</sup> this material is being approved on a case-by-case basis<br>
+<sup>3</sup> mostly will be categorized under Third Party due to the lesser known and generally unallowed nature of the material<br>
 
 <a name="scope-out"></a>
 ### Out of the Project Scope
