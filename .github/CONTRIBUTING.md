@@ -81,7 +81,7 @@ A good review will be different depending on the element(s) being changed or add
 
 * Official Core Rulebooks and Supplements <sup>1</sup>
 * Unearthed Arcana <sup>1</sup> (Playtest Material)
-* Small releases provided on official sites like D&D Beyond. <sup>1</sup> <sup>2</sup>
+* Digital only content provided on official sites like D&D Beyond. <sup>1</sup> <sup>2</sup>
 * Collaborations between Wizards of the Coast and a third party. <sup>1</sup> <sup>2</sup> <sup>3</sup>
 
 <sup>1</sup> some material might require features not supported by the Aurora Builder, these materials will be reviewed on case-by-case basis<br>
@@ -92,7 +92,7 @@ A good review will be different depending on the element(s) being changed or add
 ### Out of the Project Scope
 
 * personal homebrew content
-* content from reddit <sup>1</sup>, D&D Wiki <sup>2</sup>, DMs Guild, and other sites that allow users to post uncurated homebrew content.
+* content from reddit <sup>1</sup>, D&D Wiki <sup>2</sup>, D&D Beyond Homebrew, DMs Guild, and other sites that allow users to post uncurated homebrew content.
 * content from other franchises converted to 5e (Example: lord of the rings, pokemon, final fantasy, etc).
 
 <sup>1</sup> There is a community repository for content from reddit [here](https://github.com/community-elements/elements-reddit).<br>
