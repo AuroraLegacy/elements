@@ -4,7 +4,7 @@
 		<name>Unearthed Arcana: That Old Black Magic</name>
 		<description>Taking a new look at the tiefling race, this article breaks down the Player’s Handbook tiefling into a modular variant, allowing players to create tiefling characters tied to either a diabolic or a demonic ancestry. Additionally, a new suite of conjuration spells allows casters to call forth demons to do their bidding.</description>
 		<author url="http://dnd.wizards.com/articles/unearthed-arcana/old-black-magic">Wizards of the Coast</author>
-		<update version="0.0.1">
+		<update version="0.0.2">
 			<file name="20151207.xml" url="https://raw.githubusercontent.com/AuroraLegacy/elements/master/unearthed-arcana/2015/20151207.xml" />
 		</update>
 	</info>
@@ -23,6 +23,82 @@
 		</setters>
 	</element>
 
+	<!-- Tiefling Variant -->
+	<element name="Abyssal Tiefling" type="Sub Race" source="Unearthed Arcana: That Old Black Magic" id="ID_WOTC_UA20151207_SUBRACE_TIEFLING_ABYSSAL">
+		<supports>Tiefling</supports>
+		<description>
+			<p>As presented in the Player’s Handbook, all members of the tiefling race share some manner of diabolic origin. The following option allows you to instead create a tiefling with a demonic tie.</p>
+			<p class="indent">All abyssal tieflings trace their bloodline to the demons of the Abyss. These tieflings have the following additional features.</p>
+			<p class="indent"><b><i>Ability Score Increase.</i></b> Your Constitution score increases by 1.</p>
+			<p class="indent"><b><i>Abyssal Arcana.</i></b> Each time you finish a long rest, you gain the ability to cast cantrips and spells randomly determined from a short list. At 1st level, you can cast a cantrip. When you reach 3rd level, you can also cast a 1st-level spell. At 5th level, you can cast a 2nd-level spell</p>
+			<p class="indent">You can cast a spell gained from this trait only once until you complete your next long rest. You can cast a cantrip gained from this trait at will, as normal. For 1st-level spells whose effect changes if cast using a spell slot of 2nd level or higher, you cast the spell as if using a 2nd-level slot. Spells of 2nd level are cast as if using a 2nd-level slot. </p>
+			<p class="indent">At the end of each long rest, you lose the cantrips and spells previously granted by this feature, even if you did not cast them. You replace those cantrips and spells by rolling for new ones on the Abyssal Arcana Spells table. Roll separately for each cantrip and spell. If you roll the same spell or cantrip you gained at the end of your previous long rest, roll again until you get a different result.</p>
+			<p class="caption">Abyssal Arcana Spells</p>
+			<table>
+				<thead>
+					<tr><td>d6</td><td>1st Level</td><td>3rd Level</td><td>5th Level</td></tr>
+				</thead>
+				<tr><td>1</td><td><em>Dancing lights</em></td><td><em>Burning hands</em></td><td><em>Alter self</em></td></tr>
+				<tr><td>2</td><td><em>True strike</em></td><td><em>Charm person</em></td><td><em>Darkness</em></td></tr>
+				<tr><td>3</td><td><em>Light</em></td><td><em>Magic missle</em></td><td><em>Invisibility</em></td></tr>
+				<tr><td>4</td><td><em>Message</em></td><td><em>Cure wounds</em></td><td><em>Levitate</em></td></tr>
+				<tr><td>5</td><td><em>Spare the dying</em></td><td><em>Tasha's hideous laughter</em></td><td><em>Mirror image</em></td></tr>
+				<tr><td>6</td><td><em>Prestidigitation</em></td><td><em>Thunderwave</em></td><td><em>Spider climb</em></td></tr>
+			</table>
+			<p class="indent"><b><i>Abyssal Fortitude.</i></b> Your hit point maximum increases by half your level (minimum 1).</p>
+			<p class="indent"><b><i>Languages.</i></b> You can speak, read, and write Abyssal.</p>
+		</description>
+		<sheet display="false" />
+		<rules>
+			<grant type="Grants" id="ID_INTERNAL_GRANTS_TIEFLING_SUBRACE" />
+			<grant type="Grants" id="ID_INTERNAL_LANGUAGE_REPLACEMENT_TIEFLING_INFERNAL" />
+			<grant type="Grants" id="ID_INTERNAL_RACIAL_TRAIT_REPLACEMENT_TIEFLING_HELLISH_RESISTANCE" />
+			<stat name="charisma" value="2" requirements="!ID_WOTC_TCOE_OPTION_CUSTOMIZED_ASI" />
+			<stat name="constitution" value="1" requirements="!ID_WOTC_TCOE_OPTION_CUSTOMIZED_ASI" />
+			<select type="Ability Score Improvement" name="Custom Ability Score Improvement +2 (Abyssal Tiefling)" supports="Custom Ability Score Increase 2" requirements="ID_WOTC_TCOE_OPTION_CUSTOMIZED_ASI" />
+			<select type="Ability Score Improvement" name="Custom Ability Score Improvement +1 (Abyssal Tiefling)" supports="Custom Ability Score Increase 1" requirements="ID_WOTC_TCOE_OPTION_CUSTOMIZED_ASI" />
+			<grant type="Language" id="ID_LANGUAGE_ABYSSAL" requirements="!ID_WOTC_TCOE_OPTION_CUSTOMIZED_LANGUAGE" />
+			<grant type="Racial Trait" id="ID_WOTC_UA20151207_RACIAL_TRAIT_ABYSSAL_ABYSSAL_ARCANA" />
+			<grant type="Racial Trait" id="ID_WOTC_UA20151207_RACIAL_TRAIT_ABYSSAL_ABYSSAL_FORTITUDE" />
+		</rules>
+	</element>
+	<element name="Abyssal Arcana" type="Racial Trait" source="Unearthed Arcana: That Old Black Magic" id="ID_WOTC_UA20151207_RACIAL_TRAIT_ABYSSAL_ABYSSAL_ARCANA">
+		<description>
+			<p>Each time you finish a long rest, you gain the ability to cast cantrips and spells randomly determined from a short list. At 1st level, you can cast a cantrip. When you reach 3rd level, you can also cast a 1st-level spell. At 5th level, you can cast a 2nd-level spell</p>
+			<p class="indent">You can cast a spell gained from this trait only once until you complete your next long rest. You can cast a cantrip gained from this trait at will, as normal. For 1st-level spells whose effect changes if cast using a spell slot of 2nd level or higher, you cast the spell as if using a 2nd-level slot. Spells of 2nd level are cast as if using a 2nd-level slot. </p>
+			<p class="indent">At the end of each long rest, you lose the cantrips and spells previously granted by this feature, even if you did not cast them. You replace those cantrips and spells by rolling for new ones on the Abyssal Arcana Spells table. Roll separately for each cantrip and spell. If you roll the same spell or cantrip you gained at the end of your previous long rest, roll again until you get a different result.</p>
+			<p class="caption">Abyssal Arcana Spells</p>
+			<table>
+				<thead>
+					<tr><td>d6</td><td>1st Level</td><td>3rd Level</td><td>5th Level</td></tr>
+				</thead>
+				<tr><td>1</td><td><em>Dancing lights</em></td><td><em>Burning hands</em></td><td><em>Alter self</em></td></tr>
+				<tr><td>2</td><td><em>True strike</em></td><td><em>Charm person</em></td><td><em>Darkness</em></td></tr>
+				<tr><td>3</td><td><em>Light</em></td><td><em>Magic missle</em></td><td><em>Invisibility</em></td></tr>
+				<tr><td>4</td><td><em>Message</em></td><td><em>Cure wounds</em></td><td><em>Levitate</em></td></tr>
+				<tr><td>5</td><td><em>Spare the dying</em></td><td><em>Tasha's hideous laughter</em></td><td><em>Mirror image</em></td></tr>
+				<tr><td>6</td><td><em>Prestidigitation</em></td><td><em>Thunderwave</em></td><td><em>Spider climb</em></td></tr>
+			</table>
+		</description>
+		<sheet>
+			<description>Whenever you finish a long rest, roll on the Abyssal Arcana Spells table to determine your random cantrip, this cantrip can be cast at will. You lose cantrip previously granted by this feature when you finish a long rest. If you roll the same cantrip you gained at the end of your previous long rest, roll again until you get a different result.</description>
+			<description level="3">Whenever you finish a long rest, roll on the Abyssal Arcana Spells table to determine your random cantrip and 1st-level spell, rolling separately for each. You can cast cantrip at will. You can also cast a 1st-level spell once (if the rolled spell can be used with a higher level slots, you cast it at the 2nd-level). You lose cantrip and spell previously granted by this feature when you finish a long rest. If you roll the same cantrip or spell you gained at the end of your previous long rest, roll again until you get a different result.</description>
+			<description level="5">Whenever you finish a long rest, roll on the Abyssal Arcana Spells table to determine your random cantrip, and spells of 1st and 2nd level, rolling separately for each. You can cast cantrip at will. You can also cast each spell once (if the rolled spell of 1st-level can be used with a higher level slots, you cast it at the 2nd-level). You lose cantrip and spells previously granted by this feature when you finish a long rest. If you roll the same cantrip or spell you gained at the end of your previous long rest, roll again until you get a different result.</description>
+		</sheet>
+	</element>
+	<element name="Abyssal Fortitude" type="Racial Trait" source="Unearthed Arcana: That Old Black Magic" id="ID_WOTC_UA20151207_RACIAL_TRAIT_ABYSSAL_ABYSSAL_FORTITUDE">
+		<description>
+			<p>Your hit point maximum increases by half your level (minimum 1).</p>
+		</description>
+		<sheet display="false" />
+		<rules>
+			<stat name="abyssal fortitude:hp" value="level:half" bonus="base" />
+			<stat name="abyssal fortitude:hp" value="1" bonus="base" />
+			<stat name="hp" value="abyssal fortitude:hp" />
+		</rules>
+	</element>
+
+	<!-- Spells -->
 	<element name="Conjure Barlgura" type="Spell" source="Unearthed Arcana: That Old Black Magic" id="ID_WOTC_UA20151207_SPELL_CONJURE_BARLGURA">
 		<supports>Sorcerer, Wizard</supports>
 		<description>
