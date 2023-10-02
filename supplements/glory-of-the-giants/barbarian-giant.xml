@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<elements>
+	<info>
+		<name>Path of the Giant</name>
+		<description>The Path of the Giant from Bigby Presents: Glory of the Giants</description>
+		<update version="0.0.1">
+			<file name="barbarian-giant.xml" url="https://raw.githubusercontent.com/AuroraLegacy/elements/master/supplements/glory-of-the-giants/barbarian-giant.xml" />
+		</update>
+	</info>
+
+	<element name="Path of the Giant" type="Archetype" source="Bigby Presents: Glory of the Giants" id="ID_WOTC_GOTG_ARCHETYPE_BARBARIAN_PATH_OF_THE_GIANT">
+		<supports>Primal Path</supports>
+		<description>
+			<p>Barbarians who walk the Path of the Giant draw strength from the same primal forces as giants. As they rage, these barbarians surge with elemental power and grow in size, taking on forms that evoke the glory of giants. Some barbarians look like oversized versions of themselves, perhaps with a hint of elemental energy flaring in their eyes and around their weapons. Others transform more dramatically, taking on the appearance of an actual giant or a form similar to an Elemental, wreathed in fire, frost, or lightning.</p>
+			<div element="ID_WOTC_GOTG_ARCHETYPE_FEATURE_PATH_OF_THE_GIANT_GIANT_POWER" />
+			<div element="ID_WOTC_GOTG_ARCHETYPE_FEATURE_PATH_OF_THE_GIANT_GIANTS_HAVOC" />
+			<div element="ID_WOTC_GOTG_ARCHETYPE_FEATURE_PATH_OF_THE_GIANT_ELEMENTAL_CLEAVER" />
+			<div element="ID_WOTC_GOTG_ARCHETYPE_FEATURE_PATH_OF_THE_GIANT_MIGHTY_IMPEL" />
+			<div element="ID_WOTC_GOTG_ARCHETYPE_FEATURE_PATH_OF_THE_GIANT_DEMIURGIC_COLOSSUS" />
+		</description>
+		<sheet display="false" />
+		<rules>
+			<grant type="Archetype Feature" id="ID_WOTC_GOTG_ARCHETYPE_FEATURE_PATH_OF_THE_GIANT_GIANT_POWER" level="3" />
+			<grant type="Archetype Feature" id="ID_WOTC_GOTG_ARCHETYPE_FEATURE_PATH_OF_THE_GIANT_GIANTS_HAVOC" level="3" />
+			<grant type="Archetype Feature" id="ID_WOTC_GOTG_ARCHETYPE_FEATURE_PATH_OF_THE_GIANT_ELEMENTAL_CLEAVER" level="6" />
+			<grant type="Archetype Feature" id="ID_WOTC_GOTG_ARCHETYPE_FEATURE_PATH_OF_THE_GIANT_MIGHTY_IMPEL" level="10" />
+			<grant type="Archetype Feature" id="ID_WOTC_GOTG_ARCHETYPE_FEATURE_PATH_OF_THE_GIANT_DEMIURGIC_COLOSSUS" level="14" />
+		</rules>
+	</element>
+
+	<element name="Giant Power" type="Archetype Feature" source="Bigby Presents: Glory of the Giants" id="ID_WOTC_GOTG_ARCHETYPE_FEATURE_PATH_OF_THE_GIANT_GIANT_POWER">
+		<description>
+			<p><em>3rd-level Path of the Giant feature</em></p>
+			<p>When you choose this path, you learn to speak, read, and write Giant or one other language of your choice if you already know Giant. Additionally, you learn a cantrip of your choice: either druidcraft or thaumaturgy. Wisdom is your spellcasting ability for this spell.</p>
+		</description>
+		<sheet>
+			<description>Wisdom is your spellcasting ability for the cantrip you learn from this feature.</description>
+		</sheet>
+		<rules>
+			<select type="Language" name="Language (Giant Power)" supports="Standard||Exotic" default="ID_LANGUAGE_GIANT"/>
+			<select type="Spell" name="Cantrip (Giant Power)" supports="ID_PHB_SPELL_DRUIDCRAFT|ID_PHB_SPELL_THAUMATURGY" />
+		</rules>
+	</element>
+
+	<element name="Giant's Havoc" type="Archetype Feature" source="Bigby Presents: Glory of the Giants" id="ID_WOTC_GOTG_ARCHETYPE_FEATURE_PATH_OF_THE_GIANT_GIANTS_HAVOC">
+		<description>
+			<p><em>3rd-level Path of the Giant feature</em></p>
+			<p>Your rages pull strength from the primal might of giants, transforming you into a hulking force of destruction. While raging, you gain the following benefits:</p>
+			<p style="text-indent: -1em; margin-left: 1em"><strong>Crushing Throw.</strong> When you make a successful ranged attack with a thrown weapon using Strength, you can add your Rage Damage bonus to the attack's damage roll.</p>
+			<p style="text-indent: -1em; margin-left: 1em; margin-bottom: 20px"><strong>Giant Stature.</strong> Your reach increases by 5 feet, and if you are smaller than Large, you become Large, along with anything you are wearing. If there isn't enough room for you to increase your size, your size doesn't change.</p>
+		</description>
+		<sheet>
+			<description>While raging, you gain the following benefits: You add {{barbarian rage:damage}} to damage rolls of your Strength-based ranged attacks, your reach increases by 5 feet, and if you are smaller than Large, you become Large, along with anything you are wearing. If there isn't enough room for you to increase your size, your size doesn't change.</description>
+			<description level="14">While raging, you gain the following benefits: You add {{barbarian rage:damage}} to damage rolls of your Strength-based ranged attacks, your reach increases by 10 feet, and if you are smaller than Large, you become Large or Huge (your choice), along with anything you are wearing. If there isn't enough room for you to increase your size, your size doesn't change.</description>
+		</sheet>
+	</element>
+
+	<element name="Elemental Cleaver" type="Archetype Feature" source="Bigby Presents: Glory of the Giants" id="ID_WOTC_GOTG_ARCHETYPE_FEATURE_PATH_OF_THE_GIANT_ELEMENTAL_CLEAVER">
+		<description>
+			<p><em>6th-level Path of the Giant feature</em></p>
+			<p>Your bond with the elemental might of giants grows, and you learn to infuse weapons with primordial energy.</p>
+			<p class="indent">When you enter your rage, you can choose one weapon that you are holding and infuse it with one of the following damage types: acid, cold, fire, thunder, or lightning. While you wield the infused weapon during your rage, the weapon's damage type changes to the chosen type, it deals an extra 1d6 damage of the chosen type when it hits, and it gains the thrown property, with a normal range of 20 feet and a long range of 60 feet. If you throw the weapon, it reappears in your hand the instant after it hits or misses a target. The infused weapon's benefits are suppressed while a creature other than you wields it.</p>
+			<p class="indent">While raging and holding the infused weapon, you can use a bonus action to change the infused weapon's current damage type to another one from the damage type options above.</p>
+		</description>
+		<sheet>
+			<description>When you enter your rage, you can choose one weapon that you are holding and infuse it with one of the following damage types: acid, cold, fire, thunder, or lightning. While you wield the infused weapon during your rage, the weapon's damage type changes to the chosen type, it deals an extra {{elemental cleaver:dice}}d6 damage of the chosen type, and it gains the thrown property, with a normal range of 20 feet and a long range of 60 feet. If you throw the weapon, it reappears in your hand the instant after it hits or misses a target. &#13;
+			While raging and holding the infused weapon, you can use a bonus action to change the infused weapon's current damage type to another one from the damage type options above.</description>
+		</sheet>
+		<rules>
+			<stat name="elemental cleaver:dice" value="1" bonus="base" />
+		</rules>
+	</element>
+
+	<element name="Mighty Impel" type="Archetype Feature" source="Bigby Presents: Glory of the Giants" id="ID_WOTC_GOTG_ARCHETYPE_FEATURE_PATH_OF_THE_GIANT_MIGHTY_IMPEL">
+		<description>
+			<p><em>10th-level Path of the Giant feature</em></p>
+			<p>Your connection to giant strength allows you to hurl both allies and enemies on the battlefield. As a bonus action while raging, you can choose one Medium or smaller creature within your reach and move it to an unoccupied space you can see within 30 feet of yourself. An unwilling creature must succeed on a Strength saving throw (DC equals 8 + your proficiency bonus + your Strength modifier) to avoid the effect.</p>
+			<p class="indent">If, at the end of this movement, the thrown creature isn't on a surface or liquid that can support it, the creature falls, taking damage as normal and landing prone.</p>
+		</description>
+		<sheet action="Bonus Action">
+			<description>While raging, you can choose one Medium or smaller creature within your reach and move it to an unoccupied space you can see within 30 feet of yourself. An unwilling creature must succeed on a Strength saving throw DC{{mighty impel:dc}} to avoid the effect. &#13;
+			If, at the end of this movement, the thrown creature isn't on a surface or liquid that can support it, the creature falls, taking damage as normal and landing prone.</description>
+			<description level="14">While raging, you can choose one Large or smaller creature within your reach and move it to an unoccupied space you can see within 30 feet of yourself. An unwilling creature must succeed on a Strength saving throw DC{{mighty impel:dc}} to avoid the effect. &#13;
+			If, at the end of this movement, the thrown creature isn't on a surface or liquid that can support it, the creature falls, taking damage as normal and landing prone.</description>
+		</sheet>
+		<rules>
+			<stat name="mighty impel:dc" value="8" />
+			<stat name="mighty impel:dc" value="proficiency" />
+			<stat name="mighty impel:dc" value="strength:modifier" />
+		</rules>
+	</element>
+
+	<element name="Demiurgic Colossus" type="Archetype Feature" source="Bigby Presents: Glory of the Giants" id="ID_WOTC_GOTG_ARCHETYPE_FEATURE_PATH_OF_THE_GIANT_DEMIURGIC_COLOSSUS">
+		<description>
+			<p><em>14th-level Path of the Giant feature</em></p>
+			<p>The primordial power of your rage intensifies. When you rage, your reach increases by 10 feet, your size can increase to Large or Huge (your choice), and you can use your Mighty Impel to move creatures that are Large or smaller.</p>
+			<p class="indent">In addition, the extra damage dealt by your Elemental Cleaver feature increases to 2d6.</p>
+		</description>
+		<sheet display="false" />
+		<rules>
+			<stat name="elemental cleaver:dice" value="2" bonus="base" />
+		</rules>
+	</element>
+</elements>
