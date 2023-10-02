@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<elements>
+	<info>
+		<update version="0.0.1">
+			<file name="background-giant-foundling.xml" url="https://raw.githubusercontent.com/AuroraLegacy/elements/master/supplements/glory-of-the-giants/backgrounds/background-giant-foundling.xml" />
+		</update>
+	</info>
+	<element name="Giant Foundling" type="Background" source="Bigby Presents: Glory of the Giants" id="ID_WOTC_GOTG_BACKGROUND_GIANT_FOUNDLING">
+		<description>
+			<p>Though you aren’t a Giant, you grew up among giants. Maybe you were an orphan taken in by a sympathetic family of stone giants who raised you as one of their own. Or perhaps you lived in a lost prehistoric pocket of the world, surrounded by giants and fearsome behemoths or hulking dinosaurs.</p>
+			<p class="indent">Something about your environment—perhaps the food or water that sustained you, elemental magic inherent in the site of your home, or some verdant blessing of growth placed on you—caused you to grow to a remarkable size for your kind. With the aid of this magic, you have learned how to embody the might of giants. You are used to moving through a world much bigger than you, and that is reflected in your skills, attitude, and perspective on life.</p>
+			<ul class="unstyled">
+				<li><strong>Skill Proficiencies:</strong> Intimidation, Survival</li>
+				<li><strong>Languages:</strong> Giant and one other language of your choice</li>
+				<li><strong>Equipment:</strong> A backpack, a set of traveler's clothes, a small stone or sprig that reminds you of home, and a pouch containing 10 gp</li>
+			</ul>
+			<h5>ORIGIN STORIES</h5>
+			<p>How you came to live among colossal creatures is up to you to determine, but the Foundling Origin table suggests a variety of possibilities.</p>
+			<p><strong>FOUNDLING ORIGIN</strong></p>
+			<table>
+				<thead>
+					<tr><td class="col-10">d6</td><td>Origin</td></tr>
+				</thead>
+				<tr><td>1</td><td>You were found as a baby by a family of nomadic giants who raised you as one of their own.</td></tr>
+				<tr><td>2</td><td>A family of stone giants rescued you when you fell into a mountain chasm, and you have lived with them underground ever since.</td></tr>
+				<tr><td>3</td><td>You were lost or abandoned as a child in a jungle that teemed with ravenous dinosaurs. There, you found an equally lost frost giant; together, you survived.</td></tr>
+				<tr><td>4</td><td>Your farm was crushed and your family killed in a battle between warring groups of giants. Racked with guilt over the destruction, a sympathetic giant soldier promised to care for you.</td></tr>
+				<tr><td>5</td><td>After you had a series of strange dreams as a child, your superstitious parents sent you to study with a powerful but aloof storm giant oracle.</td></tr>
+				<tr><td>6</td><td>While playing hide-and-seek with your friends, you stumbled into the castle of a cloud giant, who immediately adopted you.</td></tr>
+			</table>
+			<h5>BUILDING A GIANT FOUNDLING CHARACTER</h5>
+			<p>Your life among giants has given you a unique perspective. Though you are unusually large for your kind, you're no larger than a giant child, so you might be very mindful of your size.</p>
+			<div element="ID_WOTC_GOTG_BACKGROUND_FEATURE_GIANT_FOUNDLING_STRIKE_OF_THE_GIANTS" />
+			<h5>SUGGESTED CHARACTERISTICS</h5>
+			<p>The Giant Foundling Personality Traits table suggests a variety of traits you might adopt for your character.</p>
+			<table>
+				<thead>
+					<tr><td class="col-10">d6</td><td>Personality Trait</td></tr>
+				</thead>
+				<tr><td>1</td><td>What I lack in stature compared to giants, I make up for with sheer spite.</td></tr>
+				<tr><td>2</td><td>I insist on being taken seriously as a full-grown adult. Nobody talks down to me!</td></tr>
+				<tr><td>3</td><td>Crowded spaces make me uncomfortable. I'd much rather be in an open field than a bustling tavern.</td></tr>
+				<tr><td>4</td><td>I embrace my shorter stature. It helps me stay unnoticed—and underestimated.</td></tr>
+				<tr><td>5</td><td>Every avalanche begins as a single pebble.</td></tr>
+				<tr><td>6</td><td>The world always feels too big, and I'm afraid I'll never find my place in it.</td></tr>
+			</table>
+		</description>
+		<setters>
+			<set name="short">Intimidation, Survival, Giant Language and 1 other Language</set>
+		</setters>
+		<rules>
+			<grant type="Proficiency" id="ID_PROFICIENCY_SKILL_INTIMIDATION" />
+			<grant type="Proficiency" id="ID_PROFICIENCY_SKILL_SURVIVAL" />
+			<grant type="Language" id="ID_LANGUAGE_GIANT" />
+			<select type="Language" name="Language (Giant Foundling)" supports="Standard||Exotic" />
+			<grant type="Background Feature" id="ID_WOTC_GOTG_BACKGROUND_FEATURE_GIANT_FOUNDLING_STRIKE_OF_THE_GIANTS" requirements="!ID_INTERNAL_GRANT_OPTIONAL_BACKGROUND_FEATURE"/>
+			<select type="Background Feature" name="Variant Feature" supports="Optional Background Feature" optional="true" />
+			<select type="List" name="Personality Trait" number="2">
+				<item id="1">What I lack in stature compared to giants, I make up for with sheer spite.</item>
+				<item id="2">I insist on being taken seriously as a full-grown adult. Nobody talks down to me!</item>
+				<item id="3">Crowded spaces make me uncomfortable. I'd much rather be in an open field than a bustling tavern.</item>
+				<item id="4">I embrace my shorter stature. It helps me stay unnoticed—and underestimated.</item>
+				<item id="5">Every avalanche begins as a single pebble.</item>
+				<item id="6">The world always feels too big, and I'm afraid I'll never find my place in it.</item>
+			</select>
+		</rules>
+	</element>
+	<element name="Feature: Strike of the Giants" type="Background Feature" source="Eberron: Rising from the Last War" id="ID_WOTC_GOTG_BACKGROUND_FEATURE_GIANT_FOUNDLING_STRIKE_OF_THE_GIANTS">
+		<supports>Background Feature</supports>
+		<description>
+			<p>You gain the Strike of the Giants feat.</p>
+		</description>
+		<sheet display="false" />
+		<rules>
+			<grant type="Feat" id="ID_WOTC_GOTG_FEAT_STRIKE_OF_THE_GIANTS" />
+		</rules>
+	</element>
+</elements>
