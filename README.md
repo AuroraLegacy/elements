@@ -7,16 +7,25 @@ The goal of Aurora Legacy is to continually support Aurora Builder app with upda
 Please take a moment to review the [contributing guidelines](https://github.com/AuroraLegacy/elements/blob/master/.github/CONTRIBUTING.md) when creating an issue, making a content request, or submitting a pull request.
 
 ## Extending Content
-Go to the _Additional Content_ tab in Aurora, enter the URL of the index file, and have Aurora download the content to the custom folder for you. When these files get updated, Aurora will be able to keep content files up to date automatically. <br>
-More information about extending the content can be found [here](http://aurorabuilder.com/content/ "Additional Content") (could be taken down at a later time).
+Go to the _Additional Content_ tab in Aurora, enter the URL of the index file, and have Aurora download the content to the custom folder for you. When these files get updated, Aurora will be able to keep content files up to date automatically.
 
-- https://raw.githubusercontent.com/AuroraLegacy/elements/master/core.index **(Required)**
-- https://raw.githubusercontent.com/AuroraLegacy/elements/master/supplements.index **(Requires Core)**
-- https://raw.githubusercontent.com/AuroraLegacy/elements/master/unearthed-arcana.index **(Requires Core)**
+<u>**Warning:**</u> Users who previously used content from now archived Aurora repository, must first delete following folders and files in "_custom_" folder (you can open it through the Additional Content tab's "Content Folder" button), before using links above: "core" folder, "_supplements_" folder, "_unearthed-arcana_" folder, "_core.index_" file, "_supplements.index_" file, "_unearthed-arcana.index_" file. <br/>
+This also applies to users who want to change from Individual Indexes Download to All in One Download. <br/>
+_**Additionally**_, old characters may require re-selecting some options, due to changes in new files (that includes errata, and general fixes).
 
-_**Warning:**_ Users who previously used content from now archived Aurora repository, must first delete following folders and files in "_custom_" folder (you can open it through the Additional Content tab's "Content Folder" button), before using links above: "core" folder, "_supplements_" folder, "_unearthed-arcana_" folder, "_core.index_" file, "_supplements.index_" file, "_unearthed-arcana.index_" file.
-
-**Additionally**, old characters can require re-selecting some options, due to changes in new files (that includes errata, and general fixes).
+### Download Options:
+<details>
+  <summary><b>Option 1: All In One Download</b></summary>
+  • Master Index: https://raw.githubusercontent.com/AuroraLegacy/elements/master/AuroraLegacy.index
+</details>
+<hr style="width:750px; height:2px; margin-top:-10px; margin-bottom:5px; background-color:rgb(150,150,150)">
+<details>
+  <summary><b>Option 2: Individual Indexes Download</b> </summary>
+ • Core Index: https://raw.githubusercontent.com/AuroraLegacy/elements/master/core.index <b>(Required by following Indexes)</b> <br>
+  • Supplements Index: https://raw.githubusercontent.com/AuroraLegacy/elements/master/supplements.index <b>(Requires Core Index)</b> <br>
+  • Unearthed Arcana Index: https://raw.githubusercontent.com/AuroraLegacy/elements/master/unearthed-arcana.index <b>(Requires Core Index)</b> <br>
+  • Collaborations Index: https://raw.githubusercontent.com/AuroraLegacy/elements/master/collaborations.index <b>(Requires Core Index)</b>
+</details>
 
 ## Disclaimer
 Aurora Legacy repository is intended as a place for easily-accessible Aurora Builder content (xml) files of products you already own. Please ensure you only access content in accordance with your local laws.
