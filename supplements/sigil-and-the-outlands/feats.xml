@@ -1,0 +1,294 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<elements>
+	<info>
+		<name>Feats</name>
+		<update version="0.0.1">
+			<file name="feats.xml" url="https://raw.githubusercontent.com/AuroraLegacy/elements/master/supplements/sigil-and-the-outlands/feats.xml" />
+		</update>
+	</info>
+
+	<element name="Agent of Order" type="Feat" source="Sigil and the Outlands" id="ID_WOTC_SATO_FEAT_AGENT_OF_ORDER">
+		<requirements>[level:4],ID_WOTC_SATO_FEAT_SCION_OF_THE_OUTER_PLANES_LAWFUL_OUTER_PLANE||ID_WOTC_SATO_FEAT_SCION_OF_THE_OUTER_PLANES,ID_WOTC_SATO_GRANTS_FEAT_UNLOCKER</requirements>
+		<prerequisite>4th level, scion of the outer planes (lawful outer plane) feat</prerequisite>
+		<description>
+			<p><em>Prerequisite: 4th level, scion of the outer planes (lawful outer plane) feat</em></p>
+			<p>You can channel cosmic forces of order to gain these benefits:</p>
+			<p class="indent"><b>Ability Score Increase.</b> Increase one ability score of your choice by 1, to a maximum of 20.</p>
+			<p class="indent"><b>Stasis Strike.</b> Once per turn, when you damage a creature you can see within 60 feet of yourself, you can deal an extra 1d8 force damage to the target, and it must make a Wisdom saving throw (DC equal to 8 + your proficiency bonus + the modifier of the spellcasting ability you chose for the Scion of the Outer Planes feat) as spectral bindings try to ensnare it. On a successful save, the target escapes. On a failed save, the target has the restrained condition until the start of your next turn. These bindings manifest as chains or some other symbol of stasis. You can use this benefit a number of times equal to your proficiency bonus, and you regain all expended uses when you finish a long rest.</p>
+		</description>
+		<sheet alt="Stasis Strike" usage="{{proficiency}}/Long Rest">
+			<description>Once per turn, when you damage a creature you can see within 60 feet of yourself, you can deal an extra 1d8 force damage to the target, and it must make a Wisdom saving throw (DC{{stasis strike:dc}}) as spectral bindings try to ensnare it. On a failed save, the target has the restrained condition until the start of your next turn. These bindings manifest as chains or some other symbol of stasis.</description>
+		</sheet>
+		<rules>
+			<select type="Ability Score Improvement" name="Ability Score Increase (Agent of Order)" supports="Feat" />
+			<stat name="stasis strike:dc" value="8" bonus="base" />
+			<stat name="stasis strike:dc" value="proficiency" bonus="proficiency" />
+		</rules>
+	</element>
+
+	<element name="Baleful Scion" type="Feat" source="Sigil and the Outlands" id="ID_WOTC_SATO_FEAT_BALEFUL_SCION">
+		<requirements>[level:4],ID_WOTC_SATO_FEAT_SCION_OF_THE_OUTER_PLANES_EVIL_OUTER_PLANE||ID_WOTC_SATO_GRANTS_FEAT_UNLOCKER</requirements>
+		<prerequisite>4th level, scion of the outer planes (evil outer plane) feat</prerequisite>
+		<description>
+			<p><em>Prerequisite: 4th level, scion of the outer planes (evil outer plane) feat</em></p>
+			<p>You can channel cosmic forces of evil to gain these benefits:</p>
+			<p class="indent"><b>Ability Score Increase.</b> Increase one ability score of your choice by 1, to a maximum of 20.</p>
+			<p class="indent"><b>Grasp of Avarice.</b> Once per turn, when you damage a creature you can see within 60 feet of yourself, you can also deal necrotic damage to it. The necrotic damage equals 1d6 + your proficiency bonus, and you regain a number of hit points equal to this necrotic damage dealt. You can use this benefit a number of times equal to your proficiency bonus, and you regain all expended uses when you finish a long rest.</p>
+		</description>
+		<sheet alt="Grasp of Avarice" usage="{{proficiency}}/Long Rest">
+			<description>Once per turn, when you damage a creature you can see within 60 feet of yourself, you can also deal necrotic damage to it. The necrotic damage equals 1d6 + {{proficiency}}, and you regain a number of hit points equal to this necrotic damage dealt.</description>
+		</sheet>
+		<rules>
+			<select type="Ability Score Improvement" name="Ability Score Increase (Baleful Scion)" supports="Feat" />
+		</rules>
+	</element>
+
+	<element name="Cohort of Chaos" type="Feat" source="Sigil and the Outlands" id="ID_WOTC_SATO_FEAT_COHORT_OF_CHAOS">
+		<requirements>[level:4],ID_WOTC_SATO_FEAT_SCION_OF_THE_OUTER_PLANES_CHAOTIC_OUTER_PLANE||ID_WOTC_SATO_GRANTS_FEAT_UNLOCKER</requirements>
+		<prerequisite>4th level, scion of the outer planes (chaotic outer plane) feat</prerequisite>
+		<description>
+			<p><em>Prerequisite: 4th level, scion of the outer planes (chaotic outer plane) feat</em></p>
+			<p>You can channel cosmic forces of chaos to gain these benefits:</p>
+			<p class="indent"><b>Ability Score Increase.</b> Increase one ability score of your choice by 1, to a maximum of 20.</p>
+			<p class="indent"><b>Chaotic Flare.</b> When you roll a 1 or a 20 on an attack roll or a saving throw, the magic of chaos flows through you. Roll a d4 and consult the Chaotic Flares table to determine what happens. A flare lasts until the end of your next turn, and a new flare can't occur until after the first flare ends.</p>
+			<h5>Chaotic Flare</h5>
+			<table>
+				<thead>
+					<tr><td class="col-10">d4</td><td>Flare</td></tr>
+				</thead>
+				<tr><td>1</td><td><b>Battle Fury.</b> A creature of your choice that you can see is filled with reckless fury. It has advantage on attack rolls and disadvantage on ability checks.</td></tr>
+				<tr><td>2</td><td><b>Disruption Field.</b> Waves of energy ripple around you. Every creature that starts its turn within 5 feet of you, or that moves into that area for the first time on a turn, takes 1d8 force damage.</td></tr>
+				<tr><td>3</td><td><b>Unbound.</b> When you move, you can use some or all of your walking speed to teleport yourself once, along with any equipment you're wearing or carrying, up to the distance used to an unoccupied space that you can see.</td></tr>
+				<tr><td>4</td><td><b>Wailing Winds.</b> Winds swirl in a 15-foot-radius sphere centered on you. You and any other creatures in that area have disadvantage on Wisdom saving throws.</td></tr>
+			</table>
+		</description>
+		<sheet alt="Chaotic Flare">
+			<description>When you roll a 1 or a 20 on an attack roll or a saving throw, roll a d4: &#13;
+			On a 1, a creature of your choice that you can see is filled with reckless fury, it has advantage on attack rolls and disadvantage on ability checks; On a 2, every creature that starts its turn within 5 feet of you, or that moves into that area for the first time on a turn, takes 1d8 force damage; On a 3, when you move, you can use some or all of your walking speed to teleport yourself once, along with any equipment you're wearing or carrying, up to the distance used to an unoccupied space that you can see; On a 4, winds swirl in a 15-foot-radius sphere centered on you, you and any other creatures in that area have disadvantage on Wisdom saving throws. &#13;
+			A flare lasts until the end of your next turn, and a new flare can't occur until after the first flare ends.</description>
+		</sheet>
+		<rules>
+			<select type="Ability Score Improvement" name="Ability Score Increase (Cohort of Chaos)" supports="Feat" />
+		</rules>
+	</element>
+
+	<element name="Outlands Envoy" type="Feat" source="Sigil and the Outlands" id="ID_WOTC_SATO_FEAT_OUTLANDS_ENVOY">
+		<requirements>[level:4],ID_WOTC_SATO_FEAT_SCION_OF_THE_OUTER_PLANES_THE_OUTLANDS||ID_WOTC_SATO_FEAT_SCION_OF_THE_OUTER_PLANES,ID_WOTC_SATO_GRANTS_FEAT_UNLOCKER</requirements>
+		<prerequisite>4th level, scion of the outer planes (the outlands) feat</prerequisite>
+		<description>
+			<p><em>Prerequisite: 4th level, scion of the outer planes (the outlands) feat</em></p>
+			<p>You have spent significant time in Sigil or the Outlands, the crossroads of the multiverse. Being steeped in converging planar energies grants you these benefits:</p>
+			<p class="indent"><b>Ability Score Increase.</b> Increase one ability score of your choice by 1, to a maximum of 20.</p>
+			<p class="indent"><b>Crossroads Emissary.</b> You learn the <i>misty step</i> and <i>tongues</i> spells. You can cast each spell once using this feat without a spell slot, and you must finish a long rest before you can cast that spell in this way again. When you cast <i>tongues</i> using this feat, you require no material components. You can also cast these spells using spell slots you have of the appropriate level. The spells' spellcasting ability is the one chosen when you gained the Scion of the Outer Planes feat.</p>
+			<div class="reference">
+				<div element="ID_PHB_SPELL_MISTY_STEP" />
+			</div>
+			<div class="reference">
+				<div element="ID_PHB_SPELL_TONGUES" />
+			</div>
+		</description>
+		<sheet alt="Crossroads Emissary">
+			<description>You learn the misty step and tongues spells, you can cast each spell once using this feat without a spell slot, and you must finish a long rest before you can cast that spell in this way again. When you cast tongues using this feat, you require no material components. You can also cast these spells using spell slots you have of the appropriate level. The spells' spellcasting ability is {{sotop:spellcasting}}.</description>
+		</sheet>
+		<rules>
+			<select type="Ability Score Improvement" name="Ability Score Increase (Outlands Envoy)" supports="Feat" />
+		</rules>
+	</element>
+
+	<element name="Planar Wanderer" type="Feat" source="Sigil and the Outlands" id="ID_WOTC_SATO_FEAT_PLANAR_WANDERER">
+		<requirements>[level:4],ID_WOTC_SATO_FEAT_SCION_OF_THE_OUTER_PLANES||ID_WOTC_SATO_GRANTS_FEAT_UNLOCKER</requirements>
+		<prerequisite>4th level, scion of the outer planes feat</prerequisite>
+		<description>
+			<p><em>Prerequisite: 4th level, scion of the outer planes feat</em></p>
+			<p>You can draw on the forces of the multiverse to survive cosmic extremes and to traverse its infinite realms, granting you these benefits:</p>
+			<p class="indent"><b>Planar Adaptation.</b> When you finish a long rest, you gain resistance to either acid, cold, or fire damage (your choice) until you finish your next long rest.</p>
+			<p class="indent"><b>Portal Cracker.</b> Your experience with portals allows you to open them without a portal key. As an action, you can concentrate on a portal you're aware of that is within 5 feet of yourself and make a DC 20 Intelligence (Arcana) check. On a failed check, you take 3d8 psychic damage and can't use this benefit on that portal again until you finish a long rest. On a successful check, you can force the portal open or closed for 1 hour. For that duration, the portal doesn't respond to its portal key unless a creature employing the key succeeds on a DC 20 Intelligence (Arcana) check as an action.</p>
+			<p class="indent"><b>Portal Sense.</b> You know the direction to the last planar portal you used while you and the portal are on the same plane of existence. Moreover, as an action, you can detect the location of any portals within 30 feet of you that aren't behind total cover. Once you detect a portal with this action, you can't use the action again until you finish a long rest.</p>
+		</description>
+		<sheet display="false" />
+		<rules>
+			<grant type="Feat Feature" id="ID_WOTC_SATO_FEAT_PLANAR_WANDERER_PORTAL_CRACKER" />
+			<grant type="Feat Feature" id="ID_WOTC_SATO_FEAT_PLANAR_WANDERER_PORTAL_SENSE" />
+			<select type="Condition" name="Resistance (Planar Adaptation)" supports="ID_INTERNAL_CONDITION_DAMAGE_RESISTANCE_ACID|ID_INTERNAL_CONDITION_DAMAGE_RESISTANCE_COLD|ID_INTERNAL_CONDITION_DAMAGE_RESISTANCE_FIRE" />
+		</rules>
+	</element>
+	<element name="Portal Cracker" type="Feat Feature" source="Sigil and the Outlands" id="ID_WOTC_SATO_FEAT_PLANAR_WANDERER_PORTAL_CRACKER">
+		<compendium display="false" />
+		<description>
+			<p>Your experience with portals allows you to open them without a portal key. As an action, you can concentrate on a portal you're aware of that is within 5 feet of yourself and make a DC 20 Intelligence (Arcana) check. On a failed check, you take 3d8 psychic damage and can't use this benefit on that portal again until you finish a long rest. On a successful check, you can force the portal open or closed for 1 hour. For that duration, the portal doesn't respond to its portal key unless a creature employing the key succeeds on a DC 20 Intelligence (Arcana) check as an action.</p>
+		</description>
+		<sheet action="Action">
+			<description>You can concentrate on a portal you're aware of that is within 5 feet of yourself and make a DC 20 Intelligence (Arcana) check. On a failed check, you take 3d8 psychic damage and can't use this benefit on that portal again until you finish a long rest. On a successful check, you can force the portal open or closed for 1 hour. For that duration, the portal doesn't respond to its portal key unless a creature employing the key succeeds on a DC 20 Intelligence (Arcana) check as an action.</description>
+		</sheet>
+	</element>
+	<element name="Portal Sense" type="Feat Feature" source="Sigil and the Outlands" id="ID_WOTC_SATO_FEAT_PLANAR_WANDERER_PORTAL_SENSE">
+		<compendium display="false" />
+		<description>
+			<p>You know the direction to the last planar portal you used while you and the portal are on the same plane of existence. Moreover, as an action, you can detect the location of any portals within 30 feet of you that aren't behind total cover. Once you detect a portal with this action, you can't use the action again until you finish a long rest.</p>
+		</description>
+		<sheet action="Action">
+			<description>You can detect the location of any portals within 30 feet of you that aren't behind total cover. Once you detect a portal with this action, you can't use the action again until you finish a long rest.
+			Moreover, you know the direction to the last planar portal you used while you and the portal are on the same plane of existence.</description>
+		</sheet>
+	</element>
+
+	<element name="Righteous Heritor" type="Feat" source="Sigil and the Outlands" id="ID_WOTC_SATO_FEAT_RIGHTEOUS_HERITOR">
+		<requirements>[level:4],ID_WOTC_SATO_FEAT_SCION_OF_THE_OUTER_PLANES_GOOD_OUTER_PLANE||ID_WOTC_SATO_GRANTS_FEAT_UNLOCKER</requirements>
+		<prerequisite>4th level, scion of the outer planes (good outer plane) feat</prerequisite>
+		<description>
+			<p><em>Prerequisite: 4th level, scion of the outer planes (good outer plane) feat</em></p>
+			<p>You can channel cosmic forces of good to gain these benefits:</p>
+			<p class="indent"><b>Ability Score Increase.</b> Increase one ability score of your choice by 1, to a maximum of 20.</p>
+			<p class="indent"><b>Soothe Pain.</b> When you or a creature within 30 feet of you takes damage, you can use your reaction to reduce that damage by 1d10 + your proficiency bonus. You can use this benefit a number of times equal to your proficiency bonus, and you regain all expended uses when you finish a long rest.</p>
+		</description>
+		<sheet alt="Soothe Pain" action="Reaction" usage="{{proficiency}}/Long Rest">
+			<description>When you or a creature within 30 feet of you takes damage, you can reduce that damage by 1d10 + {{proficiency}}.</description>
+		</sheet>
+		<rules>
+			<select type="Ability Score Improvement" name="Ability Score Increase (Righteous Heritor)" supports="Feat" />
+		</rules>
+	</element>
+
+	<element name="Scion of the Outer Planes" type="Feat" source="Sigil and the Outlands" id="ID_WOTC_SATO_FEAT_SCION_OF_THE_OUTER_PLANES">
+		<prerequisite>Planescape Campaign</prerequisite>
+		<description>
+			<p><em>Prerequisite: Planescape Campaign</em></p>
+			<p>Your connection to an Outer Plane infuses you with the energy there. Choose a type of plane listed in the Planar Infusion table. Your choice gives you resistance to a damage type and the ability to cast a cantrip, as specified in the table. You can cast this cantrip without material components, and your spellcasting ability for it is Intelligence, Wisdom, or Charisma (choose when you select this feat).</p>
+			<h5>title</h5>
+			<table>
+				<thead>
+					<tr><td>Plane</td><td>Damage Resistance</td><td>Cantrip</td></tr>
+				</thead>
+				<tr><td>Chaotic Outer Plane</td><td>Poison</td><td><i>Minor illusion</i></td></tr>
+				<tr><td>Evil Outer Plane</td><td>Necrotic</td><td><i>Chill touch</i></td></tr>
+				<tr><td>Good Outer Plane</td><td>Radiant</td><td><i>Sacred flame</i></td></tr>
+				<tr><td>Lawful Outer Plane</td><td>Force</td><td><i>Guidance</i></td></tr>
+				<tr><td>The Outlands</td><td>Psychic</td><td><i>Mage hand</i></td></tr>
+			</table>
+		</description>
+		<sheet display="false" />
+		<rules>
+			<select type="Feat Feature" name="Plane Type (Scion of the Outer Planes)" supports="ID_WOTC_SATO_FEAT_SCION_OF_THE_OUTER_PLANES_LAWFUL_OUTER_PLANE|ID_WOTC_SATO_FEAT_SCION_OF_THE_OUTER_PLANES_EVIL_OUTER_PLANE|ID_WOTC_SATO_FEAT_SCION_OF_THE_OUTER_PLANES_CHAOTIC_OUTER_PLANE|ID_WOTC_SATO_FEAT_SCION_OF_THE_OUTER_PLANES_THE_OUTLANDS|ID_WOTC_SATO_FEAT_SCION_OF_THE_OUTER_PLANES_GOOD_OUTER_PLANE" />
+			<select type="Feat Feature" name="Spellcasting Ability (Scion of the Outer Planes)" supports="ID_WOTC_SATO_FEAT_SCION_OF_THE_OUTER_PLANES_INTELLIGENCE|ID_WOTC_SATO_FEAT_SCION_OF_THE_OUTER_PLANES_WISDOM|ID_WOTC_SATO_FEAT_SCION_OF_THE_OUTER_PLANES_CHARISMA" />
+		</rules>
+	</element>
+	<element name="Chaotic Outer Plane" type="Feat Feature" source="Sigil and the Outlands" id="ID_WOTC_SATO_FEAT_SCION_OF_THE_OUTER_PLANES_CHAOTIC_OUTER_PLANE">
+		<compendium display="false" />
+		<description>
+			<p>Your gain resistance to poison damage type and <i>minor illusion</i> cantrip. You can cast this cantrip without material components, and your spellcasting ability for it is Intelligence, Wisdom, or Charisma (choose when you select this feat).</p>
+		</description>
+		<sheet display="false" />
+		<rules>
+			<grant type="Condition" id="ID_INTERNAL_CONDITION_DAMAGE_RESISTANCE_POISON" />
+			<stat name="sotop:plane" value="a chaotic outer plane" inline="true" />
+			<stat name="sotop:cantrip" value="minor illusion" inline="true" />
+		</rules>
+	</element>
+	<element name="Evil Outer Plane" type="Feat Feature" source="Sigil and the Outlands" id="ID_WOTC_SATO_FEAT_SCION_OF_THE_OUTER_PLANES_EVIL_OUTER_PLANE">
+		<compendium display="false" />
+		<description>
+			<p>Your gain resistance to necrotic damage type and <i>chill touch</i> cantrip. You can cast this cantrip without material components, and your spellcasting ability for it is Intelligence, Wisdom, or Charisma (choose when you select this feat).</p>
+		</description>
+		<sheet display="false" />
+		<rules>
+			<grant type="Condition" id="ID_INTERNAL_CONDITION_DAMAGE_RESISTANCE_NECROTIC" />
+			<stat name="sotop:plane" value="an evil outer plane" inline="true" />
+			<stat name="sotop:cantrip" value="chill touch" inline="true" />
+		</rules>
+	</element>
+	<element name="Good Outer Plane" type="Feat Feature" source="Sigil and the Outlands" id="ID_WOTC_SATO_FEAT_SCION_OF_THE_OUTER_PLANES_GOOD_OUTER_PLANE">
+		<compendium display="false" />
+		<description>
+			<p>Your gain resistance to radiant damage type and <i>sacred flame</i> cantrip. You can cast this cantrip without material components, and your spellcasting ability for it is Intelligence, Wisdom, or Charisma (choose when you select this feat).</p>
+		</description>
+		<sheet display="false" />
+		<rules>
+			<grant type="Condition" id="ID_INTERNAL_CONDITION_DAMAGE_RESISTANCE_RADIANT" />
+			<stat name="sotop:plane" value="a good outer plane" inline="true" />
+			<stat name="sotop:cantrip" value="sacred flame" inline="true" />
+		</rules>
+	</element>
+	<element name="Lawful Outer Plane" type="Feat Feature" source="Sigil and the Outlands" id="ID_WOTC_SATO_FEAT_SCION_OF_THE_OUTER_PLANES_LAWFUL_OUTER_PLANE">
+		<compendium display="false" />
+		<description>
+			<p>Your gain resistance to force damage type and <i>guidance</i> cantrip. You can cast this cantrip without material components, and your spellcasting ability for it is Intelligence, Wisdom, or Charisma (choose when you select this feat).</p>
+		</description>
+		<sheet display="false" />
+		<rules>
+			<grant type="Condition" id="ID_INTERNAL_CONDITION_DAMAGE_RESISTANCE_FORCE" />
+			<stat name="sotop:plane" value="a lawful outer plane" inline="true" />
+			<stat name="sotop:cantrip" value="guidance" inline="true" />
+		</rules>
+	</element>
+	<element name="The Outlands" type="Feat Feature" source="Sigil and the Outlands" id="ID_WOTC_SATO_FEAT_SCION_OF_THE_OUTER_PLANES_THE_OUTLANDS">
+		<compendium display="false" />
+		<description>
+			<p>Your gain resistance to psychic damage type and <i>mage hand</i> cantrip. You can cast this cantrip without material components, and your spellcasting ability for it is Intelligence, Wisdom, or Charisma (choose when you select this feat).</p>
+		</description>
+		<sheet display="false" />
+		<rules>
+			<grant type="Condition" id="ID_INTERNAL_CONDITION_DAMAGE_RESISTANCE_PSYCHIC" />
+			<stat name="sotop:plane" value="the outlands" inline="true" />
+			<stat name="sotop:cantrip" value="guidance" inline="true" />
+		</rules>
+	</element>
+
+	<element name="Intelligence" type="Feat Feature" source="Sigil and the Outlands" id="ID_WOTC_SATO_FEAT_SCION_OF_THE_OUTER_PLANES_INTELLIGENCE">
+		<compendium display="false" />
+		<description>
+			<p>Intelligence is your spellcasting ability for this feat's cantrip.</p>
+		</description>
+		<sheet alt="Scion of the Outer Planes">
+			<description>You have a connection to {{sotop:plane}} and you can cast {{sotop:cantrip}} without material components. Your spellcasting ability for it is Intelligence.</description>
+		</sheet>
+		<rules>
+			<stat name="stasis strike:dc" value="intelligence:modifier" bonus="ability" />
+			<stat name="sotop:spellcasting" value="intelligence" inline="true" />
+		</rules>
+	</element>
+	<element name="Wisdom" type="Feat Feature" source="Sigil and the Outlands" id="ID_WOTC_SATO_FEAT_SCION_OF_THE_OUTER_PLANES_WISDOM">
+		<compendium display="false" />
+		<description>
+			<p>Wisdom is your spellcasting ability for this feat's cantrip.</p>
+		</description>
+		<sheet alt="Scion of the Outer Planes">
+			<description>You have a connection to {{sotop:plane}} and you can cast {{sotop:cantrip}} without material components. Your spellcasting ability for it is Wisdom.</description>
+		</sheet>
+		<rules>
+			<stat name="stasis strike:dc" value="wisdom:modifier" bonus="ability" />
+			<stat name="sotop:spellcasting" value="wisdom" inline="true" />
+		</rules>
+	</element>
+	<element name="Charisma" type="Feat Feature" source="Sigil and the Outlands" id="ID_WOTC_SATO_FEAT_SCION_OF_THE_OUTER_PLANES_CHARISMA">
+		<compendium display="false" />
+		<description>
+			<p>Charisma is your spellcasting ability for this feat's cantrip.</p>
+		</description>
+		<sheet alt="Scion of the Outer Planes">
+			<description>You have a connection to {{sotop:plane}} and you can cast {{sotop:cantrip}} without material components. Your spellcasting ability for it is Charisma.</description>
+		</sheet>
+		<rules>
+			<stat name="stasis strike:dc" value="charisma:modifier" bonus="ability" />
+			<stat name="sotop:spellcasting" value="charisma" inline="true" />
+		</rules>
+	</element>
+
+	<!-- Feat Unlocker -->
+	<element name="Feat Unlocker" type="Item" source="Sigil and the Outlands" id="ID_WOTC_SATO_ITEM_FEAT_UNLOCKER">
+		<compendium display="false" />
+		<description>
+			<p>Once equipped, this item allows you to ignore prerequisites for most of the Feats from <i>Sigil and the Outlands</i> Source.</p>
+			<p><b>Note:</b> <i>Agent of Order</i> and <i>Outlands Envoy</i> feats can't be fully unlocked with this item, because their features are based on <i>Scion of the Outer Planes</i> features. Instead, this item allows you to ignore level prerequisite and bypass selecting specific Plane Type to gain access to those feats.</p>
+		</description>
+		<setters>
+			<set name="category">Additional Feature</set>
+			<set name="slot">misc</set>
+			<set name="inventory-hidden">true</set>
+		</setters>
+		<rules>
+			<grant type="Grants" id="ID_WOTC_SATO_GRANTS_FEAT_UNLOCKER" />
+		</rules>
+	</element>
+
+	<element name="Feat Unlocker" type="Grants" source="Sigil and the Outlands" id="ID_WOTC_SATO_GRANTS_FEAT_UNLOCKER" />
+</elements>
