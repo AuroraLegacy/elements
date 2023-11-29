@@ -1,0 +1,457 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<elements>
+	<info>
+		<name>Magic Items and Blessings from Phandelver and Below: The Shattered Obelisk</name>
+		<update version="0.0.1">
+			<file name="items.xml" url="https://raw.githubusercontent.com/AuroraLegacy/elements/master/supplements/phandelver-and-below-the-shattered-obelisk/items.xml" />
+		</update>
+	</info>
+
+	<!--Magic Items-->
+	<element name="Bracers of Celerity" type="Magic Item" source="Phandelver and Below: The Shattered Obelisk" id="ID_WOTC_PBSO_MAGIC_ITEM_BRACERS_OF_CELERITY">
+		<description>
+			<p>This pair of lightweight bronze bracers is lined with soft, purple velvet and engraved with swirling designs.</p>
+			<p class="indent">While you're wearing these bracers, all your speeds increase by 10 feet, and you have advantage on saving throws you make to avoid or end the paralyzed or restrained condition on yourself.</p>
+		</description>
+		<setters>
+			<set name="keywords">speed, advantage, saving throws, saves, paralyzed, restrained, conditions</set>
+			<set name="category">Wondrous Items</set>
+			<set name="type">Wondrous Item</set>
+			<set name="rarity">Rare</set>
+			<set name="attunement">true</set>
+			<set name="slot">arms</set>
+			<set name="cost" currency="gp">0</set>
+			<set name="weight" lb="0">0 lb.</set>
+		</setters>
+		<rules>
+			<stat name="speed:misc" value="10" requirements="[speed:1]" />
+			<stat name="speed:climb:misc" value="10" requirements="[speed:climb:1]" />
+			<stat name="speed:fly:misc" value="10" requirements="[speed:fly:1]" />
+			<stat name="speed:swim:misc" value="10" requirements="[speed:swim:1]" />
+			<stat name="speed:burrow:misc" value="10" requirements="[speed:burrow:1]" />
+		</rules>
+	</element>
+
+	<element name="Cape of Enlargement" type="Magic Item" source="Phandelver and Below: The Shattered Obelisk" id="ID_WOTC_PBSO_MAGIC_ITEM_CAPE_OF_ENLARGEMENT">
+		<description>
+			<p>Ancient runes are stitched in silver thread along the hem of this grayish-purple cape.</p>
+			<p class="indent">The cape has 3 charges. As a bonus action while wearing the cape, you can expend 1 of its charges to enlarge yourself, granting yourself the following benefits:</p>
+			<ul>
+				<li>Your size increases by one category—from Medium to Large, for example. If there isn't enough room for your size to increase by one category, you instead become the maximum possible size in the space available.</li>
+				<li>You have advantage on Strength checks and Strength saving throws.</li>
+				<li>When you hit with an attack roll using a weapon or an unarmed strike, you can add your proficiency bonus to the attack's damage.</li>
+			</ul>
+			<p class="indent">These benefits last for 10 minutes or until you use another bonus action to dismiss them. The cape regains 1d3 expended charges daily at dawn.</p>
+		</description>
+		<setters>
+			<set name="keywords">charges, bonus action, advantage, strength, ability checks, checks, saving throws, saves, proficiency bonus, PB, damage, dawn</set>
+			<set name="category">Wondrous Items</set>
+			<set name="type">Wondrous Item</set>
+			<set name="rarity">Very Rare</set>
+			<set name="attunement">true</set>
+			<set name="slot">shoulders</set>
+			<set name="cost" currency="gp">0</set>
+			<set name="weight" lb="0">0 lb.</set>
+		</setters>
+	</element>
+
+	<element name="Dragonguard" type="Magic Item" source="Phandelver and Below: The Shattered Obelisk" id="ID_WOTC_PBSO_MAGIC_ITEM_ARMOR_DRAGONGUARD">
+		<description>
+			<p>You have a +1 bonus to AC while wearing this armor.</p>
+			<p class="indent">This breastplate has a gold dragon motif worked into its design. Created for a human hero of old Neverwinter named Tergon, it grants its wearer advantage on saving throws against the breath weapons of Dragons.</p>
+			<p class="indent">This armor consists of a fitted metal chest piece worn with supple leather. Although it leaves the legs and arms relatively unprotected, this armor provides good protection for the wearer's vital organs while leaving the wearer relatively unencumbered.</p>
+		</description>
+		<setters>
+			<set name="keywords">ac, armor class, advantage, saving throws, saves</set>
+			<set name="category">Magic Armor</set>
+			<set name="type" addition="breastplate">Armor</set>
+			<set name="rarity">Rare</set>
+			<set name="cost" currency="gp">0</set>
+			<set name="armor">Breastplate</set>
+			<set name="name-format">Dragonguard</set>
+		</setters>
+		<rules>
+			<stat name="ac:armored:enhancement" value="1" bonus="enhancement" />
+		</rules>	
+	</element>
+
+	<element name="Flayer Slayer" type="Magic Item" source="Phandelver and Below: The Shattered Obelisk" id="ID_WOTC_PBSO_MAGIC_ITEM_FLAYER_SLAYER">
+		<description>
+			<p>Carvings of decapitated mind flayers adorn this greataxe's metal blade. You gain a +1 bonus to attack and damage rolls made with this greataxe.</p>
+			<p class="indent">An Aberration hit with this greataxe takes an extra 1d12 slashing damage. If the Aberration is currently grappling a creature, the Aberration must succeed on a DC 15 Strength saving throw or release each creature it is grappling.</p>
+		</description>
+		<setters>
+			<set name="keywords">attack, damage, slashing, aberration, strength, saving throw, save</set>
+			<set name="category">Magic Weapons</set>
+			<set name="type" addition="greataxe">Weapon</set>
+			<set name="rarity">Rare</set>
+			<set name="attunement">true</set>
+			<set name="weapon">Greataxe</set>
+			<set name="enhancement">1</set>
+			<set name="cost" currency="gp">0</set>
+		</setters>
+	</element>
+
+	<element name="Hew" type="Magic Item" source="Phandelver and Below: The Shattered Obelisk" id="ID_WOTC_PBSO_MAGIC_ITEM_HEW">
+		<description>
+			<p>You have a +1 bonus to attack and damage rolls made with this magic weapon.</p>
+			<p class="indent"><i>Hew</i> is a +1 battleaxe that deals maximum damage when the wielder attacks a Plant creature or an object made of wood. The axe's creator used it for protection in the forest while he cut firewood.</p>
+		</description>
+		<setters>
+			<set name="keywords">attack, maximum, damage, plant</set>
+			<set name="category">Magic Weapons</set>
+			<set name="type" addition="greataxe">Weapon</set>
+			<set name="rarity">Uncommon</set>
+			<set name="weapon">Greataxe</set>
+			<set name="enhancement">1</set>
+			<set name="cost" currency="gp">0</set>
+		</setters>
+	</element>
+
+	<element name="Lightbringer" type="Magic Item" source="Phandelver and Below: The Shattered Obelisk" id="ID_WOTC_PBSO_MAGIC_ITEM_LIGHTBRINGER">
+		<description>
+			<p>You have a +1 bonus to attack and damage rolls made with this magic weapon.</p>
+			<p class="indent">This weapon, known as <i>Lightbringer</i>, was made for a cleric of Lathander, the god of dawn. The head of the mace is shaped like a sunburst and is made of solid brass. The mace glows as bright as a torch when its wielder commands. While glowing, the mace deals an extra 1d6 radiant damage to Undead creatures.</p>
+		</description>
+		<setters>
+			<set name="keywords">attack, damage, radiant, damage, undead</set>
+			<set name="category">Magic Weapons</set>
+			<set name="type" addition="mace">Weapon</set>
+			<set name="rarity">Uncommon</set>
+			<set name="weapon">Mace</set>
+			<set name="enhancement">1</set>
+			<set name="cost" currency="gp">0</set>
+		</setters>
+	</element>
+
+	<element name="Luminous War Pick" type="Magic Item" source="Phandelver and Below: The Shattered Obelisk" id="ID_WOTC_PBSO_MAGIC_ITEM_LUMINOUS_WAR_PICK">
+		<description>
+			<p>The haft of this war pick is inlaid with crushed pearlescent stones that imbue the weapon with a faint luminescence. You gain a +1 bonus to attack and damage rolls made with this war pick.</p>
+			<p class="indent">While wielding the war pick, you can use a bonus action to cast the <i>daylight</i> spell, choosing a point on the war pick. Once you use this bonus action, it can't be used again until the next dawn.</p>
+			<div class="reference">
+				<div element="ID_PHB_SPELL_DAYLIGHT" />
+			</div>
+		</description>
+		<setters>
+			<set name="keywords">attack, damage, bonus action, daylight, spells, dawn</set>
+			<set name="category">Magic Weapons</set>
+			<set name="type" addition="war pick">Weapon</set>
+			<set name="rarity">Rare</set>
+			<set name="attunement">true</set>
+			<set name="weapon">War Pick</set>
+			<set name="enhancement">1</set>
+			<set name="cost" currency="gp">0</set>
+		</setters>
+	</element>
+
+	<element name="Mind Crystal (Careful)" type="Magic Item" source="Phandelver and Below: The Shattered Obelisk" id="ID_WOTC_PBSO_MAGIC_ITEM_MIND_CRYSTAL_CAREFUL">
+		<description>
+			<p>This gemstone contains a crystallized bit of spellcasting magic.</p>
+			<p class="indent">When you cast a spell that has a casting time of 1 action while holding the <i>mind crystal</i>, you can use it and choose up to three creatures affected by the spell, the chosen creatures automatically succeed on their saving throws against the spell. You can use only a single <i>mind crystal</i> to modify the spell, and you can't use a <i>mind crystal</i> and a Metamagic option on the same spell. Once you use the <i>mind crystal</i>, it becomes a nonmagical gem worth 50 gp.</p>
+		</description>
+		<setters>
+			<set name="keywords">metamagic, spellcasting</set>
+			<set name="category">Wondrous Items</set>
+			<set name="type">Wondrous Item</set>
+			<set name="rarity">Uncommon</set>
+			<set name="cost" currency="gp">0</set>
+			<set name="weight" lb="0">0 lb.</set>
+		</setters>
+	</element>
+
+	<element name="Mind Crystal (Distant)" type="Magic Item" source="Phandelver and Below: The Shattered Obelisk" id="ID_WOTC_PBSO_MAGIC_ITEM_MIND_CRYSTAL_DISTANT">
+		<description>
+			<p>This gemstone contains a crystallized bit of spellcasting magic.</p>
+			<p class="indent">When you cast a spell that has a casting time of 1 action while holding the <i>mind crystal</i>, you can use it and if the spell has a range of 5 feet or more and doesn't have a range of self, the spell's range increases by 100 feet. If the spell has a range of touch, its range becomes 30 feet. You can use only a single <i>mind crystal</i> to modify the spell, and you can't use a <i>mind crystal</i> and a Metamagic option on the same spell. Once you use the <i>mind crystal</i>, it becomes a nonmagical gem worth 50 gp.</p>
+		</description>
+		<setters>
+			<set name="keywords">metamagic, spellcasting</set>
+			<set name="category">Wondrous Items</set>
+			<set name="type">Wondrous Item</set>
+			<set name="rarity">Uncommon</set>
+			<set name="cost" currency="gp">0</set>
+			<set name="weight" lb="0">0 lb.</set>
+		</setters>
+	</element>
+
+	<element name="Mind Crystal (Empowered)" type="Magic Item" source="Phandelver and Below: The Shattered Obelisk" id="ID_WOTC_PBSO_MAGIC_ITEM_MIND_CRYSTAL_EMPOWERED">
+		<description>
+			<p>This gemstone contains a crystallized bit of spellcasting magic.</p>
+			<p class="indent">When you cast a spell that has a casting time of 1 action while holding the <i>mind crystal</i>, you can use it and when you roll damage for the spell, you can reroll up to three damage dice, you must use the new rolls. You can use only a single <i>mind crystal</i> to modify the spell, and you can't use a <i>mind crystal</i> and a Metamagic option on the same spell. Once you use the <i>mind crystal</i>, it becomes a nonmagical gem worth 50 gp.</p>
+		</description>
+		<setters>
+			<set name="keywords">metamagic, spellcasting</set>
+			<set name="category">Wondrous Items</set>
+			<set name="type">Wondrous Item</set>
+			<set name="rarity">Uncommon</set>
+			<set name="cost" currency="gp">0</set>
+			<set name="weight" lb="0">0 lb.</set>
+		</setters>
+	</element>
+
+	<element name="Mind Crystal (Extended)" type="Magic Item" source="Phandelver and Below: The Shattered Obelisk" id="ID_WOTC_PBSO_MAGIC_ITEM_MIND_CRYSTAL_EXTENDED">
+		<description>
+			<p>This gemstone contains a crystallized bit of spellcasting magic.</p>
+			<p class="indent">When you cast a spell that has a casting time of 1 action while holding the <i>mind crystal</i>, you can use it and if the spell has a duration of 1 minute or longer, double the spell's duration, to a maximum duration of 24 hours. You can use only a single <i>mind crystal</i> to modify the spell, and you can't use a <i>mind crystal</i> and a Metamagic option on the same spell. Once you use the <i>mind crystal</i>, it becomes a nonmagical gem worth 50 gp.</p>
+		</description>
+		<setters>
+			<set name="keywords">metamagic, spellcasting</set>
+			<set name="category">Wondrous Items</set>
+			<set name="type">Wondrous Item</set>
+			<set name="rarity">Uncommon</set>
+			<set name="cost" currency="gp">0</set>
+			<set name="weight" lb="0">0 lb.</set>
+		</setters>
+	</element>
+
+	<element name="Mind Crystal (Heightened)" type="Magic Item" source="Phandelver and Below: The Shattered Obelisk" id="ID_WOTC_PBSO_MAGIC_ITEM_MIND_CRYSTAL_HEIGHTENED">
+		<description>
+			<p>This gemstone contains a crystallized bit of spellcasting magic.</p>
+			<p class="indent">When you cast a spell that has a casting time of 1 action while holding the <i>mind crystal</i>, you can use it and choose one creature affected by the spell, that creature has disadvantage on the first saving throw it makes against the spell. You can use only a single <i>mind crystal</i> to modify the spell, and you can't use a <i>mind crystal</i> and a Metamagic option on the same spell. Once you use the <i>mind crystal</i>, it becomes a nonmagical gem worth 50 gp.</p>
+		</description>
+		<setters>
+			<set name="keywords">metamagic, spellcasting</set>
+			<set name="category">Wondrous Items</set>
+			<set name="type">Wondrous Item</set>
+			<set name="rarity">Rare</set>
+			<set name="cost" currency="gp">0</set>
+			<set name="weight" lb="0">0 lb.</set>
+		</setters>
+	</element>
+
+	<element name="Mind Crystal (Quickened)" type="Magic Item" source="Phandelver and Below: The Shattered Obelisk" id="ID_WOTC_PBSO_MAGIC_ITEM_MIND_CRYSTAL_QUICKENED">
+		<description>
+			<p>This gemstone contains a crystallized bit of spellcasting magic.</p>
+			<p class="indent">When you cast a spell that has a casting time of 1 action while holding the <i>mind crystal</i>, you can use it and you change the spell's casting time to 1 bonus action for this casting. You can use only a single <i>mind crystal</i> to modify the spell, and you can't use a <i>mind crystal</i> and a Metamagic option on the same spell. Once you use the <i>mind crystal</i>, it becomes a nonmagical gem worth 50 gp.</p>
+		</description>
+		<setters>
+			<set name="keywords">metamagic, spellcasting</set>
+			<set name="category">Wondrous Items</set>
+			<set name="type">Wondrous Item</set>
+			<set name="rarity">Rare</set>
+			<set name="cost" currency="gp">0</set>
+			<set name="weight" lb="0">0 lb.</set>
+		</setters>
+	</element>
+
+	<element name="Mind Crystal (Subtle)" type="Magic Item" source="Phandelver and Below: The Shattered Obelisk" id="ID_WOTC_PBSO_MAGIC_ITEM_MIND_CRYSTAL_SUBTLE">
+		<description>
+			<p>This gemstone contains a crystallized bit of spellcasting magic.</p>
+			<p class="indent">When you cast a spell that has a casting time of 1 action while holding the <i>mind crystal</i>, you can use it and you cast the spell without any somatic or verbal components for this casting. You can use only a single <i>mind crystal</i> to modify the spell, and you can't use a <i>mind crystal</i> and a Metamagic option on the same spell. Once you use the <i>mind crystal</i>, it becomes a nonmagical gem worth 50 gp.</p>
+		</description>
+		<setters>
+			<set name="keywords">metamagic, spellcasting</set>
+			<set name="category">Wondrous Items</set>
+			<set name="type">Wondrous Item</set>
+			<set name="rarity">Common</set>
+			<set name="cost" currency="gp">0</set>
+			<set name="weight" lb="0">0 lb.</set>
+		</setters>
+	</element>
+
+	<element name="Mindblasting Cap" type="Magic Item" source="Phandelver and Below: The Shattered Obelisk" id="ID_WOTC_PBSO_MAGIC_ITEM_MINDBLASTING_CAP">
+		<description>
+			<p>This soft, violet cap bears stitching in the pattern of folds on a brain.</p>
+			<p class="indent">As a bonus action while wearing the cap, you can project psychic energy in a 60-foot cone. Each creature in that area must make a DC 15 Intelligence saving throw. On a failed save, a creature takes 5d8 psychic damage and has the stunned condition for 1 minute. On a successful save, the creature takes half as much damage only. At the end of each of its turns, a stunned creature can repeat the saving throw, ending the stunned condition on itself on a success.</p>
+			<p class="indent">Once this bonus action is used, it can't be used again until the next dawn.</p>
+		</description>
+		<setters>
+			<set name="keywords">bonus action, intelligence, saving throw, save, psychic, damage, stunned, condition, dawn</set>
+			<set name="category">Wondrous Items</set>
+			<set name="type">Wondrous Item</set>
+			<set name="rarity">Very Rare</set>
+			<set name="attunement">true</set>
+			<set name="slot">head</set>
+			<set name="cost" currency="gp">0</set>
+			<set name="weight" lb="0">0 lb.</set>
+		</setters>
+	</element>
+
+	<element name="Mindguard Crown" type="Magic Item" source="Phandelver and Below: The Shattered Obelisk" id="ID_WOTC_PBSO_MAGIC_ITEM_MINDGUARD_CROWN">
+		<description>
+			<p>While you wear this adamantine crown, you have advantage on Intelligence, Wisdom, and Charisma saving throws, and you have resistance to psychic damage.</p>
+		</description>
+		<setters>
+			<set name="keywords">adamantine, advantage, intelligence, wisdom, charisma, resistance, psychic, damage</set>
+			<set name="category">Wondrous Items</set>
+			<set name="type">Wondrous Item</set>
+			<set name="rarity">Very Rare</set>
+			<set name="attunement">true</set>
+			<set name="slot">head</set>
+			<set name="cost" currency="gp">0</set>
+			<set name="weight" lb="0">0 lb.</set>
+		</setters>
+		<rules>
+			<grant type="Condition" id="ID_INTERNAL_CONDITION_DAMAGE_RESISTANCE_PSYCHIC" />
+		</rules>
+	</element>
+
+	<element name="Mudslick Tower" type="Magic Item" source="Phandelver and Below: The Shattered Obelisk" id="ID_WOTC_PBSO_MAGIC_ITEM_MUDSLICK_TOWER">
+		<description>
+			<p>You can use an action to place this 1-inch-diameter granite sphere on the ground and speak its command word, which is "petrification" in Terran. The sphere rapidly grows into a stout tower that remains until you use an action to touch the tower and speak the command word again, whereupon the tower shrinks back to a 1-inch-diameter granite sphere. The tower must be empty to shrink in this way. The tower bristles with muddy knobs that constantly extrude and retract across its surface, as though the tower were breathing through a coating of thick mud.</p>
+			<p class="indent">Each creature in the area where the tower appears must make a DC 15 Dexterity saving throw, taking 10d10 bludgeoning damage on a failed save, or half as much damage on a successful one. In either case, the creature is pushed to an unoccupied space outside but next to the tower. Objects in the area that aren't being worn or carried take this damage and are pushed automatically.</p>
+			<p class="indent">Whenever it expands, the <i>mudslick tower</i> merges with any natural stone it touches, awkwardly tipping and wedging itself to touch as much natural stone as it can.</p>
+			<p class="indent">The tower is 20 feet on a side and 30 feet high, with arrow slits on all sides and a battlement atop it. Its interior is divided into two floors, with a ladder running along one wall to connect them. The ladder ends at a trapdoor leading to the roof. When activated, the tower has a small door on the side facing you. The door opens only at your command, which you can speak as a bonus action. It is immune to the knock spell and similar magic, such as that of a chime of opening.</p>
+			<p class="indent">Although it looks like stone, the tower is made of adamantine, and its magic prevents creatures from tipping it over. The roof, the door, and the walls each have 100 hit points, immunity to damage from nonmagical weapons excluding siege weapons, and resistance to all other damage. While merged with natural stone, the <i>mudslick tower</i> has immunity to all damage. Only a wish spell can repair the tower (this use of the spell counts as replicating a spell of 8th level or lower). Each casting of wish causes the roof, the door, or one wall to regain 50 hit points.</p>
+		</description>
+		<setters>
+			<set name="keywords">dexterity, saving throw, save, bludgeoning, damage, adamantine</set>
+			<set name="category">Wondrous Items</set>
+			<set name="type">Wondrous Item</set>
+			<set name="rarity">Very Rare</set>
+			<set name="cost" currency="gp">0</set>
+			<set name="weight" lb="0">0 lb.</set>
+		</setters>
+	</element>
+
+	<element name="Netherese Ring of Protection" type="Magic Item" source="Phandelver and Below: The Shattered Obelisk" id="ID_WOTC_PBSO_MAGIC_ITEM_RING_NETHERESE_RING_OF_PROTECTION">
+		<description>
+			<p>You gain a +1 bonus to AC and saving throws while wearing this ring.</p>
+			<p class="indent">The ring is made from a single piece of mystical green glass that's stronger than steel. It has the added property of making the wearer less likely to drop or lose anything held in the hand the ring is on. The wearer receives a +4 bonus to saving throws or checks made to avoid dropping or being disarmed of any item held in that hand.</p>
+		</description>
+		<setters>
+			<set name="keywords">ac, armor class, saves, saving throws, disarm</set>
+			<set name="category">Rings</set>
+			<set name="type">Ring</set>
+			<set name="rarity">Rare</set>
+			<set name="attunement">true</set>
+			<set name="slot">ring</set>
+			<set name="cost" currency="gp">0</set>
+			<set name="weight" lb="0">0 lb.</set>
+		</setters>
+		<rules>
+			<stat name="ac:misc" value="1" />
+			<stat name="strength:save:misc" value="1" />
+			<stat name="dexterity:save:misc" value="1" />
+			<stat name="constitution:save:misc" value="1" />
+			<stat name="intelligence:save:misc" value="1" />
+			<stat name="wisdom:save:misc" value="1" />
+			<stat name="charisma:save:misc" value="1" />
+		</rules>
+	</element>
+
+	<element name="Potion of Psionic Fortitude" type="Magic Item" source="Phandelver and Below: The Shattered Obelisk" id="ID_WOTC_PBSO_MAGIC_ITEM_POTION_POTION_OF_PSIONIC_FORTITUDE">
+		<description>
+			<p>When you drink this potion, you have advantage for 1 hour on saving throws you make to avoid or end the charmed or stunned condition on yourself.</p>
+			<p class="indent">This black potion swirls with shimmering flecks of pink and purple.</p>
+		</description>
+		<setters>
+			<set name="keywords">advantage, saving throws, saves, charmed, stunned, conditions</set>
+			<set name="category">Potions</set>
+			<set name="type">Potion</set>
+			<set name="rarity">Uncommon</set>
+			<set name="weight" lb="0">0 lb.</set>
+			<set name="stackable">true</set>
+		</setters>
+	</element>
+
+	<element name="Ring of the Orator" type="Magic Item" source="Phandelver and Below: The Shattered Obelisk" id="ID_WOTC_PBSO_MAGIC_ITEM_RING_RING_OF_THE_ORATOR">
+		<description>
+			<p>This ring has 6 charges. While you wear it, you can expend 1 of its charges to project your voice to be heard clearly by all creatures within 1 mile of yourself, regardless of intervening noise, for 1 minute. Magical silence, 1 foot of stone, 1 inch of common metal, a thin sheet of lead, or 3 feet of wood blocks this projection. If you project your voice while speaking a language the listening creatures don't understand, you can make the creatures understand what you're saying. You must be able to see the creatures to make them understand. The ring regains 1d6 expended charges daily at dawn.</p>
+		</description>
+		<setters>
+			<set name="keywords">charges, dawn</set>
+			<set name="category">Rings</set>
+			<set name="type">Ring</set>
+			<set name="rarity">Uncommon</set>
+			<set name="attunement">true</set>
+			<set name="slot">ring</set>
+			<set name="cost" currency="gp">0</set>
+			<set name="weight" lb="0">0 lb.</set>
+		</setters>
+	</element>
+
+	<element name="Spider Staff" type="Magic Item" source="Phandelver and Below: The Shattered Obelisk" id="ID_WOTC_PBSO_MAGIC_ITEM_SPIDER_STAFF">
+		<description>
+			<p>The top of this magic quarterstaff is shaped like a spider. It deals an extra 1d6 poison damage on a hit when used to make a weapon attack.</p>
+			<p class="indent"><b>Spells.</b> The staff has 10 charges. While holding it, you can expend the requisite number of charges to cast one of the following spells from the staff: <i>spider climb</i> (1 charge) or <i>web</i> (2 charges; spell save DC 15).</p>
+			<p class="indent">The staff regains 1d6 + 4 expended charges daily at dusk. If you expend the staff's last charge, roll a d20. On a 1, the staff crumbles to dust and is destroyed.</p>
+			<div class="reference">
+				<div element="ID_PHB_SPELL_SPIDER_CLIMB" />
+			</div>
+			<div class="reference">
+				<div element="ID_PHB_SPELL_WEB" />
+			</div>
+		</description>
+		<setters>
+			<set name="keywords">poison, damage, spells, charges, spider climb, web, dusk</set>
+			<set name="category">Staffs</set>
+			<set name="type">Staff</set>
+			<set name="rarity">Rare</set>
+			<set name="attunement" addition="by a bard, sorcerer, warlock, or wizard">true</set>
+			<set name="weapon">Quarterstaff</set>
+			<set name="cost" currency="gp">0</set>
+			<set name="weight" lb="4">4 lb.</set>
+		</setters>
+	</element>
+
+	<element name="Staff of Defense" type="Magic Item" source="Phandelver and Below: The Shattered Obelisk" id="ID_WOTC_PBSO_MAGIC_ITEM_STAFF_OF_DEFENSE">
+		<description>
+			<p>This slender, hollow staff is made of glass yet is as strong as oak. It weighs 3 pounds. While holding the staff, you have a +1 bonus to your Armor Class.</p>
+			<p class="indent"><b>Spells.</b> The staff has 10 charges. While holding it, you can expend the requisite number of charges to cast one of the following spells from the staff: <i>mage armor</i> (1 charge) or <i>shield</i> (2 charges).</p>
+			<p class="indent">The staff regains 1d6 + 4 expended charges daily at dawn. If you expend the staff's last charge, roll a d20. On a 1, the staff shatters and is destroyed.</p>
+			<div class="reference">
+				<div element="ID_PHB_SPELL_MAGE_ARMOR" />
+			</div>
+			<div class="reference">
+				<div element="ID_PHB_SPELL_SHIELD" />
+			</div>
+		</description>
+		<setters>
+			<set name="keywords">ac, armor class, spells, charges, mage armor, shield, dawn</set>
+			<set name="category">Staffs</set>
+			<set name="type">Staff</set>
+			<set name="rarity">Rare</set>
+			<set name="attunement" addition="by a bard, sorcerer, warlock, or wizard">true</set>
+			<set name="weapon">Quarterstaff</set>
+			<set name="cost" currency="gp">0</set>
+			<set name="weight" lb="3">3 lb.</set>
+		</setters>
+		<rules>
+			<stat name="ac:misc" value="1" />
+		</rules>
+	</element>
+
+	<element name="Statuette of Augury" type="Magic Item" source="Phandelver and Below: The Shattered Obelisk" id="ID_WOTC_PBSO_MAGIC_ITEM_STATUETTE_OF_AUGURY">
+		<description>
+			<p>This gold statuette of an elf is worth 100 gp, and is imbued with divination magic. A non-evil creature grasping the statue can ask it a question and receive a telepathic response, as though the creature had cast <i>augury</i>. Once a creature has asked its question and received a response, it can never activate the statuette again.</p>
+			<div class="reference">
+				<div element="ID_PHB_SPELL_AUGURY" />
+			</div>
+		</description>
+		<setters>
+			<set name="keywords">divination, augury</set>
+			<set name="category">Wondrous Items</set>
+			<set name="type">Wondrous Item</set>
+			<set name="cost" currency="gp">0</set>
+			<set name="weight" lb="0">0 lb.</set>
+		</setters>
+	</element>
+
+	<!-- Blessings -->
+	<element name="Blessing of Dumathoin" type="Magic Item" source="Phandelver and Below: The Shattered Obelisk" id="ID_WOTC_PBSO_MAGIC_ITEM_BLESSING_OF_DUMATHOIN">
+		<description>
+			<p>Your eyes become keen enough to pick out hidden secrets. You gain darkvision. If you already had darkvision, you can see in color in the dark. In addition, you can use an action to gain truesight for 1 minute. Once you gain truesight in this way, you can't do so again until you finish a long rest.</p>
+		</description>
+		<setters>
+			<set name="category">Supernatural Gifts</set>
+			<set name="type">Blessing</set>
+			<set name="slot">gift</set>
+		</setters>
+		<rules>
+			<grant type="Vision" id="ID_VISION_LESSER_DARKVISION" />
+			<stat name="darkvision:range" value="60" bonus="base" />
+		</rules>
+	</element>
+
+	<element name="Blessing of the Solipsistic Mind" type="Magic Item" source="Phandelver and Below: The Shattered Obelisk" id="ID_WOTC_PBSO_MAGIC_ITEM_BLESSING_OF_THE_SOLIPSISTIC_MIND">
+		<description>
+			<p>You access esoteric truths from an ancient tome by focusing deeply on your own thoughts. You can take an action to focus your inner mind. This focus lasts for 1 hour. While your inner mind is focused, you can't take reactions. For the duration, when you make an Intelligence check, Wisdom check, Intelligence saving throw, or Wisdom saving throw, you can roll a d8 and add the number rolled to the ability check or saving throw. You regain the ability to focus your inner mind when you finish a long rest.</p>
+		</description>
+		<setters>
+			<set name="category">Supernatural Gifts</set>
+			<set name="type">Blessing</set>
+			<set name="slot">gift</set>
+		</setters>
+	</element>
+</elements>
