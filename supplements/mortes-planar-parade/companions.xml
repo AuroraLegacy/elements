@@ -1,0 +1,196 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<elements>
+	<info>
+		<name>Companion</name>
+		<description>Creatures from Morte’s Planar Parade, that fit rules for Familiars</description>
+		<update version="0.0.1">
+			<file name="companions.xml" url="https://raw.githubusercontent.com/AuroraLegacy/elements/master/supplements/mortes-planar-parade/companions.xml" />
+		</update>
+	</info>
+
+	<!-- Familiars -->
+	<element name="Vargouille Reflection" type="Companion" source="Morte’s Planar Parade" id="ID_WOTC_MPP_COMPANION_VARGOUILLE_REFLECTION">
+		<supports>Variant Familiar</supports>
+		<description>
+			<p>Vargouilles are flying Fiends that resemble disembodied Humanoid heads with wings. While most vargouilles roam the planes to curse Humanoids and create more vargouilles, a variant known as the vargouille reflection resides in Undersigil. When a vargouille reflection spots a Humanoid target, it takes on that creature's visage, terrifying that creature by appearing as its own disembodied head.</p>
+		</description>
+		<setters>
+			<set name="size">Tiny</set>
+			<set name="type">Fiend</set>
+			<set name="alignment">typically Chaotic Evil</set>
+			<set name="ac">12</set>
+			<set name="hp">22 (5d4 + 10)</set>
+			<set name="speed">5 ft., fly 40 ft.</set>
+			<set name="strength">6</set>
+			<set name="dexterity">15</set>
+			<set name="constitution">14</set>
+			<set name="intelligence">6</set>
+			<set name="wisdom">10</set>
+			<set name="charisma">2</set>
+			<set name="resistances">cold, fire, lightning, psychic</set>
+			<set name="immunities">poison</set>
+			<set name="conditionImmunities">poisoned</set>			
+			<set name="senses">darkvision 60 ft., passive Perception 10</set>
+			<set name="languages">understands Abyssal, Infernal, and any languages it knew before becoming a vargouille, but it can't speak</set>
+			<set name="challenge">1</set>
+			<set name="traits">ID_WOTC_MPP_COMPANION_TRAIT_VARGOUILLE_REFLECTION_MAGIC_RESISTANCE</set>
+			<set name="actions">ID_WOTC_MPP_COMPANION_ACTION_VARGOUILLE_REFLECTION_BITE,ID_WOTC_MPP_COMPANION_ACTION_VARGOUILLE_REFLECTION_ABYSSAL_CURSE,ID_WOTC_MPP_COMPANION_ACTION_VARGOUILLE_REFLECTION_HORRIFIC_REFLECTION</set>
+		</setters>
+		<rules>
+			<stat name="companion:ac" value="12" />
+			<stat name="companion:hp:max" value="22" bonus="base" />
+			<stat name="companion:speed" value="5" bonus="base" />
+			<stat name="companion:speed:fly" value="40" bonus="base" />
+		</rules>
+	</element>
+	<element name="Magic Resistance" type="Companion Trait" source="Morte’s Planar Parade" id="ID_WOTC_MPP_COMPANION_TRAIT_VARGOUILLE_REFLECTION_MAGIC_RESISTANCE">
+		<description>
+			<p>The vargouille has advantage on saving throws against spells and other magical effects.</p>
+		</description>
+		<sheet>
+			<description>The vargouille has advantage on saving throws against spells and other magical effects.</description>
+		</sheet>
+	</element>
+	<element name="Bite" type="Companion Action" source="Morte’s Planar Parade" id="ID_WOTC_MPP_COMPANION_ACTION_VARGOUILLE_REFLECTION_BITE">
+		<description>
+			<p><i>Melee Weapon Attack:</i> +4 to hit, reach 5 ft., one target. <i>Hit:</i> 5 (1d6 + 2) piercing damage plus 10 (3d6) psychic damage.</p>
+		</description>
+		<sheet>
+			<description>Melee Weapon Attack: +4 to hit, reach 5 ft., one target. Hit: 5 (1d6 + 2) piercing damage plus 10 (3d6) psychic damage.</description>
+		</sheet>
+	</element>
+	<element name="Abyssal Curse" type="Companion Action" source="Morte’s Planar Parade" id="ID_WOTC_MPP_COMPANION_ACTION_VARGOUILLE_REFLECTION_ABYSSAL_CURSE">
+		<description>
+			<p>The vargouille targets one Humanoid within 5 feet of itself that has the incapacitated condition. The target must succeed on a DC 12 Charisma saving throw or become cursed. The cursed target's Charisma decreases by 1 after each hour, as its head takes on fiendish aspects, and its Charisma can't increase. The curse doesn't advance while the target is in sunlight or the area of a daylight spell. When the cursed target's Charisma becomes 2, the target dies, and its head tears from its body and becomes a new vargouille reflection. Casting remove curse, greater restoration, or a similar spell on the target before the transformation is complete ends the curse and restores the target's Charisma.</p>
+		</description>
+		<sheet>
+			<description>The vargouille targets one Humanoid within 5 feet of itself that has the incapacitated condition. The target must succeed on a DC 12 Charisma saving throw or become cursed. The cursed target's Charisma decreases by 1 after each hour, as its head takes on fiendish aspects, and its Charisma can't increase. The curse doesn't advance while the target is in sunlight or the area of a daylight spell. When the cursed target's Charisma becomes 2, the target dies, and its head tears from its body and becomes a new vargouille reflection. Casting remove curse, greater restoration, or a similar spell on the target before the transformation is complete ends the curse and restores the target's Charisma.</description>
+		</sheet>
+	</element>
+	<element name="Horrific Reflection (Recharge 5–6)" type="Companion Action" source="Morte’s Planar Parade" id="ID_WOTC_MPP_COMPANION_ACTION_VARGOUILLE_REFLECTION_HORRIFIC_REFLECTION">
+		<description>
+			<p>The vargouille's head mimics that of a Humanoid the vargouille can see within 120 feet of itself. The target must succeed on a DC 12 Wisdom saving throw or take 10 (3d6) psychic damage and have the frightened condition for 1 hour or until the vargouille loses concentration (as if concentrating on a spell). If the target's saving throw is successful or if the effect ends on it, the target is immune to the Horrific Reflection of all vargouille reflections for 1 hour.</p>
+		</description>
+		<sheet alt="Horrific Reflection" usage="Recharge 5–6">
+			<description>The vargouille's head mimics that of a Humanoid the vargouille can see within 120 feet of itself. The target must succeed on a DC 12 Wisdom saving throw or take 10 (3d6) psychic damage and have the frightened condition for 1 hour or until the vargouille loses concentration (as if concentrating on a spell). If the target's saving throw is successful or if the effect ends on it, the target is immune to the Horrific Reflection of all vargouille reflections for 1 hour.</description>
+		</sheet>
+	</element>
+
+	<element name="Sunfly" type="Companion" source="Morte’s Planar Parade" id="ID_WOTC_MPP_COMPANION_SUNFLY">
+		<supports>Variant Familiar</supports>
+		<description>
+			<p>Sunflies are whimsical, buzzing inhabitants of the Outer Planes. They travel widely and are important indicators of the health of the realms in which they reside; when sunflies struggle, so do the places they inhabit. Sunflies have stingers that they use to inject natural toxins into other creatures. Planar magic can alter a sunfly's toxin so that its effect is different depending on which Outer Plane the sunfly is on.</p>
+			<p class="indent">Many inhabitants of the planes have strong feelings about sunflies, viewing them as loathsome pests or adorable pets. Sunflies in Sigil are often the pets of doting, highly protective owners.</p>
+		</description>
+		<setters>
+			<set name="size">Tiny</set>
+			<set name="type">Celestial</set>
+			<set name="alignment">typically Chaotic Good</set>
+			<set name="ac">13</set>
+			<set name="hp">2 (1d4)</set>
+			<set name="speed">10 ft., fly 40 ft.</set>
+			<set name="strength">4</set>
+			<set name="dexterity">17</set>
+			<set name="constitution">10</set>
+			<set name="intelligence">4</set>
+			<set name="wisdom">10</set>
+			<set name="charisma">6</set>
+			<set name="senses">passive Perception 10</set>
+			<set name="languages">understands Celestial but can't speak</set>
+			<set name="challenge">0</set>
+			<set name="actions">ID_WOTC_MPP_COMPANION_ACTION_SUNFLY_STING,ID_WOTC_MPP_COMPANION_ACTION_SUNFLY_ILLUMINATION</set>
+		</setters>
+		<rules>
+			<stat name="companion:ac" value="13" />
+			<stat name="companion:hp:max" value="2" bonus="base" />
+			<stat name="companion:speed" value="10" bonus="base" />
+			<stat name="companion:speed:fly" value="40" bonus="base" />
+		</rules>
+	</element>
+	<element name="Sting" type="Companion Action" source="Morte’s Planar Parade" id="ID_WOTC_MPP_COMPANION_ACTION_SUNFLY_STING">
+		<description>
+			<p><i>Melee Weapon Attack:</i> +5 to hit, reach 5 ft., one target. <i>Hit:</i> 2 (1d4) piercing damage. Additionally, if the sunfly is on an Outer Plane, it injects the target with a toxin, the effect of which is determined by the sunfly's location:</p>
+			<p class="indent"><b><i>Upper Plane.</i></b> The target sheds bright light in a 5-foot radius until the end of its next turn.</p>
+			<p class="indent"><b><i>Neutral Plane.</i></b> If the target is concentrating on a spell or similar effect, it makes the Constitution saving throw with disadvantage to maintain its concentration.</p>
+			<p class="indent"><b><i>Lower Plane.</i></b> The target's speed is reduced by 5 feet until the end of its next turn.</p>
+		</description>
+		<sheet>
+			<description>Melee Weapon Attack: +5 to hit, reach 5 ft., one target. Hit: 2 (1d4) piercing damage. Additionally, if the sunfly is on an Outer Plane, it injects the target with a toxin, the effect of which is determined by the sunfly's location: &#13;
+			• Upper Plane. The target sheds bright light in a 5-foot radius until the end of its next turn. &#13;
+			• Neutral Plane. If the target is concentrating on a spell or similar effect, it makes the Constitution saving throw with disadvantage to maintain its concentration. &#13;
+			• Lower Plane. The target's speed is reduced by 5 feet until the end of its next turn. </description>
+		</sheet>
+	</element>
+	<element name="Illumination" type="Companion Action" source="Morte’s Planar Parade" id="ID_WOTC_MPP_COMPANION_ACTION_SUNFLY_ILLUMINATION">
+		<description>
+			<p>The sunfly sheds bright light in a 5-foot radius and dim light for an additional 5 feet, or it uses a bonus action to extinguish the light.</p>
+		</description>
+		<sheet action="Bonus Action">
+			<description>The sunfly sheds bright light in a 5-foot radius and dim light for an additional 5 feet, or it uses a bonus action to extinguish the light.</description>
+		</sheet>
+	</element>
+
+	<element name="Cranium Rat Squeaker" type="Companion" source="Morte’s Planar Parade" id="ID_WOTC_MPP_COMPANION_CRANIUM_RAT_SQUEAKER">
+		<supports>Variant Familiar</supports>
+		<description>
+			<p>The cranium rats squeakers of Sigil have no connection to the mind flayers that created their progenitors. Rather, these magical rodents cooperate with the residents of the City of Doors, whether by simply living together or by pursuing greater ambitions. When squeakers collect in large numbers, their swarms merge into a single intelligence with enhanced psionic abilities and the accumulated memories of its constituents.</p>
+		</description>
+		<setters>
+			<set name="size">Tiny</set>
+			<set name="type">Aberration</set>
+			<set name="alignment">Unaligned</set>
+			<set name="ac">12</set>
+			<set name="hp">2 (1d4)</set>
+			<set name="speed">30 ft.</set>
+			<set name="strength">2</set>
+			<set name="dexterity">14</set>
+			<set name="constitution">10</set>
+			<set name="intelligence">4</set>
+			<set name="wisdom">11</set>
+			<set name="charisma">8</set>
+			<set name="senses">darkvision 30 ft., passive Perception 10</set>
+			<set name="languages">telepathy 30 ft. (emotions only)</set>
+			<set name="challenge">0</set>
+			<set name="traits">ID_WOTC_MPP_COMPANION_TRAIT_CRANIUM_RAT_SQUEAKER_MAGIC_SHARED_TELEPATHY,ID_WOTC_MPP_COMPANION_TRAIT_CRANIUM_RAT_SQUEAKER_MAGIC_TELEPATHIC_SHROUD</set>
+			<set name="actions">ID_WOTC_MPP_COMPANION_ACTION_CRANIUM_RAT_SQUEAKER_BITE,ID_WOTC_MPP_COMPANION_ACTION_CRANIUM_RAT_SQUEAKER_ILLUMINATION</set>
+		</setters>
+		<rules>
+			<stat name="companion:ac" value="12" />
+			<stat name="companion:hp:max" value="2" bonus="base" />
+			<stat name="companion:speed" value="30" bonus="base" />
+		</rules>
+	</element>
+	<element name="Shared Telepathy" type="Companion Trait" source="Morte’s Planar Parade" id="ID_WOTC_MPP_COMPANION_TRAIT_CRANIUM_RAT_SQUEAKER_MAGIC_SHARED_TELEPATHY">
+		<description>
+			<p>Any creature touching the cranium rat can use the rat's telepathy if the rat allows it. If the creature knows any language, the creature can use the telepathy to communicate words and emotions.</p>
+		</description>
+		<sheet>
+			<description>Any creature touching the cranium rat can use the rat's telepathy if the rat allows it. If the creature knows any language, the creature can use the telepathy to communicate words and emotions.</description>
+		</sheet>
+	</element>
+	<element name="Telepathic Shroud" type="Companion Trait" source="Morte’s Planar Parade" id="ID_WOTC_MPP_COMPANION_TRAIT_CRANIUM_RAT_SQUEAKER_MAGIC_TELEPATHIC_SHROUD">
+		<description>
+			<p>The cranium rat is immune to any effect that would sense its emotions or read its thoughts, as well as to divination spells.</p>
+		</description>
+		<sheet>
+			<description>The cranium rat is immune to any effect that would sense its emotions or read its thoughts, as well as to divination spells.</description>
+		</sheet>
+	</element>
+	<element name="Bite" type="Companion Action" source="Morte’s Planar Parade" id="ID_WOTC_MPP_COMPANION_ACTION_CRANIUM_RAT_SQUEAKER_BITE">
+		<description>
+			<p><i>Melee Weapon Attack:</i> +4 to hit, reach 5 ft., one target. <i>Hit:</i> 1 piercing damage.</p>
+		</description>
+		<sheet>
+			<description>Melee Weapon Attack: +4 to hit, reach 5 ft., one target. Hit: 1 piercing damage.</description>
+		</sheet>
+	</element>
+	<element name="Illumination" type="Companion Action" source="Morte’s Planar Parade" id="ID_WOTC_MPP_COMPANION_ACTION_CRANIUM_RAT_SQUEAKER_ILLUMINATION">
+		<description>
+			<p>The cranium rat sheds dim light from its exposed brain in a 5-foot radius or extinguishes the light.</p>
+		</description>
+		<sheet action="Bonus Action">
+			<description>The cranium rat sheds dim light from its exposed brain in a 5-foot radius or extinguishes the light.</description>
+		</sheet>
+	</element>
+
+</elements>
