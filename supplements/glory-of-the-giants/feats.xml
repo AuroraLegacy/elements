@@ -1,0 +1,460 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<elements>
+	<info>
+		<update version="0.0.2">
+			<file name="feats.xml" url="https://raw.githubusercontent.com/AuroraLegacy/elements/master/supplements/glory-of-the-giants/feats.xml" />
+		</update>
+	</info>
+
+	<element name="Ember of the Fire Giant" type="Feat" source="Bigby Presents: Glory of the Giants" id="ID_WOTC_GOTG_FEAT_EMBER_OF_THE_FIRE_GIANT">
+		<requirements>[level:4],ID_WOTC_GOTG_FEAT_FEATURE_STRIKE_OF_THE_GIANTS_FIRE_STRIKE||ID_WOTC_GOTG_GRANTS_FEAT_UNLOCKER</requirements>
+		<prerequisite>4th level, Strike of the Giants (Fire Strike) feat</prerequisite>
+		<description>
+			<p><em>Prerequisite: 4th level, Strike of the Giants (Fire Strike) feat</em></p>
+			<p>You've manifested the fiery combat emblematic of fire giants, granting you the following benefits:</p>
+			<p class="indent"><i><b>Ability Score Increase.</b></i> Increase your Strength, Constitution, or Wisdom by 1, to a maximum of 20.</p>
+			<p class="indent"><i><b>Born of Flame.</b></i> You have resistance to fire damage.</p>
+			<p class="indent"><i><b>Searing Ignition.</b></i> When you take the Attack action on your turn, you can replace a single attack with a magical burst of flame. Each creature of your choice in a 15-foot-radius sphere centered on you must make a Dexterity saving throw (DC equals 8 + your proficiency bonus + the modifier of the ability increased by this feat). On a failed save, a creature takes fire damage equal to 1d8 + your proficiency bonus, and it has the blinded condition until the start of your next turn. On a successful save, the creature takes half as much damage only. You can use your Searing Ignition a number of times equal to your proficiency bonus (but no more than once per turn), and you regain all expended uses when you finish a long rest.</p>
+		</description>
+		<sheet action="Attack" usage="{{proficiency}}/Long Rest" alt="Searing Ignition">
+			<description>Once on your turn, each creature of your choice in a 15-foot-radius sphere centered on you must make a Dexterity saving throw DC{{searing ignition:dc}}. On a failed save, a creature takes fire damage equal to 1d8 + {{proficiency}}, and it has the blinded condition until the start of your next turn. On a successful save, the creature takes half as much damage only.</description>
+		</sheet>
+		<rules>
+			<select type="Feat Feature" name="Ability Score Increase (Ember of the Fire Giant)" supports="ID_WOTC_GOTG_FEAT_FEATURE_EMBER_OF_THE_FIRE_GIANT_STRENGTH|ID_WOTC_GOTG_FEAT_FEATURE_EMBER_OF_THE_FIRE_GIANT_CONSTITUTION|ID_WOTC_GOTG_FEAT_FEATURE_EMBER_OF_THE_FIRE_GIANT_WISDOM" />
+			<grant type="Condition" id="ID_INTERNAL_CONDITION_DAMAGE_RESISTANCE_FIRE" />
+
+			<stat name="searing ignition:dc" value="8" bonus="base" />
+			<stat name="searing ignition:dc" value="proficiency" bonus="proficiency" />
+		</rules>
+	</element>
+	<element name="Strength" type="Feat Feature" source="Bigby Presents: Glory of the Giants" id="ID_WOTC_GOTG_FEAT_FEATURE_EMBER_OF_THE_FIRE_GIANT_STRENGTH">
+		<compendium display="false" />
+		<description>
+			<p>Increase your Strength by 1, to a maximum of 20.</p>
+		</description>
+		<sheet display="false" />
+		<rules>
+			<stat name="strength" value="1" />
+			<stat name="searing ignition:dc" value="strength:modifier" bonus="ability" />
+		</rules>
+	</element>
+	<element name="Constitution" type="Feat Feature" source="Bigby Presents: Glory of the Giants" id="ID_WOTC_GOTG_FEAT_FEATURE_EMBER_OF_THE_FIRE_GIANT_CONSTITUTION">
+		<compendium display="false" />
+		<description>
+			<p>Increase your Constitution by 1, to a maximum of 20.</p>
+		</description>
+		<sheet display="false" />
+		<rules>
+			<stat name="constitution" value="1" />
+			<stat name="searing ignition:dc" value="constitution:modifier" bonus="ability" />
+		</rules>
+	</element>
+	<element name="Wisdom" type="Feat Feature" source="Bigby Presents: Glory of the Giants" id="ID_WOTC_GOTG_FEAT_FEATURE_EMBER_OF_THE_FIRE_GIANT_WISDOM">
+		<compendium display="false" />
+		<description>
+			<p>Increase your Wisdom by 1, to a maximum of 20.</p>
+		</description>
+		<sheet display="false" />
+		<rules>
+			<stat name="wisdom" value="1" />
+			<stat name="searing ignition:dc" value="wisdom:modifier" bonus="ability" />
+		</rules>
+	</element>
+
+	<element name="Fury of the Frost Giant" type="Feat" source="Bigby Presents: Glory of the Giants" id="ID_WOTC_GOTG_FEAT_FURY_OF_THE_FROST_GIANT">
+		<requirements>[level:4],ID_WOTC_GOTG_FEAT_FEATURE_STRIKE_OF_THE_GIANTS_FROST_STRIKE||ID_WOTC_GOTG_GRANTS_FEAT_UNLOCKER</requirements>
+		<prerequisite>4th level, Strike of the Giants (Frost Strike) feat</prerequisite>
+		<description>
+			<p><em>Prerequisite: 4th level, Strike of the Giants (Frost Strike) feat</em></p>
+			<p>You've manifested the icy might emblematic of frost giants, granting you the following benefits:</p>
+			<p class="indent"><i><b>Ability Score Increase.</b></i> Increase your Strength, Constitution, or Wisdom by 1, to a maximum of 20.</p>
+			<p class="indent"><i><b>Born of Ice.</b></i> You have resistance to cold damage.</p>
+			<p class="indent"><i><b>Frigid Retaliation.</b></i> Immediately after a creature you can see within 30 feet of you hits you with an attack roll and deals damage, you can use your reaction to retaliate with a conjured blast of ice. The creature must make a Constitution saving throw (DC equals 8 + your proficiency bonus + the modifier of the ability increased by this feat). On a failed save, the creature takes cold damage equal to 1d8 + your proficiency bonus, and its speed is reduced to 0 until the end of its next turn. You can use this reaction a number of times equal to your proficiency bonus, and you regain all expended uses when you finish a long rest.</p>
+		</description>
+		<sheet action="Reaction" usage="{{proficiency}}/Long Rest" alt="Frigid Retaliation">
+			<description>Immediately after a creature you can see within 30 feet of you hits you with an attack roll and deals damage, you can retaliate with a conjured blast of ice. The creature must make a Constitution saving throw DC{{frigid retaliation:dc}}. On a failed save, the creature takes cold damage equal to 1d8 + {{proficiency}}, and its speed is reduced to 0 until the end of its next turn.</description>
+		</sheet>
+		<rules>
+			<select type="Feat Feature" name="Ability Score Increase (Fury of the Frost Giant)" supports="ID_WOTC_GOTG_FEAT_FEATURE_FURY_OF_THE_FROST_GIANT_STRENGTH|ID_WOTC_GOTG_FEAT_FEATURE_FURY_OF_THE_FROST_GIANT_CONSTITUTION|ID_WOTC_GOTG_FEAT_FEATURE_FURY_OF_THE_FROST_GIANT_WISDOM" />
+			<grant type="Condition" id="ID_INTERNAL_CONDITION_DAMAGE_RESISTANCE_COLD" />
+
+			<stat name="frigid retaliation:dc" value="8" bonus="base" />
+			<stat name="frigid retaliation:dc" value="proficiency" bonus="proficiency" />
+		</rules>
+	</element>
+	<element name="Strength" type="Feat Feature" source="Bigby Presents: Glory of the Giants" id="ID_WOTC_GOTG_FEAT_FEATURE_FURY_OF_THE_FROST_GIANT_STRENGTH">
+		<compendium display="false" />
+		<description>
+			<p>Increase your Strength by 1, to a maximum of 20.</p>
+		</description>
+		<sheet display="false" />
+		<rules>
+			<stat name="strength" value="1" />
+			<stat name="frigid retaliation:dc" value="strength:modifier" bonus="ability" />
+		</rules>
+	</element>
+	<element name="Constitution" type="Feat Feature" source="Bigby Presents: Glory of the Giants" id="ID_WOTC_GOTG_FEAT_FEATURE_FURY_OF_THE_FROST_GIANT_CONSTITUTION">
+		<compendium display="false" />
+		<description>
+			<p>Increase your Constitution by 1, to a maximum of 20.</p>
+		</description>
+		<sheet display="false" />
+		<rules>
+			<stat name="constitution" value="1" />
+			<stat name="frigid retaliation:dc" value="constitution:modifier" bonus="ability" />
+		</rules>
+	</element>
+	<element name="Wisdom" type="Feat Feature" source="Bigby Presents: Glory of the Giants" id="ID_WOTC_GOTG_FEAT_FEATURE_FURY_OF_THE_FROST_GIANT_WISDOM">
+		<compendium display="false" />
+		<description>
+			<p>Increase your Wisdom by 1, to a maximum of 20.</p>
+		</description>
+		<sheet display="false" />
+		<rules>
+			<stat name="wisdom" value="1" />
+			<stat name="frigid retaliation:dc" value="wisdom:modifier" bonus="ability" />
+		</rules>
+	</element>
+
+	<element name="Guile of the Cloud Giant" type="Feat" source="Bigby Presents: Glory of the Giants" id="ID_WOTC_GOTG_FEAT_GUILE_OF_THE_CLOUD_GIANT">
+		<requirements>[level:4],ID_WOTC_GOTG_FEAT_FEATURE_STRIKE_OF_THE_GIANTS_CLOUD_STRIKE||ID_WOTC_GOTG_GRANTS_FEAT_UNLOCKER</requirements>
+		<prerequisite>4th level, Strike of the Giants (Cloud Strike) feat</prerequisite>
+		<description>
+			<p><em>Prerequisite: 4th level, Strike of the Giants (Cloud Strike) feat</em></p>
+			<p>You've manifested the confounding magic emblematic of cloud giants, granting you the following benefits:</p>
+			<p class="indent"><i><b>Ability Score Increase.</b></i> Increase your Strength, Constitution, or Charisma by 1, to a maximum of 20.</p>
+			<p class="indent"><i><b>Cloudy Escape.</b></i> When a creature you can see hits you with an attack roll, you can use your reaction to give yourself resistance to that attack's damage. You then teleport to an unoccupied space that you can see within 30 feet of yourself. You can use this reaction a number of times equal to your proficiency bonus, and you regain all expended uses when you finish a long rest.</p>
+		</description>
+		<sheet action="Reaction" usage="{{proficiency}}/Long Rest" alt="Cloudy Escape">
+			<description>When a creature you can see hits you with an attack roll, you can give yourself resistance to that attack's damage. You then teleport to an unoccupied space that you can see within 30 feet of yourself.</description>
+		</sheet>
+		<rules>
+			<select type="Ability Score Improvement" name="Ability Score Increase (Guile of the Cloud Giant)" supports="ID_PHB_FEAT_ASI_STRENGTH|ID_PHB_FEAT_ASI_CONSTITUTION|ID_PHB_FEAT_ASI_CHARISMA" />
+		</rules>
+	</element>
+
+	<element name="Keenness of the Stone Giant" type="Feat" source="Bigby Presents: Glory of the Giants" id="ID_WOTC_GOTG_FEAT_KEENNESS_OF_THE_STONE_GIANT">
+		<requirements>[level:4],ID_WOTC_GOTG_FEAT_FEATURE_STRIKE_OF_THE_GIANTS_STONE_STRIKE||ID_WOTC_GOTG_GRANTS_FEAT_UNLOCKER</requirements>
+		<prerequisite>4th level, Strike of the Giants (Stone Strike) feat</prerequisite>
+		<description>
+			<p><em>Prerequisite: 4th level, Strike of the Giants (Stone Strike) feat</em></p>
+			<p>You've manifested the physical talents emblematic of stone giants, granting you the following benefits:</p>
+			<p class="indent"><i><b>Ability Score Increase.</b></i> Increase your Strength, Constitution, or Wisdom by 1, to a maximum of 20.</p>
+			<p class="indent"><i><b>Cavernous Sight.</b></i> You gain darkvision with a range of 60 feet. If you already have darkvision from another source, its range increases by 60 feet.</p>
+			<p class="indent"><i><b>Stone Throw.</b></i> As a bonus action, you can take a rock and make a magical attack with it. The attack is a ranged spell attack with a range of 60 feet that uses the ability score you increased with this feat as the spellcasting ability. On a hit, the rock deals 1d10 force damage, and the target must succeed on a Strength saving throw (DC equals 8 + your proficiency bonus + the spellcasting ability modifier) or have the prone condition. You can use this bonus action a number of times equal to your proficiency bonus, and you regain all expended uses when you finish a long rest.</p>
+		</description>
+		<sheet display="false" />
+		<rules>
+			<select type="Feat Feature" name="Ability Score Increase (Keenness of the Stone Giant)" supports="ID_WOTC_GOTG_FEAT_FEATURE_KEENNESS_OF_THE_STONE_GIANT_STRENGTH|ID_WOTC_GOTG_FEAT_FEATURE_KEENNESS_OF_THE_STONE_GIANT_CONSTITUTION|ID_WOTC_GOTG_FEAT_FEATURE_KEENNESS_OF_THE_STONE_GIANT_WISDOM" />
+			<grant type="Vision" id="ID_VISION_LESSER_DARKVISION" />
+			<stat name="darkvision:range" value="60" />
+
+			<stat name="stone throw:dc" value="8" bonus="base" />
+			<stat name="stone throw:dc" value="proficiency" bonus="proficiency" />
+		</rules>
+	</element>
+	<element name="Strength" type="Feat Feature" source="Bigby Presents: Glory of the Giants" id="ID_WOTC_GOTG_FEAT_FEATURE_KEENNESS_OF_THE_STONE_GIANT_STRENGTH">
+		<compendium display="false" />
+		<description>
+			<p>Increase your Strength by 1, to a maximum of 20.</p>
+		</description>
+		<sheet action="Bonus Action" usage="{{proficiency}}/Long Rest" alt="Stone Throw">
+			<description>You can take a rock and make a magical attack with it. The attack is a ranged spell attack with a range of 60 feet that uses your Strength as the spellcasting ability. On a hit, the rock deals 1d10 force damage, and the target must succeed on a Strength saving throw DC{{stone throw:dc}} or have the prone condition.</description>
+		</sheet>
+		<rules>
+			<stat name="strength" value="1" />
+			<stat name="stone throw:dc" value="strength:modifier" bonus="ability" />
+		</rules>
+	</element>
+	<element name="Constitution" type="Feat Feature" source="Bigby Presents: Glory of the Giants" id="ID_WOTC_GOTG_FEAT_FEATURE_KEENNESS_OF_THE_STONE_GIANT_CONSTITUTION">
+		<compendium display="false" />
+		<description>
+			<p>Increase your Constitution by 1, to a maximum of 20.</p>
+		</description>
+		<sheet action="Bonus Action" usage="{{proficiency}}/Long Rest" alt="Stone Throw">
+			<description>You can take a rock and make a magical attack with it. The attack is a ranged spell attack with a range of 60 feet that uses your Constitution as the spellcasting ability. On a hit, the rock deals 1d10 force damage, and the target must succeed on a Strength saving throw DC{{stone throw:dc}} or have the prone condition.</description>
+		</sheet>
+		<rules>
+			<stat name="constitution" value="1" />
+			<stat name="stone throw:dc" value="constitution:modifier" bonus="ability" />
+		</rules>
+	</element>
+	<element name="Wisdom" type="Feat Feature" source="Bigby Presents: Glory of the Giants" id="ID_WOTC_GOTG_FEAT_FEATURE_KEENNESS_OF_THE_STONE_GIANT_WISDOM">
+		<compendium display="false" />
+		<description>
+			<p>Increase your Wisdom by 1, to a maximum of 20.</p>
+		</description>
+		<sheet action="Bonus Action" usage="{{proficiency}}/Long Rest" alt="Stone Throw">
+			<description>You can take a rock and make a magical attack with it. The attack is a ranged spell attack with a range of 60 feet that uses your Wisdom as the spellcasting ability. On a hit, the rock deals 1d10 force damage, and the target must succeed on a Strength saving throw DC{{stone throw:dc}} or have the prone condition.</description>
+		</sheet>
+		<rules>
+			<stat name="wisdom" value="1" />
+			<stat name="stone throw:dc" value="wisdom:modifier" bonus="ability" />
+		</rules>
+	</element>
+
+	<element name="Rune Shaper" type="Feat" source="Bigby Presents: Glory of the Giants" id="ID_WOTC_GOTG_FEAT_RUNE_SHAPER">
+		<prerequisite>Spellcasting Feature or Rune Carver Background</prerequisite>
+		<description>
+			<p><em>Prerequisite: Spellcasting Feature or Rune Carver Background</em></p>
+			<p>You've studied the magic of Giant runes, granting you the following benefits:</p>
+			<p class="indent"><i><b>Comprehend Languages.</b></i> You learn the <i>comprehend languages</i> spell. You can cast this spell without expending a spell slot, and you must finish a long rest before you can cast it in this way again. You can also cast this spell using any spell slots you have.</p>
+			<p class="indent"><i><b>Rune Magic.</b></i> You know a number of runes equal to half your proficiency bonus (rounded down), chosen from the Rune Spells table. Whenever you finish a long rest, you can inscribe each rune you know onto one nonmagical weapon, armor, piece of clothing, or other object you touch. You temporarily learn the 1st-level spells that correspond to the runes you inscribed, as specified on the Rune Spells table, and you know those spells until you finish a long rest, when the runes fade. While you are wearing or carrying any rune-marked object, you can cast the spells associated with those runes using any spell slots you have.</p>
+			<p class="indent">You can also invoke a rune inscribed on an object you are wearing or carrying and cast its associated spell without expending a spell slot or using material components. Once you cast the spell in this way, you can't do so again until you finish a long rest. Your spellcasting ability for this feat is Intelligence, Wisdom, or Charisma (choose when you select this feat).</p>
+			<p class="indent">Each time you gain a level, you can replace one of the runes you know with another one from the Rune Spells table.</p>
+			<h5>Rune Spells</h5>
+			<table>
+				<thead>
+					<tr><td>Rune</td><td>Spell</td></tr>
+				</thead>
+				<tr><td>Cloud</td><td><i>Fog cloud</i></td></tr>
+				<tr><td>Death</td><td><i>Inflict wounds</i></td></tr>
+				<tr><td>Dragon</td><td><i>Chromatic orb</i></td></tr>
+				<tr><td>Enemy</td><td><i>Disguise self</i></td></tr>
+				<tr><td>Fire</td><td><i>Burning hands</i></td></tr>
+				<tr><td>Friend</td><td><i>Speak with animals</i></td></tr>
+				<tr><td>Frost</td><td><i>Armor of Agathys</i></td></tr>
+				<tr><td>Hill</td><td><i>Goodberry</i></td></tr>
+				<tr><td>Journey</td><td><i>Longstrider</i></td></tr>
+				<tr><td>King</td><td><i>Command</i></td></tr>
+				<tr><td>Mountain</td><td><i>Entangle</i></td></tr>
+				<tr><td>Stone</td><td><i>Sanctuary</i></td></tr>
+				<tr><td>Storm</td><td><i>Thunderwave</i></td></tr>
+			</table>
+		</description>
+		<sheet display="false" />
+		<rules>
+			<grant type="Spell" id="ID_PHB_SPELL_COMPREHEND_LANGUAGES" />
+
+			<stat name="rune shaper:usage" value="proficiency:half" bonus="base" />
+			<select type="Spell" name="Rune Spell (Rune Shaper)" supports="ID_PHB_SPELL_FOG_CLOUD|ID_PHB_SPELL_INFLICT_WOUNDS|ID_PHB_SPELL_CHROMATIC_ORB|ID_PHB_SPELL_DISGUISE_SELF|ID_PHB_SPELL_BURNING_HANDS|ID_PHB_SPELL_SPEAK_WITH_ANIMALS|ID_PHB_SPELL_ARMOR_OF_AGATHYS|ID_PHB_SPELL_GOODBERRY|ID_PHB_SPELL_LONGSTRIDER|ID_PHB_SPELL_COMMAND|ID_PHB_SPELL_ENTANGLE|ID_PHB_SPELL_SANCTUARY|ID_PHB_SPELL_THUNDERWAVE" />
+			<select type="Spell" name="2nd Rune Spell (Rune Shaper)" supports="ID_PHB_SPELL_FOG_CLOUD|ID_PHB_SPELL_INFLICT_WOUNDS|ID_PHB_SPELL_CHROMATIC_ORB|ID_PHB_SPELL_DISGUISE_SELF|ID_PHB_SPELL_BURNING_HANDS|ID_PHB_SPELL_SPEAK_WITH_ANIMALS|ID_PHB_SPELL_ARMOR_OF_AGATHYS|ID_PHB_SPELL_GOODBERRY|ID_PHB_SPELL_LONGSTRIDER|ID_PHB_SPELL_COMMAND|ID_PHB_SPELL_ENTANGLE|ID_PHB_SPELL_SANCTUARY|ID_PHB_SPELL_THUNDERWAVE" requirements="[rune shaper:usage:2]" />
+			<select type="Spell" name="3rd Rune Spell (Rune Shaper)" supports="ID_PHB_SPELL_FOG_CLOUD|ID_PHB_SPELL_INFLICT_WOUNDS|ID_PHB_SPELL_CHROMATIC_ORB|ID_PHB_SPELL_DISGUISE_SELF|ID_PHB_SPELL_BURNING_HANDS|ID_PHB_SPELL_SPEAK_WITH_ANIMALS|ID_PHB_SPELL_ARMOR_OF_AGATHYS|ID_PHB_SPELL_GOODBERRY|ID_PHB_SPELL_LONGSTRIDER|ID_PHB_SPELL_COMMAND|ID_PHB_SPELL_ENTANGLE|ID_PHB_SPELL_SANCTUARY|ID_PHB_SPELL_THUNDERWAVE" requirements="[rune shaper:usage:3]" />
+			<select type="Feat Feature" name="Spellcasting Ability (Rune Shaper)" supports="ID_WOTC_GOTG_FEAT_FEATURE_RUNE_SHAPER_INTELLIGENCE|ID_WOTC_GOTG_FEAT_FEATURE_RUNE_SHAPER_WISDOM|ID_WOTC_GOTG_FEAT_FEATURE_RUNE_SHAPER_CHARISMA" />
+		</rules>
+	</element>
+	<element name="Intelligence" type="Feat Feature" source="Bigby Presents: Glory of the Giants" id="ID_WOTC_GOTG_FEAT_FEATURE_RUNE_SHAPER_INTELLIGENCE">
+		<compendium display="false" />
+		<description>
+			<p>Your spellcasting ability for this feat is Intelligence.</p>
+		</description>
+		<sheet alt="Rune Shaper">
+			<description>You gain following benefits: &#13;
+			• You learn the comprehend languages spell. You can cast this spell without expending a spell slot, and you must finish a long rest before you can cast it in this way again. You can also cast this spell using any spell slots you have. &#13;
+			• You know a number of runes equal to {{rune shaper:usage}}. Whenever you finish a long rest, you can inscribe each rune you know onto one nonmagical weapon, armor, piece of clothing, or other object you touch. You temporarily learn one 1st-level spell based on the rune you choose and you know the spell until you finish a long rest, when the rune fades. &#13;
+			While you are wearing or carrying the rune-marked object, you can cast the chosen spell associated with the rune once without using a spell slot or material components, and you can also cast the spell using any spell slots you have. &#13;
+			Each time you gain a level, you can replace one of the runes you know with another one from the Rune Spells table. &#13;
+			Your spellcasting ability for the benefits of this Feat is Intelligence.</description>
+		</sheet>
+	</element>
+	<element name="Wisdom" type="Feat Feature" source="Bigby Presents: Glory of the Giants" id="ID_WOTC_GOTG_FEAT_FEATURE_RUNE_SHAPER_WISDOM">
+		<compendium display="false" />
+		<description>
+			<p>Your spellcasting ability for this feat is Wisdom.</p>
+		</description>
+		<sheet alt="Rune Shaper">
+			<description>You gain following benefits: &#13;
+			• You learn the comprehend languages spell. You can cast this spell without expending a spell slot, and you must finish a long rest before you can cast it in this way again. You can also cast this spell using any spell slots you have. &#13;
+			• You know a number of runes equal to {{rune shaper:usage}}. Whenever you finish a long rest, you can inscribe each rune you know onto one nonmagical weapon, armor, piece of clothing, or other object you touch. You temporarily learn one 1st-level spell based on the rune you choose and you know the spell until you finish a long rest, when the rune fades. &#13;
+			While you are wearing or carrying the rune-marked object, you can cast the chosen spell associated with the rune once without using a spell slot or material components, and you can also cast the spell using any spell slots you have. &#13;
+			Each time you gain a level, you can replace one of the runes you know with another one from the Rune Spells table. &#13;
+			Your spellcasting ability for the benefits of this Feat is Wisdom.</description>
+		</sheet>
+	</element>
+	<element name="Charisma" type="Feat Feature" source="Bigby Presents: Glory of the Giants" id="ID_WOTC_GOTG_FEAT_FEATURE_RUNE_SHAPER_CHARISMA">
+		<compendium display="false" />
+		<description>
+			<p>Your spellcasting ability for this feat is Charisma.</p>
+		</description>
+		<sheet alt="Rune Shaper">
+			<description>You gain following benefits: &#13;
+			• You learn the comprehend languages spell. You can cast this spell without expending a spell slot, and you must finish a long rest before you can cast it in this way again. You can also cast this spell using any spell slots you have. &#13;
+			• You know a number of runes equal to {{rune shaper:usage}}. Whenever you finish a long rest, you can inscribe each rune you know onto one nonmagical weapon, armor, piece of clothing, or other object you touch. You temporarily learn one 1st-level spell based on the rune you choose and you know the spell until you finish a long rest, when the rune fades. &#13;
+			While you are wearing or carrying the rune-marked object, you can cast the chosen spell associated with the rune once without using a spell slot or material components, and you can also cast the spell using any spell slots you have. &#13;
+			Each time you gain a level, you can replace one of the runes you know with another one from the Rune Spells table. &#13;
+			Your spellcasting ability for the benefits of this Feat is Charisma.</description>
+		</sheet>
+	</element>
+
+	<element name="Soul of the Storm Giant" type="Feat" source="Bigby Presents: Glory of the Giants" id="ID_WOTC_GOTG_FEAT_SOUL_OF_THE_STORM_GIANT">
+		<requirements>[level:4],ID_WOTC_GOTG_FEAT_FEATURE_STRIKE_OF_THE_GIANTS_STORM_STRIKE||ID_WOTC_GOTG_GRANTS_FEAT_UNLOCKER</requirements>
+		<prerequisite>4th level, Strike of the Giants (Storm Strike) feat</prerequisite>
+		<description>
+			<p><em>Prerequisite: 4th level, Strike of the Giants (Storm Strike) feat</em></p>
+			<p>You've manifested the tempest magic emblematic of storm giants, granting you the following benefits:</p>
+			<p class="indent"><i><b>Ability Score Increase.</b></i> Increase your Strength, Wisdom, or Charisma by 1, to a maximum of 20.</p>
+			<p class="indent"><i><b>Maelstrom Aura.</b></i> As a bonus action, you surround yourself with an aura of magical wind and lightning that extends 10 feet from you in every direction but not through total cover. The aura lasts until the start of your next turn or until you are incapacitated. While the aura is active, you have resistance to lightning and thunder damage. In addition, attack rolls against you have disadvantage, and whenever another creature starts its turn within the aura, you can force the creature to make a Strength saving throw (DC equals 8 + your proficiency bonus + the modifier of the ability increased by this feat). On a failed save, the creature's speed is halved until the start of its next turn. You can use this bonus action a number of times equal to your proficiency bonus, and you regain all expended uses when you finish a long rest.</p>
+		</description>
+		<sheet action="Bonus Action" usage="{{proficiency}}/Long Rest">
+			<description>You surround yourself with an aura of magical wind and lightning that extends 10 feet from you in every direction but not through total cover. The aura lasts until the start of your next turn or until you are incapacitated. While the aura is active, you have resistance to lightning and thunder damage. In addition, attack rolls against you have disadvantage, and whenever another creature starts its turn within the aura, you can force the creature to make a Strength saving throw DC{{maelstrom aura:dc}}. On a failed save, the creature's speed is halved until the start of its next turn.</description>
+		</sheet>
+		<rules>
+			<select type="Feat Feature" name="Ability Score Increase (Soul of the Storm Giant)" supports="ID_WOTC_GOTG_FEAT_FEATURE_SOUL_OF_THE_STORM_GIANT_STRENGTH|ID_WOTC_GOTG_FEAT_FEATURE_SOUL_OF_THE_STORM_GIANT_WISDOM|ID_WOTC_GOTG_FEAT_FEATURE_SOUL_OF_THE_STORM_GIANT_CHARISMA" />
+
+			<stat name="maelstrom aura:dc" value="8" bonus="base" />
+			<stat name="maelstrom aura:dc" value="proficiency" bonus="proficiency" />
+		</rules>
+	</element>
+	<element name="Strength" type="Feat Feature" source="Bigby Presents: Glory of the Giants" id="ID_WOTC_GOTG_FEAT_FEATURE_SOUL_OF_THE_STORM_GIANT_STRENGTH">
+		<compendium display="false" />
+		<description>
+			<p>Increase your Strength by 1, to a maximum of 20.</p>
+		</description>
+		<sheet display="false" />
+		<rules>
+			<stat name="strength" value="1" />
+			<stat name="maelstrom aura:dc" value="strength:modifier" bonus="ability" />
+		</rules>
+	</element>
+	<element name="Wisdom" type="Feat Feature" source="Bigby Presents: Glory of the Giants" id="ID_WOTC_GOTG_FEAT_FEATURE_SOUL_OF_THE_STORM_GIANT_WISDOM">
+		<compendium display="false" />
+		<description>
+			<p>Increase your Wisdom by 1, to a maximum of 20.</p>
+		</description>
+		<sheet display="false" />
+		<rules>
+			<stat name="wisdom" value="1" />
+			<stat name="maelstrom aura:dc" value="wisdom:modifier" bonus="ability" />
+		</rules>
+	</element>
+	<element name="Charisma" type="Feat Feature" source="Bigby Presents: Glory of the Giants" id="ID_WOTC_GOTG_FEAT_FEATURE_SOUL_OF_THE_STORM_GIANT_CHARISMA">
+		<compendium display="false" />
+		<description>
+			<p>Increase your Charisma by 1, to a maximum of 20.</p>
+		</description>
+		<sheet display="false" />
+		<rules>
+			<stat name="charisma" value="1" />
+			<stat name="maelstrom aura:dc" value="charisma:modifier" bonus="ability" />
+		</rules>
+	</element>
+
+	<element name="Strike of the Giants" type="Feat" source="Bigby Presents: Glory of the Giants" id="ID_WOTC_GOTG_FEAT_STRIKE_OF_THE_GIANTS">
+		<description>
+			<p>You have absorbed primeval magic that gives you an echo of the might of giants. When you take this feat, choose one of the benefits listed below. Once per turn, when you hit a target with a melee weapon attack or a ranged weapon attack using a thrown weapon, you can imbue the attack with an additional effect depending on the benefit you chose:</p>
+			<p class="indent"><i><b>Cloud Strike.</b></i> The target takes an extra 1d4 thunder damage. If the target is a creature, it must succeed on a Wisdom saving throw, or you become invisible to it until the start of your next turn or until immediately after you make an attack roll or cast a spell.</p>
+			<p class="indent"><i><b>Fire Strike.</b></i> The target takes an extra 1d10 fire damage.</p>
+			<p class="indent"><i><b>Frost Strike.</b></i> The target takes an extra 1d6 cold damage. If the target is a creature, it must succeed on a Constitution saving throw, or its speed is reduced to 0 until the start of your next turn.</p>
+			<p class="indent"><i><b>Hill Strike.</b></i> The target takes an extra 1d6 damage of the weapon's type. If the target is a creature, it must succeed on a Strength saving throw or have the prone condition.</p>
+			<p class="indent"><i><b>Stone Strike.</b></i> The target takes an extra 1d6 force damage. If the target is a creature, it must succeed on a Strength saving throw or be pushed 10 feet from you in a straight line.</p>
+			<p class="indent"><i><b>Storm Strike.</b></i> The target takes an extra 1d6 lightning damage. If the target is a creature, it must succeed on a Constitution saving throw, or it has disadvantage on attack rolls until the start of your next turn.</p>
+			<p>The saving throw DC for these effects equals 8 + your proficiency bonus + your Strength or Constitution modifier.</p>
+			<p>You can use this feat a number of times equal to your proficiency bonus, and you regain all expended uses when you finish a long rest.</p>
+		</description>
+		<sheet display="false" />
+		<rules>
+			<select type="Feat Feature" name="Strike Type (Strike of the Giants)" supports="ID_WOTC_GOTG_FEAT_FEATURE_STRIKE_OF_THE_GIANTS_CLOUD_STRIKE|ID_WOTC_GOTG_FEAT_FEATURE_STRIKE_OF_THE_GIANTS_FIRE_STRIKE|ID_WOTC_GOTG_FEAT_FEATURE_STRIKE_OF_THE_GIANTS_FROST_STRIKE|ID_WOTC_GOTG_FEAT_FEATURE_STRIKE_OF_THE_GIANTS_HILL_STRIKE|ID_WOTC_GOTG_FEAT_FEATURE_STRIKE_OF_THE_GIANTS_STONE_STRIKE|ID_WOTC_GOTG_FEAT_FEATURE_STRIKE_OF_THE_GIANTS_STORM_STRIKE" />
+
+			<stat name="strike of the giants:dc" value="8" bonus="base" />
+			<stat name="strike of the giants:dc" value="proficiency" bonus="proficiency" />
+			<stat name="strike of the giants:dc" value="strength:modifier" bonus="ability" />
+			<stat name="strike of the giants:dc" value="constitution:modifier" bonus="ability" />
+		</rules>
+	</element>
+	<element name="Cloud Strike" type="Feat Feature" source="Bigby Presents: Glory of the Giants" id="ID_WOTC_GOTG_FEAT_FEATURE_STRIKE_OF_THE_GIANTS_CLOUD_STRIKE">
+		<compendium display="false" />
+		<description>
+			<p>Once per turn, when you hit a target with a melee weapon attack or a ranged weapon attack using a thrown weapon, the target takes an extra 1d4 thunder damage. If the target is a creature, it must succeed on a Wisdom saving throw, or you become invisible to it until the start of your next turn or until immediately after you make an attack roll or cast a spell.</p>
+			<p class="indent">The saving throw DC for this effect is 8 + your proficiency bonus + your Strength or Constitution modifier.</p>
+			<p class="indent">You can use this feat a number of times equal to your proficiency bonus, and you regain all expended uses when you finish a long rest.</p>
+		</description>
+		<sheet usage="{{proficiency}}/Long Rest">
+			<description>Once per turn, when you hit a target with a melee weapon attack or a ranged weapon attack using a thrown weapon, the target takes an extra 1d4 thunder damage. If the target is a creature, it must succeed on a Wisdom saving throw DC{{strike of the giants:dc}}, or you become invisible to it until the start of your next turn or until immediately after you make an attack roll or cast a spell.</description>
+		</sheet>
+	</element>
+	<element name="Fire Strike" type="Feat Feature" source="Bigby Presents: Glory of the Giants" id="ID_WOTC_GOTG_FEAT_FEATURE_STRIKE_OF_THE_GIANTS_FIRE_STRIKE">
+		<compendium display="false" />
+		<description>
+			<p>Once per turn, when you hit a target with a melee weapon attack or a ranged weapon attack using a thrown weapon, the target takes an extra 1d10 fire damage.</p>
+			<p class="indent">You can use this feat a number of times equal to your proficiency bonus, and you regain all expended uses when you finish a long rest.</p>
+		</description>
+		<sheet usage="{{proficiency}}/Long Rest">
+			<description>Once per turn, when you hit a target with a melee weapon attack or a ranged weapon attack using a thrown weapon, the target takes an extra 1d10 fire damage.</description>
+		</sheet>
+	</element>
+	<element name="Frost Strike" type="Feat Feature" source="Bigby Presents: Glory of the Giants" id="ID_WOTC_GOTG_FEAT_FEATURE_STRIKE_OF_THE_GIANTS_FROST_STRIKE">
+		<compendium display="false" />
+		<description>
+			<p>Once per turn, when you hit a target with a melee weapon attack or a ranged weapon attack using a thrown weapon, the target takes an extra 1d6 cold damage. If the target is a creature, it must succeed on a Constitution saving throw, or its speed is reduced to 0 until the start of your next turn.</p>
+			<p class="indent">The saving throw DC for this effect is 8 + your proficiency bonus + your Strength or Constitution modifier.</p>
+			<p class="indent">You can use this feat a number of times equal to your proficiency bonus, and you regain all expended uses when you finish a long rest.</p>
+		</description>
+		<sheet usage="{{proficiency}}/Long Rest">
+			<description>Once per turn, when you hit a target with a melee weapon attack or a ranged weapon attack using a thrown weapon, the target takes an extra 1d6 cold damage. If the target is a creature, it must succeed on a Constitution saving throw DC{{strike of the giants:dc}}, or its speed is reduced to 0 until the start of your next turn.</description>
+		</sheet>
+	</element>
+	<element name="Hill Strike" type="Feat Feature" source="Bigby Presents: Glory of the Giants" id="ID_WOTC_GOTG_FEAT_FEATURE_STRIKE_OF_THE_GIANTS_HILL_STRIKE">
+		<compendium display="false" />
+		<description>
+			<p>Once per turn, when you hit a target with a melee weapon attack or a ranged weapon attack using a thrown weapon, the target takes an extra 1d6 damage of the weapon's type. If the target is a creature, it must succeed on a Strength saving throw or have the prone condition.</p>
+			<p class="indent">The saving throw DC for this effect is 8 + your proficiency bonus + your Strength or Constitution modifier.</p>
+			<p class="indent">You can use this feat a number of times equal to your proficiency bonus, and you regain all expended uses when you finish a long rest.</p>
+		</description>
+		<sheet usage="{{proficiency}}/Long Rest">
+			<description>Once per turn, when you hit a target with a melee weapon attack or a ranged weapon attack using a thrown weapon, the target takes an extra 1d6 damage of the weapon's type. If the target is a creature, it must succeed on a Strength saving throw DC{{strike of the giants:dc}}, or it falls prone</description>
+		</sheet>
+	</element>
+	<element name="Stone Strike" type="Feat Feature" source="Bigby Presents: Glory of the Giants" id="ID_WOTC_GOTG_FEAT_FEATURE_STRIKE_OF_THE_GIANTS_STONE_STRIKE">
+		<compendium display="false" />
+		<description>
+			<p>Once per turn, when you hit a target with a melee weapon attack or a ranged weapon attack using a thrown weapon, the target takes an extra 1d6 force damage. If the target is a creature, it must succeed on a Strength saving throw or be pushed 10 feet from you in a straight line.</p>
+			<p class="indent">The saving throw DC for this effect is 8 + your proficiency bonus + your Strength or Constitution modifier.</p>
+			<p class="indent">You can use this feat a number of times equal to your proficiency bonus, and you regain all expended uses when you finish a long rest.</p>
+		</description>
+		<sheet usage="{{proficiency}}/Long Rest">
+			<description>Once per turn, when you hit a target with a melee weapon attack or a ranged weapon attack using a thrown weapon, the target takes an extra 1d6 force damage. If the target is a creature, it must succeed on a Strength saving throw DC{{strike of the giants:dc}}, or it is pushed 10 feet from you in a straight line.</description>
+		</sheet>
+	</element>
+	<element name="Storm Strike" type="Feat Feature" source="Bigby Presents: Glory of the Giants" id="ID_WOTC_GOTG_FEAT_FEATURE_STRIKE_OF_THE_GIANTS_STORM_STRIKE">
+		<compendium display="false" />
+		<description>
+			<p>Once per turn, when you hit a target with a melee weapon attack or a ranged weapon attack using a thrown weapon, the target takes an extra 1d6 lightning damage. If the target is a creature, it must succeed on a Constitution saving throw, or it has disadvantage on attack rolls until the start of your next turn.</p>
+			<p class="indent">The saving throw DC for this effect is 8 + your proficiency bonus + your Strength or Constitution modifier.</p>
+			<p class="indent">You can use this feat a number of times equal to your proficiency bonus, and you regain all expended uses when you finish a long rest.</p>
+		</description>
+		<sheet usage="{{proficiency}}/Long Rest">
+			<description>Once per turn, when you hit a target with a melee weapon attack or a ranged weapon attack using a thrown weapon, the target takes an extra 1d6 lightning damage. If the target is a creature, it must succeed on a Constitution saving throw DC{{strike of the giants:dc}}, or it has disadvantage on attack rolls until the start of your next turn.</description>
+		</sheet>
+	</element>
+
+	<element name="Vigor of the Hill Giant" type="Feat" source="Bigby Presents: Glory of the Giants" id="ID_WOTC_GOTG_FEAT_GUILE_OF_THE_HILL_GIANT">
+		<requirements>[level:4],ID_WOTC_GOTG_FEAT_FEATURE_STRIKE_OF_THE_GIANTS_HILL_STRIKE||ID_WOTC_GOTG_GRANTS_FEAT_UNLOCKER</requirements>
+		<prerequisite>4th level, Strike of the Giants (Hill Strike) feat</prerequisite>
+		<description>
+			<p><em>Prerequisite: 4th level, Strike of the Giants (Hill Strike) feat</em></p>
+			<p>You've manifested the resilience emblematic of hill giants, granting you the following benefits:</p>
+			<p class="indent"><i><b>Ability Score Increase.</b></i> Increase your Strength, Constitution, or Wisdom by 1, to a maximum of 20.</p>
+			<p class="indent"><i><b>Bulwark.</b></i> When you are subjected to an effect that would move you at least 5 feet or give you the prone condition, you can use your reaction to steady yourself. You aren't moved and don't have the prone condition.</p>
+			<p class="indent"><i><b>Iron Stomach.</b></i> Whenever you eat food as part of a short rest and spend one or more Hit Dice to regain hit points, you regain additional hit points equal to your Constitution modifier + your proficiency bonus.</p>
+		</description>
+		<sheet>
+			<description>You gain following benefits: &#13;
+			• Bulwark. When you are subjected to an effect that would move you at least 5 feet or give you the prone condition, you can use your reaction to steady yourself, ignoring the effect. &#13;
+			• Iron Stomach. Whenever you eat food as part of a short rest and spend Hit Dice to regain hit points, you regain additional {{iron stomach:hp}} hit points. </description>
+		</sheet>
+		<rules>
+			<select type="Ability Score Improvement" name="Ability Score Increase (Guile of the Cloud Giant)" supports="ID_PHB_FEAT_ASI_STRENGTH|ID_PHB_FEAT_ASI_CONSTITUTION|ID_PHB_FEAT_ASI_WISDOM" />
+
+			<stat name="iron stomach:hp" value="constitution:modifier" bonus="ability" />
+			<stat name="iron stomach:hp" value="proficiency" bonus="proficiency" />
+		</rules>
+	</element>
+
+	<!-- Feat Unlocker -->
+	<element name="Feat Unlocker" type="Item" source="Bigby Presents: Glory of the Giants" id="ID_WOTC_GOTG_ITEM_FEAT_UNLOCKER">
+		<compendium display="false" />
+		<description>
+			<p>Once equipped, this item allows you to ignore prerequisites for the Feats from <i>Bigby Presents: Glory of the Giants</i> source.</p>
+		</description>
+		<setters>
+			<set name="category">Additional Feature</set>
+			<set name="slot">misc</set>
+			<set name="inventory-hidden">true</set>
+		</setters>
+		<rules>
+			<grant type="Grants" id="ID_WOTC_GOTG_GRANTS_FEAT_UNLOCKER" />
+		</rules>
+	</element>
+	<element name="Feat Unlocker" type="Grants" source="Bigby Presents: Glory of the Giants" id="ID_WOTC_GOTG_GRANTS_FEAT_UNLOCKER" />
+
+</elements>

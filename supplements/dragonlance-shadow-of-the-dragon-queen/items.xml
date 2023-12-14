@@ -1,0 +1,177 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<elements>
+	<info>
+		<update version="0.0.1">
+			<file name="items.xml" url="https://raw.githubusercontent.com/AuroraLegacy/elements/master/supplements/dragonlance-shadow-of-the-dragon-queen/items.xml" />
+		</update>
+	</info>
+
+	<!-- Adventuring Gear -->
+	<element name="Fargab" type="Item" source="Dragonlance: Shadow of the Dragon Queen" id="ID_WOTC_DSDQ_ITEM_FARGAB">
+		<description>
+			<p>These backpack-sized devices are created in pairs, with matching numbers engraved on them, and allow communication over a long distance using radio frequencies. While wearing a fargab, you can use an action to speak into the device's mouthpiece and send a short message of twenty-five words or less to another creature wearing the matched fargab while it is within 18 miles of you. The message emits from the speakers of the device and can be heard up to 10 feet away from the device. If no creature is wearing the fargab, the speakers make static noises instead.</p>
+		</description>
+		<setters>
+			<set name="category">Adventuring Gear</set>
+			<set name="cost" currency="gp">0</set>
+			<set name="weight" lb="0">—</set>
+		</setters>
+	</element>
+
+	<element name="Narycrash" type="Item" source="Dragonlance: Shadow of the Dragon Queen" id="ID_WOTC_DSDQ_ITEM_NARYCRASH">
+		<description>
+			<p>This backpack-sized device holds a balloon-based parachute. If you fall while wearing this device, you can use your reaction to deploy the parachute. Once deployed, the parachute rapidly inflates, and you descend 60 feet per round and take no damage from falling. When you are 10 feet away from the ground, roll a d20. If you roll a 5 or less, the parachute gives out, and you begin to fall normally.</p>
+		</description>
+		<setters>
+			<set name="category">Adventuring Gear</set>
+			<set name="cost" currency="gp">0</set>
+			<set name="weight" lb="0">—</set>
+		</setters>
+	</element>
+
+	<!-- Hoopak Weapon -->
+	<element name="Hoopak" type="Weapon" source="Dragonlance: Shadow of the Dragon Queen" id="ID_WOTC_DSDQ_ITEM_HOOPAK">
+		<supports>ID_INTERNAL_WEAPON_CATEGORY_MARTIAL_MELEE, ID_INTERNAL_WEAPON_PROPERTY_FINESSE, ID_INTERNAL_WEAPON_PROPERTY_SPECIAL, ID_WOTC_DSDQ_WEAPON_PROPERTY_SPECIAL_HOOPAK, ID_INTERNAL_WEAPON_PROPERTY_AMMUNITION, ID_INTERNAL_WEAPON_PROPERTY_TWOHANDED</supports>
+		<description>
+			<p>A hoopak is a sturdy stick with a sling at one end and a pointed tip at the other.</p>
+			<div element="ID_WOTC_DSDQ_WEAPON_PROPERTY_SPECIAL_HOOPAK" />
+		</description>
+		<setters>
+			<set name="category">Weapons</set>
+			<set name="cost" currency="sp">1</set>
+			<set name="weight" lb="0">—</set>
+			<set name="slot">onehand</set>
+			<set name="range">30/120</set>
+			<set name="damage" type="piercing (melee) or 1d4 bludgeoning (ranged)">1d6</set>
+			<set name="proficiency">ID_WOTC_DSDQ_PROFICIENCY_WEAPON_PROFICIENCY_HOOPAK</set>
+		</setters>
+	</element>
+
+    <element name="Special (Hoopak)" type="Weapon Property" source="Dragonlance: Shadow of the Dragon Queen" id="ID_WOTC_DSDQ_WEAPON_PROPERTY_SPECIAL_HOOPAK">
+        <description>
+            <p>When you make a melee attack with this weapon, you ignore its ammunition property. You can use the hoopak as a martial ranged weapon. If you do, it uses the ammunition property, uses sling bullets, and deals 1d4 bludgeoning damage on a hit.</p>
+        </description>
+    </element>
+
+	<element name="Weapon Proficiency (Hoopak)" type="Proficiency" source="Dragonlance: Shadow of the Dragon Queen" id="ID_WOTC_DSDQ_PROFICIENCY_WEAPON_PROFICIENCY_HOOPAK">
+		<supports>Weapon, Martial, Melee, ID_INTERNAL_WEAPON_CATEGORY_MARTIAL_MELEE, ID_INTERNAL_WEAPON_PROPERTY_FINESSE, ID_INTERNAL_WEAPON_PROPERTY_SPECIAL, ID_WOTC_DSDQ_WEAPON_PROPERTY_SPECIAL_HOOPAK, ID_INTERNAL_WEAPON_PROPERTY_AMMUNITION, ID_INTERNAL_WEAPON_PROPERTY_TWOHANDED</supports>
+	</element>
+
+	<!-- Gnome Siege Weapons -->
+	<element name="Boilerdrak" type="Item" source="Dragonlance: Shadow of the Dragon Queen" id="ID_WOTC_DSDQ_ITEM_BOILERDRAK">
+		<description>
+			<p><i>Large object</i></p>
+			<ul class="unstyled">
+				<li><b>Armor Class:</b> 15</li>
+				<li><b>Hit Points:</b> 100</li>
+				<li><b>Damage Immunities:</b> poison, psychic</li>
+			</ul>
+			<br />
+			<p>This wagon-sized device is designed to look roughly like a dragon. Before it can be used, the boilerdrak must be lit and aimed. It takes 1 action to light the weapon, 1 action to aim it, and 1 action to fire it. When you use your action to fire it, roll a d20. If you roll a 2 or higher, use the Flames action. If you roll a 1, use the Explosion action.</p>
+			<p><i><b>Flames.</b></i> The boilerdrak expels flames in a 60-foot cone. Each creature in that area must make a DC 15 Dexterity saving throw, taking 27 (5d10) fire damage on a failed save, or half as much damage on a successful one.</p>
+			<p><i><b>Explosion.</b></i> The boilerdrak explodes in a 30-foot-radius sphere and is destroyed. Each creature in that area must make a DC 15 Dexterity saving throw, taking 27 (5d10) fire damage on a failed save, or half as much damage on a successful one.</p>
+		</description>
+		<setters>
+			<set name="category">Adventuring Gear</set>
+			<set name="cost" currency="gp">0</set>
+			<set name="weight" lb="0">—</set>
+		</setters>
+	</element>
+
+	<element name="Gnomeflinger" type="Item" source="Dragonlance: Shadow of the Dragon Queen" id="ID_WOTC_DSDQ_ITEM_GNOMEFLINGER">
+		<description>
+			<p><i>Large object</i></p>
+			<ul class="unstyled">
+				<li><b>Armor Class:</b> 15</li>
+				<li><b>Hit Points:</b> 100</li>
+				<li><b>Damage Immunities:</b> poison, psychic</li>
+			</ul>
+			<br />
+			<p>The gnomeflinger is a catapult designed to hurl creatures, instead of projectiles, in a high arc. The gnomeflinger was designed in conjunction with the narycrash (see the "Adventuring Gear" section) to hasten transportation. The device can hold one Medium or smaller creature. Before it can be used, the gnomeflinger must be loaded and aimed. It takes 1 action to load the gnomeflinger, 1 action to aim it, and 1 action to fire it.</p>
+			<p class="indent">While taking an action to aim the gnomeflinger, you set the maximum horizontal distance of the Fling Personnel action to 60 feet, 150 feet, or 300 feet.</p>
+			<p><i><b>Fling Personnel.</b></i> The gnomeflinger catapults a Medium or smaller creature at least 60 feet away horizontally, with a maximum horizontal distance of 60 feet, 150 feet, or 300 feet, depending on the option chosen when the catapult was aimed. During this trajectory, the creature always reaches a height of 60 feet vertically.</p>
+			<p class="indent">A creature that collides with another creature or an object during this trajectory takes 3 (1d6) bludgeoning damage for every 10 feet away from the gnomeflinger it is.</p>
+		</description>
+		<setters>
+			<set name="category">Adventuring Gear</set>
+			<set name="cost" currency="gp">0</set>
+			<set name="weight" lb="0">—</set>
+		</setters>
+	</element>
+
+	<!-- Magic Items -->
+	<element name="Dragonlance" type="Magic Item" source="Dragonlance: Shadow of the Dragon Queen" id="ID_WOTC_DSDQ_MAGIC_ITEM_DRAGONLANCE">
+		<description>
+			<p>A dragonlance is a renowned weapon forged from rare metal with the aid of powerful artifacts. On Krynn, its creation is associated with the god Paladine and legendary heroes who fought against the evil of the Dragon Queen. Different lances are forged for use by foot soldiers (as pikes) and by riders (as lances), but the magical properties of the weapons are the same.</p>
+			<p class="indent">You gain a +3 bonus to attack and damage rolls made with this magic weapon.</p>
+			<p class="indent">When you hit a Dragon with this weapon, the Dragon takes an extra 3d6 force damage, and any Dragon of your choice that you can see within 30 feet of you can immediately use its reaction to make a melee attack.</p>
+		</description>
+		<setters>
+			<set name="keywords"></set>
+			<set name="category">Magic Weapons</set>
+			<set name="cost" currency="gp">0</set>
+			<set name="attunement">true</set>
+			<set name="type" addition="Lance or Pike">Weapon</set>
+			<set name="rarity">Legendary</set>
+			<set name="weapon">Lance||Pike</set>
+			<set name="enhancement">3</set>
+		</setters>
+	</element>
+
+	<element name="Flying Citadel Helm" type="Magic Item" source="Dragonlance: Shadow of the Dragon Queen" id="ID_WOTC_DSDQ_MAGIC_ITEM_FLYING_CITADEL_HELM">
+		<description>
+			<p>The function of this ornate chair is to propel and maneuver a flying citadel on which it has been installed. The chair has AC 15, 18 hit points, and immunity to poison and psychic damage. It is destroyed if reduced to 0 hit points.</p>
+			<p class="indent">The sensation of being attuned to a <i>flying citadel helm</i> is akin to the pins-and-needles effect one experiences after one's arm or leg falls asleep, but not as intense.</p>
+			<p class="indent">While attuned to a <i>flying citadel helm</i> and sitting in it, you gain the following abilities for as long as you maintain concentration (as if concentrating on a spell):</p>
+			<ul>
+				<li>You can use the <i>flying citadel helm</i> to move the citadel through the air, up to 80 feet per round, or up to 8 miles per hour.</li>
+				<li>You can steer the citadel, albeit in a somewhat clumsy fashion, in much the way that a rudder or oars can be used to maneuver a seafaring ship.</li>
+				<li>At any time, you can see and hear from the highest point outside the citadel as though you were at that location.</li>
+			</ul>
+			<p>If no creature attuned to the helm is maintaining concentration, the citadel remains motionless in its space.</p>
+			<p class="indent"><b><i>Transfer Attunement.</i></b> You can use an action to touch a willing spellcaster, whereupon that creature attunes to the <i>flying citadel helm</i> immediately, and your attunement to the <i>flying citadel helm</i> ends.</p>
+			<p class="indent"><b><i>Crash.</i></b> Should the <i>flying citadel helm</i> be destroyed, the citadel it is installed on loses power and begins to crumble. If the crumbling citadel is in the air, it descends at a rate of 30 feet per round, or 300 feet per minute. Any creature on the citadel or on the ground within 120 feet of the citadel when it lands must make a DC 20 Dexterity saving throw, taking 39 (6d12) bludgeoning damage on a failed save, or half as much damage on a successful one.</p>
+		</description>
+		<setters>
+			<set name="keywords">spellcaster</set>
+			<set name="category">Wondrous Items</set>
+			<set name="type">Wondrous Item</set>
+			<set name="rarity">Very Rare</set>
+			<set name="attunement" addition="by a Spellcaster">true</set>
+		</setters>
+	</element>
+
+	<element name="Kagonesti Forest Shroud" type="Magic Item" source="Dragonlance: Shadow of the Dragon Queen" id="ID_WOTC_DSDQ_MAGIC_ITEM_KAGONESTI_FOREST_SHROUD">
+		<description>
+			<p>This cloak appears to be made of autumnal leaves woven together. While you wear this cloak, you have advantage on Dexterity (Stealth) checks, and you can use a bonus action to magically teleport, along with any equipment you are wearing or carrying, to an unoccupied space you can see within 30 feet of yourself. You then have advantage on the next attack roll you make before the end of the turn. Once this bonus action is used, it can't be used again until the next dawn.</p>
+		</description>
+		<setters>
+			<set name="keywords">advantage, Stealth, checks, bonus action, teleport, attack</set>
+			<set name="category">Wondrous Items</set>
+			<set name="type">Wondrous Item</set>
+			<set name="rarity">Rare</set>
+			<set name="attunement">true</set>
+		</setters>
+		<rules>
+			<grant type="Grants" id="ID_INTERNAL_GRANTS_STEALTH_DISADVANTAGE" />
+		</rules>
+	</element>
+
+	<element name="Mirror of Reflected Pasts" type="Magic Item" source="Dragonlance: Shadow of the Dragon Queen" id="ID_WOTC_DSDQ_MAGIC_ITEM_MIRROR_OF_REFLECTED_PASTS">
+		<description>
+			<p>This mirror of elven design allows those who stare into it to reflect on positive memories. The 3-foot-tall mirror weighs 25 pounds, and it has AC 11, 10 hit points, and vulnerability to bludgeoning damage. It shatters and is destroyed if reduced to 0 hit points.</p>
+			<p class="indent">While holding the mirror upright, you can use an action to speak its command word and activate it. While activated, the mirror hovers in the air, and it can be destroyed but not moved. It remains activated until you use an action to speak the command word again or your attunement to the mirror ends, at which point the mirror harmlessly floats to the ground. Once the mirror has been deactivated, it can't be activated again until the next dawn.</p>
+			<p class="indent">If a non-Construct creature other than you sees its reflection in the activated mirror while within 30 feet of it, that creature must succeed on a DC 15 Wisdom saving throw or become paralyzed until the mirror is deactivated or until that creature can no longer see the mirror. A creature paralyzed by the mirror can repeat the saving throw at the end of each of its turns, ending the effect on a success. If a creature's saving throw is successful or the effect ends for it, the creature is immune to this mirror's effect for the next 24 hours.</p>
+			<p>While paralyzed by the mirror, the creature sees events from their past reflected in the mirror's glass. These memories aren't real, but rather idealized versions of those occurrences. Nearby observers can glimpse flashes of these memories if looking indirectly at the mirror.</p>
+		</description>
+		<setters>
+			<set name="keywords">paralyzed, paralyzation</set>
+			<set name="category">Wondrous Items</set>
+			<set name="type">Wondrous Item</set>
+			<set name="rarity">Very Rare</set>
+			<set name="attunement">true</set>
+			<set name="weight" lb="25">25 lb.</set>
+		</setters>
+	</element>
+
+</elements>

@@ -4,7 +4,7 @@
         <name>Unearthed Arcana: Artificer</name>
         <description>Makers of magic-infused objects, artificers are defined by their inventive nature.</description>
         <author url="http://dnd.wizards.com/articles/unearthed-arcana/artificer">Wizards of the Coast</author>
-        <update version="0.1.5">
+        <update version="0.1.6">
             <file name="20170109.xml" url="https://raw.githubusercontent.com/AuroraLegacy/elements/master/unearthed-arcana/2017/20170109.xml" />
         </update>
     </info>
@@ -22,7 +22,7 @@
 			<set name="release">20170109</set>
 		</setters>
 	</element>
-    
+
     <element name="Artificer" type="Class" source="Unearthed Arcana: Artificer" id="ID_WOTC_UA_CLASS_ARTIFICER">
         <description>
             <p>A gnome sits hunched over a workbench, carefully using needle and thread to wave runes into a leather satchel. The bag shudders as she completes her work, and a sudden, loud pop echoes through the room as a portal to an extra-dimensional space springs to being in the bag's interior. She beams with pride at her newly crafted <em>bag of holding.</em></p>
@@ -51,14 +51,14 @@
             </p>
             <h5>PROFICIENCIES</h5>
             <p>
-                <span class="emphasis">Armor:</span>Light armor and medium armor 
+                <span class="emphasis">Armor:</span>Light armor and medium armor
                 <br />
                 <span class="emphasis">Weapons:</span>Simple weapons
                 <br />
                 <span class="emphasis">Tools:</span>Thieves’ tools, two other tools of your choice
             </p>
             <p>
-                <span class="emphasis">Saving Throws:</span>Constitution, Intelligence 
+                <span class="emphasis">Saving Throws:</span>Constitution, Intelligence
                 <br />
                 <span class="emphasis">Skills:</span>Choose three from: Arcana, Deception, History, Investigation, Medicine, Nature, Religion, Sleight of Hand
             </p>
@@ -66,7 +66,7 @@
             <p>You start with the following equipment, in addition to the equipment granted by your background:</p>
             <ul>
                 <li>
-                    <i>(a)</i> a handaxe and a light hammer or 
+                    <i>(a)</i> a handaxe and a light hammer or
                     <i>(b)</i> any two simple weapons
                 </li>
                 <li>
@@ -121,7 +121,7 @@
         <multiclass id="ID_WOTC_UA_MULTICLASS_ARTIFICER">
 			  <!-- no multiclass info provided in UA, using recommendations from mike mearls (wotcstaff) -->
             <prerequisite>Intelligence 13</prerequisite>
-            <requirements>[int:13], !(ID_WOTC_UA20190228_CLASS_ARTIFICER||ID_WOTC_UA20190228_MULTICLASS_ARTIFICER||ID_WOTC_ERLW_CLASS_ARTIFICER||ID_WOTC_ERLW_MULTICLASS_ARTIFICER)</requirements>
+            <requirements>[int:13], !(ID_WOTC_UA20190228_CLASS_ARTIFICER||ID_WOTC_UA20190228_MULTICLASS_ARTIFICER||ID_WOTC_ERLW_CLASS_ARTIFICER||ID_WOTC_ERLW_MULTICLASS_ARTIFICER||ID_WOTC_TCOE_CLASS_ARTIFICER||ID_WOTC_TCOE_MULTICLASS_ARTIFICER)</requirements>
             <setters>
                 <set name="multiclass proficiencies">Light armor, simple weapons, two tools of your choice</set>
             </setters>
@@ -268,7 +268,7 @@
             <stat name="artificer:spellcasting:slots:3" value="2" level="13" />
             <stat name="artificer:spellcasting:slots:3" value="1" level="16" />
             <stat name="artificer:spellcasting:slots:4" value="1" level="19" />
-            
+
             <select type="Spell" name="Spell (Artificer)" supports="$(spellcasting:list),$(spellcasting:slots)" level="3" number="3" spellcasting="Artificer"/>
             <select type="Spell" name="Spell (Artificer)" supports="$(spellcasting:list),$(spellcasting:slots)" level="4" spellcasting="Artificer"/>
             <select type="Spell" name="Spell (Artificer)" supports="$(spellcasting:list),$(spellcasting:slots)" level="7" spellcasting="Artificer"/>
@@ -348,7 +348,7 @@
             <stat name="attunement:max" value="1" level="20" />
         </rules>
     </element>
-    
+
     <!-- Alchemist -->
     <element name="Alchemist" type="Archetype" source="Unearthed Arcana: Artificer" id="ID_WOTC_UA_ARCHETYPE_ALCHEMIST">
         <supports>UA20170109 Artificer Specialist</supports>
@@ -548,7 +548,7 @@
             <select type="Spell" name="Alchemical Formula (17)" supports="Alchemical Formula" level="17" />
         </rules>
     </element>
-    
+
     <!-- Gunsmith -->
     <element name="Gunsmith" type="Archetype" source="Unearthed Arcana: Artificer" id="ID_WOTC_UA_ARCHETYPE_GUNSMITH">
         <supports>UA20170109 Artificer Specialist</supports>

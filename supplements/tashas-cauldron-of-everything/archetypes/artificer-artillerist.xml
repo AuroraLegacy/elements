@@ -1,0 +1,197 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<elements>
+	<info>
+		<name>Artillerist Artificer Archetype</name>
+		<update version="0.0.1">
+			<file name="artificer-artillerist.xml" url="https://raw.githubusercontent.com/AuroraLegacy/elements/master/supplements/tashas-cauldron-of-everything/archetypes/artificer-artillerist.xml" />
+		</update>
+	</info>
+
+	<element name="Artillerist" type="Archetype" source="Tasha’s Cauldron of Everything" id="ID_WOTC_TCOE_ARCHETYPE_ARTIFICER_ARTILLERIST">
+		<supports>Artificer Specialist, TCOE Base</supports>
+		<description>
+			<p>An Artillerist specializes in using magic to hurl energy, projectiles, and explosions on a battlefield. This destructive power is valued by armies in the wars on many different worlds. And when war passes, some members of this specialization seek to build a more peaceful world by using their powers to fight the resurgence of strife. The world-hopping gnome artificer Vi has been especially vocal about making things right: “It’s about time we fixed things instead of blowing them all to hell.”</p>
+			<div element="ID_WOTC_TCOE_ARCHETYPE_FEATURE_ARTILLERIST_TOOL_PROFICIENCY" />
+			<div element="ID_WOTC_TCOE_ARCHETYPE_FEATURE_ARTILLERIST_ARTILLERIST_SPELLS" />
+			<div element="ID_WOTC_TCOE_ARCHETYPE_FEATURE_ARTILLERIST_ELDRITCH_CANNON" />
+			<div element="ID_WOTC_TCOE_ARCHETYPE_FEATURE_ARTILLERIST_ARCANE_FIREARM" />
+			<div element="ID_WOTC_TCOE_ARCHETYPE_FEATURE_ARTILLERIST_EXPLOSIVE_CANNON" />
+			<div element="ID_WOTC_TCOE_ARCHETYPE_FEATURE_ARTILLERIST_FORTIFIED_POSITION" />
+		</description>
+		<sheet display="false" />
+		<rules>
+			<grant type="Archetype Feature" id="ID_WOTC_TCOE_ARCHETYPE_FEATURE_ARTILLERIST_TOOL_PROFICIENCY" level="3" />
+			<grant type="Archetype Feature" id="ID_WOTC_TCOE_ARCHETYPE_FEATURE_ARTILLERIST_ARTILLERIST_SPELLS" level="3" />
+			<grant type="Archetype Feature" id="ID_WOTC_TCOE_ARCHETYPE_FEATURE_ARTILLERIST_ELDRITCH_CANNON" level="3" />
+			<grant type="Archetype Feature" id="ID_WOTC_TCOE_ARCHETYPE_FEATURE_ARTILLERIST_ARCANE_FIREARM" level="5" />
+			<grant type="Archetype Feature" id="ID_WOTC_TCOE_ARCHETYPE_FEATURE_ARTILLERIST_EXPLOSIVE_CANNON" level="9" />
+			<grant type="Archetype Feature" id="ID_WOTC_TCOE_ARCHETYPE_FEATURE_ARTILLERIST_FORTIFIED_POSITION" level="15" />
+		</rules>
+	</element>
+	<element name="Tool Proficiency" type="Archetype Feature" source="Tasha’s Cauldron of Everything" id="ID_WOTC_TCOE_ARCHETYPE_FEATURE_ARTILLERIST_TOOL_PROFICIENCY">
+		<requirements>!ID_INTERNAL_FEATURE_REPLACEMENT_TCOE_ARTIFICER_ARTILLERIST_TOOL_PROFICIENCY</requirements>
+		<description>
+			<p><em>3rd-level Artillerist feature</em></p>
+			<p>You gain proficiency with woodcarver's tools. If you already have this proficiency, you gain proficiency with one other type of artisan's tools of your choice.</p>
+		</description>
+		<sheet display="false" />
+		<rules>
+			<select type="Proficiency" name="Tool Proficiency (Artillerist)" supports="Artisan tools" default="ID_PROFICIENCY_TOOL_PROFICIENCY_WOODCARVERS_TOOLS" />
+		</rules>
+	</element>
+	<element name="Artillerist Spells" type="Archetype Feature" source="Tasha’s Cauldron of Everything" id="ID_WOTC_TCOE_ARCHETYPE_FEATURE_ARTILLERIST_ARTILLERIST_SPELLS">
+		<requirements>!ID_INTERNAL_FEATURE_REPLACEMENT_TCOE_ARTIFICER_ARTILLERIST_SPELLS</requirements>
+		<description>
+			<p><em>3rd-level Artillerist feature</em></p>
+			<p>You always have certain spells prepared after you reach particular levels in this class, as shown in the Artillerist Spells table. These spells count as artificer spells for you, but they don't count against the number of artificer spells you prepare.</p>
+			<p><strong>Artillerist Spells</strong></p>
+			<table>
+				<thead>
+					<tr><td>Artificer Level</td><td>Spells</td></tr>
+				</thead>
+				<tr><td>3rd</td><td><em>shield, thunderwave</em></td></tr>
+				<tr><td>5th</td><td><em>scorching ray, shatter</em></td></tr>
+				<tr><td>9th</td><td><em>fireball, wind wall</em></td></tr>
+				<tr><td>13th</td><td><em>ice storm, wall of fire</em></td></tr>
+				<tr><td>17th</td><td><em>cone of cold, wall of force</em></td></tr>
+			</table>
+		</description>
+		<sheet display="false" />
+		<rules>
+			<grant type="Spell" id="ID_PHB_SPELL_SHIELD" spellcasting="Artificer" level="3" prepared="true" />
+			<grant type="Spell" id="ID_PHB_SPELL_THUNDERWAVE" spellcasting="Artificer" level="3" prepared="true" />
+			<grant type="Spell" id="ID_PHB_SPELL_SCORCHING_RAY" spellcasting="Artificer" level="5" prepared="true" />
+			<grant type="Spell" id="ID_PHB_SPELL_SHATTER" spellcasting="Artificer" level="5" prepared="true" />
+			<grant type="Spell" id="ID_PHB_SPELL_FIREBALL" spellcasting="Artificer" level="9" prepared="true" />
+			<grant type="Spell" id="ID_PHB_SPELL_WIND_WALL" spellcasting="Artificer" level="9" prepared="true" />
+			<grant type="Spell" id="ID_PHB_SPELL_ICE_STORM" spellcasting="Artificer" level="13" prepared="true" />
+			<grant type="Spell" id="ID_PHB_SPELL_WALL_OF_FIRE" spellcasting="Artificer" level="13" prepared="true" />
+			<grant type="Spell" id="ID_PHB_SPELL_CONE_OF_COLD" spellcasting="Artificer" level="17" prepared="true" />
+			<grant type="Spell" id="ID_PHB_SPELL_WALL_OF_FORCE" spellcasting="Artificer" level="17" prepared="true" />
+		</rules>
+	</element>
+	<element name="Eldritch Cannon" type="Archetype Feature" source="Tasha’s Cauldron of Everything" id="ID_WOTC_TCOE_ARCHETYPE_FEATURE_ARTILLERIST_ELDRITCH_CANNON">
+		<requirements>!ID_INTERNAL_FEATURE_REPLACEMENT_TCOE_ARTIFICER_ARTILLERIST_ELDRITCH_CANNON</requirements>
+		<description>
+			<p><em>3rd-level Artillerist feature</em></p>
+			<p>You've learned how to create a magical cannon. Using woodcarver's tools or smith's tools, you can
+take an action to magically create a Small or Tiny eldritch cannon in an unoccupied space on a horizontal surface within 5 feet of you. A Small eldritch cannon occupies its space, and a Tiny one can be held in one hand.</p>
+			<p class="indent">Once you create a cannon, you can’t do so again until you finish a long rest or until you expend a spell slot to create one. You can have only one cannon at a time and can’t create one while your cannon is present.</p>
+			<p class="indent">The cannon is a magical object. Regardless of size, the cannon has an AC of 18 and a number of hit points equal to five times your artificer level. It is immune to poison damage and psychic damage. If it is forced to make an ability check or a saving throw, treat all its ability scores as 10 (+0). If the <i>mending</i> spell is cast on it, it regains 2d6 hit points. It disappears if it is reduced to 0 hit points or after 1 hour. You can dismiss it early as an action.</p>
+			<p class="indent">When you create the cannon, you determine its appearance and whether it has legs. You also decide which type it is, choosing from the options on the Eldritch Cannons table. On each of your turns, you can take a bonus action to cause the cannon to activate if you are within 60 feet of it. As part of the same bonus action, you can direct the cannon to walk or climb up to 15 feet to an unoccupied space, provided it has legs.</p>
+			<p><strong>Eldritch Cannons</strong></p>
+			<table>
+				<thead>
+					<tr><td>Cannon</td><td>Activation</td></tr>
+				</thead>
+				<tr><td>Flamethrower</td><td>The cannon exhales fire in an adjacent 15-foot cone that you designate. Each creature in that area must make a Dexterity saving throw against your spell save DC, taking 2d8 fire damage on a failed save or half as much damage on a successful one. The fire ignites any flammable objects in the area that aren’t being worn or carried.</td></tr>
+				<tr><td>Force Ballista</td><td>Make a ranged spell attack, originating from the cannon, at one creature or object within 120 feet of it. On a hit, the target takes 2d8 force damage, and if the target is a creature, it is pushed up to 5 feet away from the cannon.</td></tr>
+				<tr><td>Protector</td><td>The cannon emits a burst of positive energy that grants itself and each creature of your choice with in 10 feet of it a number of temporary hit points equal to 1d8 + your Intelligence modifier (minimum of +1).</td></tr>
+			</table>
+		</description>
+		<sheet action="Action">
+			<description>You can magically create an eldritch cannon in an unoccupied space on a horizontal surface within 5 feet of you. &#13;
+			Once you create a cannon, you can’t do so again until you finish a long rest or until you expend a spell slot to create one.</description>
+		</sheet>
+		<rules>
+			<grant type="Archetype Feature" id="ID_WOTC_TCOE_ARCHETYPE_FEATURE_ARTILLERIST_ELDRITCH_CANNON_FLAMETHROWER" />
+			<grant type="Archetype Feature" id="ID_WOTC_TCOE_ARCHETYPE_FEATURE_ARTILLERIST_ELDRITCH_CANNON_FORCE_BALLISTA" />
+			<grant type="Archetype Feature" id="ID_WOTC_TCOE_ARCHETYPE_FEATURE_ARTILLERIST_ELDRITCH_CANNON_PROTECTOR" />
+		</rules>
+	</element>
+	<element name="Flamethrower" type="Archetype Feature" source="Tasha’s Cauldron of Everything" id="ID_WOTC_TCOE_ARCHETYPE_FEATURE_ARTILLERIST_ELDRITCH_CANNON_FLAMETHROWER">
+		<requirements>!ID_INTERNAL_FEATURE_REPLACEMENT_TCOE_ARTIFICER_ARTILLERIST_ELDRITCH_CANNON_FLAMETHROWER</requirements>
+		<description>
+			<p>The cannon exhales fire in an adjacent 15-foot cone that you designate. Each creature in that area must make a Dexterity saving throw against your spell save DC, taking 2d8 fire damage on a failed save or half as much damage on a successful one. The fire ignites any flammable objects in the area that aren’t being worn or carried.</p>
+		</description>
+		<sheet usage="Eldritch Cannon">
+			<description>The cannon exhales fire in an adjacent 15-foot cone that you designate. Each creature in that area must make a Dexterity saving throw, taking {{flamethrower cannon:dice:amount}}d8 fire damage on a failed save or half as much damage on a successful one. The fire ignites any flammable objects in the area that aren’t being worn or carried.</description>
+		</sheet>
+		<rules>
+			<stat name="flamethrower cannon:dice:amount" value="2" />
+		</rules>
+	</element>
+	<element name="Force Ballista" type="Archetype Feature" source="Tasha’s Cauldron of Everything" id="ID_WOTC_TCOE_ARCHETYPE_FEATURE_ARTILLERIST_ELDRITCH_CANNON_FORCE_BALLISTA">
+		<requirements>!ID_INTERNAL_FEATURE_REPLACEMENT_TCOE_ARTIFICER_ARTILLERIST_ELDRITCH_CANNON_FORCE_BALLISTA</requirements>
+		<description>
+			<p>Make a ranged spell attack, originating from the cannon, at one creature or object within 120 feet of it. On a hit, the target takes 2d8 force damage, and if the target is a creature, it is pushed up to 5 feet away from the cannon.</p>
+		</description>
+		<sheet usage="Eldritch Cannon">
+			<description>Make a ranged spell attack at one creature or object within 120 feet of it. On a hit, the target takes {{force ballista cannon:dice:amount}}d8 force damage, and if the target is a creature, it is pushed up to 5 feet away from the cannon.</description>
+		</sheet>
+		<rules>
+			<stat name="force ballista cannon:dice:amount" value="2" />
+		</rules>
+	</element>
+	<element name="Protector" type="Archetype Feature" source="Tasha’s Cauldron of Everything" id="ID_WOTC_TCOE_ARCHETYPE_FEATURE_ARTILLERIST_ELDRITCH_CANNON_PROTECTOR">
+		<requirements>!ID_INTERNAL_FEATURE_REPLACEMENT_TCOE_ARTIFICER_ARTILLERIST_ELDRITCH_CANNON_PROTECTOR</requirements>
+		<description>
+			<p>The cannon emits a burst of positive energy that grants itself and each creature of your choice with in 10 feet of it a number of temporary hit points equal to 1d8 + your Intelligence modifier (minimum of +1).</p>
+		</description>
+		<sheet usage="Eldritch Cannon">
+			<description>The cannon emits a burst of positive energy that grants itself and each creature of your choice with in 10 feet of it {{protector cannon:dice:amount}}d8+{{protector cannon:temporary hp}} temporary hit points.</description>
+		</sheet>
+		<rules>
+			<stat name="protector cannon:temporary hp" value="1" bonus="base" />
+			<stat name="protector cannon:temporary hp" value="intelligence:modifier" bonus="base" />
+			<stat name="protector cannon:dice:amount" value="1" />
+		</rules>
+	</element>
+	<element name="Arcane Firearm" type="Archetype Feature" source="Tasha’s Cauldron of Everything" id="ID_WOTC_TCOE_ARCHETYPE_FEATURE_ARTILLERIST_ARCANE_FIREARM">
+		<requirements>!ID_INTERNAL_FEATURE_REPLACEMENT_TCOE_ARTIFICER_ARTILLERIST_ARCANE_FIREARM</requirements>
+		<description>
+			<p><em>5th-level Artillerist feature</em></p>
+			<p>You know how to turn a wand, staff, or rod into an arcane firearm, a conduit for your destructive spells. When you finish a long rest, you can use woodcarver's tools to carve special sigils into a wand, staff, or rod and thereby turn it into your arcane firearm. The sigils disappear from the object if you later carve them on a different item. The sigils otherwise last indefinitely.</p>
+			<p class="indent">You can use your arcane firearm as a spellcasting focus for your artificer spells. When you cast an artificer spell through the firearm, roll a d8, and you gain a bonus to one of the spell’s damage rolls equal to the number rolled.</p>
+		</description>
+		<sheet>
+			<description>When you finish a long rest, you can use woodcarver’s tools to carve special sigils into a wand, staff, or rod and thereby turn it into your arcane firearm. &#13;
+			When you cast an artificer spell through the firearm, roll a d8, and you gain a bonus to one of the spell’s damage rolls equal to the number rolled.</description>
+		</sheet>
+	</element>
+	<element name="Explosive Cannon" type="Archetype Feature" source="Tasha’s Cauldron of Everything" id="ID_WOTC_TCOE_ARCHETYPE_FEATURE_ARTILLERIST_EXPLOSIVE_CANNON">
+		<requirements>!ID_INTERNAL_FEATURE_REPLACEMENT_TCOE_ARTIFICER_ARTILLERIST_EXPLOSIVE_CANNON</requirements>
+		<description>
+			<p><em>9th-level Artillerist feature</em></p>
+			<p>Every eldritch cannon you create is now more destructive:</p>
+			<ul>
+				<li>The cannon’s damage rolls all increase by 1d8.</li>
+				<li>As an action, you can command the cannon to detonate if you are within 60 feet of it. Doing so destroys the cannon and forces each creature within 20 feet of it to make a Dexterity saving throw against your spell save DC, taking 3d8 force damage on a failed save or half as much damage on a successful one.</li>
+			</ul>
+		</description>
+		<sheet action="Action">
+			<description>You can command the cannon to detonate if you are within 60 feet of it. Doing so destroys the cannon and forces each creature within 20 feet of it to make a Dexterity saving throw, taking 3d8 force damage on a failed save or half as much damage on a successful one.</description>
+		</sheet>
+		<rules>	
+			<stat name="flamethrower cannon:dice:amount" value="1" />
+			<stat name="force ballista cannon:dice:amount" value="1" />
+			<stat name="protector cannon:dice:amount" value="1" />
+		</rules>
+	</element>
+	<element name="Fortified Position" type="Archetype Feature" source="Tasha’s Cauldron of Everything" id="ID_WOTC_TCOE_ARCHETYPE_FEATURE_ARTILLERIST_FORTIFIED_POSITION">
+		<requirements>!ID_INTERNAL_FEATURE_REPLACEMENT_TCOE_ARTIFICER_ARTILLERIST_FORTIFIED_POSITION</requirements>
+		<description>
+			<p><em>15th-level Artillerist feature</em></p>
+			<p>You're a master at forming well-defended emplacements using your Eldritch Cannon:</p>
+			<ul>
+				<li>You and your allies have half cover while within 10 feet of a cannon you create with Eldritch Cannon, as a result of a shimmering field of magical protection that the cannon emits.</li>
+				<li>You can now have two cannons at the same time. You can create two with the same action (but not the same spell slot), and you can activate both of them with the same bonus action. You determine whether the cannons are identical to each other or different. You can’t create a third cannon while you have two.</li>
+			</ul>
+		</description>
+		<sheet>
+			<description>You and your allies have half cover while within 10 feet of an Eldritch Cannon &#13;
+			You can now have two cannons at the same time. You can create two with the same action, and you can activate both of them with the same bonus action.</description>
+		</sheet>
+	</element>
+
+	<!--Feature Replacement Grants-->
+	<element name="Tool Proficiency Feature Replacement" type="Grants" source="Internal" id="ID_INTERNAL_FEATURE_REPLACEMENT_TCOE_ARTIFICER_ARTILLERIST_TOOL_PROFICIENCY" />
+	<element name="Artillerist Spells Feature Replacement" type="Grants" source="Internal" id="ID_INTERNAL_FEATURE_REPLACEMENT_TCOE_ARTIFICER_ARTILLERIST_SPELLS" />
+	<element name="Eldritch Cannon Feature Replacement" type="Grants" source="Internal" id="ID_INTERNAL_FEATURE_REPLACEMENT_TCOE_ARTIFICER_ARTILLERIST_ELDRITCH_CANNON" />
+	<element name="Flamethrower Feature Replacement" type="Grants" source="Internal" id="ID_INTERNAL_FEATURE_REPLACEMENT_TCOE_ARTIFICER_ARTILLERIST_ELDRITCH_CANNON_FLAMETHROWER" />
+	<element name="Force Ballista Feature Replacement" type="Grants" source="Internal" id="ID_INTERNAL_FEATURE_REPLACEMENT_TCOE_ARTIFICER_ARTILLERIST_ELDRITCH_CANNON_FORCE_BALLISTA" />
+	<element name="Protector Feature Replacement" type="Grants" source="Internal" id="ID_INTERNAL_FEATURE_REPLACEMENT_TCOE_ARTIFICER_ARTILLERIST_ELDRITCH_CANNON_PROTECTOR" />
+	<element name="Arcane Firearm Feature Replacement" type="Grants" source="Internal" id="ID_INTERNAL_FEATURE_REPLACEMENT_TCOE_ARTIFICER_ARTILLERIST_ARCANE_FIREARM" />
+	<element name="Explosive Cannon Feature Replacement" type="Grants" source="Internal" id="ID_INTERNAL_FEATURE_REPLACEMENT_TCOE_ARTIFICER_ARTILLERIST_EXPLOSIVE_CANNON" />
+	<element name="Fortified Position Feature Replacement" type="Grants" source="Internal" id="ID_INTERNAL_FEATURE_REPLACEMENT_TCOE_ARTIFICER_ARTILLERIST_FORTIFIED_POSITION" />
+</elements>

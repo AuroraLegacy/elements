@@ -1,12 +1,13 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <elements>
 	<info>
-		<update version="0.0.4">
+		<update version="0.0.5">
 			<file name="artificer-infusions.xml" url="https://raw.githubusercontent.com/AuroraLegacy/elements/master/supplements/tashas-cauldron-of-everything/artificer-infusions.xml" />
 		</update>
 	</info>
-	
-	<element name="Illuminator's Tattoo" type="Class Feature" source="Tasha’s Cauldron of Everything" id="ID_WOTC_TCOE_CLASS_FEATURE_ARTIFICER_INFUSION_REPLICATE_MAGIC_ITEM_OPTION_ILLUMINATORS_TATTOO">		
+
+	<!--Replicate Magic Item Option-->
+	<element name="Illuminator's Tattoo" type="Class Feature" source="Tasha’s Cauldron of Everything" id="ID_WOTC_TCOE_CLASS_FEATURE_ARTIFICER_INFUSION_REPLICATE_MAGIC_ITEM_OPTION_ILLUMINATORS_TATTOO">
 		<supports>Replicate Magic Item Option</supports>
 		<description>
 			<p>Using this infusion, you can replicate an Illuminator's Tattoo.</p>
@@ -16,10 +17,10 @@
 		</description>
 		<sheet>
 			<description>Using this infusion, you can replicate an Illuminator's Tattoo.</description>
-		</sheet>		
+		</sheet>
 	</element>
 
-	<element name="Masquerade Tattoo" type="Class Feature" source="Tasha’s Cauldron of Everything" id="ID_WOTC_TCOE_CLASS_FEATURE_ARTIFICER_INFUSION_REPLICATE_MAGIC_ITEM_OPTION_MASQUERADE_TATTOO">		
+	<element name="Masquerade Tattoo" type="Class Feature" source="Tasha’s Cauldron of Everything" id="ID_WOTC_TCOE_CLASS_FEATURE_ARTIFICER_INFUSION_REPLICATE_MAGIC_ITEM_OPTION_MASQUERADE_TATTOO">
 		<supports>Replicate Magic Item Option</supports>
 		<description>
 			<p>Using this infusion, you can replicate a Masquerade Tattoo.</p>
@@ -29,10 +30,10 @@
 		</description>
 		<sheet>
 			<description>Using this infusion, you can replicate a Masquerade Tattoo.</description>
-		</sheet>		
+		</sheet>
 	</element>
 
-	<element name="Spellwrought Tattoo (Cantrip)" type="Class Feature" source="Tasha’s Cauldron of Everything" id="ID_WOTC_TCOE_CLASS_FEATURE_ARTIFICER_INFUSION_REPLICATE_MAGIC_ITEM_OPTION_SPELLWROUGHT_TATTOO_CANTRIP">		
+	<element name="Spellwrought Tattoo (Cantrip)" type="Class Feature" source="Tasha’s Cauldron of Everything" id="ID_WOTC_TCOE_CLASS_FEATURE_ARTIFICER_INFUSION_REPLICATE_MAGIC_ITEM_OPTION_SPELLWROUGHT_TATTOO_CANTRIP">
 		<supports>Replicate Magic Item Option</supports>
 		<description>
 			<p>Using this infusion, you can replicate a Spellwrought Tattoo (Cantrip).</p>
@@ -42,10 +43,10 @@
 		</description>
 		<sheet>
 			<description>Using this infusion, you can replicate a Spellwrought Tattoo (Cantrip).</description>
-		</sheet>		
+		</sheet>
 	</element>
 
-	<element name="Spellwrought Tattoo (1st Level)" type="Class Feature" source="Tasha’s Cauldron of Everything" id="ID_WOTC_TCOE_CLASS_FEATURE_ARTIFICER_INFUSION_REPLICATE_MAGIC_ITEM_OPTION_SPELLWROUGHT_TATTOO_1ST">		
+	<element name="Spellwrought Tattoo (1st Level)" type="Class Feature" source="Tasha’s Cauldron of Everything" id="ID_WOTC_TCOE_CLASS_FEATURE_ARTIFICER_INFUSION_REPLICATE_MAGIC_ITEM_OPTION_SPELLWROUGHT_TATTOO_1ST">
 		<supports>Replicate Magic Item Option</supports>
 		<description>
 			<p>Using this infusion, you can replicate a Spellwrought Tattoo (1st Level).</p>
@@ -55,9 +56,10 @@
 		</description>
 		<sheet>
 			<description>Using this infusion, you can replicate a Spellwrought Tattoo (1st Level).</description>
-		</sheet>		
+		</sheet>
 	</element>
 
+	<!--New Infusions-->
 	<element name="Arcane Propulsion Armor" type="Class Feature" source="Tasha’s Cauldron of Everything" id="ID_WOTC_TCOE_CLASS_FEATURE_ARTIFICER_INFUSION_ARCANE_PROPULSION_ARMOR">
 		<supports>Artificer Infusion</supports>
 		<requirements>[level:14]</requirements>
@@ -190,7 +192,7 @@
 			<description>You can infuse a suit of armor or robes into a Mind Sharpener.</description>
 		</sheet>
 	</element>
-	
+
 	<element name="Mind Sharpener" type="Magic Item" source="Tasha’s Cauldron of Everything" id="ID_WOTC_TCOE_MAGIC_ITEM_ARMOR_MIND_SHARPENER">
 		<description>
 			<p>The infused item can send a jolt to the wearer to refocus their mind. The item has 4 charges. When the wearer fails a Constitution saving throw to maintain concentration on a spell, the wearer can use its reaction to expend 1 of the item's charges to succeed instead. The item regains 1d4 expended charges daily at dawn.</p>
@@ -246,7 +248,436 @@
 			<set name="type" addition="artificer infusion">Ring</set>
 			<set name="attunement">true</set>
 		</setters>
-	</element>	
+	</element>
 
+	<!--Reprinted Infusions-->
+	<element name="Boots of the Winding Path" type="Class Feature" source="Tasha’s Cauldron of Everything" id="ID_WOTC_TCOE_CLASS_FEATURE_ARTIFICER_INFUSION_BOOTS_OF_THE_WINDING_PATH">
+		<supports>Artificer Infusion, TCOE Base</supports>
+		<requirements>[level:6]</requirements>
+		<prerequisite>6th-level artificer</prerequisite>
+		<description>
+			<p><em>Prerequisite: 6th-level artificer</em></p>
+			<p><em>Item: A pair of boots (requires attunement)</em></p>
+			<p>While wearing these boots, a creature can teleport up to 15 feet as a bonus action to an unoccupied space the creature can see. The creature must have occupied that space at some point during the current turn.</p>
+			<!-- <div class="reference">
+				<div element="ID_WOTC_TCOE_MAGIC_ITEM_INFUSION_BOOTS_OF_THE_WINDING_PATH" />
+			</div> -->
+		</description>
+		<sheet>
+			<description>You can infuse a pair of boots into Boots of the Winding Path.</description>
+		</sheet>
+	</element>
+	<element name="Enhanced Arcane Focus" type="Class Feature" source="Tasha’s Cauldron of Everything" id="ID_WOTC_TCOE_CLASS_FEATURE_ARTIFICER_INFUSION_ENHANCED_ARCANE_FOCUS">
+		<supports>Artificer Infusion, TCOE Base</supports>
+		<description>
+			<p><em>Item: A rod, staff, or wand (requires attunement)</em></p>
+			<p>While holding this item, a creature gains a +1 bonus to spell attack rolls. In addition, the creature ignores half cover when making a spell attack.</p>
+			<p class="indent">The bonus increases to +2 when you reach 10th level in this class.</p>
+		</description>
+		<sheet>
+			<description>You can infuse a rod, staff, or wand into an enhanced arcane focus.</description>
+			<!-- <description>Item: A rod, staff, or wand (requires attunement)
+			While holding this item, a creature gains a +1 bonus to spell attack rolls. In addition, the creature ignores half cover when making a spell attack.</description>
+			<description level="10">Item: A rod, staff, or wand (requires attunement)
+			While holding this item, a creature gains a +2 bonus to spell attack rolls. In addition, the creature ignores half cover when making a spell attack.</description> -->
+		</sheet>
+	</element>
+	<element name="Enhanced Defense" type="Class Feature" source="Tasha’s Cauldron of Everything" id="ID_WOTC_TCOE_CLASS_FEATURE_ARTIFICER_INFUSION_ENHANCED_DEFENSE">
+		<supports>Artificer Infusion, TCOE Base</supports>
+		<description>
+			<p><em>Item: A suit of armor or a shield</em></p>
+			<p>A creature gains a +1 bonus to Armor Class while wearing (armor) or wielding (shield) the infused item.</p>
+			<p class="indent">The bonus increases to +2 when you reach 10th level in this class.</p>
+		</description>
+		<sheet>
+			<description>You can infuse a suit of armor or a shield into a +1 armor or a +1 shield.</description>
+			<description level="10">You can infuse a suit of armor or a shield into a +2 armor or a +2 shield.</description>
+			<!-- <description>A suit of armor or a shield
+			A creature gains a +1 bonus to Armor Class while wearing (armor) or wielding (shield) the infused item.</description>
+			<description level="10">A suit of armor or a shield
+			A creature gains a + 2 bonus to Armor Class while wearing (armor) or wielding (shield) the infused item.</description> -->
+		</sheet>
+	</element>
+	<element name="Enhanced Weapon" type="Class Feature" source="Tasha’s Cauldron of Everything" id="ID_WOTC_TCOE_CLASS_FEATURE_ARTIFICER_INFUSION_ENHANCED_WEAPON">
+		<supports>Artificer Infusion, TCOE Base</supports>
+		<description>
+			<p><em>Item: A simple or martial weapon</em></p>
+			<p>This magic weapon grants a +1 bonus to attack and damage rolls made with it.</p>
+			<p class="indent">The bonus increases to +2 when you reach 10th level in this class.</p>
+		</description>
+		<sheet>
+			<description>You can infuse a simple or martial weapon into a +1 weapon.</description>
+			<description level="10">You can infuse a simple or martial weapon into a +2 weapon.</description>
+			<!-- <description>Item: A simple or martial weapon
+			This magic weapon grants a +1 bonus to attack and damage rolls made with it.</description>
+			<description level="10">Item: A simple or martial weapon
+			This magic weapon grants a + 2 bonus to attack and damage rolls made with it.</description> -->
+		</sheet>
+	</element>
+	<element name="Homunculus Servant" type="Class Feature" source="Tasha’s Cauldron of Everything" id="ID_WOTC_TCOE_CLASS_FEATURE_ARTIFICER_INFUSION_HOMUNCULUS_SERVANT">
+		<supports>Artificer Infusion, TCOE Base</supports>
+		<description>
+			<p><em>Item: A gem or crystal worth at least 100 gp</em></p>
+			<p>You learn intricate methods for magically creating a special homunculus that serves you. The item you infuse serves as the creature’s heart, around which the creature’s body instantly forms.</p>
+			<p class="indent">You determine the homunculus’s appearance. Some artificers prefer mechanical-looking birds, whereas some like winged vials or miniature, animate cauldrons.</p>
+			<p class="indent">The homunculus is friendly to you and your companions, and it obeys your commands. See this creature’s game statistics in the Homunculus Servant stat block, which uses your proficiency bonus (PB) in several places.</p>
+			<p class="indent">In combat, the homunculus shares your initiative count, but it takes its turn immediately after yours. It can move and use its reaction on its own, but the only action it takes on its turn is the Dodge action, unless you take a bonus action on your turn to command it to take another action. That action can be one in its stat block or some other action. If you are incapacitated, the homunculus can take any action of its choice, not just Dodge.</p>
+			<p class="indent">The homunculus regains 2d6 hit points if the mending spell is cast on it. If you or the homunculus dies, it vanishes, leaving its heart in its space. </p>
+			<div class="reference">
+				<h3 style="margin-bottom:-20px;margin-top:-5px">Homunculus Servant</h3>
+				<p style="margin-bottom:-5px"><em>Tiny construct</em></p>
+				<h4 style="margin-top:5px" />
+				<ul class="unstyled">
+					<li><strong>Armor Class</strong> 13 (natural armor)</li>
+					<li><strong>Hit Points</strong> 1 + your Intelligence modifier + your artificer level (the homunculus servant has a number of Hit Dice [d4s] equal to your artificer level)</li>
+					<li><strong>Speed</strong> 20 ft., fly 30 ft.</li>
+				</ul>
+				<table style="text-align:center;margin-top:10px;margin-bottom:10px">
+					<thead><tr><td>STR</td><td>DEX</td><td>CON</td><td>INT</td><td>WIS</td><td>CHA</td></tr></thead>
+					<tr><td>4 (-3)</td><td>15 (+2)</td><td>12 (+1)</td><td>10 (+0)</td><td>10 (+0)</td><td>7 (-2)</td></tr>
+				</table>
+				<ul class="unstyled">
+					<li><strong>Saving Throws</strong> Dex +2 plus PB</li>
+					<li><strong>Skills</strong> Perception +0 plus PB x 2, Stealth +2 plus PB</li>
+					<li><strong>Damage Immunities</strong> poison</li>
+					<li><strong>Condition Immunities</strong> exhaustion, poisoned</li>
+					<li><strong>Senses</strong> darkvision 60 ft., passive Perception 10 + (PB x 2)</li>
+					<li><strong>Languages</strong> understands the language you speak</li>
+					<li><strong>Challenge</strong> —</li>
+					<li><strong>Proficiency Bonus (PB)</strong> equals your bonus</li>
+				</ul>
+				<h4 style="margin-top:5px; margin-bottom:10px" />
+				<ul class="unstyled">
+					<li><strong><em>Evasion.</em></strong> If the homunculus is subjected to an effect that allows it to make a Dexterity saving throw to take only half damage, it instead takes no damage if it succeeds on the saving throw, and only half damage if it fails. It can't use this trait if it's incapacitated.</li>
+				</ul>
+				<h4 style="margin-top:10px">Actions</h4>
+				<ul class="unstyled">
+					<li><strong><em>Force Strike. </em></strong><em>Ranged Weapon Attack:</em> your spell attack modifier to hit, range 30 ft., one target you can see. <em>Hit:</em> 1d4 + PB force damage.</li>
+				</ul>
+				<h4 style="margin-top:10px">Reactions</h4>
+				<ul class="unstyled">
+					<li><strong><em>Channel Magic. </em></strong>The homunculus delivers a spell you cast that has a range of touch. The homunculus must be within 120 feet of you.</li>
+				</ul>
+			</div>
+		</description>
+		<sheet>
+			<description>You can infuse a gem or crystal worth at least 100 gp into a homunculus servant. &#13;
+			In combat, the homunculus shares your initiative count, but it takes its turn immediately after yours. It can move and use its reaction on its own, but the only action it takes on its turn is the Dodge action, unless you take a bonus action on your turn to command it to take another action. That action can be one in its stat block or some other action. If you are incapacitated, the homunculus can take any action of its choice, not just Dodge. &#13;
+			The homunculus regains 2d6 hit points if the mending spell is cast on it. If you or the homunculus dies, it vanishes, leaving its heart in its space.</description>
+		</sheet>
+		<rules>
+			<select type="Companion" name="Homunculus Servant" supports="Homunculus Servant" />
+		</rules>
+	</element>
+	<element name="Radiant Weapon" type="Class Feature" source="Tasha’s Cauldron of Everything" id="ID_WOTC_TCOE_CLASS_FEATURE_ARTIFICER_INFUSION_RADIANT_WEAPON">
+		<supports>Artificer Infusion, TCOE Base</supports>
+		<requirements>[level:6]</requirements>
+		<prerequisite>6th-level artificer</prerequisite>
+		<description>
+			<p><em>Prerequisite: 6th-level artificer</em></p>
+			<p><em>Item: A simple or martial weapon (requires attunement)</em></p>
+			<p>This magic weapon grants a +1 bonus to attack and damage rolls made with it. While holding it, the wielder can take a bonus action to cause it to shed bright light in a 30-foot radius and dim light for an additional 30 feet. The wielder can extinguish the light as a bonus action.</p>
+			<p class="indent">The weapon has 4 charges. As a reaction immediately after being hit by an attack, the wielder can expend 1 charge and cause the attacker to be blinded until the end of the attacker’s next turn, unless the attacker succeeds on a Constitution saving throw against your spell save DC. The weapon regains 1d4 expended charges daily at dawn.</p>
+		</description>
+		<sheet>
+			<description>You can infuse a simple or martial weapon into a radiant weapon.</description>
+			<!-- <description>Item: A simple or martial weapon (requires attunement)
+			This magic weapon grants a +1 bonus to attack and damage rolls made with it. While holding it, the wielder can take a bonus action to cause it to shed bright light in a 30-foot radius and dim light for an additional 30 feet. The wielder can extinguish the light as a bonus action.
+			The weapon has 4 charges. As a reaction immediately after being hit by an attack, the wielder can expend 1 charge and cause the attacker to be blinded until the end of the attacker’s next turn, unless the attacker succeeds on a Constitution saving throw against your spell save DC. The weapon regains 1d4 expended charges daily at dawn</description> -->
+		</sheet>
+	</element>
+	<element name="Repeating Shot" type="Class Feature" source="Tasha’s Cauldron of Everything" id="ID_WOTC_TCOE_CLASS_FEATURE_ARTIFICER_INFUSION_REPEATING_SHOT">
+		<supports>Artificer Infusion, TCOE Base</supports>
+		<description>
+			<p><em>Item: A simple or martial weapon with the ammunition property (requires attunement)</em></p>
+			<p>This magic weapon grants a +1 bonus to attack and damage rolls made with it when it’s used to make a ranged attack, and it ignores the loading property if it has it.</p>
+			<p class="indent">If the weapon lacks ammunition, it produces its own, automatically creating one piece of magic ammunition when the wielder makes a ranged attack with it. The ammunition created by the weapon vanishes the instant after it hits or misses a target.</p>
+		</description>
+		<sheet>
+			<description>You can infuse a simple or martial weapon with the ammunition property into a repeating weapon.</description>
+			<!-- <description>Item: A simple or martial weapon with the ammunition property (requires attunement)
+			This magic weapon grants a +1 bonus to attack and damage rolls made with it when it’s used to make a ranged attack, and it ignores the loading property if it has it.
+			If you load no ammunition in the weapon, it produces its own, automatically creating one piece of magic ammunition when you make a ranged attack with it. The ammunition created by the weapon vanishes the instant after it hits or misses a target.</description> -->
+		</sheet>
+	</element>
+	<element name="Replicate Magic Item" type="Class Feature" source="Tasha’s Cauldron of Everything" id="ID_WOTC_TCOE_CLASS_FEATURE_ARTIFICER_INFUSION_REPLICATE_MAGIC_ITEM">
+		<supports>Artificer Infusion, TCOE Base</supports>
+		<description>
+			<p>Using this infusion, you replicate a particular magic item. You can learn this infusion multiple times; each time you do so, choose a magic item that you can make with it, picking from the Replicable Items tables below. A table’s title tells you the level you must be in the class to choose an item from the table. Alternatively, you can choose the magic item from among the common magic items in the game, not including potions or scrolls.</p>
+			<p class="indent">In the tables, an item’s entry tells you whether the item requires attunement. See the item’s description in the <i>Dungeon Master’s Guide</i> for more information about it, including the type of object required for its making.</p>
+			<div element="ID_WOTC_TCOE_INFORMATION_ARTIFICER_INFUSION_REPLICATE_MAGIC_ITEM_TABLES" />
+		</description>
+		<sheet display="false">
+			<description>Using this infusion, you replicate a particular magic item.</description>
+		</sheet>
+	</element>
+	<element name="Replicate Magic Item" type="Class Feature" source="Tasha’s Cauldron of Everything" id="ID_WOTC_TCOE_CLASS_FEATURE_ARTIFICER_INFUSION_REPLICATE_MAGIC_ITEM_2">
+		<compendium display="false" />
+		<supports>Artificer Infusion, TCOE Base</supports>
+		<requirements>ID_WOTC_TCOE_CLASS_FEATURE_ARTIFICER_INFUSION_REPLICATE_MAGIC_ITEM</requirements>
+		<description>
+			<p>Using this infusion, you replicate a particular magic item. You can learn this infusion multiple times; each time you do so, choose a magic item that you can make with it, picking from the Replicable Items tables below. A table’s title tells you the level you must be in the class to choose an item from the table. Alternatively, you can choose the magic item from among the common magic items in the game, not including potions or scrolls.</p>
+			<p class="indent">In the tables, an item’s entry tells you whether the item requires attunement. See the item’s description in the <i>Dungeon Master’s Guide</i> for more information about it, including the type of object required for its making.</p>
+			<div element="ID_WOTC_TCOE_INFORMATION_ARTIFICER_INFUSION_REPLICATE_MAGIC_ITEM_TABLES" />
+		</description>
+		<sheet display="false">
+			<description>Using this infusion, you replicate a particular magic item.</description>
+		</sheet>
+	</element>
+	<element name="Replicate Magic Item" type="Class Feature" source="Tasha’s Cauldron of Everything" id="ID_WOTC_TCOE_CLASS_FEATURE_ARTIFICER_INFUSION_REPLICATE_MAGIC_ITEM_3">
+		<compendium display="false" />
+		<supports>Artificer Infusion, TCOE Base</supports>
+		<requirements>ID_WOTC_TCOE_CLASS_FEATURE_ARTIFICER_INFUSION_REPLICATE_MAGIC_ITEM_2</requirements>
+		<description>
+			<p>Using this infusion, you replicate a particular magic item. You can learn this infusion multiple times; each time you do so, choose a magic item that you can make with it, picking from the Replicable Items tables below. A table’s title tells you the level you must be in the class to choose an item from the table. Alternatively, you can choose the magic item from among the common magic items in the game, not including potions or scrolls.</p>
+			<p class="indent">In the tables, an item’s entry tells you whether the item requires attunement. See the item’s description in the <i>Dungeon Master’s Guide</i> for more information about it, including the type of object required for its making.</p>
+			<div element="ID_WOTC_TCOE_INFORMATION_ARTIFICER_INFUSION_REPLICATE_MAGIC_ITEM_TABLES" />
+		</description>
+		<sheet display="false">
+			<description>Using this infusion, you replicate a particular magic item.</description>
+		</sheet>
+	</element>
+	<element name="Replicate Magic Item" type="Class Feature" source="Tasha’s Cauldron of Everything" id="ID_WOTC_TCOE_CLASS_FEATURE_ARTIFICER_INFUSION_REPLICATE_MAGIC_ITEM_4">
+		<compendium display="false" />
+		<supports>Artificer Infusion, TCOE Base</supports>
+		<requirements>ID_WOTC_TCOE_CLASS_FEATURE_ARTIFICER_INFUSION_REPLICATE_MAGIC_ITEM_3</requirements>
+		<description>
+			<p>Using this infusion, you replicate a particular magic item. You can learn this infusion multiple times; each time you do so, choose a magic item that you can make with it, picking from the Replicable Items tables below. A table’s title tells you the level you must be in the class to choose an item from the table. Alternatively, you can choose the magic item from among the common magic items in the game, not including potions or scrolls.</p>
+			<p class="indent">In the tables, an item’s entry tells you whether the item requires attunement. See the item’s description in the <i>Dungeon Master’s Guide</i> for more information about it, including the type of object required for its making.</p>
+			<div element="ID_WOTC_TCOE_INFORMATION_ARTIFICER_INFUSION_REPLICATE_MAGIC_ITEM_TABLES" />
+		</description>
+		<sheet display="false">
+			<description>Using this infusion, you replicate a particular magic item.</description>
+		</sheet>
+	</element>
+	<element name="Replicate Magic Item" type="Class Feature" source="Tasha’s Cauldron of Everything" id="ID_WOTC_TCOE_CLASS_FEATURE_ARTIFICER_INFUSION_REPLICATE_MAGIC_ITEM_5">
+		<compendium display="false" />
+		<supports>Artificer Infusion, TCOE Base</supports>
+		<requirements>ID_WOTC_TCOE_CLASS_FEATURE_ARTIFICER_INFUSION_REPLICATE_MAGIC_ITEM_4</requirements>
+		<description>
+			<p>Using this infusion, you replicate a particular magic item. You can learn this infusion multiple times; each time you do so, choose a magic item that you can make with it, picking from the Replicable Items tables below. A table’s title tells you the level you must be in the class to choose an item from the table. Alternatively, you can choose the magic item from among the common magic items in the game, not including potions or scrolls.</p>
+			<p class="indent">In the tables, an item’s entry tells you whether the item requires attunement. See the item’s description in the <i>Dungeon Master’s Guide</i> for more information about it, including the type of object required for its making.</p>
+			<div element="ID_WOTC_TCOE_INFORMATION_ARTIFICER_INFUSION_REPLICATE_MAGIC_ITEM_TABLES" />
+		</description>
+		<sheet display="false">
+			<description>Using this infusion, you replicate a particular magic item.</description>
+		</sheet>
+	</element>
+	<element name="Replicate Magic Item" type="Class Feature" source="Tasha’s Cauldron of Everything" id="ID_WOTC_TCOE_CLASS_FEATURE_ARTIFICER_INFUSION_REPLICATE_MAGIC_ITEM_6">
+		<compendium display="false" />
+		<supports>Artificer Infusion, TCOE Base</supports>
+		<requirements>ID_WOTC_TCOE_CLASS_FEATURE_ARTIFICER_INFUSION_REPLICATE_MAGIC_ITEM_5</requirements>
+		<description>
+			<p>Using this infusion, you replicate a particular magic item. You can learn this infusion multiple times; each time you do so, choose a magic item that you can make with it, picking from the Replicable Items tables below. A table’s title tells you the level you must be in the class to choose an item from the table. Alternatively, you can choose the magic item from among the common magic items in the game, not including potions or scrolls.</p>
+			<p class="indent">In the tables, an item’s entry tells you whether the item requires attunement. See the item’s description in the <i>Dungeon Master’s Guide</i> for more information about it, including the type of object required for its making.</p>
+			<div element="ID_WOTC_TCOE_INFORMATION_ARTIFICER_INFUSION_REPLICATE_MAGIC_ITEM_TABLES" />
+		</description>
+		<sheet display="false">
+			<description>Using this infusion, you replicate a particular magic item.</description>
+		</sheet>
+	</element>
+	<element name="Replicate Magic Item" type="Class Feature" source="Tasha’s Cauldron of Everything" id="ID_WOTC_TCOE_CLASS_FEATURE_ARTIFICER_INFUSION_REPLICATE_MAGIC_ITEM_7">
+		<compendium display="false" />
+		<supports>Artificer Infusion, TCOE Base</supports>
+		<requirements>ID_WOTC_TCOE_CLASS_FEATURE_ARTIFICER_INFUSION_REPLICATE_MAGIC_ITEM_6</requirements>
+		<description>
+			<p>Using this infusion, you replicate a particular magic item. You can learn this infusion multiple times; each time you do so, choose a magic item that you can make with it, picking from the Replicable Items tables below. A table’s title tells you the level you must be in the class to choose an item from the table. Alternatively, you can choose the magic item from among the common magic items in the game, not including potions or scrolls.</p>
+			<p class="indent">In the tables, an item’s entry tells you whether the item requires attunement. See the item’s description in the <i>Dungeon Master’s Guide</i> for more information about it, including the type of object required for its making.</p>
+			<div element="ID_WOTC_TCOE_INFORMATION_ARTIFICER_INFUSION_REPLICATE_MAGIC_ITEM_TABLES" />
+		</description>
+		<sheet display="false">
+			<description>Using this infusion, you replicate a particular magic item.</description>
+		</sheet>
+	</element>
+	<element name="Replicate Magic Item" type="Class Feature" source="Tasha’s Cauldron of Everything" id="ID_WOTC_TCOE_CLASS_FEATURE_ARTIFICER_INFUSION_REPLICATE_MAGIC_ITEM_8">
+		<compendium display="false" />
+		<supports>Artificer Infusion, TCOE Base</supports>
+		<requirements>ID_WOTC_TCOE_CLASS_FEATURE_ARTIFICER_INFUSION_REPLICATE_MAGIC_ITEM_7</requirements>
+		<description>
+			<p>Using this infusion, you replicate a particular magic item. You can learn this infusion multiple times; each time you do so, choose a magic item that you can make with it, picking from the Replicable Items tables below. A table’s title tells you the level you must be in the class to choose an item from the table. Alternatively, you can choose the magic item from among the common magic items in the game, not including potions or scrolls.</p>
+			<p class="indent">In the tables, an item’s entry tells you whether the item requires attunement. See the item’s description in the <i>Dungeon Master’s Guide</i> for more information about it, including the type of object required for its making.</p>
+			<div element="ID_WOTC_TCOE_INFORMATION_ARTIFICER_INFUSION_REPLICATE_MAGIC_ITEM_TABLES" />
+		</description>
+		<sheet display="false">
+			<description>Using this infusion, you replicate a particular magic item.</description>
+		</sheet>
+	</element>
+	<element name="Replicate Magic Item" type="Class Feature" source="Tasha’s Cauldron of Everything" id="ID_WOTC_TCOE_CLASS_FEATURE_ARTIFICER_INFUSION_REPLICATE_MAGIC_ITEM_9">
+		<compendium display="false" />
+		<supports>Artificer Infusion, TCOE Base</supports>
+		<requirements>ID_WOTC_TCOE_CLASS_FEATURE_ARTIFICER_INFUSION_REPLICATE_MAGIC_ITEM_8</requirements>
+		<description>
+			<p>Using this infusion, you replicate a particular magic item. You can learn this infusion multiple times; each time you do so, choose a magic item that you can make with it, picking from the Replicable Items tables below. A table’s title tells you the level you must be in the class to choose an item from the table. Alternatively, you can choose the magic item from among the common magic items in the game, not including potions or scrolls.</p>
+			<p class="indent">In the tables, an item’s entry tells you whether the item requires attunement. See the item’s description in the <i>Dungeon Master’s Guide</i> for more information about it, including the type of object required for its making.</p>
+			<div element="ID_WOTC_TCOE_INFORMATION_ARTIFICER_INFUSION_REPLICATE_MAGIC_ITEM_TABLES" />
+		</description>
+		<sheet display="false">
+			<description>Using this infusion, you replicate a particular magic item.</description>
+		</sheet>
+	</element>
+	<element name="Replicate Magic Item" type="Class Feature" source="Tasha’s Cauldron of Everything" id="ID_WOTC_TCOE_CLASS_FEATURE_ARTIFICER_INFUSION_REPLICATE_MAGIC_ITEM_10">
+		<compendium display="false" />
+		<supports>Artificer Infusion, TCOE Base</supports>
+		<requirements>ID_WOTC_TCOE_CLASS_FEATURE_ARTIFICER_INFUSION_REPLICATE_MAGIC_ITEM_9</requirements>
+		<description>
+			<p>Using this infusion, you replicate a particular magic item. You can learn this infusion multiple times; each time you do so, choose a magic item that you can make with it, picking from the Replicable Items tables below. A table’s title tells you the level you must be in the class to choose an item from the table. Alternatively, you can choose the magic item from among the common magic items in the game, not including potions or scrolls.</p>
+			<p class="indent">In the tables, an item’s entry tells you whether the item requires attunement. See the item’s description in the <i>Dungeon Master’s Guide</i> for more information about it, including the type of object required for its making.</p>
+			<div element="ID_WOTC_TCOE_INFORMATION_ARTIFICER_INFUSION_REPLICATE_MAGIC_ITEM_TABLES" />
+		</description>
+		<sheet display="false">
+			<description>Using this infusion, you replicate a particular magic item.</description>
+		</sheet>
+	</element>
+	<element name="Replicate Magic Item" type="Class Feature" source="Tasha’s Cauldron of Everything" id="ID_WOTC_TCOE_CLASS_FEATURE_ARTIFICER_INFUSION_REPLICATE_MAGIC_ITEM_11">
+		<compendium display="false" />
+		<supports>Artificer Infusion, TCOE Base</supports>
+		<requirements>ID_WOTC_TCOE_CLASS_FEATURE_ARTIFICER_INFUSION_REPLICATE_MAGIC_ITEM_10</requirements>
+		<description>
+			<p>Using this infusion, you replicate a particular magic item. You can learn this infusion multiple times; each time you do so, choose a magic item that you can make with it, picking from the Replicable Items tables below. A table’s title tells you the level you must be in the class to choose an item from the table. Alternatively, you can choose the magic item from among the common magic items in the game, not including potions or scrolls.</p>
+			<p class="indent">In the tables, an item’s entry tells you whether the item requires attunement. See the item’s description in the <i>Dungeon Master’s Guide</i> for more information about it, including the type of object required for its making.</p>
+			<div element="ID_WOTC_TCOE_INFORMATION_ARTIFICER_INFUSION_REPLICATE_MAGIC_ITEM_TABLES" />
+		</description>
+		<sheet display="false">
+			<description>Using this infusion, you replicate a particular magic item.</description>
+		</sheet>
+	</element>
+	<element name="Replicate Magic Item" type="Class Feature" source="Tasha’s Cauldron of Everything" id="ID_WOTC_TCOE_CLASS_FEATURE_ARTIFICER_INFUSION_REPLICATE_MAGIC_ITEM_12">
+		<compendium display="false" />
+		<supports>Artificer Infusion, TCOE Base</supports>
+		<requirements>ID_WOTC_TCOE_CLASS_FEATURE_ARTIFICER_INFUSION_REPLICATE_MAGIC_ITEM_11</requirements>
+		<description>
+			<p>Using this infusion, you replicate a particular magic item. You can learn this infusion multiple times; each time you do so, choose a magic item that you can make with it, picking from the Replicable Items tables below. A table’s title tells you the level you must be in the class to choose an item from the table. Alternatively, you can choose the magic item from among the common magic items in the game, not including potions or scrolls.</p>
+			<p class="indent">In the tables, an item’s entry tells you whether the item requires attunement. See the item’s description in the <i>Dungeon Master’s Guide</i> for more information about it, including the type of object required for its making.</p>
+			<div element="ID_WOTC_TCOE_INFORMATION_ARTIFICER_INFUSION_REPLICATE_MAGIC_ITEM_TABLES" />
+		</description>
+		<sheet display="false">
+			<description>Using this infusion, you replicate a particular magic item.</description>
+		</sheet>
+	</element>
+	<element name="Repulsion Shield" type="Class Feature" source="Tasha’s Cauldron of Everything" id="ID_WOTC_TCOE_CLASS_FEATURE_ARTIFICER_INFUSION_REPULSION_SHIELD">
+		<supports>Artificer Infusion, TCOE Base</supports>
+		<requirements>[level:6]</requirements>
+		<prerequisite>6th-level artificer</prerequisite>
+		<description>
+			<p><em>Prerequisite: 6th-level artificer</em></p>
+			<p><em>Item: A shield (requires attunement)</em></p>
+			<p>A creature gains a +1 bonus to Armor Class while wielding this shield.</p>
+			<p class="indent">The shield has 4 charges. While holding it, the wielder can use a reaction immediately after being hit by a melee attack to expend 1 of the shield’s charges and push the attacker up to 15 feet away. The shield regains 1d4 expended charges daily at dawn.</p>
+		</description>
+		<sheet>
+			<description>You can infuse a shield into a repulsion shield.</description>
+			<!-- <description>Item: A shield (requires attunement)
+			A creature gains a +1 bonus to Armor Class while wielding this shield.
+			The shield has 4 charges. While holding it, the wielder can use a reaction immediately after being hit by a melee attack to expend 1 of the shield’s charges and push the attacker up to 15 feet away. The shield regains 1d4 expended charges daily at dawn.</description> -->
+		</sheet>
+	</element>
+	<element name="Resistant Armor" type="Class Feature" source="Tasha’s Cauldron of Everything" id="ID_WOTC_TCOE_CLASS_FEATURE_ARTIFICER_INFUSION_RESISTANT_ARMOR">
+		<supports>Artificer Infusion, TCOE Base</supports>
+		<requirements>[level:6]</requirements>
+		<prerequisite>6th-level artificer</prerequisite>
+		<description>
+			<p><em>Prerequisite: 6th-level artificer</em></p>
+			<p><em>Item: A suit of armor (requires attunement)</em></p>
+			<p>While wearing this armor, a creature has resistance to one of the following damage types, which you choose when you infuse the item: acid, cold, fire, force, lightning, necrotic, poison, psychic, radiant, or thunder.</p>
+		</description>
+		<sheet>
+			<description>You can infuse a suit of armor into a resistant armor.</description>
+			<!-- <description>Item: A suit of armor (requires attunement)
+			While wearing this armor, a creature has resistance to one of the following damage types, which you choose when you infuse the item: acid, cold, fire, force, lightning, necrotic, poison, psychic, radiant, or thunder.</description> -->
+		</sheet>
+	</element>
+	<element name="Returning Weapon" type="Class Feature" source="Tasha’s Cauldron of Everything" id="ID_WOTC_TCOE_CLASS_FEATURE_ARTIFICER_INFUSION_RETURNING_WEAPON">
+		<supports>Artificer Infusion, TCOE Base</supports>
+		<description>
+			<p><em>Item: A simple or martial weapon with the thrown property</em></p>
+			<p>This magic weapon grants a +1 bonus to attack and damage rolls made with it, and it returns to the wielder’s hand immediately after it is used to make a ranged attack.</p>
+		</description>
+		<sheet>
+			<description>You can infuse a simple or martial weapon with the thrown property into a returning weapon.</description>
+			<!-- <description>Item: A simple or martial weapon with the thrown property
+			This magic weapon grants a +1 bonus to attack and damage rolls made with it, and it returns to the wielder’s hand immediately after it is used to make a ranged attack.</description> -->
+		</sheet>
+	</element>
+
+	<element name="Replicate Magic Item Table" type="Information" source="Tasha’s Cauldron of Everything" id="ID_WOTC_TCOE_INFORMATION_ARTIFICER_INFUSION_REPLICATE_MAGIC_ITEM_TABLES">
+		<compendium display="false" />
+		<description>
+			<p><strong>Replicable Items (2nd-level Artificer)</strong></p>
+			<table>
+				<thead>
+					<tr><td>Magic Item</td><td class="col-20">Attunement</td></tr>
+				</thead>
+				<tr><td>Alchemy jug</td><td>No</td></tr>
+				<tr><td>Bag of holding</td><td>No</td></tr>
+				<tr><td>Cap of water breathing</td><td>No</td></tr>
+				<tr><td>Goggles of night</td><td>No</td></tr>
+				<tr><td>Rope of climbing</td><td>No</td></tr>
+				<tr><td>Sending stones</td><td>No</td></tr>
+				<tr><td>Wand of magic detection</td><td>No</td></tr>
+				<tr><td>Wand of secrets</td><td>No</td></tr>
+			</table>
+			<p><strong>Replicable Items (6th-level Artificer)</strong></p>
+			<table>
+				<thead>
+					<tr><td>Magic Item</td><td class="col-20">Attunement</td></tr>
+				</thead>
+				<tr><td>Boots of elvenkind</td><td>No</td></tr>
+				<tr><td>Cloak of elvenkind</td><td>Yes</td></tr>
+				<tr><td>Cloak of the manta ray</td><td>No</td></tr>
+				<tr><td>Eyes of charming</td><td>Yes</td></tr>
+				<tr><td>Gloves of thievery</td><td>No</td></tr>
+				<tr><td>Lantern of revealing</td><td>No</td></tr>
+				<tr><td>Pipes of haunting</td><td>No</td></tr>
+				<tr><td>Ring of water walking</td><td>No</td></tr>
+			</table>
+			<p><strong>Replicable Items (10th-level Artificer)</strong></p>
+			<table>
+				<thead>
+					<tr><td>Magic Item</td><td class="col-20">Attunement</td></tr>
+				</thead>
+				<tr><td>Boots of striding and springing</td><td>Yes</td></tr>
+				<tr><td>Boots of the winterlands</td><td>Yes</td></tr>
+				<tr><td>Bracers of archery</td><td>Yes</td></tr>
+				<tr><td>Brooch of shielding</td><td>Yes</td></tr>
+				<tr><td>Cloak of protection</td><td>Yes</td></tr>
+				<tr><td>Eyes of the eagle</td><td>Yes</td></tr>
+				<tr><td>Gauntlets of ogre power</td><td>Yes</td></tr>
+				<tr><td>Gloves of missile snaring</td><td>Yes</td></tr>
+				<tr><td>Gloves of swimming and climbing</td><td>Yes</td></tr>
+				<tr><td>Hat of disguise</td><td>Yes</td></tr>
+				<tr><td>Headband of intellect</td><td>Yes</td></tr>
+				<tr><td>Helm of telepathy</td><td>Yes</td></tr>
+				<tr><td>Medallion of thoughts</td><td>Yes</td></tr>
+				<tr><td>Necklace of adaptation</td><td>Yes</td></tr>
+				<tr><td>Periapt of wound closure</td><td>Yes</td></tr>
+				<tr><td>Pipes of the sewers</td><td>Yes</td></tr>
+				<tr><td>Quiver of Ehlonna</td><td>No</td></tr>
+				<tr><td>Ring of jumping</td><td>Yes</td></tr>
+				<tr><td>Ring of mind shielding</td><td>Yes</td></tr>
+				<tr><td>Slippers of spider climbing</td><td>Yes</td></tr>
+				<tr><td>Ventilating lung</td><td>Yes</td></tr>
+				<tr><td>Winged boots</td><td>Yes</td></tr>
+			</table>
+			<p><strong>Replicable Items (14th-level Artificer)</strong></p>
+			<table>
+				<thead>
+					<tr><td>Magic Item</td><td class="col-20">Attunement</td></tr>
+				</thead>
+				<tr><td>Amulet of health</td><td>Yes</td></tr>
+				<tr><td>Arcane propulsion arm</td><td>Yes</td></tr>
+				<tr><td>Belt of hill giant strength</td><td>Yes</td></tr>
+				<tr><td>Boots of levitation</td><td>Yes</td></tr>
+				<tr><td>Boots of speed</td><td>Yes</td></tr>
+				<tr><td>Bracers of defense</td><td>Yes</td></tr>
+				<tr><td>Cloak of the bat</td><td>Yes</td></tr>
+				<tr><td>Dimensional shackles</td><td>No</td></tr>
+				<tr><td>Gem of seeing</td><td>Yes</td></tr>
+				<tr><td>Horn of blasting</td><td>No</td></tr>
+				<tr><td>Ring of free action</td><td>Yes</td></tr>
+				<tr><td>Ring of protection</td><td>Yes</td></tr>
+				<tr><td>Ring of the ram</td><td>Yes</td></tr>
+			</table>
+		</description>
+	</element>
 
 </elements>
