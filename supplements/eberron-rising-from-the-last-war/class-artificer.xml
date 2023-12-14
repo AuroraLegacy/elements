@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <elements>
 	<info>
-		<update version="0.1.1">
+		<update version="0.1.2">
 			<file name="class-artificer.xml" url="https://raw.githubusercontent.com/AuroraLegacy/elements/master/supplements/eberron-rising-from-the-last-war/class-artificer.xml" />
 		</update>
 	</info>
-	
+
 	<element name="Artificer" type="Class" source="Eberron: Rising from the Last War" id="ID_WOTC_ERLW_CLASS_ARTIFICER">
 		<description>
 			<p>Masters of unlocking magic in everyday objects, artificers are supreme inventors. They see magic as a complex system waiting to be decoded and controlled. Artificers use tools to channel arcane power, crafting magical objects. To cast a spell, an artificer could use alchemist’s supplies to create a potent elixir, calligrapher’s supplies to inscribe a sigil of power on an ally’s armor, or tinker’s tools to craft a temporary charm. The magic of artificers is tied to their tools and their talents.</p>
@@ -125,7 +125,7 @@
 		</rules>
 		<multiclass id="ID_WOTC_ERLW_MULTICLASS_ARTIFICER">
 			<prerequisite>Intelligence 13</prerequisite>
-			<requirements>[int:13],!ID_WOTC_UA20190228_CLASS_ARTIFICER,!ID_WOTC_UA20190228_MULTICLASS_ARTIFICER, !ID_WOTC_UA_CLASS_ARTIFICER, !ID_WOTC_UA_MULTICLASS_ARTIFICER</requirements>
+			<requirements>[int:13],!(ID_WOTC_UA_CLASS_ARTIFICER||ID_WOTC_UA_MULTICLASS_ARTIFICER||ID_WOTC_UA20190228_CLASS_ARTIFICER||ID_WOTC_UA20190228_MULTICLASS_ARTIFICER||ID_WOTC_TCOE_CLASS_ARTIFICER||ID_WOTC_TCOE_MULTICLASS_ARTIFICER)</requirements>
 			<setters>
 				<set name="multiclass proficiencies">light armor, medium armor, shields, thieves’ tools, tinker’s tools.</set>
 			</setters>
@@ -135,6 +135,7 @@
 		</multiclass>
 	</element>
 	<element name="Magical Tinkering" type="Class Feature" source="Eberron: Rising from the Last War" id="ID_WOTC_ERLW_CLASS_FEATURE_ARTIFICER_MAGICAL_TINKERING">
+		<requirements>!ID_INTERNAL_FEATURE_REPLACEMENT_ERLW_ARTIFICER_MAGICAL_TINKERING</requirements>
 		<description>
 			<p>At 1st level, you learn how to invest a spark of magic into mundane objects. To use this ability, you must have thieves’ tools or artisan’s tools. You then touch a Tiny nonmagical object as an action and give it one of the following magical properties of your choice:</p>
 			<ul>
@@ -161,6 +162,7 @@
 		</rules>
 	</element>
 	<element name="Spellcasting" type="Class Feature" source="Eberron: Rising from the Last War" id="ID_WOTC_ERLW_CLASS_FEATURE_ARTIFICER_SPELLCASTING">
+		<requirements>!ID_INTERNAL_FEATURE_REPLACEMENT_ERLW_ARTIFICER_SPELLCASTING</requirements>
 		<description>
 			<p>You have studied the workings of magic and how to channel it through objects. As a result, you have gained the ability to cast spells. To observers, you don’t appear to be casting spells in a conventional way; you look as if you’re producing wonders using mundane items or outlandish inventions.</p>
 			<h5>TOOLS REQUIRED</h5>
@@ -184,7 +186,7 @@
 			<p>You can cast an artificer spell as a ritual if that spell has the ritual tag and you have the spell prepared.</p>
 		</description>
 		<sheet display="false">
-			<description>You produce your artificer spell effects through your tools. You must have a spellcasting focus—specifically thieves’ tools or some kind of artisan’s tool—in hand when you cast any spell. 
+			<description>You produce your artificer spell effects through your tools. You must have a spellcasting focus—specifically thieves’ tools or some kind of artisan’s tool—in hand when you cast any spell.
 			You can also use any item bearing one of your infusions as a spellcasting focus.</description>
 		</sheet>
 		<spellcasting name="Artificer" ability="Intelligence" prepare="true">
@@ -213,27 +215,32 @@
 		</rules>
 	</element>
 	<element name="Infuse Item" type="Class Feature" source="Eberron: Rising from the Last War" id="ID_WOTC_ERLW_CLASS_FEATURE_ARTIFICER_INFUSE_ITEM">
+		<requirements>!ID_INTERNAL_FEATURE_REPLACEMENT_ERLW_ARTIFICER_INFUSE_ITEM</requirements>
 		<description>
 			<p>At 2nd level, you gain the ability to imbue mundane items with certain magical infusions. The magic items you create with this feature are effectively prototypes of permanent items.</p>
 			<h5>INFUSIONS KNOWN</h5>
 			<p>When you gain this feature, pick four artificer infusions to learn, choosing from the "Artificer Infusions" section at the end of the class’s description. You learn additional infusions of your choice when you reach certain levels in this class, as shown in the Infusions Known column of the Artificer table.</p>
-			<p class="indent">Whenever you gain a level in this class, you can replace one of the artificer infusions you learned with a new one.</p>	
+			<p class="indent">Whenever you gain a level in this class, you can replace one of the artificer infusions you learned with a new one.</p>
 			<h5>INFUSING AN ITEM</h5>
 			<p>Whenever you finish a long rest, you can touch a nonmagical object and imbue it with one of your artificer infusions, turning it into a magic item. An infusion works on only certain kinds of objects, as specified in the infusion’s description. If the item requires attunement, you can attune yourself to it the instant you infuse the item. If you decide to attune to the item later, you must do so using the normal process for attunement (see "Attunement" in chapter 7 of the Dungeon Master’s Guide).</p>
 			<p class="indent">Your infusion remains in an item indefinitely, but when you die, the infusion vanishes after a number of days have passed equal to your Intelligence modifier (minimum of 1 day). The infusion also vanishes if you give up your knowledge of the infusion for another one.</p>
 			<p class="indent">You can infuse more than one nonmagical object at the end of a long rest; the maximum number of objects appears in the Infused Items column of the Artificer table. You must touch each of the objects, and each of your infusions can be in only one object at a time. Moreover, no object can bear more than one of your infusions at a time. If you try to exceed your maximum number of infusions, the oldest infusion immediately ends, and then the new infusion applies. If an infusion ends on an item that contains other things, like a bag of holding, its contents harmlessly appear in and around its space.</p>
 		</description>
 		<sheet>
-			<description>Whenever you finish a long rest, you can touch a nonmagical object and imbue it with one of your artificer infusions, turning it into a magic item.
-			Your infusion remains in an item indefinitely, but when you die, the infusion vanishes after {{item infusions:decay}} days have passed.
-			You can infuse up to {{item infusions:max}} nonmagical objects at the end of a long rest.</description>
+			<description>You must have thieves’ tools or artisan’s tools. You touch a Tiny nonmagical object as an action and give it one of the following magical properties of your choice: &#13;
+			The object sheds bright light in a 5-foot radius and dim light for an additional 5 feet. &#13;
+			Whenever tapped by a creature, the object emits a recorded message (no more than 6 seconds long) that can be heard up to 10 feet away. &#13;
+			The object continuously emits your choice of an odor or a nonverbal sound. The chosen phenomenon is perceivable up to 10 feet away. &#13;
+			A static visual effect appears on one of the object’s surfaces. &#13;
+			The chosen property lasts indefinitely. As an action, you can touch the object and end the property early. &#13;
+			You can bestow magic on up to {{magical tinkering:objects}} objects.</description>
 		</sheet>
 		<rules>
-			<select type="Class Feature" name="Artificer Infusion" supports="Artificer Infusion" number="4" level="2" />
-			<select type="Class Feature" name="Artificer Infusion" supports="Artificer Infusion" number="2" level="6" />
-			<select type="Class Feature" name="Artificer Infusion" supports="Artificer Infusion" number="2" level="10" />
-			<select type="Class Feature" name="Artificer Infusion" supports="Artificer Infusion" number="2" level="14" />
-			<select type="Class Feature" name="Artificer Infusion" supports="Artificer Infusion" number="2" level="16" />
+			<select type="Class Feature" name="Artificer Infusion" supports="Artificer Infusion, !TCOE Base" number="4" level="2" />
+			<select type="Class Feature" name="Artificer Infusion" supports="Artificer Infusion, !TCOE Base" number="2" level="6" />
+			<select type="Class Feature" name="Artificer Infusion" supports="Artificer Infusion, !TCOE Base" number="2" level="10" />
+			<select type="Class Feature" name="Artificer Infusion" supports="Artificer Infusion, !TCOE Base" number="2" level="14" />
+			<select type="Class Feature" name="Artificer Infusion" supports="Artificer Infusion, !TCOE Base" number="2" level="16" />
 
 			<!-- selects for replicate magic items -->
 			<select type="Class Feature" name="Artificer Infusion, Replicate Magic Item" supports="Replicate Magic Item Option" requirements="ID_WOTC_ERLW_CLASS_FEATURE_ARTIFICER_INFUSION_REPLICATE_MAGIC_ITEM" />
@@ -259,23 +266,26 @@
 		</rules>
 	</element>
 	<element name="Artificer Specialist" type="Class Feature" source="Eberron: Rising from the Last War" id="ID_WOTC_ERLW_CLASS_FEATURE_ARTIFICER_ARTIFICER_SPECIALIST">
+		<requirements>!ID_INTERNAL_FEATURE_REPLACEMENT_ERLW_ARTIFICER_ARTIFICER_SPECIALIST</requirements>
 		<description>
 			<p>At 3rd level, you choose the type of specialist you are: Alchemist, Artillerist, or Battle Smith, each of which is detailed at the end of the class’s description. Your choice grants you features at 5th level and again at 9th and 15th level.</p>
 		</description>
 		<sheet display="false" />
 		<rules>
-			<select type="Archetype" name="Artificer Specialist" supports="Artificer Specialist" />
+			<select type="Archetype" name="Artificer Specialist" supports="Artificer Specialist, !TCOE Base" />
 		</rules>
 	</element>
 	<element name="The Right Tool for the Job" type="Class Feature" source="Eberron: Rising from the Last War" id="ID_WOTC_ERLW_CLASS_FEATURE_ARTIFICER_THE_RIGHT_TOOL_FOR_THE_JOB">
+		<requirements>!ID_INTERNAL_FEATURE_REPLACEMENT_ERLW_ARTIFICER_THE_RIGHT_TOOL_FOR_THE_JOB</requirements>
 		<description>
 			<p>At 3rd level, you learn how to produce exactly the tool you need: with with thieves’ tools or artisan’s tools in hand, you can magically create one set of artisan’s tools in an unoccupied space within 5 feet of you. This creation requires 1 hour of uninterrupted work, which can coincide with a short or long rest. Though the product of magic, the tools are nonmagical, and they vanish when you use this feature again.</p>
 		</description>
 		<sheet>
-			<description>With with thieves’ tools or artisan’s tools in hand, you can magically create one set of artisan’s tools in an unoccupied space within 5 feet of you. This creation requires 1 hour of uninterrupted work.</description>
+			<description>With thieves’ tools or artisan’s tools in hand, you can magically create one set of artisan’s tools in an unoccupied space within 5 feet of you. This creation requires 1 hour of uninterrupted work.</description>
 		</sheet>
 	</element>
 	<element name="Ability Score Improvement" type="Class Feature" source="Eberron: Rising from the Last War" id="ID_WOTC_ERLW_CLASS_FEATURE_ARTIFICER_ABILITY_SCORE_IMPROVEMENT">
+		<requirements>!ID_INTERNAL_FEATURE_REPLACEMENT_ERLW_ARTIFICER_ABILITY_SCORE_IMPROVEMENT</requirements>
 		<compendium display="false" />
 		<description>
 			<p>When you reach 4th, 8th, 12th, 16th, and 19th level, you can increase one ability score of your choice by 2, or you can increase two ability scores of your choice by 1. As normal, you can’t increase an ability score above 20 using this feature.</p>
@@ -292,6 +302,7 @@
 		</rules>
 	</element>
 	<element name="Tool Expertise" type="Class Feature" source="Eberron: Rising from the Last War" id="ID_WOTC_ERLW_CLASS_FEATURE_ARTIFICER_TOOL_EXPERTISE">
+		<requirements>!ID_INTERNAL_FEATURE_REPLACEMENT_ERLW_ARTIFICER_TOOL_EXPERTISE</requirements>
 		<description>
 			<p>Starting at 6th level, your proficiency bonus is doubled for any ability check you make that uses your proficiency with a tool.</p>
 		</description>
@@ -300,12 +311,13 @@
 		</sheet>
 	</element>
 	<element name="Flash of Genius" type="Class Feature" source="Eberron: Rising from the Last War" id="ID_WOTC_ERLW_CLASS_FEATURE_ARTIFICER_FLASH_OF_GENIUS">
+		<requirements>!ID_INTERNAL_FEATURE_REPLACEMENT_ERLW_ARTIFICER_FLASH_OF_GENIUS</requirements>
 		<description>
 			<p>Starting at 7th level, you gain the ability to come up with solutions under pressure. When you or another creature you can see within 30 feet of you makes an ability check or a saving throw, you can use your reaction to add your Intelligence modifier to the roll.</p>
 			<p class="indent">You can use this feature a number of times equal to your Intelligence modifier (minimum of once). You regain all expended uses when you finish a long rest.</p>
 		</description>
 		<sheet action="Reaction" usage="{{flash of genius:usage}}/Long Rest">
-			<description>When you or another creature you can see within 30 feet of you makes an ability check or a saving throw, you can use your reaction to add {{intelligence:modifier}} to the roll.</description>
+			<description>When you or another creature you can see within 30 feet of you makes an ability check or a saving throw, you can add {{intelligence:modifier}} to the roll.</description>
 		</sheet>
 		<rules>
 			<stat name="flash of genius:usage" value="1" bonus="base" />
@@ -313,6 +325,7 @@
 		</rules>
 	</element>
 	<element name="Magic Item Adept" type="Class Feature" source="Eberron: Rising from the Last War" id="ID_WOTC_ERLW_CLASS_FEATURE_ARTIFICER_MAGIC_ITEM_ADEPT">
+		<requirements>!ID_INTERNAL_FEATURE_REPLACEMENT_ERLW_ARTIFICER_MAGIC_ITEM_ADEPT</requirements>
 		<description>
 			<p>When you reach 10th level, you achieve a profound understanding of how to use and make magic items:</p>
 			<ul>
@@ -329,12 +342,13 @@
 		</rules>
 	</element>
 	<element name="Spell-Storing Item" type="Class Feature" source="Eberron: Rising from the Last War" id="ID_WOTC_ERLW_CLASS_FEATURE_ARTIFICER_SPELL_STORING_ITEM">
+		<requirements>!ID_INTERNAL_FEATURE_REPLACEMENT_ERLW_ARTIFICER_SPELL_STORING_ITEM</requirements>
 		<description>
 			<p>At 11th level, you learn how to store a spell in an object. Whenever you finish a long rest, you can touch one simple or martial weapon or one item that you can use as a spellcasting focus, and you store a spell in it, choosing a 1st- or 2nd-level spell from the artificer spell list that requires 1 action to cast (you needn’t have it prepared).</p>
 			<p class="indent">While holding the object, a creature can take an action to produce the spell’s effect from it, using your spellcasting ability modifier. If the spell requires concentration, the creature must concentrate. The spell stays in the object until it’s been used a number of times equal to twice your Intelligence modifier (minimum of twice) or until you use this feature again to store a spell in an object.</p>
 		</description>
 		<sheet>
-			<description>Whenever you finish a long rest, you can touch one simple or martial weapon or one item that you can use as a spellcasting focus, and you store a spell in it, choosing a 1st- or 2nd-level spell from the artificer spell list that requires 1 action to cast.
+			<description>Whenever you finish a long rest, you can touch one simple or martial weapon or one item that you can use as a spellcasting focus to store a spell in it, choosing a 1st- or 2nd-level spell from the artificer spell list that requires 1 action to cast. &#13;
 			While holding the object, a creature can take an action to produce the spell’s effect from it, using your spellcasting ability modifier. If the spell requires concentration, the creature must concentrate. The spell stays in the object until it’s been used {{spell storing item:charges}} times or until you use this feature again to store a spell in an object.</description>
 		</sheet>
 		<rules>
@@ -345,6 +359,7 @@
 		</rules>
 	</element>
 	<element name="Magic Item Savant" type="Class Feature" source="Eberron: Rising from the Last War" id="ID_WOTC_ERLW_CLASS_FEATURE_ARTIFICER_MAGIC_ITEM_SAVANT">
+		<requirements>!ID_INTERNAL_FEATURE_REPLACEMENT_ERLW_ARTIFICER_MAGIC_ITEM_SAVANT</requirements>
 		<description>
 			<p>At 14th level, your skill with magic items deepens more:</p>
 			<ul>
@@ -361,6 +376,7 @@
 		</rules>
 	</element>
 	<element name="Magic Item Master" type="Class Feature" source="Eberron: Rising from the Last War" id="ID_WOTC_ERLW_CLASS_FEATURE_ARTIFICER_MAGIC_ITEM_MASTER">
+		<requirements>!ID_INTERNAL_FEATURE_REPLACEMENT_ERLW_ARTIFICER_MAGIC_ITEM_MASTER</requirements>
 		<description>
 			<p>Starting at 18th level, you can attune to up to six magic items at once.</p>
 		</description>
@@ -372,6 +388,7 @@
 		</rules>
 	</element>
 	<element name="Soul of Artifice" type="Class Feature" source="Eberron: Rising from the Last War" id="ID_WOTC_ERLW_CLASS_FEATURE_ARTIFICER_SOUL_OF_ARTIFICE">
+		<requirements>!ID_INTERNAL_FEATURE_REPLACEMENT_ERLW_ARTIFICER_SOUL_OF_ARTIFICE</requirements>
 		<description>
 			<p>At 20th level, you develop a mystical connection to your magic items, which you can draw on for protection:</p>
 			<ul>
@@ -379,8 +396,8 @@
 				<li>If you’re reduced to 0 hit points but not killed outright, you can use your reaction to end one of your artificer infusions, causing you to drop to 1 hit point instead of 0.</li>
 			</ul>
 		</description>
-		<sheet action="Reaction">
-			<description>You gain a +1 bonus to all saving throws per magic item you are currently attuned to.
+		<sheet>
+			<description>You gain a +1 bonus to all saving throws per magic item you are currently attuned to. &#13;
 			If you’re reduced to 0 hit points but not killed outright, you can use your reaction to end one of your artificer infusions, causing you to drop to 1 hit point instead of 0.</description>
 		</sheet>
 		<rules>
@@ -395,1158 +412,24 @@
 			<stat name="charisma:save:misc" value="attunement:current" />
 		</rules>
 	</element>
-	
-	<element name="Alchemist" type="Archetype" source="Eberron: Rising from the Last War" id="ID_WOTC_ERLW_ARCHETYPE_ARTIFICER_ALCHEMIST">
-		<supports>Artificer Specialist</supports>
-		<description>
-			<p>An Alchemist is an expert at combining reagents to produce mystical effects. Alchemists use their creations to give life and to leech it away. Alchemy is the oldest of artificer traditions, and its versatility has long been valued during times of war and peace.</p>
-			<div element="ID_WOTC_ERLW_ARCHETYPE_FEATURE_ALCHEMIST_TOOL_PROFICIENCY" />
-			<div element="ID_WOTC_ERLW_ARCHETYPE_FEATURE_ALCHEMIST_ALCHEMIST_SPELLS" />
-			<div element="ID_WOTC_ERLW_ARCHETYPE_FEATURE_ALCHEMIST_EXPERIMENTAL_ELIXIR" />
-			<div element="ID_WOTC_ERLW_ARCHETYPE_FEATURE_ALCHEMIST_ALCHEMICAL_SAVANT" />
-			<div element="ID_WOTC_ERLW_ARCHETYPE_FEATURE_ALCHEMIST_RESTORATIVE_REAGENTS" />
-			<div element="ID_WOTC_ERLW_ARCHETYPE_FEATURE_ALCHEMIST_CHEMICAL_MASTERY" />
-		</description>
-		<sheet display="false">
-			<description>An Alchemist is an expert at combining reagents to produce mystical effects.</description>
-		</sheet>
-		<rules>
-			<grant type="Archetype Feature" id="ID_WOTC_ERLW_ARCHETYPE_FEATURE_ALCHEMIST_TOOL_PROFICIENCY" level="3" />
-			<grant type="Archetype Feature" id="ID_WOTC_ERLW_ARCHETYPE_FEATURE_ALCHEMIST_ALCHEMIST_SPELLS" level="3" />
-			<grant type="Archetype Feature" id="ID_WOTC_ERLW_ARCHETYPE_FEATURE_ALCHEMIST_EXPERIMENTAL_ELIXIR" level="3" />
-			<grant type="Archetype Feature" id="ID_WOTC_ERLW_ARCHETYPE_FEATURE_ALCHEMIST_ALCHEMICAL_SAVANT" level="5" />
-			<grant type="Archetype Feature" id="ID_WOTC_ERLW_ARCHETYPE_FEATURE_ALCHEMIST_RESTORATIVE_REAGENTS" level="9" />
-			<grant type="Archetype Feature" id="ID_WOTC_ERLW_ARCHETYPE_FEATURE_ALCHEMIST_CHEMICAL_MASTERY" level="15" />
-		</rules>
-	</element>
-	<element name="Tool Proficiency" type="Archetype Feature" source="Eberron: Rising from the Last War" id="ID_WOTC_ERLW_ARCHETYPE_FEATURE_ALCHEMIST_TOOL_PROFICIENCY">
-		<description>
-			<p>When you adopt this specialization at 3rd level, you gain proficiency with alchemist’s supplies. If you already have this proficiency, you gain proficiency with one other type of artisan’s tools of your choice.</p>
-		</description>
-		<sheet display="false">
-			<description>You gain proficiency with alchemist’s supplies. If you already have this proficiency, you gain proficiency with one other type of artisan’s tools of your choice.</description>
-		</sheet>
-		<rules>
-			<select type="Proficiency" name="Tool Proficiency, Alchemist" supports="Tool" default="ID_PROFICIENCY_TOOL_PROFICIENCY_ALCHEMISTS_SUPPLIES" />
-		</rules>
-	</element>
-	<element name="Alchemist Spells" type="Archetype Feature" source="Eberron: Rising from the Last War" id="ID_WOTC_ERLW_ARCHETYPE_FEATURE_ALCHEMIST_ALCHEMIST_SPELLS">
-		<description>
-			<p>Starting at 3rd level, you always have certain spells prepared after you reach particular levels in this class, as shown in the Alchemist Spells table. These spells count as artificer spells for you, but they don’t count against the number of artificer spells you prepare.</p>
-			<h5 class="caption">ALCHEMIST SPELLS</h5>
-			<table>
-				<thead>
-					<tr><td>Artificer Level</td><td>Spells</td></tr>
-				</thead>
-				<tr><td>3rd</td><td><em>healing word, ray of sickness</em></td></tr>
-				<tr><td>5th</td><td><em>flaming sphere, Melf’s acid arrow</em></td></tr>
-				<tr><td>9th</td><td><em>gaseous form, mass healing word</em></td></tr>
-				<tr><td>13th</td><td><em>blight, death ward</em></td></tr>
-				<tr><td>17th</td><td><em>cloudkill, raise dead</em></td></tr>
-			</table>
-		</description>
-		<sheet display="false">
-			<description>You always have certain spells prepared after you reach particular levels in this class, as shown in the Alchemist Spells table. These spells count as artificer spells for you, but they don’t count against the number of artificer spells you prepare.</description>
-		</sheet>
-		<rules>
-			<grant type="Spell" id="ID_PHB_SPELL_HEALING_WORD" spellcasting="Artificer" level="3" prepared="true" />
-			<grant type="Spell" id="ID_PHB_SPELL_RAY_OF_SICKNESS" spellcasting="Artificer" level="3" prepared="true" />
-			<grant type="Spell" id="ID_PHB_SPELL_FLAMING_SPHERE" spellcasting="Artificer" level="5" prepared="true" />
-			<grant type="Spell" id="ID_PHB_SPELL_MELFS_ACID_ARROW" spellcasting="Artificer" level="5" prepared="true" />
-			<grant type="Spell" id="ID_PHB_SPELL_GASEOUS_FORM" spellcasting="Artificer" level="9" prepared="true" />
-			<grant type="Spell" id="ID_PHB_SPELL_MASS_HEALING_WORD" spellcasting="Artificer" level="9" prepared="true" />
-			<grant type="Spell" id="ID_PHB_SPELL_BLIGHT" spellcasting="Artificer" level="13" prepared="true" />
-			<grant type="Spell" id="ID_PHB_SPELL_DEATH_WARD" spellcasting="Artificer" level="13" prepared="true" />
-			<grant type="Spell" id="ID_PHB_SPELL_CLOUDKILL" spellcasting="Artificer" level="17" prepared="true" />
-			<grant type="Spell" id="ID_PHB_SPELL_RAISE_DEAD" spellcasting="Artificer" level="17" prepared="true" />
-		</rules>
-	</element>
-	<element name="Experimental Elixir" type="Archetype Feature" source="Eberron: Rising from the Last War" id="ID_WOTC_ERLW_ARCHETYPE_FEATURE_ALCHEMIST_EXPERIMENTAL_ELIXIR">
-		<description>
-			<p>Beginning at 3rd level, whenever you finish a long rest, you can magically produce an experimental elixir in an empty flask you touch. Roll on the Experimental Elixir table for the elixir’s effect, which is triggered when someone drinks the elixir. As an action, a creature can drink the elixir or administer it to an incapacitated creature.</p>
-			<p class="indent">Creating an experimental elixir requires you to have alchemist supplies on your person, and any elixir you create with this feature lasts until it is drunk or until the end of your next long rest.</p>
-			<p class="indent">When you reach certain levels in this class, you can make more elixirs at the end of a long rest: two at 6th level and three at 15th level. Roll for each elixir’s effect separately. Each elixir requires its own flask.</p>
-			<p class="indent">You can create additional experimental elixirs by expending a spell slot of 1st level or higher for each one. When you do so, you use your action to create the elixir in an empty flask you touch, and you choose the elixir’s effect from the Experimental Elixir table.</p>
-			<p><strong>Experimental Elixir</strong></p>
-			<table>
-				<thead>
-					<tr><td>d6</td><td>Effect</td></tr>
-				</thead>
-				<tr><td>1</td><td><strong>Healing.</strong> The drinker regains a number of hit points equal to 2d4 + your Intelligence modifier.</td></tr>
-				<tr><td>2</td><td><strong>Swiftness.</strong> The drinker’s walking speed increases by 10 feet for 1 hour.</td></tr>
-				<tr><td>3</td><td><strong>Resilience.</strong> The drinker gains a +1 bonus to AC for 10 minutes.</td></tr>
-				<tr><td>4</td><td><strong>Boldness.</strong> The drinker can roll a d4 and add the number rolled to every attack roll and saving throw they make for the next minute.</td></tr>
-				<tr><td>5</td><td><strong>Flight.</strong> The drinker gains a flying speed of 10 feet for 10 minutes.</td></tr>
-				<tr><td>6</td><td><strong>Transformation.</strong> The drinker’s body is transformed as if by the alter self spell. The drinker determines the transformation caused by the spell, the effects of which last for 10 minutes.</td></tr>
-			</table>
-		</description>
-		<sheet>
-			<description>Whenever you finish a long rest, you can magically produce up to {{experimental elixir:count}} elixirs, each in an empty flask you touch.
-			Any elixir you create with this feature lasts until it is drunk or until the end of your next long rest.
-			You can create additional experimental elixirs by expending a spell slot of 1st level or higher for each one.</description>
-		</sheet>
-		<rules>
-			<stat name="experimental elixir:count" value="1"  />
-			<stat name="experimental elixir:count" value="1" level="6" />
-			<stat name="experimental elixir:count" value="1" level="15" />
-		</rules>
-	</element>
-	<element name="Alchemical Savant" type="Archetype Feature" source="Eberron: Rising from the Last War" id="ID_WOTC_ERLW_ARCHETYPE_FEATURE_ALCHEMIST_ALCHEMICAL_SAVANT">
-		<description>
-			<p>At 5th level, you develop masterful command of magical chemicals, enhancing the healing and damage you create through them. Whenever you cast a spell using your alchemist’s supplies as the spellcasting focus, you gain a bonus to one roll of the spell. That roll must restore hit points or be a damage roll that deals acid, fire, necrotic, or poison damage, and the bonus equals your Intelligence modifier (minimum of +1).</p>
-		</description>
-		<sheet>
-			<description>Whenever you cast a spell using your alchemist’s supplies, you gain a +{{alchemical savant:bonus}} bonus to one roll of the spell. That roll must restore hit points or be a damage roll that deals acid, fire, necrotic, or poison damage.</description>
-		</sheet>
-		<rules>
-			<stat name="alchemical savant:bonus" value="1" bonus="base" />
-			<stat name="alchemical savant:bonus" value="intelligence:modifier" bonus="base" />
-		</rules>
-	</element>
-	<element name="Restorative Reagents" type="Archetype Feature" source="Eberron: Rising from the Last War" id="ID_WOTC_ERLW_ARCHETYPE_FEATURE_ALCHEMIST_RESTORATIVE_REAGENTS">
-		<description>
-			<p>Starting at 9th level, you can incorporate restorative reagents into some of your works:</p>
-			<ul>
-				<li>Whenever a creature drinks an experimental elixir you created, the creature gains temporary hit points equal to 2d6 + your Intelligence modifier (minimum of 1 temporary hit point).</li>
-				<li>You can cast lesser restoration without expending a spell slot and without preparing the spell, provided you use alchemist’s supplies as the spellcasting focus. You can do so a number of times equal to your Intelligence modifier (minimum of once), and you regain all expended uses when you finish a long rest.</li>
-			</ul>
-		</description>
-		<sheet>
-			<description>Whenever a creature drinks an experimental elixir you created, the creature gains 2d6+{{intelligence:modifier}} temporary hp.
-			You can cast lesser restoration {{restorative reagents:usage}} times per long rest without expending a spell slot and without preparing the spell, provided you use alchemist’s supplies as the spellcasting focus.</description>
-		</sheet>
-		<rules>
-			<stat name="restorative reagents:usage" value="1" bonus="base" />
-			<stat name="restorative reagents:usage" value="intelligence:modifier" bonus="base" />
-		</rules>
-	</element>
-	<element name="Chemical Mastery" type="Archetype Feature" source="Eberron: Rising from the Last War" id="ID_WOTC_ERLW_ARCHETYPE_FEATURE_ALCHEMIST_CHEMICAL_MASTERY">
-		<description>
-			<p>By 15th level, you have been exposed to so many chemicals that they pose little risk to you, and you can use them to quickly end certain ailments:</p>
-			<ul>
-				<li>You gain resistance to acid damage and poison damage, and you are immune to the poisoned condition.</li>
-				<li>You can cast greater restoration and heal without expending a spell slot, without preparing the spell, and without material components, provided you use alchemist’s supplies as the spellcasting focus. Once you cast either spell with this feature, you can’t cast that spell with it again until you finish a long rest.</li>
-			</ul>
-		</description>
-		<sheet usage="1/Long Rest">
-			<description>You are immune to the poisoned condition.
-			You can cast greater restoration and heal without expending a spell slot, without preparing the spell, and without material components, provided you use alchemist’s supplies as the spellcasting focus.</description>
-		</sheet>
-		<rules>
-			<grant type="Condition" id="ID_INTERNAL_CONDITION_DAMAGE_RESISTANCE_ACID" />
-			<grant type="Condition" id="ID_INTERNAL_CONDITION_DAMAGE_RESISTANCE_POISON" />
-		</rules>
-	</element>
 
-	<element name="Artillerist" type="Archetype" source="Eberron: Rising from the Last War" id="ID_WOTC_ERLW_ARCHETYPE_ARTIFICER_ARTILLERIST">
-		<supports>Artificer Specialist</supports>
-		<description>
-			<p>An Artillerist specializes in using magic to hurl energy, projectiles, and explosions on a battlefield. This destructive power was valued by all the armies of the Last War. Now that the war is over, some members of this specialization have sought to build a more peaceful world by using their powers to fight the resurgence of strife in Khorvaire. The gnome artificer Vi, an unlikely yet key member of House Cannith’s warforged project, has been especially vocal about making things right: "It’s about time we fixed things instead of blowing them all to hell."</p>
-			<div element="ID_WOTC_ERLW_ARCHETYPE_FEATURE_ARTILLERIST_TOOL_PROFICIENCY" />
-			<div element="ID_WOTC_ERLW_ARCHETYPE_FEATURE_ARTILLERIST_ARTILLERIST_SPELLS" />
-			<div element="ID_WOTC_ERLW_ARCHETYPE_FEATURE_ARTILLERIST_ELDRITCH_CANNON" />
-			<div element="ID_WOTC_ERLW_ARCHETYPE_FEATURE_ARTILLERIST_ARCANE_FIREARM" />
-			<div element="ID_WOTC_ERLW_ARCHETYPE_FEATURE_ARTILLERIST_EXPLOSIVE_CANNON" />
-			<div element="ID_WOTC_ERLW_ARCHETYPE_FEATURE_ARTILLERIST_FORTIFIED_POSITION" />
-		</description>
-		<sheet display="false">
-			<description>An Artillerist specializes in using magic to hurl energy, projectiles, and explosions on a battlefield.</description>
-		</sheet>
-		<rules>
-			<grant type="Archetype Feature" id="ID_WOTC_ERLW_ARCHETYPE_FEATURE_ARTILLERIST_TOOL_PROFICIENCY" level="3" />
-			<grant type="Archetype Feature" id="ID_WOTC_ERLW_ARCHETYPE_FEATURE_ARTILLERIST_ARTILLERIST_SPELLS" level="3" />
-			<grant type="Archetype Feature" id="ID_WOTC_ERLW_ARCHETYPE_FEATURE_ARTILLERIST_ELDRITCH_CANNON" level="3" />
-			<grant type="Archetype Feature" id="ID_WOTC_ERLW_ARCHETYPE_FEATURE_ARTILLERIST_ARCANE_FIREARM" level="5" />
-			<grant type="Archetype Feature" id="ID_WOTC_ERLW_ARCHETYPE_FEATURE_ARTILLERIST_EXPLOSIVE_CANNON" level="9" />
-			<grant type="Archetype Feature" id="ID_WOTC_ERLW_ARCHETYPE_FEATURE_ARTILLERIST_FORTIFIED_POSITION" level="15" />
-		</rules>
-	</element>
-	<element name="Tool Proficiency" type="Archetype Feature" source="Eberron: Rising from the Last War" id="ID_WOTC_ERLW_ARCHETYPE_FEATURE_ARTILLERIST_TOOL_PROFICIENCY">
-		<description>
-			<p>When you adopt this specialization at 3rd level, you gain proficiency with woodcarver’s tools. If you already have this proficiency, you gain proficiency with one other type of artisan’s tools of your choice.</p>
-		</description>
-		<sheet display="false">
-			<description>You gain proficiency with woodcarver’s tools. If you already have this proficiency, you gain proficiency with one other type of artisan’s tools of your choice.</description>
-		</sheet>
-		<rules>
-			<select type="Proficiency" name="Tool Proficiency, Artillerist" supports="Tool" default="ID_PROFICIENCY_TOOL_PROFICIENCY_WOODCARVERS_TOOLS" />
-		</rules>
-	</element>
-	<element name="Artillerist Spells" type="Archetype Feature" source="Eberron: Rising from the Last War" id="ID_WOTC_ERLW_ARCHETYPE_FEATURE_ARTILLERIST_ARTILLERIST_SPELLS">
-		<description>
-			<p>Starting at 3rd level, you always have certain spells prepared after you reach particular levels in this class, as shown in the Artillerist Spells table. These spells count as artificer spells for you, but they don’t count against the number of artificer spells you prepare.</p>
-			<p><strong>ARTILLERIST SPELLS</strong></p>
-			<table>
-				<thead>
-					<tr><td>Artificer Level</td><td>Spells</td></tr>
-				</thead>
-				<tr><td>3rd</td><td><em>shield, thunderwave</em></td></tr>
-				<tr><td>5th</td><td><em>scorching ray, shatter</em></td></tr>
-				<tr><td>9th</td><td><em>fireball, wind wall</em></td></tr>
-				<tr><td>13th</td><td><em>ice storm, wall of fire</em></td></tr>
-				<tr><td>17th</td><td><em>cone of cold, wall of force</em></td></tr>
-			</table>
-		</description>
-		<sheet display="false">
-			<description>You always have certain spells prepared after you reach particular levels in this class, as shown in the Artillerist Spells table. These spells count as artificer spells for you, but they don’t count against the number of artificer spells you prepare.</description>
-		</sheet>
-		<rules>
-			<grant type="Spell" id="ID_PHB_SPELL_SHIELD" spellcasting="Artificer" level="3" prepared="true" />
-			<grant type="Spell" id="ID_PHB_SPELL_THUNDERWAVE" spellcasting="Artificer" level="3" prepared="true" />
-			<grant type="Spell" id="ID_PHB_SPELL_SCORCHING_RAY" spellcasting="Artificer" level="5" prepared="true" />
-			<grant type="Spell" id="ID_PHB_SPELL_SHATTER" spellcasting="Artificer" level="5" prepared="true" />
-			<grant type="Spell" id="ID_PHB_SPELL_FIREBALL" spellcasting="Artificer" level="9" prepared="true" />
-			<grant type="Spell" id="ID_PHB_SPELL_WIND_WALL" spellcasting="Artificer" level="9" prepared="true" />
-			<grant type="Spell" id="ID_PHB_SPELL_ICE_STORM" spellcasting="Artificer" level="13" prepared="true" />
-			<grant type="Spell" id="ID_PHB_SPELL_WALL_OF_FIRE" spellcasting="Artificer" level="13" prepared="true" />
-			<grant type="Spell" id="ID_PHB_SPELL_CONE_OF_COLD" spellcasting="Artificer" level="17" prepared="true" />
-			<grant type="Spell" id="ID_PHB_SPELL_WALL_OF_FORCE" spellcasting="Artificer" level="17" prepared="true" />
-		</rules>
-	</element>
-	<element name="Eldritch Cannon" type="Archetype Feature" source="Eberron: Rising from the Last War" id="ID_WOTC_ERLW_ARCHETYPE_FEATURE_ARTILLERIST_ELDRITCH_CANNON">
-		<description>
-			<p>At 3rd level, you learn how to create a magical cannon. Using woodcarver’s tools or smith’s tools, you can take an action to magically create a Small or Tiny eldritch cannon in an unoccupied space on a horizontal surface within 5 feet of you. A Small eldritch cannon occupies its space, and a Tiny one can be held in one hand.</p>
-			<p class="indent">Once you create a cannon, you can’t do so again until you finish a long rest or until you expend a spell slot to create one. You can have only one cannon at a time and can’t create one while your cannon is present.</p>
-			<p class="indent">The cannon is a magical object. Regardless of size, the cannon has an AC of 18 and a number of hit points equal to five times your artificer level. It is immune to poison damage and psychic damage. If it is forced to make an ability check or a saving throw, treat all its ability scores as 10 (+0). If the mending spell is cast on it, it regains 2d6 hit points. It disappears if it is reduced to 0 hit points or after 1 hour. You can dismiss it early as an action.</p>
-			<p class="indent">When you create the cannon, you determine its appearance and whether it has legs. You also decide which type it is, choosing from the options on the Eldritch Cannons table. On each of your turns, you can take a bonus action to cause the cannon to activate if you are within 60 feet of it. As part of the same bonus action, you can direct the cannon to walk or climb up to 15 feet to an unoccupied space, provided it has legs.</p>
-			<p><strong>ELDRITCH CANNONS</strong></p>
-			<table>
-				<thead>
-					<tr><td>Cannon</td><td>Activation</td></tr>
-				</thead>
-				<tr><td>Flamethrower</td><td>The cannon exhales fire in an adjacent 15-foot cone that you designate. Each creature in that area must make a Dexterity saving throw against your spell save DC, taking 2d8 fire damage on a failed save or half as much damage on a successful one. The fire ignites any flammable objects in the area that aren’t being worn or carried.</td></tr>
-				<tr><td>Force Ballista</td><td>Make a ranged spell attack, originating from the cannon, at one creature or object within 120 feet of it. On a hit, the target takes 2d8 force damage, and if the target is a creature, it is pushed up to 5 feet away from the cannon.</td></tr>
-				<tr><td>Protector</td><td>The cannon emits a burst of positive energy that grants itself and each creature of your choice with in 10 feet of it a number of temporary hit points equal to 1d8 + your Intelligence modifier (minimum of +1).</td></tr>
-			</table>
-		</description>
-		<sheet action="Action">
-			<description>You can magically create an eldritch cannon in an unoccupied space on a horizontal surface within 5 feet of you.
-			Once you create a cannon, you can’t do so again until you finish a long rest or until you expend a spell slot to create one.</description>
-		</sheet>
-		<rules>
-			<grant type="Archetype Feature" id="ID_WOTC_ERLW_ARCHETYPE_FEATURE_ARTILLERIST_ELDRITCH_CANNON_FLAMETHROWER" />
-			<grant type="Archetype Feature" id="ID_WOTC_ERLW_ARCHETYPE_FEATURE_ARTILLERIST_ELDRITCH_CANNON_FORCE_BALLISTA" />
-			<grant type="Archetype Feature" id="ID_WOTC_ERLW_ARCHETYPE_FEATURE_ARTILLERIST_ELDRITCH_CANNON_PROTECTOR" />
-		</rules>
-	</element>
-	<element name="Flamethrower" type="Archetype Feature" source="Eberron: Rising from the Last War" id="ID_WOTC_ERLW_ARCHETYPE_FEATURE_ARTILLERIST_ELDRITCH_CANNON_FLAMETHROWER">
-		<description>
-			<p>The cannon exhales fire in an adjacent 15-foot cone that you designate. Each creature in that area must make a Dexterity saving throw against your spell save DC, taking 2d8 fire damage on a failed save or half as much damage on a successful one. The fire ignites any flammable objects in the area that aren’t being worn or carried.</p>
-		</description>
-		<sheet usage="Eldritch Cannon">
-			<description>The cannon exhales fire in an adjacent 15-foot cone that you designate. Each creature in that area must make a Dexterity saving throw, taking {{flamethrower cannon:dice:amount}}d8 fire damage on a failed save or half as much damage on a successful one. The fire ignites any flammable objects in the area that aren’t being worn or carried.</description>
-		</sheet>
-		<rules>
-			<stat name="flamethrower cannon:dice:amount" value="2" />
-		</rules>
-	</element>
-	<element name="Force Ballista" type="Archetype Feature" source="Eberron: Rising from the Last War" id="ID_WOTC_ERLW_ARCHETYPE_FEATURE_ARTILLERIST_ELDRITCH_CANNON_FORCE_BALLISTA">
-		<description>
-			<p>Make a ranged spell attack, originating from the cannon, at one creature or object within 120 feet of it. On a hit, the target takes 2d8 force damage, and if the target is a creature, it is pushed up to 5 feet away from the cannon.</p>
-		</description>
-		<sheet usage="Eldritch Cannon">
-			<description>Make a ranged spell attack, originating from the cannon, at one creature or object within 120 feet of it. On a hit, the target takes {{force ballista cannon:dice:amount}}d8 force damage, and if the target is a creature, it is pushed up to 5 feet away from the cannon.</description>
-		</sheet>
-		<rules>
-			<stat name="force ballista cannon:dice:amount" value="2" />
-		</rules>
-	</element>
-	<element name="Protector" type="Archetype Feature" source="Eberron: Rising from the Last War" id="ID_WOTC_ERLW_ARCHETYPE_FEATURE_ARTILLERIST_ELDRITCH_CANNON_PROTECTOR">
-		<description>
-			<p>The cannon emits a burst of positive energy that grants itself and each creature of your choice with in 10 feet of it a number of temporary hit points equal to 1d8 + your Intelligence modifier (minimum of +1).</p>
-		</description>
-		<sheet usage="Eldritch Cannon">
-			<description>The cannon emits a burst of positive energy that grants itself and each creature of your choice with in 10 feet of it {{protector cannon:dice:amount}}d8+{{protector cannon:temporary hp}} temporary hit points.</description>
-		</sheet>
-		<rules>
-			<stat name="protector cannon:temporary hp" value="1" bonus="base" />
-			<stat name="protector cannon:temporary hp" value="intelligence:modifier" bonus="base" />
-			<stat name="protector cannon:dice:amount" value="1" />
-		</rules>
-	</element>
-	<element name="Arcane Firearm" type="Archetype Feature" source="Eberron: Rising from the Last War" id="ID_WOTC_ERLW_ARCHETYPE_FEATURE_ARTILLERIST_ARCANE_FIREARM">
-		<description>
-			<p>At 5th level, you know how to turn a wand, staff, or rod into an arcane firearm, a conduit for your destructive spells. When you finish a long rest, you can use woodcarver’s tools to carve special sigils into a wand, staff, or rod and thereby turn it into your arcane firearm. The sigils disappear from the object if you later carve them on a different item. The sigils otherwise last indefinitely.</p>
-			<p class="indent">You can use your arcane firearm as a spellcasting focus for your artificer spells. When you cast an artificer spell through the firearm, roll a d8, and you gain a bonus to one of the spell’s damage rolls equal to the number rolled.</p>
-		</description>
-		<sheet>
-			<description>When you finish a long rest, you can use woodcarver’s tools to carve special sigils into a wand, staff, or rod and thereby turn it into your arcane firearm.
-			When you cast an artificer spell through the firearm, roll a d8, and you gain a bonus to one of the spell’s damage rolls equal to the number rolled.</description>
-		</sheet>
-	</element>
-	<element name="Explosive Cannon" type="Archetype Feature" source="Eberron: Rising from the Last War" id="ID_WOTC_ERLW_ARCHETYPE_FEATURE_ARTILLERIST_EXPLOSIVE_CANNON">
-		<description>
-			<p>Starting at 9th level, every eldritch cannon you create is more destructive:</p>
-			<ul>
-				<li>The cannon’s damage rolls all increase by 1d8.</li>
-				<li>As an action, you can command the cannon to detonate if you are within 60 feet of it. Doing so destroys the cannon and forces each creature within 20 feet of it to make a Dexterity saving throw against your spell save DC, taking 3d8 force damage on a failed save or half as much damage on a successful one.</li>
-			</ul>
-		</description>
-		<sheet action="Action">
-			<description>You can command the cannon to detonate if you are within 60 feet of it. Doing so destroys the cannon and forces each creature within 20 feet of it to make a Dexterity saving throw, taking 3d8 force damage on a failed save or half as much damage on a successful one.</description>
-		</sheet>
-		<rules>	
-			<stat name="flamethrower cannon:dice:amount" value="1" />
-			<stat name="force ballista cannon:dice:amount" value="1" />
-			<stat name="protector cannon:dice:amount" value="1" />
-		</rules>
-	</element>
-	<element name="Fortified Position" type="Archetype Feature" source="Eberron: Rising from the Last War" id="ID_WOTC_ERLW_ARCHETYPE_FEATURE_ARTILLERIST_FORTIFIED_POSITION">
-		<description>
-			<p>Starting at 15th level, you’re a master at forming well-defended emplacements using Eldritch Cannon:</p>
-			<ul>
-				<li>You and your allies have half cover while within 10 feet of a cannon you create with Eldritch Cannon, as a result of a shimmering field of magical protection that the cannon emits.</li>
-				<li>You can now have two cannons at the same time. You can create two with the same action (but not the same spell slot), and you can activate both of them with the same bonus action. You determine whether the cannons are identical to each other or different. You can’t create a third cannon while you have two.</li>
-			</ul>
-		</description>
-		<sheet>
-			<description>You and your allies have half cover while within 10 feet of an Eldritch Cannon
-			You can now have two cannons at the same time. You can create two with the same action, and you can activate both of them with the same bonus action.</description>
-		</sheet>
-	</element>
 
-	<element name="Battle Smith" type="Archetype" source="Eberron: Rising from the Last War" id="ID_WOTC_ERLW_ARCHETYPE_ARTIFICER_BATTLE_SMITH">
-		<supports>Artificer Specialist</supports>
-		<description>
-			<p>Armies require protection, and someone has to put things back together if defenses fail. A combination of protector and medic, a Battle Smith is an expert at defending others and repairing both material and personnel. To aid in their work, Battle Smiths are usually accompanied by a steel defender, a protective companion of their own creation. Many soldiers tell stories of nearly dying before being saved by a Battle Smith and a steel defender.</p>
-			<p class="indent">Battle Smiths played a key role in House Cannith’s work on battle constructs and the original warforged, and after the Last War, these artificers led efforts to aid those who were injured in the war’s horrific battles.</p>
-			<div element="ID_WOTC_ERLW_ARCHETYPE_FEATURE_BATTLE_SMITH_TOOL_PROFICIENCY" />
-			<div element="ID_WOTC_ERLW_ARCHETYPE_FEATURE_BATTLE_SMITH_BATTLE_SMITH_SPELLS" />
-			<div element="ID_WOTC_ERLW_ARCHETYPE_FEATURE_BATTLE_SMITH_BATTLE_READY" />
-			<div element="ID_WOTC_ERLW_ARCHETYPE_FEATURE_BATTLE_SMITH_STEEL_DEFENDER" />
-			<div element="ID_WOTC_ERLW_ARCHETYPE_FEATURE_BATTLE_SMITH_EXTRA_ATTACK" />
-			<div element="ID_WOTC_ERLW_ARCHETYPE_FEATURE_BATTLE_SMITH_ARCANE_JOLT" />
-			<div element="ID_WOTC_ERLW_ARCHETYPE_FEATURE_BATTLE_SMITH_IMPROVED_DEFENDER" />
-		</description>
-		<sheet display="false">
-			<description>Armies require protection, and someone has to put things back together if defenses fail.</description>
-		</sheet>
-		<rules>
-			<grant type="Archetype Feature" id="ID_WOTC_ERLW_ARCHETYPE_FEATURE_BATTLE_SMITH_TOOL_PROFICIENCY" level="3" />
-			<grant type="Archetype Feature" id="ID_WOTC_ERLW_ARCHETYPE_FEATURE_BATTLE_SMITH_BATTLE_SMITH_SPELLS" level="3" />
-			<grant type="Archetype Feature" id="ID_WOTC_ERLW_ARCHETYPE_FEATURE_BATTLE_SMITH_BATTLE_READY" level="3" />
-			<grant type="Archetype Feature" id="ID_WOTC_ERLW_ARCHETYPE_FEATURE_BATTLE_SMITH_STEEL_DEFENDER" level="3" />
-			<grant type="Archetype Feature" id="ID_WOTC_ERLW_ARCHETYPE_FEATURE_BATTLE_SMITH_EXTRA_ATTACK" level="5" />
-			<grant type="Archetype Feature" id="ID_WOTC_ERLW_ARCHETYPE_FEATURE_BATTLE_SMITH_ARCANE_JOLT" level="9" />
-			<grant type="Archetype Feature" id="ID_WOTC_ERLW_ARCHETYPE_FEATURE_BATTLE_SMITH_IMPROVED_DEFENDER" level="15" />
-		</rules>
-	</element>
-	<element name="Tool Proficiency" type="Archetype Feature" source="Eberron: Rising from the Last War" id="ID_WOTC_ERLW_ARCHETYPE_FEATURE_BATTLE_SMITH_TOOL_PROFICIENCY">
-		<description>
-			<p>When you adopt this specialization at 3rd level, you gain proficiency with smith’s tools. If you already have this proficiency, you gain proficiency with one other type of artisan’s tools of your choice.</p>
-		</description>
-		<sheet display="false">
-			<description>You gain proficiency with smith’s tools. If you already have this proficiency, you gain proficiency with one other type of artisan’s tools of your choice.</description>
-		</sheet>
-		<rules>
-			<select type="Proficiency" name="Tool Proficiency, Battle Smith" supports="Tool" default="ID_PROFICIENCY_TOOL_PROFICIENCY_SMITHS_TOOLS" />
-		</rules>
-	</element>
-	<element name="Battle Smith Spells" type="Archetype Feature" source="Eberron: Rising from the Last War" id="ID_WOTC_ERLW_ARCHETYPE_FEATURE_BATTLE_SMITH_BATTLE_SMITH_SPELLS">
-		<description>
-			<p>Starting at 3rd level, you always have certain spells prepared after you reach particular levels in this class, as shown in the Battle Smith Spells table. These spells count as artificer spells for you, but they don’t count against the number of artificer spells you prepare.</p>
-			<p><strong>BATTLE SMITH SPELLS</strong></p>
-			<table>
-				<thead>
-					<tr><td>Artificer Level</td><td>Spells</td></tr>
-				</thead>
-				<tr><td>3rd</td><td><em>heroism, shield</em></td></tr>
-				<tr><td>5th</td><td><em>branding smite, warding bond</em></td></tr>
-				<tr><td>9th</td><td><em>aura of vitality, conjure barrage</em></td></tr>
-				<tr><td>13th</td><td><em>aura of purity, fire shield</em></td></tr>
-				<tr><td>17th</td><td><em>banishing smite, mass cure wounds</em></td></tr>
-			</table>			
-		</description>
-		<sheet display="false">
-			<description>You always have certain spells prepared after you reach particular levels in this class, as shown in the Battle Smith Spells table. These spells count as artificer spells for you, but they don’t count against the number of artificer spells you prepare.</description>
-		</sheet>
-		<rules>
-			<grant type="Spell" id="ID_PHB_SPELL_HEROISM" spellcasting="Artificer" level="3" prepared="true" />
-			<grant type="Spell" id="ID_PHB_SPELL_SHIELD" spellcasting="Artificer" level="3" prepared="true" />
-			<grant type="Spell" id="ID_PHB_SPELL_BRANDING_SMITE" spellcasting="Artificer" level="5" prepared="true" />
-			<grant type="Spell" id="ID_PHB_SPELL_WARDING_BOND" spellcasting="Artificer" level="5" prepared="true" />
-			<grant type="Spell" id="ID_PHB_SPELL_AURA_OF_VITALITY" spellcasting="Artificer" level="9" prepared="true" />
-			<grant type="Spell" id="ID_PHB_SPELL_CONJURE_BARRAGE" spellcasting="Artificer" level="9" prepared="true" />
-			<grant type="Spell" id="ID_PHB_SPELL_AURA_OF_PURITY" spellcasting="Artificer" level="13" prepared="true" />
-			<grant type="Spell" id="ID_PHB_SPELL_FIRE_SHIELD" spellcasting="Artificer" level="13" prepared="true" />
-			<grant type="Spell" id="ID_PHB_SPELL_BANISHING_SMITE" spellcasting="Artificer" level="17" prepared="true" />
-			<grant type="Spell" id="ID_PHB_SPELL_MASS_CURE_WOUNDS" spellcasting="Artificer" level="17" prepared="true" />
-		</rules>
-	</element>
-	<element name="Battle Ready" type="Archetype Feature" source="Eberron: Rising from the Last War" id="ID_WOTC_ERLW_ARCHETYPE_FEATURE_BATTLE_SMITH_BATTLE_READY">
-		<description>
-			<p>When you reach 3rd level, your combat training and your experiments with magic have paid off in two ways:</p>
-			<ul>
-				<li>You gain proficiency with martial weapons.</li>
-				<li>When you attack with a magic weapon, you can use your Intelligence modifier, instead of Strength or Dexterity modifier, for the attack and damage rolls.</li>
-			</ul>
-		</description>
-		<sheet>
-			<description>When you attack with a magic weapon, you can use your Intelligence modifier, instead of Strength or Dexterity modifier, for the attack and damage rolls.</description>
-		</sheet>
-		<rules>
-			<grant type="Proficiency" id="ID_PROFICIENCY_WEAPON_PROFICIENCY_MARTIAL_WEAPONS" />
-		</rules>
-	</element>
-	<element name="Steel Defender" type="Archetype Feature" source="Eberron: Rising from the Last War" id="ID_WOTC_ERLW_ARCHETYPE_FEATURE_BATTLE_SMITH_STEEL_DEFENDER">
-		<description>
-			<p>By 3rd level, your tinkering has borne you a faithful companion, a steel defender. It is friendly to you and your companions, and it obeys your commands. See this creature’s game statistics in the Steel Defender stat block, which uses your proficiency bonus (PB) in several places. You determine the creature’s appearance and whether it has two legs or four; your choice has no effect on its game statistics.</p>
-			<p class="indent">In combat, the defender shares your initiative count, but it takes its turn immediately after yours. It can move and use its reaction on its own, but the only action it takes on its turn is the Dodge action, unless you take a bonus action on your turn to command it to take another action. That action can be one in its stat block or some other action. If you are incapacitated, the defender can take any action of its choice, not just Dodge.</p>
-			<p class="indent">If the mending spell is cast on it, it regains 2d6 hit points. If it has died within the last hour, you can use your smith’s tools as an action to revive it, provided you are within 5 feet of it and you expend a spell slot of 1st level or higher. The steel defender returns to life after 1 minute with all its hit points restored.</p>
-			<p class="indent">At the end of a long rest, you can create a new steel defender if you have your smith’s tools with you. If you already have a steel defender from this feature, the first one immediately perishes. The defender also perishes if you die.</p>
-		</description>
-		<sheet>
-			<description>In combat, the defender shares your initiative count, but it takes its turn immediately after yours. It can move and use its reaction on its own, but the only action it takes on its turn is the Dodge action, unless you take a bonus action on your turn to command it to take another action. That action can be one in its stat block or some other action. If you are incapacitated, the defender can take any action of its choice, not just Dodge.
-			If the mending spell is cast on it, it regains 2d6 hit points. If it has died within the last hour, you can use your smith’s tools as an action to revive it, provided you are within 5 feet of it and you expend a spell slot of 1st level or higher. The steel defender returns to life after 1 minute with all its hit points restored.
-			At the end of a long rest, you can create a new steel defender if you have your smith’s tools with you.</description>
-		</sheet>
-		<rules>
-			<select type="Companion" name="Steel Defender" supports="Steel Defender" default="ID_WOTC_ERLW_COMPANION_ARTIFICER_STEEL_DEFENDER" />
-		</rules>
-	</element>
-	<element name="Extra Attack" type="Archetype Feature" source="Eberron: Rising from the Last War" id="ID_WOTC_ERLW_ARCHETYPE_FEATURE_BATTLE_SMITH_EXTRA_ATTACK">
-		<description>
-			<p>Starting at 5th level, you can attack twice, rather than once, whenever you take the Attack action on your turn.</p>
-		</description>
-		<sheet>
-			<description>You can attack twice, rather than once, whenever you take the Attack action on your turn.</description>
-		</sheet>
-		<rules>
-			<stat name="extra attack:count" value="2" level="5" bonus="extra attack" />
-		</rules>
-	</element>
-	<element name="Arcane Jolt" type="Archetype Feature" source="Eberron: Rising from the Last War" id="ID_WOTC_ERLW_ARCHETYPE_FEATURE_BATTLE_SMITH_ARCANE_JOLT">
-		<description>
-			<p>At 9th level, you learn new ways to channel arcane energy to harm or heal. When either you hit a target with a magic weapon attack or your steel defender hits a target, you can channel magical energy through the strike to create one of the following effects:</p>
-			<ul>
-				<li>The target takes an extra 2d6 force damage.</li>
-				<li>Choose one creature or object you can see within 30 feet of the target. Healing energy flows into the chosen recipient, restoring 2d6 hit points to it.</li>
-			</ul>
-			<p class="indent">You can use this energy a number of times equal to your Intelligence modifier (minimum of once), but you can do so no more than once on a turn. You regain all expended uses when you finish a long rest.</p>
-		</description>
-		<sheet>
-			<description>When either you hit a target with a magic weapon attack or your steel defender hits a target, you can create one of the following effects:
-			The target takes an extra {{arcane jolt damage:dice:amount}}d6 force damage.
-			Choose one creature or object you can see within 30 feet of the target restoring {{arcane jolt healing:dice:amount}}d6 hit points to it.</description>
-		</sheet>
-		<rules>
-			<stat name="arcane jolt damage:dice:amount" value="2" />
-			<stat name="arcane jolt healing:dice:amount" value="2" />
-		</rules>
-	</element>
-	<element name="Improved Defender" type="Archetype Feature" source="Eberron: Rising from the Last War" id="ID_WOTC_ERLW_ARCHETYPE_FEATURE_BATTLE_SMITH_IMPROVED_DEFENDER">
-		<description>
-			<p>At 15th level, your Arcane jolt and steel defender become more powerful:</p>
-			<ul>
-				<li>The extra damage and the healing of your Arcane jolt both increase to 4d6.</li>
-				<li>Your steel defender gains a +2 bonus to Armor Class.</li>
-				<li>Whenever your steel defender uses its Deflect Attack, the attacker takes force damage equal to 1d4 + your Intelligence modifier.</li>
-			</ul>
-		</description>
-		<sheet>
-			<description>Whenever your steel defender uses its Deflect Attack, the attacker takes 1d4+{{intelligence:modifier}} force damage.</description>
-		</sheet>
-		<rules>
-			<stat name="arcane jolt damage:dice:amount" value="2" />
-			<stat name="arcane jolt healing:dice:amount" value="2" />
-			<stat name="companion:ac" value="2" />
-		</rules>
-	</element>
+	<!--Feature Replacement Grants-->
+	<element name="Magical Tinkering Feature Replacement" type="Grants" source="Internal" id="ID_INTERNAL_FEATURE_REPLACEMENT_ERLW_ARTIFICER_MAGICAL_TINKERING" />
+	<element name="Spellcasting Feature Replacement" type="Grants" source="Internal" id="ID_INTERNAL_FEATURE_REPLACEMENT_ERLW_ARTIFICER_SPELLCASTING" />
+	<element name="Infuse Item Feature Replacement" type="Grants" source="Internal" id="ID_INTERNAL_FEATURE_REPLACEMENT_ERLW_ARTIFICER_INFUSE_ITEM" />
+	<element name="Artificer Specialist Feature Replacement" type="Grants" source="Internal" id="ID_INTERNAL_FEATURE_REPLACEMENT_ERLW_ARTIFICER_ARTIFICER_SPECIALIST" />
+	<element name="The Right Tool for the Job Feature Replacement" type="Grants" source="Internal" id="ID_INTERNAL_FEATURE_REPLACEMENT_ERLW_ARTIFICER_THE_RIGHT_TOOL_FOR_THE_JOB" />
+	<element name="Ability Score Improvement Feature Replacement" type="Grants" source="Internal" id="ID_INTERNAL_FEATURE_REPLACEMENT_ERLW_ARTIFICER_ABILITY_SCORE_IMPROVEMENT" />
+	<element name="Tool Expertise Feature Replacement" type="Grants" source="Internal" id="ID_INTERNAL_FEATURE_REPLACEMENT_ERLW_ARTIFICER_TOOL_EXPERTISE" />
+	<element name="Flash of Genius Feature Replacement" type="Grants" source="Internal" id="ID_INTERNAL_FEATURE_REPLACEMENT_ERLW_ARTIFICER_FLASH_OF_GENIUS" />
+	<element name="Magic Item Adept Feature Replacement" type="Grants" source="Internal" id="ID_INTERNAL_FEATURE_REPLACEMENT_ERLW_ARTIFICER_MAGIC_ITEM_ADEPT" />
+	<element name="Spell-Storing Item Feature Replacement" type="Grants" source="Internal" id="ID_INTERNAL_FEATURE_REPLACEMENT_ERLW_ARTIFICER_SPELL_STORING_ITEM" />
+	<element name="Magic Item Savant Feature Replacement" type="Grants" source="Internal" id="ID_INTERNAL_FEATURE_REPLACEMENT_ERLW_ARTIFICER_MAGIC_ITEM_SAVANT" />
+	<element name="Magic Item Master Feature Replacement" type="Grants" source="Internal" id="ID_INTERNAL_FEATURE_REPLACEMENT_ERLW_ARTIFICER_MAGIC_ITEM_MASTER" />
+	<element name="Soul of Artifice Feature Replacement" type="Grants" source="Internal" id="ID_INTERNAL_FEATURE_REPLACEMENT_ERLW_ARTIFICER_SOUL_OF_ARTIFICE" />
 
-	<element name="Steel Defender" type="Companion" source="Eberron: Rising from the Last War" id="ID_WOTC_ERLW_COMPANION_ARTIFICER_STEEL_DEFENDER">
-		<supports>Steel Defender</supports>
-		<description>
-			<p>Your tinkering has borne you a faithful companion, a steel defender. It is friendly to you and your companions, and it obeys your commands.</p>
-			<p><b>Proficiency Bonus (PB)</b> equals your bonus</p>
-		</description>
-		<setters>
-			<set name="strength">14</set>
-			<set name="dexterity">12</set>
-			<set name="constitution">14</set>
-			<set name="intelligence">4</set>
-			<set name="wisdom">10</set>
-			<set name="charisma">6</set>
-			<set name="ac">15 (natural armor)</set>
-			<set name="hp">2 + your Intelligence modifier + five times your artificer level (the defender has a number of Hit Dice [d8s] equal to your artificer level)</set>
-			<set name="speed">40 ft.</set>
-			<set name="immunities">poison</set>
-			<set name="conditionImmunities">charmed, exhaustion, poisoned</set>			
-			<set name="saves">Dex +1 plus PB, Con +2 plus PB</set>
-			<set name="skills">Athletics +2 plus PB, Perception +0 plus PB × 2</set>
-			<set name="senses">darkvision 60 ft., passive Perception 10 plus PB×2</set>
-			<set name="languages">understands the languages you speak</set>
-			<set name="type">Construct</set>
-			<set name="size">Medium</set>
-			<set name="alignment">neutral</set>
-			<set name="challenge">1</set>
-			<set name="traits">ID_WOTC_ERLW_COMPANION_TRAIT_STEEL_DEFENDER_VIGILANT</set>
-			<set name="actions">ID_WOTC_ERLW_COMPANION_ACTION_STEEL_DEFENDER_FORCE_EMPOWERED_REND,ID_WOTC_ERLW_COMPANION_ACTION_STEEL_DEFENDER_REPAIR</set>
-			<set name="reactions">ID_WOTC_ERLW_COMPANION_REACTION_STEEL_DEFENDER_DEFLECT_ATTACK</set>
-		</setters>
-		<rules>
-			<stat name="companion:ac" value="15" bonus="base" />
-			<stat name="companion:hp:max" value="2" />
-			<stat name="companion:hp:max" value="intelligence:modifier" />
-			<stat name="companion:hp:max" value="level:artificer" />
-			<stat name="companion:hp:max" value="level:artificer" />
-			<stat name="companion:hp:max" value="level:artificer" />
-			<stat name="companion:hp:max" value="level:artificer" />
-			<stat name="companion:hp:max" value="level:artificer" />
-			<stat name="companion:speed" value="40" bonus="base" />	
-			<stat name="companion:proficiency" value="proficiency" bonus="base" />
-			<stat name="companion:proficiency" value="-2" bonus="base companion PB removal"/>
-			<stat name="companion:athletics:proficiency" value="companion:proficiency" bonus="proficiency" />
-			<stat name="companion:perception:proficiency" value="companion:proficiency" bonus="proficiency" />
-			<stat name="companion:perception:proficiency" value="companion:proficiency" bonus="double" />
-			<stat name="companion:dexterity:save:proficiency" value="companion:proficiency" bonus="proficiency" />
-			<stat name="companion:constitution:save:proficiency" value="companion:proficiency" bonus="proficiency" />
-		</rules>
-	</element>
-	<element name="Vigilant" type="Companion Trait" source="Eberron: Rising from the Last War" id="ID_WOTC_ERLW_COMPANION_TRAIT_STEEL_DEFENDER_VIGILANT">
-		<description>
-			<p>The defender can’t be surprised.</p>
-		</description>
-		<sheet>
-			<description>The defender can’t be surprised.</description>
-		</sheet>
-	</element>
-	<element name="Force-Empowered Rend" type="Companion Action" source="Eberron: Rising from the Last War" id="ID_WOTC_ERLW_COMPANION_ACTION_STEEL_DEFENDER_FORCE_EMPOWERED_REND">
-		<description>
-			<p>Melee Weapon Attack: your spell attack modifier to hit, reach 5 ft., one target you can see. Hit: 1d8 + PB force damage.</p>
-		</description>
-		<sheet>
-			<description>Melee Weapon Attack: your spell attack modifier to hit, reach 5 ft., one target you can see. Hit: 1d8 + PB force damage.</description>
-		</sheet>
-	</element>
-	<element name="Repair" type="Companion Action" source="Eberron: Rising from the Last War" id="ID_WOTC_ERLW_COMPANION_ACTION_STEEL_DEFENDER_REPAIR">
-		<description>
-			<p>The magical mechanisms inside the defender restore 2d8 + PB hit points to itself or to one construct or object within 5 feet of it.</p>
-		</description>
-		<sheet usage="3/Day">
-			<description>The magical mechanisms inside the defender restore 2d8 + PB hit points to itself or to one construct or object within 5 feet of it.</description>
-		</sheet>
-	</element>
-	<element name="Deflect Attack" type="Companion Reaction" source="Eberron: Rising from the Last War" id="ID_WOTC_ERLW_COMPANION_REACTION_STEEL_DEFENDER_DEFLECT_ATTACK">
-		<description>
-			<p>The defender imposes disadvantage on the attack roll of one creature it can see that is within 5 feet of it, provided the attack roll is against a creature other than the defender.</p>
-		</description>
-		<sheet>
-			<description>The defender imposes disadvantage on the attack roll of one creature it can see that is within 5 feet of it, provided the attack roll is against a creature other than the defender.</description>
-		</sheet>
-	</element>
-	
-	<element name="Boots of the Winding Path" type="Class Feature" source="Eberron: Rising from the Last War" id="ID_WOTC_ERLW_CLASS_FEATURE_ARTIFICER_INFUSION_BOOTS_OF_THE_WINDING_PATH">
-		<supports>Artificer Infusion</supports>
-		<requirements>[level:6]</requirements>
-		<prerequisite>6th-level artificer</prerequisite>
-		<description>
-			<p><em>Prerequisite: 6th-level artificer</em></p>
-			<p><em>Item: A pair of boots (requires attunement)</em></p>
-			<p>While wearing these boots, a creature can teleport up to 15 feet as a bonus action to an unoccupied space the creature can see. The creature must have occupied that space at some point during the current turn.</p>
-			<!-- <div class="reference">
-				<div element="ID_WOTC_ERLW_MAGIC_ITEM_INFUSION_BOOTS_OF_THE_WINDING_PATH" />
-			</div> -->
-		</description>
-		<sheet>
-			<description>You can infuse a pair of boots into Boots of the Winding Path.</description>
-		</sheet>
-	</element>
-	<element name="Enhanced Arcane Focus" type="Class Feature" source="Eberron: Rising from the Last War" id="ID_WOTC_ERLW_CLASS_FEATURE_ARTIFICER_INFUSION_ENHANCED_ARCANE_FOCUS">
-		<supports>Artificer Infusion</supports>
-		<description>
-			<p><em>Item: A rod, staff, or wand (requires attunement)</em></p>
-			<p>While holding this item, a creature gains a +1 bonus to spell attack rolls. In addition, the creature ignores half cover when making a spell attack.</p>
-			<p class="indent">The bonus increases to +2 when you reach 10th level in this class.</p>
-		</description>
-		<sheet>
-			<description>You can infuse a rod, staff, or wand into an enhanced arcane focus.</description>
-			<!-- <description>Item: A rod, staff, or wand (requires attunement)
-			While holding this item, a creature gains a +1 bonus to spell attack rolls. In addition, the creature ignores half cover when making a spell attack.</description>
-			<description level="10">Item: A rod, staff, or wand (requires attunement)
-			While holding this item, a creature gains a +2 bonus to spell attack rolls. In addition, the creature ignores half cover when making a spell attack.</description> -->
-		</sheet>
-	</element>
-	<element name="Enhanced Defense" type="Class Feature" source="Eberron: Rising from the Last War" id="ID_WOTC_ERLW_CLASS_FEATURE_ARTIFICER_INFUSION_ENHANCED_DEFENSE">
-		<supports>Artificer Infusion</supports>
-		<description>
-			<p><em>Item: A suit of armor or a shield</em></p>
-			<p>A creature gains a +1 bonus to Armor Class while wearing (armor) or wielding (shield) the infused item.</p>
-			<p class="indent">The bonus increases to +2 when you reach 10th level in this class.</p>
-		</description>
-		<sheet>
-			<description>You can infuse a suit of armor or a shield into a +1 armor or a +1 shield.</description>
-			<description level="10">You can infuse a suit of armor or a shield into a +2 armor or a +2 shield.</description>
-			<!-- <description>A suit of armor or a shield
-			A creature gains a +1 bonus to Armor Class while wearing (armor) or wielding (shield) the infused item.</description>
-			<description level="10">A suit of armor or a shield
-			A creature gains a + 2 bonus to Armor Class while wearing (armor) or wielding (shield) the infused item.</description> -->
-		</sheet>
-	</element>
-	<element name="Enhanced Weapon" type="Class Feature" source="Eberron: Rising from the Last War" id="ID_WOTC_ERLW_CLASS_FEATURE_ARTIFICER_INFUSION_ENHANCED_WEAPON">
-		<supports>Artificer Infusion</supports>
-		<description>
-			<p><em>Item: A simple or martial weapon</em></p>
-			<p>This magic weapon grants a +1 bonus to attack and damage rolls made with it.</p>
-			<p class="indent">The bonus increases to +2 when you reach 10th level in this class.</p>
-		</description>
-		<sheet>
-			<description>You can infuse a simple or martial weapon into a +1 weapon.</description>
-			<description level="10">You can infuse a simple or martial weapon into a +2 weapon.</description>
-			<!-- <description>Item: A simple or martial weapon
-			This magic weapon grants a +1 bonus to attack and damage rolls made with it.</description>
-			<description level="10">Item: A simple or martial weapon
-			This magic weapon grants a + 2 bonus to attack and damage rolls made with it.</description> -->
-		</sheet>
-	</element>
-	<element name="Homunculus Servant" type="Class Feature" source="Eberron: Rising from the Last War" id="ID_WOTC_ERLW_CLASS_FEATURE_ARTIFICER_INFUSION_HOMUNCULUS_SERVANT">
-		<supports>Artificer Infusion</supports>
-		<description>
-			<p><em>Item: A gem or crystal worth at least 100 gp</em></p>
-			<p>You learn intricate methods for magically creating a special homunculus that serves you. The item you infuse serves as the creature’s heart, around which the creature’s body instantly forms.</p>
-			<p class="indent">You determine the homunculus’s appearance. Some artificers prefer mechanical-looking birds, whereas some like winged vials or miniature, animate cauldrons.</p>
-			<p class="indent">The homunculus is friendly to you and your companions, and it obeys your commands. See this creature’s game statistics in the Homunculus Servant stat block, which uses your proficiency bonus (PB) in several places.</p>
-			<p class="indent">In combat, the homunculus shares your initiative count, but it takes its turn immediately after yours. It can move and use its reaction on its own, but the only action it takes on its turn is the Dodge action, unless you take a bonus action on your turn to command it to take another action. That action can be one in its stat block or some other action. If you are incapacitated, the homunculus can take any action of its choice, not just Dodge.</p>
-			<p class="indent">The homunculus regains 2d6 hit points if the mending spell is cast on it. If you or the homunculus dies, it vanishes, leaving its heart in its space. </p>
-			<div class="reference">
-				<h3 style="margin-bottom:-20px;margin-top:-5px">Homunculus Servant</h3>
-				<p style="margin-bottom:-5px"><em>Tiny construct</em></p>
-				<h4 style="margin-top:5px" />
-				<ul class="unstyled">
-					<li><strong>Armor Class</strong> 13 (natural armor)</li>
-					<li><strong>Hit Points</strong> 1 + your Intelligence modifier + your artificer level (the homunculus servant has a number of Hit Dice [d4s] equal to your artificer level)</li>
-					<li><strong>Speed</strong> 20 ft., fly 30 ft.</li>
-				</ul>
-				<table style="text-align:center;margin-top:10px;margin-bottom:10px">
-					<thead><tr><td>STR</td><td>DEX</td><td>CON</td><td>INT</td><td>WIS</td><td>CHA</td></tr></thead>
-					<tr><td>4 (-3)</td><td>15 (+2)</td><td>12 (+1)</td><td>10 (+0)</td><td>10 (+0)</td><td>7 (-2)</td></tr>
-				</table>
-				<ul class="unstyled">
-					<li><strong>Saving Throws</strong> Dex +2 plus PB</li>
-					<li><strong>Skills</strong> Perception +0 plus PB x 2, Stealth +2 plus PB</li>
-					<li><strong>Damage Immunities</strong> poison</li>
-					<li><strong>Condition Immunities</strong> exhaustion, poisoned</li>
-					<li><strong>Senses</strong> darkvision 60 ft., passive Perception 10 + (PB x 2)</li>
-					<li><strong>Languages</strong> understands the language you speak</li>
-					<li><strong>Challenge</strong> —</li>
-					<li><strong>Proficiency Bonus (PB)</strong> equals your bonus</li>
-				</ul>
-				<h4 style="margin-top:5px; margin-bottom:10px" />
-				<ul class="unstyled">
-					<li><strong><em>Evasion.</em></strong> If the homunculus is subjected to an effect that allows it to make a Dexterity saving throw to take only half damage, it instead takes no damage if it succeeds on the saving throw, and only half damage if it fails. It can't use this trait if it's incapacitated.</li>
-				</ul>
-				<h4 style="margin-top:10px">Actions</h4>
-				<ul class="unstyled">
-					<li><strong><em>Force Strike. </em></strong><em>Ranged Weapon Attack:</em> your spell attack modifier to hit, range 30 ft., one target you can see. <em>Hit:</em> 1d4 + PB force damage.</li>
-				</ul>
-				<h4 style="margin-top:10px">Reactions</h4>
-				<ul class="unstyled">
-					<li><strong><em>Channel Magic. </em></strong>The homunculus delivers a spell you cast that has a range of touch. The homunculus must be within 120 feet of you.</li>
-				</ul>
-			</div>
-		</description>
-		<sheet>
-			<description>You can infuse a gem or crystal worth at least 100 gp into a homunculus servant.
-			In combat, the homunculus shares your initiative count, but it takes its turn immediately after yours. It can move and use its reaction on its own, but the only action it takes on its turn is the Dodge action, unless you take a bonus action on your turn to command it to take another action. That action can be one in its stat block or some other action. If you are incapacitated, the homunculus can take any action of its choice, not just Dodge.
-			The homunculus regains 2d6 hit points if the mending spell is cast on it. If you or the homunculus dies, it vanishes, leaving its heart in its space.</description>
-		</sheet>
-		<rules>
-			<select type="Companion" name="Homunculus Servant" supports="Homunculus Servant" />
-		</rules>
-	</element>
-	<element name="Radiant Weapon" type="Class Feature" source="Eberron: Rising from the Last War" id="ID_WOTC_ERLW_CLASS_FEATURE_ARTIFICER_INFUSION_RADIANT_WEAPON">
-		<supports>Artificer Infusion</supports>
-		<requirements>[level:6]</requirements>
-		<prerequisite>6th-level artificer</prerequisite>
-		<description>
-			<p><em>Prerequisite: 6th-level artificer</em></p>
-			<p><em>Item: A simple or martial weapon (requires attunement)</em></p>
-			<p>This magic weapon grants a +1 bonus to attack and damage rolls made with it. While holding it, the wielder can take a bonus action to cause it to shed bright light in a 30-foot radius and dim light for an additional 30 feet. The wielder can extinguish the light as a bonus action.</p>
-			<p class="indent">The weapon has 4 charges. As a reaction immediately after being hit by an attack, the wielder can expend 1 charge and cause the attacker to be blinded until the end of the attacker’s next turn, unless the attacker succeeds on a Constitution saving throw against your spell save DC. The weapon regains 1d4 expended charges daily at dawn.</p>
-		</description>
-		<sheet>
-			<description>You can infuse a simple or martial weapon into a radiant weapon.</description>
-			<!-- <description>Item: A simple or martial weapon (requires attunement)
-			This magic weapon grants a +1 bonus to attack and damage rolls made with it. While holding it, the wielder can take a bonus action to cause it to shed bright light in a 30-foot radius and dim light for an additional 30 feet. The wielder can extinguish the light as a bonus action.
-			The weapon has 4 charges. As a reaction immediately after being hit by an attack, the wielder can expend 1 charge and cause the attacker to be blinded until the end of the attacker’s next turn, unless the attacker succeeds on a Constitution saving throw against your spell save DC. The weapon regains 1d4 expended charges daily at dawn</description> -->
-		</sheet>
-	</element>
-	<element name="Repeating Shot" type="Class Feature" source="Eberron: Rising from the Last War" id="ID_WOTC_ERLW_CLASS_FEATURE_ARTIFICER_INFUSION_REPEATING_SHOT">
-		<supports>Artificer Infusion</supports>
-		<description>
-			<p><em>Item: A simple or martial weapon with the ammunition property (requires attunement)</em></p>
-			<p>This magic weapon grants a +1 bonus to attack and damage rolls made with it when it’s used to make a ranged attack, and it ignores the loading property if it has it.</p>
-			<p class="indent">If you load no ammunition in the weapon, it produces its own, automatically creating one piece of magic ammunition when you make a ranged attack with it. The ammunition created by the weapon vanishes the instant after it hits or misses a target.</p>
-		</description>
-		<sheet>
-			<description>You can infuse a simple or martial weapon with the ammunition property into a repeating weapon.</description>
-			<!-- <description>Item: A simple or martial weapon with the ammunition property (requires attunement)
-			This magic weapon grants a +1 bonus to attack and damage rolls made with it when it’s used to make a ranged attack, and it ignores the loading property if it has it.
-			If you load no ammunition in the weapon, it produces its own, automatically creating one piece of magic ammunition when you make a ranged attack with it. The ammunition created by the weapon vanishes the instant after it hits or misses a target.</description> -->
-		</sheet>
-	</element>
-	<element name="Replicate Magic Item" type="Class Feature" source="Eberron: Rising from the Last War" id="ID_WOTC_ERLW_CLASS_FEATURE_ARTIFICER_INFUSION_REPLICATE_MAGIC_ITEM">
-		<supports>Artificer Infusion</supports>
-		<description>
-			<p>Using this infusion, you replicate a particular magic item. You can learn this infusion multiple times; each time you do so, choose a magic item that you can make with it, picking from the Replicable Items tables below. A table’s title tells you the level you must be in the class to choose an item from the table. Alternatively, you can choose the magic item from among the common magic items in the game, not including potions or scrolls.</p>
-			<p class="indent">In the tables, an item’s entry tells you whether the item requires attunement. See the item’s description in the Dungeon Master’s Guide for more information about it, including the type of object required for its making.</p>
-			<div element="ID_WOTC_ERLW_CLASS_FEATURE_ARTIFICER_INFUSION_REPLICATE_MAGIC_ITEM_TABLES" />
-		</description>
-		<sheet display="false">
-			<description>Using this infusion, you replicate a particular magic item.</description>
-		</sheet>
-	</element>
-	<element name="Replicate Magic Item" type="Class Feature" source="Eberron: Rising from the Last War" id="ID_WOTC_ERLW_CLASS_FEATURE_ARTIFICER_INFUSION_REPLICATE_MAGIC_ITEM_2">
-		<compendium display="false" />
-		<supports>Artificer Infusion</supports>
-		<requirements>ID_WOTC_ERLW_CLASS_FEATURE_ARTIFICER_INFUSION_REPLICATE_MAGIC_ITEM</requirements>
-		<description>
-			<p>Using this infusion, you replicate a particular magic item. You can learn this infusion multiple times; each time you do so, choose a magic item that you can make with it, picking from the Replicable Items tables below. A table’s title tells you the level you must be in the class to choose an item from the table. Alternatively, you can choose the magic item from among the common magic items in the game, not including potions or scrolls.</p>
-			<p class="indent">In the tables, an item’s entry tells you whether the item requires attunement. See the item’s description in the Dungeon Master’s Guide for more information about it, including the type of object required for its making.</p>
-			<div element="ID_WOTC_ERLW_CLASS_FEATURE_ARTIFICER_INFUSION_REPLICATE_MAGIC_ITEM_TABLES" />
-		</description>
-		<sheet display="false">
-			<description>Using this infusion, you replicate a particular magic item.</description>
-		</sheet>
-	</element>
-	<element name="Replicate Magic Item" type="Class Feature" source="Eberron: Rising from the Last War" id="ID_WOTC_ERLW_CLASS_FEATURE_ARTIFICER_INFUSION_REPLICATE_MAGIC_ITEM_3">
-		<compendium display="false" />
-		<supports>Artificer Infusion</supports>
-		<requirements>ID_WOTC_ERLW_CLASS_FEATURE_ARTIFICER_INFUSION_REPLICATE_MAGIC_ITEM_2</requirements>
-		<description>
-			<p>Using this infusion, you replicate a particular magic item. You can learn this infusion multiple times; each time you do so, choose a magic item that you can make with it, picking from the Replicable Items tables below. A table’s title tells you the level you must be in the class to choose an item from the table. Alternatively, you can choose the magic item from among the common magic items in the game, not including potions or scrolls.</p>
-			<p class="indent">In the tables, an item’s entry tells you whether the item requires attunement. See the item’s description in the Dungeon Master’s Guide for more information about it, including the type of object required for its making.</p>
-			<div element="ID_WOTC_ERLW_CLASS_FEATURE_ARTIFICER_INFUSION_REPLICATE_MAGIC_ITEM_TABLES" />
-		</description>
-		<sheet display="false">
-			<description>Using this infusion, you replicate a particular magic item.</description>
-		</sheet>
-	</element>
-	<element name="Replicate Magic Item" type="Class Feature" source="Eberron: Rising from the Last War" id="ID_WOTC_ERLW_CLASS_FEATURE_ARTIFICER_INFUSION_REPLICATE_MAGIC_ITEM_4">
-		<compendium display="false" />
-		<supports>Artificer Infusion</supports>
-		<requirements>ID_WOTC_ERLW_CLASS_FEATURE_ARTIFICER_INFUSION_REPLICATE_MAGIC_ITEM_3</requirements>
-		<description>
-			<p>Using this infusion, you replicate a particular magic item. You can learn this infusion multiple times; each time you do so, choose a magic item that you can make with it, picking from the Replicable Items tables below. A table’s title tells you the level you must be in the class to choose an item from the table. Alternatively, you can choose the magic item from among the common magic items in the game, not including potions or scrolls.</p>
-			<p class="indent">In the tables, an item’s entry tells you whether the item requires attunement. See the item’s description in the Dungeon Master’s Guide for more information about it, including the type of object required for its making.</p>
-			<div element="ID_WOTC_ERLW_CLASS_FEATURE_ARTIFICER_INFUSION_REPLICATE_MAGIC_ITEM_TABLES" />
-		</description>
-		<sheet display="false">
-			<description>Using this infusion, you replicate a particular magic item.</description>
-		</sheet>
-	</element>
-	<element name="Replicate Magic Item" type="Class Feature" source="Eberron: Rising from the Last War" id="ID_WOTC_ERLW_CLASS_FEATURE_ARTIFICER_INFUSION_REPLICATE_MAGIC_ITEM_5">
-		<compendium display="false" />
-		<supports>Artificer Infusion</supports>
-		<requirements>ID_WOTC_ERLW_CLASS_FEATURE_ARTIFICER_INFUSION_REPLICATE_MAGIC_ITEM_4</requirements>
-		<description>
-			<p>Using this infusion, you replicate a particular magic item. You can learn this infusion multiple times; each time you do so, choose a magic item that you can make with it, picking from the Replicable Items tables below. A table’s title tells you the level you must be in the class to choose an item from the table. Alternatively, you can choose the magic item from among the common magic items in the game, not including potions or scrolls.</p>
-			<p class="indent">In the tables, an item’s entry tells you whether the item requires attunement. See the item’s description in the Dungeon Master’s Guide for more information about it, including the type of object required for its making.</p>
-			<div element="ID_WOTC_ERLW_CLASS_FEATURE_ARTIFICER_INFUSION_REPLICATE_MAGIC_ITEM_TABLES" />
-		</description>
-		<sheet display="false">
-			<description>Using this infusion, you replicate a particular magic item.</description>
-		</sheet>
-	</element>
-	<element name="Replicate Magic Item" type="Class Feature" source="Eberron: Rising from the Last War" id="ID_WOTC_ERLW_CLASS_FEATURE_ARTIFICER_INFUSION_REPLICATE_MAGIC_ITEM_6">
-		<compendium display="false" />
-		<supports>Artificer Infusion</supports>
-		<requirements>ID_WOTC_ERLW_CLASS_FEATURE_ARTIFICER_INFUSION_REPLICATE_MAGIC_ITEM_5</requirements>
-		<description>
-			<p>Using this infusion, you replicate a particular magic item. You can learn this infusion multiple times; each time you do so, choose a magic item that you can make with it, picking from the Replicable Items tables below. A table’s title tells you the level you must be in the class to choose an item from the table. Alternatively, you can choose the magic item from among the common magic items in the game, not including potions or scrolls.</p>
-			<p class="indent">In the tables, an item’s entry tells you whether the item requires attunement. See the item’s description in the Dungeon Master’s Guide for more information about it, including the type of object required for its making.</p>
-			<div element="ID_WOTC_ERLW_CLASS_FEATURE_ARTIFICER_INFUSION_REPLICATE_MAGIC_ITEM_TABLES" />
-		</description>
-		<sheet display="false">
-			<description>Using this infusion, you replicate a particular magic item.</description>
-		</sheet>
-	</element>
-	<element name="Replicate Magic Item" type="Class Feature" source="Eberron: Rising from the Last War" id="ID_WOTC_ERLW_CLASS_FEATURE_ARTIFICER_INFUSION_REPLICATE_MAGIC_ITEM_7">
-		<compendium display="false" />
-		<supports>Artificer Infusion</supports>
-		<requirements>ID_WOTC_ERLW_CLASS_FEATURE_ARTIFICER_INFUSION_REPLICATE_MAGIC_ITEM_6</requirements>
-		<description>
-			<p>Using this infusion, you replicate a particular magic item. You can learn this infusion multiple times; each time you do so, choose a magic item that you can make with it, picking from the Replicable Items tables below. A table’s title tells you the level you must be in the class to choose an item from the table. Alternatively, you can choose the magic item from among the common magic items in the game, not including potions or scrolls.</p>
-			<p class="indent">In the tables, an item’s entry tells you whether the item requires attunement. See the item’s description in the Dungeon Master’s Guide for more information about it, including the type of object required for its making.</p>
-			<div element="ID_WOTC_ERLW_CLASS_FEATURE_ARTIFICER_INFUSION_REPLICATE_MAGIC_ITEM_TABLES" />
-		</description>
-		<sheet display="false">
-			<description>Using this infusion, you replicate a particular magic item.</description>
-		</sheet>
-	</element>
-	<element name="Replicate Magic Item" type="Class Feature" source="Eberron: Rising from the Last War" id="ID_WOTC_ERLW_CLASS_FEATURE_ARTIFICER_INFUSION_REPLICATE_MAGIC_ITEM_8">
-		<compendium display="false" />
-		<supports>Artificer Infusion</supports>
-		<requirements>ID_WOTC_ERLW_CLASS_FEATURE_ARTIFICER_INFUSION_REPLICATE_MAGIC_ITEM_7</requirements>
-		<description>
-			<p>Using this infusion, you replicate a particular magic item. You can learn this infusion multiple times; each time you do so, choose a magic item that you can make with it, picking from the Replicable Items tables below. A table’s title tells you the level you must be in the class to choose an item from the table. Alternatively, you can choose the magic item from among the common magic items in the game, not including potions or scrolls.</p>
-			<p class="indent">In the tables, an item’s entry tells you whether the item requires attunement. See the item’s description in the Dungeon Master’s Guide for more information about it, including the type of object required for its making.</p>
-			<div element="ID_WOTC_ERLW_CLASS_FEATURE_ARTIFICER_INFUSION_REPLICATE_MAGIC_ITEM_TABLES" />
-		</description>
-		<sheet display="false">
-			<description>Using this infusion, you replicate a particular magic item.</description>
-		</sheet>
-	</element>
-	<element name="Replicate Magic Item" type="Class Feature" source="Eberron: Rising from the Last War" id="ID_WOTC_ERLW_CLASS_FEATURE_ARTIFICER_INFUSION_REPLICATE_MAGIC_ITEM_9">
-		<compendium display="false" />
-		<supports>Artificer Infusion</supports>
-		<requirements>ID_WOTC_ERLW_CLASS_FEATURE_ARTIFICER_INFUSION_REPLICATE_MAGIC_ITEM_8</requirements>
-		<description>
-			<p>Using this infusion, you replicate a particular magic item. You can learn this infusion multiple times; each time you do so, choose a magic item that you can make with it, picking from the Replicable Items tables below. A table’s title tells you the level you must be in the class to choose an item from the table. Alternatively, you can choose the magic item from among the common magic items in the game, not including potions or scrolls.</p>
-			<p class="indent">In the tables, an item’s entry tells you whether the item requires attunement. See the item’s description in the Dungeon Master’s Guide for more information about it, including the type of object required for its making.</p>
-			<div element="ID_WOTC_ERLW_CLASS_FEATURE_ARTIFICER_INFUSION_REPLICATE_MAGIC_ITEM_TABLES" />
-		</description>
-		<sheet display="false">
-			<description>Using this infusion, you replicate a particular magic item.</description>
-		</sheet>
-	</element>
-	<element name="Replicate Magic Item" type="Class Feature" source="Eberron: Rising from the Last War" id="ID_WOTC_ERLW_CLASS_FEATURE_ARTIFICER_INFUSION_REPLICATE_MAGIC_ITEM_10">
-		<compendium display="false" />
-		<supports>Artificer Infusion</supports>
-		<requirements>ID_WOTC_ERLW_CLASS_FEATURE_ARTIFICER_INFUSION_REPLICATE_MAGIC_ITEM_9</requirements>
-		<description>
-			<p>Using this infusion, you replicate a particular magic item. You can learn this infusion multiple times; each time you do so, choose a magic item that you can make with it, picking from the Replicable Items tables below. A table’s title tells you the level you must be in the class to choose an item from the table. Alternatively, you can choose the magic item from among the common magic items in the game, not including potions or scrolls.</p>
-			<p class="indent">In the tables, an item’s entry tells you whether the item requires attunement. See the item’s description in the Dungeon Master’s Guide for more information about it, including the type of object required for its making.</p>
-			<div element="ID_WOTC_ERLW_CLASS_FEATURE_ARTIFICER_INFUSION_REPLICATE_MAGIC_ITEM_TABLES" />
-		</description>
-		<sheet display="false">
-			<description>Using this infusion, you replicate a particular magic item.</description>
-		</sheet>
-	</element>
-	<element name="Replicate Magic Item" type="Class Feature" source="Eberron: Rising from the Last War" id="ID_WOTC_ERLW_CLASS_FEATURE_ARTIFICER_INFUSION_REPLICATE_MAGIC_ITEM_11">
-		<compendium display="false" />
-		<supports>Artificer Infusion</supports>
-		<requirements>ID_WOTC_ERLW_CLASS_FEATURE_ARTIFICER_INFUSION_REPLICATE_MAGIC_ITEM_10</requirements>
-		<description>
-			<p>Using this infusion, you replicate a particular magic item. You can learn this infusion multiple times; each time you do so, choose a magic item that you can make with it, picking from the Replicable Items tables below. A table’s title tells you the level you must be in the class to choose an item from the table. Alternatively, you can choose the magic item from among the common magic items in the game, not including potions or scrolls.</p>
-			<p class="indent">In the tables, an item’s entry tells you whether the item requires attunement. See the item’s description in the Dungeon Master’s Guide for more information about it, including the type of object required for its making.</p>
-			<div element="ID_WOTC_ERLW_CLASS_FEATURE_ARTIFICER_INFUSION_REPLICATE_MAGIC_ITEM_TABLES" />
-		</description>
-		<sheet display="false">
-			<description>Using this infusion, you replicate a particular magic item.</description>
-		</sheet>
-	</element>
-	<element name="Replicate Magic Item" type="Class Feature" source="Eberron: Rising from the Last War" id="ID_WOTC_ERLW_CLASS_FEATURE_ARTIFICER_INFUSION_REPLICATE_MAGIC_ITEM_12">
-		<compendium display="false" />
-		<supports>Artificer Infusion</supports>
-		<requirements>ID_WOTC_ERLW_CLASS_FEATURE_ARTIFICER_INFUSION_REPLICATE_MAGIC_ITEM_11</requirements>
-		<description>
-			<p>Using this infusion, you replicate a particular magic item. You can learn this infusion multiple times; each time you do so, choose a magic item that you can make with it, picking from the Replicable Items tables below. A table’s title tells you the level you must be in the class to choose an item from the table. Alternatively, you can choose the magic item from among the common magic items in the game, not including potions or scrolls.</p>
-			<p class="indent">In the tables, an item’s entry tells you whether the item requires attunement. See the item’s description in the Dungeon Master’s Guide for more information about it, including the type of object required for its making.</p>
-			<div element="ID_WOTC_ERLW_CLASS_FEATURE_ARTIFICER_INFUSION_REPLICATE_MAGIC_ITEM_TABLES" />
-		</description>
-		<sheet display="false">
-			<description>Using this infusion, you replicate a particular magic item.</description>
-		</sheet>
-	</element>
-	<element name="Repulsion Shield" type="Class Feature" source="Eberron: Rising from the Last War" id="ID_WOTC_ERLW_CLASS_FEATURE_ARTIFICER_INFUSION_REPULSION_SHIELD">
-		<supports>Artificer Infusion</supports>
-		<requirements>[level:6]</requirements>
-		<prerequisite>6th-level artificer</prerequisite>
-		<description>
-			<p><em>Prerequisite: 6th-level artificer</em></p>
-			<p><em>Item: A shield (requires attunement)</em></p>
-			<p>A creature gains a +1 bonus to Armor Class while wielding this shield.</p>
-			<p class="indent">The shield has 4 charges. While holding it, the wielder can use a reaction immediately after being hit by a melee attack to expend 1 of the shield’s charges and push the attacker up to 15 feet away. The shield regains 1d4 expended charges daily at dawn.</p>
-		</description>
-		<sheet>
-			<description>You can infuse a shield into a repulsion shield.</description>
-			<!-- <description>Item: A shield (requires attunement)
-			A creature gains a +1 bonus to Armor Class while wielding this shield.
-			The shield has 4 charges. While holding it, the wielder can use a reaction immediately after being hit by a melee attack to expend 1 of the shield’s charges and push the attacker up to 15 feet away. The shield regains 1d4 expended charges daily at dawn.</description> -->
-		</sheet>
-	</element>
-	<element name="Resistant Armor" type="Class Feature" source="Eberron: Rising from the Last War" id="ID_WOTC_ERLW_CLASS_FEATURE_ARTIFICER_INFUSION_RESISTANT_ARMOR">
-		<supports>Artificer Infusion</supports>
-		<requirements>[level:6]</requirements>
-		<prerequisite>6th-level artificer</prerequisite>
-		<description>
-			<p><em>Prerequisite: 6th-level artificer</em></p>
-			<p><em>Item: A suit of armor (requires attunement)</em></p>
-			<p>While wearing this armor, a creature has resistance to one of the following damage types, which you choose when you infuse the item: acid, cold, fire, force, lightning, necrotic, poison, psychic, radiant, or thunder.</p>
-		</description>
-		<sheet>
-			<description>You can infuse a suit of armor into a resistant armor.</description>
-			<!-- <description>Item: A suit of armor (requires attunement)
-			While wearing this armor, a creature has resistance to one of the following damage types, which you choose when you infuse the item: acid, cold, fire, force, lightning, necrotic, poison, psychic, radiant, or thunder.</description> -->
-		</sheet>
-	</element>
-	<element name="Returning Weapon" type="Class Feature" source="Eberron: Rising from the Last War" id="ID_WOTC_ERLW_CLASS_FEATURE_ARTIFICER_INFUSION_RETURNING_WEAPON">
-		<supports>Artificer Infusion</supports>
-		<description>
-			<p><em>Item: A simple or martial weapon with the thrown property</em></p>
-			<p>This magic weapon grants a +1 bonus to attack and damage rolls made with it, and it returns to the wielder’s hand immediately after it is used to make a ranged attack.</p>
-		</description>
-		<sheet>
-			<description>You can infuse a simple or martial weapon with the thrown property into a returning weapon.</description>
-			<!-- <description>Item: A simple or martial weapon with the thrown property
-			This magic weapon grants a +1 bonus to attack and damage rolls made with it, and it returns to the wielder’s hand immediately after it is used to make a ranged attack.</description> -->
-		</sheet>
-	</element>
-	
-	<element name="" type="Internal" source="Eberron: Rising from the Last War" id="ID_WOTC_ERLW_CLASS_FEATURE_ARTIFICER_INFUSION_REPLICATE_MAGIC_ITEM_TABLES">
-		<compendium display="false" />
-		<description>
-			<p><strong>REPLICABLE ITEMS (2nd-level Artificer)</strong></p>
-			<table>
-				<thead>
-					<tr><td>Magic Item</td><td class="col-20">Attunement</td></tr>
-				</thead>
-				<tr><td>Alchemy jug</td><td>No</td></tr>
-				<tr><td>Bag of holding</td><td>No</td></tr>
-				<tr><td>Cap of water breathing</td><td>No</td></tr>
-				<tr><td>Goggles of night</td><td>No</td></tr>
-				<tr><td>Rope of climbing</td><td>No</td></tr>
-				<tr><td>Sending stones</td><td>No</td></tr>
-				<tr><td>Wand of magic detection</td><td>No</td></tr>
-				<tr><td>Wand of secrets</td><td>No</td></tr>
-			</table>
-			<p><strong>REPLICABLE ITEMS (6th-level Artificer)</strong></p>
-			<table>
-				<thead>
-					<tr><td>Magic Item</td><td class="col-20">Attunement</td></tr>
-				</thead>
-				<tr><td>Boots of elvenkind</td><td>No</td></tr>
-				<tr><td>Cloak of elvenkind</td><td>Yes</td></tr>
-				<tr><td>Cloak of the manta ray</td><td>No</td></tr>
-				<tr><td>Eyes of charming</td><td>Yes</td></tr>
-				<tr><td>Gloves of thievery</td><td>No</td></tr>
-				<tr><td>Lantern of revealing</td><td>No</td></tr>
-				<tr><td>Pipes of haunting</td><td>No</td></tr>
-				<tr><td>Ring of water walking</td><td>No</td></tr>
-			</table>
-			<p><strong>REPLICABLE ITEMS (10th-level Artificer)</strong></p>
-			<table>
-				<thead>
-					<tr><td>Magic Item</td><td class="col-20">Attunement</td></tr>
-				</thead>
-				<tr><td>Boots of striding and springing</td><td>Yes</td></tr>
-				<tr><td>Boots of the winterlands</td><td>Yes</td></tr>
-				<tr><td>Bracers of archery</td><td>Yes</td></tr>
-				<tr><td>Brooch of shielding</td><td>Yes</td></tr>
-				<tr><td>Cloak of protection</td><td>Yes</td></tr>
-				<tr><td>Eyes of the eagle</td><td>Yes</td></tr>
-				<tr><td>Gauntlets of ogre power</td><td>Yes</td></tr>
-				<tr><td>Gloves of missile snaring</td><td>Yes</td></tr>
-				<tr><td>Gloves of swimming and climbing</td><td>Yes</td></tr>
-				<tr><td>Hat of disguise</td><td>Yes</td></tr>
-				<tr><td>Headband of intellect</td><td>Yes</td></tr>
-				<tr><td>Helm of telepathy</td><td>Yes</td></tr>
-				<tr><td>Medallion of thoughts</td><td>Yes</td></tr>
-				<tr><td>Necklace of adaptation</td><td>Yes</td></tr>
-				<tr><td>Peria pt of wound closure</td><td>Yes</td></tr>
-				<tr><td>Pipes of the sewers</td><td>Yes</td></tr>
-				<tr><td>Quiver of Ehlonna</td><td>No</td></tr>
-				<tr><td>Ring of jumping</td><td>Yes</td></tr>
-				<tr><td>Ring of mind shielding</td><td>Yes</td></tr>
-				<tr><td>Slippers of spider climbing</td><td>Yes</td></tr>
-				<tr><td>Ventilating lung</td><td>Yes</td></tr>
-				<tr><td>Winged boots</td><td>Yes</td></tr>
-			</table>
-			<p><strong>REPLICABLE ITEMS (14th-level Artificer)</strong></p>
-			<table>
-				<thead>
-					<tr><td>Magic Item</td><td class="col-20">Attunement</td></tr>
-				</thead>
-				<tr><td>Amulet of health</td><td>Yes</td></tr>
-				<tr><td>Arcane propulsion arm</td><td>Yes</td></tr>
-				<tr><td>Belt of hill giant strength</td><td>Yes</td></tr>
-				<tr><td>Boots of levitation</td><td>Yes</td></tr>
-				<tr><td>Boots of speed</td><td>Yes</td></tr>
-				<tr><td>Bracers of defense</td><td>Yes</td></tr>
-				<tr><td>Cloak of the bat</td><td>Yes</td></tr>
-				<tr><td>Dimensional shackles</td><td>No</td></tr>
-				<tr><td>Gem of seeing</td><td>Yes</td></tr>
-				<tr><td>Horn of blasting</td><td>No</td></tr>
-				<tr><td>Ring of free action</td><td>Yes</td></tr>
-				<tr><td>Ring of protection</td><td>Yes</td></tr>
-				<tr><td>Ring of the ram</td><td>Yes</td></tr>
-			</table>
-		</description>
-	</element>
 
-	<!-- infused items -->
-	<element name="Boots of the Winding Path" type="Magic Item" source="Eberron: Rising from the Last War" id="ID_WOTC_ERLW_MAGIC_ITEM_INFUSION_BOOTS_OF_THE_WINDING_PATH">
-		<description>
-			<p>While wearing these boots, a creature can teleport up to 15 feet as a bonus action to an unoccupied space the creature can see. The creature must have occupied that space at some point during the current turn.</p>
-		</description>
-		<setters>
-			<set name="keywords">artificer infusion,teleport,bonus action</set>
-			<set name="category">Wondrous Items</set>
-			<set name="type">Artificer Infusion</set>
-			<set name="slot">misc</set>
-			<set name="attunement">true</set>
-		</setters>
-	</element>
-	<element name="Enhanced Arcane Rod, +1" type="Magic Item" source="Eberron: Rising from the Last War" id="ID_WOTC_ERLW_MAGIC_ITEM_INFUSION_ENHANCED_ARCANE_FOCUS_1">
-		<description>
-			<p>While holding this rod, a creature gains a +1 bonus to spell attack rolls. In addition, the creature ignores half cover when making a spell attack.</p>
-		</description>
-		<setters>
-			<set name="keywords">artificer infusion</set>
-			<set name="category">Rods</set>
-			<set name="weight" lb="2">2 lb.</set>
-			<set name="slot">onehand</set>
-			<set name="type" addition="artificer infusion">Rod</set>
-			<set name="attunement">true</set>
-		</setters>
-		<rules>
-			<stat name="spellcasting:attack" value="1" />
-		</rules>
-	</element>
-	<element name="Enhanced Arcane Rod, +2" type="Magic Item" source="Eberron: Rising from the Last War" id="ID_WOTC_ERLW_MAGIC_ITEM_INFUSION_ENHANCED_ARCANE_FOCUS_2">
-		<description>
-			<p>While holding this rod, a creature gains a +2 bonus to spell attack rolls. In addition, the creature ignores half cover when making a spell attack.</p>
-		</description>
-		<setters>
-			<set name="keywords">artificer infusion</set>
-			<set name="category">Rods</set>
-			<set name="weight" lb="2">2 lb.</set>
-			<set name="slot">onehand</set>
-			<set name="type" addition="artificer infusion">Rod</set>
-			<set name="attunement">true</set>
-		</setters>
-		<rules>
-			<stat name="spellcasting:attack" value="2" />
-		</rules>
-	</element>	
-	<element name="Enhanced Arcane Wand, +1" type="Magic Item" source="Eberron: Rising from the Last War" id="ID_WOTC_ERLW_MAGIC_ITEM_ENHANCED_WAND_1">
-		<description>
-			<p>While holding this wand, a creature gains a +1 bonus to spell attack rolls. In addition, the creature ignores half cover when making a spell attack.</p>
-		</description>
-		<setters>
-			<set name="keywords">artificer infusion</set>
-			<set name="category">Wands</set>
-			<set name="cost" currency="gp">0</set>
-			<set name="weight" lb="1">1 lb.</set>
-			<set name="slot">onehand</set>
-			<set name="type" addition="artificer infusion">Wand</set>
-			<set name="attunement">true</set>
-		</setters>
-		<rules>
-			<stat name="spellcasting:attack" value="1" />
-		</rules>
-	</element>
-	<element name="Enhanced Arcane Wand, +2" type="Magic Item" source="Eberron: Rising from the Last War" id="ID_WOTC_ERLW_MAGIC_ITEM_ENHANCED_WAND_2">
-		<description>
-			<p>While holding this wand, a creature gains a +2 bonus to spell attack rolls. In addition, the creature ignores half cover when making a spell attack.</p>
-		</description>
-		<setters>
-			<set name="keywords">artificer infusion</set>
-			<set name="category">Wands</set>
-			<set name="cost" currency="gp">0</set>
-			<set name="weight" lb="1">1 lb.</set>
-			<set name="slot">onehand</set>
-			<set name="type" addition="artificer infusion">Wand</set>
-			<set name="attunement">true</set>
-		</setters>
-		<rules>
-			<stat name="spellcasting:attack" value="2" />
-		</rules>
-	</element>
-	<element name="Enhanced Arcane Staff, +1" type="Magic Item" source="Eberron: Rising from the Last War" id="ID_WOTC_ERLW_MAGIC_ITEM_ENHANCED_ARCANE_STAFF_1">
-		<description>
-			<p>While holding this staff, a creature gains a +1 bonus to spell attack rolls. In addition, the creature ignores half cover when making a spell attack.</p>
-		</description>
-		<setters>
-			<set name="category">Staffs</set>
-			<set name="weight" lb="4">4 lb.</set>
-			<set name="slot">onehand</set>
-			<set name="weapon">Quarterstaff</set>
-			<set name="type" addition="artificer infusion">Staff</set>
-			<set name="attunement">true</set>
-		</setters>
-		<rules>
-			<stat name="spellcasting:attack" value="1" />
-		</rules>
-	</element>
-	<element name="Enhanced Arcane Staff, +2" type="Magic Item" source="Eberron: Rising from the Last War" id="ID_WOTC_ERLW_MAGIC_ITEM_ENHANCED_ARCANE_STAFF_2">
-		<description>
-			<p>While holding this staff, a creature gains a +2 bonus to spell attack rolls. In addition, the creature ignores half cover when making a spell attack.</p>
-		</description>
-		<setters>
-			<set name="category">Staffs</set>
-			<set name="weight" lb="4">4 lb.</set>
-			<set name="slot">onehand</set>
-			<set name="weapon">Quarterstaff</set>
-			<set name="type" addition="artificer infusion">Staff</set>
-			<set name="attunement">true</set>
-		</setters>
-		<rules>
-			<stat name="spellcasting:attack" value="2" />
-		</rules>
-	</element>
-	<element name="Radiant Weapon" type="Magic Item" source="Eberron: Rising from the Last War" id="ID_WOTC_ERLW_MAGIC_ITEM_INFUSION_RADIANT_WEAPON">
-		<description>
-			<p>This magic weapon grants a +1 bonus to attack and damage rolls made with it. While holding it, the wielder can take a bonus action to cause it to shed bright light in a 30-foot radius and dim light for an additional 30 feet. The wielder can extinguish the light as a bonus action.</p>
-			<p class="indent">The weapon has 4 charges. As a reaction immediately after being hit by an attack, the wielder can expend 1 charge and cause the attacker to be blinded until the end of the attacker’s next turn, unless the attacker succeeds on a Constitution saving throw against your spell save DC. The weapon regains 1d4 expended charges daily at dawn.</p>
-		</description>
-		<setters>
-			<set name="keywords">artificer infusion</set>
-			<set name="category">Magic Weapons</set>
-			<set name="cost" currency="gp">0</set>
-			<set name="type" addition="simple or martial weapon">Weapon</set>
-			<set name="rarity">Artificer Infusion</set>
-			<set name="enhancement">1</set>
-			<set name="attunement">true</set>
-			<set name="weapon">ID_INTERNAL_WEAPON_CATEGORY_SIMPLE_MELEE||ID_INTERNAL_WEAPON_CATEGORY_SIMPLE_RANGED||ID_INTERNAL_WEAPON_CATEGORY_MARTIAL_MELEE||ID_INTERNAL_WEAPON_CATEGORY_MARTIAL_RANGED</set>
-			<set name="name-format">Radiant {{parent}} +{{enhancement}}</set>
-			<set name="charges">4</set>
-		</setters>
-	</element>
-	<element name="Repeating Shot" type="Magic Item" source="Eberron: Rising from the Last War" id="ID_WOTC_ERLW_MAGIC_ITEM_INFUSION_REPEATING_SHOT">
-		<description>
-			<p>This magic weapon grants a +1 bonus to attack and damage rolls made with it when it’s used to make a ranged attack, and it ignores the loading property if it has it.
-			If you load no ammunition in the weapon, it produces its own, automatically creating one piece of magic ammunition when you make a ranged attack with it. The ammunition created by the weapon vanishes the instant after it hits or misses a target.</p>
-		</description>
-		<setters>
-			<set name="keywords">artificer infusion</set>
-			<set name="category">Magic Weapons</set>
-			<set name="cost" currency="gp">0</set>
-			<set name="type" addition="a simple or martial weapon with the ammunition property">Weapon</set>
-			<set name="rarity">Artificer Infusion</set>
-			<set name="enhancement">1</set>
-			<set name="attunement">true</set>
-			<set name="weapon">(ID_INTERNAL_WEAPON_CATEGORY_SIMPLE_MELEE||ID_INTERNAL_WEAPON_CATEGORY_SIMPLE_RANGED||ID_INTERNAL_WEAPON_CATEGORY_MARTIAL_MELEE||ID_INTERNAL_WEAPON_CATEGORY_MARTIAL_RANGED),(ID_WOTC_DMG_WEAPON_PROPERTY_FIREARM_AMMUNITION||ID_INTERNAL_WEAPON_PROPERTY_AMMUNITION)</set>
-			<set name="name-format">Repeating {{parent}} +{{enhancement}}</set>
-		</setters>
-	</element>
-	<element name="Repulsion Shield" type="Magic Item" source="Eberron: Rising from the Last War" id="ID_WOTC_ERLW_MAGIC_ITEM_SHIELD_REPULSION_SHIELD">
-		<description>
-			<p>A creature gains a +1 bonus to Armor Class while wielding this shield.</p>
-			<p class="indent">The shield has 4 charges. While holding it, the wielder can use a reaction immediately after being hit by a melee attack to expend 1 of the shield’s charges and push the attacker up to 15 feet away. The shield regains 1d4 expended charges daily at dawn.</p>
-		</description>
-		<setters>
-			<set name="keywords">artificer infusion</set>
-			<set name="category">Magic Armor</set>
-			<set name="cost" currency="gp" override="false">0</set>
-			<set name="weight" lb="0">0 lb.</set>
-			<set name="type" addition="shield">Armor</set>
-			<set name="rarity">Artificer Infusion</set>
-			<set name="attunement">true</set>
-			<set name="enhancement">1</set>
-			<set name="armor">ID_INTERNAL_ARMOR_GROUP_SHIELD</set>
-			<set name="name-format">Repulsion Shield +{{enhancement}}</set>
-		</setters>
-		<rules>
-			<stat name="ac:shield" value="1" bonus="enhancement" />
-		</rules>
-	</element>
-	<element name="Returning Weapon" type="Magic Item" source="Eberron: Rising from the Last War" id="ID_WOTC_ERLW_MAGIC_ITEM_INFUSION_RETURNING_WEAPON">
-		<description>
-			<p>This magic weapon grants a +1 bonus to attack and damage rolls made with it, and it returns to the wielder’s hand immediately after it is used to make a ranged attack.</p>
-		</description>
-		<setters>
-			<set name="keywords">artificer infusion</set>
-			<set name="category">Magic Weapons</set>
-			<set name="cost" currency="gp">0</set>
-			<set name="type" addition="a simple or martial weapon with the thrown property">Weapon</set>
-			<set name="rarity">Artificer Infusion</set>
-			<set name="enhancement">1</set>
-			<set name="weapon">(ID_INTERNAL_WEAPON_CATEGORY_SIMPLE_MELEE||ID_INTERNAL_WEAPON_CATEGORY_SIMPLE_RANGED||ID_INTERNAL_WEAPON_CATEGORY_MARTIAL_MELEE||ID_INTERNAL_WEAPON_CATEGORY_MARTIAL_RANGED),ID_INTERNAL_WEAPON_PROPERTY_THROWN</set>
-			<set name="name-format">Returning {{parent}} +{{enhancement}}</set>
-		</setters>
-	</element>
-	
 	<!-- v1.19.3XX workaround -->
 	<element name="Ability Score Improvement" type="Class Feature" source="Eberron: Rising from the Last War" id="ID_WOTC_ERLW_CLASS_FEATURE_ABILITY_4">
 		<compendium display="false" />
@@ -1655,7 +538,7 @@
 		<rules>
 			<select name="Feat (Level 16)" type="Feat" />
 		</rules>
-	</element> 
+	</element>
 	<element name="Ability Score Improvement" type="Class Feature" source="Eberron: Rising from the Last War" id="ID_WOTC_ERLW_CLASS_FEATURE_ABILITY_19">
 		<compendium display="false" />
 		<supports>Improvement Option, Eberron Artificer, 19</supports>
@@ -1682,71 +565,5 @@
 		<rules>
 			<select name="Feat (Level 19)" type="Feat" />
 		</rules>
-	</element>
-
-	<element name="Homunculus Servant" type="Companion" source="Eberron: Rising from the Last War" id="ID_WOTC_ERLW_COMPANION_ARTIFICER_HOMUNCULUS_SERVANT "> 
-		<supports>Homunculus Servant</supports>
-		<description /> 
-		<setters>
-			<set name="strength">4</set>
-			<set name="dexterity">15</set>
-			<set name="constitution">12</set>
-			<set name="intelligence">10</set>
-			<set name="wisdom">10</set>
-			<set name="charisma">7</set>
-			<set name="ac">13 (natural armor)</set>
-			<set name="hp">1 + your Intelligence modifier + your artificer level (the Homunculus has a number of Hit Dice [d4s] equal to your artificer level)</set>
-			<set name="speed">20 ft., fly 30 ft.</set>
-			<set name="immunities">poison</set>
-			<set name="conditionImmunities">exhaustion, poisoned</set>
-			<set name="saves">Dex +2 plus PB</set>
-			<set name="skills">Perception +0 plus PB x 2, Stealth +2 plus PB </set>
-			<set name="senses">darkvision 60 ft., passive Perception 10 + (PB x 2) </set>
-			<set name="languages">understands the languages you speak</set>
-			<set name="type">Construct</set>
-			<set name="size">Tiny</set>
-			<set name="alignment">neutral</set>
-			<set name="challenge">-</set>
-			<set name="traits">ID_WOTC_ERLW_COMPANION_TRAIT_HOMUNCULUS_SERVANT_EVASION</set>
-			<set name="actions">ID_WOTC_ERLW_COMPANION_ACTION_HOMUNCULUS_SERVANT_FORCE_STRIKE</set>
-			<set name="reactions">ID_WOTC_ERLW_COMPANION_REACTION_HOMUNCULUS_SERVANT_CHANNEL_MAGIC</set>
-		</setters> 
-		<rules>
-			<stat name="companion:ac" value="13" bonus="base" />
-			<stat name="companion:hp:max" value="1" bonus="base" />
-			<stat name="companion:hp:max" value="intelligence:modifier" bonus="ability" />
-			<stat name="companion:hp:max" value="level:artificer" bonus="level" />
-			<stat name="companion:speed" value="20" bonus="base" />
-			<stat name="companion:speed:fly" value="30" bonus="base" />
-			<stat name="companion:proficiency" value="proficiency" bonus="base" />	
-			<stat name="companion:stealths:proficiency" value="proficiency" bonus="proficiency" />
-			<stat name="companion:perception:proficiency" value="proficiency" bonus="proficiency" />
-			<stat name="companion:perception:proficiency" value="proficiency" bonus="double" />
-			<stat name="companion:dexterity:save:proficiency" value="proficiency" bonus="proficiency" />
-		</rules> 
-	</element> 
-	<element name="Evasion" type="Companion Trait" source="Eberron: Rising from the Last War" id="ID_WOTC_ERLW_COMPANION_TRAIT_HOMUNCULUS_SERVANT_EVASION">
-		<description>
-			<p>If the homunculus is subjected to an effect that allows it to make a Dexterity saving throw to take only half damage, it instead takes no damage if it succeeds on the saving throw, and only half damage if it fails. It can't use this trait if it's incapacitated. </p>
-		</description>
-		<sheet>
-			<description>If the homunculus is subjected to an effect that allows it to make a Dexterity saving throw to take only half damage, it instead takes no damage if it succeeds on the saving throw, and only half damage if it fails. It can't use this trait if it's incapacitated. </description> 
-		</sheet> 
-	</element>
-	<element name="Force Strike" type="Companion Action" source="Eberron: Rising from the Last War" id="ID_WOTC_ERLW_COMPANION_ACTION_HOMUNCULUS_SERVANT_FORCE_STRIKE">
-		<description>
-			<p><i>Ranged Weapon Attack:</i> your spell attack modifier to hit, range 30 ft., one target you can see. <i>Hit:</i> 1d4 + PB force damage. </p>
-		</description>
-		<sheet>
-			<description><i>Ranged Weapon Attack:</i> your spell attack modifier to hit, range 30 ft., one target you can see. <i>Hit:</i> 1d4 + PB force damage. </description>
-		</sheet> 
-	</element>
-	<element name="Channel Magic" type="Companion Reaction" source="Eberron: Rising from the Last War" id="ID_WOTC_ERLW_COMPANION_REACTION_HOMUNCULUS_SERVANT_CHANNEL_MAGIC">
-		<description>
-			<p> The homunculus delivers a spell you cast that has a range of touch. The homunculus must be within 120 feet of you. </p>
-		</description>
-		<sheet>
-			<description> The homunculus delivers a spell you cast that has a range of touch. The homunculus must be within 120 feet of you. </description>
-		</sheet> 
 	</element>
 </elements>

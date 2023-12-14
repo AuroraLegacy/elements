@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<elements>
+	<info>
+		<name>Autognome</name>
+		<description></description>
+		<author url="https://dnd.wizards.com/products/spelljammer">Astral Adventurer's Guide</author>
+		<update version="0.0.1">
+			<file name="race-autognome.xml" url="https://raw.githubusercontent.com/AuroraLegacy/elements/master/supplements/astral-adventurers-guide/races/race-autognome.xml" />
+		</update>
+	</info>
+
+	<element name="Autognome" type="Race" source="Astral Adventurer's Guide" id="ID_WOTC_AAG_RACE_AUTOGNOME">
+		<description>
+			<p>Autognomes are mechanical beings built by rock gnomes in their image, usually with a particular purpose in mind. For example, a gnome might build an autognome to be a steadfast colleague or a loyal companion. Sometimes, because of a malfunction or a unique circumstance, an autognome becomes separated from its creator and strikes out on its own.</p>
+			<p class="indent">An autognome bears a resemblance to its creator, and most autognomes are programmed to speak and understand Gnomish. The internal components used in an autognome’s manufacture can vary wildly; one autognome might have an actual beating heart in its chest cavity, while another might be powered by stardust or intricate clockwork gears.</p>
+			<p class="indent">Roll on the Autognome History table or choose an entry to determine what event set your autognome on the path to adventure. If nothing on the table appeals to you, work with your DM to create an origin story for your autognome.</p>
+			<p class="indent">Like gnomes, autognomes can live for centuries, up to 500 years.</p>
+			<h5>Autognome History</h5>
+			<table>
+				<thead>
+					<tr><td class="col-10" style="text-align:center">d6</td><td>Story</td></tr>
+				</thead>
+				<tr><td style="text-align:center">1</td><td>Your creator gave you autonomy and urged you to follow your dreams.</td></tr>
+				<tr><td style="text-align:center">2</td><td>Your creator died, leaving you to fend for yourself.</td></tr>
+				<tr><td style="text-align:center">3</td><td>A glitch caused you to forget your original programming. You don’t remember who made you or where you came from.</td></tr>
+				<tr><td style="text-align:center">4</td><td>You didn’t like how you were being treated by your creator, so you ran away from home.</td></tr>
+				<tr><td style="text-align:center">5</td><td>You were built to complete a special mission.</td></tr>
+				<tr><td style="text-align:center">6</td><td>You felt trapped in the role for which you were built and abandoned your creator, determined to find a greater purpose.</td></tr>
+			</table>
+			<h4>AUTOGNOME TRAITS</h4>
+			<p>You have the following racial traits.</p>
+			<p class="indent"><strong><em>Creature Type.</em></strong> You are a Construct.</p>
+			<p class="indent"><strong><em>Size.</em></strong> You are Small.</p>
+			<p class="indent"><strong><em>Speed.</em></strong> Your walking speed is 30 feet.</p>
+			<p class="indent"><strong><em>Armored Casing.</em></strong> You are encased in thin metal or some other durable material. While you aren’t wearing armor, your base Armor Class is 13 + your Dexterity modifier.</p>
+			<p class="indent"><strong><em>Built for Success.</em></strong> You can add a d4 to one attack roll, ability check, or saving throw you make, and you can do so after seeing the d20 but before the effects of the roll are resolved. You can use this trait a number of times equal to your proficiency bonus, and you regain all expended uses when you finish a long rest.</p>
+			<p class="indent"><strong><em>Healing Machine.</em></strong> If the <i>mending spell</i> is cast on you, you can expend a Hit Die, roll it, and regain a number of hit points equal to the roll plus your Constitution modifier (minimum of 1 hit point).</p>
+			<p class="indent">In addition, your creator designed you to benefit from common spells that preserve life but that normally don’t affect Constructs: <i>cure wounds, healing word,</i> and <i>spare the dying.</i></p>
+			<p class="indent"><strong><em>Mechanical Nature.</em></strong> You have resistance to poison damage and immunity to disease, and you have advantage on saving throws against being paralyzed or poisoned. You don’t need to eat, drink, or breathe.</p>
+			<p class="indent"><strong><em>Sentry’s Rest.</em></strong> When you take a long rest, you spend at least 6 hours in an inactive, motionless state, instead of sleeping. In this state, you appear inert, but you aren’t unconscious.</p>
+			<p class="indent"><strong><em>Specialized Design.</em></strong> You gain two tool proficiencies of your choice, selected from the <i>Player’s Handbook</i>.</p>
+		</description>
+		<sheet display="false" />
+		<rules>
+			<select type="Ability Score Improvement" name="Ability Score Improvement Option (Autognome)" supports="Custom Ability Score Improvement Option" />
+			<grant type="Racial Trait" id="ID_INTERNAL_RACIAL_TRAIT_TYPE_CONSTRUCT" />
+			<stat name="innate speed" value="30" bonus="base" />
+			<grant type="Size" id="ID_SIZE_SMALL" />
+			<grant type="Language" id="ID_LANGUAGE_COMMON" requirements="!ID_WOTC_TCOE_OPTION_CUSTOMIZED_LANGUAGE" />
+			<select type="Language" name="Customized Language (Autognome)" supports="Custom Race Language"  requirements="ID_WOTC_TCOE_OPTION_CUSTOMIZED_LANGUAGE" />
+			<select type="Language" name="Language (Autognome)" supports="Standard||Exotic" />
+			<grant type="Racial Trait" id="ID_WOTC_AAG_RACIAL_TRAIT_AUTOGNOME_ARMORED_CASING" />
+			<grant type="Racial Trait" id="ID_WOTC_AAG_RACIAL_TRAIT_AUTOGNOME_BUILT_FOR_SUCCESS" />
+			<grant type="Racial Trait" id="ID_WOTC_AAG_RACIAL_TRAIT_AUTOGNOME_HEALING_MACHINE"/>
+			<grant type="Racial Trait" id="ID_WOTC_AAG_RACIAL_TRAIT_AUTOGNOME_MECHANICAL_NATURE" />
+			<grant type="Racial Trait" id="ID_WOTC_AAG_RACIAL_TRAIT_AUTOGNOME_SENTRYS_REST"/>
+			<grant type="Racial Trait" id="ID_WOTC_AAG_RACIAL_TRAIT_AUTOGNOME_SPECIALIZED_DESIGN"/>
+		</rules>
+	</element>
+
+	<element name="Armored Casing" type="Racial Trait" source="Astral Adventurer's Guide" id="ID_WOTC_AAG_RACIAL_TRAIT_AUTOGNOME_ARMORED_CASING">
+		<description>
+			<p>You are encased in thin metal or some other durable material. While you aren’t wearing armor, your base Armor Class is 13 + your Dexterity modifier.</p>
+		</description>
+		<sheet>
+			<description>While you aren’t wearing armor, your base Armor Class is {{armor casing:ac}}.</description>
+		</sheet>
+		<rules>
+			<stat name="armor casing:ac" value="13" bonus="base" />
+			<stat name="armor casing:ac" value="dexterity:modifier" bonus="ability" />
+			<stat name="ac:calculation" value="armor casing:ac" bonus="calculation" equipped="[armor:none]" />
+		</rules>
+	</element>
+
+	<element name="Built for Success" type="Racial Trait" source="Astral Adventurer's Guide" id="ID_WOTC_AAG_RACIAL_TRAIT_AUTOGNOME_BUILT_FOR_SUCCESS">
+		<description>
+			<p>You can add a d4 to one attack roll, ability check, or saving throw you make, and you can do so after seeing the d20 but before the effects of the roll are resolved. You can use this trait a number of times equal to your proficiency bonus, and you regain all expended uses when you finish a long rest.</p>
+		</description>
+		<sheet usage="{{proficiency}}/Long Rest">
+			<description>You can add a d4 to one attack roll, ability check, or saving throw you make, and you can do so after seeing the d20 but before the effects of the roll are resolved.</description>
+		</sheet>
+	</element>
+
+	<element name="Healing Machine" type="Racial Trait" source="Astral Adventurer's Guide" id="ID_WOTC_AAG_RACIAL_TRAIT_AUTOGNOME_HEALING_MACHINE">
+		<description>
+			<p>If the <i>mending</i> spell is cast on you, you can expend a Hit Die, roll it, and regain a number of hit points equal to the roll plus your Constitution modifier (minimum of 1 hit point).</p>
+			<p class="indent">In addition, your creator designed you to benefit from common spells that preserve life but that normally don’t affect Constructs: <i>cure wounds, healing word,</i> and <i>spare the dying.</i></p>
+		</description>
+		<sheet>
+			<description>If the mending spell is cast on you, you can expend a Hit Die, roll it, and regain a number of hit points equal to the roll plus {{constitution:modifier}} (minimum of 1 hit point). &#13;
+			In addition, you're able to gain benefit from cure wounds, healing word, and spare the dying spells.</description>
+		</sheet>
+	</element>
+
+	<element name="Mechanical Nature" type="Racial Trait" source="Astral Adventurer's Guide" id="ID_WOTC_AAG_RACIAL_TRAIT_AUTOGNOME_MECHANICAL_NATURE">
+		<description>
+			<p>You have resistance to poison damage and immunity to disease, and you have advantage on saving throws against being paralyzed or poisoned. You don’t need to eat, drink, or breathe.</p>
+		</description>
+		<sheet>
+			<description>You have immunity to disease, and you have advantage on saving throws against being paralyzed or poisoned. You don’t need to eat, drink, or breathe.</description>
+		</sheet>
+		<rules>
+			<grant type="Condition" id="ID_INTERNAL_CONDITION_DAMAGE_RESISTANCE_POISON" />
+		</rules>
+	</element>
+
+	<element name="Sentry’s Rest" type="Racial Trait" source="Astral Adventurer's Guide" id="ID_WOTC_AAG_RACIAL_TRAIT_AUTOGNOME_SENTRYS_REST">
+		<description>
+			<p>When you take a long rest, you spend at least 6 hours in an inactive, motionless state, instead of sleeping. In this state, you appear inert, but you aren’t unconscious.</p>
+		</description>
+		<sheet>
+			<description>When you take a long rest, you spend at least 6 hours in an inactive, motionless state, instead of sleeping. In this state, you appear inert, but you aren’t unconscious.</description>
+		</sheet>
+	</element>
+
+	<element name="Specialized Design" type="Racial Trait" source="Astral Adventurer's Guide" id="ID_WOTC_AAG_RACIAL_TRAIT_AUTOGNOME_SPECIALIZED_DESIGN">
+		<description>
+			<p>You gain two tool proficiencies of your choice, selected from the <i>Player’s Handbook</i>.</p>
+		</description>
+		<sheet display="false" />
+		<rules>
+			<select type="Proficiency" name="Tool Proficiency (Specialized Design)" supports="Tool" number="2" />
+		</rules>
+	</element>
+</elements>

@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<elements>
+	<info>
+		<name>Plasmoid</name>
+		<description></description>
+		<author url="https://dnd.wizards.com/products/spelljammer">Astral Adventurer's Guide</author>
+		<update version="0.0.1">
+			<file name="race-plasmoid.xml" url="https://raw.githubusercontent.com/AuroraLegacy/elements/master/supplements/astral-adventurers-guide/races/race-plasmoid.xml" />
+		</update>
+	</info>
+
+	<element name="Plasmoid" type="Race" source="Astral Adventurer's Guide" id="ID_WOTC_AAG_RACE_PLASMOID">
+		<description>
+			<p>Plasmoids are amorphous beings with no typical shape. In the presence of other folk, they often adopt a similar form, but there’s little chance of mistaking a plasmoid for anything else. They consume food by osmosis, the way an amoeba does, and excrete waste through tiny pores. They breathe by absorbing oxygen through another set of pores, and their limbs are strong and flexible enough to grasp and manipulate weapons and tools. Although most plasmoids are translucent gray, they can alter their color and translucence by absorbing dyes through their pores.</p>
+			<p class="indent">Plasmoids don’t have internal organs of the usual sort. Their bodies are composed of cells, fibers, plasma-like ooze, and clusters of nerves. These nerves enable a plasmoid to detect light, heat, texture, sound, pain, and vibrations. Plasmoids can stiffen the outer layers of their bodies to maintain a humanlike shape, so they can wear clothing and accessories. They speak by forcing air out of tubular cavities that constrict to produce sound.</p>
+			<p class="indent">When plasmoids sleep, they lose their rigidity and spread out and are sometimes mistaken for a rock or some other feature of the environment.</p>
+			<h4>PLASMOID TRAITS</h4>
+			<p>You have the following racial traits.</p>
+			<p><strong><em>Creature Type.</em></strong> You are an Ooze.</p>
+			<p class="indent"><strong><em>Size.</em></strong> You are Medium or Small. You choose the size when you gain this race.</p>
+			<p class="indent"><strong><em>Speed.</em></strong> Your walking speed is 30 feet.</p>
+			<p class="indent"><strong><em>Amorphous.</em></strong> You can squeeze through a space as narrow as 1 inch wide, provided you are wearing and carrying nothing. You have advantage on ability checks you make to initiate or escape a grapple.</p>
+			<p class="indent"><strong><em>Darkvision.</em></strong> You can see in dim light within 60 feet of you as if it were bright light and in darkness as if it were dim light. You discern colors in that darkness only as shades of gray.</p>
+			<p class="indent"><strong><em>Hold Breath.</em></strong> You can hold your breath for 1 hour.</p>
+			<p class="indent"><strong><em>Natural Resilience.</em></strong> You have resistance to acid and poison damage, and you have advantage on saving throws against being poisoned.</p>
+			<p class="indent"><strong><em>Shape Self.</em></strong> As an action, you can reshape your body to give yourself a head, one or two arms, one or two legs, and makeshift hands and feet, or you can revert to a limbless blob. While you have a humanlike shape, you can wear clothing and armor made for a Humanoid of your size.</p>
+			<p class="indent">As a bonus action, you can extrude a pseudopod that is up to 6 inches wide and 10 feet long or reabsorb it into your body. As part of the same bonus action, you can use this pseudopod to manipulate an object, open or close a door or container, or pick up or set down a Tiny object. The pseudopod contains no sensory organs and can’t attack, activate magic items, or lift more than 10 pounds.</p>
+		</description>
+		<sheet display="false" />
+		<rules>
+			<grant type="Racial Trait" id="ID_INTERNAL_RACIAL_TRAIT_TYPE_OOZE" />
+			<select type="Racial Trait" name="Size (Plasmoid)" supports="ID_INTERNAL_RACIAL_TRAIT_SMALL|ID_INTERNAL_RACIAL_TRAIT_MEDIUM" />
+			<stat name="innate speed" value="30" bonus="base" />
+			<select type="Ability Score Improvement" name="Ability Score Improvement Option (Plasmoid)" supports="Custom Ability Score Improvement Option" />
+			<grant type="Language" id="ID_LANGUAGE_COMMON" requirements="!ID_WOTC_TCOE_OPTION_CUSTOMIZED_LANGUAGE" />
+			<select type="Language" name="Customized Language (Plasmoid)" supports="Custom Race Language" requirements="ID_WOTC_TCOE_OPTION_CUSTOMIZED_LANGUAGE" />
+			<select type="Language" name="Language (Plasmoid)" supports="Standard||Exotic" />
+			<grant type="Vision" id="ID_VISION_DARKVISION" />
+			<grant type="Racial Trait" id="ID_WOTC_AAG_RACIAL_TRAIT_PLASMOID_AMORPHOUS" />
+			<grant type="Racial Trait" id="ID_WOTC_AAG_RACIAL_TRAIT_PLASMOID_HOLD_BREATH" />
+			<grant type="Racial Trait" id="ID_WOTC_AAG_RACIAL_TRAIT_PLASMOID_NATURAL_RESILIENCE" />
+			<grant type="Racial Trait" id="ID_WOTC_AAG_RACIAL_TRAIT_PLASMOID_SHAPE_SELF" />
+	</rules>
+	</element>
+
+	<element name="Amorphous" type="Racial Trait" source="Astral Adventurer's Guide" id="ID_WOTC_AAG_RACIAL_TRAIT_PLASMOID_AMORPHOUS">
+		<description>
+			<p>You can squeeze through a space as narrow as 1 inch wide, provided you are wearing and carrying nothing. You also have advantage on ability checks you make to initiate or escape a grapple.</p>
+		</description>
+		<sheet>
+			<description>You can squeeze through a space as narrow as 1 inch wide, provided you are wearing and carrying nothing. You also have advantage on ability checks you make to initiate or escape a grapple.</description>
+		</sheet>
+	</element>
+
+	<element name="Hold Breath" type="Racial Trait" source="Astral Adventurer's Guide" id="ID_WOTC_AAG_RACIAL_TRAIT_PLASMOID_HOLD_BREATH">
+		<description>
+			<p>You can hold your breath for 1 hour</p>
+		</description>
+		<sheet>
+			<description>You can hold your breath for 1 hour</description>
+		</sheet>
+	</element>
+
+	<element name="Natural Resilience" type="Racial Trait" source="Astral Adventurer's Guide" id="ID_WOTC_AAG_RACIAL_TRAIT_PLASMOID_NATURAL_RESILIENCE">
+		<description>
+			<p>You have resistance to acid and poison damage, and you have advantage on saving throws against being poisoned.</p>
+		</description>
+		<sheet>
+			<description>You have advantage on saving throws against being poisoned.</description>
+		</sheet>
+		<rules>
+			<grant type="Condition" id="ID_INTERNAL_CONDITION_DAMAGE_RESISTANCE_ACID" />
+			<grant type="Condition" id="ID_INTERNAL_CONDITION_DAMAGE_RESISTANCE_POISON" />
+		</rules>
+	</element>
+
+	<element name="Shape Self" type="Racial Trait" source="Astral Adventurer's Guide" id="ID_WOTC_AAG_RACIAL_TRAIT_PLASMOID_SHAPE_SELF">
+		<description>
+			<p>As an action, you can reshape your body to give yourself a head, one or two arms, one or two legs, and makeshift hands and feet, or you can revert to a limbless blob. While you have a humanlike shape, you can wear clothing and armor made for a Humanoid of your size.</p>
+			<p class="indent">As a bonus action, you can extrude a pseudopod that is up to 6 inches wide and 10 feet long or reabsorb it into your body. As part of the same bonus action, you can use this pseudopod to manipulate an object, open or close a door or container, or pick up or set down a Tiny object. The pseudopod contains no sensory organs and can’t attack, activate magic items, or lift more than 10 pounds.</p>
+		</description>
+		<sheet>
+			<description>As an action, you can reshape your body to give yourself a head, one or two arms, one or two legs, and makeshift hands and feet, or you can revert to a limbless blob. While you have a humanlike shape, you can wear clothing and armor made for a Humanoid of your size.&#13;
+			As a bonus action, you can extrude a pseudopod that is up to 6 inches wide and 10 feet long or reabsorb it into your body. As part of the same bonus action, you can use this pseudopod to manipulate an object, open or close a door or container, or pick up or set down a Tiny object. The pseudopod contains no sensory organs and can’t attack, activate magic items, or lift more than 10 pounds.</description>
+		</sheet>
+	</element>
+</elements>

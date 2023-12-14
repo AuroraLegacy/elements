@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<elements>
+	<info>
+		<name>Thri-Kreen</name>
+		<description></description>
+		<author url="https://dnd.wizards.com/products/spelljammer">Astral Adventurer's Guide</author>
+		<update version="0.0.1">
+			<file name="race-thri-kreen.xml" url="https://raw.githubusercontent.com/AuroraLegacy/elements/master/supplements/astral-adventurers-guide/races/race-thri-kreen.xml" />
+		</update>
+	</info>
+
+	<element name="Thri-Kreen" type="Race" source="Astral Adventurer's Guide" id="ID_WOTC_AAG_RACE_THRIKREEN">
+		<description>
+			<p>Thri-kreen have insectile features and two pairs of arms. Their bodies are encased in protective chitin. They can alter the coloration of this carapace to blend in with their natural surroundings. </p>
+			<p class="indent">Although thri-kreen don’t sleep, they do require periods of inactivity to revitalize themselves. During these periods, they are fully conscious and aware of what’s happening around them. </p>
+			<p class="indent">Thri-kreen speak by clacking their mandibles and waving their antennae, indicating to other thri-kreen what they are thinking and feeling. Other creatures find this method of communication difficult to interpret and impossible to duplicate. To interact with other folk, thri-kreen rely on a form of telepathy.</p>
+			<h4>THRIKREEN TRAITS</h4>
+			<p>You have the following racial traits.</p>
+			<p class="indent"><strong><em>Creature Type.</em></strong> You are a Monstrosity.</p>
+			<p class="indent"><strong><em>Size.</em></strong> You are Medium or Small. You choose the size when you select this race.</p>
+			<p class="indent"><strong><em>Speed.</em></strong> Your walking speed is 30 feet.</p>
+			<p class="indent"><strong><em>Chameleon Carapace.</em></strong> While you aren’t wearing armor, your carapace gives you a base Armor Class of 13 + your Dexterity modifier.</p>
+			<p class="indent">As an action, you can change the color of your carapace to match the color and texture of your surroundings, giving you advantage on Dexterity (Stealth) checks made to hide in those surroundings.</p>
+			<p class="indent"><strong><em>Darkvision.</em></strong> You can see in dim light within 60 feet of you as if it were bright light and in darkness as if it were dim light. You discern colors in that darkness only as shades of gray.</p>
+			<p class="indent"><strong><em>Secondary Arms.</em></strong> You have two slightly smaller secondary arms below your primary pair of arms. The secondary arms can manipulate an object, open or close a door or container, pick up or set down a Tiny object, or wield a weapon that has the light property.</p>
+			<p class="indent"><strong><em>Sleepless.</em></strong> You do not require sleep and can choose to remain conscious during a long rest, though you must still refrain from strenuous activity to gain the benefit of the rest.</p>
+			<p class="indent"><strong><em>Thri-kreen Telepathy.</em></strong> Without the assistance of magic, you can’t speak the non-thri-kreen languages you know. Instead you use telepathy to convey your thoughts. You have the magical ability to transmit your thoughts mentally to willing creatures you can see within 120 feet of yourself. A contacted creature doesn’t need to share a language with you to understand your thoughts, but it must be able to understand at least one language. Your telepathic link to a creature is broken if you and the creature move more than 120 feet apart, if either of you is incapacitated, or if either of you mentally breaks the contact (no action required).</p>
+		</description>
+		<sheet display="false" />
+		<rules>
+			<select type="Ability Score Improvement" name="Ability Score Improvement Option (Thri-Kreen)" supports="Custom Ability Score Improvement Option" />
+			<grant type="Racial Trait" id="ID_INTERNAL_RACIAL_TRAIT_TYPE_MONSTROSITY" />
+			<stat name="innate speed" value="30" bonus="base" />
+			<select type="Racial Trait" name="Size (Thri-Kreen)" supports="ID_INTERNAL_RACIAL_TRAIT_SMALL|ID_INTERNAL_RACIAL_TRAIT_MEDIUM" />
+			<grant type="Language" id="ID_LANGUAGE_COMMON" requirements="!ID_WOTC_TCOE_OPTION_CUSTOMIZED_LANGUAGE" />
+			<select type="Language" name="Customized Language (Thri-Kreen)" supports="Custom Race Language"	requirements="ID_WOTC_TCOE_OPTION_CUSTOMIZED_LANGUAGE" />
+			<select type="Language" name="Language (Thri-Kreen)" supports="Standard||Exotic" />
+			<grant type="Vision" id="ID_VISION_DARKVISION" />
+			<grant type="Racial Trait" id="ID_WOTC_AAG_RACIAL_TRAIT_THRIKREEN_CHAMELEON_CARAPACE" />
+			<grant type="Racial Trait" id="ID_WOTC_AAG_RACIAL_TRAIT_THRIKREEN_SECONDARY_ARMS" />
+			<grant type="Racial Trait" id="ID_WOTC_AAG_RACIAL_TRAIT_THRIKREEN_SLEEPLESS" />
+			<grant type="Racial Trait" id="ID_WOTC_AAG_RACIAL_TRAIT_THRIKREEN_THRIKREEN_TELEPATHY"/>
+		</rules>
+	</element>
+
+	<element name="Chameleon Carapace" type="Racial Trait" source="Astral Adventurer's Guide" id="ID_WOTC_AAG_RACIAL_TRAIT_THRIKREEN_CHAMELEON_CARAPACE">
+		<description>
+			<p>While you aren’t wearing armor, your carapace gives you a base Armor Class of 13 + your Dexterity modifier.</p>
+			<p class="indent">As an action, you can change the color of your carapace to match the color and texture of your surroundings, giving you advantage on Dexterity (Stealth) checks made to hide in those surroundings.</p>
+		</description>
+		<sheet action="Action">
+			<description>You can change the color of your carapace to match the color and texture of your surroundings, giving you advantage on Dexterity (Stealth) checks made to hide in those surroundings. &#13;
+			In addition, while you aren’t wearing armor, your base Armor Class is {{chameleon carapace:ac}}.</description>
+		</sheet>
+		<rules>
+			<stat name="chameleon carapace:ac" value="13" bonus="base" />
+			<stat name="chameleon carapace:ac" value="dexterity:modifier" bonus="ability" />
+			<stat name="ac:calculation" value="chameleon carapace:ac" bonus="calculation" equipped="[armor:none]" />
+		</rules>
+	</element>
+
+	<element name="Secondary Arms" type="Racial Trait" source="Astral Adventurer's Guide" id="ID_WOTC_AAG_RACIAL_TRAIT_THRIKREEN_SECONDARY_ARMS">
+		<description>
+			<p>You have two slightly smaller secondary arms below your primary pair of arms. The secondary arms can manipulate an object, open or close a door or container, pick up or set down a Tiny object, or wield a weapon that has the light property.</p>
+		</description>
+		<sheet>
+			<description>The secondary arms you have can manipulate an object, open or close a door or container, pick up or set down a Tiny object, or wield a weapon that has the light property.</description>
+		</sheet>
+	</element>
+
+	<element name="Sleepless" type="Racial Trait" source="Astral Adventurer's Guide" id="ID_WOTC_AAG_RACIAL_TRAIT_THRIKREEN_SLEEPLESS">
+		<description>
+			<p>You do not require sleep and can choose to remain conscious during a long rest, though you must still refrain from strenuous activity to gain the benefit of the rest. </p>
+		</description>
+		<sheet>
+			<description>You do not require sleep and can choose to remain conscious during a long rest, though you must still refrain from strenuous activity to gain the benefit of the rest. </description>
+		</sheet>
+	</element>
+
+	<element name="Thri-kreen Telepathy" type="Racial Trait" source="Astral Adventurer's Guide" id="ID_WOTC_AAG_RACIAL_TRAIT_THRIKREEN_THRIKREEN_TELEPATHY">
+		<description>
+			<p>Without the assistance of magic, you can’t speak the non-thri-kreen languages you know. Instead you use telepathy to convey your thoughts. You have the magical ability to transmit your thoughts mentally to willing creatures you can see within 120 feet of yourself. A contacted creature doesn’t need to share a language with you to understand your thoughts, but it must be able to understand at least one language. Your telepathic link to a creature is broken if you and the creature move more than 120 feet apart, if either of you is incapacitated, or if either of you mentally breaks the contact (no action required).</p>
+		</description>
+		<sheet>
+			<description>Without the assistance of magic, you can’t speak the non-thri-kreen languages you know. You have the magical ability to transmit your thoughts mentally to willing creatures you can see within 120 feet of yourself. A contacted creature doesn’t need to share a language with you to understand your thoughts, but it must be able to understand at least one language. Your telepathic link to a creature is broken if you and the creature move more than 120 feet apart, if either of you is incapacitated, or if either of you mentally breaks the contact (no action required).</description>
+		</sheet>
+	</element>
+</elements>

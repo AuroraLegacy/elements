@@ -2,7 +2,7 @@
 <elements>
 	<info>
         <name>Items</name>
-		<update version="0.0.3">
+		<update version="0.0.4">
 			<file name="items.xml" url="https://raw.githubusercontent.com/AuroraLegacy/elements/master/supplements/acquisitions-incorporated/items.xml" />
 		</update>
 	</info>
@@ -66,7 +66,7 @@
 	</element>
 	<element name="Dimensional Loop" type="Magic Item" source="Acquisitions Incorporated" id="ID_WOTC_ACQINC_MAGIC_ITEM_DIMENSIONAL_LOOP">
 		<description>
-			<p>While attuned to this device, you have a +1 bonus to Strength saving throws. and you have darkvision out to a range of 60 feet. If you already have darkvision, its range increases by 30 feet.</p>
+			<p>While attuned to this device, you have a +1 bonus to Strength saving throws, and you have darkvision out to a range of 60 feet. If you already have darkvision, its range increases by 30 feet.</p>
 			<p class="indent"><b><i>Dimensional Cloak.</i></b> As a bonus action, you send your body out of phase with the material world for 1 minute, granting you advantage on Dexterity (Stealth) checks made to hide, and imposing disadvantage on attack rolls against you. Once you use this feature of the dimensional loop, it cannot be used again until the next dawn.</p>
 			<p class="indent"><b><i>Fold Space.</i></b> Choose a space you can see within 60 feet of you (no action required). You treat that space as if it were within 5 feet of you until the end of your turn. This allows you to move immediately to that space without provoking opportunity attacks, or to interact with objects or creatures in that space as though they were next to you (including allowing you to make melee attacks into that space). Once you use this feature of the dimensional loop, it cannot be used again until the next dawn.</p>
 			<p class="indent"><b><i>Part of a Whole.</i></b> While this component is not installed in the <em>Orrery of the Wanderer</em>, its magic might function sporadically or with unpredictable side effects, as determined by the DM.</p>
@@ -81,7 +81,9 @@
 		</setters>
 		<rules>
 			<stat name="strength:save:misc" value="1" />
-			<grant type="Vision" id="ID_VISION_DARKVISION" />
+			<grant type="Vision" id="ID_VISION_LESSER_DARKVISION" />
+			<stat name="darkvision:range" value="30" bonus="base" />
+			<stat name="darkvision:range" value="30" />
 		</rules>
 	</element>
 	<element name="Far Gear" type="Magic Item" source="Acquisitions Incorporated" id="ID_WOTC_ACQINC_MAGIC_ITEM_FAR_GEAR">
