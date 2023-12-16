@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<elements>
+	<info>
+		<name>Companion</name>
+		<description>Creatures from The Book of Many Things, that fit rules for Companions or Familiars</description>
+		<update version="0.0.1">
+			<file name="companions.xml" url="https://raw.githubusercontent.com/AuroraLegacy/elements/master/supplements/the-book-of-many-things/companions.xml" />
+		</update>
+	</info>
+
+	<!-- Familiars -->
+	<element name="Harrow Hawk" type="Companion" source="The Book of Many Things" id="ID_WOTC_BOMT_COMPANION_HARROW_HAWK">
+		<supports>Variant Familiar</supports>
+		<description>
+			<p>When a beloved animal companion dies traumatically alongside its master, the beast might rise again as an Undead. Falcons, ravens, and other birds of prey that suffer this fate are known as harrow hawks, and they prowl abandoned battlefields and cemeteries, looking for corpses to eat and living creatures to hunt. A harrow hawk can even travel the multiverse, flying magically from one world to another.</p>
+			<p class="indent">The Grim Harrow—a band of Undead beings created by the Deck of Many Things (see chapter 19)—seeks out harrow hawks, capturing them and training them as hunting animals. The Grim Harrow dispatches these Undead companions from the Gardens of Decay to search for Decks of Many Things. On harrowing hunts, harrow hawks scout for the prey and accompany the Grim Harrow in battle.</p>
+		</description>
+		<setters>
+			<set name="size">Tiny</set>
+			<set name="type">Undead</set>
+			<set name="alignment">Unaligned</set>
+			<set name="ac">13</set>
+			<set name="hp">25 (10d4)</set>
+			<set name="speed">10 ft., fly 60 ft.</set>
+			<set name="strength">5</set>
+			<set name="dexterity">16</set>
+			<set name="constitution">10</set>
+			<set name="intelligence">2</set>
+			<set name="wisdom">14</set>
+			<set name="charisma">7</set>
+			<set name="skills">Perception +6, Stealth +5</set>
+			<set name="immunities">poison</set>
+			<set name="conditionImmunities">exhaustion, poisoned</set>            
+			<set name="senses">darkvision 120 ft., passive Perception 16</set>
+			<set name="languages">—</set>
+			<set name="challenge">1</set>
+			<set name="actions">ID_WOTC_BOMT_COMPANION_ACTION_HARROW_HAWK_TALONS,ID_WOTC_BOMT_COMPANION_ACTION_HARROW_HAWK_PLANE_SHIFT,ID_WOTC_BOMT_COMPANION_ACTION_HARROW_HAWK_SHADOW_DASH</set>
+		</setters>
+		<rules>
+			<stat name="companion:ac" value="13" />
+			<stat name="companion:hp:max" value="25" bonus="base" />
+			<stat name="companion:speed" value="10" bonus="base" />
+			<stat name="companion:speed:fly" value="60" bonus="base" />
+			<stat name="companion:perception:proficiency" value="companion:proficiency" bonus="base" />
+			<stat name="companion:perception:proficiency" value="companion:proficiency" bonus="double" />
+			<stat name="companion:stealth:proficiency" value="companion:proficiency" bonus="base" />
+		</rules>
+	</element>
+	<element name="Talons" type="Companion Action" source="The Book of Many Things" id="ID_WOTC_BOMT_COMPANION_ACTION_HARROW_HAWK_TALONS">
+		<description>
+			<p><i>Melee Weapon Attack:</i> +5 to hit, reach 5 ft., one target. <i>Hit:</i> 8 (2d4 + 3) slashing damage plus 3 (1d6) necrotic damage.</p>
+		</description>
+		<sheet>
+			<description>Melee Weapon Attack: +5 to hit, reach 5 ft., one target. Hit: 8 (2d4 + 3) slashing damage plus 3 (1d6) necrotic damage.</description>
+		</sheet>
+	</element>
+	<element name="Plane Shift" type="Companion Action" source="The Book of Many Things" id="ID_WOTC_BOMT_COMPANION_ACTION_HARROW_HAWK_PLANE_SHIFT">
+		<description>
+			<p>The hawk casts Plane Shift on itself, requiring no spell components and using Wisdom as the spellcasting ability.</p>
+		</description>
+		<sheet usage="2/Day">
+			<description>The hawk casts Plane Shift on itself, requiring no spell components and using Wisdom as the spellcasting ability.</description>
+		</sheet>
+	</element>
+	<element name="Shadow Dash" type="Companion Action" source="The Book of Many Things" id="ID_WOTC_BOMT_COMPANION_ACTION_HARROW_HAWK_SHADOW_DASH">
+		<description>
+			<p>When the hawk is in dim light or darkness, it teleports up to 30 feet to an unoccupied space it can see that is also in dim light or darkness. The hawk then has advantage on the first melee attack it makes before the end of the turn.</p>
+		</description>
+		<sheet action="Bonus Action">
+			<description>When the hawk is in dim light or darkness, it teleports up to 30 feet to an unoccupied space it can see that is also in dim light or darkness. The hawk then has advantage on the first melee attack it makes before the end of the turn.</description>
+		</sheet>
+	</element>
+
+</elements>
