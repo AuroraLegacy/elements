@@ -15,9 +15,7 @@
 			<div element="ID_DDB_LRDTOB_ARCHETYPE_FEATURE_PATH_OF_THE_DEPTHS_MANIFESTATIONS_OF_THE_DEEP" />
 			<div element="ID_DDB_LRDTOB_ARCHETYPE_FEATURE_PATH_OF_THE_DEPTHS_DEPTH_CHARGE" />
 		</description>
-		<sheet>
-			<description>Encounters with the terrors of the deep can break the minds of the weak-willed, but some forge their trauma into weapons never seen above the waves. The barbarian who walks this path has survived such an encounter and has gained extraordinary abilities from the experience.</description>
-		</sheet>
+		<sheet display="false"/>
 		<rules>
 			<grant type="Archetype Feature" id="ID_DDB_LRDTOB_ARCHETYPE_FEATURE_PATH_OF_THE_DEPTHS_GIFT_OF_THE_DROWNED_ONES" level="3" />
 			<grant type="Archetype Feature" id="ID_DDB_LRDTOB_ARCHETYPE_FEATURE_PATH_OF_THE_DEPTHS_DREDGE_LINE" level="3" />
@@ -61,9 +59,18 @@
 	<element name="Manifestations of the Deep" type="Archetype Feature" source="Legends of Runeterra: Dark Tides of Bilgewater" id="ID_DDB_LRDTOB_ARCHETYPE_FEATURE_PATH_OF_THE_DEPTHS_MANIFESTATIONS_OF_THE_DEEP">
 		<description>
 			<p>At 10th level, you can manifest additional adaptations of the deep. Select one of the below adaptations you manifest, during a long rest you may replace your chosen manifestation with a new option from this list.</p>
+			<p class="indent"><strong><em>Eyes of the Deep.</em></strong> You gain the ability to use echolocation. When you do so, you cast the <i>true seeing</i> spell, without using a spell slot or material components. After you cast a spell in this way, you can't use this feature again until you finish a short or long rest.</p>
+			<p class="indent"><strong><em>Arms of the Deep.</em></strong> While raging, you now manifest two magical appendages, which may be tentacles, chains and anchors, animated rigging, or another grasping arm of your choice. When you use your dredge line ability, you can attempt a grapple with each of your appendages.</p>
+			<p class="indent"><strong><em>Heart of the Deep.</em></strong> Now on your turn, you can use a bonus action to gain temporary hit points equal to 1d12 + your barbarian level. Once you use this feature, you must finish a short or long rest before you can use it again.</p>
+			<p class="indent"><strong><em>Soul of the Deep.</em></strong> You are now immune to all effects that would cause you to be charmed or frightened.</p>
+			<p class="indent"><strong><em>Armor of the Deep.</em></strong> Your skin hardens, increasing your Armor Class by 1.</p>
+
 		</description>
+		<sheet>
+			<description>You may replace your chosen manifestation during a long rest.</description>
+		</sheet>
 		<rules>
-			<select type="Archetype Feature" name="Manifestations of the Deep" supports="Manifestation, Path of the Depths" number="1" />
+			<select type="Archetype Feature" name="Manifestations of the Deep" supports="Manifestation, Path of the Depths" />
 		</rules>
 	</element>
 
@@ -86,15 +93,17 @@
 			<description>While raging, you now manifest two magical appendages, which may be tentacles, chains and anchors, animated rigging, or another grasping arm of your choice. When you use your dredge line ability, you can attempt a grapple with each of your appendages.</description>
 		</sheet>
 	</element>
+	
 	<element name="Heart of the Deep" type="Archetype Feature" source="Legends of Runeterra: Dark Tides of Bilgewater" id="ID_DDB_LRDTOB_ARCHETYPE_FEATURE_MANIFESTATION_HEART_OF_THE_DEEP">
 		<supports>Manifestation, Path of the Depths</supports>
 		<description>
 			<p>Now on your turn, you can use a bonus action to gain temporary hit points equal to 1d12 + your barbarian level. Once you use this feature, you must finish a short or long rest before you can use it again.</p>
 		</description>
-		<sheet action="Bonus Action" usage="1/Short Rest">
+		<sheet action="Bonus Action" usage="1/Rest">
 			<description>You gain 1d12+{{level:barbarian}} temporary hit points.</description>
 		</sheet>
 	</element>
+	
 	<element name="Soul of the Deep" type="Archetype Feature" source="Legends of Runeterra: Dark Tides of Bilgewater" id="ID_DDB_LRDTOB_ARCHETYPE_FEATURE_MANIFESTATION_SOUL_OF_THE_DEEP">
 		<supports>Manifestation, Path of the Depths</supports>
 		<description>
@@ -104,6 +113,7 @@
 			<description>You are now immune to all effects that would cause you to be charmed or frightened.</description>
 		</sheet>
 	</element>
+	
 	<element name="Armour of the Deep" type="Archetype Feature" source="Legends of Runeterra: Dark Tides of Bilgewater" id="ID_DDB_LRDTOB_ARCHETYPE_FEATURE_MANIFESTATION_ARMOUR_OF_THE_DEEP"> <!--it's my code and I get to spell it with a U-->
 		<supports>Manifestation, Path of the Depths</supports>
 		<description>
@@ -116,6 +126,7 @@
 			<stat name="ac:misc" value="1" />
 		</rules>
 	</element>
+	
 	<element name="Eyes of the Deep" type="Archetype Feature" source="Legends of Runeterra: Dark Tides of Bilgewater" id="ID_DDB_LRDTOB_ARCHETYPE_FEATURE_MANIFESTATION_EYES_OF_THE_DEEP">
 		<supports>Manifestation, Path of the Depths</supports>
 		<description>
@@ -131,4 +142,5 @@
 			<grant type="Spell" id="ID_PHB_SPELL_TRUE_SEEING" />
 		</rules>
 	</element>
+	
 </elements>
