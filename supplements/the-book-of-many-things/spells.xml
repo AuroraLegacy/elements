@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<elements>
+	<info>
+		<name>Spells from The Book of Many Things</name>
+		<update version="0.0.1">
+			<file name="spells.xml" url="https://raw.githubusercontent.com/AuroraLegacy/elements/master/supplements/the-book-of-many-things/spells.xml" />
+		</update>
+	</info>
+
+	<element name="Spray of Cards" type="Spell" source="The Book of Many Things" id="ID_WOTC_BOMT_SPELL_SPRAY_OF_CARDS">
+		<supports>Bard, Sorcerer, Warlock, Wizard</supports>
+		<description>
+			<p>You spray a 15-foot cone of spectral cards. Each creature in that area must make a Dexterity saving throw. On a failed save, a creature takes 2d10 force damage and has the blinded condition until the end of its next turn. On a successful save, a creature takes half as much damage only.</p>
+			<p class="indent"><b><i>At Higher Levels.</i></b> When you cast this spell using a spell slot of 3rd level or higher, the damage increases by 1d10 for each slot level above 2nd.</p>
+		</description>
+		<setters>
+			<set name="keywords">dexterity, saving throw, force, damage, blinded, condition, upcasting, higher levels</set>
+			<set name="level">2</set>
+			<set name="school">Conjuration</set>
+			<set name="time">1 action</set>
+			<set name="range">Self (15-foot cone)</set>
+			<set name="duration">Instantaneous</set>
+			<set name="hasVerbalComponent">true</set>
+			<set name="hasSomaticComponent">true</set>
+			<set name="hasMaterialComponent">true</set>
+			<set name="materialComponent">a deck of cards</set>
+		</setters>
+	</element>
+
+	<element name="Antagonize" type="Spell" source="The Book of Many Things" id="ID_WOTC_BOMT_SPELL_ANTAGONIZE">
+		<supports>Bard, Sorcerer, Warlock, Wizard</supports>
+		<description>
+			<p>You whisper magical words that antagonize one creature of your choice within range. The target must make a Wisdom saving throw. On a failed save, the target takes 4d4 psychic damage and must immediately use its reaction to make a melee attack against another creature of your choice that you can see. If the target can't make this attack (for example, because there is no one within its reach or because its reaction is unavailable), the target instead has disadvantage on the next attack roll it makes before the start of your next turn. On a successful save, the target takes half as much damage only.</p>
+			<p class="indent"><b><i>At Higher Levels.</i></b> When you cast this spell using a spell slot of 4th level or higher, the damage increases by 1d4 for each slot level above 3rd.</p>
+		</description>
+		<setters>
+			<set name="keywords">wisdom, saving throw, psychic, damage, reaction, disadvantage, attack rolls, upcasting, higher levels</set>
+			<set name="level">3</set>
+			<set name="school">Enchantment</set>
+			<set name="time">1 action</set>
+			<set name="range">30 feet</set>
+			<set name="duration">Instantaneous</set>
+			<set name="hasVerbalComponent">true</set>
+			<set name="hasSomaticComponent">true</set>
+			<set name="hasMaterialComponent">true</set>
+			<set name="materialComponent">a playing card depicting a rogue</set>
+		</setters>
+	</element>
+
+	<element name="Spirit of Death" type="Spell" source="The Book of Many Things" id="ID_WOTC_BOMT_SPELL_SPIRIT_OF_DEATH">
+		<supports>Sorcerer, Warlock, Wizard</supports>
+		<description>
+			<p>You call forth a spirit that embodies death. The spirit manifests in an unoccupied space you can see within range and uses the reaper spirit stat block. The spirit disappears when it is reduced to 0 hit points or when the spell ends.</p>
+			<p class="indent">The spirit is an ally to you and your companions. In combat, the spirit shares your initiative count and takes its turn immediately after yours. It obeys your verbal commands (no action required by you). If you don't issue the spirit any commands, it takes the Dodge action and uses its movement to avoid danger.</p>
+			<p class="indent"><b><i>At Higher Levels.</i></b> When you cast this spell using a spell slot of 5th level or higher, use the higher level wherever the spell's level appears in the reaper spirit stat block.</p>
+			<div class="reference">
+				<div element="ID_WOTC_BOMT_INFORMATION_REAPER_SPIRIT_STATBLOCK" />
+			</div>
+		</description>
+		<setters>
+			<set name="keywords">summoning, stat block, upcasting, higher levels</set>
+			<set name="level">4</set>
+			<set name="school">Necromancy</set>
+			<set name="time">1 action</set>
+			<set name="range">60 feet</set>
+			<set name="duration">Concentration, up to 1 hour</set>
+			<set name="hasVerbalComponent">true</set>
+			<set name="hasSomaticComponent">true</set>
+			<set name="hasMaterialComponent">true</set>
+			<set name="materialComponent">a gilded playing card worth at least 400 gp and depicting an avatar of death</set>
+			<set name="isConcentration">true</set>
+		</setters>
+	</element>
+
+	<element name="Reaper Spirit" type="Information" source="The Book of Many Things" id="ID_WOTC_BOMT_INFORMATION_REAPER_SPIRIT_STATBLOCK">
+		<description>
+			<p style="margin-bottom:-5px"><em>Medium Undead, Neutral</em></p>
+			<h4 style="margin-top:5px" />
+			<ul class="unstyled">
+				<li><strong>Armor Class</strong> 11 + the level of the spell (natural armor)</li>
+				<li><strong>Hit Points</strong> 40 + 10 for each spell level above 4th</li>
+				<li><strong>Speed</strong> 30 ft., fly 30 ft. (hover)</li>
+			</ul>
+			<table style="text-align:center;margin-top:10px;margin-bottom:10px">
+				<thead><tr><td>STR</td><td>DEX</td><td>CON</td><td>INT</td><td>WIS</td><td>CHA</td></tr></thead>
+				<tr><td>16 (+3)</td><td>16 (+3)</td><td>16 (+3)</td><td>16 (+3)</td><td>16 (+3)</td><td>16 (+3)</td></tr>
+			</table>
+			<ul class="unstyled">
+				<li><strong>Damage Immunities</strong> necrotic, poison</li>
+				<li><strong>Condition Immunities</strong> charmed, exhaustion, frightened, paralyzed, poisoned</li>
+				<li><strong>Senses</strong> darkvision 60 ft., passive Perception 13</li>
+				<li><strong>Languages</strong> understands the languages you speak</li>
+				<li style="margin-bottom:-1em"><strong>Challenge</strong> —</li>
+				<li style="text-align:right; margin-top:-1em"><strong>Proficiency Bonus (PB)</strong> equals your bonus</li>
+			</ul>
+			<h4 style="margin-top:5px; margin-bottom:10px" />
+			<ul class="unstyled">
+				<li><strong>Incorporeal Movement.</strong> The spirit can move through other creatures and objects as if they were difficult terrain. If it ends its turn inside an object, it is shunted to the nearest unoccupied space and takes 1d10 force damage for every 5 feet shunted.</li>
+			</ul>
+			<h4 style="margin-top:10px">Actions</h4>
+			<ul class="unstyled">
+				<li><strong><em>Multiattack.</em></strong> The spirit makes a number of Reaping Scythe attacks equal to half the level of the spell (rounded down).</li>
+				<li><strong><em>Reaping Scythe.</em></strong> <em>Melee Weapon Attack</em>: your spell attack modifier to hit (with advantage), reach 5 ft., the creature haunted by Haunt Creature. Hit: 1d8 + 3 + the spell's level necrotic damage.</li>
+			</ul>
+			<h4 style="margin-top:10px">Bonus Actions</h4>
+			<ul class="unstyled">
+				<li><strong>Haunt Creature.</strong> The spirit targets a creature it can see within 10 feet of itself and begins haunting it. While the target is haunted, you and the spirit sense the direction and distance to the target if it is on the same plane of existence as you. Additionally, if the target starts its turn within 10 feet of the spirit, the target must succeed on a Wisdom saving throw against your spell save DC or have the frightened condition until the start of the target's next turn. The target remains haunted until it dies, the spirit disappears, or the spirit uses this action again.</li>
+			</ul>
+		</description>
+	</element>
+</elements>

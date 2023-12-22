@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<elements>
+	<info>
+		<name>Ruined Background</name>
+		<update version="0.0.1">
+			<file name="background-ruined.xml" url="https://raw.githubusercontent.com/AuroraLegacy/elements/master/supplements/the-book-of-many-things/backgrounds/background-ruined.xml" />
+		</update>
+	</info>
+
+	<element name="Ruined" type="Background" source="The Book of Many Things" id="ID_WOTC_BOMT_BACKGROUND_RUINED">
+		<description>
+			<ul class="unstyled">
+				<li><strong>Skill Proficiencies:</strong> Stealth, Survival</li>
+				<li><strong>Languages:</strong> One of your choice</li>
+				<li><strong>Equipment:</strong> A cracked hourglass, a set of rusty manacles, a half-empty bottle, a hunting trap, a gaming set (matching your chosen proficiency), a set of traveler's clothes, and a pouch containing 13 gp</li>
+				<li><strong>Tool Proficiency:</strong>One gaming set of your choice (such as playing cards or three-dragon ante cards)</li>
+			</ul>
+			<div element="ID_WOTC_BOMT_BACKGROUND_RUINED_STILL_STANDING" />
+			<h5>SUGGESTED CHARACTERISTICS</h5>
+			<p>Rising above misfortune shapes one's perspective. The Ruined Personality Traits table suggests traits you might adopt for your character (and ruinous cards that might have prompted this trait).</p>
+			<table>
+				<thead>
+					<tr><td class="col-10">d6</td><td>Personality Trait</td></tr>
+				</thead>
+				<tr><td>1</td><td>I've changed from my past, and I work to live up to my new path. (Balance, Throne)</td></tr>
+				<tr><td>2</td><td>Every moment is a gift I refuse to squander. (Euryale, Skull)</td></tr>
+				<tr><td>3</td><td>Now that I've overcome having nothing, I can survive anything. (Fool, Ruin, Talons)</td></tr>
+				<tr><td>4</td><td>I know enemies are set against me, and I always prepare for the worst. (Flames, Rogue)</td></tr>
+				<tr><td>5</td><td>I interpret every event as part of a larger pattern I just haven't worked out yet. (Puzzle, Star)</td></tr>
+				<tr><td>6</td><td>I must make up for so much time I've already lost. (Donjon, Void)</td></tr>
+			</table>
+			<h5>BUILDING A RUINED CHARACTER</h5>
+			<p>Ruined characters were on top of the world before misfortune struck. Many were wealthy. Others come from modest backgrounds, but they were surrounded by friends, family, and loved ones. They might have been famous, or simply never encountered serious hardship before. Some were born to privilege or rose to prominence through trickery or a false reputation. Now a Deck of Many Things—or another calamity—has knocked them down like a house of cards.</p>
+			<p class="indent">If your character's life was ruined by a Deck of Many Things, consider which card was responsible. Perhaps your character was imprisoned for years by the Donjon or Void card, and now everyone they knew has died. Maybe your character drew the Rogue card, and the person closest to them—a spouse, child, or parent—turned against them. A devil unleashed by the Flames card might have destroyed their life. The Ruin or Talons card might have stolen the character's material goods or saddled them with vast debt.</p>
+			<h5>REWARDED TRINKETS</h5>
+			<p>When you make your character, you can roll once on the Ruined Trinkets table instead of on the Trinkets table in the Player's Handbook.</p>
+			<table>
+				<thead>
+					<tr><td class="col-10">d6</td><td>Trinket</td></tr>
+				</thead>
+				<tr><td>1</td><td>A rusted scrap of a once-beloved family heirloom</td></tr>
+				<tr><td>2</td><td>A land deed, but all the names and markings that once tied it to you have faded into obscurity</td></tr>
+				<tr><td>3</td><td>A bauble once imbued with powerful magic</td></tr>
+				<tr><td>4</td><td>A battered playing card with a hole pierced in it, its face depicting the card that affected you</td></tr>
+				<tr><td>5</td><td>A yellowed Humanoid tooth that whispers eerily when placed under a pillow</td></tr>
+				<tr><td>6</td><td>A keepsake from someone you were once close to but who is now your enemy</td></tr>
+			</table>
+		</description>
+		<setters>
+			<set name="short">Stealth, Survival, 1 Language, 1 Gaming Set</set>
+		</setters>
+		<rules>
+			<grant type="Background Feature" id="ID_WOTC_BOMT_BACKGROUND_RUINED_STILL_STANDING" requirements="!ID_INTERNAL_GRANT_OPTIONAL_BACKGROUND_FEATURE"/>
+			<select type="Background Feature" name="Variant Feature" supports="Optional Background Feature" optional="true" />
+			<select type="List" name="Personality Trait" number="2">
+				<item id="1">I've changed from my past, and I work to live up to my new path. (Balance, Throne)</item>
+				<item id="2">Every moment is a gift I refuse to squander. (Euryale, Skull)</item>
+				<item id="3">Now that I've overcome having nothing, I can survive anything. (Fool, Ruin, Talons)</item>
+				<item id="4">I know enemies are set against me, and I always prepare for the worst. (Flames, Rogue)</item>
+				<item id="5">I interpret every event as part of a larger pattern I just haven't worked out yet. (Puzzle, Star)</item>
+				<item id="6">I must make up for so much time I've already lost. (Donjon, Void)</item>
+			</select>
+			<grant type="Proficiency" id="ID_PROFICIENCY_SKILL_STEALTH" />
+			<grant type="Proficiency" id="ID_PROFICIENCY_SKILL_SURVIVAL" />
+			<select type="Language" name="Language (Ruined)" supports="Standard||Exotic" />
+			<select type="Proficiency" name="Gaming Set (Ruined)" supports="Gaming Set"/>
+		</rules>
+	</element>
+
+	<element name="Feature: Still Standing" type="Background Feature" source="The Book of Many Things" id="ID_WOTC_BOMT_BACKGROUND_RUINED_STILL_STANDING">
+		<supports>Background Feature</supports>
+		<description>
+			<p>You have weathered ruinous misfortune, and you possess hidden reserves others don't expect. You gain the Alert, Skilled, or Tough feat (your choice). Your choice of feat reflects how you've dealt with the terrible loss that changed your life forever. If you've kept your senses sharp for every opportunity and climbed your way out of misery by seizing the tiniest scrap of hope, choose Alert. If you've redoubled your efforts to reclaim what was once yours, choose Skilled. If you've stoically persevered through your misfortune, select Tough.</p>
+		</description>
+		<sheet alt="Fortune's Favor">
+			<description>You have weathered ruinous misfortune, and you possess hidden reserves others don't expect. You gain the Alert, Skilled, or Tough feat (your choice).</description>
+		</sheet>
+		<rules>
+			<select type="Feat" name="Background Feat (Fortune's Favor)" supports="ID_PHB_FEAT_ALERT|ID_PHB_FEAT_SKILLED|ID_PHB_FEAT_TOUGH" />
+			<grant type="Grants" id="ID_INTERNAL_GRANTS_BACKGROUND_WITH_A_FEAT" />
+		</rules>
+	</element>
+</elements>

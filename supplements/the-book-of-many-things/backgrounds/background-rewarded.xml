@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<elements>
+	<info>
+		<name>Rewarded Background</name>
+		<update version="0.0.1">
+			<file name="background-rewarded.xml" url="https://raw.githubusercontent.com/AuroraLegacy/elements/master/supplements/the-book-of-many-things/backgrounds/background-rewarded.xml" />
+		</update>
+	</info>
+
+	<element name="Rewarded" type="Background" source="The Book of Many Things" id="ID_WOTC_BOMT_BACKGROUND_REWARDED">
+		<description>
+			<ul class="unstyled">
+				<li><strong>Skill Proficiencies:</strong> Insight, Persuasion</li>
+				<li><strong>Languages:</strong> One of your choice</li>
+				<li><strong>Equipment:</strong> A bottle of black ink, an ink pen, five sheets of paper, a gaming set (matching your chosen proficiency), a signet ring, a set of fine clothes, and a pouch containing 18 gp</li>
+				<li><strong>Tool Proficiency:</strong>One gaming set of your choice (such as playing cards or three-dragon ante cards)</li>
+			</ul>
+			<div element="ID_WOTC_BOMT_BACKGROUND_REWARDED_FORTUNES_FAVOR" />
+			<h5>SUGGESTED CHARACTERISTICS</h5>
+			<p>Your character's perspective on life has changed thanks to their new destiny. The Rewarded Personality Traits table suggests traits you might adopt for your character and cards from the Deck of Many Things that might have prompted this trait.</p>
+			<table>
+				<thead>
+					<tr><td class="col-10">d6</td><td>Personality Trait</td></tr>
+				</thead>
+				<tr><td>1</td><td>A safe home is a foundation on which anything else can be built. (Key, Throne)</td></tr>
+				<tr><td>2</td><td>I was elevated to heights I could never otherwise attain, and I won't waste my fortune. (Star, Sun)</td></tr>
+				<tr><td>3</td><td>I try to be a source of inspiration and joy to others. Life is never as bad as you think! (Euryale, Jester)</td></tr>
+				<tr><td>4</td><td>Courage and boldness can carry the day when all else fails. (Comet, Knight)</td></tr>
+				<tr><td>5</td><td>My good fortune means I can lift others up as well. (Gem, Moon)</td></tr>
+				<tr><td>6</td><td>Having the right answers is the first step to solving any problem, no matter how dire. (Fates, Sage)</td></tr>
+			</table>
+			<h5>BUILDING A REWARDED CHARACTER</h5>
+			<p>Rewarded characters have varied histories, but they have one thing in common: they were down on their luck before their lives abruptly turned around. They might have given up all hope of a happier life, only to suddenly get a second chance. A rewarded character has often spent many years struggling to escape painful circumstances. Now, extricated from the (sometimes literal) prison that was their former life, they throw their cares to the wind and become adventurers.</p>
+			<p class="indent">If your character's life was changed by a Deck of Many Things, consider which card was responsible. Perhaps the Fates card undid a tragic mistake your character made in their youth. The Gem card could have wiped out debts incurred over a lifetime. Maybe the Sage card provided the advice needed to escape a hopeless situation, the Star card increased an ability score to its current value, or a Wish spell cast after drawing the Moon card transformed your character from a peddler to a fledgling sorcerer infused with magic and new knowledge and skills. If you're making a character at higher than 1st level, magic items they have could have been granted by the Key or Sun card.</p>
+			<h5>REWARDED TRINKETS</h5>
+			<p>When you make your character, you can roll once on the Rewarded Trinkets table instead of on the Trinkets table in the Player's Handbook for your starting trinket.</p>
+			<table>
+				<thead>
+					<tr><td class="col-10">d6</td><td>Trinket</td></tr>
+				</thead>
+				<tr><td>1</td><td>A perfumed silk scarf from an admirer</td></tr>
+				<tr><td>2</td><td>A crystal bead that glows like a candle in the dark</td></tr>
+				<tr><td>3</td><td>A letter of introduction and invitation from an influential person in a far-off city</td></tr>
+				<tr><td>4</td><td>A motto or symbol whose meaning eludes you, etched on a piece of your equipment</td></tr>
+				<tr><td>5</td><td>A crisp playing card that never seems to tear or soil, depicting the card that affected you</td></tr>
+				<tr><td>6</td><td>Half a medallion designed to be rejoined to its other half</td></tr>
+			</table>
+		</description>
+		<setters>
+			<set name="short">Insight, Persuasion, 1 Language, 1 Gaming Set</set>
+		</setters>
+		<rules>
+			<grant type="Background Feature" id="ID_WOTC_BOMT_BACKGROUND_REWARDED_FORTUNES_FAVOR" requirements="!ID_INTERNAL_GRANT_OPTIONAL_BACKGROUND_FEATURE"/>
+			<select type="Background Feature" name="Variant Feature" supports="Optional Background Feature" optional="true" />
+			<select type="List" name="Personality Trait" number="2">
+				<item id="1">A safe home is a foundation on which anything else can be built. (Key, Throne)</item>
+				<item id="2">I was elevated to heights I could never otherwise attain, and I won't waste my fortune. (Star, Sun)</item>
+				<item id="3">I try to be a source of inspiration and joy to others. Life is never as bad as you think! (Euryale, Jester)</item>
+				<item id="4">Courage and boldness can carry the day when all else fails. (Comet, Knight)</item>
+				<item id="5">My good fortune means I can lift others up as well. (Gem, Moon)</item>
+				<item id="6">Having the right answers is the first step to solving any problem, no matter how dire. (Fates, Sage)</item>
+			</select>
+			<grant type="Proficiency" id="ID_PROFICIENCY_SKILL_INSIGHT" />
+			<grant type="Proficiency" id="ID_PROFICIENCY_SKILL_PERSUASION" />
+			<select type="Language" name="Language (Rewarded)" supports="Standard||Exotic" />
+			<select type="Proficiency" name="Gaming Set (Rewarded)" supports="Gaming Set"/>
+		</rules>
+	</element>
+
+	<element name="Feature: Fortune's Favor" type="Background Feature" source="The Book of Many Things" id="ID_WOTC_BOMT_BACKGROUND_REWARDED_FORTUNES_FAVOR">
+		<supports>Background Feature</supports>
+		<description>
+			<p>Your unexpected good fortune is reflected by a minor boon. You gain the Lucky, Magic Initiate, or Skilled feat (your choice). Your choice of feat reflects the transformation that changed your life. An encounter with a genie who gave you three wishes might have resulted in magical powers represented by Magic Initiate. If you paid off all your family debts with a fortuitous round of three-dragon ante, you might be Lucky instead. Alternatively, you could use the Skilled feat to reflect whatever trial you endured to secure your new destiny and to model the knowledge and abilities imparted to you by whatever force transformed your life.</p>
+		</description>
+		<sheet alt="Fortune's Favor">
+			<description>Your unexpected good fortune is reflected by a minor boon. You gain the Lucky, Magic Initiate, or Skilled feat (your choice).</description>
+		</sheet>
+		<rules>
+			<select type="Feat" name="Background Feat (Fortune's Favor)" supports="ID_PHB_FEAT_LUCKY|ID_PHB_FEAT_MAGICINITIATE|ID_PHB_FEAT_SKILLED" />
+			<grant type="Grants" id="ID_INTERNAL_GRANTS_BACKGROUND_WITH_A_FEAT" />
+		</rules>
+	</element>
+</elements>

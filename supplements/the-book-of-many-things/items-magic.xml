@@ -1,0 +1,1593 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<elements>
+	<info>
+		<name>Magic Items from The Book of Many Things</name>
+		<update version="0.0.1">
+			<file name="items-magic.xml" url="https://raw.githubusercontent.com/AuroraLegacy/elements/master/supplements/the-book-of-many-things/items-magic.xml" />
+		</update>
+	</info>
+
+	<element name="Antimagic Armor" type="Magic Item" source="The Book of Many Things" id="ID_WOTC_BOMT_MAGIC_ITEM_ANTIMAGIC_ARMOR">
+		<description>
+			<p>While wearing this armor, you can use your reaction to give yourself advantage on a saving throw you make against a spell. Once this property is used, it can't be used again until the next dawn.</p>
+			<p class="indent">In addition, while you wear this armor, you can use it to cast <i>Antimagic Field</i>, requiring no spell components. Once this property is used, it can't be used again until the next dawn.</p>
+			<div class="reference">
+				<div element="ID_PHB_SPELL_ANTIMAGIC_FIELD" />
+			</div>
+		</description>
+		<setters>
+			<set name="keywords">reaction, advantage, saving throw, antimagic field</set>
+			<set name="category">Magic Armor</set>
+			<set name="cost" currency="gp">0</set>
+			<set name="type">Armor</set>
+			<set name="rarity">Very Rare</set>
+			<set name="armor">ID_INTERNAL_ARMOR_GROUP_LIGHT|ID_INTERNAL_ARMOR_GROUP_MEDIUM|ID_INTERNAL_ARMOR_GROUP_HEAVY</set>
+			<set name="name-format">Antimagic {{parent}}</set>
+			<set name="attunement">true</set>
+		</setters>
+	</element>
+
+	<element name="Armor of Fungal Spores" type="Magic Item" source="The Book of Many Things" id="ID_WOTC_BOMT_MAGIC_ITEM_ARMOR_OF_FUNGAL_SPORES">
+		<description>
+			<p>While wearing this armor, you can take a bonus action to make the armor emit poisonous spores, which fill a 10-foot-radius sphere centered on yourself. Each creature in that area must succeed on a DC 15 Constitution saving throw or have the poisoned condition until the end of your next turn. Once this property is used, it can't be used again until the next dawn.</p>
+		</description>
+		<setters>
+			<set name="keywords">bonus action, constitution, saving throw, poisoned, condition</set>
+			<set name="category">Magic Armor</set>
+			<set name="cost" currency="gp">0</set>
+			<set name="type" addition="Medium">Armor</set>
+			<set name="rarity">Uncommon</set>
+			<set name="armor">ID_INTERNAL_ARMOR_GROUP_MEDIUM</set>
+			<set name="name-format">{{parent}} of Fungal Spores</set>
+		</setters>
+	</element>
+
+	<element name="Armor of the Fallen" type="Magic Item" source="The Book of Many Things" id="ID_WOTC_BOMT_MAGIC_ITEM_ARMOR_OF_THE_FALLEN">
+		<description>
+			<p>While wearing this armor, you can use it to cast either <i>Speak with Dead</i> or <i>Animate Dead</i>. Once the armor has cast a spell in this way, it can't cast either spell until the next dawn.</p>
+			<p class="indent">Your soul keeps this armor together. If you die while you are attuned to the armor, the armor is destroyed.</p>
+			<div class="reference">
+				<div element="ID_PHB_SPELL_SPEAK_WITH_DEAD" />
+			</div>
+			<div class="reference">
+				<div element="ID_PHB_SPELL_ANIMATE_DEAD" />
+			</div>
+		</description>
+		<setters>
+			<set name="keywords">spells, speak with dead, animate dead</set>
+			<set name="category">Magic Armor</set>
+			<set name="cost" currency="gp">0</set>
+			<set name="type">Armor</set>
+			<set name="rarity">Uncommon</set>
+			<set name="armor">ID_INTERNAL_ARMOR_GROUP_MEDIUM|ID_INTERNAL_ARMOR_GROUP_HEAVY</set>
+			<set name="name-format">{{parent}} of the Fallen</set>
+			<set name="attunement">true</set>
+		</setters>
+	</element>
+
+	<element name="Armor of Weightlessness" type="Magic Item" source="The Book of Many Things" id="ID_WOTC_BOMT_MAGIC_ITEM_ARMOR_OF_WEIGHTLESSNESS">
+		<description>
+			<p>This armor has 5 charges. While you wear it, you can use a bonus action to expend 1 or more charges to cast one of the following spells from the armor, targeting yourself: <i>Jump</i> (1 charge) or <i>Levitate</i> (2 charges).</p>
+			<p class="indent">This armor regains 1d4 + 1 expended charges daily at dawn.</p>
+			<div class="reference">
+				<div element="ID_PHB_SPELL_JUMP" />
+			</div>
+			<div class="reference">
+				<div element="ID_PHB_SPELL_LEVITATE" />
+			</div>
+		</description>
+		<setters>
+			<set name="keywords">charges, bonus action, spells, jump, levitate</set>
+			<set name="category">Magic Armor</set>
+			<set name="cost" currency="gp">0</set>
+			<set name="type" addition="Any Armor">Armor</set>
+			<set name="rarity">Uncommon</set>
+			<set name="armor">ID_INTERNAL_ARMOR_GROUP_LIGHT|ID_INTERNAL_ARMOR_GROUP_MEDIUM|ID_INTERNAL_ARMOR_GROUP_HEAVY</set>
+			<set name="name-format">{{parent}} of Weightlessness</set>
+			<set name="attunement">true</set>
+		</setters>
+	</element>
+
+	<element name="Baleful Talon" type="Magic Item" source="The Book of Many Things" id="ID_WOTC_BOMT_MAGIC_ITEM_BALEFUL_TALON">
+		<description>
+			<p>You gain a +1 bonus to attack and damage rolls made with this hooked, obsidian dagger.</p>
+			<p class="indent">When you hit a creature with this magic weapon and roll a 19 or 20 on the attack roll, the creature must make a DC 15 Constitution saving throw as the dagger flares with sickly light. The creature takes 6d6 necrotic damage on a failed save, or half as much on a successful one. If this damage reduces the creature to 0 hit points, the creature disintegrates into dust.</p>
+		</description>
+		<setters>
+			<set name="keywords">attack, damage, constitution, saving throw, necrotic</set>
+			<set name="category">Magic Weapons</set>
+			<set name="cost" currency="gp">0</set>
+			<set name="type" addition="Dagger">Weapon</set>
+			<set name="rarity">Very Rare</set>
+			<set name="enhancement">1</set>
+			<set name="weapon">Dagger</set>
+		</setters>
+	</element>
+
+	<element name="Blasted Goggles" type="Magic Item" source="The Book of Many Things" id="ID_WOTC_BOMT_MAGIC_ITEM_BLASTED_GOGGLES">
+		<description>
+			<p>These tinker's goggles have 3 charges. As an action, you can expend 1 charge to shoot a beam of fiery light from the goggles at a creature you can see within 120 feet of yourself. The target must succeed on a DC 15 Dexterity saving throw or take 3d6 fire damage. The goggles regain 1d3 expended charges daily at dawn.</p>
+			<p class="indent"><b><i>Cursed.</i></b> The goggles are cursed, and becoming attuned to them extends the curse to you. You can't remove the goggles or end your attunement to them until you are targeted by a <i>Remove Curse</i> spell or similar magic.</p>
+			<p class="indent">Whenever you use the goggles' fiery beam and the target rolls a 20 on the d20 for the saving throw, the goggles expose you to a flash of violent bright light. As a result, you have the blinded condition for 24 hours.</p>
+		</description>
+		<setters>
+			<set name="keywords">charges, action, dexterity, saving throw, fire, damage, cursed</set>
+			<set name="category">Wondrous Items</set>
+			<set name="type">Wondrous Item</set>
+			<set name="rarity">Uncommon</set>
+			<set name="cost" currency="gp">0</set>
+			<set name="weight" lb="0">0 lb.</set>
+			<set name="attunement">true</set>
+		</setters>
+	</element>
+
+	<element name="Bloodrage Greataxe" type="Magic Item" source="The Book of Many Things" id="ID_WOTC_BOMT_MAGIC_ITEM_BLOODRAGE_GREATAXE">
+		<description>
+			<p>You gain a +2 bonus to attack and damage rolls made with this magic greataxe while you have half your hit points or fewer.</p>
+		</description>
+		<setters>
+			<set name="keywords">attack, damage</set>
+			<set name="category">Magic Weapons</set>
+			<set name="cost" currency="gp">0</set>
+			<set name="type" addition="Greataxe">Weapon</set>
+			<set name="rarity">Uncommon</set>
+			<set name="weapon">Greataxe</set>
+		</setters>
+	</element>
+
+	<element name="Bloodseeker Ammunition" type="Magic Item" source="The Book of Many Things" id="ID_WOTC_BOMT_MAGIC_ITEM_BLOODSEEKER_AMMUNITION">		
+		<description>
+			<p>Ranged attack rolls made with this ammunition have advantage against any creature doesn't have all its hit points.</p>
+		</description>
+		<setters>
+			<set name="keywords">advantage</set>
+			<set name="category">Ammunition</set>
+			<set name="cost" currency="gp">0</set>
+			<set name="weight" lb="0">0 lb.</set>
+			<set name="type" addition="Any Ammunition">Weapon</set>
+			<set name="rarity">Very Rare</set>
+			<set name="stackable">true</set>
+		</setters>
+	</element>
+
+	<element name="Boomerang Shield" type="Magic Item" source="The Book of Many Things" id="ID_WOTC_BOMT_MAGIC_ITEM_BOOMERANG_SHIELD">
+		<description>
+			<p>You can make a ranged weapon attack with this magic shield. It has a normal range of 20 feet and a long range of 60 feet, and it uses your Strength or Dexterity for the attack roll (your choice). If you're proficient with shields, you are proficient with attacks made using this shield. On a hit, it deals 1d6 slashing damage. If you throw the shield, it reappears in your hand the instant after it hits or misses a target.</p>
+		</description>
+		<setters>
+			<set name="keywords">ranged, weapon, strength, dexterity, attack, slashing, damage</set>
+			<set name="category">Magic Armor</set>
+			<set name="cost" currency="gp">0</set>
+			<set name="type" addition="shield">Armor</set>
+			<set name="rarity">Uncommon</set>
+			<set name="armor">ID_INTERNAL_ARMOR_GROUP_SHIELD</set>
+			<set name="attunement">true</set>
+		</setters>
+	</element>
+
+	<element name="Bow of Conflagration" type="Magic Item" source="The Book of Many Things" id="ID_WOTC_BOMT_MAGIC_ITEM_BOW_OF_CONFLAGRATION">
+		<description>
+			<p>Ammunition fired from this bow blazes brightly. When you hit with an attack roll using this bow, the target takes an extra 1d6 fire damage. If the target is a flammable, nonmagical object, it catches fire, taking 1d6 fire damage at the start of each of your turns until a creature uses an action to extinguish the flames.</p>
+		</description>
+		<setters>
+			<set name="keywords">fire, damage</set>
+			<set name="category">Magic Weapons</set>
+			<set name="cost" currency="gp">0</set>
+			<set name="type" addition="Any Bow">Weapon</set>
+			<set name="rarity">Rare</set>
+			<set name="attunement">true</set>
+			<set name="weapon">ID_INTERNAL_WEAPON_GROUP_BOWS||ID_INTERNAL_WEAPON_GROUP_CROSSBOWS</set>
+			<set name="name-format">{{parent}} of Conflagration</set>
+		</setters>
+	</element>
+
+	<element name="Bow of Melodies" type="Magic Item" source="The Book of Many Things" id="ID_WOTC_BOMT_MAGIC_ITEM_BOW_OF_MELODIES">
+		<description>
+			<p>This bow has multiple strings and resembles a lyre or small harp. By strumming the strings while setting an arrow to the bow, you imbue the arrow with magic.</p>
+			<p class="indent">You can play one of the following melodies when you use the bow to make a ranged weapon attack. You must choose to do so before you make the attack roll, and you can play only one melody per attack.</p>
+			<p class="indent"><b><i>Melody of Precision.</i></b> If you're proficient in Performance, you gain a +1 bonus to the attack roll. If you have expertise in Performance, you gain a +2 bonus instead.</p>
+			<p class="indent"><b><i>Melody of Reverberation.</i></b> The melody you strum echoes loudly. On a hit, the target takes extra thunder damage equal to your Charisma modifier.</p>
+		</description>
+		<setters>
+			<set name="keywords">performance, attack, thunder, damage, charisma</set>
+			<set name="category">Magic Weapons</set>
+			<set name="cost" currency="gp">0</set>
+			<set name="type" addition="Any Bow">Weapon</set>
+			<set name="rarity">Very Rare</set>
+			<set name="attunement">true</set>
+			<set name="weapon">ID_INTERNAL_WEAPON_GROUP_BOWS||ID_INTERNAL_WEAPON_GROUP_CROSSBOWS</set>
+			<set name="name-format">{{parent}} of Melodies</set>
+		</setters>
+	</element>
+
+	<element name="Breastplate of Balance" type="Magic Item" source="The Book of Many Things" id="ID_WOTC_BOMT_MAGIC_ITEM_BREASTPLATE_OF_BALANCE">
+		<description>
+			<p>This burnished copper breastplate looks as if it were made of interlocking gears. Merchant's scales are emblazoned across the chest.</p>
+			<p class="indent">The armor has 4 charges. You can use the charges in the following ways while wearing the armor:</p>
+			<ul class="unstyled" style="margin-bottom: 20px">
+				<li style="text-indent: -1em; margin-left: 1em"><strong>Equalize.</strong> When you or a creature you can see within 60 feet of yourself is about to roll a d20 with advantage or disadvantage, you can expend 1 charge and take a reaction to prevent the roll from being affected by advantage or disadvantage.</li>
+				<li style="text-indent: -1em; margin-left: 1em"><strong>Expunge Imbalance.</strong> As a bonus action, you can expend 2 charges to cast the <i>Lesser Restoration</i> spell from the armor.</li>
+			</ul>
+			<p class="indent">The armor regains 1d4 expended charges daily at dawn.</p>
+			<div class="reference">
+				<div element="ID_PHB_SPELL_LESSER_RESTORATION" />
+			</div>
+		</description>
+		<setters>
+			<set name="keywords">charges, reaction, bonus action, spell, lesser restoration</set>
+			<set name="category">Magic Armor</set>
+			<set name="cost" currency="gp">0</set>
+			<set name="weight" lb="0">0 lb.</set>
+			<set name="slot">body</set>
+			<set name="type" addition="breastplate">Armor</set>
+			<set name="rarity">Rare</set>
+			<set name="attunement">true</set>
+			<set name="armor">Breastplate</set>
+		</setters>
+	</element>
+
+	<element name="Card Sharp's Deck" type="Magic Item" source="The Book of Many Things" id="ID_WOTC_BOMT_MAGIC_ITEM_CARD_SHARPS_DECK">
+		<description>
+			<p>The cards of this deck shimmer around the edges. While holding this deck, you can use the following properties:</p>
+			<ul class="unstyled" style="margin-bottom: 20px">
+				<li style="text-indent: -1em; margin-left: 1em"><b>Deadly Deal.</b> As an action, you can use this deck to make a ranged spell attack by throwing a spectral card and using Dexterity for the attack roll. The card has a range of 120 feet and deals 1d8 force damage on a hit.</li>
+				<li style="text-indent: -1em; margin-left: 1em"><b>Spray of Cards.</b> As an action, you can shuffle the deck and cast the <i>Spray of Cards</i> spell at 3rd level from the deck (spell save DC 15). Once the deck has cast the spell, it can't cast the spell again until the next dawn.</li>
+			</ul>
+			<div class="reference">
+				<div element="ID_WOTC_BOMT_SPELL_SPRAY_OF_CARDS" />
+			</div>
+		</description>
+		<setters>
+			<set name="keywords">action, ranged spell attack, attack, dexterity, force, damage, spell, spray of cards</set>
+			<set name="category">Wondrous Items</set>
+			<set name="type">Wondrous Item</set>
+			<set name="rarity">Uncommon</set>
+			<set name="cost" currency="gp">0</set>
+			<set name="weight" lb="0">0 lb.</set>
+		</setters>
+	</element>
+
+	<element name="Clockwork Armor" type="Magic Item" source="The Book of Many Things" id="ID_WOTC_BOMT_MAGIC_ITEM_CLOCKWORK_ARMOR">
+		<description>
+			<p>The outside surface and internal joints of this armor whir with interlocking gears, drawing on the orderly magic of the plane of Mechanus.</p>
+			<p class="indent">The armor has 4 charges. If you make a d20 roll while wearing this armor, you can expend 1 charge to change the number rolled to a 10. The armor regains 1d4 expended charges daily at dawn.</p>
+		</description>
+		<setters>
+			<set name="keywords">charges, take 10</set>
+			<set name="category">Magic Armor</set>
+			<set name="cost" currency="gp">0</set>
+			<set name="type" addition="Heavy">Armor</set>
+			<set name="rarity">Very Rare</set>
+			<set name="armor">ID_INTERNAL_ARMOR_GROUP_HEAVY</set>
+			<set name="name-format">Clockwork {{parent}}</set>
+			<set name="attunement">true</set>
+		</setters>
+	</element>
+
+	<element name="Crown of Whirling Comets" type="Magic Item" source="The Book of Many Things" id="ID_WOTC_BOMT_MAGIC_ITEM_CROWN_OF_WHIRLING_COMETS">
+		<description>
+			<p>This delicate silver tiara is decorated with stellar iconography. While you wear the crown, the gems on the tiara's points detach and closely orbit your head.</p>
+			<p class="indent">The crown has 6 charges for the following properties, which you can use while wearing the crown:</p>
+			<ul class="unstyled" style="margin-bottom: 20px">
+				<li style="text-indent: -1em; margin-left: 1em"><b>Star Flight.</b> As a bonus action, you can spend 1 charge to gain the power of flight for 10 minutes. For the duration, you gain a flying speed equal to your walking speed, and you can hover. While flying, you glow faintly with starlight.</li>
+				<li style="text-indent: -1em; margin-left: 1em"><b>Starlight Strike.</b> As an action, you can spend any number of charges to launch bolts of frigid starlight. You launch a number of bolts equal to the number of charges spent, and you can direct the bolts to target one creature or several, so long as all creatures are within 120 feet of you and you can see them. The bolts automatically strike their targets, and each bolt deals 2d4 cold damage.</li>
+				<li style="text-indent: -1em; margin-left: 1em"><b>Whirling Hail.</b> As an action, you can spend 3 charges and cast the <i>Ice Storm</i> spell (save DC 16).</li>
+			</ul>
+			<p class="indent">The crown regains 1d6 expended charges daily at dawn.</p>
+			<div class="reference">
+				<div element="ID_PHB_SPELL_ICE_STORM" />
+			</div>
+		</description>
+		<setters>
+			<set name="keywords">charges, bonus action, flying, speed, hover, action, cold, damage, spell, ice storm</set>
+			<set name="category">Wondrous Items</set>
+			<set name="type">Wondrous Item</set>
+			<set name="rarity">Very Rare</set>
+			<set name="attunement">true</set>
+			<set name="slot">head</set>
+			<set name="cost" currency="gp">0</set>
+			<set name="weight" lb="0">0 lb.</set>
+		</setters>
+	</element>
+
+	<element name="Deck of Dimensions" type="Magic Item" source="The Book of Many Things" id="ID_WOTC_BOMT_MAGIC_ITEM_DECK_OF_DIMENSIONS">
+		<description>
+			<p>The backs of the cards in this deck are decorated with intricate designs representing different planes of existence. The deck has 6 charges. While holding it, you can expend 1 or more of its charges to use the following properties:</p>
+			<ul class="unstyled" style="margin-bottom: 20px">
+				<li style="text-indent: -1em; margin-left: 1em"><b>Marked Card.</b> As a bonus action, you can expend 1 charge to draw a card from the deck and place it in an unoccupied space within 5 feet of you. The card then becomes marked with an invisible sigil. Once within the next 24 hours, as an action, you can speak the marked card's name and teleport to the card's location, along with any equipment you are wearing or carrying, appearing in the closest unoccupied space to the card. After you teleport in this way, or after 8 hours, the card returns to the deck, and the mark on it fades.</li>
+				<li style="text-indent: -1em; margin-left: 1em"><b>Riffling Portal.</b> As an action, you can expend 3 charges to cast the <i>Arcane Gate</i> spell from the deck. The deck vanishes, and fluttering cards create the spell's portal rings. When the spell ends, the deck reappears in your possession.</li>
+				<li style="text-indent: -1em; margin-left: 1em"><b>Shuffling Stride.</b> As a bonus action, you can expend 1 charge to throw a card from the deck to an unoccupied space within 60 feet of yourself and teleport, along with any equipment you're wearing or carrying, to that space. The card then vanishes and returns to the deck.</li>
+			</ul>
+			<p class="indent">The deck regains 1d6 expended charges daily at dawn.</p>
+			<div class="reference">
+				<div element="ID_PHB_SPELL_ARCANE_GATE" />
+			</div>
+		</description>
+		<setters>
+			<set name="keywords">charges, bonus action, action, teleport, spell, arcane gate</set>
+			<set name="category">Wondrous Items</set>
+			<set name="type">Wondrous Item</set>
+			<set name="rarity">Very Rare</set>
+			<set name="attunement">true</set>
+			<set name="cost" currency="gp">0</set>
+			<set name="weight" lb="0">0 lb.</set>
+		</setters>
+	</element>
+
+	<element name="Deck of Many More Things" type="Magic Item" source="The Book of Many Things" id="ID_WOTC_BOMT_MAGIC_ITEM_DECK_OF_MANY_MORE_THINGS">
+		<description>
+			<p>Over the centuries since the first Deck of Many Things was created, many have sought and failed to replicate it. But some have created new cards. These forty-four additional cards are known collectively as the <i>Deck of Many More Things</i>. (More information on creating new cards for this deck appears in chapter 2 of <i>The Book of Many Things</i>.)</p>
+			<p class="indent">Like the Deck of Many Things, the <i>Deck of Many More Things</i> manifests differently on various worlds. While it can include fewer or different cards, it frequently appears with a Deck of Many Things as part of a combined deck of sixty-six illuminated cards. The combined deck is usually protected by a box or pouch. The forty-four cards of the <i>Deck of Many More Things</i> bear similar imagery to those in the Deck of Many Things and have potent magical effects, which are detailed later in this description. Notably, cards from the <i>Deck of Many More Things</i> are more likely to be beneficial, though about a third of them are still dangerous.</p>
+			<p class="indent">Before you draw a card, you must declare how many cards you intend to draw and then draw them randomly. Unless a card allows you to draw additional cards, any cards drawn exceeding this number have no effect.</p>
+			<p class="indent">As soon as you draw a card, its magic takes effect. You must draw each card you declared no more than 1 hour after the previous draw. Unless a card states otherwise, if you fail to draw the chosen number, the remaining number of cards fly from the deck and take effect simultaneously.</p>
+			<p class="indent">Unless it is the Fool or the Jester card, a drawn card immediately takes effect, fades from existence, and reappears in the deck, making it possible to draw the same card multiple times.</p>
+			<p class="indent">The DM can use the physical cards provided in The Deck of Many Things card set to build a combined Deck of Many Things and <i>Deck of Many More Things</i>, including whichever cards they desire. Alternatively, roll on the <i>Deck of Many More Things</i> table below to randomly determine what cards are drawn.</p>
+			<h5>Deck of Many More Things</h5>
+			<table>
+				<thead>
+					<tr><td class="col-10">d100</td><td>Card</td></tr>
+				</thead>
+				<tr><td>01</td><td>Aberration</td></tr>
+				<tr><td>02</td><td>Balance*</td></tr>
+				<tr><td>03</td><td>Beast</td></tr>
+				<tr><td>04</td><td>Book</td></tr>
+				<tr><td>05</td><td>Bridge</td></tr>
+				<tr><td>06</td><td>Campfire</td></tr>
+				<tr><td>07</td><td>Cavern</td></tr>
+				<tr><td>08</td><td>Celestial</td></tr>
+				<tr><td>09</td><td>Comet*</td></tr>
+				<tr><td>10</td><td>Construct</td></tr>
+				<tr><td>11</td><td>Corpse</td></tr>
+				<tr><td>12</td><td>Crossroads</td></tr>
+				<tr><td>13</td><td>Donjon*</td></tr>
+				<tr><td>14</td><td>Door</td></tr>
+				<tr><td>15</td><td>Dragon</td></tr>
+				<tr><td>16</td><td>Elemental</td></tr>
+				<tr><td>17</td><td>Euryale*</td></tr>
+				<tr><td>18</td><td>Expert</td></tr>
+				<tr><td>19</td><td>Fates*</td></tr>
+				<tr><td>20</td><td>Fey</td></tr>
+				<tr><td>21</td><td>Fiend</td></tr>
+				<tr><td>22</td><td>Flames*</td></tr>
+				<tr><td>23</td><td>Fool*</td></tr>
+				<tr><td>24</td><td>Gem*</td></tr>
+				<tr><td>25</td><td>Giant</td></tr>
+				<tr><td>26</td><td>Humanoid</td></tr>
+				<tr><td>27</td><td>Jester*</td></tr>
+				<tr><td>28</td><td>Key*</td></tr>
+				<tr><td>29</td><td>Knight*</td></tr>
+				<tr><td>30</td><td>Lance</td></tr>
+				<tr><td>31</td><td>Mage</td></tr>
+				<tr><td>32</td><td>Map</td></tr>
+				<tr><td>33</td><td>Maze</td></tr>
+				<tr><td>34</td><td>Mine</td></tr>
+				<tr><td>35</td><td>Monstrosity</td></tr>
+				<tr><td>36</td><td>Moon*</td></tr>
+				<tr><td>37</td><td>Ooze</td></tr>
+				<tr><td>38</td><td>Path</td></tr>
+				<tr><td>39</td><td>Pit</td></tr>
+				<tr><td>40</td><td>Plant</td></tr>
+				<tr><td>41</td><td>Priest</td></tr>
+				<tr><td>42</td><td>Prisoner</td></tr>
+				<tr><td>43</td><td>Puzzle*</td></tr>
+				<tr><td>44</td><td>Ring</td></tr>
+				<tr><td>45</td><td>Rogue*</td></tr>
+				<tr><td>46</td><td>Ruin*</td></tr>
+				<tr><td>47</td><td>Sage*</td></tr>
+				<tr><td>48</td><td>Shield</td></tr>
+				<tr><td>49</td><td>Ship</td></tr>
+				<tr><td>50</td><td>Skull*</td></tr>
+				<tr><td>51</td><td>Staff</td></tr>
+				<tr><td>52</td><td>Stairway</td></tr>
+				<tr><td>53</td><td>Star*</td></tr>
+				<tr><td>54</td><td>Statue</td></tr>
+				<tr><td>55</td><td>Sun*</td></tr>
+				<tr><td>56</td><td>Talons*</td></tr>
+				<tr><td>57</td><td>Tavern</td></tr>
+				<tr><td>58</td><td>Temple</td></tr>
+				<tr><td>59</td><td>Throne*</td></tr>
+				<tr><td>60</td><td>Tomb</td></tr>
+				<tr><td>61</td><td>Tower</td></tr>
+				<tr><td>62</td><td>Tree</td></tr>
+				<tr><td>63</td><td>Undead</td></tr>
+				<tr><td>64</td><td>Void*</td></tr>
+				<tr><td>65</td><td>Warrior</td></tr>
+				<tr><td>66</td><td>Well</td></tr>
+				<tr><td>67-00</td><td>Roll again</td></tr>
+			</table>
+			<p class="indent">* Found in the Deck of Many Things as depicted in the <i>Dungeon Master's Guide</i></p>
+			<p><strong><em>Aberration.</em></strong> You gain telepathy within a range of 90 feet.</p>
+			<p><strong><em>Beast.</em></strong> You immediately transform into a random Beast with a CR of 5 or lower. Your game statistics—including your ability scores, hit points, and possible actions—are replaced by the Beast's game statistics, and any nonmagical equipment you're wearing or carrying melds into your new form and can't be used. Any magic items you're carrying drop in an unoccupied space within 5 feet of your new form.</p>
+			<p class="indent">You remain transformed in this way for 2d12 days; nothing can alter your form while you're under the effects of this card, but the Wish spell can end the transformation early. When you revert to your normal form, you return to the same state you were in when you initially transformed.</p>
+			<p><strong><em>Book.</em></strong> You gain the ability to speak, read, and write 1d6 + 2 languages of your choice.</p>
+			<p><strong><em>Bridge.</em></strong> You gain the ability to cast the Time Stop spell 1d3 times. Use your Intelligence, Wisdom, or Charisma as the spellcasting ability (your choice).</p>
+			<p><strong><em>Campfire.</em></strong> You immediately gain the benefits of finishing a long rest.</p>
+			<p><strong><em>Cavern.</em></strong> You gain a climbing speed equal to your walking speed. You also gain the ability to move up, down, across vertical surfaces, and along ceilings, while leaving your hands free.</p>
+			<p><strong><em>Celestial.</em></strong> You sprout a pair of softly luminescent, feathered wings from your back and gain a flying speed of 30 feet.</p>
+			<p><strong><em>Construct.</em></strong> A homunculus appears in an unoccupied space within 5 feet of you. The appearance of the homunculus is determined by the DM, and the homunculus treats you as its creator.</p>
+			<p><strong><em>Corpse.</em></strong> You immediately drop to 0 hit points, have the unconscious condition, and must begin making death saving throws. Spells and other magical effects that restore hit points have no effect on you until you are stabilized. If you fail three death saving throws, you die and can be resurrected only by the Wish spell.</p>
+			<p><strong><em>Crossroads.</em></strong> Roll a d20. If the roll is even, you age 1d10 years. If the roll is odd, you become younger by 1d10 years, to a minimum of 1 year. This effect can be undone only by the Wish spell, divine intervention, or similar magic.</p>
+			<p><strong><em>Door.</em></strong> You gain the ability to cast the Gate spell 1d4 times, requiring no material components. Use your Intelligence, Wisdom, or Charisma as the spellcasting ability (your choice).</p>
+			<p><strong><em>Dragon.</em></strong> A dragon egg appears at your feet and immediately hatches into a dragon wyrmling. The type of dragon is chosen by the DM. The wyrmling views you as its parent and is staunchly loyal to you and your allies.</p>
+			<p><strong><em>Elemental.</em></strong> You become immune to one of the following damage types (choose immediately upon drawing this card): acid, cold, fire, lightning, or thunder.</p>
+			<p><strong><em>Expert.</em></strong> Your Dexterity score increases by 2, to a maximum of 22.</p>
+			<p><strong><em>Fey.</em></strong> A fey crossing opens into the Feywild, and you're immediately pulled through it, disappearing in a flash of rainbow-colored light. You draw no more cards.</p>
+			<p class="indent">The fey crossing appears as a shimmering fractal of light above the deck, and it remains open for 1 minute after the card is drawn. The precise location in the Feywild to which the fey crossing leads is determined by the DM.</p>
+			<p><strong><em>Fiend.</em></strong> A powerful Fiend appears in a nearby unoccupied space and offers you a deal. The precise nature of this deal is up to the DM, but usually the Fiend offers some material reward in exchange for you and your allies completing a task for the Fiend. The Fiend is indifferent to you and can be bargained with; it keeps its side of any bargain it makes, though it might twist the wording of any agreement to suit its purposes. If attacked, or if negotiations fail and you refuse the Fiend's offer, it returns to its home plane.</p>
+			<p><strong><em>Giant.</em></strong> You immediately grow 2d10 inches in height, and your hit point maximum and current hit points both increase by 20.</p>
+			<p><strong><em>Humanoid.</em></strong> You can immediately choose to stop drawing from the deck, regardless of how many cards you initially declared.</p>
+			<p><strong><em>Lance.</em></strong> All your ability scores increase by 1, to a maximum of 20.</p>
+			<p><strong><em>Mage.</em></strong> Your Intelligence score increases by 2, to a maximum of 22.</p>
+			<p><strong><em>Map.</em></strong> At any time you choose within 1 year of drawing this card, you can mentally name or describe an object or individual that is familiar to you. You immediately know the location of the object or individual, as well as the distance between you and the object or individual, even if the object or individual is on a different plane of existence. If you named an individual, you know if they are alive and any conditions they have. If you named an object, you know if it is broken or not. If you named a magic item that has charges, you know how many charges it has remaining.</p>
+			<p><strong><em>Maze.</em></strong> You gain 1d3 levels of exhaustion.</p>
+			<p><strong><em>Mine.</em></strong> A pile of 2d6 gems (each worth 5,000 gp) and 1d10 chunks of precious ore (each worth 2,500 gp) appears at your feet.</p>
+			<p><strong><em>Monstrosity.</em></strong> A Large or larger Monstrosity with a challenge rating of 10 or less (chosen by the DM) appears in an unoccupied space within 15 feet of you. The creature is hostile toward you and attacks immediately. The creature disappears when it is killed or when you are reduced to 0 hit points. If there isn't enough space for a Large or larger creature to appear, this card has no effect.</p>
+			<p><strong><em>Ooze.</em></strong> A gelatinous cube immediately appears in your space and engulfs you. The gelatinous cube is hostile and remains until it is destroyed. If there isn't enough space for the gelatinous cube to appear, this card has no effect.</p>
+			<p><strong><em>Path.</em></strong> Your walking speed increases by 10 feet.</p>
+			<p><strong><em>Pit.</em></strong> A pit opens beneath you. You plummet 3d6 × 10 feet, take damage from the fall, and have the prone condition.</p>
+			<p><strong><em>Plant.</em></strong> You gain the ability to cast Speak with Plants without using a spell slot; you must finish a long rest before you can cast it this way again. If you have spell slots of 3rd level or higher, you can cast this spell using them. Use your Intelligence, Wisdom, or Charisma as the spellcasting ability (your choice).</p>
+			<p><strong><em>Priest.</em></strong> Your Wisdom score increases by 2, to a maximum of 22.</p>
+			<p><strong><em>Prisoner.</em></strong> Glowing chains made of magical force appear and wrap around you. You have the restrained condition until the chains are destroyed or you are freed. While you have this condition, you can't cast spells, and any magic items you're wearing or carrying have their properties suppressed. You draw no more cards. The chains are immune to damage and can't be dispelled using the Dispel Magic spell or similar magic. However, a Disintegrate spell destroys the chains instantly, freeing you. Another creature can also free you by succeeding on a DC 30 Dexterity check using thieves' tools.</p>
+			<p><strong><em>Ring.</em></strong> A rare or rarer magic ring appears on your finger. If you have the attunement slots available, you're automatically attuned to the ring when it appears. The DM chooses the ring.</p>
+			<p><strong><em>Shield.</em></strong> A rare or rarer suit of magic armor that you are proficient with appears in your hands. The DM chooses the armor. If you lack proficiency with any armor, your base AC instead now equals 12 + your Dexterity modifier while you aren't wearing armor.</p>
+			<p><strong><em>Ship.</em></strong> You gain proficiency in three skills chosen by the DM.</p>
+			<p><strong><em>Staff.</em></strong> A rare or rarer magic rod, staff, or wand appears in your hands. The DM chooses the item.</p>
+			<p><strong><em>Stairway.</em></strong> You can choose to either decrease your number of declared draws by two or receive a rare or rarer wondrous item, which appears in your hands. The DM chooses the item.</p>
+			<p><strong><em>Statue.</em></strong> You immediately have the petrified condition as your body is transformed into marble. The petrification lasts until you are freed with the Greater Restoration spell or similar magic.</p>
+			<p><strong><em>Tavern.</em></strong> Your Charisma score increases by 2 to a maximum of 22.</p>
+			<p><strong><em>Temple.</em></strong> A deity or entity of similar power becomes bound to aid you. At any point in time between drawing the card and when you die, you can use your action to call on this entity for divine intervention, and the entity is bound to answer. The parameters and nature of this intervention are chosen by the DM. If you die without having used this intervention, the deity fulfills its obligation by casting the Resurrection spell on you. Once the entity has answered your call for divine intervention or resurrected you, the entity is no longer bound to aid you.</p>
+			<p><strong><em>Tomb.</em></strong> At any time you choose within 1 year of drawing this card, you can cast the True Resurrection spell once without expending a spell slot or requiring material components. Use your Intelligence, Wisdom, or Charisma as the spellcasting ability (your choice).</p>
+			<p><strong><em>Tower.</em></strong> Draw two additional cards beyond your declared number of draws. The magic of these cards doesn't immediately take effect; instead, choose one of the two additional cards to keep, returning the other to the deck. The magic of the card you keep takes effect immediately thereafter.</p>
+			<p><strong><em>Tree.</em></strong> Your skin immediately becomes rough, like tree bark. Your base AC now equals 15 + your Dexterity modifier while you aren't wearing armor, but you have vulnerability to fire damage. This transformation can be undone only by the Wish spell, divine intervention, or similar magic.</p>
+			<p><strong><em>Undead.</em></strong> Somewhere on the Material Plane, a revenant rises. This revenant blames you for its existence and relentlessly hunts you to exact its revenge. The revenant exists until either 1 year passes, the revenant kills you, or you use a Wish spell to banish it permanently to the afterlife.</p>
+			<p><strong><em>Warrior.</em></strong> Your Strength score increases by 2 to a maximum of 22.</p>
+			<p><strong><em>Well.</em></strong> You learn three cantrips of your choice from any spell list.</p>
+		</description>
+		<setters>
+			<set name="keywords">cards</set>
+			<set name="category">Wondrous Items</set>
+			<set name="type">Wondrous Item</set>
+			<set name="rarity">Legendary</set>
+			<set name="cost" currency="gp">0</set>
+			<set name="weight" lb="0">0 lb.</set>
+		</setters>
+	</element>
+
+	<element name="Deck of Miscellany" type="Magic Item" source="The Book of Many Things" id="ID_WOTC_BOMT_MAGIC_ITEM_DECK_OF_MISCELLANY">
+		<description>
+			<p>This wooden box contains a set of thirty-two parchment cards.</p>
+			<p class="indent">The face of each card bears an illustration of a different item or set of items. As an action, you can draw a card of your choice from the deck and throw it to the ground in an unoccupied space within 5 feet of yourself. When the card hits the ground, the card permanently transforms into the item or set of items depicted on its face. An altered deck of real-world playing cards can simulate the deck, as shown on the Deck of Miscellany table.</p>
+			<h5>Deck of Miscellany</h5>
+			<table>
+				<thead>
+					<tr><td class="col-10" style="text-align:center">Card</td><td>Item</td></tr>
+				</thead>
+				<tr><td style="text-align:center">3 <span style="color:red">♦</span></td><td>Wooden abacus</td></tr>
+				<tr><td style="text-align:center">4 <span style="color:red">♦</span></td><td>Four vials of perfume</td></tr>
+				<tr><td style="text-align:center">5 <span style="color:red">♦</span></td><td>5 days' worth of rations</td></tr>
+				<tr><td style="text-align:center">6 <span style="color:red">♦</span></td><td>Iron pot</td></tr>
+				<tr><td style="text-align:center">7 <span style="color:red">♦</span></td><td>Disguise kit</td></tr>
+				<tr><td style="text-align:center">8 <span style="color:red">♦</span></td><td>Window (up to 5 feet wide and 5 feet high), which you can place on a vertical surface up to 5 feet thick and which allows you to look through the surface</td></tr>
+				<tr><td style="text-align:center">9 <span style="color:red">♦</span></td><td>Manacles</td></tr>
+				<tr><td style="text-align:center">10 <span style="color:red">♦</span></td><td>Ten sheets of parchment</td></tr>
+				<tr><td style="text-align:center">3 <span style="color:red">♥</span></td><td>Three daggers</td></tr>
+				<tr><td style="text-align:center">4 <span style="color:red">♥</span></td><td>Four flasks of oil</td></tr>
+				<tr><td style="text-align:center">5 <span style="color:red">♥</span></td><td>Five silk robes</td></tr>
+				<tr><td style="text-align:center">6 <span style="color:red">♥</span></td><td>Forgery kit</td></tr>
+				<tr><td style="text-align:center">7 <span style="color:red">♥</span></td><td>Quarterstaff</td></tr>
+				<tr><td style="text-align:center">8 <span style="color:red">♥</span></td><td>Fishing tackle</td></tr>
+				<tr><td style="text-align:center">9 <span style="color:red">♥</span></td><td>Leather pouch containing 18 gp</td></tr>
+				<tr><td style="text-align:center">10 <span style="color:red">♥</span></td><td>10 crossbow bolts</td></tr>
+				<tr><td style="text-align:center">3 ♣</td><td>Three books, written in Common, about random historical events</td></tr>
+				<tr><td style="text-align:center">4 ♣</td><td>Canvas tent</td></tr>
+				<tr><td style="text-align:center">5 ♣</td><td>50 feet of coiled silk rope</td></tr>
+				<tr><td style="text-align:center">6 ♣</td><td>Two crowbars</td></tr>
+				<tr><td style="text-align:center">7 ♣</td><td>Healer's kit</td></tr>
+				<tr><td style="text-align:center">8 ♣</td><td>Eight gems worth 5 gp each</td></tr>
+				<tr><td style="text-align:center">9 ♣</td><td>Lamp</td></tr>
+				<tr><td style="text-align:center">10 ♣</td><td>10 feet of iron chain</td></tr>
+				<tr><td style="text-align:center">3 ♠</td><td>Three spears</td></tr>
+				<tr><td style="text-align:center">4 ♠</td><td>Steel mirror</td></tr>
+				<tr><td style="text-align:center">5 ♠</td><td>15-foot wooden pole</td></tr>
+				<tr><td style="text-align:center">6 ♠</td><td>Burlap sack</td></tr>
+				<tr><td style="text-align:center">7 ♠</td><td>Two sets of fine clothes</td></tr>
+				<tr><td style="text-align:center">8 ♠</td><td>Shovel</td></tr>
+				<tr><td style="text-align:center">9 ♠</td><td>Light hammer</td></tr>
+				<tr><td style="text-align:center">10 ♠</td><td>Ten arrows</td></tr>
+			</table>
+		</description>
+		<setters>
+			<set name="keywords">cards, items</set>
+			<set name="category">Wondrous Items</set>
+			<set name="type">Wondrous Item</set>
+			<set name="rarity">Uncommon</set>
+			<set name="cost" currency="gp">0</set>
+			<set name="weight" lb="0">0 lb.</set>
+		</setters>
+	</element>
+
+	<element name="Deck of Oracles" type="Magic Item" source="The Book of Many Things" id="ID_WOTC_BOMT_MAGIC_ITEM_DECK_OF_ORACLES">
+		<description>
+			<p>The illustrations on this deck of oracle cards move or change subtly when viewed indirectly. When you finish a long rest, you can spend 10 minutes consulting the cards for an omen of the coming day. Roll a d20 and record the number rolled. Once in the next 8 hours, immediately after a creature within 60 feet of you makes an ability check, an attack roll, or a saving throw, you can use your reaction to discard the d20 roll; the creature must use the number you rolled in place of its roll.</p>
+			<p class="indent">Additionally, while holding the cards, you can cast <i>Divination</i> from them. Once this property is used, it can't be used again until the next dawn.</p>
+			<div class="reference">
+				<div element="ID_PHB_SPELL_DIVINATION" />
+			</div>
+		</description>
+		<setters>
+			<set name="keywords">reaction, portent, spell, divination</set>
+			<set name="category">Wondrous Items</set>
+			<set name="type">Wondrous Item</set>
+			<set name="rarity">Rare</set>
+			<set name="attunement">true</set>
+			<set name="cost" currency="gp">0</set>
+			<set name="weight" lb="0">0 lb.</set>
+		</setters>
+	</element>
+
+	<element name="Deck of Wild Cards" type="Magic Item" source="The Book of Many Things" id="ID_WOTC_BOMT_MAGIC_ITEM_DECK_OF_WILD_CARDS">
+		<description>
+			<p>This deck of heavy vellum cards hums with the magic of the Elemental Chaos.</p>
+			<p class="indent">The magic of the deck functions only if cards are drawn at random (a deck of real-world playing cards can simulate the deck). As an action, you can draw a random card from this deck and throw it to make a ranged spell attack, using Dexterity for the attack roll. The card has a range of 30 feet. On a hit, it deals 1d4 slashing damage and imposes a magical effect determined by its suit, as detailed in the <i>Deck of Wild Cards</i> table. The card immediately returns to the deck after it hits or misses a target.</p>
+			<h5>Deck of Wild Cards</h5>
+			<table>
+				<thead>
+					<tr><td class="col-10">d4</td><td class="col-10">Suit</td><td>Effect</td></tr>
+				</thead>
+				<tr><td>1</td><td>♣ (Rods)</td><td>The card explodes in a burst of fire. The target and each creature within 5 feet of it must succeed on a DC 15 Dexterity saving throw or take 2d8 fire damage.</td></tr>
+				<tr><td>2</td><td><span style="color:red">♦</span> (Coins)</td><td>The card shoots streaks of lightning. The target must make a DC 15 Dexterity saving throw. On a failed save, the target has the blinded condition until the end of your next turn, and each creature within 10 feet of the target takes 1d6 lightning damage.</td></tr>
+				<tr><td>3</td><td><span style="color:red">♥</span> (Cups)</td><td>The card covers the target in a thick layer of ice. The target takes 1d10 cold damage and must succeed on a DC 15 Constitution saving throw or have the restrained condition until the end of your next turn.</td></tr>
+				<tr><td>4</td><td>♠ (Swords)</td><td>The card unleashes a sharp, concussive blast. The target and each creature within 5 feet of it take 1d6 force damage and must succeed on a DC 15 Strength saving throw or have the prone condition.</td></tr>
+			</table>
+		</description>
+		<setters>
+			<set name="keywords">action, attack, ranged spell attack, dexterity, slashing, damage, fire, lightning, blinded, condition, cold, restrained, force, prone, saving throw, constitution, strength</set>
+			<set name="category">Wondrous Items</set>
+			<set name="type">Wondrous Item</set>
+			<set name="rarity">Very Rare</set>
+			<set name="cost" currency="gp">0</set>
+			<set name="weight" lb="0">0 lb.</set>
+		</setters>
+	</element>
+
+	<element name="Deck of Wonder" type="Magic Item" source="The Book of Many Things" id="ID_WOTC_BOMT_MAGIC_ITEM_DECK_OF_WONDER">
+		<description>
+			<p>Created in the image of the Deck of Many Things, this deck of ivory or vellum cards bestows an assortment of minor benefits and penalties on those who draw from it. Most (75 percent) of these decks have only thirteen cards, but the rest have twenty-two.</p>
+			<p class="indent">Before you draw a card, you must declare how many cards you intend to draw, then draw them randomly. Any additional cards drawn have no effect. Unless a card states otherwise, as soon as you draw a card from the deck, its magic takes effect. You must draw each card you declared no more than 1 hour after the previous draw. If you fail to draw the chosen number, the remaining number of cards fly from the deck and take effect simultaneously.</p>
+			<p class="indent">Unless it is the Mystery card, a drawn card immediately takes effect, fades from existence, and reappears in the deck, making it possible to draw the same card multiple times.</p>
+			<p class="indent">You can use an altered deck of playing cards to simulate the deck, as shown in the <i>Deck of Wonder</i> table.</p>
+			<h5>Deck of Wonder</h5>
+			<table>
+				<thead>
+					<tr><td class="col-25" style="text-align:center">Card</td><td>Card Title</td></tr>
+				</thead>
+				<tr><td style="text-align:center">A <span style="color:red">♦</span></td><td>Chancellor*</td></tr>
+				<tr><td style="text-align:center">K <span style="color:red">♦</span></td><td>Day</td></tr>
+				<tr><td style="text-align:center">Q <span style="color:red">♦</span></td><td>Night</td></tr>
+				<tr><td style="text-align:center">J <span style="color:red">♦</span></td><td>Dawn</td></tr>
+				<tr><td style="text-align:center">2 <span style="color:red">♦</span></td><td>Dusk*</td></tr>
+				<tr><td style="text-align:center">A <span style="color:red">♥</span></td><td>Destiny*</td></tr>
+				<tr><td style="text-align:center">K <span style="color:red">♥</span></td><td>Crown</td></tr>
+				<tr><td style="text-align:center">Q <span style="color:red">♥</span></td><td>Lock</td></tr>
+				<tr><td style="text-align:center">J <span style="color:red">♥</span></td><td>Champion</td></tr>
+				<tr><td style="text-align:center">2 <span style="color:red">♥</span></td><td>Coin*</td></tr>
+				<tr><td style="text-align:center">A ♣</td><td>Vulture*</td></tr>
+				<tr><td style="text-align:center">K ♣</td><td>Chaos</td></tr>
+				<tr><td style="text-align:center">Q ♣</td><td>Order</td></tr>
+				<tr><td style="text-align:center">J ♣</td><td>Beginning</td></tr>
+				<tr><td style="text-align:center">2 ♣</td><td>Mystery*</td></tr>
+				<tr><td style="text-align:center">A ♠</td><td>Isolation*</td></tr>
+				<tr><td style="text-align:center">K ♠</td><td>End</td></tr>
+				<tr><td style="text-align:center">Q ♠</td><td>Monster</td></tr>
+				<tr><td style="text-align:center">J ♠</td><td>Knife</td></tr>
+				<tr><td style="text-align:center">2 ♠</td><td>Justice*</td></tr>
+				<tr><td style="text-align:center">Joker (with ™)</td><td>Student*</td></tr>
+				<tr><td style="text-align:center">Joker (without ™)</td><td>Mischief</td></tr>
+			</table>
+			<p class="indent">* Found only in twenty-two card decks.</p>
+			<p><strong><em>Beginning.</em></strong> Your hit point maximum and current hit points increase by 2d10. Your hit point maximum remains increased in this way for the next 8 hours.</p>
+			<p><strong><em>Champion.</em></strong> You gain a +1 bonus to weapon attack and damage rolls. This bonus lasts for 8 hours.</p>
+			<p class="indent">You remain transformed in this way for 2d12 days; nothing can alter your form while you're under the effects of this card, but the Wish spell can end the transformation early. When you revert to your normal form, you return to the same state you were in when you initially transformed.</p>
+			<p><strong><em>Chancellor.</em></strong> Within 8 hours of drawing this card, you can cast Augury once as an action, requiring no material components. Use your Intelligence, Wisdom, or Charisma as the spellcasting ability (your choice).</p>
+			<p><strong><em>Chaos.</em></strong> You gain resistance to one of the following damage types (chosen by the DM): acid, cold, fire, lightning, or thunder. This resistance lasts for 1d12 days.</p>
+			<p><strong><em>Coin.</em></strong> Five pieces of jewelry, each worth 100 gp, or ten gemstones, each worth 50 gp, appear at your feet.</p>
+			<p><strong><em>Crown.</em></strong> You learn the Friends cantrip. Use your Intelligence, Wisdom, or Charisma as the spellcasting ability (your choice). If you already know this cantrip, the card has no effect.</p>
+			<p><strong><em>Dawn.</em></strong> This card invigorates you. For the next 8 hours, you can add your proficiency bonus to your initiative rolls.</p>
+			<p><strong><em>Day.</em></strong> You gain a +1 bonus to saving throws. This benefit lasts until you finish a long rest.</p>
+			<p><strong><em>Destiny.</em></strong> This card protects you against an untimely demise. The first time after drawing this card that you would drop to 0 hit points from taking damage, you instead drop to 1 hit point.</p>
+			<p><strong><em>Dusk.</em></strong> This card supernaturally saps your energy. You have disadvantage on initiative rolls. This effect lasts until you finish a long rest, but it can be ended early by a Remove Curse spell or similar magic.</p>
+			<p><strong><em>End.</em></strong> This card is an omen of death. You take 2d10 necrotic damage, and your hit point maximum is reduced by an amount equal to the damage taken. This effect can't reduce your hit point maximum below 10 hit points. This reduction lasts until you finish a long rest, but it can be ended early by a Remove Curse spell or similar magic.</p>
+			<p><strong><em>Isolation.</em></strong> You disappear, along with anything you are wearing or carrying, and become trapped in a harmless extradimensional space for 1d4 minutes. You draw no more cards. You then reappear in the space you left or the nearest unoccupied space. When you reappear, you must succeed on a DC 11 Constitution saving throw or have the poisoned condition for 1 hour as your body reels from the extradimensional travel.</p>
+			<p><strong><em>Justice.</em></strong> You momentarily gain the ability to balance the scales of fate. For the next 8 hours, whenever you or a creature within 60 feet of you is about to roll a d20 with advantage or disadvantage, you can use your reaction to prevent the roll from being affected by advantage or disadvantage.</p>
+			<p><strong><em>Knife.</em></strong> An uncommon magic weapon you're proficient with appears in your hands. The DM chooses the weapon.</p>
+			<p><strong><em>Lock.</em></strong> You gain the ability to cast Knock 1d3 times. Use your Intelligence, Wisdom, or Charisma as the spellcasting ability (your choice).</p>
+			<p><strong><em>Mischief.</em></strong> You receive an uncommon wondrous item (chosen by the DM), or you can draw two additional cards beyond your declared draws.</p>
+			<p><strong><em>Monster.</em></strong> This card's monstrous visage curses you. While cursed in this way, whenever you make a saving throw, you must roll 1d4 and subtract the number rolled from the total. The curse lasts until you finish a long rest, but it can be ended early with a Remove Curse spell or similar magic.</p>
+			<p><strong><em>Mystery.</em></strong> You have disadvantage on Intelligence saving throws for 1 hour. Discard this card and draw from the deck again; together, the two draws count as one of your declared draws.</p>
+			<p><strong><em>Night.</em></strong> You gain darkvision within a range of 300 feet. This darkvision lasts for 8 hours.</p>
+			<p><strong><em>Order.</em></strong> You gain resistance to one of the following damage types (chosen by the DM): force, necrotic, poison, psychic, or radiant. This resistance lasts for 1d12 days.</p>
+			<p><strong><em>Student.</em></strong> You gain proficiency in Wisdom saving throws. If you already have this proficiency, you instead gain proficiency in Intelligence or Charisma saving throws (your choice).</p>
+			<p><strong><em>Vulture.</em></strong> One nonmagical item or piece of equipment in your possession (chosen by the DM) disappears. The item remains nearby but concealed for a short time, so it can be found with a successful DC 15 Wisdom (Perception) check. If the item isn't recovered within 1 hour, it disappears forever.</p>
+		</description>
+		<setters>
+			<set name="keywords">cards</set>
+			<set name="category">Wondrous Items</set>
+			<set name="type">Wondrous Item</set>
+			<set name="rarity">Uncommon</set>
+			<set name="cost" currency="gp">0</set>
+			<set name="weight" lb="0">0 lb.</set>
+		</setters>
+	</element>
+
+	<element name="Donjon's Sundering Sphere" type="Magic Item" source="The Book of Many Things" id="ID_WOTC_BOMT_MAGIC_ITEM_DONJONS_SUNDERING_SPHERE">
+		<description>
+			<p><b>Note:</b> This version of the item is the sphere itself. In order to attune to it, you need to use its Magic Weapon counterpart.</p>
+			<p>This marble-size crystal sphere glows with extraplanar energy.</p>
+			<p class="indent">As part of attuning to this item, you press the crystal sphere to the hilt of a nonmagical melee weapon of your choice, magically attaching the sphere to the weapon. The weapon becomes a magic weapon with a +1 bonus to attack and damage rolls. While wielding this weapon, you gain the following benefits:</p>
+			<ul class="unstyled" style="margin-bottom: 20px">
+				<li style="text-indent: -1em; margin-left: 1em"><b>Dimensional Anchor.</b> You have advantage on saving throws against spells or effects that would send you to an extradimensional space, a demiplane, or another plane of existence against your will.</li>
+				<li style="text-indent: -1em; margin-left: 1em"><b>Isolating Smite.</b> When you hit a creature with this weapon, you can force the creature to make a DC 16 Charisma saving throw. On a failed save, the creature is banished to a harmless demiplane until the end of its next turn. When the banished creature returns, it reappears in the space it left or the nearest unoccupied space if that space is occupied. Once this property is used, it can't be used again until the next dawn.</li>
+			</ul>
+			<p class="indent">When you end your attunement to the sphere, the sphere harmlessly detaches from the weapon, and the weapon reverts to a nonmagical piece of equipment.</p>
+		</description>
+		<setters>
+			<set name="keywords">attack, damage, advantage, saving throws, charisma, banishment, banished</set>
+			<set name="category">Wondrous Items</set>
+			<set name="type">Wondrous Item</set>
+			<set name="rarity">Rare</set>
+			<set name="cost" currency="gp">0</set>
+			<set name="weight" lb="0">0 lb.</set>
+		</setters>
+	</element>
+
+	<element name="Donjon's Sundering Sphere" type="Magic Item" source="The Book of Many Things" id="ID_WOTC_BOMT_MAGIC_ITEM_DONJONS_SUNDERING_SPHERE_WEAPON">
+		<compendium display="false" />
+		<description>
+			<p><b>Note:</b> This version of the item is the attune-able Magic Weapon. If you're looking to carry the sphere in its unattuned form, you need to use its Wondrous Item counterpart.</p>
+			<p>This marble-size crystal sphere glows with extraplanar energy.</p>
+			<p class="indent">As part of attuning to this item, you press the crystal sphere to the hilt of a nonmagical melee weapon of your choice, magically attaching the sphere to the weapon. The weapon becomes a magic weapon with a +1 bonus to attack and damage rolls. While wielding this weapon, you gain the following benefits:</p>
+			<ul class="unstyled" style="margin-bottom: 20px">
+				<li style="text-indent: -1em; margin-left: 1em"><b>Dimensional Anchor.</b> You have advantage on saving throws against spells or effects that would send you to an extradimensional space, a demiplane, or another plane of existence against your will.</li>
+				<li style="text-indent: -1em; margin-left: 1em"><b>Isolating Smite.</b> When you hit a creature with this weapon, you can force the creature to make a DC 16 Charisma saving throw. On a failed save, the creature is banished to a harmless demiplane until the end of its next turn. When the banished creature returns, it reappears in the space it left or the nearest unoccupied space if that space is occupied. Once this property is used, it can't be used again until the next dawn.</li>
+			</ul>
+			<p class="indent">When you end your attunement to the sphere, the sphere harmlessly detaches from the weapon, and the weapon reverts to a nonmagical piece of equipment.</p>
+		</description>
+		<setters>
+			<set name="keywords">attack, damage, advantage, saving throws, charisma, banishment, banished</set>
+			<set name="category">Magic Weapons</set>
+			<set name="cost" currency="gp">0</set>
+			<set name="type" addition="Any melee weapon">Weapon</set>
+			<set name="rarity">Rare</set>
+			<set name="attunement">true</set>
+			<set name="enhancement">1</set>
+			<set name="weapon">ID_INTERNAL_WEAPON_CATEGORY_SIMPLE_MELEE||ID_INTERNAL_WEAPON_CATEGORY_MARTIAL_MELEE</set>
+		</setters>
+	</element>
+
+	<element name="Dried Leech" type="Magic Item" source="The Book of Many Things" id="ID_WOTC_BOMT_MAGIC_ITEM_DRIED_LEECH">		
+		<description>
+			<p>This leech has been dried and imbued with a mote of animating magic. If you hit a creature with a ranged attack roll using this ammunition, the leech springs to life and sinks its teeth into the target, dealing 1d4 piercing damage at the start of each of the target's turns. If the leech deals at least 10 damage or the target dies, the leech falls off. A creature, including the target, can use its action to detach the leech. Once a leech is no longer attached to its target, the leech dies and is no longer magical.</p>
+		</description>
+		<setters>
+			<set name="keywords">advantage</set>
+			<set name="category">Ammunition</set>
+			<set name="cost" currency="gp">0</set>
+			<set name="weight" lb="0">0 lb.</set>
+			<set name="type" addition="Any Ammunition">Weapon</set>
+			<set name="rarity">Uncommon</set>
+			<set name="stackable">true</set>
+		</setters>
+	</element>
+
+	<element name="Euryale's Aegis" type="Magic Item" source="The Book of Many Things" id="ID_WOTC_BOMT_MAGIC_ITEM_EURYALES_SHIELD">
+		<description>
+			<p>This gleaming brass shield bears a relief of the legendary medusa druid Euryale.</p>
+			<p class="indent">While wielding this shield, you gain the following benefits:</p>
+			<ul class="unstyled" style="margin-bottom: 20px">
+				<li style="text-indent: -1em; margin-left: 1em"><b>Blessing of Euryale.</b> You have resistance to poison damage and are immune to the petrified condition.</li>
+				<li style="text-indent: -1em; margin-left: 1em"><b>Petrifying Heraldry.</b> As a bonus action, you can make the front of the shield flare with a medusa's petrifying magic, causing the relief's eyes to glow brightly. Choose one creature you can see within 30 feet of you. The creature must succeed on a DC 20 Constitution saving throw, or it has the restrained condition as its body turns to stone. The restrained creature must make another DC 20 Constitution saving throw at the start of its next turn. On a failed save, the creature has the petrified condition for 24 hours. On a successful save, the restrained condition ends. Once this bonus action is used, it can't be used again until the next dawn.</li>
+				<li style="text-indent: -1em; margin-left: 1em"><b>Spellcasting.</b> While wielding the shield, you can use an action to cast one of the following spells from it: <i>Lesser Restoration</i>, <i>Locate Creature</i>, <i>Transport via Plants</i>. Once you use the shield to cast a spell, the shield can't cast that spell again until the next dawn.</li>
+			</ul>
+		</description>
+		<setters>
+			<set name="keywords">resistance, poison, immunity, petrified, condition, bonus action, constitution, saving throw, restrained, action, spellcasting, spells, lesser restoration, locate creature, transport via plants</set>
+			<set name="category">Magic Armor</set>
+			<set name="cost" currency="gp">0</set>
+			<set name="type" addition="shield">Armor</set>
+			<set name="rarity">Legendary</set>
+			<set name="armor">ID_INTERNAL_ARMOR_GROUP_SHIELD</set>
+			<set name="attunement">true</set>
+		</setters>
+		<rules>
+			<grant type="Condition" id="ID_INTERNAL_CONDITION_DAMAGE_RESISTANCE_POISON" />
+		</rules>
+	</element>
+
+	<element name="Fabulist Gem" type="Magic Item" source="The Book of Many Things" id="ID_WOTC_BOMT_MAGIC_ITEM_DONJONS_FABULIST_GEM">
+		<description>
+			<p>This glittering red gem is commonly found embedded in a ring or brooch.</p>
+			<p class="indent">While wearing the gem, you gain the following benefits:</p>
+			<ul class="unstyled" style="margin-bottom: 20px">
+				<li style="text-indent: -1em; margin-left: 1em"><b>Counterfeit Coins.</b> You can use your action to magically create a pile of coins, worth no more than 100 gp total, in an unoccupied space within 10 feet of yourself. The pile must appear on a surface that can support it. After 1 hour, the coins vanish, regardless of where they are. Once this action is used, it can't be used again until the next dawn.</li>
+				<li style="text-indent: -1em; margin-left: 1em"><b>Illusory Fashion.</b> As a bonus action, you can magically change the appearance of your clothing and armor. You can change the style, color, and apparent quality of what you're wearing, or you can make it appear as if you were wearing different garments entirely. In either case, the changes wrought by this magic fail to pass physical inspection.</li>
+			</ul>
+		</description>
+		<setters>
+			<set name="keywords">action, bonus action, illusions</set>
+			<set name="category">Wondrous Items</set>
+			<set name="type">Wondrous Item</set>
+			<set name="rarity">Uncommon</set>
+			<set name="attunement">true</set>
+			<set name="cost" currency="gp">0</set>
+			<set name="weight" lb="0">0 lb.</set>
+		</setters>
+	</element>
+
+	<element name="Fate Cutter Shears" type="Magic Item" source="The Book of Many Things" id="ID_WOTC_BOMT_MAGIC_ITEM_FATE_CUTTER_SHEARS">
+		<description>
+			<p>The blades of these pruning shears bear many nicks and dents but still cut cleanly. The shears function as a magic dagger. The weapon has the following properties:</p>
+			<ul class="unstyled" style="margin-bottom: 20px">
+				<li style="text-indent: -1em; margin-left: 1em"><b>Ever Sharp.</b> When you hit with an attack using the shears, the target takes an extra 1d6 force damage.</li>
+				<li style="text-indent: -1em; margin-left: 1em"><b>Sever Threads.</b> When you hit a creature with the shears, you can cut that creature's fate. Until the target finishes a long rest, attack rolls against it score a critical hit on a roll of 19 or 20 on the d20. Once this property is used, it can't be used again until the next dawn.</li>
+			</ul>
+		</description>
+		<setters>
+			<set name="keywords">attack, force, damage, critical hit, crits</set>
+			<set name="category">Magic Weapons</set>
+			<set name="cost" currency="gp">0</set>
+			<set name="type" addition="Dagger">Weapon</set>
+			<set name="rarity">Very Rare</set>
+			<set name="enhancement">1</set>
+			<set name="weapon">Dagger</set>
+			<set name="attunement">true</set>
+		</setters>
+	</element>
+
+	<element name="Fate Dealer's Deck +1" type="Magic Item" source="The Book of Many Things" id="ID_WOTC_BOMT_MAGIC_ITEM_FATE_DEALERS_DECK_RARE">
+		<description>
+			<p>The backs of these cards are inscribed with glyphs representing the Inner Planes, the Outer Planes, or the holy symbols of various deities. While holding this deck, you can use it as a spellcasting focus, and you gain a +1 bonus to spell attack rolls and to your spell save DC.</p>
+			<p class="indent">In addition, while you're holding the deck, you can draw a card as an action to expend and roll one of your Hit Dice and add the deck's bonus to the number rolled. One creature you can see within 30 feet of you either takes radiant damage or regains hit points (your choice) equal to the total.</p>
+		</description>
+		<setters>
+			<set name="keywords">cleric, paladin, spellcasting, focus, action, hit die, hit dice, radiant, damage, healing</set>
+			<set name="category">Wondrous Items</set>
+			<set name="weight" lb="0">0 lb.</set>
+			<set name="type">Wondrous Item</set>
+			<set name="rarity">Rare</set>
+			<set name="attunement" addition="by a cleric or paladin">true</set>
+		</setters>
+		<rules>
+			<stat name="cleric:spellcasting:attack" value="1" />
+			<stat name="cleric:spellcasting:dc" value="1" />
+			<stat name="paladin:spellcasting:attack" value="1" />
+			<stat name="paladin:spellcasting:dc" value="1" />
+		</rules>
+	</element>
+
+	<element name="Fate Dealer's Deck +2" type="Magic Item" source="The Book of Many Things" id="ID_WOTC_BOMT_MAGIC_ITEM_FATE_DEALERS_DECK_VERY_RARE">
+		<description>
+			<p>The backs of these cards are inscribed with glyphs representing the Inner Planes, the Outer Planes, or the holy symbols of various deities. While holding this deck, you can use it as a spellcasting focus, and you gain a +2 bonus to spell attack rolls and to your spell save DC.</p>
+			<p class="indent">In addition, while you're holding the deck, you can draw a card as an action to expend and roll one of your Hit Dice and add the deck's bonus to the number rolled. One creature you can see within 30 feet of you either takes radiant damage or regains hit points (your choice) equal to the total.</p>
+		</description>
+		<setters>
+			<set name="keywords">cleric, paladin, spellcasting, focus, action, hit die, hit dice, radiant, damage, healing</set>
+			<set name="category">Wondrous Items</set>
+			<set name="weight" lb="0">0 lb.</set>
+			<set name="type">Wondrous Item</set>
+			<set name="rarity">Very Rare</set>
+			<set name="attunement" addition="by a cleric or paladin">true</set>
+		</setters>
+		<rules>
+			<stat name="cleric:spellcasting:attack" value="2" />
+			<stat name="cleric:spellcasting:dc" value="2" />
+			<stat name="paladin:spellcasting:attack" value="2" />
+			<stat name="paladin:spellcasting:dc" value="2" />
+		</rules>
+	</element>
+
+	<element name="Fate Dealer's Deck +3" type="Magic Item" source="The Book of Many Things" id="ID_WOTC_BOMT_MAGIC_ITEM_FATE_DEALERS_DECK_LEGENDARY">
+		<description>
+			<p>The backs of these cards are inscribed with glyphs representing the Inner Planes, the Outer Planes, or the holy symbols of various deities. While holding this deck, you can use it as a spellcasting focus, and you gain a +3 bonus to spell attack rolls and to your spell save DC.</p>
+			<p class="indent">In addition, while you're holding the deck, you can draw a card as an action to expend and roll one of your Hit Dice and add the deck's bonus to the number rolled. One creature you can see within 30 feet of you either takes radiant damage or regains hit points (your choice) equal to the total.</p>
+		</description>
+		<setters>
+			<set name="keywords">cleric, paladin, spellcasting, focus, action, hit die, hit dice, radiant, damage, healing</set>
+			<set name="category">Wondrous Items</set>
+			<set name="weight" lb="0">0 lb.</set>
+			<set name="type">Wondrous Item</set>
+			<set name="rarity">Legendary</set>
+			<set name="attunement" addition="by a cleric or paladin">true</set>
+		</setters>
+		<rules>
+			<stat name="cleric:spellcasting:attack" value="3" />
+			<stat name="cleric:spellcasting:dc" value="3" />
+			<stat name="paladin:spellcasting:attack" value="3" />
+			<stat name="paladin:spellcasting:dc" value="3" />
+		</rules>
+	</element>
+
+	<element name="Feywrought Armor" type="Magic Item" source="The Book of Many Things" id="ID_WOTC_BOMT_MAGIC_ITEM_FEYWROUGHT_ARMOR">
+		<description>
+			<p>This colorful, flowery armor was forged in the Feywild and is infused with that plane's captivating magic.</p>
+			<p class="indent">While wearing this armor, you have advantage on saving throws you make to avoid or end the charmed condition on yourself.</p>
+			<p class="indent">This armor has 3 charges. You can use an action to expend a charge to cast the <i>Compulsion</i> spell (save DC 15) from this armor. The armor regains 1d3 expended charges daily at dawn.</p>
+			<div class="reference">
+				<div element="ID_PHB_SPELL_COMPULSION" />
+			</div>
+		</description>
+		<setters>
+			<set name="keywords">advantage, saving throws, charmed, condition, charges, action, spells, compulsion</set>
+			<set name="category">Magic Armor</set>
+			<set name="cost" currency="gp">0</set>
+			<set name="type" addition="Any Armor">Armor</set>
+			<set name="rarity">Rare</set>
+			<set name="armor">ID_INTERNAL_ARMOR_GROUP_LIGHT|ID_INTERNAL_ARMOR_GROUP_MEDIUM|ID_INTERNAL_ARMOR_GROUP_HEAVY</set>
+			<set name="name-format">Feywrought {{parent}}</set>
+			<set name="attunement">true</set>
+		</setters>
+	</element>
+
+	<element name="Fool's Blade" type="Magic Item" source="The Book of Many Things" id="ID_WOTC_BOMT_MAGIC_ITEM_FOOLS_BLADE">
+		<description>
+			<p>This weapon appears ordinary, but it bears strong illusion magic that allows its wielder to skillfully deceive opponents.</p>
+			<p class="indent">You have a +2 bonus to attack and damage rolls made with this magic weapon. While wielding it, you also gain the following benefits:</p>
+			<ul class="unstyled" style="margin-bottom: 20px">
+				<li style="text-indent: -1em; margin-left: 1em"><b>Fool's Feint.</b> As a bonus action, you can feint, choosing a creature within 5 feet of you as your target. Until the start of your next turn, you have advantage on attack rolls against the target. Once this bonus action is used, it can't be used again until the next dawn.</li>
+				<li style="text-indent: -1em; margin-left: 1em"><b>Misdirect.</b> When a creature within 60 feet of you targets you with an attack roll, you can use your reaction to require that creature to make a DC 15 Intelligence saving throw. On a failed save, the attack instead targets another creature of your choice that is within the attacker's reach. Once this reaction has been used, it can't be used again until the next dawn.</li>
+			</ul>
+		</description>
+		<setters>
+			<set name="keywords">sword, attack, damage, bonus action, advantage, reaction, intelligence, saving throw</set>
+			<set name="category">Magic Weapons</set>
+			<set name="cost" currency="gp">0</set>
+			<set name="type" addition="Any Sword">Weapon</set>
+			<set name="attunement">true</set>
+			<set name="rarity">Very Rare</set>
+			<set name="enhancement">2</set>
+			<set name="weapon">ID_INTERNAL_WEAPON_GROUP_SWORDS</set>
+			<set name="name-format">Fool's {{parent}}</set>
+		</setters>
+	</element>
+
+	<element name="Forcebreaker Weapon" type="Magic Item" source="The Book of Many Things" id="ID_WOTC_BOMT_MAGIC_ITEM_FORCEBREAKER_WEAPON">
+		<description>
+			<p>You gain a +2 bonus to attack and damage rolls made with this magic weapon.</p>
+			<p class="indent">This weapon was crafted to destroy structures made of force, such as those created by Forcecage or Wall of Force. Striking a Large or smaller structure of magical force with this weapon automatically shatters that structure. If the target is a Huge or larger structure of force, this weapon shatters a 20-foot-cube portion of it.</p>
+		</description>
+		<setters>
+			<set name="keywords">bludgeoning, attack, damage</set>
+			<set name="category">Magic Weapons</set>
+			<set name="cost" currency="gp">0</set>
+			<set name="type" addition="Any Weapon that Deals Bludgeoning Damage">Weapon</set>
+			<set name="rarity">Very Rare</set>
+			<set name="enhancement">2</set>
+			<set name="weapon">ID_INTERNAL_DAMAGE_TYPE_BLUDGEONING</set>
+			<set name="name-format">Forcebreaker {{parent}}</set>
+		</setters>
+	</element>
+
+	<element name="Glimmering Moonbow" type="Magic Item" source="The Book of Many Things" id="ID_WOTC_BOMT_MAGIC_ITEM_GLIMMERING_MOONBOW">
+		<description>
+			<p>This silver-and-black bow is engraved with the phases of the moon. You gain a +1 bonus to attack and damage rolls made with this magic weapon.</p>
+			<p class="indent">When you hit with a ranged attack roll using this magic bow, the target takes an extra 1d6 radiant damage. If you load no ammunition in the weapon, it produces its own, automatically creating one piece of magic ammunition when you make a ranged attack with it. The ammunition created by the bow vanishes the instant after it hits or misses a target.</p>
+			<p class="indent">While wielding this magic bow, you can use a bonus action to enter a semi-incorporeal state until the start of your next turn. While semi-incorporeal, you have resistance to bludgeoning, piercing, and slashing damage. Once this bonus action is used, it can't be used again until the next dawn.</p>
+		</description>
+		<setters>
+			<set name="keywords">attack, radiant, damage, bonus action, resistance, bludgeoning, piercing, slashing</set>
+			<set name="category">Magic Weapons</set>
+			<set name="cost" currency="gp">0</set>
+			<set name="type" addition="Any Bow">Weapon</set>
+			<set name="rarity">Rare</set>
+			<set name="enhancement">1</set>
+			<set name="attunement">true</set>
+			<set name="weapon">ID_INTERNAL_WEAPON_GROUP_BOWS||ID_INTERNAL_WEAPON_GROUP_CROSSBOWS</set>
+			<set name="name-format">Glimmering Moonbow ({{parent}})</set>
+		</setters>
+	</element>
+
+	<element name="Gloomwrought Armor" type="Magic Item" source="The Book of Many Things" id="ID_WOTC_BOMT_MAGIC_ITEM_GLOOMWROUGHT_ARMOR">
+		<description>
+			<p>This intricate grayscale armor was forged in the Shadowfell and is infused with that plane's gloom.</p>
+			<p class="indent">While you're wearing this armor, you have advantage on saving throws you make to avoid or end the frightened condition on yourself.</p>
+			<p class="indent">This armor has 3 charges. You can expend a charge to cast the <i>Calm Emotions</i> spell (save DC 15) from the armor. This armor regains 1d3 expended charges daily at dawn.</p>
+			<div class="reference">
+				<div element="ID_PHB_SPELL_CALM_EMOTIONS" />
+			</div>
+		</description>
+		<setters>
+			<set name="keywords">advantage, saving throws, frightened, condition, charges, spells, calm emotions</set>
+			<set name="category">Magic Armor</set>
+			<set name="cost" currency="gp">0</set>
+			<set name="type" addition="Any Armor">Armor</set>
+			<set name="rarity">Rare</set>
+			<set name="armor">ID_INTERNAL_ARMOR_GROUP_LIGHT|ID_INTERNAL_ARMOR_GROUP_MEDIUM|ID_INTERNAL_ARMOR_GROUP_HEAVY</set>
+			<set name="name-format">Gloomwrought {{parent}}</set>
+			<set name="attunement">true</set>
+		</setters>
+	</element>
+
+	<element name="Grasping Whip" type="Magic Item" source="The Book of Many Things" id="ID_WOTC_BOMT_MAGIC_ITEM_GRASPING_WHIP">
+		<description>
+			<p>You gain a +1 bonus to attack and damage rolls made with this magic whip. When you hit a creature or object that is Large or smaller with this whip, you can pull that creature or object 5 feet toward you instead of dealing damage.</p>
+		</description>
+		<setters>
+			<set name="keywords">attack, damage</set>
+			<set name="category">Magic Weapons</set>
+			<set name="cost" currency="gp">0</set>
+			<set name="type" addition="Whip">Weapon</set>
+			<set name="rarity">Rare</set>
+			<set name="enhancement">1</set>
+			<set name="weapon">Whip</set>
+		</setters>
+	</element>
+
+	<element name="Hammer of Runic Focus" type="Magic Item" source="The Book of Many Things" id="ID_WOTC_BOMT_MAGIC_ITEM_HAMMER_OF_RUNIC_FOCUS">
+		<description>
+			<p>This magic hammer has 3 charges. As a bonus action, you can expend 1 charge and slam this hammer on the ground, creating a 15-foot-radius circle of glowing runes centered on the point of impact. While you're inside that area, your hammer glows with matching runes, and you gain a +3 bonus to attack and damage rolls made with this hammer. The rune circle disappears after 1 minute, when you create another rune circle, or when you dismiss the rune circle as a bonus action. This hammer regains 1d3 expended charges daily at dawn.</p>
+		</description>
+		<setters>
+			<set name="keywords">charge, bonus action, attack, damage</set>
+			<set name="category">Magic Weapons</set>
+			<set name="cost" currency="gp">0</set>
+			<set name="type" addition="Warhammer">Weapon</set>
+			<set name="rarity">Very Rare</set>
+			<set name="weapon">Warhammer</set>
+			<set name="attunement">true</set>
+		</setters>
+	</element>
+
+	<element name="House of Cards" type="Magic Item" source="The Book of Many Things" id="ID_WOTC_BOMT_MAGIC_ITEM_HOUSE_OF_CARDS">
+		<description>
+			<p>This deck of cards is decorated with geometric shapes that have a protective motif. While you're holding the deck, you can use an action to shuffle it and cause the cards to deal themselves out and transform into a shelter made of cards. The shelter can be shaped however you desire, but it must fit in a 40-foot cube centered on a point within 30 feet of you. The shelter has one door and up to four windows, and only you can open or close them. It has a floor and a roof, and it maintains a comfortable temperature inside.</p>
+			<p class="indent">The shelter has AC 15, 50 hit points, and immunity to poison and psychic damage. The shelter lasts for 24 hours, until you dismiss it as an action, or until it is reduced to 0 hit points. When the shelter's duration ends, it transforms back into a deck of cards and appears in your hand. Once the deck has transformed into a shelter, it can't be used again until the next dawn.</p>
+		</description>
+		<setters>
+			<set name="keywords">action</set>
+			<set name="category">Wondrous Items</set>
+			<set name="type">Wondrous Item</set>
+			<set name="rarity">Uncommon</set>
+			<set name="cost" currency="gp">0</set>
+			<set name="weight" lb="0">0 lb.</set>
+		</setters>
+	</element>
+
+	<element name="Jester's Mask" type="Magic Item" source="The Book of Many Things" id="ID_WOTC_BOMT_MAGIC_ITEM_JESTERS_MASK">		
+		<description>
+			<p>This colorful, harlequin domino mask is edged with pearls. While wearing this mask, you gain the following benefits:</p>
+			<ul class="unstyled" style="margin-bottom: 20px">
+				<li style="text-indent: -1em; margin-left: 1em"><b>Charismatic Focus.</b> You can use the mask as a spellcasting focus. You gain a +3 bonus to any spell attack rolls and spell saving throw DCs that use Charisma as the spellcasting ability.</li>
+				<li style="text-indent: -1em; margin-left: 1em"><b>Marvelous Escape.</b> When a creature hits you with an attack roll, you can use your reaction to disappear in a puff of smoke and colorful sparkles. You take no damage and instead teleport, along with anything you are wearing or carrying, to an unoccupied space you can see within 30 feet of yourself. Once this reaction is used, it can't be used again until the next dawn.</li>
+				<li style="text-indent: -1em; margin-left: 1em"><b>Topsy-Turvy.</b> When you roll a 1 on a d20, you can treat the roll as if you rolled a 20 instead. Once this property is used, it can't be used again until the next dawn.</li>
+			</ul>
+		</description>
+		<setters>
+			<set name="keywords">spellcasting focus, spell, attack, saving throw, charisma, spellcasting, reaction, take 20</set>
+			<set name="category">Wondrous Items</set>
+			<set name="cost" currency="gp">0</set>
+			<set name="weight" lb="0">0 lb.</set>
+			<set name="type">Wondrous Item</set>
+			<set name="rarity">Legendary</set>
+			<set name="slot">head</set>
+			<set name="attunement">true</set>
+		</setters>
+	</element>
+
+	<element name="Plate of Knight's Fellowship" type="Magic Item" source="The Book of Many Things" id="ID_WOTC_BOMT_MAGIC_ITEM_PLATE_OF_KNIGHTS_FELLOWSHIP">
+		<description>
+			<p>This gleaming set of silver-and-gold plate armor never tarnishes.</p>
+			<p class="indent">While wearing this armor, you can use a bonus action to summon the spirit of a warrior to your aid. The spirit's corporeal form manifests in an unoccupied space of your choice within 30 feet of you, and it uses the knight stat block. The spirit disappears when it drops to 0 hit points or after 1 minute, whichever comes first.</p>
+			<p class="indent">The spirit is an ally to you and your companions. In combat, the spirit shares your initiative count but takes its turn immediately after yours. The spirit obeys your commands (no action required by you); if you don't issue any commands, the spirit takes the Dodge action and uses its movement to avoid danger.</p>
+			<p class="indent">Once this bonus action is used, it can't be used again until the next dawn.</p>
+			<div class="reference">
+				<div element="ID_WOTC_MM_INFORMATION_KNIGHT_STATBLOCK" />
+			</div>
+		</description>
+		<setters>
+			<set name="keywords">bonus action, summoning</set>
+			<set name="category">Magic Armor</set>
+			<set name="cost" currency="gp">0</set>
+			<set name="type" addition="Plate">Armor</set>
+			<set name="rarity">Uncommon</set>
+			<set name="armor">Plate</set>
+			<set name="attunement">true</set>
+		</setters>
+	</element>
+
+	<element name="Ring of Puzzler's Wit" type="Magic Item" source="The Book of Many Things" id="ID_WOTC_BOMT_MAGIC_ITEM_RING_OF_PUZZLERS_WIT">
+		<description>
+			<p>This gold ring bears a fluorite stone and is enchanted to sharpen the wearer's mind.</p>
+			<p class="indent">The ring has 3 charges and regains 1d4 - 1 expended charges daily at dawn. When you make an Intelligence check, you can expend 1 charge to grant yourself advantage on the check.</p>
+		</description>
+		<setters>
+			<set name="keywords">charges, intelligence, checks, advantage</set>
+			<set name="category">Rings</set>
+			<set name="type">Ring</set>
+			<set name="rarity">Uncommon</set>
+			<set name="slot">ring</set>
+		</setters>
+	</element>
+
+	<element name="Rod of Hellish Flames" type="Magic Item" source="Dungeon Master’s Guide" id="ID_WOTC_DMG_MAGIC_ITEM_ROD_OF_HELLISH_FLAMES">
+		<description>
+			<p>Glowing cinders orbit the flanged head of this black iron rod.</p>
+			<p class="indent">This rod can be used as an arcane focus. While holding this rod, you gain the following benefits:</p>
+			<ul class="unstyled" style="margin-bottom: 20px">
+				<li style="text-indent: -1em; margin-left: 1em"><b>Hellish Resistance.</b> You have resistance to fire and necrotic damage.</li>
+				<li style="text-indent: -1em; margin-left: 1em"><b>Searing Rebuke.</b> You can cast the <i>Hellish Rebuke</i> spell as a 4th-level spell (save DC 16) from the rod. Once you use the rod to cast the spell, the rod can't cast the spell again until the next dawn.</li>
+				<li style="text-indent: -1em; margin-left: 1em"><b>Surge of Brimstone.</b> Whenever you cast a spell that deals fire or necrotic damage, you can use the rod to deal the maximum damage instead of rolling. Once this property is used, it can't be used again until the next dawn.</li>
+			</ul>
+			<div class="reference">
+				<div element="ID_PHB_SPELL_HELLISH_REBUKE" />
+			</div>
+		</description>
+		<setters>
+			<set name="keywords">spellcasting, focus, arcane, resistance, fire, necrotic, damage, spell, hellish rebuke</set>
+			<set name="category">Rods</set>
+			<set name="cost" currency="gp">0</set>
+			<set name="weight" lb="2">2 lb.</set>
+			<set name="type">Rod</set>
+			<set name="slot">onehand</set>
+			<set name="attunement" addition="by a spellcaster">true</set>
+			<set name="rarity">Very Rare</set>
+		</setters>
+		<rules>
+			<grant type="Condition" id="ID_INTERNAL_CONDITION_DAMAGE_RESISTANCE_FIRE" />
+			<grant type="Condition" id="ID_INTERNAL_CONDITION_DAMAGE_RESISTANCE_NECROTIC" />
+		</rules>
+	</element>
+
+	<element name="Rogue's Mantle" type="Magic Item" source="The Book of Many Things" id="ID_WOTC_BOMT_MAGIC_ITEM_ROGUES_MANTLE">		
+		<description>
+			<p>This dark, hooded mantle of thick cloth is infused with secretive and deceptive magic. While wearing it, you gain the following benefits:</p>
+			<ul class="unstyled" style="margin-bottom: 20px">
+				<li style="text-indent: -1em; margin-left: 1em"><b>Darkvision.</b> You gain darkvision within a range of 60 feet. If you already have darkvision, the mantle increases your darkvision's range by 60 feet instead.</li>
+				<li style="text-indent: -1em; margin-left: 1em"><b>Move in Shadows.</b> While you are in dim light or darkness, you can use a bonus action to teleport, along with anything you are wearing or carrying, up to 30 feet to an unoccupied space you can see that is also in dim light or darkness. You then have advantage on the first melee attack you make before the end of the turn.</li>
+				<li style="text-indent: -1em; margin-left: 1em"><b>Willful Enmity.</b> You can cast the <i>Antagonize</i> spell (save DC 15) from the mantle. Once the mantle has cast the spell, it can't cast the spell again until the next dawn.</li>
+			</ul>
+			<div class="reference">
+				<div element="ID_WOTC_BOMT_SPELL_ANTAGONIZE" />
+			</div>
+		</description>
+		<setters>
+			<set name="keywords">darkvision, bonus action, teleport, spell, antagonize</set>
+			<set name="category">Wondrous Items</set>
+			<set name="cost" currency="gp">0</set>
+			<set name="weight" lb="0">0 lb.</set>
+			<set name="type">Wondrous Item</set>
+			<set name="rarity">Rare</set>
+			<set name="slot">shoulders</set>
+			<set name="attunement">true</set>
+		</setters>
+		<rules>
+			<grant type="Vision" id="ID_VISION_LESSER_DARKVISION" />
+			<stat name="darkvision:range" value="60" bonus="rogues mantle" />
+		</rules>
+	</element>
+
+	<element name="Ruinous Flail" type="Magic Item" source="The Book of Many Things" id="ID_WOTC_BOMT_MAGIC_ITEM_RUINOUS_FLAIL">
+		<description>
+			<p>This ash-gray flail is cold to the touch. You gain a +1 bonus to attack and damage rolls made with this magic weapon, and it deals double damage to objects and structures.</p>
+			<p class="indent">Additionally, when you hit a creature with this weapon, you can force the creature to make a DC 15 Constitution saving throw. On a failed save, the creature has the poisoned condition for 1 minute. The poisoned creature takes 2d4 necrotic damage at the start of each of its turns. The creature can repeat the saving throw at the end of each of its turns, ending the effect on itself on a success. Once this property is used in this way, it can't be used again until the next dawn.</p>
+		</description>
+		<setters>
+			<set name="keywords">attack, damage, constitution, saving throw, poisoned, condition, necrotic</set>
+			<set name="category">Magic Weapons</set>
+			<set name="cost" currency="gp">0</set>
+			<set name="type" addition="Flail">Weapon</set>
+			<set name="rarity">Rare</set>
+			<set name="enhancement">1</set>
+			<set name="weapon">Flail</set>
+			<set name="attunement">true</set>
+		</setters>
+	</element>
+
+	<element name="Sage's Signet (Bear)" type="Magic Item" source="The Book of Many Things" id="ID_WOTC_BOMT_MAGIC_ITEM_SAGE_SIGNET_BEAR">
+		<description>
+			<p>This gilded ring bears a beautiful engraving and is imbued with powers of keen wisdom and foresight. While wearing this ring, you can use an action to cast the <i>Augury</i> spell from the ring. Once you use the ring to cast the spell, the ring can't cast the spell again until the next dawn.</p>
+			<p class="indent">While wearing the <i>Sage's Signet</i>, you can cast the <i>Enlarge/Reduce</i> and <i>Polymorph</i> once each from the ring using your Intelligence as the spellcasting ability. Once you cast each spell from the ring, the ring can't cast the spell again until the next dawn.</p>
+			<div class="reference">
+				<div element="ID_PHB_SPELL_AUGURY" />
+			</div>
+			<div class="reference">
+				<div element="ID_PHB_SPELL_ENLARGE_REDUCE" />
+			</div>
+			<div class="reference">
+				<div element="ID_PHB_SPELL_POLYMORPH" />
+			</div>
+		</description>
+		<setters>
+			<set name="keywords">action, augury, spells, enlarge/reduce, polymorph</set>
+			<set name="category">Rings</set>
+			<set name="type">Ring</set>
+			<set name="rarity">Very Rare</set>
+			<set name="slot">ring</set>
+			<set name="attunement" addition="by a spellcaster">true</set>
+		</setters>
+	</element>
+
+	<element name="Sage's Signet (Hart)" type="Magic Item" source="The Book of Many Things" id="ID_WOTC_BOMT_MAGIC_ITEM_SAGE_SIGNET_HART">
+		<description>
+			<p>This gilded ring bears a beautiful engraving and is imbued with powers of keen wisdom and foresight. While wearing this ring, you can use an action to cast the <i>Augury</i> spell from the ring. Once you use the ring to cast the spell, the ring can't cast the spell again until the next dawn.</p>
+			<p class="indent">While wearing the <i>Sage's Signet</i>, you can cast the <i>Aura of Vitality</i> and <i>Mass Cure Wounds</i> once each from the ring using your Intelligence as the spellcasting ability. Once you cast each spell from the ring, the ring can't cast the spell again until the next dawn.</p>
+			<div class="reference">
+				<div element="ID_PHB_SPELL_AUGURY" />
+			</div>
+			<div class="reference">
+				<div element="ID_PHB_SPELL_AURA_OF_VITALITY" />
+			</div>
+			<div class="reference">
+				<div element="ID_PHB_SPELL_MASS_CURE_WOUNDS" />
+			</div>
+		</description>
+		<setters>
+			<set name="keywords">action, augury, spells, aura of vitality, mass cure wounds</set>
+			<set name="category">Rings</set>
+			<set name="type">Ring</set>
+			<set name="rarity">Very Rare</set>
+			<set name="slot">ring</set>
+			<set name="attunement" addition="by a spellcaster">true</set>
+		</setters>
+	</element>
+
+	<element name="Sage's Signet (Lion)" type="Magic Item" source="The Book of Many Things" id="ID_WOTC_BOMT_MAGIC_ITEM_SAGE_SIGNET_LION">
+		<description>
+			<p>This gilded ring bears a beautiful engraving and is imbued with powers of keen wisdom and foresight. While wearing this ring, you can use an action to cast the <i>Augury</i> spell from the ring. Once you use the ring to cast the spell, the ring can't cast the spell again until the next dawn.</p>
+			<p class="indent">While wearing the <i>Sage's Signet</i>, you can cast the <i>Destructive Wave</i> and <i>Fireball</i> once each from the ring using your Intelligence as the spellcasting ability. Once you cast each spell from the ring, the ring can't cast the spell again until the next dawn.</p>
+			<div class="reference">
+				<div element="ID_PHB_SPELL_AUGURY" />
+			</div>
+			<div class="reference">
+				<div element="ID_PHB_SPELL_DESTRUCTIVE_WAVE" />
+			</div>
+			<div class="reference">
+				<div element="ID_PHB_SPELL_FIREBALL" />
+			</div>
+		</description>
+		<setters>
+			<set name="keywords">action, augury, spells, destructive wave, fireball</set>
+			<set name="category">Rings</set>
+			<set name="type">Ring</set>
+			<set name="rarity">Very Rare</set>
+			<set name="slot">ring</set>
+			<set name="attunement" addition="by a spellcaster">true</set>
+		</setters>
+	</element>
+
+	<element name="Sage's Signet (Serpent)" type="Magic Item" source="The Book of Many Things" id="ID_WOTC_BOMT_MAGIC_ITEM_SAGE_SIGNET_SERPENT">
+		<description>
+			<p>This gilded ring bears a beautiful engraving and is imbued with powers of keen wisdom and foresight. While wearing this ring, you can use an action to cast the <i>Augury</i> spell from the ring. Once you use the ring to cast the spell, the ring can't cast the spell again until the next dawn.</p>
+			<p class="indent">While wearing the <i>Sage's Signet</i>, you can cast the <i>Fear</i> and <i>Hex</i> once each from the ring using your Intelligence as the spellcasting ability. Once you cast each spell from the ring, the ring can't cast the spell again until the next dawn.</p>
+			<div class="reference">
+				<div element="ID_PHB_SPELL_AUGURY" />
+			</div>
+			<div class="reference">
+				<div element="ID_PHB_SPELL_FEAR" />
+			</div>
+			<div class="reference">
+				<div element="ID_PHB_SPELL_HEX" />
+			</div>
+		</description>
+		<setters>
+			<set name="keywords">action, augury, spells, fear, hex</set>
+			<set name="category">Rings</set>
+			<set name="type">Ring</set>
+			<set name="rarity">Rare</set>
+			<set name="slot">ring</set>
+			<set name="attunement" addition="by a spellcaster">true</set>
+		</setters>
+	</element>
+
+	<element name="Sage's Signet (Songbird)" type="Magic Item" source="The Book of Many Things" id="ID_WOTC_BOMT_MAGIC_ITEM_SAGE_SIGNET_SONGBIRD">
+		<description>
+			<p>This gilded ring bears a beautiful engraving and is imbued with powers of keen wisdom and foresight. While wearing this ring, you can use an action to cast the <i>Augury</i> spell from the ring. Once you use the ring to cast the spell, the ring can't cast the spell again until the next dawn.</p>
+			<p class="indent">While wearing the <i>Sage's Signet</i>, you can cast the <i>Charm Person</i> and <i>Hypnotic Pattern</i> once each from the ring using your Intelligence as the spellcasting ability. Once you cast each spell from the ring, the ring can't cast the spell again until the next dawn.</p>
+			<div class="reference">
+				<div element="ID_PHB_SPELL_AUGURY" />
+			</div>
+			<div class="reference">
+				<div element="ID_PHB_SPELL_CHARM_PERSON" />
+			</div>
+			<div class="reference">
+				<div element="ID_PHB_SPELL_HYPNOTIC_PATTERN" />
+			</div>
+		</description>
+		<setters>
+			<set name="keywords">action, augury, spells, charm person, hypnotic pattern</set>
+			<set name="category">Rings</set>
+			<set name="type">Ring</set>
+			<set name="rarity">Rare</set>
+			<set name="slot">ring</set>
+			<set name="attunement" addition="by a spellcaster">true</set>
+		</setters>
+	</element>
+
+	<element name="Sage's Signet (Wolf)" type="Magic Item" source="The Book of Many Things" id="ID_WOTC_BOMT_MAGIC_ITEM_SAGE_SIGNET_WOLF">
+		<description>
+			<p>This gilded ring bears a beautiful engraving and is imbued with powers of keen wisdom and foresight. While wearing this ring, you can use an action to cast the <i>Augury</i> spell from the ring. Once you use the ring to cast the spell, the ring can't cast the spell again until the next dawn.</p>
+			<p class="indent">While wearing the <i>Sage's Signet</i>, you can cast the <i>Freedom of Movement</i> and <i>Pass without Trace</i> once each from the ring using your Intelligence as the spellcasting ability. Once you cast each spell from the ring, the ring can't cast the spell again until the next dawn.</p>
+			<div class="reference">
+				<div element="ID_PHB_SPELL_AUGURY" />
+			</div>
+			<div class="reference">
+				<div element="ID_PHB_SPELL_FREEDOM_OF_MOVEMENT" />
+			</div>
+			<div class="reference">
+				<div element="ID_PHB_SPELL_PASS_WITHOUT_TRACE" />
+			</div>
+		</description>
+		<setters>
+			<set name="keywords">action, augury, spells, freedom of movement, pass without trace</set>
+			<set name="category">Rings</set>
+			<set name="type">Ring</set>
+			<set name="rarity">Very Rare</set>
+			<set name="slot">ring</set>
+			<set name="attunement" addition="by a spellcaster">true</set>
+		</setters>
+	</element>
+
+	<element name="Shield of the Tortoise" type="Magic Item" source="The Book of Many Things" id="ID_WOTC_BOMT_MAGIC_ITEM_SHIELD_OF_THE_TORTOISE">
+		<description>
+			<p>While you are wielding this shield, you gain a +1 bonus to AC. This bonus is in addition to the shield's normal bonus to AC.</p>
+			<p class="indent"><i><b>Curse.</b></i> This item is cursed. Attuning to it extends the curse to you until you are targeted by a <i>Remove Curse</i> spell or similar magic. You cannot discard the shield, and remain attuned to it, as long as you are cursed. As long as you are cursed, you are sluggish. Your speed is halved. When you roll initiative, treat the roll on your d20 as a 1. You can't change your initiative by any means.</p>
+		</description>
+		<setters>
+			<set name="keywords">AC, armor class, cursed, speed, initiative</set>
+			<set name="category">Magic Armor</set>
+			<set name="cost" currency="gp">0</set>
+			<set name="type" addition="shield">Armor</set>
+			<set name="rarity">Uncommon</set>
+			<set name="enhancement">1</set>
+			<set name="armor">ID_INTERNAL_ARMOR_GROUP_SHIELD</set>
+			<set name="attunement">true</set>
+		</setters>
+		<rules>
+			<stat name="ac:shield" value="1" bonus="enhancement" />
+		</rules>
+	</element>
+
+	<element name="Shrieking Greaves" type="Magic Item" source="The Book of Many Things" id="ID_WOTC_BOMT_MAGIC_ITEM_SHRIEKING_GREAVES">		
+		<description>
+			<p>Each of these black leg guards is decorated with a motif of monstrous skulls screaming in terror.</p>
+			<p class="indent">The greaves have 3 charges. While wearing these greaves, you can use a bonus action to expend 1 charge to increase your walking speed by 30 feet, and you have advantage on Dexterity saving throws. These effects last for 1 minute. The greaves regain 1d3 expended charges daily at dawn.</p>
+			<p class="indent"><i><b>Curse.</b></i> The greaves are cursed, and becoming attuned to them extends the curse to you. You can't remove the greaves or end your attunement to them until you are targeted by a Remove Curse spell or similar magic.</p>
+			<p class="indent">You have disadvantage on saving throws against the frightened condition. Whenever you start your turn frightened, the greaves release an ear-piercing scream. You and each creature within 10 feet of you must make a DC 15 Constitution saving throw, taking 9 (2d8) thunder damage on a failed save, or half as much damage on a successful one.</p>
+		</description>
+		<setters>
+			<set name="keywords">charges, bonus action, walking, speed, advantage, dexterity, saving throws, cursed</set>
+			<set name="category">Wondrous Items</set>
+			<set name="cost" currency="gp">0</set>
+			<set name="weight" lb="0">0 lb.</set>
+			<set name="type">Wondrous Item</set>
+			<set name="rarity">Rare</set>
+			<set name="slot">legs</set>
+			<set name="attunement">true</set>
+		</setters>
+	</element>
+
+	<element name="Skull Helm" type="Magic Item" source="The Book of Many Things" id="ID_WOTC_BOMT_MAGIC_ITEM_SKULL_HELM">		
+		<description>
+			<p>While wearing this skull-shaped helm, you have resistance to cold, poison, and necrotic damage.</p>
+			<p class="indent">Additionally, while wearing the helm, you can cast <i>Spirit of Death</i> from it without requiring material components. Once you use the helm to cast the spell, the helm can't cast this spell again until the next dawn.</p>
+			<div class="reference">
+				<div element="ID_WOTC_BOMT_SPELL_SPIRIT_OF_DEATH" />
+			</div>
+		</description>
+		<setters>
+			<set name="keywords">resistances, cold, poison, necrotic, spell, spirit of death</set>
+			<set name="category">Wondrous Items</set>
+			<set name="cost" currency="gp">0</set>
+			<set name="weight" lb="0">0 lb.</set>
+			<set name="type">Wondrous Item</set>
+			<set name="rarity">Very Rare</set>
+			<set name="slot">head</set>
+			<set name="attunement">true</set>
+		</setters>
+		<rules>
+			<grant type="Condition" id="ID_INTERNAL_CONDITION_DAMAGE_RESISTANCE_COLD" />
+			<grant type="Condition" id="ID_INTERNAL_CONDITION_DAMAGE_RESISTANCE_POISON" />
+			<grant type="Condition" id="ID_INTERNAL_CONDITION_DAMAGE_RESISTANCE_NECROTIC" />
+		</rules>
+	</element>
+
+	<element name="Sling of Giant Felling" type="Magic Item" source="The Book of Many Things" id="ID_WOTC_BOMT_MAGIC_ITEM_TWO_BIRDS_SLING">
+		<description>
+			<p>When you hit a Giant creature with a ranged attack roll using this magic sling, the creature must succeed on a DC 18 Constitution saving throw or have the prone condition.</p>
+		</description>
+		<setters>
+			<set name="keywords">constitution, saving throw, prone, condition</set>
+			<set name="category">Magic Weapons</set>
+			<set name="cost" currency="gp">0</set>
+			<set name="type" addition="Sling">Weapon</set>
+			<set name="rarity">Uncommon</set>
+			<set name="weapon">Sling</set>
+		</setters>
+	</element>
+
+	<element name="Spindle of Fate" type="Magic Item" source="The Book of Many Things" id="ID_WOTC_BOMT_MAGIC_ITEM_SPINDLE_OF_FATE">
+		<description>
+			<p>This wand is shaped like a drop spindle wrapped in red thread. The wand has 6 charges that can be used for the following properties:</p>
+			<ul class="unstyled" style="margin-bottom: 20px">
+				<li style="text-indent: -1em; margin-left: 1em"><b>Battle Foreknowledge.</b> When you roll initiative, you can expend 1 charge to add or subtract your proficiency bonus from the total roll.</li>
+				<li style="text-indent: -1em; margin-left: 1em"><b>Doom Foretold.</b> As an action, you can expend 2 charges to target a creature within 30 feet of yourself and invoke that creature's doom. While the target is on the same plane of existence as you, you can sense the direction to its location, and you know the direction of its movement if it's in motion. Additionally, once per turn when you deal damage to the doomed creature, you can roll 1d6 and add the number rolled to the damage roll. These benefits persist for 1 hour or until you target another creature with this effect.</li>
+				<li style="text-indent: -1em; margin-left: 1em"><b>Twist of Fate.</b> When a creature within 60 feet of you makes a saving throw or an attack roll, you can use your reaction to expend 3 charges and alter the outcome, turning a failed saving throw into a successful one, a missed attack roll into a hit, or vice versa.</li>
+			</ul>
+			<p class="indent">The wand regains 1d6 expended charges daily at dawn.</p>
+		</description>
+		<setters>
+			<set name="keywords">charges, initiative, action, damage, reaction, saving throw, attack roll, lucky</set>
+			<set name="category">Wands</set>
+			<set name="cost" currency="gp">0</set>
+			<set name="weight" lb="1">1 lb.</set>
+			<set name="slot">onehand</set>
+			<set name="type">Wand</set>
+			<set name="rarity">Legendary</set>
+			<set name="charges">6</set>
+			<set name="attunement">true</set>
+		</setters>
+	</element>
+
+	<element name="Starshot Crossbow" type="Magic Item" source="The Book of Many Things" id="ID_WOTC_BOMT_MAGIC_ITEM_STARSHOT_CROSSBOW">
+		<description>
+			<p>This crossbow is crafted from blackened wood, and its limbs bear pearl inlays depicting constellations. You ignore the loading property with this crossbow. If you load no ammunition in the weapon, it produces its own, automatically creating one piece of magic ammunition when you make a ranged attack with it. The ammunition created by the weapon vanishes the instant after it hits or misses a target. The crossbow has 3 charges and regains 1d3 expended charges daily at dawn.</p>
+			<p class="indent"><b><i>Constellations.</i></b> The crossbow is decorated with three constellations. As a bonus action, you can tap one of the constellations to invoke it, expending 1 charge and producing one of the following effects:</p>
+			<ul class="unstyled" style="margin-bottom: 20px">
+				<li style="text-indent: -1em; margin-left: 1em"><b>Balance.</b> The next time you hit a creature with a ranged attack roll using this crossbow before the end of your next turn, you or another creature of your choice within 30 feet of you can regain hit points equal to 1d8 plus your proficiency bonus.</li>
+				<li style="text-indent: -1em; margin-left: 1em"><b>Flames.</b> Until the end of your next turn, when you hit a creature with a ranged attack roll using this crossbow, the attack deals an additional 2d8 fire damage.</li>
+				<li style="text-indent: -1em; margin-left: 1em"><b>Rogue.</b> Until the end of your next turn, you have the invisible condition, and anything you are wearing or carrying is also invisible.</li>
+			</ul>
+		</description>
+		<setters>
+			<set name="keywords">charges, bonus action, healing, fire, damage, invisible, invisibility, condition</set>
+			<set name="category">Magic Weapons</set>
+			<set name="cost" currency="gp">0</set>
+			<set name="type" addition="Any Crossbow">Weapon</set>
+			<set name="rarity">Rare</set>
+			<set name="attunement">true</set>
+			<set name="weapon">ID_INTERNAL_WEAPON_GROUP_CROSSBOWS</set>
+			<set name="name-format">Starshot Crossbow ({{parent}})</set>
+		</setters>
+	</element>
+
+	<element name="Stonemaker War Pick" type="Magic Item" source="The Book of Many Things" id="ID_WOTC_BOMT_MAGIC_ITEM_STONEMAKER_WAR_PICK">
+		<description>
+			<p>You gain a +1 bonus to attack and damage rolls made with this magic war pick. It has the following special properties:</p>
+			<ul class="unstyled" style="margin-bottom: 20px">
+				<li style="text-indent: -1em; margin-left: 1em"><b>Meld into Stone.</b> You can cast the <i>Meld into Stone</i> spell from this war pick. Once this property is used, it can't be used again until the next dawn.</li>
+				<li style="text-indent: -1em; margin-left: 1em"><b>Petrification.</b> The war pick has 1d6 + 1 charges. If you score a critical hit against a creature that has fewer than 100 hit points, you can expend 1 charge from the war pick to have that creature make a DC 15 Constitution saving throw. On a failed save, the creature has the petrified condition for 8 hours. When the war pick has no charges remaining, it loses this property.</li>
+			</ul>
+			<div class="reference">
+				<div element="ID_PHB_SPELL_MELD_INTO_STONE" />
+			</div>
+		</description>
+		<setters>
+			<set name="keywords">attack, damage, spell, meld into stone, charges, critical hit, constitution, saving throw, save, petrified, condition</set>
+			<set name="category">Magic Weapons</set>
+			<set name="type" addition="war pick">Weapon</set>
+			<set name="rarity">Very Rare</set>
+			<set name="attunement">true</set>
+			<set name="weapon">War Pick</set>
+			<set name="enhancement">1</set>
+			<set name="cost" currency="gp">0</set>
+		</setters>
+	</element>
+
+	<element name="Sun Staff" type="Magic Item" source="The Book of Many Things" id="ID_WOTC_BOMT_MAGIC_ITEM_SUN_STAFF">		
+		<description>
+			<p>Veins of sunstone run through this wooden staff. This staff can be wielded as a magic quarterstaff that grants a +1 bonus to attack and damage rolls made with it. When you hit with an attack roll using this staff, the target takes an extra 1d8 fire damage.</p>
+			<p class="indent"><b><i>Solar Focus.</i></b> You can use the staff as a spellcasting focus. While holding the staff, you can reroll a number of damage dice up to your proficiency bonus when you use a spell slot to cast a spell that deals fire or radiant damage. You must use the new rolls. Once this property is used, it can't be used again until the next dawn.</p>
+			<p class="indent"><b><i>Sunny Glow.</i></b> As a bonus action, you can cause the staff to glow with sunlight. While glowing, the staff sheds bright light in a 15-foot radius and dim light for an additional 15 feet. The light lasts until you use another bonus action to extinguish it.</p>
+		</description>
+		<setters>
+			<set name="keywords">attack, damage, fire, spellcasting focus, radiant, bonus action, bright, light, dim</set>
+			<set name="category">Staffs</set>
+			<set name="cost" currency="gp">0</set>
+			<set name="weight" lb="4">4 lb.</set>
+			<set name="type">Staff</set>
+			<set name="rarity">Rare</set>
+			<set name="slot">onehand</set>
+			<set name="attunement" addition="by a cleric, druid, or wizard">true</set>
+			<set name="weapon">Quarterstaff</set>
+			<set name="enhancement">1</set>
+		</setters>
+	</element>
+
+	<element name="Sword of the Planes" type="Magic Item" source="The Book of Many Things" id="ID_WOTC_BOMT_MAGIC_ITEM_SWORD_OF_THE_PLANES">
+		<description>
+			<p>You gain a +3 bonus to attack and damage rolls made with this magic sword.</p>
+			<p class="indent">This sword can tear the fabric of reality, creating a temporary rift between planes. You can use your action to choose a different plane of existence from the one you're on and slice through an unoccupied space within 5 feet of yourself, creating a rift to that other plane. The rift can be up to 10 feet high and 10 feet wide, and it lasts for 1 minute. Once this property is used, it can't be used again until the next dawn.</p>
+			<p class="indent">You can specify a target destination, such as the City of Brass on the Elemental Plane of Fire or the palace of Dispater on the second layer of the Nine Hells, and the rift opens in or near that destination (DM's discretion). If you are trying to reach the City of Brass, for example, the rift might appear on the Street of Steel, before the Gate of Ashes, or facing the city from across the Sea of Fire, at the DM's discretion.</p>
+			<p class="indent">Anything that enters the rift is instantly transported to the other plane, appearing in the unoccupied space nearest to the rift.</p>
+		</description>
+		<setters>
+			<set name="keywords">attack, damage, action, planeshift</set>
+			<set name="category">Magic Weapons</set>
+			<set name="cost" currency="gp">0</set>
+			<set name="type" addition="Any Sword">Weapon</set>
+			<set name="attunement">true</set>
+			<set name="rarity">Legendary</set>
+			<set name="enhancement">3</set>
+			<set name="weapon">ID_INTERNAL_WEAPON_GROUP_SWORDS</set>
+			<set name="name-format">{{parent}} of the Planes</set>
+		</setters>
+	</element>
+
+	<element name="Telescopic Transporter" type="Magic Item" source="The Book of Many Things" id="ID_WOTC_BOMT_MAGIC_ITEM_TELESCOPIC_TRANSPORTER">
+		<description>
+			<p>This enormous telescope allows you to view distant celestial objects, including stars, Wildspace systems, and Astral Sea phenomena like the cities of deities or the petrified husks of dead gods.</p>
+			<p class="indent">After spending 1 hour calibrating the telescope, you can attempt to travel to the planet or celestial body at which the telescope is currently pointed. At the end of the hour, make a DC 17 Intelligence (Arcana) check. On a successful check, you and eight other willing creatures touching the telescope, along with everything all travelers are wearing and carrying, safely teleport to unoccupied spaces at the intended destination. On a failed check, a mishap occurs instead. The DM rolls on the Telescope Travel Mishaps table to determine the mishap or chooses a mishap that's good for the campaign.</p>
+			<h5>Telescope Travel Mishaps</h5>
+			<table>
+				<thead>
+					<tr><td class="col-10">d6</td><td>Mishap</td></tr>
+				</thead>
+				<tr><td>1</td><td>The travelers appear adrift in the Astral Sea.</td></tr>
+				<tr><td>2</td><td>The travelers appear on a different plane of existence, determined randomly or chosen by the DM.</td></tr>
+				<tr><td>3</td><td>Excess cosmic energy overloads the telescope, causing it to explode. Each creature within 60 feet of the telescope takes 8d6 necrotic damage. Any Humanoid who survives this damage is transformed into a different kind of creature, as if it had been subject to the Reincarnate spell.</td></tr>
+				<tr><td>4</td><td>A creature from the Astral Sea (such as a githyanki knight) appears within 60 feet of the telescope. The DM decides its attitude.</td></tr>
+				<tr><td>5</td><td>The travelers appear on a different planet or celestial body in the Wildspace system nearest to their target destination.</td></tr>
+				<tr><td>6</td><td>The travelers arrive at their intended destination, but they each appear coated in harmless slime.</td></tr>
+			</table>
+		</description>
+		<setters>
+			<set name="keywords">intelligence, arcana, check, teleport</set>
+			<set name="category">Wondrous Items</set>
+			<set name="type">Wondrous Item</set>
+			<set name="rarity">Legendary</set>
+			<set name="cost" currency="gp">0</set>
+			<set name="weight" lb="0">0 lb.</set>
+		</setters>
+	</element>
+
+	<element name="Tidecaller Trident" type="Magic Item" source="The Book of Many Things" id="ID_WOTC_BOMT_MAGIC_ITEM_TIDECALLER_TRIDENT">
+		<description>
+			<p>You gain a +2 bonus to attack and damage rolls made with this magic trident. You also have advantage on attack rolls made with this weapon while underwater.</p>
+			<p class="indent">This trident has 3 charges. You can expend 1 charge to cast Control Water (save DC 15) from the trident or 3 charges to cast Tsunami (save DC 15) from it instead. The trident regains 1d3 expended charges daily at dawn.</p>
+			<div class="reference">
+				<div element="ID_PHB_SPELL_CONTROL_WATER" />
+			</div>
+			<div class="reference">
+				<div element="ID_PHB_SPELL_TSUNAMI" />
+			</div>
+		</description>
+		<setters>
+			<set name="keywords">attack, damage, advantage, charges, spell, control water, tsunami</set>
+			<set name="category">Magic Weapons</set>
+			<set name="type" addition="Trident">Weapon</set>
+			<set name="rarity">Very Rare</set>
+			<set name="attunement">true</set>
+			<set name="weapon">Trident</set>
+			<set name="enhancement">2</set>
+			<set name="cost" currency="gp">0</set>
+		</setters>
+	</element>
+
+	<element name="Voidwalker Armor" type="Magic Item" source="Dungeon Master’s Guide" id="ID_WOTC_DMG_MAGIC_ITEM_VOIDWALKER_ARMOR">
+		<description>
+			<p>This black studded leather armor bears a red sheen. While wearing this armor, you can use a bonus action to summon a projection of yourself in an unoccupied space within 30 feet of yourself. The projection is a translucent copy of you that has immunity to all damage and conditions, and you can make attacks and cast spells with a range other than self as if standing in the projection's space. The projection disappears at the end of your turn. Once you use this bonus action, it can't be used again until the next dawn.</p>
+			<p class="indent"><b><i>Curse.</i></b> This armor is cursed, and attuning to it extends the curse to you. As long as you remain cursed, you're unwilling to part with the armor. Taking it off fails to end the curse. While cursed in this way, you feel disconnected from your body, continuously hearing whispers that call for you to join them. Whenever you finish a long rest while cursed, you must make a DC 11 Charisma saving throw. On a failed save, your soul is drawn from your body and trapped in an object on a different plane of existence. The object and location of this object are chosen by the DM (but might be the House of Cards; see chapter 18). While your soul is trapped in this way, your body is inert and doesn't age or require sustenance. Destroying the object frees your soul; otherwise, only a Wish spell can restore your soul to your body.</p>
+		</description>
+		<setters>
+			<set name="keywords">studded, leather, bonus action, cursed</set>
+			<set name="category">Magic Armor</set>
+			<set name="cost" currency="gp">0</set>
+			<set name="slot">body</set>
+			<set name="type" addition="Studded Leather">Armor</set>
+			<set name="attunement">true</set>
+			<set name="rarity">Rare</set>
+			<set name="armor">Studded Leather</set>
+		</setters>
+	</element>
+
+	<element name="Warrior's Passkey" type="Magic Item" source="The Book of Many Things" id="ID_WOTC_BOMT_MAGIC_ITEM_WARRIORS_PASSKEY">
+		<description>
+			<p>This silver skeleton key is warm to the touch. While holding the key in its key form, you can use an action to cast the Knock spell from the key.</p>
+			<p class="indent"><b><i>Transforming the Key.</i></b> While holding the key, you can use a bonus action to transform it into a magic longsword. You are considered proficient with the sword, and you have a +1 bonus to attack and damage rolls made with it. On a hit, the sword deals 1d10 force damage. The item remains in its sword form until it leaves your grasp or you use another bonus action to revert it to its key form.</p>
+			<p class="indent">If you end your attunement to the item while it's in its sword form, it automatically reverts to its key form.</p>
+		</description>
+		<setters>
+			<set name="keywords">action, knock, bonus action, longsword, force, damage</set>
+			<set name="category">Wondrous Items</set>
+			<set name="type">Wondrous Item</set>
+			<set name="rarity">Rare</set>
+			<set name="cost" currency="gp">0</set>
+			<set name="weight" lb="0">0 lb.</set>
+			<set name="attunement">true</set>
+		</setters>
+	</element>
+
+	<element name="Weapon of Throne's Command" type="Magic Item" source="The Book of Many Things" id="ID_WOTC_BOMT_MAGIC_ITEM_WEAPON_OF_THRONES_COMMAND">
+		<description>
+			<p>This weapon is bedecked in ornate gold filigree and deep-blue and maroon jewels. You gain a +1 bonus to attack and damage rolls made with this weapon. Additionally, you gain proficiency in the Intimidation and Persuasion skills if you don't already have it.</p>
+			<p class="indent"><b><i>Spellcasting.</i></b> The weapon has 5 charges. You can use a bonus action and expend 1 or more of its charges to cast one of the following spells (save DC 16): Command (1 charge), Zone of Truth (2 charges), Compulsion (4 charges), Banishment (4 charges), or Dominate Person (5 charges).</p>
+			<p class="indent">The weapon regains 1d4 expended charges daily at dawn.</p>
+			<div class="reference">
+				<div element="ID_PHB_SPELL_COMMAND" />
+			</div>
+			<div class="reference">
+				<div element="ID_PHB_SPELL_ZONE_OF_TRUTH" />
+			</div>
+			<div class="reference">
+				<div element="ID_PHB_SPELL_COMPULSION" />
+			</div>
+			<div class="reference">
+				<div element="ID_PHB_SPELL_BANISHMENT" />
+			</div>
+			<div class="reference">
+				<div element="ID_PHB_SPELL_DOMINATE_PERSON" />
+			</div>
+		</description>
+		<setters>
+			<set name="keywords">attack, damage, proficiency, intimidation, persuasion, spellcasting, bonus action, spells, command, zone of truth, compulsion, banishment, dominate person</set>
+			<set name="category">Magic Weapons</set>
+			<set name="cost" currency="gp">0</set>
+			<set name="type" addition="Any">Weapon</set>
+			<set name="rarity">Very Rare</set>
+			<set name="enhancement">1</set>
+			<set name="weapon">ID_INTERNAL_WEAPON_CATEGORY_SIMPLE_MELEE||ID_INTERNAL_WEAPON_CATEGORY_SIMPLE_RANGED||ID_INTERNAL_WEAPON_CATEGORY_MARTIAL_MELEE||ID_INTERNAL_WEAPON_CATEGORY_MARTIAL_RANGED</set>
+			<set name="attunement">true</set>
+			<set name="name-format">{{parent}} of Throne's Command</set>
+		</setters>
+		<rules>
+			<grant type="Proficiency" id="ID_PROFICIENCY_SKILL_INTIMIDATION" />
+			<grant type="Proficiency" id="ID_PROFICIENCY_SKILL_PERSUASION" />
+		</rules>
+	</element>
+
+	<element name="Winged Ammunition" type="Magic Item" source="The Book of Many Things" id="ID_WOTC_BOMT_MAGIC_ITEM_WINGED_AMMUNITION">		
+		<description>
+			<p>Ranged weapon attack rolls made with this ammunition ignore half and three-quarters cover. In addition, attacking at long range doesn't impose disadvantage on ranged weapon attack rolls made with this ammunition.</p>
+		</description>
+		<setters>
+			<set name="keywords">cover, long, range</set>
+			<set name="category">Ammunition</set>
+			<set name="cost" currency="gp">0</set>
+			<set name="weight" lb="0">0 lb.</set>
+			<set name="type" addition="Any Ammunition">Weapon</set>
+			<set name="rarity">Uncommon</set>
+			<set name="stackable">true</set>
+		</setters>
+	</element>
+
+	<element name="Wraps of Unarmed Prowess +1" type="Magic Item" source="The Book of Many Things" id="ID_WOTC_BOMT_MAGIC_ITEM_WRAPS_OF_UNARMED_PROWESS_UNCOMMON">
+		<description>
+			<p>While you're wearing these cloth wraps, your unarmed strikes are considered magical for the purpose of overcoming immunity and resistance to nonmagical attacks and damage, and you gain a +1 bonus to the attack and damage rolls of your unarmed strikes.</p>
+		</description>
+		<setters>
+			<set name="keywords">unarmed strikes, attack, damage</set>
+			<set name="category">Wondrous Items</set>
+			<set name="type">Wondrous Item</set>
+			<set name="rarity">Uncommon</set>
+			<set name="cost" currency="gp">0</set>
+			<set name="weight" lb="0">0 lb.</set>
+		</setters>
+	</element>
+
+	<element name="Wraps of Unarmed Prowess +2" type="Magic Item" source="The Book of Many Things" id="ID_WOTC_BOMT_MAGIC_ITEM_WRAPS_OF_UNARMED_PROWESS_RARE">
+		<description>
+			<p>While you're wearing these cloth wraps, your unarmed strikes are considered magical for the purpose of overcoming immunity and resistance to nonmagical attacks and damage, and you gain a +2 bonus to the attack and damage rolls of your unarmed strikes.</p>
+		</description>
+		<setters>
+			<set name="keywords">unarmed strikes, attack, damage</set>
+			<set name="category">Wondrous Items</set>
+			<set name="type">Wondrous Item</set>
+			<set name="rarity">Rare</set>
+			<set name="cost" currency="gp">0</set>
+			<set name="weight" lb="0">0 lb.</set>
+		</setters>
+	</element>
+
+	<element name="Wraps of Unarmed Prowess +3" type="Magic Item" source="The Book of Many Things" id="ID_WOTC_BOMT_MAGIC_ITEM_WRAPS_OF_UNARMED_PROWESS_VERY_RARE">
+		<description>
+			<p>While you're wearing these cloth wraps, your unarmed strikes are considered magical for the purpose of overcoming immunity and resistance to nonmagical attacks and damage, and you gain a +3 bonus to the attack and damage rolls of your unarmed strikes.</p>
+		</description>
+		<setters>
+			<set name="keywords">unarmed strikes, attack, damage</set>
+			<set name="category">Wondrous Items</set>
+			<set name="type">Wondrous Item</set>
+			<set name="rarity">Very Rare</set>
+			<set name="cost" currency="gp">0</set>
+			<set name="weight" lb="0">0 lb.</set>
+		</setters>
+	</element>
+
+</elements>
