@@ -36,7 +36,8 @@
 		</description>
 		<sheet display="false" />
 		<rules>
-			<select type="Proficiency" name="Scoundrel's Wit (Renegade)" supports="ID_PROFICIENCY_SKILL_DECEPTION|ID_PROFICIENCY_SKILL_PERSUASION|ID_PROFICIENCY_SKILL_SLIGHT_OF_HAND" />
+			<select type="Proficiency" name="Skill Proficiency (Scoundrel's Wit)" supports="ID_PROFICIENCY_SKILL_DECEPTION|ID_PROFICIENCY_SKILL_PERSUASION|ID_PROFICIENCY_SKILL_SLIGHT_OF_HAND" number="2" />
+
 		</rules>
 	</element>
 
@@ -44,8 +45,9 @@
 		<description>
 			<p>Additionally, when you choose this archetype at 3rd level, you begin constructing a custom firearm that suits your unique brand of renegade style. This process begins by selecting the form upon which to base your weapon. Choose one of the following options; each form grants you a new ability and unlocks certain upgrades you can add to your weapon at higher levels.</p>
 		</description>
+		<sheet display="false" />
 		<rules>
-			<select type="Archetype Feature" name="Gunfighter Form" supports="Gunfighter Form, Renegade Fighter" number="1" />
+			<select type="Archetype Feature" name="Gunfighter Form" supports="Gunfighter Form, Renegade Fighter" />
 		</rules>
 	</element>
 
@@ -53,15 +55,26 @@
 		<description>
 			<p>Through a combination of salvaging stolen pieces of arcane technology and sheer rakish ingenuity, you can customize your firearm with various upgrades. When you choose this archetype at 3rd level, pick one minor upgrade and one major upgrade from the Firearm Upgrades list at the end of this subclass. If an upgrade has a prerequisite, you must meet that prerequisite in order to benefit from the upgrade.</p>
 			<p class="indent">You gain one additional minor upgrade at 5th level, and one additional major upgrade at 10th level.</p>
+			<div class="sidebar">
+				<h5>FIREARM UPGRADES</h5>
+				<p>Renegades alter their weapons to suit their personal knavish swagger. The following list provides various options to enhance your firearm’s capabilities. These upgrades may be personal touches you put on your weapon, or scavenged bits of Hextech that you’ve discovered and rigged to work with your weapon.</p>
+				<p class="indent"><strong>Saving Throws.</strong> Some of these upgrades require your targets to make a saving throw to resist the effect. The saving throw DC is calculated as follows:= 8 + your proficiency bonus + your Intelligence modifier</p>
+				<center>
+					<p><strong>Firearm Upgrade save DC</strong> = 8 + your proficiency bonus + your Charisma modifier</p>
+				</center>
+			</div>
 		</description>
 		<sheet>
-			<description/>
+			<description>Your Firearm Upgrade save DC is {{firearm upgrade:dc}}.</description>
 		</sheet>
 		<rules>
-			<select type="Archetype Feature" name="Firearm Upgrade (Minor)" supports="Minor Firearm Upgrade" level="3"/>
-			<select type="Archetype Feature" name="Firearm Upgrade (Major)" supports="Major Firearm Upgrade" level="3"/>
-			<select type="Archetype Feature" name="Firearm Upgrade (Minor) (Level 5)" supports="Minor Firearm Upgrade" level="5" />
-			<select type="Archetype Feature" name="Firearm Upgrade (Major) (Level 10)" supports="Major Firearm Upgrade" level="10"/>
+			<stat name="firearm upgrade:dc" value="8" bonus="base" />
+			<stat name="firearm upgrade:dc" value="proficiency" bonus="proficiency" />
+			<stat name="firearm upgrade:dc" value="charisma:modifier" bonus="ability" />
+			<select type="Archetype Feature" name="Minor Firearm Upgrade (Weapon of Choice)" supports="Minor Firearm Upgrade" level="3"/>
+			<select type="Archetype Feature" name="Major Firearm Upgrade (Weapon of Choice)" supports="Major Firearm Upgrade" level="3"/>
+			<select type="Archetype Feature" name="Minor Firearm Upgrade (Weapon of Choice)" supports="Minor Firearm Upgrade" level="5" />
+			<select type="Archetype Feature" name="Major Firearm Upgrade (Weapon of Choice)" supports="Major Firearm Upgrade" level="10"/>
 		</rules>
 	</element>
 
@@ -79,7 +92,7 @@
 			<p>At 10th level, you can brace yourself in the heat of battle, even when gravely wounded. When you use your Second Wind feature, your AC gains a +1 bonus and your movement speed increases by 10 feet until the start of your next turn.</p>
 		</description>
 		<sheet>
-			<description>When you use your Second Wind feature, your AC gains a +1 bonus and your movement speed increases by 10 feet until the start of your next turn.</description>
+			<description>When you use your Second Wind feature, you gain a +1 bonus to AC and your movement speed increases by 10 feet until the start of your next turn.</description>
 		</sheet>
 	</element>
 
@@ -99,13 +112,8 @@
 			<p class="indent">Once you use this feature, you cannot use it again until you complete a short or long rest.</p>
 		</description>
 		<sheet action="Bonus Action">
-			<description>You can either throw or set down a small explosive. If thrown, the explosive has a range of 30 feet and detonates immediately on impact; if set down, the explosive can be detonated remotely from up to 60 feet away as another bonus action. When detonated, each creature within a 15-foot radius of the explosive must make a DC {{firearm-upgrade:save-DC}} Dexterity saving throw, taking 12d6 force damage on a failure and half as much on a success.</description>
+			<description>You can either throw or set down a small explosive. If thrown, the explosive has a range of 30 feet and detonates immediately on impact; if set down, the explosive can be detonated remotely from up to 60 feet away as another bonus action. When detonated, each creature within a 15-foot radius of the explosive must make a DC{{firearm upgrade:dc}} Dexterity saving throw, taking 12d6 force damage on a failure or half as much on a success.</description>
 		</sheet>
-		<rules>
-			<stat name="firearm-upgrade:save-DC" value="8"/>
-			<stat name="firearm-upgrade:save-DC" value="proficiency"/>
-			<stat name="firearm-upgrade:save-DC" value="charisma:modifier"/>
-		</rules>
 	</element>
 
 	<!--Gunfighter Forms-->
@@ -116,13 +124,15 @@
 			<p class="indent">The number of shots you can fire during a single action increases when you reach higher levels in this subclass: two shots at 5th level, three shots at 11th level, and four shots at 20th level. The shots can target the same creature or different creatures. Make a separate attack roll for each shot.</p>
 		</description>
 		<sheet action="Action">
-			<description>You can target a creature within 30 feet and shoot. Make a ranged attack roll against the target. You are proficient with the attack, and on a hit, the attack deals piercing damage equal to 1d6 + {{dexterity:modifier}}. You can make {{pistoleer-shots:number}} as a single action. The shots can target the same creature or different creatures. Make a separate attack roll for each shot.</description>
+			<description>You can target a creature within 30 feet and shoot. Make a ranged attack roll against the target. You are proficient with the attack, and on a hit, the attack deals piercing damage equal to 1d6 + {{dexterity:modifier}}.</description>
+			<description level="5">You can target a creature within 30 feet and shoot. Make a ranged attack roll against the target. You are proficient with the attack, and on a hit, the attack deals piercing damage equal to 1d6 + {{dexterity:modifier}}. You can make {{pistoleer shots:number}} shots as part of this action. The shots can target the same creature or different creatures. Make a separate attack roll for each shot.</description>
+
 		</sheet>
 		<rules>
-			<stat name="pistoleer-shots:number" value="1" level="1"/>
-			<stat name="pistoleer-shots:number" value="1" level="5"/>
-			<stat name="pistoleer-shots:number" value="1" level="11"/>
-			<stat name="pistoleer-shots:number" value="1" level="20"/>
+			<stat name="pistoleer shots:number" value="1" bonus="base" level="1"/>
+			<stat name="pistoleer shots:number" value="2" bonus="base" level="5"/>
+			<stat name="pistoleer shots:number" value="3" bonus="base" level="11"/>
+			<stat name="pistoleer shots:number" value="4" bonus="base" level="20"/>
 		</rules>
 	</element>
 
@@ -133,13 +143,14 @@
 			<p class="indent">You deal extra damage while using this form when you reach higher levels, dealing damage equal to 2d10 + your Dexterity modifier at 5th level, 4d10 at 11th level, and 6d10 at 20th level.</p>
 		</description>
 		<sheet action="Action">
-			<description>You can target a creature within 120 feet and shoot. Make a ranged attack roll against the target. You are proficient with the attack, and on a hit, the attack deals piercing damage equal to {{sniper-shot:dice}}d10 + {{dexterity:modifier}}.</description>
+			<description>You can target a creature within 120 feet and shoot. Make a ranged attack roll against the target. You are proficient with the attack, and on a hit, the attack deals piercing damage equal to {{sniper shot:dice}}d10 + {{dexterity:modifier}}.</description>
 		</sheet>
 		<rules>
-			<stat name="sniper-shot:dice" value="1" level="1"/>
-			<stat name="sniper-shot:dice" value="1" level="5"/>
-			<stat name="sniper-shot:dice" value="1" level="11"/>
-			<stat name="sniper-shot:dice" value="1" level="20"/>
+			<stat name="sniper shot:dice" value="1" bonus="base" level="1"/>
+			<stat name="sniper shot:dice" value="2" bonus="base" level="5"/>
+			<stat name="sniper shot:dice" value="4" bonus="base" level="11"/>
+			<stat name="sniper shot:dice" value="6" bonus="base" level="20"/>
+
 		</rules>
 	</element>
 
@@ -153,7 +164,7 @@
 			<p>You create a matching blade to accompany your firearm, rendering you a deadly opponent in both melee and ranged combat. Being within 5 feet of a hostile creature doesn’t impose disadvantage on your ranged attack rolls. Additionally, when you use your action to shoot using your Gunfighter Form, you can use your bonus action to strike at a creature within melee range. Make a melee attack roll. The attack roll uses your Dexterity modifier, and you are proficient with the attack. On a hit, the attack deals slashing damage equal to 1d6 + your Dexterity modifier.</p>
 		</description>
 		<sheet>
-			<description>Being within 5 feet of a hostile creature doesn’t impose disadvantage on your ranged attack rolls. Additionally, when you use your action to shoot using your Gunfighter Form, you can use your bonus action to strike at a creature within melee range. Make a melee attack roll. The attack roll uses your Dexterity modifier, and you are proficient with the attack. On a hit, the attack deals slashing damage equal to 1d6 + {{dexterity:modifier}}.</description>
+			<description>Being within 5 feet of a hostile creature doesn’t impose disadvantage on your ranged attack rolls. Additionally, when you use your action to shoot using your Gunfighter Form, you can use your bonus action to strike at a creature within melee range. Make a melee attack roll using your Dexterity modifier. You are proficient with this attack. On a hit, the attack deals slashing damage equal to 1d6 + {{dexterity:modifier}}.</description>
 		</sheet>
 	</element>
 
@@ -189,16 +200,16 @@
 			<p>You equip your firearm with a targeting mechanism. If you haven't moved this turn, you can aim down your sights as a bonus action, reducing your speed to 0 and granting you advantage on all attacks you make using your Gunfighter's Form feature until the end of your turn.</p>
 		</description>
 		<sheet action="Bonus Action">
-			<description>If you haven't moved this turn, you can reduce your speed to 0 and grant yourself you advantage on all attacks you make using your Gunfighter's Form feature until the end of your turn.</description>
+			<description>If you haven't moved this turn, you can reduce your speed to 0 and grant yourself advantage on all attacks you make using your Gunfighter's Form feature until the end of your turn.</description>
 		</sheet>
 	</element>
 
 	<element name="Double-Barrel" type="Archetype Feature" source="Legends of Runeterra: Dark Tides of Bilgewater" id="ID_DDB_LRDTOB_ARCHETYPE_FEATURE_MINOR_FIREARM_UPGRADE_DOUBLE_BARREL">
 		<supports>Minor Firearm Upgrade</supports>
-		<prerequisite>Sniper Form, Level 5</prerequisite>
+		<prerequisite>Sniper Form, 5th level</prerequisite>
 		<requirements>ID_DDB_LRDTOB_ARCHETYPE_FEATURE_GUNFIGHTER_FORM_SNIPER,[level:5]</requirements>
 		<description>
-			<p><em>Prerequisite: Sniper Form, Level 5</em></p>
+			<p><em>Prerequisite: Sniper Form, 5th level</em></p>
 			<p>You add a second barrel to your firearm. When you use your Gunfighter Form, you can shoot twice during a single action, instead of once. The shots can target the same creature or different creatures. Make a separate attack roll for each shot.</p>
 		</description>
 		<sheet>
@@ -212,7 +223,7 @@
 			<p>As an action, you alter the firing mechanism of your gun to release a burst of ash and smoke. This cloud forms a 10-foot cube centered on a point of your choice within the firearm’s range, spreading around corners, and the area covered by this cube is considered heavily obscured. This smoke lasts for 10 minutes and cannot be dispersed. Once you use this feature, you cannot use it again until you finish a short or long rest.</p>
 		</description>
 		<sheet usage="1/Rest" action="Action">
-			<description>This cloud forms a 10-foot cube centered on a point of your choice within the firearm’s range, spreading around corners, and the area covered by this cube is considered heavily obscured. This smoke lasts for 10 minutes and cannot be dispersed.</description>
+			<description>You release a 10-foot cube of ash and smoke centered on a point of your choice within the firearm’s range. Smoke spreads around the corners, and the area within the cube is considered heavily obscured. This smoke lasts for 10 minutes and cannot be dispersed.</description>
 		</sheet>
 	</element>
 
@@ -222,8 +233,8 @@
 		<description>
 			<p>As an action, you can fire a barrage of bullets. Each creature in a 15-foot cone originating from yourself must make a Dexterity saving throw, taking piercing damage equal to 3d10 + your Dexterity modifier on a failure and half as much on a success. Once you use this feature, you cannot use it again until you finish a short or long rest.</p>
 		</description>
-		<sheet usage="1/Short Rest" action="Action">
-			<description>Each creature in a 15-foot cone originating from yourself must make a Dexterity saving throw, taking piercing damage equal to 3d10 + your Dexterity modifier on a failure and half as much on a success.</description>
+		<sheet usage="1/Rest" action="Action">
+			<description>Each creature in a 15-foot cone originating from yourself must make a Dexterity saving throw, taking piercing damage equal to 3d10 + {{dexterity:modifier}} on a failure or half as much on a success.</description>
 		</sheet>
 	</element>
 
@@ -232,9 +243,13 @@
 		<description>
 			<p>When you hit a creature with a successful ranged weapon attack with a firearm, you can immediately cause the bullet to hit another creature within 15 feet of the original target. The second target takes piercing damage equal to your Dexterity modifier (minimum of one). You can redirect a bullet in this way a number of times equal to your Charisma modifier, and regain all expended uses after a short or long rest.</p>
 		</description>
-		<sheet usage="{{charisma:modifier}}/Short Rest">
-			<description>When you hit a creature with a successful ranged weapon attack with a firearm, you can immediately cause the bullet to hit another creature within 15 feet of the original target. The second target takes {{dexterity:modifier}} piercing damage .</description>
+		<sheet usage="{{charisma:modifier}}/Rest">
+			<description>When you hit a creature with a successful ranged weapon attack with a firearm, you can immediately cause the bullet to hit another creature within 15 feet of the original target. The second target takes {{upgrade:double up:damage}} piercing damage.</description>
 		</sheet>
+		<rules>
+			<stat name="upgrade:double up:damage" value="1" bonus="base" />
+			<stat name="upgrade:double up:damage" value="dexterity:modifier" bonus="base" />
+		</rules>
 	</element>
 
 	<element name="Lightning Round" type="Archetype Feature" source="Legends of Runeterra: Dark Tides of Bilgewater" id="ID_DDB_LRDTOB_ARCHETYPE_FEATURE_MAJOR_FIREARM_UPGRADE_LIGHTNING_ROUND">
@@ -242,8 +257,8 @@
 		<description>
 			<p>You equip your firearm with a volatile piece of stolen Hextech, allowing you to release a piercing bolt of electricity as an action on your turn. The lightning fires from you in a straight line that is 1 foot wide and 30 feet long. Each creature in the line must make a Dexterity saving throw, taking 3d8 lightning damage on a failure and half as much on a success. Once you use this feature, you cannot use it again until you finish a short or long rest.</p>
 		</description>
-		<sheet usage="1/Short Rest" action="Action">
-			<description>The lightning fires from you in a straight line that is 1 foot wide and 30 feet long. Each creature in the line must make a Dexterity saving throw, taking 3d8 lightning damage on a failure and half as much on a success.</description>
+		<sheet usage="1/Rest" action="Action">
+			<description>The lightning fires from you in a straight line that is 1 foot wide and 30 feet long. Each creature in the line must make a Dexterity saving throw, taking 3d8 lightning damage on a failure or half as much on a success.</description>
 		</sheet>
 	</element>
 
@@ -252,8 +267,9 @@
 		<description>
 			<p>As a bonus action, you can charge your weapons with blazing force. Until the start of your next turn, whenever you make a successful attack, you deal extra fire damage equal to half your fighter level, rounded up. You can charge your weapons this way a number of times equal to your Charisma modifier (minimum of once), and regain all uses after a short or long rest.</p>
 		</description>
-		<sheet usage="{{charisma:modifier}}/Short Rest" action="Bonus Action">
-			<description>Until the start of your next turn, whenever you make a successful attack, you deal {{level:fighter}} extra fire damage.</description>
+		<sheet usage="{{charisma:modifier}}/Rest" action="Bonus Action">
+			<description>Until the start of your next turn, whenever you make a successful attack, you deal {{level:fighter:half:up}} extra fire damage.</description>
 		</sheet>
+
 	</element>
 </elements>
