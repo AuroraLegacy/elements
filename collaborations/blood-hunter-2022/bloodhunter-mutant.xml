@@ -36,7 +36,7 @@
 			<h5 class="caption">Mutagencraft</h5>
 			<table>
 				<thead>
-					<tr><td class="col-5">Blood Hunter Level</td><td class="col-15">Mutagens Created</td><td class="col-20">Formulas Known</td></tr>
+					<tr><td>Blood Hunter Level</td><td>Mutagens Created</td><td>Formulas Known</td></tr>
 				</thead>
 				<tr><td> 3rd</td><td>1</td><td>4</td></tr>
 				<tr><td> 7th</td><td>2</td><td>5</td></tr>
@@ -46,14 +46,14 @@
 			</table>
 		</description>
 		<sheet action="Bonus Action">
-			<description>You can consume a single mutagen, and the effects and side effects last until you finish a short or long rest, unless otherwise specified. While one or more mutagens are affecting you, you can use an action to focus and flush the toxins from your system, ending the effects and side effects of all mutagens.		
-			Mutagens have no effect on other creatures. They also lose their potency and becoming inert if not used before you finish your next short or long rest.
+			<description>You can consume a single mutagen, and the effects and side effects last until you finish a short or long rest, unless otherwise specified. While one or more mutagens are affecting you, you can use an action to focus and flush the toxins from your system, ending the effects and side effects of all mutagens. &#13;
+			Mutagens have no effect on other creatures. They also lose their potency and becoming inert if not used before you finish your next short or long rest. &#13;
 			You can concoct a single mutagen when you finish a short or long rest. </description>			
-			<description level="7">You can consume a single mutagen, and the effects and side effects last until you finish a short or long rest, unless otherwise specified. While one or more mutagens are affecting you, you can use an action to focus and flush the toxins from your system, ending the effects and side effects of all mutagens.		
-			Mutagens have no effect on other creatures. They also lose their potency and becoming inert if not used before you finish your next short or long rest.
+			<description level="7">You can consume a single mutagen, and the effects and side effects last until you finish a short or long rest, unless otherwise specified. While one or more mutagens are affecting you, you can use an action to focus and flush the toxins from your system, ending the effects and side effects of all mutagens. &#13;
+			Mutagens have no effect on other creatures. They also lose their potency and becoming inert if not used before you finish your next short or long rest. &#13;
 			You can concoct two mutagens when you finish a short or long rest.</description>
-			<description level="15">You can consume a single mutagen, and the effects and side effects last until you finish a short or long rest, unless otherwise specified. While one or more mutagens are affecting you, you can use an action to focus and flush the toxins from your system, ending the effects and side effects of all mutagens.		
-			Mutagens have no effect on other creatures. They also lose their potency and becoming inert if not used before you finish your next short or long rest.
+			<description level="15">You can consume a single mutagen, and the effects and side effects last until you finish a short or long rest, unless otherwise specified. While one or more mutagens are affecting you, you can use an action to focus and flush the toxins from your system, ending the effects and side effects of all mutagens. &#13;
+			Mutagens have no effect on other creatures. They also lose their potency and becoming inert if not used before you finish your next short or long rest. &#13;
 			You can concoct three mutagens when you finish a short or long rest.</description>
 		</sheet>
 	</element>
@@ -62,12 +62,10 @@
 		<description>
 			<p>The number of mutagens you can concoct when you finish a rest, and the number of formulas you know, increases as you gain levels in the blood hunter class, as shown on the Mutagencraft table above. Additionally, when you learn a new mutagen formula, you can replace one formula you already know with a new mutagen formula. You choose four mutagen formulas to learn from the options detailed at the end of this subclass description, and you can concoct one mutagen when you finish a short or long rest.</p>
 		</description>
-		<sheet>
-			<description></description>
-		</sheet>
+		<sheet />
 		<rules>
 			<select type="Archetype Feature" name="Mutagen Formula" supports="Blood Hunter Mutagen 2022" level="3" number="4" />
-			<select type="Archetype Feature" name="Mutagen Formula" supports="Blood Hunter Mutagen 2022" level="4" />
+			<select type="Archetype Feature" name="Mutagen Formula" supports="Blood Hunter Mutagen 2022" level="7" />
 			<select type="Archetype Feature" name="Mutagen Formula" supports="Blood Hunter Mutagen 2022" level="11" />
 			<select type="Archetype Feature" name="Mutagen Formula" supports="Blood Hunter Mutagen 2022" level="15" />
 			<select type="Archetype Feature" name="Mutagen Formula" supports="Blood Hunter Mutagen 2022" level="18" />
@@ -79,8 +77,9 @@
 			<p>When you reach 7th level, your body begins to adapt to toxins and venoms, ignoring their corrupting effects. You gain immunity to poison damage and the poisoned condition.</p>
 			<p class="indent">Additionally, you can trigger a burst of adrenaline that lets you temporarily resist the negative effects of a mutagen. As a bonus action, you can ignore the negative side effect of one mutagen affecting you for 1 minute. Once you do so, you can’t do so again until you finish a long rest.</p>
 		</description>
-		<sheet>
-			<description>You gain immunity to poison damage and the poisoned condition. Once per long rest, as a bonus action, you can choose to ignore the negative side effect of one mutagen affecting you for 1 minute.</description>
+		<sheet action="Bonus Action" usage="1/Long Rest">
+			<description>You can ignore the negative side effect of one mutagen affecting you for 1 minute. &#13;
+			Additionally, you have immunity to the poisoned condition.</description>
 		</sheet>
 		<rules>
 			<grant type="Condition" id="ID_INTERNAL_CONDITION_DAMAGE_IMMUNITY_POISON" />
@@ -100,9 +99,7 @@
 		<description>
 			<p>Starting at 15th level, your blood curse can infuse a creature’s body with terrible toxins. You gain the Blood Curse of Corrosion for your Blood Maledict feature. This doesn’t count against your number of blood curses known.</p>
 		</description>
-		<sheet display="false">
-			<description>You gain the Blood Curse of Corrosion for your Blood Maledict feature. This doesn’t count against your number of blood curses known.</description>
-		</sheet>
+		<sheet display="false" />
 		<rules>
 			<grant type="Class Feature" id="ID_DDB_BH22_CLASS_FEATURE_BLOOD_HUNTER_BLOOD_CURSE_OF_CORROSION" />
 		</rules>
@@ -132,7 +129,7 @@
 			<p>You have a flying speed of 20 feet for 1 hour. However, you have disadvantage on Strength checks and Dexterity checks during this time.</p>
 		</description>
 		<sheet>
-			<description>You have a flying speed of 20 feet for 1 hour. However, you have disadvantage on Strength checks and Dexterity checks during this time.</description>
+			<description>You have a flying speed of 20 feet for 1 hour. However, you have disadvantage on Strength and Dexterity checks during this time.</description>
 		</sheet>
 	</element>
 	<element name="Alluring" type="Archetype Feature" source="Blood Hunter (2022)" id="ID_DDB_BH22_ARCHETYPE_FEATURE_MUTANT_MUTAGEN_ALLURING">
@@ -172,7 +169,7 @@
 			<p><em>Prerequisite: 11th level</em></p>
 			<p>When you use the Attack action, you can make one additional weapon attack as a bonus action. However, you have disadvantage on Intelligence, Wisdom, and Charisma saving throws.</p>
 		</description>
-		<sheet action="Bonus Action">
+		<sheet>
 			<description>When you use the Attack action, you can make one additional weapon attack as a bonus action. However, you have disadvantage on Intelligence, Wisdom, and Charisma saving throws.</description>
 		</sheet>
 	</element>
