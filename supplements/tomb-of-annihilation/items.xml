@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<elements>
+	<info>
+		<update version="0.0.1">
+			<file name="items.xml" url="https://raw.githubusercontent.com/AuroraLegacy/elements/master/supplements/tomb-of-annihilation/items.xml" />
+		</update>
+	</info>
+	
+	<!--Yklwa-->
+	<element name="Yklwa" type="Weapon" source="Tomb of Annihilation" id="ID_WOTC_TOA_WEAPON_YKLWA">
+		<supports>ID_INTERNAL_WEAPON_CATEGORY_SIMPLE_MELEE, ID_INTERNAL_DAMAGE_TYPE_PIERCING, ID_INTERNAL_WEAPON_PROPERTY_THROWN, ID_INTERNAL_WEAPON_GROUP_SPEARS</supports>
+		<description>
+			<p>A yklwa (pronounced YICK-ul-wah) is a simple melee weapon that is the traditional weapon of Chultan warriors. A yklwa consists of a 3-foot wooden shaft with a steel or stone blade up to 18 inches long. Although it has the thrown weapon property, the yklwa is not well balanced for throwing.</p>
+		</description>
+		<setters>
+			<set name="category">Weapons</set>
+			<set name="cost" currency="gp">1</set>
+			<set name="weight" lb="3">3 lb.</set>
+			<set name="slot">onehand</set>
+			<set name="range">20/60</set>
+			<set name="damage" type="piercing">1d8</set>
+			<set name="proficiency">ID_WOTC_TOA_WEAPON_PROFICIENCY_YKLWA</set>
+		</setters>
+	</element>
+	
+	<element name="Weapon Proficiency (Yklwa)" type="Proficiency" source="Tomb of Annihilation" id="ID_WOTC_TOA_WEAPON_PROFICIENCY_YKLWA">
+		<supports>Weapon, Simple, Melee, ID_INTERNAL_WEAPON_CATEGORY_SIMPLE_MELEE, ID_INTERNAL_DAMAGE_TYPE_PIERCING, ID_INTERNAL_WEAPON_PROPERTY_THROWN, ID_INTERNAL_WEAPON_GROUP_SPEARS</supports>
+	</element>
+	
+	<element name="Kensei Weapon (Yklwa)" type="Archetype Feature" source="Tomb of Annihilation" id="ID_WOTC_TOA_ARCHETYPE_FEATURE_KENSEI_WEAPON_YKLWA">
+		<supports>Kensei Weapon, Melee</supports>
+		<description>
+			<p>You gain proficiency with the Yklwa if you don’t already have it, and it is a monk weapon for you.</p>
+		</description>
+		<rules>
+			<grant type="Proficiency" id="ID_WOTC_TOA_WEAPON_PROFICIENCY_YKLWA" />
+		</rules>
+	</element>
+	
+	<append id="ID_PROFICIENCY_WEAPON_PROFICIENCY_SIMPLE_MELEE_WEAPONS">
+		<rules>
+			<grant type="Proficiency" id="ID_WOTC_TOA_WEAPON_PROFICIENCY_YKLWA" />
+		</rules>
+	</append>
+
+</elements>
