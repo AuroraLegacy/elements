@@ -1,16 +1,16 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <elements>
-    <info>
-        <update version="0.0.1">
-            <file name="companions.xml" url="https://raw.githubusercontent.com/AuroraLegacy/elements/master/supplements/descent-into-avernus/companions.xml" />
-        </update>
-    </info>
+	<info>
+		<update version="0.0.2">
+			<file name="companions.xml" url="https://raw.githubusercontent.com/AuroraLegacy/elements/master/supplements/descent-into-avernus/companions.xml" />
+		</update>
+	</info>
 	<element name="Abyssal Chicken" type="Companion" source="Baldur’s Gate: Descent into Avernus" id="ID_WOTC_BGDIA_COMPANION_ABYSSAL_CHICKEN">
 		<supports>Familiar,Variant Familiar</supports>
 		<description>
 			<p>Abyssal chickens are carnivorous, temperamental, tasty bottom-feeders native to the Abyss. They beat their leathery wings to scare predators and to help them run faster, and they taste like fatty chicken.</p>
 			<p class="indent">With your permission, a character who casts the find familiar spell can henceforth choose to conjure an abyssal chicken instead of a raven.</p>
-        </description>
+		</description>
 		<setters>
 			<set name="strength">6</set>
 			<set name="dexterity">14</set>
@@ -68,5 +68,78 @@
 		<sheet>
 			<description>Melee Weapon Attack: +4 to hit, reach 5 ft., one target. Hit: 5 (1d6 + 2) slashing damage.</description>
 		</sheet>
-	</element>    
+	</element>
+
+	<element name="Tressym" type="Companion" source="Baldur’s Gate: Descent into Avernus" id="ID_WOTC_BGDIA_COMPANION_TRESSYM">
+		<supports>Familiar, Variant Familiar</supports>
+		<description />
+		<setters>
+			<set name="strength">3</set>
+			<set name="dexterity">15</set>
+			<set name="constitution">10</set>
+			<set name="intelligence">11</set>
+			<set name="wisdom">12</set>
+			<set name="charisma">12</set>
+			<set name="ac">12</set>
+			<set name="hp">5 (2d4)</set>
+			<set name="speed">40 ft., climb 30 ft., fly 40 ft.</set>
+			<set name="senses">darkvision 60 ft., passive Perception 15</set>
+			<set name="Immunities">poison</set>
+			<set name="conditionImmunities">poisoned</set>
+			<set name="skills">Perception +5, Stealth +4</set>
+			<set name="languages">understands Common but can't speak</set>
+			<set name="type">Monstrosity</set>
+			<set name="size">Small</set>
+			<set name="alignment">any alignment</set>
+			<set name="challenge">0</set>
+			<set name="traits">ID_WOTC_BGDIA_COMPANION_TRAIT_TRESSYM_DETECT_INVISIBILITY,ID_WOTC_BGDIA_COMPANION_TRAIT_TRESSYM_KEEN_SMELL,ID_WOTC_BGDIA_COMPANION_TRAIT_TRESSYM_POISON_SENSE</set>
+			<set name="actions">ID_WOTC_BGDIA_COMPANION_ACTION_TRESSYM_CLAWS</set>
+		</setters>
+		<rules>
+			<stat name="companion:ac" value="12" />
+			<stat name="companion:hp:max" value="5" bonus="base" />
+			<stat name="companion:speed" value="40" bonus="base" />
+			<stat name="companion:speed:climb" value="30" bonus="base" />
+			<stat name="companion:speed:fly" value="40" bonus="base" />
+			<stat name="companion:perception:proficiency" value="companion:proficiency" bonus="base" />
+			<stat name="companion:perception:proficiency" value="companion:proficiency" bonus="double" />
+			<stat name="companion:stealth:proficiency" value="companion:proficiency" bonus="base" />
+		</rules>
+	</element>
+
+	<element name="Detect Invisibility" type="Companion Trait" source="Baldur’s Gate: Descent into Avernus" id="ID_WOTC_BGDIA_COMPANION_TRAIT_TRESSYM_DETECT_INVISIBILITY">
+		<description>
+			<p>Within 60 feet of the tressym, magical invisibility fails to conceal anything from the tressym's sight.</p>
+		</description>
+		<sheet>
+			<description>Within 60 feet of the tressym, magical invisibility fails to conceal anything from the tressym's sight.</description>
+		</sheet>
+	</element>
+	
+	<element name="Keen Smell" type="Companion Trait" source="Baldur’s Gate: Descent into Avernus" id="ID_WOTC_BGDIA_COMPANION_TRAIT_TRESSYM_KEEN_SMELL">
+		<description>
+			<p>Within 60 feet of the tressym, magical invisibility fails to conceal anything from the tressym's sight.</p>
+		</description>
+		<sheet>
+			<description>Within 60 feet of the tressym, magical invisibility fails to conceal anything from the tressym's sight.</description>
+		</sheet>
+	</element>
+	
+	<element name="Poison Sense" type="Companion Trait" source="Baldur’s Gate: Descent into Avernus" id="ID_WOTC_BGDIA_COMPANION_TRAIT_TRESSYM_POISON_SENSE">
+		<description>
+			<p>The tressym can detect whether a substance is poisonous by taste, touch, or smell.</p>
+		</description>
+		<sheet>
+			<description>The tressym can detect whether a substance is poisonous by taste, touch, or smell.</description>
+		</sheet>
+	</element>
+
+	<element name="Claws" type="Companion Action" source="Baldur’s Gate: Descent into Avernus" id="ID_WOTC_BGDIA_COMPANION_ACTION_TRESSYM_CLAWS">
+		<description>
+			<p>Melee Weapon Attack: +0 to hit, reach 5 ft., one target. Hit: 1 slashing damage.</p>
+		</description>
+		<sheet>
+			<description>Melee Weapon Attack: +0 to hit, reach 5 ft., one target. Hit: 1 slashing damage.</description>
+		</sheet>
+	</element>
 </elements>
