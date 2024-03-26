@@ -1,0 +1,271 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<elements>
+	<info>
+		<name>D&amp;D Celebration 2020</name>
+		<description>Familiars and Magic Items from the D&amp;D Celebration 2020 web event.</description>
+		<update version="0.0.1">
+			<file name="dnd-celebration-2020.xml" url="https://raw.githubusercontent.com/AuroraLegacy/elements/master/supplements/adventurers-league/dnd-celebration-2020.xml" />
+		</update>
+	</info>
+
+	<element name="D&amp;D Celebration 2020" type="Source" source="Core" id="ID_WOTC_SOURCE_DND_CELEBRATION_2020">
+		<description>
+			<p>Check out the opening hours of <i>D&amp;D Celebration</i>, a new digital event featuring live games, designer panels and discussions from across the <i>Dungeons &amp; Dragons</i> community.</p>
+		</description>
+		<setters>
+			<set name="abbreviation">DNDC</set>
+			<set name="url"></set>
+			<set name="author" abbreviation="WOTC" url="http://dnd.wizards.com">Wizards of the Coast</set>
+			<set name="official">true</set>
+			<set name="supplement">true</set>
+			<set name="league">true</set>
+			<set name="release">20200917</set>
+		</setters>
+	</element>
+
+	<!--Familiars-->
+	<element name="Arctic Stink Squirrel" type="Companion" source="D&amp;D Celebration 2020" id="ID_WOTC_DNDC_COMPANION_ARCTIC_STINK_SQUIRREL">
+		<supports>Variant Familiar</supports>
+		<description>
+			<p>This cuddly little brute makes a playful (if alarming) companion.</p>
+			<div class="reference">
+				<div element="ID_PHB_SPELL_STINKING_CLOUD" />
+			</div>
+		</description>
+		<setters>
+			<set name="strength">3</set>
+			<set name="dexterity">16</set>
+			<set name="constitution">8</set>
+			<set name="intelligence">2</set>
+			<set name="wisdom">12</set>
+			<set name="charisma">3</set>
+			<set name="ac">13</set>
+			<set name="hp">1 (1d4 - 1)</set>
+			<set name="speed">30 ft.</set>
+			<set name="languages">—</set>
+			<set name="skills">Perception +3, Stealth +5</set>
+			<set name="type">Beast</set>
+			<set name="size">Tiny</set>
+			<set name="alignment">unaligned</set>
+			<set name="challenge">0</set>
+			<set name="traits">ID_WOTC_DNDC_COMPANION_TRAIT_ARCTIC_STINK_SQUIRREL_KEEN_HEARING_AND_SMELL</set>
+			<set name="actions">ID_WOTC_DNDC_COMPANION_ACTION_ARCTIC_STINK_SQUIRREL_BITE,ID_WOTC_DNDC_COMPANION_ACTION_ARCTIC_STINK_SQUIRREL_STINKING_CLOUD</set>
+		</setters>
+		<rules>
+			<stat name="companion:ac" value="13" />
+			<stat name="companion:hp:max" value="1" bonus="base" />
+			<stat name="companion:speed" value="30" bonus="base" />
+			<stat name="companion:perception:proficiency" value="companion:proficiency" bonus="base" />
+			<stat name="companion:stealth:proficiency" value="companion:proficiency" bonus="base" />
+		</rules>
+	</element>
+	
+	<element name="Keen Hearing and Smell" type="Companion Trait" source="D&amp;D Celebration 2020" id="ID_WOTC_DNDC_COMPANION_TRAIT_ARCTIC_STINK_SQUIRREL_KEEN_HEARING_AND_SMELL">
+		<description>
+			<p>The arctic stink squirrel has advantage on Wisdom (Perception) checks that rely on hearing or smell.</p>
+		</description>
+		<sheet>
+			<description>The arctic stink squirrel has advantage on Wisdom (Perception) checks that rely on hearing or smell.</description>
+		</sheet>
+	</element>
+	
+	<element name="Bite" type="Companion Action" source="D&amp;D Celebration 2020" id="ID_WOTC_DNDC_COMPANION_ACTION_ARCTIC_STINK_SQUIRREL_BITE">
+		<description>
+			<p>Melee Weapon Attack: +5 to hit, reach 5 ft., one creature. Hit: 1 piercing damage.</p>
+		</description>
+		<sheet>
+			<description>Melee Weapon Attack: +5 to hit, reach 5 ft., one creature. Hit: 1 piercing damage.</description>
+		</sheet>
+	</element>
+
+	<element name="Stinking Cloud" type="Companion Action" source="D&amp;D Celebration 2020" id="ID_WOTC_DNDC_COMPANION_ACTION_ARCTIC_STINK_SQUIRREL_STINKING_CLOUD">
+		<description>
+			<p>The arctic stink squirrel can cast stinking cloud once per day, save DC 11.</p>
+		</description>
+		<sheet>
+			<description>The arctic stink squirrel can cast stinking cloud once per day, save DC 11.</description>
+		</sheet>
+	</element>
+
+	<element name="Chwinga Squidling" type="Companion" source="D&amp;D Celebration 2020" id="ID_WOTC_DNDC_COMPANION_CHWINGA_SQUIDLING">
+		<supports>Variant Familiar</supports>
+		<description>
+			<p>This bizarre mutation is both devoted and dangerous.</p>
+		</description>
+		<setters>
+			<set name="strength">4</set>
+			<set name="dexterity">16</set>
+			<set name="constitution">11</set>
+			<set name="intelligence">2</set>
+			<set name="wisdom">8</set>
+			<set name="charisma">6</set>
+			<set name="ac">14</set>
+			<set name="hp">2 (1d4)</set>
+			<set name="speed">10 ft.</set>
+			<set name="senses">darkvision 60 ft.</set>
+			<set name="languages">—</set>
+			<set name="type">Beast</set>
+			<set name="size">Tiny</set>
+			<set name="alignment">unaligned</set>
+			<set name="challenge">1/8</set>
+			<set name="actions">ID_WOTC_DNDC_COMPANION_ACTION_CHWINGA_SQUIDLING_BLOOD_DRAIN</set>
+		</setters>
+		<rules>
+			<stat name="companion:ac" value="14" />
+			<stat name="companion:hp:max" value="2" bonus="base" />
+			<stat name="companion:speed" value="10" bonus="base" />
+		</rules>
+	</element>
+
+	<element name="Blood Drain" type="Companion Action" source="D&amp;D Celebration 2020" id="ID_WOTC_DNDC_COMPANION_ACTION_CHWINGA_SQUIDLING_BLOOD_DRAIN">
+		<description>
+			<p>Melee Weapon Attack: +5 to hit, reach 5 ft., one creature. Hit: 5 (1d4 + 3) piercing damage, and the chwinga squidling attaches to the target. While attached, the chwinga squidling doesn't attack. Instead, at the start of each of the chwinga squidling's turns, the target loses 5 (1d4 + 3) hit points due to blood loss.</p>
+			<p class="indent">The chwinga squidling can detach itself by spending 5 feet of its movement. It does so after it drains 10 hit points of blood from the target or the target dies. A creature, including the target, can use its action to detach the chwinga squidling.</p>
+		</description>
+		<sheet>
+			<description>Melee Weapon Attack: +5 to hit, reach 5 ft., one creature. Hit: 5 (1d4 + 3) piercing damage, and the chwinga squidling attaches to the target. While attached, the chwinga squidling doesn't attack. Instead, at the start of each of the chwinga squidling's turns, the target loses 5 (1d4 + 3) hit points due to blood loss.
+			The chwinga squidling can detach itself by spending 5 feet of its movement. It does so after it drains 10 hit points of blood from the target or the target dies. A creature, including the target, can use its action to detach the chwinga squidling.</description>
+		</sheet>
+	</element>
+
+	<element name="Gelatinous Ice Cube" type="Companion" source="D&amp;D Celebration 2020" id="ID_WOTC_DNDC_COMPANION_GELATINOUS_ICE_CUBE">
+		<supports>Variant Familiar</supports>
+		<description>
+			<p>You have a friendly psychic link with this tiny cube of death.</p>
+		</description>
+		<setters>
+			<set name="strength">8</set>
+			<set name="dexterity">16</set>
+			<set name="constitution">15</set>
+			<set name="intelligence">14</set>
+			<set name="wisdom">11</set>
+			<set name="charisma">10</set>
+			<set name="ac">13</set>
+			<set name="hp">18 (4d4 + 8)</set>
+			<set name="speed">20 ft.</set>
+			<set name="senses">blindsight 60 ft. (blind beyond this distance), passive Perception 12</set>
+			<set name="conditionImmunities">blinded, charmed, deafened, exhaustion, prone</set>
+			<set name="languages">—</set>
+			<set name="saves">Int +4, Cha +2</set>
+			<set name="type">Ooze</set>
+			<set name="size">Tiny</set>
+			<set name="alignment">lawful evil</set>
+			<set name="challenge">1/4</set>
+			<set name="traits">ID_WOTC_DNDC_COMPANION_TRAIT_GELATINOUS_ICE_CUBE_AMORPHOUS,ID_WOTC_DNDC_COMPANION_TRAIT_GELATINOUS_ICE_CUBE_AVERSION_TO_FIRE</set>
+			<set name="actions">ID_WOTC_DNDC_COMPANION_ACTION_GELATINOUS_ICE_CUBE_PSEUDOPOD</set>
+		</setters>
+		<rules>
+			<stat name="companion:ac" value="13" />
+			<stat name="companion:hp:max" value="18" bonus="base" />
+			<stat name="companion:speed" value="20" bonus="base" />
+			<stat name="companion:intelligence:save:proficiency" value="companion:proficiency" bonus="base" />
+			<stat name="companion:charisma:save:proficiency" value="companion:proficiency" bonus="base" />
+		</rules>
+	</element>
+
+	<element name="Amorphous" type="Companion Trait" source="D&amp;D Celebration 2020" id="ID_WOTC_DNDC_COMPANION_TRAIT_GELATINOUS_ICE_CUBE_AMORPHOUS">
+		<description>
+			<p>The gelatinous ice cube can move through a space as narrow as 1 inch wide without squeezing.</p>
+		</description>
+		<sheet>
+			<description>The gelatinous ice cube can move through a space as narrow as 1 inch wide without squeezing.</description>
+		</sheet>
+	</element>
+
+	<element name="Aversion to Fire" type="Companion Trait" source="D&amp;D Celebration 2020" id="ID_WOTC_DNDC_COMPANION_TRAIT_GELATINOUS_ICE_CUBE_AVERSION_TO_FIRE">
+		<description>
+			<p>If the gelatinous ice cube takes fire damage, it has disadvantage on attack rolls and ability checks until the end of its next turn.</p>
+		</description>
+		<sheet>
+			<description>If the gelatinous ice cube takes fire damage, it has disadvantage on attack rolls and ability checks until the end of its next turn.</description>
+		</sheet>
+	</element>
+
+	<element name="Pseudopod" type="Companion Action" source="D&amp;D Celebration 2020" id="ID_WOTC_DNDC_COMPANION_ACTION_GELATINOUS_ICE_CUBE_PSEUDOPOD">
+		<description>
+			<p>Melee Weapon Attack: +5 to hit, reach 5 ft., one target. Hit: 5 (1d4 + 3) bludgeoning damage plus 2 (1d4) psychic damage.</p>
+		</description>
+		<sheet>
+			<description>Melee Weapon Attack: +5 to hit, reach 5 ft., one target. Hit: 5 (1d4 + 3) bludgeoning damage plus 2 (1d4) psychic damage.</description>
+		</sheet>
+	</element>
+
+	<element name="Snowy Owlbear Cub" type="Companion" source="D&amp;D Celebration 2020" id="ID_WOTC_DNDC_COMPANION_SNOWY_OWLBEAR_CUB">
+		<supports>Variant Familiar</supports>
+		<description>
+			<p>The cub of this rare breed of tiny owlbear forms a loving bond with a single adventurer.</p>
+		</description>
+		<setters>
+			<set name="strength">3</set>
+			<set name="dexterity">15</set>
+			<set name="constitution">10</set>
+			<set name="intelligence">3</set>
+			<set name="wisdom">12</set>
+			<set name="charisma">7</set>
+			<set name="ac">12</set>
+			<set name="hp">2 (1d4)</set>
+			<set name="speed">40 ft., climb 30 ft.</set>
+			<set name="languages">—</set>
+			<set name="skills">Perception +3, Stealth +4</set>
+			<set name="type">Beast</set>
+			<set name="size">Tiny</set>
+			<set name="alignment">unaligned</set>
+			<set name="challenge">0</set>
+			<set name="traits">ID_WOTC_DNDC_COMPANION_TRAIT_SNOWY_OWLBEAR_CUB_KEEN_SMELL</set>
+			<set name="actions">ID_WOTC_DNDC_COMPANION_ACTION_SNOWY_OWLBEAR_CUB_CLAWS</set>
+		</setters>
+		<rules>
+			<stat name="companion:ac" value="12" />
+			<stat name="companion:hp:max" value="2" bonus="base" />
+			<stat name="companion:speed" value="40" bonus="base" />
+			<stat name="companion:speed:climb" value="30" bonus="base" />
+			<stat name="companion:perception:proficiency" value="companion:proficiency" bonus="base" />
+			<stat name="companion:stealth:proficiency" value="companion:proficiency" bonus="base" />
+		</rules>
+	</element>
+	
+	<element name="Keen Smell" type="Companion Trait" source="D&amp;D Celebration 2020" id="ID_WOTC_DNDC_COMPANION_TRAIT_SNOWY_OWLBEAR_CUB_KEEN_SMELL">
+		<description>
+			<p>The snowy owlbear cub has advantage on Wisdom (Perception) checks that rely on smell.</p>
+		</description>
+		<sheet>
+			<description>The snowy owlbear cub has advantage on Wisdom (Perception) checks that rely on smell.</description>
+		</sheet>
+	</element>
+	
+	<element name="Claws" type="Companion Action" source="D&amp;D Celebration 2020" id="ID_WOTC_DNDC_COMPANION_ACTION_SNOWY_OWLBEAR_CUB_CLAWS">
+		<description>
+			<p>Melee Weapon Attack: +0 to hit, reach 5 ft., one target. Hit: 1 slashing damage.</p>
+		</description>
+		<sheet>
+			<description>Melee Weapon Attack: +0 to hit, reach 5 ft., one target. Hit: 1 slashing damage.</description>
+		</sheet>
+	</element>
+
+	<!--Items-->
+	<element name="Inspired Cocoa Mug" type="Magic Item" source="D&amp;D Celebration 2020" id="ID_WOTC_DNDC_MAGIC_ITEM_INSPIRED_COCOA_MUG">
+		<description>
+			<p>This mug can magically fill with delicious hot cocoa during a short rest. Drinking the cocoa allows one creature to regain an extra 1d6 hit points if they spend Hit Dice to regain hit points.</p>
+		</description>
+		<setters>
+			<set name="keywords">short rest, healing, hit dice</set>
+			<set name="category">Wondrous Items</set>
+			<set name="cost" currency="gp">0</set>
+			<set name="weight" lb="0">0 lb.</set>
+			<set name="type">Wondrous Item</set>
+		</setters>
+	</element>
+
+	<element name="Netherese Ghost Stories" type="Magic Item" source="D&amp;D Celebration 2020" id="ID_WOTC_DNDC_MAGIC_ITEM_NETHERESE_GHOST_STORIES">
+		<description>
+			<p>Reading from this Netherese book of horrifying ghost stories for 10 minutes grants advantage on a single related History check and gives the reader nightmares. You must succeed on a DC 13 Wisdom saving throw to successfully complete your next long rest.</p>
+		</description>
+		<setters>
+			<set name="keywords">advantage, history, check, wisdom, saving throw</set>
+			<set name="category">Wondrous Items</set>
+			<set name="cost" currency="gp">0</set>
+			<set name="weight" lb="0">0 lb.</set>
+			<set name="type">Wondrous Item</set>
+		</setters>
+	</element>
+</elements>
