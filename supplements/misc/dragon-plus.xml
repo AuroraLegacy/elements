@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<elements>
+	<info>
+		<name>Dragon Plus Magazine</name>
+		<update version="0.0.1">
+			<file name="dragon-plus.xml" url="https://raw.githubusercontent.com/AuroraLegacy/elements/master/supplements/misc/dragon-plus.xml" />
+		</update>
+	</info>
+	
+	<element name="Dragon+ Magazine" type="Source" source="Core" id="ID_WOTC_SOURCE_DRAGON_PLUS_MAGAZINE">
+		<description>
+			<p><strong>Meet <i>Dragon+</i>, the newest addition to your <i>Dungeons &amp; Dragons</i> library!</strong></p>
+			<p class="indent">Inside you’ll find interviews, features and comics that cover all things <i>D&amp;D</i>—whether you play with a controller, mouse and keyboard or pen and paper. Free on iOS and Android devices, you’ll be able to stay up to date on the latest Dungeons &amp; Dragons news and stories no matter where you go.</p>
+		</description>
+		<setters>
+			<set name="abbreviation">DPM</set>
+			<set name="url">https://archive.org/details/dragonplus-magazine</set>
+			<set name="image">https://raw.githubusercontent.com/AuroraLegacy/elements/master/supplements/misc/DPM.jpg</set>
+			<set name="author" abbreviation="WOTC" url="http://dnd.wizards.com">Wizards of the Coast</set>
+			<set name="official">true</set>
+			<set name="supplement">true</set>
+			<set name="release">20150401</set>
+		</setters>
+	</element>
+
+	<!--Issue 21-->
+	<element name="Minion" type="Language" source="Dragon+ Magazine" id="ID_WOTC_DPM_LANGUAGE_MINION">
+		<supports>Monster</supports>
+		<description>
+			<p>Typically spoken by minions.</p>
+		</description>
+		<setters>
+			<set name="monster">true</set>
+			<set name="speakers">Minions</set>
+			<set name="script"></set>
+			<set name="sourceUrl">https://media.wizards.com/2018/dnd/dragon/21/DRA21_minions.pdf</set>
+		</setters>
+	</element>
+
+	<!--Issue 26-->
+	<element name="Diminishing Repose" type="Spell" source="Dragon+ Magazine" id="ID_WOTC_DPM_SPELL_DIMINISHING_REPOSE">
+		<supports>Wizard, Spell Saving Throw</supports>
+		<description>
+			<p>This spell causes one Large or larger creature to be reduced in size and pacified for easier handling. The target can attempt a Wisdom saving throw to negate the spell's effect. On a failed save, the target's size is reduced to one-quarter in all dimensions, and its weight is reduced to one-sixteenth of normal. Equipment worn or held by the creature is likewise reduced in size and weight. Any item dropped by the target creature returns to normal size at once.</p>
+			<p class="indent">While so reduced, a creature has its mind and instincts transformed, imposing disadvantage on Strength saving throws, suppressing strong emotions, and putting the creature into a state of complete calm. The creature does not attack or engage in combat unless it is attacked or otherwise provoked, which ends the spell.</p>
+			<p class="indent">If powdered ruby worth at least 200 gp is used as the spell's material component instead of powdered pearl, the duration is doubled and the saving throw is made with disadvantage.</p>
+		</description>
+		<setters>
+			<set name="keywords"></set>
+			<set name="level">4</set>
+			<set name="school">Transmutation</set>
+			<set name="time">1 action</set>
+			<set name="duration">12 hours</set>
+			<set name="range">120 feet</set>
+			<set name="hasVerbalComponent">true</set>
+			<set name="hasSomaticComponent">true</set>
+			<set name="hasMaterialComponent">true</set>
+			<set name="materialComponent">a pinch of powdered pearl worth at least 50 gp</set>
+			<set name="isConcentration">false</set>
+			<set name="isRitual">false</set>
+			<set name="sourceUrl">https://media.wizards.com/2019/dnd/dragon/26/DRA26_spells.pdf</set>
+		</setters>
+	</element>
+
+	<element name="Mass Aquatic Transposition" type="Spell" source="Dragon+ Magazine" id="ID_WOTC_DPM_SPELL_MASS_AQUATIC_TRANSPOSITION">
+		<supports>Wizard</supports>
+		<description>
+			<p>This spell causes an aquatic creature and a volume of water surrounding it to be instantly teleported to a destination you select. The creature and the volume of water can be no larger than a 40-foot cube. The destination you choose must be known to you, and it must be within 20 miles of you. Your familiarity with the destination determines the success of the transposition. The DM rolls d100 and consults the table.</p>
+			<table>
+				<thead>
+					<tr><td>Familiarity</td><td>Mishap</td><td>Body of Water</td><td>Off Target</td><td>On Target</td></tr>
+				</thead>
+				<tr><td>Permanent circle</td><td>—</td><td>—</td><td>—</td><td>01–100</td></tr>
+				<tr><td>Associated object</td><td>—</td><td>—</td><td>—</td><td>01–100</td></tr>
+				<tr><td>Very familiar</td><td>01–03</td><td>04–10</td><td>11–25</td><td>26–100</td></tr>
+				<tr><td>Seen casually</td><td>01–10</td><td>11–25</td><td>26–50</td><td>50–100</td></tr>
+				<tr><td>Viewed once</td><td>01–25</td><td>26–50</td><td>51–75</td><td>76–100</td></tr>
+				<tr><td>Description</td><td>01–50</td><td>51–75</td><td>76–90</td><td>91–100</td></tr>
+				<tr><td>False destination</td><td>01–100</td><td>—</td><td>—</td><td>—</td></tr>
+			</table>
+			<p class="indent"><b><i>Familiarity.</i></b> "Permanent circle" means a permanent teleportation circle whose sigil sequence you know. "Associated object" means that you possess an object taken from the desired destination within the last six months, such as a piece of wood taken from a pier, a pebble taken from a cave, or a brick from a harbor wall. </p>
+			<p class="indent">"Very familiar" is a place you have been very often, a place you have carefully studied, or a place you can see when you cast the spell. "Seen casually" is some place you have seen more than once but with which you aren't very familiar. "Viewed once" is a place you have seen once, possibly using magic. "Description" is a place whose location and appearance you know through someone else's description, perhaps from a map.</p>
+			<p class="indent">"False destination" is a place that doesn't exist. </p>
+			<p class="indent"><b><i>On Target.</i></b> The creature and the water surrounding it appear where you want them to.</p>
+			<p class="indent"><b><i>Off Target.</i></b> The creature and the volume of water around it appear a random distance away from the destination in a random direction. Distance off target is 1d10 × 1d10 percent of the distance that was to be traveled. For example, if you tried to transpose a creature 20 miles, landed off target, and rolled a 5 and 3 on the two d10s, then the creature would be off target by 15 percent, or 3 miles. The DM determines the direction off target randomly by rolling a d8 and designating 1 as north, 2 as northeast, 3 as east, and so on around the points of the compass.</p>
+			<p class="indent"><b><i>Body of Water.</i></b> The creature ends up in a random location in the nearest natural body of water, such as a pond, river, lake, or sea.</p>
+			<p class="indent"><b><i>Mishap.</i></b> The spell's magic is badly corrupted. There is a 20 percent chance that the creature materializes at a random height directly above its point of origin. Otherwise, it materializes at a random distance and direction from the starting point, at the DM's discretion.</p>
+		</description>
+		<setters>
+			<set name="keywords"></set>
+			<set name="level">7</set>
+			<set name="school">Conjuration</set>
+			<set name="time">1 action</set>
+			<set name="duration">Instantaneous</set>
+			<set name="range">120 feet</set>
+			<set name="hasVerbalComponent">true</set>
+			<set name="hasSomaticComponent">true</set>
+			<set name="hasMaterialComponent">false</set>
+			<set name="materialComponent" />
+			<set name="isConcentration">false</set>
+			<set name="isRitual">false</set>
+			<set name="sourceUrl">https://media.wizards.com/2019/dnd/dragon/26/DRA26_spells.pdf</set>
+		</setters>
+	</element>
+
+</elements>
