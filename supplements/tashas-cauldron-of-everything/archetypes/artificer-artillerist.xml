@@ -2,7 +2,7 @@
 <elements>
 	<info>
 		<name>Artillerist Artificer Archetype</name>
-		<update version="0.0.1">
+		<update version="0.0.2">
 			<file name="artificer-artillerist.xml" url="https://raw.githubusercontent.com/AuroraLegacy/elements/master/supplements/tashas-cauldron-of-everything/archetypes/artificer-artillerist.xml" />
 		</update>
 	</info>
@@ -108,7 +108,7 @@ take an action to magically create a Small or Tiny eldritch cannon in an unoccup
 			<description>The cannon exhales fire in an adjacent 15-foot cone that you designate. Each creature in that area must make a Dexterity saving throw, taking {{flamethrower cannon:dice:amount}}d8 fire damage on a failed save or half as much damage on a successful one. The fire ignites any flammable objects in the area that aren’t being worn or carried.</description>
 		</sheet>
 		<rules>
-			<stat name="flamethrower cannon:dice:amount" value="2" />
+			<stat name="flamethrower cannon:dice:amount" value="2" bonus="base" />
 		</rules>
 	</element>
 	<element name="Force Ballista" type="Archetype Feature" source="Tasha’s Cauldron of Everything" id="ID_WOTC_TCOE_ARCHETYPE_FEATURE_ARTILLERIST_ELDRITCH_CANNON_FORCE_BALLISTA">
@@ -120,7 +120,7 @@ take an action to magically create a Small or Tiny eldritch cannon in an unoccup
 			<description>Make a ranged spell attack at one creature or object within 120 feet of it. On a hit, the target takes {{force ballista cannon:dice:amount}}d8 force damage, and if the target is a creature, it is pushed up to 5 feet away from the cannon.</description>
 		</sheet>
 		<rules>
-			<stat name="force ballista cannon:dice:amount" value="2" />
+			<stat name="force ballista cannon:dice:amount" value="2" bonus="base" />
 		</rules>
 	</element>
 	<element name="Protector" type="Archetype Feature" source="Tasha’s Cauldron of Everything" id="ID_WOTC_TCOE_ARCHETYPE_FEATURE_ARTILLERIST_ELDRITCH_CANNON_PROTECTOR">
@@ -134,7 +134,7 @@ take an action to magically create a Small or Tiny eldritch cannon in an unoccup
 		<rules>
 			<stat name="protector cannon:temporary hp" value="1" bonus="base" />
 			<stat name="protector cannon:temporary hp" value="intelligence:modifier" bonus="base" />
-			<stat name="protector cannon:dice:amount" value="1" />
+			<stat name="protector cannon:dice:amount" value="1" bonus="base" />
 		</rules>
 	</element>
 	<element name="Arcane Firearm" type="Archetype Feature" source="Tasha’s Cauldron of Everything" id="ID_WOTC_TCOE_ARCHETYPE_FEATURE_ARTILLERIST_ARCANE_FIREARM">
@@ -163,9 +163,8 @@ take an action to magically create a Small or Tiny eldritch cannon in an unoccup
 			<description>You can command the cannon to detonate if you are within 60 feet of it. Doing so destroys the cannon and forces each creature within 20 feet of it to make a Dexterity saving throw, taking 3d8 force damage on a failed save or half as much damage on a successful one.</description>
 		</sheet>
 		<rules>	
-			<stat name="flamethrower cannon:dice:amount" value="1" />
-			<stat name="force ballista cannon:dice:amount" value="1" />
-			<stat name="protector cannon:dice:amount" value="1" />
+			<stat name="flamethrower cannon:dice:amount" value="3" bonus="base" />
+			<stat name="force ballista cannon:dice:amount" value="3" bonus="base" />
 		</rules>
 	</element>
 	<element name="Fortified Position" type="Archetype Feature" source="Tasha’s Cauldron of Everything" id="ID_WOTC_TCOE_ARCHETYPE_FEATURE_ARTILLERIST_FORTIFIED_POSITION">
