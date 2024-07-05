@@ -2,7 +2,7 @@
 <elements>
 	<info>
 		<name>Half-Orc</name>
-		<update version="0.2.2">
+		<update version="0.2.3">
 			<file name="race-halforc.xml" url="https://raw.githubusercontent.com/AuroraLegacy/elements/master/core/players-handbook/races/race-halforc.xml" />
 		</update>
 	</info>
@@ -52,7 +52,7 @@
 			<select type="Ability Score Improvement" name="Custom Ability Score Improvement +1 (Half-Orc)" supports="Custom Ability Score Increase 1" requirements="!ID_WOTC_WGTE_GRANTS_DARKMARKED,!ID_INTERNAL_GRANTS_DRAGONMARK,ID_WOTC_TCOE_OPTION_CUSTOMIZED_ASI" />
 			<stat name="innate speed" value="30" bonus="base"/>
 			<grant type="Size" id="ID_SIZE_MEDIUM" />
-			<grant type="Vision" id="ID_VISION_DARKVISION" requirements="!ID_INTERNAL_GRANTS_DRAGONMARK" />
+			<grant type="Vision" id="ID_VISION_DARKVISION" requirements="!(ID_INTERNAL_FEATURE_REPLACEMENT_VISION_DARKVISION|ID_INTERNAL_GRANTS_DRAGONMARK)" />
 			<grant type="Racial Trait" id="ID_RACIAL_TRAIT_MENACING" requirements="!ID_WOTC_WGTE_GRANTS_DARKMARKED,!ID_INTERNAL_GRANTS_DRAGONMARK"/>
 			<grant type="Racial Trait" id="ID_RACIAL_TRAIT_RELENTLESS_ENDURANCE" requirements="!ID_WOTC_WGTE_GRANTS_DARKMARKED,!ID_INTERNAL_GRANTS_DRAGONMARK"/>
 			<grant type="Racial Trait" id="ID_RACIAL_TRAIT_SAVAGE_ATTACKS" requirements="!ID_WOTC_WGTE_GRANTS_DARKMARKED,!ID_INTERNAL_GRANTS_DRAGONMARK"/>
@@ -63,6 +63,7 @@
 		</rules>
 	</element>	
 	<element name="Menacing" type="Racial Trait" source="Player’s Handbook" id="ID_RACIAL_TRAIT_MENACING">
+		<requirements>!ID_INTERNAL_FEATURE_REPLACEMENT_RACE_HALFORC_MENACING</requirements>
 		<description>
 			<p>You gain proficiency in the Intimidation skill.</p>
 		</description>
@@ -75,6 +76,7 @@
 		</rules>
 	</element>
 	<element name="Relentless Endurance" type="Racial Trait" source="Player’s Handbook" id="ID_RACIAL_TRAIT_RELENTLESS_ENDURANCE">
+		<requirements>!ID_INTERNAL_FEATURE_REPLACEMENT_RACE_HALFORC_RELENTLESS_ENDURANCE</requirements>
 		<description>
 			<p>When you are reduced to 0 hit points but not killed outright, you can drop to 1 hit point instead. You can’t use this feature again until you finish a long rest.</p>
 		</description>
@@ -83,6 +85,7 @@
 		</sheet>
 	</element>
 	<element name="Savage Attacks" type="Racial Trait" source="Player’s Handbook" id="ID_RACIAL_TRAIT_SAVAGE_ATTACKS">
+		<requirements>!ID_INTERNAL_FEATURE_REPLACEMENT_RACE_HALFORC_SAVAGE_ATTACKS</requirements>
 		<description>
 			<p>When you score a critical hit with a melee weapon attack, you can roll one of the weapon’s damage dice one additional time and add it to the extra damage of the critical hit.</p>
 		</description>
@@ -90,4 +93,10 @@
 			<description>When you score a critical hit with a melee weapon attack, you can roll one of the weapon’s damage dice one additional time and add it to the extra damage of the critical hit.</description>
 		</sheet>
 	</element>
+
+	<!--Feature Replacement Grants-->
+	<element name="Darkvision Feature Replacement" type="Grants" source="Internal" id="ID_INTERNAL_FEATURE_REPLACEMENT_VISION_DARKVISION" />
+	<element name="Menacing Feature Replacement" type="Grants" source="Internal" id="ID_INTERNAL_FEATURE_REPLACEMENT_RACE_HALFORC_MENACING" />
+	<element name="Dwarven Combat Training Feature Replacement" type="Grants" source="Internal" id="ID_INTERNAL_FEATURE_REPLACEMENT_RACE_HALFORC_RELENTLESS_ENDURANCE" />
+	<element name="Dwarven Tool Proficiency Feature Replacement" type="Grants" source="Internal" id="ID_INTERNAL_FEATURE_REPLACEMENT_RACE_HALFORC_SAVAGE_ATTACKS" />
 </elements>
