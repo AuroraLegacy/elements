@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<elements>
+	<info>
+		<update version="0.0.1">
+			<file name="descent-into-the-lost-caverns-of-tsojcanth.xml" url="https://raw.githubusercontent.com/AuroraLegacy/elements/master/supplements/dnd-beyond/descent-into-the-lost-caverns-of-tsojcanth.xml" />
+		</update>
+	</info>
+
+	<element name="Descent into the Lost Caverns of Tsojcanth" type="Source" source="Core" id="ID_WOTC_SOURCE_DESCENT_INTO_THE_LOST_CAVERNS_OF_TSOJCANTH">
+		<description>
+			<p>Deep in the Yatil Mountains lie the Lost Caverns of Tsojcanth, formerly occupied by the legendary archmage Iggwilv the Witch Queen. Though Iggwilv is long gone, she is rumored to have amassed a magical hoard of unsurpassed value, a trove of such fame that scores of adventurers have perished in search of it.</p>
+			<p class="indent">This adventure is part of a yearlong celebration of Dungeons &amp; Dragons and its 50th anniversary. The adventure presented herein is an abridged, quick-play version of “The Lost Caverns of Tsojcanth,” which appears in <i>Quests from the Infinite Staircase</i>.</p>
+		</description>
+		<setters>
+			<set name="abbreviation">DLCT</set>
+			<set name="url">https://www.dndbeyond.com/claim/source/descent-into-tsojcanth</set>
+			<set name="image">https://raw.githubusercontent.com/AuroraLegacy/elements/master/supplements/dnd-beyond/DLCT.png</set>
+			<set name="author" abbreviation="WOTC" url="http://dnd.wizards.com">Wizards of the Coast, D&amp;D Beyond</set>
+			<set name="official">true</set>
+			<set name="supplement">true</set>
+			<set name="release">20240326</set>
+		</setters>
+	</element>
+
+	<element name="Demon Skin" type="Magic Item" source="Descent into the Lost Caverns of Tsojcanth" id="ID_WOTC_DLCT_MAGIC_ITEM_DEMON_SKIN">
+		<description>
+			<p>This magic armor appears as a pot of bubbling black ichor. When you attune to it, the ichor adheres to and contours to your skin, and the pot disappears. The armor can be worn under normal clothes, and it doesn’t impede bodily functions. Once you put it on, it can’t be removed unless you choose to do so or you die, at which point the pot reappears and the ichor flows back into it.</p>
+			<p class="indent">While wearing the armor, you have resistance to poison damage. The armor also doesn’t impose disadvantage on Dexterity (Stealth) checks.</p>
+		</description>
+		<setters>
+			<set name="keywords">heavy, stealth</set>
+			<set name="category">Magic Armor</set>
+			<set name="cost" currency="gp">0</set>
+			<set name="slot">body</set>
+			<set name="type" addition="any heavy">Armor</set>
+			<set name="rarity">Rare</set>
+			<set name="attunement">true</set>
+			<set name="armor">ID_INTERNAL_ARMOR_GROUP_HEAVY</set>
+			<set name="name-format">Demon Skin</set>
+		</setters>
+		<rules>
+			<grant type="Condition" id="ID_INTERNAL_CONDITION_DAMAGE_RESISTANCE_POISON" />
+			<grant type="Grants" id="ID_INTERNAL_GRANTS_IGNORE_STEALTH_DISADVANTAGE" />
+		</rules>
+	</element>
+
+	<element name="Iggwilv’s Horn" type="Magic Item" source="Descent into the Lost Caverns of Tsojcanth" id="ID_WOTC_DLCT_MAGIC_ITEM_IGGWILVS_HORN">
+		<description>
+			<p>You can use an action to blow this horn to cast one of the following spells from it: <i>Arms of Hadar</i>, <i>Fog Cloud</i>, <i>Gust of Wind</i>, or <i>Web</i>. If the spell requires a saving throw, the spell save DC is 13.</p>
+			<p class="indent">Once the horn has been used to cast a spell, it can’t be used to cast that spell again until the next dawn.</p>
+		</description>
+		<setters>
+			<set name="keywords">action, arms of hadar, fog cloud, gust of wind, web, spells, dawn</set>
+			<set name="category">Wondrous Items</set>
+			<set name="cost" currency="gp">0</set>
+			<set name="weight" lb="0">0 lb.</set>
+			<set name="type">Wondrous Item</set>
+			<set name="rarity">Rare</set>
+			<set name="attunement">true</set>
+		</setters>
+	</element>
+
+	<element name="Potion of Polychromy" type="Magic Item" source="Descent into the Lost Caverns of Tsojcanth" id="ID_WOTC_DLCT_MAGIC_ITEM_POTION_OF_POLYCHROMY">
+		<description>
+			<p>When you drink this potion, you and everything you are wearing or carrying take on a rainbow-hued appearance for 1 hour. During that time, you can use a bonus action to turn any color or combination of colors you choose. If you mimic the colors of your surroundings, your hues continually shift to match your surroundings, and you have advantage on Dexterity (Stealth) checks until you change your colors again or the potion wears off.</p>
+			<p class="indent">The potion is separated into seven brightly colored bands of immiscible liquids and has a syrupy taste.</p>
+		</description>
+		<setters>
+			<set name="keywords">stealth, advantage</set>
+			<set name="category">Potions</set>
+			<set name="weight" lb="0.5">½ lb.</set>
+			<set name="type">Potion</set>
+			<set name="rarity">Uncommon</set>
+			<set name="stackable">true</set>
+		</setters>
+	</element>
+
+	<element name="Tasha’s Creeping Keelboat" type="Magic Item" source="Descent into the Lost Caverns of Tsojcanth" id="ID_WOTC_DLCT_MAGIC_ITEM_TASHAS_CREEPING_KEELBOAT">
+		<description>
+			<p>This magic vehicle is a boat 10 feet wide and 30 feet long. It has four legs that propel it across land and water. It has a walking and swimming speed of 20 feet, but it can’t travel underwater. The boat moves according to your spoken directions while you are riding it, and creatures of your choice gain a +1 bonus to their Armor Class while on the boat.</p>
+			<p class="indent">The boat can transport up to 1,000 pounds without hindrance. It can carry up to twice this weight, but it moves at half speed if it carries more than its normal capacity.</p>
+		</description>
+		<setters>
+			<set name="keywords"></set>
+			<set name="category">Wondrous Items</set>
+			<set name="cost" currency="gp">0</set>
+			<set name="weight" lb="0" excludeEncumbrance="true">0 lb.</set>
+			<set name="type">Wondrous Item</set>
+			<set name="rarity">Very Rare</set>
+			<set name="attunement">true</set>
+		</setters>
+	</element>
+
+</elements>
