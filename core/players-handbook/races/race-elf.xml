@@ -2,7 +2,7 @@
 <elements>
 	<info>
 		<name>Elf</name>
-		<update version="0.2.3">
+		<update version="0.2.4">
 			<file name="race-elf.xml" url="https://raw.githubusercontent.com/AuroraLegacy/elements/master/core/players-handbook/races/race-elf.xml" />
 		</update>
 	</info>
@@ -53,14 +53,14 @@
 			<set name="names" type="family">Amakiir, Amastacia, Galanodel, Holimion, Ilphelkiir, Liadon, Meliamne, Nai'lo, Siannodel, Xiloscient</set>
 			<set name="names-format">{{name}} {{family}}</set>
 			<set name="height" modifier="2d10">4'6"</set>
-			<set name="weight" modifier="1d4">90 lb.</set>
+			<set name="weight" modifier="2d4">90 lb.</set>
 		</setters>
 		<rules>
 			<stat name="dexterity" value="2" requirements="!ID_UA_PSK_GRANTS_ELF_SUBRACE,!ID_WOTC_TCOE_OPTION_CUSTOMIZED_ASI" />
 			<select type="Ability Score Improvement" name="Custom Ability Score Improvement +2 (Elf)" supports="Custom Ability Score Increase 2" requirements="!ID_UA_PSK_GRANTS_ELF_SUBRACE,ID_WOTC_TCOE_OPTION_CUSTOMIZED_ASI" />
 			<stat name="innate speed" value="30" bonus="base" />
 			<grant type="Size" id="ID_SIZE_MEDIUM" />
-			<grant type="Vision" id="ID_VISION_DARKVISION" />
+			<grant type="Vision" id="ID_VISION_DARKVISION" requirements="!ID_INTERNAL_FEATURE_REPLACEMENT_VISION_DARKVISION"/>
 			<grant type="Language" id="ID_LANGUAGE_COMMON" requirements="!ID_WOTC_UA20171113_SUB_RACE_GRUGACH,!ID_WOTC_TCOE_OPTION_CUSTOMIZED_LANGUAGE" />
 			<grant type="Language" id="ID_LANGUAGE_ELVISH" requirements="!ID_WOTC_TCOE_OPTION_CUSTOMIZED_LANGUAGE" />
 			<select type="Language" name="Customized Language" supports="Custom Race Language" number="2"  requirements="ID_WOTC_TCOE_OPTION_CUSTOMIZED_LANGUAGE" />
@@ -71,6 +71,7 @@
 		</rules>
 	</element>
 	<element name="Keen Senses" type="Racial Trait" source="Player’s Handbook" id="ID_RACIAL_TRAIT_KEEN_SENSES">
+		<requirements>!ID_INTERNAL_FEATURE_REPLACEMENT_RACE_ELF_KEEN_SENSES</requirements>
 		<description>
 			<p>You have proficiency in the Perception skill.</p>
 		</description>
@@ -83,6 +84,7 @@
 		</rules>
 	</element>
 	<element name="Fey Ancestry" type="Racial Trait" source="Player’s Handbook" id="ID_RACIAL_TRAIT_FEY_ANCESTRY">
+		<requirements>!ID_INTERNAL_FEATURE_REPLACEMENT_RACE_ELF_FEY_ANCESTRY</requirements>
 		<description>
 			<p>You have advantage on saving throws against being charmed, and magic can’t put you to sleep.</p>
 		</description>
@@ -91,6 +93,7 @@
 		</sheet>
 	</element>
 	<element name="Trance" type="Racial Trait" source="Player’s Handbook" id="ID_RACIAL_TRAIT_TRANCE">
+		<requirements>!ID_INTERNAL_FEATURE_REPLACEMENT_RACE_ELF_TRANCE</requirements> 
 		<description>
 			<p>Elves don’t need to sleep. Instead, they meditate deeply, remaining semiconscious, for 4 hours a day. (The Common word for such meditation is “trance.”) While meditating, you can dream after a fashion; such dreams are actually mental exercises that have become reflexive through years of practice. After resting in this way, you gain the same benefit that a human does from 8 hours of sleep.</p>
 		</description>
@@ -274,4 +277,10 @@
 			<select type="Proficiency" name="Simple/Martial Weapon or Tool (Drow Weapon Training)" number="3" supports="Weapon||Tool" requirements="ID_WOTC_TCOE_OPTION_CUSTOMIZED_PROFICIENCY" />
 		</rules>
 	</element>
+
+	<!--Feature Replacement Grants-->
+	<element name="Darkvision Feature Replacement" type="Grants" source="Internal" id="ID_INTERNAL_FEATURE_REPLACEMENT_VISION_DARKVISION" />
+	<element name="Keen Senses Feature Replacement" type="Grants" source="Internal" id="ID_INTERNAL_FEATURE_REPLACEMENT_RACE_ELF_KEEN_SENSES" />
+	<element name="Fey Ancestry Feature Replacement" type="Grants" source="Internal" id="ID_INTERNAL_FEATURE_REPLACEMENT_RACE_ELF_FEY_ANCESTRY" />
+	<element name="Trance Feature Replacement" type="Grants" source="Internal" id="ID_INTERNAL_FEATURE_REPLACEMENT_RACE_ELF_TRANCE" />
 </elements>
