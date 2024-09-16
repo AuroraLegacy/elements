@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<elements>
+	<info>
+		<update version="0.0.2">
+			<file name="monstrous-compendium-1.xml" url="https://raw.githubusercontent.com/AuroraLegacy/elements/master/supplements/dnd-beyond/monstrous-compendium-1.xml" />
+		</update>
+	</info>
+
+	<element name="Monstrous Compendium Volume One: Spelljammer Creatures" type="Source" source="Core" id="ID_WOTC_SOURCE_MONSTROUS_COMPENDIUM_ONE">
+		<description>
+			<p></p>
+		</description>
+		<setters>
+			<set name="abbreviation">MCV1</set>
+			<set name="url">https://www.dndbeyond.com/sources/mcv1/spelljammer-creatures</set>
+			<set name="image">https://raw.githubusercontent.com/AuroraLegacy/elements/master/supplements/dnd-beyond/MCV1.png</set>
+			<set name="author" abbreviation="WOTC" url="http://dnd.wizards.com">Wizards of the Coast, D&amp;D Beyond</set>
+			<set name="official">true</set>
+			<set name="supplement">true</set>
+			<set name="release">20220421</set>
+		</setters>
+	</element>
+
+	<element name="Ziklight" type="Language" source="Monstrous Compendium Volume One: Spelljammer Creatures" id="ID_WOTC_MCV1_LANGUAGE_ZIKLIGHT">
+		<supports>Monster</supports>
+		<description>
+			<p>Typically spoken by clockwork horrors.</p>
+		</description>
+		<setters>
+			<set name="monster">true</set>
+			<set name="speakers">Clockwork Horrors</set>
+			<set name="script"></set>
+		</setters>
+	</element>
+
+	<!--Puppeteer Parasite-->
+	<element name="Puppeteer Parasite" type="Companion" source="Monstrous Compendium Volume One: Spelljammer Creatures" id="ID_WOTC_MCV1_COMPANION_PUPPETEER_PARASITE">
+		<supports>Variant Familiar</supports>
+		<description>
+			<p>A puppeteer parasite looks like a rubbery amoeba the size of a dinner plate. Its dorsal surface is soft and glossy, while its ventral surface is lined with bony hooks. The parasite uses its hooks to attach to a wall or ceiling until suitable prey passes nearby.</p>
+			<p class="indent">A parasite that comes in physical contact with a Humanoid uses its hooks to latch onto it. The parasite can then drain life energy from that creature or use it as transportation. The parasite can also impose its will on a nearby creature, forcing the creature to comply with its wishes. Puppeteer parasites like to use Humanoid thralls as bodyguards and transports.</p>
+		</description>
+		<setters>
+			<set name="strength">2</set>
+			<set name="dexterity">15</set>
+			<set name="constitution">18</set>
+			<set name="intelligence">16</set>
+			<set name="wisdom">10</set>
+			<set name="charisma">3</set>
+			<set name="ac">15 (natural armor)</set>
+			<set name="hp">71 (11d4 + 44)</set>
+			<set name="speed">10 ft., fly 30 ft. (hover)</set>
+			<set name="senses">blindsight 60 ft. (blind beyond this distance), passive Perception 12</set>
+			<set name="vulnerabilities">radiant</set>
+			<set name="resistances">fire, necrotic, poison</set>
+			<set name="conditionImmunities">charmed, frightened, poisoned</set>
+			<set name="languages">telepathy 30 ft.</set>
+			<set name="skills">Stealth +4</set>
+			<set name="saves">Dex +4, Con +6, Wis +2</set>
+			<set name="type">Aberration</set>
+			<set name="size">Tiny</set>
+			<set name="alignment">typically neutral evil</set>
+			<set name="challenge">3</set>
+			<set name="traits">ID_WOTC_MCV1_COMPANION_TRAIT_PUPPETEER_PARASITE_UNUSUAL_NATURE</set>
+			<set name="actions">ID_WOTC_MCV1_COMPANION_ACTION_PUPPETEER_PARASITE_CLING,ID_WOTC_MCV1_COMPANION_ACTION_PUPPETEER_PARASITE_CONSUME_LIFE,ID_WOTC_MCV1_COMPANION_ACTION_PUPPETEER_PARASITE_SUGGESTION</set>
+		</setters>
+		<rules>
+			<stat name="companion:ac" value="15" />
+			<stat name="companion:hp:max" value="71" bonus="base" />
+			<stat name="companion:speed" value="10" bonus="base" />
+			<stat name="companion:speed:fly" value="30" bonus="base" />
+			<stat name="companion:dexterity:save:proficiency" value="companion:proficiency" bonus="base" />
+			<stat name="companion:constitution:save:proficiency" value="companion:proficiency" bonus="base" />
+			<stat name="companion:wisdom:save:proficiency" value="companion:proficiency" bonus="base" />
+			<stat name="companion:stealth:proficiency" value="companion:proficiency" bonus="base" />
+		</rules>
+	</element>
+	<element name="Unusual Nature" type="Companion Trait" source="Monstrous Compendium Volume One: Spelljammer Creatures" id="ID_WOTC_MCV1_COMPANION_TRAIT_PUPPETEER_PARASITE_UNUSUAL_NATURE">
+		<description>
+			<p>The parasite doesn’t require air or sleep.</p>
+		</description>
+		<sheet>
+			<description>The parasite doesn’t require air or sleep.</description>
+		</sheet>
+	</element>
+	<element name="Cling" type="Companion Action" source="Monstrous Compendium Volume One: Spelljammer Creatures" id="ID_WOTC_MCV1_COMPANION_ACTION_PUPPETEER_PARASITE_CLING">
+		<description>
+			<p><i>Melee Weapon Attack:</i> +4 to hit, reach 5 ft., one creature. <i>Hit:</i> 12 (3d6 + 2) necrotic damage, and the parasite attaches to the target. While attached, the parasite can’t make Cling attacks. The parasite can detach itself by spending 5 feet of its movement. As an action, a creature within reach of the parasite can try to detach it, doing so with a successful DC 14 Strength check.</p>
+		</description>
+		<sheet>
+			<description>Melee Weapon Attack: +4 to hit, reach 5 ft., one creature. Hit: 12 (3d6 + 2) necrotic damage, and the parasite attaches to the target. While attached, the parasite can’t make Cling attacks. The parasite can detach itself by spending 5 feet of its movement. As an action, a creature within reach of the parasite can try to detach it, doing so with a successful DC 14 Strength check.</description>
+		</sheet>
+	</element>
+	<element name="Consume Life" type="Companion Action" source="Monstrous Compendium Volume One: Spelljammer Creatures" id="ID_WOTC_MCV1_COMPANION_ACTION_PUPPETEER_PARASITE_CONSUME_LIFE">
+		<description>
+			<p>The parasite deals 12 (3d6 + 2) necrotic damage to one creature it is physically attached to, provided that creature isn’t a Construct or an Undead. The parasite regains hit points equal to the damage taken.</p>
+		</description>
+		<sheet>
+			<description>The parasite deals 12 (3d6 + 2) necrotic damage to one creature it is physically attached to, provided that creature isn’t a Construct or an Undead. The parasite regains hit points equal to the damage taken.</description>
+		</sheet>
+	</element>
+	<element name="Suggestion (Psionics; 1/Day, Bonus Action)" type="Companion Action" source="Monstrous Compendium Volume One: Spelljammer Creatures" id="ID_WOTC_MCV1_COMPANION_ACTION_PUPPETEER_PARASITE_SUGGESTION">
+		<description>
+			<p>The parasite casts the <i>suggestion</i> spell, requiring no spell components and using Intelligence as the spellcasting ability (spell save DC 13).</p>
+		</description>
+		<sheet alt="Suggestion" usage="Bonus Action, 1/Day">
+			<description>The parasite casts the suggestion spell, requiring no spell components and using Intelligence as the spellcasting ability (spell save DC 13).</description>
+		</sheet>
+	</element>
+
+</elements>

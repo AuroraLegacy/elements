@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<elements>
+	<info>
+		<update version="0.0.1">
+			<file name="monstrous-compendium-2.xml" url="https://raw.githubusercontent.com/AuroraLegacy/elements/master/supplements/dnd-beyond/monstrous-compendium-2.xml" />
+		</update>
+	</info>
+
+	<element name="Monstrous Compendium Volume Two: Dragonlance Monsters" type="Source" source="Core" id="ID_WOTC_SOURCE_MONSTROUS_COMPENDIUM_TWO">
+		<description>
+			<p></p>
+		</description>
+		<setters>
+			<set name="abbreviation">MCV2</set>
+			<set name="url">https://www.dndbeyond.com/claim/source/mcv2</set>
+			<set name="image">https://raw.githubusercontent.com/AuroraLegacy/elements/master/supplements/dnd-beyond/MCV2.png</set>
+			<set name="author" abbreviation="WOTC" url="http://dnd.wizards.com">Wizards of the Coast, D&amp;D Beyond</set>
+			<set name="official">true</set>
+			<set name="supplement">true</set>
+			<set name="release">20221205</set>
+		</setters>
+	</element>
+	
+	<element name="Nightbringer" type="Magic Item" source="Monstrous Compendium Volume Two: Dragonlance Monsters" id="ID_WOTC_MCV2_MAGIC_ITEM_NIGHTBRINGER">
+		<description>
+			<p>This heavy mace has a dark oaken handle and a head of blackened steel trimmed with gold. In combat, the mace’s head is wreathed in inky black energy.</p>
+			<p class="indent">You gain a +3 bonus to attack and damage rolls made with this weapon. When you hit with an attack roll using it, the target takes an additional 4d4 radiant damage.</p>
+			<p class="indent">If you have an evil alignment, you also gain the following benefits when attuned to Nightbringer:</p>
+			<p class="indent"><strong><em>Blessing of the Dragon Queen.</em></strong> You are immune to the charmed and frightened conditions, and you gain immunity to one of the following damage types (choose when you attune to the weapon): acid, cold, fire, lightning, or poison.</p>
+			<p class="indent"><strong><em>Eye of Midnight.</em></strong> You have darkvision with a range of 60 feet. If you already have darkvision, its range increases by 60 feet.</p>
+			<p class="indent"><strong><em>Midnight Shroud.</em></strong> The weapon has 6 charges. When you hit a creature with an attack using this weapon, you can expend one charge to force the creature to make a DC 20 Constitution saving throw. On a failed save, the creature is blinded until the start of your next turn. The weapon regains 1d6 expended charges daily at dawn.</p>
+		</description>
+		<setters>
+			<set name="keywords">mace, attack, damage, evil, immunity, charmed, frightened, condition, acid, cold, fire, lightning, poison, darkvision, charges, constitution, save, saving throw, blinded</set>
+			<set name="category">Magic Weapons</set>
+			<set name="cost" currency="gp">0</set>
+			<set name="type" addition="mace">Weapon</set>
+			<set name="attunement">true</set>
+			<set name="rarity">Legendary</set>
+			<set name="enhancement">3</set>
+			<set name="weapon">ID_INTERNAL_WEAPON_GROUP_MACES</set>
+		</setters>
+		<rules>
+			<grant type="Vision" id="ID_VISION_LESSER_DARKVISION" requirements="ID_ALIGNMENT_LAWFUL_EVIL|ID_ALIGNMENT_NEUTRAL_EVIL|ID_ALIGNMENT_CHAOTIC_EVIL"/>
+			<stat name="darkvision:range" value="60" requirements="ID_ALIGNMENT_LAWFUL_EVIL|ID_ALIGNMENT_NEUTRAL_EVIL|ID_ALIGNMENT_CHAOTIC_EVIL"/>
+			<select type="Class Feature" name="Damage Immunity (Nightbringer)" supports="ID_WOTC_MCV2_MAGIC_ITEM_NIGHTBRINGER_ACID|ID_WOTC_MCV2_MAGIC_ITEM_NIGHTBRINGER_COLD|ID_WOTC_MCV2_MAGIC_ITEM_NIGHTBRINGER_FIRE|ID_WOTC_MCV2_MAGIC_ITEM_NIGHTBRINGER_LIGHTNING|ID_WOTC_MCV2_MAGIC_ITEM_NIGHTBRINGER_POISON" requirements="ID_ALIGNMENT_LAWFUL_EVIL|ID_ALIGNMENT_NEUTRAL_EVIL|ID_ALIGNMENT_CHAOTIC_EVIL"/>
+		</rules>
+	</element>
+	<element name="Acid" type="Class Feature" source="Internal" id="ID_WOTC_MCV2_MAGIC_ITEM_NIGHTBRINGER_ACID">
+		<compendium display="false" />
+		<description>
+			<p>You gain immunity to acid damage.</p>
+		</description>
+		<sheet display="false"/>
+		<rules>
+			<grant type="Condition" id="ID_INTERNAL_CONDITION_DAMAGE_IMMUNITY_ACID" />
+		</rules>
+	</element>
+	<element name="Cold" type="Class Feature" source="Internal" id="ID_WOTC_MCV2_MAGIC_ITEM_NIGHTBRINGER_COLD">
+		<compendium display="false" />
+		<description>
+			<p>You gain immunity to cold damage.</p>
+		</description>
+		<sheet display="false"/>
+		<rules>
+			<grant type="Condition" id="ID_INTERNAL_CONDITION_DAMAGE_IMMUNITY_COLD" />
+		</rules>
+	</element>
+	<element name="Fire" type="Class Feature" source="Internal" id="ID_WOTC_MCV2_MAGIC_ITEM_NIGHTBRINGER_FIRE">
+		<compendium display="false" />
+		<description>
+			<p>You gain immunity to fire damage.</p>
+		</description>
+		<sheet display="false"/>
+		<rules>
+			<grant type="Condition" id="ID_INTERNAL_CONDITION_DAMAGE_IMMUNITY_FIRE" />
+		</rules>
+	</element>
+	<element name="Lightning" type="Class Feature" source="Internal" id="ID_WOTC_MCV2_MAGIC_ITEM_NIGHTBRINGER_LIGHTNING">
+		<compendium display="false" />
+		<description>
+			<p>You gain immunity to lightning damage.</p>
+		</description>
+		<sheet display="false"/>
+		<rules>
+			<grant type="Condition" id="ID_INTERNAL_CONDITION_DAMAGE_IMMUNITY_LIGHTNING" />
+		</rules>
+	</element>
+	<element name="Poison" type="Class Feature" source="Internal" id="ID_WOTC_MCV2_MAGIC_ITEM_NIGHTBRINGER_POISON">
+		<compendium display="false" />
+		<description>
+			<p>You gain immunity to poison damage.</p>
+		</description>
+		<sheet display="false"/>
+		<rules>
+			<grant type="Condition" id="ID_INTERNAL_CONDITION_DAMAGE_IMMUNITY_POISON" />
+		</rules>
+	</element>
+
+
+</elements>

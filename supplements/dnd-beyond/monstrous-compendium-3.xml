@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<elements>
+	<info>
+		<update version="0.0.1">
+			<file name="monstrous-compendium-3.xml" url="https://raw.githubusercontent.com/AuroraLegacy/elements/master/supplements/dnd-beyond/monstrous-compendium-3.xml" />
+		</update>
+	</info>
+
+	<element name="Monstrous Compendium Volume Three: Minecraft Creatures" type="Source" source="Core" id="ID_WOTC_SOURCE_MONSTROUS_COMPENDIUM_THREE">
+		<description>
+			<p>Minecraft creepers have come to D&amp;D, and they’re eager to detonate at your next session. This supplement brings five iconic mobs from the Minecraft game to D&amp;D, including the blaze, creeper, ender dragon, enderman, and wolf of the overworld.</p>
+		</description>
+		<setters>
+			<set name="abbreviation">MCV3</set>
+			<set name="url">https://www.dndbeyond.com/claim/source/minecraft-creatures-monstrous-compendium</set>
+			<set name="image">https://raw.githubusercontent.com/AuroraLegacy/elements/master/supplements/dnd-beyond/MCV3.png</set>
+			<set name="author" abbreviation="WOTC" url="http://dnd.wizards.com">Wizards of the Coast, Mojang Studios, D&amp;D Beyond</set>
+			<set name="official">true</set>
+			<set name="supplement">true</set>
+			<set name="release">20230328</set>
+		</setters>
+	</element>
+
+	<element name="Endspeech" type="Language" source="Monstrous Compendium Volume Three: Minecraft Creatures" id="ID_WOTC_MCV3_LANGUAGE_ENDSPEECH">
+		<supports>Monster</supports>
+		<description>
+			<p>Typically spoken by endermen.</p>
+		</description>
+		<setters>
+			<set name="monster">true</set>
+			<set name="speakers">Endermen</set>
+			<set name="script"></set>
+		</setters>
+	</element>
+
+	<element name="End Crystal" type="Magic Item" source="Monstrous Compendium Volume Three: Minecraft Creatures" id="ID_WOTC_MCV3_MAGIC_ITEM_END_CRYSTAL">
+		<description>
+			<p>An <i>End crystal</i> is a Large object that has Armor Class 11; 30 hit points; vulnerability to bludgeoning and thunder damage; resistance to piercing and slashing damage; and immunity to poison and psychic damage. When a crystal is destroyed, it explodes in a 20-foot-radius sphere of destructive energy. Any creature in that area must make a DC 15 Dexterity saving throw, taking 21 (6d6) force damage on a failed save, or half as much damage on a successful one.</p>
+		</description>
+		<setters>
+			<set name="keywords">dexterity, save, saving throw, force, damage</set>
+			<set name="category">Wondrous Items</set>
+			<set name="cost" currency="gp">0</set>
+			<set name="weight" lb="0">0 lb.</set>
+			<set name="type">Wondrous Item</set>
+			<set name="rarity">Unknown</set>
+		</setters>
+	</element>
+
+	<element name="Ender Pearl" type="Magic Item" source="Monstrous Compendium Volume Three: Minecraft Creatures" id="ID_WOTC_MCV3_MAGIC_ITEM_ENDER_PEARL">
+		<description>
+			<p>A creature can throw the pearl up to 60 feet; if the pearl lands in an unoccupied space big enough to contain the creature, the creature teleports to that space, along with any equipment it is wearing or carrying, and the pearl disappears.</p>
+		</description>
+		<setters>
+			<set name="keywords">teleport</set>
+			<set name="category">Wondrous Items</set>
+			<set name="cost" currency="gp">500</set>
+			<set name="weight" lb="0">0 lb.</set>
+			<set name="type">Wondrous Item</set>
+			<set name="rarity">Unknown</set>
+		</setters>
+	</element>
+
+	<element name="Wolf of the Overworld" type="Companion" source="Monstrous Compendium Volume Three: Minecraft Creatures" id="ID_WOTC_MCV3_COMPANION_WOLF_OF_THE_OVERWORLD">
+		<description />
+		<setters>
+			<set name="size">Medium</set>
+			<set name="type">Beast</set>
+			<set name="alignment">unaligned</set>
+			<set name="ac">13 (natural armor)</set>
+			<set name="hp">11 (2d8+2)</set>
+			<set name="speed">40 ft.</set>
+			<set name="strength">12</set>
+			<set name="dexterity">15</set>
+			<set name="constitution">12</set>
+			<set name="intelligence">3</set>
+			<set name="wisdom">12</set>
+			<set name="charisma">6</set>
+			<set name="skills">Perception +5, Stealth +4</set>
+			<set name="languages">—</set>
+			<set name="challenge">1/4</set>
+			<set name="traits">ID_WOTC_MCV3_COMPANION_TRAIT_WOLF_OF_THE_OVERWORLD_PACK_TACTICS</set>
+			<set name="actions">ID_WOTC_MCV3_COMPANION_ACTION_WOLF_OF_THE_OVERWORLD_BITE</set>
+		</setters>
+		<rules>
+			<stat name="companion:ac" value="13" />
+			<stat name="companion:hp:max" value="11" bonus="base" />
+			<stat name="companion:speed" value="40" bonus="base" />
+			<stat name="companion:perception:proficiency" value="companion:proficiency" bonus="base" />
+			<stat name="companion:perception:proficiency" value="companion:proficiency" bonus="double" />
+			<stat name="companion:stealth:proficiency" value="companion:proficiency" bonus="base" />
+		</rules>
+	</element>
+	<element name="Pack Tactics" type="Companion Trait" source="Monstrous Compendium Volume Three: Minecraft Creatures" id="ID_WOTC_MCV3_COMPANION_TRAIT_WOLF_OF_THE_OVERWORLD_PACK_TACTICS">
+		<description>
+			<p>The wolf has advantage on attack rolls against a creature if at least one of the wolf’s allies is within 5 feet of the creature and the ally doesn’t have the incapacitated condition.</p>
+		</description>
+		<sheet>
+			<description>The wolf has advantage on attack rolls against a creature if at least one of the wolf’s allies is within 5 feet of the creature and the ally doesn’t have the incapacitated condition.</description>
+		</sheet>
+	</element>
+	<element name="Bite" type="Companion Action" source="Monstrous Compendium Volume Three: Minecraft Creatures" id="ID_WOTC_MCV3_COMPANION_ACTION_WOLF_OF_THE_OVERWORLD_BITE">
+		<description>
+			<p><i>Melee Weapon Attack:</i> +4 to hit; reach 5 ft., one target. <i>Hit:</i> 7 (2d4 + 2) piercing damage. If the target is a creature, it must succeed on a DC 11 Strength saving throw or have the prone condition.</p>
+		</description>
+		<sheet>
+			<description>Melee Weapon Attack: +4 to hit; reach 5 ft., one target. Hit: 7 (2d4 + 2) piercing damage. If the target is a creature, it must succeed on a DC 11 Strength saving throw or have the prone condition.</description>
+		</sheet>
+	</element>
+
+</elements>
