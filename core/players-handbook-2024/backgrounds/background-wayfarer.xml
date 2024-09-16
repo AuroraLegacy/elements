@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<elements>
+	<info>
+		<name>Wayfarer</name>
+		<description>Wayfarer Background</description>
+		<author url="http://dnd.wizards.com/products/tabletop-games/rpg-products/rpg_playershandbook">Wizards of the Coast</author>
+		<update version="0.0.1">
+			<file name="background-wayfarer.xml" url="https://raw.githubusercontent.com/AuroraLegacy/elements/master/core/players-handbook-2024/backgrounds/background-wayfarer.xml" />
+		</update>
+	</info>
+
+	<element name="Wayfarer" type="Background" source="Player’s Handbook 2024" id="ID_WOTC_PHB24_BACKGROUND_WAYFARER">
+		<description>
+			<table>
+				<tr><td><b>Ability Scores:</b></td><td> Dexterity, Wisdom, Charisma</td></tr>
+				<tr><td><b>Feat:</b> </td><td> Lucky (see chapter 5)</td></tr>
+				<tr><td><b>Skill Proficiencies:</b></td><td> : Insight and Stealth</td></tr>
+				<tr><td><b>Tool Proficiency:</b></td><td> Thieves' Tools</td></tr>
+				<tr><td><b>Equipment:</b></td><td> <i>Choose A or B:</i> (A) 2 Daggers, Thieves' Tools, Gaming Set (any), Bedroll, 2 Pouches, Traveler's Clothes, 16 GP; or (B) 50 GP</td></tr>
+			</table>
+			<p>You grew up on the streets surrounded by similarly ill-fated castoffs, a few of them friends and a few of them rivals. You slept where you could and did odd jobs for food. At times, when the hunger became unbearable, you resorted to theft.Still, you never lost your pride and never abandoned hope. Fate is not yet finished with you.</p>
+		</description>
+		<rules>
+			<grant type="Proficiency" id="ID_WOTC_PHB24_PROFICIENCY_SKILL_INSIGHT" />
+			<grant type="Proficiency" id="ID_WOTC_PHB24_PROFICIENCY_SKILL_STEALTH" /> 
+			<grant type="Grants" id="ID_INTERNAL_GRANTS_BACKGROUND_ASI" />		<!--
+			<grant type="Feat" id="_________" />-->
+			<grant type="Proficiency" id="ID_WOTC_PHB24_PROFICIENCY_TOOL_PROFICIENCY_THIEVES_TOOLS" />	
+			<select type="Ability Score Improvement" name="Ability Score Improvement Option (Wayfarer)" supports="Custom Ability Score Improvement Option" />		
+		</rules>
+	</element>
+
+	<append id="ID_WOTC_ASI_ABILITY_SCORE_IMPROVEMENT_OPTION_1">
+		<rules>
+            <select type="Ability Score Improvement" name="Custom Ability Score Improvement +2" supports="ID_WOTC_TCOE_OPTION_CUSTOMIZED_ASI_DEXTERITY_INCREASE_2|ID_WOTC_TCOE_OPTION_CUSTOMIZED_ASI_WISDOM_INCREASE_2|ID_WOTC_TCOE_OPTION_CUSTOMIZED_ASI_CHARISMA_INCREASE_2" requirements="ID_WOTC_PHB24_BACKGROUND_WAYFARER"/>
+            <select type="Ability Score Improvement" name="Custom Ability Score Improvement +1" supports="ID_WOTC_TCOE_OPTION_CUSTOMIZED_ASI_DEXTERITY_INCREASE_1|ID_WOTC_TCOE_OPTION_CUSTOMIZED_ASI_WISDOM_INCREASE_1|ID_WOTC_TCOE_OPTION_CUSTOMIZED_ASI_CHARISMA_INCREASE_1" requirements="ID_WOTC_PHB24_BACKGROUND_WAYFARER"/>
+		</rules>
+	</append>
+	<append id="ID_WOTC_ASI_ABILITY_SCORE_IMPROVEMENT_OPTION_2">
+		<rules>
+			<select type="Ability Score Improvement" name="Custom Ability Score Improvement +1" number="3" supports="ID_WOTC_TCOE_OPTION_CUSTOMIZED_ASI_DEXTERITY_INCREASE_1|ID_WOTC_TCOE_OPTION_CUSTOMIZED_ASI_WISDOM_INCREASE_1|ID_WOTC_TCOE_OPTION_CUSTOMIZED_ASI_CHARISMA_INCREASE_1" requirements="ID_WOTC_PHB24_BACKGROUND_WAYFARER"/>
+		</rules>
+	</append>
+
+</elements>
