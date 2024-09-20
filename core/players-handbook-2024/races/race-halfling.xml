@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<elements>
+	<info>
+		<name>Halfling</name>
+		<description>The Halfling species from the Player’s Handbook (2024).</description>
+		<author url="http://dnd.wizards.com/products/tabletop-games/rpg-products/rpg_playershandbook">Wizards of the Coast</author>
+		<update version="0.0.1">
+			<file name="race-halfling.xml" url="https://raw.githubusercontent.com/AuroraLegacy/elements/master/core/players-handbook-2024/races/race-halfling.xml" />
+		</update>
+	</info>
+	
+	<element name="Halfling" type="Race" source="Player’s Handbook (2024)" id="ID_WOTC_PHB24_RACE_HALFLING">
+		<description>
+			<p>Cherished and guided by gods who value life, home, and hearth, halflings gravitate toward bucolic havens where family and community help shape their lives. That said, many halflings possess a brave and adventurous spirit that leads them on journeys of discovery, affording them the chance to explore a bigger world and make new friends along the way. Their size—similar to that of a human child—helps them pass through crowds unnoticed and slip through tight spaces.</p>
+			<p class="indent">Anyone who has spent time around halflings, particularly halfling adventurers, has likely witnessed the storied “luck of the halflings” in action. When a halfling is in mortal danger, an unseen force seems to intervene on the halfling’s behalf. Many halflings believe in the power of luck, and they attribute their unusual gift to one or more of their benevolent gods, including Yondalla, Brandobaris, and Charmalaine. The same gift might contribute to their robust life spans (about 150 years).</p>
+			<p class="indent">Halfling communities come in all varieties. For every sequestered shire tucked away in an unspoiled part of the world, there’s a crime syndicate like the Boromar Clan in the Eberron setting or a territorial mob of halflings like those in the Dark Sun setting.</p>
+			<p class="indent">Halflings who prefer to live underground are sometimes called strongheart halflings or stouts. Nomadic halflings, as well as those who live among humans and other tall folk, are sometimes called lightfoot halflings or tallfellows.</p>
+			
+			<h4>Halfling Traits</h4>
+			<p style="margin-top:15px"><strong><em>Creature Type:</em></strong> Humanoid</p>
+			<p><strong><em>Size:</em></strong> Small (about 2–3 feet tall)</p>
+			<p><strong><em>Speed:</em></strong> 30 feet</p>
+			
+			<p>As a Halfling, you have these special traits.</p>
+			<p class="indent"><strong><em>Brave.</em></strong> You have Advantage on saving throws you make to avoid or end the Frightened condition.</p> 
+			<p class="indent"><strong><em>Halfling Nimbleness.</em></strong> You can move through the space of any creature that is of a size larger than you, but you can't stop in the same space.</p> 
+			<p class="indent"><strong><em>Luck.</em></strong> When you roll a 1 on the d20 of a D20 Test, you can reroll the die, and you must use the new roll.</p> 
+			<p class="indent"><strong><em>Naturally Stealthy.</em></strong> You can take the Hide action even when you are obscured only by a creature that is at least one size larger than you.</p> 
+		</description>
+		<sheet display="false" />
+		<rules>
+			<grant type="Grants" id="ID_INTERNAL_GRANT_RACE_HALFLING" />
+			<select type="Ability Score Improvement" name="Ability Score Improvement Option (Halfling)" supports="Custom Ability Score Improvement Option" requirements="!ID_INTERNAL_GRANTS_BACKGROUND_ASI" />
+			<grant type="Size" id="ID_SIZE_SMALL" />
+			<stat name="innate speed" value="30" bonus="base" />
+
+			<grant type="Language" id="ID_LANGUAGE_COMMON" requirements="!ID_WOTC_TCOE_OPTION_CUSTOMIZED_LANGUAGE" />
+			<select type="Language" name="Customized Language (Halfling)" supports="Custom Race Language" requirements="ID_WOTC_TCOE_OPTION_CUSTOMIZED_LANGUAGE" />
+			<select type="Language" name="Language (Halfling)" supports="Standard||Exotic" number="2" />
+
+			<grant type="Racial Trait" id="ID_WOTC_PHB24_RACIAL_TRAIT_HALFLING_BRAVE" requirements="!ID_WOTC_PHB24_RACIAL_TRAIT_REPLACEMENT_HALFLING_BRAVE" />
+			<grant type="Racial Trait" id="ID_WOTC_PHB24_RACIAL_TRAIT_HALFLING_HALFLING_NIMBLENESS" requirements="!ID_WOTC_PHB24_RACIAL_TRAIT_REPLACEMENT_HALFLING_HALFLING_NIMBLENESS" />
+			<grant type="Racial Trait" id="ID_WOTC_PHB24_RACIAL_TRAIT_HALFLING_LUCK" requirements="!ID_WOTC_PHB24_RACIAL_TRAIT_REPLACEMENT_HALFLING_LUCK" />
+			<grant type="Racial Trait" id="ID_WOTC_PHB24_RACIAL_TRAIT_NATURALLY_STEALTHY" requirements="!ID_WOTC_PHB24_RACIAL_TRAIT_REPLACEMENT_HALFLING_NATURALLY_STEALTHY" />
+		</rules>
+	</element>
+
+	<element name="Brave" type="Racial Trait" source="Player’s Handbook (2024)" id="ID_WOTC_PHB24_RACIAL_TRAIT_HALFLING_BRAVE">
+		<description>
+			<p>You have Advantage on saving throws you make to avoid or end the Frightened condition.</p> 
+		</description>
+		<sheet>
+			<description>You have Advantage on saving throws you make to avoid or end the Frightened condition.</description>
+		</sheet>
+	</element>
+
+	<element name="Halfling Nimbleness" type="Racial Trait" source="Player’s Handbook (2024)" id="ID_WOTC_PHB24_RACIAL_TRAIT_HALFLING_HALFLING_NIMBLENESS">
+		<description>
+			<p>You can move through the space of any creature that is of a size larger than you, but you can't stop in the same space.</p> 
+		</description>
+		<sheet>
+			<description>You can move through the space of any creature that is of a size larger than you, but you can't stop in the same space.</description>
+		</sheet>
+	</element>
+
+	<element name="Luck" type="Racial Trait" source="Player’s Handbook (2024)" id="ID_WOTC_PHB24_RACIAL_TRAIT_HALFLING_LUCK">
+		<description>
+			<p>When you roll a 1 on the d20 of a D20 Test, you can reroll the die, and you must use the new roll.</p> 
+		</description>
+		<sheet>
+			<description>When you roll a 1 on the d20 of a D20 Test, you can reroll the die, and you must use the new roll.</description>
+		</sheet>
+	</element>
+
+	<element name="Naturally Stealthy" type="Racial Trait" source="Player’s Handbook (2024)" id="ID_WOTC_PHB24_RACIAL_TRAIT_HALFLING_NATURALLY_STEALTHY">
+		<description>
+			<p>You can take the Hide action even when you are obscured only by a creature that is at least one size larger than you.</p> 
+		</description>
+		<sheet>
+			<description>You can take the Hide action even when you are obscured only by a creature that is at least one size larger than you.</description>
+		</sheet>
+	</element>
+
+	<!--racial trait replacement grants-->
+	<element name="Brave Replacement" type="Grants" source="Internal" id="ID_WOTC_PHB24_RACIAL_TRAIT_REPLACEMENT_HALFLING_BRAVE" />
+	<element name="Halfling Nimbleness Replacement" type="Grants" source="Internal" id="ID_WOTC_PHB24_RACIAL_TRAIT_REPLACEMENT_HALFLING_HALFLING_NIMBLENESS" />
+	<element name="Luck Replacement" type="Grants" source="Internal" id="ID_WOTC_PHB24_RACIAL_TRAIT_REPLACEMENT_HALFLING_LUCK" />
+	<element name="Naturally Stealthy Replacement" type="Grants" source="Internal" id="ID_WOTC_PHB24_RACIAL_TRAIT_REPLACEMENT_HALFLING_NATURALLY_STEALTHY" />
+</elements>
