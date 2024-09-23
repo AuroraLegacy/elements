@@ -4,7 +4,7 @@
 		<name>Artisan</name>
 		<description>Artisan Background</description>
 		<author url="http://dnd.wizards.com/products/tabletop-games/rpg-products/rpg_playershandbook">Wizards of the Coast</author>
-		<update version="0.0.1">
+		<update version="0.0.2">
 			<file name="background-artisan.xml" url="https://raw.githubusercontent.com/AuroraLegacy/elements/master/core/players-handbook-2024/backgrounds/background-artisan.xml" />
 		</update>
 	</info>
@@ -26,20 +26,33 @@
 			<grant type="Grants" id="ID_INTERNAL_GRANTS_BACKGROUND_ASI" />		<!--
 			<grant type="Feat" id="_________" />-->
 			<select type="Proficiency" name="Tool Proficiency (Artisan)" supports="Tool, Artisan tools" />
-			<select type="Ability Score Improvement" name="Ability Score Improvement Option (Artisan)" supports="Custom Ability Score Improvement Option" />		
+			<select type="Ability Score Improvement" name="Ability Score Improvement Option (Artisan)" supports="ID_WOTC_PHB24_ABILITY_SCORE_IMPROVEMENT_ARTISAN_OPTION_1|ID_WOTC_PHB24_ABILITY_SCORE_IMPROVEMENT_ARTISAN_OPTION_2" />		
 		</rules>
 	</element>
 
-
-	<append id="ID_WOTC_ASI_ABILITY_SCORE_IMPROVEMENT_OPTION_1">
+	<element name="Ability Score Improvement +2, +1" type="Ability Score Improvement" source="Player’s Handbook 2024" id="ID_WOTC_PHB24_ABILITY_SCORE_IMPROVEMENT_ARTISAN_OPTION_1">
+		<compendium display="false" />
+		<description>
+			<p>You can increase one of the scores by 2 and increase a different score by 1.</p>
+		</description>
+		<sheet display="false" />
 		<rules>
             <select type="Ability Score Improvement" name="Custom Ability Score Improvement +2" supports="ID_WOTC_TCOE_OPTION_CUSTOMIZED_ASI_STRENGTH_INCREASE_2|ID_WOTC_TCOE_OPTION_CUSTOMIZED_ASI_DEXTERITY_INCREASE_2|ID_WOTC_TCOE_OPTION_CUSTOMIZED_ASI_INTELLIGENCE_INCREASE_2" requirements="ID_WOTC_PHB24_BACKGROUND_ARTISAN"/>
             <select type="Ability Score Improvement" name="Custom Ability Score Improvement +1" supports="ID_WOTC_TCOE_OPTION_CUSTOMIZED_ASI_STRENGTH_INCREASE_1|ID_WOTC_TCOE_OPTION_CUSTOMIZED_ASI_DEXTERITY_INCREASE_1|ID_WOTC_TCOE_OPTION_CUSTOMIZED_ASI_INTELLIGENCE_INCREASE_1" requirements="ID_WOTC_PHB24_BACKGROUND_ARTISAN"/>
 		</rules>
-	</append>
-	<append id="ID_WOTC_ASI_ABILITY_SCORE_IMPROVEMENT_OPTION_2">
+	</element>
+
+	<element name="Ability Score Improvement +1, +1, +1" type="Ability Score Improvement" source="Player’s Handbook 2024" id="ID_WOTC_PHB24_ABILITY_SCORE_IMPROVEMENT_ARTISAN_OPTION_2">
+		<compendium display="false" />
+		<description>
+			<p>You can increase three different scores by 1.</p>
+		</description>
+		<sheet display="false" />
 		<rules>
-			<select type="Ability Score Improvement" name="Custom Ability Score Improvement +1" number="3" supports="ID_WOTC_TCOE_OPTION_CUSTOMIZED_ASI_STRENGTH_INCREASE_1|ID_WOTC_TCOE_OPTION_CUSTOMIZED_ASI_DEXTERITY_INCREASE_1|ID_WOTC_TCOE_OPTION_CUSTOMIZED_ASI_INTELLIGENCE_INCREASE_1" requirements="ID_WOTC_PHB24_BACKGROUND_ARTISAN"/>
+			<stat name="strenght" value="1" alt="Ability Score Increase (Artisan)" />
+			<stat name="dexterity" value="1" alt="Ability Score Increase (Artisan)" />
+			<stat name="intelligence" value="1" alt="Ability Score Increase (Artisan)" />		
 		</rules>
-	</append>
+	</element>
+	
 </elements>

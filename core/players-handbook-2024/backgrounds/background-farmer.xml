@@ -4,7 +4,7 @@
 		<name>Farmer</name>
 		<description>Farmer Background</description>
 		<author url="http://dnd.wizards.com/products/tabletop-games/rpg-products/rpg_playershandbook">Wizards of the Coast</author>
-		<update version="0.0.1">
+		<update version="0.0.2">
 			<file name="background-farmer.xml" url="https://raw.githubusercontent.com/AuroraLegacy/elements/master/core/players-handbook-2024/backgrounds/background-farmer.xml" />
 		</update>
 	</info>
@@ -26,20 +26,33 @@
 			<grant type="Grants" id="ID_INTERNAL_GRANTS_BACKGROUND_ASI" />		<!--
 			<grant type="Feat" id="_________" />-->
 			<grant type="Proficiency" id="ID_WOTC_PHB24_PROFICIENCY_TOOL_PROFICIENCY_CARPENTERS_TOOLS" />	
-			<select type="Ability Score Improvement" name="Ability Score Improvement Option (Farmer)" supports="Custom Ability Score Improvement Option" />		
+			<select type="Ability Score Improvement" name="Ability Score Improvement Option (Farmer)" supports="ID_WOTC_PHB24_ABILITY_SCORE_IMPROVEMENT_FARMER_OPTION_1|ID_WOTC_PHB24_ABILITY_SCORE_IMPROVEMENT_FARMER_OPTION_2" />		
 		</rules>
 	</element>
 
-	<append id="ID_WOTC_ASI_ABILITY_SCORE_IMPROVEMENT_OPTION_1">
+	<element name="Ability Score Improvement +2, +1" type="Ability Score Improvement" source="Player’s Handbook 2024" id="ID_WOTC_PHB24_ABILITY_SCORE_IMPROVEMENT_FARMER_OPTION_1">
+		<compendium display="false" />
+		<description>
+			<p>You can increase one of the scores by 2 and increase a different score by 1.</p>
+		</description>
+		<sheet display="false" />
 		<rules>
             <select type="Ability Score Improvement" name="Custom Ability Score Improvement +2" supports="ID_WOTC_TCOE_OPTION_CUSTOMIZED_ASI_STRENGTH_INCREASE_2|ID_WOTC_TCOE_OPTION_CUSTOMIZED_ASI_CONSTITUTION_INCREASE_2|ID_WOTC_TCOE_OPTION_CUSTOMIZED_ASI_WISDOM_INCREASE_2" requirements="ID_WOTC_PHB24_BACKGROUND_FARMER"/>
             <select type="Ability Score Improvement" name="Custom Ability Score Improvement +1" supports="ID_WOTC_TCOE_OPTION_CUSTOMIZED_ASI_STRENGTH_INCREASE_1|ID_WOTC_TCOE_OPTION_CUSTOMIZED_ASI_CONSTITUTION_INCREASE_1|ID_WOTC_TCOE_OPTION_CUSTOMIZED_ASI_WISDOM_INCREASE_1" requirements="ID_WOTC_PHB24_BACKGROUND_FARMER"/>
 		</rules>
-	</append>
-	<append id="ID_WOTC_ASI_ABILITY_SCORE_IMPROVEMENT_OPTION_2">
+	</element>
+
+	<element name="Ability Score Improvement +1, +1, +1" type="Ability Score Improvement" source="Player’s Handbook 2024" id="ID_WOTC_PHB24_ABILITY_SCORE_IMPROVEMENT_FARMER_OPTION_2">
+		<compendium display="false" />
+		<description>
+			<p>You can increase three different scores by 1.</p>
+		</description>
+		<sheet display="false" />
 		<rules>
-			<select type="Ability Score Improvement" name="Custom Ability Score Improvement +1" number="3" supports="ID_WOTC_TCOE_OPTION_CUSTOMIZED_ASI_STRENGTH_INCREASE_1|ID_WOTC_TCOE_OPTION_CUSTOMIZED_ASI_CONSTITUTION_INCREASE_1|ID_WOTC_TCOE_OPTION_CUSTOMIZED_ASI_WISDOM_INCREASE_1" requirements="ID_WOTC_PHB24_BACKGROUND_FARMER"/>
+			<stat name="strenght" value="1" alt="Ability Score Increase (Farmer)" />
+			<stat name="constitution" value="1" alt="Ability Score Increase (Farmer)" />
+			<stat name="wisdom" value="1" alt="Ability Score Increase (Farmer)" />		
 		</rules>
-	</append>
+	</element>
 
 </elements>
