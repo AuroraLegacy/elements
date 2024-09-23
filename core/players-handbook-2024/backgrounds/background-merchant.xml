@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<elements>
+	<info>
+		<name>Merchant</name>
+		<description>Merchant Background</description>
+		<author url="http://dnd.wizards.com/products/tabletop-games/rpg-products/rpg_playershandbook">Wizards of the Coast</author>
+		<update version="0.0.2">
+			<file name="background-merchant.xml" url="https://raw.githubusercontent.com/AuroraLegacy/elements/master/core/players-handbook-2024/backgrounds/background-merchant.xml" />
+		</update>
+	</info>
+
+	<element name="Merchant" type="Background" source="Player’s Handbook 2024" id="ID_WOTC_PHB24_BACKGROUND_MERCHANT">
+		<description>
+			<table>
+				<tr><td><b>Ability Scores:</b></td><td> Constitution, Intelligence, Charisma</td></tr>
+				<tr><td><b>Feat:</b> </td><td> Lucky (see chapter 5)</td></tr>
+				<tr><td><b>Skill Proficiencies:</b></td><td> Animal Handling and Persuasion</td></tr>
+				<tr><td><b>Tool Proficiency:</b></td><td> Navigator's Tools</td></tr>
+				<tr><td><b>Equipment:</b></td><td> <i>Choose A or B:</i> (A) Navigator's Tools, 2 Pouches, Traveler's Clothes, 22 CP; or (B) 50 GP</td></tr>
+			</table>
+			<p>You were apprenticed to a trader, caravan master, or shopkeeper, learning the fundamentals of commerce. You traveled broadly, and you earned a living by buying and selling the raw materials artisans need to practice their craft or finished works from such crafters. You might have transported goods from one place to another (by ship, wagon, or caravan) or bought them from traveling traders and sold them in your own shop.</p>
+		</description>
+		<rules>
+			<grant type="Proficiency" id="ID_WOTC_PHB24_PROFICIENCY_SKILL_ANIMALHANDLING" />
+			<grant type="Proficiency" id="ID_WOTC_PHB24_PROFICIENCY_SKILL_PERSUASION" /> 
+			<grant type="Grants" id="ID_INTERNAL_GRANTS_BACKGROUND_ASI" />		<!--
+			<grant type="Feat" id="_________" />-->
+			<grant type="Proficiency" id="ID_WOTC_PHB24_PROFICIENCY_TOOL_PROFICIENCY_NAVIGATORS_TOOLS" />	
+			<select type="Ability Score Improvement" name="Ability Score Improvement Option (Merchant)" supports="ID_WOTC_PHB24_ABILITY_SCORE_IMPROVEMENT_MERCHANT_OPTION_1|ID_WOTC_PHB24_ABILITY_SCORE_IMPROVEMENT_MERCHANT_OPTION_2" />		
+		</rules>
+	</element>
+
+	<element name="Ability Score Improvement +2, +1" type="Ability Score Improvement" source="Player’s Handbook 2024" id="ID_WOTC_PHB24_ABILITY_SCORE_IMPROVEMENT_MERCHANT_OPTION_1">
+		<compendium display="false" />
+		<description>
+			<p>You can increase one of the scores by 2 and increase a different score by 1.</p>
+		</description>
+		<sheet display="false" />
+		<rules>
+            <select type="Ability Score Improvement" name="Custom Ability Score Improvement +2" supports="ID_WOTC_TCOE_OPTION_CUSTOMIZED_ASI_CONSTITUTION_INCREASE_2|ID_WOTC_TCOE_OPTION_CUSTOMIZED_ASI_INTELLIGENCE_INCREASE_2|ID_WOTC_TCOE_OPTION_CUSTOMIZED_ASI_CHARISMA_INCREASE_2" requirements="ID_WOTC_PHB24_BACKGROUND_MERCHANT"/>
+            <select type="Ability Score Improvement" name="Custom Ability Score Improvement +1" supports="ID_WOTC_TCOE_OPTION_CUSTOMIZED_ASI_CONSTITUTION_INCREASE_1|ID_WOTC_TCOE_OPTION_CUSTOMIZED_ASI_INTELLIGENCE_INCREASE_1|ID_WOTC_TCOE_OPTION_CUSTOMIZED_ASI_CHARISMA_INCREASE_1" requirements="ID_WOTC_PHB24_BACKGROUND_MERCHANT"/>
+		</rules>
+	</element>
+	
+	<element name="Ability Score Improvement +1, +1, +1" type="Ability Score Improvement" source="Player’s Handbook 2024" id="ID_WOTC_PHB24_ABILITY_SCORE_IMPROVEMENT_MERCHANT_OPTION_2">
+		<compendium display="false" />
+		<description>
+			<p>You can increase three different scores by 1.</p>
+		</description>
+		<sheet display="false" />
+		<rules>
+			<stat name="constitution" value="1" alt="Ability Score Increase (Merchant)" />
+			<stat name="intelligence" value="1" alt="Ability Score Increase (Merchant)" />		
+			<stat name="charisma" value="1" alt="Ability Score Increase (Merchant)" />
+		</rules>
+	</element>
+	
+</elements>

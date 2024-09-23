@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<elements>
+	<info>
+		<name>Artisan</name>
+		<description>Artisan Background</description>
+		<author url="http://dnd.wizards.com/products/tabletop-games/rpg-products/rpg_playershandbook">Wizards of the Coast</author>
+		<update version="0.0.2">
+			<file name="background-artisan.xml" url="https://raw.githubusercontent.com/AuroraLegacy/elements/master/core/players-handbook-2024/backgrounds/background-artisan.xml" />
+		</update>
+	</info>
+
+	<element name="Artisan" type="Background" source="Player’s Handbook 2024" id="ID_WOTC_PHB24_BACKGROUND_ARTISAN">
+		<description>
+			<table>
+				<tr><td><b>Ability Scores:</b></td><td> Strength, Dexterity, Intelligence</td></tr>
+				<tr><td><b>Feat:</b> </td><td> Crafter (see chapter 5)</td></tr>
+				<tr><td><b>Skill Proficiencies:</b></td><td> Investigation and Persuasion</td></tr>
+				<tr><td><b>Tool Proficiency:</b></td><td> <i>Choose one kind of Artisan's Tools</i> (see chapter 6)</td></tr>
+				<tr><td><b>Equipment:</b></td><td> <i>Choose A or B:</i> (A) Artisan’s Tools (same as above), 2 Pouches, Traveler's Clothes, 32 GP; or (B) 50 GP</td></tr>
+			</table>
+			<p>You began mopping floors and scrubbing counters in an artisan's workshop for a few coppers per day as soon as you were strong enough to carry a bucket. When you were old enough to apprentice, you learned to create basic crafts of your own, as well as how to sweet-talk the occasional demanding customer. Your trade has also given you a keen eyefor detail.</p>
+		</description>
+		<rules>
+			<grant type="Proficiency" id="ID_WOTC_PHB24_PROFICIENCY_SKILL_INVESTIGATION" />
+			<grant type="Proficiency" id="ID_WOTC_PHB24_PROFICIENCY_SKILL_PERSUASION" /> 
+			<grant type="Grants" id="ID_INTERNAL_GRANTS_BACKGROUND_ASI" />		<!--
+			<grant type="Feat" id="_________" />-->
+			<select type="Proficiency" name="Tool Proficiency (Artisan)" supports="Tool, Artisan tools" />
+			<select type="Ability Score Improvement" name="Ability Score Improvement Option (Artisan)" supports="ID_WOTC_PHB24_ABILITY_SCORE_IMPROVEMENT_ARTISAN_OPTION_1|ID_WOTC_PHB24_ABILITY_SCORE_IMPROVEMENT_ARTISAN_OPTION_2" />		
+		</rules>
+	</element>
+
+	<element name="Ability Score Improvement +2, +1" type="Ability Score Improvement" source="Player’s Handbook 2024" id="ID_WOTC_PHB24_ABILITY_SCORE_IMPROVEMENT_ARTISAN_OPTION_1">
+		<compendium display="false" />
+		<description>
+			<p>You can increase one of the scores by 2 and increase a different score by 1.</p>
+		</description>
+		<sheet display="false" />
+		<rules>
+            <select type="Ability Score Improvement" name="Custom Ability Score Improvement +2" supports="ID_WOTC_TCOE_OPTION_CUSTOMIZED_ASI_STRENGTH_INCREASE_2|ID_WOTC_TCOE_OPTION_CUSTOMIZED_ASI_DEXTERITY_INCREASE_2|ID_WOTC_TCOE_OPTION_CUSTOMIZED_ASI_INTELLIGENCE_INCREASE_2" requirements="ID_WOTC_PHB24_BACKGROUND_ARTISAN"/>
+            <select type="Ability Score Improvement" name="Custom Ability Score Improvement +1" supports="ID_WOTC_TCOE_OPTION_CUSTOMIZED_ASI_STRENGTH_INCREASE_1|ID_WOTC_TCOE_OPTION_CUSTOMIZED_ASI_DEXTERITY_INCREASE_1|ID_WOTC_TCOE_OPTION_CUSTOMIZED_ASI_INTELLIGENCE_INCREASE_1" requirements="ID_WOTC_PHB24_BACKGROUND_ARTISAN"/>
+		</rules>
+	</element>
+
+	<element name="Ability Score Improvement +1, +1, +1" type="Ability Score Improvement" source="Player’s Handbook 2024" id="ID_WOTC_PHB24_ABILITY_SCORE_IMPROVEMENT_ARTISAN_OPTION_2">
+		<compendium display="false" />
+		<description>
+			<p>You can increase three different scores by 1.</p>
+		</description>
+		<sheet display="false" />
+		<rules>
+			<stat name="strength" value="1" alt="Ability Score Increase (Artisan)" />
+			<stat name="dexterity" value="1" alt="Ability Score Increase (Artisan)" />
+			<stat name="intelligence" value="1" alt="Ability Score Increase (Artisan)" />		
+		</rules>
+	</element>
+	
+</elements>

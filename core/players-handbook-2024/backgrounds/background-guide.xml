@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<elements>
+	<info>
+		<name>Guide</name>
+		<description>Guide Background</description>
+		<author url="http://dnd.wizards.com/products/tabletop-games/rpg-products/rpg_playershandbook">Wizards of the Coast</author>
+		<update version="0.0.2">
+			<file name="background-guide.xml" url="https://raw.githubusercontent.com/AuroraLegacy/elements/master/core/players-handbook-2024/backgrounds/background-guide.xml" />
+		</update>
+	</info>
+
+	<element name="Guide" type="Background" source="Player’s Handbook 2024" id="ID_WOTC_PHB24_BACKGROUND_GUIDE">
+		<description>
+			<table>
+				<tr><td><b>Ability Scores:</b></td><td> Dexterity, Constitution, Wisdom</td></tr>
+				<tr><td><b>Feat:</b> </td><td> Magic Initiate (Druid)  (see chapter 5)</td></tr>
+				<tr><td><b>Skill Proficiencies:</b></td><td> Stealth and Survival</td></tr>
+				<tr><td><b>Tool Proficiency:</b></td><td> Cartographer's Tools</td></tr>
+				<tr><td><b>Equipment:</b></td><td> <i>Choose A or B:</i> (A) Shortbow, 20 Arrows, Cartographer's Tools, Bedroll, Quiver, Tent, Traveler's Clothes, 3 GP; or (B) 50 GP</td></tr>
+			</table>
+			<p>You came of age outdoors, far from settled lands. Your home was anywhere you chose to spread your bedroll. There are wonders in the wilderness — strange monsters, pristine forests and streams, overgrown ruins of great halls once trod by giants — and you learned to fend for yourself as you explored them. From time to time, you guided friendly nature priests who instructed you in the fundamentals of channeling the magic of the wild.</p>
+		</description>
+		<rules>
+			<grant type="Proficiency" id="ID_WOTC_PHB24_PROFICIENCY_SKILL_STEALTH" />
+			<grant type="Proficiency" id="ID_WOTC_PHB24_PROFICIENCY_SKILL_SURVIVAL" /> 
+			<grant type="Grants" id="ID_INTERNAL_GRANTS_BACKGROUND_ASI" />		<!--
+			<grant type="Feat" id="_________" />-->
+			<grant type="Proficiency" id="ID_WOTC_PHB24_PROFICIENCY_TOOL_PROFICIENCY_CARPENTERS_TOOLS" />	
+			<select type="Ability Score Improvement" name="Ability Score Improvement Option (Guide)" supports="ID_WOTC_PHB24_ABILITY_SCORE_IMPROVEMENT_GUIDE_OPTION_1|ID_WOTC_PHB24_ABILITY_SCORE_IMPROVEMENT_GUIDE_OPTION_2" />		
+		</rules>
+	</element>
+
+	<element name="Ability Score Improvement +2, +1" type="Ability Score Improvement" source="Player’s Handbook 2024" id="ID_WOTC_PHB24_ABILITY_SCORE_IMPROVEMENT_GUIDE_OPTION_1">
+		<compendium display="false" />
+		<description>
+			<p>You can increase one of the scores by 2 and increase a different score by 1.</p>
+		</description>
+		<sheet display="false" />
+		<rules>
+            <select type="Ability Score Improvement" name="Custom Ability Score Improvement +2" supports="ID_WOTC_TCOE_OPTION_CUSTOMIZED_ASI_DEXTERITY_INCREASE_2|ID_WOTC_TCOE_OPTION_CUSTOMIZED_ASI_CONSTITUTION_INCREASE_2|ID_WOTC_TCOE_OPTION_CUSTOMIZED_ASI_WISDOM_INCREASE_2" requirements="ID_WOTC_PHB24_BACKGROUND_GUIDE"/>
+            <select type="Ability Score Improvement" name="Custom Ability Score Improvement +1" supports="ID_WOTC_TCOE_OPTION_CUSTOMIZED_ASI_DEXTERITY_INCREASE_1|ID_WOTC_TCOE_OPTION_CUSTOMIZED_ASI_CONSTITUTION_INCREASE_1|ID_WOTC_TCOE_OPTION_CUSTOMIZED_ASI_WISDOM_INCREASE_1" requirements="ID_WOTC_PHB24_BACKGROUND_GUIDE"/>
+		</rules>
+	</element>
+
+	<element name="Ability Score Improvement +1, +1, +1" type="Ability Score Improvement" source="Player’s Handbook 2024" id="ID_WOTC_PHB24_ABILITY_SCORE_IMPROVEMENT_GUIDE_OPTION_2">
+		<compendium display="false" />
+		<description>
+			<p>You can increase three different scores by 1.</p>
+		</description>
+		<sheet display="false" />
+		<rules>
+			<stat name="dexterity" value="1" alt="Ability Score Increase (Guide)" />
+			<stat name="constitution" value="1" alt="Ability Score Increase (Guide)" />
+			<stat name="wisdom" value="1" alt="Ability Score Increase (Guide)" />		
+		</rules>
+	</element>
+
+</elements>
