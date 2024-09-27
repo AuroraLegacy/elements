@@ -1,0 +1,261 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<elements>
+	<info>
+		<name>Items</name>
+		<update version="0.0.1">
+			<file name="items.xml" url="https://raw.githubusercontent.com/AuroraLegacy/elements/master/supplements/tomb-of-annihilation/items.xml" />
+		</update>
+	</info>
+	
+	<!--Yklwa-->
+
+	<element name="Yklwa" type="Weapon" source="Tomb of Annihilation" id="ID_WOTC_TOA_WEAPON_YKLWA">
+		<supports>ID_INTERNAL_WEAPON_CATEGORY_SIMPLE_MELEE, ID_INTERNAL_DAMAGE_TYPE_PIERCING, ID_INTERNAL_WEAPON_PROPERTY_THROWN, ID_INTERNAL_WEAPON_GROUP_SPEARS</supports>
+		<description>
+			<p>A yklwa (pronounced YICK-ul-wah) is a simple melee weapon that is the traditional weapon of Chultan warriors. A yklwa consists of a 3-foot wooden shaft with a steel or stone blade up to 18 inches long. Although it has the thrown weapon property, the yklwa is not well balanced for throwing.</p>
+		</description>
+		<setters>
+			<set name="category">Weapons</set>
+			<set name="cost" currency="gp">1</set>
+			<set name="weight" lb="3">3 lb.</set>
+			<set name="slot">onehand</set>
+			<set name="range">10/30</set>
+			<set name="damage" type="piercing">1d8</set>
+			<set name="proficiency">ID_WOTC_TOA_WEAPON_PROFICIENCY_YKLWA</set>
+		</setters>
+	</element>
+	
+	<element name="Weapon Proficiency (Yklwa)" type="Proficiency" source="Tomb of Annihilation" id="ID_WOTC_TOA_WEAPON_PROFICIENCY_YKLWA">
+		<supports>Weapon, Simple, Melee, ID_INTERNAL_WEAPON_CATEGORY_SIMPLE_MELEE, ID_INTERNAL_DAMAGE_TYPE_PIERCING, ID_INTERNAL_WEAPON_PROPERTY_THROWN, ID_INTERNAL_WEAPON_GROUP_SPEARS</supports>
+	</element>
+	
+	<element name="Kensei Weapon (Yklwa)" type="Archetype Feature" source="Tomb of Annihilation" id="ID_WOTC_TOA_ARCHETYPE_FEATURE_KENSEI_WEAPON_YKLWA">
+		<supports>Kensei Weapon, Melee</supports>
+		<description>
+			<p>You gain proficiency with the Yklwa if you don’t already have it, and it is a monk weapon for you.</p>
+		</description>
+		<rules>
+			<grant type="Proficiency" id="ID_WOTC_TOA_WEAPON_PROFICIENCY_YKLWA" />
+		</rules>
+	</element>
+	
+	<append id="ID_PROFICIENCY_WEAPON_PROFICIENCY_SIMPLE_MELEE_WEAPONS">
+		<rules>
+			<grant type="Proficiency" id="ID_WOTC_TOA_WEAPON_PROFICIENCY_YKLWA" />
+		</rules>
+	</append>
+	
+	<!--Magic Items-->
+	<element name="Amulet of the Black Skull" type="Magic Item" source="Tomb of Annihilation" id="ID_WOTC_TOA_MAGIC_ITEM_AMULET_OF_THE_BLACK_SKULL">
+		<description>
+			<p>This amulet is carved from obsidian and shaped like a screaming humanoid skull, with ruby eyes and emeralds for teeth. It hangs from an iron chain necklace.</p>
+			<p class="indent">The amulet has 6 charges and regains 1d6 charges daily at dawn. While wearing the amulet, you can use an action to expend 1 of its charges to transport your self and anything you are wearing or carrying to a location within 100 feet of you. The destination you choose doesn't need to be in your line of sight, but it must be familiar to you (in other words, a place you have seen or visited), and it must be on the same plane of existence as you. This effect isn't subject to the magic restrictions placed on the Tomb of the Nine Gods; thus, the amulet can be used to enter and exit the tomb.</p>
+			<p class="indent">If you aren't undead, you must make a DC 16 Constitution saving throw each time you use the amulet to teleport. On a failed saving throw, the black skull cackles as you are transformed in transit. The transformation takes effect as soon as you arrive at the destination, and is determined randomly by rolling percentile dice and consulting the Black Skull Transformation table.</p>
+			<h5>BLACK SKULL TRANSFORMATION</h5>
+			<table>
+				<thead>
+					<tr><td>d100</td><td>Transformation</td></tr>
+				</thead>
+				<tr><td>01-20</td><td>The symbol of Acererak is burned into your flesh, a curse that can only be removed with a <i>remove curse</i> spell or similar magic. Until the curse ends, your hit points can't be restored by magic.</td></tr>
+				<tr><td>21-35</td><td>You grow larger as if affected by an <i>enlarge/reduce</i> spell, except the effect lasts for 1 hour.</td></tr>
+				<tr><td>36-50</td><td>You grow smaller as if affected by an <i>enlarge/reduce</i> spell, except the effect lasts for 1 hour.</td></tr>
+				<tr><td>51-70</td><td>You arrive at the destination wearing nothing but the <i>amulet of the black skull</i>. Everything else that you were wearing or carrying appears in a random unoccupied space within 100 feet of you.</td></tr>
+				<tr><td>71-95</td><td>You are paralyzed for l minute or until this effect is ended with a <i>lesser restoration</i> spell or similar magic.</td></tr>
+				<tr><td>96-00</td><td>You become petrified. Th is effect can be ended only with a <i>greater restoration</i> spell or similar magic.</td></tr>
+			</table>
+		</description>
+		<setters>
+			<set name="category">Wondrous Items</set>
+			<set name="weight">0 lb.</set>
+			<set name="type">Wondrous Item</set>
+			<set name="rarity">Very Rare</set>
+			<set name="attunement">true</set>
+		</setters>
+	</element>
+
+	<element name="Bob" type="Magic Item" source="Tomb of Annihilation" id="ID_WOTC_TOA_MAGIC_ITEM_BOB">
+		<description>
+			<p>A dwarven-made battleaxe that floats on water and other liquids, and grants its bearer advantage on Strength (Athletics) checks made to swim. Etched into the haft of the battleaxe are Dethek (Dwarvish) runes that spell the weapon's name: Bob.</p>
+		</description>
+		<setters>
+			<set name="category">Magic Weapons</set>
+			<set name="cost" currency="gp">0</set>
+			<set name="weight" lb="0">0 lb.</set>
+			<set name="type" addition="battleaxe">Weapon</set>
+			<set name="enhancement">1</set>
+			<set name="weapon">Battleaxe</set>
+		</setters>
+	</element>
+	
+	<element name="Bookmark" type="Magic Item" source="Tomb of Annihilation" id="ID_WOTC_TOA_MAGIC_ITEM_BOOKMARK">
+		<description>
+			<p>This <i>+3 dagger</i> belongs to Artus Cimber (see <i>Tomb of Annihilation</i>, pp. 212-213). While you have the dagger drawn, you can use a bonus action to activate one of the following properties:</p>
+			<ul>
+				<li>Cause a blue gem set into the dagger's pommel to shed bright light in a 20-foot radius and dim light for an additional 20 feet, or make the gem go dark.</li>
+				<li>Turn the dagger into a compass that, while resting on your palm, points north.</li>
+				<li>Cast <i>dimension door</i> from the dagger. Once this property is used, it can't be used again until the next dawn.</li>
+				<li>Cast <i>compulsion</i> (save DC 15) from the dagger. The range of the spell increases to 90 feet, but it targets only spiders that are beasts. Once this property is used, it can't be used again until the next dawn.</li>
+			</ul>
+		</description>
+		<setters>
+			<set name="category">Magic Weapons</set>
+			<set name="cost" currency="gp">0</set>
+			<set name="weight" lb="0">0 lb.</set>
+			<set name="type" addition="dagger">Weapon</set>
+			<set name="rarity">Legendary</set>
+			<set name="enhancement">3</set>
+			<set name="weapon">Dagger</set>
+			<set name="attunement">true</set>
+		</setters>
+	</element>
+	
+	<element name="Delvin's Staff of Striking" type="Magic Item" source="Tomb of Annihilation" id="ID_WOTC_TOA_MAGIC_ITEM_DELVINS_STAFF_OF_STRIKING">
+		<description>
+			<p>This staff can be wielded as a magic quarterstaff that grants a +3 bonus to attack and damage rolls made with it.</p>
+			<p class="indent">The staff has 10 charges. When you hit with a melee attack using it, you can expend up to 3 of its charges. For each charge you expend, the target takes an extra 1d6 force damage. The staff regains 1d6 + 4 expended charges daily at dawn. If you expend the last charge, roll a d20. On a 1, the staff becomes a nonmagical quarterstaff.</p>
+			<p class="indent"><b><i>Curse.</i></b> Any character who attunes to the staff transforms into a goat-humanoid hybrid over the course of 3 days. Tieflings are immune to this curse. Throughout the first day, shaggy fur begins to grow all over your body. After 24 hours, your eyes become goat-like, and stumpy horns sprout from your brow. On the last day, your fingers and toes meld into double digits, and the horns grow to full length. This transformation doesn't prevent you from wielding weapons or casting spells. <i>Remove curse</i>, <i>greater restoration</i>, or any other effect that ends a curse restores your original appearance, but only a <i>wish</i> spell can rid the staff of its power to transform those who attune to it.</p>
+		</description>
+		<setters>
+			<set name="category">Staffs</set>
+			<set name="cost" currency="gp">0</set>
+			<set name="weight" lb="4">4 lb.</set>
+			<set name="slot">onehand</set>
+			<set name="weapon">Quarterstaff</set>
+			<set name="type">Staff</set>
+			<set name="attunement">true</set>
+			<set name="rarity">Very Rare</set>
+			<set name="enhancement">3</set>
+		</setters>
+	</element>
+
+	<element name="Draconic Longsword" type="Magic Item" source="Tomb of Annihilation" id="ID_WOTC_TOA_MAGIC_ITEM_DRACONIC_LONGSWORD">
+		<description>
+			<p>This longsword has a dragon-shaped hilt. While you carry it, you gain the ability to speak and understand the Draconic language.</p>
+		</description>
+		<setters>
+			<set name="category">Magic Weapons</set>
+			<set name="cost" currency="gp">0</set>
+			<set name="weight" lb="0">0 lb.</set>
+			<set name="type" addition="longsword">Weapon</set>
+			<set name="weapon">Longsword</set>
+		</setters>
+		<rules>
+			<grant type="Language" id="ID_LANGUAGE_DRACONIC" />
+		</rules>
+	</element>
+	
+	<element name="Ghost Lantern" type="Magic Item" source="Tomb of Annihilation" id="ID_WOTC_TOA_MAGIC_ITEM_GHOST_LANTERN">
+		<description>
+			<p>A restless spirit is trapped inside this lantern. While holding the lantern, you can command the spirit as a bonus action to shed bright light in a 30-foot radius and dim light for an additional 30 feet.</p>
+			<p class="indent">While holding the lantern, you can use an action to order the spirit to leave the lantern and duplicate the effect of the <i>mage hand</i> spell. The spirit returns to the lantern when the spell ends.</p>
+			<p class="indent">If you fall unconscious within 10 feet of the lantern, the spirit emerges from it, magically stabilizes you with a touch, and then quickly returns to the lantern.</p>
+			<p class="indent">The spirit is bound to the lantern and can't be harmed, turned, or raised from the dead. Casting a <i>dispel evil and good</i> spell on the lantern releases the spirit to the afterlife and renders the lantern nonmagical.</p>
+		</description>
+		<setters>
+			<set name="category">Wondrous Items</set>
+			<set name="weight">0 lb.</set>
+			<set name="type">Wondrous Item</set>
+			<set name="rarity">Rare</set>
+			<set name="attunement">true</set>
+		</setters>
+	</element>
+
+	<element name="Mask of the Beast" type="Magic Item" source="Tomb of Annihilation" id="ID_WOTC_TOA_MAGIC_ITEM_MASK_OF_THE_BEAST">
+		<description>
+			<p>This wooden mask is shaped in the likeness of a beast's visage and has 3 charges. While wearing the mask, you can expend 1 charge and use the mask to cast the <i>animal friendship</i> spell as an action. The mask regains all expended charges at dawn.</p>
+		</description>
+		<setters>
+			<set name="category">Wondrous Items</set>
+			<set name="weight">0 lb.</set>
+			<set name="type">Wondrous Item</set>
+			<set name="rarity">Uncommon</set>
+		</setters>
+	</element>
+
+	<element name="Ring of Winter" type="Magic Item" source="Tomb of Annihilation" id="ID_WOTC_TOA_MAGIC_ITEM_RING_OF_WINTER">
+		<description>
+			<p>Artus Cimber (see <i>Tomb of Annihilation</i>, pp. 212-213) has kept this item in his possession for over a century. The Ring of Winter is a golden band that resizes to fit snugly on the finger of its wearer. A thin layer of frost coats the outside of the ring, which normal heat can't melt. The ring feels ice cold to the touch and initially numbs the hand that wears it, but this cold ceases to be felt by one who is attuned to the ring.</p>
+			<p class="indent">The <em>Ring of Winter</em> is sentient and tries to take control of any creature that wears it (see "Sentient Magic Items" in chapter 7 of the <i>Dungeon Master's Guide</i>). If it succeeds, the ring compels its wearer to cause undue harm to everyone and everything around it, in a cold-hearted attempt to incur the wrath of enemies and bring about the wearer's doom.</p>
+			<p class="indent"><b><i>Sentience.</i></b> The <em>Ring of Winter</em> is a sentient chaotic evil item with an Intelligence of 14, a Wisdom of 14, and a Charisma of 17. The ring communicates by transmitting emotion to the creature carrying or wielding it, and it has hearing and normal vision out to a range of 60 feet. The ring craves destruction, and it likes inflicting indiscriminate harm on others.</p>
+			<p class="indent"><b><i>Nondetection.</i></b> The <em>Ring of Winter</em> defies attempts to magically locate it. Neither the ring nor its wearer can be targeted by any divination magic or perceived through magical scrying sensors.</p>
+			<p class="indent"><b><i>Frozen Time.</i></b> As long as you wear the ring, you don't age naturally. This effect is similar to suspended animation, in that your age doesn't catch up to you once the ring is removed. The ring doesn't protect its wearer from magical or supernatural aging effects, such as the Horrifying Visage of a ghost.</p>
+			<p class="indent"><b><i>Cold Immunity.</i></b> While attuned to and wearing the ring, you have immunity to cold damage and don't suffer any ill effects from extreme cold (see chapter 5 of the <i>Dungeon Master's Guide</i>).</p>
+			<p class="indent"><b><i>Magic.</i></b> The <em>Ring of Winter</em> has 12 charges and regains all its expended charges daily at dawn. While wearing the ring, you can expend the necessary number of charges to activate one of the following properties:</p>
+			<ul>
+				<li>You can expend 1 charge as an action and use the ring to lower the temperature in a 120-foot-radius sphere centered on a point you can see within 300 feet of you. The temperature in that area drops 20 degrees per minute, to a minimum of -30 degrees Fahrenheit. Frost and ice begin to form on surfaces once the temperature drops below 32 degrees. This effect is permanent unless you use the ring to end it as an action, at which point the temperature in the area returns to normal at a rate of 10 degrees per minute.</li>
+				<li>You can cast one of the following spells from the ring (spell save DC 17) by expending the necessary number of charges: <em>Bigby's hand</em> (2 charges; the hand is made of ice, is immune to cold damage, and deals bludgeoning damage instead of force damage as a clenched fist), <em>cone of cold</em> (2 charges), <em>flesh to ice</em> (3 charges; as <i>flesh to stone</i> except that the target turns to solid ice with the density and durability of stone), <em>ice storm</em> (2 charges), <em>Otiluke's freezing sphere</em> (3 charges), <em>sleet storm</em> (1 charge), <em>spike growth</em> (1 charge; the spikes are made of ice), or <em>wall of ice</em> (2 charges).</li>
+				<li>You can expend the necessary number of charges as an action and use the ring to create either an inanimate ice object (2 charges) or an animated ice creature (4 charges). The ice object can't have any moving parts, must be able to fit inside a 10-foot cube, and has the density and durability of metal or stone (your choice). The ice creature must be modeled after a beast with a challenge rating of 2 or less. The ice creature has the same statistics as the beast it models, with the following changes: the creature is a construct with vulnerability to fire damage, immunity to cold and poison damage, and immunity to the following conditions: charmed, exhaustion, frightened, paralyzed, petrified, and poisoned. The ice creature obeys only its creator's commands. The ice object or creature appears in an unoccupied space within 60 feet of you. It melts into a pool of normal water after 24 hours or when it drops to 0 hit points. In extreme heat, it loses 5 (ldlO) hit points per minute as it melts. Use the guidelines in chapter 8 of the <i>Dungeon Master's Guide</i> to determine the hit points of an inanimate object if they become necessary.</li>
+			</ul>
+			<p class="indent"><b><i>Other Properties.</i></b> The <em>Ring of Winter>/em> is rumored to possess other properties that can be activated only by an evil being whose will the ring can't break. Frost giants have long believed that the ring can be used to freeze entire worlds, while a djinni in the service of a Calishite pasha once claimed that the ring could be used to summon and control white dragons, as well as a mighty ice primordial named Cryonax.</p>
+			<p class="indent"><b><i>Destroying the Ring.</i></b> The ring is nigh indestructible, resisting even the most intense magical heat. If it is placed on the finger of the powerful archfey known as the Summer Queen, the ring melts away and is destroyed forever.</p>
+		</description>
+		<setters>
+			<set name="category">Rings</set>
+			<set name="weight">0 lb.</set>
+			<set name="type">Ring</set>
+			<set name="rarity">Artifact</set>
+			<set name="slot">ring</set>
+			<set name="attunement">true</set>
+		</setters>
+		<rules>
+			<grant type="Condition" id="ID_INTERNAL_CONDITION_DAMAGE_IMMUNITY_COLD" />
+		</rules>
+	</element>
+
+	<element name="Scorpion Armor" type="Magic Item" source="Tomb of Annihilation" id="ID_WOTC_TOA_MAGIC_ITEM_SCORPION_ARMOR">
+		<description>
+			<p>This suit of plate armor is fashioned from giant scorpion chitin. While wearing this armor, you gain the following benefits:</p>
+			<ul>
+				<li>The armor improves your combat readiness, granting you a +5 bonus to initiative as long as you aren't incapacitated.</li>
+				<li>The armor doesn't impose disadvantage on your Dexterity (Stealth) checks.</li>
+				<li>The armor doesn't impose disadvantage on saving throws made to resist the effects of extreme heat (see chapter 5 of the Dungeon Master's Guide).</li>
+			</ul>
+			<p class="indent"><b><i>Curse.</i></b> This armor is cursed. Whenever you don or doff it, you must make a DC 15 Constitution saving throw, taking 100 (10d10 + 45) poison damage on a failed save, or half as much damage on a successful one. Only a wish spell can remove the armor's curse.</p>
+		</description>
+		<setters>
+			<set name="category">Magic Armor</set>
+			<set name="cost" currency="gp">0</set>
+			<set name="type" addition="plate">Armor</set>
+			<set name="rarity">Rare</set>
+			<set name="armor">Plate</set>
+			<set name="attunement">true</set>
+		</setters>
+		<rules>
+			<stat name="initiative" value="5" />
+			<grant type="Grants" id="ID_INTERNAL_GRANTS_IGNORE_STEALTH_DISADVANTAGE" />
+		</rules>
+	</element>
+
+	<element name="Staff of the Forgotten One" type="Magic Item" source="Tomb of Annihilation" id="ID_WOTC_TOA_MAGIC_ITEM_STAFF_OF_THE_FORGOTTEN_ONE">
+		<description>
+			<p>This crooked staff is carved from bone and topped with the skull of a forgotten archmage whom Acererak destroyed long ago. Etched into the skull's forehead is Accrerak's rune, which is known on many worlds as a sign of death.</p>
+			<p class="indent"><b><i>Beneficial Properties.</i></b> While the staff is on your person, you gain the following benefits:</p>
+			<ul>
+				<li>Your proficiency bonus to Intelligence (Arcana) and Intelligence (History) checks is doubled.</li>
+				<li>You can't be blinded, charmed, deafened, frightened, petrified, or stunned.</li>
+				<li>Undead with a challenge rating of 2 or lower will neither threaten nor attack you unless you harm them.</li>
+				<li>You can wield the staff as a +3 quarterstaff that deals an extra 10 (3d6) necrotic damage on a hit.</li>
+			</ul>
+			<p class="indent"><b><i>Invoke Curse.</i></b> The <i>Staff of the Forgotten One</i> has 7 charges and regains 1d4 + 3 expended charges daily at dawn. While holding the staff, you can use an action to expend 1 charge and target one creature you can see within 60 feet of you. The target must succeed on a Constitution saving throw (using your spell save DC) or be cursed. While cursed in this way, the target can't regain hit points and has vulnerability to necrotic damage. A <i>greater restoration</i>, <i>remove curse</i>, or similar spell ends the curse on the target.</p>
+			<p class="indent"><b><i>The Forgotten One.</i></b> The bodiless life force of a dead archmage empowers the staff and is imprisoned within it. The rune carved into the staff's skull protects Acererak from this spirit's vengeance. Each time a creature other than Acererak expends any of the staff's charges, there is a 50 percent chance that the life force tries to possess the staff wielder. The wielder must succeed on a DC 20 Charisma saving throw or be possessed, becoming an NPC under the DM's control. If the intruding life force is targeted by magic such as a <i>dispel evil and good</i> spell, it becomes trapped in the staff once more. Once it takes control of another creature, the insane spirit of the dead archmage attempts to destroy the staff.</p>
+			<p class="indent"><b><i>Destroying the Staff.</i></b> A creature in possession of the staff can use an action to break it over one knee or a solid surface. The staff is destroyed and releases its remaining magic in an explosion that expands to fill a 30-foot-radius sphere centered on it. Each creature in the area must make a DC 18 Dexterity saving throw, taking 132 (24d10) force damage on a failed save, or half as much damage on a successful one. When the staff is destroyed, the life force of the Forgotten One is released to the afterlife. Where it goes is anyone's guess. </p>
+			<p class="indent">Casting the staff into a <i>sphere of annihilation</i> destroys both the staff and the Life force trapped within it. The staff doesn't explode if destroyed in this manner, but its destruction causes the sphere to be destroyed as well.</p>
+		</description>
+		<setters>
+			<set name="category">Staffs</set>
+			<set name="cost" currency="gp">0</set>
+			<set name="weight" lb="4">4 lb.</set>
+			<set name="slot">onehand</set>
+			<set name="weapon">Quarterstaff</set>
+			<set name="type">Staff</set>
+			<set name="attunement" addition="by a sorcerer, warlock, or wizard">true</set>
+			<set name="rarity">Artifact</set>
+			<set name="enhancement">3</set>
+		</setters>
+		<rules>
+			<stat name="arcana:proficiency" value="proficiency" bonus="double" />
+			<stat name="history:proficiency" value="proficiency" bonus="double" />
+		</rules>
+	</element>
+
+</elements>
