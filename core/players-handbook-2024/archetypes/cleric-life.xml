@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<elements>
+	<info>
+		<update version="0.0.1">
+			<file name="cleric-life.xml" url="https://raw.githubusercontent.com/AuroraLegacy/elements/master/core/players-handbook-2024/archetypes/cleric-life.xml" />
+		</update>
+	</info>
+
+	<element name="Life Domain" type="Archetype" source="2024 Player’s Handbook" id="ID_WOTC_2024PHB_ARCHETYPE_CLERIC_LIFE_DOMAIN">
+		<supports>Divine Domain</supports>
+		<description>
+			<h5><i>Soothe the Hurts of the World</i></h5>
+			<p>The Life Domain focuses on the positive energy that helps sustain all life in the multiverse. Clerics whotap into this domain are masters of healing, using that life force to cure many hurts.</p>
+			<p>Existence itself relies on the positive energy asso- ciated with this doma in, so a Cleric of almost any religious tradition might choose it. This domain is particularly associated with agricultural deities, gods of healing or endurance, and gods of home and community . Religious orders of healing also seek the magic of this domain.</p>
+			<h5 class="caption">LIFE DOMAIN SPELLS</h5>
+			<p>Your connection to this divine domain ensures you always have certain spells ready. When you reach a Cleric level specified in the Life Domain Spells table, you thereafter always have the listed spells prepared.</p>
+			<table>
+				<thead>
+					<tr><td>Cleric Level</td><td>Spells</td></tr>
+				</thead>
+				<tr><td>3rd</td><td><em>Aid, Bless, Cure Wounds, Lesser Restoration</em></td></tr>
+				<tr><td>5th</td><td><em>Mass Healing Word, Revivify</em></td></tr>
+				<tr><td>7th</td><td><em>Aura of Life, Death Ward</em></td></tr>
+				<tr><td>9th</td><td><em>Greater Restoration, Mass Cure Wounds</em></td></tr>
+			</table>
+			<div element="ID_WOTC_2024PHB_ARCHETYPE_FEATURE_LIFE_DOMAIN_CD_PRESERVE_LIFE" />
+			<div element="ID_WOTC_2024PHB_ARCHETYPE_FEATURE_LIFE_DOMAIN_DISCIPLE_OF_LIFE" />
+			<div element="ID_WOTC_2024PHB_ARCHETYPE_FEATURE_LIFE_DOMAIN_BLESSED_HEALER" />
+			<div element="ID_WOTC_2024PHB_ARCHETYPE_FEATURE_LIFE_DOMAIN_SUPREME_HEALING" />
+		</description>
+		<sheet display="false"/>
+		<rules>
+			<!-- Update 2014 to 2024 spell ID's
+			<grant type="Spell" id="ID_PHB_SPELL_AID" level="3" spellcasting="Cleric" prepared="true" />
+			<grant type="Spell" id="ID_PHB_SPELL_BLESS" level="3" spellcasting="Cleric" prepared="true" />
+			<grant type="Spell" id="ID_PHB_SPELL_CURE_WOUNDS" level="3" spellcasting="Cleric" prepared="true" />
+			<grant type="Spell" id="ID_PHB_SPELL_LESSER_RESTORATION" level="3" spellcasting="Cleric" prepared="true" />
+			<grant type="Spell" id="ID_PHB_SPELL_MASS_HEALING_WORD" level="5" spellcasting="Cleric" prepared="true" />
+			<grant type="Spell" id="ID_PHB_SPELL_REVIVIFY" level="5" spellcasting="Cleric" prepared="true" />
+			<grant type="Spell" id="ID_PHB_SPELL_AURA_OF_LIFE" level="7" spellcasting="Cleric" prepared="true" />
+			<grant type="Spell" id="ID_PHB_SPELL_DEATH_WARD" level="7" spellcasting="Cleric" prepared="true" />
+			<grant type="Spell" id="ID_PHB_SPELL_GREATER_RESTORATION" level="9" spellcasting="Cleric" prepared="true" />
+			<grant type="Spell" id="ID_PHB_SPELL_MASS_CURE_WOUNDS" level="9" spellcasting="Cleric" prepared="true" /> -->
+			<grant type="Archetype Feature" id="ID_WOTC_2024PHB_ARCHETYPE_FEATURE_LIFE_DOMAIN_CD_PRESERVE_LIFE" level="3"/>
+			<grant type="Archetype Feature" id="ID_WOTC_2024PHB_ARCHETYPE_FEATURE_LIFE_DOMAIN_DISCIPLE_OF_LIFE" level="3"/>
+			<grant type="Archetype Feature" id="ID_WOTC_2024PHB_ARCHETYPE_FEATURE_LIFE_DOMAIN_BLESSED_HEALER" level="6"/>
+			<grant type="Archetype Feature" id="ID_WOTC_2024PHB_ARCHETYPE_FEATURE_LIFE_DOMAIN_SUPREME_HEALING" level="17"/>
+		</rules>
+	</element>
+
+	<element name="Disciple of Life" type="Archetype Feature" source="2024 Player’s Handbook" id="ID_WOTC_2024PHB_ARCHETYPE_FEATURE_LIFE_DOMAIN_DISCIPLE_OF_LIFE">
+		<requirements>!ID_INTERNAL_FEATURE_REPLACEMENT_CLERIC_LIFE_DOMAIN_DISCIPLE_OF_LIFE</requirements>
+		<description>
+			<p>When you use a spell of 1st level or higher to restore hit points to a creature, the creature regains additional hit points equal to 2 + the spell’s level.</p>
+		</description>
+		<sheet>
+			<description>When you use a spell of 1st level or higher to restore hp to a creature, the creature regains additional hp equal to 2 + the spell’s level.</description>
+		</sheet>
+	</element>
+
+	<element name="Channel Divinity: Preserve Life" type="Archetype Feature" source="2024 Player’s Handbook" id="ID_WOTC_2024PHB_ARCHETYPE_FEATURE_LIFE_DOMAIN_CD_PRESERVE_LIFE">
+		<requirements>!ID_INTERNAL_FEATURE_REPLACEMENT_CLERIC_LIFE_DOMAIN_CD_PRESERVE_LIFE</requirements>
+		<description>
+			<p>As a Magic action, you present your Holy Symbol and expend a use of your Channel Divinity to evoke healing energy that can restore a number of Hit Points equal to five times your Cleric level. Choose Bloodied creatures within 30 feet of yourself (which can include you), and divide those Hit Points among them. This feature can restore a creature to no more than half its Hit Point maximum.</p>
+		</description>
+		<sheet alt="Preserve Life" action="Magic Action" usage="Channel Divinity">
+			<description>You restore {{preserve-life:hp}} Hit Points to Bloodied creatures within 30 feet of yourself (which can include you). You divide those Hit Points among them, though this feature can restore a creature to no more than half its Hit Point maximum.</description>
+		</sheet>
+		<rules>
+			<stat name="preserve-life:hp" value="level:cleric" />
+			<stat name="preserve-life:hp" value="level:cleric" />
+			<stat name="preserve-life:hp" value="level:cleric" />
+			<stat name="preserve-life:hp" value="level:cleric" />
+			<stat name="preserve-life:hp" value="level:cleric" />
+		</rules>
+	</element>
+	
+
+	<element name="Blessed Healer" type="Archetype Feature" source="2024 Player’s Handbook" id="ID_WOTC_2024PHB_ARCHETYPE_FEATURE_LIFE_DOMAIN_BLESSED_HEALER">
+		<requirements>!ID_INTERNAL_FEATURE_REPLACEMENT_CLERIC_LIFE_DOMAIN_BLESSED_HEALER</requirements>
+		<description>
+			<p>The healing spells you cast on others heal you as well. Immediately after you cast a spell with a spell slot that restores Hit Points to one or more crea- tures other than yourself, you regain Hit Points equal to 2 plus the spell slot's level.</p>
+		</description>
+		<sheet>
+			<description>When you cast a spell of 1st level or higher that restores hp to a creature other than you, you regain hp equal to 2 + the spell’s level.</description>
+		</sheet>
+	</element>
+
+	<element name="Supreme Healing" type="Archetype Feature" source="2024 Player’s Handbook" id="ID_WOTC_2024PHB_ARCHETYPE_FEATURE_LIFE_DOMAIN_SUPREME_HEALING">
+		<requirements>!ID_INTERNAL_FEATURE_REPLACEMENT_CLERIC_LIFE_DOMAIN_SUPREME_HEALER</requirements>
+		<description>
+			<p>When you would normally roll one or more dice to restore Hit Points to a creature with a spell or Channel Divinity, you don't roll those dice for the healing; instead use the highest number possible for each die. For example, instead of restoring 2d6 Hit Points to a creature with a spell, you restore 12.</p>
+		</description>
+		<sheet>
+			<description>When you would normally roll one or more dice to restore Hit Points to a creature with a spell or Channel Divinity, you don't roll those dice for the healing; instead use the highest number possible for each die.</description>
+		</sheet>
+	</element>
+	
+	<!--Feature Replacement Grants-->
+	<element name="Channel Divinity: Preserve Life Feature Replacement" type="Grants" source="Internal" id="ID_INTERNAL_FEATURE_REPLACEMENT_CLERIC_LIFE_DOMAIN_CD_PRESERVE_LIFE" />
+	<element name="Disciple of Life Feature Replacement" type="Grants" source="Internal" id="ID_INTERNAL_FEATURE_REPLACEMENT_CLERIC_LIFE_DOMAIN_DESCIPLE_OF_LIFE" />
+	<element name="Blessed Healer Feature Replacement" type="Grants" source="Internal" id="ID_INTERNAL_FEATURE_REPLACEMENT_CLERIC_LIFE_DOMAIN_BLESSED_HEALER" />
+	<element name="Supreme Healing Feature Replacement" type="Grants" source="Internal" id="ID_INTERNAL_FEATURE_REPLACEMENT_CLERIC_LIFE_DOMAIN_SUPREME_HEALER" />
+</elements>

@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<elements>
+	<info>
+		<update version="0.0.1">
+			<file name="cleric-trickery.xml" url="https://raw.githubusercontent.com/AuroraLegacy/elements/master/core/players-handbook-2024/archetypes/cleric-trickery.xml" />
+		</update>
+	</info>
+
+	<element name="Trickery Domain" type="Archetype" source="2024 Player’s Handbook" id="ID_WOTC_2024PHB_ARCHETYPE_CLERIC_TRICKERY_DOMAIN">
+		<supports>Divine Domain</supports>
+		<description>
+			<h5><i>Make Mischief and Challenge Authority</i></h5>
+			<p>The Trickery Domain offers magic of deception, illusion, and stealth. Clerics who wield this magic are a disruptive force in the world, puncturing pride, mocking tyrants, freeing captives, and flouting hollow traditions. They prefer subterfuge and pranks to direct confrontation.</p>
+			<p>Gods of trickery are mischief-makers and instigators who stand as a constant challenge to the accepted order among both gods and mortals. They embody the forces of change and social upheaval, and they're patrons of thieves, scoundrels, gamblers, rebels, and liberators. Religious orders that operate in secret, especially those that seek to undermine oppressive governments or hierarchies, also draw on the power of the Trickery Domain.</p>
+			<h5 class="caption">TRICKERY DOMAIN SPELLS</h5>
+			<p>Your connection to this divine domain ensures you always have certain spells ready. When you reach a Cleric level specified in the Trickery Domain Spells table, you thereafter always have the listed spells prepared.</p>
+			<table>
+				<thead>
+					<tr><td>Cleric Level</td><td>Spells</td></tr>
+				</thead>
+				<tr><td>3rd</td><td><em>Charm person, disguise self, invisibility, pass without trace</em></td></tr>
+				<tr><td>5th</td><td><em>Hypnotic pattern, nondetection</em></td></tr>
+				<tr><td>7th</td><td><em>Confusion, dimension door</em></td></tr>
+				<tr><td>9th</td><td><em>Dominate person, modify memory</em></td></tr>
+			</table>
+			<div element="ID_WOTC_2024PHB_ARCHETYPE_FEATURE_TRICKERY_DOMAIN_BLESSING_OF_THE_TRICKSTER" />
+			<div element="ID_WOTC_2024PHB_ARCHETYPE_FEATURE_TRICKERY_DOMAIN_CD_INVOKE_DUPLICITY" />
+			<div element="ID_WOTC_2024PHB_ARCHETYPE_FEATURE_TRICKERY_DOMAIN_TRICKSTER'S_TRANSPOSITION" />
+			<div element="ID_WOTC_2024PHB_ARCHETYPE_FEATURE_TRICKERY_DOMAIN_IMPROVED_DUPLICITY" />
+		</description>
+		<sheet display="false"/>
+		<rules>
+			<!-- Update 2014 to 2024 spell ID's
+			<grant type="Spell" id="ID_PHB_SPELL_CHARM_PERSON" level="3" spellcasting="Cleric" prepared="true" />
+			<grant type="Spell" id="ID_PHB_SPELL_DISGUISE_SELF" level="3" spellcasting="Cleric" prepared="true" />
+			<grant type="Spell" id="ID_PHB_SPELL_INVISIBILITY" level="3" spellcasting="Cleric" prepared="true" />
+			<grant type="Spell" id="ID_PHB_SPELL_PASS_WITHOUT_TRACE" level="3" spellcasting="Cleric" prepared="true" />
+			<grant type="Spell" id="ID_PHB_SPELL_HYPNOTIC_PATTERN" level="5" spellcasting="Cleric" prepared="true" />
+			<grant type="Spell" id="ID_PHB_SPELL_NONDETECTION" level="5" spellcasting="Cleric" prepared="true" />
+			<grant type="Spell" id="ID_PHB_SPELL_CONFUSION" level="7" spellcasting="Cleric" prepared="true" />
+			<grant type="Spell" id="ID_PHB_SPELL_DIMENSION_DOOR" level="7" spellcasting="Cleric" prepared="true" />
+			<grant type="Spell" id="ID_PHB_SPELL_DOMINATE_PERSON" level="9" spellcasting="Cleric" prepared="true" />
+			<grant type="Spell" id="ID_PHB_SPELL_MODIFY_MEMORY" level="9" spellcasting="Cleric" prepared="true" /> -->
+			<grant type="Archetype Feature" id="ID_WOTC_2024PHB_ARCHETYPE_FEATURE_TRICKERY_DOMAIN_BLESSING_OF_THE_TRICKSTER" level="3"/>
+			<grant type="Archetype Feature" id="ID_WOTC_2024PHB_ARCHETYPE_FEATURE_TRICKERY_DOMAIN_CD_INVOKE_DUPLICITY" level="3"/>
+			<grant type="Archetype Feature" id="ID_WOTC_2024PHB_ARCHETYPE_FEATURE_TRICKERY_DOMAIN_TRICKSTER'S_TRANSPOSITION" level="6"/>
+			<grant type="Archetype Feature" id="ID_WOTC_2024PHB_ARCHETYPE_FEATURE_TRICKERY_DOMAIN_IMPROVED_DUPLICITY" level="17"/>
+		</rules>
+	</element>
+	<element name="Blessing of the Trickster" type="Archetype Feature" source="2024 Player’s Handbook" id="ID_WOTC_2024PHB_ARCHETYPE_FEATURE_TRICKERY_DOMAIN_BLESSING_OF_THE_TRICKSTER">
+		<requirements>!ID_INTERNAL_FEATURE_REPLACEMENT_CLERIC_TRICKERY_DOMAIN_BLESSING_OF_THE_TRICKSTER</requirements>
+		<description>
+			<p>As a Magic action, you can choose yourself or a willing creature within 30 feet of yourself to have Advantage on Dexterity (Stealth) checks. This blessing lasts until you finish a Long Rest or you use this feature again.</p>
+		</description>
+		<sheet action="Magic Action">
+			<description>You give yourself or a willing creature within 30 feet of yourself Advantage on Dexterity (Stealth) checks. This blessing lasts until you finish a Long Rest or you use this feature again.</description>
+		</sheet>
+	</element>
+
+	<element name="Channel Divinity: Invoke Duplicity" type="Archetype Feature" source="2024 Player’s Handbook" id="ID_WOTC_2024PHB_ARCHETYPE_FEATURE_TRICKERY_DOMAIN_CD_INVOKE_DUPLICITY">
+		<requirements>!ID_INTERNAL_FEATURE_REPLACEMENT_CLERIC_TRICKERY_DOMAIN_CD_INVOKE_DUPLICITY</requirements>
+		<description>
+			<p>As a Bonus Action, you can expend one use of your Channel Divinity to create a perfect visual illusion of yourself in an unoccupied space you can see within 30 feet of yourself. The illusion is intangible and doesn't occupy its space. It lasts for 1 minute, but it ends early if you dismiss it (no action required) or have the Incapacitated condition. The illusion is animated and mimics your expressions and gestures. While it persists, you gain the following benefits.</p>
+			<p class="indent"><i>Cast Spells.</i> You can cast spells as though you were in the illusion's space, but you must use your own senses.</p>
+			<p class="indent"><i>Distract.</i> When both you and your illusion are within 5 feet of a creature that can see the illusion, you have Advantage on attack rolls against that creature, given how distracting the illusion is to the target.</p>
+			<p class="indent"><i>Move.</i> As a Bonus Action, you can move the illusion up to 30 feet to an unoccupied space you can see that is within 120 feet of yourself.</p>
+		</description>
+		<sheet alt="Invoke Duplicity" action="Bonus Action" usage="Channel Divinity">
+			<description>You can expend one use of your Channel Divinity to create a perfect visual illusion of yourself in an unoccupied space you can see within 30 feet of yourself. For the duration, you can cast spells as though you were in the illusion’s space, but you must use your own senses. Additionally, when both you and your illusion are within 5 feet of a creature that can see the illusion, you have advantage on attack rolls against that creature, and you can move the illusion up to 30 feet within 120 feet of yourself. The illusion lasts for 1 minute,  but it ends early if you dismiss it (no action required) or have the Incapacitated condition.</description>
+		</sheet>
+	</element>
+
+	<element name="Trickster's Transposition" type="Archetype Feature" source="2024 Player’s Handbook" id="ID_WOTC_2024PHB_ARCHETYPE_FEATURE_TRICKERY_DOMAIN_TRICKSTER'S_TRANSPOSITION">
+		<requirements>!ID_INTERNAL_FEATURE_REPLACEMENT_CLERIC_TRICKERY_DOMAIN_CD_CLOAK_OF_SHADOWS</requirements>
+		<description>
+			<p>Whenever you take the Bonus Action to create or move the illusion of your Invoke Duplicity, you can teleport, swapping places with the illusion.</p>
+		</description>
+		<sheet alt="Cloak of Shadows" action="Bonus Action">
+			<description>Whenever you take the Bonus Action to create or move the illusion of your Invoke Duplicity, you can teleport, swapping places with the illusion.</description>
+		</sheet>
+	</element>
+
+	<element name="Improved Duplicity" type="Archetype Feature" source="2024 Player’s Handbook" id="ID_WOTC_2024PHB_ARCHETYPE_FEATURE_TRICKERY_DOMAIN_IMPROVED_DUPLICITY">
+		<requirements>!ID_INTERNAL_FEATURE_REPLACEMENT_CLERIC_TRICKERY_DOMAIN_IMPROVED_DUPLICITY</requirements>
+		<description>
+			<p>The illusion of your Invoke Duplicity has grown more powerful in the following ways.</p>
+			<p><i>Shared Distraction</i>When you and your allies make attack rolls against a creature within 5 feet of the illusion, the attack rolls have Advantage.</p>
+			<p><i>Healing Illusion</i>When the illusion ends, you or a creature of your choice within 5 feet of it regains a number of Hit Points equal to your Cleric level.</p>
+			<div class="reference">
+				<div element="ID_WOTC_2024PHB_ARCHETYPE_FEATURE_TRICKERY_DOMAIN_CD_INVOKE_DUPLICITY" />
+			</div>
+		</description>
+		<sheet>
+			<description>The illusion of your Invoke Duplicity has grown more powerful in the following ways; Shared Distraction: When you and your allies make attack rolls against a creature within 5 feet of the illusion, the attack rolls have Advantage. Healing Illusion: When the illusion ends, you or a creature of your choice within 5 feet of it regains {{level}} Hit Points.</description>
+		</sheet>
+	</element>
+	
+	<!--Feature Replacement Grants-->
+	<element name="Blessing of the Trickster Feature Replacement" type="Grants" source="Internal" id="ID_INTERNAL_FEATURE_REPLACEMENT_CLERIC_TRICKERY_DOMAIN_BLESSING_OF_THE_TRICKSTER" />
+	<element name="Channel Divinity: Invoke Duplicity Feature Replacement" type="Grants" source="Internal" id="ID_INTERNAL_FEATURE_REPLACEMENT_CLERIC_TRICKERY_DOMAIN_CD_INVOKE_DUPLICITY" />
+	<element name="Channel Divinity: Cloak of Shadows Feature Replacement" type="Grants" source="Internal" id="ID_INTERNAL_FEATURE_REPLACEMENT_CLERIC_TRICKERY_DOMAIN_CD_CLOAK_OF_SHADOWS" />
+	<element name="Improved Duplicity Feature Replacement" type="Grants" source="Internal" id="ID_INTERNAL_FEATURE_REPLACEMENT_CLERIC_TRICKERY_DOMAIN_IMPROVED_DUPLICITY" />
+</elements>
