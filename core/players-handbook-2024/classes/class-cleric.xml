@@ -17,13 +17,13 @@
 			<div class="sidebar">
 				<h5>CORE CLERIC TRAITS</h5>
 				<table>
-					<tr><td>Primary Ability</td><td class="left">Wisdom </td> </tr>
-					<tr><td>Hit Point Die</td><td class="left">D8 per Cleric level</td></tr>
-					<tr><td>Saving Throw Proficiencies</td><td class="left">Wisdom and Charisma</td></tr>
-					<tr><td>Skill Proficiencies</td><td class="left"><i>Choose 2:</i> History, Insight, Medicine, Persuasion, or Religion.</td></tr>
-					<tr><td>Weapon Proficiencies</td><td class="left>">Simple weapons</td></tr>
-					<tr><td>Armor Training</td><td class="left">Light and Medium armor and Shields</td></tr>
-					<tr><td>Starting Equipment</td><td class="left"><i> Choose A or B:</i> (A) Chain Shirt, Shield, Mace, Holy Symbol, Priest's Pack, and 7 GP; or (B) 110 GP</td></tr>
+					<tr><td><b>Primary Ability</b></td><td class="left">Wisdom </td> </tr>
+					<tr><td><b>Hit Point Die</b></td><td class="left">D8 per Cleric level</td></tr>
+					<tr><td><b>Saving Throw Proficiencies</b></td><td class="left">Wisdom and Charisma</td></tr>
+					<tr><td><b>Skill Proficiencies</b></td><td class="left"><i>Choose 2:</i> History, Insight, Medicine, Persuasion, or Religion.</td></tr>
+					<tr><td><b>Weapon Proficiencies</b></td><td class="left>">Simple weapons</td></tr>
+					<tr><td><b>Armor Training</b></td><td class="left">Light and Medium armor and Shields</td></tr>
+					<tr><td><b>Starting Equipment</b></td><td class="left"><i> Choose A or B:</i> (A) Chain Shirt, Shield, Mace, Holy Symbol, Priest's Pack, and 7 GP; or (B) 110 GP</td></tr>
 				</table>
 			</div>
 			<h4>BECOMING A CLERIC ...</h4>
@@ -69,7 +69,7 @@
 				<tr><td>19</td><td class="left">Epic Boon</td><td>4</td><td>5</td><td>21</td><td>4</td><td>3</td><td>3</td><td>3</td><td>3</td><td>2</td><td>1</td><td>1</td><td>1</td></tr>
 				<tr><td>20</td><td class="left">Greater Divine Intervention</td><td>4</td><td>5</td><td>22</td><td>4</td><td>3</td><td>3</td><td>3</td><td>3</td><td>2</td><td>2</td><td>1</td><td>1</td></tr>
 			</table>
-			<div element="ID_WOTC_PHB24_CLASS_FEATURE_CLERIC_SPELLCASTING_CLERIC" />
+			<div element="ID_WOTC_PHB24_CLASS_FEATURE_CLERIC_SPELLCASTING" />
 			<div element="ID_WOTC_PHB24_CLASS_FEATURE_CLERIC_DIVINE_ORDER" />
 			<div element="ID_WOTC_PHB24_CLASS_FEATURE_CLERIC_CHANNEL_DIVINITY" />
 			<div element="ID_WOTC_PHB24_CLASS_FEATURE_CLERIC_CLERIC_SUBCLASS" />
@@ -83,7 +83,7 @@
 		</description>
 		<sheet display="false" />
 		<setters>
-			<set name="short">A Miraculous Priest of Divine Power.</set>
+			<set name="short">A Miraculous Priest of Divine Power</set>
 			<set name="hd">d8</set>
 		</setters>
 		<rules>
@@ -95,7 +95,7 @@
 			<grant type="Proficiency" id="ID_WOTC_PHB24_PROFICIENCY_SAVINGTHROW_CHARISMA" requirements="!ID_WOTC_PHB24_MULTICLASS_CLERIC"/>
 			<select type="Proficiency" name="Skill Proficiency (Cleric)" supports="Skill,Cleric" number="2" requirements="!ID_WOTC_PHB24_MULTICLASS_CLERIC"/>
 
-			<grant type="Class Feature" id="ID_WOTC_PHB24_CLASS_FEATURE_CLERIC_SPELLCASTING_CLERIC" />
+			<grant type="Class Feature" id="ID_WOTC_PHB24_CLASS_FEATURE_CLERIC_SPELLCASTING" />
 			<grant type="Class Feature" id="ID_WOTC_PHB24_CLASS_FEATURE_CLERIC_DIVINE_ORDER" />
 			<grant type="Class Feature" id="ID_WOTC_PHB24_CLASS_FEATURE_CLERIC_CHANNEL_DIVINITY" level="2" />
 			<grant type="Class Feature" id="ID_WOTC_PHB24_CLASS_FEATURE_CLERIC_CLERIC_SUBCLASS" level="3" />
@@ -119,7 +119,7 @@
 		</multiclass>
 	</element>
 
-	<element name="Level 1: Spellcasting" type="Class Feature" source="Player’s Handbook 2024" id="ID_WOTC_PHB24_CLASS_FEATURE_CLERIC_SPELLCASTING_CLERIC">
+	<element name="Level 1: Spellcasting" type="Class Feature" source="Player’s Handbook 2024" id="ID_WOTC_PHB24_CLASS_FEATURE_CLERIC_SPELLCASTING">
 		<requirements>!ID_INTERNAL_PHB24_FEATURE_REPLACEMENT_CLERIC_SPELLCASTING</requirements>
 		<description>
 			<p>You have learned to cast spells through prayer and meditation.</p>
@@ -145,6 +145,7 @@
 			<list known="true">Cleric</list>
 		</spellcasting>
 		<rules>
+			<grant type="Grants" id="ID_INTERNAL_GRANTS_SPELLCASTING_FEATURE" />
 			<grant type="Grants" id="ID_INTERNAL_GRANT_MULTICLASS_SPELLCASTING_SLOTS_FULL" requirements="ID_INTERNAL_GRANT_MULTICLASS" />
 			<grant type="Grants" id="ID_INTERNAL_RITUAL_CASTING" />
 			<grant type="Proficiency" id="ID_INTERNAL_PROFICIENCY_SPELLFOCUS_GROUP_HOLY_SYMBOL" />
@@ -203,7 +204,7 @@
 		</description>
 		<sheet display="false" />
 		<rules>
-			<select type="Class Feature" name="Sacred Role (Divine Domain)" supports="PHB24 Divine Order" />
+			<select type="Class Feature" name="Sacred Role (Divine Order)" supports="PHB24 Divine Order" />
 		</rules>
 	</element>
 
@@ -253,7 +254,7 @@
 			<stat name="channel divinity:count" value="3" level="6" bonus="base" />
 			<stat name="channel divinity:count" value="4" level="18" bonus="base" />
 			<select type="Class Feature" name="Channel Divinity: Divine Spark" supports="PHB24 Divine Spark" default="ID_WOTC_PHB24_CLASS_FEATURE_CLERIC_CHANNEL_DIVINITY_DIVINE_SPARK" requirements="!ID_INTERNAL_PHB24_FEATURE_REPLACEMENT_CLERIC_CHANNEL_DIVINITY_DIVINE_SPARK" />
-			<select type="Class Feature" name="Channel Divinity: Divine Spark" supports="PHB24 Turn Undead" default="ID_WOTC_PHB24_CLASS_FEATURE_CLERIC_CHANNEL_DIVINITY_TURN_UNDEAD" requirements="!ID_INTERNAL_PHB24_FEATURE_REPLACEMENT_CLERIC_CHANNEL_DIVINITY_TURN_UNDEAD" />
+			<select type="Class Feature" name="Channel Divinity: Turn Undead" supports="PHB24 Turn Undead" default="ID_WOTC_PHB24_CLASS_FEATURE_CLERIC_CHANNEL_DIVINITY_TURN_UNDEAD" requirements="!ID_INTERNAL_PHB24_FEATURE_REPLACEMENT_CLERIC_CHANNEL_DIVINITY_TURN_UNDEAD" />
 		</rules>
 	</element>
 	<element name="Channel Divinity: Divine Spark" type="Class Feature" source="Player’s Handbook 2024" id="ID_WOTC_PHB24_CLASS_FEATURE_CLERIC_CHANNEL_DIVINITY_DIVINE_SPARK">
@@ -302,10 +303,10 @@
 		</description>
 		<sheet display="false" />
 		<rules>
-			<select type="Feat" name="Ability Score Improvement (Cleric 4)" supports="!Boon" level="4" />
-			<select type="Feat" name="Ability Score Improvement (Cleric 8)" supports="!Boon" level="8" />
-			<select type="Feat" name="Ability Score Improvement (Cleric 12)" supports="!Boon" level="12" />
-			<select type="Feat" name="Ability Score Improvement (Cleric 16)" supports="!Boon" level="16" />
+			<select type="Feat" name="Ability Score Improvement (Cleric 4)" level="4" />
+			<select type="Feat" name="Ability Score Improvement (Cleric 8)" level="8" />
+			<select type="Feat" name="Ability Score Improvement (Cleric 12)" level="12" />
+			<select type="Feat" name="Ability Score Improvement (Cleric 16)" level="16" />
 		</rules>
 	</element>
 
