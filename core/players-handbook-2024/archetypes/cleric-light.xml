@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<elements>
+	<info>
+		<update version="0.0.1">
+			<file name="cleric-light.xml" url="https://raw.githubusercontent.com/AuroraLegacy/elements/master/core/players-handbook-2024/archetypes/cleric-light.xml" />
+		</update>
+	</info>
+
+	<element name="Light Domain" type="Archetype" source="Player’s Handbook 2024" id="ID_WOTC_PHB24_ARCHETYPE_CLERIC_LIGHT_DOMAIN">
+		<supports>Cleric Subclass</supports>
+		<description>
+			<p class="flavor">Bring Light to Banish Darkness</p>
+			<p>The Light Domain emphasizes the divine power to bring about blazing fire and revelation. Clerics who wield this power are enlightened souls infused with radiance and the power of their deities' discerning vision, charged with chasing away lies and burning away darkness.</p>
+			<p class="indent">The Light Domain is associated with gods of truth, vigilance, beauty, insight, and renewal. Some of these gods are identified with the sun or as charioteers who guide the sun across the sky. Others are sentinels who pierce deception. Some are deities of beauty and artistry who teach that art is a vehicle for the soul's improvement.</p>
+			<div element="ID_WOTC_PHB24_ARCHETYPE_FEATURE_LIGHT_DOMAIN_LIGHT_DOMAIN_SPELLS" />
+			<div element="ID_WOTC_PHB24_ARCHETYPE_FEATURE_LIGHT_DOMAIN_RADIANCE_OF_THE_DAWN" />
+			<div element="ID_WOTC_PHB24_ARCHETYPE_FEATURE_LIGHT_DOMAIN_WARDING_FLARE" />
+			<div element="ID_WOTC_PHB24_ARCHETYPE_FEATURE_LIGHT_DOMAIN_IMPROVED_FLARE" />
+			<div element="ID_WOTC_PHB24_ARCHETYPE_FEATURE_LIGHT_DOMAIN_CORONA_OF_LIGHT" />
+		</description>
+		<sheet display="false" />
+		<rules>
+			<grant type="Archetype Feature" id="ID_WOTC_PHB24_ARCHETYPE_FEATURE_LIGHT_DOMAIN_LIGHT_DOMAIN_SPELLS" level="3"/>
+			<grant type="Archetype Feature" id="ID_WOTC_PHB24_ARCHETYPE_FEATURE_LIGHT_DOMAIN_RADIANCE_OF_THE_DAWN" level="3" />
+			<grant type="Archetype Feature" id="ID_WOTC_PHB24_ARCHETYPE_FEATURE_LIGHT_DOMAIN_WARDING_FLARE" level="3" />
+			<grant type="Archetype Feature" id="ID_WOTC_PHB24_ARCHETYPE_FEATURE_LIGHT_DOMAIN_IMPROVED_FLARE" level="6" />
+			<grant type="Archetype Feature" id="ID_WOTC_PHB24_ARCHETYPE_FEATURE_LIGHT_DOMAIN_CORONA_OF_LIGHT" level="17" /> 
+		</rules>
+	</element>
+
+	<element name="Level 3: Light Domain Spells" type="Archetype Feature" source="Player’s Handbook 2024" id="ID_WOTC_PHB24_ARCHETYPE_FEATURE_LIGHT_DOMAIN_LIGHT_DOMAIN_SPELLS">
+		<requirements>!ID_INTERNAL_PHB24_FEATURE_REPLACEMENT_CLERIC_LIGHT_DOMAIN_LIGHT_DOMAIN_SPELLS</requirements>
+		<description>
+			<p>Your connection to this divine domain ensures you always have certain spells ready. When you reach a Cleric level specified in the Light Domain Spells table, you thereafter always have the listed spells prepared.</p>
+			<h5>LIGHT DOMAIN SPELLS</h5>
+			<table>
+				<thead>
+					<tr><td class="col-15" style="text-align:center">Cleric Level</td><td>Prepared Spells</td></tr>
+				</thead>
+				<tr><td style="text-align:center">3</td><td><em>Burning Hands, Faerie Fire, Scorching Ray, See Invisibility</em></td></tr>
+				<tr><td style="text-align:center">5</td><td><em>Daylight, Fireball</em></td></tr>
+				<tr><td style="text-align:center">7</td><td><em>Arcane Eye, Wall of Fire</em></td></tr>
+				<tr><td style="text-align:center">9</td><td><em>Flame Strike, Scrying</em></td></tr>
+			</table>
+		</description>
+		<sheet display="false" />
+		<rules>
+			<grant type="Spell" id="ID_WOTC_PHB24_SPELL_BURNING_HANDS" level="3" spellcasting="Cleric" prepared="true" />
+			<grant type="Spell" id="ID_WOTC_PHB24_SPELL_FAERIE_FIRE" level="3" spellcasting="Cleric" prepared="true" />
+			<grant type="Spell" id="ID_WOTC_PHB24_SPELL_SCORCHING_RAY" level="3" spellcasting="Cleric" prepared="true" />
+			<grant type="Spell" id="ID_WOTC_PHB24_SPELL_SEE_INVISIBILITY" level="3" spellcasting="Cleric" prepared="true" />
+			<grant type="Spell" id="ID_WOTC_PHB24_SPELL_DAYLIGHT" level="5" spellcasting="Cleric" prepared="true" />
+			<grant type="Spell" id="ID_WOTC_PHB24_SPELL_FIREBALL" level="5" spellcasting="Cleric" prepared="true" />
+			<grant type="Spell" id="ID_WOTC_PHB24_SPELL_ARCANE_EYE" level="7" spellcasting="Cleric" prepared="true" />
+			<grant type="Spell" id="ID_WOTC_PHB24_SPELL_WALL_OF_FIRE" level="7" spellcasting="Cleric" prepared="true" />
+			<grant type="Spell" id="ID_WOTC_PHB24_SPELL_FLAME_STRIKE" level="9" spellcasting="Cleric" prepared="true" />
+			<grant type="Spell" id="ID_WOTC_PHB24_SPELL_SCRYING" level="9" spellcasting="Cleric" prepared="true" />
+		</rules>
+	</element>
+
+	<element name="Level 3: Radiance of the Dawn" type="Archetype Feature" source="Player’s Handbook 2024" id="ID_WOTC_PHB24_ARCHETYPE_FEATURE_LIGHT_DOMAIN_RADIANCE_OF_THE_DAWN">
+		<requirements>!ID_INTERNAL_PHB24_FEATURE_REPLACEMENT_CLERIC_LIGHT_DOMAIN_RADIANCE_OF_THE_DAWN</requirements>
+		<description>
+			<p>As a Magic action, you present your Holy Symbol and expend a use of your Channel Divinity to emit a flash of light in a 30-foot Emanation originating from yourself. Any magical Darkness—such as that created by the <i>Darkness</i> spell—in that area is dispelled. Additionally, each creature of your choice in that area must make a Constitution saving throw, taking Radiant damage equal to 2d10 plus your Cleric level on a failed save or half as much damage on a successful one.</p>
+		</description>
+		<sheet alt="Radiance of the Dawn" action="Action" usage="Channel Divinity">
+			<description>You present your Holy Symbol, and any magical darkness within 30 feet of you is magically dispelled. Each creature of your choice within 30 feet of you must make a DC{{cleric:spellcasting:dc}} Constitution saving throw. A creature takes 2d10+{{level:cleric}} radiant damage on a failed saving throw, and half as much damage on a successful one.</description>
+		</sheet>
+	</element>
+
+	<element name="Level 3: Warding Flare" type="Archetype Feature" source="Player’s Handbook 2024" id="ID_WOTC_PHB24_ARCHETYPE_FEATURE_LIGHT_DOMAIN_WARDING_FLARE">
+		<requirements>!ID_INTERNAL_PHB24_FEATURE_REPLACEMENT_CLERIC_LIGHT_DOMAIN_WARDING_FLARE</requirements>
+		<description>
+			<p>When a creature that you can see within 30 feet of yourself makes an attack roll, you can take a Reaction to impose Disadvantage on the attack roll, causing light to flare before it hits or misses.</p>
+			<p class="indent">You can use this feature a number of times equal to your Wisdom modifier (minimum of once). You regain all expended uses when you finish a Long Rest.</p>
+		</description>
+		<sheet alt="Warding Flare" action="Reaction" usage="{{warding flare:usage}}/Long Rest">
+			<description>When a creature that you can see within 30 feet of yourself makes an attack roll, you can impose Disadvantage on the attack roll before it hits or misses.</description>
+			<description usage="{{warding flare:usage}}/Short Rest" level="6">When a creature that you can see within 30 feet of yourself makes an attack roll, you can impose Disadvantage on the attack roll before it hits or misses. Additionally, you can give the target of this attack 2d6+{{wisdom:modifier}} Temporary Hit Points.</description>
+		</sheet>
+		<rules>
+			<stat name="warding flare:usage" value="1" bonus="base" />
+			<stat name="warding flare:usage" value="wisdom:modifier" bonus="base" />
+		</rules>
+	</element>
+
+	<element name="Level 6: Improved Flare" type="Archetype Feature" source="Player’s Handbook 2024" id="ID_WOTC_PHB24_ARCHETYPE_FEATURE_LIGHT_DOMAIN_IMPROVED_FLARE">
+		<requirements>!ID_INTERNAL_PHB24_FEATURE_REPLACEMENT_CLERIC_LIGHT_DOMAIN_IMPROVED_FLARE</requirements>
+		<description>
+			<p>You regain all expended uses of your Warding Flare when you finish a Short or Long Rest.</p>
+			<p class="indent">In addition, whenever you use Warding Flare, you can give the target of the triggering attack a number of Temporary Hit Points equal to 2d6 plus your Wisdom modifier.</p>
+		</description>
+		<sheet display="false" />
+	</element>
+
+	<element name="Level 17: Corona of Light" type="Archetype Feature" source="Player’s Handbook 2024" id="ID_WOTC_PHB24_ARCHETYPE_FEATURE_LIGHT_DOMAIN_CORONA_OF_LIGHT">
+		<requirements>!ID_INTERNAL_PHB24_FEATURE_REPLACEMENT_CLERIC_LIGHT_DOMAIN_CORONA_OF_LIGHT</requirements>
+		<description>
+			<p>As a Magic action, you cause yourself to emit an aura of sunlight that lasts for 1 minute or until you dismiss it (no action required). You emit Bright Light in a 60-foot radius and Dim Light for an additional 30 feet. Your enemies in the Bright Light have Disadvantage on saving throws against your Radiance of the Dawn and any spell that deals Fire or Radiant damage.</p>
+			<p class="indent">You can use this feature a number of times equal to your Wisdom modifier (minimum of once). You regain all expended uses when you finish a Long Rest.</p>
+		</description>
+		<sheet alt="Corona of Light" action="Action" usage="{{corona of light:usage}}/Long Rest">
+			<description>You cause yourself to magically emit an aura of sunlight that lasts for 1 minute or until you dismiss it. You emit Bright Light in a 60-foot radius and Dim Light for an additional 30 feet. Your enemies in the Bright Light have Disadvantage on saving throws against your Radiance of the Dawn and any spell that deals Fire or Radiant damage..</description>
+		</sheet>
+		<rules>
+			<stat name="corona of light:usage" value="1" bonus="base" />
+			<stat name="corona of light:usage" value="wisdom:modifier" bonus="base" />
+		</rules>
+	</element>
+	
+	<!--Feature Replacement Grants-->
+	<element name="Radiance of the Dawn Feature Replacement" type="Grants" source="Internal" id="ID_INTERNAL_PHB24_FEATURE_REPLACEMENT_CLERIC_LIGHT_DOMAIN_LIGHT_DOMAIN_SPELLS" />
+	<element name="Radiance of the Dawn Feature Replacement" type="Grants" source="Internal" id="ID_INTERNAL_PHB24_FEATURE_REPLACEMENT_CLERIC_LIGHT_DOMAIN_RADIANCE_OF_THE_DAWN" />
+	<element name="Warding Flare Feature Replacement" type="Grants" source="Internal" id="ID_INTERNAL_PHB24_FEATURE_REPLACEMENT_CLERIC_LIGHT_DOMAIN_WARDING_FLARE" />
+	<element name="Improved Flare Feature Replacement" type="Grants" source="Internal" id="ID_INTERNAL_PHB24_FEATURE_REPLACEMENT_CLERIC_LIGHT_DOMAIN_IMPROVED_FLARE" />
+	<element name="Corona of Light Feature Replacement" type="Grants" source="Internal" id="ID_INTERNAL_PHB24_FEATURE_REPLACEMENT_CLERIC_LIGHT_DOMAIN_CORONA_OF_LIGHT" />
+</elements>

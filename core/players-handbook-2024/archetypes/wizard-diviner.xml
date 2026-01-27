@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<elements>
+	<info>
+		<update version="0.0.1">
+		<file name="wizard-diviner.xml" url="https://raw.githubusercontent.com/AuroraLegacy/elements/master/core/players-handbook-2024/archetypes/wizard-diviner.xml" />
+		</update>
+	</info>
+
+	<element name="Diviner" type="Archetype" source="Player’s Handbook 2024" id="ID_WOTC_PHB24_ARCHETYPE_WIZARD_DIVINER">
+		<supports>Wizard Subclass</supports>
+		<description>
+			<p class="flavor">Learn the Secrets of the Multiverse</p>
+            <p>The counsel of a Diviner is sought by those who want a clearer understanding of the past, present, and future. As a Diviner, you strive to part the veils of space, time, and consciousness. You work to master spells of discernment, remote viewing, supernatural knowledge, and foresight.</p>
+            <div element="ID_WOTC_PHB24_ARCHETYPE_WIZARD_DIVINER_DIVINATION_SAVANT" />
+			<div element="ID_WOTC_PHB24_ARCHETYPE_WIZARD_DIVINER_PORTENT" />
+			<div element="ID_WOTC_PHB24_ARCHETYPE_WIZARD_DIVINER_EXPERT_DIVINATION" />
+			<div element="ID_WOTC_PHB24_ARCHETYPE_WIZARD_DIVINER_THE_THIRD_EYE" />
+			<div element="ID_WOTC_PHB24_ARCHETYPE_WIZARD_DIVINER_GREATER_PORTENT" />
+		</description>
+        <sheet display="false" />
+		<rules>
+			<grant type="Archetype Feature" id="ID_WOTC_PHB24_ARCHETYPE_WIZARD_DIVINER_DIVINATION_SAVANT" level="3"/>
+			<grant type="Archetype Feature" id="ID_WOTC_PHB24_ARCHETYPE_WIZARD_DIVINER_PORTENT" level="3"/>
+			<grant type="Archetype Feature" id="ID_WOTC_PHB24_ARCHETYPE_WIZARD_DIVINER_EXPERT_DIVINATION" level="6"/>
+			<grant type="Archetype Feature" id="ID_WOTC_PHB24_ARCHETYPE_WIZARD_DIVINER_THE_THIRD_EYE" level="10"/>
+			<grant type="Archetype Feature" id="ID_WOTC_PHB24_ARCHETYPE_WIZARD_DIVINER_GREATER_PORTENT" level="14"/>
+		</rules>
+	</element>
+
+	<element name="Level 3: Divination Savant" type="Archetype Feature" source="Player’s Handbook 2024" id="ID_WOTC_PHB24_ARCHETYPE_WIZARD_DIVINER_DIVINATION_SAVANT">
+		<requirements>!ID_INTERNAL_PHB24_FEATURE_REPLACEMENT_WIZARD_DIVINER_DIVINATION_SAVANT</requirements>
+		<description>
+			<p>Choose two Wizard spells from the Divination school, each of which must be no higher than level 2, and add them to your spellbook for free.</p>
+			<p class="indent">In addition, whenever you gain access to a new level of spell slots in this class, you can add one Wizard spell from the Divination school to your spellbook for free. The chosen spell must be of a level for which you have spell slots.</p>
+		</description>
+		<sheet display="false" />
+		<rules>
+			<select type="Spell" name="Divination Spell (Divination Savant)" supports="$(spellcasting:slots),Divination,Wizard" number="2" level="3" spellcasting="Wizard" />
+			<select type="Spell" name="Divination Spell (Divination Savant)" supports="$(spellcasting:slots),Divination,Wizard" level="5" spellcasting="Wizard" />
+			<select type="Spell" name="Divination Spell (Divination Savant)" supports="$(spellcasting:slots),Divination,Wizard" level="7" spellcasting="Wizard" />
+			<select type="Spell" name="Divination Spell (Divination Savant)" supports="$(spellcasting:slots),Divination,Wizard" level="9" spellcasting="Wizard" />
+			<select type="Spell" name="Divination Spell (Divination Savant)" supports="$(spellcasting:slots),Divination,Wizard" level="11" spellcasting="Wizard" />
+			<select type="Spell" name="Divination Spell (Divination Savant)" supports="$(spellcasting:slots),Divination,Wizard" level="13" spellcasting="Wizard" />
+			<select type="Spell" name="Divination Spell (Divination Savant)" supports="$(spellcasting:slots),Divination,Wizard" level="15" spellcasting="Wizard" />
+			<select type="Spell" name="Divination Spell (Divination Savant)" supports="$(spellcasting:slots),Divination,Wizard" level="17" spellcasting="Wizard" />
+		</rules>
+	</element>
+
+	<element name="Level 3: Portent" type="Archetype Feature" source="Player’s Handbook 2024" id="ID_WOTC_PHB24_ARCHETYPE_WIZARD_DIVINER_PORTENT">
+		<requirements>!(ID_INTERNAL_PHB24_FEATURE_REPLACEMENT_WIZARD_DIVINER_PORTENT||ID_INTERNAL_PHB24_FEATURE_REPLACEMENT_WIZARD_DIVINER_GREATER_PORTENT)</requirements>
+		<description>
+			<p>Glimpses of the future begin to press on your awareness. Whenever you finish a Long Rest, roll two d20s and record the numbers rolled. You can replace any D20 Test made by you or a creature that you can see with one of these foretelling rolls. You must choose to do so before the roll, and you can replace a roll in this way only once per turn.</p>
+			<p class="indent">Each foretelling roll can be used only once. When you finish a Long Rest, you lose any unused foretelling rolls.</p>
+		</description>
+		<sheet alt="Portent">
+			<description>When you finish a Long Rest, roll two d20s and record the numbers rolled. You can replace any D20 Test made by you or a creature that you can see with one of these foretelling rolls by expending it. You must choose to do so before the roll, and you can do so only once per turn. When you finish a Long Rest, you lose any unexpended foretelling rolls.</description>
+			<description level="14">When you finish a Long Rest, roll three d20s and record the numbers rolled. You can replace any D20 Test made by you or a creature that you can see with one of these foretelling rolls by expending it. You must choose to do so before the roll, and you can do so only once per turn. When you finish a Long Rest, you lose any unexpended foretelling rolls.</description>
+		</sheet>
+	</element>
+
+	<element name="Level 6: Expert Divination" type="Archetype Feature" source="Player’s Handbook 2024" id="ID_WOTC_PHB24_ARCHETYPE_WIZARD_DIVINER_EXPERT_DIVINATION">
+		<requirements>!ID_INTERNAL_PHB24_FEATURE_REPLACEMENT_WIZARD_DIVINER_EXPERT_DIVINATION</requirements>
+		<description>
+			<p>Casting Divination spells comes so easily to you that it expends only a fraction of your spellcasting efforts. When you cast a Divination spell using a level 2+ spell slot, you regain one expended spell slot. The slot you regain must be of a level lower than the slot you expended and can't be higher than level 5.</p>
+		</description>
+		<sheet alt="Expert Divination">
+			<description>When you cast a Divination spell using a level 2+ spell slot, you regain one expended spell slot that can be of a level lower than the slot you expended and can't be higher than level 5.</description>
+		</sheet>
+	</element>
+
+	<element name="Level 10: The Third Eye" type="Archetype Feature" source="Player’s Handbook 2024" id="ID_WOTC_PHB24_ARCHETYPE_WIZARD_DIVINER_THE_THIRD_EYE">
+		<requirements>!ID_INTERNAL_PHB24_FEATURE_REPLACEMENT_WIZARD_DIVINER_THE_THIRD_EYE</requirements>
+		<description>
+			<p>You can increase your powers of perception. As a Bonus Action, choose one of the following benefits, which lasts until you start a Short or Long Rest. You can't use this feature again until you finish a Short or Long Rest.</p>
+			<p class="indent"><i><b>Darkvision.</b></i> You gain Darkvision with a range of 120 feet.</p>
+			<p class="indent"><i><b>Greater Comprehension.</b></i> You can read any language.</p>
+			<p class="indent"><i><b>See Invisibility.</b></i> You can cast <i>See Invisibility</i> without expending a spell slot.</p>
+		</description>
+		<sheet alt="The Third Eye" action="Bonus Action" usage="1/Short Rest">
+			<description>Choose one of the following benefits, which lasts until you start a Rest: &#13;
+			• You gain Darkvision with a range of 120 feet. &#13;
+			• You can read any language. &#13;
+			• You can cast See Invisibility without expending a spell slot.</description>
+		</sheet>
+	</element>
+
+	<element name="Level 14: Greater Portent" type="Archetype Feature" source="Player’s Handbook 2024" id="ID_WOTC_PHB24_ARCHETYPE_WIZARD_DIVINER_GREATER_PORTENT">
+		<requirements>!ID_INTERNAL_PHB24_FEATURE_REPLACEMENT_WIZARD_DIVINER_GREATER_PORTENT</requirements>
+		<description>
+			<p>The visions in your dreams intensify and paint a more accurate picture in your mind of what is to come. Roll three d20s for your Portent feature rather than two.</p>
+		</description>
+		<sheet display="false" />
+	</element>
+	
+	<!--Feature Replacement Grants-->
+	<element name="Divination Savant Feature Replacement" type="Grants" source="Internal" id="ID_INTERNAL_PHB24_FEATURE_REPLACEMENT_WIZARD_DIVINER_DIVINATION_SAVANT" />
+	<element name="Portent Feature Replacement" type="Grants" source="Internal" id="ID_INTERNAL_PHB24_FEATURE_REPLACEMENT_WIZARD_DIVINER_PORTENT" />
+	<element name="Expert Divination Feature Replacement" type="Grants" source="Internal" id="ID_INTERNAL_PHB24_FEATURE_REPLACEMENT_WIZARD_DIVINER_EXPERT_DIVINATION" />
+	<element name="The Third Eye Feature Replacement" type="Grants" source="Internal" id="ID_INTERNAL_PHB24_FEATURE_REPLACEMENT_WIZARD_DIVINER_THE_THIRD_EYE" />
+	<element name="Greater Portent Feature Replacement" type="Grants" source="Internal" id="ID_INTERNAL_PHB24_FEATURE_REPLACEMENT_WIZARD_DIVINER_GREATER_PORTENT" />
+</elements>

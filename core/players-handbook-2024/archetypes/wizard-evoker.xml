@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<elements>
+	<info>
+		<update version="0.0.1">
+		<file name="wizard-evoker.xml" url="https://raw.githubusercontent.com/AuroraLegacy/elements/master/core/players-handbook-2024/archetypes/wizard-evoker.xml" />
+		</update>
+	</info>
+
+	<element name="Evoker" type="Archetype" source="Player’s Handbook 2024" id="ID_WOTC_PHB24_ARCHETYPE_WIZARD_EVOKER">
+		<supports>Wizard Subclass</supports>
+		<description>
+			<p class="flavor">Create Explosive Elemental Effects</p>
+			<p>Your studies focus on magic that creates powerful elemental effects such as bitter cold, searing flame, rolling thunder, crackling lightning, and burning acid. Some Evokers find employment in military forces, serving as artillery to blast armies from afar. Others use their power to protect others, while some seek their own gain.</p>
+            <div element="ID_WOTC_PHB24_ARCHETYPE_WIZARD_EVOKER_EVOCATION_SAVANT" />
+			<div element="ID_WOTC_PHB24_ARCHETYPE_WIZARD_EVOKER_POTENT_CANTRIP" />
+			<div element="ID_WOTC_PHB24_ARCHETYPE_WIZARD_EVOKER_SCULPT_SPELLS" />
+			<div element="ID_WOTC_PHB24_ARCHETYPE_WIZARD_EVOKER_EMPOWERED_EVOCATION" />
+			<div element="ID_WOTC_PHB24_ARCHETYPE_WIZARD_EVOKER_OVERCHANNEL" />
+		</description>
+        <sheet display="false" />
+		<rules>
+			<grant type="Archetype Feature" id="ID_WOTC_PHB24_ARCHETYPE_WIZARD_EVOKER_EVOCATION_SAVANT" level="3"/>
+			<grant type="Archetype Feature" id="ID_WOTC_PHB24_ARCHETYPE_WIZARD_EVOKER_POTENT_CANTRIP" level="3"/>
+			<grant type="Archetype Feature" id="ID_WOTC_PHB24_ARCHETYPE_WIZARD_EVOKER_SCULPT_SPELLS" level="6"/>
+			<grant type="Archetype Feature" id="ID_WOTC_PHB24_ARCHETYPE_WIZARD_EVOKER_EMPOWERED_EVOCATION" level="10"/>
+			<grant type="Archetype Feature" id="ID_WOTC_PHB24_ARCHETYPE_WIZARD_EVOKER_OVERCHANNEL" level="14"/>
+		</rules>
+	</element>
+
+	<element name="Level 3: Evocation Savant" type="Archetype Feature" source="Player’s Handbook 2024" id="ID_WOTC_PHB24_ARCHETYPE_WIZARD_EVOKER_EVOCATION_SAVANT">
+		<requirements>!ID_INTERNAL_PHB24_FEATURE_REPLACEMENT_WIZARD_EVOKER_EVOCATION_SAVANT</requirements>
+		<description>
+			<p>Choose two Wizard spells from the Evocation school, each of which must be no higher than level 2, and add them to your spellbook for free.</p>
+			<p class="indent">In addition, whenever you gain access to a new level of spell slots in this class, you can add one Wizard spell from the Evocation school to your spellbook for free. The chosen spell must be of a level for which you have spell slots.</p>
+		</description>
+		<sheet display="false" />
+		<rules>
+			<select type="Spell" name="Evocation Spell (Evocation Savant)" supports="$(spellcasting:slots),Evocation,Wizard" number="2" level="3" spellcasting="Wizard" />
+			<select type="Spell" name="Evocation Spell (Evocation Savant)" supports="$(spellcasting:slots),Evocation,Wizard" level="5" spellcasting="Wizard" />
+			<select type="Spell" name="Evocation Spell (Evocation Savant)" supports="$(spellcasting:slots),Evocation,Wizard" level="7" spellcasting="Wizard" />
+			<select type="Spell" name="Evocation Spell (Evocation Savant)" supports="$(spellcasting:slots),Evocation,Wizard" level="9" spellcasting="Wizard" />
+			<select type="Spell" name="Evocation Spell (Evocation Savant)" supports="$(spellcasting:slots),Evocation,Wizard" level="11" spellcasting="Wizard" />
+			<select type="Spell" name="Evocation Spell (Evocation Savant)" supports="$(spellcasting:slots),Evocation,Wizard" level="13" spellcasting="Wizard" />
+			<select type="Spell" name="Evocation Spell (Evocation Savant)" supports="$(spellcasting:slots),Evocation,Wizard" level="15" spellcasting="Wizard" />
+			<select type="Spell" name="Evocation Spell (Evocation Savant)" supports="$(spellcasting:slots),Evocation,Wizard" level="17" spellcasting="Wizard" />
+		</rules>
+	</element>
+
+	<element name="Level 3: Potent Cantrip" type="Archetype Feature" source="Player’s Handbook 2024" id="ID_WOTC_PHB24_ARCHETYPE_WIZARD_EVOKER_POTENT_CANTRIP">
+		<requirements>!ID_INTERNAL_PHB24_FEATURE_REPLACEMENT_WIZARD_EVOKER_POTENT_CANTRIP</requirements>
+		<description>
+			<p>Your damaging cantrips affect even creatures that avoid the brunt of the effect. When you cast a cantrip at a creature and you miss with the attack roll or the target succeeds on a saving throw against the cantrip, the target takes half the cantrip's damage (if any) but suffers no additional effect from the cantrip.</p>
+		</description>
+		<sheet alt="Potent Cantrip">
+			<description>When you cast a cantrip at a creature and you miss with the attack roll or the target succeeds on a saving throw against the cantrip, the target takes half the cantrip's damage (if any) but suffers no additional effect from the cantrip.</description>
+		</sheet>
+	</element>
+
+	<element name="Level 6: Sculpt Spells" type="Archetype Feature" source="Player’s Handbook 2024" id="ID_WOTC_PHB24_ARCHETYPE_WIZARD_EVOKER_SCULPT_SPELLS">
+		<requirements>!ID_INTERNAL_PHB24_FEATURE_REPLACEMENT_WIZARD_EVOKER_SCULPT_SPELLS</requirements>
+		<description>
+			<p>You can create pockets of relative safety within the effects of your evocations. When you cast an Evocation spell that affects other creatures that you can see, you can choose a number of them equal to 1 plus the spell's level. The chosen creatures automatically succeed on their saving throws against the spell, and they take no damage if they would normally take half damage on a successful save.</p>
+		</description>
+		<sheet alt="Sculpt Spells">
+			<description>When you cast an Evocation spell that affects other creatures that you can see, you can choose a number of them equal to 1 plus the spell's level. The chosen creatures automatically succeed on their saving throws against the spell, and they take no damage if they would normally take half damage on a successful save.</description>
+		</sheet>
+	</element>
+
+	<element name="Level 10: Empowered Evocation" type="Archetype Feature" source="Player’s Handbook 2024" id="ID_WOTC_PHB24_ARCHETYPE_WIZARD_EVOKER_EMPOWERED_EVOCATION">
+		<requirements>!ID_INTERNAL_PHB24_FEATURE_REPLACEMENT_WIZARD_EVOKER_EMPOWERED_EVOCATION</requirements>
+		<description>
+			<p>Whenever you cast a Wizard spell from the Evocation school, you can add your Intelligence modifier to one damage roll of that spell.</p>
+		</description>
+		<sheet alt="Empowered Evocation">
+			<description>When you cast a Wizard Evocation spell, you can add {{intelligence:modifier}} to one damage roll of that spell.</description>
+		</sheet>
+	</element>
+
+	<element name="Level 14: Overchannel" type="Archetype Feature" source="Player’s Handbook 2024" id="ID_WOTC_PHB24_ARCHETYPE_WIZARD_EVOKER_OVERCHANNEL">
+		<requirements>!ID_INTERNAL_PHB24_FEATURE_REPLACEMENT_WIZARD_EVOKER_OVERCHANNEL</requirements>
+		<description>
+			<p>You can increase the power of your spells. When you cast a Wizard spell with a spell slot of levels 1–5 that deals damage, you can deal maximum damage with that spell on the turn you cast it.</p>
+			<p class="indent">The first time you do so, you suffer no adverse effect. If you use this feature again before you finish a Long Rest, you take 2d12 Necrotic damage for each level of the spell slot immediately after you cast it. This damage ignores Resistance and Immunity.</p>
+			<p class="indent">Each time you use this feature again before finishing a Long Rest, the Necrotic damage per spell level increases by 1d12.</p>
+		</description>
+		<sheet alt="Overchannel">
+			<description>When you cast a Wizard spell with a spell slot of levels 1–5 that deals damage, you can deal maximum damage with that spell on the turn you cast it. The first time you do so, you suffer no adverse effect. If you use this feature again before you finish a Long Rest, you take 2d12 Necrotic damage for each level of the spell slot immediately after you cast it. This damage ignores Resistance and Immunity. Each time you use this feature again before finishing a Long Rest, the Necrotic damage per spell level increases by 1d12.</description>
+		</sheet>
+	</element>
+	
+	<!--Feature Replacement Grants-->
+	<element name="Evocation Savant Feature Replacement" type="Grants" source="Internal" id="ID_INTERNAL_PHB24_FEATURE_REPLACEMENT_WIZARD_EVOKER_EVOCATION_SAVANT" />
+	<element name="Potent Cantrip Feature Replacement" type="Grants" source="Internal" id="ID_INTERNAL_PHB24_FEATURE_REPLACEMENT_WIZARD_EVOKER_POTENT_CANTRIP" />
+	<element name="Sculpt Spells Feature Replacement" type="Grants" source="Internal" id="ID_INTERNAL_PHB24_FEATURE_REPLACEMENT_WIZARD_EVOKER_SCULPT_SPELLS" />
+	<element name="Empowered Evocation Feature Replacement" type="Grants" source="Internal" id="ID_INTERNAL_PHB24_FEATURE_REPLACEMENT_WIZARD_EVOKER_EMPOWERED_EVOCATION" />
+	<element name="Overchannel Feature Replacement" type="Grants" source="Internal" id="ID_INTERNAL_PHB24_FEATURE_REPLACEMENT_WIZARD_EVOKER_OVERCHANNEL" />
+</elements>
