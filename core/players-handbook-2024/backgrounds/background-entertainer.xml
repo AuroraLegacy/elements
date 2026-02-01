@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<elements>
+	<info>
+		<name>Entertainer</name>
+		<description>Entertainer background from the Player’s Handbook 2024.</description>
+		<author url="https://dndstore.wizards.com/us/en/product/1001494/2024-player-s-handbook-digital-plus-physical-bundle">Wizards of the Coast</author>
+		<update version="0.0.1">
+			<file name="background-entertainer.xml" url="https://raw.githubusercontent.com/AuroraLegacy/elements/master/core/players-handbook-2024/backgrounds/background-entertainer.xml" />
+		</update>
+	</info>
+
+	<element name="Entertainer" type="Background" source="Player’s Handbook 2024" id="ID_WOTC_PHB24_BACKGROUND_ENTERTAINER">
+		<description>
+			<ul class="unstyled" style="text-indent:-1em; margin-left:1em; margin-bottom:5px">
+				<li><strong>Ability Scores:</strong> Strength, Dexterity, Charisma</li>
+				<li><strong>Feat:</strong> Musician</li>
+				<li><strong>Skill Proficiencies:</strong> Acrobatics and Performance</li>
+				<li><strong>Tool Proficiency:</strong><i> Choose one kind of Musical Instrument</i></li>
+				<li><strong>Equipment:</strong><i> Choose A or B:</i> (A) Musical Instrument (same as above), 2 Costumes, Mirror, Perfume, Traveler's Clothes, 11 GP; or (B) 50 GP</li>
+			</ul>
+			<p>You spent much of your youth following roving fairs and carnivals, performing odd jobs for musicians and acrobats in exchange for lessons. You may have learned how to walk a tightrope, how to play a lute in a distinct style, or how to recite poetry with impeccable diction. To this day, you thrive on applause and long for the stage.</p>
+		</description>
+		<setters>
+			<set name="short">Strength, Dexterity, Charisma, Musician Feat, Acrobatics and Performance Skills, a Musical Instrument</set>
+		</setters>
+		<rules>
+			<grant type="Ability Score Improvement" id="ID_INTERNAL_ABILITY_SCORE_IMPROVEMENT_COMBINATION_STR_DEX_CHA" />
+			<grant type="Feat" id="ID_WOTC_PHB24_FEAT_MUSICIAN" />
+			<grant type="Proficiency" id="ID_WOTC_PHB24_PROFICIENCY_SKILL_ACROBATICS" />
+			<grant type="Proficiency" id="ID_WOTC_PHB24_PROFICIENCY_SKILL_PERFORMANCE" />
+			<grant type="Grants" id="ID_INTERNAL_GRANTS_BACKGROUND_ASI" />
+			<select type="Proficiency" name="Musical Instrument (Entertainer)" supports="Musical Instrument" />
+		</rules>
+	</element>
+
+	<!-- Todo: Add Equipment Pack for this Background. Example element is in the Acolyte Background. -->
+</elements>

@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<elements>
+	<info>
+		<name>Guide</name>
+		<description>Guide background from the Player’s Handbook 2024.</description>
+		<author url="https://dndstore.wizards.com/us/en/product/1001494/2024-player-s-handbook-digital-plus-physical-bundle">Wizards of the Coast</author>
+		<update version="0.0.1">
+			<file name="background-guide.xml" url="https://raw.githubusercontent.com/AuroraLegacy/elements/master/core/players-handbook-2024/backgrounds/background-guide.xml" />
+		</update>
+	</info>
+
+	<element name="Guide" type="Background" source="Player’s Handbook 2024" id="ID_WOTC_PHB24_BACKGROUND_GUIDE">
+		<description>
+			<ul class="unstyled" style="text-indent:-1em; margin-left:1em; margin-bottom:5px">
+				<li><strong>Ability Scores:</strong> Dexterity, Constitution, Wisdom</li>
+				<li><strong>Feat:</strong> Magic Initiate (Druid)</li>
+				<li><strong>Skill Proficiencies:</strong> Stealth and Survival</li>
+				<li><strong>Tool Proficiency:</strong> Cartographer's Tools</li>
+				<li><strong>Equipment:</strong><i> Choose A or B:</i> (A) Shortbow, 20 Arrows, Cartographer's Tools, Bedroll, Quiver, Tent, Traveler's Clothes, 3 GP; or (B) 50 GP</li>
+			</ul>
+			<p>You came of age outdoors, far from settled lands. Your home was anywhere you chose to spread your bedroll. There are wonders in the wilderness—strange monsters, pristine forests and streams, overgrown ruins of great halls once trod by giants—and you learned to fend for yourself as you explored them. From time to time, you guided friendly nature priests who instructed you in the fundamentals of channeling the magic of the wild.</p>
+		</description>
+		<setters>
+			<set name="short">Dexterity, Constitution, Wisdom, Magic Initiate (Druid) Feat, Stealth and Survival Skills, Cartographer's Tools</set>
+		</setters>
+		<rules>
+			<grant type="Ability Score Improvement" id="ID_INTERNAL_ABILITY_SCORE_IMPROVEMENT_COMBINATION_DEX_CON_WIS" />
+			<grant type="Feat" id="ID_WOTC_PHB24_FEAT_MAGIC_INITIATE_DRUID" />
+			<grant type="Proficiency" id="ID_WOTC_PHB24_PROFICIENCY_SKILL_STEALTH" />
+			<grant type="Proficiency" id="ID_WOTC_PHB24_PROFICIENCY_SKILL_SURVIVAL" />
+			<grant type="Grants" id="ID_INTERNAL_GRANTS_BACKGROUND_ASI" />
+			<grant type="Proficiency" id="ID_WOTC_PHB24_PROFICIENCY_TOOL_PROFICIENCY_CARPENTERS_TOOLS" />
+		</rules>
+	</element>
+
+	<!-- Todo: Add Equipment Pack for this Background. Example element is in the Acolyte Background. -->
+</elements>

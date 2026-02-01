@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<elements>
+	<info>
+		<name>Artisan</name>
+		<description>Artisan background from the Player’s Handbook 2024.</description>
+		<author url="https://dndstore.wizards.com/us/en/product/1001494/2024-player-s-handbook-digital-plus-physical-bundle">Wizards of the Coast</author>
+		<update version="0.0.1">
+			<file name="background-artisan.xml" url="https://raw.githubusercontent.com/AuroraLegacy/elements/master/core/players-handbook-2024/backgrounds/background-artisan.xml" />
+		</update>
+	</info>
+
+	<element name="Artisan" type="Background" source="Player’s Handbook 2024" id="ID_WOTC_PHB24_BACKGROUND_ARTISAN">
+		<description>
+			<ul class="unstyled" style="text-indent:-1em; margin-left:1em; margin-bottom:5px">
+				<li><strong>Ability Scores:</strong> Strength, Dexterity, Intelligence</li>
+				<li><strong>Feat:</strong> Crafter</li>
+				<li><strong>Skill Proficiencies:</strong> Investigation and Persuasion</li>
+				<li><strong>Tool Proficiency:</strong><i> Choose one kind of Artisan's Tools</i></li>
+				<li><strong>Equipment:</strong><i> Choose A or B:</i> (A) Artisan’s Tools (same as above), 2 Pouches, Traveler's Clothes, 32 GP; or (B) 50 GP</li>
+			</ul>
+			<p>You began mopping floors and scrubbing counters in an artisan's workshop for a few coppers per day as soon as you were strong enough to carry a bucket. When you were old enough to apprentice, you learned to create basic crafts of your own, as well as how to sweet-talk the occasional demanding customer. Your trade has also given you a keen eye for detail.</p>
+		</description>
+		<setters>
+			<set name="short">Strength, Dexterity, Intelligence, Crafter Feat, Investigation and Persuasion Skills, an Artisan's Tool</set>
+		</setters>
+		<rules>
+			<grant type="Ability Score Improvement" id="ID_WOTC_INTERNAL_ABILITY_SCORE_IMPROVEMENT_COMBINATION_STR_DEX_INT" />
+			<grant type="Feat" id="ID_WOTC_PHB24_FEAT_CRAFTER" />
+			<grant type="Proficiency" id="ID_WOTC_PHB24_PROFICIENCY_SKILL_INVESTIGATION" />
+			<grant type="Proficiency" id="ID_WOTC_PHB24_PROFICIENCY_SKILL_PERSUASION" />
+			<grant type="Grants" id="ID_INTERNAL_GRANTS_BACKGROUND_ASI" />
+			<select type="Proficiency" name="Tool Proficiency (Artisan)" supports="Tool, Artisan tools" />
+		</rules>
+	</element>
+
+	<!-- Todo: Add Equipment Pack for this Background. Example element is in the Acolyte Background. -->
+</elements>

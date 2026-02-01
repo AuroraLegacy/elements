@@ -1,0 +1,188 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<elements>
+	<info>
+		<name>Draconic Sorcery</name>
+		<description>The Draconic Sorcery subclass from the Player’s Handbook 2024.</description>
+		<author url="https://dndstore.wizards.com/us/en/product/1001494/2024-player-s-handbook-digital-plus-physical-bundle">Wizards of the Coast</author>
+		<update version="0.0.6">
+			<file name="sorcerer-draconic.xml" url="https://raw.githubusercontent.com/AuroraLegacy/elements/master/core/players-handbook-2024/archetypes/sorcerer-draconic.xml" />
+		</update>
+	</info>
+	<element name="Draconic Sorcery" type="Archetype" source="Player’s Handbook 2024" id="ID_WOTC_PHB24_ARCHETYPE_SORCERER_DRACONIC_SORCERY">
+		<supports>Sorcerer Subclass</supports>
+		<description>
+			<p class="flavor">Breathe the Magic of Dragons</p>
+			<p>Your innate magic comes from the gift of a dragon. Perhaps an ancient dragon facing death bequeathed some of its magical power to you or your ancestor. You might have absorbed magic from a site infused with dragons’ power. Or perhaps you handled a treasure taken from a dragon’s hoard that was steeped in draconic power. Or you might have a dragon for an ancestor.</p>
+			<div element="ID_WOTC_PHB24_ARCHETYPE_FEATURE_SORCERER_DRACONIC_SORCERY_DRACONIC_RESILIENCE"/>
+			<div element="ID_WOTC_PHB24_ARCHETYPE_FEATURE_SORCERER_DRACONIC_SORCERY_DRACONIC_SPELLS"/>
+			<div element="ID_WOTC_PHB24_ARCHETYPE_FEATURE_SORCERER_DRACONIC_SORCERY_ELEMENTAL_AFFINITY"/>
+			<div element="ID_WOTC_PHB24_ARCHETYPE_FEATURE_SORCERER_DRACONIC_SORCERY_DRAGON_WINGS"/>
+			<div element="ID_WOTC_PHB24_ARCHETYPE_FEATURE_SORCERER_DRACONIC_SORCERY_DRAGON_COMPANION"/>
+		</description>
+		<sheet display="false" />
+		<rules>
+			<grant type="Archetype Feature" id="ID_WOTC_PHB24_ARCHETYPE_FEATURE_SORCERER_DRACONIC_SORCERY_DRACONIC_RESILIENCE" level="3" />
+			<grant type="Archetype Feature" id="ID_WOTC_PHB24_ARCHETYPE_FEATURE_SORCERER_DRACONIC_SORCERY_DRACONIC_SPELLS" level="3" />
+			<grant type="Archetype Feature" id="ID_WOTC_PHB24_ARCHETYPE_FEATURE_SORCERER_DRACONIC_SORCERY_ELEMENTAL_AFFINITY" level="6" />
+			<grant type="Archetype Feature" id="ID_WOTC_PHB24_ARCHETYPE_FEATURE_SORCERER_DRACONIC_SORCERY_DRAGON_WINGS" level="14" />
+			<grant type="Archetype Feature" id="ID_WOTC_PHB24_ARCHETYPE_FEATURE_SORCERER_DRACONIC_SORCERY_DRAGON_COMPANION" level="18" />
+		</rules>
+	</element>
+
+	<element name="Level 3: Draconic Resilience" type="Archetype Feature" source="Player’s Handbook 2024" id="ID_WOTC_PHB24_ARCHETYPE_FEATURE_SORCERER_DRACONIC_SORCERY_DRACONIC_RESILIENCE">
+		<requirements>!ID_INTERNAL_PHB24_FEATURE_REPLACEMENT_SORCERER_DRACONIC_SORCERY_DRACONIC_RESILIENCE</requirements>
+		<description>
+			<p>The magic in your body manifests physical traits of your draconic gift. Your Hit Point maximum increases by 3, and it increases by 1 whenever you gain another Sorcerer level.</p>
+			<p class="indent">Parts of you are also covered by dragon-like scales. While you aren’t wearing armor, your base Armor Class equals 10 plus your Dexterity and Charisma modifiers.</p>
+		</description>
+		<sheet alt="Draconic Resilience">
+			<description>When you aren’t wearing armor, your AC equals {{ac:draconic resilience}}.</description>
+		</sheet>
+		<rules>
+			<stat name="hp" value="level:sorcerer" />
+			<stat name="ac:draconic resilience" value="10" bonus="base" />
+			<stat name="ac:draconic resilience" value="dexterity:modifier" bonus="primary ability" />
+			<stat name="ac:draconic resilience" value="charisma:modifier" bonus="secondary ability" />
+			<stat name="ac:calculation" value="ac:draconic resilience" bonus="calculation" equipped="[armor:none]" alt="Draconic Resilience (Sorcerer)" />
+		</rules>
+	</element>
+
+	<element name="Level 3: Draconic Spells" type="Archetype Feature" source="Player’s Handbook 2024" id="ID_WOTC_PHB24_ARCHETYPE_FEATURE_SORCERER_DRACONIC_SORCERY_DRACONIC_SPELLS">
+		<requirements>!ID_INTERNAL_PHB24_FEATURE_REPLACEMENT_SORCERER_DRACONIC_SORCERY_DRACONIC_SPELLS</requirements>
+		<description>
+			<p>When you reach a Sorcerer level specified in the Draconic Spells table, you thereafter always have the listed spells prepared.</p>
+			<h5>Draconic Spells</h5>
+			<table class="class-features">
+				<thead>
+					<tr><td class="col-30">Sorcerer Level</td><td class="left">Spells</td></tr>
+				</thead>
+				<tr><td>3</td><td class="left"><em>Alter Self, Chromatic Orb, Command, Dragon’s Breath</em></td></tr>
+				<tr><td>5</td><td class="left"><em>Fear, Fly</em></td></tr>
+				<tr><td>7</td><td class="left"><em>Arcane Eye, Charm Monster</em></td></tr>
+				<tr><td>9</td><td class="left"><em>Legend Lore, Summon Dragon</em></td></tr>
+			</table>
+		</description>
+		<sheet display="false" />
+		<rules>
+			<grant type="Spell" id="ID_WOTC_PHB24_SPELL_CHROMATIC_ORB" spellcasting="Sorcerer" />
+			<grant type="Spell" id="ID_WOTC_PHB24_SPELL_COMMAND" spellcasting="Sorcerer" />
+			<grant type="Spell" id="ID_WOTC_PHB24_SPELL_ALTER_SELF" spellcasting="Sorcerer" />
+			<grant type="Spell" id="ID_WOTC_PHB24_SPELL_DRAGONS_BREATH" spellcasting="Sorcerer" />
+			<grant type="Spell" id="ID_WOTC_PHB24_SPELL_FEAR" level="5" spellcasting="Sorcerer" />
+			<grant type="Spell" id="ID_WOTC_PHB24_SPELL_FLY" level="5" spellcasting="Sorcerer" />
+			<grant type="Spell" id="ID_WOTC_PHB24_SPELL_ARCANE_EYE" level="7" spellcasting="Sorcerer" />
+			<grant type="Spell" id="ID_WOTC_PHB24_SPELL_CHARM_MONSTER" level="7" spellcasting="Sorcerer" />
+			<grant type="Spell" id="ID_WOTC_PHB24_SPELL_LEGEND_LORE" level="9" spellcasting="Sorcerer" />
+			<grant type="Spell" id="ID_WOTC_PHB24_SPELL_SUMMON_DRAGON" level="9" spellcasting="Sorcerer" />
+		</rules>
+	</element>
+
+	<element name="Level 6: Elemental Affinity" type="Archetype Feature" source="Player’s Handbook 2024" id="ID_WOTC_PHB24_ARCHETYPE_FEATURE_SORCERER_DRACONIC_SORCERY_ELEMENTAL_AFFINITY">
+		<requirements>!ID_INTERNAL_PHB24_FEATURE_REPLACEMENT_SORCERER_DRACONIC_SORCERY_ELEMENTAL_AFFINITY</requirements>
+		<description>
+			<p>Your draconic magic has an affinity with a damage type associated with dragons. Choose one of those types: Acid, Cold, Fire, Lightning, or Poison.</p>
+			<p class="indent">You have Resistance to that damage type, and when you cast a spell that deals damage of that type, you can add your Charisma modifier to one damage roll of that spell.</p>
+		</description>
+		<sheet display="false" />
+		<rules>
+			<select type="Archetype Feature" name="Elemental Affinity (Draconic Sorcery)" supports="PHB24 Elemental Affinity" />
+		</rules>
+	</element>
+	<element name="Acid" type="Archetype Feature" source="Player’s Handbook 2024" id="ID_WOTC_PHB24_ARCHETYPE_FEATURE_SORCERER_DRACONIC_SORCERY_ELEMENTAL_AFFINITY_ACID">
+		<requirements>!ID_INTERNAL_PHB24_FEATURE_REPLACEMENT_SORCERER_DRACONIC_SORCERY_ELEMENTAL_AFFINITY_ACID</requirements>
+		<supports>PHB24 Elemental Affinity</supports>
+		<description>
+			<p>Your draconic elemental affinity is Acid.</p>
+		</description>
+		<sheet alt="Elemental Affinity">
+			<description>When you cast a spell that deals Acid damage, you can add {{charisma:modifier}} to one damage roll of that spell.</description>
+		</sheet>
+		<rules>
+			<grant type="Condition" id="ID_INTERNAL_CONDITION_DAMAGE_RESISTANCE_ACID" />
+		</rules>
+	</element>
+	<element name="Cold" type="Archetype Feature" source="Player’s Handbook 2024" id="ID_WOTC_PHB24_ARCHETYPE_FEATURE_SORCERER_DRACONIC_SORCERY_ELEMENTAL_AFFINITY_COLD">
+		<requirements>!ID_INTERNAL_PHB24_FEATURE_REPLACEMENT_SORCERER_DRACONIC_SORCERY_ELEMENTAL_AFFINITY_COLD</requirements>
+		<supports>PHB24 Elemental Affinity</supports>
+		<description>
+			<p>Your draconic elemental affinity is Cold.</p>
+		</description>
+		<sheet alt="Elemental Affinity">
+			<description>When you cast a spell that deals Cold damage, you can add {{charisma:modifier}} to one damage roll of that spell.</description>
+		</sheet>
+		<rules>
+			<grant type="Condition" id="ID_INTERNAL_CONDITION_DAMAGE_RESISTANCE_COLD" />
+		</rules>
+	</element>
+	<element name="Fire" type="Archetype Feature" source="Player’s Handbook 2024" id="ID_WOTC_PHB24_ARCHETYPE_FEATURE_SORCERER_DRACONIC_SORCERY_ELEMENTAL_AFFINITY_FIRE">
+		<requirements>!ID_INTERNAL_PHB24_FEATURE_REPLACEMENT_SORCERER_DRACONIC_SORCERY_ELEMENTAL_AFFINITY_FIRE</requirements>
+		<supports>PHB24 Elemental Affinity</supports>
+		<description>
+			<p>Your draconic elemental affinity is Fire.</p>
+		</description>
+		<sheet alt="Elemental Affinity">
+			<description>When you cast a spell that deals Fire damage, you can add {{charisma:modifier}} to one damage roll of that spell.</description>
+		</sheet>
+		<rules>
+			<grant type="Condition" id="ID_INTERNAL_CONDITION_DAMAGE_RESISTANCE_FIRE" />
+		</rules>
+	</element>
+	<element name="Lightning" type="Archetype Feature" source="Player’s Handbook 2024" id="ID_WOTC_PHB24_ARCHETYPE_FEATURE_SORCERER_DRACONIC_SORCERY_ELEMENTAL_AFFINITY_LIGHTNING">
+		<requirements>!ID_INTERNAL_PHB24_FEATURE_REPLACEMENT_SORCERER_DRACONIC_SORCERY_ELEMENTAL_AFFINITY_LIGHTNING</requirements>
+		<supports>PHB24 Elemental Affinity</supports>
+		<description>
+			<p>Your draconic elemental affinity is Lightning.</p>
+		</description>
+		<sheet alt="Elemental Affinity">
+			<description>When you cast a spell that deals Lightning damage, you can add {{charisma:modifier}} to one damage roll of that spell.</description>
+		</sheet>
+		<rules>
+			<grant type="Condition" id="ID_INTERNAL_CONDITION_DAMAGE_RESISTANCE_LIGHTNING" />
+		</rules>
+	</element>
+	<element name="Poison" type="Archetype Feature" source="Player’s Handbook 2024" id="ID_WOTC_PHB24_ARCHETYPE_FEATURE_SORCERER_DRACONIC_SORCERY_ELEMENTAL_AFFINITY_POISON">
+		<requirements>!ID_INTERNAL_PHB24_FEATURE_REPLACEMENT_SORCERER_DRACONIC_SORCERY_ELEMENTAL_AFFINITY_POISON</requirements>
+		<supports>PHB24 Elemental Affinity</supports>
+		<description>
+			<p>Your draconic elemental affinity is Poison.</p>
+		</description>
+		<sheet alt="Elemental Affinity">
+			<description>When you cast a spell that deals Poison damage, you can add {{charisma:modifier}} to one damage roll of that spell.</description>
+		</sheet>
+		<rules>
+			<grant type="Condition" id="ID_INTERNAL_CONDITION_DAMAGE_RESISTANCE_POISON" />
+		</rules>
+	</element>
+
+	<element name="Level 14: Dragon Wings" type="Archetype Feature" source="Player’s Handbook 2024" id="ID_WOTC_PHB24_ARCHETYPE_FEATURE_SORCERER_DRACONIC_SORCERY_DRAGON_WINGS">
+		<requirements>!ID_INTERNAL_PHB24_FEATURE_REPLACEMENT_SORCERER_DRACONIC_SORCERY_DRAGON_WINGS</requirements>
+		<description>
+			<p>As a Bonus Action, you can cause draconic wings to appear on your back. The wings last for 1 hour or until you dismiss them (no action required). For the duration, you have a Fly Speed of 60 feet.</p>
+			<p class="indent">Once you use this feature, you can’t use it again until you finish a Long Rest unless you spend 3 Sorcery Points (no action required) to restore your use of it.</p>
+		</description>
+		<sheet alt="Dragon Wings" action="Bonus Action" usage="1/Long Rest">
+			<description>Draconic wings appear on your back for 1 hour or until you dismiss them, granting you a Fly Speed of 60 feet. &#13;
+			You can spend 3 Sorcery Points to restore a use of this feature.</description>
+		</sheet>
+	</element>
+
+	<element name="Level 18: Dragon Companion" type="Archetype Feature" source="Player’s Handbook 2024" id="ID_WOTC_PHB24_ARCHETYPE_FEATURE_SORCERER_DRACONIC_SORCERY_DRAGON_COMPANION">
+		<requirements>!ID_INTERNAL_PHB24_FEATURE_REPLACEMENT_SORCERER_DRACONIC_SORCERY_DRAGON_COMPANION</requirements>
+		<description>
+			<p>You can cast <i>Summon Dragon</i> without a Material component. You can also cast it once without a spell slot, and you regain the ability to cast it in this way when you finish a Long Rest.</p>
+			<p class="indent">Whenever you start casting the spell, you can modify it so that it doesn’t require Concentration. If you do so, the spell’s duration becomes 1 minute for that casting.</p>
+		</description>
+		<sheet alt="Dragon Companion" usage="1/Long Rest">
+			<description>You can cast Summon Dragon without a spell slot. &#13; 
+			Additionally, you can cast this spell without Material component, and can choose to modify the spell: so that it doesn’t require Concentration. If you do so, its duration becomes 1 minute for that casting.</description>
+		</sheet>
+	</element>
+
+	<!--Feature Replacement Grants-->
+	<element name="Draconic Resilience Feature Replacement" type="Grants" source="Internal" id="ID_INTERNAL_PHB24_FEATURE_REPLACEMENT_SORCERER_DRACONIC_SORCERY_DRACONIC_RESILIENCE" />
+	<element name="Draconic Spells Feature Replacement" type="Grants" source="Internal" id="ID_INTERNAL_PHB24_FEATURE_REPLACEMENT_SORCERER_DRACONIC_SORCERY_DRACONIC_SPELLS" />
+	<element name="Elemental Affinity Feature Replacement" type="Grants" source="Internal" id="ID_INTERNAL_PHB24_FEATURE_REPLACEMENT_SORCERER_DRACONIC_SORCERY_ELEMENTAL_AFFINITY" />
+	<element name="Dragon Wings Feature Replacement" type="Grants" source="Internal" id="ID_INTERNAL_PHB24_FEATURE_REPLACEMENT_SORCERER_DRACONIC_SORCERY_DRAGON_WINGS" />
+	<element name="Dragon Companion Feature Replacement" type="Grants" source="Internal" id="ID_INTERNAL_PHB24_FEATURE_REPLACEMENT_SORCERER_DRACONIC_SORCERY_DRAGON_COMPANION" />
+
+</elements>

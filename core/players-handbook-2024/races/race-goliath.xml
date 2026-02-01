@@ -1,0 +1,152 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<elements>
+	<info>
+		<name>Goliath</name>
+		<description>The Goliath species from the Player’s Handbook 2024.</description>
+		<author url="https://dndstore.wizards.com/us/en/product/1001494/2024-player-s-handbook-digital-plus-physical-bundle">Wizards of the Coast</author>
+		<update version="0.0.1">
+			<file name="race-goliath.xml" url="https://raw.githubusercontent.com/AuroraLegacy/elements/master/core/players-handbook-2024/races/race-goliath.xml" />
+		</update>
+	</info>
+	
+	<element name="Goliath" type="Race" source="Player’s Handbook 2024" id="ID_WOTC_PHB24_RACE_GOLIATH">
+		<description>
+			<p>Towering over most folk, goliaths are distant descendants of giants. Each goliath bears the favors of the first giants—favors that manifest in various supernatural boons, including the ability to quickly grow and temporarily approach the height of goliaths’ gigantic kin.</p>
+			<p class="indent">Goliaths have physical characteristics that are reminiscent of the giants in their family lines. For example, some goliaths look like stone giants, while others resemble fire giants. Whatever giants they count as kin, goliaths have forged their own path in the multiverse—unencumbered by the internecine conflicts that have ravaged giantkind for ages—and seek heights above those reached by their ancestors.</p>
+			<h5>GOLIATH TRAITS</h5>
+			<ul class="unstyled" style="text-indent:-1em; margin-left:1em; margin-bottom:5px">
+				<li><strong>Creature Type:</strong> Humanoid</li>
+				<li><strong>Size:</strong> Medium (about 7–8 feet tall)</li>
+				<li><strong>Speed:</strong> 35 feet</li>
+			</ul>
+			<p>As a Goliath, you have these special traits.</p>
+			<p class="indent" style="margin-bottom:5px"><strong><em>Giant Ancestry.</em></strong> You are descended from Giants. Choose one of the following benefits—a supernatural boon from your ancestry; you can use the chosen benefit a number of times equal to your Proficiency Bonus, and you regain all expended uses when you finish a Long Rest:</p>
+			<ul class="unstyled" style="text-indent:-1em; margin-left:1em; margin-bottom:1em">
+				<li><strong>Cloud’s Jaunt (Cloud Giant).</strong> As a Bonus Action, you magically teleport up to 30 feet to an unoccupied space you can see.</li>
+				<li><strong>Fire’s Burn (Fire Giant).</strong> When you hit a target with an attack roll and deal damage to it, you can also deal 1d10 Fire damage to that target.</li>
+				<li><strong>Frost’s Chill (Frost Giant).</strong> When you hit a target with an attack roll and deal damage to it, you can also deal 1d6 Cold damage to that target and reduce its Speed by 10 feet until the start of your next turn.</li>
+				<li><strong>Hill’s Tumble (Hill Giant).</strong> When you hit a Large or smaller creature with an attack roll and deal damage to it, you can give that target the Prone condition.</li>
+				<li><strong>Stone’s Endurance (Stone Giant).</strong> When you take damage, you can take a Reaction to roll 1d12. Add your Constitution modifier to the number rolled and reduce the damage by that total.</li>
+				<li><strong>Storm’s Thunder (Storm Giant).</strong> When you take damage from a creature within 60 feet of you, you can take a Reaction to deal 1d8 Thunder damage to that creature.</li>
+			</ul>
+			<p class="indent"><strong><em>Large Form.</em></strong> Starting at character level 5, you can change your size to Large as a Bonus Action if you’re in a big enough space. This transformation lasts for 10 minutes or until you end it (no action required). For that duration, you have Advantage on Strength checks, and your Speed increases by 10 feet. Once you use this trait, you can’t use it again until you finish a Long Rest.</p> 
+			<p class="indent"><strong><em>Powerful Build.</em></strong> You have Advantage on any ability check you make to end the Grappled condition. You also count as one size larger when determining your carrying capacity.</p> 
+		</description>
+		<sheet display="false" />
+		<rules>
+			<select type="Ability Score Improvement" name="Ability Score Improvement Option (Goliath)" supports="Custom Ability Score Improvement Option" requirements="!ID_INTERNAL_GRANTS_BACKGROUND_ASI" />
+			<grant type="Size" id="ID_SIZE_MEDIUM" />
+			<stat name="speed" value="35" bonus="base" />
+
+			<grant type="Language" id="ID_WOTC_PHB24_LANGUAGE_COMMON" requirements="!ID_WOTC_TCOE_OPTION_CUSTOMIZED_LANGUAGE" />
+			<select type="Language" name="Language (Goliath)" supports="Standard" number="2" requirements="!ID_WOTC_TCOE_OPTION_CUSTOMIZED_LANGUAGE" />
+			<select type="Language" name="Customized Language (Goliath)" supports="Custom Race Language"  requirements="ID_WOTC_TCOE_OPTION_CUSTOMIZED_LANGUAGE" number="3" />
+
+			<grant type="Racial Trait" id="ID_WOTC_PHB24_RACIAL_TRAIT_GOLIATH_GIANT_ANCESTRY" />
+			<grant type="Racial Trait" id="ID_WOTC_PHB24_RACIAL_TRAIT_GOLIATH_LARGE_FORM" level="5" />
+			<grant type="Racial Trait" id="ID_WOTC_PHB24_RACIAL_TRAIT_GOLIATH_POWERFUL_BUILD" />
+		</rules>
+	</element>
+
+	<element name="Giant Ancestry" type="Racial Trait" source="Player’s Handbook 2024" id="ID_WOTC_PHB24_RACIAL_TRAIT_GOLIATH_GIANT_ANCESTRY">
+		<requirements>!ID_INTERNAL_PHB24_RACIAL_TRAIT_REPLACEMENT_GOLIATH_GIANT_ANCESTRY</requirements>
+		<description>
+			<p>You are descended from Giants. Choose one of the following benefits—a supernatural boon from your ancestry; you can use the chosen benefit a number of times equal to your Proficiency Bonus, and you regain all expended uses when you finish a Long Rest:</p>
+			<ul class="unstyled" style="text-indent:-1em; margin-left:1em">
+				<li><strong>Cloud’s Jaunt (Cloud Giant).</strong> As a Bonus Action, you magically teleport up to 30 feet to an unoccupied space you can see.</li>
+				<li><strong>Fire’s Burn (Fire Giant).</strong> When you hit a target with an attack roll and deal damage to it, you can also deal 1d10 Fire damage to that target.</li>
+				<li><strong>Frost’s Chill (Frost Giant).</strong> When you hit a target with an attack roll and deal damage to it, you can also deal 1d6 Cold damage to that target and reduce its Speed by 10 feet until the start of your next turn.</li>
+				<li><strong>Hill’s Tumble (Hill Giant).</strong> When you hit a Large or smaller creature with an attack roll and deal damage to it, you can give that target the Prone condition.</li>
+				<li><strong>Stone’s Endurance (Stone Giant).</strong> When you take damage, you can take a Reaction to roll 1d12. Add your Constitution modifier to the number rolled and reduce the damage by that total.</li>
+				<li><strong>Storm’s Thunder (Storm Giant).</strong> When you take damage from a creature within 60 feet of you, you can take a Reaction to deal 1d8 Thunder damage to that creature.</li>
+			</ul>
+		</description>
+		<sheet display="false" />
+		<rules>
+			<select type="Racial Trait" name="Ancestral Boon (Giant Ancestry)" supports="Giant Ancestry 2024" />
+		</rules>
+	</element>
+	<element name="Cloud’s Jaunt (Cloud Giant)" type="Racial Trait" source="Player’s Handbook 2024" id="ID_WOTC_PHB24_RACIAL_TRAIT_GOLIATH_GIANT_ANCESTRY_CLOUDS_JAUNT">
+		<supports>Giant Ancestry 2024</supports>
+		<description>
+			<p>As a Bonus Action, you magically teleport up to 30 feet to an unoccupied space you can see.</p> 
+		</description>
+		<sheet alt="Cloud’s Jaunt" action="Bonus Action" usage="{{proficiency}}/Long Rest">
+			<description>You magically teleport up to 30 feet to an unoccupied space you can see.</description>
+		</sheet>
+	</element>
+	<element name="Fire’s Burn (Fire Giant)" type="Racial Trait" source="Player’s Handbook 2024" id="ID_WOTC_PHB24_RACIAL_TRAIT_GOLIATH_GIANT_ANCESTRY_FIRES_BURN">
+		<supports>Giant Ancestry 2024</supports>
+		<description>
+			<p>When you hit a target with an attack roll and deal damage to it, you can also deal 1d10 Fire damage to that target.</p> 
+		</description>
+		<sheet alt="Fire’s Burn" usage="{{proficiency}}/Long Rest">
+			<description>When you hit a target with an attack roll and deal damage to it, you can also deal 1d10 Fire damage to that target.</description>
+		</sheet>
+	</element>
+	<element name="Frost’s Chill (Frost Giant)" type="Racial Trait" source="Player’s Handbook 2024" id="ID_WOTC_PHB24_RACIAL_TRAIT_GOLIATH_GIANT_ANCESTRY_FROSTS_CHILL">
+		<supports>Giant Ancestry 2024</supports>
+		<description>
+			<p>When you hit a target with an attack roll and deal damage to it, you can also deal 1d6 Cold damage to that target and reduce its Speed by 10 feet until the start of your next turn.</p> 
+		</description>
+		<sheet alt="Frost’s Chill" usage="{{proficiency}}/Long Rest">
+			<description>When you hit a target with an attack roll and deal damage to it, you can also deal 1d6 Cold damage to that target and reduce its Speed by 10 feet until the start of your next turn.</description>
+		</sheet>
+	</element>
+	<element name="Hill’s Tumble (Hill Giant)" type="Racial Trait" source="Player’s Handbook 2024" id="ID_WOTC_PHB24_RACIAL_TRAIT_GOLIATH_GIANT_ANCESTRY_HILLS_TUMBLE">
+		<supports>Giant Ancestry 2024</supports>
+		<description>
+			<p>When you hit a Large or smaller creature with an attack roll and deal damage to it, you can give that target the Prone condition.</p> 
+		</description>
+		<sheet alt="Hill’s Tumble" usage="{{proficiency}}/Long Rest">
+			<description>When you hit a Large or smaller creature with an attack roll and deal damage to it, you can give that target the Prone condition.</description>
+		</sheet>
+	</element>
+	<element name="Stone’s Endurance (Stone Giant)" type="Racial Trait" source="Player’s Handbook 2024" id="ID_WOTC_PHB24_RACIAL_TRAIT_GOLIATH_GIANT_ANCESTRY_STONES_ENDURANCE">
+		<supports>Giant Ancestry 2024</supports>
+		<description>
+			<p>When you take damage, you can take a Reaction to roll 1d12. Add your Constitution modifier to the number rolled and reduce the damage by that total.</p> 
+		</description>
+		<sheet alt="Stone’s Endurance" action="Reaction" usage="{{proficiency}}/Long Rest">
+			<description>When you take damage, you can reduce the damage by 1d12+{{constitution:modifier}}.</description>
+		</sheet>
+	</element>
+	<element name="Storm’s Thunder (Storm Giant)" type="Racial Trait" source="Player’s Handbook 2024" id="ID_WOTC_PHB24_RACIAL_TRAIT_GOLIATH_GIANT_ANCESTRY_STORMS_THUNDER">
+		<supports>Giant Ancestry 2024</supports>
+		<description>
+			<p>When you take damage from a creature within 60 feet of you, you can take a Reaction to deal 1d8 Thunder dam­age to that creature.</p> 
+		</description>
+		<sheet alt="Storm’s Thunder" action="Reaction" usage="{{proficiency}}/Long Rest">
+			<description>When you take damage from a creature within 60 feet of you, you can take a Reaction to deal 1d8 Thunder dam­age to that creature.</description>
+		</sheet>
+	</element>
+
+	<element name="Large Form" type="Racial Trait" source="Player’s Handbook 2024" id="ID_WOTC_PHB24_RACIAL_TRAIT_GOLIATH_LARGE_FORM">
+		<requirements>!ID_INTERNAL_PHB24_RACIAL_TRAIT_REPLACEMENT_GOLIATH_LARGE_FORM</requirements>
+		<description>
+			<p>Starting at character level 5, you can change your size to Large as a Bonus Action if you’re in a big enough space. This transformation lasts for 10 minutes or until you end it (no action required). For that duration, you have Advantage on Strength checks, and your Speed increases by 10 feet. Once you use this trait, you can’t use it again until you finish a Long Rest.</p>
+		</description>
+		<sheet action="Bonus Action" usage="1/Long Rest">
+			<description>You can change your size to Large as a Bonus Action if you’re in a big enough space. This transformation lasts for 10 minutes or until you end it (no action required). For that duration, you have Advantage on Strength checks, and your Speed increases by 10 feet.</description>
+		</sheet>
+	</element>
+
+	<element name="Powerful Build" type="Racial Trait" source="Player’s Handbook 2024" id="ID_WOTC_PHB24_RACIAL_TRAIT_GOLIATH_POWERFUL_BUILD">
+		<requirements>!ID_INTERNAL_PHB24_RACIAL_TRAIT_REPLACEMENT_GOLIATH_POWERFUL_BUILD</requirements>
+		<description>
+			<p>You have Advantage on any ability check you make to end the Grappled condition. You also count as one size larger when determining your carrying capacity.</p>
+		</description>
+		<sheet>
+			<description>You have Advantage on any ability check you make to end the Grappled condition. You also count as one size larger when determining your carrying capacity.</description>
+		</sheet>
+		<rules>
+			<grant type="Grants" id="ID_INTERNAL_GRANTS_WEIGHT_CAPACITY_COUNTS_AS_LARGER" />
+		</rules>
+	</element>
+
+	<!--Racial Trait Replacement Grants-->
+	<element name="Giant Ancestry Trait Replacement" type="Grants" source="Internal" id="ID_INTERNAL_PHB24_RACIAL_TRAIT_REPLACEMENT_GOLIATH_GIANT_ANCESTRY" />
+	<element name="Large Form Trait Replacement" type="Grants" source="Internal" id="ID_INTERNAL_PHB24_RACIAL_TRAIT_REPLACEMENT_GOLIATH_LARGE_FORM" />
+	<element name="Powerful Build Trait Replacement" type="Grants" source="Internal" id="ID_INTERNAL_PHB24_RACIAL_TRAIT_REPLACEMENT_GOLIATH_POWERFUL_BUILD" />
+
+</elements>

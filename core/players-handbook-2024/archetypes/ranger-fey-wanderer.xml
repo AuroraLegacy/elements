@@ -1,0 +1,153 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<elements>
+	<info>
+		<name>Fey Wanderer</name>
+		<description>The Fey Wanderer subclass from the Player’s Handbook 2024.</description>
+		<author url="https://dndstore.wizards.com/us/en/product/1001494/2024-player-s-handbook-digital-plus-physical-bundle">Wizards of the Coast</author>
+		<update version="0.0.1">
+			<file name="ranger-fey.xml" url="https://raw.githubusercontent.com/AuroraLegacy/elements/master/core/players-handbook-2024/archetypes/ranger-fey.xml" />
+		</update>
+	</info>
+	
+	<element name="Fey Wanderer" type="Archetype" source="Player’s Handbook 2024" id="ID_WOTC_PHB24_ARCHETYPE_RANGER_FEY_WANDERER">
+		<supports>Ranger Subclass</supports>
+		<description>
+			<p class="flavor">Wield Fey Mirth and Fury</p>
+			<p>A fey mystique surrounds you, thanks to the boon of an archfey or a location in the Feywild that transformed you. However you gained fey magic, you are now a Fey Wanderer. Your joyful laughter brightens the hearts of the downtrodden, and your martial prowess strikes terror in your foes, for great is the mirth of the fey and dreadful is their fury.</p>
+			<div element="ID_WOTC_PHB24_ARCHETYPE_FEATURE_RANGER_FEY_WANDERER_DREADFUL_STRIKES" />
+			<div element="ID_WOTC_PHB24_ARCHETYPE_FEATURE_RANGER_FEY_WANDERER_FEY_WANDERER_SPELLS" />
+			<div element="ID_WOTC_PHB24_ARCHETYPE_FEATURE_RANGER_FEY_WANDERER_OTHERWORLDLY_GLAMOUR" />
+			<div element="ID_WOTC_PHB24_ARCHETYPE_FEATURE_RANGER_FEY_WANDERER_BEGUILING_TWIST" />
+			<div element="ID_WOTC_PHB24_ARCHETYPE_FEATURE_RANGER_FEY_WANDERER_FEY_REINFORCEMENTS" />
+			<div element="ID_WOTC_PHB24_ARCHETYPE_FEATURE_RANGER_FEY_WANDERER_MISTY_WANDERER" />
+		</description>
+		<sheet display="false" />
+		<rules>
+			<grant type="Archetype Feature" id="ID_WOTC_PHB24_ARCHETYPE_FEATURE_RANGER_FEY_WANDERER_DREADFUL_STRIKES" level="3" />
+			<grant type="Archetype Feature" id="ID_WOTC_PHB24_ARCHETYPE_FEATURE_RANGER_FEY_WANDERER_FEY_WANDERER_SPELLS" level="3" />
+			<grant type="Archetype Feature" id="ID_WOTC_PHB24_ARCHETYPE_FEATURE_RANGER_FEY_WANDERER_OTHERWORLDLY_GLAMOUR" level="3" />
+			<grant type="Archetype Feature" id="ID_WOTC_PHB24_ARCHETYPE_FEATURE_RANGER_FEY_WANDERER_BEGUILING_TWIST" level="7" />
+			<grant type="Archetype Feature" id="ID_WOTC_PHB24_ARCHETYPE_FEATURE_RANGER_FEY_WANDERER_FEY_REINFORCEMENTS" level="11" />
+			<grant type="Archetype Feature" id="ID_WOTC_PHB24_ARCHETYPE_FEATURE_RANGER_FEY_WANDERER_MISTY_WANDERER" level="15" />
+		</rules>
+	</element>
+
+	<element name="Level 3: Dreadful Strikes" type="Archetype Feature" source="Player’s Handbook 2024" id="ID_WOTC_PHB24_ARCHETYPE_FEATURE_RANGER_FEY_WANDERER_DREADFUL_STRIKES">
+		<requirements>!ID_INTERNAL_PHB24_FEATURE_REPLACEMENT_RANGER_FEY_WANDERER_DREADFUL_STRIKES</requirements>
+		<description>
+			<p>You can augment your weapon strikes with mind-scarring magic drawn from the murky hollows of the Feywild. When you hit a creature with a weapon, you can deal an extra 1d4 Psychic damage to the target, which can take this extra damage only once per turn. The extra damage increases to 1d6 when you reach Ranger level 11.</p>
+		</description>
+		<sheet alt="Dreadful Strikes">
+			<description>When you hit a creature with a weapon, you can deal an extra 1d4 Psychic damage to the target, which can take this extra damage only once per turn.</description>
+			<description level="11">When you hit a creature with a weapon, you can deal an extra 1d6 Psychic damage to the target, which can take this extra damage only once per turn.</description>
+		</sheet>
+	</element>
+
+	<element name="Level 3: Fey Wanderer Spells" type="Archetype Feature" source="Player’s Handbook 2024" id="ID_WOTC_PHB24_ARCHETYPE_FEATURE_RANGER_FEY_WANDERER_FEY_WANDERER_SPELLS">
+		<requirements>!ID_INTERNAL_PHB24_FEATURE_REPLACEMENT_RANGER_FEY_WANDERER_FEY_WANDERER_SPELLS</requirements>
+		<description>
+			<p>When you reach a Ranger level specified in the Fey Wanderer Spells table, you thereafter always have the listed spells prepared.</p>
+			<h5>Fey Wanderer Spells</h5>
+			<table class="class-features">
+				<thead>
+					<tr><td class="col-25">Ranger Level</td><td class="left">Spells</td></tr>
+				</thead>
+				<tr><td>3</td><td class="left"><em>Charm Person</em></td></tr>
+				<tr><td>5</td><td class="left"><em>Misty Step</em></td></tr>
+				<tr><td>9</td><td class="left"><em>Summon Fey</em></td></tr>
+
+				<tr><td>13</td><td class="left"><em>Dimension Door</em></td></tr>
+				<tr><td>17</td><td class="left"><em>Mislead</em></td></tr>
+			</table>
+			<p>You also possess a fey blessing. Choose it from the Feywild Gifts table or determine it randomly.</p>
+			<h5>Feywild Gifts</h5>
+			<table class="class-features">
+				<thead>
+					<tr><td class="col-10">d6</td><td class="left">Gift</td></tr>
+				</thead>
+				<tr><td>1</td><td class="left">Illusory butterflies flutter around you while you take a Short or Long Rest.</td></tr>
+				<tr><td>2</td><td class="left">Flowers bloom from your hair each dawn.</td></tr>
+				<tr><td>3</td><td class="left">You faintly smell of cinnamon, lavender nutmeg, or another comforting herb or spice.</td></tr>
+				<tr><td>4</td><td class="left">Your shadow dances while no one is looking directly at it.</td></tr>
+				<tr><td>5</td><td class="left">Horns or antlers sprout from your head.</td></tr>
+				<tr><td>6</td><td class="left">Your skin and hair change color at each dawn.</td></tr>
+			</table>
+		</description>
+		<sheet display="false" />
+		<rules>
+			<grant type="Spell" id="ID_WOTC_PHB24_SPELL_CHARM_PERSON" level="3" spellcasting="Ranger" />
+			<grant type="Spell" id="ID_WOTC_PHB24_SPELL_MISTY_STEP" level="5" spellcasting="Ranger" />
+			<grant type="Spell" id="ID_WOTC_PHB24_SPELL_SUMMON_FEY" level="9" spellcasting="Ranger" />
+			<grant type="Spell" id="ID_WOTC_PHB24_SPELL_DIMENSION_DOOR" level="13" spellcasting="Ranger" />
+			<grant type="Spell" id="ID_WOTC_PHB24_SPELL_MISLEAD" level="17" spellcasting="Ranger" />
+		</rules>
+	</element>
+
+	<element name="Level 3: Otherworldly Glamour" type="Archetype Feature" source="Player’s Handbook 2024" id="ID_WOTC_PHB24_ARCHETYPE_FEATURE_RANGER_FEY_WANDERER_OTHERWORLDLY_GLAMOUR">
+		<requirements>!ID_INTERNAL_PHB24_FEATURE_REPLACEMENT_RANGER_FEY_WANDERER_OTHERWORLDLY_GLAMOUR</requirements>
+		<description>
+			<p>Whenever you make a Charisma check, you gain a bonus to the check equal to your Wisdom modifier (minimum of +1).</p>
+			<p class="indent">You also gain proficiency in one of these skills of your choice: Deception, Performance, or Persuasion</p>
+		</description>
+		<sheet alt="Otherworldly Glamour">
+			<description>Whenever you make a Charisma check, you gain a +{{otherworldly glamour:charisma bonus}} bonus to the check.</description>
+		</sheet>
+		<rules>
+			<stat name="otherworldly glamour:charisma bonus" value="1" bonus="base" />
+			<stat name="otherworldly glamour:charisma bonus" value="wisdom:modifier" bonus="base" />
+			<stat name="deception:misc" value="otherworldly glamour:charisma bonus" />
+			<stat name="intimidation:misc" value="otherworldly glamour:charisma bonus" />
+			<stat name="performance:misc" value="otherworldly glamour:charisma bonus" />
+			<stat name="persuasion:misc" value="otherworldly glamour:charisma bonus" />
+			<select type="Proficiency" name="Skill Proficiency, Otherworldly Glamour" supports="ID_WOTC_PHB24_PROFICIENCY_SKILL_DECEPTION|ID_WOTC_PHB24_PROFICIENCY_SKILL_PERFORMANCE|ID_WOTC_PHB24_PROFICIENCY_SKILL_PERSUASION" />
+		</rules>
+	</element>
+
+	<element name="Level 7: Beguiling Twist" type="Archetype Feature" source="Player’s Handbook 2024" id="ID_WOTC_PHB24_ARCHETYPE_FEATURE_RANGER_FEY_WANDERER_BEGUILING_TWIST">
+		<requirements>!ID_INTERNAL_FEATURE_PHB24_REPLACEMENT_RANGER_FEY_WANDERER_BEGUILING_TWIST</requirements>
+		<description>
+			<p>The magic of the Feywild guards your mind. You have Advantage on saving throws to avoid or end the Charmed or Frightened condition.</p>
+			<p class="indent">In addition, whenever you or a creature you can see within 120 feet of you succeeds on a saving throw to avoid or end the Charmed or Frightened condition, you can take a Reaction to force a different creature you can see within 120 feet of yourself to make a Wisdom save against your spell save DC. On a failed save, the target is Charmed or Frightened (your choice) for 1 minute. The target repeats the save at the end of each of its turns, ending the effect on itself on a success.</p>
+		</description>
+		<sheet alt="Beguiling Twist" action="Reaction">
+			<description>When you you can see a creature within 120ft. of you succeeding on a saving throw to avoid or end the Charmed or Frightened condition, you can force a different creature you can see within 120ft. of yourself to make a DC{{ranger:spellcasting:dc}} Wisdom save. On a failure, the target is Charmed or Frightened (your choice) for 1 minute. The target can repeat the save at the end of each of its turns, ending the effect on itself on a successful save. &#13;
+			In addition, you have advantage on saving throws to avoid or end the Charmed or Frightened condition.</description>
+		</sheet>
+	</element>
+
+	<element name="Level 11: Fey Reinforcements" type="Archetype Feature" source="Player’s Handbook 2024" id="ID_WOTC_PHB24_ARCHETYPE_FEATURE_RANGER_FEY_WANDERER_FEY_REINFORCEMENTS">
+		<requirements>!ID_INTERNAL_PHB24_FEATURE_REPLACEMENT_RANGER_FEY_WANDERER_FEY_REINFORCEMENTS</requirements>
+		<description>
+			<p>You can cast <i>Summon Fey</i> without a Material component. You can also cast it once without a spell slot, and you regain the ability to cast it in this way when you finish a Long Rest.</p>
+			<p class="indent">Whenever you start casting the spell, you can modify it so that it doesn't require concentration. If you do so, the spell's duration becomes 1 minute for that casting.</p>
+		</description>
+		<sheet alt="Fey Reinforcements" usage="1/Long Rest">
+			<description>You can cast Summon Fey without a spell slot. &#13;
+			Additionally, this spell no longer requires a Material component. Whenever you start casting the spell, you can modify it so that it doesn't require concentration. If you do so, the spell's duration becomes 1 minute for that casting.</description>
+		</sheet>
+	</element>
+
+	<element name="Level 15: Misty Wanderer" type="Archetype Feature" source="Player’s Handbook 2024" id="ID_WOTC_PHB24_ARCHETYPE_FEATURE_RANGER_FEY_WANDERER_MISTY_WANDERER">
+		<requirements>!ID_INTERNAL_PHB24_FEATURE_REPLACEMENT_RANGER_FEY_WANDERER_MISTY_WANDERER</requirements>
+		<description>
+			<p>You can cast <i>Misty Step</i> without expending a spell slot. You can do so a number of times equal to your Wisdom modifier (minimum of once), and you regain all expended uses when you finish a Long Rest.</p>
+			<p class="indent">In addition, whenever you cast <i>Misty Step</i>, you can bring along one willing creature you can see within 5 feet of you. That creature teleports to an unoccupied space of your choice within 5 feet of your destination space.</p>
+		</description>
+		<sheet alt="Misty Wanderer" usage="{{misty wanderer:usage}}/Long Rest">
+			<description>You can cast Misty Step without expending a spell slot. &#13;
+			In addition, whenever you cast Misty Step, you can bring along one willing creature you can see within 5 feet of you. That creature teleports to an unoccupied space of your choice within 5 feet of your destination space.</description>
+		</sheet>
+		<rules>
+			<stat name="misty wanderer:usage" value="1" bonus="base" />
+			<stat name="misty wanderer:usage" value="wisdom:modifier" bonus="base" />
+		</rules>
+	</element>	
+
+	<!--Feature Replacement Grants-->
+	<element name="Dreadful Strikes Feature Replacement" type="Grants" source="Internal" id="ID_INTERNAL_PHB24_FEATURE_REPLACEMENT_RANGER_FEY_WANDERER_DREADFUL_STRIKES" />
+	<element name="Fey Wanderer Spells Feature Replacement" type="Grants" source="Internal" id="ID_INTERNAL_PHB24_FEATURE_REPLACEMENT_RANGER_FEY_WANDERER_FEY_WANDERER_SPELLS" />
+	<element name="Otherworldly Glamour Feature Replacement" type="Grants" source="Internal" id="ID_INTERNAL_PHB24_FEATURE_REPLACEMENT_RANGER_FEY_WANDERER_OTHERWORLDLY_GLAMOUR" />
+	<element name="Beguiling Twist Feature Replacement" type="Grants" source="Internal" id="ID_INTERNAL_FEATURE_PHB24_REPLACEMENT_RANGER_FEY_WANDERER_BEGUILING_TWIST" />
+	<element name="Fey Reinforcements Feature Replacement" type="Grants" source="Internal" id="ID_INTERNAL_PHB24_FEATURE_REPLACEMENT_RANGER_FEY_WANDERER_FEY_REINFORCEMENTS" />	
+	<element name="Misty Wanderer Feature Replacement" type="Grants" source="Internal" id="ID_INTERNAL_PHB24_FEATURE_REPLACEMENT_RANGER_FEY_WANDERER_MISTY_WANDERER" />
+</elements>

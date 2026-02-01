@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<elements>
+	<info>
+		<name>Farmer</name>
+		<description>Farmer background from the Player’s Handbook 2024.</description>
+		<author url="https://dndstore.wizards.com/us/en/product/1001494/2024-player-s-handbook-digital-plus-physical-bundle">Wizards of the Coast</author>
+		<update version="0.0.1">
+			<file name="background-farmer.xml" url="https://raw.githubusercontent.com/AuroraLegacy/elements/master/core/players-handbook-2024/backgrounds/background-farmer.xml" />
+		</update>
+	</info>
+
+	<element name="Farmer" type="Background" source="Player’s Handbook 2024" id="ID_WOTC_PHB24_BACKGROUND_FARMER">
+		<description>
+			<ul class="unstyled" style="text-indent:-1em; margin-left:1em; margin-bottom:5px">
+				<li><strong>Ability Scores:</strong> Strength, Constitution, Wisdom</li>
+				<li><strong>Feat:</strong> Tough</li>
+				<li><strong>Skill Proficiencies:</strong> Animal Handling and Nature</li>
+				<li><strong>Tool Proficiency:</strong> Carpenter's Tools</li>
+				<li><strong>Equipment:</strong><i> Choose A or B:</i> (A) Sickle, Carpenter's Tools, Healer's Kit, Iron Pot, Shovel, Traveler's Clothes, 30GP; or (B) 50 GP</li>
+			</ul>
+			<p>You grew up close to the land. Years tending animals and cultivating the earth rewarded you with patience and good health. You have a keen appreciation for nature's bounty alongside a healthy respect for nature's wrath.</p>
+		</description>
+		<setters>
+			<set name="short">Strength, Constitution, Wisdom, Tough Feat, Animal Handling and Nature Skills, Carpenter's Tools</set>
+		</setters>
+		<rules>
+			<grant type="Ability Score Improvement" id="ID_INTERNAL_ABILITY_SCORE_IMPROVEMENT_COMBINATION_STR_CON_WIS" />
+			<grant type="Feat" id="ID_WOTC_PHB24_FEAT_TOUGH" />
+			<grant type="Proficiency" id="ID_WOTC_PHB24_PROFICIENCY_SKILL_ANIMALHANDLING" />
+			<grant type="Proficiency" id="ID_WOTC_PHB24_PROFICIENCY_SKILL_NATURE" />
+			<grant type="Grants" id="ID_INTERNAL_GRANTS_BACKGROUND_ASI" />
+			<grant type="Proficiency" id="ID_WOTC_PHB24_PROFICIENCY_TOOL_PROFICIENCY_CARPENTERS_TOOLS" />
+		</rules>
+	</element>
+
+	<!-- Todo: Add Equipment Pack for this Background. Example element is in the Acolyte Background. -->
+</elements>

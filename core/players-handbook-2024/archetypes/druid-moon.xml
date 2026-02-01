@@ -1,0 +1,153 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<elements>
+	<info>
+		<name>Circle of the Moon</name>
+		<description>The Circle of the Moon subclass from the Player’s Handbook 2024.</description>
+		<author url="https://dndstore.wizards.com/us/en/product/1001494/2024-player-s-handbook-digital-plus-physical-bundle">Wizards of the Coast</author>
+		<update version="0.0.1">
+			<file name="druid-moon.xml" url="https://raw.githubusercontent.com/AuroraLegacy/elements/master/core/players-handbook-2024/archetypes/druid-moon.xml" />
+		</update>
+	</info>
+
+	<element name="Circle of the Moon" type="Archetype" source="Player’s Handbook 2024" id="ID_WOTC_PHB24_ARCHETYPE_DRUID_CIRCLE_OF_THE_MOON">
+		<supports>Druid Subclass</supports>
+		<description>
+			<p class="flavor">Adopt Animal Forms to Guard the Wilds</p>
+			<p>Druids of the Circle of the Moon draw on lunar magic to transform themselves. Their order gathers under the moon to share news and perform rituals.</p>
+			<p class="indent">Changeable as the moon, a Druid of this circle might prowl as a great cat one night, soar over the treetops as an eagle the next day, and then crash through undergrowth as a bear to drive off a trespassing monster. The wild is in the Druid’s blood.</p>
+			<div element="ID_WOTC_PHB24_ARCHETYPE_FEATURE_DRUID_MOON_CIRCLE_FORMS" />
+			<div element="ID_WOTC_PHB24_ARCHETYPE_FEATURE_DRUID_MOON_CIRCLE_OF_MOON_SPELLS" />
+			<div element="ID_WOTC_PHB24_ARCHETYPE_FEATURE_DRUID_MOON_IMPROVED_CIRCLE_FORMS" />
+			<div element="ID_WOTC_PHB24_ARCHETYPE_FEATURE_DRUID_MOON_MOONLIGHT_STEP" />
+			<div element="ID_WOTC_PHB24_ARCHETYPE_FEATURE_DRUID_MOON_LUNAR_FORM" />
+		</description>
+		<sheet display="false" />
+		<rules>
+			<grant type="Archetype Feature" id="ID_WOTC_PHB24_ARCHETYPE_FEATURE_DRUID_MOON_CIRCLE_FORMS" level="3" />
+			<grant type="Archetype Feature" id="ID_WOTC_PHB24_ARCHETYPE_FEATURE_DRUID_MOON_CIRCLE_OF_MOON_SPELLS" level="3" />
+			<grant type="Archetype Feature" id="ID_WOTC_PHB24_ARCHETYPE_FEATURE_DRUID_MOON_IMPROVED_CIRCLE_FORMS" level="6" />
+			<grant type="Archetype Feature" id="ID_WOTC_PHB24_ARCHETYPE_FEATURE_DRUID_MOON_MOONLIGHT_STEP" level="10" />
+			<grant type="Archetype Feature" id="ID_WOTC_PHB24_ARCHETYPE_FEATURE_DRUID_MOON_LUNAR_FORM" level="14" />
+		</rules>
+	</element>
+
+	<element name="Level 3: Circle Forms" type="Archetype Feature" source="Player’s Handbook 2024" id="ID_WOTC_PHB24_ARCHETYPE_FEATURE_DRUID_MOON_CIRCLE_FORMS">
+		<requirements>!ID_INTERNAL_PHB24_FEATURE_REPLACEMENT_DRUID_MOON_CIRCLE_FORMS</requirements>
+		<description>
+			<p>You can channel lunar magic when you assume a Wild Shape form, granting you the benefits below.</p>
+			<p class="indent"><em><strong>Challenge Rating.</strong></em> The maximum Challenge Rating for the form equals your Druid level divided by 3 (round down).</p>
+			<p class="indent"><em><strong>Armor Class.</strong></em> Until you leave the form, your AC equals 13 plus your Wisdom modifier if that total is higher than the Beast’s AC.</p>
+			<p class="indent"><em><strong>Temporary Hit Points.</strong></em> You gain a number of Temporary Hit Points equal to three times your Druid level.</p>
+		</description>
+		<sheet alt="Wild Shape" action="Bonus Action" usage="{{wild shape:uses}}/Long Rest">
+			<description>You can magically assume the form of a Beast you have learned (you can have {{wild shape:forms}} Known Forms of CR{{circle forms:cr}} or lower without a Fly Speed). You immediately gain {{wild shape:thp}} Temporary Hit Points, and you can stay in that form for {{wild shape:hours}} hours or until you use Wild Shape again, have the Incapacitated condition, or die. You can also leave the form early as a Bonus Action. &#13;
+			While transformed your statistics are replaced by the Beast’s, but you retain your creature type; Hit Points; Hit Point Dice; Intelligence, Wisdom, and Charisma scores; class features; languages; and feats. Your AC in this form is {{circle forms:ac}}, if it's higher than the Beast’s AC. You also retain your skill and saving throw proficiencies and use your Proficiency Bonus for them, in addition to gaining the proficiencies of the creature. You can use Beast's skill or saving throw modifier if it's higher than yours. You can cast only your Circle spells, but shape-shifting doesn’t break your Concentration or otherwise interfere with a spell you’ve already cast. &#13;
+			You regain one expended use of your Wild Shape when you finish a Short Rest.</description>
+			<description level="18">You can magically assume the form of a Beast you have learned (you can have {{wild shape:forms}} Known Forms of CR 1 or lower). You immediately gain {{wild shape:thp}} Temporary Hit Points, and you can stay in that form for {{wild shape:hours}} hours or until you use Wild Shape again, have the Incapacitated condition, or die. You can also leave the form early as a Bonus Action. &#13;
+			While transformed your statistics are replaced by the Beast’s, but you retain your creature type; Hit Points; Hit Point Dice; Intelligence, Wisdom, and Charisma scores; class features; languages; and feats. Your AC in this form is {{circle forms:ac}}, if it's higher than the Beast’s AC. You also retain your skill and saving throw proficiencies and use your Proficiency Bonus for them, in addition to gaining the proficiencies of the creature. You can use Beast's skill or saving throw modifier if it's higher than yours. You can cast Circle spells in Beast form, and spells that don't have a Material component that is consumed or has a cost. Shape-shifting doesn’t break your Concentration or otherwise interfere with a spell you’ve already cast. &#13;
+			You regain one expended use of your Wild Shape when you finish a Short Rest.</description>
+			<description level="20">You can magically assume the form of a Beast you have learned (you can have {{wild shape:forms}} Known Forms of CR 1 or lower). You immediately gain {{wild shape:thp}} Temporary Hit Points, and you can stay in that form for {{wild shape:hours}} hours or until you use Wild Shape again, have the Incapacitated condition, or die. You can also leave the form early as a Bonus Action. &#13;
+			While transformed your statistics are replaced by the Beast’s, but you retain your creature type; Hit Points; Hit Point Dice; Intelligence, Wisdom, and Charisma scores; class features; languages; and feats. Your AC in this form is {{circle forms:ac}}, if it's higher than the Beast’s AC. You also retain your skill and saving throw proficiencies and use your Proficiency Bonus for them, in addition to gaining the proficiencies of the creature. You can use Beast's skill or saving throw modifier if it's higher than yours. You can cast Circle spells in Beast form, and spells that don't have a Material component that is consumed or has a cost. Shape-shifting doesn’t break your Concentration or otherwise interfere with a spell you’ve already cast. &#13;
+			Whenever you roll Initiative and have no uses of Wild Shape left, you regain one expended use. You regain one expended use of your Wild Shape when you finish a Short Rest.</description>
+		</sheet>
+		<rules>
+			<!-- Wild Shape stats -->
+			<stat name="wild shape:forms" value="4" bonus="base" />
+			<stat name="wild shape:forms" value="6" bonus="base" level="4"/>
+			<stat name="wild shape:forms" value="8" bonus="base" level="8"/>
+			<stat name="wild shape:uses" value="2" bonus="base" />
+			<stat name="wild shape:uses" value="3" bonus="base" level="6"/>
+			<stat name="wild shape:uses" value="4" bonus="base" level="17"/>
+			<stat name="wild shape:hours" value="level:druid:half" />
+			<stat name="wild shape:thp" value="level:druid" />
+			<!-- Circle Forms stats -->
+			<stat name="circle forms:cr" value="1" bonus="base" />
+			<stat name="circle forms:cr" value="2" bonus="base" level="6" />
+			<stat name="circle forms:cr" value="3" bonus="base" level="9" />
+			<stat name="circle forms:cr" value="4" bonus="base" level="12" />
+			<stat name="circle forms:cr" value="5" bonus="base" level="15" />
+			<stat name="circle forms:cr" value="6" bonus="base" level="18" />
+			<stat name="circle forms:ac" value="13" bonus="base" />
+			<stat name="circle forms:ac" value="wisdom:modifier" bonus="ability" />
+			<stat name="wild shape:thp" value="level:druid" />
+			<stat name="wild shape:thp" value="level:druid" />
+			<grant type="Grants" id="ID_INTERNAL_PHB24_FEATURE_REPLACEMENT_DRUID_WILD_SHAPE" />
+		</rules>
+	</element>
+
+	<element name="Level 3: Circle of the Moon Spells" type="Archetype Feature" source="Player’s Handbook 2024" id="ID_WOTC_PHB24_ARCHETYPE_FEATURE_DRUID_MOON_CIRCLE_OF_MOON_SPELLS">
+		<requirements>!ID_INTERNAL_PHB24_FEATURE_REPLACEMENT_DRUID_MOON_CIRCLE_OF_MOON_SPELLS</requirements>
+		<description>
+			<p>When you reach a Druid level specified in the Circle of the Moon Spells table, you thereafter always have the listed spells prepared.</p>
+			<p class="indent">In addition, you can cast the spells from this feature while you’re in a Wild Shape form.</p>
+			<h5>Circle of the Moon Spells</h5>
+			<table class="class-features">
+				<thead>
+					<tr><td class="col-10">Druid Level</td><td class="left">Prepared Spells</td></tr>
+				</thead>
+				<tr><td>3</td><td class="left"><em>Cure Wounds, Moonbeam, Starry Wisp</em></td></tr>
+				<tr><td>5</td><td class="left"><em>Conjure Animals</em></td></tr>
+				<tr><td>7</td><td class="left"><em>Fount of Moonlight</em></td></tr>
+				<tr><td>9</td><td class="left"><em>Mass Cure Wounds</em></td></tr>
+			</table>
+		</description>
+		<sheet display="false" />
+		<rules>
+			<grant type="Spell" id="ID_WOTC_PHB24_SPELL_STARRY_WISP" spellcasting="Druid" />
+			<grant type="Spell" id="ID_WOTC_PHB24_SPELL_CURE_WOUNDS" spellcasting="Druid" prepared="true" />
+			<grant type="Spell" id="ID_WOTC_PHB24_SPELL_MOONBEAM" spellcasting="Druid" prepared="true" />
+			<grant type="Spell" id="ID_WOTC_PHB24_SPELL_CONJURE_ANIMALS" level="5" spellcasting="Druid" prepared="true" />
+			<grant type="Spell" id="ID_WOTC_PHB24_SPELL_FOUNT_OF_MOONLIGHT" level="9" spellcasting="Druid" prepared="true" />
+			<grant type="Spell" id="ID_WOTC_PHB24_SPELL_MASS_CURE_WOUNDS" level="9" spellcasting="Druid" prepared="true" />
+		</rules>
+	</element>
+
+	<element name="Level 6: Improved Circle Forms" type="Archetype Feature" source="Player’s Handbook 2024" id="ID_WOTC_PHB24_ARCHETYPE_FEATURE_DRUID_MOON_IMPROVED_CIRCLE_FORMS">
+		<requirements>!ID_INTERNAL_PHB24_FEATURE_REPLACEMENT_DRUID_MOON_IMPROVED_CIRCLE_FORMS</requirements>
+		<description>
+			<p>While in a Wild Shape form, you gain the following benefits.</p>
+			<p class="indent"><em><strong>Lunar Radiance.</strong></em> Each of your attacks in a Wild Shape form can deal its normal damage type or Radiant damage. You make this choice each time you hit with those attacks.</p>
+			<p class="indent"><em><strong>Increased Toughness.</strong></em> You can add your Wisdom modifier to your Constitution saving throws.</p>
+		</description>
+		<sheet alt="Improved Circle Forms">
+			<description>While in a Wild Shape form, your attacks can deal Radiant damage instead of their normal damage type, and you add +{{wisdom:modifier}} to your Constitution saving throws.</description>
+			<description level="14">While in a Wild Shape form, your attacks can deal Radiant damage instead of their normal damage type, and once per turn can deal an additional 2d10 Radiant damage. Additionally, you add +{{wisdom:modifier}} to your Constitution saving throws. </description>
+		</sheet>
+	</element>
+
+	<element name="Level 10: Moonlight Step" type="Archetype Feature" source="Player’s Handbook 2024" id="ID_WOTC_PHB24_ARCHETYPE_FEATURE_DRUID_MOON_MOONLIGHT_STEP">
+		<requirements>!ID_INTERNAL_PHB24_FEATURE_REPLACEMENT_DRUID_MOON_MOONLIGHT_STEP</requirements>
+		<description>
+			<p>You magically transport yourself, reappearing amid a burst of moonlight. As a Bonus Action, you teleport up to 30 feet to an unoccupied space you can see, and you have Advantage on the next attack roll you make before the end of this turn.</p>
+			<p class="indent">You can use this feature a number of times equal to your Wisdom modifier (minimum of once), and you regain all expended uses when you finish a Long Rest. You can also regain uses by expending a level 2+ spell slot for each use you want to restore (no action required).</p>
+		</description>
+		<sheet alt="Moonlight Step" action="Bonus Action" usage="{{moonlight step:usage}}/Long Rest">
+			<description>You can teleport up to 30 feet to an unoccupied space you can see, and have Advantage on the next attack you make before the end of this turn. &#13;
+			You can restore a use of this feature by expending a level 2+ spell slot.</description>
+			<description level="14">You can teleport yourself and one willing creature within 10 feet of you to an unoccupied space you can see within 30 feet of you, and you have Advantage on the next attack you make before the end of this turn. &#13;
+			You can restore a use of this feature by expending a level 2+ spell slot.</description>
+			</sheet>
+		<rules>
+			<stat name="moonlight step:usage" value="1" bonus="base" />
+			<stat name="moonlight step:usage" value="wisdom:modifier" bonus="base" />
+		</rules>
+	</element>
+
+	<element name="Level 14: Lunar Form" type="Archetype Feature" source="Player’s Handbook 2024" id="ID_WOTC_PHB24_ARCHETYPE_FEATURE_DRUID_MOON_LUNAR_FORM">
+		<requirements>!ID_INTERNAL_PHB24_FEATURE_REPLACEMENT_DRUID_MOON_LUNAR_FORM</requirements>
+		<description>
+			<p>The power of the moon suffuses you, granting you the following benefits.</p>
+			<p class="indent"><em><strong>Improved Lunar Radiance.</strong></em> Once per turn, you can deal an extra 2d10 Radiant damage to a target you hit with a Wild Shape form’s attack.</p>
+			<p class="indent"><em><strong>Shared Moonlight.</strong></em> Whenever you use Moonlight Step, you can also teleport one willing creature. That creature must be within 10 feet of you, and you teleport it to an unoccupied space you can see within 10 feet of your destination space.</p>
+			</description>
+		<sheet display="false" />
+	</element>
+
+	<!--Feature Replacement Grants-->
+	<element name="Circle of the Moon Spells Feature Replacement" type="Grants" source="Internal" id="ID_INTERNAL_PHB24_FEATURE_REPLACEMENT_DRUID_MOON_CIRCLE_OF_MOON_SPELLS" />
+	<element name="Circle Forms Feature Replacement" type="Grants" source="Internal" id="ID_INTERNAL_PHB24_FEATURE_REPLACEMENT_DRUID_MOON_CIRCLE_FORMS" />
+	<element name="Improved Circle Forms Feature Replacement" type="Grants" source="Internal" id="ID_INTERNAL_PHB24_FEATURE_REPLACEMENT_DRUID_MOON_IMPROVED_CIRCLE_FORMS" />
+	<element name="Moonlight Step Feature Replacement" type="Grants" source="Internal" id="ID_INTERNAL_PHB24_FEATURE_REPLACEMENT_DRUID_MOON_MOONLIGHT_STEP" />
+	<element name="Lunar Form Feature Replacement" type="Grants" source="Internal" id="ID_INTERNAL_PHB24_FEATURE_REPLACEMENT_DRUID_MOON_LUNAR_FORM" />
+
+</elements>

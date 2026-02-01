@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<elements>
+	<info>
+		<name>Scribe</name>
+		<description>Scribe background from the Player’s Handbook 2024.</description>
+		<author url="https://dndstore.wizards.com/us/en/product/1001494/2024-player-s-handbook-digital-plus-physical-bundle">Wizards of the Coast</author>
+		<update version="0.0.1">
+			<file name="background-scribe.xml" url="https://raw.githubusercontent.com/AuroraLegacy/elements/master/core/players-handbook-2024/backgrounds/background-scribe.xml" />
+		</update>
+	</info>
+
+	<element name="Scribe" type="Background" source="Player’s Handbook 2024" id="ID_WOTC_PHB24_BACKGROUND_SCRIBE">
+		<description>
+			<ul class="unstyled" style="text-indent:-1em; margin-left:1em; margin-bottom:5px">
+				<li><strong>Ability Scores:</strong> Dexterity, Intelligence, Wisdom</li>
+				<li><strong>Feat:</strong> Skilled</li>
+				<li><strong>Skill Proficiencies:</strong> Investigation and Perception</li>
+				<li><strong>Tool Proficiency:</strong> Calligrapher’s Supplies</li>
+				<li><strong>Equipment:</strong><i> Choose A or B:</i> (A) Calligrapher's Supplies, Fine Clothes, Lamp, Oil (3 flasks). Parchment (12 sheets), 23 GP; or (B) 50 GP</li>
+			</ul>
+			<p>You spent your formative years in a scriptorium, a monastery dedicated to the preservation of knowledge, or a government agency, where you learned to write with a clear hand and produce finely written texts. Perhaps you scribed government documents or copied tomes of literature. You might have some skill as a writer of poetry, narrative, or scholarly research. Above all, you have a careful attention to detail, helping you avoid introducing mistakes to the documents you copy and create.</p>
+		</description>
+		<setters>
+			<set name="short">Dexterity, Intelligence, Wisdom, Skilled Feat, Investigation and Perception Skills, Calligrapher’s Supplies</set>
+		</setters>
+		<rules>
+			<grant type="Ability Score Improvement" id="ID_INTERNAL_ABILITY_SCORE_IMPROVEMENT_COMBINATION_DEX_INT_WIS" />
+			<select type="Feat" name="Origin Feat (Scribe)" supports="ID_WOTC_PHB24_FEAT_SKILLED|ID_WOTC_PHB24_FEAT_SKILLED_2" default="ID_WOTC_PHB24_FEAT_SKILLED" />
+			<grant type="Proficiency" id="ID_WOTC_PHB24_PROFICIENCY_SKILL_INVESTIGATION" />
+			<grant type="Proficiency" id="ID_WOTC_PHB24_PROFICIENCY_SKILL_PERCEPTION" /> 
+			<grant type="Grants" id="ID_INTERNAL_GRANTS_BACKGROUND_ASI" />
+			<grant type="Proficiency" id="ID_WOTC_PHB24_PROFICIENCY_TOOL_PROFICIENCY_CALLIGRAPHERS_SUPPLIES" />	
+		</rules>
+	</element>
+
+	<!-- Todo: Add Equipment Pack for this Background. Example element is in the Acolyte Background. -->
+</elements>

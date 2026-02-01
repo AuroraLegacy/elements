@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<elements>
+	<info>
+		<name>Guard</name>
+		<description>Guard background from the Player’s Handbook 2024.</description>
+		<author url="https://dndstore.wizards.com/us/en/product/1001494/2024-player-s-handbook-digital-plus-physical-bundle">Wizards of the Coast</author>
+		<update version="0.0.1">
+			<file name="background-guard.xml" url="https://raw.githubusercontent.com/AuroraLegacy/elements/master/core/players-handbook-2024/backgrounds/background-guard.xml" />
+		</update>
+	</info>
+
+	<element name="Guard" type="Background" source="Player’s Handbook 2024" id="ID_WOTC_PHB24_BACKGROUND_GUARD">
+		<description>
+			<ul class="unstyled" style="text-indent:-1em; margin-left:1em; margin-bottom:5px">
+				<li><strong>Ability Scores:</strong> Strength, Intelligence, Wisdom</li>
+				<li><strong>Feat:</strong> Alert</li>
+				<li><strong>Skill Proficiencies:</strong> Athletics and Perception</li>
+				<li><strong>Tool Proficiency:</strong><i> Choose one kind of Gaming Set</i></li>
+				<li><strong>Equipment:</strong><i> Choose A or B:</i> (A) Spear, Light Crossbow, 20 Bolts, Gaming Set (same as above). Hooded Lantern, Manacles, Quiver, Traveler's Clothes, 12 GP; or (B) 50 GP</li>
+			</ul>
+			<p>Your feet ache when you remember the countless hours you spent at your post in the tower. You were trained to keep one eye looking outside the wall, watching for marauders sweeping from the nearby forest, and your other eye looking inside the wall, searching for cutpurses and troublemakers.</p>
+		</description>
+		<setters>
+			<set name="short">Strength, Intelligence, Wisdom, Alert Feat, Athletics and Perception Skills, a Gaming Set</set>
+		</setters>
+		<rules>
+			<grant type="Ability Score Improvement" id="ID_INTERNAL_ABILITY_SCORE_IMPROVEMENT_COMBINATION_STR_INT_WIS" />
+			<grant type="Feat" id="ID_WOTC_PHB24_FEAT_ALERT" />
+			<grant type="Proficiency" id="ID_WOTC_PHB24_PROFICIENCY_SKILL_ATHLETICS" />
+			<grant type="Proficiency" id="ID_WOTC_PHB24_PROFICIENCY_SKILL_PERCEPTION" />
+			<grant type="Grants" id="ID_INTERNAL_GRANTS_BACKGROUND_ASI" />
+			<select type="Proficiency" name="Gaming Set (Guard)" supports="Gaming Set" />
+		</rules>
+	</element>
+
+	<!-- Todo: Add Equipment Pack for this Background. Example element is in the Acolyte Background. -->
+</elements>

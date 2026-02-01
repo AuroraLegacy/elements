@@ -1,0 +1,328 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<elements>
+	<info>
+		<name>Tiefling</name>
+		<description>The Tiefling species from the Player’s Handbook 2024.</description>
+		<author url="https://dndstore.wizards.com/us/en/product/1001494/2024-player-s-handbook-digital-plus-physical-bundle">Wizards of the Coast</author>
+		<update version="0.0.1">
+			<file name="race-tiefling.xml" url="https://raw.githubusercontent.com/AuroraLegacy/elements/master/core/players-handbook-2024/races/race-tiefling.xml" />
+		</update>
+	</info>
+	
+	<element name="Tiefling" type="Race" source="Player’s Handbook 2024" id="ID_WOTC_PHB24_RACE_TIEFLING">
+		<description>
+			<p>Tieflings are either born in the Lower Planes or have fiendish ancestors who originated there. A tiefling (pronounced TEE-fling) is linked by blood to a devil, a demon, or some other Fiend. This connection to the Lower Planes is the tiefling’s fiendish legacy, which comes with the promise of power yet has no effect on the tiefling’s moral outlook.</p>
+			<p class="indent">A tiefling chooses whether to embrace or lament their fiendish legacy. The three legacies are described below.</p>
+			<h5>TIEFLING TRAITS</h5>
+			<ul class="unstyled" style="text-indent:-1em; margin-left:1em; margin-bottom:5px">
+				<li><strong>Creature Type:</strong> Humanoid</li>
+				<li><strong>Size:</strong> Medium (about 4–7 feet tall) or Small (about 3–4 feet tall), chosen when you select this species</li>
+				<li><strong>Speed:</strong> 30 feet</li>
+			</ul>
+			<p>As a Tiefling, you have these special traits.</p>
+			<p class="indent"><strong><em>Darkvision.</em></strong> You have Darkvision with a range of 60 feet.</p>
+			<p class="indent"><strong><em>Fiendish Legacy.</em></strong> You are the recipient of a legacy that grants you supernatural abilities. Choose a legacy from the Fiendish Legacies table. You gain the level 1 benefit of the chosen legacy.</p>
+			<p class="indent">When you reach character levels 3 and 5, you learn a higher-level spell, as shown on the table. You always have that spell prepared. You can cast it once without a spell slot, and you regain the ability to cast it in that way when you finish a Long Rest. You can also cast the spell using any spell slots you have of the appropriate level.</p>
+			<p class="indent">Intelligence, Wisdom, or Charisma is your spellcasting ability for the spells you cast with this trait (choose the ability when you select the legacy).</p>
+			<p class="indent"><strong><em>Otherworldly Presence.</em></strong> You know the <i>Thaumaturgy</i> cantrip. When you cast it with this trait, the spell uses the same spellcasting ability you use for your Fiendish Legacy trait.</p>
+			
+			<h5>Fiendish Legacies</h5>
+			<table>
+				<thead>
+					<tr><td>Legacy</td><td class="col-50">Level 1</td><td>Level 3</td><td>Level 5</td></tr>
+				</thead>
+				<tr><td>Abyssal</td><td>You have Resistance to Poison damage. You also know the <i>Poison Spray</i> cantrip.</td><td><i>Ray of Sickness</i></td><td><i>Hold Person</i></td></tr>
+				<tr><td>Chthonic</td><td>You have Resistance to Necrotic damage. You also know the <i>Chill Touch</i> cantrip.</td><td><i>False Life</i></td><td><i>Ray of Enfeeblement</i></td></tr>
+				<tr><td>Infernal</td><td>You have Resistance to Fire damage. You also know the <i>Fire Bolt</i> cantrip.</td><td><i>Hellish Rebuke</i></td><td><i>Darkness</i></td></tr>
+			</table>
+		</description>
+		<sheet display="false" />
+		<rules>
+			<grant type="Grants" id="ID_INTERNAL_GRANT_RACE_TIEFLING" />
+			<select type="Ability Score Improvement" name="Ability Score Improvement Option (Tiefling)" supports="Custom Ability Score Improvement Option" requirements="!ID_INTERNAL_GRANTS_BACKGROUND_ASI" />
+			<select type="Racial Trait" name="Size (Tiefling)" supports="ID_INTERNAL_RACIAL_TRAIT_SMALL|ID_INTERNAL_RACIAL_TRAIT_MEDIUM" />
+			<stat name="speed" value="30" bonus="base" />
+
+			<grant type="Language" id="ID_WOTC_PHB24_LANGUAGE_COMMON" requirements="!ID_WOTC_TCOE_OPTION_CUSTOMIZED_LANGUAGE" />
+			<select type="Language" name="Language (Tiefling)" supports="Standard" number="2" requirements="!ID_WOTC_TCOE_OPTION_CUSTOMIZED_LANGUAGE" />
+			<select type="Language" name="Customized Language (Tiefling)" supports="Custom Race Language"  requirements="ID_WOTC_TCOE_OPTION_CUSTOMIZED_LANGUAGE" number="3" />
+
+			<grant type="Vision" id="ID_VISION_DARKVISION" requirements="!ID_INTERNAL_PHB24_RACIAL_TRAIT_REPLACEMENT_TIEFLING_DARKVISION" />
+			<grant type="Racial Trait" id="ID_WOTC_PHB24_RACIAL_TRAIT_TIEFLING_FIENDISH_LEGACY" />
+			<grant type="Racial Trait" id="ID_WOTC_PHB24_RACIAL_TRAIT_TIEFLING_OTHERWORLDLY_PRESENCE_INTELLIGENCE" requirements="ID_WOTC_PHB24_GRANTS_TIEFLING_FIENDISH_LEGACY_SPELLCASTING_ABILITY_INTELLIGENCE" />
+			<grant type="Racial Trait" id="ID_WOTC_PHB24_RACIAL_TRAIT_TIEFLING_OTHERWORLDLY_PRESENCE_WISDOM" requirements="ID_WOTC_PHB24_GRANTS_TIEFLING_FIENDISH_LEGACY_SPELLCASTING_ABILITY_WISDOM" />
+			<grant type="Racial Trait" id="ID_WOTC_PHB24_RACIAL_TRAIT_TIEFLING_OTHERWORLDLY_PRESENCE_CHARISMA" requirements="ID_WOTC_PHB24_GRANTS_TIEFLING_FIENDISH_LEGACY_SPELLCASTING_ABILITY_CHARISMA" />
+		</rules>
+	</element>
+
+	<element name="Fiendish Legacy" type="Racial Trait" source="Player’s Handbook 2024" id="ID_WOTC_PHB24_RACIAL_TRAIT_TIEFLING_FIENDISH_LEGACY">
+		<requirements>!ID_INTERNAL_PHB24_RACIAL_TRAIT_REPLACEMENT_TIEFLING_FIENDISH_LEGACY</requirements>
+		<description>
+			<p>You are the recipient of a legacy that grants you supernatural abilities. Choose a legacy from the Fiendish Legacies table. You gain the level 1 benefit of the chosen legacy.</p>
+			<p class="indent">When you reach character levels 3 and 5, you learn a higher-level spell, as shown on the table. You always have that spell prepared. You can cast it once without a spell slot, and you regain the ability to cast it in that way when you finish a Long Rest. You can also cast the spell using any spell slots you have of the appropriate level.</p>
+			<p class="indent">Intelligence, Wisdom, or Charisma is your spellcasting ability for the spells you cast with this trait (choose the ability when you select the legacy).</p>
+			<h5>Fiendish Legacies</h5>
+			<table>
+				<thead>
+					<tr><td>Legacy</td><td class="col-50">Level 1</td><td>Level 3</td><td>Level 5</td></tr>
+				</thead>
+				<tr><td>Abyssal</td><td>You have Resistance to Poison damage. You also know the <i>Poison Spray</i> cantrip.</td><td><i>Ray of Sickness</i></td><td><i>Hold Person</i></td></tr>
+				<tr><td>Chthonic</td><td>You have Resistance to Necrotic damage. You also know the <i>Chill Touch</i> cantrip.</td><td><i>False Life</i></td><td><i>Ray of Enfeeblement</i></td></tr>
+				<tr><td>Infernal</td><td>You have Resistance to Fire damage. You also know the <i>Fire Bolt</i> cantrip.</td><td><i>Hellish Rebuke</i></td><td><i>Darkness</i></td></tr>
+			</table>
+		</description>
+		<sheet display="false" />
+		<rules>
+			<select type="Racial Trait" name="Fiendish Legacy" supports="Fiendish Legacy 2024" />
+			<select type="Racial Trait" name="Spellcasting Ability (Fiendish Legacy)" supports="ID_WOTC_PHB24_RACIAL_TRAIT_TIEFLING_FIENDISH_LEGACY_INTELLIGENCE|ID_WOTC_PHB24_RACIAL_TRAIT_TIEFLING_FIENDISH_LEGACY_WISDOM|ID_WOTC_PHB24_RACIAL_TRAIT_TIEFLING_FIENDISH_LEGACY_CHARISMA" />
+		</rules>
+	</element>
+
+	<element name="Abyssal Legacy" type="Racial Trait" source="Player’s Handbook 2024" id="ID_WOTC_PHB24_RACIAL_TRAIT_TIEFLING_FIENDISH_LEGACY_ABYSSAL">
+		<compendium display="false" />
+		<supports>Fiendish Legacy 2024</supports>
+		<description>
+			<p>The entropy of the Abyss, the chaos of Pandemonium, and the despair of Carceri call to tieflings who have the abyssal legacy. Horns, fur, tusks, and peculiar scents are common physical features of such tieflings, most of whom have the blood of demons coursing through their veins.</p>
+			<p>As an Abyssal Tiefling, you have Resistance to Poison damage and you learn the <i>Poison Spray</i> cantrip.</p>
+			<p class="indent">Additionally, you learn <i>Ray of Sickness</i> spell when you reach 3rd level, and <i>Hold Person</i> spell once you reach 5th level. You can cast each of these spells once without a spell slot, and you regain the ability to cast them in this way when you finish a Long Rest. You can also cast these spells using any spell slots you have of the appropriate level.</p>
+		</description>
+		<sheet display="false" />
+		<rules>
+			<grant type="Condition" id="ID_INTERNAL_CONDITION_DAMAGE_RESISTANCE_POISON" />
+			<select type="Racial Trait" name="Spellcasting Ability (Fiendish Legacy)" supports="ID_WOTC_PHB24_RACIAL_TRAIT_TIEFLING_FIENDISH_LEGACY_ABYSSAL_INTELLIGENCE|ID_WOTC_PHB24_RACIAL_TRAIT_TIEFLING_FIENDISH_LEGACY_ABYSSAL_WISDOM|ID_WOTC_PHB24_RACIAL_TRAIT_TIEFLING_FIENDISH_LEGACY_ABYSSAL_CHARISMA" />
+		</rules>
+	</element>
+	<element name="Intelligence" type="Racial Trait" source="Player’s Handbook 2024" id="ID_WOTC_PHB24_RACIAL_TRAIT_TIEFLING_FIENDISH_LEGACY_ABYSSAL_INTELLIGENCE">
+		<compendium display="false" />
+		<description>
+			<p>Intelligence is your spellcasting ability for the spells you cast with Fiendish Legacy trait.</p>
+		</description>
+		<sheet alt="Fiendish Legacy (Abyssal)">
+			<description>You know the Poison Spray cantrip. Intelligence is your spellcasting ability for it.</description>
+			<description level="3">You know the Poison Spray cantrip, and you can cast the Ray of Sickness spell once per Long Rest. Intelligence is your spellcasting ability for the spells you cast with this trait. You can also cast this spell using any spell slots you have of the appropriate level.</description>
+			<description level="5">You know the Poison Spray cantrip, and you can cast the Ray of Sickness and Hold Person spells once each per Long Rest. Intelligence is your spellcasting ability for the spells you cast with this trait. You can also cast either of those spells using any spell slots you have of the appropriate level.</description>
+		</sheet>
+		<rules>
+			<grant type="Grants" id="ID_WOTC_PHB24_GRANTS_TIEFLING_FIENDISH_LEGACY_SPELLCASTING_ABILITY_INTELLIGENCE" />
+			<grant type="Spell" id="ID_WOTC_PHB24_SPELL_POISON_SPRAY" />
+			<grant type="Spell" id="ID_WOTC_PHB24_SPELL_RAY_OF_SICKNESS" level="3" />
+			<grant type="Spell" id="ID_WOTC_PHB24_SPELL_HOLD_PERSON" level="5" />
+		</rules>
+	</element>
+	<element name="Wisdom" type="Racial Trait" source="Player’s Handbook 2024" id="ID_WOTC_PHB24_RACIAL_TRAIT_TIEFLING_FIENDISH_LEGACY_ABYSSAL_WISDOM">
+		<compendium display="false" />
+		<description>
+			<p>Wisdom is your spellcasting ability for the spells you cast with Fiendish Legacy trait.</p>
+		</description>
+		<sheet alt="Fiendish Legacy (Abyssal)">
+			<description>You know the Poison Spray cantrip. Wisdom is your spellcasting ability for it.</description>
+			<description level="3">You know the Poison Spray cantrip, and you can cast the Ray of Sickness spell once per Long Rest. Wisdom is your spellcasting ability for the spells you cast with this trait. You can also cast this spell using any spell slots you have of the appropriate level.</description>
+			<description level="5">You know the Poison Spray cantrip, and you can cast the Ray of Sickness and Hold Person spells once each per Long Rest. Wisdom is your spellcasting ability for the spells you cast with this trait. You can also cast either of those spells using any spell slots you have of the appropriate level.</description>
+		</sheet>
+		<rules>
+			<grant type="Grants" id="ID_WOTC_PHB24_GRANTS_TIEFLING_FIENDISH_LEGACY_SPELLCASTING_ABILITY_WISDOM" />
+			<grant type="Spell" id="ID_WOTC_PHB24_SPELL_POISON_SPRAY" />
+			<grant type="Spell" id="ID_WOTC_PHB24_SPELL_RAY_OF_SICKNESS" level="3" />
+			<grant type="Spell" id="ID_WOTC_PHB24_SPELL_HOLD_PERSON" level="5" />
+		</rules>
+	</element>
+	<element name="Charisma" type="Racial Trait" source="Player’s Handbook 2024" id="ID_WOTC_PHB24_RACIAL_TRAIT_TIEFLING_FIENDISH_LEGACY_ABYSSAL_CHARISMA">
+		<compendium display="false" />
+		<description>
+			<p>Charisma is your spellcasting ability for the spells you cast with Fiendish Legacy trait.</p>
+		</description>
+		<sheet alt="Fiendish Legacy (Abyssal)">
+			<description>You know the Poison Spray cantrip. Charisma is your spellcasting ability for it.</description>
+			<description level="3">You know the Poison Spray cantrip, and you can cast the Ray of Sickness spell once per Long Rest. Charisma is your spellcasting ability for the spells you cast with this trait. You can also cast this spell using any spell slots you have of the appropriate level.</description>
+			<description level="5">You know the Poison Spray cantrip, and you can cast the Ray of Sickness and Hold Person spells once each per Long Rest. Charisma is your spellcasting ability for the spells you cast with this trait. You can also cast either of those spells using any spell slots you have of the appropriate level.</description>
+		</sheet>
+		<rules>
+			<grant type="Grants" id="ID_WOTC_PHB24_GRANTS_TIEFLING_FIENDISH_LEGACY_SPELLCASTING_ABILITY_CHARISMA" />
+			<grant type="Spell" id="ID_WOTC_PHB24_SPELL_POISON_SPRAY" />
+			<grant type="Spell" id="ID_WOTC_PHB24_SPELL_RAY_OF_SICKNESS" level="3" />
+			<grant type="Spell" id="ID_WOTC_PHB24_SPELL_HOLD_PERSON" level="5" />
+		</rules>
+	</element>
+	
+	<element name="Chthonic Legacy" type="Racial Trait" source="Player’s Handbook 2024" id="ID_WOTC_PHB24_RACIAL_TRAIT_TIEFLING_FIENDISH_LEGACY_CHTHONIC">
+		<compendium display="false" />
+		<supports>Fiendish Legacy 2024</supports>
+		<description>
+			<p>Tieflings who have the chthonic legacy feel not only the tug of Carceri but also the greed of Gehenna and the gloom of Hades. Some of these tieflings look cadaverous. Others possess the unearthly beauty of a succubus, or they have physical features in common with a night hag, a yugoloth, or some other Neutral Evil fiendish ancestor.</p>
+			<p>As a Chthonic Tiefling, you have Resistance to Necrotic damage and you learn the <i>Chill Touch</i> cantrip.</p>
+			<p class="indent">Additionally, you learn <i>False Life</i> spell when you reach 3rd level, and <i>Ray of Enfeeblement</i> spell once you reach 5th level. You can cast each of these spells once without a spell slot, and you regain the ability to cast them in this way when you finish a Long Rest. You can also cast these spells using any spell slots you have of the appropriate level.</p>
+		</description>
+		<sheet display="false" />
+		<rules>
+			<grant type="Condition" id="ID_INTERNAL_CONDITION_DAMAGE_RESISTANCE_NECROTIC" />
+			<select type="Racial Trait" name="Spellcasting Ability (Fiendish Legacy)" supports="ID_WOTC_PHB24_RACIAL_TRAIT_TIEFLING_FIENDISH_LEGACY_CHTHONIC_INTELLIGENCE|ID_WOTC_PHB24_RACIAL_TRAIT_TIEFLING_FIENDISH_LEGACY_CHTHONIC_WISDOM|ID_WOTC_PHB24_RACIAL_TRAIT_TIEFLING_FIENDISH_LEGACY_CHTHONIC_CHARISMA" />
+		</rules>
+	</element>
+	<element name="Intelligence" type="Racial Trait" source="Player’s Handbook 2024" id="ID_WOTC_PHB24_RACIAL_TRAIT_TIEFLING_FIENDISH_LEGACY_CHTHONIC_INTELLIGENCE">
+		<compendium display="false" />
+		<description>
+			<p>Intelligence is your spellcasting ability for the spells you cast with Fiendish Legacy trait.</p>
+		</description>
+		<sheet alt="Fiendish Legacy (Chthonic)">
+			<description>You know the Chill Touch cantrip. Intelligence is your spellcasting ability for it.</description>
+			<description level="3">You know the Chill Touch cantrip, and you can cast the False Life spell once per Long Rest. Intelligence is your spellcasting ability for the spells you cast with this trait. You can also cast this spell using any spell slots you have of the appropriate level.</description>
+			<description level="5">You know the Chill Touch cantrip, and you can cast the False Life and Ray of Enfeeblement spells once each per Long Rest. Intelligence is your spellcasting ability for the spells you cast with this trait. You can also cast either of those spells using any spell slots you have of the appropriate level.</description>
+		</sheet>
+		<rules>
+			<grant type="Grants" id="ID_WOTC_PHB24_GRANTS_TIEFLING_FIENDISH_LEGACY_SPELLCASTING_ABILITY_INTELLIGENCE" />
+			<grant type="Spell" id="ID_WOTC_PHB24_SPELL_CHILL_TOUCH" />
+			<grant type="Spell" id="ID_WOTC_PHB24_SPELL_FALSE_LIFE" level="3" />
+			<grant type="Spell" id="ID_WOTC_PHB24_SPELL_RAY_OF_ENFEEBLEMENT" level="5" />
+		</rules>
+	</element>
+	<element name="Wisdom" type="Racial Trait" source="Player’s Handbook 2024" id="ID_WOTC_PHB24_RACIAL_TRAIT_TIEFLING_FIENDISH_LEGACY_CHTHONIC_WISDOM">
+		<compendium display="false" />
+		<description>
+			<p>Wisdom is your spellcasting ability for the spells you cast with Fiendish Legacy trait.</p>
+		</description>
+		<sheet alt="Fiendish Legacy (Chthonic)">
+			<description>You know the Chill Touch cantrip. Wisdom is your spellcasting ability for it.</description>
+			<description level="3">You know the Chill Touch cantrip, and you can cast the False Life spell once per Long Rest. Wisdom is your spellcasting ability for the spells you cast with this trait. You can also cast this spell using any spell slots you have of the appropriate level.</description>
+			<description level="5">You know the Chill Touch cantrip, and you can cast the False Life and Ray of Enfeeblement spells once each per Long Rest. Wisdom is your spellcasting ability for the spells you cast with this trait. You can also cast either of those spells using any spell slots you have of the appropriate level.</description>
+		</sheet>
+		<rules>
+			<grant type="Grants" id="ID_WOTC_PHB24_GRANTS_TIEFLING_FIENDISH_LEGACY_SPELLCASTING_ABILITY_WISDOM" />
+			<grant type="Spell" id="ID_WOTC_PHB24_SPELL_CHILL_TOUCH" />
+			<grant type="Spell" id="ID_WOTC_PHB24_SPELL_FALSE_LIFE" level="3" />
+			<grant type="Spell" id="ID_WOTC_PHB24_SPELL_RAY_OF_ENFEEBLEMENT" level="5" />
+		</rules>
+	</element>
+	<element name="Charisma" type="Racial Trait" source="Player’s Handbook 2024" id="ID_WOTC_PHB24_RACIAL_TRAIT_TIEFLING_FIENDISH_LEGACY_CHTHONIC_CHARISMA">
+		<compendium display="false" />
+		<description>
+			<p>Charisma is your spellcasting ability for the spells you cast with Fiendish Legacy trait.</p>
+		</description>
+		<sheet alt="Fiendish Legacy (Chthonic)">
+			<description>You know the Chill Touch cantrip. Charisma is your spellcasting ability for it.</description>
+			<description level="3">You know the Chill Touch cantrip, and you can cast the False Life spell once per Long Rest. Charisma is your spellcasting ability for the spells you cast with this trait. You can also cast this spell using any spell slots you have of the appropriate level.</description>
+			<description level="5">You know the Chill Touch cantrip, and you can cast the False Life and Ray of Enfeeblement spells once each per Long Rest. Charisma is your spellcasting ability for the spells you cast with this trait. You can also cast either of those spells using any spell slots you have of the appropriate level.</description>
+		</sheet>
+		<rules>
+			<grant type="Grants" id="ID_WOTC_PHB24_GRANTS_TIEFLING_FIENDISH_LEGACY_SPELLCASTING_ABILITY_CHARISMA" />
+			<grant type="Spell" id="ID_WOTC_PHB24_SPELL_CHILL_TOUCH" />
+			<grant type="Spell" id="ID_WOTC_PHB24_SPELL_FALSE_LIFE" level="3" />
+			<grant type="Spell" id="ID_WOTC_PHB24_SPELL_RAY_OF_ENFEEBLEMENT" level="5" />
+		</rules>
+	</element>
+
+	<element name="Infernal Legacy" type="Racial Trait" source="Player’s Handbook 2024" id="ID_WOTC_PHB24_RACIAL_TRAIT_TIEFLING_FIENDISH_LEGACY_INFERNAL">
+		<compendium display="false" />
+		<supports>Fiendish Legacy 2024</supports>
+		<description>
+			<p>The infernal legacy connects tieflings not only to Gehenna but also the Nine Hells and the raging battlefields of Acheron. Horns, spines, tails, golden eyes, and a faint odor of sulfur or smoke are common physical features of such tieflings, most of whom trace their ancestry to devils.</p>
+			<p>As an Infernal Tiefling, you have Resistance to Fire damage and you learn the <i>Fire Bolt</i> cantrip.</p>
+			<p class="indent">Additionally, you learn <i>Hellish Rebuke</i> spell when you reach 3rd level, and <i>Darkness</i> spell once you reach 5th level. You can cast each of these spells once without a spell slot, and you regain the ability to cast them in this way when you finish a Long Rest. You can also cast these spells using any spell slots you have of the appropriate level.</p>
+		</description>
+		<sheet display="false" />
+		<rules>
+			<grant type="Condition" id="ID_INTERNAL_CONDITION_DAMAGE_RESISTANCE_FIRE" />
+			<select type="Racial Trait" name="Spellcasting Ability (Fiendish Legacy)" supports="ID_WOTC_PHB24_RACIAL_TRAIT_TIEFLING_FIENDISH_LEGACY_INFERNAL_INTELLIGENCE|ID_WOTC_PHB24_RACIAL_TRAIT_TIEFLING_FIENDISH_LEGACY_INFERNAL_WISDOM|ID_WOTC_PHB24_RACIAL_TRAIT_TIEFLING_FIENDISH_LEGACY_INFERNAL_CHARISMA" />
+		</rules>
+	</element>
+	<element name="Intelligence" type="Racial Trait" source="Player’s Handbook 2024" id="ID_WOTC_PHB24_RACIAL_TRAIT_TIEFLING_FIENDISH_LEGACY_INFERNAL_INTELLIGENCE">
+		<compendium display="false" />
+		<description>
+			<p>Intelligence is your spellcasting ability for the spells you cast with Fiendish Legacy trait.</p>
+		</description>
+		<sheet alt="Fiendish Legacy (Infernal)">
+			<description>You know the Fire Bolt cantrip. Intelligence is your spellcasting ability for it.</description>
+			<description level="3">You know the Fire Bolt cantrip, and you can cast the Hellish Rebuke spell once per Long Rest. Intelligence is your spellcasting ability for the spells you cast with this trait. You can also cast this spell using any spell slots you have of the appropriate level.</description>
+			<description level="5">You know the Fire Bolt cantrip, and you can cast the Hellish Rebuke and Darkness spells once each per Long Rest. Intelligence is your spellcasting ability for the spells you cast with this trait. You can also cast either of those spells using any spell slots you have of the appropriate level.</description>
+		</sheet>
+		<rules>
+			<grant type="Grants" id="ID_WOTC_PHB24_GRANTS_TIEFLING_FIENDISH_LEGACY_SPELLCASTING_ABILITY_INTELLIGENCE" />
+			<grant type="Spell" id="ID_WOTC_PHB24_SPELL_FIRE_BOLT" />
+			<grant type="Spell" id="ID_WOTC_PHB24_SPELL_HELLISH_REBUKE" level="3" />
+			<grant type="Spell" id="ID_WOTC_PHB24_SPELL_DARKNESS" level="5" />
+		</rules>
+	</element>
+	<element name="Wisdom" type="Racial Trait" source="Player’s Handbook 2024" id="ID_WOTC_PHB24_RACIAL_TRAIT_TIEFLING_FIENDISH_LEGACY_INFERNAL_WISDOM">
+		<compendium display="false" />
+		<description>
+			<p>Wisdom is your spellcasting ability for the spells you cast with Fiendish Legacy trait.</p>
+		</description>
+		<sheet alt="Fiendish Legacy (Infernal)">
+			<description>You know the Fire Bolt cantrip. Wisdom is your spellcasting ability for it.</description>
+			<description level="3">You know the Fire Bolt cantrip, and you can cast the Hellish Rebuke spell once per Long Rest. Wisdom is your spellcasting ability for the spells you cast with this trait. You can also cast this spell using any spell slots you have of the appropriate level.</description>
+			<description level="5">You know the Fire Bolt cantrip, and you can cast the Hellish Rebuke and Darkness spells once each per Long Rest. Wisdom is your spellcasting ability for the spells you cast with this trait. You can also cast either of those spells using any spell slots you have of the appropriate level.</description>
+		</sheet>
+		<rules>
+			<grant type="Grants" id="ID_WOTC_PHB24_GRANTS_TIEFLING_FIENDISH_LEGACY_SPELLCASTING_ABILITY_WISDOM" />
+			<grant type="Spell" id="ID_WOTC_PHB24_SPELL_FIRE_BOLT" />
+			<grant type="Spell" id="ID_WOTC_PHB24_SPELL_HELLISH_REBUKE" level="3" />
+			<grant type="Spell" id="ID_WOTC_PHB24_SPELL_DARKNESS" level="5" />
+		</rules>
+	</element>
+	<element name="Charisma" type="Racial Trait" source="Player’s Handbook 2024" id="ID_WOTC_PHB24_RACIAL_TRAIT_TIEFLING_FIENDISH_LEGACY_INFERNAL_CHARISMA">
+		<compendium display="false" />
+		<description>
+			<p>Charisma is your spellcasting ability for the spells you cast with Fiendish Legacy trait.</p>
+		</description>
+		<sheet alt="Fiendish Legacy (Infernal)">
+			<description>You know the Fire Bolt cantrip. Charisma is your spellcasting ability for it.</description>
+			<description level="3">You know the Fire Bolt cantrip, and you can cast the Hellish Rebuke spell once per Long Rest. Charisma is your spellcasting ability for the spells you cast with this trait. You can also cast this spell using any spell slots you have of the appropriate level.</description>
+			<description level="5">You know the Fire Bolt cantrip, and you can cast the Hellish Rebuke and Darkness spells once each per Long Rest. Charisma is your spellcasting ability for the spells you cast with this trait. You can also cast either of those spells using any spell slots you have of the appropriate level.</description>
+		</sheet>
+		<rules>
+			<grant type="Grants" id="ID_WOTC_PHB24_GRANTS_TIEFLING_FIENDISH_LEGACY_SPELLCASTING_ABILITY_CHARISMA" />
+			<grant type="Spell" id="ID_WOTC_PHB24_SPELL_FIRE_BOLT" />
+			<grant type="Spell" id="ID_WOTC_PHB24_SPELL_HELLISH_REBUKE" level="3" />
+			<grant type="Spell" id="ID_WOTC_PHB24_SPELL_DARKNESS" level="5" />
+		</rules>
+	</element>
+	
+	<element name="Otherworldly Presence" type="Racial Trait" source="Player’s Handbook 2024" id="ID_WOTC_PHB24_RACIAL_TRAIT_TIEFLING_OTHERWORLDLY_PRESENCE_INTELLIGENCE">
+		<requirements>!ID_INTERNAL_PHB24_RACIAL_TRAIT_REPLACEMENT_TIEFLING_OTHERWORLDLY_PRESENCE</requirements>
+		<description>
+			<p>You know the <i>Thaumaturgy</i> cantrip. When you cast it with this trait, the spell uses the same spellcasting ability you use for your Fiendish Legacy trait.</p> 
+		</description>
+		<sheet>
+			<description>You know the Thaumaturgy cantrip. Intelligence is your spellcasting ability for it.</description>
+		</sheet>
+		<rules>
+			<grant type="Spell" id="ID_WOTC_PHB24_SPELL_THAUMATURGY" />
+		</rules>
+	</element>
+	<element name="Otherworldly Presence" type="Racial Trait" source="Player’s Handbook 2024" id="ID_WOTC_PHB24_RACIAL_TRAIT_TIEFLING_OTHERWORLDLY_PRESENCE_WISDOM">
+		<requirements>!ID_INTERNAL_PHB24_RACIAL_TRAIT_REPLACEMENT_TIEFLING_OTHERWORLDLY_PRESENCE</requirements>
+		<compendium display="false" />
+		<description>
+			<p>You know the <i>Thaumaturgy</i> cantrip. When you cast it with this trait, the spell uses the same spellcasting ability you use for your Fiendish Legacy trait.</p> 
+		</description>
+		<sheet>
+			<description>You know the Thaumaturgy cantrip. Wisdom is your spellcasting ability for it.</description>
+		</sheet>
+		<rules>
+			<grant type="Spell" id="ID_WOTC_PHB24_SPELL_THAUMATURGY" />
+		</rules>
+	</element>
+	<element name="Otherworldly Presence" type="Racial Trait" source="Player’s Handbook 2024" id="ID_WOTC_PHB24_RACIAL_TRAIT_TIEFLING_OTHERWORLDLY_PRESENCE_CHARISMA">
+		<compendium display="false" />
+		<requirements>!ID_INTERNAL_PHB24_RACIAL_TRAIT_REPLACEMENT_TIEFLING_OTHERWORLDLY_PRESENCE</requirements>
+		<description>
+			<p>You know the <i>Thaumaturgy</i> cantrip. When you cast it with this trait, the spell uses the same spellcasting ability you use for your Fiendish Legacy trait.</p> 
+		</description>
+		<sheet>
+			<description>You know the Thaumaturgy cantrip. Charisma is your spellcasting ability for it.</description>
+		</sheet>
+		<rules>
+			<grant type="Spell" id="ID_WOTC_PHB24_SPELL_THAUMATURGY" />
+		</rules>
+	</element>
+
+	<!-- Spellcasting Ability Grants, which serve as requirements for Otherworldly Presence elements -->
+	<element name="Spellcasting Ability: Intelligence (Fiendish Legacy)" type="Grants" source="Internal" id="ID_WOTC_PHB24_GRANTS_TIEFLING_FIENDISH_LEGACY_SPELLCASTING_ABILITY_INTELLIGENCE" />
+	<element name="Spellcasting Ability: Wisdom (Fiendish Legacy)" type="Grants" source="Internal" id="ID_WOTC_PHB24_GRANTS_TIEFLING_FIENDISH_LEGACY_SPELLCASTING_ABILITY_WISDOM" />
+	<element name="Spellcasting Ability: Charisma (Fiendish Legacy)" type="Grants" source="Internal" id="ID_WOTC_PHB24_GRANTS_TIEFLING_FIENDISH_LEGACY_SPELLCASTING_ABILITY_CHARISMA" />
+
+	<!--Racial Trait Replacement Grants-->
+	<element name="Darkvision Trait Replacement" type="Grants" source="Internal" id="ID_INTERNAL_PHB24_RACIAL_TRAIT_REPLACEMENT_TIEFLING_DARKVISION" />
+	<element name="Fiendish Legacy Trait Replacement" type="Grants" source="Internal" id="ID_INTERNAL_PHB24_RACIAL_TRAIT_REPLACEMENT_TIEFLING_FIENDISH_LEGACY" />
+	<element name="Otherworldly Presence Trait Replacement" type="Grants" source="Internal" id="ID_INTERNAL_PHB24_RACIAL_TRAIT_REPLACEMENT_TIEFLING_OTHERWORLDLY_PRESENCE" />
+
+</elements>

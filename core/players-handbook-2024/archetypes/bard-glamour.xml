@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<elements>
+	<info>
+		<name>College of Glamour</name>
+		<description>The College of Glamour subclass from the Player’s Handbook 2024.</description>
+		<author url="https://dndstore.wizards.com/us/en/product/1001494/2024-player-s-handbook-digital-plus-physical-bundle">Wizards of the Coast</author>
+		<update version="0.0.1">
+			<file name="bard-glamour.xml" url="https://raw.githubusercontent.com/AuroraLegacy/elements/master/core/players-handbook-2024/archetypes/bard-glamour.xml" />
+		</update>
+	</info>
+
+	<element name="College of Glamour" type="Archetype" source="Player’s Handbook 2024" id="ID_WOTC_PHB24_ARCHETYPE_BARD_COLLEGE_OF_GLAMOUR">
+		<supports>Bard Subclass</supports>
+		<description>
+			<p class="flavor">Weave Beguiling Fey Magic</p>
+			<p>The College of Glamour traces its origins to the beguiling magic of the Feywild. Bards who study this magic weave threads of beauty and terror into their songs and stories, and the mightiest among them can cloak themselves in otherworldly majesty. Their performances stir up wistful longing for forgotten innocence, evoke unconscious memories of long-held fears, and tug at the emotions of even the most hard-hearted listeners.</p>
+			<div element="ID_WOTC_PHB24_ARCHETYPE_FEATURE_BARD_GLAMOUR_BEGUILING_MAGIC" />
+			<div element="ID_WOTC_PHB24_ARCHETYPE_FEATURE_BARD_GLAMOUR_MANTLE_OF_INSPIRATION" />
+			<div element="ID_WOTC_PHB24_ARCHETYPE_FEATURE_BARD_GLAMOUR_MANTLE_OF_MAJESTY" />
+			<div element="ID_WOTC_PHB24_ARCHETYPE_FEATURE_BARD_GLAMOUR_UNBREAKABLE_MAJESTY" />
+		</description>
+		<sheet display="false" />
+		<rules>
+			<grant type="Archetype Feature" id="ID_WOTC_PHB24_ARCHETYPE_FEATURE_BARD_GLAMOUR_BEGUILING_MAGIC" level="3" />
+			<grant type="Archetype Feature" id="ID_WOTC_PHB24_ARCHETYPE_FEATURE_BARD_GLAMOUR_MANTLE_OF_INSPIRATION" level="3" />
+			<grant type="Archetype Feature" id="ID_WOTC_PHB24_ARCHETYPE_FEATURE_BARD_GLAMOUR_MANTLE_OF_MAJESTY" level="6" />
+			<grant type="Archetype Feature" id="ID_WOTC_PHB24_ARCHETYPE_FEATURE_BARD_GLAMOUR_UNBREAKABLE_MAJESTY" level="14" />
+		</rules>
+	</element>
+
+	<element name="Level 3: Beguiling Magic" type="Archetype Feature" source="Player’s Handbook 2024" id="ID_WOTC_PHB24_ARCHETYPE_FEATURE_BARD_GLAMOUR_BEGUILING_MAGIC">
+		<requirements>!ID_INTERNAL_PHB24_FEATURE_REPLACEMENT_BARD_GLAMOUR_BEGUILING_MAGIC</requirements>
+		<description>
+			<p>You always have the <i>Charm Person</i> and <i>Mirror Image</i> spells prepared.</p>
+			<p class="indent">In addition, immediately after you cast an Enchantment or Illusion spell using a spell slot, you can cause a creature you can see within 60 feet of yourself to make a Wisdom saving throw against your spell save DC. On a failed save, the target has the Charmed or Frightened condition (your choice) for 1 minute. The target repeats the save at the end of each of its turns, ending the effect on itself on a success.</p>
+			<p class="indent">Once you use this benefit, you can’t use it again until you finish a Long Rest. You can also restore your use of it by expending one use of your Bardic Inspiration (no action required).</p>
+		</description>
+		<sheet alt="Beguiling Magic" usage="1/Long Rest">
+			<description>Immediately after you cast an Enchantment or Illusion spell using a spell slot, you can cause a creature you can see within 60 feet of yourself to make a DC{{bard:spellcasting:dc}} Wisdom saving throw. On a failed save, the target has the Charmed or Frightened condition (your choice) for 1 minute. The target repeats the save at the end of each of its turns, ending the effect on itself on a success. &#13;
+			You can restore a use of this feature by expending one use of your Bardic Inspiration.</description>
+		</sheet>
+		<rules>
+			<grant type="Spell" id="ID_WOTC_PHB24_SPELL_CHARM_PERSON" spellcasting="Bard" allowReplace="false" />
+			<grant type="Spell" id="ID_WOTC_PHB24_SPELL_MIRROR_IMAGE" spellcasting="Bard" allowReplace="false" />
+		</rules>
+	</element>
+
+	<element name="Level 3: Mantle of Inspiration" type="Archetype Feature" source="Player’s Handbook 2024" id="ID_WOTC_PHB24_ARCHETYPE_FEATURE_BARD_GLAMOUR_MANTLE_OF_INSPIRATION">
+		<requirements>!ID_INTERNAL_PHB24_FEATURE_REPLACEMENT_BARD_GLAMOUR_MANTLE_OF_INSPIRATION</requirements>
+		<description>
+			<p>You can weave fey magic into a song or dance to fill others with vigor. As a Bonus Action, you can expend a use of Bardic Inspiration, rolling a Bardic Inspiration die. When you do so, choose a number of other creatures within 60 feet of yourself, up to a number equal to your Charisma modifier (minimum of one creature). Each of those creatures gains a number of Temporary Hit Points equal to two times the number rolled on the Bardic Inspiration die, and then each can use its Reaction to move up to its Speed without provoking Opportunity Attacks.</p>
+		</description>
+		<sheet alt="Mantle of Inspiration" action="Bonus Action" usage="Bardic Inspiration">
+			<description>Roll the Bardic Inspiration die, and choose up to {{mantle of inspiration:count}} other creatures within 60ft of you. Each of them gains Temporary Hit Points equal to twice the value rolled, and they can use their Reaction to move up to their Speed without provoking Opportunity Attacks.</description>
+		</sheet>
+		<rules>
+			<stat name="mantle of inspiration:count" value="1" bonus="base" />
+			<stat name="mantle of inspiration:count" value="charisma:modifier" bonus="base" />
+		</rules>
+	</element>
+
+	<element name="Level 6: Mantle of Majesty" type="Archetype Feature" source="Player’s Handbook 2024" id="ID_WOTC_PHB24_ARCHETYPE_FEATURE_BARD_GLAMOUR_MANTLE_OF_MAJESTY">
+		<requirements>!ID_INTERNAL_PHB24_FEATURE_REPLACEMENT_BARD_GLAMOUR_MANTLE_OF_MAJESTY</requirements>
+		<description>
+			<p>You always have the <i>Command</i> spell prepared.</p>
+			<p class="indent">As a Bonus Action, you cast <i>Command</i> without expending a spell slot, and you take on an unearthly appearance for 1 minute or until your Concentration ends. During this time, you can cast <i>Command</i> as a Bonus Action without expending a spell slot.</p>
+			<p class="indent">Any creature Charmed by you automatically fails its saving throw against the <i>Command</i> you cast with this feature.</p>
+			<p class="indent">Once you use this feature, you can’t use it again until you finish a Long Rest. You can also restore your use of it by expending a level 3+ spell slot (no action required).</p>
+		</description>
+		<sheet alt="Mantle of Majesty" action="Bonus Action" usage="1/Long Rest">
+			<description>For the next minute as if Concentrating on a spell, you can cast Command as a Bonus Action on each of your turns without expending a spell slot. Creatures Charmed by you automatically fail their saving throws against the Command spell you cast with this feature. &#13;
+			You can restore a use of this feature by expending a level 3+ spell slot (no action required).</description>
+		</sheet>
+		<rules>
+			<grant type="Spell" id="ID_WOTC_PHB24_SPELL_COMMAND" spellcasting="Bard" allowReplace="false" />
+		</rules>
+	</element>
+
+	<element name="Level 14: Unbreakable Majesty" type="Archetype Feature" source="Player’s Handbook 2024" id="ID_WOTC_PHB24_ARCHETYPE_FEATURE_BARD_GLAMOUR_UNBREAKABLE_MAJESTY">
+		<requirements>!ID_INTERNAL_PHB24_FEATURE_REPLACEMENT_BARD_GLAMOUR_UNBREAKABLE_MAJESTY</requirements>
+		<description>
+			<p>As a Bonus Action, you can assume a magically majestic presence for 1 minute or until you have the Incapacitated condition. For the duration, whenever any creature hits you with an attack roll for the first time on a turn, the attacker must succeed on a Charisma saving throw against your spell save DC, or the attack misses instead, as the creature recoils from your majesty.</p>
+			<p class="indent">Once you assume this majestic presence, you can’t do so again until you finish a Short or Long Rest.</p>
+		</description>
+		<sheet alt="Unbreakable Majesty" action="Bonus Action" usage="1/Short Rest">
+			<description>For 1 minute or until you are Incapacitated, whenever a creature hits you for the first time on a turn, it must succeed on a DC{{bard:spellcasting:dc}} Charisma saving throw or the attack misses instead.</description>
+		</sheet>
+	</element>
+
+	<!--Feature Replacement Grants-->
+	<element name="Beguiling Magic Feature Replacement" type="Grants" source="Internal" id="ID_INTERNAL_PHB24_FEATURE_REPLACEMENT_BARD_GLAMOUR_BEGUILING_MAGIC" />
+	<element name="Mantle of Inspiration Feature Replacement" type="Grants" source="Internal" id="ID_INTERNAL_PHB24_FEATURE_REPLACEMENT_BARD_GLAMOUR_MANTLE_OF_INSPIRATION" />
+	<element name="Mantle of Majesty Feature Replacement" type="Grants" source="Internal" id="ID_INTERNAL_PHB24_FEATURE_REPLACEMENT_BARD_GLAMOUR_MANTLE_OF_MAJESTY" />
+	<element name="Unbreakable Majesty Feature Replacement" type="Grants" source="Internal" id="ID_INTERNAL_PHB24_FEATURE_REPLACEMENT_BARD_GLAMOUR_UNBREAKABLE_MAJESTY" />
+
+</elements>

@@ -1,0 +1,155 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<elements>
+	<info>
+		<name>Great Old One Patron</name>
+		<description>The Great Old One Patron subclass from the Player’s Handbook 2024.</description>
+		<author url="https://dndstore.wizards.com/us/en/product/1001494/2024-player-s-handbook-digital-plus-physical-bundle">Wizards of the Coast</author>
+		<update version="0.0.1">
+			<file name="warlock-great-old-one.xml" url="https://raw.githubusercontent.com/AuroraLegacy/elements/master/core/players-handbook-2024/archetypes/warlock-great-old-one.xml" />
+		</update>
+	</info>
+
+	<element name="Great Old One Patron" type="Archetype" source="Player’s Handbook 2024" id="ID_WOTC_PHB24_ARCHETYPE_WARLOCK_GREAT_OLD_ONE_PATRON">
+		<supports>Warlock Subclass</supports>
+		<description>
+			<p class="flavor">Unearth Forbidden Lore of Ineffable Beings</p>
+			<p>When you choose this subclass, you might bind yourself to an unspeakable being from the Far Realm or an elder god—a being such as Tharizdun, the Chained God; Zargon, the Returner; Hadar, the Dark Hunger; or Great Cthulhu. Or you might invoke several entities without yoking yourself to one. The motives of these beings are incomprehensible, and the Great Old One might be indifferent to your existence. But the secrets you’ve learned nevertheless allow you to draw strange magic from it.</p>
+			<div element="ID_WOTC_PHB24_ARCHETYPE_FEATURE_WARLOCK_GREAT_OLD_ONE_PATRON_AWAKENED_MIND" />
+			<div element="ID_WOTC_PHB24_ARCHETYPE_FEATURE_WARLOCK_GREAT_OLD_ONE_PATRON_GREAT_OLD_ONE_SPELLS" />
+			<div element="ID_WOTC_PHB24_ARCHETYPE_FEATURE_WARLOCK_GREAT_OLD_ONE_PATRON_PSYCHIC_SPELLS" />
+			<div element="ID_WOTC_PHB24_ARCHETYPE_FEATURE_WARLOCK_GREAT_OLD_ONE_PATRON_CLAIRVOYANT_COMBATANT" />
+			<div element="ID_WOTC_PHB24_ARCHETYPE_FEATURE_WARLOCK_GREAT_OLD_ONE_PATRON_ELDRITCH_HEX" />
+			<div element="ID_WOTC_PHB24_ARCHETYPE_FEATURE_WARLOCK_GREAT_OLD_ONE_PATRON_THOUGHT_SHIELD" />
+			<div element="ID_WOTC_PHB24_ARCHETYPE_FEATURE_WARLOCK_GREAT_OLD_ONE_PATRON_CREATE_THRALL" />
+		</description>
+		<sheet display="false" />
+		<rules>
+			<grant type="Archetype Feature" id="ID_WOTC_PHB24_ARCHETYPE_FEATURE_WARLOCK_GREAT_OLD_ONE_PATRON_AWAKENED_MIND" level="3" />
+			<grant type="Archetype Feature" id="ID_WOTC_PHB24_ARCHETYPE_FEATURE_WARLOCK_GREAT_OLD_ONE_PATRON_GREAT_OLD_ONE_SPELLS" level="3" />
+			<grant type="Archetype Feature" id="ID_WOTC_PHB24_ARCHETYPE_FEATURE_WARLOCK_GREAT_OLD_ONE_PATRON_PSYCHIC_SPELLS" level="3" />
+			<grant type="Archetype Feature" id="ID_WOTC_PHB24_ARCHETYPE_FEATURE_WARLOCK_GREAT_OLD_ONE_PATRON_CLAIRVOYANT_COMBATANT" level="6" />
+			<grant type="Archetype Feature" id="ID_WOTC_PHB24_ARCHETYPE_FEATURE_WARLOCK_GREAT_OLD_ONE_PATRON_ELDRITCH_HEX" level="10" />
+			<grant type="Archetype Feature" id="ID_WOTC_PHB24_ARCHETYPE_FEATURE_WARLOCK_GREAT_OLD_ONE_PATRON_THOUGHT_SHIELD" level="10" />
+			<grant type="Archetype Feature" id="ID_WOTC_PHB24_ARCHETYPE_FEATURE_WARLOCK_GREAT_OLD_ONE_PATRON_CREATE_THRALL" level="14" />
+		</rules>
+	</element>
+
+	<element name="Level 3: Awakened Mind" type="Archetype Feature" source="Player’s Handbook 2024" id="ID_WOTC_PHB24_ARCHETYPE_FEATURE_WARLOCK_GREAT_OLD_ONE_PATRON_AWAKENED_MIND">
+		<requirements>!ID_INTERNAL_PHB24_FEATURE_REPLACEMENT_WARLOCK_GREAT_OLD_ONE_PATRON_AWAKENED_MIND</requirements>
+		<description>
+			<p>You can form a telepathic connection between your mind and the mind of another. As a Bonus Action, choose one creature you can see within 30 feet of yourself. You and the chosen creature can communicate telepathically with each other while the two of you are within a number of miles of each other equal to your Charisma modifier (minimum of 1 mile). To understand each other, you each must mentally use a language the other knows.</p>
+			<p class="indent">The telepathic connection lasts for a number of minutes equal to your Warlock level. It ends early if you use this feature to connect with a different creature.</p>
+		</description>
+		<sheet alt="Awakened Mind" action="Bonus Action">
+			<description>Choose one creature you can see within 30 ft. of yourself. You and the creature can communicate telepathically for the next {{level:warlock}} minutes, as long as you are within {{awakened mind:distance}} miles of each other and share one language. This link ends early if you use it to connect to a different creature.</description>
+		</sheet>
+		<rules>
+			<stat name="awakened mind:distance" value="1" bonus="base" />
+			<stat name="awakened mind:distance" value="charisma:modifier" bonus="base" />
+		</rules>
+	</element>
+
+	<element name="Level 3: Great Old One Spells" type="Archetype Feature" source="Player’s Handbook 2024" id="ID_WOTC_PHB24_ARCHETYPE_FEATURE_WARLOCK_GREAT_OLD_ONE_PATRON_GREAT_OLD_ONE_SPELLS">
+		<requirements>!ID_INTERNAL_PHB24_FEATURE_REPLACEMENT_WARLOCK_GREAT_OLD_ONE_PATRON_GREAT_OLD_ONE_SPELLS</requirements>
+		<description>
+			<p>The magic of your patron ensures you always have certain spells ready; when you reach a Warlock level specified in the Great Old One Spells table, you thereafter always have the listed spells prepared.</p>
+			<h5>Great Old One Spells</h5>
+			<table class="class-features">
+				<thead>
+					<tr><td class="col-30">Warlock Level</td><td class="left">Spells</td></tr>
+				</thead>
+				<tr><td>3</td><td class="left"><em>Detect Thoughts, Dissonant Whispers, Phantasmal Force, Tasha’s Hideous Laughter</em></td></tr>
+				<tr><td>5</td><td class="left"><em>Clairvoyance, Hunger of Hadar</em></td></tr>
+				<tr><td>7</td><td class="left"><em>Confusion, Summon Aberration</em></td></tr>
+				<tr><td>9</td><td class="left"><em>Modify Memory, Telekinesis</em></td></tr>
+			</table>
+		</description>
+		<sheet display="false" />
+		<rules>
+			<grant type="Spell" id="ID_WOTC_PHB24_SPELL_DISSONANT_WHISPERS" spellcasting="Warlock" />
+			<grant type="Spell" id="ID_WOTC_PHB24_SPELL_TASHAS_HIDEOUS_LAUGHTER" spellcasting="Warlock" />
+			<grant type="Spell" id="ID_WOTC_PHB24_SPELL_DETECT_THOUGHTS" spellcasting="Warlock" />
+			<grant type="Spell" id="ID_WOTC_PHB24_SPELL_PHANTASMAL_FORCE" spellcasting="Warlock" />
+			<grant type="Spell" id="ID_WOTC_PHB24_SPELL_CLAIRVOYANCE" level="5" spellcasting="Warlock" />
+			<grant type="Spell" id="ID_WOTC_PHB24_SPELL_HUNGER_OF_HADAR" level="5" spellcasting="Warlock" />
+			<grant type="Spell" id="ID_WOTC_PHB24_SPELL_CONFUSION" level="7" spellcasting="Warlock" />
+			<grant type="Spell" id="ID_WOTC_PHB24_SPELL_SUMMON_ABERRATION" level="7" spellcasting="Warlock" />
+			<grant type="Spell" id="ID_WOTC_PHB24_SPELL_MODIFY_MEMORY" level="9" spellcasting="Warlock" />
+			<grant type="Spell" id="ID_WOTC_PHB24_SPELL_TELEKINESIS" level="9" spellcasting="Warlock" />
+		</rules>
+	</element>
+
+	<element name="Level 3: Psychic Spells" type="Archetype Feature" source="Player’s Handbook 2024" id="ID_WOTC_PHB24_ARCHETYPE_FEATURE_WARLOCK_GREAT_OLD_ONE_PATRON_PSYCHIC_SPELLS">
+		<requirements>!ID_INTERNAL_PHB24_FEATURE_REPLACEMENT_WARLOCK_GREAT_OLD_ONE_PATRON_PSYCHIC_SPELLS</requirements>
+		<description>
+			<p>When you cast a Warlock spell that deals damage, you can change its damage type to Psychic. In addition, when you cast a Warlock spell that is an Enchantment or Illusion, you can do so without Verbal or Somatic components.</p>
+		</description>
+		<sheet alt="Psychic Spells" >
+			<description>When you cast a Warlock spell that deals damage, you can change its damage type to Psychic. In addition, when you cast a Warlock spell that is an Enchantment or Illusion, you can do so without Verbal or Somatic components.</description>
+		</sheet>
+	</element>
+	
+	<element name="Level 6: Clairvoyant Combatant" type="Archetype Feature" source="Player’s Handbook 2024" id="ID_WOTC_PHB24_ARCHETYPE_FEATURE_WARLOCK_GREAT_OLD_ONE_PATRON_CLAIRVOYANT_COMBATANT">
+		<requirements>!ID_INTERNAL_PHB24_FEATURE_REPLACEMENT_WARLOCK_GREAT_OLD_ONE_PATRON_CLAIRVOYANT_COMBATANT</requirements>
+		<description>
+			<p>When you form a telepathic bond with a creature using your Awakened Mind, you can force that creature to make a Wisdom saving throw against your spell save DC. On a failed save, the creature has Disadvantage on attack rolls against you, and you have Advantage on attack rolls against that creature for the duration of the bond.</p>
+			<p class="indent">Once you use this feature, you can’t use it again until you finish a Short or Long Rest unless you expend a Pact Magic spell slot (no action required) to restore your use of it.</p>
+		</description>
+		<sheet alt="Clairvoyant Combatant" usage="1/Short Rest">
+			<description>When you form a telepathic bond with a creature using your Awakened Mind, you can force that creature to make a DC{{warlock:spellcasting:dc}} Wisdom saving throw. On a failed save, the creature has Disadvantage on attack rolls against you, and you have Advantage on attack rolls against that creature for the duration of the bond. &#13;
+			You can expend a Pact Magic spell slot to restore a use of this feature.</description>
+		</sheet>
+	</element>
+
+	<element name="Level 10: Eldritch Hex" type="Archetype Feature" source="Player’s Handbook 2024" id="ID_WOTC_PHB24_ARCHETYPE_FEATURE_WARLOCK_GREAT_OLD_ONE_PATRON_ELDRITCH_HEX">
+		<requirements>!ID_INTERNAL_PHB24_FEATURE_REPLACEMENT_WARLOCK_GREAT_OLD_ONE_PATRON_ELDRITCH_HEX</requirements>
+		<description>
+			<p>Your alien patron grants you a powerful curse. You always have the <i>Hex</i> spell prepared. When you cast <i>Hex</i> and choose an ability, the target also has Disadvantage on saving throws of the chosen ability for the duration of the spell.</p>
+		</description>
+		<sheet alt="Eldritch Hex" >
+			<description>When you cast Hex and choose an ability, the target also has Disadvantage on saving throws of the chosen ability for the duration of the spell.</description>
+		</sheet>
+		<rules>
+			<grant type="Spell" id="ID_WOTC_PHB24_SPELL_HEX" spellcasting="Warlock" />
+		</rules>
+	</element>
+
+	<element name="Level 10: Thought Shield" type="Archetype Feature" source="Player’s Handbook 2024" id="ID_WOTC_PHB24_ARCHETYPE_FEATURE_WARLOCK_GREAT_OLD_ONE_PATRON_THOUGHT_SHIELD">
+		<requirements>!ID_INTERNAL_PHB24_FEATURE_REPLACEMENT_WARLOCK_GREAT_OLD_ONE_PATRON_THOUGHT_SHIELD</requirements>
+		<description>
+			<p>Your thoughts can’t be read by telepathy or other means unless you allow it. You also have Resistance to Psychic damage, and whenever a creature deals Psychic damage to you, that creature takes the same amount of damage that you take.</p>
+		</description>
+		<sheet alt="Thought Shield">
+			<description>Whenever a creature deals Psychic damage to you, that creature takes the same amount of damage that you take. Additionally, your thoughts can’t be read by telepathy or other means unless you allow it.</description>
+		</sheet>
+		<rules>
+			<grant type="Condition" name="ID_INTERNAL_CONDITION_DAMAGE_RESISTANCE_PSYCHIC" />
+		</rules>
+	</element>
+
+	<element name="Level 14: Create Thrall" type="Archetype Feature" source="Player’s Handbook 2024" id="ID_WOTC_PHB24_ARCHETYPE_FEATURE_WARLOCK_GREAT_OLD_ONE_PATRON_CREATE_THRALL">
+		<requirements>!ID_INTERNAL_PHB24_FEATURE_REPLACEMENT_WARLOCK_GREAT_OLD_ONE_PATRON_CREATE_THRALL</requirements>
+		<description>
+			<p>When you cast <i>Summon Aberration</i>, you can modify it so that it doesn’t require Concentration. If you do so, the spell’s duration becomes 1 minute for that casting, and when summoned, the Aberration has a number of Temporary Hit Points equal to your Warlock level plus your Charisma modifier.</p>
+			<p class="indent">In addition, the first time each turn the Aberration hits a creature under the effect of your <i>Hex</i>, the Aberration deals extra Psychic damage to the target equal to the bonus damage of that spell.</p>
+		</description>
+		<sheet alt="Create Thrall">
+			<description>When you cast Summon Aberration, you can modify it so that it doesn’t require Concentration. This version of the spell has a 1 minute duration, and the Aberration starts with {{create thrall:thp}} Temporary Hit Points. &#13;
+			The first time each turn the Aberration hits a creature under the effect of your Hex, the Aberration deals extra Psychic damage to the target equal to the bonus damage of the Hex spell.</description>
+		</sheet>
+		<rules>
+			<stat name="create thrall:thp" value="level:warlock" bonus="base" />
+			<stat name="create thrall:thp" value="charisma:modifier" bonus="ability" />
+		</rules>
+	</element>
+
+	<!--Feature Replacement Grants-->
+	<element name="Great Old One Spells Feature Replacement" type="Grants" source="Internal" id="ID_INTERNAL_PHB24_FEATURE_REPLACEMENT_WARLOCK_GREAT_OLD_ONE_PATRON_GREAT_OLD_ONE_SPELLS" />
+	<element name="Awakened Mind Feature Replacement" type="Grants" source="Internal" id="ID_INTERNAL_PHB24_FEATURE_REPLACEMENT_WARLOCK_GREAT_OLD_ONE_PATRON_AWAKENED_MIND" />
+	<element name="Psychic Spells Feature Replacement" type="Grants" source="Internal" id="ID_INTERNAL_PHB24_FEATURE_REPLACEMENT_WARLOCK_GREAT_OLD_ONE_PATRON_PSYCHIC_SPELLS" />
+	<element name="Clairvoyant Combatant Feature Replacement" type="Grants" source="Internal" id="ID_INTERNAL_PHB24_FEATURE_REPLACEMENT_WARLOCK_GREAT_OLD_ONE_PATRON_CLAIRVOYANT_COMBATANT" />
+	<element name="Eldritch Hex Feature Replacement" type="Grants" source="Internal" id="ID_INTERNAL_PHB24_FEATURE_REPLACEMENT_WARLOCK_GREAT_OLD_ONE_PATRON_ELDRITCH_HEX" />
+	<element name="Thought Shield Feature Replacement" type="Grants" source="Internal" id="ID_INTERNAL_PHB24_FEATURE_REPLACEMENT_WARLOCK_GREAT_OLD_ONE_PATRON_THOUGHT_SHIELD" />
+	<element name="Create Thrall Feature Replacement" type="Grants" source="Internal" id="ID_INTERNAL_PHB24_FEATURE_REPLACEMENT_WARLOCK_GREAT_OLD_ONE_PATRON_CREATE_THRALL" />
+
+</elements>

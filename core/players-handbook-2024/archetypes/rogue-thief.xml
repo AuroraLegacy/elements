@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<elements>
+	<info>
+		<name>Thief</name>
+		<description>The Thief subclass from the Player’s Handbook 2024.</description>
+		<author url="https://dndstore.wizards.com/us/en/product/1001494/2024-player-s-handbook-digital-plus-physical-bundle">Wizards of the Coast</author>
+		<update version="0.0.1">
+			<file name="rogue-thief.xml" url="https://raw.githubusercontent.com/AuroraLegacy/elements/master/core/players-handbook-2024/archetypes/rogue-thief.xml" />
+		</update>
+	</info>
+
+	<element name="Thief" type="Archetype" source="Player’s Handbook 2024" id="ID_WOTC_PHB24_ARCHETYPE_ROGUE_THIEF">
+		<supports>Rogue Subclass</supports>
+		<description>
+			<p class="flavor">Hunt for Treasure as a Classic Adventurer</p>
+			<p>A mix of burglar, treasure hunter, and explorer, you are the epitome of an adventurer. In addition to improving your agility and stealth, you gain abilities useful for delving into ruins and getting maximum benefit from the magic items you find there.</p>
+			<div element="ID_WOTC_PHB24_ARCHETYPE_FEATURE_ROGUE_THIEF_FAST_HANDS" />
+			<div element="ID_WOTC_PHB24_ARCHETYPE_FEATURE_ROGUE_THIEF_SECOND_STORY_WORK" />
+			<div element="ID_WOTC_PHB24_ARCHETYPE_FEATURE_ROGUE_THIEF_SUPREME_SNEAK" />
+			<div element="ID_WOTC_PHB24_ARCHETYPE_FEATURE_ROGUE_THIEF_USE_MAGIC_DEVICE" />
+			<div element="ID_WOTC_PHB24_ARCHETYPE_FEATURE_ROGUE_THIEF_THIEFS_REFLEXES" />
+		</description>
+		<sheet display="false" />
+		<rules>
+			<grant type="Archetype Feature" id="ID_WOTC_PHB24_ARCHETYPE_FEATURE_ROGUE_THIEF_FAST_HANDS" level="3"/>
+			<grant type="Archetype Feature" id="ID_WOTC_PHB24_ARCHETYPE_FEATURE_ROGUE_THIEF_SECOND_STORY_WORK" level="3"/>
+			<grant type="Archetype Feature" id="ID_WOTC_PHB24_ARCHETYPE_FEATURE_ROGUE_THIEF_SUPREME_SNEAK" level="9"/>
+			<grant type="Archetype Feature" id="ID_WOTC_PHB24_ARCHETYPE_FEATURE_ROGUE_THIEF_USE_MAGIC_DEVICE" level="13"/>
+			<grant type="Archetype Feature" id="ID_WOTC_PHB24_ARCHETYPE_FEATURE_ROGUE_THIEF_THIEFS_REFLEXES" level="17"/>
+		</rules>
+	</element>
+
+	<element name="Level 3: Fast Hands" type="Archetype Feature" source="Player’s Handbook 2024" id="ID_WOTC_PHB24_ARCHETYPE_FEATURE_ROGUE_THIEF_FAST_HANDS">
+		<requirements>!ID_INTERNAL_PHB24_FEATURE_REPLACEMENT_ROGUE_THIEF_FAST_HANDS</requirements>
+		<description>
+			<p>As a Bonus Action, you can do one of the following:</p>
+			<p class="indent"><em><strong>Sleight of Hand.</strong></em> Make a Dexterity (Sleight of Hand) check to pick a lock or disarm a trap with Thieves’ Tools or to pick a pocket.</p>
+			<p class="indent"><em><strong>Use an Object.</strong></em> Take the Utilize action, or take the Magic action to use a magic item that requires that action.</p>
+		</description>
+		<sheet alt="Fast Hands" action="Bonus Action">
+			<description>You can make a Dexterity (Sleight of Hand) check to pick a pocket, or pick a lock or disarm a trap with Thieves’ Tools. Alternatively, you can take the Utilize action, or take the Magic action to use a magic item that requires that action.</description>
+		</sheet>
+	</element>
+
+	<element name="Level 3: Second-Story Work" type="Archetype Feature" source="Player’s Handbook 2024" id="ID_WOTC_PHB24_ARCHETYPE_FEATURE_ROGUE_THIEF_SECOND_STORY_WORK">
+		<requirements>!ID_INTERNAL_PHB24_FEATURE_REPLACEMENT_ROGUE_THIEF_SECOND_STORY_WORK</requirements>
+		<description>
+			<p>You’ve trained to get into especially hard-to-reach places, granting you these benefits.</p>
+			<p class="indent"><em><strong>Climber.</strong></em> You gain a Climb Speed equal to your Speed.</p>
+			<p class="indent"><em><strong>Jumper.</strong></em> You can determine your jump distance using your Dexterity rather than your Strength.</p>
+		</description>
+		<sheet alt="Second-Story Work" >
+			<description>You can use your Dexterity instead of your Strength to determine your jump distance.</description>
+		</sheet>
+		<rules>
+			<stat name="speed:climb" value="speed" bonus="base" />
+		</rules>
+	</element>
+
+	<element name="Level 9: Supreme Sneak" type="Archetype Feature" source="Player’s Handbook 2024" id="ID_WOTC_PHB24_ARCHETYPE_FEATURE_ROGUE_THIEF_SUPREME_SNEAK">
+		<requirements>!ID_INTERNAL_PHB24_FEATURE_REPLACEMENT_ROGUE_THIEF_SUPREME_SNEAK</requirements>
+		<description>
+			<p>You gain the following Cunning Strike option.</p>
+			<p class="indent"><em><strong>Stealth Attack (Cost: 1d6).</strong></em> If you have the Hide action’s Invisible condition, this attack doesn’t end that condition on you if you end the turn behind Three-Quarters Cover or Total Cover.</p>
+		</description>
+		<sheet display="false" />
+	</element>
+	<element name="Stealth Attack (Cost: 1d6)" type="Archetype Feature" source="Player’s Handbook 2024" id="ID_WOTC_PHB24_ARCHETYPE_FEATURE_ROGUE_THIEF_SUPREME_SNEAK_STEALTH_ATTACK">
+		<requirements>!ID_INTERNAL_PHB24_FEATURE_REPLACEMENT_ROGUE_THIEF_SUPREME_SNEAK_STEALTH_ATTACK</requirements>
+		<supports>PHB24 Cunning Strike Stealth Attack</supports>
+		<compendium display="false" />
+		<description>
+			<p>If you have the Hide action’s Invisible condition, this attack doesn’t end that condition on you if you end the turn behind Three-Quarters Cover or Total Cover.</p>
+		</description>
+		<sheet alt="Stealth Attack (1d6)">
+			<description>If you have the Hide action’s Invisible condition, your attack doesn’t end that condition on you if you end the turn behind Three-Quarters or Total Cover.</description>
+		</sheet>
+	</element>
+	<append id="ID_WOTC_PHB24_CLASS_FEATURE_ROGUE_CUNNING_STRIKE">
+		<rules>
+			<select type="Archetype Feature" name="Stealth Attack" supports="PHB24 Cunning Strike Stealth Attack" default="ID_WOTC_PHB24_ARCHETYPE_FEATURE_ROGUE_THIEF_SUPREME_SNEAK_STEALTH_ATTACK" requirements="ID_WOTC_PHB24_ARCHETYPE_FEATURE_ROGUE_THIEF_SUPREME_SNEAK" />
+		</rules>
+	</append>
+
+	<element name="Level 13: Use Magic Device" type="Archetype Feature" source="Player’s Handbook 2024" id="ID_WOTC_PHB24_ARCHETYPE_FEATURE_ROGUE_THIEF_USE_MAGIC_DEVICE">
+		<requirements>!ID_INTERNAL_PHB24_FEATURE_REPLACEMENT_ROGUE_THIEF_USE_MAGIC_DEVICE</requirements>
+		<description>
+			<p>You’ve learned how to maximize use of magic items, granting you the following benefits.</p>
+			<p class="indent"><em><strong>Attunement.</strong></em> You can attune to up to four magic items at once.</p>
+			<p class="indent"><em><strong>Charges.</strong></em> Whenever you use a magic item property that expends charges, roll 1d6. On a roll of 6, you use the property without expending the charges.</p>
+			<p class="indent"><em><strong>Scrolls.</strong></em> You can use any <i>Spell Scroll</i>, using Intelligence as your spellcasting ability for the spell. If the spell is a cantrip or a level 1 spell, you can cast it reliably. If the scroll contains a higher-level spell, you must first succeed on an Intelligence (Arcana) check (DC 10 plus the spell’s level). On a successful check, you cast the spell from the scroll. On a failed check, the scroll disintegrates.</p>
+		</description>
+		<sheet alt="Use Magical Device" >
+			<description>When using a magic item property that expends charges, you can use it without charges if you roll a 6 on a d6. &#13;
+			You can use any Spell Scroll, using Intelligence as your spellcasting ability. If the scroll contains a level 2+ spell, you must first succeed on an Intelligence (Arcana) check (DC10 + the spell’s level) or the spell fails and the scroll disintegrates.</description>
+		</sheet>
+		<rules>
+			<stat name="attunement:max" value="4" bonus="base" />
+		</rules>
+	</element>
+
+	<element name="Level 17: Thief’s Reflexes" type="Archetype Feature" source="Player’s Handbook 2024" id="ID_WOTC_PHB24_ARCHETYPE_FEATURE_ROGUE_THIEF_THIEFS_REFLEXES">
+		<requirements>!ID_INTERNAL_PHB24_FEATURE_REPLACEMENT_ROGUE_THIEF_THIEFS_REFLEXES</requirements>
+		<description>
+			<p>You are adept at laying ambushes and quickly escaping danger. You can take two turns during the first round of any combat. You take your first turn at your normal Initiative and your second turn at your Initiative minus 10.</p>
+		</description>
+		<sheet alt="Thief’s Reflexes">
+			<description>You can take two turns during the first round of any combat. You take your first turn at your normal initiative and your second turn at your initiative minus 10.</description>
+		</sheet>
+	</element>
+	
+	<!--Feature Replacement Grants-->
+	<element name="Fast Hands Feature Replacement" type="Grants" source="Internal" id="ID_INTERNAL_PHB24_FEATURE_REPLACEMENT_ROGUE_THIEF_FAST_HANDS" />
+	<element name="Second-Story Work Feature Replacement" type="Grants" source="Internal" id="ID_INTERNAL_PHB24_FEATURE_REPLACEMENT_ROGUE_THIEF_SECOND_STORY_WORK" />
+	<element name="Supreme Sneak Feature Replacement" type="Grants" source="Internal" id="ID_INTERNAL_PHB24_FEATURE_REPLACEMENT_ROGUE_THIEF_SUPREME_SNEAK" />
+	<element name="Supreme Sneak: Stealth Attack Feature Replacement" type="Grants" source="Internal" id="ID_INTERNAL_PHB24_FEATURE_REPLACEMENT_ROGUE_THIEF_SUPREME_SNEAK_STEALTH_ATTACK" />
+	<element name="Supreme Sneak: Stealth Attack Feature Replacement" type="Grants" source="Internal" id="ID_INTERNAL_PHB24_FEATURE_REPLACEMENT_ROGUE_THIEF_SUPREME_SNEAK_STEALTH_ATTACK" />
+	<element name="Use Magic Device Feature Replacement" type="Grants" source="Internal" id="ID_INTERNAL_PHB24_FEATURE_REPLACEMENT_ROGUE_THIEF_USE_MAGIC_DEVICE" />
+	<element name="Thief’s Reflexes Feature Replacement" type="Grants" source="Internal" id="ID_INTERNAL_PHB24_FEATURE_REPLACEMENT_ROGUE_THIEF_THIEFS_REFLEXES" />
+</elements>

@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<elements>
+	<info>
+		<name>Soldier</name>
+		<description>Soldier background from the Player’s Handbook 2024.</description>
+		<author url="https://dndstore.wizards.com/us/en/product/1001494/2024-player-s-handbook-digital-plus-physical-bundle">Wizards of the Coast</author>
+		<update version="0.0.1">
+			<file name="background-soldier.xml" url="https://raw.githubusercontent.com/AuroraLegacy/elements/master/core/players-handbook-2024/backgrounds/background-soldier.xml" />
+		</update>
+	</info>
+
+	<element name="Soldier" type="Background" source="Player’s Handbook 2024" id="ID_WOTC_PHB24_BACKGROUND_SOLDIER">
+		<description>
+			<ul class="unstyled" style="text-indent:-1em; margin-left:1em; margin-bottom:5px">
+				<li><strong>Ability Scores:</strong> Strength, Dexterity, Constitution</li>
+				<li><strong>Feat:</strong> Savage Attacker</li>
+				<li><strong>Skill Proficiencies:</strong> Athletics and Intimidation</li>
+				<li><strong>Tool Proficiency:</strong><i> Choose one kind of Gaming Set</i></li>
+				<li><strong>Equipment:</strong><i> Choose A or B:</i> (A) Spear, Shortbow, 20 Arrows, Gaming Set (same as above), Healer's Kit, Quiver, Traveler’s Clothes, 14 GP; or (B) 50 GP</li>
+			</ul>
+			<p>You began training for war as soon as you reached adulthood and carry precious few memories of life before you took up arms. Battle is in your blood. Sometimes you catch yourself reflexively performing the basic fighting exercises you learned first. Eventually, you put that training to use on the battlefield, protecting the realm by waging war</p>
+		</description>
+		<setters>
+			<set name="short">Strength, Dexterity, Constitution, Savage Attacker Feat, Athletics and Intimidation Skills, a Gaming Set</set>
+		</setters>
+		<rules>
+			<grant type="Ability Score Improvement" id="ID_INTERNAL_ABILITY_SCORE_IMPROVEMENT_COMBINATION_STR_DEX_CON" />
+			<grant type="Feat" id="ID_WOTC_PHB24_FEAT_SAVAGE_ATTACKER" />
+			<grant type="Proficiency" id="ID_WOTC_PHB24_PROFICIENCY_SKILL_ATHLETICS" /> 
+			<grant type="Proficiency" id="ID_WOTC_PHB24_PROFICIENCY_SKILL_INTIMIDATION" />
+			<grant type="Grants" id="ID_INTERNAL_GRANTS_BACKGROUND_ASI" />
+			<select type="Proficiency" name="Gaming Set (Soldier)" supports="Gaming Set" />
+		</rules>
+	</element>
+
+	<!-- Todo: Add Equipment Pack for this Background. Example element is in the Acolyte Background. -->
+</elements>

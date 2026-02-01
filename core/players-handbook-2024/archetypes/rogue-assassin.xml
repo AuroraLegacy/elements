@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<elements>
+	<info>
+		<name>Assassin</name>
+		<description>The Assassin subclass from the Player’s Handbook 2024.</description>
+		<author url="https://dndstore.wizards.com/us/en/product/1001494/2024-player-s-handbook-digital-plus-physical-bundle">Wizards of the Coast</author>
+		<update version="0.0.1">
+			<file name="rogue-assassin.xml" url="https://raw.githubusercontent.com/AuroraLegacy/elements/master/core/players-handbook-2024/archetypes/rogue-assassin.xml" />
+		</update>
+	</info>
+
+	<element name="Assassin" type="Archetype" source="Player’s Handbook 2024" id="ID_WOTC_PHB24_ARCHETYPE_ROGUE_ASSASSIN">
+		<supports>Rogue Subclass</supports>
+		<description>
+			<p class="flavor">Practice the Grim Art of Death</p>
+			<p>An Assassin’s training focuses on using stealth, poison, and disguise to eliminate foes with deadly efficiency. While some Rogues who follow this path are hired killers, spies, or bounty hunters, the capabilities of this subclass are equally useful for adventurers facing a variety of monstrous enemies.</p>
+			<div element="ID_WOTC_PHB24_ARCHETYPE_FEATURE_ROGUE_ASSASSIN_ASSASSINATE" />
+			<div element="ID_WOTC_PHB24_ARCHETYPE_FEATURE_ROGUE_ASSASSIN_ASSASSINS_TOOLS" />
+			<div element="ID_WOTC_PHB24_ARCHETYPE_FEATURE_ROGUE_ASSASSIN_INFILTRATION_EXPERTISE" />
+			<div element="ID_WOTC_PHB24_ARCHETYPE_FEATURE_ROGUE_ASSASSIN_ENVENOM_WEAPONS" />
+			<div element="ID_WOTC_PHB24_ARCHETYPE_FEATURE_ROGUE_ASSASSIN_DEATH_STRIKE" />
+		</description>
+		<sheet display="false" />
+		<rules>
+			<grant type="Archetype Feature" id="ID_WOTC_PHB24_ARCHETYPE_FEATURE_ROGUE_ASSASSIN_ASSASSINATE" level="3"/>
+			<grant type="Archetype Feature" id="ID_WOTC_PHB24_ARCHETYPE_FEATURE_ROGUE_ASSASSIN_ASSASSINS_TOOLS" level="3"/>
+			<grant type="Archetype Feature" id="ID_WOTC_PHB24_ARCHETYPE_FEATURE_ROGUE_ASSASSIN_INFILTRATION_EXPERTISE" level="9"/>
+			<grant type="Archetype Feature" id="ID_WOTC_PHB24_ARCHETYPE_FEATURE_ROGUE_ASSASSIN_ENVENOM_WEAPONS" level="13"/>
+			<grant type="Archetype Feature" id="ID_WOTC_PHB24_ARCHETYPE_FEATURE_ROGUE_ASSASSIN_DEATH_STRIKE" level="17"/>
+		</rules>
+	</element>
+
+	<element name="Level 3: Assassinate" type="Archetype Feature" source="Player’s Handbook 2024" id="ID_WOTC_PHB24_ARCHETYPE_FEATURE_ROGUE_ASSASSIN_ASSASSINATE">
+		<requirements>!ID_INTERNAL_PHB24_FEATURE_REPLACEMENT_ROGUE_ASSASSIN_ASSASSINATE</requirements>
+		<description>
+			<p>You’re adept at ambushing a target, granting you the following benefits:</p>
+			<p class="indent"><em><strong>Initiative.</strong></em> You have Advantage on Initiative rolls.</p>
+			<p class="indent"><em><strong>Surprising Strikes.</strong></em> During the first round of each combat, you have Advantage on attack rolls against any creature that hasn’t taken a turn. If your Sneak Attack hits any target during that round, the target takes extra damage of the weapon’s type equal to your Rogue level.</p>
+		</description>
+		<sheet alt="Assassinate">
+			<description>During first round of combat, you have Advantage on attack rolls against any creature that hasn’t taken a turn in the combat yet, and your Sneak Attack deals an additional {{level:rogue}} damage.</description>
+		</sheet>
+		<rules>
+			<grant type="Grants" id="ID_INTERNAL_GRANTS_INITIATIVE_ADVANTAGE" />
+		</rules>
+	</element>
+
+	<element name="Level 3: Assassin’s Tools" type="Archetype Feature" source="Player’s Handbook 2024" id="ID_WOTC_PHB24_ARCHETYPE_FEATURE_ROGUE_ASSASSIN_ASSASSINS_TOOLS">
+		<requirements>!ID_INTERNAL_PHB24_FEATURE_REPLACEMENT_ROGUE_ASSASSIN_ASSASSINS_TOOLS</requirements>
+		<description>
+			<p>You gain a Disguise Kit and a Poisoner’s Kit, and you have proficiency with them.</p>
+		</description>
+		<sheet display="false"/>
+		<rules>
+			<grant type="Proficiency" id="ID_PROFICIENCY_TOOL_PROFICIENCY_DISGUISE_KIT" requirements="ID_WOTC_SOURCE_PLAYERS_HANDBOOK"/>
+			<grant type="Proficiency" id="ID_PROFICIENCY_TOOL_PROFICIENCY_POISONERS_KIT" requirements="ID_WOTC_SOURCE_PLAYERS_HANDBOOK"/>
+			<grant type="Proficiency" id="ID_WOTC_PHB24_PROFICIENCY_TOOL_PROFICIENCY_DISGUISE_KIT" />
+			<grant type="Proficiency" id="ID_WOTC_PHB24_PROFICIENCY_TOOL_PROFICIENCY_POISONERS_KIT" />
+		</rules>
+	</element>
+
+	<element name="Level 9: Infiltration Expertise" type="Archetype Feature" source="Player’s Handbook 2024" id="ID_WOTC_PHB24_ARCHETYPE_FEATURE_ROGUE_ASSASSIN_INFILTRATION_EXPERTISE">
+		<requirements>!ID_INTERNAL_PHB24_FEATURE_REPLACEMENT_ROGUE_ASSASSIN_INFILTRATION_EXPERTISE</requirements>
+		<description>
+			<p>You are expert at the following techniques that aid your infiltrations.</p>
+			<p class="indent"><em><strong>Masterful Mimicry.</strong></em> You can unerringly mimic another person’s speech, handwriting, or both if you have spent at least 1 hour studying them.</p>
+			<p class="indent"><em><strong>Roving Aim.</strong></em> Your Speed isn’t reduced to 0 by using Steady Aim.</p>
+		</description>
+		<sheet alt="Infiltration Expertise">
+			<description>You can unerringly mimic another person’s speech, handwriting, or both if you have spent at least 1 hour studying them. Additionally, your Speed is not reduced to 0 by using Steady Aim.</description>
+		</sheet>
+	</element>
+
+	<element name="Level 13: Envenom Weapons" type="Archetype Feature" source="Player’s Handbook 2024" id="ID_WOTC_PHB24_ARCHETYPE_FEATURE_ROGUE_ASSASSIN_ENVENOM_WEAPONS">
+		<requirements>!ID_INTERNAL_PHB24_FEATURE_REPLACEMENT_ROGUE_ASSASSIN_ENVENOM_WEAPONS</requirements>
+		<description>
+			<p>When you use the Poison option of your Cunning Strike, the target also takes 2d6 Poison damage whenever it fails the saving throw. This damage ignores Resistance to Poison damage.</p>
+		</description>
+		<sheet alt="Envenom Weapons">
+			<description>When you use the Poison option of your Cunning Strike, the target also takes 2d6 Poison damage whenever it fails the saving throw. This damage ignores Resistance to Poison damage.</description>
+		</sheet>
+		<rules>
+			<grant type="Grants" id="ID_INTERNAL_PHB24_FEATURE_REPLACEMENT_ROGUE_CUNNING_STRIKE_POISON" />
+		</rules>
+	</element>
+	<element name="Poison (Cost: 1d6)" type="Archetype Feature" source="Player’s Handbook 2024" id="ID_WOTC_PHB24_ARCHETYPE_FEATURE_ROGUE_ASSASSIN_ENVENOM_WEAPONS_POISON">
+		<supports>PHB24 Cunning Strike Envenom Weapon</supports>
+		<compendium display="false" />
+		<description>
+			<p>When you use the Poison option of your Cunning Strike, the target also takes 2d6 Poison damage whenever it fails the saving throw. This damage ignores Resistance to Poison damage.</p>
+		</description>
+		<sheet alt="Poison (1d6)">
+			<description>Target must succeed on a DC{{cunning strike:dc}} Constitution saving throw or take 2d6 Poison damage and become Poisoned for 1 minute. This damage ignores Resistance to Poison damage. At the end of each of its turns, the Poisoned target repeats the save, ending the effect on itself on a success. To use this effect, you must have a Poisoner’s Kit on your person.</description>
+		</sheet>
+	</element>
+	<append id="ID_WOTC_PHB24_CLASS_FEATURE_ROGUE_CUNNING_STRIKE">
+		<rules>
+			<select type="Archetype Feature" name="PHB24 Cunning Strike Envenom Weapon" supports="PHB24 Cunning Strike Envenom Weapon" default="ID_WOTC_PHB24_ARCHETYPE_FEATURE_ROGUE_ASSASSIN_ENVENOM_WEAPONS_POISON" requirements="ID_WOTC_PHB24_ARCHETYPE_FEATURE_ROGUE_ASSASSIN_ENVENOM_WEAPONS" />
+		</rules>
+	</append>
+
+	<element name="Level 17: Death Strike" type="Archetype Feature" source="Player’s Handbook 2024" id="ID_WOTC_PHB24_ARCHETYPE_FEATURE_ROGUE_ASSASSIN_DEATH_STRIKE">
+		<requirements>!ID_INTERNAL_PHB24_FEATURE_REPLACEMENT_ROGUE_ASSASSIN_DEATH_STRIKE</requirements>
+		<description>
+			<p>When you hit with your Sneak Attack on the first round of a combat, the target must succeed on a Constitution saving throw (DC 8 plus your Dexterity modifier and Proficiency Bonus), or the attack’s damage is doubled against the target.</p>
+		</description>
+		<sheet alt="Death Strike">
+			<description>When you hit with your Sneak Attack on the first round of a combat, the target must succeed on a DC{{death strike:dc}} Constitution saving throw, or the attack’s damage is doubled.</description>
+		</sheet>
+		<rules>
+			<stat name="death strike:dc" value="8" bonus="base" />
+			<stat name="death strike:dc" value="proficiency" bonus="proficiency" />
+			<stat name="death strike:dc" value="dexterity:modifier" bonus="ability" />
+		</rules>
+	</element>
+	
+	<!--Feature Replacement Grants-->
+	<element name="Assassin’s Tools Feature Replacement" type="Grants" source="Internal" id="ID_INTERNAL_PHB24_FEATURE_REPLACEMENT_ROGUE_ASSASSIN_ASSASSINS_TOOLS" />
+	<element name="Assassinate Feature Replacement" type="Grants" source="Internal" id="ID_INTERNAL_PHB24_FEATURE_REPLACEMENT_ROGUE_ASSASSIN_ASSASSINATE" />
+	<element name="Infiltration Expertise Feature Replacement" type="Grants" source="Internal" id="ID_INTERNAL_PHB24_FEATURE_REPLACEMENT_ROGUE_ASSASSIN_INFILTRATION_EXPERTISE" />
+	<element name="Envenom Weapons Feature Replacement" type="Grants" source="Internal" id="ID_INTERNAL_PHB24_FEATURE_REPLACEMENT_ROGUE_ASSASSIN_ENVENOM_WEAPONS" />
+	<element name="Death Strike Feature Replacement" type="Grants" source="Internal" id="ID_INTERNAL_PHB24_FEATURE_REPLACEMENT_ROGUE_ASSASSIN_DEATH_STRIKE" />
+</elements>

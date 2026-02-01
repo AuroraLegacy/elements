@@ -1,0 +1,142 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<elements>
+	<info>
+		<name>Clockwork Sorcery</name>
+		<description>The Clockwork Sorcery subclass from the Player’s Handbook 2024.</description>
+		<author url="https://dndstore.wizards.com/us/en/product/1001494/2024-player-s-handbook-digital-plus-physical-bundle">Wizards of the Coast</author>
+		<update version="0.0.1">
+			<file name="sorcerer-clockwork.xml" url="https://raw.githubusercontent.com/AuroraLegacy/elements/master/core/players-handbook-2024/archetypes/sorcerer-clockwork.xml" />
+		</update>
+	</info>
+
+	<element name="Clockwork Sorcery" type="Archetype" source="Player’s Handbook 2024" id="ID_WOTC_PHB24_ARCHETYPE_SORCERER_CLOCKWORK_SORCERY">
+		<supports>Sorcerer Subclass</supports>
+		<description>
+			<p class="flavor">Channel Cosmic Forces of Order</p>
+			<p>The cosmic force of order has suffused you with magic. That power arises from Mechanus or a realm like it—a plane of existence shaped entirely by clockwork efficiency. You or someone from your lineage might have become entangled in the machinations of modrons, the orderly beings who inhabit Mechanus. Perhaps your ancestor even took part in the Great Modron March. Whatever its origin within you, the power of order can seem strange to others, but for you, it’s part of a vast and glorious system.</p>
+			<div element="ID_WOTC_PHB24_ARCHETYPE_FEATURE_SORCERER_CLOCKWORK_SORCERY_CLOCKWORK_MAGIC" />
+			<div element="ID_WOTC_PHB24_ARCHETYPE_FEATURE_SORCERER_CLOCKWORK_SORCERY_RESTORE_BALANCE" />
+			<div element="ID_WOTC_PHB24_ARCHETYPE_FEATURE_SORCERER_CLOCKWORK_SORCERY_BASTION_OF_LAW" />
+			<div element="ID_WOTC_PHB24_ARCHETYPE_FEATURE_SORCERER_CLOCKWORK_SORCERY_TRANCE_OF_ORDER" />
+			<div element="ID_WOTC_PHB24_ARCHETYPE_FEATURE_SORCERER_CLOCKWORK_SORCERY_CLOCKWORK_CAVALCADE" />
+		</description>
+		<sheet display="false" />
+		<rules>
+			<grant type="Archetype Feature" id="ID_WOTC_PHB24_ARCHETYPE_FEATURE_SORCERER_CLOCKWORK_SORCERY_CLOCKWORK_MAGIC" level="3" />
+			<grant type="Archetype Feature" id="ID_WOTC_PHB24_ARCHETYPE_FEATURE_SORCERER_CLOCKWORK_SORCERY_RESTORE_BALANCE" level="3" />
+			<grant type="Archetype Feature" id="ID_WOTC_PHB24_ARCHETYPE_FEATURE_SORCERER_CLOCKWORK_SORCERY_BASTION_OF_LAW" level="6" />
+			<grant type="Archetype Feature" id="ID_WOTC_PHB24_ARCHETYPE_FEATURE_SORCERER_CLOCKWORK_SORCERY_TRANCE_OF_ORDER" level="14" />
+			<grant type="Archetype Feature" id="ID_WOTC_PHB24_ARCHETYPE_FEATURE_SORCERER_CLOCKWORK_SORCERY_CLOCKWORK_CAVALCADE" level="18" />
+		</rules>
+	</element>
+
+	<element name="Level 3: Clockwork Magic" type="Archetype Feature" source="Player’s Handbook 2024" id="ID_WOTC_PHB24_ARCHETYPE_FEATURE_SORCERER_CLOCKWORK_SORCERY_CLOCKWORK_MAGIC">
+		<requirements>!ID_INTERNAL_PHB24_FEATURE_REPLACEMENT_SORCERER_CLOCKWORK_SORCERY_CLOCKWORK_MAGIC</requirements>
+		<description>
+			<p>When you reach a Sorcerer level specified in the Clockwork Spells table, you thereafter always have the listed spells prepared.</p>
+			<h5>Clockwork Spells</h5>
+			<table class="class-features">
+				<thead>
+					<tr><td class="col-30">Sorcerer Level</td><td class="left">Spells</td></tr>
+				</thead>
+				<tr><td>3</td><td class="left"><em>Aid, Alarm, Lesser Restoration, Protection from Evil and Good</em></td></tr>
+				<tr><td>5</td><td class="left"><em>Dispel Magic, Protection from Energy</em></td></tr>
+				<tr><td>7</td><td class="left"><em>Freedom of Movement, Summon Construct</em></td></tr>
+				<tr><td>9</td><td class="left"><em>Greater Restoration, Wall of Force</em></td></tr>
+			</table>
+			<p>In addition, consult the Manifestations of Order table and choose or randomly determine a way your connection to order manifests while you are casting any of your Sorcerer spells.</p>
+			<h5>Manifestations of Order</h5>
+			<table class="class-features">
+				<thead>
+					<tr><td class="col-10">1d6</td><td class="left">Manifestation</td></tr>
+				</thead>
+				<tr><td>1</td><td class="left">Spectral cogwheels hover behind you.</td></tr>
+				<tr><td>2</td><td class="left">The hands of a clock spin in your eyes.</td></tr>
+				<tr><td>3</td><td class="left">Your skin glows with a brassy sheen.</td></tr>
+				<tr><td>4</td><td class="left">Floating equations and geometric objects overlay your body.</td></tr>
+				<tr><td>5</td><td class="left">Your Spellcasting Focus temporarily takes the form of a Tiny clockwork mechanism.</td></tr>
+				<tr><td>6</td><td class="left">The ticking of gears or ringing of a clock can be heard by you and those affected by your magic.</td></tr>
+			</table>
+		</description>
+		<sheet display="false" />
+		<rules>
+			<grant type="Spell" id="ID_WOTC_PHB24_SPELL_ALARM" spellcasting="Sorcerer" />
+			<grant type="Spell" id="ID_WOTC_PHB24_SPELL_PROTECTION_FROM_EVIL_AND_GOOD" spellcasting="Sorcerer" />
+			<grant type="Spell" id="ID_WOTC_PHB24_SPELL_AID" spellcasting="Sorcerer" />
+			<grant type="Spell" id="ID_WOTC_PHB24_SPELL_LESSER_RESTORATION" spellcasting="Sorcerer" />
+			<grant type="Spell" id="ID_WOTC_PHB24_SPELL_DISPEL_MAGIC" level="5" spellcasting="Sorcerer" />
+			<grant type="Spell" id="ID_WOTC_PHB24_SPELL_PROTECTION_FROM_ENERGY" level="5" spellcasting="Sorcerer" />
+			<grant type="Spell" id="ID_WOTC_PHB24_SPELL_FREEDOM_OF_MOVEMENT" level="7" spellcasting="Sorcerer" />
+			<grant type="Spell" id="ID_WOTC_PHB24_SPELL_SUMMON_CONSTRUCT" level="7" spellcasting="Sorcerer" />
+			<grant type="Spell" id="ID_WOTC_PHB24_SPELL_GREATER_RESTORATION" level="9" spellcasting="Sorcerer" />
+			<grant type="Spell" id="ID_WOTC_PHB24_SPELL_WALL_OF_FORCE" level="9" spellcasting="Sorcerer" />
+		</rules>
+	</element>
+
+	<element name="Level 3: Restore Balance" type="Archetype Feature" source="Player’s Handbook 2024" id="ID_WOTC_PHB24_ARCHETYPE_FEATURE_SORCERER_CLOCKWORK_SORCERY_RESTORE_BALANCE">
+		<requirements>!ID_INTERNAL_PHB24_FEATURE_REPLACEMENT_SORCERER_CLOCKWORK_SORCERY_RESTORE_BALANCE</requirements>
+		<description>
+			<p>Your connection to the plane of absolute order allows you to equalize chaotic moments. When a creature you can see within 60 feet of yourself is about to roll a d20 with Advantage or Disadvantage, you can take a Reaction to prevent the roll from being affected by Advantage and Disadvantage.</p>
+			<p class="indent">You can use this feature a number of times equal to your Charisma modifier (minimum of once), and you regain all expended uses when you finish a Long Rest.</p>
+		</description>
+		<sheet alt="Restore Balance" action="Reaction" usage="{{restore balance:usage}}/Long Rest">
+			<description>When a creature you can see within 60 feet of yourself is about to roll a d20 with Advantage or Disadvantage, you can prevent the roll from being affected by Advantage and Disadvantage.</description>
+		</sheet>
+		<rules>
+			<stat name="restore balance:usage" value="1" bonus="base" />
+			<stat name="restore balance:usage" value="charisma:modifier" bonus="base" />
+		</rules>
+		<rules>
+			<stat name="restore balance:usage" value="1" bonus="base" />
+			<stat name="restore balance:usage" value="charisma:modifier" bonus="base" />
+		</rules>
+	</element>
+
+	<element name="Level 6: Bastion of Law" type="Archetype Feature" source="Player’s Handbook 2024" id="ID_WOTC_PHB24_ARCHETYPE_FEATURE_SORCERER_CLOCKWORK_SORCERY_BASTION_OF_LAW">
+		<requirements>!ID_INTERNAL_PHB24_FEATURE_REPLACEMENT_SORCERER_CLOCKWORK_SORCERY_BASTION_OF_LAW</requirements>
+		<description>
+			<p>You can tap into the grand equation of existence to imbue a creature with a shimmering shield of order. As a Magic action, you can expend 1 to 5 Sorcery Points to create a magical ward around yourself or another creature you can see within 30 feet of yourself. The ward is represented by a number of d8s equal to the number of Sorcery Points spent to create it. When the warded creature takes damage, it can expend a number of those dice, roll them, and reduce the damage taken by the total rolled on those dice.</p>
+			<p class="indent">The ward lasts until you finish a Long Rest or until you use this feature again.</p>
+		</description>
+		<sheet alt="Bastion of Law" action="Action" usage="1-5 Sorcery Points">
+			<description>You can create a magical ward around yourself or another creature you can see within 30 ft. of you. The ward is represented by a number of d8s equal to the number of Sorcery Points spent to create it. When the warded creature takes damage, it can expend a number of those dice, roll them, and reduce the damage taken by the total rolled on those dice. The ward lasts until you finish a Long Rest or until you use this feature again.</description>
+		</sheet>
+	</element>
+
+	<element name="Level 14: Trance of Order" type="Archetype Feature" source="Player’s Handbook 2024" id="ID_WOTC_PHB24_ARCHETYPE_FEATURE_SORCERER_CLOCKWORK_SORCERY_TRANCE_OF_ORDER">
+		<requirements>!ID_INTERNAL_PHB24_FEATURE_REPLACEMENT_SORCERER_CLOCKWORK_SORCERY_TRANCE_OF_ORDER</requirements>
+		<description>
+			<p>You gain the ability to align your consciousness with the endless calculations of Mechanus. As a Bonus Action, you can enter this state for 1 minute. For the duration, attack rolls against you can’t benefit from Advantage, and whenever you make a D20 Test, you can treat a roll of 9 or lower on the d20 as a 10.</p>
+			<p class="indent">Once you use this feature, you can’t use it again until you finish a Long Rest unless you spend 5 Sorcery Points (no action required) to restore your use of it.</p>
+		</description>
+		<sheet alt="Trance of Order" action="Bonus Action" usage="1/Long Rest">
+			<description>For 1 minute, attack rolls against you can’t benefit from Advantage, and whenever you make a D20 Test, you can treat a roll of 9 or lower on the d20 as a 10. &#13;
+			You can spend 5 Sorcery Points to restore a use of this feature.</description>
+		</sheet>
+	</element>
+
+	<element name="Level 18: Clockwork Cavalcade" type="Archetype Feature" source="Player’s Handbook 2024" id="ID_WOTC_PHB24_ARCHETYPE_FEATURE_SORCERER_CLOCKWORK_SORCERY_CLOCKWORK_CAVALCADE">
+		<requirements>!ID_INTERNAL_PHB24_FEATURE_REPLACEMENT_SORCERER_CLOCKWORK_SORCERY_CLOCKWORK_CAVALCADE</requirements>
+		<description>
+			<p>You momentarily summon spirits of order to expunge disorder around you. As a Magic action, you summon the spirits in a 30-foot Cube originating from you. The spirits look like modrons or other Constructs of your choice. The spirits are intangible and invulnerable, and they create the effects below within the Cube before vanishing. Once you use this action, you can’t use it again until you finish a Long Rest unless you spend 7 Sorcery Points (no action required) to restore your use of it.</p>
+			<p class="indent"><em><strong>Heal.</strong></em> The spirits restore up to 100 Hit Points, divided as you choose among any number of creatures of your choice in the Cube.</p>
+			<p class="indent"><em><strong>Repair.</strong></em> Any damaged objects entirely in the Cube are repaired instantly.</p>
+			<p class="indent"><em><strong>Dispel.</strong></em> Every spell of level 6 and lower ends on creatures and objects of your choice in the Cube.</p>
+		</description>
+		<sheet alt="Clockwork Cavalcade" action="Action" usage="1/Long Rest">
+			<description>You magically produce following effects within the 30-foot Cube originating from you: &#13;
+			• Restore up to 100 hit points, divided as you choose among any number of creatures of your choice. &#13;
+			• Any damaged objects are repaired instantly. &#13;
+			• Every spell of level 6 and lower ends on creatures and objects of your choice. &#13;
+			You can spend 7 Sorcery Points to restore a use of this feature.</description>
+		</sheet>
+	</element>
+
+	<!--Feature Replacement Grants-->
+	<element name="Clockwork Magic Feature Replacement" type="Grants" source="Internal" id="ID_INTERNAL_PHB24_FEATURE_REPLACEMENT_SORCERER_CLOCKWORK_SORCERY_CLOCKWORK_MAGIC" />
+	<element name="Restore Balance Feature Replacement" type="Grants" source="Internal" id="ID_INTERNAL_PHB24_FEATURE_REPLACEMENT_SORCERER_CLOCKWORK_SORCERY_RESTORE_BALANCE" />
+	<element name="Bastion of Law Feature Replacement" type="Grants" source="Internal" id="ID_INTERNAL_PHB24_FEATURE_REPLACEMENT_SORCERER_CLOCKWORK_SORCERY_BASTION_OF_LAW" />
+	<element name="Trance of Order Feature Replacement" type="Grants" source="Internal" id="ID_INTERNAL_PHB24_FEATURE_REPLACEMENT_SORCERER_CLOCKWORK_SORCERY_TRANCE_OF_ORDER" />
+	<element name="Clockwork Cavalcade Feature Replacement" type="Grants" source="Internal" id="ID_INTERNAL_PHB24_FEATURE_REPLACEMENT_SORCERER_CLOCKWORK_SORCERY_CLOCKWORK_CAVALCADE" />
+
+</elements>

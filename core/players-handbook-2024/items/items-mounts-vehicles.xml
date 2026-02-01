@@ -1,0 +1,542 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<elements>
+	<info>
+		<name>Mounts and Vehicles</name>
+		<description>Mounts and Vehicles from Player's Handbook 2024</description>
+		<update version="0.0.1">
+			<file name="items-mounts-vehicles.xml" url="https://raw.githubusercontent.com/AuroraLegacy/elements/master/core/players-handbook-2024/items/items-mounts-vehicles.xml" />
+		</update>
+	</info>
+
+	<!-- Barding was never properly implemented, and is currently not planned, as it don't affect the character in any way. Still maybe at some point in the future it would make sense to adapt normal armor into barding at least for an ease of tracking it for users -->
+	<element name="Barding" type="Item" source="Player’s Handbook 2024" id="ID_WOTC_PHB24_ITEM_BARDING">
+		<description>
+			<p>Barding is armor designed for a mount. Any type of armor on the Armor table in this chapter can be purchased as barding. The cost is four times the normal cost, and it weighs twice as much.</p>
+		</description>
+		<setters>
+			<set name="category">Mounts &amp; Vehicles</set>
+			<set name="cost" currency="gp">0</set>
+			<set name="weight" lb="0">—</set>
+		</setters>
+	</element>
+
+	<element name="Camel" type="Item" source="Player’s Handbook 2024" id="ID_WOTC_PHB24_ITEM_CAMEL">
+		<description>
+			<h4 style="margin-top:0px" />
+			<p><em>Large Beast, Unaligned</em></p>
+			<ul class="unstyled mb">
+				<li style="margin-bottom:-1em"><strong>AC</strong> 10</li>
+				<li style="text-align:right; margin-top:-1em"><strong>Initiative</strong> -1 (9)</li>
+				<li style="margin-bottom:-1em"><strong>HP</strong> 17 (2d10 + 6)</li>
+				<li style="text-align:right; margin-top:-1em"><strong>Carrying Capacity</strong> 450 lb.</li>
+				<li><strong>Speed</strong> 50 ft.</li>
+			</ul>
+			<table style="text-align:center">
+				<thead><tr><td> </td><td> </td><td>MOD</td><td>SAVE</td><td> </td><td> </td><td>MOD</td><td>SAVE</td><td> </td><td> </td><td>MOD</td><td>SAVE</td></tr></thead>
+				<tr><td>STR</td><td>15</td><td>+2</td><td>+2</td><td>DEX</td><td>8</td><td>-1</td><td>-1</td><td>CON</td><td>17</td><td>+3</td><td>+5</td></tr>
+				<tr><td>INT</td><td>2</td><td>-4</td><td>-4</td><td>WIS</td><td>11</td><td>+0</td><td>+0</td><td>CHA</td><td>5</td><td>-3</td><td>-3</td></tr>
+			</table>
+			<ul class="unstyled">
+				<li><strong>Senses</strong> Darkvision 60ft., Passive Perception 10</li>
+				<li><strong>Languages</strong> None</li>
+				<li><strong>Challenge</strong> 1/8 (XP 25; PB +2)</li>
+			</ul>
+			<h4 style="margin-top:10px">Actions</h4>
+			<ul class="unstyled">
+				<li><strong><em>Bite. </em></strong><em>Melee Weapon Attack:</em> +4, reach 5 ft. <em>Hit:</em> 4 (1d4 + 2) Bludgeoning damage.</li>
+			</ul>
+		</description>
+		<setters>
+			<set name="category">Mounts &amp; Vehicles</set>
+			<set name="cost" currency="gp">50</set>
+			<set name="weight" lb="0" excludeEncumbrance="true">—</set>
+			<set name="type">Mount</set>
+		</setters>
+	</element>
+
+	<element name="Elephant" type="Item" source="Player’s Handbook 2024" id="ID_WOTC_PHB24_ITEM_ELEPHANT">
+		<description>
+			<h4 style="margin-top:0px" />
+			<p><em>Huge Beast, Unaligned</em></p>
+			<ul class="unstyled mb">
+				<li style="margin-bottom:-1em"><strong>AC</strong> 12</li>
+				<li style="text-align:right; margin-top:-1em"><strong>Initiative</strong> -1 (9)</li>
+				<li style="margin-bottom:-1em"><strong>HP</strong> 76 (8d12 + 24)</li>
+				<li style="text-align:right; margin-top:-1em"><strong>Carrying Capacity</strong> 1320 lb.</li>
+				<li><strong>Speed</strong> 40 ft.</li>
+			</ul>
+			<table style="text-align:center">
+				<thead><tr><td> </td><td> </td><td>MOD</td><td>SAVE</td><td> </td><td> </td><td>MOD</td><td>SAVE</td><td> </td><td> </td><td>MOD</td><td>SAVE</td></tr></thead>
+				<tr><td>STR</td><td>22</td><td>+6</td><td>+6</td><td>DEX</td><td>9</td><td>-1</td><td>-1</td><td>CON</td><td>17</td><td>+3</td><td>+3</td></tr>
+				<tr><td>INT</td><td>3</td><td>-4</td><td>-4</td><td>WIS</td><td>11</td><td>+0</td><td>+0</td><td>CHA</td><td>6</td><td>-2</td><td>-2</td></tr>
+			</table>
+			<ul class="unstyled">
+				<li><strong>Senses</strong> Passive Perception 10</li>
+				<li><strong>Languages</strong> None</li>
+				<li><strong>Challenge</strong> 4 (XP 1,100; PB +2)</li>
+			</ul>
+			<h4 style="margin-top:10px">Actions</h4>
+			<ul class="unstyled">
+				<li><strong><em>Multiattack. </em></strong> The elephant makes two Gore attacks.</li>
+				<li><strong><em>Gore. </em></strong><em>Melee Weapon Attack:</em> +8, reach 5 ft. <em>Hit:</em> 15 (2d8 + 6) Piercing damage. lf the elephant moved at least 20 feet straight toward the target immediately before the hit, the target also has the Prone condition.</li>
+			</ul>
+			<h4 style="margin-top:10px">Bonus Actions</h4>
+			<ul class="unstyled">
+				<li><strong><em>Trample. </em></strong><em>Dexterity Saving Throw:</em> DC16, one creature within 5 feet that has the Prone condition. <em>Failure:</em> 17 (2d10 + 6) Bludgeoning damage. <em>Success:</em> Half damage.</li>
+			</ul>
+		</description>
+		<setters>
+			<set name="category">Mounts &amp; Vehicles</set>
+			<set name="cost" currency="gp">200</set>
+			<set name="weight" lb="0">—</set>
+			<set name="type">Mount</set>
+		</setters>
+	</element>
+
+	<element name="Horse, Draft" type="Item" source="Player’s Handbook 2024" id="ID_WOTC_PHB24_ITEM_HORSE_DRAFT">
+		<description>
+			<h4 style="margin-top:0px" />
+			<p><em>Large Beast, Unaligned</em></p>
+			<ul class="unstyled mb">
+				<li style="margin-bottom:-1em"><strong>AC</strong> 10</li>
+				<li style="text-align:right; margin-top:-1em"><strong>Initiative</strong> +0 (10)</li>
+				<li style="margin-bottom:-1em"><strong>HP</strong> 15 (2d10 + 4)</li>
+				<li style="text-align:right; margin-top:-1em"><strong>Carrying Capacity</strong> 540 lb.</li>
+				<li><strong>Speed</strong> 40 ft.</li>
+			</ul>
+			<table style="text-align:center">
+				<thead><tr><td> </td><td> </td><td>MOD</td><td>SAVE</td><td> </td><td> </td><td>MOD</td><td>SAVE</td><td> </td><td> </td><td>MOD</td><td>SAVE</td></tr></thead>
+				<tr><td>STR</td><td>18</td><td>+4</td><td>+4</td><td>DEX</td><td>10</td><td>+0</td><td>+0</td><td>CON</td><td>15</td><td>+2</td><td>+2</td></tr>
+				<tr><td>INT</td><td>2</td><td>-4</td><td>-4</td><td>WIS</td><td>11</td><td>+0</td><td>+0</td><td>CHA</td><td>7</td><td>-2</td><td>-2</td></tr>
+			</table>
+			<ul class="unstyled">
+				<li><strong>Senses</strong> Passive Perception 10</li>
+				<li><strong>Languages</strong> None</li>
+				<li><strong>Challenge</strong> 1/4 (XP 50; PB +2)</li>
+			</ul>
+			<h4 style="margin-top:10px">Actions</h4>
+			<ul class="unstyled">
+				<li><strong><em>Hooves. </em></strong><em>Melee Weapon Attack:</em> +6, reach 5 ft. <em>Hit:</em> 6 (1d4 + 4) Bludgeoning damage.</li>
+			</ul>
+		</description>
+		<setters>
+			<set name="category">Mounts &amp; Vehicles</set>
+			<set name="cost" currency="gp">50</set>
+			<set name="weight" lb="0">—</set>
+			<set name="type">Mount</set>
+		</setters>
+	</element>
+
+	<element name="Horse, Riding" type="Item" source="Player’s Handbook 2024" id="ID_WOTC_PHB24_ITEM_HORSE_RIDING">
+		<description>
+			<h4 style="margin-top:0px" />
+			<p><em>Large Beast, Unaligned</em></p>
+			<ul class="unstyled mb">
+				<li style="margin-bottom:-1em"><strong>AC</strong> 11</li>
+				<li style="text-align:right; margin-top:-1em"><strong>Initiative</strong> +1 (11)</li>
+				<li style="margin-bottom:-1em"><strong>HP</strong> 13 (2d10 + 2)</li>
+				<li style="text-align:right; margin-top:-1em"><strong>Carrying Capacity</strong> 480 lb.</li>
+				<li><strong>Speed</strong> 60 ft.</li>
+			</ul>
+			<table style="text-align:center">
+				<thead><tr><td> </td><td> </td><td>MOD</td><td>SAVE</td><td> </td><td> </td><td>MOD</td><td>SAVE</td><td> </td><td> </td><td>MOD</td><td>SAVE</td></tr></thead>
+				<tr><td>STR</td><td>16</td><td>+3</td><td>+3</td><td>DEX</td><td>13</td><td>+1</td><td>+1</td><td>CON</td><td>12</td><td>+1</td><td>+1</td></tr>
+				<tr><td>INT</td><td>2</td><td>-4</td><td>-4</td><td>WIS</td><td>11</td><td>+0</td><td>+0</td><td>CHA</td><td>7</td><td>-2</td><td>-2</td></tr>
+			</table>
+			<ul class="unstyled">
+				<li><strong>Senses</strong> Passive Perception 10</li>
+				<li><strong>Languages</strong> None</li>
+				<li><strong>Challenge</strong> 1/4 (XP 50; PB +2)</li>
+			</ul>
+			<h4 style="margin-top:10px">Actions</h4>
+			<ul class="unstyled">
+				<li><strong><em>Hooves. </em></strong><em>Melee Weapon Attack:</em> +5, reach 5 ft. <em>Hit:</em> 7 (1d8 + 3) Bludgeoning damage.</li>
+			</ul>
+		</description>
+		<setters>
+			<set name="category">Mounts &amp; Vehicles</set>
+			<set name="cost" currency="gp">75</set>
+			<set name="weight" lb="0">—</set>
+			<set name="type">Mount</set>
+		</setters>
+	</element>
+
+	<element name="Mastiff" type="Item" source="Player’s Handbook 2024" id="ID_WOTC_PHB24_ITEM_MASTIFF">
+		<description>
+			<h4 style="margin-top:0px" />
+			<p><em>Medium Beast, Unaligned</em></p>
+			<ul class="unstyled mb">
+				<li style="margin-bottom:-1em"><strong>AC</strong> 12</li>
+				<li style="text-align:right; margin-top:-1em"><strong>Initiative</strong> +2 (12)</li>
+				<li style="margin-bottom:-1em"><strong>HP</strong> 5 (1d8 + 1)</li>
+				<li style="text-align:right; margin-top:-1em"><strong>Carrying Capacity</strong> 195 lb.</li>
+				<li><strong>Speed</strong> 40 ft.</li>
+			</ul>
+			<table style="text-align:center">
+				<thead><tr><td> </td><td> </td><td>MOD</td><td>SAVE</td><td> </td><td> </td><td>MOD</td><td>SAVE</td><td> </td><td> </td><td>MOD</td><td>SAVE</td></tr></thead>
+				<tr><td>STR</td><td>13</td><td>+1</td><td>+1</td><td>DEX</td><td>14</td><td>+2</td><td>+2</td><td>CON</td><td>12</td><td>+1</td><td>+1</td></tr>
+				<tr><td>INT</td><td>3</td><td>-4</td><td>-4</td><td>WIS</td><td>12</td><td>+1</td><td>+3</td><td>CHA</td><td>7</td><td>-2</td><td>-2</td></tr>
+			</table>
+			<ul class="unstyled">
+				<li><strong>Skills</strong> Perception +5</li>
+				<li><strong>Senses</strong> Darkvision 60 ft., Passive Perception 15</li>
+				<li><strong>Languages</strong> None</li>
+				<li><strong>Challenge</strong> 1/8 (XP 25; PB +2)</li>
+			</ul>
+			<h4 style="margin-top:10px">Actions</h4>
+			<ul class="unstyled">
+				<li><strong><em>Bite. </em></strong><em>Melee Weapon Attack:</em> +2, reach 5 ft. <em>Hit:</em> 1 Piercing damage.</li>
+			</ul>
+		</description>
+		<setters>
+			<set name="category">Mounts &amp; Vehicles</set>
+			<set name="cost" currency="gp">25</set>
+			<set name="weight" lb="0">—</set>
+			<set name="type">Mount</set>
+		</setters>
+	</element>
+
+	<element name="Mule" type="Item" source="Player’s Handbook 2024" id="ID_WOTC_PHB24_ITEM_MULE">
+		<description>
+			<h4 style="margin-top:0px" />
+			<p><em>Medium Beast, Unaligned</em></p>
+			<ul class="unstyled mb">
+				<li style="margin-bottom:-1em"><strong>AC</strong> 10</li>
+				<li style="text-align:right; margin-top:-1em"><strong>Initiative</strong> +0 (10)</li>
+				<li style="margin-bottom:-1em"><strong>HP</strong> 11 (2d8 + 2)</li>
+				<li style="text-align:right; margin-top:-1em"><strong>Carrying Capacity</strong> 420 lb.</li>
+				<li><strong>Speed</strong> 40 ft.</li>
+			</ul>
+			<table style="text-align:center">
+				<thead><tr><td> </td><td> </td><td>MOD</td><td>SAVE</td><td> </td><td> </td><td>MOD</td><td>SAVE</td><td> </td><td> </td><td>MOD</td><td>SAVE</td></tr></thead>
+				<tr><td>STR</td><td>14</td><td>+2</td><td>+4</td><td>DEX</td><td>10</td><td>+0</td><td>+0</td><td>CON</td><td>13</td><td>+1</td><td>+1</td></tr>
+				<tr><td>INT</td><td>2</td><td>-4</td><td>-4</td><td>WIS</td><td>10</td><td>+0</td><td>+0</td><td>CHA</td><td>5</td><td>-3</td><td>-3</td></tr>
+			</table>
+			<ul class="unstyled">
+				<li><strong>Senses</strong> Passive Perception 10</li>
+				<li><strong>Languages</strong> None</li>
+				<li><strong>Challenge</strong> 1/8 (XP 25; PB +2)</li>
+			</ul>
+			<h4 style="margin-top:10px">Traits</h4>
+			<ul class="unstyled">
+				<li><strong><em>Beast of Burden. </em></strong><em>Melee Weapon Attack:</em> The mule counts as one size larger for the purpose of determining its carrying capacity.</li>
+			</ul>
+			<h4 style="margin-top:10px">Actions</h4>
+			<ul class="unstyled">
+				<li><strong><em>Hooves. </em></strong><em>Melee Weapon Attack:</em> +4, reach 5 ft. <em>Hit:</em> 4 (1d4 + 2) Bludgeoning damage.</li>
+			</ul>
+		</description>
+		<setters>
+			<set name="category">Mounts &amp; Vehicles</set>
+			<set name="cost" currency="gp">8</set>
+			<set name="weight" lb="0">—</set>
+			<set name="type">Mount</set>
+		</setters>
+	</element>
+
+	<element name="Pony" type="Item" source="Player’s Handbook 2024" id="ID_WOTC_PHB24_ITEM_PONY">
+		<description>
+			<h4 style="margin-top:0px" />
+			<p><em>Medium Beast, Unaligned</em></p>
+			<ul class="unstyled mb">
+				<li style="margin-bottom:-1em"><strong>AC</strong> 10</li>
+				<li style="text-align:right; margin-top:-1em"><strong>Initiative</strong> +0 (10)</li>
+				<li style="margin-bottom:-1em"><strong>HP</strong> 11 (2d8 + 2)</li>
+				<li style="text-align:right; margin-top:-1em"><strong>Carrying Capacity</strong> 225 lb.</li>
+				<li><strong>Speed</strong> 40 ft.</li>
+			</ul>
+			<table style="text-align:center">
+				<thead><tr><td> </td><td> </td><td>MOD</td><td>SAVE</td><td> </td><td> </td><td>MOD</td><td>SAVE</td><td> </td><td> </td><td>MOD</td><td>SAVE</td></tr></thead>
+				<tr><td>STR</td><td>15</td><td>+2</td><td>+4</td><td>DEX</td><td>10</td><td>+0</td><td>+0</td><td>CON</td><td>13</td><td>+1</td><td>+1</td></tr>
+				<tr><td>INT</td><td>2</td><td>-4</td><td>-4</td><td>WIS</td><td>11</td><td>+0</td><td>+0</td><td>CHA</td><td>7</td><td>-2</td><td>-2</td></tr>
+			</table>
+			<ul class="unstyled">
+				<li><strong>Senses</strong> Passive Perception 10</li>
+				<li><strong>Languages</strong> None</li>
+				<li><strong>Challenge</strong> 1/8 (XP 25; PB +2)</li>
+			</ul>
+			<h4 style="margin-top:10px">Actions</h4>
+			<ul class="unstyled">
+				<li><strong><em>Hooves. </em></strong><em>Melee Weapon Attack:</em> +4, reach 5 ft. <em>Hit:</em> 4 (1d4 + 2) Bludgeoning damage.</li>
+			</ul>
+		</description>
+		<setters>
+			<set name="category">Mounts &amp; Vehicles</set>
+			<set name="cost" currency="gp">30</set>
+			<set name="weight" lb="0">—</set>
+			<set name="type">Mount</set>
+		</setters>
+	</element>
+
+	<element name="Warhorse" type="Item" source="Player’s Handbook 2024" id="ID_WOTC_PHB24_ITEM_WARHORSE">
+		<description>
+			<h4 style="margin-top:0px" />
+			<p><em>Large Beast, Unaligned</em></p>
+			<ul class="unstyled mb">
+				<li style="margin-bottom:-1em"><strong>AC</strong> 11</li>
+				<li style="text-align:right; margin-top:-1em"><strong>Initiative</strong> +1 (11)</li>
+				<li style="margin-bottom:-1em"><strong>HP</strong> 19 (3d10 + 3)</li>
+				<li style="text-align:right; margin-top:-1em"><strong>Carrying Capacity</strong> 540 lb.</li>
+				<li><strong>Speed</strong> 60 ft.</li>
+			</ul>
+			<table style="text-align:center">
+				<thead><tr><td> </td><td> </td><td>MOD</td><td>SAVE</td><td> </td><td> </td><td>MOD</td><td>SAVE</td><td> </td><td> </td><td>MOD</td><td>SAVE</td></tr></thead>
+				<tr><td>STR</td><td>18</td><td>+4</td><td>+4</td><td>DEX</td><td>12</td><td>+1</td><td>+1</td><td>CON</td><td>13</td><td>+1</td><td>+1</td></tr>
+				<tr><td>INT</td><td>2</td><td>-4</td><td>-4</td><td>WIS</td><td>12</td><td>+1</td><td>+3</td><td>CHA</td><td>7</td><td>-2</td><td>-2</td></tr>
+			</table>
+			<ul class="unstyled">
+				<li><strong>Senses</strong> Passive Perception 11</li>
+				<li><strong>Languages</strong> None</li>
+				<li><strong>Challenge</strong> 1/2 (XP 100; PB +2)</li>
+			</ul>
+			<h4 style="margin-top:10px">Actions</h4>
+			<ul class="unstyled">
+				<li><strong><em>Hooves. </em></strong><em>Melee Weapon Attack:</em> +6, reach 5 ft. <em>Hit:</em> 9 (2d4 + 4) Bludgeoning damage. lf the horse moved at least 20 feet straight toward the target immediately before the hit, the target takes an extra 5 (2d4) Bludgeoning damage and, if it is Huge or smaller, has the Prone condition.</li>
+			</ul>
+		</description>
+		<setters>
+			<set name="category">Mounts &amp; Vehicles</set>
+			<set name="cost" currency="gp">400</set>
+			<set name="weight" lb="0">—</set>
+			<set name="type">Mount</set>
+		</setters>
+	</element>
+
+	<element name="Carriage" type="Item" source="Player’s Handbook 2024" id="ID_WOTC_PHB24_ITEM_CARRIAGE">
+		<setters>
+			<set name="category">Mounts &amp; Vehicles</set>
+			<set name="cost" currency="gp">100</set>
+			<set name="weight" lb="600" excludeEncumbrance="true">600 lb.</set>
+			<set name="type">Vehicle</set>
+		</setters>
+	</element>
+
+	<element name="Cart" type="Item" source="Player’s Handbook 2024" id="ID_WOTC_PHB24_ITEM_CART">
+		<setters>
+			<set name="category">Mounts &amp; Vehicles</set>
+			<set name="cost" currency="gp">15</set>
+			<set name="weight" lb="200" excludeEncumbrance="true">200 lb.</set>
+			<set name="type">Vehicle</set>
+		</setters>
+	</element>
+
+	<element name="Chariot" type="Item" source="Player’s Handbook 2024" id="ID_WOTC_PHB24_ITEM_CHARIOT">
+		<setters>
+			<set name="category">Mounts &amp; Vehicles</set>
+			<set name="cost" currency="gp">250</set>
+			<set name="weight" lb="100" excludeEncumbrance="true">100 lb.</set>
+			<set name="type">Vehicle</set>
+		</setters>
+	</element>
+
+	<element name="Feed (per day)" type="Item" source="Player’s Handbook 2024" id="ID_WOTC_PHB24_ITEM_FEED_PER_DAY">
+		<setters>
+			<set name="category">Mounts &amp; Vehicles</set>
+			<set name="cost" currency="cp">5</set>
+			<set name="weight" lb="10">10 lb.</set>
+			<set name="stackable">true</set>
+		</setters>
+	</element>
+
+	<element name="Saddle, Exotic" type="Item" source="Player’s Handbook 2024" id="ID_WOTC_PHB24_ITEM_SADDLE_EXOTIC">
+		<description>
+			<p>A saddle comes with a bit, a bridle, reins, and any other equipment needed to use the saddle. An Exotic Saddle allows riding an aquatic or a flying mount.</p>
+		</description>
+		<setters>
+			<set name="category">Mounts &amp; Vehicles</set>
+			<set name="cost" currency="gp">60</set>
+			<set name="weight" lb="40" excludeEncumbrance="true">40 lb.</set>
+		</setters>
+	</element>
+
+	<element name="Saddle, Military" type="Item" source="Player’s Handbook 2024" id="ID_WOTC_PHB24_ITEM_SADDLE_MILITARY">
+		<description>
+			<p>A saddle comes with a bit, a bridle, reins, and any other equipment needed to use the saddle. A Military Saddle gives Advantage on any ability check you make to remain mounted.</p>
+		</description>
+		<setters>
+			<set name="category">Mounts &amp; Vehicles</set>
+			<set name="cost" currency="gp">20</set>
+			<set name="weight" lb="30" excludeEncumbrance="true">30 lb.</set>
+		</setters>
+	</element>
+
+	<element name="Saddle, Riding" type="Item" source="Player’s Handbook 2024" id="ID_WOTC_PHB24_ITEM_SADDLE_RIDING">
+		<description>
+			<p>A saddle comes with a bit, a bridle, reins, and any other equipment needed to use the saddle.</p>
+		</description>
+		<setters>
+			<set name="category">Mounts &amp; Vehicles</set>
+			<set name="cost" currency="gp">10</set>
+			<set name="weight" lb="25" excludeEncumbrance="true">25 lb.</set>
+		</setters>
+	</element>
+
+	<element name="Sled" type="Item" source="Player’s Handbook 2024" id="ID_WOTC_PHB24_ITEM_SLED">
+		<setters>
+			<set name="category">Mounts &amp; Vehicles</set>
+			<set name="cost" currency="gp">20</set>
+			<set name="weight" lb="300" excludeEncumbrance="true">300 lb.</set>
+			<set name="type">Vehicle</set>
+		</setters>
+	</element>
+
+	<!-- doesn't seem to be appropriate for an "Item", but instead of being completely removed, it has been commented out in case someone finds this item useful -->
+	<!-- <element name="Stabling (per day)" type="Item" source="Player’s Handbook 2024" id="ID_WOTC_PHB24_ITEM_STABLING">
+		<setters>
+			<set name="category">Mounts &amp; Vehicles</set>
+			<set name="cost" currency="sp">5</set>
+			<set name="weight" lb="0">0 lb.</set>
+			<set name="stackable">true</set>
+		</setters>
+	</element> -->
+
+	<element name="Wagon" type="Item" source="Player’s Handbook 2024" id="ID_WOTC_PHB24_ITEM_WAGON">
+		<setters>
+			<set name="category">Mounts &amp; Vehicles</set>
+			<set name="cost" currency="gp">35</set>
+			<set name="weight" lb="400" excludeEncumbrance="true">400 lb.</set>
+			<set name="type">Vehicle</set>
+		</setters>
+	</element> 
+
+	<element name="Airship" type="Item" source="Player’s Handbook 2024" id="ID_WOTC_PHB24_ITEM_AIRSHIP">
+		<supports>Airborne</supports>
+		<description>
+			<ul class="unstyled">
+				<li><b>Speed.</b> 8 mph</li>
+				<li><b>Crew.</b> 10</li>
+				<li><b>Passengers.</b> 20</li>
+				<li><b>Cargo (tons).</b> 1</li>
+				<li><b>AC.</b> 13</li>
+				<li><b>HP.</b> 300</li>
+				<li><b>Damage Threshold.</b> —</li>
+			</ul>
+		</description>
+		<setters>
+			<set name="category">Mounts &amp; Vehicles</set>
+			<set name="cost" currency="gp">40000</set>
+			<set name="weight" lb="0" excludeEncumbrance="true">0 lb.</set>
+			<set name="type">Vehicle</set>			
+		</setters>
+	</element>
+
+	<element name="Galley" type="Item" source="Player’s Handbook 2024" id="ID_WOTC_PHB24_ITEM_GALLEY">
+		<description>
+			<ul class="unstyled">
+				<li><b>Speed.</b> 4 mph</li>
+				<li><b>Crew.</b> 80</li>
+				<li><b>Passengers.</b> —</li>
+				<li><b>Cargo (tons).</b> 150</li>
+				<li><b>AC.</b> 15</li>
+				<li><b>HP.</b> 500</li>
+				<li><b>Damage Threshold.</b> 20</li>
+			</ul>
+		</description>
+		<setters>
+			<set name="category">Mounts &amp; Vehicles</set>
+			<set name="cost" currency="gp">30000</set>
+			<set name="weight" lb="0" excludeEncumbrance="true">0 lb.</set>
+			<set name="type">Vehicle</set>
+		</setters>
+	</element>
+
+	<element name="Keelboat" type="Item" source="Player’s Handbook 2024" id="ID_WOTC_PHB24_ITEM_KEELBOAT">
+		<description>
+			<ul class="unstyled">
+				<li><b>Speed.</b> 1 mph</li>
+				<li><b>Crew.</b> 1</li>
+				<li><b>Passengers.</b> 6</li>
+				<li><b>Cargo (tons).</b> 1/2</li>
+				<li><b>AC.</b> 15</li>
+				<li><b>HP.</b> 100</li>
+				<li><b>Damage Threshold.</b> 10</li>
+			</ul>
+		</description>
+		<setters>
+			<set name="category">Mounts &amp; Vehicles</set>
+			<set name="cost" currency="gp">3000</set>
+			<set name="weight" lb="0" excludeEncumbrance="true">0 lb.</set>
+			<set name="type">Vehicle</set>
+		</setters>
+	</element>
+
+	<element name="Longship" type="Item" source="Player’s Handbook 2024" id="ID_WOTC_PHB24_ITEM_LONGSHIP">
+		<description>
+			<ul class="unstyled">
+				<li><b>Speed.</b> 3 mph</li>
+				<li><b>Crew.</b> 40</li>
+				<li><b>Passengers.</b> 150</li>
+				<li><b>Cargo (tons).</b> 10</li>
+				<li><b>AC.</b> 15</li>
+				<li><b>HP.</b> 300</li>
+				<li><b>Damage Threshold.</b> 15</li>
+			</ul>
+		</description>
+		<setters>
+			<set name="category">Mounts &amp; Vehicles</set>
+			<set name="cost" currency="gp">10000</set>
+			<set name="weight" lb="0" excludeEncumbrance="true">0 lb.</set>
+			<set name="type">Vehicle</set>
+		</setters>
+	</element>
+
+	<element name="Rowboat" type="Item" source="Player’s Handbook 2024" id="ID_WOTC_PHB24_ITEM_ROWBOAT">
+		<description>
+			<ul class="unstyled">
+				<li><b>Speed.</b> 1½ mph</li>
+				<li><b>Crew.</b> 1</li>
+				<li><b>Passengers.</b> 3</li>
+				<li><b>Cargo (tons).</b> —</li>
+				<li><b>AC.</b> 11</li>
+				<li><b>HP.</b> 50</li>
+				<li><b>Damage Threshold.</b> —</li>
+			</ul>
+		</description>
+		<setters>
+			<set name="category">Mounts &amp; Vehicles</set>
+			<set name="cost" currency="gp">50</set>
+			<set name="weight" lb="0" excludeEncumbrance="true">0 lb.</set>
+			<set name="type">Vehicle</set>
+		</setters>
+	</element>
+
+	<element name="Sailing Ship" type="Item" source="Player’s Handbook 2024" id="ID_WOTC_PHB24_ITEM_SAILING_SHIP">
+		<description>
+			<ul class="unstyled">
+				<li><b>Speed.</b> 2 mph</li>
+				<li><b>Crew.</b> 20</li>
+				<li><b>Passengers.</b> 20</li>
+				<li><b>Cargo (tons).</b> 100</li>
+				<li><b>AC.</b> 15</li>
+				<li><b>HP.</b> 300</li>
+				<li><b>Damage Threshold.</b> 15</li>
+			</ul>
+		</description>
+		<setters>
+			<set name="category">Mounts &amp; Vehicles</set>
+			<set name="cost" currency="gp">10000</set>
+			<set name="weight" lb="0" excludeEncumbrance="true">0 lb.</set>
+			<set name="type">Vehicle</set>
+		</setters>
+	</element>
+
+	<element name="Warship" type="Item" source="Player’s Handbook 2024" id="ID_WOTC_PHB24_ITEM_WARSHIP">
+		<description>
+			<ul class="unstyled">
+				<li><b>Speed.</b> 2½ mph</li>
+				<li><b>Crew.</b> 60</li>
+				<li><b>Passengers.</b> 60</li>
+				<li><b>Cargo (tons).</b> 200</li>
+				<li><b>AC.</b> 15</li>
+				<li><b>HP.</b> 500</li>
+				<li><b>Damage Threshold.</b> 20</li>
+			</ul>
+		</description>
+		<setters>
+			<set name="category">Mounts &amp; Vehicles</set>
+			<set name="cost" currency="gp">25000</set>
+			<set name="weight" lb="0" excludeEncumbrance="true">0 lb.</set>
+			<set name="type">Vehicle</set>
+		</setters>
+	</element>
+</elements>

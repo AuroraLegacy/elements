@@ -1,0 +1,181 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<elements>
+	<info>
+		<name>Gnome</name>
+		<description>The Gnome species from the Player’s Handbook 2024.</description>
+		<author url="https://dndstore.wizards.com/us/en/product/1001494/2024-player-s-handbook-digital-plus-physical-bundle">Wizards of the Coast</author>
+		<update version="0.0.1">
+			<file name="race-gnome.xml" url="https://raw.githubusercontent.com/AuroraLegacy/elements/master/core/players-handbook-2024/races/race-gnome.xml" />
+		</update>
+	</info>
+	
+	<element name="Gnome" type="Race" source="Player’s Handbook 2024" id="ID_WOTC_PHB24_RACE_GNOME">
+		<description>
+			<p>Gnomes are magical folk created by gods of invention, illusions, and life underground. The earliest gnomes were seldom seen by other folk due to the gnomes’ secretive nature and their propensity for living in forests and burrows. What they lacked in size, they made up for in cleverness. They confounded predators with traps and labyrinthine tunnels. They also learned magic from gods like Garl Glittergold, Baervan Wildwanderer, and Baravar Cloakshadow, who visited them in disguise. That magic eventually created the lineages of forest gnomes and rock gnomes.</p>
+			<p class="indent">Gnomes are petite folk with big eyes and pointed ears, who live around 425 years. Many gnomes like the feeling of a roof over their head, even if that “roof” is nothing more than a hat.</p>
+			<h5>GNOME TRAITS</h5>
+			<ul class="unstyled" style="text-indent:-1em; margin-left:1em; margin-bottom:5px">
+				<li><strong>Creature Type:</strong> Humanoid</li>
+				<li><strong>Size:</strong> Small (about 3–4 feet tall)</li>
+				<li><strong>Speed:</strong> 30 feet</li>
+			</ul>
+			<p>As a Gnome, you have these special traits.</p>
+			<p class="indent"><strong><em>Darkvision.</em></strong> You have Darkvision with a range of 60 feet.</p> 
+			<p class="indent"><strong><em>Gnomish Cunning.</em></strong> You have Advantage on Intelligence, Wisdom, and Charisma saving throws.</p> 
+			<p class="indent" style="margin-bottom:5px"><strong><em>Gnomish Lineage.</em></strong> You are part of a lineage that grants you supernatural abilities. Choose one of the following options; whichever one you choose, Intelligence, Wisdom, or Charisma is your spellcasting ability for the spells you cast with this trait (choose the ability when you select the lineage):</p>
+			<ul class="unstyled" style="text-indent:-1em; margin-left:1em">
+				<li><strong>Forest Gnome.</strong> You know the <i>Minor Illusion</i> cantrip. You also always have the <i>Speak with Animals</i> spell prepared. You can cast it without a spell slot a number of times equal to your Proficiency Bonus, and you regain all expended uses when you finish a Long Rest. You can also use any spell slots you have to cast the spell.</li>
+				<li><strong>Rock Gnome.</strong> You know the <i>Mending</i> and <i>Prestidigitation</i> cantrips. In addition, you can spend 10 minutes casting <i>Prestidigitation</i> to create a Tiny clockwork device (AC 5,1 HP), such as a toy, fire starter, or music box. When you create the device, you determine its function by choosing one effect from <i>Prestidigitation</i>; the device produces that effect whenever you or another creature takes a Bonus Action to activate it with a touch. If the chosen effect has options within it, you choose one of those options for the device when you create it. For example, if you choose the spell’s ignite-extinguish effect, you determine whether the device ignites or extinguishes fire; the device doesn't do both. You can have three such devices in existence at a time, and each falls apart 8 hours after its creation or when you dismantle it with a touch as a Utilize action.</li>
+			</ul>
+		</description>
+		<sheet display="false" />
+		<rules>
+			<grant type="Grants" id="ID_INTERNAL_GRANT_RACE_GNOME" />
+			<select type="Ability Score Improvement" name="Ability Score Improvement Option (Gnome)" supports="Custom Ability Score Improvement Option" requirements="!ID_INTERNAL_GRANTS_BACKGROUND_ASI" />
+			<grant type="Size" id="ID_SIZE_SMALL" />
+			<stat name="speed" value="30" bonus="base" />
+
+			<grant type="Language" id="ID_WOTC_PHB24_LANGUAGE_COMMON" requirements="!ID_WOTC_TCOE_OPTION_CUSTOMIZED_LANGUAGE" />
+			<select type="Language" name="Language (Gnome)" supports="Standard" number="2" requirements="!ID_WOTC_TCOE_OPTION_CUSTOMIZED_LANGUAGE" />
+			<select type="Language" name="Customized Language (Gnome)" supports="Custom Race Language"  requirements="ID_WOTC_TCOE_OPTION_CUSTOMIZED_LANGUAGE" number="3" />
+
+			<grant type="Vision" id="ID_VISION_DARKVISION" requirements="!ID_INTERNAL_PHB24_RACIAL_TRAIT_REPLACEMENT_GNOME_DARKVISION" />
+			<grant type="Racial Trait" id="ID_WOTC_PHB24_RACIAL_TRAIT_GNOME_GNOMISH_CUNNING" />
+			<grant type="Racial Trait" id="ID_WOTC_PHB24_RACIAL_TRAIT_GNOME_GNOMISH_LINEAGE" />
+		</rules>
+	</element>
+
+	<element name="Gnomish Cunning" type="Racial Trait" source="Player’s Handbook 2024" id="ID_WOTC_PHB24_RACIAL_TRAIT_GNOME_GNOMISH_CUNNING">
+		<requirements>!ID_INTERNAL_PHB24_RACIAL_TRAIT_REPLACEMENT_GNOME_GNOMISH_CUNNING</requirements>
+		<description>
+			<p>You have Advantage on Intelligence, Wisdom, and Charisma saving throws.</p> 
+		</description>
+		<sheet>
+			<description>You have Advantage on Intelligence, Wisdom, and Charisma saving throws.</description>
+		</sheet>
+	</element>
+
+	<element name="Gnomish Lineage" type="Racial Trait" source="Player’s Handbook 2024" id="ID_WOTC_PHB24_RACIAL_TRAIT_GNOME_GNOMISH_LINEAGE">
+		<requirements>!ID_INTERNAL_PHB24_RACIAL_TRAIT_REPLACEMENT_GNOME_GNOMISH_LINEAGE</requirements>
+		<description>
+			<p>You are part of a lineage that grants you supernatural abilities. Choose one of the following options; whichever one you choose, Intelligence, Wisdom, or Charisma is your spellcasting ability for the spells you cast with this trait (choose the ability when you select the lineage):</p>
+			<ul class="unstyled" style="text-indent:-1em; margin-left:1em">
+				<li><strong>Forest Gnome.</strong> You know the <i>Minor Illusion</i> cantrip. You also always have the <i>Speak with Animals</i> spell prepared. You can cast it without a spell slot a number of times equal to your Proficiency Bonus, and you regain all expended uses when you finish a Long Rest. You can also use any spell slots you have to cast the spell.</li>
+				<li><strong>Rock Gnome.</strong> You know the <i>Mending</i> and <i>Prestidigitation</i> cantrips. In addition, you can spend 10 minutes casting <i>Prestidigitation</i> to create a Tiny clockwork device (AC 5,1 HP), such as a toy, fire starter, or music box. When you create the device, you determine its function by choosing one effect from <i>Prestidigitation</i>; the device produces that effect whenever you or another creature takes a Bonus Action to activate it with a touch. If the chosen effect has options within it, you choose one of those options for the device when you create it. For example, if you choose the spell’s ignite-extinguish effect, you determine whether the device ignites or extinguishes fire; the device doesn't do both. You can have three such devices in existence at a time, and each falls apart 8 hours after its creation or when you dismantle it with a touch as a Utilize action.</li>
+			</ul>
+		</description>
+		<sheet display="false" />
+		<rules>
+			<select type="Racial Trait" name="Gnomish Lineage" supports="Gnomish Lineage 2024" />
+		</rules>
+	</element>
+
+	<element name="Forest Gnome" type="Racial Trait" source="Player’s Handbook 2024" id="ID_WOTC_PHB24_RACIAL_TRAIT_GNOME_GNOMISH_LINEAGE_FOREST_GNOME">
+		<supports>Gnomish Lineage 2024</supports>
+		<description>
+			<p>You know the <i>Minor Illusion</i> cantrip. You also always have the <i>Speak with Animals</i> spell prepared. You can cast it without a spell slot a number of times equal to your Proficiency Bonus, and you regain all expended uses when you finish a Long Rest. You can also use any spell slots you have to cast the spell.</p>
+		</description>
+		<sheet display="false" />
+		<rules>
+			<select type="Racial Trait" name="Spellcasting Ability (Gnomish Lineage)" supports="ID_WOTC_PHB24_RACIAL_TRAIT_GNOME_GNOMISH_LINEAGE_FOREST_GNOME_INTELLIGENCE|ID_WOTC_PHB24_RACIAL_TRAIT_GNOME_GNOMISH_LINEAGE_FOREST_GNOME_WISDOM|ID_WOTC_PHB24_RACIAL_TRAIT_GNOME_GNOMISH_LINEAGE_FOREST_GNOME_CHARISMA" />
+		</rules>
+	</element>
+	<element name="Intelligence" type="Racial Trait" source="Player’s Handbook 2024" id="ID_WOTC_PHB24_RACIAL_TRAIT_GNOME_GNOMISH_LINEAGE_FOREST_GNOME_INTELLIGENCE">
+		<compendium display="false" />
+		<description>
+			<p>Intelligence is your spellcasting ability for the spells you cast with Gnomish Lineage trait.</p>
+		</description>
+		<sheet alt="Gnomish Lineage (Forest Gnome)">
+			<description>You know the Minor Illusion cantrip, and you can cast the Speak with Animals spell {{proficiency}} times per Long Rest. Intelligence is your spellcasting ability for the spells you cast with this trait. You can also cast this spell using any spell slots you have of the appropriate level.</description>
+		</sheet>
+		<rules>
+			<grant type="Spell" id="ID_WOTC_PHB24_SPELL_MINOR_ILLUSION" />
+			<grant type="Spell" id="ID_WOTC_PHB24_SPELL_SPEAK_WITH_ANIMALS" />
+		</rules>
+	</element>
+	<element name="Wisdom" type="Racial Trait" source="Player’s Handbook 2024" id="ID_WOTC_PHB24_RACIAL_TRAIT_GNOME_GNOMISH_LINEAGE_FOREST_GNOME_WISDOM">
+		<compendium display="false" />
+		<description>
+			<p>Wisdom is your spellcasting ability for the spells you cast with Gnomish Lineage trait.</p>
+		</description>
+		<sheet alt="Gnomish Lineage (Forest Gnome)">
+			<description>You know the Minor Illusion cantrip, and you can cast the Speak with Animals spell {{proficiency}} times per Long Rest. Wisdom is your spellcasting ability for the spells you cast with this trait. You can also cast this spell using any spell slots you have of the appropriate level.</description>
+		</sheet>
+		<rules>
+			<grant type="Spell" id="ID_WOTC_PHB24_SPELL_MINOR_ILLUSION" />
+			<grant type="Spell" id="ID_WOTC_PHB24_SPELL_SPEAK_WITH_ANIMALS" />
+		</rules>
+	</element>
+	<element name="Charisma" type="Racial Trait" source="Player’s Handbook 2024" id="ID_WOTC_PHB24_RACIAL_TRAIT_GNOME_GNOMISH_LINEAGE_FOREST_GNOME_CHARISMA">
+		<compendium display="false" />
+		<description>
+			<p>Charisma is your spellcasting ability for the spells you cast with Gnomish Lineage trait.</p>
+		</description>
+		<sheet alt="Gnomish Lineage (Forest Gnome)">
+			<description>You know the Minor Illusion cantrip, and you can cast the Speak with Animals spell {{proficiency}} times per Long Rest. Charisma is your spellcasting ability for the spells you cast with this trait. You can also cast this spell using any spell slots you have of the appropriate level.</description>
+		</sheet>
+		<rules>
+			<grant type="Spell" id="ID_WOTC_PHB24_SPELL_MINOR_ILLUSION" />
+			<grant type="Spell" id="ID_WOTC_PHB24_SPELL_SPEAK_WITH_ANIMALS" />
+		</rules>
+	</element>
+
+	<element name="Rock Gnome" type="Racial Trait" source="Player’s Handbook 2024" id="ID_WOTC_PHB24_RACIAL_TRAIT_GNOME_GNOMISH_LINEAGE_ROCK_GNOME">
+		<supports>Gnomish Lineage 2024</supports>
+		<description>
+			<p>You know the <i>Mending</i> and <i>Prestidigitation</i> cantrips. In addition, you can spend 10 minutes casting <i>Prestidigitation</i> to create a Tiny clockwork device (AC 5,1 HP), such as a toy, fire starter, or music box. When you create the device, you determine its function by choosing one effect from <i>Prestidigitation</i>; the device produces that effect whenever you or another creature takes a Bonus Action to activate it with a touch. If the chosen effect has options within it, you choose one of those options for the device when you create it. For example, if you choose the spell’s ignite-extinguish effect, you determine whether the device ignites or extinguishes fire; the device doesn't do both. You can have three such devices in existence at a time, and each falls apart 8 hours after its creation or when you dismantle it with a touch as a Utilize action.</p> 
+		</description>
+		<sheet display="false" />
+		<rules>
+			<select type="Racial Trait" name="Spellcasting Ability (Gnomish Lineage)" supports="ID_WOTC_PHB24_RACIAL_TRAIT_GNOME_GNOMISH_LINEAGE_ROCK_GNOME_INTELLIGENCE|ID_WOTC_PHB24_RACIAL_TRAIT_GNOME_GNOMISH_LINEAGE_ROCK_GNOME_WISDOM|ID_WOTC_PHB24_RACIAL_TRAIT_GNOME_GNOMISH_LINEAGE_ROCK_GNOME_CHARISMA" />
+		</rules>
+	</element>
+	<element name="Intelligence" type="Racial Trait" source="Player’s Handbook 2024" id="ID_WOTC_PHB24_RACIAL_TRAIT_GNOME_GNOMISH_LINEAGE_ROCK_GNOME_INTELLIGENCE">
+		<compendium display="false" />
+		<description>
+			<p>Intelligence is your spellcasting ability for the spells you cast with Gnomish Lineage trait.</p>
+		</description>
+		<sheet alt="Gnomish Lineage (Rock Gnome)">
+			<description>You know the Mending and Prestidigitation cantrips. Intelligence is your spellcasting ability for the spells you cast with this trait. &#13;
+			In addition, you can spend 10 minutes casting Prestidigitation to create a Tiny clockwork device (AC 5, 1 HP). You determine function of the device by choosing one effect from Prestidigitation; the device produces that effect whenever creature takes a Bonus Action to activate it with a touch. If the chosen effect has options within it, you can choose only one of those options for the device when you create it. You can have 3 such devices at the same time, and each falls apart 8 hours after its creation or when you dismantle it with a touch as a Utilize action.</description>
+		</sheet>
+		<rules>
+			<grant type="Spell" id="ID_WOTC_PHB24_SPELL_MENDING" />
+			<grant type="Spell" id="ID_WOTC_PHB24_SPELL_PRESTIDIGITATION" />
+		</rules>
+	</element>
+	<element name="Wisdom" type="Racial Trait" source="Player’s Handbook 2024" id="ID_WOTC_PHB24_RACIAL_TRAIT_GNOME_GNOMISH_LINEAGE_ROCK_GNOME_WISDOM">
+		<compendium display="false" />
+		<description>
+			<p>Wisdom is your spellcasting ability for the spells you cast with Gnomish Lineage trait.</p>
+		</description>
+		<sheet alt="Gnomish Lineage (Rock Gnome)">
+			<description>You know the Mending and Prestidigitation cantrips. Wisdom is your spellcasting ability for the spells you cast with this trait. &#13;
+			In addition, you can spend 10 minutes casting Prestidigitation to create a Tiny clockwork device (AC 5, 1 HP). You determine function of the device by choosing one effect from Prestidigitation; the device produces that effect whenever creature takes a Bonus Action to activate it with a touch. If the chosen effect has options within it, you can choose only one of those options for the device when you create it. You can have 3 such devices at the same time, and each falls apart 8 hours after its creation or when you dismantle it with a touch as a Utilize action.</description>
+		</sheet>
+		<rules>
+			<grant type="Spell" id="ID_WOTC_PHB24_SPELL_MENDING" />
+			<grant type="Spell" id="ID_WOTC_PHB24_SPELL_PRESTIDIGITATION" />
+		</rules>
+	</element>
+	<element name="Charisma" type="Racial Trait" source="Player’s Handbook 2024" id="ID_WOTC_PHB24_RACIAL_TRAIT_GNOME_GNOMISH_LINEAGE_ROCK_GNOME_CHARISMA">
+		<compendium display="false" />
+		<description>
+			<p>Charisma is your spellcasting ability for the spells you cast with Gnomish Lineage trait.</p>
+		</description>
+		<sheet alt="Gnomish Lineage (Rock Gnome)">
+			<description>You know the Mending and Prestidigitation cantrips. Charisma is your spellcasting ability for the spells you cast with this trait. &#13;
+			In addition, you can spend 10 minutes casting Prestidigitation to create a Tiny clockwork device (AC 5, 1 HP). You determine function of the device by choosing one effect from Prestidigitation; the device produces that effect whenever creature takes a Bonus Action to activate it with a touch. If the chosen effect has options within it, you can choose only one of those options for the device when you create it. You can have 3 such devices at the same time, and each falls apart 8 hours after its creation or when you dismantle it with a touch as a Utilize action.</description>
+		</sheet>
+		<rules>
+			<grant type="Spell" id="ID_WOTC_PHB24_SPELL_MENDING" />
+			<grant type="Spell" id="ID_WOTC_PHB24_SPELL_PRESTIDIGITATION" />
+		</rules>
+	</element>
+
+	<!--Racial Trait Replacement Grants-->
+	<element name="Darkvision Trait Replacement" type="Grants" source="Internal" id="ID_INTERNAL_PHB24_RACIAL_TRAIT_REPLACEMENT_GNOME_DARKVISION" />
+	<element name="Gnomish Cunning Trait Replacement" type="Grants" source="Internal" id="ID_INTERNAL_PHB24_RACIAL_TRAIT_REPLACEMENT_GNOME_GNOMISH_CUNNING" />
+	<element name="Gnomish Lineage Trait Replacement" type="Grants" source="Internal" id="ID_INTERNAL_PHB24_RACIAL_TRAIT_REPLACEMENT_GNOME_GNOMISH_LINEAGE" />
+
+</elements>

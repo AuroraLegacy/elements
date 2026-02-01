@@ -1,0 +1,260 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<elements>
+	<info>
+		<name>Circle of the Land</name>
+		<description>The Circle of the Land subclass from the Player’s Handbook 2024.</description>
+		<author url="https://dndstore.wizards.com/us/en/product/1001494/2024-player-s-handbook-digital-plus-physical-bundle">Wizards of the Coast</author>
+		<update version="0.0.1">
+			<file name="druid-land.xml" url="https://raw.githubusercontent.com/AuroraLegacy/elements/master/core/players-handbook-2024/archetypes/druid-land.xml" />
+		</update>
+	</info>
+
+	<element name="Circle of the Land" type="Archetype" source="Player’s Handbook 2024" id="ID_WOTC_PHB24_ARCHETYPE_DRUID_CIRCLE_OF_THE_LAND">
+		<supports>Druid Subclass</supports>
+		<description>
+			<p class="flavor">Celebrate Connection to the Natural World</p>
+			<p>The Circle of the Land comprises mystics and sages who safeguard ancient knowledge and rites. These Druids meet within sacred circles of trees or standing stones to whisper primal secrets in Druidic. The circle’s wisest members preside as the chief priests of their communities.</p>
+			<div element="ID_WOTC_PHB24_ARCHETYPE_FEATURE_DRUID_LAND_CIRCLE_OF_LAND_SPELLS" />
+			<div element="ID_WOTC_PHB24_ARCHETYPE_FEATURE_DRUID_LAND_LANDS_AID" />
+			<div element="ID_WOTC_PHB24_ARCHETYPE_FEATURE_DRUID_LAND_NATURAL_RECOVERY" />
+			<div element="ID_WOTC_PHB24_ARCHETYPE_FEATURE_DRUID_LAND_NATURES_WARD" />
+			<div element="ID_WOTC_PHB24_ARCHETYPE_FEATURE_DRUID_LAND_NATURES_SANCTUARY" />
+		</description>
+		<sheet display="false" />
+		<rules>
+			<grant type="Archetype Feature" id="ID_WOTC_PHB24_ARCHETYPE_FEATURE_DRUID_LAND_CIRCLE_OF_LAND_SPELLS" level="3" />
+			<grant type="Archetype Feature" id="ID_WOTC_PHB24_ARCHETYPE_FEATURE_DRUID_LAND_LANDS_AID" level="3" />
+			<grant type="Archetype Feature" id="ID_WOTC_PHB24_ARCHETYPE_FEATURE_DRUID_LAND_NATURAL_RECOVERY" level="6" />
+			<grant type="Archetype Feature" id="ID_WOTC_PHB24_ARCHETYPE_FEATURE_DRUID_LAND_NATURES_WARD" level="10" />
+			<grant type="Archetype Feature" id="ID_WOTC_PHB24_ARCHETYPE_FEATURE_DRUID_LAND_NATURES_SANCTUARY" level="14" />
+		</rules>
+	</element>
+
+	<element name="Level 3: Circle of the Land Spells" type="Archetype Feature" source="Player’s Handbook 2024" id="ID_WOTC_PHB24_ARCHETYPE_FEATURE_DRUID_LAND_CIRCLE_OF_LAND_SPELLS">
+		<requirements>!ID_INTERNAL_PHB24_FEATURE_REPLACEMENT_DRUID_LAND_CIRCLE_OF_LAND_SPELLS</requirements>
+		<description>
+			<p>Whenever you finish a Long Rest, choose one type of land: arid, polar, temperate, or tropical. Consult the table below that corresponds to the chosen type; you have the spells listed for your Druid level and lower prepared.</p>
+			<h5>Arid Land</h5>
+			<table class="class-features">
+				<thead>
+					<tr><td class="col-10">Druid Level</td><td class="left">Circle Spells</td></tr>
+				</thead>
+				<tr><td>3</td><td class="left"><em>Blur, Burning Hands, Fire Bolt</em></td></tr>
+				<tr><td>5</td><td class="left"><em>Fireball</em></td></tr>
+				<tr><td>7</td><td class="left"><em>Blight</em></td></tr>
+				<tr><td>9</td><td class="left"><em>Wall of Stone</em></td></tr>
+			</table>
+			<h5>Polar Land</h5>
+			<table class="class-features">
+				<thead>
+					<tr><td class="col-10">Druid Level</td><td class="left">Circle Spells</td></tr>
+				</thead>
+				<tr><td>3</td><td class="left"><em>Fog Cloud, Hold Person, Ray of Frost</em></td></tr>
+				<tr><td>5</td><td class="left"><em>Sleet Storm</em></td></tr>
+				<tr><td>7</td><td class="left"><em>Ice Storm</em></td></tr>
+				<tr><td>9</td><td class="left"><em>Cone of Cold</em></td></tr>
+			</table>
+			<h5>Temperate Land</h5>
+			<table class="class-features">
+				<thead>
+					<tr><td class="col-10">Druid Level</td><td class="left">Circle Spells</td></tr>
+				</thead>
+				<tr><td>3</td><td class="left"><em>Misty Step, Shocking Grasp, Sleep</em></td></tr>
+				<tr><td>5</td><td class="left"><em>Lightning Bolt</em></td></tr>
+				<tr><td>7</td><td class="left"><em>Freedom of Movement</em></td></tr>
+				<tr><td>9</td><td class="left"><em>Tree Stride</em></td></tr>
+			</table>
+			<h5>Tropical Land</h5>
+			<table class="class-features">
+				<thead>
+					<tr><td class="col-10">Druid Level</td><td class="left">Circle Spells</td></tr>
+				</thead>
+				<tr><td>3</td><td class="left"><em>Acid Splash, Ray of Sickness, Web</em></td></tr>
+				<tr><td>5</td><td class="left"><em>Stinking Cloud</em></td></tr>
+				<tr><td>7</td><td class="left"><em>Polymorph</em></td></tr>
+				<tr><td>9</td><td class="left"><em>Insect Plague</em></td></tr>
+			</table>
+		</description>
+		<sheet alt="Circle of the Land Spells">
+			<description>Whenever you finish a Long Rest, you can change the land type you chose to a different one.</description>
+		</sheet>
+		<rules>
+			<select type="Archetype Feature" name="Land Type (Circle of the Land Spells)" supports="Circle of Land Spells" />
+		</rules>
+	</element>
+	<element name="Arid Land" type="Archetype Feature" source="Player’s Handbook 2024" id="ID_WOTC_PHB24_ARCHETYPE_FEATURE_DRUID_LAND_CIRCLE_OF_LAND_SPELLS_ARID">
+		<supports>Circle of Land Spells</supports>
+		<description>
+			<h5>Arid Land</h5>
+			<table class="class-features">
+				<thead>
+					<tr><td class="col-10">Druid Level</td><td class="left">Circle Spells</td></tr>
+				</thead>
+				<tr><td>3</td><td class="left"><em>Blur, Burning Hands, Fire Bolt</em></td></tr>
+				<tr><td>5</td><td class="left"><em>Fireball</em></td></tr>
+				<tr><td>7</td><td class="left"><em>Blight</em></td></tr>
+				<tr><td>9</td><td class="left"><em>Wall of Stone</em></td></tr>
+			</table>
+		</description>
+		<sheet display="false" />
+		<rules>
+			<grant type="Spell" id="ID_WOTC_PHB24_SPELL_FIRE_BOLT" spellcasting="Druid" />
+			<grant type="Spell" id="ID_WOTC_PHB24_SPELL_BURNING_HANDS" spellcasting="Druid" prepared="true" />
+			<grant type="Spell" id="ID_WOTC_PHB24_SPELL_BLUR" spellcasting="Druid" prepared="true" />
+			<grant type="Spell" id="ID_WOTC_PHB24_SPELL_FIREBALL" level="5" spellcasting="Druid" prepared="true" />
+			<grant type="Spell" id="ID_WOTC_PHB24_SPELL_BLIGHT" level="7" spellcasting="Druid" prepared="true" />
+			<grant type="Spell" id="ID_WOTC_PHB24_SPELL_WALL_OF_STONE" level="9" spellcasting="Druid" prepared="true" />
+			<grant type="Condition" id="ID_INTERNAL_CONDITION_DAMAGE_RESISTANCE_FIRE" requirements="ID_WOTC_PHB24_ARCHETYPE_FEATURE_DRUID_LAND_NATURES_WARD" />
+			<stat name="circle of the land:resistance" value="fire" inline="true" />
+		</rules>
+	</element>
+	<element name="Polar Land" type="Archetype Feature" source="Player’s Handbook 2024" id="ID_WOTC_PHB24_ARCHETYPE_FEATURE_DRUID_LAND_CIRCLE_OF_LAND_SPELLS_POLAR">
+		<supports>Circle of Land Spells</supports>
+		<requirements>!ID_INTERNAL_PHB24_FEATURE_REPLACEMENT_DRUID_LAND_CIRCLE_OF_LAND_SPELLS_POLAR</requirements>
+		<description>
+			<h5>Polar Land</h5>
+			<table class="class-features">
+				<thead>
+					<tr><td class="col-10">Druid Level</td><td class="left">Circle Spells</td></tr>
+				</thead>
+				<tr><td>3</td><td class="left"><em>Fog Cloud, Hold Person, Ray of Frost</em></td></tr>
+				<tr><td>5</td><td class="left"><em>Sleet Storm</em></td></tr>
+				<tr><td>7</td><td class="left"><em>Ice Storm</em></td></tr>
+				<tr><td>9</td><td class="left"><em>Cone of Cold</em></td></tr>
+			</table>
+		</description>
+		<sheet display="false" />
+		<rules>
+			<grant type="Spell" id="ID_WOTC_PHB24_SPELL_RAY_OF_FROST" spellcasting="Druid" />
+			<grant type="Spell" id="ID_WOTC_PHB24_SPELL_FOG_CLOUD" spellcasting="Druid" prepared="true" />
+			<grant type="Spell" id="ID_WOTC_PHB24_SPELL_HOLD_PERSON" spellcasting="Druid" prepared="true" />
+			<grant type="Spell" id="ID_WOTC_PHB24_SPELL_SLEET_STORM" level="5" spellcasting="Druid" prepared="true" />
+			<grant type="Spell" id="ID_WOTC_PHB24_SPELL_ICE_STORM" level="7" spellcasting="Druid" prepared="true" />
+			<grant type="Spell" id="ID_WOTC_PHB24_SPELL_CONE_OF_COLD" level="9" spellcasting="Druid" prepared="true" />
+			<grant type="Condition" id="ID_INTERNAL_CONDITION_DAMAGE_RESISTANCE_COLD" requirements="ID_WOTC_PHB24_ARCHETYPE_FEATURE_DRUID_LAND_NATURES_WARD" />
+			<stat name="circle of the land:resistance" value="cold" inline="true" />
+		</rules>
+	</element>
+	<element name="Temperate Land" type="Archetype Feature" source="Player’s Handbook 2024" id="ID_WOTC_PHB24_ARCHETYPE_FEATURE_DRUID_LAND_CIRCLE_OF_LAND_SPELLS_TEMPERATE">
+		<supports>Circle of Land Spells</supports>
+		<requirements>!ID_INTERNAL_PHB24_FEATURE_REPLACEMENT_DRUID_LAND_CIRCLE_OF_LAND_SPELLS_TEMPERATE</requirements>
+		<description>
+			<h5>Temperate Land</h5>
+			<table class="class-features">
+				<thead>
+					<tr><td class="col-10">Druid Level</td><td class="left">Circle Spells</td></tr>
+				</thead>
+				<tr><td>3</td><td class="left"><em>Misty Step, Shocking Grasp, Sleep</em></td></tr>
+				<tr><td>5</td><td class="left"><em>Lightning Bolt</em></td></tr>
+				<tr><td>7</td><td class="left"><em>Freedom of Movement</em></td></tr>
+				<tr><td>9</td><td class="left"><em>Tree Stride</em></td></tr>
+			</table>
+		</description>
+		<sheet display="false" />
+		<rules>
+			<grant type="Spell" id="ID_WOTC_PHB24_SPELL_SHOCKING_GRASP" spellcasting="Druid" />
+			<grant type="Spell" id="ID_WOTC_PHB24_SPELL_SLEEP" spellcasting="Druid" prepared="true" />
+			<grant type="Spell" id="ID_WOTC_PHB24_SPELL_MISTY_STEP" spellcasting="Druid" prepared="true" />
+			<grant type="Spell" id="ID_WOTC_PHB24_SPELL_LIGHTNING_BOLT" level="5" spellcasting="Druid" prepared="true" />
+			<grant type="Spell" id="ID_WOTC_PHB24_SPELL_FREEDOM_OF_MOVEMENT" level="7" spellcasting="Druid" prepared="true" />
+			<grant type="Spell" id="ID_WOTC_PHB24_SPELL_TREE_STRIDE" level="9" spellcasting="Druid" prepared="true" />
+			<grant type="Condition" id="ID_INTERNAL_CONDITION_DAMAGE_RESISTANCE_LIGHTNING" requirements="ID_WOTC_PHB24_ARCHETYPE_FEATURE_DRUID_LAND_NATURES_WARD" />
+			<stat name="circle of the land:resistance" value="lightning" inline="true" />
+		</rules>
+	</element>
+	<element name="Tropical Land" type="Archetype Feature" source="Player’s Handbook 2024" id="ID_WOTC_PHB24_ARCHETYPE_FEATURE_DRUID_LAND_CIRCLE_OF_LAND_SPELLS_TROPICAL">
+		<supports>Circle of Land Spells</supports>
+		<requirements>!ID_INTERNAL_PHB24_FEATURE_REPLACEMENT_DRUID_LAND_CIRCLE_OF_LAND_SPELLS_TROPICAL</requirements>
+		<description>
+			<h5>Tropical Land</h5>
+			<table class="class-features">
+				<thead>
+					<tr><td class="col-10">Druid Level</td><td class="left">Circle Spells</td></tr>
+				</thead>
+				<tr><td>3</td><td class="left"><em>Acid Splash, Ray of Sickness, Web</em></td></tr>
+				<tr><td>5</td><td class="left"><em>Stinking Cloud</em></td></tr>
+				<tr><td>7</td><td class="left"><em>Polymorph</em></td></tr>
+				<tr><td>9</td><td class="left"><em>Insect Plague</em></td></tr>
+			</table>
+		</description>
+		<sheet display="false" />
+		<rules>
+			<grant type="Spell" id="ID_WOTC_PHB24_SPELL_ACID_SPLASH" spellcasting="Druid" />
+			<grant type="Spell" id="ID_WOTC_PHB24_SPELL_RAY_OF_SICKNESS" spellcasting="Druid" prepared="true" />
+			<grant type="Spell" id="ID_WOTC_PHB24_SPELL_WEB" spellcasting="Druid" prepared="true" />
+			<grant type="Spell" id="ID_WOTC_PHB24_SPELL_STINKING_CLOUD" level="5" spellcasting="Druid" prepared="true" />
+			<grant type="Spell" id="ID_WOTC_PHB24_SPELL_POLYMORPH" level="7" spellcasting="Druid" prepared="true" />
+			<grant type="Spell" id="ID_WOTC_PHB24_SPELL_INSECT_PLAGUE" level="9" spellcasting="Druid" prepared="true" />
+			<grant type="Condition" id="ID_INTERNAL_CONDITION_DAMAGE_RESISTANCE_POISON" requirements="ID_WOTC_PHB24_ARCHETYPE_FEATURE_DRUID_LAND_NATURES_WARD" />
+			<stat name="circle of the land:resistance" value="poison" inline="true" />
+		</rules>
+	</element>
+	
+	<element name="Level 3: Land’s Aid" type="Archetype Feature" source="Player’s Handbook 2024" id="ID_WOTC_PHB24_ARCHETYPE_FEATURE_DRUID_LAND_LANDS_AID">
+		<requirements>!ID_INTERNAL_PHB24_FEATURE_REPLACEMENT_DRUID_LAND_LANDS_AID</requirements>
+		<description>
+			<p>As a Magic action, you can expend a use of your Wild Shape and choose a point within 60 feet of yourself. Vitality-giving flowers and life-draining thorns appear for a moment in a 10-foot-radius Sphere centered on that point. Each creature of your choice in the Sphere must make a Constitution saving throw against your spell save DC, taking 2d6 Necrotic damage on a failed save or half as much damage on a successful one. One creature of your choice in that area regains 2d6 Hit Points.</p>
+			<p class="indent">The damage and healing increase by 1d6 when you reach Druid levels 10 (3d6) and 14 (4d6).</p>
+		</description>
+		<sheet alt="Land’s Aid" action="Action" usage="Wild Shape">
+			<description>Select a point within 60 feet of yourself. Each creature of your choice within 10 feet of that point must make a DC{{druid:spellcasting:dc}} Constitution saving throw, taking {{land aid:dice count}}d6 Necrotic damage on a failed save or half as much on a successful one. One creature of your choice in that area regains {{land aid:dice count}}d6 Hit Points.</description>
+		</sheet>
+		<rules>
+			<stat name="land aid:dice count" value="2" bonus="base" />
+			<stat name="land aid:dice count" value="3" bonus="base" level="10" />
+			<stat name="land aid:dice count" value="4" bonus="base" level="14" />
+		</rules>
+	</element>
+
+	<element name="Level 6: Natural Recovery" type="Archetype Feature" source="Player’s Handbook 2024" id="ID_WOTC_PHB24_ARCHETYPE_FEATURE_DRUID_LAND_NATURAL_RECOVERY">
+		<requirements>!ID_INTERNAL_PHB24_FEATURE_REPLACEMENT_DRUID_LAND_NATURAL_RECOVERY</requirements>
+		<description>
+			<p>You can cast one of the level 1+ spells that you have prepared from your Circle Spells feature without expending a spell slot, and you must finish a Long Rest before you do so again.</p>
+			<p class="indent">In addition, when you finish a Short Rest, you can choose expended spell slots to recover. The spell slots can have a combined level that is equal to or less than half your Druid level (round up), and none of them can be level 6+. For example, if you’re a level 6 Druid, you can recover up to three levels’ worth of spell slots. You can recover a level 3 spell slot, a level 2 and a level 1 spell slot, or three level 1 spell slots. Once you recover spell slots with this feature, you can’t do so again until you finish a Long Rest.</p>
+		</description>
+		<sheet alt="Natural Recovery" usage="1/Long Rest" >
+			<description>You can cast one of your Circle Spells without expending a spell slot. &#13;
+			Additionally, once per day when you finish a Short Rest, you can choose expended spell slots up to 5th level to recover. The spell slots can have a combined level that is equal to or less than {{level:druid:half:up}}.</description>
+		</sheet>
+	</element>
+
+	<element name="Level 10: Nature’s Ward" type="Archetype Feature" source="Player’s Handbook 2024" id="ID_WOTC_PHB24_ARCHETYPE_FEATURE_DRUID_LAND_NATURES_WARD">
+		<requirements>!ID_INTERNAL_PHB24_FEATURE_REPLACEMENT_DRUID_LAND_NATURES_WARD</requirements>
+		<description>
+			<p>You are immune to the Poisoned condition, and you have Resistance to a damage type associated with your current land choice in the Circle Spells feature, as shown in the Nature’s Ward table.</p>
+			<h5>Nature’s Ward</h5>
+			<table>
+				<thead>
+					<tr><td>Land Type</td><td>Resistance</td></tr>
+				</thead>
+				<tr><td>Arid</td><td><em>Fire</em></td></tr>
+				<tr><td>Polar</td><td><em>Cold</em></td></tr>
+				<tr><td>Temperate</td><td><em>Lightning</em></td></tr>
+				<tr><td>Tropical</td><td><em>Poison</em></td></tr>
+			</table>
+		</description>
+		<sheet alt="Nature’s Ward">
+			<description>You are immune to the Poisoned Condition.</description>
+		</sheet>
+	</element>
+
+	<element name="Level 14: Nature’s Sanctuary" type="Archetype Feature" source="Player’s Handbook 2024" id="ID_WOTC_PHB24_ARCHETYPE_FEATURE_DRUID_LAND_NATURES_SANCTUARY">
+		<requirements>!ID_INTERNAL_PHB24_FEATURE_REPLACEMENT_DRUID_LAND_NATURES_SANCTUARY</requirements>
+		<description>
+			<p>As a Magic action, you can expend a use of your Wild Shape and cause spectral trees and vines to appear in a 15-foot Cube on the ground within 120 feet of yourself. They last there for 1 minute or until you have the Incapacitated condition or die. You and your allies have Half Cover while in that area, and your allies gain the current Resistance of your Nature’s Ward while there.</p>
+			<p class="indent">As a Bonus Action, you can move the Cube up to 60 feet to ground within 120 feet of yourself.</p>
+		</description>
+		<sheet alt="Nature’s Sanctuary" action="Action" usage="Wild Shape">
+			<description>You cause spectral trees and vines to appear in a 15-foot Cube on the ground within 120 feet of yourself, granting you and your allies Half Cover and Resistance to {{circle of the land:resistance}} damage while within the Cube. It lasts for 1 minute or until you have the Incapacitated condition or die. &#13;
+			As a Bonus Action, you can move the Cube up to 60 feet to ground within 120 feet of yourself.</description>
+		</sheet>
+	</element>
+
+	<!--Feature Replacement Grants-->
+	<element name="Circle of the Land Spells Feature Replacement" type="Grants" source="Internal" id="ID_INTERNAL_PHB24_FEATURE_REPLACEMENT_DRUID_LAND_CIRCLE_OF_LAND_SPELLS" />
+	<element name="Land’s Aid Feature Replacement" type="Grants" source="Internal" id="ID_INTERNAL_PHB24_FEATURE_REPLACEMENT_DRUID_LAND_LANDS_AID" />
+	<element name="Natural Recovery Feature Replacement" type="Grants" source="Internal" id="ID_INTERNAL_PHB24_FEATURE_REPLACEMENT_DRUID_LAND_NATURAL_RECOVERY" />
+	<element name="Nature’s Ward Feature Replacement" type="Grants" source="Internal" id="ID_INTERNAL_PHB24_FEATURE_REPLACEMENT_DRUID_LAND_NATURES_WARD" />
+	<element name="Nature’s Sanctuary Feature Replacement" type="Grants" source="Internal" id="ID_INTERNAL_PHB24_FEATURE_REPLACEMENT_DRUID_LAND_NATURES_SANCTUARY" />
+
+</elements>

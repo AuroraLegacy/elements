@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<elements>
+	<info>
+		<name>Path of the Zealot</name>
+		<description>The Path of the Zealot subclass from the Player’s Handbook 2024.</description>
+		<author url="https://dndstore.wizards.com/us/en/product/1001494/2024-player-s-handbook-digital-plus-physical-bundle">Wizards of the Coast</author>
+		<update version="0.0.1">
+			<file name="barbarian-zealot.xml" url="https://raw.githubusercontent.com/AuroraLegacy/elements/master/core/players-handbook-2024/archetypes/barbarian-zealot.xml" />
+		</update>
+	</info>
+
+	<element name="Path of the Zealot" type="Archetype" source="Player’s Handbook 2024" id="ID_WOTC_PHB24_ARCHETYPE_BARBARIAN_ZEALOT">
+		<supports>Barbarian Subclass</supports>
+		<description>
+			<p class="flavor">Rage in Ecstatic Union with a God</p>
+			<p>Barbarians who walk the Path of the Zealot receive boons from a god or pantheon. These Barbarians experience their Rage as an ecstatic episode of divine union that infuses them with power. They are often allies to the priests and other followers of their god or pantheon.</p>
+			<div element="ID_WOTC_PHB24_ARCHETYPE_FEATURE_BARBARIAN_ZEALOT_DIVINE_FURY" />
+			<div element="ID_WOTC_PHB24_ARCHETYPE_FEATURE_BARBARIAN_ZEALOT_WARRIOR_OF_THE_GODS"/>
+			<div element="ID_WOTC_PHB24_ARCHETYPE_FEATURE_BARBARIAN_ZEALOT_FANATICAL_FOCUS" />
+			<div element="ID_WOTC_PHB24_ARCHETYPE_FEATURE_BARBARIAN_ZEALOT_ZEALOUS_PRESENCE" />
+			<div element="ID_WOTC_PHB24_ARCHETYPE_FEATURE_BARBARIAN_ZEALOT_RAGE_OF_THE_GODS" />
+		</description>
+		<sheet display="false" />
+		<rules>
+			<grant type="Archetype Feature" id="ID_WOTC_PHB24_ARCHETYPE_FEATURE_BARBARIAN_ZEALOT_DIVINE_FURY" level="3" />
+			<grant type="Archetype Feature" id="ID_WOTC_PHB24_ARCHETYPE_FEATURE_BARBARIAN_ZEALOT_WARRIOR_OF_THE_GODS" level="3" />
+			<grant type="Archetype Feature" id="ID_WOTC_PHB24_ARCHETYPE_FEATURE_BARBARIAN_ZEALOT_FANATICAL_FOCUS" level="6" />
+			<grant type="Archetype Feature" id="ID_WOTC_PHB24_ARCHETYPE_FEATURE_BARBARIAN_ZEALOT_ZEALOUS_PRESENCE" level="10" />
+			<grant type="Archetype Feature" id="ID_WOTC_PHB24_ARCHETYPE_FEATURE_BARBARIAN_ZEALOT_RAGE_OF_THE_GODS" level="14" />
+		</rules>
+	</element>
+
+	<element name="Level 3: Divine Fury" type="Archetype Feature" source="Player’s Handbook 2024" id="ID_WOTC_PHB24_ARCHETYPE_FEATURE_BARBARIAN_ZEALOT_DIVINE_FURY">
+		<requirements>!ID_INTERNAL_PHB24_FEATURE_REPLACEMENT_BARBARIAN_ZEALOT_DIVINE_FURY</requirements>
+		<description>
+			<p>You can channel divine power into your strikes. On each of your turns while your Rage is active, the first creature you hit with a weapon or an Unarmed Strike takes extra damage equal to 1d6 plus half your Barbarian level (round down). The extra damage is Necrotic or Radiant; you choose the type each time you deal the damage.</p>
+		</description>
+		<sheet alt="Divine Fury">
+			<description>On your turn while your Rage is active, the first creature you hit takes an extra 1d6+{{level:barbarian:half}} Necrotic or Radiant damage (your choice).</description>
+		</sheet>
+	</element>
+
+	<element name="Level 3: Warrior of the Gods" type="Archetype Feature" source="Player’s Handbook 2024" id="ID_WOTC_PHB24_ARCHETYPE_FEATURE_BARBARIAN_ZEALOT_WARRIOR_OF_THE_GODS">
+		<requirements>!ID_INTERNAL_PHB24_FEATURE_REPLACEMENT_BARBARIAN_ZEALOT_WARRIOR_OF_THE_GODS</requirements>
+		<description>
+			<p>A divine entity helps ensure you can continue the fight. You have a pool of four d12s that you can spend to heal yourself. As a Bonus Action, you can expend dice from the pool, roll them, and regain a number of Hit Points equal to the roll’s total.</p>
+			<p class="indent">Your pool regains all expended dice when you finish a Long Rest.</p>
+			<p class="indent">The pool’s maximum number of dice increases by one when you reach Barbarian levels 6 (5 dice), 12 (6 dice), and 17 (7 dice).</p>
+		</description>
+		<sheet alt="Warrior of the Gods" action="Bonus Action" usage="{{warrior of the gods:count}}d12/Long Rest">
+			<description>You can expend dice from your pool of healing and regain a number of Hit Points equal to the roll’s total.</description>
+		</sheet>
+		<rules>
+			<stat name="warrior of the gods:count" value="4" bonus="base" />
+			<stat name="warrior of the gods:count" value="5" bonus="base" level="6" />
+			<stat name="warrior of the gods:count" value="6" bonus="base" level="12" />
+			<stat name="warrior of the gods:count" value="7" bonus="base" level="17" />
+		</rules>
+	</element>
+
+	<element name="Level 6: Fanatical Focus" type="Archetype Feature" source="Player’s Handbook 2024" id="ID_WOTC_PHB24_ARCHETYPE_FEATURE_BARBARIAN_ZEALOT_FANATICAL_FOCUS">
+		<requirements>!ID_INTERNAL_PHB24_FEATURE_REPLACEMENT_BARBARIAN_ZEALOT_FANATICAL_FOCUS</requirements>
+		<description>
+			<p>Once per active Rage, if you fail a saving throw, you can reroll it with a bonus equal to your Rage Damage bonus, and you must use the new roll.</p>
+		</description>
+		<sheet alt="Fanatical Focus" usage="1/Rage">
+			<description>If you fail a saving throw while your Rage is active, you can reroll it and add {{barbarian rage:damage}} to the total. You must use the new roll.</description>
+		</sheet>
+	</element>
+
+	<element name="Level 10: Zealous Presence" type="Archetype Feature" source="Player’s Handbook 2024" id="ID_WOTC_PHB24_ARCHETYPE_FEATURE_BARBARIAN_ZEALOT_ZEALOUS_PRESENCE">
+		<requirements>!ID_INTERNAL_PHB24_FEATURE_REPLACEMENT_BARBARIAN_ZEALOT_ZEALOUS_PRESENCE</requirements>
+		<description>
+			<p>As a Bonus Action, you unleash a battle cry infused with divine energy. Up to ten other creatures of your choice within 60 feet of you gain Advantage on attack rolls and saving throws until the start of your next turn.</p>
+			<p class="indent">Once you use this feature, you can’t use it again until you finish a Long Rest unless you expend a use of your Rage (no action required) to restore your use of it.</p>
+		</description>
+		<sheet alt="Zealous Presence" action="Bonus Action" usage="1/Long Rest">
+			<description>Choose up to 10 other creatures within 60ft of you. They gain Advantage on attack rolls and saving throws until the start of your next turn. &#13;
+			You can expend one use of your Rage (no action required) to restore a use of this feature.</description>
+		</sheet>
+	</element>
+
+	<element name="Level 14: Rage of the Gods" type="Archetype Feature" source="Player’s Handbook 2024" id="ID_WOTC_PHB24_ARCHETYPE_FEATURE_BARBARIAN_ZEALOT_RAGE_OF_THE_GODS">
+		<requirements>!ID_INTERNAL_PHB24_FEATURE_REPLACEMENT_BARBARIAN_ZEALOT_RAGE_OF_THE_GODS</requirements>
+		<description>
+			<p>When you activate your Rage, you can assume the form of a divine warrior. This form lasts for 1 minute or until you drop to 0 Hit Points. Once you use this feature, you can’t do so again until you finish a Long Rest.</p>
+			<p>While in this form, you gain the benefits below.</p>
+			<p class="indent"><em><strong>Flight.</strong></em> You have a Fly Speed equal to your Speed and can hover.</p>
+			<p class="indent"><em><strong>Resistance.</strong></em> You have Resistance to Necrotic, Psychic, and Radiant damage.</p>
+			<p class="indent"><em><strong>Revivification.</strong></em> When a creature within 30 feet of you would drop to 0 Hit Points, you can take a Reaction to expend a use of your Rage to instead change the target’s Hit Points to a number equal to your Barbarian level.</p>
+		</description>
+		<sheet alt="Rage of the Gods" usage="1/Long Rest">
+			<description>When you activate your Rage, you can assume the form of a divine warrior, and gain the following benefits: You have a Resistance to Necrotic, Psychic, and Radiant damage, {{speed}}ft. Flying Speed and can hover; When a creature within 30 feet of you would drop to 0 Hit Points, you can take a Reaction to expend a use of your Rage and instead change the target’s Hit Points to {{level:barbarian}}. &#13;
+			This form lasts for 1 minute or until you drop to 0 Hit Points.</description>
+		</sheet>
+	</element>
+
+	<!--Feature Replacement Grants-->
+	<element name="Divine Fury Feature Replacement" type="Grants" source="Internal" id="ID_INTERNAL_PHB24_FEATURE_REPLACEMENT_BARBARIAN_ZEALOT_DIVINE_FURY" />
+	<element name="Warrior of the Gods Feature Replacement" type="Grants" source="Internal" id="ID_INTERNAL_PHB24_FEATURE_REPLACEMENT_BARBARIAN_ZEALOT_WARRIOR_OF_THE_GODS" />
+	<element name="Fanatical Focus Feature Replacement" type="Grants" source="Internal" id="ID_INTERNAL_PHB24_FEATURE_REPLACEMENT_BARBARIAN_ZEALOT_FANATICAL_FOCUS" />
+	<element name="Zealous Presence Feature Replacement" type="Grants" source="Internal" id="ID_INTERNAL_PHB24_FEATURE_REPLACEMENT_BARBARIAN_ZEALOT_ZEALOUS_PRESENCE" />
+	<element name="Rage of the Gods Feature Replacement" type="Grants" source="Internal" id="ID_INTERNAL_PHB24_FEATURE_REPLACEMENT_BARBARIAN_ZEALOT_RAGE_OF_THE_GODS" />
+
+</elements>
