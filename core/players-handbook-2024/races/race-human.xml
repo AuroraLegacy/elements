@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<elements>
+	<info>
+		<name>Human</name>
+		<description>The Human species from the Player’s Handbook 2024.</description>
+		<author url="https://dndstore.wizards.com/us/en/product/1001494/2024-player-s-handbook-digital-plus-physical-bundle">Wizards of the Coast</author>
+		<update version="0.0.1">
+			<file name="race-human.xml" url="https://raw.githubusercontent.com/AuroraLegacy/elements/master/core/players-handbook-2024/races/race-human.xml" />
+		</update>
+	</info>
+	
+	<element name="Human" type="Race" source="Player’s Handbook 2024" id="ID_WOTC_PHB24_RACE_HUMAN">
+		<description>
+			<p>Found throughout the multiverse, humans are as varied as they are numerous, and they endeavor to achieve as much as they can in the years they are given. Their ambition and resourcefulness are commended, respected, and feared on many worlds.</p>
+			<p class="indent">Humans are as diverse in appearance as the people of Earth, and they have many gods. Scholars dispute the origin of humanity, but one of the earliest known human gatherings is said to have occurred in Sigil, the torus-shaped city at the center of the multiverse and the place where the Common language was born. From there, humans could have spread to every part of the multiverse, bringing the City of Doors’ cosmopolitanism with them.</p>
+			<h5>HUMAN TRAITS</h5>
+			<ul class="unstyled" style="text-indent:-1em; margin-left:1em; margin-bottom:5px">
+				<li><strong>Creature Type:</strong> Humanoid</li>
+				<li><strong>Size:</strong> Medium (about 4–7 feet tall) or Small (about 2–4 feet tall), chosen when you select this species</li>
+				<li><strong>Speed:</strong> 30 feet</li>
+			</ul>
+			<p>As a Human, you have these special traits.</p>
+			<p class="indent"><strong><em>Resourceful.</em></strong> You gain Heroic Inspiration whenever you finish a Long Rest.</p>
+			<p class="indent"><strong><em>Skillful.</em></strong> You gain proficiency in one skill of your choice.</p> 
+			<p class="indent"><strong><em>Versatile.</em></strong> You gain an Origin feat of your choice. Skilled is recommended.</p> 
+		</description>
+		<sheet display="false" />
+		<rules>
+			<grant type="Grants" id="ID_INTERNAL_GRANT_RACE_HUMAN" />
+			<select type="Ability Score Improvement" name="Ability Score Improvement Option (Human)" supports="Custom Ability Score Improvement Option" requirements="!ID_INTERNAL_GRANTS_BACKGROUND_ASI" />
+			<select type="Racial Trait" name="Size (Human)" supports="ID_INTERNAL_RACIAL_TRAIT_SMALL|ID_INTERNAL_RACIAL_TRAIT_MEDIUM" />
+			<stat name="speed" value="30" bonus="base" />
+
+			<grant type="Language" id="ID_WOTC_PHB24_LANGUAGE_COMMON" requirements="!ID_WOTC_TCOE_OPTION_CUSTOMIZED_LANGUAGE" />
+			<select type="Language" name="Language (Human)" supports="Standard" number="2" requirements="!ID_WOTC_TCOE_OPTION_CUSTOMIZED_LANGUAGE" />
+			<select type="Language" name="Customized Language (Human)" supports="Custom Race Language"  requirements="ID_WOTC_TCOE_OPTION_CUSTOMIZED_LANGUAGE" number="3" />
+
+			<grant type="Racial Trait" id="ID_WOTC_PHB24_RACIAL_TRAIT_HUMAN_RESOURCEFUL" />
+			<grant type="Racial Trait" id="ID_WOTC_PHB24_RACIAL_TRAIT_HUMAN_SKILLFUL" />
+			<grant type="Racial Trait" id="ID_WOTC_PHB24_RACIAL_TRAIT_HUMAN_VERSATILE" />
+		</rules>
+	</element>
+
+	<element name="Resourceful" type="Racial Trait" source="Player’s Handbook 2024" id="ID_WOTC_PHB24_RACIAL_TRAIT_HUMAN_RESOURCEFUL">
+		<requirements>!ID_INTERNAL_PHB24_RACIAL_TRAIT_REPLACEMENT_HUMAN_RESOURCEFUL</requirements>
+		<description>
+			<p>You gain Heroic Inspiration whenever you finish a Long Rest.</p> 
+		</description>
+		<sheet>
+			<description>You gain Heroic Inspiration whenever you finish a Long Rest.</description>
+		</sheet>
+	</element>
+
+	<element name="Skillful" type="Racial Trait" source="Player’s Handbook 2024" id="ID_WOTC_PHB24_RACIAL_TRAIT_HUMAN_SKILLFUL">
+		<requirements>!ID_INTERNAL_PHB24_RACIAL_TRAIT_REPLACEMENT_HUMAN_SKILLFUL</requirements>
+		<description>
+			<p>You gain proficiency in one skill of your choice.</p> 
+		</description>
+		<sheet display="false" />
+		<rules>
+			<select type="Proficiency" name="Skill Proficiency (Skillful)" supports="Skill" />
+		</rules>
+	</element>
+
+	<element name="Versatile" type="Racial Trait" source="Player’s Handbook 2024" id="ID_WOTC_PHB24_RACIAL_TRAIT_HUMAN_VERSATILE">
+		<requirements>!ID_INTERNAL_PHB24_RACIAL_TRAIT_REPLACEMENT_HUMAN_VERSATILE</requirements>
+		<description>
+			<p>You gain an Origin feat of your choice. Skilled is recommended.</p> 
+		</description>
+		<sheet display="false" />
+		<rules>
+			<select type="Feat" name="Feat (Versatile)" supports="Origin" />
+		</rules>
+	</element>
+
+	<!--Racial Trait Replacement Grants-->
+	<element name="Resourceful Trait Replacement" type="Grants" source="Internal" id="ID_INTERNAL_PHB24_RACIAL_TRAIT_REPLACEMENT_HUMAN_RESOURCEFUL" />
+	<element name="Skillful Trait Replacement" type="Grants" source="Internal" id="ID_INTERNAL_PHB24_RACIAL_TRAIT_REPLACEMENT_HUMAN_SKILLFUL" />
+	<element name="Versatile Trait Replacement" type="Grants" source="Internal" id="ID_INTERNAL_PHB24_RACIAL_TRAIT_REPLACEMENT_HUMAN_VERSATILE" />
+
+</elements>

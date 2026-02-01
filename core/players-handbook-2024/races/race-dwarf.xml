@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<elements>
+	<info>
+		<name>Dwarf</name>
+		<description>The Dwarf species from the Player’s Handbook 2024.</description>
+		<author url="https://dndstore.wizards.com/us/en/product/1001494/2024-player-s-handbook-digital-plus-physical-bundle">Wizards of the Coast</author>
+		<update version="0.0.1">
+			<file name="race-dwarf.xml" url="https://raw.githubusercontent.com/AuroraLegacy/elements/master/core/players-handbook-2024/races/race-dwarf.xml" />
+		</update>
+	</info>
+	
+	<element name="Dwarf" type="Race" source="Player’s Handbook 2024" id="ID_WOTC_PHB24_RACE_DWARF">
+		<description>
+			<p>Dwarves were raised from the earth in the elder days by a deity of the forge. Called by various names on different worlds—Moradin, Reorx, and others—that god gave dwarves an affinity for stone and metal and for living underground. The god also made them resilient like the mountains, with a life span of about 350 years.</p>
+			<p class="indent">Squat and often bearded, the original dwarves carved cities and strongholds into mountainsides and under the earth. Their oldest legends tell of conflicts with the monsters of mountaintops and the Underdark, whether those monsters were towering giants or subterranean horrors. Inspired by those tales, dwarves of any culture often sing of valorous deeds—especially of the little overcoming the mighty.</p>
+			<p class="indent">On some worlds in the multiverse, the first settlements of dwarves were built in hills or mountains, and the families who trace their ancestry to those settlements call themselves hill dwarves or mountain dwarves, respectively. The Greyhawk and Dragonlance settings have such communities.</p>
+			<h5>DWARF TRAITS</h5>
+			<ul class="unstyled" style="text-indent:-1em; margin-left:1em; margin-bottom:5px">
+				<li><strong>Creature Type:</strong> Humanoid</li>
+				<li><strong>Size:</strong> Medium (about 4–5 feet tall)</li>
+				<li><strong>Speed:</strong> 30 feet</li>
+			</ul>
+			<p>As a Dwarf, you have these special traits.</p>
+			<p class="indent"><strong><em>Darkvision.</em></strong> You have Darkvision with a range of 120 feet.</p>
+			<p class="indent"><strong><em>Dwarven Resilience.</em></strong> You have Resistance to Poison damage. You also have Advantage on saving throws you make to avoid or end the Poisoned condition.</p> 
+			<p class="indent"><strong><em>Dwarven Toughness.</em></strong> Your Hit Point maximum increases by 1, and it increases by 1 again whenever you gain a level.</p> 
+			<p class="indent"><strong><em>Stonecunning.</em></strong> As a Bonus Action, you gain Tremorsense with a range of 60 feet for 10 minutes. You must be on a stone surface or touching a stone surface to use this Tremorsense. The stone can be natural or worked.</p>
+			<p class="indent">You can use this Bonus Action a number of times equal to your Proficiency Bonus, and you regain all expended uses when you finish a Long Rest.</p>
+		</description>
+		<sheet display="false" />
+		<rules>
+			<grant type="Grants" id="ID_INTERNAL_GRANT_RACE_DWARF" />
+			<select type="Ability Score Improvement" name="Ability Score Improvement Option (Dwarf)" supports="Custom Ability Score Improvement Option" requirements="!ID_INTERNAL_GRANTS_BACKGROUND_ASI" />
+			<grant type="Size" id="ID_SIZE_MEDIUM" />
+			<stat name="speed" value="30" bonus="base" />
+
+			<grant type="Language" id="ID_WOTC_PHB24_LANGUAGE_COMMON" requirements="!ID_WOTC_TCOE_OPTION_CUSTOMIZED_LANGUAGE" />
+			<select type="Language" name="Language (Dwarf)" supports="Standard" number="2" requirements="!ID_WOTC_TCOE_OPTION_CUSTOMIZED_LANGUAGE" />
+			<select type="Language" name="Customized Language (Dwarf)" supports="Custom Race Language"  requirements="ID_WOTC_TCOE_OPTION_CUSTOMIZED_LANGUAGE" number="3" />
+
+			<grant type="Vision" id="ID_VISION_DARKVISION" requirements="!ID_INTERNAL_PHB24_RACIAL_TRAIT_REPLACEMENT_DWARF_DARKVISION" />
+			<stat name="darkvision:range" value="120" requirements="!ID_INTERNAL_PHB24_RACIAL_TRAIT_REPLACEMENT_DWARF_DARKVISION" bonus="base" />
+			<grant type="Racial Trait" id="ID_WOTC_PHB24_RACIAL_TRAIT_DWARF_DWARVEN_RESILIENCE" />
+			<grant type="Racial Trait" id="ID_WOTC_PHB24_RACIAL_TRAIT_DWARF_DWARVEN_TOUGHNESS" />
+			<grant type="Racial Trait" id="ID_WOTC_PHB24_RACIAL_TRAIT_DWARF_STONECUNNING" />
+		</rules>
+	</element>
+
+	<element name="Dwarven Resilience" type="Racial Trait" source="Player’s Handbook 2024" id="ID_WOTC_PHB24_RACIAL_TRAIT_DWARF_DWARVEN_RESILIENCE">
+		<requirements>!ID_INTERNAL_PHB24_RACIAL_TRAIT_REPLACEMENT_DWARF_DWARVEN_RESILIENCE</requirements>
+		<description>
+			<p>You have Resistance to Poison damage. You also have Advantage on saving throws you make to avoid or end the Poisoned condition.</p>
+		</description>
+		<sheet>
+			<description>You have Advantage on saving throws you make to avoid or end the Poisoned condition.</description>
+		</sheet>
+		<rules>
+			<grant type="Condition" id="ID_INTERNAL_CONDITION_DAMAGE_RESISTANCE_POISON" />
+		</rules>
+	</element>
+
+	<element name="Dwarven Toughness" type="Racial Trait" source="Player’s Handbook 2024" id="ID_WOTC_PHB24_RACIAL_TRAIT_DWARF_DWARVEN_TOUGHNESS">
+		<requirements>!ID_INTERNAL_PHB24_RACIAL_TRAIT_REPLACEMENT_DWARF_DWARVEN_TOUGHNESS</requirements>
+		<description>
+			<p>Your Hit Point maximum increases by 1, and it increases by 1 again whenever you gain a level.</p>
+		</description>
+		<sheet display="false" />
+		<rules>
+			<stat name="hp" value="level" />
+		</rules>
+	</element>
+
+	<element name="Stonecunning" type="Racial Trait" source="Player’s Handbook 2024" id="ID_WOTC_PHB24_RACIAL_TRAIT_DWARF_STONECUNNING">
+		<requirements>!ID_INTERNAL_PHB24_RACIAL_TRAIT_REPLACEMENT_DWARF_STONECUNNING</requirements>
+		<description>
+			<p>As a Bonus Action, you gain Tremorsense with a range of 60 feet for 10 minutes. You must be on a stone surface or touching a stone surface to use this Tremorsense. The stone can be natural or worked.</p>
+			<p class="indent">You can use this Bonus Action a number of times equal to your Proficiency Bonus, and you regain all expended uses when you finish a Long Rest.</p>
+		</description>
+		<sheet action="Bonus Action" usage="{{proficiency}}/Long Rest">
+			<description>You gain Tremorsense with a range of 60 feet for 10 minutes. You must be on a stone surface or touching a stone surface to use this Tremorsense. The stone can be natural or worked.</description>
+		</sheet>
+	</element>
+
+	<!--Racial Trait Replacement Grants-->
+	<element name="Darkvision Trait Replacement" type="Grants" source="Internal" id="ID_INTERNAL_PHB24_RACIAL_TRAIT_REPLACEMENT_DWARF_DARKVISION" />
+	<element name="Dwarven Resilience Trait Replacement" type="Grants" source="Internal" id="ID_INTERNAL_PHB24_RACIAL_TRAIT_REPLACEMENT_DWARF_DWARVEN_RESILIENCE" />
+	<element name="Dwarven Toughness Trait Replacement" type="Grants" source="Internal" id="ID_INTERNAL_PHB24_RACIAL_TRAIT_REPLACEMENT_DWARF_DWARVEN_TOUGHNESS" />
+	<element name="Stonecunning Trait Replacement" type="Grants" source="Internal" id="ID_INTERNAL_PHB24_RACIAL_TRAIT_REPLACEMENT_DWARF_STONECUNNING" />
+
+</elements>

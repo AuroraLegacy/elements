@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<elements>
+	<info>
+		<name>Orc</name>
+		<description>The Orc species from the Player’s Handbook 2024.</description>
+		<author url="https://dndstore.wizards.com/us/en/product/1001494/2024-player-s-handbook-digital-plus-physical-bundle">Wizards of the Coast</author>
+		<update version="0.0.1">
+			<file name="race-orc.xml" url="https://raw.githubusercontent.com/AuroraLegacy/elements/master/core/players-handbook-2024/races/race-orc.xml" />
+		</update>
+	</info>
+	
+	<element name="Orc" type="Race" source="Player’s Handbook 2024" id="ID_WOTC_PHB24_RACE_ORC">
+		<description>
+			<p>Orcs trace their creation to Gruumsh, a powerful god who roamed the wide open spaces of the Material Plane. Gruumsh equipped his children with gifts to help them wander great plains, vast caverns, and churning seas and to face the monsters that lurk there. Even when they turn their devotion to other gods, orcs retain Gruumsh’s gifts: endurance, determination, and the ability to see in darkness.</p>
+			<p class="indent">Orcs are, on average, tall and broad. They have gray skin, ears that are sharply pointed, and prominent lower canines that resemble small tusks. Orc youths on some worlds are told about their ancestors' great travels and travails. Inspired by those tales, many of those orcs wonder when Gruumsh will call on them to match the heroic deeds of old and if they will prove worthy of his favor. Other orcs are happy to leave old tales in the past and find their own way.</p>
+			<h5>ORC TRAITS</h5>
+			<ul class="unstyled" style="text-indent:-1em; margin-left:1em; margin-bottom:5px">
+				<li><strong>Creature Type:</strong> Humanoid</li>
+				<li><strong>Size:</strong> Medium (about 6–7 feet tall)</li>
+				<li><strong>Speed:</strong> 30 feet</li>
+			</ul>
+			<p>As an Orc, you have these special traits.</p>
+			<p class="indent"><strong><em>Adrenaline Rush.</em></strong> You can take the Dash action as a Bonus Action. When you do so, you gain a number of Temporary Hit Points equal to your Proficiency Bonus.</p>
+			<p class="indent">You can use this trait a number of times equal to your Proficiency Bonus, and you regain all expended uses when you finish a Short or Long Rest.</p> 
+			<p class="indent"><strong><em>Darkvision.</em></strong> You have Darkvision with a range of 120 feet.</p> 
+			<p class="indent"><strong><em>Relentless Endurance.</em></strong> When you are reduced to 0 Hit Points but not killed outright, you can drop to 1 Hit Point instead. Once you use this trait, you can’t do so again until you finish a Long Rest.</p> 
+		</description>
+		<sheet display="false" />
+		<rules>
+			<select type="Ability Score Improvement" name="Ability Score Improvement Option (Orc)" supports="Custom Ability Score Improvement Option" requirements="!ID_INTERNAL_GRANTS_BACKGROUND_ASI" />
+			<grant type="Size" id="ID_SIZE_MEDIUM" />
+			<stat name="speed" value="30" bonus="base" />
+
+			<grant type="Language" id="ID_WOTC_PHB24_LANGUAGE_COMMON" requirements="!ID_WOTC_TCOE_OPTION_CUSTOMIZED_LANGUAGE" />
+			<select type="Language" name="Language (Orc)" supports="Standard" number="2" requirements="!ID_WOTC_TCOE_OPTION_CUSTOMIZED_LANGUAGE" />
+			<select type="Language" name="Customized Language (Orc)" supports="Custom Race Language"  requirements="ID_WOTC_TCOE_OPTION_CUSTOMIZED_LANGUAGE" number="3" />
+
+			<grant type="Racial Trait" id="ID_WOTC_PHB24_RACIAL_TRAIT_ORC_ADRENALINE_RUSH" />
+			<grant type="Vision" id="ID_VISION_DARKVISION" requirements="!ID_INTERNAL_PHB24_RACIAL_TRAIT_REPLACEMENT_ORC_DARKVISION"/>
+			<stat name="darkvision:range" value="120" bonus="base" requirements="!ID_INTERNAL_PHB24_RACIAL_TRAIT_REPLACEMENT_ORC_DARKVISION"/>
+			<grant type="Racial Trait" id="ID_WOTC_PHB24_RACIAL_TRAIT_ORC_RELENTLESS_ENDURANCE" />
+		</rules>
+	</element>
+
+	<element name="Adrenaline Rush" type="Racial Trait" source="Player’s Handbook 2024" id="ID_WOTC_PHB24_RACIAL_TRAIT_ORC_ADRENALINE_RUSH">
+		<requirements>!ID_INTERNAL_PHB24_RACIAL_TRAIT_REPLACEMENT_ORC_ADRENALINE_RUSH</requirements>
+		<description>
+			<p>You can take the Dash action as a Bonus Action. When you do so, you gain a number of Temporary Hit Points equal to your Proficiency Bonus.</p>
+			<p class="indent">You can use this trait a number of times equal to your Proficiency Bonus, and you regain all expended uses when you finish a Short or Long Rest.</p> 
+		</description>
+		<sheet action="Bonus Action" usage="{{proficiency}}/Short Rest">
+			<description>You can take the Dash action as a Bonus Action. When you do so, you gain {{proficiency}} Temporary Hit Points.</description>
+		</sheet>
+	</element>
+
+	<element name="Relentless Endurance" type="Racial Trait" source="Player’s Handbook 2024" id="ID_WOTC_PHB24_RACIAL_TRAIT_ORC_RELENTLESS_ENDURANCE">
+		<requirements>!ID_INTERNAL_PHB24_RACIAL_TRAIT_REPLACEMENT_ORC_RELENTLESS_ENDURANCE</requirements>
+		<description>
+			<p>When you are reduced to 0 Hit Points but not killed outright, you can drop to 1 Hit Point instead. Once you use this trait, you can’t do so again until you finish a Long Rest.</p> 
+		</description>
+		<sheet usage="1/Long Rest">
+			<description>When you are reduced to 0 Hit Points but not killed outright, you can drop to 1 Hit Point instead.</description>
+		</sheet>
+	</element>
+
+	<!--Racial Trait Replacement Grants-->
+	<element name="Adrenaline Rush Trait Replacement" type="Grants" source="Internal" id="ID_INTERNAL_PHB24_RACIAL_TRAIT_REPLACEMENT_ORC_ADRENALINE_RUSH" />
+	<element name="Darkvision Trait Replacement" type="Grants" source="Internal" id="ID_INTERNAL_PHB24_RACIAL_TRAIT_REPLACEMENT_ORC_DARKVISION" />
+	<element name="Relentless Endurance Trait Replacement" type="Grants" source="Internal" id="ID_INTERNAL_PHB24_RACIAL_TRAIT_REPLACEMENT_ORC_RELENTLESS_ENDURANCE" />
+
+</elements>
