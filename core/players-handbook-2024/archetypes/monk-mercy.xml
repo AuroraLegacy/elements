@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<elements>
+	<info>
+		<name>Warrior of Mercy</name>
+		<description>The Warrior of Mercy subclass from the Player’s Handbook 2024.</description>
+		<author url="https://dndstore.wizards.com/us/en/product/1001494/2024-player-s-handbook-digital-plus-physical-bundle">Wizards of the Coast</author>
+		<update version="0.0.1">
+			<file name="monk-mercy.xml" url="https://raw.githubusercontent.com/AuroraLegacy/mercy/master/core/players-handbook-2024/archetypes/monk-mercy.xml" />
+		</update>
+	</info>
+
+	<element name="Warrior of Mercy" type="Archetype" source="Player’s Handbook 2024" id="ID_WOTC_PHB24_ARCHETYPE_MONK_WARRIOR_OF_MERCY">
+		<supports>Monk Subclass</supports>
+		<description>
+			<p class="flavor">Manipulate Forces of Life and Death</p>
+			<p>Warriors of Mercy manipulate the life force of others. These Monks are wandering physicians, but they bring a swift end to their enemies. They often wear masks, presenting themselves as faceless bringers of life and death.</p>
+			<div element="ID_WOTC_PHB24_ARCHETYPE_FEATURE_MONK_MERCY_HAND_OF_HARM"/>
+			<div element="ID_WOTC_PHB24_ARCHETYPE_FEATURE_MONK_MERCY_HAND_OF_HEALING"/>
+			<div element="ID_WOTC_PHB24_ARCHETYPE_FEATURE_MONK_MERCY_IMPLEMENTS_OF_MERCY"/>
+			<div element="ID_WOTC_PHB24_ARCHETYPE_FEATURE_MONK_MERCY_PHYSICIANS_TOUCH"/>
+			<div element="ID_WOTC_PHB24_ARCHETYPE_FEATURE_MONK_MERCY_FLURRY_OF_HEALING_AND_HARM"/>
+			<div element="ID_WOTC_PHB24_ARCHETYPE_FEATURE_MONK_MERCY_HAND_OF_ULTIMATE_MERCY"/>
+		</description>
+		<sheet display="false" />
+		<rules>
+			<grant type="Archetype Feature" id="ID_WOTC_PHB24_ARCHETYPE_FEATURE_MONK_MERCY_HAND_OF_HARM" level="3"/>
+			<grant type="Archetype Feature" id="ID_WOTC_PHB24_ARCHETYPE_FEATURE_MONK_MERCY_HAND_OF_HEALING" level="3"/>
+			<grant type="Archetype Feature" id="ID_WOTC_PHB24_ARCHETYPE_FEATURE_MONK_MERCY_IMPLEMENTS_OF_MERCY" level="3"/>
+			<grant type="Archetype Feature" id="ID_WOTC_PHB24_ARCHETYPE_FEATURE_MONK_MERCY_PHYSICIANS_TOUCH" level="6"/>
+			<grant type="Archetype Feature" id="ID_WOTC_PHB24_ARCHETYPE_FEATURE_MONK_MERCY_FLURRY_OF_HEALING_AND_HARM" level="11"/>
+			<grant type="Archetype Feature" id="ID_WOTC_PHB24_ARCHETYPE_FEATURE_MONK_MERCY_HAND_OF_ULTIMATE_MERCY" level="17"/>
+		</rules>
+	</element>
+
+	<element name="Level 3: Hand of Harm" type="Archetype Feature" source="Player’s Handbook 2024" id="ID_WOTC_PHB24_ARCHETYPE_FEATURE_MONK_MERCY_HAND_OF_HARM">
+		<requirements>!(ID_INTERNAL_PHB24_FEATURE_REPLACEMENT_MONK_MERCY_HAND_OF_HARM||ID_INTERNAL_PHB24_FEATURE_REPLACEMENT_MONK_MERCY_PHYSICIANS_TOUCH)</requirements>
+		<description>
+			<p>Once per turn when you hit a creature with an Unarmed Strike and deal damage, you can expend 1 Focus Point to deal extra Necrotic damage equal to one roll of your Martial Arts die plus your Wisdom modifier.</p>
+		</description>
+		<sheet alt="Hand of Harm" usage="Focus Point — 1/Turn" >
+			<description>When you deal damage to a creature with an Unarmed Strike, you can deal extra 1d{{martial arts:dice}}+{{wisdom:modifier}} Necrotic damage to the target.</description>
+			<description level="6">When you deal damage to a creature with an Unarmed Strike, you can deal extra 1d{{martial arts:dice}}+{{wisdom:modifier}} Necrotic damage to the target and it becomes Poisoned until the end of your next turn.</description>
+		</sheet>
+	</element>
+
+	<element name="Level 3: Hand of Healing" type="Archetype Feature" source="Player’s Handbook 2024" id="ID_WOTC_PHB24_ARCHETYPE_FEATURE_MONK_MERCY_HAND_OF_HEALING">
+		<requirements>!(ID_INTERNAL_PHB24_FEATURE_REPLACEMENT_MONK_MERCY_HAND_OF_HEALING||ID_INTERNAL_PHB24_FEATURE_REPLACEMENT_MONK_MERCY_PHYSICIANS_TOUCH)</requirements>
+		<description>
+			<p>As a Magic action, you can expend 1 Focus Point to touch a creature and restore a number of Hit Points equal to a roll of your Martial Arts die plus your Wisdom modifier.</p>
+			<p class="indent">When you use your Flurry of Blows, you can replace one of the Unarmed Strikes with a use of this feature without expending a Focus Point for the healing.</p>
+		</description>
+		<sheet alt="Hand of Healing" action="Action" usage="Focus Point" >
+			<description>You can touch a creature and magically restore 1d{{martial arts:dice}}+{{wisdom:modifier}} Hit Points to them. When you use your Flurry of Blows, you can replace one of the Unarmed Strikes with a use of this feature without expending a Focus Point for the healing.</description>
+			<description level="6">You can touch a creature to magically restore 1d{{martial arts:dice}}+{{wisdom:modifier}} Hit Points to them and end a Blinded, Deafened, Paralyzed, Poisoned, or Stunned condition. When you use your Flurry of Blows, you can replace one of the Unarmed Strikes with a use of this feature without expending a Focus Point for the healing.</description>
+		</sheet>
+	</element>
+
+	<element name="Level 3: Implements of Mercy" type="Archetype Feature" source="Player’s Handbook 2024" id="ID_WOTC_PHB24_ARCHETYPE_FEATURE_MONK_MERCY_IMPLEMENTS_OF_MERCY">
+		<requirements>!ID_INTERNAL_PHB24_FEATURE_REPLACEMENT_MONK_MERCY_IMPLEMENTS_OF_MERCY</requirements>
+		<compendium display="false" />
+		<description>
+			<p>You gain proficiency in the Insight and Medicine skills and proficiency with the Herbalism Kit.</p>
+		</description>
+		<sheet display="false" />
+		<rules>
+			<grant type="Proficiency" id="ID_WOTC_PHB24_PROFICIENCY_SKILL_INSIGHT" />
+			<grant type="Proficiency" id="ID_WOTC_PHB24_PROFICIENCY_SKILL_MEDICINE" />
+			<grant type="Proficiency" id="ID_WOTC_PHB24_PROFICIENCY_TOOL_PROFICIENCY_HERBALISM_KIT" />
+		</rules>
+	</element>
+
+	<element name="Level 6: Physician's Touch" type="Archetype Feature" source="Player’s Handbook 2024" id="ID_WOTC_PHB24_ARCHETYPE_FEATURE_MONK_MERCY_PHYSICIANS_TOUCH">
+		<requirements>!ID_INTERNAL_PHB24_FEATURE_REPLACEMENT_MONK_MERCY_PHYSICIANS_TOUCH</requirements>
+		<description>
+			<p>Your Hand of Harm and Hand of Healing improve, as detailed below.</p>
+			<p class="indent"><em><strong>Hand of Harm.</strong></em> When you use Hand of Harm on a creature, you can also give that creature the Poisoned condition until the end of your next turn.</p>
+			<p class="indent"><em><strong>Hand of Healing.</strong></em> When you use Hand of Healing, you can also end one of the following conditions on the creature you heal: Blinded, Deafened, Paralyzed, Poisoned, or Stunned.</p>
+		</description>
+		<sheet display="false" />
+	</element>
+
+	<element name="Level 11: Flurry of Healing and Harm" type="Archetype Feature" source="Player’s Handbook 2024" id="ID_WOTC_PHB24_ARCHETYPE_FEATURE_MONK_MERCY_FLURRY_OF_HEALING_AND_HARM">
+		<requirements>!ID_INTERNAL_PHB24_FEATURE_REPLACEMENT_MONK_MERCY_FLURRY_OF_HEALING_AND_HARM</requirements>
+		<description>
+			<p>When you use Flurry of Blows, you can replace each of the Unarmed Strikes with a use of Hand of Healing without expending Focus Points for the healing.</p>
+			<p class="indent">In addition, when you make an Unarmed Strike with Flurry of Blows and deal damage, you can use Hand of Harm with that strike without expending a Focus Point for Hand of Harm. You can still use Hand of Harm only once per turn.</p>
+			<p class="indent">You can use these benefits a total number of times equal to your Wisdom modifier (minimum of once). You regain all expended uses when you finish a Long Rest.</p>
+		</description>
+		<sheet alt="Flurry of Healing and Harm" usage="{{flurry of healing and harm:usage}}/Long Rest">
+			<description>When you use Flurry of Blows, you can replace each of the Unarmed Strikes with a use of Hand of Healing without expending Focus Points for the healing. &#13;
+			When you make an Unarmed Strike with Flurry of Blows and deal damage, you can use Hand of Harm without expending a Focus Point. You can still only use Hand of Harm once per turn.</description>
+		</sheet>
+		<rules>
+			<stat name="flurry of healing and harm:usage" value="1" bonus="base" />
+			<stat name="flurry of healing and harm:usage" value="wisdom:modifier" bonus="base" />
+		</rules>
+	</element>
+
+	<element name="Level 17: Hand of Ultimate Mercy" type="Archetype Feature" source="Player’s Handbook 2024" id="ID_WOTC_PHB24_ARCHETYPE_FEATURE_MONK_MERCY_HAND_OF_ULTIMATE_MERCY">
+		<requirements>!ID_INTERNAL_PHB24_FEATURE_REPLACEMENT_MONK_MERCY_HAND_OF_ULTIMATE_MERCY</requirements>
+		<description>
+			<p>Your mastery of life energy opens the door to the ultimate mercy. As a Magic Action, you can touch the corpse of a creature that died within the past 24 hours and expend 5 Focus Points. The creature then returns to life with a number of Hit Points equal to 4d10 plus your Wisdom modifier. If the creature died with any of the following conditions, the creature revives with the conditions removed: Blinded, Deafened, Paralyzed, Poisoned, and Stunned.</p>
+			<p class="indent">Once you use this feature, you can't use it again until you finish a Long Rest.</p>
+		</description>
+		<sheet alt="Hand of Ultimate Mercy" action="Action" usage="5 Focus Points — 1/Long Rest">
+			<description>You can magically touch the corpse of a creature that died within the past 24 hours and return it to life with 4d10+{{wisdom:modifier}} Hit Points. When creature is revived, you remove any Blinded, Deafened, Paralyzed, Poisoned, and Stunned conditions it had.</description>
+		</sheet>
+	</element>
+
+	<!--Feature Replacement Grants-->
+	<element name="Hand of Harm Feature Replacement" type="Grants" source="Internal" id="ID_INTERNAL_PHB24_FEATURE_REPLACEMENT_MONK_MERCY_HAND_OF_HARM" />
+	<element name="Hand of Healing Feature Replacement" type="Grants" source="Internal" id="ID_INTERNAL_PHB24_FEATURE_REPLACEMENT_MONK_MERCY_HAND_OF_HEALING" />
+	<element name="Implements of Mercy Feature Replacement" type="Grants" source="Internal" id="ID_INTERNAL_PHB24_FEATURE_REPLACEMENT_MONK_MERCY_IMPLEMENTS_OF_MERCY" />
+	<element name="Physician's Touch Feature Replacement" type="Grants" source="Internal" id="ID_INTERNAL_PHB24_FEATURE_REPLACEMENT_MONK_MERCY_PHYSICIANS_TOUCH" />
+	<element name="Flurry of Healing and Harm Feature Replacement" type="Grants" source="Internal" id="ID_INTERNAL_PHB24_FEATURE_REPLACEMENT_MONK_MERCY_FLURRY_OF_HEALING_AND_HARM" />
+	<element name="Hand of Ultimate Mercy Feature Replacement" type="Grants" source="Internal" id="ID_INTERNAL_PHB24_FEATURE_REPLACEMENT_MONK_MERCY_HAND_OF_ULTIMATE_MERCY" />
+</elements>

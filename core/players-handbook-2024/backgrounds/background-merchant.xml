@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<elements>
+	<info>
+		<name>Merchant</name>
+		<description>Merchant background from the Player’s Handbook 2024.</description>
+		<author url="https://dndstore.wizards.com/us/en/product/1001494/2024-player-s-handbook-digital-plus-physical-bundle">Wizards of the Coast</author>
+		<update version="0.0.1">
+			<file name="background-merchant.xml" url="https://raw.githubusercontent.com/AuroraLegacy/elements/master/core/players-handbook-2024/backgrounds/background-merchant.xml" />
+		</update>
+	</info>
+
+	<element name="Merchant" type="Background" source="Player’s Handbook 2024" id="ID_WOTC_PHB24_BACKGROUND_MERCHANT">
+		<description>
+			<ul class="unstyled" style="text-indent:-1em; margin-left:1em; margin-bottom:5px">
+				<li><strong>Ability Scores:</strong> Constitution, Intelligence, Charisma</li>
+				<li><strong>Feat:</strong> Lucky</li>
+				<li><strong>Skill Proficiencies:</strong> Animal Handling and Persuasion</li>
+				<li><strong>Tool Proficiency:</strong> Navigator's Tools</li>
+				<li><strong>Equipment:</strong><i> Choose A or B:</i> (A) Navigator's Tools, 2 Pouches, Traveler's Clothes, 22 CP; or (B) 50 GP</li>
+			</ul>
+			<p>You were apprenticed to a trader, caravan master, or shopkeeper, learning the fundamentals of commerce. You traveled broadly, and you earned a living by buying and selling the raw materials artisans need to practice their craft or finished works from such crafters. You might have transported goods from one place to another (by ship, wagon, or caravan) or bought them from traveling traders and sold them in your own shop.</p>
+		</description>
+		<setters>
+			<set name="short">Constitution, Intelligence, Charisma, Lucky Feat, Animal Handling and Persuasion Skills, Navigator's Tools</set>
+		</setters>
+		<rules>
+			<grant type="Ability Score Improvement" id="ID_INTERNAL_ABILITY_SCORE_IMPROVEMENT_COMBINATION_CON_INT_CHA" />
+			<grant type="Feat" id="ID_WOTC_PHB24_FEAT_LUCKY" />
+			<grant type="Proficiency" id="ID_WOTC_PHB24_PROFICIENCY_SKILL_ANIMALHANDLING" />
+			<grant type="Proficiency" id="ID_WOTC_PHB24_PROFICIENCY_SKILL_PERSUASION" />
+			<grant type="Grants" id="ID_INTERNAL_GRANTS_BACKGROUND_ASI" />
+			<grant type="Proficiency" id="ID_WOTC_PHB24_PROFICIENCY_TOOL_PROFICIENCY_NAVIGATORS_TOOLS" />
+		</rules>
+	</element>
+
+	<!-- Todo: Add Equipment Pack for this Background. Example element is in the Acolyte Background. -->
+</elements>

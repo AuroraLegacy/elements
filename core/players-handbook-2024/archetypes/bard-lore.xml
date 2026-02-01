@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<elements>
+	<info>
+		<name>College of Lore</name>
+		<description>The College of Lore subclass from the Player’s Handbook 2024.</description>
+		<author url="https://dndstore.wizards.com/us/en/product/1001494/2024-player-s-handbook-digital-plus-physical-bundle">Wizards of the Coast</author>
+		<update version="0.0.1">
+			<file name="bard-lore.xml" url="https://raw.githubusercontent.com/AuroraLegacy/elements/master/core/players-handbook-2024/archetypes/bard-lore.xml" />
+		</update>
+	</info>
+
+	<element name="College of Lore" type="Archetype" source="Player’s Handbook 2024" id="ID_WOTC_PHB24_ARCHETYPE_BARD_COLLEGE_OF_LORE">
+		<supports>Bard Subclass</supports>
+		<description>
+			<p class="flavor">Plumb the Depths of Magical Knowledge</p>
+			<p>Bards of the College of Lore collect spells and secrets from diverse sources, such as scholarly tomes, mystical rites, and peasant tales. The college’s members gather in libraries and universities to share their lore with one another. They also meet at festivals or affairs of state, where they can expose corruption, unravel lies, and poke fun at self-important figures of authority.</p>
+			<div element="ID_WOTC_PHB24_ARCHETYPE_FEATURE_BARD_LORE_BONUS_PROFICIENCIES" />
+			<div element="ID_WOTC_PHB24_ARCHETYPE_FEATURE_BARD_LORE_CUTTING_WORDS" />
+			<div element="ID_WOTC_PHB24_ARCHETYPE_FEATURE_BARD_LORE_MAGICAL_DISCOVERIES" />
+			<div element="ID_WOTC_PHB24_ARCHETYPE_FEATURE_BARD_LORE_PEERLESS_SKILL" />
+		</description>
+		<sheet display="false" />
+		<rules>
+			<grant type="Archetype Feature" id="ID_WOTC_PHB24_ARCHETYPE_FEATURE_BARD_LORE_BONUS_PROFICIENCIES" level="3" />
+			<grant type="Archetype Feature" id="ID_WOTC_PHB24_ARCHETYPE_FEATURE_BARD_LORE_CUTTING_WORDS" level="3" />
+			<grant type="Archetype Feature" id="ID_WOTC_PHB24_ARCHETYPE_FEATURE_BARD_LORE_MAGICAL_DISCOVERIES" level="6" />
+			<grant type="Archetype Feature" id="ID_WOTC_PHB24_ARCHETYPE_FEATURE_BARD_LORE_PEERLESS_SKILL" level="14" />
+		</rules>
+	</element>
+
+	<element name="Level 3: Bonus Proficiencies" type="Archetype Feature" source="Player’s Handbook 2024" id="ID_WOTC_PHB24_ARCHETYPE_FEATURE_BARD_LORE_BONUS_PROFICIENCIES">
+		<requirements>!ID_INTERNAL_PHB24_FEATURE_REPLACEMENT_BARD_LORE_BONUS_PROFICIENCIES</requirements>
+		<description>
+			<p>You gain proficiency with three skills of your choice.</p>
+		</description>
+		<sheet display="false" />
+		<rules>
+			<select type="Proficiency" name="Skill Proficiency (Bonus Proficiencies)" supports="Skill" number="3"/>
+		</rules>
+	</element>
+
+	<element name="Level 3: Cutting Words" type="Archetype Feature" source="Player’s Handbook 2024" id="ID_WOTC_PHB24_ARCHETYPE_FEATURE_BARD_LORE_CUTTING_WORDS">
+		<requirements>!ID_INTERNAL_PHB24_FEATURE_REPLACEMENT_BARD_LORE_CUTTING_WORDS</requirements>
+		<description>
+			<p>You learn to use your wit to supernaturally distract, confuse, and otherwise sap the confidence and competence of others. When a creature that you can see within 60 feet of yourself makes a damage roll or succeeds on an ability check or attack roll, you can take a Reaction to expend one use of your Bardic Inspiration; roll your Bardic Inspiration die, and subtract the number rolled from the creature’s roll, reducing the damage or potentially turning the success into a failure.</p>
+		</description>
+		<sheet alt="Cutting Words" action="Reaction" usage="Bardic Inspiration">
+			<description>When a creature that you can see within 60 feet of yourself makes a damage roll or succeeds on an ability check or attack roll, you can roll your Bardic Inspiration die, and subtract the number rolled from the creature’s roll, reducing the damage or potentially turning the success into a failure.</description>
+		</sheet>
+	</element>
+
+	<element name="Level 6: Magical Discoveries" type="Archetype Feature" source="Player’s Handbook 2024" id="ID_WOTC_PHB24_ARCHETYPE_FEATURE_BARD_LORE_MAGICAL_DISCOVERIES">
+	<requirements>!ID_INTERNAL_PHB24_FEATURE_REPLACEMENT_BARD_LORE_MAGICAL_DISCOVERIES</requirements>
+		<description>
+			<p>You learn two spells of your choice. These spells can come from the Cleric, Druid, or Wizard spell list or any combination thereof. A spell you choose must be a cantrip or a spell for which you have spell slots, as shown in the Bard Features table.</p>
+			<p class="indent">You always have the chosen spells prepared, and whenever you gain a Bard level, you can replace one of the spells with another spell that meets these requirements.</p>
+		</description>
+		<sheet display="false" />
+		<rules>
+			<select type="Archetype Feature" name="1st Spell Type (Magical Discoveries)" supports="Lore Bard Magical Discoveries 1"/>
+			<select type="Archetype Feature" name="2nd Spell Type (Magical Discoveries)" supports="Lore Bard Magical Discoveries 2"/>
+		</rules>
+	</element>
+	<element name="Cantrip" type="Archetype Feature" source="Player’s Handbook 2024" id="ID_WOTC_PHB24_ARCHETYPE_FEATURE_BARD_LORE_MAGICAL_DISCOVERIES_CANTRIP_1">
+	<compendium display="false" />
+	<supports>Lore Bard Magical Discoveries 1</supports>
+		<description>
+			<p>You learn a cantrip from the Cleric, Druid, or Wizard spell lists. Whenever you gain a Bard level, you can replace this cantrip with another spell that meets the Magical Discoveries requirements.</p>
+		</description>
+		<sheet display="false" />
+		<rules>
+			<select type="Spell" name="Cantrip (Magical Discoveries)" supports="0,(Bard||Cleric||Druid||Wizard)" spellcasting="Bard" />
+		</rules>
+	</element>
+	<element name="Leveled Spell" type="Archetype Feature" source="Player’s Handbook 2024" id="ID_WOTC_PHB24_ARCHETYPE_FEATURE_BARD_LORE_MAGICAL_DISCOVERIES_LEVELED_SPELL_1">
+	<compendium display="false" />
+	<supports>Lore Bard Magical Discoveries 1</supports>
+		<description>
+			<p>You learn a spell from the Cleric, Druid, or Wizard spell lists for which you have spell slots. Whenever you gain a Bard level, you can replace this spell with another spell that meets the Magical Discoveries requirements.</p>
+		</description>
+		<sheet display="false" />
+		<rules>
+			<select type="Spell" name="Spell (Magical Discoveries)" supports="$(spellcasting:slots),(Bard||Cleric||Druid||Wizard)" level="6" spellcasting="Bard" allowReplace="true" />
+		</rules>
+	</element>
+	<element name="Cantrip" type="Archetype Feature" source="Player’s Handbook 2024" id="ID_WOTC_PHB24_ARCHETYPE_FEATURE_BARD_LORE_MAGICAL_DISCOVERIES_CANTRIP_2">
+	<compendium display="false" />
+	<supports>Lore Bard Magical Discoveries 2</supports>
+		<description>
+			<p>You learn a cantrip from the Cleric, Druid, or Wizard spell lists. Whenever you gain a Bard level, you can replace this cantrip with another spell that meets the Magical Discoveries requirements.</p>
+		</description>
+		<sheet display="false" />
+		<rules>
+			<select type="Spell" name="Cantrip (Magical Discoveries)" supports="0,(Bard||Cleric||Druid||Wizard)" spellcasting="Bard" />
+		</rules>
+	</element>
+	<element name="Leveled Spell" type="Archetype Feature" source="Player’s Handbook 2024" id="ID_WOTC_PHB24_ARCHETYPE_FEATURE_BARD_LORE_MAGICAL_DISCOVERIES_LEVELED_SPELL_2">
+	<compendium display="false" />
+	<supports>Lore Bard Magical Discoveries 2</supports>
+		<description>
+			<p>You learn a spell from the Cleric, Druid, or Wizard spell lists for which you have spell slots. Whenever you gain a Bard level, you can replace this spell with another spell that meets the Magical Discoveries requirements.</p>
+		</description>
+		<sheet display="false" />
+		<rules>
+			<select type="Spell" name="Spell (Magical Discoveries)" supports="$(spellcasting:slots),(Bard||Cleric||Druid||Wizard)" level="6" spellcasting="Bard" allowReplace="true" />
+		</rules>
+	</element>
+
+	<element name="Level 14: Peerless Skill" type="Archetype Feature" source="Player’s Handbook 2024" id="ID_WOTC_PHB24_ARCHETYPE_FEATURE_BARD_LORE_PEERLESS_SKILL">
+		<requirements>!ID_INTERNAL_PHB24_FEATURE_REPLACEMENT_BARD_LORE_PEERLESS_SKILL</requirements>
+		<description>
+			<p>When you make an ability check or attack roll and fail, you can expend one use of Bardic Inspiration; roll the Bardic Inspiration die, and add the number rolled to the d20, potentially turning a failure into a success. On a failure, the Bardic Inspiration isn’t expended.</p>
+		</description>
+		<sheet alt="Peerless Skill" usage="Bardic Inspiration">
+			<description>When you fail an ability check or attack roll, you can roll the Bardic Inspiration die, and add the number rolled to the d20, potentially turning a failure into a success. On a failure, the Bardic Inspiration isn’t expended.</description>
+		</sheet>
+	</element>
+
+	<!--Feature Replacement Grants-->
+	<element name="Bonus Proficiencies Feature Replacement" type="Grants" source="Internal" id="ID_INTERNAL_PHB24_FEATURE_REPLACEMENT_BARD_LORE_BONUS_PROFICIENCIES" />
+	<element name="Cutting Words Feature Replacement" type="Grants" source="Internal" id="ID_INTERNAL_PHB24_FEATURE_REPLACEMENT_BARD_LORE_CUTTING_WORDS" />
+	<element name="Additional Magical Secrets Feature Replacement" type="Grants" source="Internal" id="ID_INTERNAL_PHB24_FEATURE_REPLACEMENT_BARD_LORE_MAGICAL_DISCOVERIES" />
+	<element name="Peerless Skill Feature Replacement" type="Grants" source="Internal" id="ID_INTERNAL_PHB24_FEATURE_REPLACEMENT_BARD_LORE_PEERLESS_SKILL" />
+</elements>

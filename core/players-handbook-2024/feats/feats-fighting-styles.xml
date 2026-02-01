@@ -1,0 +1,152 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<elements>
+	<info>
+		<name>Fighting Style Category Feats</name>
+		<description>The Fighting Style Category Feats from the Player’s Handbook 2024.</description>
+		<author url="https://dndstore.wizards.com/us/en/product/1001494/2024-player-s-handbook-digital-plus-physical-bundle">Wizards of the Coast</author>
+		<update version="0.0.1">
+			<file name="feats-fighting-styles.xml" url="https://raw.githubusercontent.com/AuroraLegacy/elements/master/core/players-handbook-2024/feats/feats-fighting-styles.xml" />
+		</update>
+	</info>
+		
+	<element name="Archery" type="Feat" source="Player’s Handbook 2024" id="ID_WOTC_PHB24_FEAT_ARCHERY">
+		<requirements>ID_INTERNAL_GRANTS_FIGHTING_STYLE_FEATURE</requirements>
+		<supports>Fighting Style</supports>
+		<prerequisite>Fighting Style Feature</prerequisite>
+		<description>
+    		<p class="flavor">Fighting Style Feat (Prerequisite: Fighting Style Feature)</p>
+			<p>You gain a +2 bonus to attack rolls you make with Ranged weapons.</p>
+		</description>
+		<sheet display="false" />
+		<rules>
+			<stat name="ranged:attack" value="2" />
+		</rules>
+	</element>
+
+    <element name="Blind Fighting" type="Feat" source="Player’s Handbook 2024" id="ID_WOTC_PHB24_FEAT_BLIND_FIGHTING">
+		<requirements>ID_INTERNAL_GRANTS_FIGHTING_STYLE_FEATURE</requirements>
+		<supports>Fighting Style</supports>
+		<prerequisite>Fighting Style Feature</prerequisite>
+		<description>
+    		<p class="flavor">Fighting Style Feat (Prerequisite: Fighting Style Feature)</p>
+			<p>You have Blindsight with a range of 10 feet.</p>
+		</description>
+		<sheet display="false" />
+		<rules>
+			<grant type="Vision" id="ID_VISION_BLINDSIGHT" />
+			<stat name="blindsight:range" value="10" bonus="base"/>
+		</rules>
+	</element>
+
+    <element name="Defense" type="Feat" source="Player’s Handbook 2024" id="ID_WOTC_PHB24_FEAT_DEFENSE">
+		<requirements>ID_INTERNAL_GRANTS_FIGHTING_STYLE_FEATURE</requirements>
+		<supports>Fighting Style</supports>
+		<prerequisite>Fighting Style Feature</prerequisite>
+		<description>
+    		<p class="flavor">Fighting Style Feat (Prerequisite: Fighting Style Feature)</p>
+			<p>While you’re wearing Light, Medium, or Heavy armor, you gain a +1 bonus to Armor Class.</p>
+		</description>
+		<sheet display="false" />
+		<rules>
+			<stat name="ac:misc" value="1" bonus="fighting style" equipped="[armor:any]" alt="Defense (Fighting Style)" />
+		</rules>
+	</element>
+
+    <element name="Dueling" type="Feat" source="Player’s Handbook 2024" id="ID_WOTC_PHB24_FEAT_DUELING">
+		<requirements>ID_INTERNAL_GRANTS_FIGHTING_STYLE_FEATURE</requirements>
+		<supports>Fighting Style</supports>
+		<prerequisite>Fighting Style Feature</prerequisite>
+		<description>
+    		<p class="flavor">Fighting Style Feat (Prerequisite: Fighting Style Feature)</p>
+			<p>When you're holding a Melee weapon in one hand and no other weapons, you gain a +2 bonus to damage rolls with that weapon.</p>
+		</description>
+		<sheet>
+			<description>When you're holding a Melee weapon in one hand and no other weapons, you gain a +2 bonus to damage rolls with that weapon.</description>
+		</sheet>
+	</element>
+
+    <element name="Great Weapon Fighting" type="Feat" source="Player’s Handbook 2024" id="ID_WOTC_PHB24_FEAT_GREAT_WEAPON_FIGHTING">
+		<requirements>ID_INTERNAL_GRANTS_FIGHTING_STYLE_FEATURE</requirements>
+		<supports>Fighting Style</supports>
+		<prerequisite>Fighting Style Feature</prerequisite>
+		<description>
+    		<p class="flavor">Fighting Style Feat (Prerequisite: Fighting Style Feature)</p>
+			<p>When you roll damage for an attack you make with a Melee weapon that you are holding with two hands, you can treat any 1 or 2 on a damage die as a 3. The weapon must have the Two-Handed or Versatile property to gain this benefit.</p>
+		</description>
+		<sheet>
+			<description>When you roll a 1 or 2 on a damage die for an attack you make with a melee weapon that you are wielding with two hands, you can treat the result as a 3. The weapon must have the Two-Handed or Versatile property to gain this benefit.</description>
+		</sheet>
+	</element>
+
+    <element name="Interception" type="Feat" source="Player’s Handbook 2024" id="ID_WOTC_PHB24_FEAT_INTERCEPTION">
+		<requirements>ID_INTERNAL_GRANTS_FIGHTING_STYLE_FEATURE</requirements>
+		<supports>Fighting Style</supports>
+		<prerequisite>Fighting Style Feature</prerequisite>
+		<description>
+    		<p class="flavor">Fighting Style Feat (Prerequisite: Fighting Style Feature)</p>
+			<p>When a creature you can see hits another creature within 5 feet of you with an attack roll, you can take a Reaction to reduce the damage dealt to the target by 1d10 plus your Proficiency Bonus. You must be holding a Shield or a Simple or Martial weapon to use this Reaction.</p>
+		</description>
+		<sheet action="Reaction">
+			<description>When a creature you can see hits another creature within 5ft. of you with an attack roll, you can reduce the damage dealt to the target by 1d10+{{proficiency}}. You must be holding a Shield or a Simple or Martial weapon.</description>
+		</sheet>
+	</element>
+
+    <element name="Protection" type="Feat" source="Player’s Handbook 2024" id="ID_WOTC_PHB24_FEAT_PROTECTION">
+		<requirements>ID_INTERNAL_GRANTS_FIGHTING_STYLE_FEATURE</requirements>
+		<supports>Fighting Style</supports>
+		<prerequisite>Fighting Style Feature</prerequisite>
+		<description>
+    		<p class="flavor">Fighting Style Feat (Prerequisite: Fighting Style Feature)</p>
+			<p>When a creature you can see attacks a target other than you that is within 5 feet of you, you can take a Reaction to interpose your Shield if you're holding one. You impose Disadvantage on the triggering attack roll and all other attack rolls against the target until the start of your next turn if you remain within 5 feet of the target.</p>
+		</description>
+		<sheet action="Reaction">
+			<description>When a creature you can see attacks a target other than you that is within 5ft. of you, you can impose Disadvantage on the attack roll and all other attack rolls against the target until the start of your next turn if you remain within 5ft. of the target. You must be holding a Shield.</description>
+		</sheet>
+	</element>
+
+    <element name="Thrown Weapon Fighting" type="Feat" source="Player’s Handbook 2024" id="ID_WOTC_PHB24_FEAT_THROWN_WEAPON_FIGHTING">
+		<requirements>ID_INTERNAL_GRANTS_FIGHTING_STYLE_FEATURE</requirements>
+		<supports>Fighting Style</supports>
+		<prerequisite>Fighting Style Feature</prerequisite>
+		<description>
+    		<p class="flavor">Fighting Style Feat (Prerequisite: Fighting Style Feature)</p>
+			<p>When you hit with a ranged attack roll using a weapon that has the Thrown property, you gain a +2 bonus to the damage roll.</p>
+		</description>
+		<sheet>
+			<description>You gain a +2 bonus to the damage of a ranged attack using a weapon that has the Thrown property.</description>
+		</sheet>
+	</element>
+
+    <element name="Two-Weapon Fighting" type="Feat" source="Player’s Handbook 2024" id="ID_WOTC_PHB24_FEAT_TWOWEAPON_FIGHTING">
+		<requirements>ID_INTERNAL_GRANTS_FIGHTING_STYLE_FEATURE</requirements>
+		<supports>Fighting Style</supports>
+		<prerequisite>Fighting Style Feature</prerequisite>
+		<description>
+    		<p class="flavor">Fighting Style Feat (Prerequisite: Fighting Style Feature)</p>
+			<p>When you make an extra attack as a result of using a weapon that has the Light property, you can add your ability modifier to the damage of that attack if you aren't already adding it to the damage.</p>
+		</description>
+		<sheet>
+			<description>You can add your ability modifier to the extra attack damage of a weapon that has the Light property.</description>
+		</sheet>
+	</element>
+
+    <element name="Unarmed Fighting" type="Feat" source="Player’s Handbook 2024" id="ID_WOTC_PHB24_FEAT_UNARMED_FIGHTING">
+        <requirements>ID_INTERNAL_GRANTS_FIGHTING_STYLE_FEATURE</requirements>
+		<supports>Fighting Style</supports>
+		<prerequisite>Fighting Style Feature</prerequisite>
+		<description>
+    		<p class="flavor">Fighting Style Feat (Prerequisite: Fighting Style Feature)</p>
+			<p>When you hit with your Unarmed Strike and deal damage, you can deal Bludgeoning damage equal to 1d6 plus your Strength modifier instead of the normal damage of an Unarmed Strike. If you aren't holding any weapons or a Shield when you make the attack roll, the d6 becomes a d8.</p>
+            <p class="indent">At the start of each of your turns, you can deal 1d4 Bludgeoning damage to one creature Grappled by you.</p>
+		</description>
+		<sheet>
+			<description>When you hit with your Unarmed Strike and deal damage, you can deal 1d6 (or 1d8, if aren't holding any weapons or a Shield) + {{strength:modifier}} Bludgeoning damage instead of the normal damage of an Unarmed Strike. &#13;
+            At the start of each of your turns, you can deal 1d4 Bludgeoning damage to one creature Grappled by you.</description>
+		</sheet>
+		<rules>
+			<stat name="unarmed strike:dice" value="6" bonus="unarmed strike" />
+			<stat name="unarmed strike:dice" value="8" bonus="unarmed strike" equipped="[primary:none],[secondary:none],[shield:none]" />
+		</rules>
+	</element>
+
+</elements>

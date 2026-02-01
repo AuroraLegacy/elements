@@ -1,0 +1,161 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<elements>
+	<info>
+		<name>Arcane Trickster</name>
+		<description>The Arcane Trickster subclass from the Player’s Handbook 2024.</description>
+		<author url="https://dndstore.wizards.com/us/en/product/1001494/2024-player-s-handbook-digital-plus-physical-bundle">Wizards of the Coast</author>
+		<update version="0.0.1">
+			<file name="rogue-arcane-trickster.xml" url="https://raw.githubusercontent.com/AuroraLegacy/elements/master/core/players-handbook-2024/archetypes/rogue-arcane-trickster.xml" />
+		</update>
+	</info>
+
+	<element name="Arcane Trickster" type="Archetype" source="Player’s Handbook 2024" id="ID_WOTC_PHB24_ARCHETYPE_ROGUE_ARCANE_TRICKSTER">
+		<supports>Rogue Subclass</supports>
+		<description>
+			<p class="flavor">Enhance Stealth with Arcane Spells</p>
+			<p>Some Rogues enhance their fine-honed skills of stealth and agility with spells, learning magical tricks to aid them in their trade. Some Arcane Tricksters use their talents as pickpockets and burglars, while others are pranksters.</p>
+			<div element="ID_WOTC_PHB24_ARCHETYPE_FEATURE_ROGUE_ARCANE_TRICKSTER_SPELLCASTING" />
+			<h5>ARCANE TRICKSTER SPELLCASTING</h5>
+			<table class="class-features">
+				<tr style="font-weight: bold">
+					<td class="col-20" rowspan="2">Rogue<br />Level</td>
+					<td class="col-20" rowspan="2">Prepared<br />Spells</td>
+					<td colspan="4" style="vertical-align:bottom; border-bottom: 0px">Spell Slots per Spell Level</td>
+				</tr>
+				<tr style="font-weight: bold"><td>1</td><td>2</td><td>3</td><td>4</td></tr>
+				<tr><td>3</td><td>3</td><td>2</td><td>—</td><td>—</td><td>—</td></tr>
+				<tr><td>4</td><td>4</td><td>3</td><td>—</td><td>—</td><td>—</td></tr>
+				<tr><td>5</td><td>4</td><td>3</td><td>—</td><td>—</td><td>—</td></tr>
+				<tr><td>6</td><td>4</td><td>3</td><td>—</td><td>—</td><td>—</td></tr>
+				<tr><td>7</td><td>5</td><td>4</td><td>2</td><td>—</td><td>—</td></tr>
+				<tr><td>8</td><td>6</td><td>4</td><td>2</td><td>—</td><td>—</td></tr>
+				<tr><td>9</td><td>6</td><td>4</td><td>2</td><td>—</td><td>—</td></tr>
+				<tr><td>10</td><td>7</td><td>4</td><td>3</td><td>—</td><td>—</td></tr>
+				<tr><td>11</td><td>8</td><td>4</td><td>3</td><td>—</td><td>—</td></tr>
+				<tr><td>12</td><td>8</td><td>4</td><td>3</td><td>—</td><td>—</td></tr>
+				<tr><td>13</td><td>9</td><td>4</td><td>3</td><td>2</td><td>—</td></tr>
+				<tr><td>14</td><td>10</td><td>4</td><td>3</td><td>2</td><td>—</td></tr>
+				<tr><td>15</td><td>10</td><td>4</td><td>3</td><td>2</td><td>—</td></tr>
+				<tr><td>16</td><td>11</td><td>4</td><td>3</td><td>3</td><td>—</td></tr>
+				<tr><td>17</td><td>11</td><td>4</td><td>3</td><td>3</td><td>—</td></tr>
+				<tr><td>18</td><td>11</td><td>4</td><td>3</td><td>3</td><td>—</td></tr>
+				<tr><td>19</td><td>12</td><td>4</td><td>3</td><td>3</td><td>1</td></tr>
+				<tr><td>20</td><td>13</td><td>4</td><td>3</td><td>3</td><td>1</td></tr>
+			</table>
+			<div element="ID_WOTC_PHB24_ARCHETYPE_FEATURE_ROGUE_ARCANE_TRICKSTER_MAGE_HAND_LEGERDEMAIN" />
+			<div element="ID_WOTC_PHB24_ARCHETYPE_FEATURE_ROGUE_ARCANE_TRICKSTER_MAGICAL_AMBUSH" />
+			<div element="ID_WOTC_PHB24_ARCHETYPE_FEATURE_ROGUE_ARCANE_TRICKSTER_VERSATILE_TRICKSTER" />
+			<div element="ID_WOTC_PHB24_ARCHETYPE_FEATURE_ROGUE_ARCANE_TRICKSTER_SPELL_THIEF" />
+		</description>
+		<sheet display="false" />
+		<rules>
+			<grant type="Archetype Feature" id="ID_WOTC_PHB24_ARCHETYPE_FEATURE_ROGUE_ARCANE_TRICKSTER_SPELLCASTING" level="3"/>
+			<grant type="Archetype Feature" id="ID_WOTC_PHB24_ARCHETYPE_FEATURE_ROGUE_ARCANE_TRICKSTER_MAGE_HAND_LEGERDEMAIN" level="3"/>
+			<grant type="Archetype Feature" id="ID_WOTC_PHB24_ARCHETYPE_FEATURE_ROGUE_ARCANE_TRICKSTER_MAGICAL_AMBUSH" level="9"/>
+			<grant type="Archetype Feature" id="ID_WOTC_PHB24_ARCHETYPE_FEATURE_ROGUE_ARCANE_TRICKSTER_VERSATILE_TRICKSTER" level="13"/>
+			<grant type="Archetype Feature" id="ID_WOTC_PHB24_ARCHETYPE_FEATURE_ROGUE_ARCANE_TRICKSTER_SPELL_THIEF" level="17"/>
+		</rules>
+	</element>
+
+	<element name="Level 3: Spellcasting" type="Archetype Feature" source="Player’s Handbook 2024" id="ID_WOTC_PHB24_ARCHETYPE_FEATURE_ROGUE_ARCANE_TRICKSTER_SPELLCASTING">
+		<requirements>!ID_INTERNAL_PHB24_FEATURE_REPLACEMENT_ROGUE_ARCANE_TRICKSTER_SPELLCASTING</requirements>
+		<description>
+			<p>You have learned to cast spells.</p>
+			<p class="indent"><em><strong>Cantrips.</strong></em> You know three cantrips: <i>Mage Hand</i> and two other cantrips of your choice from the Wizard spell list. <i>Mind Sliver</i> and <i>Minor Illusion</i> are recommended.</p>
+			<p class="indent">Whenever you gain a Rogue level, you can replace one of your cantrips, except <i>Mage Hand</i>, with another Wizard cantrip of your choice.</p>
+			<p class="indent">When you reach Rogue level 10, you learn another Wizard cantrip of your choice.</p>
+			<p class="indent"><em><strong>Spell Slots.</strong></em> The Arcane Trickster Spellcasting table shows how many spell slots you have to cast your level 1+ spells. You regain all expended spell slots when you finish a Long Rest.</p>
+			<p class="indent"><em><strong>Prepared Spells of Level 1+.</strong></em> You prepare the list of level 1+ spells that are available for you to cast with this feature. To start, choose three level 1 Wizard spells. <i>Charm Person</i>, <i>Disguise Self</i>, and <i>Fog Cloud</i> are recommended.</p>
+			<p class="indent">The number of spells on your list increases as you gain Rogue levels, as shown in the Prepared Spells column of the Arcane Trickster Spellcasting table. Whenever that number increases, choose additional Wizard spells until the number of spells on your list matches the number in the Arcane Trickster Spellcasting table. The chosen spells must be of a level for which you have spell slots. For example, if you’re a level 7 Rogue, your list of prepared spells can include five Wizard spells of level 1 or 2 in any combination.</p>
+			<p class="indent"><em><strong>Changing Your Prepared Spells.</strong></em> Whenever you gain a Rogue level, you can replace one spell on your list with another Wizard spell for which you have spell slots.</p>
+			<p class="indent"><em><strong>Spellcasting Ability.</strong></em> Intelligence is your spellcasting ability for your Wizard spells.</p>
+			<p class="indent"><em><strong>Spellcasting Focus.</strong></em> You can use an Arcane Focus as a Spellcasting Focus for your Wizard spells.</p>
+			<center>
+				<p><strong>Spell save DC</strong> = 8 + your proficiency bonus + your Intelligence modifier</p>
+				<p><strong>Spell attack modifier</strong> = your proficiency bonus + your Intelligence modifier</p>
+			</center>
+		</description>
+		<sheet alt="Spellcasting">
+			<description>Whenever you gain a Rogue level, you can replace one of your chosen cantrips with another Wizard cantrip of your choice.</description>
+		</sheet>
+		<spellcasting name="Arcane Trickster" ability="Intelligence" allowReplace="true">
+			<list>Wizard</list>
+		</spellcasting>
+		<rules>
+			<grant type="Grants" id="ID_INTERNAL_GRANTS_SPELLCASTING_FEATURE" />
+			<grant type="Grants" id="ID_INTERNAL_GRANT_MULTICLASS_SPELLCASTING_SLOTS_THIRD" requirements="ID_INTERNAL_GRANT_MULTICLASS" />
+			<stat name="arcane trickster:spellcasting:slots:1" value="2" level="3" />
+			<stat name="arcane trickster:spellcasting:slots:1" value="1" level="4" />
+			<stat name="arcane trickster:spellcasting:slots:1" value="1" level="7" />
+			<stat name="arcane trickster:spellcasting:slots:2" value="2" level="7" />
+			<stat name="arcane trickster:spellcasting:slots:2" value="1" level="10" />
+			<stat name="arcane trickster:spellcasting:slots:3" value="2" level="13" />
+			<stat name="arcane trickster:spellcasting:slots:3" value="1" level="16" />
+			<stat name="arcane trickster:spellcasting:slots:4" value="1" level="19" />
+
+			<grant type="Spell" id="ID_WOTC_PHB24_SPELL_MAGE_HAND" spellcasting="Arcane Trickster" />
+			<select type="Spell" name="Cantrip (Arcane Trickster)" supports="$(spellcasting:list), 0" number="2" spellcasting="Arcane Trickster" />
+			<select type="Spell" name="Cantrip (Arcane Trickster)" supports="$(spellcasting:list), 0" level="10" spellcasting="Arcane Trickster" />
+			<select type="Spell" name="Spell (Arcane Trickster)" supports="$(spellcasting:list), $(spellcasting:slots)" level="3" number="3" spellcasting="Arcane Trickster" />
+			<select type="Spell" name="Spell (Arcane Trickster)" supports="$(spellcasting:list), $(spellcasting:slots)" level="4" spellcasting="Arcane Trickster"/>
+			<select type="Spell" name="Spell (Arcane Trickster)" supports="$(spellcasting:list), $(spellcasting:slots)" level="7" spellcasting="Arcane Trickster"/>
+			<select type="Spell" name="Spell (Arcane Trickster)" supports="$(spellcasting:list), $(spellcasting:slots)" level="8" spellcasting="Arcane Trickster"/>
+			<select type="Spell" name="Spell (Arcane Trickster)" supports="$(spellcasting:list), $(spellcasting:slots)" level="10" spellcasting="Arcane Trickster"/>
+			<select type="Spell" name="Spell (Arcane Trickster)" supports="$(spellcasting:list), $(spellcasting:slots)" level="11" spellcasting="Arcane Trickster"/>
+			<select type="Spell" name="Spell (Arcane Trickster)" supports="$(spellcasting:list), $(spellcasting:slots)" level="13" spellcasting="Arcane Trickster"/>
+			<select type="Spell" name="Spell (Arcane Trickster)" supports="$(spellcasting:list), $(spellcasting:slots)" level="14" spellcasting="Arcane Trickster"/>
+			<select type="Spell" name="Spell (Arcane Trickster)" supports="$(spellcasting:list), $(spellcasting:slots)" level="16" spellcasting="Arcane Trickster"/>
+			<select type="Spell" name="Spell (Arcane Trickster)" supports="$(spellcasting:list), $(spellcasting:slots)" level="19" spellcasting="Arcane Trickster"/>
+			<select type="Spell" name="Spell (Arcane Trickster)" supports="$(spellcasting:list), $(spellcasting:slots)" level="20" spellcasting="Arcane Trickster"/>
+		</rules>
+	</element>
+
+	<element name="Level 3: Mage Hand Legerdemain" type="Archetype Feature" source="Player’s Handbook 2024" id="ID_WOTC_PHB24_ARCHETYPE_FEATURE_ROGUE_ARCANE_TRICKSTER_MAGE_HAND_LEGERDEMAIN">
+		<requirements>!ID_INTERNAL_PHB24_FEATURE_REPLACEMENT_ROGUE_ARCANE_TRICKSTER_MAGE_HAND_LEGERDEMAIN</requirements>
+		<description>
+			<p>When you cast <i>Mage Hand</i>, you can cast it as a Bonus Action, and you can make the spectral hand Invisible. You can control the hand as a Bonus Action, and through it, you can make Dexterity (Sleight of Hand) checks.</p>
+		</description>
+		<sheet alt="Mage Hand Legerdemain">
+			<description>You can cast and control Mage Hand as a Bonus Action, and you can make the spectral hand Invisible. You can make Dexterity (Sleight of Hand) checks with it.</description>
+		</sheet>
+	</element>
+
+	<element name="Level 9: Magical Ambush" type="Archetype Feature" source="Player’s Handbook 2024" id="ID_WOTC_PHB24_ARCHETYPE_FEATURE_ROGUE_ARCANE_TRICKSTER_MAGICAL_AMBUSH">
+		<requirements>!ID_INTERNAL_PHB24_FEATURE_REPLACEMENT_ROGUE_ARCANE_TRICKSTER_MAGICAL_AMBUSH</requirements>
+		<description>
+			<p>If you have the Invisible condition when you cast a spell on a creature, it has Disadvantage on any saving throw it makes against the spell on the same turn.</p>
+		</description>
+		<sheet alt="Magical Ambush">
+			<description>When you're Invisible and cast a spell on a creature, it has Disadvantage on any saving throw it makes against the spell on the same turn.</description>
+		</sheet>
+	</element>
+
+	<element name="Level 13: Versatile Trickster" type="Archetype Feature" source="Player’s Handbook 2024" id="ID_WOTC_PHB24_ARCHETYPE_FEATURE_ROGUE_ARCANE_TRICKSTER_VERSATILE_TRICKSTER">
+		<requirements>!ID_INTERNAL_PHB24_FEATURE_REPLACEMENT_ROGUE_ARCANE_TRICKSTER_VERSATILE_TRICKSTER</requirements>
+		<description>
+			<p>You gain the ability to distract targets with your Mage Hand. When you use the Trip option of your Cunning Strike on a creature, you can also use that option on another creature within 5 feet of the spectral hand.</p>
+		</description>
+		<sheet alt="Versatile Trickster">
+			<description>When you use the Trip option of your Cunning Strike on a creature, you can also use that option on another creature within 5 ft. of your Mage Hand.</description>
+		</sheet>
+	</element>
+
+	<element name="Level 17: Spell Thief" type="Archetype Feature" source="Player’s Handbook 2024" id="ID_WOTC_PHB24_ARCHETYPE_FEATURE_ROGUE_ARCANE_TRICKSTER_SPELL_THIEF">
+		<requirements>!ID_INTERNAL_PHB24_FEATURE_REPLACEMENT_ROGUE_ARCANE_TRICKSTER_SPELL_THIEF</requirements>
+		<description>
+			<p>You gain the ability to magically steal the knowledge of how to cast a spell from another spellcaster.</p>
+			<p class="indent">Immediately after a creature casts a spell that targets you or includes you in its area of effect, you can take a Reaction to force the creature to make an Intelligence saving throw. The DC equals your spell save DC. On a failed save, you negate the spell’s effect against you, and you steal the knowledge of the spell if it is at least level 1 and of a level you can cast (it doesn’t need to be a Wizard spell). For the next 8 hours, you have the spell prepared. The creature can’t cast it until the 8 hours have passed.</p>
+			<p class="indent">Once you steal a spell with this feature, you can’t use this feature again until you finish a Long Rest.</p>
+		</description>
+		<sheet alt="Spell Thief" action="Reaction" usage="1/Long Rest">
+			<description>Immediately after a creature casts a spell that targets you or includes you in its area of effect, you can force the creature to make a DC{{arcane trickster:spellcasting:dc}} Intelligence saving throw. On a failed save, you negate the spell’s effect against you, and you learn the spell if it is at least level 1 and of a level you can cast (it doesn’t need to be a Wizard spell). For the next 8 hours, you have the spell prepared, and the creature can’t cast it again until the 8 hours have passed.</description>
+		</sheet>
+	</element>
+
+	<!--Feature Replacement Grants-->
+	<element name="Spellcasting Feature Replacement" type="Grants" source="Internal" id="ID_INTERNAL_PHB24_FEATURE_REPLACEMENT_ROGUE_ARCANE_TRICKSTER_SPELLCASTING" />
+	<element name="Mage Hand Legerdemain Feature Replacement" type="Grants" source="Internal" id="ID_INTERNAL_PHB24_FEATURE_REPLACEMENT_ROGUE_ARCANE_TRICKSTER_MAGE_HAND_LEGERDEMAIN" />
+	<element name="Magical Ambush Feature Replacement" type="Grants" source="Internal" id="ID_INTERNAL_PHB24_FEATURE_REPLACEMENT_ROGUE_ARCANE_TRICKSTER_MAGICAL_AMBUSH" />
+	<element name="Versatile Trickster Feature Replacement" type="Grants" source="Internal" id="ID_INTERNAL_PHB24_FEATURE_REPLACEMENT_ROGUE_ARCANE_TRICKSTER_VERSATILE_TRICKSTER" />
+	<element name="Spell Thief Feature Replacement" type="Grants" source="Internal" id="ID_INTERNAL_PHB24_FEATURE_REPLACEMENT_ROGUE_ARCANE_TRICKSTER_SPELL_THIEF" />
+</elements>

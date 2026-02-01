@@ -1,0 +1,211 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<elements>
+	<info>
+		<name>Elf</name>
+		<description>The Elf species from the Player’s Handbook 2024.</description>
+		<author url="http://dnd.wizards.com/products/tabletop-games/rpg-products/rpg_playershandbook">Wizards of the Coast</author>
+		<update version="0.0.1">
+			<file name="race-elf.xml" url="https://raw.githubusercontent.com/AuroraLegacy/elements/master/core/players-handbook-2024/races/race-elf.xml" />
+		</update>
+	</info>
+	
+	<element name="Elf" type="Race" source="Player’s Handbook 2024" id="ID_WOTC_PHB24_RACE_ELF">
+		<description>
+			<p>Created by the god Corellon, the first elves could change their forms at will. They lost this ability when Corellon cursed them for plotting with the deity Lolth, who tried and failed to usurp Corellon’s dominion. When Lolth was cast into the Abyss, most elves renounced her and earned Corellon’s forgiveness, but that which Corellon had taken from them was lost forever.</p>
+			<p class="indent">No longer able to shape-shift at will, the elves retreated to the Feywild, where their sorrow was deepened by that plane’s influence. Over time, curiosity led many of them to explore other planes of existence, including worlds in the Material Plane.</p>
+			<p class="indent">Elves have pointed ears and lack facial and body hair. They live for around 750 years, and they don’t sleep but instead enter a trance when they need to rest. In that state, they remain aware of their surroundings while immersing themselves in memories and meditations.</p>
+			<p class="indent">An environment subtly transforms elves after they inhabit it for a millennium or more, and it grants them certain kinds of magic. Drow, high elves, and wood elves are examples of elves who have been transformed thus.</p>
+			<h4>Drow</h4>
+			<p>Drow typically dwell in the Underdark and have been shaped by it. Some drow individuals and societies avoid the Underdark altogether yet carry its magic. In the Eberron setting, for example, drow dwell in rainforests and cyclopean ruins on the continent of Xen’drik.</p>
+			<h4>High Elves</h4>
+			<p>High elves have been infused with the magic of crossings between the Feywild and the Material Plane. On some worlds, high elves refer to themselves by other names. For example, they call themselves sun or moon elves in the Forgotten Realms setting, Silvanesti and Qualinesti in the Dragonlance setting, and Aereni in the Eberron setting.</p>
+			<h4>Wood Elves</h4>
+			<p>Wood elves carry the magic of primeval forests within themselves. They are known by many other names, including wild elves, green elves, and forest elves. Grugach are reclusive wood elves of the Greyhawk setting, while the Kagonesti and the Tairnadal are wood elves of the Dragonlance and Eberron settings, respectively.</p>
+
+			<h4>Elf Traits</h4>
+			<p style="margin-top:15px"><strong><em>Creature Type:</em></strong> Humanoid</p>
+			<p><strong><em>Size:</em></strong> Medium (about 5–6 feet tall)</p>
+			<p><strong><em>Speed:</em></strong> 30 feet</p>
+			
+			<p>As an Elf, you have these special traits.</p>
+			<p class="indent"><strong><em>Darkvision.</em></strong> You have Darkvision with a range of 60 feet.</p>
+			<p class="indent"><strong><em>Elven Lineage.</em></strong> You are part of a lineage that grants you supernatural abilities. Choose a lineage from the Elven Lineages table. You gain the level 1 benefit of that lineage.</p>
+			<p class="indent">When you reach character levels 3 and 5, you learn a higher-level spell, as shown on the table. You always have that spell prepared. You can cast it once without a spell slot, and you regain the ability to cast it in that way when you finish a Long Rest. You can also cast the spell using any spell slots you have of the appropriate level. Intelligence, Wisdom, or Charisma is your spellcasting ability for the spells you cast with this trait (choose the ability when you select the lineage).</p>
+			<p class="indent"><strong><em>Fey Ancestry.</em></strong> You have Advantage on saving throws you make to avoid or end the Charmed condition.</p>
+			<p class="indent"><strong><em>Trance.</em></strong> You don’t need to sleep, and magic can’t put you to sleep. You can finish a Long Rest in 4 hours if you spend those hours in a trancelike meditation, during which you retain consciousness.</p>
+			<h5>Elven Lineage</h5>
+			<table>
+				<thead>
+					<tr><td>Lineage</td><td>Level 1</td><td>Level 3</td><td>Level 5</td></tr>
+				</thead>
+				<tr><td>Drow</td><td>The range of your Darkvision increases to 120 feet. You also know the <i>Dancing Lights</i> cantrip.</td><td><i>Faerie Fire</i></td><td><i>Darkness</i></td></tr>
+				<tr><td>High Elf</td><td>You know the <i>Prestidigitation</i> cantrip. Whenever you finish a Long Rest, you can replace that cantrip with a different cantrip from the Wizard spell list.</td><td><i>Detect Magic</i></td><td><i>Misty Step</i></td></tr>
+				<tr><td>Wood Elf</td><td>Your Speed increases to 35 feet. You also know the <i>Druidcraft</i> cantrip.</td><td><i>Longstrider</i></td><td><i>Pass without Trace</i></td></tr>
+			</table>
+		</description>
+		<sheet display="false" />
+		<rules>
+			<grant type="Grants" id="ID_INTERNAL_GRANT_RACE_ELF" />
+			<select type="Ability Score Improvement" name="Ability Score Improvement Option (Elf)" supports="Custom Ability Score Improvement Option" requirements="!ID_INTERNAL_GRANTS_BACKGROUND_ASI" />
+			<grant type="Size" id="ID_SIZE_MEDIUM" />
+			<stat name="innate speed" value="30" bonus="base" />
+			<grant type="Vision" id="ID_VISION_DARKVISION" />
+			<stat name="darkvision:range" value="60" bonus="base" />
+
+			<grant type="Language" id="ID_LANGUAGE_COMMON" requirements="!ID_WOTC_TCOE_OPTION_CUSTOMIZED_LANGUAGE" />
+			<select type="Language" name="Customized Language (Elf)" supports="Custom Race Language" requirements="ID_WOTC_TCOE_OPTION_CUSTOMIZED_LANGUAGE" />
+			<select type="Language" name="Language (Elf)" supports="Standard||Exotic" number="2" />
+
+			<grant type="Racial Trait" id="ID_WOTC_PHB24_RACIAL_TRAIT_ELF_ELVEN_LINEAGE" requirements="!ID_WOTC_PHB24_RACIAL_TRAIT_REPLACEMENT_ELF_ELVEN_LINEAGE" />
+			<grant type="Racial Trait" id="ID_WOTC_PHB24_RACIAL_TRAIT_ELF_FEY_ANCESTRY" requirements="!ID_WOTC_PHB24_RACIAL_TRAIT_REPLACEMENT_ELF_FEY_ANCESTRY" />
+			<grant type="Racial Trait" id="ID_WOTC_PHB24_RACIAL_TRAIT_ELF_KEEN_SENSES" requirements="!ID_WOTC_PHB24_RACIAL_TRAIT_REPLACEMENT_ELF_KEEN_SENSES" />
+			<grant type="Racial Trait" id="ID_WOTC_PHB24_RACIAL_TRAIT_ELF_TRANCE" requirements="!ID_WOTC_PHB24_RACIAL_TRAIT_REPLACEMENT_ELF_TRANCE" />
+		</rules>
+	</element>
+
+	<element name="Elven Lineage" type="Racial Trait" source="Player’s Handbook 2024" id="ID_WOTC_PHB24_RACIAL_TRAIT_ELF_ELVEN_LINEAGE">
+		<description>
+			<p>You are part of a lineage that grants you supernatural abilities. Choose a lineage from the Elven Lineages table. You gain the level 1 benefit of that lineage.</p>
+			<p class="indent">When you reach character levels 3 and 5, you learn a higher-level spell, as shown on the table. You always have that spell prepared. You can cast it once without a spell slot, and you regain the ability to cast it in that way when you finish a Long Rest. You can also cast the spell using any spell slots you have of the appropriate level. Intelligence, Wisdom, or Charisma is your spellcasting ability for the spells you cast with this trait (choose the ability when you select the lineage).</p>
+			<h5>Elven Lineage</h5>
+			<table>
+				<thead>
+					<tr><td>Lineage</td><td>Level 1</td><td>Level 3</td><td>Level 5</td></tr>
+				</thead>
+				<tr><td>Drow</td><td>The range of your Darkvision increases to 120 feet. You also know the <i>Dancing Lights</i> cantrip.</td><td><i>Faerie Fire</i></td><td><i>Darkness</i></td></tr>
+				<tr><td>High Elf</td><td>You know the <i>Prestidigitation</i> cantrip. Whenever you finish a Long Rest, you can replace that cantrip with a different cantrip from the Wizard spell list.</td><td><i>Detect Magic</i></td><td><i>Misty Step</i></td></tr>
+				<tr><td>Wood Elf</td><td>Your Speed increases to 35 feet. You also know the <i>Druidcraft</i> cantrip.</td><td><i>Longstrider</i></td><td><i>Pass without Trace</i></td></tr>
+			</table>
+		</description>
+		<sheet>
+			<description>Your spellcasting ability for these spells is {{phb24:elven lineage:ability}}.</description>
+		</sheet>
+		<rules>
+			<select type="Racial Trait" name="Elven Lineage" supports="Elven Lineage 2024" />
+			<select type="Racial Trait" name="Spellcasting Ability (Elven Lineage)" supports="ID_WOTC_PHB24_RACIAL_TRAIT_ELF_ELVEN_LINEAGE_INTELLIGENCE|ID_WOTC_PHB24_RACIAL_TRAIT_ELF_ELVEN_LINEAGE_WISDOM|ID_WOTC_PHB24_RACIAL_TRAIT_ELF_ELVEN_LINEAGE_CHARISMA" />
+		</rules>
+	</element>
+
+	<element name="Drow" type="Racial Trait" source="Player’s Handbook 2024" id="ID_WOTC_PHB24_RACIAL_TRAIT_ELF_ELVEN_LINEAGE_DROW">
+		<compendium display="false" />
+		<supports>Elven Lineage 2024</supports>
+		<description>
+			<div element="ID_WOTC_PHB24_RACIAL_TRAIT_ELF_ELVEN_LINEAGE" />
+		</description>
+		<sheet>
+			<description>You know the Dancing Lights cantrip.</description>
+			<description level="3">You know the Dancing Lights cantrip, and you can cast the Faerie Fire spell once per long rest. You can also cast this spell using any spell slots you have of the appropriate level.</description>
+			<description level="5">You know the Dancing Lights cantrip, and you can cast the Faerie Fire and Darkness spells once per long rest. You can also cast either of those spells using any spell slots you have of the appropriate level.</description>
+		</sheet>
+		<rules>
+			<stat name="darkvision:range" value="120" bonus="base" />
+			<grant type="Spell" id="ID_WOTC_PHB24_SPELL_DANCING_LIGHTS" />
+			<grant type="Spell" id="ID_WOTC_PHB24_SPELL_FAERIE_FIRE" level="3" />
+			<grant type="Spell" id="ID_WOTC_PHB24_SPELL_DARKNESS" level="5" />
+		</rules>
+	</element>
+	
+	<element name="High Elf" type="Racial Trait" source="Player’s Handbook 2024" id="ID_WOTC_PHB24_RACIAL_TRAIT_ELF_ELVEN_LINEAGE_HIGH_ELF">
+		<compendium display="false" />
+		<supports>Elven Lineage 2024</supports>
+		<description>
+			<div element="ID_WOTC_PHB24_RACIAL_TRAIT_ELF_ELVEN_LINEAGE" />
+		</description>
+		<sheet>
+			<description>You know a cantrip from the Wizard spell list. You can replace this cantrip whenever you finish a long rest.</description>
+			<description level="3">You know a cantrip from the Wizard spell list. You can replace this cantrip whenever you finish a long rest. You can cast the Detect Magic spell once per long rest. You can also cast this spell using any spell slots you have of the appropriate level.</description>
+			<description level="5">You know a cantrip from the Wizard spell list. You can replace this cantrip whenever you finish a long rest. You can cast the Detect Magic and Misty Step spells once per long rest. You can also cast either of those spells using any spell slots you have of the appropriate level.</description>
+		</sheet>
+		<rules>
+			<select type="Spell" name="Wizard Cantrip (High Elf)" supports="Wizard&amp;&amp;0" default="ID_WOTC_PHB24_SPELL_PRESTIDIGITATION" />
+			<grant type="Spell" id="ID_WOTC_PHB24_SPELL_DETECT_MAGIC" level="3" />
+			<grant type="Spell" id="ID_WOTC_PHB24_SPELL_MISTY_STEP" level="5" />
+		</rules>
+	</element>
+
+	<element name="Wood Elf" type="Racial Trait" source="Player’s Handbook 2024" id="ID_WOTC_PHB24_RACIAL_TRAIT_ELF_ELVEN_LINEAGE_WOOD_ELF">
+		<compendium display="false" />
+		<supports>Elven Lineage 2024</supports>
+		<description>
+			<div element="ID_WOTC_PHB24_RACIAL_TRAIT_ELF_ELVEN_LINEAGE" />
+		</description>
+		<sheet>
+			<description>You know the Druidcraft cantrip.</description>
+			<description level="3">You know the Druidcraft cantrip, and you can cast the Longstrider spell once per long rest. You can also cast this spell using any spell slots you have of the appropriate level.</description>
+			<description level="5">You know the Druidcraft cantrip, and you can cast the Longstrider and Pass without Trace spells once per long rest. You can also cast either of those spells using any spell slots you have of the appropriate level.</description>
+		</sheet>
+		<rules>
+			<stat name="innate speed" value="35" bonus="base" />
+			<grant type="Spell" id="ID_WOTC_PHB24_SPELL_DRUIDCRAFT" />
+			<grant type="Spell" id="ID_WOTC_PHB24_SPELL_LONGSTRIDER" level="3" />
+			<grant type="Spell" id="ID_WOTC_PHB24_SPELL_PASS_WITHOUT_TRACE" level="5" />
+		</rules>
+	</element>
+
+	<element name="Intelligence" type="Racial Trait" source="Player’s Handbook 2024" id="ID_WOTC_PHB24_RACIAL_TRAIT_ELF_ELVEN_LINEAGE_INTELLIGENCE">
+		<compendium display="false" />
+		<description>
+			<p>Your spellcasting ability for these spells is Intelligence.</p>
+		</description>
+		<sheet display="false" />
+		<rules>
+			<stat name="phb24:elven lineage:ability" value="Intelligence" inline="true" />
+		</rules>
+	</element>
+	<element name="Wisdom" type="Racial Trait" source="Player’s Handbook 2024" id="ID_WOTC_PHB24_RACIAL_TRAIT_ELF_ELVEN_LINEAGE_WISDOM">
+		<compendium display="false" />
+		<description>
+			<p>Your spellcasting ability for these spells is Wisdom.</p>
+		</description>
+		<sheet display="false" />
+		<rules>
+			<stat name="phb24:elven lineage:ability" value="Wisdom" inline="true" />
+		</rules>
+	</element>
+	<element name="Charisma" type="Racial Trait" source="Player’s Handbook 2024" id="ID_WOTC_PHB24_RACIAL_TRAIT_ELF_ELVEN_LINEAGE_CHARISMA">
+		<compendium display="false" />
+		<description>
+			<p>Your spellcasting ability for these spells is Charisma.</p>
+		</description>
+		<sheet display="false" />
+		<rules>
+			<stat name="phb24:elven lineage:ability" value="Charisma" inline="true" />
+		</rules>
+	</element>
+	
+	<element name="Fey Ancestry" type="Racial Trait" source="Player’s Handbook 2024" id="ID_WOTC_PHB24_RACIAL_TRAIT_ELF_FEY_ANCESTRY">
+		<description>
+			<p>You have Advantage on saving throws you make to avoid or end the Charmed condition.</p>
+		</description>
+		<sheet>
+			<description>You have Advantage on saving throws you make to avoid or end the Charmed condition.</description>
+		</sheet>
+	</element>
+
+	<element name="Keen Senses" type="Racial Trait" source="Player’s Handbook 2024" id="ID_WOTC_PHB24_RACIAL_TRAIT_ELF_KEEN_SENSES">
+		<description>
+			<p>You have proficiency in the Insight, Perception, or Survival skill.</p>
+		</description>
+		<sheet display="false" />
+		<rules>
+			<select type="Proficiency" name="Keen Senses" supports="ID_WOTC_PHB24_PROFICIENCY_SKILL_INSIGHT||ID_WOTC_PHB24_PROFICIENCY_SKILL_PERCEPTION|ID_WOTC_PHB24_PROFICIENCY_SKILL_SURVIVAL" requirements="!ID_WOTC_TCOE_OPTION_CUSTOMIZED_PROFICIENCY" />
+			<select type="Proficiency" name="Customized Skill Proficiency (Keen Senses)" supports="Skill" requirements="ID_WOTC_TCOE_OPTION_CUSTOMIZED_PROFICIENCY" />
+		</rules>
+	</element>
+
+	<element name="Trance" type="Racial Trait" source="Player’s Handbook 2024" id="ID_WOTC_PHB24_RACIAL_TRAIT_ELF_TRANCE">
+		<description>
+			<p>You don’t need to sleep, and magic can’t put you to sleep. You can finish a Long Rest in 4 hours if you spend those hours in a trancelike meditation, during which you retain consciousness.</p>
+		</description>
+		<sheet>
+			<description>You don’t need to sleep, and magic can’t put you to sleep. You can finish a Long Rest in 4 hours if you spend those hours in a trancelike meditation, during which you retain consciousness.</description>
+		</sheet>
+	</element>
+
+	<!--racial trait replacement grants-->
+	<element name="Elven Lineage Replacement" type="Grants" source="Internal" id="ID_WOTC_PHB24_RACIAL_TRAIT_REPLACEMENT_ELF_ELVEN_LINEAGE" />
+	<element name="Fey Ancestry Replacement" type="Grants" source="Internal" id="ID_WOTC_PHB24_RACIAL_TRAIT_REPLACEMENT_ELF_FEY_ANCESTRY" />
+	<element name="Keen Senses Replacement" type="Grants" source="Internal" id="ID_WOTC_PHB24_RACIAL_TRAIT_REPLACEMENT_ELF_KEEN_SENSES" />
+	<element name="Trance Replacement" type="Grants" source="Internal" id="ID_WOTC_PHB24_RACIAL_TRAIT_REPLACEMENT_ELF_TRANCE" />
+
+</elements>

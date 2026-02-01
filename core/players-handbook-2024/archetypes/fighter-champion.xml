@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<elements>
+	<info>
+		<name>Champion</name>
+		<description>The Champion subclass from the Player’s Handbook 2024.</description>
+		<author url="https://dndstore.wizards.com/us/en/product/1001494/2024-player-s-handbook-digital-plus-physical-bundle">Wizards of the Coast</author>
+		<update version="0.0.1">
+			<file name="fighter-champion.xml" url="https://raw.githubusercontent.com/AuroraLegacy/elements/master/core/players-handbook-2024/archetypes/fighter-champion.xml" />
+		</update>
+	</info>
+
+	<element name="Champion" type="Archetype" source="Player’s Handbook 2024" id="ID_WOTC_PHB24_ARCHETYPE_FIGHTER_CHAMPION">
+		<supports>Fighter Subclass</supports>
+		<description>
+			<p class="flavor">Pursue Physical Excellence in Combat</p>
+			<p>A Champion focuses on the development of martial prowess in a relentless pursuit of victory. Champions combine rigorous training with physical excellence to deal devastating blows, withstand peril, and garner glory. Whether in athletic contests or bloody battle, Champions strive for the crown of the victor.</p>
+			<div element="ID_WOTC_PHB24_ARCHETYPE_FEATURE_FIGHTER_CHAMPION_IMPROVED_CRITICAL"/>
+			<div element="ID_WOTC_PHB24_ARCHETYPE_FEATURE_FIGHTER_CHAMPION_REMARKABLE_ATHLETE"/>
+			<div element="ID_WOTC_PHB24_ARCHETYPE_FEATURE_FIGHTER_CHAMPION_ADDITIONAL_FIGHTING_STYLE"/>
+			<div element="ID_WOTC_PHB24_ARCHETYPE_FEATURE_FIGHTER_CHAMPION_HEROIC_WARRIOR"/>
+			<div element="ID_WOTC_PHB24_ARCHETYPE_FEATURE_FIGHTER_CHAMPION_SUPERIOR_CRITICAL"/>
+			<div element="ID_WOTC_PHB24_ARCHETYPE_FEATURE_FIGHTER_CHAMPION_SURVIVOR"/>
+		</description>
+		<sheet display="false" />
+		<rules>
+			<grant type="Archetype Feature" id="ID_WOTC_PHB24_ARCHETYPE_FEATURE_FIGHTER_CHAMPION_IMPROVED_CRITICAL" level="3"/>
+			<grant type="Archetype Feature" id="ID_WOTC_PHB24_ARCHETYPE_FEATURE_FIGHTER_CHAMPION_REMARKABLE_ATHLETE" level="3"/>
+			<grant type="Archetype Feature" id="ID_WOTC_PHB24_ARCHETYPE_FEATURE_FIGHTER_CHAMPION_ADDITIONAL_FIGHTING_STYLE" level="7"/>
+			<grant type="Archetype Feature" id="ID_WOTC_PHB24_ARCHETYPE_FEATURE_FIGHTER_CHAMPION_HEROIC_WARRIOR" level="10"/>
+			<grant type="Archetype Feature" id="ID_WOTC_PHB24_ARCHETYPE_FEATURE_FIGHTER_CHAMPION_SUPERIOR_CRITICAL" level="15"/>
+			<grant type="Archetype Feature" id="ID_WOTC_PHB24_ARCHETYPE_FEATURE_FIGHTER_CHAMPION_SURVIVOR" level="18"/>
+		</rules>
+	</element>
+
+	<element name="Level 3: Improved Critical" type="Archetype Feature" source="Player’s Handbook 2024" id="ID_WOTC_PHB24_ARCHETYPE_FEATURE_FIGHTER_CHAMPION_IMPROVED_CRITICAL">
+		<requirements>!ID_INTERNAL_PHB24_FEATURE_REPLACEMENT_FIGHTER_CHAMPION_IMPROVED_CRITICAL</requirements>
+		<description>
+			<p>Your attack rolls with weapons and Unarmed Strikes can score a Critical Hit on a roll of 19 or 20 on the d20.</p>
+		</description>
+		<sheet alt="Improved Critical">
+			<description>Your attack rolls with weapons and Unarmed Strikes can score a Critical Hit on a roll of 19–20.</description>
+			<description level="15">Your attack rolls with weapons and Unarmed Strikes can score a Critical Hit on a roll of 18–20.</description>
+		</sheet>
+	</element>
+	<element name="Level 3: Remarkable Athlete" type="Archetype Feature" source="Player’s Handbook 2024" id="ID_WOTC_PHB24_ARCHETYPE_FEATURE_FIGHTER_CHAMPION_REMARKABLE_ATHLETE">
+		<requirements>!ID_INTERNAL_PHB24_FEATURE_REPLACEMENT_FIGHTER_CHAMPION_REMARKABLE_ATHLETE</requirements>
+		<description>
+			<p>Thanks to your athleticism, you have Advantage on Initiative rolls and Strength (Athletics) checks.</p>
+			<p class="indent">In addition, immediately after you score a Critical Hit, you can move up to half your Speed without provoking Opportunity Attacks.</p>
+		</description>
+		<sheet alt="Remarkable Athlete">
+			<description>Immediately after you score a Critical hit, you can move up to half your Speed without provoking Opportunity Attacks. Additionally, you have Advantage on Initiative rolls and Strength (Athletics) checks.</description>
+		</sheet>
+		<rules>
+			<grant type="Grants" id="ID_INTERNAL_GRANTS_INITIATIVE_ADVANTAGE" />
+		</rules>
+	</element>
+
+	<element name="Level 7: Additional Fighting Style" type="Archetype Feature" source="Player’s Handbook 2024" id="ID_WOTC_PHB24_ARCHETYPE_FEATURE_FIGHTER_CHAMPION_ADDITIONAL_FIGHTING_STYLE">
+		<requirements>!ID_INTERNAL_PHB24_FEATURE_REPLACEMENT_FIGHTER_CHAMPION_ADDITIONAL_FIGHTING_STYLE</requirements>
+		<description>
+			<p>You gain another Fighting Style feat of your choice.</p>
+		</description>
+		<sheet display="false" />
+		<rules>
+			<select type="Feat" name="Additional Fighting Style (Champion)" supports="Fighting Style" />
+		</rules>
+	</element>
+
+	<element name="Level 10: Heroic Warrior" type="Archetype Feature" source="Player’s Handbook 2024" id="ID_WOTC_PHB24_ARCHETYPE_FEATURE_FIGHTER_CHAMPION_HEROIC_WARRIOR">
+		<requirements>!ID_INTERNAL_PHB24_FEATURE_REPLACEMENT_FIGHTER_CHAMPION_HEROIC_WARRIOR</requirements>
+		<description>
+			<p>The thrill of battle drives you toward victory. During combat, you can give yourself Heroic Inspiration whenever you start your turn without it.</p>
+		</description>
+		<sheet alt="Heroic Warrior">
+			<description>During combat, you can give yourself Heroic Inspiration whenever you start your turn without it.</description>
+		</sheet>
+	</element>
+
+	<element name="Level 15: Superior Critical" type="Archetype Feature" source="Player’s Handbook 2024" id="ID_WOTC_PHB24_ARCHETYPE_FEATURE_FIGHTER_CHAMPION_SUPERIOR_CRITICAL">
+		<requirements>!ID_INTERNAL_PHB24_FEATURE_REPLACEMENT_FIGHTER_CHAMPION_SUPERIOR_CRITICAL</requirements>
+		<description>
+			<p>Your attack rolls with weapons and Unarmed Strikes can now score a Critical Hit on a roll of 18–20 on the d20.</p>
+		</description>
+		<sheet display="false" />
+	</element>
+
+	<element name="Level 18: Survivor" type="Archetype Feature" source="Player’s Handbook 2024" id="ID_WOTC_PHB24_ARCHETYPE_FEATURE_FIGHTER_CHAMPION_SURVIVOR">
+		<requirements>!ID_INTERNAL_PHB24_FEATURE_REPLACEMENT_FIGHTER_CHAMPION_SURVIVOR</requirements>
+		<description>
+			<p>You attain the pinnacle of resilience in battle, giving you these benefits.</p>
+			<p class="indent"><em><strong>Defy Death.</strong></em> You have Advantage on Death Saving Throws. Moreover, when you roll 18–20 on a Death Saving Throw, you gain the benefit of rolling a 20 on it.</p>
+			<p class="indent"><em><strong>Heroic Rally.</strong></em> At the start of each of your turns, you regain Hit Points equal to 5 plus your Constitution modifier if you are Bloodied and have at least 1 Hit Point.</p>
+		</description>
+		<sheet alt="Survivor">
+			<description>At the start of each of your turns, you regain 5+{{constitution:modifier}} Hit Points if you are Bloodied and have at least 1 Hit Point. In addition, you have advantage on Death Saving Throws, and gain the benefit of rolling a 20 on them if you roll an 18-20.</description>
+		</sheet>
+	</element>
+	
+	<!--Feature Replacement Grants-->
+	<element name="Improved Critical Feature Replacement" type="Grants" source="Internal" id="ID_INTERNAL_PHB24_FEATURE_REPLACEMENT_FIGHTER_CHAMPION_IMPROVED_CRITICAL" />
+	<element name="Remarkable Athlete Feature Replacement" type="Grants" source="Internal" id="ID_INTERNAL_PHB24_FEATURE_REPLACEMENT_FIGHTER_CHAMPION_REMARKABLE_ATHLETE" />
+	<element name="Additional Fighting Style Feature Replacement" type="Grants" source="Internal" id="ID_INTERNAL_PHB24_FEATURE_REPLACEMENT_FIGHTER_CHAMPION_ADDITIONAL_FIGHTING_STYLE" />
+	<element name="Heroic Warrior Feature Replacement" type="Grants" source="Internal" id="ID_INTERNAL_PHB24_FEATURE_REPLACEMENT_FIGHTER_CHAMPION_HEROIC_WARRIOR" />
+	<element name="Superior Critical Feature Replacement" type="Grants" source="Internal" id="ID_INTERNAL_PHB24_FEATURE_REPLACEMENT_FIGHTER_CHAMPION_SUPERIOR_CRITICAL" />
+	<element name="Survivor Feature Replacement" type="Grants" source="Internal" id="ID_INTERNAL_PHB24_FEATURE_REPLACEMENT_FIGHTER_CHAMPION_SURVIVOR" />
+</elements>

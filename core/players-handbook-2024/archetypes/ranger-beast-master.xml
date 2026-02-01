@@ -1,0 +1,446 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<elements>
+	<info>
+		<name>Beast Master</name>
+		<description>The Beast Master subclass from the Player’s Handbook 2024</description>
+		<author url="https://dndstore.wizards.com/us/en/product/1001494/2024-player-s-handbook-digital-plus-physical-bundle">Wizards of the Coast</author>
+		<update version="0.0.1">
+			<file name="ranger-beast-master.xml" url="https://raw.githubusercontent.com/AuroraLegacy/elements/master/core/players-handbook-2024/archetypes/ranger-beast-master.xml" />
+		</update>
+	</info>
+
+	<element name="Beast Master" type="Archetype" source="Player’s Handbook 2024" id="ID_WOTC_PHB24_ARCHETYPE_RANGER_BEAST_MASTER">
+		<supports>Ranger Subclass</supports>
+		<description>
+			<p class="flavor">Bond with a Primal Beast</p>
+			<p>A Beast Master forms a mystical bond with a special animal, drawing on primal magic and a deep connection to the natural world.</p>
+			<div element="ID_WOTC_PHB24_ARCHETYPE_FEATURE_RANGER_BEAST_MASTER_PRIMAL_COMPANION" />
+			<div element="ID_WOTC_PHB24_ARCHETYPE_FEATURE_RANGER_BEAST_MASTER_EXCEPTIONAL_TRAINING" />
+			<div element="ID_WOTC_PHB24_ARCHETYPE_FEATURE_RANGER_BEAST_MASTER_BESTIAL_FURY" />
+			<div element="ID_WOTC_PHB24_ARCHETYPE_FEATURE_RANGER_BEAST_MASTER_SHARE_SPELLS" />
+			<div class="reference">
+				<div element="ID_WOTC_PHB24_INFORMATION_PRIMAL_COMPANION_BEAST_OF_THE_LAND" />
+			</div>
+			<div class="reference">
+				<div element="ID_WOTC_PHB24_INFORMATION_PRIMAL_COMPANION_BEAST_OF_THE_SKY" />
+			</div>
+			<div class="reference">
+				<div element="ID_WOTC_PHB24_INFORMATION_PRIMAL_COMPANION_BEAST_OF_THE_SEA" />
+			</div>
+		</description>
+		<sheet display="false" />
+		<rules>
+			<grant type="Archetype Feature" id="ID_WOTC_PHB24_ARCHETYPE_FEATURE_RANGER_BEAST_MASTER_PRIMAL_COMPANION" level="3" />
+			<grant type="Archetype Feature" id="ID_WOTC_PHB24_ARCHETYPE_FEATURE_RANGER_BEAST_MASTER_EXCEPTIONAL_TRAINING" level="7" />
+			<grant type="Archetype Feature" id="ID_WOTC_PHB24_ARCHETYPE_FEATURE_RANGER_BEAST_MASTER_BESTIAL_FURY" level="11" />
+			<grant type="Archetype Feature" id="ID_WOTC_PHB24_ARCHETYPE_FEATURE_RANGER_BEAST_MASTER_SHARE_SPELLS" level="15" />
+		</rules>
+	</element>
+
+	<element name="Level 3: Primal Companion" type="Class Feature" source="Player’s Handbook 2024" id="ID_WOTC_PHB24_ARCHETYPE_FEATURE_RANGER_BEAST_MASTER_PRIMAL_COMPANION">
+		<requirements>!ID_INTERNAL_PHB24_FEATURE_REPLACEMENT_RANGER_BEAST_MASTER_PRIMAL_COMPANION</requirements>
+		<description>
+			<p>You magically summon a primal beast, which draws strength from your bond with nature. Choose its stat block: <b>Beast of the Land</b>, <b>Beast of the Sea</b>, or <b>Beast of the Sky</b>. You also determine the kind of animal it is, choosing a kind appropriate for the stat block. Whatever beast you choose, it bears primal markings indicating its supernatural origin.</p>
+			<p class="indent">The beast is Friendly to you and your allies and obeys your commands. It vanishes if you die.</p>
+			<p class="indent"><b><i>The Beast in Combat.</i></b> In combat, the beast acts during your turn. It can move and use its Reaction on its own, but the only action it takes is the Dodge action unless you take a Bonus Action to command it to take an action in its stat block or some other action. You can also sacrifice one of your attacks when you take the Attack action to command the beast to take the Beast's Strike action. If you have the Incapacitated condition, the beast acts on its own and isn't limited to the Dodge action.</p>
+			<p class="indent"><b><i>Restoring or Replacing the Beast.</i></b> If the beast has died within the last hour, you can take a Magic action to touch it and expend a spell slot. The beast returns to life after 1 minute with all its Hit Points restored.</p>
+			<p class="indent">Whenever you finish a Long Rest, you can summon a different primal beast, which appears in an unoccupied space within 5 feet of you. You choose its stat block and appearance. If you already have a beast from this feature, the old one vanishes when the new one appears.</p>
+			<div class="reference">
+				<div element="ID_WOTC_PHB24_INFORMATION_PRIMAL_COMPANION_BEAST_OF_THE_LAND" />
+			</div>
+			<div class="reference">
+				<div element="ID_WOTC_PHB24_INFORMATION_PRIMAL_COMPANION_BEAST_OF_THE_SKY" />
+			</div>
+			<div class="reference">
+				<div element="ID_WOTC_PHB24_INFORMATION_PRIMAL_COMPANION_BEAST_OF_THE_SEA" />
+			</div>
+		</description>
+		<sheet alt="Primal Companion">
+			<description>You magically summon a primal beast. The beast is friendly to you and your companions and obeys your commands. &#13;
+			In combat, the beast acts during your turn. It can move and use its Reaction on its own, but the only action it takes is the Dodge action, unless you take a Bonus Action on your turn to command it to take another action. That action can be one in its stat block or some other action. You can also sacrifice one of your attacks when you take the Attack action to command the beast to take the Beast's Strike action. If you are incapacitated, the beast can take any action of its choice, not just Dodge. &#13;
+			If the beast has died within the last hour, you can use an action to magically touch it and expend a spell slot. The beast returns to life after 1 minute with all its hit points restored. &#13;
+			When you finish a Long Rest, you can summon a different primal beast. The new beast appears in an unoccupied space within 5 feet of you, and you choose its stat block and appearance. If you already have a beast from this feature, it vanishes when the new beast appears.</description>
+		</sheet>
+		<rules>
+			<select type="Companion" name="Primal Companion" supports="ID_WOTC_PHB24_COMPANION_RANGER_BEAST_MASTER_PRIMAL_COMPANION_BEAST_OF_THE_LAND|ID_WOTC_PHB24_COMPANION_RANGER_BEAST_MASTER_PRIMAL_COMPANION_BEAST_OF_THE_SEA|ID_WOTC_PHB24_COMPANION_RANGER_BEAST_MASTER_PRIMAL_COMPANION_BEAST_OF_THE_SKY" />
+		</rules>
+	</element>
+
+	<element name="Level 7: Exceptional Training" type="Archetype Feature" source="Player’s Handbook 2024" id="ID_WOTC_PHB24_ARCHETYPE_FEATURE_RANGER_BEAST_MASTER_EXCEPTIONAL_TRAINING">
+		<requirements>!ID_INTERNAL_PHB24_FEATURE_REPLACEMENT_RANGER_BEAST_MASTER_EXCEPTIONAL_TRAINING</requirements>
+		<description>
+			<p>When you take a Bonus Action to command your Primal Companion beast to take an action, you can also command it to take the Dash, Disengage, Dodge, or Help action using its Bonus Action.</p>
+			<p class="indent">In addition, whenever it hits with an attack roll and deals damage, it can deal your choice of Force damage or its normal damage type.</p>
+		</description>
+		<sheet alt="Exceptional Training" action="Bonus Action">
+			<description>When you command your Primal Companion to take an action, you can also command it to take the Dash, Disengage, Dodge, or Help action using its Bonus Action. &#13;
+			Additionally, whenever it hits with an attack roll, it can deal its normal damage type or Force damage (your choice).</description>
+		</sheet>
+	</element>
+
+	<element name="Level 11: Bestial Fury" type="Archetype Feature" source="Player’s Handbook 2024" id="ID_WOTC_PHB24_ARCHETYPE_FEATURE_RANGER_BEAST_MASTER_BESTIAL_FURY">
+		<requirements>!ID_INTERNAL_PHB24_FEATURE_REPLACEMENT_RANGER_BEAST_MASTER_BESTIAL_FURY</requirements>
+		<description>
+			<p>When you command your Primal Companion beast to take the Beast’s Strike action, the beast can use it twice.</p>
+			<p class="indent">In addition, the first time each turn it hits a creature under the effect of your <i>Hunter’s Mark</i> spell, the beast deals extra Force damage equal to the bonus damage of that spell.</p>
+		</description>
+		<sheet alt="Bestial Fury">
+			<description>When you command your Primal Companion beast to take the Beast’s Strike action, the beast can use it twice. In addition, the first time each turn it hits a creature under the effect of your Hunter’s Mark spell, the beast deals extra Force damage equal to the bonus damage of that spell.</description>
+		</sheet>
+	</element>
+
+	<element name="Level 15: Share Spells" type="Archetype Feature" source="Player’s Handbook 2024" id="ID_WOTC_PHB24_ARCHETYPE_FEATURE_RANGER_BEAST_MASTER_SHARE_SPELLS">
+		<requirements>!ID_INTERNAL_PHB24_FEATURE_REPLACEMENT_RANGER_BEAST_MASTER_SHARE_SPELLS</requirements>
+		<description>
+			<p>When you cast a spell targeting yourself, you can also affect your Primal Companion beast with the spell if the beast is within 30 feet of you.</p>
+		</description>
+		<sheet alt="Share Spells">
+			<description>When you cast a spell targeting yourself, you can also affect your Primal Companion beast with the spell if the beast is within 30 feet of you.</description>
+		</sheet>
+	</element>
+
+	<!-- Beast Master Companions and Information elements -->
+	<element name="Beast of the Land" type="Companion" source="Player’s Handbook 2024" id="ID_WOTC_PHB24_COMPANION_RANGER_BEAST_MASTER_PRIMAL_COMPANION_BEAST_OF_THE_LAND">
+		<compendium display="false" />
+		<setters>
+			<set name="size">Medium</set>
+			<set name="type">Beast</set>
+			<set name="alignment">Neutral</set>
+			<set name="ac">13 + your Wisdom modifier</set>
+			<set name="hp">5 + five times your Ranger level (the beast has a number of Hit Dice [d8s] equal to your Ranger level)</set>
+			<set name="speed">40 ft., Climb 40 ft.</set>
+			<set name="strength">14</set>
+			<set name="dexterity">14</set>
+			<set name="constitution">15</set>
+			<set name="intelligence">8</set>
+			<set name="wisdom">14</set>
+			<set name="charisma">11</set>
+			<set name="senses">Darkvision 60 ft., Passive Perception 12</set>
+			<set name="languages">Understands the languages you know</set>
+			<set name="challenge">—</set>
+			<set name="traits">ID_WOTC_PHB24_COMPANION_TRAIT_PRIMAL_COMPANION_BEAST_OF_THE_LAND_PRIMAL_BOND</set>
+			<set name="actions">ID_WOTC_PHB24_COMPANION_ACTION_PRIMAL_COMPANION_BEAST_OF_THE_LAND_BEASTS_STRIKE</set>
+		</setters>
+		<rules>
+			<stat name="companion:ac" value="13" bonus="base" />
+			<stat name="companion:ac" value="wisdom:modifier" bonus="ability" />
+			<stat name="companion:hp:max" value="5" bonus="base" />
+			<stat name="companion:hp:max" value="level:ranger" />
+			<stat name="companion:hp:max" value="level:ranger" />
+			<stat name="companion:hp:max" value="level:ranger" />
+			<stat name="companion:hp:max" value="level:ranger" />
+			<stat name="companion:hp:max" value="level:ranger" />
+			<stat name="companion:speed" value="40" bonus="base" />
+			<stat name="companion:speed:climb" value="40" bonus="base" />
+			<stat name="companion:proficiency" value="proficiency" bonus="base" />
+			<stat name="companion:proficiency" value="-2" bonus="base companion PB removal"/>
+			<grant type="Companion Trait" id="ID_WOTC_PHB24_COMPANION_TRAIT_PRIMAL_COMPANION_BEAST_OF_THE_LAND_PRIMAL_BOND" />
+		</rules>
+	</element>
+	<element name="Primal Bond" type="Companion Trait" source="Player’s Handbook 2024" id="ID_WOTC_PHB24_COMPANION_TRAIT_PRIMAL_COMPANION_BEAST_OF_THE_LAND_PRIMAL_BOND">
+		<description>
+			<p>Add your Proficiency Bonus to any ability check or saving throw the beast makes.</p>
+		</description>
+		<sheet display="false" />
+		<rules>
+			<stat name="companion:acrobatics:proficiency" value="companion:proficiency" bonus="base" />
+			<stat name="companion:animal handling:proficiency" value="companion:proficiency" bonus="base" />
+			<stat name="companion:arcana:proficiency" value="companion:proficiency" bonus="base" />
+			<stat name="companion:athletics:proficiency" value="companion:proficiency" bonus="base" />
+			<stat name="companion:deception:proficiency" value="companion:proficiency" bonus="base" />
+			<stat name="companion:history:proficiency" value="companion:proficiency" bonus="base" />
+			<stat name="companion:insight:proficiency" value="companion:proficiency" bonus="base" />
+			<stat name="companion:intimidation:proficiency" value="companion:proficiency" bonus="base" />
+			<stat name="companion:investigation:proficiency" value="companion:proficiency" bonus="base" />
+			<stat name="companion:medicine:proficiency" value="companion:proficiency" bonus="base" />
+			<stat name="companion:nature:proficiency" value="companion:proficiency" bonus="base" />
+			<stat name="companion:perception:proficiency" value="companion:proficiency" bonus="base" />
+			<stat name="companion:performance:proficiency" value="companion:proficiency" bonus="base" />
+			<stat name="companion:persuasion:proficiency" value="companion:proficiency" bonus="base" />
+			<stat name="companion:religion:proficiency" value="companion:proficiency" bonus="base" />
+			<stat name="companion:sleight of hand:proficiency" value="companion:proficiency" bonus="base" />
+			<stat name="companion:stealth:proficiency" value="companion:proficiency" bonus="base" />
+			<stat name="companion:survival:proficiency" value="companion:proficiency" bonus="base" />
+			<stat name="companion:strength:save:proficiency" value="companion:proficiency" bonus="base" />
+			<stat name="companion:dexterity:save:proficiency" value="companion:proficiency" bonus="base" />
+			<stat name="companion:constitution:save:proficiency" value="companion:proficiency" bonus="base" />
+			<stat name="companion:intelligence:save:proficiency" value="companion:proficiency" bonus="base" />
+			<stat name="companion:wisdom:save:proficiency" value="companion:proficiency" bonus="base" />
+			<stat name="companion:charisma:save:proficiency" value="companion:proficiency" bonus="base" />
+		</rules>
+	</element>
+	<element name="Beast's Strike" type="Companion Action" source="Player’s Handbook 2024" id="ID_WOTC_PHB24_COMPANION_ACTION_PRIMAL_COMPANION_BEAST_OF_THE_LAND_BEASTS_STRIKE">
+		<description>
+			<p><i>Melee Attack Roll:</i> Bonus equals your spell attack modifier, reach 5 ft. <i>Hit:</i> 1d8 + 2 plus your Wisdom modifier Bludgeoning, Piercing, or Slashing damage (your choice when you summon the beast).</p>
+			<p class="indent">If the beast moved at least 20 feet straight toward the target before the hit, the target takes an extra 1d6 damage of the same type, and the target has the Prone condition if it is a Large or smaller creature.</p>
+		</description>
+		<sheet>
+			<description>Melee Attack Roll: Your spell attack modifier to hit, reach 5 ft. Hit: 1d8 + 2 + your Wisdom modifier Bludgeoning, Piercing, or Slashing damage (your choice at summon).&#13;
+			If the beast moved at least 20 feet straight toward the target before the hit, the target takes an extra 1d6 damage of the same type, and the target has the Prone condition if it is a Large or smaller creature.</description>
+		</sheet>
+	</element>
+	<element name="Beast of the Land" type="Information" source="Player’s Handbook 2024" id="ID_WOTC_PHB24_INFORMATION_PRIMAL_COMPANION_BEAST_OF_THE_LAND">
+		<description>
+			<p style="margin-bottom:5px"><em>Medium Beast, Neutral</em></p>
+			<ul class="unstyled">
+				<li><strong>AC</strong> 13 plus your Wisdom modifier</li>
+				<li><strong>HP</strong> 5 plus five times your Ranger level (the beast has a number of Hit Dice [d8s] equal to your Ranger level)</li>
+				<li><strong>Speed</strong> 40 ft., Climb 40 ft.</li>
+			</ul>
+			<table style="text-align:center;margin-top:2px;margin-bottom:10px">
+				<tr style="font-size:8px"><td colspan="2" /><td>MOD</td><td>SAVE</td><td colspan="2" /><td>MOD</td><td>SAVE</td><td colspan="2" /><td>MOD</td><td>SAVE</td></tr>
+				<tr><td><b>STR</b></td><td>14</td><td>+2</td><td>+2</td><td><b>DEX</b></td><td>14</td><td>+2</td><td>+2</td><td><b>CON</b></td><td>15</td><td>+2</td><td>+2</td></tr>
+				<tr><td><b>INT</b></td><td>8</td><td>-1</td><td>-1</td><td><b>WIS</b></td><td>14</td><td>+2</td><td>+2</td><td><b>CHA</b></td><td>11</td><td>+0</td><td>+0</td></tr>
+			</table>
+			<ul class="unstyled">
+				<li><strong>Senses</strong> Darkvision 60 ft., Passive Perception 12</li>
+				<li><strong>Languages</strong> Understands the languages you know</li>
+				<li><strong>CR</strong> None (XP 0; PB equals your Proficiency Bonus)</li>
+			</ul>
+			<h4 style="margin-top:5px">Traits</h4>
+			<ul class="unstyled">
+				<li><strong><em>Primal Bond.</em></strong> Add your Proficiency Bonus to any ability check or saving throw the beast makes.</li>
+			</ul>
+			<h4 style="margin-top:5px">Actions</h4>
+			<ul class="unstyled">
+				<li><em><strong>Beast's Strike.</strong> Melee Attack Roll:</em> Bonus equals your spell attack modifier, reach 5 ft. <em>Hit:</em> 1d8 + 2 plus your Wisdom modifier Bludgeoning, Piercing, or Slashing damage (your choice when you summon the beast).
+				<p style="text-indent: 1em">If the beast moved at least 20 feet straight toward the target before the hit, the target takes an extra 1d6 damage of the same type, and the target has the Prone condition if it is a Large or smaller creature.</p></li>
+			</ul>
+		</description>
+	</element>
+
+	<element name="Beast of the Sky" type="Companion" source="Player’s Handbook 2024" id="ID_WOTC_PHB24_COMPANION_RANGER_BEAST_MASTER_PRIMAL_COMPANION_BEAST_OF_THE_SKY">
+		<compendium display="false" />
+		<setters>
+			<set name="size">Small</set>
+			<set name="type">Beast</set>
+			<set name="alignment">Neutral</set>
+			<set name="ac">13 + your Wisdom modifier</set>
+			<set name="hp">4 + four times your Ranger level (the beast has a number of Hit Dice [d6s] equal to your Ranger level)</set>
+			<set name="speed">10 ft., Fly 60 ft.</set>
+			<set name="strength">6</set>
+			<set name="dexterity">16</set>
+			<set name="constitution">13</set>
+			<set name="intelligence">8</set>
+			<set name="wisdom">14</set>
+			<set name="charisma">11</set>
+			<set name="senses">Darkvision 60 ft., Passive Perception 12</set>
+			<set name="languages">Understands the languages you know</set>
+			<set name="challenge">—</set>
+			<set name="traits">ID_WOTC_PHB24_COMPANION_TRAIT_PRIMAL_COMPANION_BEAST_OF_THE_SKY_FLYBY, ID_WOTC_PHB24_COMPANION_TRAIT_PRIMAL_COMPANION_BEAST_OF_THE_SKY_PRIMAL_BOND</set>
+			<set name="actions">ID_WOTC_PHB24_COMPANION_ACTION_PRIMAL_COMPANION_BEAST_OF_THE_SKY_BEASTS_STRIKE</set>
+		</setters>
+		<rules>
+			<stat name="companion:ac" value="13" bonus="base" />
+			<stat name="companion:ac" value="wisdom:modifier" bonus="ability" />
+			<stat name="companion:hp:max" value="4" bonus="base" />
+			<stat name="companion:hp:max" value="level:ranger" />
+			<stat name="companion:hp:max" value="level:ranger" />
+			<stat name="companion:hp:max" value="level:ranger" />
+			<stat name="companion:hp:max" value="level:ranger" />
+			<stat name="companion:speed" value="10" bonus="base" />
+			<stat name="companion:speed:fly" value="60" bonus="base" />
+			<stat name="companion:proficiency" value="proficiency" bonus="base" />
+			<stat name="companion:proficiency" value="-2" bonus="base companion PB removal"/>
+			<grant type="Companion Trait" id="ID_WOTC_PHB24_COMPANION_TRAIT_PRIMAL_COMPANION_BEAST_OF_THE_SKY_PRIMAL_BOND" />
+		</rules>
+	</element>
+	<element name="Flyby" type="Companion Trait" source="Player’s Handbook 2024" id="ID_WOTC_PHB24_COMPANION_TRAIT_PRIMAL_COMPANION_BEAST_OF_THE_SKY_FLYBY">
+		<description>
+			<p>The beast doesn't provoke Opportunity Attacks when it flies out of an enemy's reach.</p>
+		</description>
+		<sheet>
+			<description>The beast doesn't provoke Opportunity Attacks when it flies out of an enemy's reach.</description>
+		</sheet>
+	</element>
+	<element name="Primal Bond" type="Companion Trait" source="Player’s Handbook 2024" id="ID_WOTC_PHB24_COMPANION_TRAIT_PRIMAL_COMPANION_BEAST_OF_THE_SKY_PRIMAL_BOND">
+		<description>
+			<p>You can add your Proficiency Bonus to any ability check or saving throw that the beast makes.</p>
+		</description>
+		<sheet display="false" />
+		<rules>
+			<stat name="companion:acrobatics:proficiency" value="companion:proficiency" bonus="base" />
+			<stat name="companion:animal handling:proficiency" value="companion:proficiency" bonus="base" />
+			<stat name="companion:arcana:proficiency" value="companion:proficiency" bonus="base" />
+			<stat name="companion:athletics:proficiency" value="companion:proficiency" bonus="base" />
+			<stat name="companion:deception:proficiency" value="companion:proficiency" bonus="base" />
+			<stat name="companion:history:proficiency" value="companion:proficiency" bonus="base" />
+			<stat name="companion:insight:proficiency" value="companion:proficiency" bonus="base" />
+			<stat name="companion:intimidation:proficiency" value="companion:proficiency" bonus="base" />
+			<stat name="companion:investigation:proficiency" value="companion:proficiency" bonus="base" />
+			<stat name="companion:medicine:proficiency" value="companion:proficiency" bonus="base" />
+			<stat name="companion:nature:proficiency" value="companion:proficiency" bonus="base" />
+			<stat name="companion:perception:proficiency" value="companion:proficiency" bonus="base" />
+			<stat name="companion:performance:proficiency" value="companion:proficiency" bonus="base" />
+			<stat name="companion:persuasion:proficiency" value="companion:proficiency" bonus="base" />
+			<stat name="companion:religion:proficiency" value="companion:proficiency" bonus="base" />
+			<stat name="companion:sleight of hand:proficiency" value="companion:proficiency" bonus="base" />
+			<stat name="companion:stealth:proficiency" value="companion:proficiency" bonus="base" />
+			<stat name="companion:survival:proficiency" value="companion:proficiency" bonus="base" />
+			<stat name="companion:strength:save:proficiency" value="companion:proficiency" bonus="base" />
+			<stat name="companion:dexterity:save:proficiency" value="companion:proficiency" bonus="base" />
+			<stat name="companion:constitution:save:proficiency" value="companion:proficiency" bonus="base" />
+			<stat name="companion:intelligence:save:proficiency" value="companion:proficiency" bonus="base" />
+			<stat name="companion:wisdom:save:proficiency" value="companion:proficiency" bonus="base" />
+			<stat name="companion:charisma:save:proficiency" value="companion:proficiency" bonus="base" />
+		</rules>
+	</element>
+	<element name="Beast's Strike" type="Companion Action" source="Player’s Handbook 2024" id="ID_WOTC_PHB24_COMPANION_ACTION_PRIMAL_COMPANION_BEAST_OF_THE_SKY_BEASTS_STRIKE">
+		<description>
+			<p><i>Melee Attack Roll:</i> Bonus equals your spell attack modifier, reach 5 ft. <i>Hit:</i> 1d4 + 3 plus your Wisdom modifier Slashing damage.</p>
+		</description>&#13;
+		<sheet>
+			<description>Melee Attack Roll: Your spell attack modifier to hit, reach 5 ft. Hit: 1d4 + 3 + your Wisdom modifier Slashing damage.</description>
+		</sheet>
+	</element>
+	<element name="Beast of the Sky" type="Information" source="Player’s Handbook 2024" id="ID_WOTC_PHB24_INFORMATION_PRIMAL_COMPANION_BEAST_OF_THE_SKY">
+		<description>
+			<p style="margin-bottom:5px"><em>Small Beast, Neutral</em></p>
+			<ul class="unstyled">
+				<li><strong>AC</strong> 13 plus your Wisdom modifier</li>
+				<li><strong>HP</strong> 4 plus four times your Ranger level (the beast has a number of Hit Dice [d6s] equal to your Ranger level)</li>
+				<li><strong>Speed</strong> 10 ft., Fly 60 ft.</li>
+			</ul>
+			<table style="text-align:center;margin-top:2px;margin-bottom:10px">
+				<tr style="font-size:8px"><td colspan="2" /><td>MOD</td><td>SAVE</td><td colspan="2" /><td>MOD</td><td>SAVE</td><td colspan="2" /><td>MOD</td><td>SAVE</td></tr>
+				<tr><td><b>STR</b></td><td>6</td><td>-2</td><td>-2</td><td><b>DEX</b></td><td>16</td><td>+3</td><td>+3</td><td><b>CON</b></td><td>13</td><td>+1</td><td>+1</td></tr>
+				<tr><td><b>INT</b></td><td>8</td><td>-1</td><td>-1</td><td><b>WIS</b></td><td>14</td><td>+2</td><td>+2</td><td><b>CHA</b></td><td>11</td><td>+0</td><td>+0</td></tr>
+			</table>
+			<ul class="unstyled">
+				<li><strong>Senses</strong> Darkvision 60 ft., Passive Perception 12</li>
+				<li><strong>Languages</strong> Understands the languages you know</li>
+				<li><strong>CR</strong> None (XP 0; PB equals your Proficiency Bonus)</li>
+			</ul>
+			<h4 style="margin-top:5px">Traits</h4>
+			<ul class="unstyled">
+				<li><strong><em>Flyby.</em></strong> The beast doesn't provoke Opportunity Attacks when it flies out of an enemy's reach.</li>
+				<li style="margin-top:5px"><strong><em>Primal Bond.</em></strong> Add your Proficiency Bonus to any ability check or saving throw the beast makes.</li>
+			</ul>
+			<h4 style="margin-top:5px">Actions</h4>
+			<ul class="unstyled">
+				<li><em><strong>Beast's Strike.</strong> Melee Attack Roll:</em> Bonus equals your spell attack modifier, reach 5 ft. <em>Hit:</em> 1d4 + 3 plus your Wisdom modifier Slashing damage.</li>
+			</ul>
+		</description>
+	</element>
+
+	<element name="Beast of the Sea" type="Companion" source="Player’s Handbook 2024" id="ID_WOTC_PHB24_COMPANION_RANGER_BEAST_MASTER_PRIMAL_COMPANION_BEAST_OF_THE_SEA">
+		<compendium display="false" />
+		<setters>
+			<set name="size">Medium</set>
+			<set name="type">Beast</set>
+			<set name="alignment">Neutral</set>
+			<set name="ac">13 + your Wisdom modifier</set>
+			<set name="hp">5 + five times your Ranger level (the beast has a number of Hit Dice [d8s] equal to your Ranger level)</set>
+			<set name="speed">5 ft., Swim 60 ft.</set>
+			<set name="strength">14</set>
+			<set name="dexterity">14</set>
+			<set name="constitution">15</set>
+			<set name="intelligence">8</set>
+			<set name="wisdom">14</set>
+			<set name="charisma">11</set>
+			<set name="senses">Darkvision 90 ft., Passive Perception 12</set>
+			<set name="languages">Understands the languages you know</set>
+			<set name="challenge">—</set>
+			<set name="traits">ID_WOTC_PHB24_COMPANION_TRAIT_PRIMAL_COMPANION_BEAST_OF_THE_SEA_AMPHIBIOUS, ID_WOTC_PHB24_COMPANION_TRAIT_PRIMAL_COMPANION_BEAST_OF_THE_SEA_PRIMAL_BOND</set>
+			<set name="actions">ID_WOTC_PHB24_COMPANION_ACTION_PRIMAL_COMPANION_BEAST_OF_THE_SEA_BEASTS_STRIKE</set>
+		</setters>
+		<rules>
+			<stat name="companion:ac" value="13" bonus="base" />
+			<stat name="companion:ac" value="wisdom:modifier" bonus="ability" />
+			<stat name="companion:hp:max" value="5" bonus="base" />
+			<stat name="companion:hp:max" value="level:ranger" />
+			<stat name="companion:hp:max" value="level:ranger" />
+			<stat name="companion:hp:max" value="level:ranger" />
+			<stat name="companion:hp:max" value="level:ranger" />
+			<stat name="companion:hp:max" value="level:ranger" />
+			<stat name="companion:speed" value="5" bonus="base" />
+			<stat name="companion:speed:swim" value="60" bonus="base" />
+			<stat name="companion:proficiency" value="proficiency" bonus="base" />
+			<stat name="companion:proficiency" value="-2" bonus="base companion PB removal"/>
+			<grant type="Companion Trait" id="ID_WOTC_PHB24_COMPANION_TRAIT_PRIMAL_COMPANION_BEAST_OF_THE_SEA_PRIMAL_BOND" />
+		</rules>
+	</element>
+	<element name="Amphibious" type="Companion Trait" source="Player’s Handbook 2024" id="ID_WOTC_PHB24_COMPANION_TRAIT_PRIMAL_COMPANION_BEAST_OF_THE_SEA_AMPHIBIOUS">
+		<description>
+			<p>The beast can breathe air and water.</p>
+		</description>
+		<sheet>
+			<description>The beast can breathe air and water.</description>
+		</sheet>
+	</element>
+	<element name="Primal Bond" type="Companion Trait" source="Player’s Handbook 2024" id="ID_WOTC_PHB24_COMPANION_TRAIT_PRIMAL_COMPANION_BEAST_OF_THE_SEA_PRIMAL_BOND">
+		<description>
+			<p>You can add your Proficiency Bonus to any ability check or saving throw that the beast makes.</p>
+		</description>
+		<sheet display="false" />
+		<rules>
+			<stat name="companion:acrobatics:proficiency" value="companion:proficiency" bonus="base" />
+			<stat name="companion:animal handling:proficiency" value="companion:proficiency" bonus="base" />
+			<stat name="companion:arcana:proficiency" value="companion:proficiency" bonus="base" />
+			<stat name="companion:athletics:proficiency" value="companion:proficiency" bonus="base" />
+			<stat name="companion:deception:proficiency" value="companion:proficiency" bonus="base" />
+			<stat name="companion:history:proficiency" value="companion:proficiency" bonus="base" />
+			<stat name="companion:insight:proficiency" value="companion:proficiency" bonus="base" />
+			<stat name="companion:intimidation:proficiency" value="companion:proficiency" bonus="base" />
+			<stat name="companion:investigation:proficiency" value="companion:proficiency" bonus="base" />
+			<stat name="companion:medicine:proficiency" value="companion:proficiency" bonus="base" />
+			<stat name="companion:nature:proficiency" value="companion:proficiency" bonus="base" />
+			<stat name="companion:perception:proficiency" value="companion:proficiency" bonus="base" />
+			<stat name="companion:performance:proficiency" value="companion:proficiency" bonus="base" />
+			<stat name="companion:persuasion:proficiency" value="companion:proficiency" bonus="base" />
+			<stat name="companion:religion:proficiency" value="companion:proficiency" bonus="base" />
+			<stat name="companion:sleight of hand:proficiency" value="companion:proficiency" bonus="base" />
+			<stat name="companion:stealth:proficiency" value="companion:proficiency" bonus="base" />
+			<stat name="companion:survival:proficiency" value="companion:proficiency" bonus="base" />
+			<stat name="companion:strength:save:proficiency" value="companion:proficiency" bonus="base" />
+			<stat name="companion:dexterity:save:proficiency" value="companion:proficiency" bonus="base" />
+			<stat name="companion:constitution:save:proficiency" value="companion:proficiency" bonus="base" />
+			<stat name="companion:intelligence:save:proficiency" value="companion:proficiency" bonus="base" />
+			<stat name="companion:wisdom:save:proficiency" value="companion:proficiency" bonus="base" />
+			<stat name="companion:charisma:save:proficiency" value="companion:proficiency" bonus="base" />
+		</rules>
+	</element>
+	<element name="Beast's Strike" type="Companion Action" source="Player’s Handbook 2024" id="ID_WOTC_PHB24_COMPANION_ACTION_PRIMAL_COMPANION_BEAST_OF_THE_SEA_BEASTS_STRIKE">
+		<description>
+			<p><i>Melee Attack Roll:</i> Bonus equals your spell attack modifier, reach 5 ft. <i>Hit:</i> 1d6 + 2 plus your Wisdom modifier Bludgeoning or Piercing damage (your choice when you summon the beast), and the target has the Grappled condition (escape DC equals your spell save DC).</p>
+		</description>
+		<sheet>
+			<description>Melee Attack Roll: Your spell attack modifier to hit, reach 5 ft. Hit: 1d6 + 2+ your Wisdom modifier Bludgeoning or Piercing damage (your choice at summon), and the target has the Grappled condition (escape DC equals your spell save DC).</description>
+		</sheet>
+	</element>
+	<element name="Beast of the Sea" type="Information" source="Player’s Handbook 2024" id="ID_WOTC_PHB24_INFORMATION_PRIMAL_COMPANION_BEAST_OF_THE_SEA">
+		<description>
+			<p style="margin-bottom:5px"><em>Medium Beast, Neutral</em></p>
+			<ul class="unstyled">
+				<li><strong>AC</strong> 13 plus your Wisdom modifier</li>
+				<li><strong>HP</strong> 5 plus five times your Ranger level (the beast has a number of Hit Dice [d8s] equal to your Ranger level)</li>
+				<li><strong>Speed</strong> 5 ft., Swim 60 ft.</li>
+			</ul>
+			<table style="text-align:center;margin-top:2px;margin-bottom:10px">
+				<tr style="font-size:8px"><td colspan="2" /><td>MOD</td><td>SAVE</td><td colspan="2" /><td>MOD</td><td>SAVE</td><td colspan="2" /><td>MOD</td><td>SAVE</td></tr>
+				<tr><td><b>STR</b></td><td>14</td><td>+2</td><td>+2</td><td><b>DEX</b></td><td>14</td><td>+2</td><td>+2</td><td><b>CON</b></td><td>15</td><td>+2</td><td>+2</td></tr>
+				<tr><td><b>INT</b></td><td>8</td><td>-1</td><td>-1</td><td><b>WIS</b></td><td>14</td><td>+2</td><td>+2</td><td><b>CHA</b></td><td>11</td><td>+0</td><td>+0</td></tr>
+			</table>
+			<ul class="unstyled">
+				<li><strong>Senses</strong> Darkvision 90 ft., Passive Perception 12</li>
+				<li><strong>Languages</strong> Understands the languages you know</li>
+				<li><strong>CR</strong> None (XP 0; PB equals your Proficiency Bonus)</li>
+			</ul>
+			<h4 style="margin-top:5px">Traits</h4>
+			<ul class="unstyled">
+				<li><strong><em>Amphibious.</em></strong> The beast can breathe air and water.</li>
+				<li style="margin-top:5px"><strong><em>Primal Bond.</em></strong> Add your Proficiency Bonus to any ability check or saving throw the beast makes.</li>
+			</ul>
+			<h4 style="margin-top:5px">Actions</h4>
+			<ul class="unstyled">
+				<li><em><strong>Beast's Strike.</strong> Melee Attack Roll:</em> Bonus equals your spell attack modifier, reach 5 ft. <em>Hit:</em> 1d6 + 2 plus your Wisdom modifier Bludgeoning or Piercing damage (your choice when you summon the beast), and the target has the Grappled condition (escape DC equals your spell save DC).</li>
+			</ul>
+		</description>
+	</element>
+
+	<!--Feature Replacement Grants-->
+	<element name="Primal Companion Feature Replacement" type="Grants" source="Internal" id="ID_INTERNAL_PHB24_FEATURE_REPLACEMENT_RANGER_BEAST_MASTER_PRIMAL_COMPANION" />
+	<element name="Exceptional Training Divinity Feature Replacement" type="Grants" source="Internal" id="ID_INTERNAL_PHB24_FEATURE_REPLACEMENT_RANGER_BEAST_MASTER_EXCEPTIONAL_TRAINING" />
+	<element name="Bestial Fury Feature Replacement" type="Grants" source="Internal" id="ID_INTERNAL_PHB24_FEATURE_REPLACEMENT_RANGER_BEAST_MASTER_BESTIAL_FURY" />
+	<element name="Share Spells Feature Replacement" type="Grants" source="Internal" id="ID_INTERNAL_PHB24_FEATURE_REPLACEMENT_RANGER_BEAST_MASTER_SHARE_SPELLS" />
+</elements>
