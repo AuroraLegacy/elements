@@ -1,0 +1,2824 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<elements>
+	<info>
+		<name>Companions</name>
+		<description>Companions from the Player’s Handbook 2024.</description>
+
+		<author url="https://dndstore.wizards.com/us/en/product/1001494/2024-player-s-handbook-digital-plus-physical-bundle">Wizards of the Coast</author>
+		<update version="0.0.3">
+			<file name="companions.xml" url="https://raw.githubusercontent.com/AuroraLegacy/elements/master/core/players-handbook-2024/companions.xml" />
+		</update>
+	</info>
+
+	<!--Familiars-->
+	<element name="Badger" type="Companion" source="Player’s Handbook 2024" id="ID_WOTC_PHB24_COMPANION_BADGER">
+		<description />
+		<setters>
+			<set name="strength">10</set>
+			<set name="dexterity">11</set>
+			<set name="constitution">16</set>
+			<set name="intelligence">2</set>
+			<set name="wisdom">12</set>
+			<set name="charisma">5</set>
+			<set name="ac">11</set>
+			<set name="hp">5 (1d4+3)</set>
+			<set name="speed">20 ft., Burrow 5 ft.</set>
+			<set name="skills">Perception +3</set>
+			<set name="senses">Darkvision 30 ft., Passive Perception 13</set>
+			<set name="languages">—</set>
+			<set name="type">Beast</set>
+			<set name="size">Tiny</set>
+			<set name="alignment">unaligned</set>
+			<set name="challenge">0</set>
+			<set name="proficiency">2</set>
+			<set name="actions">ID_WOTC_PHB24_COMPANION_ACTION_BADGER_BITE</set>
+		</setters>
+		<rules>
+			<stat name="companion:ac" value="10" />
+			<stat name="companion:hp:max" value="5" bonus="base" />
+			<stat name="companion:speed" value="20" bonus="base" />
+			<stat name="companion:speed:burrow" value="5" bonus="base" />
+			<stat name="companion:perception:proficiency" value="companion:proficiency" bonus="base" />
+		</rules>
+	</element>
+	<element name="Bite" type="Companion Action" source="Player’s Handbook 2024" id="ID_WOTC_PHB24_COMPANION_ACTION_BADGER_BITE">
+		<compendium display="false" />
+		<description>
+			<p><i>Melee Attack Roll:</i> +2, reach 5 ft. <i>Hit:</i> 1 Piercing damage.</p>
+		</description>
+		<sheet>
+			<description>Melee Weapon Attack: +2 to hit, reach 5 ft., one target. Hit: 1 Piercing damage.</description>
+		</sheet>
+	</element>
+
+	<element name="Bat" type="Companion" source="Player’s Handbook 2024" id="ID_WOTC_PHB24_COMPANION_BAT">
+		<supports>Familiar</supports>
+		<description />
+		<setters>
+			<set name="strength">2</set>
+			<set name="dexterity">15</set>
+			<set name="constitution">8</set>
+			<set name="intelligence">2</set>
+			<set name="wisdom">12</set>
+			<set name="charisma">4</set>
+			<set name="ac">12</set>
+			<set name="hp">1 (1d4-1)</set>
+			<set name="speed">5 ft., Fly 30 ft.</set>
+			<set name="senses">Blindsight 60 ft., Passive Perception 11</set>
+			<set name="languages">—</set>
+			<set name="type">Beast</set>
+			<set name="size">Tiny</set>
+			<set name="alignment">unaligned</set>
+			<set name="challenge">0</set>
+			<set name="proficiency">2</set>
+			<set name="actions">ID_WOTC_PHB24_COMPANION_ACTION_BAT_BITE</set>
+		</setters>
+		<rules>
+			<stat name="companion:ac" value="12" />
+			<stat name="companion:hp:max" value="1" bonus="base" />
+			<stat name="companion:speed" value="5" bonus="base" />
+			<stat name="companion:speed:fly" value="30" bonus="base" />
+		</rules>
+	</element>
+	<element name="Bite" type="Companion Action" source="Player’s Handbook 2024" id="ID_WOTC_PHB24_COMPANION_ACTION_BAT_BITE">
+		<compendium display="false" />
+		<description>
+			<p><i>Melee Attack Roll:</i> +4 to hit, reach 5 ft. <i>Hit:</i> 1 Piercing damage.</p>
+		</description>
+		<sheet>
+			<description>Melee Attack Roll: +4 to hit, reach 5 ft. Hit: 1 Piercing damage.</description>
+		</sheet>
+	</element>
+
+	<element name="Cat" type="Companion" source="Player’s Handbook 2024" id="ID_WOTC_PHB24_COMPANION_CAT">
+		<supports>Familiar</supports>
+		<description />
+		<setters>
+			<set name="strength">3</set>
+			<set name="dexterity">15</set>
+			<set name="constitution">10</set>
+			<set name="intelligence">3</set>
+			<set name="wisdom">12</set>
+			<set name="charisma">7</set>
+			<set name="ac">12</set>
+			<set name="hp">2 (1d4)</set>
+			<set name="speed">40 ft., Climb 40 ft.</set>
+			<set name="languages">—</set>
+			<set name="skills">Perception +3, Stealth +4</set>
+			<set name="senses">Darkvision 60 ft., Passive Perception 13</set>
+			<set name="type">Beast</set>
+			<set name="size">Tiny</set>
+			<set name="alignment">unaligned</set>
+			<set name="challenge">0</set>
+			<set name="proficiency">2</set>
+			<set name="traits">ID_WOTC_PHB24_COMPANION_TRAIT_CAT_JUMPER</set>
+			<set name="actions">ID_WOTC_PHB24_COMPANION_ACTION_CAT_SCRATCH</set>
+		</setters>
+		<rules>
+			<stat name="companion:ac" value="12" />
+			<stat name="companion:hp:max" value="2" bonus="base" />
+			<stat name="companion:speed" value="40" bonus="base" />
+			<stat name="companion:speed:climb" value="40" bonus="base" />
+			<stat name="companion:perception:proficiency" value="companion:proficiency" bonus="base" />
+			<stat name="companion:stealth:proficiency" value="companion:proficiency" bonus="base" />
+		</rules>
+	</element>
+	<element name="Jumper" type="Companion Trait" source="Player’s Handbook 2024" id="ID_WOTC_PHB24_COMPANION_TRAIT_CAT_JUMPER">
+		<compendium display="false" />
+		<description>
+			<p>The cat’s jump distance is determined using its Dexterity rather than its Strength.</p>
+		</description>
+		<sheet>
+			<description>The cat’s jump distance is determined using its Dexterity rather than its Strength.</description>
+		</sheet>
+	</element>
+	<element name="Scratch" type="Companion Action" source="Player’s Handbook 2024" id="ID_WOTC_PHB24_COMPANION_ACTION_CAT_SCRATCH">
+		<compendium display="false" />
+		<description>
+			<p><i>Melee Attack Roll:</i> +4, reach 5 ft. <i>Hit:</i> 1 Slashing damage.</p>
+		</description>
+		<sheet>
+			<description>Melee Attack Roll: +4, reach 5 ft. Hit: 1 Slashing damage.</description>
+		</sheet>
+	</element>
+
+	<element name="Crab" type="Companion" source="Player’s Handbook 2024" id="ID_WOTC_PHB24_COMPANION_CRAB">
+		<supports>Familiar</supports>
+		<description />
+		<setters>
+			<set name="strength">6</set>
+			<set name="dexterity">11</set>
+			<set name="constitution">12</set>
+			<set name="intelligence">1</set>
+			<set name="wisdom">8</set>
+			<set name="charisma">2</set>
+			<set name="ac">11</set>
+			<set name="hp">3 (1d4+1)</set>
+			<set name="speed">20 ft., Swim 20 ft.</set>
+			<set name="skills">Stealth +2</set>
+			<set name="senses">Blindsight 30 ft., Passive Perception 9</set>
+			<set name="languages">—</set>
+			<set name="type">Beast</set>
+			<set name="size">Tiny</set>
+			<set name="alignment">unaligned</set>
+			<set name="challenge">0</set>
+			<set name="proficiency">2</set>
+			<set name="traits">ID_WOTC_PHB24_COMPANION_TRAIT_CRAB_AMPHIBIOUS</set>
+			<set name="actions">ID_WOTC_PHB24_COMPANION_ACTION_CRAB_CLAW</set>
+		</setters>
+		<rules>
+			<stat name="companion:ac" value="11" />
+			<stat name="companion:hp:max" value="3" bonus="base" />
+			<stat name="companion:speed" value="20" bonus="base" />
+			<stat name="companion:speed:swim" value="20" bonus="base" />
+			<stat name="companion:stealth:proficiency" value="companion:proficiency" bonus="base" />
+		</rules>
+	</element>
+	<element name="Amphibious" type="Companion Trait" source="Player’s Handbook 2024" id="ID_WOTC_PHB24_COMPANION_TRAIT_CRAB_AMPHIBIOUS">
+		<compendium display="false" />
+		<description>
+			<p>The crab can breathe air and water.</p>
+		</description>
+		<sheet>
+			<description>The crab can breathe air and water.</description>
+		</sheet>
+	</element>
+	<element name="Claw" type="Companion Action" source="Player’s Handbook 2024" id="ID_WOTC_PHB24_COMPANION_ACTION_CRAB_CLAW">
+		<compendium display="false" />
+		<description>
+			<p><i>Melee Attack Roll:</i> +2, reach 5 ft. <i>Hit:</i> 1 Bludgeoning damage.</p>
+		</description>
+		<sheet>
+			<description>Melee Attack Roll: +2, reach 5 ft. Hit: 1 Bludgeoning damage</description>
+		</sheet>
+	</element>
+
+	<element name="Frog" type="Companion" source="Player’s Handbook 2024" id="ID_WOTC_PHB24_COMPANION_FROG">
+		<supports>Familiar</supports>
+		<description />
+		<setters>
+			<set name="strength">1</set>
+			<set name="dexterity">13</set>
+			<set name="constitution">8</set>
+			<set name="intelligence">1</set>
+			<set name="wisdom">8</set>
+			<set name="charisma">3</set>
+			<set name="ac">11</set>
+			<set name="hp">1 (1d4-1)</set>
+			<set name="speed">20 ft., Swim 20 ft.</set>
+			<set name="skills">Perception +1, Stealth +3</set>
+			<set name="senses">Darkvision 30 ft., Passive Perception 11</set>
+			<set name="languages">—</set>
+			<set name="type">Beast</set>
+			<set name="size">Tiny</set>
+			<set name="alignment">unaligned</set>
+			<set name="challenge">0</set>
+			<set name="proficiency">2</set>
+			<set name="traits">ID_WOTC_PHB24_COMPANION_TRAIT_FROG_AMPHIBIOUS,ID_WOTC_PHB24_COMPANION_TRAIT_FROG_STANDING_LEAP</set>
+			<set name="actions">ID_WOTC_PHB24_COMPANION_ACTION_FROG_BITE</set>
+		</setters>
+		<rules>
+			<stat name="companion:ac" value="11" />
+			<stat name="companion:hp:max" value="1" bonus="base" />
+			<stat name="companion:speed" value="20" bonus="base" />
+			<stat name="companion:speed:swim" value="20" bonus="base" />
+			<stat name="companion:perception:proficiency" value="companion:proficiency" bonus="base" />
+			<stat name="companion:stealth:proficiency" value="companion:proficiency" bonus="base" />
+		</rules>
+	</element>
+	<element name="Amphibious" type="Companion Trait" source="Player’s Handbook 2024" id="ID_WOTC_PHB24_COMPANION_TRAIT_FROG_AMPHIBIOUS">
+		<compendium display="false" />
+		<description>
+			<p>The frog can breathe air and water</p>
+		</description>
+		<sheet>
+			<description>The frog can breathe air and water</description>
+		</sheet>
+	</element>
+	<element name="Standing Leap" type="Companion Trait" source="Player’s Handbook 2024" id="ID_WOTC_PHB24_COMPANION_TRAIT_FROG_STANDING_LEAP">
+		<compendium display="false" />
+		<description>
+			<p>The frog’s Long Jump is up to 10 feet and its High Jump is up to 5 feet with or without a running start.</p>
+		</description>
+		<sheet>
+			<description>The frog’s Long Jump is up to 10 feet and its High Jump is up to 5 feet with or without a running start.</description>
+		</sheet>
+	</element>
+	<element name="Bite" type="Companion Action" source="Player’s Handbook 2024" id="ID_WOTC_PHB24_COMPANION_ACTION_FROG_BITE">
+		<compendium display="false" />
+		<description>
+			<p><i>Melee Attack Roll:</i> +3, reach 5 ft. <i>Hit:</i> 1 Piercing damage.</p>
+		</description>
+		<sheet>
+			<description>Melee Attack Roll: +2, reach 5 ft. Hit: 1 Piercing damage</description>
+		</sheet>
+	</element>
+
+	<element name="Goat" type="Companion" source="Player’s Handbook 2024" id="ID_WOTC_PHB24_COMPANION_GOAT">
+		<description />
+		<setters>
+			<set name="strength">11</set>
+			<set name="dexterity">10</set>
+			<set name="constitution">11</set>
+			<set name="intelligence">2</set>
+			<set name="wisdom">10</set>
+			<set name="charisma">5</set>
+			<set name="ac">10</set>
+			<set name="hp">4 (1d8)</set>
+			<set name="speed">40 ft., Climb 30 ft.</set>
+			<set name="skills">Perception +2</set>
+			<set name="senses">Darkvision 60 ft., Passive Perception 12</set>
+			<set name="languages">—</set>
+			<set name="type">Beast</set>
+			<set name="size">Medium</set>
+			<set name="alignment">unaligned</set>
+			<set name="challenge">0</set>
+			<set name="proficiency">2</set>
+			<set name="actions">ID_WOTC_PHB24_COMPANION_ACTION_GOAT_RAM</set>
+		</setters>
+		<rules>
+			<stat name="companion:ac" value="10" />
+			<stat name="companion:hp:max" value="4" bonus="base" />
+			<stat name="companion:speed" value="40" bonus="base" />
+			<stat name="companion:speed:climb" value="30" bonus="base" />
+			<stat name="companion:perception:proficiency" value="companion:proficiency" bonus="base" />
+		</rules>
+	</element>
+	<element name="Ram" type="Companion Action" source="Player’s Handbook 2024" id="ID_WOTC_PHB24_COMPANION_ACTION_GOAT_RAM">
+		<compendium display="false" />
+		<description>
+			<p><i>Melee Attack Roll:</i> +2 to hit, reach 5 ft. <i>Hit:</i> 1 Bludgeoning damage, or the goat deals 2 (1d4) Bludgeoning damage if it moved at least 20 feet straight toward the target immediately before the hit.</p>
+		</description>
+		<sheet>
+			<description>Melee Attack Roll: +2 to hit, reach 5 ft. Hit: 1 Bludgeoning damage, or the goat deals 2 (1d4) Bludgeoning damage if it moved at least 20 feet straight toward the target immediately before the hit.</description>
+		</sheet>
+	</element>
+
+	<element name="Hawk" type="Companion" source="Player’s Handbook 2024" id="ID_WOTC_PHB24_COMPANION_HAWK">
+		<supports>Familiar</supports>
+		<description />
+		<setters>
+			<set name="strength">5</set>
+			<set name="dexterity">16</set>
+			<set name="constitution">8</set>
+			<set name="intelligence">2</set>
+			<set name="wisdom">14</set>
+			<set name="charisma">6</set>
+			<set name="ac">13</set>
+			<set name="hp">1 (1d4-1)</set>
+			<set name="speed">10 ft., Fly 60 ft.</set>
+			<set name="skills">Perception +6</set>
+			<set name="senses">Passive Perception 16</set>
+			<set name="languages">—</set>
+			<set name="type">Beast</set>
+			<set name="size">Tiny</set>
+			<set name="alignment">unaligned</set>
+			<set name="challenge">0</set>
+			<set name="proficiency">2</set>
+			<set name="actions">ID_WOTC_PHB24_COMPANION_ACTION_HAWK_TALONS</set>
+		</setters>
+		<rules>
+			<stat name="companion:ac" value="13" />
+			<stat name="companion:hp:max" value="1" bonus="base" />
+			<stat name="companion:speed" value="10" bonus="base" />
+			<stat name="companion:speed:fly" value="60" bonus="base" />
+			<stat name="companion:perception:proficiency" value="companion:proficiency" bonus="base" />
+			<stat name="companion:perception:proficiency" value="companion:proficiency" bonus="double" />
+		</rules>
+	</element>
+	<element name="Talons" type="Companion Action" source="Player’s Handbook 2024" id="ID_WOTC_PHB24_COMPANION_ACTION_HAWK_TALONS">
+		<compendium display="false" />
+		<description>
+			<p><i>Melee Attack Roll:</i> +5, reach 5 ft. <i>Hit:</i> 1 Slashing damage.</p>
+		</description>
+		<sheet>
+			<description>Melee Attack Roll: +5, reach 5 ft. Hit: 1 Slashing damage.</description>
+		</sheet>
+	</element>
+
+	<element name="Lizard" type="Companion" source="Player’s Handbook 2024" id="ID_WOTC_PHB24_COMPANION_LIZARD">
+		<supports>Familiar</supports>
+		<description />
+		<setters>
+			<set name="strength">2</set>
+			<set name="dexterity">11</set>
+			<set name="constitution">10</set>
+			<set name="intelligence">1</set>
+			<set name="wisdom">8</set>
+			<set name="charisma">3</set>
+			<set name="ac">10</set>
+			<set name="hp">2 (1d4)</set>
+			<set name="speed">20 ft., Climb 20 ft.</set>
+			<set name="senses">Darkvision 30 ft., Passive Perception 9</set>
+			<set name="languages">—</set>
+			<set name="type">Beast</set>
+			<set name="size">Tiny</set>
+			<set name="alignment">unaligned</set>
+			<set name="challenge">0</set>
+			<set name="proficiency">2</set>
+			<set name="traits">ID_WOTC_PHB24_COMPANION_TRAIT_LIZARD_SPIDER_CLIMB</set>
+			<set name="actions">ID_WOTC_PHB24_COMPANION_ACTION_LIZARD_BITE</set>
+		</setters>
+		<rules>
+			<stat name="companion:ac" value="10" />
+			<stat name="companion:hp:max" value="2" bonus="base" />
+			<stat name="companion:speed" value="20" bonus="base" />
+			<stat name="companion:speed:climb" value="20" bonus="base" />
+		</rules>
+	</element>
+	<element name="Spider Climb" type="Companion Trait" source="Player’s Handbook 2024" id="ID_WOTC_PHB24_COMPANION_TRAIT_LIZARD_SPIDER_CLIMB">
+		<compendium display="false" />
+		<description>
+			<p>The lizard can climb difficult surfaces, including along ceilings, without needing to make an ability check.</p>
+		</description>
+		<sheet>
+			<description>The lizard can climb difficult surfaces, including along ceilings, without needing to make an ability check.</description>
+		</sheet>
+	</element>
+	<element name="Bite" type="Companion Action" source="Player’s Handbook 2024" id="ID_WOTC_PHB24_COMPANION_ACTION_LIZARD_BITE">
+		<compendium display="false" />
+		<description>
+			<p><i>Melee Attack Roll:</i> +2, reach 5 ft. <i>Hit:</i> 1 Piercing damage.</p>
+		</description>
+		<sheet>
+			<description>Melee Attack Roll: +2, reach 5 ft. Hit: 1 Piercing damage.</description>
+		</sheet>
+	</element>
+
+	<element name="Octopus" type="Companion" source="Player’s Handbook 2024" id="ID_WOTC_PHB24_COMPANION_OCTOPUS">
+		<supports>Familiar</supports>
+		<description />
+		<setters>
+			<set name="strength">4</set>
+			<set name="dexterity">15</set>
+			<set name="constitution">11</set>
+			<set name="intelligence">3</set>
+			<set name="wisdom">10</set>
+			<set name="charisma">4</set>
+			<set name="ac">12</set>
+			<set name="hp">3 (1d6)</set>
+			<set name="speed">5 ft., Swim 30 ft.</set>
+			<set name="skills">Perception +2, Stealth +6</set>
+			<set name="senses">Darkvision 30 ft. Passive Perception 12</set>
+			<set name="languages">—</set>
+			<set name="type">Beast</set>
+			<set name="size">Small</set>
+			<set name="alignment">unaligned</set>
+			<set name="challenge">0</set>
+			<set name="proficiency">2</set>
+			<set name="traits">ID_WOTC_PHB24_COMPANION_TRAIT_OCTOPUS_COMPRESSION,ID_WOTC_PHB24_COMPANION_TRAIT_OCTOPUS_WATER_BREATHING</set>
+			<set name="actions">ID_WOTC_PHB24_COMPANION_ACTION_OCTOPUS_TENTACLES</set>
+			<set name="reactions">ID_WOTC_PHB24_COMPANION_REACTION_OCTOPUS_INK_CLOUD</set>
+		</setters>
+		<rules>
+			<stat name="companion:ac" value="12" />
+			<stat name="companion:hp:max" value="3" bonus="base" />
+			<stat name="companion:speed" value="5" bonus="base" />
+			<stat name="companion:speed:swim" value="30" bonus="base" />
+			<stat name="companion:perception:proficiency" value="companion:proficiency" bonus="base" />
+			<stat name="companion:stealth:proficiency" value="companion:proficiency" bonus="base" />
+			<stat name="companion:stealth:proficiency" value="companion:proficiency" bonus="double" />
+		</rules>
+	</element>
+	<element name="Compression" type="Companion Trait" source="Player’s Handbook 2024" id="ID_WOTC_PHB24_COMPANION_TRAIT_OCTOPUS_COMPRESSION">
+		<compendium display="false" />
+		<description>
+			<p>The octopus can move through a space as narrow as 1 inch without spending extra movement to do so.</p>
+		</description>
+		<sheet>
+			<description>The octopus can move through a space as narrow as 1 inch without spending extra movement to do so.</description>
+		</sheet>
+	</element>
+	<element name="Water Breathing" type="Companion Trait" source="Player’s Handbook 2024" id="ID_WOTC_PHB24_COMPANION_TRAIT_OCTOPUS_WATER_BREATHING">
+		<compendium display="false" />
+		<description>
+			<p>The octopus can breathe only underwater.</p>
+		</description>
+		<sheet>
+			<description>The octopus can breathe only underwater.</description>
+		</sheet>
+	</element>
+	<element name="Tentacles" type="Companion Action" source="Player’s Handbook 2024" id="ID_WOTC_PHB24_COMPANION_ACTION_OCTOPUS_TENTACLES">
+		<compendium display="false" />
+		<description>
+			<p><i>Melee Attack Roll:</i> +4, reach 5 ft. <i>Hit:</i> 1 Bludgeoning damage.</p>
+		</description>
+		<sheet>
+			<description>Melee Attack Roll: +4, reach 5 ft. Hit: 1 Bludgeoning damage.</description>
+		</sheet>
+	</element>
+	<element name="Ink Cloud" type="Companion Reaction" source="Player’s Handbook 2024" id="ID_WOTC_PHB24_COMPANION_REACTION_OCTOPUS_INK_CLOUD">
+		<compendium display="false" />
+		<description>
+			<p><i>Trigger:</i> A creature ends its turn within 5 feet of the octopus while underwater. <i>Response:</i> The octopus releases ink that fills a 5-foot Cube centered on itself, and the octopus moves up to its Swim Speed. The Cube is Heavily Obscured for 1 minute or until a strong current or similar effect disperses the ink.</p>
+		</description>
+		<sheet usage="1/Day">
+			<description>Trigger: A creature ends its turn within 5 feet of the octopus while underwater. Response: The octopus releases ink that fills a 5-foot Cube centered on itself, and the octopus moves up to its Swim Speed. The Cube is Heavily Obscured for 1 minute or until a strong current or similar effect disperses the ink.</description>
+		</sheet>
+	</element>
+
+	<element name="Owl" type="Companion" source="Player’s Handbook 2024" id="ID_WOTC_PHB24_COMPANION_OWL">
+		<supports>Familiar</supports>
+		<description />
+		<setters>
+			<set name="strength">3</set>
+			<set name="dexterity">13</set>
+			<set name="constitution">8</set>
+			<set name="intelligence">2</set>
+			<set name="wisdom">12</set>
+			<set name="charisma">7</set>
+			<set name="ac">11</set>
+			<set name="hp">1 (1d4-1)</set>
+			<set name="speed">5 ft., Fly 60 ft.</set>
+			<set name="skills">Perception +5, Stealth +5</set>
+			<set name="senses">Darkvision 120 ft., Passive Perception 15</set>
+			<set name="languages">—</set>
+			<set name="type">Beast</set>
+			<set name="size">Tiny</set>
+			<set name="alignment">unaligned</set>
+			<set name="challenge">0</set>
+			<set name="proficiency">2</set>
+			<set name="traits">ID_WOTC_PHB24_COMPANION_TRAIT_OWL_FLYBY</set>
+			<set name="actions">ID_WOTC_PHB24_COMPANION_ACTION_OWL_TALONS</set>
+		</setters>
+		<rules>
+			<stat name="companion:ac" value="11" />
+			<stat name="companion:hp:max" value="1" bonus="base" />
+			<stat name="companion:speed" value="5" bonus="base" />
+			<stat name="companion:speed:fly" value="60" bonus="base" />
+			<stat name="companion:perception:proficiency" value="companion:proficiency" bonus="base" />
+			<stat name="companion:perception:proficiency" value="companion:proficiency" bonus="double" />
+			<stat name="companion:stealth:proficiency" value="companion:proficiency" bonus="base" />
+			<stat name="companion:stealth:proficiency" value="companion:proficiency" bonus="double" />
+		</rules>
+	</element>
+	<element name="Flyby" type="Companion Trait" source="Player’s Handbook 2024" id="ID_WOTC_PHB24_COMPANION_TRAIT_OWL_FLYBY">
+		<compendium display="false" />
+		<description>
+			<p>The owl doesn’t provoke Opportunity Attacks when it flies out of an enemy’s reach.</p>
+		</description>
+		<sheet>
+			<description>The owl doesn’t provoke Opportunity Attacks when it flies out of an enemy’s reach.</description>
+		</sheet>
+	</element>
+	<element name="Talons" type="Companion Action" source="Player’s Handbook 2024" id="ID_WOTC_PHB24_COMPANION_ACTION_OWL_TALONS">
+		<compendium display="false" />
+		<description>
+			<p><i>Melee Attack Roll:</i> +3, reach 5 ft. <i>Hit:</i> 1 Slashing damage.</p>
+		</description>
+		<sheet>
+			<description>Melee Attack Roll: +3, reach 5 ft. Hit: 1 Slashing damage.</description>
+		</sheet>
+	</element>
+
+	<element name="Rat" type="Companion" source="Player’s Handbook 2024" id="ID_WOTC_PHB24_COMPANION_RAT">
+		<supports>Familiar</supports>
+		<description />
+		<setters>
+			<set name="strength">2</set>
+			<set name="dexterity">11</set>
+			<set name="constitution">9</set>
+			<set name="intelligence">2</set>
+			<set name="wisdom">10</set>
+			<set name="charisma">4</set>
+			<set name="ac">10</set>
+			<set name="hp">1 (1d4-1)</set>
+			<set name="speed">20 ft., Climb 20 ft.</set>
+			<set name="skills">Perception +2</set>
+			<set name="senses">Darkvision 30 ft., Passive Perception 12</set>
+			<set name="languages">—</set>
+			<set name="type">Beast</set>
+			<set name="size">Tiny</set>
+			<set name="alignment">unaligned</set>
+			<set name="challenge">0</set>
+			<set name="proficiency">2</set>
+			<set name="traits">ID_WOTC_PHB24_COMPANION_TRAIT_RAT_AGILE</set>
+			<set name="actions">ID_WOTC_PHB24_COMPANION_ACTION_RAT_BITE</set>
+		</setters>
+		<rules>
+			<stat name="companion:ac" value="10" />
+			<stat name="companion:hp:max" value="1" bonus="base" />
+			<stat name="companion:speed" value="20" bonus="base" />
+			<stat name="companion:speed:climb" value="20" bonus="base" />
+			<stat name="companion:perception:proficiency" value="companion:proficiency" bonus="base" />
+		</rules>
+	</element>
+	<element name="Agile" type="Companion Trait" source="Player’s Handbook 2024" id="ID_WOTC_PHB24_COMPANION_TRAIT_RAT_AGILE">
+		<compendium display="false" />
+		<description>
+			<p>The rat doesn’t provoke Opportunity Attacks when it moves out of an enemy’s reach.</p>
+		</description>
+		<sheet>
+			<description>The rat doesn’t provoke Opportunity Attacks when it moves out of an enemy’s reach.</description>
+		</sheet>
+	</element>
+	<element name="Bite" type="Companion Action" source="Player’s Handbook 2024" id="ID_WOTC_PHB24_COMPANION_ACTION_RAT_BITE">
+		<compendium display="false" />
+		<description>
+			<p><i>Melee Attack Roll:</i> +2, reach 5 ft. <i>Hit:</i> 1 Piercing damage.</p>
+		</description>
+		<sheet>
+			<description>Melee Attack Roll: +2, reach 5 ft. Hit: 1 Piercing damage.</description>
+		</sheet>
+	</element>
+
+	<element name="Raven" type="Companion" source="Player’s Handbook 2024" id="ID_WOTC_PHB24_COMPANION_RAVEN">
+		<supports>Familiar</supports>
+		<description />
+		<setters>
+			<set name="strength">2</set>
+			<set name="dexterity">14</set>
+			<set name="constitution">10</set>
+			<set name="intelligence">5</set>
+			<set name="wisdom">13</set>
+			<set name="charisma">6</set>
+			<set name="ac">12</set>
+			<set name="hp">2 (1d4)</set>
+			<set name="speed">10 ft., Fly 50 ft.</set>
+			<set name="skills">Perception +3</set>
+			<set name="senses">Passive Perception 13</set>
+			<set name="languages">—</set>
+			<set name="type">Beast</set>
+			<set name="size">Tiny</set>
+			<set name="alignment">unaligned</set>
+			<set name="challenge">0</set>
+			<set name="proficiency">2</set>
+			<set name="traits">ID_WOTC_PHB24_COMPANION_TRAIT_RAVEN_MIMICRY</set>
+			<set name="actions">ID_WOTC_PHB24_COMPANION_ACTION_RAVEN_BEAK</set>
+		</setters>
+		<rules>
+			<stat name="companion:ac" value="12" />
+			<stat name="companion:hp:max" value="2" bonus="base" />
+			<stat name="companion:speed" value="10" bonus="base" />
+			<stat name="companion:speed:fly" value="50" bonus="base" />
+			<stat name="companion:perception:proficiency" value="companion:proficiency" bonus="base" />
+		</rules>
+	</element>
+	<element name="Mimicry" type="Companion Trait" source="Player’s Handbook 2024" id="ID_WOTC_PHB24_COMPANION_TRAIT_RAVEN_MIMICRY">
+		<compendium display="false" />
+		<description>
+			<p>The raven can mimic simple sounds it has heard, such as a whisper or chitter. A hearer can discern the sounds are imitations with a successful DC 10 Wisdom (Insight) check.</p>
+		</description>
+		<sheet>
+			<description>The raven can mimic simple sounds it has heard, such as a whisper or chitter. A hearer can discern the sounds are imitations with a successful DC 10 Wisdom (Insight) check.</description>
+		</sheet>
+	</element>
+	<element name="Beak" type="Companion Action" source="Player’s Handbook 2024" id="ID_WOTC_PHB24_COMPANION_ACTION_RAVEN_BEAK">
+		<compendium display="false" />
+		<description>
+			<p><i>Melee Attack Roll:</i> +4, reach 5 ft. <i>Hit:</i> 1 Piercing damage.</p>
+		</description>
+		<sheet>
+			<description>Melee Attack Roll: +4, reach 5 ft. Hit: 1 Piercing damage.</description>
+		</sheet>
+	</element>
+
+	<element name="Scorpion" type="Companion" source="Player’s Handbook 2024" id="ID_WOTC_PHB24_COMPANION_SCORPION">
+		<description />
+		<setters>
+			<set name="strength">2</set>
+			<set name="dexterity">11</set>
+			<set name="constitution">8</set>
+			<set name="intelligence">1</set>
+			<set name="wisdom">8</set>
+			<set name="charisma">2</set>
+			<set name="ac">11 (natural armor)</set>
+			<set name="hp">1 (1d4-1)</set>
+			<set name="speed">10 ft.</set>
+			<set name="senses">Blindsight 10 ft., Passive Perception 9</set>
+			<set name="languages">—</set>
+			<set name="type">Beast</set>
+			<set name="size">Tiny</set>
+			<set name="alignment">unaligned</set>
+			<set name="challenge">0</set>
+			<set name="proficiency">2</set>
+			<set name="actions">ID_WOTC_PHB24_COMPANION_ACTION_SCORPION_STING</set>
+		</setters>
+		<rules>
+			<stat name="companion:ac" value="11" />
+			<stat name="companion:hp:max" value="1" bonus="base" />
+			<stat name="companion:speed" value="10" bonus="base" />
+		</rules>
+	</element>
+	<element name="Sting" type="Companion Action" source="Player’s Handbook 2024" id="ID_WOTC_PHB24_COMPANION_ACTION_SCORPION_STING">
+		<compendium display="false" />
+		<description>
+			<p><i>Melee Attack Roll:</i> +2, reach 5 ft. <i>Hit:</i> 1 Piercing damage plus 3 (1d6) Poison damage.</p>
+		</description>
+		<sheet>
+			<description>Melee Attack Roll: +2, reach 5 ft. Hit: 1 Piercing damage plus 3 (1d6) Poison damage.</description>
+		</sheet>
+	</element>
+
+	<element name="Spider" type="Companion" source="Player’s Handbook 2024" id="ID_WOTC_PHB24_COMPANION_SPIDER">
+		<supports>Familiar</supports>
+		<description />
+		<setters>
+			<set name="strength">2</set>
+			<set name="dexterity">14</set>
+			<set name="constitution">8</set>
+			<set name="intelligence">1</set>
+			<set name="wisdom">10</set>
+			<set name="charisma">2</set>
+			<set name="ac">12</set>
+			<set name="hp">1 (1d4-1)</set>
+			<set name="speed">20 ft., Climb 20 ft.</set>
+			<set name="skills">Stealth +4</set>
+			<set name="senses">Darkvision 30 ft., Passive Perception 10</set>
+			<set name="languages">—</set>
+			<set name="type">Beast</set>
+			<set name="size">Tiny</set>
+			<set name="alignment">unaligned</set>
+			<set name="challenge">0</set>
+			<set name="proficiency">2</set>
+			<set name="traits">ID_WOTC_PHB24_COMPANION_TRAIT_SPIDER_SPIDER_CLIMB,ID_WOTC_PHB24_COMPANION_TRAIT_SPIDER_WEB_WALKER</set>
+			<set name="actions">ID_WOTC_PHB24_COMPANION_ACTION_SPIDER_BITE</set>
+		</setters>
+		<rules>
+			<stat name="companion:ac" value="12" />
+			<stat name="companion:hp:max" value="1" bonus="base" />
+			<stat name="companion:speed" value="20" bonus="base" />
+			<stat name="companion:speed:climb" value="20" bonus="base" />
+			<stat name="companion:stealth:proficiency" value="companion:proficiency" bonus="base" />
+		</rules>
+	</element>
+	<element name="Spider Climb" type="Companion Trait" source="Player’s Handbook 2024" id="ID_WOTC_PHB24_COMPANION_TRAIT_SPIDER_SPIDER_CLIMB">
+		<compendium display="false" />
+		<description>
+			<p>The spider can climb difficult surfaces, including along ceilings, without needing to make an ability check.</p>
+		</description>
+		<sheet>
+			<description>The spider can climb difficult surfaces, including along ceilings, without needing to make an ability check.</description>
+		</sheet>
+	</element>
+	<element name="Web Walker" type="Companion Trait" source="Player’s Handbook 2024" id="ID_WOTC_PHB24_COMPANION_TRAIT_SPIDER_WEB_WALKER">
+		<compendium display="false" />
+		<description>
+			<p>The spider ignores movement restrictions caused by webs, and the spider knows the location of any other creature in contact with the same web.</p>
+		</description>
+		<sheet>
+			<description>The spider ignores movement restrictions caused by webs, and the spider knows the location of any other creature in contact with the same web.</description>
+		</sheet>
+	</element>
+	<element name="Bite" type="Companion Action" source="Player’s Handbook 2024" id="ID_WOTC_PHB24_COMPANION_ACTION_SPIDER_BITE">
+		<compendium display="false" />
+		<description>
+			<p><i>Melee Attack Roll:</i> +4, reach 5 ft. <i>Hit:</i> 1 Piercing damage plus 2 (1d4) Poison damage.</p>
+		</description>
+		<sheet>
+			<description>Melee Attack Roll: +4, reach 5 ft. Hit: 1 Piercing damage plus 2 (1d4) Poison damage.</description>
+		</sheet>
+	</element>
+
+	<element name="Weasel" type="Companion" source="Player’s Handbook 2024" id="ID_WOTC_PHB24_COMPANION_WEASEL">
+		<supports>Familiar</supports>
+		<description />
+		<setters>
+			<set name="strength">3</set>
+			<set name="dexterity">16</set>
+			<set name="constitution">8</set>
+			<set name="intelligence">2</set>
+			<set name="wisdom">12</set>
+			<set name="charisma">3</set>
+			<set name="ac">13</set>
+			<set name="hp">1 (1d4-1)</set>
+			<set name="speed">30 ft., Climb 30 ft.</set>
+			<set name="skills">Acrobatics +5, Perception +3, Stealth +5</set>
+			<set name="senses">Darkvision 60 ft., Passive Perception 13</set>
+			<set name="languages">—</set>
+			<set name="type">Beast</set>
+			<set name="size">Tiny</set>
+			<set name="alignment">unaligned</set>
+			<set name="challenge">0</set>
+			<set name="proficiency">2</set>
+			<set name="actions">ID_WOTC_PHB24_COMPANION_ACTION_WEASEL_BITE</set>
+		</setters>
+		<rules>
+			<stat name="companion:ac" value="13" />
+			<stat name="companion:hp:max" value="1" bonus="base" />
+			<stat name="companion:speed" value="30" bonus="base" />
+			<stat name="companion:speed:climb" value="30" bonus="base" />
+			<stat name="companion:acrobatics:proficiency" value="companion:proficiency" bonus="base" />
+			<stat name="companion:perception:proficiency" value="companion:proficiency" bonus="base" />
+			<stat name="companion:stealth:proficiency" value="companion:proficiency" bonus="base" />
+		</rules>
+	</element>
+	<element name="Bite" type="Companion Action" source="Player’s Handbook 2024" id="ID_WOTC_PHB24_COMPANION_ACTION_WEASEL_BITE">
+		<compendium display="false" />
+		<description>
+			<p><i>Melee Attack Roll:</i> +5, reach 5 ft. <i>Hit:</i> 1 Piercing damage.</p>
+		</description>
+		<sheet>
+			<description>Melee Attack Roll: +5, reach 5 ft. Hit: 1 Piercing damage.</description>
+		</sheet>
+	</element>
+
+	<!-- Other Beasts & Creatures -->
+	<element name="Ape" type="Companion" source="Player’s Handbook 2024" id="ID_WOTC_PHB24_COMPANION_APE">
+		<description />
+		<setters>
+			<set name="strength">16</set>
+			<set name="dexterity">14</set>
+			<set name="constitution">14</set>
+			<set name="intelligence">6</set>
+			<set name="wisdom">12</set>
+			<set name="charisma">7</set>
+			<set name="ac">12</set>
+			<set name="hp">19 (3d8+6)</set>
+			<set name="speed">30 ft., Climb 30 ft.</set>
+			<set name="skills">Athletics +5, Perception +3</set>
+			<set name="senses">Passive Perception 13</set>
+			<set name="languages">—</set>
+			<set name="type">Beast</set>
+			<set name="size">Medium</set>
+			<set name="alignment">unaligned</set>
+			<set name="challenge">1/2</set>
+			<set name="proficiency">2</set>
+			<set name="actions">ID_WOTC_PHB24_COMPANION_ACTION_APE_MULTIATTACK,ID_WOTC_PHB24_COMPANION_ACTION_APE_FIST,ID_WOTC_PHB24_COMPANION_ACTION_APE_ROCK</set>
+		</setters>
+		<rules>
+			<stat name="companion:ac" value="12" />
+			<stat name="companion:hp:max" value="19" bonus="base" />
+			<stat name="companion:speed" value="30" bonus="base" />
+			<stat name="companion:speed:climb" value="30" bonus="base" />
+			<stat name="companion:athletics:proficiency" value="companion:proficiency" bonus="base" />
+			<stat name="companion:perception:proficiency" value="companion:proficiency" bonus="base" />
+		</rules>
+	</element>
+	<element name="Multiattack" type="Companion Action" source="Player’s Handbook 2024" id="ID_WOTC_PHB24_COMPANION_ACTION_APE_MULTIATTACK">
+		<compendium display="false" />
+		<description>
+			<p>The ape makes two Fist attacks.</p>
+		</description>
+		<sheet>
+			<description>The ape makes two Fist attacks.</description>
+		</sheet>
+	</element>
+	<element name="Fist" type="Companion Action" source="Player’s Handbook 2024" id="ID_WOTC_PHB24_COMPANION_ACTION_APE_FIST">
+		<compendium display="false" />
+		<description>
+			<p><i>Melee Attack Roll:</i> +5, reach 5 ft. <i>Hit:</i> 5 (1d4 + 3) Bludgeoning damage.</p>
+		</description>
+		<sheet>
+			<description>Melee Attack Roll: +5, reach 5 ft. Hit: 5 (1d4 + 3) Bludgeoning damage.</description>
+		</sheet>
+	</element>
+	<element name="Rock" type="Companion Action" source="Player’s Handbook 2024" id="ID_WOTC_PHB24_COMPANION_ACTION_APE_ROCK">
+		<compendium display="false" />
+		<description>
+			<p><i>Ranged Attack Roll:</i> +5, range 25/50 ft. <i>Hit:</i> 10 (2d6 + 3) Bludgeoning damage.</p>
+		</description>
+		<sheet usage="Recharge 6">
+			<description>Ranged Attack Roll: +5, range 25/50 ft. Hit: 10 (2d6 + 3) Bludgeoning damage.</description>
+		</sheet>
+	</element>
+
+	<element name="Black Bear" type="Companion" source="Player’s Handbook 2024" id="ID_WOTC_PHB24_COMPANION_BLACK_BEAR">
+		<description />
+		<setters>
+			<set name="strength">15</set>
+			<set name="dexterity">12</set>
+			<set name="constitution">14</set>
+			<set name="intelligence">2</set>
+			<set name="wisdom">12</set>
+			<set name="charisma">7</set>
+			<set name="ac">11</set>
+			<set name="hp">19 (3d8+6)</set>
+			<set name="speed">30 ft., Climb 30 ft., Swim 30 ft.</set>
+			<set name="skills">Perception +5</set>
+			<set name="senses">Darkvision 60 ft., Passive Perception 15</set>
+			<set name="languages">—</set>
+			<set name="type">Beast</set>
+			<set name="size">Medium</set>
+			<set name="alignment">unaligned</set>
+			<set name="challenge">1/2</set>
+			<set name="proficiency">2</set>
+			<set name="actions">ID_WOTC_PHB24_COMPANION_ACTION_BLACK_BEAR_MULTIATTACK,ID_WOTC_PHB24_COMPANION_ACTION_BLACK_BEAR_REND</set>
+		</setters>
+		<rules>
+			<stat name="companion:ac" value="11" />
+			<stat name="companion:hp:max" value="19" bonus="base" />
+			<stat name="companion:speed" value="30" bonus="base" />
+			<stat name="companion:speed:climb" value="30" bonus="base" />
+			<stat name="companion:speed:swim" value="30" bonus="base" />
+			<stat name="companion:perception:proficiency" value="companion:proficiency" bonus="base" />
+			<stat name="companion:perception:proficiency" value="companion:proficiency" bonus="double" />
+		</rules>
+	</element>
+	<element name="Multiattack" type="Companion Action" source="Player’s Handbook 2024" id="ID_WOTC_PHB24_COMPANION_ACTION_BLACK_BEAR_MULTIATTACK">
+		<compendium display="false" />
+		<description>
+			<p>The bear makes two Rend attacks.</p>
+		</description>
+		<sheet>
+			<description>The bear makes two Rend attacks.</description>
+		</sheet>
+	</element>
+	<element name="Rend" type="Companion Action" source="Player’s Handbook 2024" id="ID_WOTC_PHB24_COMPANION_ACTION_BLACK_BEAR_REND">
+		<compendium display="false" />
+		<description>
+			<p><i>Melee Attack Roll:</i> +4, reach 5 ft. <i>Hit:</i> 5 (1d6 + 2) Slashing damage.</p>
+		</description>
+		<sheet>
+			<description>Melee Attack Roll: +4, reach 5 ft. Hit: 5 (1d6 + 2) Slashing damage.</description>
+		</sheet>
+	</element>
+
+	<element name="Boar" type="Companion" source="Player’s Handbook 2024" id="ID_WOTC_PHB24_COMPANION_BOAR">
+		<description />
+		<setters>
+			<set name="strength">13</set>
+			<set name="dexterity">11</set>
+			<set name="constitution">14</set>
+			<set name="intelligence">2</set>
+			<set name="wisdom">9</set>
+			<set name="charisma">5</set>
+			<set name="ac">11</set>
+			<set name="hp">13 (2d8+4)</set>
+			<set name="speed">40 ft.</set>
+			<set name="senses">Passive Perception 9</set>
+			<set name="languages">—</set>
+			<set name="type">Beast</set>
+			<set name="size">Medium</set>
+			<set name="alignment">unaligned</set>
+			<set name="challenge">1/4</set>
+			<set name="proficiency">2</set>
+			<set name="traits">ID_WOTC_PHB24_COMPANION_TRAIT_BOAR_BLOODIED_FURY</set>
+			<set name="actions">ID_WOTC_PHB24_COMPANION_ACTION_BOAR_GORE</set>
+		</setters>
+		<rules>
+			<stat name="companion:ac" value="11" />
+			<stat name="companion:hp:max" value="13" bonus="base" />
+			<stat name="companion:speed" value="40" bonus="base" />
+		</rules>
+	</element>
+	<element name="Bloodied Fury" type="Companion Trait" source="Player’s Handbook 2024" id="ID_WOTC_PHB24_COMPANION_TRAIT_BOAR_BLOODIED_FURY">
+		<compendium display="false" />
+		<description>
+			<p>While Bloodied, the boar has Advantage on attack rolls.</p>
+		</description>
+		<sheet>
+			<description>While Bloodied, the boar has Advantage on attack rolls.</description>
+		</sheet>
+	</element>
+	<element name="Gore" type="Companion Action" source="Player’s Handbook 2024" id="ID_WOTC_PHB24_COMPANION_ACTION_BOAR_GORE">
+		<compendium display="false" />
+		<description>
+			<p><i>Melee Attack Roll:</i> +3, reach 5 ft. <i>Hit:</i> 4 (1d6 + 1) Piercing damage. If the boar moved at least 20 feet straight toward the target immediately before the hit, the target takes an extra 3 (1d6) Piercing damage and, if it is Large or smaller, has the Prone condition.</p>
+		</description>
+		<sheet>
+			<description>Melee Attack Roll: +3, reach 5 ft. Hit: 4 (1d6 + 1) Piercing damage. If the boar moved at least 20 feet straight toward the target immediately before the hit, the target takes an extra 3 (1d6) Piercing damage and, if it is Large or smaller, has the Prone condition.</description>
+		</sheet>
+	</element>
+
+	<element name="Brown Bear" type="Companion" source="Player’s Handbook 2024" id="ID_WOTC_PHB24_COMPANION_BROWN_BEAR">
+		<description />
+		<setters>
+			<set name="strength">17</set>
+			<set name="dexterity">12</set>
+			<set name="constitution">15</set>
+			<set name="intelligence">2</set>
+			<set name="wisdom">13</set>
+			<set name="charisma">7</set>
+			<set name="ac">11</set>
+			<set name="hp">22 (3d10+6)</set>
+			<set name="speed">40 ft., Climb 30 ft.</set>
+			<set name="skills">Perception +3</set>
+			<set name="senses">Darkvision 60 ft., Passive Perception 13</set>
+			<set name="languages">—</set>
+			<set name="type">Beast</set>
+			<set name="size">Medium</set>
+			<set name="alignment">unaligned</set>
+			<set name="challenge">1</set>
+			<set name="proficiency">2</set>
+			<set name="actions">ID_WOTC_PHB24_COMPANION_ACTION_BROWN_BEAR_MULTIATTACK,ID_WOTC_PHB24_COMPANION_ACTION_BROWN_BEAR_BITE, ID_WOTC_PHB24_COMPANION_ACTION_BROWN_BEAR_CLAW</set>
+		</setters>
+		<rules>
+			<stat name="companion:ac" value="11" />
+			<stat name="companion:hp:max" value="22" bonus="base" />
+			<stat name="companion:speed" value="40" bonus="base" />
+			<stat name="companion:speed:climb" value="30" bonus="base" />
+			<stat name="companion:perception:proficiency" value="companion:proficiency" bonus="base" />
+		</rules>
+	</element>
+	<element name="Multiattack" type="Companion Action" source="Player’s Handbook 2024" id="ID_WOTC_PHB24_COMPANION_ACTION_BLACK_BEAR_MULTIATTACK">
+		<compendium display="false" />
+		<description>
+			<p>The bear makes one Bite attack and one Claw attack.</p>
+		</description>
+		<sheet>
+			<description>The bear makes one Bite attack and one Claw attack.</description>
+		</sheet>
+	</element>
+	<element name="Bite" type="Companion Action" source="Player’s Handbook 2024" id="ID_WOTC_PHB24_COMPANION_ACTION_BROWN_BEAR_BITE">
+		<compendium display="false" />
+		<description>
+			<p><i>Melee Attack Roll:</i> +5, reach 5 ft. <i>Hit:</i> 7 (1d8 + 3) Piercing damage.</p>
+		</description>
+		<sheet>
+			<description>Melee Attack Roll: +5, reach 5 ft. Hit: 7 (1d8 + 3) Piercing damage.</description>
+		</sheet>
+	</element>
+	<element name="Claw" type="Companion Action" source="Player’s Handbook 2024" id="ID_WOTC_PHB24_COMPANION_ACTION_BROWN_BEAR_CLAW">
+		<compendium display="false" />
+		<description>
+			<p><i>Melee Attack Roll:</i> +5, reach 5 ft. <i>Hit:</i> 5 (1d4 + 3) Slashing damage, and the target has the Prone condition if it is Huge or smaller.</p>
+		</description>
+		<sheet>
+			<description>Melee Attack Roll: +5, reach 5 ft. Hit: 5 (1d4 + 3) Slashing damage, and the target has the Prone condition if it is Huge or smaller.</description>
+		</sheet>
+	</element>
+
+	<element name="Camel" type="Companion" source="Player’s Handbook 2024" id="ID_WOTC_PHB24_COMPANION_CAMEL">
+		<description />
+		<setters>
+			<set name="strength">15</set>
+			<set name="dexterity">8</set>
+			<set name="constitution">17</set>
+			<set name="intelligence">2</set>
+			<set name="wisdom">11</set>
+			<set name="charisma">5</set>
+			<set name="ac">10</set>
+			<set name="hp">17 (2d10+6)</set>
+			<set name="speed">50 ft.</set>
+			<set name="senses">Darkvision 60 ft., Passive Perception 10</set>
+			<set name="languages">—</set>
+			<set name="type">Beast</set>
+			<set name="size">Large</set>
+			<set name="alignment">unaligned</set>
+			<set name="challenge">1/8</set>
+			<set name="proficiency">2</set>
+			<set name="actions">ID_WOTC_PHB24_COMPANION_ACTION_CAMEL_BITE</set>
+		</setters>
+		<rules>
+			<stat name="companion:ac" value="10" />
+			<stat name="companion:hp:max" value="17" bonus="base" />
+			<stat name="companion:speed" value="50" bonus="base" />
+		</rules>
+	</element>
+	<element name="Bite" type="Companion Action" source="Player’s Handbook 2024" id="ID_WOTC_PHB24_COMPANION_ACTION_CAMEL_BITE">
+		<compendium display="false" />
+		<description>
+			<p><i>Melee Attack Roll:</i> +4, reach 5 ft. <i>Hit:</i> 4 (1d4 + 2) Bludgeoning damage.</p>
+		</description>
+		<sheet>
+			<description>Melee Attack Roll: +4, reach 5 ft. Hit: 4 (1d4 + 2) Bludgeoning damage.</description>
+		</sheet>
+	</element>
+
+	<element name="Constrictor Snake" type="Companion" source="Player’s Handbook 2024" id="ID_WOTC_PHB24_COMPANION_CONSTRICTOR_SNAKE">
+		<description />
+		<setters>
+			<set name="strength">15</set>
+			<set name="dexterity">14</set>
+			<set name="constitution">12</set>
+			<set name="intelligence">1</set>
+			<set name="wisdom">10</set>
+			<set name="charisma">3</set>
+			<set name="ac">13</set>
+			<set name="hp">13 (2d10+2)</set>
+			<set name="speed">30 ft., Swim 30 ft.</set>
+			<set name="skills">Perception +2, Stealth +4</set>
+			<set name="senses">Blindsight 10 ft., Passive Perception 12</set>
+			<set name="languages">—</set>
+			<set name="type">Beast</set>
+			<set name="size">Large</set>
+			<set name="alignment">unaligned</set>
+			<set name="challenge">1/4</set>
+			<set name="proficiency">2</set>
+			<set name="actions">ID_WOTC_PHB24_COMPANION_ACTION_CONSTRICTOR_SNAKE_BITE,ID_WOTC_PHB24_COMPANION_ACTION_CONSTRICTOR_SNAKE_CONSTRICT</set>
+		</setters>
+		<rules>
+			<stat name="companion:ac" value="13" />
+			<stat name="companion:hp:max" value="13" bonus="base" />
+			<stat name="companion:speed" value="30" bonus="base" />
+			<stat name="companion:speed:swim" value="30" bonus="base" />
+			<stat name="companion:perception:proficiency" value="companion:proficiency" bonus="base" />
+			<stat name="companion:stealth:proficiency" value="companion:proficiency" bonus="base" />
+		</rules>
+	</element>
+	<element name="Bite" type="Companion Action" source="Player’s Handbook 2024" id="ID_WOTC_PHB24_COMPANION_ACTION_CONSTRICTOR_SNAKE_BITE">
+		<compendium display="false" />
+		<description>
+			<p><i>Melee Attack Roll:</i> +4, reach 5 ft. <i>Hit:</i> 6 (1d8 + 2) Piercing damage.</p>
+		</description>
+		<sheet>
+			<description>Melee Attack Roll: +4, reach 5 ft. Hit: 6 (1d8 + 2) Piercing damage.</description>
+		</sheet>
+	</element>
+	<element name="Constrict" type="Companion Action" source="Player’s Handbook 2024" id="ID_WOTC_PHB24_COMPANION_ACTION_CONSTRICTOR_SNAKE_CONSTRICT">
+		<compendium display="false" />
+		<description>
+			<p><i>Strength Saving Throw: DC 12</i>, one Medium or smaller creature the snake can see within 5 feet. <i>Failure:</i> 7 (3d4) Bludgeoning damage, and the target has the Grappled condition (escape DC 12).</p>
+		</description>
+		<sheet>
+			<description>Strength Saving Throw: DC 12, one Medium or smaller creature the snake can see within 5 feet. Failure: 7 (3d4) Bludgeoning damage, and the target has the Grappled condition (escape DC 12).</description>
+		</sheet>
+	</element>
+
+	<element name="Crocodile" type="Companion" source="Player’s Handbook 2024" id="ID_WOTC_PHB24_COMPANION_CROCODILE">
+		<description />
+		<setters>
+			<set name="strength">15</set>
+			<set name="dexterity">10</set>
+			<set name="constitution">13</set>
+			<set name="intelligence">2</set>
+			<set name="wisdom">10</set>
+			<set name="charisma">5</set>
+			<set name="ac">12</set>
+			<set name="hp">13 (2d10+2)</set>
+			<set name="speed">20 ft., Swim 30 ft.</set>
+			<set name="skills">Stealth +2</set>
+			<set name="senses">Passive Perception 10</set>
+			<set name="languages">—</set>
+			<set name="type">Beast</set>
+			<set name="size">Large</set>
+			<set name="alignment">unaligned</set>
+			<set name="challenge">1/2</set>
+			<set name="proficiency">2</set>
+			<set name="traits">ID_WOTC_PHB24_COMPANION_TRAIT_CROCODILE_HOLD_BREATH</set>
+			<set name="actions">ID_WOTC_PHB24_COMPANION_ACTION_CROCODILE_BITE</set>
+		</setters>
+		<rules>
+			<stat name="companion:ac" value="12" />
+			<stat name="companion:hp:max" value="13" bonus="base" />
+			<stat name="companion:speed" value="20" bonus="base" />
+			<stat name="companion:speed:swim" value="30" bonus="base" />
+			<stat name="companion:stealth:proficiency" value="companion:proficiency" bonus="base" />
+		</rules>
+	</element>
+	<element name="Hold Breath" type="Companion Trait" source="Player’s Handbook 2024" id="ID_WOTC_PHB24_COMPANION_TRAIT_CROCODILE_HOLD_BREATH">
+		<compendium display="false" />
+		<description>
+			<p>The crocodile can hold its breath for 1 hour.</p>
+		</description>
+		<sheet>
+			<description>The crocodile can hold its breath for 1 hour.</description>
+		</sheet>
+	</element>
+	<element name="Bite" type="Companion Action" source="Player’s Handbook 2024" id="ID_WOTC_PHB24_COMPANION_ACTION_CROCODILE_BITE">
+		<compendium display="false" />
+		<description>
+			<p><i>Melee Attack Roll:</i> +4, reach 5 ft. <i>Hit:</i> 6 (1d8 + 2) Piercing damage. If the target is Medium or smaller, it has the Grappled condition (escape DC 12). While Grappled, the target has the Restrained condition.</p>
+		</description>
+		<sheet>
+			<description>Melee Attack Roll: +4, reach 5 ft. Hit: 6 (1d8 + 2) Piercing damage. If the target is Medium or smaller, it has the Grappled condition (escape DC 12). While Grappled, the target has the Restrained condition.</description>
+		</sheet>
+	</element>
+
+	<element name="Dire Wolf" type="Companion" source="Player’s Handbook 2024" id="ID_WOTC_PHB24_COMPANION_DIRE_WOLF">
+		<description />
+		<setters>
+			<set name="strength">17</set>
+			<set name="dexterity">15</set>
+			<set name="constitution">15</set>
+			<set name="intelligence">3</set>
+			<set name="wisdom">12</set>
+			<set name="charisma">7</set>
+			<set name="ac">14</set>
+			<set name="hp">22 (3d10+6)</set>
+			<set name="speed">50 ft.</set>
+			<set name="skills">Perception +5, Stealth +4</set>
+			<set name="senses">Darkvision 60 ft., Passive Perception 15</set>
+			<set name="languages">—</set>
+			<set name="type">Beast</set>
+			<set name="size">Large</set>
+			<set name="alignment">unaligned</set>
+			<set name="challenge">1</set>
+			<set name="proficiency">2</set>
+			<set name="traits">ID_WOTC_PHB24_COMPANION_TRAIT_DIRE_WOLF_PACK_TACTICS</set>
+			<set name="actions">ID_WOTC_PHB24_COMPANION_ACTION_DIRE_WOLF_BITE</set>
+		</setters>
+		<rules>
+			<stat name="companion:ac" value="14" />
+			<stat name="companion:hp:max" value="22" bonus="base" />
+			<stat name="companion:speed" value="50" bonus="base" />
+			<stat name="companion:perception:proficiency" value="companion:proficiency" bonus="base" />
+			<stat name="companion:perception:proficiency" value="companion:proficiency" bonus="double" />
+			<stat name="companion:stealth:proficiency" value="companion:proficiency" bonus="base" />
+		</rules>
+	</element>
+	<element name="Pack Tactics" type="Companion Trait" source="Player’s Handbook 2024" id="ID_WOTC_PHB24_COMPANION_TRAIT_DIRE_WOLF_PACK_TACTICS">
+		<compendium display="false" />
+		<description>
+			<p>The wolf has Advantage on an attack roll against a creature if at least one of the wolf’s allies is within 5 feet of the creature and the ally doesn’t have the Incapacitated condition.</p>
+		</description>
+		<sheet>
+			<description>The wolf has Advantage on an attack roll against a creature if at least one of the wolf’s allies is within 5 feet of the creature and the ally doesn’t have the Incapacitated condition.</description>
+		</sheet>
+	</element>
+	<element name="Bite" type="Companion Action" source="Player’s Handbook 2024" id="ID_WOTC_PHB24_COMPANION_ACTION_DIRE_WOLF_BITE">
+		<compendium display="false" />
+		<description>
+			<p><i>Melee Attack Roll:</i> +5, reach 5 ft. <i>Hit:</i> 8 (1d10 + 3) Piercing damage, and the target has the Prone condition if it is Huge or smaller.</p>
+		</description>
+		<sheet>
+			<description>Melee Attack Roll: +5, reach 5 ft. Hit: 8 (1d10 + 3) Piercing damage, and the target has the Prone condition if it is Huge or smaller.</description>
+		</sheet>
+	</element>
+
+	<element name="Draft Horse" type="Companion" source="Player’s Handbook 2024" id="ID_WOTC_PHB24_COMPANION_DRAFT_HORSE">
+		<description />
+		<setters>
+			<set name="strength">18</set>
+			<set name="dexterity">10</set>
+			<set name="constitution">15</set>
+			<set name="intelligence">2</set>
+			<set name="wisdom">11</set>
+			<set name="charisma">7</set>
+			<set name="ac">10</set>
+			<set name="hp">15 (2d10+4)</set>
+			<set name="speed">40 ft.</set>
+			<set name="senses">Passive Perception 10</set>
+			<set name="languages">—</set>
+			<set name="type">Beast</set>
+			<set name="size">Large</set>
+			<set name="alignment">unaligned</set>
+			<set name="challenge">1/4</set>
+			<set name="proficiency">2</set>
+			<set name="actions">ID_WOTC_PHB24_COMPANION_ACTION_DRAFT_HORSE_HOOVES</set>
+		</setters>
+		<rules>
+			<stat name="companion:ac" value="10" />
+			<stat name="companion:hp:max" value="15" bonus="base" />
+			<stat name="companion:speed" value="40" bonus="base" />
+		</rules>
+	</element>
+	<element name="Hooves" type="Companion Action" source="Player’s Handbook 2024" id="ID_WOTC_PHB24_COMPANION_ACTION_DRAFT_HORSE_HOOVES">
+		<compendium display="false" />
+		<description>
+			<p><i>Melee Attack Roll:</i> +6, reach 5 ft. <i>Hit:</i> 6 (1d4 + 4) Bludgeoning damage.</p>
+		</description>
+		<sheet>
+			<description>Melee Attack Roll: +6, reach 5 ft. Hit: 6 (1d4 + 4) Bludgeoning damage.</description>
+		</sheet>
+	</element>
+
+	<element name="Elephant" type="Companion" source="Player’s Handbook 2024" id="ID_WOTC_PHB24_COMPANION_ELEPHANT">
+		<description />
+		<setters>
+			<set name="strength">22</set>
+			<set name="dexterity">9</set>
+			<set name="constitution">17</set>
+			<set name="intelligence">3</set>
+			<set name="wisdom">11</set>
+			<set name="charisma">6</set>
+			<set name="ac">12</set>
+			<set name="hp">76 (8d12+24)</set>
+			<set name="speed">40 ft.</set>
+			<set name="senses">Passive Perception 10</set>
+			<set name="languages">—</set>
+			<set name="type">Beast</set>
+			<set name="size">Huge</set>
+			<set name="alignment">unaligned</set>
+			<set name="challenge">4</set>
+			<set name="proficiency">2</set>
+			<set name="actions">ID_WOTC_PHB24_COMPANION_ACTION_ELEPHANT_MULTIATTACK,ID_WOTC_PHB24_COMPANION_ACTION_ELEPHANT_GORE</set>
+			<set name="bonusActions">ID_WOTC_PHB24_COMPANION_BONUS_ACTION_ELEPHANT_TRAMPLE</set>
+		</setters>
+		<rules>
+			<stat name="companion:ac" value="12" />
+			<stat name="companion:hp:max" value="76" bonus="base" />
+			<stat name="companion:speed" value="40" bonus="base" />
+		</rules>
+	</element>
+	<element name="Multiattack" type="Companion Action" source="Player’s Handbook 2024" id="ID_WOTC_PHB24_COMPANION_ACTION_ELEPHANT_MULTIATTACK">
+		<compendium display="false" />
+		<description>
+			<p>The elephant makes two Gore attacks.</p>
+		</description>
+		<sheet>
+			<description>The elephant makes two Gore attacks.</description>
+		</sheet>
+	</element>
+	<element name="Gore" type="Companion Action" source="Player’s Handbook 2024" id="ID_WOTC_PHB24_COMPANION_ACTION_ELEPHANT_GORE">
+		<compendium display="false" />
+		<description>
+			<p><i>Melee Attack Roll:</i> +8, reach 5 ft. <i>Hit:</i> 15 (2d8 + 6) Piercing damage. If the elephant moved at least 20 feet straight toward the target immediately before the hit, the target also has the Prone condition.</p>
+		</description>
+		<sheet>
+			<description>Melee Attack Roll: +8, reach 5 ft. Hit: 15 (2d8 + 6) Piercing damage. If the elephant moved at least 20 feet straight toward the target immediately before the hit, the target also has the Prone condition.</description>
+		</sheet>
+	</element>
+	<element name="Trample" type="Companion Bonus Action" source="Player’s Handbook 2024" id="ID_WOTC_PHB24_COMPANION_BONUS_ACTION_ELEPHANT_TRAMPLE">
+		<compendium display="false" />
+		<description>
+			<p><i>Dexterity Saving Throw: DC 16</i>, one creature within 5 feet that has the Prone condition. <i>Failure:</i> 17 (2d10 + 6) Bludgeoning damage. Success: Half damage.</p>
+		</description>
+		<sheet>
+			<description>Dexterity Saving Throw: DC 16, one creature within 5 feet that has the Prone condition. Failure: 17 (2d10 + 6) Bludgeoning damage. Success: Half damage.</description>
+		</sheet>
+	</element>
+
+	<element name="Elk" type="Companion" source="Player’s Handbook 2024" id="ID_WOTC_PHB24_COMPANION_ELK">
+		<description />
+		<setters>
+			<set name="strength">16</set>
+			<set name="dexterity">10</set>
+			<set name="constitution">11</set>
+			<set name="intelligence">2</set>
+			<set name="wisdom">10</set>
+			<set name="charisma">6</set>
+			<set name="ac">10</set>
+			<set name="hp">11 (2d10)</set>
+			<set name="speed">50 ft.</set>
+			<set name="skills">Perception +2</set>
+			<set name="senses">Darkvision 60 ft., Passive Perception 12</set>
+			<set name="languages">—</set>
+			<set name="type">Beast</set>
+			<set name="size">Large</set>
+			<set name="alignment">unaligned</set>
+			<set name="challenge">1/4</set>
+			<set name="proficiency">2</set>
+			<set name="actions">ID_WOTC_PHB24_COMPANION_ACTION_ELK_RAM</set>
+		</setters>
+		<rules>
+			<stat name="companion:ac" value="10" />
+			<stat name="companion:hp:max" value="11" bonus="base" />
+			<stat name="companion:speed" value="50" bonus="base" />
+			<stat name="companion:perception:proficiency" value="companion:proficiency" bonus="base" />
+		</rules>
+	</element>
+	<element name="Ram" type="Companion Action" source="Player’s Handbook 2024" id="ID_WOTC_PHB24_COMPANION_ACTION_ELK_RAM">
+		<compendium display="false" />
+		<description>
+			<p><i>Melee Attack Roll:</i> +5, reach 5 ft. <i>Hit:</i> 6 (1d6 + 3) Bludgeoning damage. If the elk moved at least 20 feet straight toward the target immediately before the hit, the target takes an extra 3 (1d6) Bludgeoning damage and, if it is Huge or smaller, has the Prone condition.</p>
+		</description>
+		<sheet>
+			<description>Melee Attack Roll: +5, reach 5 ft. Hit: 6 (1d6 + 3) Bludgeoning damage. If the elk moved at least 20 feet straight toward the target immediately before the hit, the target takes an extra 3 (1d6) Bludgeoning damage and, if it is Huge or smaller, has the Prone condition.</description>
+		</sheet>
+	</element>
+
+	<element name="Giant Badger" type="Companion" source="Player’s Handbook 2024" id="ID_WOTC_PHB24_COMPANION_GIANT_BADGER">
+		<description />
+		<setters>
+			<set name="strength">13</set>
+			<set name="dexterity">10</set>
+			<set name="constitution">17</set>
+			<set name="intelligence">2</set>
+			<set name="wisdom">12</set>
+			<set name="charisma">5</set>
+			<set name="ac">13</set>
+			<set name="hp">15 (2d8+6)</set>
+			<set name="speed">30 ft., Burrow 10 ft.</set>
+			<set name="skills">Perception +3</set>
+			<set name="senses">Darkvision 60 ft., Passive Perception 13</set>
+			<set name="languages">—</set>
+			<set name="type">Beast</set>
+			<set name="size">Medium</set>
+			<set name="alignment">unaligned</set>
+			<set name="challenge">1/4</set>
+			<set name="proficiency">2</set>
+			<set name="actions">ID_WOTC_PHB24_COMPANION_ACTION_GIANT_BADGER_BITE</set>
+		</setters>
+		<rules>
+			<stat name="companion:ac" value="13" />
+			<stat name="companion:hp:max" value="15" bonus="base" />
+			<stat name="companion:speed" value="30" bonus="base" />
+			<stat name="companion:speed:burrow" value="10" bonus="base" />
+			<stat name="companion:perception:proficiency" value="companion:proficiency" bonus="base" />
+		</rules>
+	</element>
+	<element name="Bite" type="Companion Action" source="Player’s Handbook 2024" id="ID_WOTC_PHB24_COMPANION_ACTION_GIANT_BADGER_BITE">
+		<compendium display="false" />
+		<description>
+			<p><i>Melee Attack Roll:</i> +3, reach 5 ft. <i>Hit:</i> 6 (2d4 + 1) Piercing damage.</p>
+		</description>
+		<sheet>
+			<description>Melee Attack Roll: +3, reach 5 ft. Hit: 6 (2d4 + 1) Piercing damage.</description>
+		</sheet>
+	</element>
+
+	<element name="Giant Crab" type="Companion" source="Player’s Handbook 2024" id="ID_WOTC_PHB24_COMPANION_GIANT_CRAB">
+		<description />
+		<setters>
+			<set name="strength">13</set>
+			<set name="dexterity">13</set>
+			<set name="constitution">11</set>
+			<set name="intelligence">1</set>
+			<set name="wisdom">9</set>
+			<set name="charisma">3</set>
+			<set name="ac">15</set>
+			<set name="hp">13 (3d8)</set>
+			<set name="speed">30 ft., Swim 30 ft.</set>
+			<set name="skills">Stealth +3</set>
+			<set name="senses">Blindsight 30 ft., Passive Perception 9</set>
+			<set name="languages">—</set>
+			<set name="type">Beast</set>
+			<set name="size">Medium</set>
+			<set name="alignment">unaligned</set>
+			<set name="challenge">1/8</set>
+			<set name="proficiency">2</set>
+			<set name="traits">ID_WOTC_PHB24_COMPANION_TRAIT_GIANT_CRAB_AMPHIBIOUS</set>
+			<set name="actions">ID_WOTC_PHB24_COMPANION_ACTION_GIANT_CRAB_CLAW</set>
+		</setters>
+		<rules>
+			<stat name="companion:ac" value="15" />
+			<stat name="companion:hp:max" value="13" bonus="base" />
+			<stat name="companion:speed" value="30" bonus="base" />
+			<stat name="companion:speed:swim" value="30" bonus="base" />
+			<stat name="companion:stealth:proficiency" value="companion:proficiency" bonus="base" />
+		</rules>
+	</element>
+	<element name="Amphibious" type="Companion Trait" source="Player’s Handbook 2024" id="ID_WOTC_PHB24_COMPANION_TRAIT_GIANT_CRAB_AMPHIBIOUS">
+		<compendium display="false" />
+		<description>
+			<p>The crab can breathe air and water.</p>
+		</description>
+		<sheet>
+			<description>The crab can breathe air and water.</description>
+		</sheet>
+	</element>
+	<element name="Claw" type="Companion Action" source="Player’s Handbook 2024" id="ID_WOTC_PHB24_COMPANION_ACTION_GIANT_CRAB_CLAW">
+		<compendium display="false" />
+		<description>
+			<p><i>Melee Attack Roll:</i> +3, reach 5 ft. <i>Hit:</i> 4 (1d6 + 1) Bludgeoning damage. If the target is Medium or smaller, it has the Grappled condition (escape DC 11). The crab has two claws, each of which can grapple one target.</p>
+		</description>
+		<sheet>
+			<description>Melee Attack Roll: +3, reach 5 ft. Hit: 4 (1d6 + 1) Bludgeoning damage. If the target is Medium or smaller, it has the Grappled condition (escape DC 11). The crab has two claws, each of which can grapple one target.</description>
+		</sheet>
+	</element>
+
+	<element name="Giant Goat" type="Companion" source="Player’s Handbook 2024" id="ID_WOTC_PHB24_COMPANION_GIANT_GOAT">
+		<description />
+		<setters>
+			<set name="strength">17</set>
+			<set name="dexterity">13</set>
+			<set name="constitution">12</set>
+			<set name="intelligence">3</set>
+			<set name="wisdom">12</set>
+			<set name="charisma">6</set>
+			<set name="ac">11</set>
+			<set name="hp">19 (3d10+3)</set>
+			<set name="speed">40 ft., Climb 30 ft.</set>
+			<set name="skills">Perception +3</set>
+			<set name="senses">Darkvision 60 ft., Passive Perception 13</set>
+			<set name="languages">—</set>
+			<set name="type">Beast</set>
+			<set name="size">Large</set>
+			<set name="alignment">unaligned</set>
+			<set name="challenge">1/2</set>
+			<set name="proficiency">2</set>
+			<set name="actions">ID_WOTC_PHB24_COMPANION_ACTION_GIANT_GOAT_RAM</set>
+		</setters>
+		<rules>
+			<stat name="companion:ac" value="11" />
+			<stat name="companion:hp:max" value="19" bonus="base" />
+			<stat name="companion:speed" value="40" bonus="base" />
+			<stat name="companion:speed:climb" value="30" bonus="base" />
+			<stat name="companion:perception:proficiency" value="companion:proficiency" bonus="base" />
+		</rules>
+	</element>
+	<element name="Ram" type="Companion Action" source="Player’s Handbook 2024" id="ID_WOTC_PHB24_COMPANION_ACTION_GIANT_GOAT_RAM">
+		<compendium display="false" />
+		<description>
+			<p><i>Melee Attack Roll:</i> +5, reach 5 ft. <i>Hit:</i> 6 (1d6 + 3) Bludgeoning damage. If the goat moved at least 20 feet straight toward the target immediately before the hit, the target takes an extra 5 (2d4) Bludgeoning damage and, if it is Huge or smaller, has the Prone condition.</p>
+		</description>
+		<sheet>
+			<description>Melee Attack Roll: +5, reach 5 ft. Hit: 6 (1d6 + 3) Bludgeoning damage. If the goat moved at least 20 feet straight toward the target immediately before the hit, the target takes an extra 5 (2d4) Bludgeoning damage and, if it is Huge or smaller, has the Prone condition.</description>
+		</sheet>
+	</element>
+
+	<element name="Giant Sea Horse" type="Companion" source="Player’s Handbook 2024" id="ID_WOTC_PHB24_COMPANION_GIANT_SEA_HORSE">
+		<description />
+		<setters>
+			<set name="strength">15</set>
+			<set name="dexterity">12</set>
+			<set name="constitution">11</set>
+			<set name="intelligence">2</set>
+			<set name="wisdom">12</set>
+			<set name="charisma">5</set>
+			<set name="ac">14</set>
+			<set name="hp">16 (3d10)</set>
+			<set name="speed">5 ft., Swim 40 ft.</set>
+			<set name="senses">Passive Perception 11</set>
+			<set name="languages">—</set>
+			<set name="type">Beast</set>
+			<set name="size">Large</set>
+			<set name="alignment">unaligned</set>
+			<set name="challenge">1/2</set>
+			<set name="proficiency">2</set>
+			<set name="traits">ID_WOTC_PHB24_COMPANION_TRAIT_GIANT_SEA_HORSE_WATER_BREATHING</set>
+			<set name="actions">ID_WOTC_PHB24_COMPANION_ACTION_GIANT_SEA_HORSE_RAM</set>
+			<set name="bonusActions">ID_WOTC_PHB24_COMPANION_BONUS_ACTION_GIANT_SEA_HORSE_BUBBLE_DASH</set>
+		</setters>
+		<rules>
+			<stat name="companion:ac" value="14" />
+			<stat name="companion:hp:max" value="16" bonus="base" />
+			<stat name="companion:speed" value="5" bonus="base" />
+			<stat name="companion:speed:swim" value="40" bonus="base" />
+		</rules>
+	</element>
+	<element name="Water Breathing" type="Companion Trait" source="Player’s Handbook 2024" id="ID_WOTC_PHB24_COMPANION_TRAIT_GIANT_SEA_HORSE_WATER_BREATHING">
+		<compendium display="false" />
+		<description>
+			<p>The sea horse can breathe only underwater.</p>
+		</description>
+		<sheet>
+			<description>The sea horse can breathe only underwater.</description>
+		</sheet>
+	</element>
+	<element name="Ram" type="Companion Action" source="Player’s Handbook 2024" id="ID_WOTC_PHB24_COMPANION_ACTION_GIANT_SEA_HORSE_RAM">
+		<compendium display="false" />
+		<description>
+			<p><i>Melee Attack Roll:</i> +4, reach 5 ft. <i>Hit:</i> 9 (2d6 + 2) Bludgeoning damage, or the seahorse deals 11 (2d8 + 2) Bludgeoning damage if it moved at least 20 feet straight toward the target immediately before the hit.</p>
+		</description>
+		<sheet>
+			<description>Melee Attack Roll: +4, reach 5 ft. Hit: 9 (2d6 + 2) Bludgeoning damage, or the seahorse deals 11 (2d8 + 2) Bludgeoning damage if it moved at least 20 feet straight toward the target immediately before the hit.</description>
+		</sheet>
+	</element>
+	<element name="Bubble Dash" type="Companion Bonus Action" source="Player’s Handbook 2024" id="ID_WOTC_PHB24_COMPANION_BONUS_ACTION_GIANT_SEA_HORSE_BUBBLE_DASH">
+		<compendium display="false" />
+		<description>
+			<p>While underwater, the seahorse moves up to half its Swim Speed without provoking Opportunity Attacks.</p>
+		</description>
+		<sheet>
+			<description>While underwater, the seahorse moves up to half its Swim Speed without provoking Opportunity Attacks.</description>
+		</sheet>
+	</element>
+
+	<element name="Giant Spider" type="Companion" source="Player’s Handbook 2024" id="ID_WOTC_PHB24_COMPANION_GIANT_SPIDER">
+		<description />
+		<setters>
+			<set name="strength">14</set>
+			<set name="dexterity">16</set>
+			<set name="constitution">12</set>
+			<set name="intelligence">2</set>
+			<set name="wisdom">11</set>
+			<set name="charisma">4</set>
+			<set name="ac">14</set>
+			<set name="hp">26 (4d10+4)</set>
+			<set name="speed">30 ft., Climb 30 ft.</set>
+			<set name="skills">Perception +4, Stealth +7</set>
+			<set name="senses">Darkvision 60 ft., Passive Perception 14</set>
+			<set name="languages">—</set>
+			<set name="type">Beast</set>
+			<set name="size">Large</set>
+			<set name="alignment">unaligned</set>
+			<set name="challenge">1</set>
+			<set name="proficiency">2</set>
+			<set name="traits">ID_WOTC_PHB24_COMPANION_TRAIT_GIANT_SPIDER_SPIDER_CLIMB,ID_WOTC_PHB24_COMPANION_TRAIT_GIANT_SPIDER_WEB_WALKER</set>
+			<set name="actions">ID_WOTC_PHB24_COMPANION_ACTION_GIANT_SPIDER_BITE,ID_WOTC_PHB24_COMPANION_ACTION_GIANT_SPIDER_WEB</set>
+		</setters>
+		<rules>
+			<stat name="companion:ac" value="14" />
+			<stat name="companion:hp:max" value="26" bonus="base" />
+			<stat name="companion:speed" value="30" bonus="base" />
+			<stat name="companion:speed:climb" value="30" bonus="base" />
+			<stat name="companion:perception:proficiency" value="companion:proficiency" bonus="base" />
+			<stat name="companion:stealth:proficiency" value="companion:proficiency" bonus="base" />
+			<stat name="companion:stealth:proficiency" value="companion:proficiency" bonus="bonus" />
+		</rules>
+	</element>
+	<element name="Spider Climb" type="Companion Trait" source="Player’s Handbook 2024" id="ID_WOTC_PHB24_COMPANION_TRAIT_GIANT_SPIDER_SPIDER_CLIMB">
+		<compendium display="false" />
+		<description>
+			<p>The spider can climb difficult surfaces, including along ceilings, without needing to make an ability check.</p>
+		</description>
+		<sheet>
+			<description>The spider can climb difficult surfaces, including along ceilings, without needing to make an ability check.</description>
+		</sheet>
+	</element>
+	<element name="Web Walker" type="Companion Trait" source="Player’s Handbook 2024" id="ID_WOTC_PHB24_COMPANION_TRAIT_GIANT_SPIDER_WEB_WALKER">
+		<compendium display="false" />
+		<description>
+			<p>The spider ignores movement restrictions caused by webs, and the spider knows the location of any other creature in contact with the same web.</p>
+		</description>
+		<sheet>
+			<description>The spider ignores movement restrictions caused by webs, and the spider knows the location of any other creature in contact with the same web.</description>
+		</sheet>
+	</element>
+	<element name="Bite" type="Companion Action" source="Player’s Handbook 2024" id="ID_WOTC_PHB24_COMPANION_ACTION_GIANT_SPIDER_BITE">
+		<compendium display="false" />
+		<description>
+			<p><i>Melee Attack Roll:</i> +5, reach 5 ft. <i>Hit:</i> 7 (1d8 + 3) Piercing damage plus 7 (2d6) Poison damage.</p>
+		</description>
+		<sheet>
+			<description>Melee Attack Roll: +5, reach 5 ft. Hit: 7 (1d8 + 3) Piercing damage plus 7 (2d6) Poison damage.</description>
+		</sheet>
+	</element>
+	<element name="Web" type="Companion Action" source="Player’s Handbook 2024" id="ID_WOTC_PHB24_COMPANION_ACTION_GIANT_SPIDER_WEB">
+		<compendium display="false" />
+		<description>
+			<p><i>Dexterity Saving Throw:</i> DC 13, one creature the spider can see within 60 feet. <i>Failure:</i> The target has the Restrained condition until the web is destroyed (AC 10; HP 5; Vulnerability to Fire damage; Immunity to Poison and Psychic damage).</p>
+		</description>
+		<sheet usage="Recharge 5-6">
+			<description>Dexterity Saving Throw: DC 13, one creature the spider can see within 60 feet. Failure: The target has the Restrained condition until the web is destroyed (AC 10; HP 5; Vulnerability to Fire damage; Immunity to Poison and Psychic damage).</description>
+		</sheet>
+	</element>
+
+	<element name="Giant Weasel" type="Companion" source="Player’s Handbook 2024" id="ID_WOTC_PHB24_COMPANION_GIANT_WEASEL">
+		<description />
+		<setters>
+			<set name="strength">11</set>
+			<set name="dexterity">17</set>
+			<set name="constitution">10</set>
+			<set name="intelligence">4</set>
+			<set name="wisdom">12</set>
+			<set name="charisma">5</set>
+			<set name="ac">13</set>
+			<set name="hp">9 (2d8)</set>
+			<set name="speed">40 ft., Climb 30 ft.</set>
+			<set name="skills">Acrobatics +5, Perception +3, Stealth +5</set>
+			<set name="senses">Darkvision 60 ft., Passive Perception 13</set>
+			<set name="languages">—</set>
+			<set name="type">Beast</set>
+			<set name="size">Medium</set>
+			<set name="alignment">unaligned</set>
+			<set name="challenge">1/8</set>
+			<set name="proficiency">2</set>
+			<set name="actions">ID_WOTC_PHB24_COMPANION_ACTION_GIANT_WEASEL_BITE</set>
+		</setters>
+		<rules>
+			<stat name="companion:ac" value="13" />
+			<stat name="companion:hp:max" value="9" bonus="base" />
+			<stat name="companion:speed" value="40" bonus="base" />
+			<stat name="companion:speed:climb" value="30" bonus="base" />
+			<stat name="companion:acrobatics:proficiency" value="companion:proficiency" bonus="base" />
+			<stat name="companion:perception:proficiency" value="companion:proficiency" bonus="base" />
+			<stat name="companion:stealth:proficiency" value="companion:proficiency" bonus="base" />
+		</rules>
+	</element>
+	<element name="Bite" type="Companion Action" source="Player’s Handbook 2024" id="ID_WOTC_PHB24_COMPANION_ACTION_GIANT_WEASEL_BITE">
+		<compendium display="false" />
+		<description>
+			<p><i>Melee Attack Roll:</i> +5, reach 5 ft. <i>Hit:</i> 5 (1d4 + 3) Piercing damage.</p>
+		</description>
+		<sheet>
+			<description>Melee Attack Roll: +5, reach 5 ft. Hit: 5 (1d4 + 3) Piercing damage.</description>
+		</sheet>
+	</element>
+
+	<element name="Lion" type="Companion" source="Player’s Handbook 2024" id="ID_WOTC_PHB24_COMPANION_LION">
+		<description />
+		<setters>
+			<set name="strength">17</set>
+			<set name="dexterity">15</set>
+			<set name="constitution">11</set>
+			<set name="intelligence">3</set>
+			<set name="wisdom">12</set>
+			<set name="charisma">8</set>
+			<set name="ac">12</set>
+			<set name="hp">22 (4d10)</set>
+			<set name="speed">50 ft.</set>
+			<set name="skills">Perception +3, Stealth +4</set>
+			<set name="senses">Darkvision 60 ft., Passive Perception 13</set>
+			<set name="languages">—</set>
+			<set name="type">Beast</set>
+			<set name="size">Large</set>
+			<set name="alignment">unaligned</set>
+			<set name="challenge">1</set>
+			<set name="proficiency">2</set>
+			<set name="traits">ID_WOTC_PHB24_COMPANION_TRAIT_LION_PACK_TACTICS,ID_WOTC_PHB24_COMPANION_TRAIT_LION_RUNNING_LEAP</set>
+			<set name="actions">ID_WOTC_PHB24_COMPANION_ACTION_LION_MULTIATTACK,ID_WOTC_PHB24_COMPANION_ACTION_LION_REND,ID_WOTC_PHB24_COMPANION_ACTION_LION_ROAR</set>
+		</setters>
+		<rules>
+			<stat name="companion:ac" value="12" />
+			<stat name="companion:hp:max" value="22" bonus="base" />
+			<stat name="companion:speed" value="50" bonus="base" />
+			<stat name="companion:perception:proficiency" value="companion:proficiency" bonus="base" />
+			<stat name="companion:stealth:proficiency" value="companion:proficiency" bonus="base" />
+		</rules>
+	</element>
+	<element name="Pack Tactics" type="Companion Trait" source="Player’s Handbook 2024" id="ID_WOTC_PHB24_COMPANION_TRAIT_LION_PACK_TACTICS">
+		<compendium display="false" />
+		<description>
+			<p>The lion has Advantage on an attack roll against a creature if at least one of the lion’s allies is within 5 feet of the creature and the ally doesn’t have the Incapacitated condition.</p>
+		</description>
+		<sheet>
+			<description>The lion has Advantage on an attack roll against a creature if at least one of the lion’s allies is within 5 feet of the creature and the ally doesn’t have the Incapacitated condition.</description>
+		</sheet>
+	</element>
+	<element name="Running Leap" type="Companion Trait" source="Player’s Handbook 2024" id="ID_WOTC_PHB24_COMPANION_TRAIT_LION_RUNNING_LEAP">
+		<compendium display="false" />
+		<description>
+			<p>With a 10-foot running start, the lion can Long Jump up to 25 feet.</p>
+		</description>
+		<sheet>
+			<description>With a 10-foot running start, the lion can Long Jump up to 25 feet.</description>
+		</sheet>
+	</element>
+	<element name="Multiattack" type="Companion Action" source="Player’s Handbook 2024" id="ID_WOTC_PHB24_COMPANION_ACTION_LION_MULTIATTACK">
+		<compendium display="false" />
+		<description>
+			<p>The lion makes two Rend attacks. It can replace one of these attacks with a use of Roar.</p>
+		</description>
+		<sheet>
+			<description>The lion makes two Rend attacks. It can replace one of these attacks with a use of Roar.</description>
+		</sheet>
+	</element>
+	<element name="Rend" type="Companion Action" source="Player’s Handbook 2024" id="ID_WOTC_PHB24_COMPANION_ACTION_LION_REND">
+		<compendium display="false" />
+		<description>
+			<p><i>Melee Attack Roll:</i> +5, reach 5 ft. <i>Hit:</i> 7 (1d8 + 3) Slashing damage.</p>
+		</description>
+		<sheet>
+			<description>Melee Attack Roll: +5, reach 5 ft. Hit: 7 (1d8 + 3) Slashing damage.</description>
+		</sheet>
+	</element>
+	<element name="Roar" type="Companion Action" source="Player’s Handbook 2024" id="ID_WOTC_PHB24_COMPANION_ACTION_LION_ROAR">
+		<compendium display="false" />
+		<description>
+			<p><i>Wisdom Saving Throw:</i> DC 11, one creature within 15 feet. <i>Failure:</i> The target has the Frightened condition until the start of the lion’s next turn.</p>
+		</description>
+		<sheet>
+			<description>Wisdom Saving Throw: DC 11, one creature within 15 feet. Failure: The target has the Frightened condition until the start of the lion’s next turn.</description>
+		</sheet>
+	</element>
+
+	<element name="Mastiff" type="Companion" source="Player’s Handbook 2024" id="ID_WOTC_PHB24_COMPANION_MASTIFF">
+		<description />
+		<setters>
+			<set name="strength">13</set>
+			<set name="dexterity">14</set>
+			<set name="constitution">12</set>
+			<set name="intelligence">3</set>
+			<set name="wisdom">12</set>
+			<set name="charisma">7</set>
+			<set name="ac">12</set>
+			<set name="hp">5 (1d8+1)</set>
+			<set name="speed">40 ft.</set>
+			<set name="skills">Perception +5</set>
+			<set name="senses">Darkvision 60 ft., Passive Perception 15</set>
+			<set name="languages">—</set>
+			<set name="type">Beast</set>
+			<set name="size">Medium</set>
+			<set name="alignment">unaligned</set>
+			<set name="challenge">1/8</set>
+			<set name="proficiency">2</set>
+			<set name="actions">ID_WOTC_PHB24_COMPANION_ACTION_MASTIFF_BITE</set>
+		</setters>
+		<rules>
+			<stat name="companion:ac" value="12" />
+			<stat name="companion:hp:max" value="5" bonus="base" />
+			<stat name="companion:speed" value="40" bonus="base" />
+			<stat name="companion:perception:proficiency" value="companion:proficiency" bonus="base" />
+			<stat name="companion:perception:proficiency" value="companion:proficiency" bonus="double" />
+		</rules>
+	</element>
+	<element name="Bite" type="Companion Action" source="Player’s Handbook 2024" id="ID_WOTC_PHB24_COMPANION_ACTION_MASTIFF_BITE">
+		<compendium display="false" />
+		<description>
+			<p><i>Melee Attack Roll:</i> +3, reach 5 ft. <i>Hit:</i> 4 (1d6 + 1) Piercing damage, and the target has the Prone condition if it is Large or smaller.</p>
+		</description>
+		<sheet>
+			<description>Melee Attack Roll: +3, reach 5 ft. Hit: 4 (1d6 + 1) Piercing damage, and the target has the Prone condition if it is Large or smaller.</description>
+		</sheet>
+	</element>
+
+	<element name="Mule" type="Companion" source="Player’s Handbook 2024" id="ID_WOTC_PHB24_COMPANION_MULE">
+		<description />
+		<setters>
+			<set name="strength">14</set>
+			<set name="dexterity">10</set>
+			<set name="constitution">13</set>
+			<set name="intelligence">2</set>
+			<set name="wisdom">10</set>
+			<set name="charisma">5</set>
+			<set name="ac">10</set>
+			<set name="hp">11 (2d8+2)</set>
+			<set name="speed">40 ft.</set>
+			<set name="senses">Passive Perception 10</set>
+			<set name="languages">—</set>
+			<set name="type">Beast</set>
+			<set name="size">Medium</set>
+			<set name="alignment">unaligned</set>
+			<set name="challenge">1/8</set>
+			<set name="proficiency">2</set>
+			<set name="traits">ID_WOTC_PHB24_COMPANION_TRAIT_MULE_BEAST_OF_BURDEN</set>
+			<set name="actions">ID_WOTC_PHB24_COMPANION_ACTION_MULE_HOOVES</set>
+		</setters>
+		<rules>
+			<stat name="companion:ac" value="10" />
+			<stat name="companion:hp:max" value="11" bonus="base" />
+			<stat name="companion:speed" value="40" bonus="base" />
+		</rules>
+	</element>
+	<element name="Beast of Burden" type="Companion Trait" source="Player’s Handbook 2024" id="ID_WOTC_PHB24_COMPANION_TRAIT_MULE_BEAST_OF_BURDEN">
+		<compendium display="false" />
+		<description>
+			<p>The mule counts as one size larger for the purpose of determining its carrying capacity.</p>
+		</description>
+		<sheet>
+			<description>The mule counts as one size larger for the purpose of determining its carrying capacity.</description>
+		</sheet>
+	</element>
+	<element name="Hooves" type="Companion Action" source="Player’s Handbook 2024" id="ID_WOTC_PHB24_COMPANION_ACTION_MULE_HOOVES">
+		<compendium display="false" />
+		<description>
+			<p><i>Melee Attack Roll:</i> +4, reach 5 ft. <i>Hit:</i> 4 (1d4 + 2) Bludgeoning damage.</p>
+		</description>
+		<sheet>
+			<description>Melee Attack Roll: +4, reach 5 ft. Hit: 4 (1d4 + 2) Bludgeoning damage.</description>
+		</sheet>
+	</element>
+
+	<element name="Panther" type="Companion" source="Player’s Handbook 2024" id="ID_WOTC_PHB24_COMPANION_PANTHER">
+		<description />
+		<setters>
+			<set name="strength">14</set>
+			<set name="dexterity">15</set>
+			<set name="constitution">10</set>
+			<set name="intelligence">3</set>
+			<set name="wisdom">14</set>
+			<set name="charisma">7</set>
+			<set name="ac">12</set>
+			<set name="hp">13 (3d8)</set>
+			<set name="speed">50 ft., Climb 40 ft.</set>
+			<set name="skills">Perception +4, Stealth +6</set>
+			<set name="senses">Darkvision 60ft., Passive Perception 14</set>
+			<set name="languages">—</set>
+			<set name="type">Beast</set>
+			<set name="size">Medium</set>
+			<set name="alignment">unaligned</set>
+			<set name="challenge">1/4</set>
+			<set name="proficiency">2</set>
+			<set name="actions">ID_WOTC_PHB24_COMPANION_ACTION_PANTHER_MULTIATTACK,ID_WOTC_PHB24_COMPANION_ACTION_PANTHER_POUNCE,ID_WOTC_PHB24_COMPANION_ACTION_PANTHER_PROWL</set>
+		</setters>
+		<rules>
+			<stat name="companion:ac" value="12" />
+			<stat name="companion:hp:max" value="13" bonus="base" />
+			<stat name="companion:speed" value="50" bonus="base" />
+			<stat name="companion:speed:climb" value="40" bonus="base" />
+			<stat name="companion:perception:proficiency" value="companion:proficiency" bonus="base" />
+			<stat name="companion:stealth:proficiency" value="companion:proficiency" bonus="base" />
+			<stat name="companion:stealth:proficiency" value="companion:proficiency" bonus="double" />
+		</rules>
+	</element>
+	<element name="Multiattack" type="Companion Action" source="Player’s Handbook 2024" id="ID_WOTC_PHB24_COMPANION_ACTION_PANTHER_MULTIATTACK">
+		<compendium display="false" />
+		<description>
+			<p>The panther makes one Pounce attack and uses Prowl.</p>
+		</description>
+		<sheet>
+			<description>The panther makes one Pounce attack and uses Prowl.</description>
+		</sheet>
+	</element>
+	<element name="Pounce" type="Companion Action" source="Player’s Handbook 2024" id="ID_WOTC_PHB24_COMPANION_ACTION_PANTHER_POUNCE">
+		<compendium display="false" />
+		<description>
+			<p><i>Melee Attack Roll:</i> +4, reach 5 ft. <i>Hit:</i> 4 (1d4 + 2) Slashing damage, or the panther deals 7 (2d4 + 2) Slashing damage if it had Advantage on the attack roll.</p>
+		</description>
+		<sheet>
+			<description>Melee Attack Roll: +4, reach 5 ft. Hit: 4 (1d4 + 2) Slashing damage, or the panther deals 7 (2d4 + 2) Slashing damage if it had Advantage on the attack roll.</description>
+		</sheet>
+	</element>
+	<element name="Prowl" type="Companion Action" source="Player’s Handbook 2024" id="ID_WOTC_PHB24_COMPANION_ACTION_PANTHER_PROWL">
+		<compendium display="false" />
+		<description>
+			<p>The panther moves up to half its Speed without provoking Opportunity Attacks. At the end of this movement, the panther can take the Hide action.</p>
+		</description>
+		<sheet>
+			<description>The panther moves up to half its Speed without provoking Opportunity Attacks. At the end of this movement, the panther can take the Hide action.</description>
+		</sheet>
+	</element>
+
+	<element name="Pony" type="Companion" source="Player’s Handbook 2024" id="ID_WOTC_PHB24_COMPANION_PONY">
+		<description />
+		<setters>
+			<set name="strength">15</set>
+			<set name="dexterity">10</set>
+			<set name="constitution">13</set>
+			<set name="intelligence">2</set>
+			<set name="wisdom">11</set>
+			<set name="charisma">7</set>
+			<set name="ac">10</set>
+			<set name="hp">11 (2d8+2)</set>
+			<set name="speed">40 ft.</set>
+			<set name="senses">Passive Perception 10</set>
+			<set name="languages">—</set>
+			<set name="type">Beast</set>
+			<set name="size">Medium</set>
+			<set name="alignment">unaligned</set>
+			<set name="challenge">1/8</set>
+			<set name="proficiency">2</set>
+			<set name="actions">ID_WOTC_PHB24_COMPANION_ACTION_PONY_HOOVES</set>
+		</setters>
+		<rules>
+			<stat name="companion:ac" value="10" />
+			<stat name="companion:hp:max" value="11" bonus="base" />
+			<stat name="companion:speed" value="40" bonus="base" />
+		</rules>
+	</element>
+	<element name="Hooves" type="Companion Action" source="Player’s Handbook 2024" id="ID_WOTC_PHB24_COMPANION_ACTION_PONY_HOOVES">
+		<compendium display="false" />
+		<description>
+			<p><i>Melee Attack Roll:</i> +4, reach 5 ft. <i>Hit:</i> 4 (1d4 + 2) Bludgeoning damage.</p>
+		</description>
+		<sheet>
+			<description>Melee Attack Roll: +4, reach 5 ft. Hit: 4 (1d4 + 2) Bludgeoning damage.</description>
+		</sheet>
+	</element>
+
+	<element name="Reef Shark" type="Companion" source="Player’s Handbook 2024" id="ID_WOTC_PHB24_COMPANION_REEF_SHARK">
+		<description />
+		<setters>
+			<set name="strength">14</set>
+			<set name="dexterity">15</set>
+			<set name="constitution">13</set>
+			<set name="intelligence">1</set>
+			<set name="wisdom">10</set>
+			<set name="charisma">4</set>
+			<set name="ac">12</set>
+			<set name="hp">22 (4d8+4)</set>
+			<set name="speed">5 ft., Swim 30 ft.</set>
+			<set name="skills">Perception +2</set>
+			<set name="senses">Blindsight 30 ft., Passive Perception 12</set>
+			<set name="languages">—</set>
+			<set name="type">Beast</set>
+			<set name="size">Medium</set>
+			<set name="alignment">unaligned</set>
+			<set name="challenge">1/2</set>
+			<set name="proficiency">2</set>
+			<set name="traits">ID_WOTC_PHB24_COMPANION_TRAIT_REEF_SHARK_PACK_TACTICS,ID_WOTC_PHB24_COMPANION_TRAIT_REEF_SHARK_WATER_BREATHING</set>
+			<set name="actions">ID_WOTC_PHB24_COMPANION_ACTION_REEF_SHARK_BITE</set>
+		</setters>
+		<rules>
+			<stat name="companion:ac" value="12" />
+			<stat name="companion:hp:max" value="22" bonus="base" />
+			<stat name="companion:speed" value="5" bonus="base" />
+			<stat name="companion:speed:swim" value="30" bonus="base" />
+			<stat name="companion:perception:proficiency" value="companion:proficiency" bonus="base" />
+		</rules>
+	</element>
+	<element name="Pack Tactics" type="Companion Trait" source="Player’s Handbook 2024" id="ID_WOTC_PHB24_COMPANION_TRAIT_REEF_SHARK_PACK_TACTICS">
+		<compendium display="false" />
+		<description>
+			<p>The shark has Advantage on an attack roll against a creature if at least one of the shark’s allies is within 5 feet of the creature and the ally doesn’t have the Incapacitated condition.</p>
+		</description>
+		<sheet>
+			<description>The shark has Advantage on an attack roll against a creature if at least one of the shark’s allies is within 5 feet of the creature and the ally doesn’t have the Incapacitated condition.</description>
+		</sheet>
+	</element>
+	<element name="Water Breathing" type="Companion Trait" source="Player’s Handbook 2024" id="ID_WOTC_PHB24_COMPANION_TRAIT_REEF_SHARK_WATER_BREATHING">
+		<compendium display="false" />
+		<description>
+			<p>The shark can breathe only underwater.</p>
+		</description>
+		<sheet>
+			<description>The shark can breathe only underwater.</description>
+		</sheet>
+	</element>
+	<element name="Bite" type="Companion Action" source="Player’s Handbook 2024" id="ID_WOTC_PHB24_COMPANION_ACTION_REEF_SHARK_BITE">
+		<compendium display="false" />
+		<description>
+			<p><i>Melee Attack Roll:</i> +4, reach 5 ft. <i>Hit:</i> 7 (2d4 + 2) Piercing damage.</p>
+		</description>
+		<sheet>
+			<description>Melee Attack Roll: +4, reach 5 ft. Hit: 7 (2d4 + 2) Piercing damage.</description>
+		</sheet>
+	</element>
+
+	<element name="Riding Horse" type="Companion" source="Player’s Handbook 2024" id="ID_WOTC_PHB24_COMPANION_RIDING_HORSE">
+		<description />
+		<setters>
+			<set name="strength">16</set>
+			<set name="dexterity">13</set>
+			<set name="constitution">12</set>
+			<set name="intelligence">2</set>
+			<set name="wisdom">11</set>
+			<set name="charisma">7</set>
+			<set name="ac">11</set>
+			<set name="hp">13 (2d10+2)</set>
+			<set name="speed">60 ft.</set>
+			<set name="senses">Passive Perception 10</set>
+			<set name="languages">—</set>
+			<set name="type">Beast</set>
+			<set name="size">Large</set>
+			<set name="alignment">unaligned</set>
+			<set name="challenge">1/4</set>
+			<set name="proficiency">2</set>
+			<set name="actions">ID_WOTC_PHB24_COMPANION_ACTION_RIDING_HORSE_HOOVES</set>
+		</setters>
+		<rules>
+			<stat name="companion:ac" value="11" />
+			<stat name="companion:hp:max" value="13" bonus="base" />
+			<stat name="companion:speed" value="60" bonus="base" />
+		</rules>
+	</element>
+	<element name="Hooves" type="Companion Action" source="Player’s Handbook 2024" id="ID_WOTC_PHB24_COMPANION_ACTION_RIDING_HORSE_HOOVES">
+		<compendium display="false" />
+		<description>
+			<p><i>Melee Attack Roll:</i> +5, reach 5 ft. <i>Hit:</i> 7 (1d8 + 3) Bludgeoning damage.</p>
+		</description>
+		<sheet>
+			<description>Melee Attack Roll: +5, reach 5 ft. Hit: 7 (1d8 + 3) Bludgeoning damage.</description>
+		</sheet>
+	</element>
+
+	<element name="Tiger" type="Companion" source="Player’s Handbook 2024" id="ID_WOTC_PHB24_COMPANION_TIGER">
+		<description />
+		<setters>
+			<set name="strength">17</set>
+			<set name="dexterity">16</set>
+			<set name="constitution">14</set>
+			<set name="intelligence">3</set>
+			<set name="wisdom">12</set>
+			<set name="charisma">8</set>
+			<set name="ac">13</set>
+			<set name="hp">22 (3d10+6)</set>
+			<set name="speed">40 ft.</set>
+			<set name="skills">Perception +3, Stealth +7</set>
+			<set name="senses">Darkvision 60ft., Passive Perception 13</set>
+			<set name="languages">—</set>
+			<set name="type">Beast</set>
+			<set name="size">Large</set>
+			<set name="alignment">unaligned</set>
+			<set name="challenge">1</set>
+			<set name="proficiency">2</set>
+			<set name="actions">ID_WOTC_PHB24_COMPANION_ACTION_TIGER_MULTIATTACK,ID_WOTC_PHB24_COMPANION_ACTION_TIGER_POUNCE,ID_WOTC_PHB24_COMPANION_ACTION_TIGER_PROWL</set>
+		</setters>
+		<rules>
+			<stat name="companion:ac" value="13" />
+			<stat name="companion:hp:max" value="22" bonus="base" />
+			<stat name="companion:speed" value="40" bonus="base" />
+			<stat name="companion:perception:proficiency" value="companion:proficiency" bonus="base" />
+			<stat name="companion:stealth:proficiency" value="companion:proficiency" bonus="base" />
+			<stat name="companion:stealth:proficiency" value="companion:proficiency" bonus="double" />
+		</rules>
+	</element>
+	<element name="Multiattack" type="Companion Action" source="Player’s Handbook 2024" id="ID_WOTC_PHB24_COMPANION_ACTION_TIGER_MULTIATTACK">
+		<compendium display="false" />
+		<description>
+			<p>The tiger makes one Pounce attack and uses Prowl.</p>
+		</description>
+		<sheet>
+			<description>The tiger makes one Pounce attack and uses Prowl.</description>
+		</sheet>
+	</element>
+	<element name="Pounce" type="Companion Action" source="Player’s Handbook 2024" id="ID_WOTC_PHB24_COMPANION_ACTION_TIGER_POUNCE">
+		<compendium display="false" />
+		<description>
+			<p><i>Melee Attack Roll:</i> +5, reach 5 ft. <i>Hit:</i> 6 (1d6 + 3) Slashing damage. If the tiger had Advantage on the attack roll, the target takes an extra 3 (1d6) Slashing damage and, if it is Huge or smaller, has the Prone condition.</p>
+		</description>
+		<sheet>
+			<description>Melee Attack Roll: +5, reach 5 ft. Hit: 6 (1d6 + 3) Slashing damage. If the tiger had Advantage on the attack roll, the target takes an extra 3 (1d6) Slashing damage and, if it is Huge or smaller, has the Prone condition.</description>
+		</sheet>
+	</element>
+	<element name="Prowl" type="Companion Action" source="Player’s Handbook 2024" id="ID_WOTC_PHB24_COMPANION_ACTION_TIGER_PROWL">
+		<compendium display="false" />
+		<description>
+			<p>The tiger moves up to half its Speed without provoking Opportunity Attacks. At the end of this movement, the tiger can take the Hide action.</p>
+		</description>
+		<sheet>
+			<description>The tiger moves up to half its Speed without provoking Opportunity Attacks. At the end of this movement, the tiger can take the Hide action.</description>
+		</sheet>
+	</element>
+
+	<element name="War Horse" type="Companion" source="Player’s Handbook 2024" id="ID_WOTC_PHB24_COMPANION_WAR_HORSE">
+		<description />
+		<setters>
+			<set name="strength">18</set>
+			<set name="dexterity">12</set>
+			<set name="constitution">13</set>
+			<set name="intelligence">2</set>
+			<set name="wisdom">12</set>
+			<set name="charisma">7</set>
+			<set name="ac">11</set>
+			<set name="hp">19 (3d10+3)</set>
+			<set name="speed">60 ft.</set>
+			<set name="senses">Passive Perception 11</set>
+			<set name="languages">—</set>
+			<set name="type">Beast</set>
+			<set name="size">Large</set>
+			<set name="alignment">unaligned</set>
+			<set name="challenge">1/2</set>
+			<set name="proficiency">2</set>
+			<set name="actions">ID_WOTC_PHB24_COMPANION_ACTION_WAR_HORSE_HOOVES</set>
+		</setters>
+		<rules>
+			<stat name="companion:ac" value="11" />
+			<stat name="companion:hp:max" value="19" bonus="base" />
+			<stat name="companion:speed" value="60" bonus="base" />
+		</rules>
+	</element>
+	<element name="Hooves" type="Companion Action" source="Player’s Handbook 2024" id="ID_WOTC_PHB24_COMPANION_ACTION_WAR_HORSE_HOOVES">
+		<compendium display="false" />
+		<description>
+			<p><i>Melee Attack Roll:</i> +6, reach 5 ft. <i>Hit:</i> 9 (2d4 + 4) Bludgeoning damage. If the horse moved at least 20 feet straight toward the target immediately before the hit, the target takes an extra 5 (2d4) Bludgeoning damage and, if it is Huge or smaller, has the Prone condition.</p>
+		</description>
+		<sheet>
+			<description>Melee Attack Roll: +6, reach 5 ft. Hit: 9 (2d4 + 4) Bludgeoning damage. If the horse moved at least 20 feet straight toward the target immediately before the hit, the target takes an extra 5 (2d4) Bludgeoning damage and, if it is Huge or smaller, has the Prone condition.</description>
+		</sheet>
+	</element>
+
+	<element name="Wolf" type="Companion" source="Player’s Handbook 2024" id="ID_WOTC_PHB24_COMPANION_WOLF">
+		<description />
+		<setters>
+			<set name="strength">14</set>
+			<set name="dexterity">15</set>
+			<set name="constitution">12</set>
+			<set name="intelligence">3</set>
+			<set name="wisdom">12</set>
+			<set name="charisma">6</set>
+			<set name="ac">12</set>
+			<set name="hp">11 (2d8+2)</set>
+			<set name="speed">40 ft.</set>
+			<set name="skills">Perception +5, Stealth +4</set>
+			<set name="senses">Darkvision 60 ft., Passive Perception 15</set>
+			<set name="languages">—</set>
+			<set name="type">Beast</set>
+			<set name="size">Medium</set>
+			<set name="alignment">unaligned</set>
+			<set name="challenge">1/4</set>
+			<set name="proficiency">2</set>
+			<set name="traits">ID_WOTC_PHB24_COMPANION_TRAIT_WOLF_PACK_TACTICS</set>
+			<set name="actions">ID_WOTC_PHB24_COMPANION_ACTION_WOLF_BITE</set>
+		</setters>
+		<rules>
+			<stat name="companion:ac" value="12" />
+			<stat name="companion:hp:max" value="11" bonus="base" />
+			<stat name="companion:speed" value="40" bonus="base" />
+			<stat name="companion:perception:proficiency" value="companion:proficiency" bonus="base" />
+			<stat name="companion:perception:proficiency" value="companion:proficiency" bonus="double" />
+			<stat name="companion:stealth:proficiency" value="companion:proficiency" bonus="base" />
+		</rules>
+	</element>
+	<element name="Pack Tactics" type="Companion Trait" source="Player’s Handbook 2024" id="ID_WOTC_PHB24_COMPANION_TRAIT_WOLF_PACK_TACTICS">
+		<compendium display="false" />
+		<description>
+			<p>The wolf has Advantage on an attack roll against a creature if at least one of the wolf’s allies is within 5 feet of the creature and the ally doesn’t have the Incapacitated condition.</p>
+		</description>
+		<sheet>
+			<description>The wolf has Advantage on an attack roll against a creature if at least one of the wolf’s allies is within 5 feet of the creature and the ally doesn’t have the Incapacitated condition.</description>
+		</sheet>
+	</element>
+	<element name="Bite" type="Companion Action" source="Player’s Handbook 2024" id="ID_WOTC_PHB24_COMPANION_ACTION_WOLF_BITE">
+		<compendium display="false" />
+		<description>
+			<p><i>Melee Attack Roll:</i> +4, reach 5 ft. <i>Hit:</i> 5 (1d6 + 2) Piercing damage, and the target has the Prone condition if it is Medium or smaller.</p>
+		</description>
+		<sheet>
+			<description>Melee Attack Roll: +4, reach 5 ft. Hit: 5 (1d6 + 2) Piercing damage, and the target has the Prone condition if it is Medium or smaller.</description>
+		</sheet>
+	</element>
+
+	<element name="Zombie" type="Companion" source="Player’s Handbook 2024" id="ID_WOTC_PHB24_COMPANION_ZOMBIE">
+		<description></description>
+		<setters>
+			<set name="strength">13</set>
+			<set name="dexterity">6</set>
+			<set name="constitution">16</set>
+			<set name="intelligence">3</set>
+			<set name="wisdom">6</set>
+			<set name="charisma">5</set>
+			<set name="ac">8</set>
+			<set name="hp">15 (2d8+6)</set>
+			<set name="speed">20 ft.</set>
+			<set name="languages">Understands the languages it knew in life but can’t speak</set>
+			<set name="immunities">Poison</set>
+			<set name="conditionImmunities">Exhaustion, Poisoned</set>
+			<set name="senses">Darkvision 60 ft., Passive Perception 8</set>
+			<set name="type">Undead</set>
+			<set name="size">Medium</set>
+			<set name="alignment">Neutral Evil</set>
+			<set name="challenge">1/4</set>
+			<set name="proficiency">2</set>
+			<set name="traits">ID_WOTC_PHB24_COMPANION_TRAIT_ZOMBIE_UNDEAD_FORTITUDE</set>
+			<set name="actions">ID_WOTC_PHB24_COMPANION_ACTION_ZOMBIE_SLAM</set>
+		</setters>
+		<rules>
+			<stat name="companion:ac" value="8" />
+			<stat name="companion:hp:max" value="15" bonus="base" />
+			<stat name="companion:speed" value="20" bonus="base" />
+		</rules>
+	</element>
+	<element name="Undead Fortitude" type="Companion Trait" source="Player’s Handbook 2024" id="ID_WOTC_PHB24_COMPANION_TRAIT_ZOMBIE_UNDEAD_FORTITUDE">
+		<compendium display="false" />
+		<description>
+			<p>If damage reduces the zombie to 0 Hit Points, it must make a Constitution saving throw with a DC of 5 plus the damage taken unless the damage is Radiant or from a Critical Hit. On a successful save, the zombie drops to 1 Hit Point instead.</p>
+		</description>
+		<sheet>
+			<description>If damage reduces the zombie to 0 Hit Points, it must make a Constitution saving throw with a DC of 5 plus the damage taken unless the damage is Radiant or from a Critical Hit. On a successful save, the zombie drops to 1 Hit Point instead.</description>
+		</sheet>
+	</element>
+	<element name="Slam" type="Companion Action" source="Player’s Handbook 2024" id="ID_WOTC_PHB24_COMPANION_ACTION_ZOMBIE_SLAM">
+		<compendium display="false" />
+		<description>
+			<p><i>Melee Attack Roll:</i> +3, reach 5 ft. <i>Hit:</i> 4 (1d6 + 1) Bludgeoning damage.</p>
+		</description>
+		<sheet>
+			<description>Melee Attack Roll: +3, reach 5 ft. Hit: 4 (1d6 + 1) Bludgeoning damage.</description>
+		</sheet>
+	</element>
+
+	<!--Pact of the Chain Special Familiars-->
+	<element name="Imp" type="Companion" source="Player’s Handbook 2024" id="ID_WOTC_PHB24_COMPANION_IMP">
+		<supports>Familiar, Variant Familiar</supports>
+		<description></description>
+		<setters>
+			<set name="strength">6</set>
+			<set name="dexterity">17</set>
+			<set name="constitution">13</set>
+			<set name="intelligence">11</set>
+			<set name="wisdom">12</set>
+			<set name="charisma">14</set>
+			<set name="ac">13</set>
+			<set name="hp">21 (6d4+6)</set>
+			<set name="speed">20 ft., Fly 40 ft.</set>
+			<set name="senses">Darkvision 120 ft., Passive Perception 11</set>
+			<set name="languages">Common, Infernal</set>
+			<set name="skills">Deception +4, Insight +3, Stealth +5</set>
+			<set name="resistances">Cold</set>
+			<set name="immunities">Fire, Poison</set>
+			<set name="conditionImmunities">Poisoned</set>
+			<set name="type">Fiend</set>
+			<set name="size">Tiny</set>
+			<set name="alignment">lawful evil</set>
+			<set name="challenge">1</set>
+			<set name="proficiency">2</set>
+			<set name="traits">ID_WOTC_PHB24_COMPANION_TRAIT_IMP_DEVILS_SIGHT,ID_WOTC_PHB24_COMPANION_TRAIT_IMP_MAGIC_RESISTANCE</set>
+			<set name="actions">ID_WOTC_PHB24_COMPANION_ACTION_IMP_STING,ID_WOTC_PHB24_COMPANION_ACTION_CHANGE_SHAPE,ID_WOTC_PHB24_COMPANION_ACTION_IMP_INVISIBILITY</set>
+		</setters>
+		<rules>
+			<stat name="companion:ac" value="13" />
+			<stat name="companion:hp:max" value="21" bonus="base" />
+			<stat name="companion:speed" value="20" bonus="base" />
+			<stat name="companion:speed:fly" value="40" bonus="base" />
+			<stat name="companion:deception:proficiency" value="companion:proficiency" bonus="base" />
+			<stat name="companion:insight:proficiency" value="companion:proficiency" bonus="base" />
+			<stat name="companion:stealth:proficiency" value="companion:proficiency" bonus="base" />
+		</rules>
+	</element>
+	<element name="Devil’s Sight" type="Companion Trait" source="Player’s Handbook 2024" id="ID_WOTC_PHB24_COMPANION_TRAIT_IMP_DEVILS_SIGHT">
+		<compendium display="false" />
+		<description>
+			<p>Magical Darkness doesn’t impede the imp’s Darkvision.</p>
+		</description>
+		<sheet>
+			<description>Magical Darkness doesn’t impede the imp’s Darkvision.</description>
+		</sheet>
+	</element>
+	<element name="Magic Resistance" type="Companion Trait" source="Player’s Handbook 2024" id="ID_WOTC_PHB24_COMPANION_TRAIT_IMP_MAGIC_RESISTANCE">
+		<compendium display="false" />
+		<description>
+			<p>The imp has Advantage on saving throws against spells and other magical effects.</p>
+		</description>
+		<sheet>
+			<description>The imp has Advantage on saving throws against spells and other magical effects.</description>
+		</sheet>
+	</element>
+	<element name="Sting" type="Companion Action" source="Player’s Handbook 2024" id="ID_WOTC_PHB24_COMPANION_ACTION_IMP_STING">
+		<compendium display="false" />
+		<description>
+			<p><i>Melee Attack Roll:</i> +5, reach 5 ft. <i>Hit:</i> 6 (1d6 + 3) Piercing damage plus 7 (2d6) Poison damage.</p>
+		</description>
+		<sheet>
+			<description>Melee Attack Roll: +5, reach 5 ft. Hit: 6 (1d6 + 3) Piercing damage plus 7 (2d6) Poison damage.</description>
+		</sheet>
+	</element>
+	<element name="Change Shape" type="Companion Action" source="Player’s Handbook 2024" id="ID_WOTC_PHB24_COMPANION_ACTION_IMP_CHANGE_SHAPE">
+		<compendium display="false" />
+		<description>
+			<p>The imp changes into a form that resembles a rat (Speed 20 ft.), a raven (20 ft., Fly 60 ft.), or a spider (20 ft., Climb 20 ft.), or it returns to its true form. Its statistics are the same in each form, except for its Speed. Any equipment it’s wearing or carrying isn’t transformed. The imp reverts to its true form if it dies.</p>
+		</description>
+		<sheet>
+			<description>The imp changes into a form that resembles a rat (Speed 20 ft.), a raven (20 ft., Fly 60 ft.), or a spider (20 ft., Climb 20 ft.), or it returns to its true form. Its statistics are the same in each form, except for its Speed. Any equipment it’s wearing or carrying isn’t transformed. The imp reverts to its true form if it dies.</description>
+		</sheet>
+	</element>
+	<element name="Invisibility" type="Companion Action" source="Player’s Handbook 2024" id="ID_WOTC_PHB24_COMPANION_ACTION_IMP_INVISIBILITY">
+		<compendium display="false" />
+		<description>
+			<p>The imp casts <i>Invisibility</i> on itself, requiring no spell components and using Charisma as the spellcasting ability.</p>
+			<div class="reference">
+				<div element="ID_PHB_SPELL_INVISIBILITY" />
+				<!--<div element="ID_PHB24_SPELL_INVISIBILITY" />-->
+			</div>
+		</description>
+		<sheet>
+			<description>The imp casts Invisibility on itself, requiring no spell components and using Charisma as the spellcasting ability.</description>
+		</sheet>
+	</element>
+
+	<element name="Pseudodragon" type="Companion" source="Player’s Handbook 2024" id="ID_WOTC_PHB24_COMPANION_PSEUDODRAGON">
+		<supports>Familiar, Variant Familiar</supports>
+		<description></description>
+		<setters>
+			<set name="strength">6</set>
+			<set name="dexterity">15</set>
+			<set name="constitution">13</set>
+			<set name="intelligence">10</set>
+			<set name="wisdom">12</set>
+			<set name="charisma">10</set>
+			<set name="ac">14</set>
+			<set name="hp">10 (3d4+3)</set>
+			<set name="speed">15 ft., Fly 60 ft.</set>
+			<set name="languages">understands Common and Draconic but can’t speak</set>
+			<set name="skills">Perception +5, Stealth +4</set>
+			<set name="senses">Blindsight 10 ft., Darkvision 60 ft., Passive Perception 15</set>
+			<set name="type">Dragon</set>
+			<set name="size">Tiny</set>
+			<set name="alignment">neutral good</set>
+			<set name="challenge">1/4</set>
+			<set name="proficiency">2</set>
+			<set name="traits">ID_WOTC_PHB24_COMPANION_TRAIT_PSEUDODRAGON_MAGIC_RESISTANCE</set>
+			<set name="actions">ID_WOTC_PHB24_COMPANION_ACTION_PSEUDODRAGON_MULTIATTACK,ID_WOTC_PHB24_COMPANION_ACTION_PSEUDODRAGON_BITE,ID_WOTC_PHB24_COMPANION_ACTION_PSEUDODRAGON_STING</set>
+		</setters>
+		<rules>
+			<stat name="companion:ac" value="14" />
+			<stat name="companion:hp:max" value="10" bonus="base" />
+			<stat name="companion:speed" value="15" bonus="base" />
+			<stat name="companion:speed:fly" value="60" bonus="base" />
+			<stat name="companion:perception:proficiency" value="companion:proficiency" bonus="base" />
+			<stat name="companion:perception:proficiency" value="companion:proficiency" bonus="double" />
+			<stat name="companion:stealth:proficiency" value="companion:proficiency" bonus="base" />
+		</rules>
+	</element>
+	<element name="Magic Resistance" type="Companion Trait" source="Player’s Handbook 2024" id="ID_WOTC_PHB24_COMPANION_TRAIT_PSEUDODRAGON_MAGIC_RESISTANCE">
+		<compendium display="false" />
+		<description>
+			<p>The pseudodragon has Advantage on saving throws against spells and other magical effects.</p>
+		</description>
+		<sheet>
+			<description>The pseudodragon has Advantage on saving throws against spells and other magical effects.</description>
+		</sheet>
+	</element>
+	<element name="Multiattack" type="Companion Action" source="Player’s Handbook 2024" id="ID_WOTC_PHB24_COMPANION_ACTION_PSEUDODRAGON_MULTIATTACK">
+		<compendium display="false" />
+		<description>
+			<p>The pseudodragon makes two Bite attacks.</p>
+		</description>
+		<sheet>
+			<description>The pseudodragon makes two Bite attacks.</description>
+		</sheet>
+	</element>
+	<element name="Bite" type="Companion Action" source="Player’s Handbook 2024" id="ID_WOTC_PHB24_COMPANION_ACTION_PSEUDODRAGON_BITE">
+		<compendium display="false" />
+		<description>
+			<p><i>Melee Attack Roll:</i> +4, reach 5 ft. Hit: 4 (1d4 + 2) Piercing damage.</p>
+		</description>
+		<sheet>
+			<description>Melee Attack Roll: +4, reach 5 ft. Hit: 4 (1d4 + 2) Piercing damage.</description>
+		</sheet>
+	</element>
+	<element name="Sting" type="Companion Action" source="Player’s Handbook 2024" id="ID_WOTC_PHB24_COMPANION_ACTION_PSEUDODRAGON_STING">
+		<compendium display="false" />
+		<description>
+			<p><i>Constitution Saving Throw:</i> DC 12, one creature the pseudodragon can see within 5 feet. <i>Failure:</i> 5 (2d4) Poison damage, and the target has the Poisoned condition for 1 hour. <i>Failure by 5 or More:</i> The Poisoned target also has the Unconscious condition until it takes damage or another creature takes an action to shake it awake.</p>
+		</description>
+		<sheet>
+			<description>Constitution Saving Throw: DC 12, one creature the pseudodragon can see within 5 feet. Failure: 5 (2d4) Poison damage, and the target has the Poisoned condition for 1 hour. Failure by 5 or More: The Poisoned target also has the Unconscious condition until it takes damage or another creature takes an action to shake it awake.</description>
+			<description requirements="ID_WOTC_PHB24_CLASS_FEATURE_ELDRITCH_INVOCATION_INVESTMENT_OF_THE_CHAIN_MASTER">Constitution Saving Throw: DC {{warlock:spellcasting:dc}}, one creature the pseudodragon can see within 5 feet. Failure: 5 (2d4) Poison damage, and the target has the Poisoned condition for 1 hour. Failure by 5 or More: The Poisoned target also has the Unconscious condition until it takes damage or another creature takes an action to shake it awake.</description>
+			
+		</sheet>
+	</element>
+
+	<element name="Quasit" type="Companion" source="Player’s Handbook 2024" id="ID_WOTC_PHB24_COMPANION_QUASIT">
+		<supports>Familiar, Variant Familiar</supports>
+		<description></description>
+		<setters>
+			<set name="strength">5</set>
+			<set name="dexterity">17</set>
+			<set name="constitution">10</set>
+			<set name="intelligence">7</set>
+			<set name="wisdom">10</set>
+			<set name="charisma">10</set>
+			<set name="ac">13</set>
+			<set name="hp">25 (10d4)</set>
+			<set name="speed">40 ft.</set>
+			<set name="languages">Abyssal, Common</set>
+			<set name="skills">Stealth +5</set>
+			<set name="resistances">Cold, Fire, Lightning</set>
+			<set name="immunities">Poison</set>
+			<set name="conditionImmunities">Poisoned</set>
+			<set name="type">Fiend</set>
+			<set name="size">Tiny</set>
+			<set name="senses">Darkvision 120 ft., Passive Perception 10</set>
+			<set name="alignment">chaotic evil</set>
+			<set name="challenge">1</set>
+			<set name="proficiency">2</set>
+			<set name="traits">ID_WOTC_PHB24_COMPANION_TRAIT_QUASIT_MAGIC_RESISTANCE</set>
+			<set name="actions">ID_WOTC_PHB24_COMPANION_ACTION_QUASIT_REND,,ID_WOTC_PHB24_COMPANION_ACTION_QUASIT_CHANGE_SHAPE,ID_WOTC_PHB24_COMPANION_ACTION_QUASIT_SCARE,ID_WOTC_PHB24_COMPANION_ACTION_QUASIT_INVISIBILITY</set>
+		</setters>
+		<rules>
+			<stat name="companion:ac" value="13" />
+			<stat name="companion:hp:max" value="25" bonus="base" />
+			<stat name="companion:speed" value="40" bonus="base" />
+			<stat name="companion:stealth:proficiency" value="companion:proficiency" bonus="base" />
+		</rules>
+	</element>
+	<element name="Magic Resistance" type="Companion Trait" source="Player’s Handbook 2024" id="ID_WOTC_PHB24_COMPANION_TRAIT_QUASIT_MAGIC_RESISTANCE">
+		<compendium display="false" />
+		<description>
+			<p>The quasit has Advantage on saving throws against spells and other magical effects.</p>
+		</description>
+		<sheet>
+			<description>The quasit has Advantage on saving throws against spells and other magical effects.</description>
+		</sheet>
+	</element>
+	<element name="Rend" type="Companion Action" source="Player’s Handbook 2024" id="ID_WOTC_PHB24_COMPANION_ACTION_QUASIT_REND">
+		<compendium display="false" />
+		<description>
+			<p><i>Melee Attack Roll:</i> +5, reach 5 ft. <i>Hit:</i> 5 (1d4 + 3) Slashing damage, and the target has the Poisoned condition until the start of the quasit’s next turn.</p>
+		</description>
+		<sheet>
+			<description>Melee Attack Roll: +5, reach 5 ft. Hit: 5 (1d4 + 3) Slashing damage, and the target has the Poisoned condition until the start of the quasit’s next turn.</description>
+		</sheet>
+	</element>
+	<element name="Change Shape" type="Companion Trait" source="Player’s Handbook 2024" id="ID_WOTC_PHB24_COMPANION_ACTION_QUASIT_CHANGE_SHAPE">
+		<compendium display="false" />
+		<description>
+			<p>The quasit changes into a form that resembles a bat (Speed 10 ft., Fly 40 ft.), a centipede (40 ft., Climb 40 ft.), or a toad (40 ft., Swim 40 ft.), or it returns to its true form. Its statistics are the same in each form, except for its Speed. Any equipment it’s wearing or carrying isn’t transformed. The quasit reverts to its true form if it dies.</p>
+		</description>
+		<sheet>
+			<description>The quasit changes into a form that resembles a bat (Speed 10 ft., Fly 40 ft.), a centipede (40 ft., Climb 40 ft.), or a toad (40 ft., Swim 40 ft.), or it returns to its true form. Its statistics are the same in each form, except for its Speed. Any equipment it’s wearing or carrying isn’t transformed. The quasit reverts to its true form if it dies.</description>
+		</sheet>
+	</element>
+	<element name="Scare" type="Companion Action" source="Player’s Handbook 2024" id="ID_WOTC_PHB24_COMPANION_ACTION_QUASIT_SCARE">
+		<compendium display="false" />
+		<description>
+			<p><i>Wisdom Saving Throw:</i> DC 10, one creature within 20 feet. <i>Failure:</i> The target has the Frightened condition. At the end of each of its turns, the target repeats the save, ending the effect on itself on a success. After 1 minute, it succeeds automatically</p>
+		</description>
+		<sheet usage="1/Day">
+			<description>Wisdom Saving Throw: DC 10, one creature within 20 feet. Failure: The target has the Frightened condition. At the end of each of its turns, the target repeats the save, ending the effect on itself on a success. After 1 minute, it succeeds automatically</description>
+			<description requirements="ID_WOTC_PHB24_CLASS_FEATURE_ELDRITCH_INVOCATION_INVESTMENT_OF_THE_CHAIN_MASTER">Wisdom Saving Throw: DC {{warlock:spellcasting:dc}}, one creature within 20 feet. Failure: The target has the Frightened condition. At the end of each of its turns, the target repeats the save, ending the effect on itself on a success. After 1 minute, it succeeds automatically</description>
+		</sheet>
+	</element>
+	<element name="Invisibility" type="Companion Action" source="Player’s Handbook 2024" id="ID_WOTC_PHB24_COMPANION_ACTION_QUASIT_INVISIBILITY">
+		<compendium display="false" />
+		<description>
+			<p>The quasit casts <i>Invisibility</i> on itself, requiring no spell components and using Charisma as the spellcasting ability.</p>
+			<div class="reference">
+				<div element="ID_PHB_SPELL_INVISIBILITY" />
+				<!--<div element="ID_PHB24_SPELL_INVISIBILITY" />-->
+			</div>
+		</description>
+		<sheet>
+			<description>The quasit casts Invisibility on itself, requiring no spell components and using Charisma as the spellcasting ability.</description>
+		</sheet>
+	</element>
+
+	<element name="Skeleton" type="Companion" source="Player’s Handbook 2024" id="ID_WOTC_PHB24_COMPANION_SKELETON">
+		<supports>Familiar, Variant Familiar</supports>
+		<description></description>
+		<setters>
+			<set name="strength">10</set>
+			<set name="dexterity">16</set>
+			<set name="constitution">15</set>
+			<set name="intelligence">6</set>
+			<set name="wisdom">8</set>
+			<set name="charisma">5</set>
+			<set name="ac">13</set>
+			<set name="hp">13 (2d8+4)</set>
+			<set name="speed">30 ft.</set>
+			<set name="languages">Understands the languages it knew in life but can’t speak</set>
+			<set name="vulnerabilities">Bludgeoning</set>
+			<set name="immunities">Poison</set>
+			<set name="conditionImmunities">Exhaustion, Poisoned</set>
+			<set name="senses">Darkvision 60 ft., Passive Perception 9</set>
+			<set name="type">Undead</set>
+			<set name="size">Medium</set>
+			<set name="alignment">Lawful Evil</set>
+			<set name="challenge">1/4</set>
+			<set name="actions">ID_WOTC_PHB24_COMPANION_ACTION_SKELETON_SHORTSWORD,ID_WOTC_PHB24_COMPANION_ACTION_SKELETON_SHORTBOW</set>
+		</setters>
+		<rules>
+			<stat name="companion:ac" value="13" />
+			<stat name="companion:hp:max" value="13" bonus="base" />
+			<stat name="companion:speed" value="30" bonus="base" />
+		</rules>
+	</element>
+	<element name="Longsword" type="Companion Action" source="Player’s Handbook 2024" id="ID_WOTC_PHB24_COMPANION_ACTION_SKELETON_SHORTSWORD">
+		<compendium display="false" />
+		<description>
+			<p><i>Melee Attack Roll:</i> +5, reach 5 ft. <i>Hit:</i> 6 (1d6 + 3) Piercing damage.</p>
+		</description>
+		<sheet>
+			<description>Melee Attack Roll: +5, reach 5 ft. Hit: 6 (1d6 + 3) Piercing damage.</description>
+		</sheet>
+	</element>
+	<element name="Shortbow" type="Companion Action" source="Player’s Handbook 2024" id="ID_WOTC_PHB24_COMPANION_ACTION_SKELETON_SHORTBOW">
+		<compendium display="false" />
+		<description>
+			<p><i>Ranged Attack Roll:</i> +5, range 80/320 ft. <i>Hit:</i> 6 (1d6 + 3) Piercing damage.</p>
+		</description>
+		<sheet>
+			<description>Ranged Attack Roll: +5, range 80/320 ft. Hit: 6 (1d6 + 3) Piercing damage.</description>
+		</sheet>
+	</element>
+
+	<element name="Slaad Tadpole" type="Companion" source="Player’s Handbook 2024" id="ID_WOTC_PHB24_COMPANION_SLAAD_TADPOLE">
+		<supports>Familiar, Variant Familiar</supports>
+		<description></description>
+		<setters>
+			<set name="strength">7</set>
+			<set name="dexterity">15</set>
+			<set name="constitution">10</set>
+			<set name="intelligence">3</set>
+			<set name="wisdom">5</set>
+			<set name="charisma">3</set>
+			<set name="ac">12</set>
+			<set name="hp">7 (3d4)</set>
+			<set name="speed">30 ft., Burrow 10 ft.</set>
+			<set name="languages">Understands Slaad but can’t speak</set>
+			<set name="skills">Stealth +4</set>
+			<set name="resistances">Acid, Cold, Fire, Lightning, Thunder</set>
+			<set name="senses">Darkvision 60 ft., Passive Perception 7</set>
+			<set name="type">Aberration</set>
+			<set name="size">Tiny</set>
+			<set name="alignment">Chaotic Neutral</set>
+			<set name="challenge">1/8</set>
+			<set name="proficiency">2</set>
+			<set name="traits">ID_WOTC_PHB24_COMPANION_TRAIT_SLAAD_TADPOLE_MAGIC_RESISTANCE</set>
+			<set name="actions">ID_WOTC_PHB24_COMPANION_ACTION_SLAAD_TADPOLE_BITE</set>
+		</setters>
+		<rules>
+			<stat name="companion:ac" value="12" />
+			<stat name="companion:hp:max" value="7" bonus="base" />
+			<stat name="companion:speed" value="30" bonus="base" />
+			<stat name="companion:speed:burrow" value="10" bonus="base" />
+			<stat name="companion:stealth:proficiency" value="companion:proficiency" bonus="base" />
+		</rules>
+	</element>
+	<element name="Magic Resistance" type="Companion Trait" source="Player’s Handbook 2024" id="ID_WOTC_PHB24_COMPANION_TRAIT_SLAAD_TADPOLE_MAGIC_RESISTANCE">
+		<compendium display="false" />
+		<description>
+			<p>The slaad has Advantage on saving throws against spells and other magical effects.</p>
+		</description>
+		<sheet>
+			<description>The slaad has Advantage on saving throws against spells and other magical effects.</description>
+		</sheet>
+	</element>
+	<element name="Bite" type="Companion Action" source="Player’s Handbook 2024" id="ID_WOTC_PHB24_COMPANION_ACTION_SLAAD_TADPOLE_BITE">
+		<compendium display="false" />
+		<description>
+			<p><i>Melee Attack Roll:</i> +4, reach 5 ft. <i>Hit:</i> 5 (1d6 + 2) Piercing damage.</p>
+		</description>
+		<sheet>
+			<description>Melee Attack Roll: +4, reach 5 ft. Hit: 5 (1d6 + 2) Piercing damage.</description>
+		</sheet>
+	</element>
+
+	<element name="Sphinx of Wonder" type="Companion" source="Player’s Handbook 2024" id="ID_WOTC_PHB24_COMPANION_SPHINX_OF_WONDER">
+		<supports>Familiar, Variant Familiar</supports>
+		<description></description>
+		<setters>
+			<set name="strength">6</set>
+			<set name="dexterity">17</set>
+			<set name="constitution">13</set>
+			<set name="intelligence">15</set>
+			<set name="wisdom">12</set>
+			<set name="charisma">11</set>
+			<set name="ac">13</set>
+			<set name="hp">24 (7d4+7)</set>
+			<set name="speed">20 ft., Fly 40 ft.</set>
+			<set name="languages">Celestial, Common</set>
+			<set name="skills">Arcana +4, Religion +4, Stealth +5</set>
+			<set name="resistances">Necrotic, Psychic, Radiant</set>
+			<set name="senses">Darkvision 60 ft., Passive Perception 11</set>
+			<set name="type">Celestial</set>
+			<set name="size">Tiny</set>
+			<set name="alignment">Lawful Good</set>
+			<set name="challenge">1</set>
+			<set name="proficiency">2</set>
+			<set name="traits">ID_WOTC_PHB24_COMPANION_TRAIT_SPHINX_OF_WONDER_MAGIC_RESISTANCE</set>
+			<set name="actions">ID_WOTC_PHB24_COMPANION_ACTION_SPHINX_OF_WONDER_REND</set>
+			<set name="reactions">ID_WOTC_PHB24_COMPANION_REACTION_SPHINX_OF_WONDER_BURST_OF_INGENUITY</set>
+		</setters>
+		<rules>
+			<stat name="companion:ac" value="13" />
+			<stat name="companion:hp:max" value="24" bonus="base" />
+			<stat name="companion:speed" value="20" bonus="base" />
+			<stat name="companion:speed:fly" value="40" bonus="base" />
+			<stat name="companion:arcana:proficiency" value="companion:proficiency" bonus="base" />
+			<stat name="companion:religion:proficiency" value="companion:proficiency" bonus="base" />
+			<stat name="companion:stealth:proficiency" value="companion:proficiency" bonus="base" />
+		</rules>
+	</element>
+	<element name="Magic Resistance" type="Companion Trait" source="Player’s Handbook 2024" id="ID_WOTC_PHB24_COMPANION_TRAIT_SPHINX_OF_WONDER_MAGIC_RESISTANCE">
+		<compendium display="false" />
+		<description>
+			<p>The sphinx has Advantage on saving throws against spells and other magical effects.</p>
+		</description>
+		<sheet>
+			<description>The sphinx has Advantage on saving throws against spells and other magical effects.</description>
+		</sheet>
+	</element>
+	<element name="Rend" type="Companion Action" source="Player’s Handbook 2024" id="ID_WOTC_PHB24_COMPANION_ACTION_SPHINX_OF_WONDER_REND">
+		<compendium display="false" />
+		<description>
+			<p><i>Melee Attack Roll:</i> +5, reach 5 ft. <i>Hit:</i> 5 (1d4 + 3) Slashing damage plus 7 (2d6) Radiant damage.</p>
+		</description>
+		<sheet>
+			<description>Melee Attack Roll: +5, reach 5 ft. Hit: 5 (1d4 + 3) Slashing damage plus 7 (2d6) Radiant damage.</description>
+		</sheet>
+	</element>
+	<element name="Burst of Ingenuity" type="Companion Reaction" source="Player’s Handbook 2024" id="ID_WOTC_PHB24_COMPANION_REACTION_SPHINX_OF_WONDER_BURST_OF_INGENUITY">
+		<compendium display="false" />
+		<description>
+			<p><i>Trigger:</i> The sphinx or another creature within 30 feet makes an ability check or a saving throw. <i>Response:</i> The sphinx adds 2 to the roll.</p>
+		</description>
+		<sheet usage="2/Day">
+			<description>Trigger: The sphinx or another creature within 30 feet makes an ability check or a saving throw. Response: The sphinx adds 2 to the roll.</description>
+		</sheet>
+	</element>
+
+	<element name="Sprite" type="Companion" source="Player’s Handbook 2024" id="ID_WOTC_PHB24_COMPANION_SPRITE">
+		<supports>Familiar, Variant Familiar</supports>
+		<description></description>
+		<setters>
+			<set name="strength">3</set>
+			<set name="dexterity">18</set>
+			<set name="constitution">10</set>
+			<set name="intelligence">14</set>
+			<set name="wisdom">13</set>
+			<set name="charisma">11</set>
+			<set name="ac">15</set>
+			<set name="hp">10 (4d4)</set>
+			<set name="speed">10 ft., Fly 40 ft.</set>
+			<set name="languages">Common, Elvish, Sylvan</set>
+			<set name="skills">Perception +3, Stealth +8</set>
+			<set name="senses">Passive Perception 13</set>
+			<set name="type">Fey</set>
+			<set name="size">Tiny</set>
+			<set name="alignment">Neutral Good</set>
+			<set name="challenge">1/4</set>
+			<set name="proficiency">2</set>
+			<set name="actions">ID_WOTC_PHB24_COMPANION_ACTION_SPRITE_NEEDLE_SWORD,ID_WOTC_PHB24_COMPANION_ACTION_SPRITE_ENCHANTING_BOW,ID_WOTC_PHB24_COMPANION_ACTION_SPRITE_HEART_SIGHT,ID_WOTC_PHB24_COMPANION_ACTION_SPRITE_INVISIBILITY</set>
+		</setters>
+		<rules>
+			<stat name="companion:ac" value="15" />
+			<stat name="companion:hp:max" value="10" bonus="base" />
+			<stat name="companion:speed" value="10" bonus="base" />
+			<stat name="companion:speed:fly" value="40" bonus="base" />
+			<stat name="companion:perception:proficiency" value="companion:proficiency" bonus="base" />
+			<stat name="companion:stealth:proficiency" value="companion:proficiency" bonus="base" />
+			<stat name="companion:stealth:proficiency" value="companion:proficiency" bonus="double" />
+		</rules>
+	</element>
+	<element name="Needle Sword" type="Companion Action" source="Player’s Handbook 2024" id="ID_WOTC_PHB24_COMPANION_ACTION_SPRITE_NEEDLE_SWORD">
+		<compendium display="false" />
+		<description>
+			<p><i>Melee Attack Roll:</i> +6, reach 5 ft. <i>Hit:</i> 6 (1d4 + 4) Piercing damage.</p>
+		</description>
+		<sheet>
+			<description>Melee Attack Roll: +6, reach 5 ft. Hit: 6 (1d4 + 4) Piercing damage.</description>
+		</sheet>
+	</element>
+	<element name="Enchanting Bow" type="Companion Action" source="Player’s Handbook 2024" id="ID_WOTC_PHB24_COMPANION_ACTION_SPRITE_ENCHANTING_BOW">
+		<compendium display="false" />
+		<description>
+			<p><i>Ranged Attack Roll:</i> +6, range 40/160 ft. <i>Hit:</i> 1 Piercing damage, and the target has the Charmed condition until the start of the sprite’s next turn.</p>
+		</description>
+		<sheet>
+			<description>Ranged Attack Roll: +6, range 40/160 ft. Hit: 1 Piercing damage, and the target has the Charmed condition until the start of the sprite’s next turn.</description>
+		</sheet>
+	</element>
+	<element name="Heart Sight" type="Companion Action" source="Player’s Handbook 2024" id="ID_WOTC_PHB24_COMPANION_ACTION_SPRITE_HEART_SIGHT">
+		<compendium display="false" />
+		<description>
+			<p><i>Charisma Saving Throw:</i> DC 10, one creature within 5 feet the sprite can see. Celestials, Fiends, and Undead automatically fail the save. <i>Failure:</i> The sprite knows the target’s emotions and alignment.</p>
+		</description>
+		<sheet>
+			<description>Charisma Saving Throw: DC 10, one creature within 5 feet the sprite can see. Celestials, Fiends, and Undead automatically fail the save. Failure: The sprite knows the target’s emotions and alignment.</description>
+			<description requirements="ID_WOTC_PHB24_CLASS_FEATURE_ELDRITCH_INVOCATION_INVESTMENT_OF_THE_CHAIN_MASTER">Charisma Saving Throw: DC {{warlock:spellcasting:dc}}, one creature within 5 feet the sprite can see. Celestials, Fiends, and Undead automatically fail the save. Failure: The sprite knows the target’s emotions and alignment.</description>
+		</sheet>
+	</element>
+	<element name="Invisibility" type="Companion Action" source="Player’s Handbook 2024" id="ID_WOTC_PHB24_COMPANION_ACTION_SPRITE_INVISIBILITY">
+		<compendium display="false" />
+		<description>
+			<p>The sprite casts <i>Invisibility</i> on itself, requiring no spell components and using Charisma as the spellcasting ability.</p>
+			<div class="reference">
+				<div element="ID_PHB_SPELL_INVISIBILITY" />
+				<!--<div element="ID_PHB24_SPELL_INVISIBILITY" />-->
+			</div>
+		</description>
+		<sheet>
+			<description>The sprite casts Invisibility on itself, requiring no spell components and using Charisma as the spellcasting ability.</description>
+		</sheet>
+	</element>
+
+	<element name="Venomous Snake" type="Companion" source="Player’s Handbook 2024" id="ID_WOTC_PHB24_COMPANION_VENOMOUS_SNAKE">
+		<supports>Familiar, Variant Familiar</supports>
+		<description></description>
+		<setters>
+			<set name="strength">2</set>
+			<set name="dexterity">15</set>
+			<set name="constitution">11</set>
+			<set name="intelligence">1</set>
+			<set name="wisdom">10</set>
+			<set name="charisma">3</set>
+			<set name="ac">12</set>
+			<set name="hp">5 (2d4)</set>
+			<set name="speed">30 ft., Swim 30 ft.</set>
+			<set name="languages">—</set>
+			<set name="senses">Blindsight 10 ft., Passive Perception 10</set>
+			<set name="type">Beast</set>
+			<set name="size">Tiny</set>
+			<set name="alignment">Unaligned</set>
+			<set name="challenge">1/8</set>
+			<set name="proficiency">2</set>
+			<set name="actions">ID_WOTC_PHB24_COMPANION_ACTION_VENOMOUS_SNAKE_BITE</set>
+		</setters>
+		<rules>
+			<stat name="companion:ac" value="12" />
+			<stat name="companion:hp:max" value="5" bonus="base" />
+			<stat name="companion:speed" value="30" bonus="base" />
+			<stat name="companion:speed:swim" value="30" bonus="base" />
+		</rules>
+	</element>
+	<element name="Bite" type="Companion Action" source="Player’s Handbook 2024" id="ID_WOTC_PHB24_COMPANION_ACTION_VENOMOUS_SNAKE_BITE">
+		<compendium display="false" />
+		<description>
+			<p><i>Melee Attack Roll:</i> +4, reach 5 ft. <i>Hit:</i> 4 (1d4 + 2) Piercing damage plus 3 (1d6) Poison damage.</p>
+		</description>
+		<sheet>
+			<description>Melee Attack Roll: +4, reach 5 ft. Hit: 4 (1d4 + 2) Piercing damage plus 3 (1d6) Poison damage.</description>
+		</sheet>
+	</element>
+
+	<!--Statblocks for reference -->
+	<element name="Elephant" type="Information" source="Player’s Handbook 2024" id="ID_WOTC_PHB24_INFORMATION_ELEPHANT_STATBLOCK">
+		<compendium display="false" />
+		<description>
+			<p><i>Huge Beast, Unaligned</i></p>
+			<ul class="unstyled mb">
+			<li><b>AC</b> 12</li>
+			<li><b>HP</b> 76 (8d12 + 24)</li>
+			<li><b>Speed</b> 40 ft.</li>
+			</ul>
+			<table style="text-align:center">
+				<thead><tr><td> </td><td> </td><td>MOD</td><td>SAVE</td><td> </td><td> </td><td>MOD</td><td>SAVE</td><td> </td><td> </td><td>MOD</td><td>SAVE</td></tr></thead>
+				<tr><td>STR</td><td>22</td><td>+6</td><td>+6</td><td>DEX</td><td>9</td><td>-1</td><td>-1</td><td>CON</td><td>17</td><td>+3</td><td>+3</td></tr>
+				<tr><td>INT</td><td>3</td><td>-4</td><td>-4</td><td>WIS</td><td>11</td><td>+0</td><td>+0</td><td>CHA</td><td>6</td><td>-2</td><td>-2</td></tr>
+			</table>
+			<ul class="unstyled mb">
+				<li><b>Senses</b> Passive Perception 10</li>
+				<li><b>Languages</b> None</li>
+				<li><b>CR</b> 4 (XP 1,100; PB +2)</li>
+			</ul>
+			<h4 class="caption">ACTIONS</h4>
+			<p><b><i>Multiattack. </i></b> The elephant makes two Gore attacks.</p>
+			<p><b><i>Gore. </i></b> <i>Melee Attack Roll:</i> +8, reach 5 ft.  <i>Hit:</i> 15 (2d8 + 6) Piercing damage. If the elephant moved at least 20 feet straight toward the target immediately before the hit, the target also has the Prone condition.</p>
+			<h4 class="caption">BONUS ACTIONS</h4>
+			<p><b><i>Trample. </i></b> <i>Dexterity Saving Throw:</i> DC 16, one creature within 5 feet that has the Prone condition.  <i>Failure:</i> 17 (2d10 + 6) Bludgeoning damage.  <i>Success:</i> Half damage.</p>
+		</description>
+	</element>
+	<element name="Giant Goat" type="Information" source="Player’s Handbook 2024" id="ID_WOTC_PHB24_INFORMATION_GIANT_GOAT_STATBLOCK">
+		<compendium display="false" />
+		<description>
+			<p><i>Large Beast, Unaligned</i></p>
+			<ul class="unstyled mb">
+			<li><b>AC</b> 11</li>
+			<li><b>HP</b> 19 (3d10 + 3)</li>
+			<li><b>Speed</b> 40 ft., Climb 30 ft.</li>
+			</ul>
+			<table style="text-align:center">
+				<thead><tr><td class="col-10"> </td><td class="col-10"> </td><td class="col-10">MOD</td><td class="col-10">SAVE</td><td class="col-10"> </td><td class="col-10"> </td><td class="col-10">MOD</td><td class="col-10">SAVE</td><td> </td><td class="col-10"> </td><td>MOD</td><td class="col-10">SAVE</td></tr></thead>
+				<tr><td>STR</td><td>17</td><td>+3</td><td>+3</td><td>DEX</td><td>13</td><td>+1</td><td>+1</td><td>CON</td><td>12</td><td>+1</td><td>+1</td></tr>
+				<tr><td>INT</td><td>3</td><td>-4</td><td>-4</td><td>WIS</td><td>12</td><td>+1</td><td>+1</td><td>CHA</td><td>6</td><td>-2</td><td>-2</td></tr>
+			</table>
+			<ul class="unstyled mb">
+				<li><b>Skills</b> Perception +3</li>
+				<li><b>Senses</b> Darkvision 60 ft., Passive Perception 13</li>
+				<li><b>Languages</b> —</li>
+				<li><b>CR</b> 1/2 (XP 100; PB +2)</li>
+			</ul>
+			<h4 class="caption">ACTIONS</h4>
+			<p><b><i>Ram. </i></b> <i>Melee Attack Roll:</i> +5, reach 5 ft.  <i>Hit:</i> 6 (1d6 + 3) Bludgeoning damage. If the goat moved at least 20 feet straight toward the target immediately before the hit, the target takes an extra 5 (2d4) Bludgeoning damage and, if it is Huge or smaller, has the Prone condition.</p>
+		</description>
+	</element>
+	<element name="Lion" type="Information" source="Player’s Handbook 2024" id="ID_WOTC_PHB24_INFORMATION_LION_STATBLOCK">
+		<compendium display="false" />
+		<description>
+			<p><i>Large Beast, Unaligned</i></p>
+			<ul class="unstyled mb">
+			<li><b>AC</b> 12</li>
+			<li><b>HP</b> 22 (4d10)</li>
+			<li><b>Speed</b> 50 ft.</li>
+			</ul>
+			<table style="text-align:center">
+				<thead><tr><td> </td><td> </td><td>MOD</td><td>SAVE</td><td> </td><td> </td><td>MOD</td><td>SAVE</td><td> </td><td> </td><td>MOD</td><td>SAVE</td></tr></thead>
+				<tr><td>STR</td><td>17</td><td>+3</td><td>+3</td><td>DEX</td><td>15</td><td>+2</td><td>+2</td><td>CON</td><td>11</td><td>+0</td><td>+0</td></tr>
+				<tr><td>INT</td><td>3</td><td>-4</td><td>-4</td><td>WIS</td><td>12</td><td>+1</td><td>+1</td><td>CHA</td><td>8</td><td>-1</td><td>-1</td></tr>
+			</table>
+			<ul class="unstyled mb">
+				<li><b>Skills</b> Perception +3, Stealth +4</li>
+				<li><b>Senses</b> Darkvision 60 ft., Passive Perception 13</li>
+				<li><b>Languages</b> —</li>
+				<li><b>CR</b> 1 (XP 200; PB +2)</li>
+			</ul>
+			<h4 class="caption">TRAITS</h4>
+			<p><b><i>Pack Tactics.</i></b> The lion has Advantage on an attack roll against a creature if at least one of the lion's allies is within 5 feet of the creature and the ally doesn't have the Incapacitated condition.</p>
+			<p><b><i>Running Leap.</i></b> With a 10-foot running start, the lion can Long Jump up to 25 feet.</p>
+			<h4 class="caption">ACTIONS</h4>
+			<p><b><i>Multiattack. </i></b> The lion makes two Rend attacks. It can replace one of these attacks with a use of Roar.</p>
+			<p><b><i>Rend. </i></b> <i>Melee Attack Roll:</i> +5, reach 5 ft.  <i>Hit:</i> 7 (1d8 + 3) Slashing damage.</p>
+			<p><b><i>Roar. </i></b> <i>Wisdom Saving Throw:</i> DC 11, one creature within 15 feet.  <i>Failure:</i> The target has the Frightened condition until the start of the lion's next turn.</p>
+		</description>
+	</element>
+	<element name="Mastiff" type="Information" source="Player’s Handbook 2024" id="ID_WOTC_PHB24_INFORMATION_MASTIFF_STATBLOCK">
+		<compendium display="false" />
+		<description>
+			<p><i>Medium Beast, Unaligned</i></p>
+			<ul class="unstyled mb">
+			<li><b>AC</b> 12</li>
+			<li><b>HP</b> 5 (1d8 + 1)</li>
+			<li><b>Speed</b> 40 ft.</li>
+			</ul>
+			<table style="text-align:center">
+				<thead><tr><td> </td><td> </td><td>MOD</td><td>SAVE</td><td> </td><td> </td><td>MOD</td><td>SAVE</td><td> </td><td> </td><td>MOD</td><td>SAVE</td></tr></thead>
+				<tr><td>STR</td><td>13</td><td>+1</td><td>+1</td><td>DEX</td><td>14</td><td>+2</td><td>+2</td><td>CON</td><td>12</td><td>+1</td><td>+1</td></tr>
+				<tr><td>INT</td><td>3</td><td>-4</td><td>-4</td><td>WIS</td><td>12</td><td>+1</td><td>+1</td><td>CHA</td><td>7</td><td>-2</td><td>-2</td></tr>
+			</table>
+			<ul class="unstyled mb">
+				<li><b>Skills</b> Perception +5</li>
+				<li><b>Senses</b> Darkvision 60 ft., Passive Perception 15</li>
+				<li><b>Languages</b> —</li>
+				<li><b>CR</b> 1/8 (XP 25; PB +2)</li>
+			</ul>
+			<h4 class="caption">ACTIONS</h4>
+			<p><b><i>Bite. </i></b> <i>Melee Attack Roll:</i> +3, reach 5 ft.  <i>Hit:</i> 4 (1d6 + 1) Piercing damage, and the target has the Prone condition if it is Large or smaller.</p>
+		</description>
+	</element>
+	<element name="Raven" type="Information" source="Player’s Handbook 2024" id="ID_WOTC_PHB24_INFORMATION_RAVEN_STATBLOCK">
+		<compendium display="false" />
+		<description>
+			<p><i>Tiny Beast, Unaligned</i></p>
+			<ul class="unstyled mb">
+			<li><b>AC</b> 12</li>
+			<li><b>HP</b> 2 (1d4)</li>
+			<li><b>Speed</b> 10 ft., Fly 50 ft.</li>
+			</ul>
+			<table style="text-align:center">
+				<thead><tr><td class="col-10"> </td><td class="col-10"> </td><td class="col-10">MOD</td><td class="col-10">SAVE</td><td class="col-10"> </td><td class="col-10"> </td><td class="col-10">MOD</td><td class="col-10">SAVE</td><td> </td><td class="col-10"> </td><td>MOD</td><td class="col-10">SAVE</td></tr></thead>
+				<tr><td>STR</td><td>2</td><td>-4</td><td>-4</td><td>DEX</td><td>14</td><td>+2</td><td>+2</td><td>CON</td><td>10</td><td>+0</td><td>+0</td></tr>
+				<tr><td>INT</td><td>5</td><td>-3</td><td>-3</td><td>WIS</td><td>13</td><td>+1</td><td>+1</td><td>CHA</td><td>6</td><td>-2</td><td>-2</td></tr>
+			</table>
+			<ul class="unstyled mb">
+				<li><b>Skills</b> Perception +3</li>
+				<li><b>Senses</b> Passive Perception 13</li>
+				<li><b>Languages</b> —</li>
+				<li><b>CR</b> 0 (XP 10; PB +2)</li>
+			</ul>
+			<h4 class="caption">TRAITS</h4>
+			<p><b><i>Mimicry. </i></b> The raven can mimic simple sounds it has heard, such as a whisper or chitter. A hearer can discern the sounds are imitations with a successful DC 10 Wisdom (Insight) check.</p>
+			<h4 class="caption">ACTIONS</h4>
+			<p><b><i>Beak. </i></b> <i>Melee Attack Roll:</i> +4, reach 5 ft.  <i>Hit:</i> 1 Piercing damage.</p>
+		</description>
+	</element>
+	<element name="Riding Horse" type="Information" source="Player’s Handbook 2024" id="ID_WOTC_PHB24_INFORMATION_RIDING_HORSE_STATBLOCK">
+		<compendium display="false" />
+		<description>
+			<p><i>Large Beast, Unaligned</i></p>
+			<ul class="unstyled mb">
+			<li><b>AC</b> 11</li>
+			<li><b>HP</b> 13 (2d10 + 2)</li>
+			<li><b>Speed</b> 60 ft.</li>
+			</ul>
+			<table style="text-align:center">
+				<thead><tr><td class="col-10"> </td><td class="col-10"> </td><td class="col-10">MOD</td><td class="col-10">SAVE</td><td class="col-10"> </td><td class="col-10"> </td><td class="col-10">MOD</td><td class="col-10">SAVE</td><td> </td><td class="col-10"> </td><td>MOD</td><td class="col-10">SAVE</td></tr></thead>
+				<tr><td>STR</td><td>16</td><td>+3</td><td>+3</td><td>DEX</td><td>13</td><td>+1</td><td>+1</td><td>CON</td><td>12</td><td>+1</td><td>+1</td></tr>
+				<tr><td>INT</td><td>2</td><td>-4</td><td>-4</td><td>WIS</td><td>11</td><td>+0</td><td>+0</td><td>CHA</td><td>7</td><td>-2</td><td>-2</td></tr>
+			</table>
+			<ul class="unstyled mb">
+				<li><b>Senses</b> Passive Perception 10</li>
+				<li><b>Languages</b> —</li>
+				<li><b>CR</b> 1/4 (XP 50; PB +2)</li>
+			</ul>
+			<h4 class="caption">ACTIONS</h4>
+			<p><b><i>Hooves. </i></b> <i>Melee Attack Roll:</i> +5, reach 5 ft.  <i>Hit:</i> 7 (1d8 + 3) Bludgeoning damage.</p>
+		</description>
+	</element>
+
+</elements>

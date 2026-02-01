@@ -1,0 +1,174 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<elements>
+	<info>
+		<name>Archfey Patron</name>
+		<description>The Archfey Patron subclass from the Player’s Handbook 2024.</description>
+		<author url="https://dndstore.wizards.com/us/en/product/1001494/2024-player-s-handbook-digital-plus-physical-bundle">Wizards of the Coast</author>
+		<update version="0.0.1">
+			<file name="warlock-archfey.xml" url="https://raw.githubusercontent.com/AuroraLegacy/elements/master/core/players-handbook-2024/archetypes/warlock-archfey.xml" />
+		</update>
+	</info>
+
+	<element name="Archfey Patron" type="Archetype" source="Player’s Handbook 2024" id="ID_WOTC_PHB24_ARCHETYPE_WARLOCK_ARCHFEY_PATRON">
+		<supports>Warlock Subclass</supports>
+		<description>
+			<p class="flavor">Bargain with Whimsical Fey</p>
+			<p>Your pact draws on the power of the Feywild. When you choose this subclass, you might make a deal with an archfey, such as the Prince of Frost; the Queen of Air and Darkness, ruler of the Gloaming Court; Titania of the Summer Court; or an ancient hag. Or you might call on a spectrum of Fey, weaving a web of favors and debts. Whoever they are, your patron is often inscrutable and whimsical.</p>
+			<div element="ID_WOTC_PHB24_ARCHETYPE_FEATURE_WARLOCK_ARCHFEY_PATRON_ARCHFEY_SPELLS" />
+			<div element="ID_WOTC_PHB24_ARCHETYPE_FEATURE_WARLOCK_ARCHFEY_PATRON_STEPS_OF_THE_FEY" />
+			<div element="ID_WOTC_PHB24_ARCHETYPE_FEATURE_WARLOCK_ARCHFEY_PATRON_MISTY_ESCAPE" />
+			<div element="ID_WOTC_PHB24_ARCHETYPE_FEATURE_WARLOCK_ARCHFEY_PATRON_BEGUILING_DEFENSES" />
+			<div element="ID_WOTC_PHB24_ARCHETYPE_FEATURE_WARLOCK_ARCHFEY_PATRON_BEWITCHING_MAGIC" />
+		</description>
+		<sheet display="false" />
+		<rules>
+			<grant type="Archetype Feature" id="ID_WOTC_PHB24_ARCHETYPE_FEATURE_WARLOCK_ARCHFEY_PATRON_ARCHFEY_SPELLS" level="3" />
+			<grant type="Archetype Feature" id="ID_WOTC_PHB24_ARCHETYPE_FEATURE_WARLOCK_ARCHFEY_PATRON_STEPS_OF_THE_FEY" level="3" />
+			<grant type="Archetype Feature" id="ID_WOTC_PHB24_ARCHETYPE_FEATURE_WARLOCK_ARCHFEY_PATRON_MISTY_ESCAPE" level="6" />
+			<grant type="Archetype Feature" id="ID_WOTC_PHB24_ARCHETYPE_FEATURE_WARLOCK_ARCHFEY_PATRON_BEGUILING_DEFENSES" level="10" />
+			<grant type="Archetype Feature" id="ID_WOTC_PHB24_ARCHETYPE_FEATURE_WARLOCK_ARCHFEY_PATRON_BEWITCHING_MAGIC" level="14" />
+		</rules>
+	</element>
+
+	<element name="Level 3: Archfey Spells" type="Archetype Feature" source="Player’s Handbook 2024" id="ID_WOTC_PHB24_ARCHETYPE_FEATURE_WARLOCK_ARCHFEY_PATRON_ARCHFEY_SPELLS">
+		<requirements>!ID_INTERNAL_PHB24_FEATURE_REPLACEMENT_WARLOCK_ARCHFEY_PATRON_ARCHFEY_SPELLS</requirements>
+		<description>
+			<p>The magic of your patron ensures you always have certain spells ready; when you reach a Warlock level specified in the Archfey Spells table, you thereafter always have the listed spells prepared.</p>
+			<h5>Archfey Spells</h5>
+			<table class="class-features">
+				<thead>
+					<tr><td class="col-30">Warlock Level</td><td class="left">Spells</td></tr>
+				</thead>
+				<tr><td>3</td><td class="left"><em>Calm Emotions, Faerie Fire, Misty Step, Phantasmal Force, Sleep</em></td></tr>
+				<tr><td>5</td><td class="left"><em>Blink, Plant Growth</em></td></tr>
+				<tr><td>7</td><td class="left"><em>Dominate Beast, Greater Invisibility</em></td></tr>
+				<tr><td>9</td><td class="left"><em>Dominate Person, Seeming</em></td></tr>
+			</table>
+		</description>
+		<sheet display="false" />
+		<rules>
+			<grant type="Spell" id="ID_WOTC_PHB24_SPELL_FAERIE_FIRE" spellcasting="Warlock" />
+			<grant type="Spell" id="ID_WOTC_PHB24_SPELL_SLEEP" spellcasting="Warlock" />
+			<grant type="Spell" id="ID_WOTC_PHB24_SPELL_CALM_EMOTIONS" spellcasting="Warlock" />
+			<grant type="Spell" id="ID_WOTC_PHB24_SPELL_MISTY_STEP" spellcasting="Warlock" />
+			<grant type="Spell" id="ID_WOTC_PHB24_SPELL_PHANTASMAL_FORCE" spellcasting="Warlock" />
+			<grant type="Spell" id="ID_WOTC_PHB24_SPELL_BLINK" level="5" spellcasting="Warlock" />
+			<grant type="Spell" id="ID_WOTC_PHB24_SPELL_PLANT_GROWTH" level="5" spellcasting="Warlock" />
+			<grant type="Spell" id="ID_WOTC_PHB24_SPELL_DOMINATE_BEAST" level="7" spellcasting="Warlock" />
+			<grant type="Spell" id="ID_WOTC_PHB24_SPELL_GREATER_INVISIBILITY" level="7" spellcasting="Warlock" />
+			<grant type="Spell" id="ID_WOTC_PHB24_SPELL_DOMINATE_PERSON" level="9" spellcasting="Warlock" />
+			<grant type="Spell" id="ID_WOTC_PHB24_SPELL_SEEMING" level="9" spellcasting="Warlock" />
+		</rules>
+	</element>
+
+	<element name="Level 3: Steps of the Fey" type="Archetype Feature" source="Player’s Handbook 2024" id="ID_WOTC_PHB24_ARCHETYPE_FEATURE_WARLOCK_ARCHFEY_PATRON_STEPS_OF_THE_FEY">
+		<requirements>!ID_INTERNAL_PHB24_FEATURE_REPLACEMENT_WARLOCK_ARCHFEY_PATRON_STEPS_OF_THE_FEY</requirements>
+		<description>
+			<p>Your patron grants you the ability to move between the boundaries of the planes. You can cast <i>Misty Step</i> without expending a spell slot a number of times equal to your Charisma modifier (minimum of once), and you regain all expended uses when you finish a Long Rest.</p>
+			<p class="indent">In addition, whenever you cast that spell, you can choose one of the following additional effects.</p>
+			<p class="indent"><em><strong>Refreshing Step.</strong></em> Immediately after you teleport, you or one creature you can see within 10 feet of yourself gains 1d10 Temporary Hit Points.</p>
+			<p class="indent"><em><strong>Taunting Step.</strong></em> Creatures within 5 feet of the space you left must succeed on a Wisdom saving throw against your spell save DC or have Disadvantage on attack rolls against creatures other than you until the start of your next turn.</p>
+		</description>
+		<sheet alt="Steps of the Fey" usage="{{steps of the fey:usage}}/Long Rest">
+			<description>You can cast Misty Step without expending a spell slot. &#13;
+			Additionally, when you cast Misty Step, you can choose one of the following effects:</description>
+		</sheet>
+		<rules>
+			<stat name="steps of the fey:usage" value="1" bonus="base" />
+			<stat name="steps of the fey:usage" value="charisma:modifier" bonus="base" />
+
+			<select type="Archetype Feature" name="Refreshing Step" supports="PHB24 Refreshing Step" default="ID_WOTC_PHB24_ARCHETYPE_FEATURE_WARLOCK_ARCHFEY_PATRON_STEPS_OF_THE_FEY_REFRESHING_STEP"  requirements="!ID_INTERNAL_PHB24_FEATURE_REPLACEMENT_WARLOCK_ARCHFEY_PATRON_STEPS_OF_THE_FEY_REFRESHING_STEP" />
+			<select type="Archetype Feature" name="Taunting Step" supports="PHB24 Taunting Step" default="ID_WOTC_PHB24_ARCHETYPE_FEATURE_WARLOCK_ARCHFEY_PATRON_STEPS_OF_THE_FEY_TAUNTING_STEP"  requirements="!ID_INTERNAL_PHB24_FEATURE_REPLACEMENT_WARLOCK_ARCHFEY_PATRON_STEPS_OF_THE_FEY_TAUNTING_STEP" />
+			<select type="Archetype Feature" name="Disappearing Step" supports="PHB24 Disappearing Step" default="ID_WOTC_PHB24_ARCHETYPE_FEATURE_WARLOCK_ARCHFEY_PATRON_MISTY_ESCAPE_DISAPPEARING_STEP" requirements="ID_WOTC_PHB24_ARCHETYPE_FEATURE_WARLOCK_ARCHFEY_PATRON_MISTY_ESCAPE,!ID_INTERNAL_PHB24_FEATURE_REPLACEMENT_WARLOCK_ARCHFEY_PATRON_MISTY_ESCAPE_DISAPPEARING_STEP" />
+			<select type="Archetype Feature" name="Dreadful Step" supports="PHB24 Dreadful Step" default="ID_WOTC_PHB24_ARCHETYPE_FEATURE_WARLOCK_ARCHFEY_PATRON_MISTY_ESCAPE_DREADFUL_STEP" requirements="ID_WOTC_PHB24_ARCHETYPE_FEATURE_WARLOCK_ARCHFEY_PATRON_MISTY_ESCAPE,!ID_INTERNAL_PHB24_FEATURE_REPLACEMENT_WARLOCK_ARCHFEY_PATRON_MISTY_ESCAPE_DREADFUL_STEP" />
+		</rules>
+	</element>
+	<element name="Refreshing Step" type="Archetype Feature" source="Player’s Handbook 2024" id="ID_WOTC_PHB24_ARCHETYPE_FEATURE_WARLOCK_ARCHFEY_PATRON_STEPS_OF_THE_FEY_REFRESHING_STEP">
+		<supports>PHB24 Refreshing Step</supports>
+		<compendium display="false" />
+		<description>
+			<p>Immediately after you teleport, you or one creature you can see within 10 feet of yourself gains 1d10 Temporary Hit Points.</p>
+		</description>
+		<sheet>
+			<description>Immediately after you teleport, you or one creature you can see within 10 ft. gains 1d10 Temporary Hit Points.</description>
+		</sheet>
+	</element>
+	<element name="Taunting Step" type="Archetype Feature" source="Player’s Handbook 2024" id="ID_WOTC_PHB24_ARCHETYPE_FEATURE_WARLOCK_ARCHFEY_PATRON_STEPS_OF_THE_FEY_TAUNTING_STEP">
+		<supports>PHB24 Taunting Step</supports>
+		<compendium display="false" />
+		<description>
+			<p>Creatures within 5 feet of the space you left must succeed on a Wisdom saving throw against your spell save DC or have Disadvantage on attack rolls against creatures other than you until the start of your next turn.</p>
+		</description>
+		<sheet>
+			<description>Creatures within 5 ft. of the space you left must succeed on a DC{{warlock:spellcasting:dc}} or have Disadvantage on attack rolls against creatures other than you until the start of your next turn.</description>
+		</sheet>
+	</element>
+
+	<element name="Level 6: Misty Escape" type="Archetype Feature" source="Player’s Handbook 2024" id="ID_WOTC_PHB24_ARCHETYPE_FEATURE_WARLOCK_ARCHFEY_PATRON_MISTY_ESCAPE">
+		<requirements>!ID_INTERNAL_PHB24_FEATURE_REPLACEMENT_WARLOCK_ARCHFEY_PATRON_MISTY_ESCAPE</requirements>
+		<description>
+			<p>You can cast <i>Misty Step</i> as a Reaction in response to taking damage.</p>
+			<p>In addition, the following effects are now among your Steps of the Fey options.</p>
+			<p class="indent"><em><strong>Disappearing Step.</strong></em> You have the Invisible condition until the start of your next turn or until immediately after you make an attack roll, deal damage, or cast a spell.</p>
+			<p class="indent"><em><strong>Dreadful Step.</strong></em> Creatures within 5 feet of the space you left or the space you appear in (your choice) must succeed on a Wisdom saving throw against your spell save DC or take 2d10 Psychic damage.</p>
+		</description>
+		<sheet alt="Misty Escape" action="Reaction">
+			<description>When you take damage, you can cast Misty Step.</description>
+		</sheet>
+	</element>
+	<element name="Disappearing Step" type="Archetype Feature" source="Player’s Handbook 2024" id="ID_WOTC_PHB24_ARCHETYPE_FEATURE_WARLOCK_ARCHFEY_PATRON_MISTY_ESCAPE_DISAPPEARING_STEP">
+		<supports>PHB24 Disappearing Step</supports>
+		<compendium display="false" />
+		<description>
+			<p>You have the Invisible condition until the start of your next turn or until immediately after you make an attack roll, deal damage, or cast a spell.</p>
+		</description>
+		<sheet>
+			<description>You have the Invisible condition until the start of your next turn or until immediately after you make an attack roll, deal damage, or cast a spell.</description>
+		</sheet>
+	</element>
+	<element name="Dreadful Step" type="Archetype Feature" source="Player’s Handbook 2024" id="ID_WOTC_PHB24_ARCHETYPE_FEATURE_WARLOCK_ARCHFEY_PATRON_MISTY_ESCAPE_DREADFUL_STEP">
+		<supports>PHB24 Dreadful Step</supports>
+		<compendium display="false" />
+		<description>
+			<p>Creatures within 5 feet of the space you left or the space you appear in (your choice) must succeed on a Wisdom saving throw against your spell save DC or take 2d10 Psychic damage.</p>
+		</description>
+		<sheet>
+			<description>Creatures within 5 feet of the space you left or the space you appear in (your choice) must succeed on a DC{{warlock:spellcasting:dc}} Wisdom saving throw or take 2d10 Psychic damage.</description>
+		</sheet>
+	</element>
+
+	<element name="Level 10: Beguiling Defenses" type="Archetype Feature" source="Player’s Handbook 2024" id="ID_WOTC_PHB24_ARCHETYPE_FEATURE_WARLOCK_ARCHFEY_PATRON_BEGUILING_DEFENSES">
+		<requirements>!ID_INTERNAL_PHB24_FEATURE_REPLACEMENT_WARLOCK_ARCHFEY_PATRON_BEGUILING_DEFENSES</requirements>
+		<description>
+			<p>Your patron teaches you how to guard your mind and body. You are immune to the Charmed condition.</p>
+			<p class="indent">In addition, immediately after a creature you can see hits you with an attack roll, you can take a Reaction to reduce the damage you take by half (round down), and you can force the attacker to make a Wisdom saving throw against your spell save DC. On a failed save, the attacker takes Psychic damage equal to the damage you take. Once you use this Reaction, you can’t use it again until you finish a Long Rest unless you expend a Pact Magic spell slot (no action required) to restore your use of it.</p>
+		</description>
+		<sheet alt="Beguiling Defenses" action="Reaction" usage="1/Long Rest">
+			<description>You can reduce the damage of an incoming attack by half, and the attacker must succeed on a DC{{warlock:spellcasting:dc}} Wisdom saving throw or take Psychic damage equal to the damage you take. &#13;
+			You can expend a Pact Magic spell slot to restore a use of this feature. &#13;
+			Additionally, you are immune to Charmed condition.</description>
+		</sheet>
+	</element>
+
+	<element name="Level 14: Bewitching Magic" type="Archetype Feature" source="Player’s Handbook 2024" id="ID_WOTC_PHB24_ARCHETYPE_FEATURE_WARLOCK_ARCHFEY_PATRON_BEWITCHING_MAGIC">
+		<requirements>!ID_INTERNAL_PHB24_FEATURE_REPLACEMENT_WARLOCK_ARCHFEY_PATRON_BEWITCHING_MAGIC</requirements>
+		<description>
+			<p>Your patron grants you the ability to weave your magic with teleportation. Immediately after you cast an Enchantment or Illusion spell using an action and a spell slot, you can cast <i>Misty Step</i> as part of the same action and without expending a spell slot.</p>
+		</description>
+		<sheet alt="Bewitching Magic" >
+			<description>Immediately after you cast an Enchantment or Illusion spell using an action and a spell slot, you can cast Misty Step as part of the same action and without expending a spell slot.</description>
+		</sheet>
+	</element>
+
+	<!--Feature Replacement Grants-->
+	<element name="Archfey Spells Feature Replacement" type="Grants" source="Internal" id="ID_INTERNAL_PHB24_FEATURE_REPLACEMENT_WARLOCK_ARCHFEY_PATRON_ARCHFEY_SPELLS" />
+	<element name="Steps of the Fey Feature Replacement" type="Grants" source="Internal" id="ID_INTERNAL_PHB24_FEATURE_REPLACEMENT_WARLOCK_ARCHFEY_PATRON_STEPS_OF_THE_FEY" />
+	<element name="Steps of the Fey: Refreshing Step Feature Replacement" type="Grants" source="Internal" id="ID_INTERNAL_PHB24_FEATURE_REPLACEMENT_WARLOCK_ARCHFEY_PATRON_STEPS_OF_THE_FEY_REFRESHING_STEP" />
+	<element name="Steps of the Fey: Taunting Step Feature Replacement" type="Grants" source="Internal" id="ID_INTERNAL_PHB24_FEATURE_REPLACEMENT_WARLOCK_ARCHFEY_PATRON_STEPS_OF_THE_FEY_TAUNTING_STEP" />
+	<element name="Misty Escape Feature Replacement" type="Grants" source="Internal" id="ID_INTERNAL_PHB24_FEATURE_REPLACEMENT_WARLOCK_ARCHFEY_PATRON_MISTY_ESCAPE" />
+	<element name="Misty Escape: Disappearing Step Feature Replacement" type="Grants" source="Internal" id="ID_INTERNAL_PHB24_FEATURE_REPLACEMENT_WARLOCK_ARCHFEY_PATRON_MISTY_ESCAPE_DISAPPEARING_STEP" />
+	<element name="Misty Escape: Dreadful Step Feature Replacement" type="Grants" source="Internal" id="ID_INTERNAL_PHB24_FEATURE_REPLACEMENT_WARLOCK_ARCHFEY_PATRON_MISTY_ESCAPE_DREADFUL_STEP" />
+	<element name="Beguiling Defenses Feature Replacement" type="Grants" source="Internal" id="ID_INTERNAL_PHB24_FEATURE_REPLACEMENT_WARLOCK_ARCHFEY_PATRON_BEGUILING_DEFENSES" />
+	<element name="Bewitching Magic Feature Replacement" type="Grants" source="Internal" id="ID_INTERNAL_PHB24_FEATURE_REPLACEMENT_WARLOCK_ARCHFEY_PATRON_BEWITCHING_MAGIC" />
+
+</elements>

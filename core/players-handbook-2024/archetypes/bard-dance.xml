@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<elements>
+	<info>
+		<name>College of Dance</name>
+		<description>The College of Dance subclass from the Player’s Handbook 2024.</description>
+		<author url="https://dndstore.wizards.com/us/en/product/1001494/2024-player-s-handbook-digital-plus-physical-bundle">Wizards of the Coast</author>
+		<update version="0.0.1">
+			<file name="bard-dance.xml" url="https://raw.githubusercontent.com/AuroraLegacy/elements/master/core/players-handbook-2024/archetypes/bard-dance.xml" />
+		</update>
+	</info>
+
+	<element name="College of Dance" type="Archetype" source="Player’s Handbook 2024" id="ID_WOTC_PHB24_ARCHETYPE_BARD_COLLEGE_OF_DANCE">
+		<supports>Bard Subclass</supports>
+		<description>
+			<p class="flavor">Move in Harmony with the Cosmos</p>
+			<p>Bards of the College of Dance know that the Words of Creation can’t be contained within speech or song; the words are uttered by the movements of celestial bodies and flow through the motions of the smallest creatures. These Bards practice a way of being in harmony with the whirling cosmos that emphasizes agility, speed, and grace.</p>
+			<div element="ID_WOTC_PHB24_ARCHETYPE_FEATURE_BARD_DANCE_DAZZLING_FOOTWORK" />
+			<div element="ID_WOTC_PHB24_ARCHETYPE_FEATURE_BARD_DANCE_INSPIRING_MOVEMENT" />
+			<div element="ID_WOTC_PHB24_ARCHETYPE_FEATURE_BARD_DANCE_TANDEM_FOOTWORK" />
+			<div element="ID_WOTC_PHB24_ARCHETYPE_FEATURE_BARD_DANCE_LEADING_EVASION" />
+		</description>
+		<sheet display="false" />
+		<rules>
+			<grant type="Archetype Feature" id="ID_WOTC_PHB24_ARCHETYPE_FEATURE_BARD_DANCE_DAZZLING_FOOTWORK" level="3" />
+			<grant type="Archetype Feature" id="ID_WOTC_PHB24_ARCHETYPE_FEATURE_BARD_DANCE_INSPIRING_MOVEMENT" level="6" />
+			<grant type="Archetype Feature" id="ID_WOTC_PHB24_ARCHETYPE_FEATURE_BARD_DANCE_TANDEM_FOOTWORK" level="6" />
+			<grant type="Archetype Feature" id="ID_WOTC_PHB24_ARCHETYPE_FEATURE_BARD_DANCE_LEADING_EVASION" level="14" />
+		</rules>
+	</element>
+
+	<element name="Level 3: Dazzling Footwork" type="Archetype Feature" source="Player’s Handbook 2024" id="ID_WOTC_PHB24_ARCHETYPE_FEATURE_BARD_DANCE_DAZZLING_FOOTWORK">
+		<requirements>!ID_INTERNAL_PHB24_FEATURE_REPLACEMENT_BARD_DANCE_DAZZLING_FOOTWORK</requirements>
+		<description>
+			<p>While you aren’t wearing armor or wielding a Shield, you gain the following benefits:</p>
+			<p class="indent"><em><strong>Dance Virtuoso.</strong></em> You have Advantage on any Charisma (Performance) check you make that involves you dancing.</p>
+			<p class="indent"><em><strong>Unarmored Defense.</strong></em> Your base Armor Class equals 10 plus your Dexterity and Charisma modifiers.</p>
+			<p class="indent"><em><strong>Agile Strikes.</strong></em> When you expend a use of your Bardic Inspiration as part of an action, a Bonus Action, or a Reaction, you can make one Unarmed Strike as part of that action, Bonus Action, or Reaction.</p>
+			<p class="indent"><em><strong>Bardic Damage.</strong></em> You can use Dexterity instead of Strength for the attack rolls of your Unarmed Strikes. When you deal damage with an Unarmed Strike, you can deal Bludgeoning damage equal to a roll of your Bardic Inspiration die plus your Dexterity modifier, instead of the strike’s normal damage. This roll doesn’t expend the die.</p>
+		</description>
+		<sheet alt="Dazzling Footwork">
+			<description>While you aren’t wearing armor or wielding a Shield, your base AC is {{ac:dazzling footwork}}. You have Advantage on any Charisma (Performance) check you make that involves you dancing. &#13;
+			Additionally, you can use Dexterity instead of Strength for your Unarmed Strikes, which can deal 1d{{bardic-inspiration:dice}}+{{dexterity:modifier}} bludgeoning damage instead of the normal amount. Whenever you expend a use of your Bardic Inspiration, you can make one Unarmed Strike as part of that action, Bonus Action or Reaction.</description>
+		</sheet>
+		<rules>
+			<stat name="ac:dazzling footwork" value="10" bonus="base" />
+			<stat name="ac:dazzling footwork" value="dexterity:modifier" bonus="primary ability" />
+			<stat name="ac:dazzling footwork" value="charisma:modifier" bonus="secondary ability" />
+			<stat name="ac:calculation" value="ac:dazzling footwork" bonus="calculation" equipped="[armor:none],[shield:none]" alt="Dazzling Footwork (Bard)" />
+		</rules>
+	</element>
+
+	<element name="Level 6: Inspiring Movement" type="Archetype Feature" source="Player’s Handbook 2024" id="ID_WOTC_PHB24_ARCHETYPE_FEATURE_BARD_DANCE_INSPIRING_MOVEMENT">
+		<requirements>!ID_INTERNAL_PHB24_FEATURE_REPLACEMENT_BARD_DANCE_INSPIRING_MOVEMENT</requirements>
+		<description>
+			<p>When an enemy you can see ends its turn within 5 feet of you, you can take a Reaction and expend one use of your Bardic Inspiration to move up to half your Speed. Then one ally of your choice within 30 feet of you can also move up to half their Speed using their Reaction.</p>
+			<p class="indent">None of this feature’s movement provokes Opportunity Attacks.</p>
+		</description>
+		<sheet alt="Inspiring Movement" action="Reaction" usage="Bardic Inspiration">
+			<description>When an enemy you can see ends its turn within 5 feet of you, you can move up to half of your Speed. Then one ally of your choice within 30 feet of you can also move up to half their Speed using their Reaction. Neither movement provokes Opportunity Attacks.</description>
+		</sheet>
+	</element>
+
+	<element name="Level 6: Tandem Footwork" type="Archetype Feature" source="Player’s Handbook 2024" id="ID_WOTC_PHB24_ARCHETYPE_FEATURE_BARD_DANCE_TANDEM_FOOTWORK">
+		<requirements>!ID_INTERNAL_PHB24_FEATURE_REPLACEMENT_BARD_DANCE_TANDEM_FOOTWORK</requirements>
+		<description>
+			<p>When you roll Initiative, you can expend one use of your Bardic Inspiration if you don’t have the Incapacitated condition. When you do so, roll your Bardic Inspiration die; you and each ally within 30 feet of you who can see or hear you gains a bonus to Initiative equal to the number rolled.</p>
+		</description>
+		<sheet alt="Tandem Footwork" usage="Bardic Inspiration">
+			<description>When you roll Initiative and don't have the Incapacitated condition, you can grant yourself and each ally within 30 feet of you who can see or hear you a 1d{{bardic-inspiration:dice}} bonus to Initiative.</description>
+		</sheet>
+	</element>
+
+	<element name="Level 14: Leading Evasion" type="Archetype Feature" source="Player’s Handbook 2024" id="ID_WOTC_PHB24_ARCHETYPE_FEATURE_BARD_DANCE_LEADING_EVASION">
+		<requirements>!ID_INTERNAL_PHB24_FEATURE_REPLACEMENT_BARD_DANCE_LEADING_EVASION</requirements>
+		<description>
+			<p>When you are subjected to an effect that allows you to make a Dexterity saving throw to take only half damage, you instead take no damage if you succeed on the saving throw and only half damage if you fail. If any creatures within 5 feet of you are making the same Dexterity saving throw, you can share this benefit with them for that save.</p>
+			<p class="indent">You can’t use this feature if you have the Incapacitated condition.</p>
+		</description>
+		<sheet alt="Leading Evasion">
+			<description>When you aren't Incapacitated and are subjected to an effect that allows you to make a Dexterity saving throw to take only half damage, you instead take no damage if you succeed on the saving throw and only half damage if you fail. If any creatures within 5 feet of you are making the same Dexterity saving throw, you can share this benefit with them for that save.</description>
+		</sheet>
+	</element>
+
+	<!--Feature Replacement Grants-->
+	<element name="Dazzling Footwork Feature Replacement" type="Grants" source="Internal" id="ID_INTERNAL_PHB24_FEATURE_REPLACEMENT_BARD_DANCE_DAZZLING_FOOTWORK" />
+	<element name="Inspiring Movement Feature Replacement" type="Grants" source="Internal" id="ID_INTERNAL_PHB24_FEATURE_REPLACEMENT_BARD_DANCE_INSPIRING_MOVEMENT" />
+	<element name="Tandem Footwork Feature Replacement" type="Grants" source="Internal" id="ID_INTERNAL_PHB24_FEATURE_REPLACEMENT_BARD_DANCE_TANDEM_FOOTWORK" />
+	<element name="Leading Evasion Feature Replacement" type="Grants" source="Internal" id="ID_INTERNAL_PHB24_FEATURE_REPLACEMENT_BARD_DANCE_LEADING_EVASION" />
+
+</elements>

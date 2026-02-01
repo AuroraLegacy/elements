@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<elements>
+	<info>
+		<name>Aasimar</name>
+		<description>The Aasimar species from the Player’s Handbook 2024.</description>
+		<author url="https://dndstore.wizards.com/us/en/product/1001494/2024-player-s-handbook-digital-plus-physical-bundle">Wizards of the Coast</author>
+		<update version="0.0.1">
+			<file name="race-aasimar.xml" url="https://raw.githubusercontent.com/AuroraLegacy/elements/master/core/players-handbook-2024/races/race-aasimar.xml" />
+		</update>
+	</info>
+	
+	<element name="Aasimar" type="Race" source="Player’s Handbook 2024" id="ID_WOTC_PHB24_RACE_AASIMAR">
+		<description>
+			<p>Aasimar (pronounced AH-sih-mar) are mortals who carry a spark of the Upper Planes within their souls. Whether descended from an angelic being or infused with celestial power, they can fan that spark to bring light, healing, and heavenly fury.</p>
+			<p class="indent">Aasimar can arise among any population of mortals. They resemble their parents, but they live for up to 160 years and have features that hint at their celestial heritage, such as metallic freckles, luminous eyes, a halo, or the skin color of an angel (silver, opalescent green, or coppery red). These features start subtle and become obvious when the aasimar learns to reveal their full celestial nature.</p>
+			<h5>AASIMAR TRAITS</h5>
+			<ul class="unstyled" style="text-indent:-1em; margin-left:1em; margin-bottom:5px">
+				<li><strong>Creature Type:</strong> Humanoid</li>
+				<li><strong>Size:</strong> Medium (about 4–7 feet tall) or Small (about 2–4 feet tall), chosen when you select this species</li>
+				<li><strong>Speed:</strong> 30 feet</li>
+			</ul>
+			<p>As an Aasimar, you have these special traits.</p>
+			<p class="indent"><strong><em>Celestial Resistance.</em></strong> You have Resistance to Necrotic damage and Radiant damage.</p>
+			<p class="indent"><strong><em>Darkvision.</em></strong> You have Darkvision with a range of 60 feet.</p> 
+			<p class="indent"><strong><em>Healing Hands.</em></strong> As a Magic action, you touch a creature and roll a number of d4s equal to your Proficiency Bonus. The creature regains a number of Hit Points equal to the total rolled. Once you use this trait, you can't use it again until you finish a Long Rest.</p>
+			<p class="indent"><strong><em>Light Bearer.</em></strong> You know the <i>Light</i> cantrip. Charisma is your spellcasting ability for it.</p>
+			<p class="indent"><strong><em>Celestial Revelation.</em></strong> When you reach character level 3, you can transform as a Bonus Action using one of the options below (choose the option each time you transform). The transformation lasts for 1 minute or until you end it (no action required). Once you transform, you can’t do so again until you finish a Long Rest.</p>
+			<p class="indent">Once on each of your turns before the transformation ends, you can deal extra damage to one target when you deal damage to it with an attack or a spell. The extra damage equals your Proficiency Bonus, and the extra damage’s type is either Necrotic for Necrotic Shroud or Radiant for Heavenly Wings and Inner Radiance.</p>
+			<p class="indent" style="margin-bottom:5px">Here are the transformation options:</p>
+			<ul class="unstyled" style="text-indent:-1em; margin-left:1em">
+				<li><strong>Heavenly Wings.</strong> Two spectral wings sprout from your back temporarily. Until the transformation ends, you have a Fly Speed equal to your Speed.</li>
+				<li><strong>Inner Radiance.</strong> Searing light temporarily radiates from your eyes and mouth. For the duration, you shed Bright Light in a 10-foot radius and Dim Light for an additional 10 feet, and at the end of each of your turns, each creature within 10 feet of you takes Radiant damage equal to your Proficiency Bonus.</li>
+				<li><strong>Necrotic Shroud.</strong> Your eyes briefly become pools of darkness, and flightless wings sprout from your back temporarily. Creatures other than your allies within 10 feet of you must succeed on a Charisma saving throw (DC 8 plus your Charisma modifier and Proficiency Bonus) or have the Frightened condition until the end of your next turn.</li>
+			</ul>
+		</description>
+		<sheet display="false" />
+		<rules>
+			<select type="Ability Score Improvement" name="Ability Score Improvement Option (Aasimar)" supports="Custom Ability Score Improvement Option" requirements="!ID_INTERNAL_GRANTS_BACKGROUND_ASI" />
+			<select type="Racial Trait" name="Size (Aasimar)" supports="ID_INTERNAL_RACIAL_TRAIT_SMALL|ID_INTERNAL_RACIAL_TRAIT_MEDIUM" />
+			<stat name="speed" value="30" bonus="base" />
+
+			<grant type="Language" id="ID_WOTC_PHB24_LANGUAGE_COMMON" requirements="!ID_WOTC_TCOE_OPTION_CUSTOMIZED_LANGUAGE" />
+			<select type="Language" name="Language (Aasimar)" supports="Standard" number="2" requirements="!ID_WOTC_TCOE_OPTION_CUSTOMIZED_LANGUAGE" />
+			<select type="Language" name="Customized Language (Aasimar)" supports="Custom Race Language"  requirements="ID_WOTC_TCOE_OPTION_CUSTOMIZED_LANGUAGE" number="3" />
+
+			<grant type="Vision" id="ID_VISION_DARKVISION" requirements="!ID_INTERNAL_PHB24_RACIAL_TRAIT_REPLACEMENT_AASIMAR_DARKVISION" />
+			<grant type="Racial Trait" id="ID_WOTC_PHB24_RACIAL_TRAIT_AASIMAR_CELESTIAL_RESISTANCE" />
+			<grant type="Racial Trait" id="ID_WOTC_PHB24_RACIAL_TRAIT_AASIMAR_HEALING_HANDS" />
+			<grant type="Racial Trait" id="ID_WOTC_PHB24_RACIAL_TRAIT_AASIMAR_LIGHT_BEARER" />
+			<grant type="Racial Trait" id="ID_WOTC_PHB24_RACIAL_TRAIT_AASIMAR_CELESTIAL_REVELATION" level="3" />
+		</rules>
+	</element>
+
+	<element name="Celestial Resistance" type="Racial Trait" source="Player’s Handbook 2024" id="ID_WOTC_PHB24_RACIAL_TRAIT_AASIMAR_CELESTIAL_RESISTANCE">
+		<requirements>!ID_INTERNAL_PHB24_RACIAL_TRAIT_REPLACEMENT_AASIMAR_CELESTIAL_RESISTANCE</requirements>
+		<description>
+			<p>You have Resistance to Necrotic damage and Radiant damage.</p>
+		</description>
+		<sheet display="false" />
+		<rules>
+			<grant type="Condition" id="ID_INTERNAL_CONDITION_DAMAGE_RESISTANCE_NECROTIC" />
+			<grant type="Condition" id="ID_INTERNAL_CONDITION_DAMAGE_RESISTANCE_RADIANT" />
+		</rules>
+	</element>
+
+	<element name="Healing Hands" type="Racial Trait" source="Player’s Handbook 2024" id="ID_WOTC_PHB24_RACIAL_TRAIT_AASIMAR_HEALING_HANDS">
+		<requirements>!ID_INTERNAL_PHB24_RACIAL_TRAIT_REPLACEMENT_AASIMAR_HEALING_HANDS</requirements>
+		<description>
+			<p>As a Magic action, you touch a creature and roll a number of d4s equal to your Proficiency Bonus. The creature regains a number of Hit Points equal to the total rolled. Once you use this trait, you can't use it again until you finish a Long Rest.</p>
+		</description>
+		<sheet action="Action" usage="1/Long Rest">
+			<description>You can touch a creature and roll {{proficiency}}d4. The creature regains a number of Hit Points equal to the total rolled.</description>
+		</sheet>
+	</element>
+
+	<element name="Light Bearer" type="Racial Trait" source="Player’s Handbook 2024" id="ID_WOTC_PHB24_RACIAL_TRAIT_AASIMAR_LIGHT_BEARER">
+		<requirements>!ID_INTERNAL_PHB24_RACIAL_TRAIT_REPLACEMENT_AASIMAR_LIGHT_BEARER</requirements>
+		<description>
+			<p>You know the <i>Light</i> cantrip. Charisma is your spellcasting ability for it.</p>
+		</description>
+		<sheet>
+			<description>Charisma is your spellcasting ability for the Light cantrip.</description>
+		</sheet>
+		<rules>
+			<grant type="Spell" id="ID_WOTC_PHB24_SPELL_LIGHT" />
+		</rules>
+	</element>
+
+	<element name="Celestial Revelation" type="Racial Trait" source="Player’s Handbook 2024" id="ID_WOTC_PHB24_RACIAL_TRAIT_AASIMAR_CELESTIAL_REVELATION">
+		<requirements>!ID_INTERNAL_PHB24_RACIAL_TRAIT_REPLACEMENT_AASIMAR_CELESTIAL_REVELATION</requirements>
+		<description>
+			<p>When you reach character level 3, you can transform as a Bonus Action using one of the options below (choose the option each time you transform). The transformation lasts for 1 minute or until you end it (no action required). Once you transform, you can’t do so again until you finish a Long Rest.</p>
+			<p class="indent">Once on each of your turns before the transformation ends, you can deal extra damage to one target when you deal damage to it with an attack or a spell. The extra damage equals your Proficiency Bonus, and the extra damage’s type is either Necrotic for Necrotic Shroud or Radiant for Heavenly Wings and Inner Radiance.</p>
+			<p class="indent" style="margin-bottom:5px">Here are the transformation options:</p>
+			<ul class="unstyled" style="text-indent:-1em; margin-left:1em">
+				<li><strong>Heavenly Wings.</strong> Two spectral wings sprout from your back temporarily. Until the transformation ends, you have a Fly Speed equal to your Speed.</li>
+				<li><strong>Inner Radiance.</strong> Searing light temporarily radiates from your eyes and mouth. For the duration, you shed Bright Light in a 10-foot radius and Dim Light for an additional 10 feet, and at the end of each of your turns, each creature within 10 feet of you takes Radiant damage equal to your Proficiency Bonus.</li>
+				<li><strong>Necrotic Shroud.</strong> Your eyes briefly become pools of darkness, and flightless wings sprout from your back temporarily. Creatures other than your allies within 10 feet of you must succeed on a Charisma saving throw (DC 8 plus your Charisma modifier and Proficiency Bonus) or have the Frightened condition until the end of your next turn.</li>
+			</ul>
+		</description>
+		<sheet action="Bonus Action" usage="1/Long Rest">
+  			<description>You can transform using one of the options below. This transformation lasts for 1 minute or until you end it. While transformed, when you deal damage with an attack or a spell on your turn, you deal an extra {{proficiency}} damage to one tar­get. The damage type is either Necrotic for Necrotic Shroud or Radiant for Heavenly Wings and Inner Radiance. &#13;
+			• Heavenly Wings. Two spectral wings sprout from your back temporarily. You gain a Fly Speed of {{speed}}. &#13;
+			• Inner Radiance. For the duration, searing light radiates from your eyes and mouth shedding Bright Light in a 10-foot radius and Dim Light for an additional 10 feet. At the end of each of your turns, each creature within 10 feet of you takes {{proficiency}} Radiant damage. &#13;
+			• Necrotic Shroud. Creatures other than your allies within 10 feet of you must succeed on a Charisma saving throw (DC{{necrotic shroud:dc}}) or become Frightened until the start of your next turn as your eyes briefly become pools of darkness, and flightless wings sprout from your back.</description>
+		</sheet>
+		<rules>
+			<stat name="necrotic shroud:dc" value="8" bonus="base" />
+			<stat name="necrotic shroud:dc" value="charisma:modifier" bonus="ability" />
+			<stat name="necrotic shroud:dc" value="proficiency" bonus="proficiency" />
+		</rules>
+	</element>
+
+	<!--Racial Trait Replacement Grants-->
+	<element name="Darkvision Trait Replacement" type="Grants" source="Internal" id="ID_INTERNAL_PHB24_RACIAL_TRAIT_REPLACEMENT_AASIMAR_DARKVISION" />
+	<element name="Celestial Resistance Trait Replacement" type="Grants" source="Internal" id="ID_INTERNAL_PHB24_RACIAL_TRAIT_REPLACEMENT_AASIMAR_CELESTIAL_RESISTANCE" />
+	<element name="Healing Hands Trait Replacement" type="Grants" source="Internal" id="ID_INTERNAL_PHB24_RACIAL_TRAIT_REPLACEMENT_AASIMAR_HEALING_HANDS" />
+	<element name="Light Bearer Trait Replacement" type="Grants" source="Internal" id="ID_INTERNAL_PHB24_RACIAL_TRAIT_REPLACEMENT_AASIMAR_LIGHT_BEARER" />
+	<element name="Celestial Revelation Trait Replacement" type="Grants" source="Internal" id="ID_INTERNAL_PHB24_RACIAL_TRAIT_REPLACEMENT_AASIMAR_CELESTIAL_REVELATION" />
+
+</elements>

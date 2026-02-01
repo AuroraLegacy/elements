@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<elements>
+	<info>
+		<name>Wild Magic Sorcery</name>
+		<description>The Wild Magic Sorcery subclass from the Player’s Handbook 2024.</description>
+		<author url="https://dndstore.wizards.com/us/en/product/1001494/2024-player-s-handbook-digital-plus-physical-bundle">Wizards of the Coast</author>
+		<update version="0.0.1">
+			<file name="sorcerer-wild-magic.xml" url="https://raw.githubusercontent.com/AuroraLegacy/elements/master/core/players-handbook-2024/archetypes/sorcerer-wild-magic.xml" />
+		</update>
+	</info>
+
+	<element name="Wild Magic Sorcery" type="Archetype" source="Player’s Handbook 2024" id="ID_WOTC_PHB24_ARCHETYPE_SORCERER_WILD_MAGIC_SORCERY">
+		<supports>Sorcerer Subclass</supports>
+		<description>
+			<p class="flavor">Unleash Chaotic Magic</p>
+			<p>Your innate magic stems from the forces of chaos that underlie the order of creation. You or an ancestor might have endured exposure to raw magic, perhaps through a planar portal leading to Limbo or the Elemental Planes. Perhaps you were blessed by a fey being or marked by a demon. Or your magic could be a fluke with no apparent cause. Whatever its source, this magic churns within you, waiting for any outlet.</p>
+			<div element="ID_WOTC_PHB24_ARCHETYPE_FEATURE_SORCERER_WILD_MAGIC_SORCERY_WILD_MAGIC_SURGE" />
+			<div element="ID_WOTC_PHB24_ARCHETYPE_FEATURE_SORCERER_WILD_MAGIC_SORCERY_TIDES_OF_CHAOS" />
+			<div element="ID_WOTC_PHB24_ARCHETYPE_FEATURE_SORCERER_WILD_MAGIC_SORCERY_BEND_LUCK" />
+			<div element="ID_WOTC_PHB24_ARCHETYPE_FEATURE_SORCERER_WILD_MAGIC_SORCERY_CONTROLLED_CHAOS" />
+			<div element="ID_WOTC_PHB24_ARCHETYPE_FEATURE_SORCERER_WILD_MAGIC_SORCERY_TAMED_SURGE" />
+			<div element="ID_WOTC_PHB24_INFORMATION_SORCERER_WILD_MAGIC_SORCERY_WILD_MAGIC_SURGE_TABLE" />
+		</description>
+		<sheet display="false" />
+		<rules>
+			<grant type="Archetype Feature" id="ID_WOTC_PHB24_ARCHETYPE_FEATURE_SORCERER_WILD_MAGIC_SORCERY_WILD_MAGIC_SURGE" level="3" />
+			<grant type="Archetype Feature" id="ID_WOTC_PHB24_ARCHETYPE_FEATURE_SORCERER_WILD_MAGIC_SORCERY_TIDES_OF_CHAOS" level="3" />
+			<grant type="Archetype Feature" id="ID_WOTC_PHB24_ARCHETYPE_FEATURE_SORCERER_WILD_MAGIC_SORCERY_BEND_LUCK" level="6" />
+			<grant type="Archetype Feature" id="ID_WOTC_PHB24_ARCHETYPE_FEATURE_SORCERER_WILD_MAGIC_SORCERY_CONTROLLED_CHAOS" level="14" />
+			<grant type="Archetype Feature" id="ID_WOTC_PHB24_ARCHETYPE_FEATURE_SORCERER_WILD_MAGIC_SORCERY_TAMED_SURGE" level="18" />
+		</rules>
+	</element>
+
+	<element name="Level 3: Wild Magic Surge" type="Archetype Feature" source="Player’s Handbook 2024" id="ID_WOTC_PHB24_ARCHETYPE_FEATURE_SORCERER_WILD_MAGIC_SORCERY_WILD_MAGIC_SURGE">
+		<requirements>!ID_INTERNAL_PHB24_FEATURE_REPLACEMENT_SORCERER_WILD_MAGIC_SORCERY_WILD_MAGIC_SURGE</requirements>
+		<description>
+			<p>Your spellcasting can unleash surges of untamed magic. Once per turn, you can roll 1d20 immediately after you cast a Sorcerer spell with a spell slot. If you roll a 20, roll on the Wild Magic Surge table to create a magical effect.</p>
+			<p class="indent">If the magical effect is a spell, it is too wild to be affected by your Metamagic.</p>
+			<div element="ID_WOTC_PHB24_INFORMATION_SORCERER_WILD_MAGIC_SORCERY_WILD_MAGIC_SURGE_TABLE" />
+		</description>
+		<sheet alt="Wild Magic Surge" usage="1/Turn">
+			<description>You can roll 1d20 immediately after you cast a Sorcerer spell with a spell slot. If you roll a 20, roll on the Wild Magic Surge table to create a magical effect. If that effect is a spell, it is too wild to be affected by your Metamagic.</description>
+		</sheet>
+	</element>
+
+	<element name="Level 3: Tides of Chaos" type="Archetype Feature" source="Player’s Handbook 2024" id="ID_WOTC_PHB24_ARCHETYPE_FEATURE_SORCERER_WILD_MAGIC_SORCERY_TIDES_OF_CHAOS">
+		<requirements>!ID_INTERNAL_PHB24_FEATURE_REPLACEMENT_SORCERER_WILD_MAGIC_SORCERY_TIDES_OF_CHAOS</requirements>
+		<description>
+			<p>You can manipulate chaos itself to give yourself Advantage on one D20 Test before you roll the d20. Once you do so, you must cast a Sorcerer spell with a spell slot or finish a Long Rest before you can use this feature again.</p>
+			<p class="indent">If you do cast a Sorcerer spell with a spell slot before you finish a Long Rest, you automatically roll on the Wild Magic Surge table.</p>
+		</description>
+		<sheet alt="Tides of Chaos" usage="1/Long Rest">
+			<description>Before you make a D20 Test roll, you can give yourself Advantage on it. &#13;
+			After doing so but before finishing a Long Rest, if you cast a Sorcerer spell with a spell slot, you restore a use of this feature, but must roll on the Wild Magic Surge table.</description>
+		</sheet>
+	</element>
+
+	<element name="Level 6: Bend Luck" type="Archetype Feature" source="Player’s Handbook 2024" id="ID_WOTC_PHB24_ARCHETYPE_FEATURE_SORCERER_WILD_MAGIC_SORCERY_BEND_LUCK">
+		<requirements>!ID_INTERNAL_PHB24_FEATURE_REPLACEMENT_SORCERER_WILD_MAGIC_SORCERY_BEND_LUCK</requirements>
+		<description>
+			<p>You have the ability to twist fate using your wild magic. Immediately after another creature you can see rolls the d20 for a D20 Test, you can take a Reaction and spend 1 Sorcery Point to roll 1d4 and apply the number rolled as a bonus or penalty (your choice) to the d20 roll.</p>
+		</description>
+		<sheet alt="Bend Luck" action="Reaction" usage="Sorcery Point">
+			<description>When another creature you can see rolls the d20 for a D20 Test, you can roll 1d4 and apply the number rolled as a bonus or penalty (your choice) to the d20 roll.</description>
+		</sheet>
+	</element>
+
+	<element name="Level 14: Controlled Chaos" type="Archetype Feature" source="Player’s Handbook 2024" id="ID_WOTC_PHB24_ARCHETYPE_FEATURE_SORCERER_WILD_MAGIC_SORCERY_CONTROLLED_CHAOS">
+		<requirements>!ID_INTERNAL_PHB24_FEATURE_REPLACEMENT_SORCERER_WILD_MAGIC_SORCERY_CONTROLLED_CHAOS</requirements>
+		<description>
+			<p>You gain a modicum of control over the surges of your wild magic. Whenever you roll on the Wild Magic Surge table, you can roll twice and use either number.</p>
+		</description>
+		<sheet alt="Controlled Chaos">
+			<description>Whenever you roll on the Wild Magic Surge table, you can roll twice and use either number.</description>
+		</sheet>
+	</element>
+
+	<element name="Level 18: Tamed Surge" type="Archetype Feature" source="Player’s Handbook 2024" id="ID_WOTC_PHB24_ARCHETYPE_FEATURE_SORCERER_WILD_MAGIC_SORCERY_TAMED_SURGE">
+		<requirements>!ID_INTERNAL_PHB24_FEATURE_REPLACEMENT_SORCERER_WILD_MAGIC_SORCERY_TAMED_SURGE</requirements>
+		<description>
+			<p>Immediately after you cast a Sorcerer spell with a spell slot, you can create an effect of your choice from the Wild Magic Surge table instead of rolling on that table. You can choose any effect in the table except for the final row, and if the chosen effect involves a roll, you must make it.</p>
+			<p class="indent">Once you use this feature, you can’t do so again until you finish a Long Rest.</p>
+		</description>
+		<sheet alt="Tamed Surge" usage="1/Long Rest">
+			<description>After you cast a Sorcerer spell with a spell slot, you can create an effect of your choice from the Wild Magic Surge table instead of rolling on it. You can choose any effect in the table except for the final row, and if the chosen effect involves a roll, you must make it.</description>
+		</sheet>
+	</element>
+
+	<!-- Wild Surge Table Information Element -->
+	<element name="Wild Magic Surge Table" type="Information" source="Player’s Handbook 2024" id="ID_WOTC_PHB24_INFORMATION_SORCERER_WILD_MAGIC_SORCERY_WILD_MAGIC_SURGE_TABLE">
+		<compendium display="false" />
+		<description>
+			<table class="class-features">
+				<thead>
+					<tr><td class="col-10">d100</td><td class="left">Effect</td></tr>
+				</thead>
+				<tr><td>01-04</td><td class="left">Roll on this table at the start of each of your turns for the next minute, ignoring this result on subsequent rolls.</td></tr>
+				<tr><td>05-08</td><td class="left">A creature that is Friendly toward you appears in a random unoccupied space within 60 feet of you. The creature is under the DM’s control and disappears 1 minute later. Roll 1d4 to determine the creature: on a 1, a <b>Modron Duodrone</b> appears; on a 2, a <b>Flumph</b> appears; on a 3, a <b>Modron Monodrone</b> appears; on a 4, a <b>Unicorn</b> appears. See the <i>Monster Manual</i> for the creature’s stat block.</td></tr>
+				<tr><td>09-12</td><td class="left">For the next minute, you regain 5 Hit Points at the start of each of your turns.</td></tr>
+				<tr><td>13-16</td><td class="left">Creatures have Disadvantage on saving throws against the next spell you cast in the next minute that involves a saving throw.</td></tr>
+				<tr><td>17-20</td><td class="left">You are subjected to an effect that lasts for 1 minute unless its description says otherwise. Roll 1d8 to determine the effect: on a <b>1</b>, you’re surrounded by faint, ethereal music only you and creatures within 5 feet of you can hear; on a <b>2</b>, your size increases by one size category; on a <b>3</b>, you grow a long beard made of feathers that remains until you sneeze, at which point the feathers explode from your face and vanish; on a <b>4</b>, you must shout when you speak; on a <b>5</b>, illusory butterflies flutter in the air within 10 feet of you; on a <b>6</b>, an eye appears on your forehead, granting you Advantage on Wisdom (Perception) checks; on an <b>7</b>, pink bubbles float out of your mouth whenever you speak; on an <b>8</b>, your skin turns a vibrant shade of blue for 24 hours or until the effect is ended by a <i>Remove Curse</i> spell.</td></tr>
+				<tr><td>21-24</td><td class="left">For the next minute, all your spells with a casting time of an action have a casting time of a Bonus Action.</td></tr>
+				<tr><td>25-28</td><td class="left">You are transported to the Astral Plane until the end of your next turn. You then return to the space you previously occupied or the nearest unoccupied space if that space is occupied.</td></tr>
+				<tr><td>29-32</td><td class="left">The next time you cast a spell that deals damage within the next minute, don’t roll the spell’s damage dice for the damage. Instead use the highest number possible for each damage die.</td></tr>
+				<tr><td>33-36</td><td class="left">You have Resistance to all damage for the next minute.</td></tr>
+				<tr><td>37-40</td><td class="left">You turn into a potted plant until the start of your next turn. While you’re a plant, you have the Incapacitated condition and have Vulnerability to all damage. If you drop to 0 Hit Points, your pot breaks, and your form reverts.</td></tr>
+				<tr><td>41-44</td><td class="left">For the next minute, you can teleport up to 20 feet as a Bonus Action on each of your turns.</td></tr>
+				<tr><td>45-48</td><td class="left">You and up to three creatures you choose within 30 feet of you have the Invisible condition for 1 minute. This invisibility ends on a creature immediately after it makes an attack roll, deals damage, or casts a spell.</td></tr>
+				<tr><td>49-52</td><td class="left">A spectral shield hovers near you for the next minute, granting you a +2 bonus to AC and immunity to <i>Magic Missile</i>.</td></tr>
+				<tr><td>53-56</td><td class="left">You can take one extra action on this turn.</td></tr>
+				<tr><td>57-60</td><td class="left">You cast a random spell. If the spell normally requires Concentration, it doesn’t require Concentration in this case; the spell lasts for its full duration. Roll 1d10 to determine the spell: on a <b>1</b>, <i>Confusion</i>; on a <b>2</b>, <i>Fireball</i>; on a <b>3</b>, <i>Fog Cloud</i>; on a <b>4</b>, <i>Fly</i> (cast on a random creature within 60 feet of you), on a <b>5</b>, <i>Grease</i>; on a <b>6</b>, <i>Levitate</i> (cast on yourself); on a <b>7</b>, <i>Magic Missile</i> (cast as a level 5 spell); on an <b>8</b>, <i>Mirror Image</i>; on a <b>9</b>, <i>Polymorph</i> (cast on yourself), and if you fail the saving throw, you turn into a <b>Goat</b>; on a <b>10</b>, <i>See Invisibility</i>.</td></tr>
+				<tr><td>61-64</td><td class="left">For the next minute, any flammable, nonmagical object you touch that isn’t being worn or carried by another creature bursts into flame, takes 1d4 Fire damage, and is burning.</td></tr>
+				<tr><td>65-68</td><td class="left">If you die within the next hour, you immediately revive as if by the <i>Reincarnate</i> spell.</td></tr>
+				<tr><td>69-72</td><td class="left">You have the Frightened condition until the end of your next turn. The DM determines the source of your fear.</td></tr>
+				<tr><td>73-76</td><td class="left">You teleport up to 60 feet to an unoccupied space you can see.</td></tr>
+				<tr><td>77-80</td><td class="left">A random creature within 60 feet of you has the Poisoned condition for 1d4 hours.</td></tr>
+				<tr><td>81-84</td><td class="left">You radiate Bright Light in a 30-foot radius for the next minute. Any creature that ends its turn within 5 feet of you has the Blinded condition until the end of its next turn.</td></tr>
+				<tr><td>85-88</td><td class="left">Up to three creatures of your choice that you can see within 30 feet of you take 1d10 Necrotic damage. You regain Hit Points equal to the sum of the Necrotic damage dealt.</td></tr>
+				<tr><td>89-92</td><td class="left">Up to three creatures of your choice that you can see within 30 feet of you take 4d10 Lightning damage.</td></tr>
+				<tr><td>93-96</td><td class="left">You and all creatures within 30 feet of you have Vulnerability to Piercing damage for the next minute.</td></tr>
+				<tr><td>97-00</td><td class="left">Roll 1d6 On a <b>1</b>, you regain 2d10 Hit Points; on a <b>2</b>, one ally of your choice within 300 feet of you regains 2d10 Hit Points; on a <b>3</b>, you regain your lowest-level expended spell slot; on a <b>4</b>, one ally of your choice within 300 feet of you regains their lowest-level expended spell slot; on a <b>5</b>, you regain all your expended Sorcery Points; on a <b>6</b>, all the effects of row 17–20 affect you simultaneously.</td></tr>
+			</table>
+		</description>
+	</element>
+
+	<!--Feature Replacement Grants-->
+	<element name="Wild Magic Surge Feature Replacement" type="Grants" source="Internal" id="ID_INTERNAL_PHB24_FEATURE_REPLACEMENT_SORCERER_WILD_MAGIC_SORCERY_WILD_MAGIC_SURGE" />
+	<element name="Tides of Chaos Feature Replacement" type="Grants" source="Internal" id="ID_INTERNAL_PHB24_FEATURE_REPLACEMENT_SORCERER_WILD_MAGIC_SORCERY_TIDES_OF_CHAOS" />
+	<element name="Bend Luck Feature Replacement" type="Grants" source="Internal" id="ID_INTERNAL_PHB24_FEATURE_REPLACEMENT_SORCERER_WILD_MAGIC_SORCERY_BEND_LUCK" />
+	<element name="Controlled Chaos Feature Replacement" type="Grants" source="Internal" id="ID_INTERNAL_PHB24_FEATURE_REPLACEMENT_SORCERER_WILD_MAGIC_SORCERY_CONTROLLED_CHAOS" />
+	<element name="Tamed Surge Feature Replacement" type="Grants" source="Internal" id="ID_INTERNAL_PHB24_FEATURE_REPLACEMENT_SORCERER_WILD_MAGIC_SORCERY_TAMED_SURGE" />
+</elements>

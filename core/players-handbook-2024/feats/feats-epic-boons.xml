@@ -1,0 +1,383 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<elements>
+	<info>
+		<name>Epic Boon Category Feats</name>
+		<description>The Epic Boon Category Feats from the Player’s Handbook 2024.</description>
+		<author url="https://dndstore.wizards.com/us/en/product/1001494/2024-player-s-handbook-digital-plus-physical-bundle">Wizards of the Coast</author>
+		<update version="0.0.1">
+			<file name="feats-epic-boons.xml" url="https://raw.githubusercontent.com/AuroraLegacy/elements/master/core/players-handbook-2024/feats/feats-epic-boons.xml" />
+		</update>
+	</info>
+		
+	<element name="Boon of Combat Prowess" type="Feat" source="Player’s Handbook 2024" id="ID_WOTC_PHB24_FEAT_BOON_OF_COMBAT_PROWESS">
+		<requirements>[level:19]</requirements>
+		<supports>Epic Boon</supports>
+		<prerequisite>Level 19+</prerequisite>
+		<description>
+			<p class="flavor">Epic Boon Feat (Prerequisite: Level 19+)</p>
+			<p>You gain the following benefits.</p>
+			<p class="indent"><b><i>Ability Score Increase.</i></b> Increase one ability score of your choice by 1, to a maximum of 30.</p>
+			<p class="indent"><b><i>Peerless Aim.</i></b> When you miss with an attack roll, you can hit instead. Once you use this benefit, you can't use it again until the start of your next turn.</p>
+		</description>
+		<sheet usage="1/Round">
+			<description>When you miss with an attack roll, you can hit instead.</description>
+		</sheet>
+		<rules>
+			<select type="Ability Score Improvement" name="Ability Score Increase (Boon of Combat Prowess)" supports="Boon Ability Score Increase" />
+		</rules>
+	</element>
+
+	<element name="Boon of Dimensional Travel" type="Feat" source="Player’s Handbook 2024" id="ID_WOTC_PHB24_FEAT_BOON_OF_DIMENSIONAL_TRAVEL">
+		<requirements>[level:19]</requirements>
+		<supports>Epic Boon</supports>
+		<prerequisite>Level 19+</prerequisite>
+		<description>
+			<p class="flavor">Epic Boon Feat (Prerequisite: Level 19+)</p>
+			<p>You gain the following benefits.</p>
+			<p class="indent"><b><i>Ability Score Increase.</i></b> Increase one ability score of your choice by 1, to a maximum of 30.</p>
+			<p class="indent"><b><i>Blink Steps.</i></b> Immediately after you take the Attack action or the Magic action, you can teleport up to 30 feet to an unoccupied space you can see.</p>
+		</description>
+		<sheet>
+			<description>Immediately after you take the Attack action or the Magic action, you can teleport up to 30ft. to an unoccupied space you can see.</description>
+		</sheet>
+		<rules>
+			<select type="Ability Score Improvement" name="Ability Score Increase (Boon of Dimensional Travel)" supports="Boon Ability Score Increase" />
+		</rules>
+	</element>
+
+	<element name="Boon of Energy Resistance" type="Feat" source="Player’s Handbook 2024" id="ID_WOTC_PHB24_FEAT_BOON_OF_ENERGY_RESISTANCE">
+		<requirements>[level:19]</requirements>
+		<supports>Epic Boon</supports>
+		<prerequisite>Level 19+</prerequisite>
+		<description>
+			<p class="flavor">Epic Boon Feat (Prerequisite: Level 19+)</p>
+			<p>You gain the following benefits.</p>
+			<p class="indent"><b><i>Ability Score Increase.</i></b> Increase one ability score of your choice by 1, to a maximum of 30.</p>
+			<p class="indent"><b><i>Energy Resistances.</i></b> You gain Resistance to two of the following damage types of your choicer Acid, Cold, Fire, Lightning, Necrotic, Poison, Psychic, Radiant, or Thunder. Whenever you finish a Long Rest, you can change your choices.</p>
+			<p class="indent"><b><i>Energy Redirection.</i></b> When you take damage of one of the types chosen for the Energy Resistances benefit, you can take a Reaction to direct damage of the same type toward another creature you can see within 60 feet of yourself that isn't behind Total Cover. If you do so, that creature must succeed on a Dexterity saving throw (DC 8 plus your Constitution modifier and Proficiency Bonus) or take damage equal to 2d12 plus your Constitution modifier.</p>
+		</description>
+		<sheet action="Reaction">
+			<description>When you take damage of one of the types chosen for this Boon, you can direct damage of the same type toward another creature you can see within 60ft. of yourself that isn't behind Total Cover. If you do so, that creature must succeed on a DC{{energy redirection:dc}} Dexterity saving throw or take 2d12+{{constitution:modifier}} damage.</description>
+		</sheet>
+		<rules>
+			<select type="Ability Score Improvement" name="Ability Score Increase (Boon of Energy Resistance)" supports="Boon Ability Score Increase" />
+			<select type="Feat Feature" name="Resistance Type (Boon of Energy Resistance)" supports="PHB24 Boon of Energy Resistance" number="2" />
+			<stat name="energy redirection:dc" value="8" bonus="base" />
+            <stat name="energy redirection:dc" value="proficiency" bonus="proficiency" />
+			<stat name="energy redirection:dc" value="constitution:modifier" bonus="ability" />
+ 		</rules>
+	</element>
+	<element name="Acid" type="Feat Feature" source="Player’s Handbook 2024" id="ID_WOTC_PHB24_FEAT_FEATURE_BOON_OF_ENERGY_RESISTANCE_ACID">
+		<compendium display="false" />
+		<supports>PHB24 Boon of Energy Resistance</supports>
+		<description>
+			<p>You gain Resistance to Acid damage. Additionally, when you take Acid damage, you can take a Reaction to to direct damage of the same type toward another creature you can see within 60 feet of yourself that isn't behind Total Cover.</p>
+		</description>
+		<sheet display="false" />
+		<rules>
+			<grant type="Condition" id="ID_INTERNAL_CONDITION_DAMAGE_RESISTANCE_ACID" />
+		</rules>
+	</element>
+	<element name="Cold" type="Feat Feature" source="Player’s Handbook 2024" id="ID_WOTC_PHB24_FEAT_FEATURE_BOON_OF_ENERGY_RESISTANCE_COLD">
+		<compendium display="false" />
+		<supports>PHB24 Boon of Energy Resistance</supports>
+		<description>
+			<p>You gain Resistance to Cold damage. Additionally, when you take Cold damage, you can take a Reaction to to direct damage of the same type toward another creature you can see within 60 feet of yourself that isn't behind Total Cover.</p>
+		</description>
+		<sheet display="false" />
+		<rules>
+			<grant type="Condition" id="ID_INTERNAL_CONDITION_DAMAGE_RESISTANCE_COLD" />
+		</rules>
+	</element>
+	<element name="Fire" type="Feat Feature" source="Player’s Handbook 2024" id="ID_WOTC_PHB24_FEAT_FEATURE_BOON_OF_ENERGY_RESISTANCE_FIRE">
+		<compendium display="false" />
+		<supports>PHB24 Boon of Energy Resistance</supports>
+		<description>
+			<p>You gain Resistance to Fire damage. Additionally, when you take Fire damage, you can take a Reaction to to direct damage of the same type toward another creature you can see within 60 feet of yourself that isn't behind Total Cover.</p>
+		</description>
+		<sheet display="false" />
+		<rules>
+			<grant type="Condition" id="ID_INTERNAL_CONDITION_DAMAGE_RESISTANCE_FIRE" />
+		</rules>
+	</element>
+	<element name="Lightning" type="Feat Feature" source="Player’s Handbook 2024" id="ID_WOTC_PHB24_FEAT_FEATURE_BOON_OF_ENERGY_RESISTANCE_LIGHTNING">
+		<compendium display="false" />
+		<supports>PHB24 Boon of Energy Resistance</supports>
+		<description>
+			<p>You gain Resistance to Lightning damage. Additionally, when you take Lightning damage, you can take a Reaction to to direct damage of the same type toward another creature you can see within 60 feet of yourself that isn't behind Total Cover.</p>
+		</description>
+		<sheet display="false" />
+		<rules>
+			<grant type="Condition" id="ID_INTERNAL_CONDITION_DAMAGE_RESISTANCE_LIGHTNING" />
+		</rules>
+	</element>
+	<element name="Necrotic" type="Feat Feature" source="Player’s Handbook 2024" id="ID_WOTC_PHB24_FEAT_FEATURE_BOON_OF_ENERGY_RESISTANCE_NECROTIC">
+		<compendium display="false" />
+		<supports>PHB24 Boon of Energy Resistance</supports>
+		<description>
+			<p>You gain Resistance to Necrotic damage. Additionally, when you take Necrotic damage, you can take a Reaction to to direct damage of the same type toward another creature you can see within 60 feet of yourself that isn't behind Total Cover.</p>
+		</description>
+		<sheet display="false" />
+		<rules>
+			<grant type="Condition" id="ID_INTERNAL_CONDITION_DAMAGE_RESISTANCE_NECROTIC" />
+		</rules>
+	</element>
+	<element name="Poison" type="Feat Feature" source="Player’s Handbook 2024" id="ID_WOTC_PHB24_FEAT_FEATURE_BOON_OF_ENERGY_RESISTANCE_POISON">
+		<compendium display="false" />
+		<supports>PHB24 Boon of Energy Resistance</supports>
+		<description>
+			<p>You gain Resistance to Poison damage. Additionally, when you take Poison damage, you can take a Reaction to to direct damage of the same type toward another creature you can see within 60 feet of yourself that isn't behind Total Cover.</p>
+		</description>
+		<sheet display="false" />
+		<rules>
+			<grant type="Condition" id="ID_INTERNAL_CONDITION_DAMAGE_RESISTANCE_POISON" />
+		</rules>
+	</element>
+	<element name="Psychic" type="Feat Feature" source="Player’s Handbook 2024" id="ID_WOTC_PHB24_FEAT_FEATURE_BOON_OF_ENERGY_RESISTANCE_PSYCHIC">
+		<compendium display="false" />
+		<supports>PHB24 Boon of Energy Resistance</supports>
+		<description>
+			<p>You gain Resistance to Psychic damage. Additionally, when you take Psychic damage, you can take a Reaction to to direct damage of the same type toward another creature you can see within 60 feet of yourself that isn't behind Total Cover.</p>
+		</description>
+		<sheet display="false" />
+		<rules>
+			<grant type="Condition" id="ID_INTERNAL_CONDITION_DAMAGE_RESISTANCE_PSYCHIC" />
+		</rules>
+	</element>
+	<element name="Radiant" type="Feat Feature" source="Player’s Handbook 2024" id="ID_WOTC_PHB24_FEAT_FEATURE_BOON_OF_ENERGY_RESISTANCE_RADIANT">
+		<compendium display="false" />
+		<supports>PHB24 Boon of Energy Resistance</supports>
+		<description>
+			<p>You gain Resistance to Radiant damage. Additionally, when you take Radiant damage, you can take a Reaction to to direct damage of the same type toward another creature you can see within 60 feet of yourself that isn't behind Total Cover.</p>
+		</description>
+		<sheet display="false" />
+		<rules>
+			<grant type="Condition" id="ID_INTERNAL_CONDITION_DAMAGE_RESISTANCE_RADIANT" />
+		</rules>
+	</element>
+	<element name="Thunder" type="Feat Feature" source="Player’s Handbook 2024" id="ID_WOTC_PHB24_FEAT_FEATURE_BOON_OF_ENERGY_RESISTANCE_THUNDER">
+		<compendium display="false" />
+		<supports>PHB24 Boon of Energy Resistance</supports>
+		<description>
+			<p>You gain Resistance to Thunder damage. Additionally, when you take Thunder damage, you can take a Reaction to to direct damage of the same type toward another creature you can see within 60 feet of yourself that isn't behind Total Cover.</p>
+		</description>
+		<sheet display="false" />
+		<rules>
+			<grant type="Condition" id="ID_INTERNAL_CONDITION_DAMAGE_RESISTANCE_THUNDER" />
+		</rules>
+	</element>
+
+	<element name="Boon of Fate" type="Feat" source="Player’s Handbook 2024" id="ID_WOTC_PHB24_FEAT_BOON_OF_FATE">
+		<requirements>[level:19]</requirements>
+		<supports>Epic Boon</supports>
+		<prerequisite>Level 19+</prerequisite>
+		<description>
+			<p class="flavor">Epic Boon Feat (Prerequisite: Level 19+)</p>
+			<p>You gain the following benefits.</p>
+			<p class="indent"><b><i>Ability Score Increase.</i></b> Increase one ability score of your choice by 1, to a maximum of 30.</p>
+			<p class="indent"><b><i>Improve Fate.</i></b> When you or another creature within 60 feet of you succeeds on or fails a D20 Test, you can roll 2d4 and apply the total rolled as a bonus or penalty to the d20 roll. Once you use this benefit, you can't use it again until you roll Initiative or finish a Short or Long Rest.</p>
+		</description>
+		<sheet usage="1/Short Rest">
+			<description>When you or another creature within 60ft. of you succeeds on or fails a D20 Test, you can roll 2d4 and apply the total rolled as a bonus or penalty to the d20 roll. You also regain a use of this feature whenever you roll Initiative.</description>
+		</sheet>
+		<rules>
+			<select type="Ability Score Improvement" name="Ability Score Increase (Boon of Fate)" supports="Boon Ability Score Increase" />
+		</rules>
+	</element>
+
+	<element name="Boon of Fortitude" type="Feat" source="Player’s Handbook 2024" id="ID_WOTC_PHB24_FEAT_BOON_OF_FORTITUDE">
+		<requirements>[level:19]</requirements>
+		<supports>Epic Boon</supports>
+		<prerequisite>Level 19+</prerequisite>
+		<description>
+			<p class="flavor">Epic Boon Feat (Prerequisite: Level 19+)</p>
+			<p>You gain the following benefits.</p>
+			<p class="indent"><b><i>Ability Score Increase.</i></b> Increase one ability score of your choice by 1, to a maximum of 30.</p>
+			<p class="indent"><b><i>Fortified Health.</i></b> Your Hit Point maximum increases by 40. In addition, whenever you regain Hit Points, you can regain additional Hit Points equal to your Constitution modifier. Once you've regained these additional Hit Points, you can't do so again until the start of your next turn.</p>
+		</description>
+		<sheet usage="1/Turn">
+			<description>Whenever you regain HP, you can regain {{constitution:modifier}} additional HP.</description>
+		</sheet>
+		<rules>
+			<select type="Ability Score Improvement" name="Ability Score Increase (Boon of Fortitude)" supports="Boon Ability Score Increase" />
+			<stat name="hp" value="40" />
+		</rules>
+	</element>
+
+	<element name="Boon of Irresistible Offense" type="Feat" source="Player’s Handbook 2024" id="ID_WOTC_PHB24_FEAT_BOON_OF_IRRESISTIBLE_OFFENSE">
+		<requirements>[level:19]</requirements>
+		<supports>Epic Boon</supports>
+		<prerequisite>Level 19+</prerequisite>
+		<description>
+			<p class="flavor">Epic Boon Feat (Prerequisite: Level 19+)</p>
+			<p>You gain the following benefits.</p>
+			<p class="indent"><b><i>Ability Score Increase.</i></b> Increase your Strength or Dexterity score by 1, to a maximum of 30.</p>
+			<p class="indent"><b><i>Overcome Defenses.</i></b> The Bludgeoning, Piercing, and Slashing damage you deal always ignores Resistance.</p>
+			<p class="indent"><b><i>Overwhelming Strike.</i></b> When you roll a 20 on the d20 for an attack roll, you can deal extra damage to the target equal to the ability score increased by this feat. The extra damage's type is the same as the attack's type.</p>
+		</description>
+		<sheet display="false" />
+		<rules>
+			<select type="Feat Feature" name="Ability Score Increase (Boon of Irresistible Offense)" supports="ID_WOTC_PHB24_FEAT_BOON_OF_IRRESISTIBLE_OFFENSE_STRENGTH|ID_WOTC_PHB24_FEAT_BOON_OF_IRRESISTIBLE_OFFENSE_DEXTERITY" />
+		</rules>
+	</element>
+	<element name="Strength" type="Feat Feature" source="Player’s Handbook 2024" id="ID_WOTC_PHB24_FEAT_BOON_OF_IRRESISTIBLE_OFFENSE_STRENGTH">
+		<compendium display="false" />
+		<description>
+			<p>Increase your Strength by 1, to a maximum of 30. Additionally, when you roll a 20 on the attack roll, you deal extra damage equal to your Strength score.</p>
+		</description>
+		<sheet alt="Boon of Irresistible Offense">
+			<description>The Bludgeoning, Piercing, and Slashing damage you deal always ignores Resistance. &#13;
+			Additionally, whenever you roll a 20 on the d20 for an attack roll, you can deal {{overwhelming strike:damage}} extra damage of the same type as the attack's type to the target.</description>
+		</sheet>
+		<rules>
+			<stat name="overwhelming strike:damage" value="strength:score" bonus="ability" />
+		</rules>
+	</element>
+	<element name="Dexterity" type="Feat Feature" source="Player’s Handbook 2024" id="ID_WOTC_PHB24_FEAT_BOON_OF_IRRESISTIBLE_OFFENSE_DEXTERITY">
+		<compendium display="false" />
+		<description>
+			<p>Increase your Dexterity by 1, to a maximum of 30. Additionally, when you roll a 20 on the attack roll, you deal extra damage equal to your Dexterity score.</p>
+		</description>
+		<sheet alt="Boon of Irresistible Offense">
+			<description>The Bludgeoning, Piercing, and Slashing damage you deal always ignores Resistance. &#13;
+			Additionally, whenever you roll a 20 on the d20 for an attack roll, you can deal {{overwhelming strike:damage}} extra damage of the same type as the attack's type to the target.</description>
+		</sheet>
+		<rules>
+			<stat name="overwhelming strike:damage" value="dexterity:score" bonus="ability" />
+		</rules>
+	</element>
+
+	<element name="Boon of Recovery" type="Feat" source="Player’s Handbook 2024" id="ID_WOTC_PHB24_FEAT_BOON_OF_RECOVERY">
+		<requirements>[level:19]</requirements>
+		<supports>Epic Boon</supports>
+		<prerequisite>Level 19+</prerequisite>
+		<description>
+			<p class="flavor">Epic Boon Feat (Prerequisite: Level 19+)</p>
+			<p>You gain the following benefits.</p>
+			<p class="indent"><b><i>Ability Score Increase.</i></b> Increase one ability score of your choice by 1, to a maximum of 30.</p>
+			<p class="indent"><b><i>Last Stand.</i></b> When you would be reduced to 0 Hit Points, you can drop to 1 Hit Point instead and regain a number of Hit Points equal to half your Hit Point maximum. Once you use this benefit, you can't use it again until you finish a Long Rest.</p>
+			<p class="indent"><b><i>Recover Vitality.</i></b> You have a pool of ten d10s. As a Bonus Action, you can expend dice from the pool, roll those dice, and regain a number of Hit Points equal to the roll's total. You regain all the expended dice when you finish a Long Rest.</p>
+		</description>
+		<sheet usage="1/Long Rest">
+			<description>When you would be reduced to 0 Hit Points, you can drop to 1 Hit Point instead and regain a number of Hit Points equal to half your Hit Point maximum. &#13;
+			Additionally, you have a pool of 10d10s. As a Bonus Action, you can expend dice from the pool, roll those dice, and regain a number of Hit Points equal to the roll's total. You regain all the expended dice when you finish a Long Rest.</description>
+		</sheet>
+		<rules>
+			<select type="Ability Score Improvement" name="Ability Score Increase (Boon of Recovery)" supports="Boon Ability Score Increase" />
+		</rules>
+	</element>
+
+	<element name="Boon of Skill" type="Feat" source="Player’s Handbook 2024" id="ID_WOTC_PHB24_FEAT_BOON_OF_SKILL">
+		<requirements>[level:19]</requirements>
+		<supports>Epic Boon</supports>
+		<prerequisite>Level 19+</prerequisite>
+		<description>
+			<p class="flavor">Epic Boon Feat (Prerequisite: Level 19+)</p>
+			<p>You gain the following benefits.</p>
+			<p class="indent"><b><i>Ability Score Increase.</i></b> Increase one ability score of your choice by 1, to a maximum of 30.</p>
+			<p class="indent"><b><i>All-Around Adept.</i></b> You gain proficiency in all skills.</p>
+			<p class="indent"><b><i>Expertise.</i></b> Choose one skill in which you lack Expertise. You gain Expertise in that skill.</p>
+		</description>
+		<sheet display="false" />
+		<rules>
+			<select type="Ability Score Improvement" name="Ability Score Increase (Boon of Skill)" supports="Boon Ability Score Increase" />
+			<grant type="Proficiency" id="ID_WOTC_PHB24_PROFICIENCY_SKILL_ACROBATICS" />
+			<grant type="Proficiency" id="ID_WOTC_PHB24_PROFICIENCY_SKILL_ANIMALHANDLING" />
+			<grant type="Proficiency" id="ID_WOTC_PHB24_PROFICIENCY_SKILL_ARCANA" />
+			<grant type="Proficiency" id="ID_WOTC_PHB24_PROFICIENCY_SKILL_ATHLETICS" />
+			<grant type="Proficiency" id="ID_WOTC_PHB24_PROFICIENCY_SKILL_DECEPTION" />
+			<grant type="Proficiency" id="ID_WOTC_PHB24_PROFICIENCY_SKILL_HISTORY" />
+			<grant type="Proficiency" id="ID_WOTC_PHB24_PROFICIENCY_SKILL_INSIGHT" />
+			<grant type="Proficiency" id="ID_WOTC_PHB24_PROFICIENCY_SKILL_INTIMIDATION" />
+			<grant type="Proficiency" id="ID_WOTC_PHB24_PROFICIENCY_SKILL_INVESTIGATION" />
+			<grant type="Proficiency" id="ID_WOTC_PHB24_PROFICIENCY_SKILL_MEDICINE" />
+			<grant type="Proficiency" id="ID_WOTC_PHB24_PROFICIENCY_SKILL_NATURE" />
+			<grant type="Proficiency" id="ID_WOTC_PHB24_PROFICIENCY_SKILL_PERCEPTION" />
+			<grant type="Proficiency" id="ID_WOTC_PHB24_PROFICIENCY_SKILL_PERFORMANCE" />
+			<grant type="Proficiency" id="ID_WOTC_PHB24_PROFICIENCY_SKILL_PERSUASION" />
+			<grant type="Proficiency" id="ID_WOTC_PHB24_PROFICIENCY_SKILL_RELIGION" />
+			<grant type="Proficiency" id="ID_WOTC_PHB24_PROFICIENCY_SKILL_SLEIGHTOFHAND" />
+			<grant type="Proficiency" id="ID_WOTC_PHB24_PROFICIENCY_SKILL_STEALTH" />
+			<grant type="Proficiency" id="ID_WOTC_PHB24_PROFICIENCY_SKILL_SURVIVAL" />
+			<select type="Proficiency" name="Expertise (Boon of Skill)" supports="Expertise" />
+		</rules>
+	</element>
+
+
+	<element name="Boon of Speed" type="Feat" source="Player’s Handbook 2024" id="ID_WOTC_PHB24_FEAT_BOON_OF_SPEED">
+		<requirements>[level:19]</requirements>
+		<supports>Epic Boon</supports>
+		<prerequisite>Level 19+</prerequisite>
+		<description>
+			<p class="flavor">Epic Boon Feat (Prerequisite: Level 19+)</p>
+			<p>You gain the following benefits.</p>
+			<p class="indent"><b><i>Ability Score Increase.</i></b> Increase one ability score of your choice by 1, to a maximum of 30.</p>
+			<p class="indent"><b><i>Escape Artist.</i></b> As a Bonus Action, you can take the Disengage action, which also ends the Grappled condition on you.</p>
+			<p class="indent"><b><i>Quickness.</i></b> Your Speed increases by 30 feet.</p>
+		</description>
+		<sheet action="Bonus Action">
+			<description>You can take the Disengage action, which also ends the Grappled condition on you.</description>
+		</sheet>
+		<rules>
+			<select type="Ability Score Improvement" name="Ability Score Increase (Boon of Speed)" supports="Boon Ability Score Increase" />
+			<stat name="speed:misc" value="30" />
+		</rules>
+	</element>
+
+	<element name="Boon of Spell Recall" type="Feat" source="Player’s Handbook 2024" id="ID_WOTC_PHB24_FEAT_BOON_OF_SPELL_RECALL">
+		<requirements>[level:19],ID_INTERNAL_GRANTS_SPELLCASTING_FEATURE</requirements>
+		<supports>Epic Boon</supports>
+		<prerequisite>Level 19+, Spellcasting Feature</prerequisite>
+		<description>
+			<p class="flavor">Epic Boon Feat (Prerequisite: Level 19+, Spellcasting Feature)</p>
+			<p>You gain the following benefits.</p>
+			<p class="indent"><b><i>Ability Score Increase.</i></b> Increase your Intelligence, Wisdom, or Charisma score by 1, to a maximum of 30.</p>
+			<p class="indent"><b><i>Free Casting.</i></b> Whenever you cast a spell with a level 1-4 spell slot, roll 1d4. If the number you roll is the same as the slot's level, the slot isn't expended.</p>
+		</description>
+		<sheet>
+			<description>Whenever you cast a spell with a level 1-4 spell slot, roll 1d4. If the number you roll is the same as the slot's level, the slot isn't expended.</description>
+		</sheet>
+		<rules>
+			<select type="Ability Score Improvement" name="Ability Score Increase (Boon of Spell Recall)" supports="ID_INTERNAL_ABILITY_SCORE_IMPROVEMENT_BOON_INTELLIGENCE|ID_INTERNAL_ABILITY_SCORE_IMPROVEMENT_BOON_WISDOM|ID_INTERNAL_ABILITY_SCORE_IMPROVEMENT_BOON_CHARISMA" />
+		</rules>
+	</element>
+
+	<element name="Boon of the Night Spirit" type="Feat" source="Player’s Handbook 2024" id="ID_WOTC_PHB24_FEAT_BOON_OFTHE_NIGHT_SPIRIT">
+		<requirements>[level:19]</requirements>
+		<supports>Epic Boon</supports>
+		<prerequisite>Level 19+</prerequisite>
+		<description>
+			<p class="flavor">Epic Boon Feat (Prerequisite: Level 19+)</p>
+			<p>You gain the following benefits.</p>
+			<p class="indent"><b><i>Ability Score Increase.</i></b> Increase one ability score of your choice by 1, to a maximum of 30.</p>
+			<p class="indent"><b><i>Merge with Shadows.</i></b> While within Dim Light or Darkness, you can give yourself the invisible condition as a Bonus Action. The condition ends on you immediately after you take an action, a Bonus Action, or a Reaction.</p>
+			<p class="indent"><b><i>Shadowy Form.</i></b> While within Dim Light or Darkness, you have Resistance to all damage except Psychic and Radiant.</p>
+		</description>
+		<sheet action="Bonus Action">
+			<description>While within Dim Light or Darkness, you can become Invisible. The condition ends on you immediately after you take an action, a Bonus Action, or a Reaction. &#13;
+			Additionally, while within Dim Light or Darkness, you have Resistance to all damage except Psychic and Radiant.</description>
+		</sheet>
+		<rules>
+			<select type="Ability Score Improvement" name="Ability Score Increase (Boon of the Night Spirit)" supports="Boon Ability Score Increase" />
+		</rules>
+	</element>
+
+	<element name="Boon of Truesight" type="Feat" source="Player’s Handbook 2024" id="ID_WOTC_PHB24_FEAT_BOON_OF_TRUESIGHT">
+		<requirements>[level:19]</requirements>
+		<supports>Epic Boon</supports>
+		<prerequisite>Level 19+</prerequisite>
+		<description>
+			<p class="flavor">Epic Boon Feat (Prerequisite: Level 19+)</p>
+			<p>You gain the following benefits.</p>
+			<p class="indent"><b><i>Ability Score Increase.</i></b> Increase one ability score of your choice by 1, to a maximum of 30.</p>
+			<p class="indent"><b><i>Truesight.</i></b> You have Truesight with a range of 60 feet.</p>
+		</description>
+		<sheet display="false" />
+		<rules>
+			<select type="Ability Score Improvement" name="Ability Score Increase (Boon of Truesight)" supports="Boon Ability Score Increase" />
+			<grant type="Vision" id="ID_VISION_TRUESIGHT" />
+			<stat name="truesight:range" value="60" bonus="base" />
+		</rules>
+	</element>
+
+</elements>

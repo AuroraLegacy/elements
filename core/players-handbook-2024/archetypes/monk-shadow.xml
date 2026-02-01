@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<elements>
+	<info>
+		<name>Warrior of Shadow</name>
+		<description>The Warrior of Shadow subclass from the Player’s Handbook 2024.</description>
+		<author url="https://dndstore.wizards.com/us/en/product/1001494/2024-player-s-handbook-digital-plus-physical-bundle">Wizards of the Coast</author>
+		<update version="0.0.1">
+			<file name="monk-shadow.xml" url="https://raw.githubusercontent.com/AuroraLegacy/elements/master/core/players-handbook-2024/archetypes/monk-shadow.xml" />
+		</update>
+	</info>
+
+	<element name="Warrior of Shadow" type="Archetype" source="Player’s Handbook 2024" id="ID_WOTC_PHB24_ARCHETYPE_MONK_WARRIOR_OF_SHADOW">
+		<supports>Monk Subclass</supports>
+		<description>
+			<p class="flavor">Harness Shadow Power for Stealth and Subterfuge</p>
+			<p>Warriors of Shadow practice stealth and subterfuge, harnessing the power of the Shadowfell. They are at home in darkness, able to draw gloom around themselves to hide, leap from shadow to shadow, and take on a wraithlike form.</p>
+			<div element="ID_WOTC_PHB24_ARCHETYPE_FEATURE_MONK_SHADOW_SHADOW_ARTS"/>
+			<div element="ID_WOTC_PHB24_ARCHETYPE_FEATURE_MONK_SHADOW_SHADOW_STEP"/>
+			<div element="ID_WOTC_PHB24_ARCHETYPE_FEATURE_MONK_SHADOW_IMPROVED_SHADOW_STEP"/>
+			<div element="ID_WOTC_PHB24_ARCHETYPE_FEATURE_MONK_SHADOW_CLOAK_OF_SHADOWS"/>
+		</description>
+		<sheet display="false" />
+		<rules>
+			<grant type="Archetype Feature" id="ID_WOTC_PHB24_ARCHETYPE_FEATURE_MONK_SHADOW_SHADOW_ARTS" level="3"/>
+			<grant type="Archetype Feature" id="ID_WOTC_PHB24_ARCHETYPE_FEATURE_MONK_SHADOW_SHADOW_STEP" level="6"/>
+			<grant type="Archetype Feature" id="ID_WOTC_PHB24_ARCHETYPE_FEATURE_MONK_SHADOW_IMPROVED_SHADOW_STEP" level="11"/>
+			<grant type="Archetype Feature" id="ID_WOTC_PHB24_ARCHETYPE_FEATURE_MONK_SHADOW_CLOAK_OF_SHADOWS" level="17"/>
+		</rules>
+	</element>
+
+	<element name="Level 3: Shadow Arts" type="Archetype Feature" source="Player’s Handbook 2024" id="ID_WOTC_PHB24_ARCHETYPE_FEATURE_MONK_SHADOW_SHADOW_ARTS">
+		<requirements>!ID_INTERNAL_PHB24_FEATURE_REPLACEMENT_MONK_SHADOW_SHADOW_ARTS</requirements>
+		<description>
+			<p>You have learned to draw on the power of the Shadowfell, gaining the following benefits.</p>
+			<p class="indent"><em><strong>Darkness.</strong></em> You can expend 1 Focus Point to cast the Darkness spell without spell components. You can see within the spell's area when you cast it with this feature. While the spell persists, you can move its area of Darkness to a space within 60 feet of yourself at the start of each of your turns.</p>
+			<p class="indent"><em><strong>Darkvision.</strong></em> You gain Darkvision with a range of 60 feet. If you already have Darkvision, its range increases by 60 feet.</p>
+			<p class="indent"><em><strong>Shadowy Figments.</strong></em> You know the Minor Illusion spell. Wisdom is your spellcasting ability for it.</p>
+		</description>
+		<sheet alt="Shadow Arts" usage="Focus Point">
+			<description>You can cast the Darkness spell without spell components. You can see within the spell's area when you cast it with this feature. While the spell persists, you can move its area of Darkness to a space within 60 feet of yourself at the start of each of your turns. &#13;
+			Additionally, you know Minor Illusion cantrip and Wisdom is your spellcasting ability for it.</description>
+		</sheet>
+		<rules>
+			<grant type="Vision" id="ID_VISION_LESSER_DARKVISION" />
+			<stat name="darkvision:range" value="60" />
+			<grant type="Spell" id="ID_WOTC_PHB24_SPELL_MINOR_ILLUSION" />
+		</rules>
+	</element>
+
+	<element name="Level 6: Shadow Step" type="Archetype Feature" source="Player’s Handbook 2024" id="ID_WOTC_PHB24_ARCHETYPE_FEATURE_MONK_SHADOW_SHADOW_STEP">
+		<requirements>!(ID_INTERNAL_PHB24_FEATURE_REPLACEMENT_MONK_SHADOW_SHADOW_STEP||ID_INTERNAL_PHB24_FEATURE_REPLACEMENT_MONK_SHADOW_IMPROVED_SHADOW_STEP)</requirements>
+		<description>
+			<p>While entirely within Dim Light or Darkness, you can use a Bonus Action to teleport up to 60 feet to an unoccupied space you can see that is also in Dim Light or Darkness. You then have Advantage on the next melee attack you make before the end of the current turn.</p>
+		</description>
+		<sheet alt="Shadow Step" action="Bonus Action">
+			<description>While in Dim Light or Darkness, you can teleport up to 60 feet to an unoccupied space you can see that is also in Dim Light or Darkness. You then have Advantage on the next melee attack you make before the end of the current turn.</description>
+			<description level="11">You have two ways of using this feature: &#13;
+			• While in Dim Light or Darkness, you can teleport up to 60 feet to an unoccupied space you can see that is also in Dim Light or Darkness. &#13;
+			• You can spend 1 Focus Point to remove light requirements for this use of the feature, and you can make an Unarmed Strike immediately after you teleport. &#13;
+			Regardless of your choice, after you teleport you gain Advantage on the next melee attack you make before the end of the current turn.</description>
+		</sheet>
+	</element>
+
+	<element name="Level 11: Improved Shadow Step" type="Archetype Feature" source="Player’s Handbook 2024" id="ID_WOTC_PHB24_ARCHETYPE_FEATURE_MONK_SHADOW_IMPROVED_SHADOW_STEP">
+		<requirements>!ID_INTERNAL_PHB24_FEATURE_REPLACEMENT_MONK_SHADOW_IMPROVED_SHADOW_STEP</requirements>
+		<description>
+			<p>You can draw on your Shadowfell connection to empower your teleportation. When you use your Shadow Step, you can expend 1 Focus Point to remove the requirement that you must start and end in Dim Light or Darkness for that use of the feature. As part of this Bonus Action, you can make an Unarmed Strike immediately after you teleport.</p>
+		</description>
+		<sheet display="false"/>
+	</element>
+
+	<element name="Level 17: Cloak of Shadows" type="Archetype Feature" source="Player’s Handbook 2024" id="ID_WOTC_PHB24_ARCHETYPE_FEATURE_MONK_SHADOW_CLOAK_OF_SHADOWS">
+		<requirements>!ID_INTERNAL_PHB24_FEATURE_REPLACEMENT_MONK_SHADOW_CLOAK_OF_SHADOWS</requirements>
+		<description>
+			<p>As a Magic action while entirely within Dim Light or Darkness, you can expend 3 Focus Points to shroud yourself with shadows for 1 minute, until you have the Incapacitated condition, or until you end your turn in Bright Light. While shrouded by these shadows, you gain the following benefits.</p>
+			<p class="indent"><em><strong>Invisibility.</strong></em> You have the Invisible condition.</p>
+			<p class="indent"><em><strong>Partially Incorporeal.</strong></em> You can move through occupied spaces as if they were Difficult Terrain. If you end your turn in such a space, you are shunted to the last unoccupied space you were in.</p>
+			<p class="indent"><em><strong>Shadow Flurry.</strong></em> You can use your Flurry of Blows without expending any Focus Points.</p>
+		</description>
+		<sheet alt="Cloak of Shadows" action="Action" usage="3 Focus Points">
+			<description>While in Dim Light or Darkness, you can shroud yourself with shadows for 1 minute, until you have the Incapacitated condition, or until you end your turn in Bright Light. While shrouded, you have the Invisible condition; can move through occupied spaces as if they were Difficult Terrain, but if you end your turn in such a space you're shunted to the last unoccupied space you were in; and can use Flurry of Blows without expending Focus Points.</description>
+		</sheet>
+	</element>
+
+	<!--Feature Replacement Grants-->
+	<element name="Shadow Arts Feature Replacement" type="Grants" source="Internal" id="ID_INTERNAL_PHB24_FEATURE_REPLACEMENT_MONK_SHADOW_SHADOW_ARTS" />
+	<element name="Shadow Step Feature Replacement" type="Grants" source="Internal" id="ID_INTERNAL_PHB24_FEATURE_REPLACEMENT_MONK_SHADOW_SHADOW_STEP" />
+	<element name="Improved Shadow Step Feature Replacement" type="Grants" source="Internal" id="ID_INTERNAL_PHB24_FEATURE_REPLACEMENT_MONK_SHADOW_IMPROVED_SHADOW_STEP" />
+	<element name="Cloak of Shadows Feature Replacement" type="Grants" source="Internal" id="ID_INTERNAL_PHB24_FEATURE_REPLACEMENT_MONK_SHADOW_CLOAK_OF_SHADOWS" />
+</elements>

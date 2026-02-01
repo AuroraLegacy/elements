@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<elements>
+	<info>
+		<name>Charlatan</name>
+		<description>Charlatan background from the Player’s Handbook 2024.</description>
+		<author url="https://dndstore.wizards.com/us/en/product/1001494/2024-player-s-handbook-digital-plus-physical-bundle">Wizards of the Coast</author>
+		<update version="0.0.1">
+			<file name="background-charlatan.xml" url="https://raw.githubusercontent.com/AuroraLegacy/elements/master/core/players-handbook-2024/backgrounds/background-charlatan.xml" />
+		</update>
+	</info>
+
+	<element name="Charlatan" type="Background" source="Player’s Handbook 2024" id="ID_WOTC_PHB24_BACKGROUND_CHARLATAN">
+		<description>
+			<ul class="unstyled" style="text-indent:-1em; margin-left:1em; margin-bottom:5px">
+				<li><strong>Ability Scores:</strong> Dexterity, Constitution, Charisma</li>
+				<li><strong>Feat:</strong> Skilled</li>
+				<li><strong>Skill Proficiencies:</strong> Deception and Sleight of Hand</li>
+				<li><strong>Tool Proficiency:</strong> Forgery Kit</li>
+				<li><strong>Equipment:</strong><i> Choose A or B:</i> (A) Forgery Kit, Costume, Fine Clothes, 15 CP; or (B) 50 GP</li>
+			</ul>
+			<p>Once you were old enough to order an ale, you soon had a favorite stool in every tavern within ten miles of where you were born. As you traveled the circuit from public house to watering hole, you learned to prey on unfortunates who were in the market for a comforting lie or two-perhaps a sham potion or forged ancestry records.</p>
+		</description>
+		<setters>
+			<set name="short">Dexterity, Constitution, Charisma, Skilled Feat, Deception and Sleight of Hand Skills, Forgery Kit</set>
+		</setters>
+		<rules>
+			<grant type="Ability Score Improvement" id="ID_INTERNAL_ABILITY_SCORE_IMPROVEMENT_COMBINATION_DEX_CON_CHA" />
+			<select type="Feat" name="Origin Feat (Charlatan)" supports="ID_WOTC_PHB24_FEAT_SKILLED|ID_WOTC_PHB24_FEAT_SKILLED_2" default="ID_WOTC_PHB24_FEAT_SKILLED" />
+			<grant type="Proficiency" id="ID_WOTC_PHB24_PROFICIENCY_SKILL_DECEPTION" />
+			<grant type="Proficiency" id="ID_WOTC_PHB24_PROFICIENCY_SKILL_SLEIGHTOFHAND" />
+			<grant type="Grants" id="ID_INTERNAL_GRANTS_BACKGROUND_ASI" />
+			<grant type="Proficiency" id="ID_WOTC_PHB24_PROFICIENCY_TOOL_PROFICIENCY_FORGERY_KIT" />
+		</rules>
+	</element>
+
+	<!-- Todo: Add Equipment Pack for this Background. Example element is in the Acolyte Background. -->
+</elements>

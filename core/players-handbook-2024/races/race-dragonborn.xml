@@ -1,0 +1,274 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<elements>
+	<info>
+		<name>Dragonborn</name>
+		<description>The Dragonborn species from the Player’s Handbook 2024.</description>
+		<author url="http://dnd.wizards.com/products/tabletop-games/rpg-products/rpg_playershandbook">Wizards of the Coast</author>
+		<update version="0.0.1">
+			<file name="race-dragonborn.xml" url="https://raw.githubusercontent.com/AuroraLegacy/elements/master/core/players-handbook-2024/races/race-dragonborn.xml" />
+		</update>
+	</info>
+	
+	<element name="Dragonborn" type="Race" source="Player’s Handbook 2024" id="ID_WOTC_PHB24_RACE_DRAGONBORN">
+		<description>
+			<p>The ancestors of dragonborn hatched from the eggs of chromatic and metallic dragons. One story holds that these eggs were blessed by the dragon gods Bahamut and Tiamat, who wanted to populate the multiverse with people created in their image. Another story claims that dragons created the first dragonborn without the gods’ blessings. Whatever their origin, dragonborn have made homes for themselves on the Material Plane.</p>
+			<p class="indent">Dragonborn look like wingless, bipedal dragons—scaly, bright-eyed, and thick-boned with horns on their heads—and their coloration and other features are reminiscent of their draconic ancestors.</p>
+			
+			<h4>Dragonborn Traits</h4>
+			<p style="margin-top:15px"><strong><em>Creature Type:</em></strong> Humanoid</p>
+			<p><strong><em>Size:</em></strong> Medium (about 5–7 feet tall)</p>
+			<p><strong><em>Speed:</em></strong> 30 feet</p>
+			
+			<p>As a Dragonborn, you have these special traits.</p>
+			<p class="indent"><strong><em>Draconic Ancestry.</em></strong> Your lineage stems from a dragon progenitor. Choose the kind of dragon from the Draconic Ancestors table. Your choice affects your Breath Weapon and Damage Resistance traits as well as your appearance.</p>
+			<h5>Draconic Ancestors</h5>
+			<table>
+				<thead>
+					<tr><td>Dragon</td><td>Damage Type</td></tr>
+				</thead>
+				<tr><td>Black</td><td>Acid</td></tr>
+				<tr><td>Blue</td><td>Lightning</td></tr>
+				<tr><td>Brass</td><td>Fire</td></tr>
+				<tr><td>Bronze</td><td>Lightning</td></tr>
+				<tr><td>Copper</td><td>Acid</td></tr>
+				<tr><td>Gold</td><td>Fire</td></tr>
+				<tr><td>Green</td><td>Poison</td></tr>
+				<tr><td>Red</td><td>Fire</td></tr>
+				<tr><td>Silver</td><td>Cold</td></tr>
+				<tr><td>White</td><td>Cold</td></tr>
+			</table>
+			<p class="indent"><strong><em>Breath Weapon.</em></strong> When you take the Attack action on your turn, you can replace one of your attacks with an exhalation of magical energy in either a 15-foot Cone or a 30-foot Line that is 5 feet wide (choose the shape each time). Each creature in that area must make a Dexterity saving throw (DC 8 plus your Constitution modifier and Proficiency Bonus). On a failed save, a creature takes 1d10 damage of the type determined by your Draconic Ancestry trait. On a successful save, a creature takes half as much damage. This damage increases by 1d10 when you reach character levels 5 (2d10), 11 (3d10), and 17 (4d10).</p> 
+			<p class="indent">You can use this Breath Weapon a number of times equal to your Proficiency Bonus, and you regain all expended uses when you finish a Long Rest.</p>
+			<p class="indent"><strong><em>Damage Resistance.</em></strong> You have Resistance to the damage type determined by your Draconic Ancestry trait.</p>
+			<p class="indent"><strong><em>Darkvision.</em></strong> You have Darkvision with a range of 60 feet.</p>
+			<p class="indent"><strong><em>Draconic Flight.</em></strong> When you reach character level 5, you can channel draconic magic to give yourself temporary flight. As a Bonus Action, you sprout spectral wings on your back that last for 10 minutes or until you retract the wings (no action required) or have the Incapacitated condition. During that time, you have a Fly Speed equal to your Speed. Your wings appear to be made of the same energy as your Breath Weapon. Once you use this trait, you can’t use it again until you finish a Long Rest.</p>
+		</description>
+		<sheet display="false" />
+		<rules>
+			<grant type="Grants" id="ID_INTERNAL_GRANT_RACE_DRAGONBORN"/>
+			<select type="Ability Score Improvement" name="Ability Score Improvement Option (Dragonborn)" supports="Custom Ability Score Improvement Option" requirements="!ID_INTERNAL_GRANTS_BACKGROUND_ASI" />
+			<grant type="Size" id="ID_SIZE_MEDIUM" />
+			<stat name="innate speed" value="30" bonus="base" />
+			<grant type="Vision" id="ID_VISION_DARKVISION" />
+
+			<grant type="Language" id="ID_LANGUAGE_COMMON" requirements="!ID_WOTC_TCOE_OPTION_CUSTOMIZED_LANGUAGE" />
+			<select type="Language" name="Customized Language (Dragonborn)" supports="Custom Race Language" requirements="ID_WOTC_TCOE_OPTION_CUSTOMIZED_LANGUAGE" />
+			<select type="Language" name="Language (Dragonborn)" supports="Standard||Exotic" number="2" />
+
+			<grant type="Racial Trait" id="ID_WOTC_PHB24_RACIAL_TRAIT_DRAGONBORN_DRACONIC_ANCESTRY" requirements="!ID_WOTC_PHB24_RACIAL_TRAIT_REPLACEMENT_DRAGONBORN_DRACONIC_ANCESTRY" />
+			<grant type="Racial Trait" id="ID_WOTC_PHB24_RACIAL_TRAIT_DRAGONBORN_BREATH_WEAPON" requirements="!ID_WOTC_PHB24_RACIAL_TRAIT_REPLACEMENT_DRAGONBORN_BREATH_WEAPON" />
+			<grant type="Racial Trait" id="ID_WOTC_PHB24_RACIAL_TRAIT_DRAGONBORN_DAMAGE_RESISTANCE" requirements="!ID_WOTC_PHB24_RACIAL_TRAIT_REPLACEMENT_DRAGONBORN_DAMAGE_RESISTANCE" />
+			<grant type="Racial Trait" id="ID_WOTC_PHB24_RACIAL_TRAIT_DRAGONBORN_DRACONIC_FLIGHT" requirements="!ID_WOTC_PHB24_RACIAL_TRAIT_REPLACEMENT_DRAGONBORN_DRACONIC_FLIGHT" level="5" />
+		</rules>
+	</element>
+
+	<element name="Draconic Ancestry" type="Racial Trait" source="Player’s Handbook 2024" id="ID_WOTC_PHB24_RACIAL_TRAIT_DRAGONBORN_DRACONIC_ANCESTRY">
+		<description>
+			<p>Your lineage stems from a dragon progenitor. Choose the kind of dragon from the Draconic Ancestors table. Your choice affects your Breath Weapon and Damage Resistance traits as well as your appearance.</p>
+			<h5>Draconic Ancestors</h5>
+			<table>
+				<thead>
+					<tr><td>Dragon</td><td>Damage Type</td></tr>
+				</thead>
+				<tr><td>Black</td><td>Acid</td></tr>
+				<tr><td>Blue</td><td>Lightning</td></tr>
+				<tr><td>Brass</td><td>Fire</td></tr>
+				<tr><td>Bronze</td><td>Lightning</td></tr>
+				<tr><td>Copper</td><td>Acid</td></tr>
+				<tr><td>Gold</td><td>Fire</td></tr>
+				<tr><td>Green</td><td>Poison</td></tr>
+				<tr><td>Red</td><td>Fire</td></tr>
+				<tr><td>Silver</td><td>Cold</td></tr>
+				<tr><td>White</td><td>Cold</td></tr>
+			</table>
+		</description>
+		<sheet display="false" />
+		<rules>
+			<select type="Racial Trait" name="Draconic Ancestry" supports="Draconic Ancestry 2024" />
+		</rules>
+	</element>
+	<element name="Black" type="Racial Trait" source="Player’s Handbook 2024" id="ID_WOTC_PHB24_RACIAL_TRAIT_DRAGONBORN_DRACONIC_ANCESTRY_BLACK">
+		<supports>Draconic Ancestry 2024</supports>
+		<compendium display="false" />
+		<description>
+			<div element="ID_WOTC_PHB24_RACIAL_TRAIT_DRAGONBORN_DRACONIC_ANCESTRY" />
+		</description>
+		<sheet alt="Draconic Ancestry">
+			<description>Your ancestor was a black dragon. Your Draconic Ancestry damage type is Acid.</description>
+		</sheet>
+		<rules>
+			<stat name="draconic ancestry:damage type" value="Acid" inline="true" />
+		</rules>
+	</element>
+	<element name="Blue" type="Racial Trait" source="Player’s Handbook 2024" id="ID_WOTC_PHB24_RACIAL_TRAIT_DRAGONBORN_DRACONIC_ANCESTRY_BLUE">
+		<supports>Draconic Ancestry 2024</supports>
+		<compendium display="false" />
+		<description>
+			<div element="ID_WOTC_PHB24_RACIAL_TRAIT_DRAGONBORN_DRACONIC_ANCESTRY" />
+		</description>
+		<sheet alt="Draconic Ancestry">
+			<description>Your ancestor was a blue dragon. Your Draconic Ancestry damage type is Lightning.</description>
+		</sheet>
+		<rules>
+			<stat name="draconic ancestry:damage type" value="Lightning" inline="true" />
+		</rules>
+	</element>
+	<element name="Brass" type="Racial Trait" source="Player’s Handbook 2024" id="ID_WOTC_PHB24_RACIAL_TRAIT_DRAGONBORN_DRACONIC_ANCESTRY_BRASS">
+		<supports>Draconic Ancestry 2024</supports>
+		<compendium display="false" />
+		<description>
+			<div element="ID_WOTC_PHB24_RACIAL_TRAIT_DRAGONBORN_DRACONIC_ANCESTRY" />
+		</description>
+		<sheet alt="Draconic Ancestry">
+			<description>Your ancestor was a brass dragon. Your Draconic Ancestry damage type is Fire.</description>
+		</sheet>
+		<rules>
+			<stat name="draconic ancestry:damage type" value="Fire" inline="true" />
+		</rules>
+	</element>
+	<element name="Bronze" type="Racial Trait" source="Player’s Handbook 2024" id="ID_WOTC_PHB24_RACIAL_TRAIT_DRAGONBORN_DRACONIC_ANCESTRY_BRONZE">
+		<supports>Draconic Ancestry 2024</supports>
+		<compendium display="false" />
+		<description>
+			<div element="ID_WOTC_PHB24_RACIAL_TRAIT_DRAGONBORN_DRACONIC_ANCESTRY" />
+		</description>
+		<sheet alt="Draconic Ancestry">
+			<description>Your ancestor was a bronze dragon. Your Draconic Ancestry damage type is Lightning.</description>
+		</sheet>
+		<rules>
+			<stat name="draconic ancestry:damage type" value="Lightning" inline="true" />
+		</rules>
+	</element>
+	<element name="Copper" type="Racial Trait" source="Player’s Handbook 2024" id="ID_WOTC_PHB24_RACIAL_TRAIT_DRAGONBORN_DRACONIC_ANCESTRY_COPPER">
+		<supports>Draconic Ancestry 2024</supports>
+		<compendium display="false" />
+		<description>
+			<div element="ID_WOTC_PHB24_RACIAL_TRAIT_DRAGONBORN_DRACONIC_ANCESTRY" />
+		</description>
+		<sheet alt="Draconic Ancestry">
+			<description>Your ancestor was a copper dragon. Your Draconic Ancestry damage type is Acid.</description>
+		</sheet>
+		<rules>
+			<stat name="draconic ancestry:damage type" value="Acid" inline="true" />
+		</rules>
+	</element>
+	<element name="Gold" type="Racial Trait" source="Player’s Handbook 2024" id="ID_WOTC_PHB24_RACIAL_TRAIT_DRAGONBORN_DRACONIC_ANCESTRY_GOLD">
+		<supports>Draconic Ancestry 2024</supports>
+		<compendium display="false" />
+		<description>
+			<div element="ID_WOTC_PHB24_RACIAL_TRAIT_DRAGONBORN_DRACONIC_ANCESTRY" />
+		</description>
+		<sheet alt="Draconic Ancestry">
+			<description>Your ancestor was a gold dragon. Your Draconic Ancestry damage type is Fire.</description>
+		</sheet>
+		<rules>
+			<stat name="draconic ancestry:damage type" value="Fire" inline="true" />
+		</rules>
+	</element>
+	<element name="Green" type="Racial Trait" source="Player’s Handbook 2024" id="ID_WOTC_PHB24_RACIAL_TRAIT_DRAGONBORN_DRACONIC_ANCESTRY_GREEN">
+		<supports>Draconic Ancestry 2024</supports>
+		<compendium display="false" />
+		<description>
+			<div element="ID_WOTC_PHB24_RACIAL_TRAIT_DRAGONBORN_DRACONIC_ANCESTRY" />
+		</description>
+		<sheet alt="Draconic Ancestry">
+			<description>Your ancestor was a green dragon. Your Draconic Ancestry damage type is Poison.</description>
+		</sheet>
+		<rules>
+			<stat name="draconic ancestry:damage type" value="Poison" inline="true" />
+		</rules>
+	</element>
+	<element name="Red" type="Racial Trait" source="Player’s Handbook 2024" id="ID_WOTC_PHB24_RACIAL_TRAIT_DRAGONBORN_DRACONIC_ANCESTRY_RED">
+		<supports>Draconic Ancestry 2024</supports>
+		<compendium display="false" />
+		<description>
+			<div element="ID_WOTC_PHB24_RACIAL_TRAIT_DRAGONBORN_DRACONIC_ANCESTRY" />
+		</description>
+		<sheet alt="Draconic Ancestry">
+			<description>Your ancestor was a red dragon. Your Draconic Ancestry damage type is Fire.</description>
+		</sheet>
+		<rules>
+			<stat name="draconic ancestry:damage type" value="Fire" inline="true" />
+		</rules>
+	</element>
+	<element name="Silver" type="Racial Trait" source="Player’s Handbook 2024" id="ID_WOTC_PHB24_RACIAL_TRAIT_DRAGONBORN_DRACONIC_ANCESTRY_SILVER">
+		<supports>Draconic Ancestry 2024</supports>
+		<compendium display="false" />
+		<description>
+			<div element="ID_WOTC_PHB24_RACIAL_TRAIT_DRAGONBORN_DRACONIC_ANCESTRY" />
+		</description>
+		<sheet alt="Draconic Ancestry">
+			<description>Your ancestor was a silver dragon. Your Draconic Ancestry damage type is Cold.</description>
+		</sheet>
+		<rules>
+			<stat name="draconic ancestry:damage type" value="Cold" inline="true" />
+		</rules>
+	</element>
+	<element name="White" type="Racial Trait" source="Player’s Handbook 2024" id="ID_WOTC_PHB24_RACIAL_TRAIT_DRAGONBORN_DRACONIC_ANCESTRY_WHITE">
+		<supports>Draconic Ancestry 2024</supports>
+		<compendium display="false" />
+		<description>
+			<div element="ID_WOTC_PHB24_RACIAL_TRAIT_DRAGONBORN_DRACONIC_ANCESTRY" />
+		</description>
+		<sheet alt="Draconic Ancestry">
+			<description>Your ancestor was a white dragon. Your Draconic Ancestry damage type is Cold.</description>
+		</sheet>
+		<rules>
+			<stat name="draconic ancestry:damage type" value="Cold" inline="true" />
+		</rules>
+	</element>
+
+	<element name="Breath Weapon" type="Racial Trait" source="Player’s Handbook 2024" id="ID_WOTC_PHB24_RACIAL_TRAIT_DRAGONBORN_BREATH_WEAPON">
+		<description>
+			<p>When you take the Attack action on your turn, you can replace one of your attacks with an exhalation of magical energy in either a 15-foot Cone or a 30-foot Line that is 5 feet wide (choose the shape each time). Each creature in that area must make a Dexterity saving throw (DC 8 plus your Constitution modifier and Proficiency Bonus). On a failed save, a creature takes 1d10 damage of the type determined by your Draconic Ancestry trait. On a successful save, a creature takes half as much damage. This damage increases by 1d10 when you reach character levels 5 (2d10), 11 (3d10), and 17 (4d10).</p> 
+			<p class="indent">You can use this Breath Weapon a number of times equal to your Proficiency Bonus, and you regain all expended uses when you finish a Long Rest.</p>
+		</description>
+		<sheet action="Attack" usage="{{proficiency}}/Long Rest">
+			<description>You can replace one of your attacks with an exhalation of a magical energy in either a 15-foot Cone or a 30-foot Line that is 5 feet wide (choose the shape each time). Each creature in the area must make a Dexterity saving throw against a DC{{2024:breath weapon:dc}}. On a failed save, a creature takes {{2024:breath weapon:dice count}}d10 {{draconic ancestry:damage type}} damage, or half as much damage on a successful one.</description>
+		</sheet>
+		<rules>
+			<stat name="2024:breath weapon:dc" value="8" />
+			<stat name="2024:breath weapon:dc" value="constitution:modifier" />
+			<stat name="2024:breath weapon:dc" value="proficiency" />
+			<stat name="2024:breath weapon:dice count" value="1" level="1" bonus="base" />
+			<stat name="2024:breath weapon:dice count" value="2" level="5" bonus="base" />
+			<stat name="2024:breath weapon:dice count" value="3" level="11" bonus="base" />
+			<stat name="2024:breath weapon:dice count" value="4" level="17" bonus="base" />
+		</rules>
+	</element>
+
+	<element name="Draconic Resistance" type="Racial Trait" source="Player’s Handbook 2024" id="ID_WOTC_PHB24_RACIAL_TRAIT_DRAGONBORN_DAMAGE_RESISTANCE">
+		<description>
+			<p>You have Resistance to the damage type determined by your Draconic Ancestry trait.</p>
+		</description>
+		<sheet display="false" />
+		<rules>
+			<grant type="Condition" id="ID_INTERNAL_CONDITION_DAMAGE_RESISTANCE_ACID" requirements="ID_WOTC_PHB24_RACIAL_TRAIT_DRAGONBORN_DRACONIC_ANCESTRY_BLACK" />
+			<grant type="Condition" id="ID_INTERNAL_CONDITION_DAMAGE_RESISTANCE_LIGHTNING" requirements="ID_WOTC_PHB24_RACIAL_TRAIT_DRAGONBORN_DRACONIC_ANCESTRY_BLUE" />
+			<grant type="Condition" id="ID_INTERNAL_CONDITION_DAMAGE_RESISTANCE_FIRE" requirements="ID_WOTC_PHB24_RACIAL_TRAIT_DRAGONBORN_DRACONIC_ANCESTRY_BRASS" />
+			<grant type="Condition" id="ID_INTERNAL_CONDITION_DAMAGE_RESISTANCE_LIGHTNING" requirements="ID_WOTC_PHB24_RACIAL_TRAIT_DRAGONBORN_DRACONIC_ANCESTRY_BRONZE" />
+			<grant type="Condition" id="ID_INTERNAL_CONDITION_DAMAGE_RESISTANCE_ACID" requirements="ID_WOTC_PHB24_RACIAL_TRAIT_DRAGONBORN_DRACONIC_ANCESTRY_COPPER" />
+			<grant type="Condition" id="ID_INTERNAL_CONDITION_DAMAGE_RESISTANCE_FIRE" requirements="ID_WOTC_PHB24_RACIAL_TRAIT_DRAGONBORN_DRACONIC_ANCESTRY_GOLD" />
+			<grant type="Condition" id="ID_INTERNAL_CONDITION_DAMAGE_RESISTANCE_POISON" requirements="ID_WOTC_PHB24_RACIAL_TRAIT_DRAGONBORN_DRACONIC_ANCESTRY_GREEN" />
+			<grant type="Condition" id="ID_INTERNAL_CONDITION_DAMAGE_RESISTANCE_FIRE" requirements="ID_WOTC_PHB24_RACIAL_TRAIT_DRAGONBORN_DRACONIC_ANCESTRY_RED" />
+			<grant type="Condition" id="ID_INTERNAL_CONDITION_DAMAGE_RESISTANCE_COLD" requirements="ID_WOTC_PHB24_RACIAL_TRAIT_DRAGONBORN_DRACONIC_ANCESTRY_SILVER" />
+			<grant type="Condition" id="ID_INTERNAL_CONDITION_DAMAGE_RESISTANCE_COLD" requirements="ID_WOTC_PHB24_RACIAL_TRAIT_DRAGONBORN_DRACONIC_ANCESTRY_WHITE" />
+		</rules>
+	</element>
+
+	<element name="Draconic Flight" type="Racial Trait" source="Player’s Handbook 2024" id="ID_WOTC_PHB24_RACIAL_TRAIT_DRAGONBORN_DRACONIC_FLIGHT">
+		<description>
+			<p>When you reach character level 5, you can channel draconic magic to give yourself temporary flight. As a Bonus Action, you sprout spectral wings on your back that last for 10 minutes or until you retract the wings (no action required) or have the Incapacitated condition. During that time, you have a Fly Speed equal to your Speed. Your wings appear to be made of the same energy as your Breath Weapon. Once you use this trait, you can’t use it again until you finish a Long Rest.</p>
+		</description>
+		<sheet action="Bonus Action" usage="{{proficiency}}/Long Rest">
+			<description>You sprout spectral wings on your back that last for 10 minutes or until you retract the wings (no action required) or have the Incapacitated condition. During that time, you have a Fly Speed of {{speed}}.</description>
+		</sheet>
+	</element>
+
+	<!--racial trait replacement grants-->
+	<element name="Draconic Ancestry Replacement" type="Grants" source="Internal" id="ID_WOTC_PHB24_RACIAL_TRAIT_REPLACEMENT_DRAGONBORN_DRACONIC_ANCESTRY" />
+	<element name="Breath Weapon Replacement" type="Grants" source="Internal" id="ID_WOTC_PHB24_RACIAL_TRAIT_REPLACEMENT_DRAGONBORN_BREATH_WEAPON" />
+	<element name="Damage Resistance Replacement" type="Grants" source="Internal" id="ID_WOTC_PHB24_RACIAL_TRAIT_REPLACEMENT_DRAGONBORN_DAMAGE_RESISTANCE" />
+	<element name="Draconic Flight Replacement" type="Grants" source="Internal" id="ID_WOTC_PHB24_RACIAL_TRAIT_REPLACEMENT_DRAGONBORN_DRACONIC_FLIGHT" />
+
+</elements>

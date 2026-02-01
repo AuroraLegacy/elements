@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<elements>
+	<info>
+		<name>Warrior of the Open Hand</name>
+		<description>The Warrior of the Open Hand subclass from the Player’s Handbook 2024.</description>
+		<author url="https://dndstore.wizards.com/us/en/product/1001494/2024-player-s-handbook-digital-plus-physical-bundle">Wizards of the Coast</author>
+		<update version="0.0.1">
+			<file name="monk-open-hand.xml" url="https://raw.githubusercontent.com/AuroraLegacy/open-hand/master/core/players-handbook-2024/archetypes/monk-open-hand.xml" />
+		</update>
+	</info>
+
+	<element name="Warrior of the Open Hand" type="Archetype" source="Player’s Handbook 2024" id="ID_WOTC_PHB24_ARCHETYPE_MONK_WARRIOR_OF_THE_OPEN_HAND">
+		<supports>Monk Subclass</supports>
+		<description>
+			<p class="flavor">Master Unarmed Combat Techniques</p>
+			<p>Warriors of the Open Hand are masters of unarmed combat. They learn techniques to push and trip their opponents and manipulate their own energy to protect themselves from harm.</p>
+			<div element="ID_WOTC_PHB24_ARCHETYPE_FEATURE_MONK_OPEN_HAND_OPEN_HAND_TECHNIQUE"/>
+			<div element="ID_WOTC_PHB24_ARCHETYPE_FEATURE_MONK_OPEN_HAND_WHOLENESS_OF_BODY"/>
+			<div element="ID_WOTC_PHB24_ARCHETYPE_FEATURE_MONK_OPEN_HAND_FLEET_STEP"/>
+			<div element="ID_WOTC_PHB24_ARCHETYPE_FEATURE_MONK_OPEN_HAND_QUIVERING_PALM"/>
+		</description>
+		<sheet display="false" />
+		<rules>
+			<grant type="Archetype Feature" id="ID_WOTC_PHB24_ARCHETYPE_FEATURE_MONK_OPEN_HAND_OPEN_HAND_TECHNIQUE" level="3"/>
+			<grant type="Archetype Feature" id="ID_WOTC_PHB24_ARCHETYPE_FEATURE_MONK_OPEN_HAND_WHOLENESS_OF_BODY" level="6"/>
+			<grant type="Archetype Feature" id="ID_WOTC_PHB24_ARCHETYPE_FEATURE_MONK_OPEN_HAND_FLEET_STEP" level="11"/>
+			<grant type="Archetype Feature" id="ID_WOTC_PHB24_ARCHETYPE_FEATURE_MONK_OPEN_HAND_QUIVERING_PALM" level="17"/>
+		</rules>
+	</element>
+
+	<element name="Level 3: Open Hand Technique" type="Archetype Feature" source="Player’s Handbook 2024" id="ID_WOTC_PHB24_ARCHETYPE_FEATURE_MONK_OPEN_HAND_OPEN_HAND_TECHNIQUE">
+		<requirements>!ID_INTERNAL_PHB24_FEATURE_REPLACEMENT_MONK_OPEN_HAND_OPEN_HAND_TECHNIQUE</requirements>
+		<description>
+			<p>Whenever you hit a creature with an attack granted by your Flurry of Blows, you can impose one of the following effects on that target.</p>
+			<p class="indent"><em><strong>Addle.</strong></em> The target can't make Opportunity Attacks until the start of its next turn.</p>
+			<p class="indent"><em><strong>Push.</strong></em> The target must succeed on a Strength saving throw or be pushed up to 15 feet away from you.</p>
+			<p class="indent"><em><strong>Topple.</strong></em> The target must succeed on a Dexterity saving throw or have the Prone condition.</p>
+		</description>
+		<sheet alt="Open Hand Technique">
+			<description>On hit using your Flurry of Blows, you can force one of the following effects on the target: &#13;
+			• It can't make Opportunity Attacks until the start of its next turn. &#13;
+			• It must succeed on a DC{{monks focus:dc}} Strength saving throw or be pushed up to 15 ft. away from you. &#13;
+			• It must succeed on a DC{{monks focus:dc}} Dexterity saving throw or have the Prone condition.</description>
+		</sheet>
+	</element>
+
+	<element name="Level 6: Wholeness of Body" type="Archetype Feature" source="Player’s Handbook 2024" id="ID_WOTC_PHB24_ARCHETYPE_FEATURE_MONK_OPEN_HAND_WHOLENESS_OF_BODY">
+		<requirements>!ID_INTERNAL_PHB24_FEATURE_REPLACEMENT_MONK_OPEN_HAND_WHOLENESS_OF_BODY</requirements>
+		<description>
+			<p>You gain the ability to heal yourself. As a Bonus Action, you can roll your Martial Arts die. You regain a number of Hit Points equal to the number rolled plus your Wisdom modifier (minimum of 1 Hit Point regained).</p>
+			<p class="indent">You can use this feature a number of times equal to your Wisdom modifier (minimum of once), and you regain all expended uses when you finish a Long Rest.</p>
+		</description>
+		<sheet alt="Wholeness of Body" action="Bonus Action" usage="{{wholeness of body:usage}}/Long Rest">
+			<description>You regain 1d{{martial arts:dice}}+{{wisdom:modifier}} Hit Points (minimum of 1).</description>
+		</sheet>
+		<rules>
+			<stat name="wholeness of body:usage" value="1" bonus="base" />
+			<stat name="wholeness of body:usage" value="wisdom:modifier" bonus="base" />
+		</rules>
+	</element>
+
+	<element name="Level 11: Fleet Step" type="Archetype Feature" source="Player’s Handbook 2024" id="ID_WOTC_PHB24_ARCHETYPE_FEATURE_MONK_OPEN_HAND_FLEET_STEP">
+		<requirements>!ID_INTERNAL_PHB24_FEATURE_REPLACEMENT_MONK_OPEN_HAND_FLEET_STEP</requirements>
+		<description>
+			<p>When you take a Bonus Action other than Step of the Wind, you can also use Step of the Wind immediately after that Bonus Action.</p>
+		</description>
+		<sheet alt="Fleet Step">
+			<description>When you take a Bonus Action other than Step of the Wind, you can also use Step of the Wind immediately after that Bonus Action.</description>
+		</sheet>
+	</element>
+
+	<element name="Level 17: Quivering Palm" type="Archetype Feature" source="Player’s Handbook 2024" id="ID_WOTC_PHB24_ARCHETYPE_FEATURE_MONK_OPEN_HAND_QUIVERING_PALM">
+		<requirements>!ID_INTERNAL_PHB24_FEATURE_REPLACEMENT_MONK_OPEN_HAND_QUIVERING_PALM</requirements>
+		<description>
+			<p>You gain the ability to set up lethal vibrations in someone's body. When you hit a creature with an Unarmed Strike, you can expend 4 Focus Points to start these imperceptible vibrations, which last for a number of days equal to your Monk level. The vibrations are harmless unless you take an action to end them. Alternatively, when you take the Attack action on your turn, you can forgo one of the attacks to end the vibrations. To end them, you and the target must be on the same plane of existence. When you end them, the target must make a Constitution saving throw, taking 10d12 Force damage on a failed save or half as much damage on a successful one.</p>
+			<p class="indent">You can have only one creature under the effect of this feature at a time. You can end the vibrations harmlessly (no action required).</p>
+		</description>
+		<sheet alt="Quivering Palm" usage="4 Focus Points" >
+			<description>When you hit a creature with an Unarmed Strike, you can start imperceptible vibrations, which last for {{level:monk}} days. The vibrations are harmless unless you take an action or forgo one of the attacks to end them. To end them, you and the target must be on the same plane of existence. When you end them, the target must make a DC{{monks focus:dc}} Constitution saving throw, taking 10d12 Force damage on a failed save or half as much damage on a successful one. You can have only one creature under the effect of this feature at a time. You can end the vibrations harmlessly (no action required).</description>
+		</sheet>
+	</element>
+
+	<!--Feature Replacement Grants-->
+	<element name="Open Hand Technique Feature Replacement" type="Grants" source="Internal" id="ID_INTERNAL_PHB24_FEATURE_REPLACEMENT_MONK_OPEN_HAND_OPEN_HAND_TECHNIQUE" />
+	<element name="Wholeness of Body Feature Replacement" type="Grants" source="Internal" id="ID_INTERNAL_PHB24_FEATURE_REPLACEMENT_MONK_OPEN_HAND_WHOLENESS_OF_BODY" />
+	<element name="Fleet Step Feature Replacement" type="Grants" source="Internal" id="ID_INTERNAL_PHB24_FEATURE_REPLACEMENT_MONK_OPEN_HAND_FLEET_STEP" />
+	<element name="Quivering Palm Feature Replacement" type="Grants" source="Internal" id="ID_INTERNAL_PHB24_FEATURE_REPLACEMENT_MONK_OPEN_HAND_QUIVERING_PALM" />
+</elements>

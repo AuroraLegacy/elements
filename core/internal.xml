@@ -3,7 +3,7 @@
 	<info>
 		<name>Internal</name>
 		<description>Elements that should've been part of the app itself</description>
-		<update version="0.1.4">
+		<update version="0.1.6">
 			<file name="internal.xml" url="https://raw.githubusercontent.com/AuroraLegacy/elements/master/core/internal.xml" />
 		</update>
 	</info>
@@ -390,8 +390,8 @@
         </description>
         <sheet display="false" />
         <rules>
-            <select type="Ability Score Improvement" name="Custom Ability Score Improvement +2" supports="Custom Ability Score Increase 2" />
-            <select type="Ability Score Improvement" name="Custom Ability Score Improvement +1" supports="Custom Ability Score Increase 1" />
+            <select type="Ability Score Improvement" name="Custom Ability Score Improvement +2" supports="Custom Ability Score Increase 2"  requirements="!ID_INTERNAL_GRANTS_BACKGROUND_ASI"/>
+            <select type="Ability Score Improvement" name="Custom Ability Score Improvement +1" supports="Custom Ability Score Increase 1"  requirements="!ID_INTERNAL_GRANTS_BACKGROUND_ASI"/>
         </rules>
     </element>
 
@@ -402,7 +402,7 @@
         </description>
         <sheet display="false" />
         <rules>
-            <select type="Ability Score Improvement" name="Custom Ability Score Improvement +1" number="3" supports="Custom Ability Score Increase 1" />
+            <select type="Ability Score Improvement" name="Custom Ability Score Improvement +1" number="3" supports="Custom Ability Score Increase 1"  requirements="!ID_INTERNAL_GRANTS_BACKGROUND_ASI"/>
         </rules>
     </element>
 
@@ -1185,5 +1185,882 @@
 			<set name="proficiency">ID_PROFICIENCY_WEAPON_PROFICIENCY_JAVELIN</set>
 			<set name="sourceUrl">https://www.dndbeyond.com/equipment/boomerang</set>
 		</setters>
+	</element>
+
+	<element name="Background Ability Score Improvement" type="Grants" source="Internal" id="ID_INTERNAL_GRANTS_BACKGROUND_ASI" />
+
+	<element name="Fighting Style Feature" type="Grants" source="Internal" id="ID_INTERNAL_GRANTS_FIGHTING_STYLE_FEATURE" />
+
+	<element name="Spellcasting Feature Grants" type="Grants" source="Internal" id="ID_INTERNAL_GRANTS_SPELLCASTING_FEATURE" />
+
+	<element name="Pact Magic Feature Grants" type="Grants" source="Internal" id="ID_INTERNAL_GRANTS_PACT_MAGIC_FEATURE" />
+
+	<!-- Generic Ability Score Increases for Feats from PHB24 and onward -->
+	<element name="Strength +1" type="Ability Score Improvement" source="Internal" id="ID_INTERNAL_ABILITY_SCORE_IMPROVEMENT_FEAT_STRENGTH">
+		<compendium display="false" />
+		<supports>Feat Ability Score Increase</supports>
+		<description>
+			<p>Your Strength increases by 1.</p>
+		</description>
+		<setters>
+			<set name="allow duplicate">true</set>
+		</setters>
+		<rules>
+			<stat name="strength" value="1" alt="Ability Score Increase" />
+		</rules>
+	</element>
+	<element name="Dexterity +1" type="Ability Score Improvement" source="Internal" id="ID_INTERNAL_ABILITY_SCORE_IMPROVEMENT_FEAT_DEXTERITY">
+		<compendium display="false" />
+		<supports>Feat Ability Score Increase</supports>
+		<description>
+			<p>Your Dexterity increases by 1.</p>
+		</description>
+		<setters>
+			<set name="allow duplicate">true</set>
+		</setters>
+		<rules>
+			<stat name="dexterity" value="1" alt="Ability Score Increase" />
+		</rules>
+	</element>
+	<element name="Constitution +1" type="Ability Score Improvement" source="Internal" id="ID_INTERNAL_ABILITY_SCORE_IMPROVEMENT_FEAT_CONSTITUTION">
+		<compendium display="false" />
+		<supports>Feat Ability Score Increase</supports>
+		<description>
+			<p>Your Constitution increases by 1.</p>
+		</description>
+		<setters>
+			<set name="allow duplicate">true</set>
+		</setters>
+		<rules>
+			<stat name="constitution" value="1" alt="Ability Score Increase" />
+		</rules>
+	</element>
+	<element name="Intelligence +1" type="Ability Score Improvement" source="Internal" id="ID_INTERNAL_ABILITY_SCORE_IMPROVEMENT_FEAT_INTELLIGENCE">
+		<compendium display="false" />
+		<supports>Feat Ability Score Increase</supports>
+		<description>
+			<p>Your Intelligence increases by 1.</p>
+		</description>
+		<setters>
+			<set name="allow duplicate">true</set>
+		</setters>
+		<rules>
+			<stat name="intelligence" value="1" alt="Ability Score Increase" />
+		</rules>
+	</element>
+	<element name="Wisdom +1" type="Ability Score Improvement" source="Internal" id="ID_INTERNAL_ABILITY_SCORE_IMPROVEMENT_FEAT_WISDOM">
+		<compendium display="false" />
+		<supports>Feat Ability Score Increase</supports>
+		<description>
+			<p>Your Wisdom increases by 1.</p>
+		</description>
+		<setters>
+			<set name="allow duplicate">true</set>
+		</setters>
+		<rules>
+			<stat name="wisdom" value="1" alt="Ability Score Increase" />
+		</rules>
+	</element>
+	<element name="Charisma +1" type="Ability Score Improvement" source="Internal" id="ID_INTERNAL_ABILITY_SCORE_IMPROVEMENT_FEAT_CHARISMA">
+		<compendium display="false" />
+		<supports>Feat Ability Score Increase</supports>
+		<description>
+			<p>Your Charisma increases by 1.</p>
+		</description>
+		<setters>
+			<set name="allow duplicate">true</set>
+		</setters>
+		<rules>
+			<stat name="charisma" value="1" alt="Ability Score Increase" />
+		</rules>
+	</element>
+
+	<!-- Generic Ability Score Increase for Boons from PHB24 and onward -->-->
+	<element name="Strength +1" type="Ability Score Improvement" source="Internal" id="ID_INTERNAL_ABILITY_SCORE_IMPROVEMENT_BOON_STRENGTH">
+		<compendium display="false" />
+		<supports>Boon Ability Score Increase</supports>
+		<requirements>[level:19]</requirements>
+		<description>
+			<p>Your Strength increases by 1, to a maximum of 30.</p>
+		</description>
+		<setters>
+			<set name="allow duplicate">true</set>
+		</setters>
+		<rules>
+			<stat name="strength" value="1" alt="Ability Score Increase" />
+			<stat name="strength:max" value="10" bonus="ability"/>
+		</rules>
+	</element>
+	<element name="Dexterity +1" type="Ability Score Improvement" source="Internal" id="ID_INTERNAL_ABILITY_SCORE_IMPROVEMENT_BOON_DEXTERITY">
+		<compendium display="false" />
+		<supports>Boon Ability Score Increase</supports>
+		<requirements>[level:19]</requirements>
+		<description>
+			<p>Your Dexterity increases by 1, to a maximum of 30.</p>
+		</description>
+		<setters>
+			<set name="allow duplicate">true</set>
+		</setters>
+		<rules>
+			<stat name="dexterity" value="1" alt="Ability Score Increase" />
+			<stat name="dexterity:max" value="10" bonus="ability"/>
+		</rules>
+	</element>
+	<element name="Constitution +1" type="Ability Score Improvement" source="Internal" id="ID_INTERNAL_ABILITY_SCORE_IMPROVEMENT_BOON_CONSTITUTION">
+		<compendium display="false" />
+		<supports>Boon Ability Score Increase</supports>
+		<description>
+			<p>Your Constitution increases by 1, to a maximum of 30.</p>
+		</description>
+		<setters>
+			<set name="allow duplicate">true</set>
+		</setters>
+		<rules>
+			<stat name="constitution" value="1" alt="Ability Score Increase" />
+			<stat name="constitution:max" value="10" bonus="ability"/>
+		</rules>
+	</element>
+	<element name="Intelligence +1" type="Ability Score Improvement" source="Internal" id="ID_INTERNAL_ABILITY_SCORE_IMPROVEMENT_BOON_INTELLIGENCE">
+		<compendium display="false" />
+		<supports>Boon Ability Score Increase</supports>
+		<description>
+			<p>Your Intelligence increases by 1, to a maximum of 30.</p>
+		</description>
+		<setters>
+			<set name="allow duplicate">true</set>
+		</setters>
+		<rules>
+			<stat name="intelligence" value="1" alt="Ability Score Increase" />
+			<stat name="intelligence:max" value="10" bonus="ability"/>
+		</rules>
+	</element>
+	<element name="Wisdom +1" type="Ability Score Improvement" source="Internal" id="ID_INTERNAL_ABILITY_SCORE_IMPROVEMENT_BOON_WISDOM">
+		<compendium display="false" />
+		<supports>Boon Ability Score Increase</supports>
+		<description>
+			<p>Your Wisdom increases by 1, to a maximum of 30.</p>
+		</description>
+		<setters>
+			<set name="allow duplicate">true</set>
+		</setters>
+		<rules>
+			<stat name="wisdom" value="1" alt="Ability Score Increase" />
+			<stat name="wisdom:max" value="10" bonus="ability"/>
+		</rules>
+	</element>
+	<element name="Charisma +1" type="Ability Score Improvement" source="Internal" id="ID_INTERNAL_ABILITY_SCORE_IMPROVEMENT_BOON_CHARISMA">
+		<compendium display="false" />
+		<supports>Boon Ability Score Increase</supports>
+		<description>
+			<p>Your Charisma increases by 1.</p>
+		</description>
+		<setters>
+			<set name="allow duplicate">true</set>
+		</setters>
+		<rules>
+			<stat name="charisma" value="1" alt="Ability Score Increase" />
+			<stat name="charisma:max" value="10" bonus="ability"/>
+		</rules>
+	</element>
+	
+	<!-- 5e 2024: ASI Combinations elements for Backgrounds -->
+	<element name="Strength, Dexterity, Constitution" type="Ability Score Improvement" source="Internal" id="ID_INTERNAL_ABILITY_SCORE_IMPROVEMENT_COMBINATION_STR_DEX_CON">
+		<supports>Custom Background Ability Score Combination</supports>
+		<compendium display="false" />
+		<description>
+			<p>You can increase Strength, Dexterity, or Constitution score by 2 and another one by 1, or increase all three by 1. None of these increases can raise a score above 20.</p>
+		</description>
+		<sheet display="false" />
+		<rules>
+			<select type="Ability Score Improvement" name="Ability Score Improvement Option" supports="ID_INTERNAL_ABILITY_SCORE_IMPROVEMENT_COMBINATION_STR_DEX_CON_1|ID_INTERNAL_ABILITY_SCORE_IMPROVEMENT_COMBINATION_STR_DEX_CON_2" />
+		</rules>
+	</element>
+	<element name="Ability Score Improvement +2, +1" type="Ability Score Improvement" source="Internal" id="ID_INTERNAL_ABILITY_SCORE_IMPROVEMENT_COMBINATION_STR_DEX_CON_1">
+		<compendium display="false" />
+		<description>
+			<p>You can increase Strength, Dexterity, or Constitution score by 2 and increase a different score by 1.</p>
+		</description>
+		<sheet display="false" />
+		<rules>
+			<select type="Ability Score Improvement" name="Custom Ability Score Improvement +2" supports="ID_WOTC_TCOE_OPTION_CUSTOMIZED_ASI_STRENGTH_INCREASE_2|ID_WOTC_TCOE_OPTION_CUSTOMIZED_ASI_DEXTERITY_INCREASE_2|ID_WOTC_TCOE_OPTION_CUSTOMIZED_ASI_CONSTITUTION_INCREASE_2" />
+			<select type="Ability Score Improvement" name="Custom Ability Score Improvement +1" supports="ID_WOTC_TCOE_OPTION_CUSTOMIZED_ASI_STRENGTH_INCREASE_1|ID_WOTC_TCOE_OPTION_CUSTOMIZED_ASI_DEXTERITY_INCREASE_1|ID_WOTC_TCOE_OPTION_CUSTOMIZED_ASI_CONSTITUTION_INCREASE_1" />
+		</rules>
+	</element>
+	<element name="Ability Score Improvement +1, +1, +1" type="Ability Score Improvement" source="Internal" id="ID_INTERNAL_ABILITY_SCORE_IMPROVEMENT_COMBINATION_STR_DEX_CON_2">
+		<compendium display="false" />
+		<description>
+			<p>You increase Strength, Dexterity, and Constitution score by 1.</p>
+		</description>
+		<sheet display="false" />
+		<rules>
+			<stat name="strength" value="1" alt="Ability Score Increase (Background)" />
+			<stat name="dexterity" value="1" alt="Ability Score Increase (Background)" />
+			<stat name="constitution" value="1" alt="Ability Score Increase (Background)" />
+		</rules>
+	</element>
+
+	<element name="Strength, Dexterity, Intelligence" type="Ability Score Improvement" source="Internal" id="ID_INTERNAL_ABILITY_SCORE_IMPROVEMENT_COMBINATION_STR_DEX_INT">
+		<supports>Custom Background Ability Score Combination</supports>
+		<compendium display="false" />
+		<description>
+			<p>You can increase Strength, Dexterity, or Intelligence score by 2 and another one by 1, or increase all three by 1. None of these increases can raise a score above 20.</p>
+		</description>
+		<sheet display="false" />
+		<rules>
+			<select type="Ability Score Improvement" name="Ability Score Improvement Option" supports="ID_INTERNAL_ABILITY_SCORE_IMPROVEMENT_COMBINATION_STR_DEX_INT_1|ID_INTERNAL_ABILITY_SCORE_IMPROVEMENT_COMBINATION_STR_DEX_INT_2" />
+		</rules>
+	</element>
+	<element name="Ability Score Improvement +2, +1" type="Ability Score Improvement" source="Internal" id="ID_INTERNAL_ABILITY_SCORE_IMPROVEMENT_COMBINATION_STR_DEX_INT_1">
+		<compendium display="false" />
+		<description>
+			<p>You can increase Strength, Dexterity, or Intelligence score by 2 and increase a different score by 1.</p>
+		</description>
+		<sheet display="false" />
+		<rules>
+			<select type="Ability Score Improvement" name="Custom Ability Score Improvement +2" supports="ID_WOTC_TCOE_OPTION_CUSTOMIZED_ASI_STRENGTH_INCREASE_2|ID_WOTC_TCOE_OPTION_CUSTOMIZED_ASI_DEXTERITY_INCREASE_2|ID_WOTC_TCOE_OPTION_CUSTOMIZED_ASI_INTELLIGENCE_INCREASE_2" />
+			<select type="Ability Score Improvement" name="Custom Ability Score Improvement +1" supports="ID_WOTC_TCOE_OPTION_CUSTOMIZED_ASI_STRENGTH_INCREASE_1|ID_WOTC_TCOE_OPTION_CUSTOMIZED_ASI_DEXTERITY_INCREASE_1|ID_WOTC_TCOE_OPTION_CUSTOMIZED_ASI_INTELLIGENCE_INCREASE_1" />
+		</rules>
+	</element>
+	<element name="Ability Score Improvement +1, +1, +1" type="Ability Score Improvement" source="Internal" id="ID_INTERNAL_ABILITY_SCORE_IMPROVEMENT_COMBINATION_STR_DEX_INT_2">
+		<compendium display="false" />
+		<description>
+			<p>You increase Strength, Dexterity, and Intelligence score by 1.</p>
+		</description>
+		<sheet display="false" />
+		<rules>
+			<stat name="strength" value="1" alt="Ability Score Increase (Background)" />
+			<stat name="dexterity" value="1" alt="Ability Score Increase (Background)" />
+			<stat name="intelligence" value="1" alt="Ability Score Increase (Background)" />
+		</rules>
+	</element>
+
+	<element name="Strength, Dexterity, Wisdom" type="Ability Score Improvement" source="Internal" id="ID_INTERNAL_ABILITY_SCORE_IMPROVEMENT_COMBINATION_STR_DEX_WIS">
+		<supports>Custom Background Ability Score Combination</supports>
+		<compendium display="false" />
+		<description>
+			<p>You can increase Strength, Dexterity, or Wisdom score by 2 and another one by 1, or increase all three by 1. None of these increases can raise a score above 20.</p>
+		</description>
+		<sheet display="false" />
+		<rules>
+			<select type="Ability Score Improvement" name="Ability Score Improvement Option" supports="ID_INTERNAL_ABILITY_SCORE_IMPROVEMENT_COMBINATION_STR_DEX_WIS_1|ID_INTERNAL_ABILITY_SCORE_IMPROVEMENT_COMBINATION_STR_DEX_WIS_2" />
+		</rules>
+	</element>
+	<element name="Ability Score Improvement +2, +1" type="Ability Score Improvement" source="Internal" id="ID_INTERNAL_ABILITY_SCORE_IMPROVEMENT_COMBINATION_STR_DEX_WIS_1">
+		<compendium display="false" />
+		<description>
+			<p>You can increase Strength, Dexterity, or Wisdom score by 2 and increase a different score by 1.</p>
+		</description>
+		<sheet display="false" />
+		<rules>
+			<select type="Ability Score Improvement" name="Custom Ability Score Improvement +2" supports="ID_WOTC_TCOE_OPTION_CUSTOMIZED_ASI_STRENGTH_INCREASE_2|ID_WOTC_TCOE_OPTION_CUSTOMIZED_ASI_DEXTERITY_INCREASE_2|ID_WOTC_TCOE_OPTION_CUSTOMIZED_ASI_WISDOM_INCREASE_2" />
+			<select type="Ability Score Improvement" name="Custom Ability Score Improvement +1" supports="ID_WOTC_TCOE_OPTION_CUSTOMIZED_ASI_STRENGTH_INCREASE_1|ID_WOTC_TCOE_OPTION_CUSTOMIZED_ASI_DEXTERITY_INCREASE_1|ID_WOTC_TCOE_OPTION_CUSTOMIZED_ASI_WISDOM_INCREASE_1" />
+		</rules>
+	</element>
+	<element name="Ability Score Improvement +1, +1, +1" type="Ability Score Improvement" source="Internal" id="ID_INTERNAL_ABILITY_SCORE_IMPROVEMENT_COMBINATION_STR_DEX_WIS_2">
+		<compendium display="false" />
+		<description>
+			<p>You increase Strength, Dexterity, and Wisdom score by 1.</p>
+		</description>
+		<sheet display="false" />
+		<rules>
+			<stat name="strength" value="1" alt="Ability Score Increase (Background)" />
+			<stat name="dexterity" value="1" alt="Ability Score Increase (Background)" />
+			<stat name="wisdom" value="1" alt="Ability Score Increase (Background)" />
+		</rules>
+	</element>
+
+	<element name="Strength, Dexterity, Charisma" type="Ability Score Improvement" source="Internal" id="ID_INTERNAL_ABILITY_SCORE_IMPROVEMENT_COMBINATION_STR_DEX_CHA">
+		<supports>Custom Background Ability Score Combination</supports>
+		<compendium display="false" />
+		<description>
+			<p>You can increase Strength, Dexterity, or Charisma score by 2 and another one by 1, or increase all three by 1. None of these increases can raise a score above 20.</p>
+		</description>
+		<sheet display="false" />
+		<rules>
+			<select type="Ability Score Improvement" name="Ability Score Improvement Option" supports="ID_INTERNAL_ABILITY_SCORE_IMPROVEMENT_COMBINATION_STR_DEX_CHA_1|ID_INTERNAL_ABILITY_SCORE_IMPROVEMENT_COMBINATION_STR_DEX_CHA_2" />
+		</rules>
+	</element>
+	<element name="Ability Score Improvement +2, +1" type="Ability Score Improvement" source="Internal" id="ID_INTERNAL_ABILITY_SCORE_IMPROVEMENT_COMBINATION_STR_DEX_CHA_1">
+		<compendium display="false" />
+		<description>
+			<p>You can increase Strength, Dexterity, or Charisma score by 2 and increase a different score by 1.</p>
+		</description>
+		<sheet display="false" />
+		<rules>
+			<select type="Ability Score Improvement" name="Custom Ability Score Improvement +2" supports="ID_WOTC_TCOE_OPTION_CUSTOMIZED_ASI_STRENGTH_INCREASE_2|ID_WOTC_TCOE_OPTION_CUSTOMIZED_ASI_DEXTERITY_INCREASE_2|ID_WOTC_TCOE_OPTION_CUSTOMIZED_ASI_CHARISMA_INCREASE_2" />
+			<select type="Ability Score Improvement" name="Custom Ability Score Improvement +1" supports="ID_WOTC_TCOE_OPTION_CUSTOMIZED_ASI_STRENGTH_INCREASE_1|ID_WOTC_TCOE_OPTION_CUSTOMIZED_ASI_DEXTERITY_INCREASE_1|ID_WOTC_TCOE_OPTION_CUSTOMIZED_ASI_CHARISMA_INCREASE_1" />
+		</rules>
+	</element>
+	<element name="Ability Score Improvement +1, +1, +1" type="Ability Score Improvement" source="Internal" id="ID_INTERNAL_ABILITY_SCORE_IMPROVEMENT_COMBINATION_STR_DEX_CHA_2">
+		<compendium display="false" />
+		<description>
+			<p>You increase Strength, Dexterity, and Charisma score by 1.</p>
+		</description>
+		<sheet display="false" />
+		<rules>
+			<stat name="strength" value="1" alt="Ability Score Increase (Background)" />
+			<stat name="dexterity" value="1" alt="Ability Score Increase (Background)" />
+			<stat name="charisma" value="1" alt="Ability Score Increase (Background)" />
+		</rules>
+	</element>
+
+	<element name="Strength, Constitution, Intelligence" type="Ability Score Improvement" source="Internal" id="ID_INTERNAL_ABILITY_SCORE_IMPROVEMENT_COMBINATION_STR_CON_INT">
+		<supports>Custom Background Ability Score Combination</supports>
+		<compendium display="false" />
+		<description>
+			<p>You can increase Strength, Constitution, or Intelligence score by 2 and another one by 1, or increase all three by 1. None of these increases can raise a score above 20.</p>
+		</description>
+		<sheet display="false" />
+		<rules>
+			<select type="Ability Score Improvement" name="Ability Score Improvement Option" supports="ID_INTERNAL_ABILITY_SCORE_IMPROVEMENT_COMBINATION_STR_CON_INT_1|ID_INTERNAL_ABILITY_SCORE_IMPROVEMENT_COMBINATION_STR_CON_INT_2" />
+		</rules>
+	</element>
+	<element name="Ability Score Improvement +2, +1" type="Ability Score Improvement" source="Internal" id="ID_INTERNAL_ABILITY_SCORE_IMPROVEMENT_COMBINATION_STR_CON_INT_1">
+		<compendium display="false" />
+		<description>
+			<p>You can increase Strength, Constitution, or Intelligence score by 2 and increase a different score by 1.</p>
+		</description>
+		<sheet display="false" />
+		<rules>
+			<select type="Ability Score Improvement" name="Custom Ability Score Improvement +2" supports="ID_WOTC_TCOE_OPTION_CUSTOMIZED_ASI_STRENGTH_INCREASE_2|ID_WOTC_TCOE_OPTION_CUSTOMIZED_ASI_CONSTITUTION_INCREASE_2|ID_WOTC_TCOE_OPTION_CUSTOMIZED_ASI_INTELLIGENCE_INCREASE_2" />
+			<select type="Ability Score Improvement" name="Custom Ability Score Improvement +1" supports="ID_WOTC_TCOE_OPTION_CUSTOMIZED_ASI_STRENGTH_INCREASE_1|ID_WOTC_TCOE_OPTION_CUSTOMIZED_ASI_CONSTITUTION_INCREASE_1|ID_WOTC_TCOE_OPTION_CUSTOMIZED_ASI_INTELLIGENCE_INCREASE_1" />
+		</rules>
+	</element>
+	<element name="Ability Score Improvement +1, +1, +1" type="Ability Score Improvement" source="Internal" id="ID_INTERNAL_ABILITY_SCORE_IMPROVEMENT_COMBINATION_STR_CON_INT_2">
+		<compendium display="false" />
+		<description>
+			<p>You increase Strength, Constitution, and Intelligence score by 1.</p>
+		</description>
+		<sheet display="false" />
+		<rules>
+			<stat name="strength" value="1" alt="Ability Score Increase (Background)" />
+			<stat name="constitution" value="1" alt="Ability Score Increase (Background)" />
+			<stat name="intelligence" value="1" alt="Ability Score Increase (Background)" />
+		</rules>
+	</element>
+
+	<element name="Strength, Constitution, Wisdom" type="Ability Score Improvement" source="Internal" id="ID_INTERNAL_ABILITY_SCORE_IMPROVEMENT_COMBINATION_STR_CON_WIS">
+		<supports>Custom Background Ability Score Combination</supports>
+		<compendium display="false" />
+		<description>
+			<p>You can increase Strength, Constitution, or Wisdom score by 2 and another one by 1, or increase all three by 1. None of these increases can raise a score above 20.</p>
+		</description>
+		<sheet display="false" />
+		<rules>
+			<select type="Ability Score Improvement" name="Ability Score Improvement Option" supports="ID_INTERNAL_ABILITY_SCORE_IMPROVEMENT_COMBINATION_STR_CON_WIS_1|ID_INTERNAL_ABILITY_SCORE_IMPROVEMENT_COMBINATION_STR_CON_WIS_2" />
+		</rules>
+	</element>
+	<element name="Ability Score Improvement +2, +1" type="Ability Score Improvement" source="Internal" id="ID_INTERNAL_ABILITY_SCORE_IMPROVEMENT_COMBINATION_STR_CON_WIS_1">
+		<compendium display="false" />
+		<description>
+			<p>You can increase Strength, Constitution, or Wisdom score by 2 and increase a different score by 1.</p>
+		</description>
+		<sheet display="false" />
+		<rules>
+			<select type="Ability Score Improvement" name="Custom Ability Score Improvement +2" supports="ID_WOTC_TCOE_OPTION_CUSTOMIZED_ASI_STRENGTH_INCREASE_2|ID_WOTC_TCOE_OPTION_CUSTOMIZED_ASI_CONSTITUTION_INCREASE_2|ID_WOTC_TCOE_OPTION_CUSTOMIZED_ASI_WISDOM_INCREASE_2" />
+			<select type="Ability Score Improvement" name="Custom Ability Score Improvement +1" supports="ID_WOTC_TCOE_OPTION_CUSTOMIZED_ASI_STRENGTH_INCREASE_1|ID_WOTC_TCOE_OPTION_CUSTOMIZED_ASI_CONSTITUTION_INCREASE_1|ID_WOTC_TCOE_OPTION_CUSTOMIZED_ASI_WISDOM_INCREASE_1" />
+		</rules>
+	</element>
+	<element name="Ability Score Improvement +1, +1, +1" type="Ability Score Improvement" source="Internal" id="ID_INTERNAL_ABILITY_SCORE_IMPROVEMENT_COMBINATION_STR_CON_WIS_2">
+		<compendium display="false" />
+		<description>
+			<p>You increase Strength, Constitution, and Wisdom score by 1.</p>
+		</description>
+		<sheet display="false" />
+		<rules>
+			<stat name="strength" value="1" alt="Ability Score Increase (Background)" />
+			<stat name="constitution" value="1" alt="Ability Score Increase (Background)" />
+			<stat name="wisdom" value="1" alt="Ability Score Increase (Background)" />
+		</rules>
+	</element>
+
+	<element name="Strength, Constitution, Charisma" type="Ability Score Improvement" source="Internal" id="ID_INTERNAL_ABILITY_SCORE_IMPROVEMENT_COMBINATION_STR_CON_CHA">
+		<supports>Custom Background Ability Score Combination</supports>
+		<compendium display="false" />
+		<description>
+			<p>You can increase Strength, Constitution, or Charisma score by 2 and another one by 1, or increase all three by 1. None of these increases can raise a score above 20.</p>
+		</description>
+		<sheet display="false" />
+		<rules>
+			<select type="Ability Score Improvement" name="Ability Score Improvement Option" supports="ID_INTERNAL_ABILITY_SCORE_IMPROVEMENT_COMBINATION_STR_CON_CHA_1|ID_INTERNAL_ABILITY_SCORE_IMPROVEMENT_COMBINATION_STR_CON_CHA_2" />
+		</rules>
+	</element>
+	<element name="Ability Score Improvement +2, +1" type="Ability Score Improvement" source="Internal" id="ID_INTERNAL_ABILITY_SCORE_IMPROVEMENT_COMBINATION_STR_CON_CHA_1">
+		<compendium display="false" />
+		<description>
+			<p>You can increase Strength, Constitution, or Charisma score by 2 and increase a different score by 1.</p>
+		</description>
+		<sheet display="false" />
+		<rules>
+			<select type="Ability Score Improvement" name="Custom Ability Score Improvement +2" supports="ID_WOTC_TCOE_OPTION_CUSTOMIZED_ASI_STRENGTH_INCREASE_2|ID_WOTC_TCOE_OPTION_CUSTOMIZED_ASI_CONSTITUTION_INCREASE_2|ID_WOTC_TCOE_OPTION_CUSTOMIZED_ASI_CHARISMA_INCREASE_2" />
+			<select type="Ability Score Improvement" name="Custom Ability Score Improvement +1" supports="ID_WOTC_TCOE_OPTION_CUSTOMIZED_ASI_STRENGTH_INCREASE_1|ID_WOTC_TCOE_OPTION_CUSTOMIZED_ASI_CONSTITUTION_INCREASE_1|ID_WOTC_TCOE_OPTION_CUSTOMIZED_ASI_CHARISMA_INCREASE_1" />
+		</rules>
+	</element>
+	<element name="Ability Score Improvement +1, +1, +1" type="Ability Score Improvement" source="Internal" id="ID_INTERNAL_ABILITY_SCORE_IMPROVEMENT_COMBINATION_STR_CON_CHA_2">
+		<compendium display="false" />
+		<description>
+			<p>You increase Strength, Constitution, and Charisma score by 1.</p>
+		</description>
+		<sheet display="false" />
+		<rules>
+			<stat name="strength" value="1" alt="Ability Score Increase (Background)" />
+			<stat name="constitution" value="1" alt="Ability Score Increase (Background)" />
+			<stat name="charisma" value="1" alt="Ability Score Increase (Background)" />
+		</rules>
+	</element>
+
+	<element name="Strength, Intelligence, Wisdom" type="Ability Score Improvement" source="Internal" id="ID_INTERNAL_ABILITY_SCORE_IMPROVEMENT_COMBINATION_STR_INT_WIS">
+		<supports>Custom Background Ability Score Combination</supports>
+		<compendium display="false" />
+		<description>
+			<p>You can increase Strength, Intelligence, or Wisdom score by 2 and another one by 1, or increase all three by 1. None of these increases can raise a score above 20.</p>
+		</description>
+		<sheet display="false" />
+		<rules>
+			<select type="Ability Score Improvement" name="Ability Score Improvement Option" supports="ID_INTERNAL_ABILITY_SCORE_IMPROVEMENT_COMBINATION_STR_INT_WIS_1|ID_INTERNAL_ABILITY_SCORE_IMPROVEMENT_COMBINATION_STR_INT_WIS_2" />
+		</rules>
+	</element>
+	<element name="Ability Score Improvement +2, +1" type="Ability Score Improvement" source="Internal" id="ID_INTERNAL_ABILITY_SCORE_IMPROVEMENT_COMBINATION_STR_INT_WIS_1">
+		<compendium display="false" />
+		<description>
+			<p>You can increase Strength, Intelligence, or Wisdom score by 2 and increase a different score by 1.</p>
+		</description>
+		<sheet display="false" />
+		<rules>
+			<select type="Ability Score Improvement" name="Custom Ability Score Improvement +2" supports="ID_WOTC_TCOE_OPTION_CUSTOMIZED_ASI_STRENGTH_INCREASE_2|ID_WOTC_TCOE_OPTION_CUSTOMIZED_ASI_INTELLIGENCE_INCREASE_2|ID_WOTC_TCOE_OPTION_CUSTOMIZED_ASI_WISDOM_INCREASE_2" />
+			<select type="Ability Score Improvement" name="Custom Ability Score Improvement +1" supports="ID_WOTC_TCOE_OPTION_CUSTOMIZED_ASI_STRENGTH_INCREASE_1|ID_WOTC_TCOE_OPTION_CUSTOMIZED_ASI_INTELLIGENCE_INCREASE_1|ID_WOTC_TCOE_OPTION_CUSTOMIZED_ASI_WISDOM_INCREASE_1" />
+		</rules>
+	</element>
+	<element name="Ability Score Improvement +1, +1, +1" type="Ability Score Improvement" source="Internal" id="ID_INTERNAL_ABILITY_SCORE_IMPROVEMENT_COMBINATION_STR_INT_WIS_2">
+		<compendium display="false" />
+		<description>
+			<p>You increase Strength, Intelligence, and Wisdom score by 1.</p>
+		</description>
+		<sheet display="false" />
+		<rules>
+			<stat name="strength" value="1" alt="Ability Score Increase (Background)" />
+			<stat name="intelligence" value="1" alt="Ability Score Increase (Background)" />
+			<stat name="wisdom" value="1" alt="Ability Score Increase (Background)" />
+		</rules>
+	</element>
+
+	<element name="Strength, Intelligence, Charisma" type="Ability Score Improvement" source="Internal" id="ID_INTERNAL_ABILITY_SCORE_IMPROVEMENT_COMBINATION_STR_INT_CHA">
+		<supports>Custom Background Ability Score Combination</supports>
+		<compendium display="false" />
+		<description>
+			<p>You can increase Strength, Intelligence, or Charisma score by 2 and another one by 1, or increase all three by 1. None of these increases can raise a score above 20.</p>
+		</description>
+		<sheet display="false" />
+		<rules>
+			<select type="Ability Score Improvement" name="Ability Score Improvement Option" supports="ID_INTERNAL_ABILITY_SCORE_IMPROVEMENT_COMBINATION_STR_INT_CHA_1|ID_INTERNAL_ABILITY_SCORE_IMPROVEMENT_COMBINATION_STR_INT_CHA_2" />
+		</rules>
+	</element>
+	<element name="Ability Score Improvement +2, +1" type="Ability Score Improvement" source="Internal" id="ID_INTERNAL_ABILITY_SCORE_IMPROVEMENT_COMBINATION_STR_INT_CHA_1">
+		<compendium display="false" />
+		<description>
+			<p>You can increase Strength, Intelligence, or Charisma score by 2 and increase a different score by 1.</p>
+		</description>
+		<sheet display="false" />
+		<rules>
+			<select type="Ability Score Improvement" name="Custom Ability Score Improvement +2" supports="ID_WOTC_TCOE_OPTION_CUSTOMIZED_ASI_STRENGTH_INCREASE_2|ID_WOTC_TCOE_OPTION_CUSTOMIZED_ASI_INTELLIGENCE_INCREASE_2|ID_WOTC_TCOE_OPTION_CUSTOMIZED_ASI_CHARISMA_INCREASE_2" />
+			<select type="Ability Score Improvement" name="Custom Ability Score Improvement +1" supports="ID_WOTC_TCOE_OPTION_CUSTOMIZED_ASI_STRENGTH_INCREASE_1|ID_WOTC_TCOE_OPTION_CUSTOMIZED_ASI_INTELLIGENCE_INCREASE_1|ID_WOTC_TCOE_OPTION_CUSTOMIZED_ASI_CHARISMA_INCREASE_1" />
+		</rules>
+	</element>
+	<element name="Ability Score Improvement +1, +1, +1" type="Ability Score Improvement" source="Internal" id="ID_INTERNAL_ABILITY_SCORE_IMPROVEMENT_COMBINATION_STR_INT_CHA_2">
+		<compendium display="false" />
+		<description>
+			<p>You increase Strength, Intelligence, and Charisma score by 1.</p>
+		</description>
+		<sheet display="false" />
+		<rules>
+			<stat name="strength" value="1" alt="Ability Score Increase (Background)" />
+			<stat name="intelligence" value="1" alt="Ability Score Increase (Background)" />
+			<stat name="charisma" value="1" alt="Ability Score Increase (Background)" />
+		</rules>
+	</element>
+
+	<element name="Strength, Wisdom, Charisma" type="Ability Score Improvement" source="Internal" id="ID_INTERNAL_ABILITY_SCORE_IMPROVEMENT_COMBINATION_STR_WIS_CHA">
+		<supports>Custom Background Ability Score Combination</supports>
+		<compendium display="false" />
+		<description>
+			<p>You can increase Strength, Wisdom, or Charisma score by 2 and another one by 1, or increase all three by 1. None of these increases can raise a score above 20.</p>
+		</description>
+		<sheet display="false" />
+		<rules>
+			<select type="Ability Score Improvement" name="Ability Score Improvement Option" supports="ID_INTERNAL_ABILITY_SCORE_IMPROVEMENT_COMBINATION_STR_WIS_CHA_1|ID_INTERNAL_ABILITY_SCORE_IMPROVEMENT_COMBINATION_STR_WIS_CHA_2" />
+		</rules>
+	</element>
+	<element name="Ability Score Improvement +2, +1" type="Ability Score Improvement" source="Internal" id="ID_INTERNAL_ABILITY_SCORE_IMPROVEMENT_COMBINATION_STR_WIS_CHA_1">
+		<compendium display="false" />
+		<description>
+			<p>You can increase Strength, Wisdom, or Charisma score by 2 and increase a different score by 1.</p>
+		</description>
+		<sheet display="false" />
+		<rules>
+			<select type="Ability Score Improvement" name="Custom Ability Score Improvement +2" supports="ID_WOTC_TCOE_OPTION_CUSTOMIZED_ASI_STRENGTH_INCREASE_2|ID_WOTC_TCOE_OPTION_CUSTOMIZED_ASI_WISDOM_INCREASE_2|ID_WOTC_TCOE_OPTION_CUSTOMIZED_ASI_CHARISMA_INCREASE_2" />
+			<select type="Ability Score Improvement" name="Custom Ability Score Improvement +1" supports="ID_WOTC_TCOE_OPTION_CUSTOMIZED_ASI_STRENGTH_INCREASE_1|ID_WOTC_TCOE_OPTION_CUSTOMIZED_ASI_WISDOM_INCREASE_1|ID_WOTC_TCOE_OPTION_CUSTOMIZED_ASI_CHARISMA_INCREASE_1" />
+		</rules>
+	</element>
+	<element name="Ability Score Improvement +1, +1, +1" type="Ability Score Improvement" source="Internal" id="ID_INTERNAL_ABILITY_SCORE_IMPROVEMENT_COMBINATION_STR_WIS_CHA_2">
+		<compendium display="false" />
+		<description>
+			<p>You increase Strength, Wisdom, and Charisma score by 1.</p>
+		</description>
+		<sheet display="false" />
+		<rules>
+			<stat name="strength" value="1" alt="Ability Score Increase (Background)" />
+			<stat name="wisdom" value="1" alt="Ability Score Increase (Background)" />
+			<stat name="charisma" value="1" alt="Ability Score Increase (Background)" />
+		</rules>
+	</element>
+
+	<element name="Dexterity, Constitution, Intelligence" type="Ability Score Improvement" source="Internal" id="ID_INTERNAL_ABILITY_SCORE_IMPROVEMENT_COMBINATION_DEX_CON_INT">
+		<supports>Custom Background Ability Score Combination</supports>
+		<compendium display="false" />
+		<description>
+			<p>You can increase Dexterity, Constitution, or Intelligence score by 2 and another one by 1, or increase all three by 1. None of these increases can raise a score above 20.</p>
+		</description>
+		<sheet display="false" />
+		<rules>
+			<select type="Ability Score Improvement" name="Ability Score Improvement Option" supports="ID_INTERNAL_ABILITY_SCORE_IMPROVEMENT_COMBINATION_DEX_CON_INT_1|ID_INTERNAL_ABILITY_SCORE_IMPROVEMENT_COMBINATION_DEX_CON_INT_2" />
+		</rules>
+	</element>
+	<element name="Ability Score Improvement +2, +1" type="Ability Score Improvement" source="Internal" id="ID_INTERNAL_ABILITY_SCORE_IMPROVEMENT_COMBINATION_DEX_CON_INT_1">
+		<compendium display="false" />
+		<description>
+			<p>You can increase Dexterity, Constitution, or Intelligence score by 2 and increase a different score by 1.</p>
+		</description>
+		<sheet display="false" />
+		<rules>
+			<select type="Ability Score Improvement" name="Custom Ability Score Improvement +2" supports="ID_WOTC_TCOE_OPTION_CUSTOMIZED_ASI_DEXTERITY_INCREASE_2|ID_WOTC_TCOE_OPTION_CUSTOMIZED_ASI_CONSTITUTION_INCREASE_2|ID_WOTC_TCOE_OPTION_CUSTOMIZED_ASI_INTELLIGENCE_INCREASE_2" />
+			<select type="Ability Score Improvement" name="Custom Ability Score Improvement +1" supports="ID_WOTC_TCOE_OPTION_CUSTOMIZED_ASI_DEXTERITY_INCREASE_1|ID_WOTC_TCOE_OPTION_CUSTOMIZED_ASI_CONSTITUTION_INCREASE_1|ID_WOTC_TCOE_OPTION_CUSTOMIZED_ASI_INTELLIGENCE_INCREASE_1" />
+		</rules>
+	</element>
+	<element name="Ability Score Improvement +1, +1, +1" type="Ability Score Improvement" source="Internal" id="ID_INTERNAL_ABILITY_SCORE_IMPROVEMENT_COMBINATION_DEX_CON_INT_2">
+		<compendium display="false" />
+		<description>
+			<p>You increase Dexterity, Constitution, and Intelligence score by 1.</p>
+		</description>
+		<sheet display="false" />
+		<rules>
+			<stat name="dexterity" value="1" alt="Ability Score Increase (Background)" />
+			<stat name="constitution" value="1" alt="Ability Score Increase (Background)" />
+			<stat name="intelligence" value="1" alt="Ability Score Increase (Background)" />
+		</rules>
+	</element>
+
+	<element name="Dexterity, Constitution, Wisdom" type="Ability Score Improvement" source="Internal" id="ID_INTERNAL_ABILITY_SCORE_IMPROVEMENT_COMBINATION_DEX_CON_WIS">
+		<supports>Custom Background Ability Score Combination</supports>
+		<compendium display="false" />
+		<description>
+			<p>You can increase Dexterity, Constitution, or Wisdom score by 2 and another one by 1, or increase all three by 1. None of these increases can raise a score above 20.</p>
+		</description>
+		<sheet display="false" />
+		<rules>
+			<select type="Ability Score Improvement" name="Ability Score Improvement Option" supports="ID_INTERNAL_ABILITY_SCORE_IMPROVEMENT_COMBINATION_DEX_CON_WIS_1|ID_INTERNAL_ABILITY_SCORE_IMPROVEMENT_COMBINATION_DEX_CON_WIS_2" />
+		</rules>
+	</element>
+	<element name="Ability Score Improvement +2, +1" type="Ability Score Improvement" source="Internal" id="ID_INTERNAL_ABILITY_SCORE_IMPROVEMENT_COMBINATION_DEX_CON_WIS_1">
+		<compendium display="false" />
+		<description>
+			<p>You can increase Dexterity, Constitution, or Wisdom score by 2 and increase a different score by 1.</p>
+		</description>
+		<sheet display="false" />
+		<rules>
+			<select type="Ability Score Improvement" name="Custom Ability Score Improvement +2" supports="ID_WOTC_TCOE_OPTION_CUSTOMIZED_ASI_DEXTERITY_INCREASE_2|ID_WOTC_TCOE_OPTION_CUSTOMIZED_ASI_CONSTITUTION_INCREASE_2|ID_WOTC_TCOE_OPTION_CUSTOMIZED_ASI_WISDOM_INCREASE_2" />
+			<select type="Ability Score Improvement" name="Custom Ability Score Improvement +1" supports="ID_WOTC_TCOE_OPTION_CUSTOMIZED_ASI_DEXTERITY_INCREASE_1|ID_WOTC_TCOE_OPTION_CUSTOMIZED_ASI_CONSTITUTION_INCREASE_1|ID_WOTC_TCOE_OPTION_CUSTOMIZED_ASI_WISDOM_INCREASE_1" />
+		</rules>
+	</element>
+	<element name="Ability Score Improvement +1, +1, +1" type="Ability Score Improvement" source="Internal" id="ID_INTERNAL_ABILITY_SCORE_IMPROVEMENT_COMBINATION_DEX_CON_WIS_2">
+		<compendium display="false" />
+		<description>
+			<p>You increase Dexterity, Constitution, and Wisdom score by 1.</p>
+		</description>
+		<sheet display="false" />
+		<rules>
+			<stat name="dexterity" value="1" alt="Ability Score Increase (Background)" />
+			<stat name="constitution" value="1" alt="Ability Score Increase (Background)" />
+			<stat name="wisdom" value="1" alt="Ability Score Increase (Background)" />
+		</rules>
+	</element>
+
+	<element name="Dexterity, Constitution, Charisma" type="Ability Score Improvement" source="Internal" id="ID_INTERNAL_ABILITY_SCORE_IMPROVEMENT_COMBINATION_DEX_CON_CHA">
+		<supports>Custom Background Ability Score Combination</supports>
+		<compendium display="false" />
+		<description>
+			<p>You can increase Dexterity, Constitution, or Charisma score by 2 and another one by 1, or increase all three by 1. None of these increases can raise a score above 20.</p>
+		</description>
+		<sheet display="false" />
+		<rules>
+			<select type="Ability Score Improvement" name="Ability Score Improvement Option" supports="ID_INTERNAL_ABILITY_SCORE_IMPROVEMENT_COMBINATION_DEX_CON_CHA_1|ID_INTERNAL_ABILITY_SCORE_IMPROVEMENT_COMBINATION_DEX_CON_CHA_2" />
+		</rules>
+	</element>
+	<element name="Ability Score Improvement +2, +1" type="Ability Score Improvement" source="Internal" id="ID_INTERNAL_ABILITY_SCORE_IMPROVEMENT_COMBINATION_DEX_CON_CHA_1">
+		<compendium display="false" />
+		<description>
+			<p>You can increase Dexterity, Constitution, or Charisma score by 2 and increase a different score by 1.</p>
+		</description>
+		<sheet display="false" />
+		<rules>
+			<select type="Ability Score Improvement" name="Custom Ability Score Improvement +2" supports="ID_WOTC_TCOE_OPTION_CUSTOMIZED_ASI_DEXTERITY_INCREASE_2|ID_WOTC_TCOE_OPTION_CUSTOMIZED_ASI_CONSTITUTION_INCREASE_2|ID_WOTC_TCOE_OPTION_CUSTOMIZED_ASI_CHARISMA_INCREASE_2" />
+			<select type="Ability Score Improvement" name="Custom Ability Score Improvement +1" supports="ID_WOTC_TCOE_OPTION_CUSTOMIZED_ASI_DEXTERITY_INCREASE_1|ID_WOTC_TCOE_OPTION_CUSTOMIZED_ASI_CONSTITUTION_INCREASE_1|ID_WOTC_TCOE_OPTION_CUSTOMIZED_ASI_CHARISMA_INCREASE_1" />
+		</rules>
+	</element>
+	<element name="Ability Score Improvement +1, +1, +1" type="Ability Score Improvement" source="Internal" id="ID_INTERNAL_ABILITY_SCORE_IMPROVEMENT_COMBINATION_DEX_CON_CHA_2">
+		<compendium display="false" />
+		<description>
+			<p>You increase Dexterity, Constitution, and Charisma score by 1.</p>
+		</description>
+		<sheet display="false" />
+		<rules>
+			<stat name="dexterity" value="1" alt="Ability Score Increase (Background)" />
+			<stat name="constitution" value="1" alt="Ability Score Increase (Background)" />
+			<stat name="charisma" value="1" alt="Ability Score Increase (Background)" />
+		</rules>
+	</element>
+
+	<element name="Dexterity, Intelligence, Wisdom" type="Ability Score Improvement" source="Internal" id="ID_INTERNAL_ABILITY_SCORE_IMPROVEMENT_COMBINATION_DEX_INT_WIS">
+		<supports>Custom Background Ability Score Combination</supports>
+		<compendium display="false" />
+		<description>
+			<p>You can increase Dexterity, Intelligence, or Wisdom score by 2 and another one by 1, or increase all three by 1. None of these increases can raise a score above 20.</p>
+		</description>
+		<sheet display="false" />
+		<rules>
+			<select type="Ability Score Improvement" name="Ability Score Improvement Option" supports="ID_INTERNAL_ABILITY_SCORE_IMPROVEMENT_COMBINATION_DEX_INT_WIS_1|ID_INTERNAL_ABILITY_SCORE_IMPROVEMENT_COMBINATION_DEX_INT_WIS_2" />
+		</rules>
+	</element>
+	<element name="Ability Score Improvement +2, +1" type="Ability Score Improvement" source="Internal" id="ID_INTERNAL_ABILITY_SCORE_IMPROVEMENT_COMBINATION_DEX_INT_WIS_1">
+		<compendium display="false" />
+		<description>
+			<p>You can increase Dexterity, Intelligence, or Wisdom score by 2 and increase a different score by 1.</p>
+		</description>
+		<sheet display="false" />
+		<rules>
+			<select type="Ability Score Improvement" name="Custom Ability Score Improvement +2" supports="ID_WOTC_TCOE_OPTION_CUSTOMIZED_ASI_DEXTERITY_INCREASE_2|ID_WOTC_TCOE_OPTION_CUSTOMIZED_ASI_INTELLIGENCE_INCREASE_2|ID_WOTC_TCOE_OPTION_CUSTOMIZED_ASI_WISDOM_INCREASE_2" />
+			<select type="Ability Score Improvement" name="Custom Ability Score Improvement +1" supports="ID_WOTC_TCOE_OPTION_CUSTOMIZED_ASI_DEXTERITY_INCREASE_1|ID_WOTC_TCOE_OPTION_CUSTOMIZED_ASI_INTELLIGENCE_INCREASE_1|ID_WOTC_TCOE_OPTION_CUSTOMIZED_ASI_WISDOM_INCREASE_1" />
+		</rules>
+	</element>
+	<element name="Ability Score Improvement +1, +1, +1" type="Ability Score Improvement" source="Internal" id="ID_INTERNAL_ABILITY_SCORE_IMPROVEMENT_COMBINATION_DEX_INT_WIS_2">
+		<compendium display="false" />
+		<description>
+			<p>You increase Dexterity, Intelligence, and Wisdom score by 1.</p>
+		</description>
+		<sheet display="false" />
+		<rules>
+			<stat name="dexterity" value="1" alt="Ability Score Increase (Background)" />
+			<stat name="intelligence" value="1" alt="Ability Score Increase (Background)" />
+			<stat name="wisdom" value="1" alt="Ability Score Increase (Background)" />
+		</rules>
+	</element>
+
+	<element name="Dexterity, Intelligence, Charisma" type="Ability Score Improvement" source="Internal" id="ID_INTERNAL_ABILITY_SCORE_IMPROVEMENT_COMBINATION_DEX_INT_CHA">
+		<supports>Custom Background Ability Score Combination</supports>
+		<compendium display="false" />
+		<description>
+			<p>You can increase Dexterity, Intelligence, or Charisma score by 2 and another one by 1, or increase all three by 1. None of these increases can raise a score above 20.</p>
+		</description>
+		<sheet display="false" />
+		<rules>
+			<select type="Ability Score Improvement" name="Ability Score Improvement Option" supports="ID_INTERNAL_ABILITY_SCORE_IMPROVEMENT_COMBINATION_DEX_INT_CHA_1|ID_INTERNAL_ABILITY_SCORE_IMPROVEMENT_COMBINATION_DEX_INT_CHA_2" />
+		</rules>
+	</element>
+	<element name="Ability Score Improvement +2, +1" type="Ability Score Improvement" source="Internal" id="ID_INTERNAL_ABILITY_SCORE_IMPROVEMENT_COMBINATION_DEX_INT_CHA_1">
+		<compendium display="false" />
+		<description>
+			<p>You can increase Dexterity, Intelligence, or Charisma score by 2 and increase a different score by 1.</p>
+		</description>
+		<sheet display="false" />
+		<rules>
+			<select type="Ability Score Improvement" name="Custom Ability Score Improvement +2" supports="ID_WOTC_TCOE_OPTION_CUSTOMIZED_ASI_DEXTERITY_INCREASE_2|ID_WOTC_TCOE_OPTION_CUSTOMIZED_ASI_INTELLIGENCE_INCREASE_2|ID_WOTC_TCOE_OPTION_CUSTOMIZED_ASI_CHARISMA_INCREASE_2" />
+			<select type="Ability Score Improvement" name="Custom Ability Score Improvement +1" supports="ID_WOTC_TCOE_OPTION_CUSTOMIZED_ASI_DEXTERITY_INCREASE_1|ID_WOTC_TCOE_OPTION_CUSTOMIZED_ASI_INTELLIGENCE_INCREASE_1|ID_WOTC_TCOE_OPTION_CUSTOMIZED_ASI_CHARISMA_INCREASE_1" />
+		</rules>
+	</element>
+	<element name="Ability Score Improvement +1, +1, +1" type="Ability Score Improvement" source="Internal" id="ID_INTERNAL_ABILITY_SCORE_IMPROVEMENT_COMBINATION_DEX_INT_CHA_2">
+		<compendium display="false" />
+		<description>
+			<p>You increase Dexterity, Intelligence, and Charisma score by 1.</p>
+		</description>
+		<sheet display="false" />
+		<rules>
+			<stat name="dexterity" value="1" alt="Ability Score Increase (Background)" />
+			<stat name="intelligence" value="1" alt="Ability Score Increase (Background)" />
+			<stat name="charisma" value="1" alt="Ability Score Increase (Background)" />
+		</rules>
+	</element>
+
+	<element name="Dexterity, Wisdom, Charisma" type="Ability Score Improvement" source="Internal" id="ID_INTERNAL_ABILITY_SCORE_IMPROVEMENT_COMBINATION_DEX_WIS_CHA">
+		<supports>Custom Background Ability Score Combination</supports>
+		<compendium display="false" />
+		<description>
+			<p>You can increase Dexterity, Wisdom, or Charisma score by 2 and another one by 1, or increase all three by 1. None of these increases can raise a score above 20.</p>
+		</description>
+		<sheet display="false" />
+		<rules>
+			<select type="Ability Score Improvement" name="Ability Score Improvement Option" supports="ID_INTERNAL_ABILITY_SCORE_IMPROVEMENT_COMBINATION_DEX_WIS_CHA_1|ID_INTERNAL_ABILITY_SCORE_IMPROVEMENT_COMBINATION_DEX_WIS_CHA_2" />
+		</rules>
+	</element>
+	<element name="Ability Score Improvement +2, +1" type="Ability Score Improvement" source="Internal" id="ID_INTERNAL_ABILITY_SCORE_IMPROVEMENT_COMBINATION_DEX_WIS_CHA_1">
+		<compendium display="false" />
+		<description>
+			<p>You can increase Dexterity, Wisdom, or Charisma score by 2 and increase a different score by 1.</p>
+		</description>
+		<sheet display="false" />
+		<rules>
+			<select type="Ability Score Improvement" name="Custom Ability Score Improvement +2" supports="ID_WOTC_TCOE_OPTION_CUSTOMIZED_ASI_DEXTERITY_INCREASE_2|ID_WOTC_TCOE_OPTION_CUSTOMIZED_ASI_WISDOM_INCREASE_2|ID_WOTC_TCOE_OPTION_CUSTOMIZED_ASI_CHARISMA_INCREASE_2" />
+			<select type="Ability Score Improvement" name="Custom Ability Score Improvement +1" supports="ID_WOTC_TCOE_OPTION_CUSTOMIZED_ASI_DEXTERITY_INCREASE_1|ID_WOTC_TCOE_OPTION_CUSTOMIZED_ASI_WISDOM_INCREASE_1|ID_WOTC_TCOE_OPTION_CUSTOMIZED_ASI_CHARISMA_INCREASE_1" />
+		</rules>
+	</element>
+	<element name="Ability Score Improvement +1, +1, +1" type="Ability Score Improvement" source="Internal" id="ID_INTERNAL_ABILITY_SCORE_IMPROVEMENT_COMBINATION_DEX_WIS_CHA_2">
+		<compendium display="false" />
+		<description>
+			<p>You increase Dexterity, Wisdom, and Charisma score by 1.</p>
+		</description>
+		<sheet display="false" />
+		<rules>
+			<stat name="dexterity" value="1" alt="Ability Score Increase (Background)" />
+			<stat name="wisdom" value="1" alt="Ability Score Increase (Background)" />
+			<stat name="charisma" value="1" alt="Ability Score Increase (Background)" />
+		</rules>
+	</element>
+
+	<element name="Constitution, Intelligence, Wisdom" type="Ability Score Improvement" source="Internal" id="ID_INTERNAL_ABILITY_SCORE_IMPROVEMENT_COMBINATION_CON_INT_WIS">
+		<supports>Custom Background Ability Score Combination</supports>
+		<compendium display="false" />
+		<description>
+			<p>You can increase Constitution, Intelligence, or Wisdom score by 2 and another one by 1, or increase all three by 1. None of these increases can raise a score above 20.</p>
+		</description>
+		<sheet display="false" />
+		<rules>
+			<select type="Ability Score Improvement" name="Ability Score Improvement Option" supports="ID_INTERNAL_ABILITY_SCORE_IMPROVEMENT_COMBINATION_CON_INT_WIS_1|ID_INTERNAL_ABILITY_SCORE_IMPROVEMENT_COMBINATION_CON_INT_WIS_2" />
+		</rules>
+	</element>
+	<element name="Ability Score Improvement +2, +1" type="Ability Score Improvement" source="Internal" id="ID_INTERNAL_ABILITY_SCORE_IMPROVEMENT_COMBINATION_CON_INT_WIS_1">
+		<compendium display="false" />
+		<description>
+			<p>You can increase Constitution, Intelligence, or Wisdom score by 2 and increase a different score by 1.</p>
+		</description>
+		<sheet display="false" />
+		<rules>
+			<select type="Ability Score Improvement" name="Custom Ability Score Improvement +2" supports="ID_WOTC_TCOE_OPTION_CUSTOMIZED_ASI_CONSTITUTION_INCREASE_2|ID_WOTC_TCOE_OPTION_CUSTOMIZED_ASI_INTELLIGENCE_INCREASE_2|ID_WOTC_TCOE_OPTION_CUSTOMIZED_ASI_WISDOM_INCREASE_2" />
+			<select type="Ability Score Improvement" name="Custom Ability Score Improvement +1" supports="ID_WOTC_TCOE_OPTION_CUSTOMIZED_ASI_CONSTITUTION_INCREASE_1|ID_WOTC_TCOE_OPTION_CUSTOMIZED_ASI_INTELLIGENCE_INCREASE_1|ID_WOTC_TCOE_OPTION_CUSTOMIZED_ASI_WISDOM_INCREASE_1" />
+		</rules>
+	</element>
+	<element name="Ability Score Improvement +1, +1, +1" type="Ability Score Improvement" source="Internal" id="ID_INTERNAL_ABILITY_SCORE_IMPROVEMENT_COMBINATION_CON_INT_WIS_2">
+		<compendium display="false" />
+		<description>
+			<p>You increase Constitution, Intelligence, and Wisdom score by 1.</p>
+		</description>
+		<sheet display="false" />
+		<rules>
+			<stat name="constitution" value="1" alt="Ability Score Increase (Background)" />
+			<stat name="intelligence" value="1" alt="Ability Score Increase (Background)" />
+			<stat name="wisdom" value="1" alt="Ability Score Increase (Background)" />
+		</rules>
+	</element>
+
+	<element name="Constitution, Intelligence, Charisma" type="Ability Score Improvement" source="Internal" id="ID_INTERNAL_ABILITY_SCORE_IMPROVEMENT_COMBINATION_CON_INT_CHA">
+		<supports>Custom Background Ability Score Combination</supports>
+		<compendium display="false" />
+		<description>
+			<p>You can increase Constitution, Intelligence, or Charisma score by 2 and another one by 1, or increase all three by 1. None of these increases can raise a score above 20.</p>
+		</description>
+		<sheet display="false" />
+		<rules>
+			<select type="Ability Score Improvement" name="Ability Score Improvement Option" supports="ID_INTERNAL_ABILITY_SCORE_IMPROVEMENT_COMBINATION_CON_INT_CHA_1|ID_INTERNAL_ABILITY_SCORE_IMPROVEMENT_COMBINATION_CON_INT_CHA_2" />
+		</rules>
+	</element>
+	<element name="Ability Score Improvement +2, +1" type="Ability Score Improvement" source="Internal" id="ID_INTERNAL_ABILITY_SCORE_IMPROVEMENT_COMBINATION_CON_INT_CHA_1">
+		<compendium display="false" />
+		<description>
+			<p>You can increase Constitution, Intelligence, or Charisma score by 2 and increase a different score by 1.</p>
+		</description>
+		<sheet display="false" />
+		<rules>
+			<select type="Ability Score Improvement" name="Custom Ability Score Improvement +2" supports="ID_WOTC_TCOE_OPTION_CUSTOMIZED_ASI_CONSTITUTION_INCREASE_2|ID_WOTC_TCOE_OPTION_CUSTOMIZED_ASI_INTELLIGENCE_INCREASE_2|ID_WOTC_TCOE_OPTION_CUSTOMIZED_ASI_CHARISMA_INCREASE_2" />
+			<select type="Ability Score Improvement" name="Custom Ability Score Improvement +1" supports="ID_WOTC_TCOE_OPTION_CUSTOMIZED_ASI_CONSTITUTION_INCREASE_1|ID_WOTC_TCOE_OPTION_CUSTOMIZED_ASI_INTELLIGENCE_INCREASE_1|ID_WOTC_TCOE_OPTION_CUSTOMIZED_ASI_CHARISMA_INCREASE_1" />
+		</rules>
+	</element>
+	<element name="Ability Score Improvement +1, +1, +1" type="Ability Score Improvement" source="Internal" id="ID_INTERNAL_ABILITY_SCORE_IMPROVEMENT_COMBINATION_CON_INT_CHA_2">
+		<compendium display="false" />
+		<description>
+			<p>You increase Constitution, Intelligence, and Charisma score by 1.</p>
+		</description>
+		<sheet display="false" />
+		<rules>
+			<stat name="constitution" value="1" alt="Ability Score Increase (Background)" />
+			<stat name="intelligence" value="1" alt="Ability Score Increase (Background)" />
+			<stat name="charisma" value="1" alt="Ability Score Increase (Background)" />
+		</rules>
+	</element>
+
+	<element name="Constitution, Wisdom, Charisma" type="Ability Score Improvement" source="Internal" id="ID_INTERNAL_ABILITY_SCORE_IMPROVEMENT_COMBINATION_CON_WIS_CHA">
+		<supports>Custom Background Ability Score Combination</supports>
+		<compendium display="false" />
+		<description>
+			<p>You can increase Constitution, Wisdom, or Charisma score by 2 and another one by 1, or increase all three by 1. None of these increases can raise a score above 20.</p>
+		</description>
+		<sheet display="false" />
+		<rules>
+			<select type="Ability Score Improvement" name="Ability Score Improvement Option" supports="ID_INTERNAL_ABILITY_SCORE_IMPROVEMENT_COMBINATION_CON_WIS_CHA_1|ID_INTERNAL_ABILITY_SCORE_IMPROVEMENT_COMBINATION_CON_WIS_CHA_2" />
+		</rules>
+	</element>
+	<element name="Ability Score Improvement +2, +1" type="Ability Score Improvement" source="Internal" id="ID_INTERNAL_ABILITY_SCORE_IMPROVEMENT_COMBINATION_CON_WIS_CHA_1">
+		<compendium display="false" />
+		<description>
+			<p>You can increase Constitution, Wisdom, or Charisma score by 2 and increase a different score by 1.</p>
+		</description>
+		<sheet display="false" />
+		<rules>
+			<select type="Ability Score Improvement" name="Custom Ability Score Improvement +2" supports="ID_WOTC_TCOE_OPTION_CUSTOMIZED_ASI_CONSTITUTION_INCREASE_2|ID_WOTC_TCOE_OPTION_CUSTOMIZED_ASI_WISDOM_INCREASE_2|ID_WOTC_TCOE_OPTION_CUSTOMIZED_ASI_CHARISMA_INCREASE_2" />
+			<select type="Ability Score Improvement" name="Custom Ability Score Improvement +1" supports="ID_WOTC_TCOE_OPTION_CUSTOMIZED_ASI_CONSTITUTION_INCREASE_1|ID_WOTC_TCOE_OPTION_CUSTOMIZED_ASI_WISDOM_INCREASE_1|ID_WOTC_TCOE_OPTION_CUSTOMIZED_ASI_CHARISMA_INCREASE_1" />
+		</rules>
+	</element>
+	<element name="Ability Score Improvement +1, +1, +1" type="Ability Score Improvement" source="Internal" id="ID_INTERNAL_ABILITY_SCORE_IMPROVEMENT_COMBINATION_CON_WIS_CHA_2">
+		<compendium display="false" />
+		<description>
+			<p>You increase Constitution, Wisdom, and Charisma score by 1.</p>
+		</description>
+		<sheet display="false" />
+		<rules>
+			<stat name="constitution" value="1" alt="Ability Score Increase (Background)" />
+			<stat name="wisdom" value="1" alt="Ability Score Increase (Background)" />
+			<stat name="charisma" value="1" alt="Ability Score Increase (Background)" />
+		</rules>
+	</element>
+
+	<element name="Intelligence, Wisdom, Charisma" type="Ability Score Improvement" source="Internal" id="ID_INTERNAL_ABILITY_SCORE_IMPROVEMENT_COMBINATION_INT_WIS_CHA">
+		<supports>Custom Background Ability Score Combination</supports>
+		<compendium display="false" />
+		<description>
+			<p>You can increase Intelligence, Wisdom, or Charisma score by 2 and another one by 1, or increase all three by 1. None of these increases can raise a score above 20.</p>
+		</description>
+		<sheet display="false" />
+		<rules>
+			<select type="Ability Score Improvement" name="Ability Score Improvement Option" supports="ID_INTERNAL_ABILITY_SCORE_IMPROVEMENT_COMBINATION_INT_WIS_CHA_1|ID_INTERNAL_ABILITY_SCORE_IMPROVEMENT_COMBINATION_INT_WIS_CHA_2" />
+		</rules>
+	</element>
+	<element name="Ability Score Improvement +2, +1" type="Ability Score Improvement" source="Internal" id="ID_INTERNAL_ABILITY_SCORE_IMPROVEMENT_COMBINATION_INT_WIS_CHA_1">
+		<compendium display="false" />
+		<description>
+			<p>You can increase Intelligence, Wisdom, or Charisma score by 2 and increase a different score by 1.</p>
+		</description>
+		<sheet display="false" />
+		<rules>
+			<select type="Ability Score Improvement" name="Custom Ability Score Improvement +2" supports="ID_WOTC_TCOE_OPTION_CUSTOMIZED_ASI_INTELLIGENCE_INCREASE_2|ID_WOTC_TCOE_OPTION_CUSTOMIZED_ASI_WISDOM_INCREASE_2|ID_WOTC_TCOE_OPTION_CUSTOMIZED_ASI_CHARISMA_INCREASE_2" />
+			<select type="Ability Score Improvement" name="Custom Ability Score Improvement +1" supports="ID_WOTC_TCOE_OPTION_CUSTOMIZED_ASI_INTELLIGENCE_INCREASE_1|ID_WOTC_TCOE_OPTION_CUSTOMIZED_ASI_WISDOM_INCREASE_1|ID_WOTC_TCOE_OPTION_CUSTOMIZED_ASI_CHARISMA_INCREASE_1" />
+		</rules>
+	</element>
+	<element name="Ability Score Improvement +1, +1, +1" type="Ability Score Improvement" source="Internal" id="ID_INTERNAL_ABILITY_SCORE_IMPROVEMENT_COMBINATION_INT_WIS_CHA_2">
+		<compendium display="false" />
+		<description>
+			<p>You increase Intelligence, Wisdom, and Charisma score by 1.</p>
+		</description>
+		<sheet display="false" />
+		<rules>
+			<stat name="intelligence" value="1" alt="Ability Score Increase (Background)" />
+			<stat name="wisdom" value="1" alt="Ability Score Increase (Background)" />
+			<stat name="charisma" value="1" alt="Ability Score Increase (Background)" />
+		</rules>
 	</element>
 </elements>

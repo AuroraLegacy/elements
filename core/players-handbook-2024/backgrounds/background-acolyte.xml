@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<elements>
+	<info>
+		<name>Acolyte</name>
+		<description>The Acolyte background from the Player’s Handbook 2024.</description>
+		<author url="https://dndstore.wizards.com/us/en/product/1001494/2024-player-s-handbook-digital-plus-physical-bundle">Wizards of the Coast</author>
+		<update version="0.0.1">
+			<file name="background-acolyte.xml" url="https://raw.githubusercontent.com/AuroraLegacy/elements/master/core/players-handbook-2024/backgrounds/background-acolyte.xml" />
+		</update>
+	</info>
+
+	<element name="Acolyte" type="Background" source="Player’s Handbook 2024" id="ID_WOTC_PHB24_BACKGROUND_ACOLYTE">
+		<description>
+			<ul class="unstyled" style="text-indent:-1em; margin-left:1em; margin-bottom:5px">
+				<li><strong>Ability Scores:</strong> Intelligence, Wisdom, Charisma</li>
+				<li><strong>Feat:</strong> Magic Initiate (Cleric)</li>
+				<li><strong>Skill Proficiencies:</strong> Insight and Religion</li>
+				<li><strong>Tool Proficiency:</strong> Calligrapher’s Supplies</li>
+				<li><strong>Equipment:</strong><i> Choose A or B:</i> (A) Calligrapher’s Supplies, Book (prayers), Holy Symbol, Parchment (10 sheets), Robe, 8 GP; or (B) 50 GP</li>
+			</ul>
+			<p>You devoted yourself to service in a temple, either nestled in a town or secluded in a sacred grove. There you performed rites in honor of a god or pantheon. You served under a priest and studied religion. Thanks to your priest’s instruction and your own devotion, you also learned how to channel a modicum of divine power in service to your place of worship and the people who prayed there.</p>
+		</description>
+		<setters>
+			<set name="short">Intelligence, Wisdom, Charisma, Magic Initiate (Cleric) Feat, Insight and Religion Skills, and Calligrapher’s Supplies</set>
+		</setters>
+		<rules>
+			<grant type="Ability Score Improvement" id="ID_INTERNAL_ABILITY_SCORE_IMPROVEMENT_COMBINATION_INT_WIS_CHA" />
+			<grant type="Feat" id="ID_WOTC_PHB24_FEAT_MAGIC_INITIATE_CLERIC" />
+			<grant type="Proficiency" id="ID_WOTC_PHB24_PROFICIENCY_SKILL_INSIGHT" />
+			<grant type="Proficiency" id="ID_WOTC_PHB24_PROFICIENCY_SKILL_RELIGION" />
+			<grant type="Grants" id="ID_INTERNAL_GRANTS_BACKGROUND_ASI" />
+			<grant type="Proficiency" id="ID_PROFICIENCY_TOOL_PROFICIENCY_CALLIGRAPHERS_SUPPLIES" />
+		</rules>
+	</element>
+
+	<!-- Placeholder: Equipment Pack for Backgrounds. Will be populated with correct IDs later -->
+	<!-- <element name="Background Equipment Pack (Acolyte)" type="Item" source="Player’s Handbook 2024" id="ID_WOTC_PHB24_ITEM_BACKGROUND_EQUIPMENT_PACK_ACOLYTE">
+		<description>
+			<p style="margin-bottom:5px">This pack contains items that are given to a character of Acolyte Background, if they chose option A.</p>
+			<p>You will receive following items by extracting contents of this pack:</p>
+			<p class="indent">• Calligrapher’s Supplies</p>
+			<p class="indent">• Book (prayers)</p>
+			<p class="indent">• Holy Symbol</p>
+			<p class="indent">• Parchment (10 sheets)</p>
+			<p class="indent" style="margin-bottom:5px">• Robe</p>
+			<p><b>Note:</b> This pack doesn't include 8 GP.</p>
+		</description>
+		<setters>
+			<set name="category">Equipment Packs</set>
+			<set name="cost">—</set>
+			<set name="weight">—</set>
+		</setters>
+		<extract>
+			<item>Calligrapher’s Supplies</item>
+			<item>Book (prayers)</item>
+			<item>Holy Symbol</item>
+			<item amount="10">Parchment (10 sheets)</item>
+			<item>Robe</item>
+		</extract>
+	</element> -->
+</elements>

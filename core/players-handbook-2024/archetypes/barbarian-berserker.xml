@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<elements>
+	<info>
+		<name>Path of the Berserker</name>
+		<description>The Path of the Berserker subclass from the Player’s Handbook 2024.</description>
+		<author url="https://dndstore.wizards.com/us/en/product/1001494/2024-player-s-handbook-digital-plus-physical-bundle">Wizards of the Coast</author>
+		<update version="0.0.1">
+			<file name="barbarian-berserker.xml" url="https://raw.githubusercontent.com/AuroraLegacy/elements/master/core/players-handbook-2024/archetypes/barbarian-berserker.xml" />
+		</update>
+	</info>
+
+	<element name="Path of the Berserker" type="Archetype" source="Player’s Handbook 2024" id="ID_WOTC_PHB24_ARCHETYPE_BARBARIAN_BERSERKER">
+		<supports>Barbarian Subclass</supports>
+		<description>
+			<p class="flavor">Channel Rage into Violent Fury</p>
+			<p>Barbarians who walk the Path of the Berserker direct their Rage primarily toward violence. Their path is one of untrammeled fury, and they thrill in the chaos of battle as they allow their Rage to seize and empower them.</p>
+			<div element="ID_WOTC_PHB24_ARCHETYPE_FEATURE_BARBARIAN_BERSERKER_FRENZY" />
+			<div element="ID_WOTC_PHB24_ARCHETYPE_FEATURE_BARBARIAN_BERSERKER_MINDLESS_RAGE" />
+			<div element="ID_WOTC_PHB24_ARCHETYPE_FEATURE_BARBARIAN_BERSERKER_RETALIATION" />
+			<div element="ID_WOTC_PHB24_ARCHETYPE_FEATURE_BARBARIAN_BERSERKER_INTIMIDATING_PRESENCE" />
+		</description>
+		<sheet display="false" />
+		<rules>
+			<grant type="Archetype Feature" id="ID_WOTC_PHB24_ARCHETYPE_FEATURE_BARBARIAN_BERSERKER_FRENZY" level="3" />
+			<grant type="Archetype Feature" id="ID_WOTC_PHB24_ARCHETYPE_FEATURE_BARBARIAN_BERSERKER_MINDLESS_RAGE" level="6" />
+			<grant type="Archetype Feature" id="ID_WOTC_PHB24_ARCHETYPE_FEATURE_BARBARIAN_BERSERKER_RETALIATION" level="10" />
+			<grant type="Archetype Feature" id="ID_WOTC_PHB24_ARCHETYPE_FEATURE_BARBARIAN_BERSERKER_INTIMIDATING_PRESENCE" level="14" />
+		</rules>
+	</element>
+
+	<element name="Level 3: Frenzy" type="Archetype Feature" source="Player’s Handbook 2024" id="ID_WOTC_PHB24_ARCHETYPE_FEATURE_BARBARIAN_BERSERKER_FRENZY">
+		<requirements>!ID_INTERNAL_PHB24_FEATURE_REPLACEMENT_BARBARIAN_BERSERKER_FRENZY</requirements>
+		<description>
+			<p>If you use Reckless Attack while your Rage is active, you deal extra damage to the first target you hit on your turn with a Strength-based attack. To determine the extra damage, roll a number of d6s equal to your Rage Damage bonus, and add them together. The damage has the same type as the weapon or Unarmed Strike used for the attack.</p>
+		</description>
+		<sheet alt="Frenzy">
+			<description>When you use Reckless Attack while your Rage is active, you deal {{barbarian rage:damage}}d6 extra damage on your first hit.</description>
+		</sheet>
+	</element>
+
+	<element name="Level 6: Mindless Rage" type="Archetype Feature" source="Player’s Handbook 2024" id="ID_WOTC_PHB24_ARCHETYPE_FEATURE_BARBARIAN_BERSERKER_MINDLESS_RAGE">
+		<requirements>!ID_INTERNAL_PHB24_FEATURE_REPLACEMENT_BARBARIAN_BERSERKER_MINDLESS_RAGE</requirements>
+		<description>
+			<p>You have Immunity to the Charmed and Frightened conditions while your Rage is active. If you’re Charmed or Frightened when you enter your Rage, the condition ends on you.</p>
+		</description>
+		<sheet alt="Mindless Rage">
+			<description>You have Immunity to the Charmed and Frightened conditions while your Rage is active. If you’re Charmed or Frightened when you enter your Rage, the condition ends on you.</description>
+		</sheet>
+	</element>
+
+	<element name="Level 10: Retaliation" type="Archetype Feature" source="Player’s Handbook 2024" id="ID_WOTC_PHB24_ARCHETYPE_FEATURE_BARBARIAN_BERSERKER_RETALIATION">
+		<requirements>!ID_INTERNAL_PHB24_FEATURE_REPLACEMENT_BARBARIAN_BERSERKER_RETALIATION</requirements>
+		<description>
+			<p>When you take damage from a creature that is within 5 feet of you, you can take a Reaction to make one melee attack against that creature, using a weapon or an Unarmed Strike.</p>
+		</description>
+		<sheet alt="Retaliation" action="Reaction">
+			<description>When you take damage from a creature that is within 5 feet of you, you can make one melee attack against that creature.</description>
+		</sheet>
+	</element>
+
+	<element name="Level 14: Intimidating Presence" type="Archetype Feature" source="Player’s Handbook 2024" id="ID_WOTC_PHB24_ARCHETYPE_FEATURE_BARBARIAN_BERSERKER_INTIMIDATING_PRESENCE">
+		<requirements>!ID_INTERNAL_PHB24_FEATURE_REPLACEMENT_BARBARIAN_BERSERKER_INTIMIDATING_PRESENCE</requirements>
+		<description>
+			<p>As a Bonus Action, you can strike terror into others with your menacing presence and primal power. When you do so, each creature of your choice in a 30-foot Emanation originating from you must make a Wisdom saving throw (DC 8 plus your Strength modifier and Proficiency Bonus). On a failed save, a creature has the Frightened condition for 1 minute. At the end of each of the Frightened creature’s turns, the creature repeats the save, ending the effect on itself on a success.</p>
+			<p class="indent">Once you use this feature, you can’t use it again until you finish a Long Rest unless you expend a use of your Rage (no action required) to restore your use of it.</p>
+		</description>
+		<sheet alt="Intimidating Presence" action="Bonus Action" usage="1/Long Rest">
+			<description>Each creature of your choice in a 30-foot Emanation originating from you must make a DC{{intimidating presence:dc}} Wisdom saving throw. On a failed save, a creature has the Frightened condition for 1 minute. At the end of each of the Frightened creature’s turns, the creature repeats the save, ending the effect on itself on a success. &#13;
+			You can expend a use of your Rage (no action required) to restore a use of this feature.</description>
+		</sheet>
+		<rules>
+			<stat name="intimidating presence:dc" value="8" bonus="base" />
+			<stat name="intimidating presence:dc" value="proficiency" bonus="proficiency" />
+			<stat name="intimidating presence:dc" value="strength:modifier" bonus="ability" />
+		</rules>
+	</element>
+
+	<!--Feature Replacement Grants-->
+	<element name="Frenzy Feature Replacement" type="Grants" source="Internal" id="ID_INTERNAL_PHB24_FEATURE_REPLACEMENT_BARBARIAN_BERSERKER_FRENZY" />
+	<element name="Mindless Rage Feature Replacement" type="Grants" source="Internal" id="ID_INTERNAL_PHB24_FEATURE_REPLACEMENT_BARBARIAN_BERSERKER_MINDLESS_RAGE" />
+	<element name="Retaliation Feature Replacement" type="Grants" source="Internal" id="ID_INTERNAL_PHB24_FEATURE_REPLACEMENT_BARBARIAN_BERSERKER_RETALIATION" />
+	<element name="Intimidating Presence Feature Replacement" type="Grants" source="Internal" id="ID_INTERNAL_PHB24_FEATURE_REPLACEMENT_BARBARIAN_BERSERKER_INTIMIDATING_PRESENCE" />
+</elements>
