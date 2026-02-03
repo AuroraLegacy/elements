@@ -2,7 +2,7 @@
 <elements>
 	<info>
 		<name>Aarakocra from Monsters of the Multiverse</name>
-		<update version="0.0.1">
+		<update version="0.0.2">
 			<file name="race-aarakocra.xml" url="https://raw.githubusercontent.com/AuroraLegacy/elements/master/supplements/monsters-of-the-multiverse/race-aarakocra.xml" />
 		</update>
 	</info>
@@ -23,9 +23,10 @@
 		</description>
 		<sheet display="false" />
 		<rules>
-			<select type="Ability Score Improvement" name="Ability Score Improvement Option (Aarakocra)" supports="Custom Ability Score Improvement Option" />
+			<select type="Ability Score Improvement" name="Ability Score Improvement Option (Aarakocra)" supports="Custom Ability Score Improvement Option" requirements="!ID_INTERNAL_GRANTS_BACKGROUND_ASI" />
 			<stat name="innate speed" value="30" bonus="base" />
 			<grant type="Size" id="ID_SIZE_MEDIUM" />
+			<grant type="Grants" id="ID_INTERNAL_GRANT_RACE_AARAKOCRA" />
 
 			<grant type="Language" id="ID_LANGUAGE_COMMON" requirements="!ID_WOTC_TCOE_OPTION_CUSTOMIZED_LANGUAGE" />
 			<select type="Language" name="Customized Language (Aarakocra)" supports="Custom Race Language"  requirements="ID_WOTC_TCOE_OPTION_CUSTOMIZED_LANGUAGE" />
