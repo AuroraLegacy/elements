@@ -16,7 +16,7 @@
 				<li><strong>Feat:</strong> Skilled</li>
 				<li><strong>Skill Proficiencies:</strong> Investigation and Perception</li>
 				<li><strong>Tool Proficiency:</strong> Calligrapher’s Supplies</li>
-				<li><strong>Equipment:</strong><i> Choose A or B:</i> (A) Calligrapher's Supplies, Fine Clothes, Lamp, Oil (3 flasks). Parchment (12 sheets), 23 GP; or (B) 50 GP</li>
+				<li><strong>Equipment:</strong><i> Choose A or B:</i> (A) Calligrapher's Supplies, Fine Clothes, Lamp, Oil (3 flasks), Parchment (12 sheets), 23 GP; or (B) 50 GP</li>
 			</ul>
 			<p>You spent your formative years in a scriptorium, a monastery dedicated to the preservation of knowledge, or a government agency, where you learned to write with a clear hand and produce finely written texts. Perhaps you scribed government documents or copied tomes of literature. You might have some skill as a writer of poetry, narrative, or scholarly research. Above all, you have a careful attention to detail, helping you avoid introducing mistakes to the documents you copy and create.</p>
 		</description>
@@ -33,5 +33,28 @@
 		</rules>
 	</element>
 
-	<!-- Todo: Add Equipment Pack for this Background. Example element is in the Acolyte Background. -->
+	<element name="Background Equipment Pack (Scribe)" type="Item" source="Player’s Handbook 2024" id="ID_WOTC_PHB24_ITEM_BACKGROUND_EQUIPMENT_PACK_SCRIBE">
+		<description>
+			<p style="margin-bottom:5px">This pack contains items that are given to a character of Scribe Background, if you chose option A for Equipment.</p>
+			<p>You will receive following items by extracting contents of this pack:</p>
+			<p class="indent">• Calligrapher's Supplies</p>
+			<p class="indent">• Fine Clothes</p>
+			<p class="indent">• Lamp</p>
+			<p class="indent">• Oil (3 flasks)</p>
+			<p class="indent">• Parchment (12 sheets)</p>
+			<p><b>Note:</b> This pack doesn't include 23 GP.</p>
+		</description>
+		<setters>
+			<set name="category">Equipment Packs</set>
+			<set name="cost">—</set>
+			<set name="weight">—</set>
+		</setters>
+		<extract>
+			<item>ID_WOTC_PHB24_ITEM_TOOL_CALLIGRAPHERS_SUPPLIES</item>
+			<item>ID_WOTC_PHB24_ITEM_CLOTHES_FINE</item>
+			<item>ID_WOTC_PHB24_ITEM_LAMP</item>
+			<item amount="3">ID_WOTC_PHB24_ITEM_OIL</item>
+			<item amount="12">ID_WOTC_PHB24_ITEM_PARCHMENT</item>
+		</extract>
+	</element>
 </elements>

@@ -16,7 +16,7 @@
 				<li><strong>Feat:</strong> Skilled</li>
 				<li><strong>Skill Proficiencies:</strong> History and Persuasion</li>
 				<li><strong>Tool Proficiency:</strong><i> Choose one kind of Gaming Set</i></li>
-				<li><strong>Equipment:</strong><i> Choose A or B:</i> (A) Gaming Set (same as above). Fine Clothes, Perfume, 29 CP; or (B) 50 GP</li>
+				<li><strong>Equipment:</strong><i> Choose A or B:</i> (A) Gaming Set (same as above), Fine Clothes, Perfume, 29 GP; or (B) 50 GP</li>
 			</ul>
 			<p>You were raised in a castle, surrounded by wealth, power, and privilege. Your family of minor aristocrats ensured that you received a first-class education, some of which you appreciated and some of which you resented. Your time in the castle, especially the many hours you spent observing your family at court, also taught you a great deal about leadership.</p>
 		</description>
@@ -33,5 +33,22 @@
 		</rules>
 	</element>
 
-	<!-- Todo: Add Equipment Pack for this Background. Example element is in the Acolyte Background. -->
+	<element name="Background Equipment Pack (Noble)" type="Item" source="Player’s Handbook 2024" id="ID_WOTC_PHB24_ITEM_BACKGROUND_EQUIPMENT_PACK_NOBLE">
+		<description>
+			<p style="margin-bottom:5px">This pack contains items that are given to a character of Noble Background, if you chose option A for Equipment.</p>
+			<p>You will receive following items by extracting contents of this pack:</p>
+			<p class="indent">• Fine Clothes</p>
+			<p class="indent">• Perfume</p>
+			<p><b>Note:</b> This pack doesn't include the Gaming Set of the same kind as Proficiency gained from this Background (can be taken from "Tools" Equipment category) and 29 GP.</p>
+		</description>
+		<setters>
+			<set name="category">Equipment Packs</set>
+			<set name="cost">—</set>
+			<set name="weight">—</set>
+		</setters>
+		<extract>
+			<item>ID_WOTC_PHB24_ITEM_CLOTHES_FINE</item>
+			<item>ID_WOTC_PHB24_ITEM_PERFUME</item>
+		</extract>
+	</element>
 </elements>
