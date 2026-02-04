@@ -188,7 +188,7 @@
 			</div>
 		</description>
 		<sheet>
-			<description>You can cast False Life on yourself without expending a spell slot, and you always gain the maximum amount of Temporary Hit Points possible when casting the spell in this way.</description>
+			<description>You can cast False Life on yourself without expending a spell slot, and you always gain the maximum amount of THPs possible when casting the spell in this way.</description>
 		</sheet>
 		<rules>
 			<grant type="Spell" id="ID_WOTC_PHB24_SPELL_FALSE_LIFE" />
@@ -239,7 +239,7 @@
 			<p class="indent">As a Magic action, you can erase a name on the page by touching it.</p>
 		</description>
 		<sheet usage="1/Long Rest">
-			<description>With your permission, up to {{gift of the protectors:count}} creatures can use their action to scribe their names into your Book of Shadows. When any of these creatures is reduced to 0 Hit Points but not killed outright, the creature instead drops to 1 Hit Point, and no other creature can benefit from it until you finish a Long Rest. &#13;
+			<description>With your permission, up to {{gift of the protectors:count}} creatures can use their action to scribe their names into your Book of Shadows. When any of these creatures is reduced to 0 HP but not killed outright, the creature instead drops to 1 HP, and no other creature can benefit from it until you finish a Long Rest. &#13;
 			As a Magic action, you can erase a name on the page by touching it.</description>
 		</sheet>
 		<rules>
@@ -430,8 +430,12 @@
 			<p>Once per turn when you hit a creature with your pact weapon, you can deal an extra 1d6 Necrotic, Psychic, or Radiant damage (your choice) to the creature, and you can expend one of your Hit Point Dice to roll it and regain a number of Hit Points equal to the roll plus your Constitution modifier (minimum of 1 Hit Point).</p>
 		</description>
 		<sheet usage="1/Turn">
-			<description>When you hit a creature with your pact weapon, you can deal an extra 1d6 Necrotic, Psychic, or Radiant damage (your choice) to the creature, and you can expend one of your Hit Point Dice to roll it and regain the rolled number + {{constitution:modifier}} Hit Points.</description>
+			<description>When you hit a creature with your pact weapon, you can deal an extra 1d6 Necrotic, Psychic, or Radiant damage (your choice) to the creature, and you can expend one of your Hit Dice to roll it and regain the rolled number + {{lifedrinker:hp}} HPs.</description>
 		</sheet>
+		<rules>
+			<stat name="lifedrinker:hp" value="0" bonus="base" />
+			<stat name="lifedrinker:hp" value="constitution:modifier" bonus="base" />
+		</rules>
 	</element>
 
 	<element name="Mask of Many Faces" type="Class Feature" source="Player’s Handbook (2024)" id="ID_WOTC_PHB24_CLASS_FEATURE_ELDRITCH_INVOCATION_MASK_OF_MANY_FACES">
