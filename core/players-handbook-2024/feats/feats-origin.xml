@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <elements>
 	<info>
-		<name></name>
+		<name>Origin Feats</name>
 		<update version="0.0.1">
 			<file name="feats-origin.xml" url="https://raw.githubusercontent.com/AuroraLegacy/elements/master/core/players-handbook-2024/feats/feats-origin.xml" />
 		</update>
@@ -54,7 +54,7 @@
 			<description>Whenever you buy a nonmagical item, you receive a 20% discount on it. When you finish a Long Rest, you can craft one piece of gear from the Fast Crafting table, provided you have tools and proficiency associated with that item. The item lasts until you finish another Long Rest.</description>
 		</sheet>
 		<rules>
-			<select type="Proficiency" name="Tool Proficiency (Crafter)" supports="ID_WOTC_PHB24_PROFICIENCY_TOOL_PROFICIENCY_CARPENTERS_TOOLS|ID_WOTC_PHB24_PROFICIENCY_TOOL_PROFICIENCY_LEATHERWORKERS_TOOLS|ID_WOTC_PHB24_PROFICIENCY_TOOL_PROFICIENCY_MASONS_TOOLS|ID_WOTC_PHB24_PROFICIENCY_TOOL_PROFICIENCY_POTTERS_TOOLS|ID_WOTC_PHB24_PROFICIENCY_TOOL_PROFICIENCY_SMITHS_TOOLS|ID_WOTC_PHB24_PROFICIENCY_TOOL_PROFICIENCY_TINKERS_TOOLS|ID_WOTC_PHB24_PROFICIENCY_TOOL_PROFICIENCY_WEAVERS_TOOLS|ID_WOTC_PHB24_PROFICIENCY_TOOL_PROFICIENCY_WOODCARVERS_TOOLS" number="3"/>
+			<select type="Proficiency" name="Tool Proficiency (Crafter)" supports="ID_PROFICIENCY_TOOL_PROFICIENCY_CARPENTERS_TOOLS|ID_PROFICIENCY_TOOL_PROFICIENCY_LEATHERWORKERS_TOOLS|ID_PROFICIENCY_TOOL_PROFICIENCY_MASONS_TOOLS|ID_PROFICIENCY_TOOL_PROFICIENCY_POTTERS_TOOLS|ID_PROFICIENCY_TOOL_PROFICIENCY_SMITHS_TOOLS|ID_PROFICIENCY_TOOL_PROFICIENCY_TINKERS_TOOLS|ID_PROFICIENCY_TOOL_PROFICIENCY_WEAVERS_TOOLS|ID_PROFICIENCY_TOOL_PROFICIENCY_WOODCARVERS_TOOLS" number="3"/>
 		</rules>
 	</element>
 
@@ -444,9 +444,11 @@
 		<sheet>
 			<description>You gain following benefits: &#13;
 			• When you hit with your Unarmed Strike and deal damage, you can deal 1d4+{{strength:modifier}} Bludgeoning damage, and once per turn you can also push the target of that attack 5ft. away from you. &#13;
-			• Whenever you roll a 1 for damage for your Unarmed Strike, you can reroll the die, and you must use the new roll. &#13;
-			• You have proficiency with improvised weapons.</description>
+			• Whenever you roll a 1 for damage for your Unarmed Strike, you can reroll the die, and you must use the new roll.</description>
 		</sheet>
+		<rules>
+			<grant type="Proficiency" id="ID_ALE_PROFICIENCY_WEAPON_PROFICIENCY_IMPROVISED_WEAPONS" />
+		</rules>
 	</element>
 
 	<element name="Tough" type="Feat" source="Player’s Handbook (2024)" id="ID_WOTC_PHB24_FEAT_TOUGH">

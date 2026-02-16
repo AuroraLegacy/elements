@@ -91,14 +91,13 @@
 			<set name="hd">d8</set>
 		</setters>
 		<rules>
-			<grant type="Proficiency" id="ID_WOTC_PHB24_PROFICIENCY_WEAPON_PROFICIENCY_SIMPLE_WEAPONS" requirements="!ID_WOTC_PHB24_MULTICLASS_BARD"/>
-			<grant type="Proficiency" id="ID_WOTC_PHB24_PROFICIENCY_ARMOR_PROFICIENCY_LIGHT_ARMOR" />
-			<grant type="Proficiency" id="ID_PROFICIENCY_WEAPON_PROFICIENCY_SIMPLE_WEAPONS" requirements="!ID_WOTC_PHB24_MULTICLASS_BARD, ID_WOTC_SOURCE_PLAYERS_HANDBOOK"/>
-			<grant type="Proficiency" id="ID_PROFICIENCY_ARMOR_PROFICIENCY_LIGHT_ARMOR" requirements="ID_WOTC_SOURCE_PLAYERS_HANDBOOK"/>
-			<grant type="Proficiency" id="ID_WOTC_PHB24_PROFICIENCY_SAVINGTHROW_DEXTERITY" requirements="!ID_WOTC_PHB24_MULTICLASS_BARD"/>
-			<grant type="Proficiency" id="ID_WOTC_PHB24_PROFICIENCY_SAVINGTHROW_CHARISMA" requirements="!ID_WOTC_PHB24_MULTICLASS_BARD"/>
+			<grant type="Proficiency" id="ID_PROFICIENCY_WEAPON_PROFICIENCY_SIMPLE_WEAPONS" requirements="!ID_WOTC_PHB24_MULTICLASS_BARD"/>
+			<grant type="Proficiency" id="ID_PROFICIENCY_ARMOR_PROFICIENCY_LIGHT_ARMOR" />
+			<grant type="Proficiency" id="ID_PROFICIENCY_SAVINGTHROW_DEXTERITY" requirements="!ID_WOTC_PHB24_MULTICLASS_BARD"/>
+			<grant type="Proficiency" id="ID_PROFICIENCY_SAVINGTHROW_CHARISMA" requirements="!ID_WOTC_PHB24_MULTICLASS_BARD"/>
 			<select type="Proficiency" name="Skill Proficiency (Bard)" supports="Skill,Bard" number="3" requirements="!ID_WOTC_PHB24_MULTICLASS_BARD"/>
 			<select type="Proficiency" name="Musical Instrument (Bard)" supports="Musical Instrument" number="3" requirements="!ID_WOTC_PHB24_MULTICLASS_BARD"/>
+
 			<grant type="Class Feature" id="ID_WOTC_PHB24_CLASS_FEATURE_BARD_BARDIC_INSPIRATION" />
 			<grant type="Class Feature" id="ID_WOTC_PHB24_CLASS_FEATURE_BARD_SPELLCASTING" />
 			<grant type="Class Feature" id="ID_WOTC_PHB24_CLASS_FEATURE_BARD_EXPERTISE" level="2" />
@@ -114,7 +113,7 @@
 		</rules>
 		<multiclass id="ID_WOTC_PHB24_MULTICLASS_BARD">
 			<prerequisite>Charisma 13</prerequisite>
-			<requirements>[cha:13],!(ID_WOTC_PHB_CLASS_BARD||ID_WOTC_PHB_MULTICLASS_BARD)</requirements>
+			<requirements>([cha:13],!(ID_WOTC_PHB_CLASS_BARD||ID_WOTC_PHB_MULTICLASS_BARD))||ID_INTERNAL_GRANTS_MULTICLASS_UNLOCKER</requirements>
 			<setters>
 				<set name="multiclass proficiencies">Light armor, one skill of your choice, one Musical Instrument of your choice</set>
 			</setters>
@@ -238,8 +237,8 @@
 		</description>
 		<sheet display="false" />
 		<rules>
-			<select type="Proficiency" name="Expertise (Bard 2)" level="2" number="2" supports="Expertise"/>
-			<select type="Proficiency" name="Expertise (Bard 9)" level="9" number="2" supports="Expertise"/>
+			<select type="Proficiency" name="Expertise (Bard 2)" level="2" number="2" supports="Skill Expertise" />
+			<select type="Proficiency" name="Expertise (Bard 9)" level="9" number="2" supports="Skill Expertise" />
 		</rules>
 	</element>
 
@@ -251,24 +250,24 @@
 		</description>
 		<sheet display="false" />
 		<rules>
-			<stat name="acrobatics:misc" value="proficiency:half" requirements="!(ID_PROFICIENCY_SKILL_ACROBATICS||ID_WOTC_PHB24_PROFICIENCY_SKILL_ACROBATICS)"/>
-			<stat name="animal handling:misc" value="proficiency:half" requirements="!(ID_PROFICIENCY_SKILL_ANIMALHANDLING||ID_WOTC_PHB24_PROFICIENCY_SKILL_ANIMALHANDLING)"/>
-			<stat name="arcana:misc" value="proficiency:half" requirements="!(ID_PROFICIENCY_SKILL_ARCANA||ID_WOTC_PHB24_PROFICIENCY_SKILL_ARCANA)"/>
-			<stat name="athletics:misc" value="proficiency:half" requirements="!(ID_PROFICIENCY_SKILL_ATHLETICS||ID_WOTC_PHB24_PROFICIENCY_SKILL_ATHLETICS)"/>
-			<stat name="deception:misc" value="proficiency:half" requirements="!(ID_PROFICIENCY_SKILL_DECEPTION||ID_WOTC_PHB24_PROFICIENCY_SKILL_DECEPTION)"/>
-			<stat name="history:misc" value="proficiency:half" requirements="!(ID_PROFICIENCY_SKILL_HISTORY||ID_WOTC_PHB24_PROFICIENCY_SKILL_HISTORY)"/>
-			<stat name="insight:misc" value="proficiency:half" requirements="!(ID_PROFICIENCY_SKILL_INSIGHT||ID_WOTC_PHB24_PROFICIENCY_SKILL_INSIGHT)"/>
-			<stat name="intimidation:misc" value="proficiency:half" requirements="!(ID_PROFICIENCY_SKILL_INTIMIDATION||ID_WOTC_PHB24_PROFICIENCY_SKILL_INTIMIDATION)"/>
-			<stat name="investigation:misc" value="proficiency:half" requirements="!(ID_PROFICIENCY_SKILL_INVESTIGATION||ID_WOTC_PHB24_PROFICIENCY_SKILL_INVESTIGATION)"/>
-			<stat name="medicine:misc" value="proficiency:half" requirements="!(ID_PROFICIENCY_SKILL_MEDICINE||ID_WOTC_PHB24_PROFICIENCY_SKILL_MEDICINE)"/>
-			<stat name="nature:misc" value="proficiency:half" requirements="!(ID_PROFICIENCY_SKILL_NATURE||ID_WOTC_PHB24_PROFICIENCY_SKILL_NATURE)"/>
-			<stat name="perception:misc" value="proficiency:half" requirements="!(ID_PROFICIENCY_SKILL_PERCEPTION||ID_WOTC_PHB24_PROFICIENCY_SKILL_PERCEPTION)"/>
-			<stat name="performance:misc" value="proficiency:half" requirements="!(ID_PROFICIENCY_SKILL_PERFORMANCE||ID_WOTC_PHB24_PROFICIENCY_SKILL_PERFORMANCE)"/>
-			<stat name="persuasion:misc" value="proficiency:half" requirements="!(ID_PROFICIENCY_SKILL_PERSUASION||ID_WOTC_PHB24_PROFICIENCY_SKILL_PERSUASION)"/>
-			<stat name="religion:misc" value="proficiency:half" requirements="!(ID_PROFICIENCY_SKILL_RELIGION||ID_WOTC_PHB24_PROFICIENCY_SKILL_RELIGION)"/>
-			<stat name="sleight of hand:misc" value="proficiency:half" requirements="!(ID_PROFICIENCY_SKILL_SLEIGHTOFHAND||ID_WOTC_PHB24_PROFICIENCY_SKILL_SLEIGHTOFHAND)"/>
-			<stat name="stealth:misc" value="proficiency:half" requirements="!(ID_PROFICIENCY_SKILL_STEALTH||ID_WOTC_PHB24_PROFICIENCY_SKILL_STEALTH)"/>
-			<stat name="survival:misc" value="proficiency:half" requirements="!(ID_PROFICIENCY_SKILL_SURVIVAL||ID_WOTC_PHB24_PROFICIENCY_SKILL_SURVIVAL)"/>
+			<stat name="acrobatics:misc" value="proficiency:half" requirements="!(ID_PROFICIENCY_SKILL_ACROBATICS||ID_PROFICIENCY_SKILL_ACROBATICS)"/>
+			<stat name="animal handling:misc" value="proficiency:half" requirements="!(ID_PROFICIENCY_SKILL_ANIMALHANDLING||ID_PROFICIENCY_SKILL_ANIMALHANDLING)"/>
+			<stat name="arcana:misc" value="proficiency:half" requirements="!(ID_PROFICIENCY_SKILL_ARCANA||ID_PROFICIENCY_SKILL_ARCANA)"/>
+			<stat name="athletics:misc" value="proficiency:half" requirements="!(ID_PROFICIENCY_SKILL_ATHLETICS||ID_PROFICIENCY_SKILL_ATHLETICS)"/>
+			<stat name="deception:misc" value="proficiency:half" requirements="!(ID_PROFICIENCY_SKILL_DECEPTION||ID_PROFICIENCY_SKILL_DECEPTION)"/>
+			<stat name="history:misc" value="proficiency:half" requirements="!(ID_PROFICIENCY_SKILL_HISTORY||ID_PROFICIENCY_SKILL_HISTORY)"/>
+			<stat name="insight:misc" value="proficiency:half" requirements="!(ID_PROFICIENCY_SKILL_INSIGHT||ID_PROFICIENCY_SKILL_INSIGHT)"/>
+			<stat name="intimidation:misc" value="proficiency:half" requirements="!(ID_PROFICIENCY_SKILL_INTIMIDATION||ID_PROFICIENCY_SKILL_INTIMIDATION)"/>
+			<stat name="investigation:misc" value="proficiency:half" requirements="!(ID_PROFICIENCY_SKILL_INVESTIGATION||ID_PROFICIENCY_SKILL_INVESTIGATION)"/>
+			<stat name="medicine:misc" value="proficiency:half" requirements="!(ID_PROFICIENCY_SKILL_MEDICINE||ID_PROFICIENCY_SKILL_MEDICINE)"/>
+			<stat name="nature:misc" value="proficiency:half" requirements="!(ID_PROFICIENCY_SKILL_NATURE||ID_PROFICIENCY_SKILL_NATURE)"/>
+			<stat name="perception:misc" value="proficiency:half" requirements="!(ID_PROFICIENCY_SKILL_PERCEPTION||ID_PROFICIENCY_SKILL_PERCEPTION)"/>
+			<stat name="performance:misc" value="proficiency:half" requirements="!(ID_PROFICIENCY_SKILL_PERFORMANCE||ID_PROFICIENCY_SKILL_PERFORMANCE)"/>
+			<stat name="persuasion:misc" value="proficiency:half" requirements="!(ID_PROFICIENCY_SKILL_PERSUASION||ID_PROFICIENCY_SKILL_PERSUASION)"/>
+			<stat name="religion:misc" value="proficiency:half" requirements="!(ID_PROFICIENCY_SKILL_RELIGION||ID_PROFICIENCY_SKILL_RELIGION)"/>
+			<stat name="sleight of hand:misc" value="proficiency:half" requirements="!(ID_PROFICIENCY_SKILL_SLEIGHTOFHAND||ID_PROFICIENCY_SKILL_SLEIGHTOFHAND)"/>
+			<stat name="stealth:misc" value="proficiency:half" requirements="!(ID_PROFICIENCY_SKILL_STEALTH||ID_PROFICIENCY_SKILL_STEALTH)"/>
+			<stat name="survival:misc" value="proficiency:half" requirements="!(ID_PROFICIENCY_SKILL_SURVIVAL||ID_PROFICIENCY_SKILL_SURVIVAL)"/>
 		</rules>
 	</element>
 

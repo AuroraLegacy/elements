@@ -104,6 +104,7 @@
 			<grant type="Proficiency" id="ID_PROFICIENCY_SAVINGTHROW_STRENGTH" requirements="!ID_WOTC_PHB24_MULTICLASS_MONK" />
 			<grant type="Proficiency" id="ID_PROFICIENCY_SAVINGTHROW_DEXTERITY" requirements="!ID_WOTC_PHB24_MULTICLASS_MONK" />
 			<select type="Proficiency" name="Skill Proficiency (Monk)" supports="Skill,Monk" number="2" requirements="!ID_WOTC_PHB24_MULTICLASS_MONK" />
+
 			<grant type="Class Feature" id="ID_WOTC_PHB24_CLASS_FEATURE_MONK_MARTIAL_ARTS" level="1" />
 			<grant type="Class Feature" id="ID_WOTC_PHB24_CLASS_FEATURE_MONK_UNARMORED_DEFENSE" level="1" />
 			<grant type="Class Feature" id="ID_WOTC_PHB24_CLASS_FEATURE_MONK_MONKS_FOCUS" level="2" />
@@ -129,7 +130,7 @@
 		</rules>
 		<multiclass id="ID_WOTC_PHB24_MULTICLASS_MONK">
 			<prerequisite>Dexterity 13 and Wisdom 13</prerequisite>
-			<requirements>([dex:13],[wis:13]),!(ID_WOTC_PHB_CLASS_MONK||ID_WOTC_PHB_MULTICLASS_MONK)</requirements>
+			<requirements>(([dex:13],[wis:13]),!(ID_WOTC_PHB_CLASS_MONK||ID_WOTC_PHB_MULTICLASS_MONK))||ID_INTERNAL_GRANTS_MULTICLASS_UNLOCKER</requirements>
 			<setters>
 				<set name="multiclass proficiencies">—</set>
 			</setters>

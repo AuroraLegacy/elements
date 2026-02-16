@@ -91,25 +91,17 @@
 			<set name="hd">d8</set>
 		</setters>
 		<rules>
-			<grant type="Proficiency" id="ID_WOTC_PHB24_PROFICIENCY_ARMOR_PROFICIENCY_LIGHT_ARMOR" />
-			<grant type="Proficiency" id="ID_WOTC_PHB24_PROFICIENCY_WEAPON_PROFICIENCY_SIMPLE_WEAPONS" requirements="!ID_WOTC_PHB24_MULTICLASS_ROGUE" />
-			<grant type="Proficiency" id="ID_WOTC_PHB24_PROFICIENCY_WEAPON_PROFICIENCY_CROSSBOW_HAND" requirements="!ID_WOTC_PHB24_MULTICLASS_ROGUE" />
-			<grant type="Proficiency" id="ID_WOTC_PHB24_PROFICIENCY_WEAPON_PROFICIENCY_RAPIER" requirements="!ID_WOTC_PHB24_MULTICLASS_ROGUE" />
-			<grant type="Proficiency" id="ID_WOTC_PHB24_PROFICIENCY_WEAPON_PROFICIENCY_SCIMITAR" requirements="!ID_WOTC_PHB24_MULTICLASS_ROGUE" />
-			<grant type="Proficiency" id="ID_WOTC_PHB24_PROFICIENCY_WEAPON_PROFICIENCY_SHORTSWORD" requirements="!ID_WOTC_PHB24_MULTICLASS_ROGUE" />
-			<grant type="Proficiency" id="ID_WOTC_PHB24_PROFICIENCY_WEAPON_PROFICIENCY_WHIP" requirements="!ID_WOTC_PHB24_MULTICLASS_ROGUE" />
-			<grant type="Proficiency" id="ID_WOTC_PHB24_PROFICIENCY_TOOL_PROFICIENCY_THIEVES_TOOLS" />
-			<grant type="Proficiency" id="ID_PROFICIENCY_WEAPON_PROFICIENCY_SIMPLE_WEAPONS" requirements="!ID_WOTC_PHB24_MULTICLASS_ROGUE, ID_WOTC_SOURCE_PLAYERS_HANDBOOK"/>
-			<grant type="Proficiency" id="ID_PROFICIENCY_WEAPON_PROFICIENCY_CROSSBOW_HAND" requirements="!ID_WOTC_PHB24_MULTICLASS_ROGUE, ID_WOTC_SOURCE_PLAYERS_HANDBOOK" />
-			<grant type="Proficiency" id="ID_PROFICIENCY_WEAPON_PROFICIENCY_RAPIER" requirements="!ID_WOTC_PHB24_MULTICLASS_ROGUE, ID_WOTC_SOURCE_PLAYERS_HANDBOOK" />
-			<grant type="Proficiency" id="ID_PROFICIENCY_WEAPON_PROFICIENCY_SCIMITAR" requirements="!ID_WOTC_PHB24_MULTICLASS_ROGUE, ID_WOTC_SOURCE_PLAYERS_HANDBOOK" />
-			<grant type="Proficiency" id="ID_PROFICIENCY_WEAPON_PROFICIENCY_SHORTSWORD" requirements="!ID_WOTC_PHB24_MULTICLASS_ROGUE, ID_WOTC_SOURCE_PLAYERS_HANDBOOK" />
-			<grant type="Proficiency" id="ID_PROFICIENCY_WEAPON_PROFICIENCY_WHIP" requirements="!ID_WOTC_PHB24_MULTICLASS_ROGUE, ID_WOTC_SOURCE_PLAYERS_HANDBOOK" />
-			<grant type="Proficiency" id="ID_PROFICIENCY_ARMOR_PROFICIENCY_LIGHT_ARMOR" requirements="ID_WOTC_SOURCE_PLAYERS_HANDBOOK"/>
-			<grant type="Proficiency" id="ID_PROFICIENCY_TOOL_PROFICIENCY_THIEVES_TOOLS" requirements="ID_WOTC_SOURCE_PLAYERS_HANDBOOK" />
-			<grant type="Proficiency" id="ID_WOTC_PHB24_PROFICIENCY_SAVINGTHROW_DEXTERITY" requirements="!ID_WOTC_PHB24_MULTICLASS_ROGUE"/>
-			<grant type="Proficiency" id="ID_WOTC_PHB24_PROFICIENCY_SAVINGTHROW_INTELLIGENCE" requirements="!ID_WOTC_PHB24_MULTICLASS_ROGUE"/>
-			<select type="Proficiency" name="Skill Proficiency (Rogue)" supports="Skill,Rogue" number="4" requirements="!ID_WOTC_PHB24_MULTICLASS_ROGUE" />
+			<grant type="Proficiency" id="ID_PROFICIENCY_ARMOR_PROFICIENCY_LIGHT_ARMOR" />
+			<grant type="Proficiency" id="ID_PROFICIENCY_WEAPON_PROFICIENCY_SIMPLE_WEAPONS" requirements="!ID_WOTC_PHB24_MULTICLASS_ROGUE" />
+			<grant type="Proficiency" id="ID_PROFICIENCY_WEAPON_PROFICIENCY_CROSSBOW_HAND" requirements="!ID_WOTC_PHB24_MULTICLASS_ROGUE" />
+			<grant type="Proficiency" id="ID_PROFICIENCY_WEAPON_PROFICIENCY_RAPIER" requirements="!ID_WOTC_PHB24_MULTICLASS_ROGUE" />
+			<grant type="Proficiency" id="ID_PROFICIENCY_WEAPON_PROFICIENCY_SCIMITAR" requirements="!ID_WOTC_PHB24_MULTICLASS_ROGUE" />
+			<grant type="Proficiency" id="ID_PROFICIENCY_WEAPON_PROFICIENCY_SHORTSWORD" requirements="!ID_WOTC_PHB24_MULTICLASS_ROGUE" />
+			<grant type="Proficiency" id="ID_PROFICIENCY_WEAPON_PROFICIENCY_WHIP" requirements="!ID_WOTC_PHB24_MULTICLASS_ROGUE" />
+			<grant type="Proficiency" id="ID_PROFICIENCY_TOOL_PROFICIENCY_THIEVES_TOOLS" />
+			<grant type="Proficiency" id="ID_PROFICIENCY_SAVINGTHROW_DEXTERITY" requirements="!ID_WOTC_PHB24_MULTICLASS_ROGUE"/>
+			<grant type="Proficiency" id="ID_PROFICIENCY_SAVINGTHROW_INTELLIGENCE" requirements="!ID_WOTC_PHB24_MULTICLASS_ROGUE"/>
+			<select type="Proficiency" name="Skill Proficiency (Rogue)" supports="Skill,PHB24 Rogue" number="4" requirements="!ID_WOTC_PHB24_MULTICLASS_ROGUE" />
 
 			<grant type="Class Feature" id="ID_WOTC_PHB24_CLASS_FEATURE_ROGUE_EXPERTISE" />
 			<grant type="Class Feature" id="ID_WOTC_PHB24_CLASS_FEATURE_ROGUE_SNEAK_ATTACK" />
@@ -132,7 +124,7 @@
 		</rules>
 		<multiclass id="ID_WOTC_PHB24_MULTICLASS_ROGUE">
 			<prerequisite>Dexterity 13</prerequisite>
-			<requirements>[dex:13],!(ID_WOTC_PHB_CLASS_ROGUE||ID_WOTC_PHB_MULTICLASS_ROGUE)</requirements>
+			<requirements>([dex:13],!(ID_WOTC_PHB_CLASS_ROGUE||ID_WOTC_PHB_MULTICLASS_ROGUE))||ID_INTERNAL_GRANTS_MULTICLASS_UNLOCKER</requirements>
 			<setters>
 				<set name="multiclass proficiencies">one skill from the Rogue's skill list, Thieves’ Tools, Light armor</set>
 			</setters>
@@ -151,8 +143,8 @@
 		</description>
 		<sheet display="false" />
 		<rules>
-			<select type="Proficiency" name="Expertise (Rogue 1)" number="2" supports="Expertise"/>
-			<select type="Proficiency" name="Expertise (Rogue 6)" level="6" number="2" supports="Expertise"/>
+			<select type="Proficiency" name="Expertise (Rogue 1)" number="2" supports="Skill Expertise" />
+			<select type="Proficiency" name="Expertise (Rogue 6)" level="6" number="2" supports="Skill Expertise" />
 		</rules>
 	</element>
 
@@ -399,8 +391,8 @@
 		</description>
 		<sheet display="false" />
 		<rules>
-			<grant type="Proficiency" id="ID_WOTC_PHB24_PROFICIENCY_SAVINGTHROW_WISDOM" />
-			<grant type="Proficiency" id="ID_WOTC_PHB24_PROFICIENCY_SAVINGTHROW_CHARISMA" />
+			<grant type="Proficiency" id="ID_PROFICIENCY_SAVINGTHROW_WISDOM" />
+			<grant type="Proficiency" id="ID_PROFICIENCY_SAVINGTHROW_CHARISMA" />
 		</rules>
 	</element>
 

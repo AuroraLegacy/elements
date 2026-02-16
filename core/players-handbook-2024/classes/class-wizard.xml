@@ -88,10 +88,10 @@
 			<set name="hd">d6</set>
 		</setters>
 		<rules>
-			<grant type="Proficiency" id="ID_WOTC_PHB24_PROFICIENCY_WEAPON_PROFICIENCY_SIMPLE_WEAPONS" requirements="!ID_WOTC_PHB24_MULTICLASS_WIZARD"/>
-			<grant type="Proficiency" id="ID_WOTC_PHB24_PROFICIENCY_SAVINGTHROW_INTELLIGENCE" requirements="!ID_WOTC_PHB24_MULTICLASS_WIZARD"/>
-			<grant type="Proficiency" id="ID_WOTC_PHB24_PROFICIENCY_SAVINGTHROW_WISDOM" requirements="!ID_WOTC_PHB24_MULTICLASS_WIZARD"/>
-			<select type="Proficiency" name="Skill Proficiency (Wizard)" supports="Skill, Wizard" number="2" requirements="!ID_WOTC_PHB24_MULTICLASS_WIZARD"/>
+			<grant type="Proficiency" id="ID_PROFICIENCY_WEAPON_PROFICIENCY_SIMPLE_WEAPONS" requirements="!ID_WOTC_PHB24_MULTICLASS_WIZARD"/>
+			<grant type="Proficiency" id="ID_PROFICIENCY_SAVINGTHROW_INTELLIGENCE" requirements="!ID_WOTC_PHB24_MULTICLASS_WIZARD"/>
+			<grant type="Proficiency" id="ID_PROFICIENCY_SAVINGTHROW_WISDOM" requirements="!ID_WOTC_PHB24_MULTICLASS_WIZARD"/>
+			<select type="Proficiency" name="Skill Proficiency (Wizard)" supports="Skill,PHB24 Wizard" number="2" requirements="!ID_WOTC_PHB24_MULTICLASS_WIZARD"/>
 
 			<grant type="Class Feature" id="ID_WOTC_PHB24_CLASS_FEATURE_WIZARD_SPELLCASTING" level="1"/>
 			<grant type="Class Feature" id="ID_WOTC_PHB24_CLASS_FEATURE_WIZARD_RITUAL_ADEPT" level="1" />
@@ -106,7 +106,7 @@
 		</rules>
 		<multiclass id="ID_WOTC_PHB24_MULTICLASS_WIZARD">
 			<prerequisite>Intelligence 13</prerequisite>
-			<requirements>[int:13],!(ID_WOTC_PHB_CLASS_WIZARD||ID_WOTC_PHB_MULTICLASS_WIZARD)</requirements>
+			<requirements>([int:13],!(ID_WOTC_PHB_CLASS_WIZARD||ID_WOTC_PHB_MULTICLASS_WIZARD))||ID_INTERNAL_GRANTS_MULTICLASS_UNLOCKER</requirements>
 			<setters>
 				<set name="multiclass proficiencies">—</set>
 			</setters>
