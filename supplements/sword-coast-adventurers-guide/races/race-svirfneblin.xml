@@ -25,12 +25,13 @@
 		</description>
 		<sheet display="false" />
 		<rules>
-			<stat name="dexterity" value="1" requirements="!ID_WOTC_TCOE_OPTION_CUSTOMIZED_ASI" />
-			<select type="Ability Score Improvement" name="Custom Ability Score Improvement +1 (Svirfneblin)" supports="Custom Ability Score Increase 1" requirements="ID_WOTC_TCOE_OPTION_CUSTOMIZED_ASI" />
+			<stat name="dexterity" value="1" requirements="!(ID_WOTC_TCOE_OPTION_CUSTOMIZED_ASI||ID_INTERNAL_GRANTS_BACKGROUND_ASI)" />
+			<select type="Ability Score Improvement" name="Custom Ability Score Improvement +1 (Svirfneblin)" supports="Custom Ability Score Increase 1" requirements="ID_WOTC_TCOE_OPTION_CUSTOMIZED_ASI,!ID_INTERNAL_GRANTS_BACKGROUND_ASI" />
 			<grant type="Vision" id="ID_VISION_SUPERIORDARKVISION" />
 			<grant type="Racial Trait" id="ID_SCAG_RACIAL_TRAIT_SVIRFNEBLIN_STONE_CAMOUFLAGE" />
 			<grant type="Language" id="ID_LANGUAGE_UNDERCOMMON" requirements="!ID_WOTC_TCOE_OPTION_CUSTOMIZED_LANGUAGE" />
 			<select type="Language" name="Customized Language" supports="Custom Race Language" requirements="ID_WOTC_TCOE_OPTION_CUSTOMIZED_LANGUAGE" />
+			<grant type="Grants" id="ID_INTERNAL_GRANT_RACE_DEEP_GNOME" />
 		</rules>
 	</element>
 

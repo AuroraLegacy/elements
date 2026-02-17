@@ -2,7 +2,7 @@
 <elements>
 	<info>
 		<name>Unearthed Arcana: Draconic Options</name>
-		<update version="0.0.2">
+		<update version="0.0.3">
 			<file name="20210414.xml" url="https://raw.githubusercontent.com/AuroraLegacy/elements/master/unearthed-arcana/2021/20210414.xml" />
 		</update>
 	</info>
@@ -48,7 +48,7 @@
 		</description>
 		<sheet display="false" alt="Chromatic Dragonborn" />
 		<rules>
-			<select type="Ability Score Improvement" name="Ability Score Improvement Option (Chromatic Dragonborn)" supports="Custom Ability Score Improvement Option" />
+			<select type="Ability Score Improvement" name="Ability Score Improvement Option (Chromatic Dragonborn)" supports="Custom Ability Score Improvement Option" requirements="!ID_INTERNAL_GRANTS_BACKGROUND_ASI" />
 			<stat name="innate speed" value="30" bonus="base" />
 			<grant type="Size" id="ID_SIZE_MEDIUM" />
 			<grant type="Language" id="ID_LANGUAGE_COMMON" requirements="!ID_WOTC_TCOE_OPTION_CUSTOMIZED_LANGUAGE" />
@@ -219,7 +219,7 @@
 		</description>
 		<sheet display="false" alt="Metallic Dragonborn" />
 		<rules>
-			<select type="Ability Score Improvement" name="Ability Score Improvement Option (Metallic Dragonborn)" supports="Custom Ability Score Improvement Option" />
+			<select type="Ability Score Improvement" name="Ability Score Improvement Option (Metallic Dragonborn)" supports="Custom Ability Score Improvement Option" requirements="!ID_INTERNAL_GRANTS_BACKGROUND_ASI" />
 			<stat name="innate speed" value="30" bonus="base" />
 			<grant type="Size" id="ID_SIZE_MEDIUM" />
 			<grant type="Language" id="ID_LANGUAGE_COMMON" requirements="!ID_WOTC_TCOE_OPTION_CUSTOMIZED_LANGUAGE" />
@@ -392,7 +392,7 @@
 		</description>
 		<sheet display="false" alt="Gem Dragonborn" />
 		<rules>
-			<select type="Ability Score Improvement" name="Ability Score Improvement Option (Gem Dragonborn)" supports="Custom Ability Score Improvement Option" />
+			<select type="Ability Score Improvement" name="Ability Score Improvement Option (Gem Dragonborn)" supports="Custom Ability Score Improvement Option" requirements="!ID_INTERNAL_GRANTS_BACKGROUND_ASI" />
 			<stat name="innate speed" value="30" bonus="base" />
 			<grant type="Size" id="ID_SIZE_MEDIUM" />
 			<grant type="Language" id="ID_LANGUAGE_COMMON" requirements="!ID_WOTC_TCOE_OPTION_CUSTOMIZED_LANGUAGE" />
@@ -561,13 +561,14 @@
 		</description>
 		<sheet display="false"/>
 		<rules>
-			<select type="Ability Score Improvement" name="Ability Score Improvement Option (Kobold)" supports="Custom Ability Score Improvement Option" />
+			<select type="Ability Score Improvement" name="Ability Score Improvement Option (Kobold)" supports="Custom Ability Score Improvement Option" requirements="!ID_INTERNAL_GRANTS_BACKGROUND_ASI" />
 			<stat name="innate speed" value="30" bonus="base" />
 			<grant type="Size" id="ID_SIZE_SMALL" />
 			<grant type="Vision" id="ID_VISION_DARKVISION" />
 			<grant type="Language" id="ID_LANGUAGE_COMMON" requirements="!ID_WOTC_TCOE_OPTION_CUSTOMIZED_LANGUAGE" />
 			<select type="Language" name="Customized Language" supports="Custom Race Language"  requirements="ID_WOTC_TCOE_OPTION_CUSTOMIZED_LANGUAGE" />
 			<select type="Language" name="Language (Kobold)" supports="Standard||Exotic" />
+			<grant type="Grants" id="ID_INTERNAL_GRANT_RACE_KOBOLD" />
 			<grant type="Racial Trait" id="ID_WOTC_UA20210414_RACIAL_TRAIT_KOBOLD_DRACONIC_LEGACY" />
 			<grant type="Racial Trait" id="ID_WOTC_UA20210414_RACIAL_TRAIT_KOBOLD_DRACONIC_ROAR" />
 		</rules>
