@@ -1,12 +1,11 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <elements>
 	<info>
-		<update version="0.0.1">
+		<update version="0.0.2">
 			<file name="fighter-eldritch-knight.xml" url="https://raw.githubusercontent.com/AuroraLegacy/elements/master/core/players-handbook/archetypes/fighter-eldritch-knight.xml" />
 		</update>
 	</info>
 
-	<!-- Eldritch Knight Archetype -->
 	<element name="Eldritch Knight" type="Archetype" source="Player’s Handbook" id="ID_WOTC_PHB_ARCHETYPE_FIGHTER_ELDRITCH_KNIGHT">
 		<supports>Martial Archetype</supports>
 		<description>
@@ -78,7 +77,9 @@
 			<list>Wizard,(Abjuration||Evocation)</list>
 		</spellcasting>
 		<rules>
+			<grant type="Grants" id="ID_INTERNAL_GRANTS_SPELLCASTING_FEATURE" />
 			<grant type="Grants" id="ID_INTERNAL_GRANT_MULTICLASS_SPELLCASTING_SLOTS_THIRD" requirements="ID_INTERNAL_GRANT_MULTICLASS"/>
+
 			<stat name="eldritch knight:spellcasting:slots:1" value="2" level="3" />
 			<stat name="eldritch knight:spellcasting:slots:1" value="1" level="4" />
 			<stat name="eldritch knight:spellcasting:slots:1" value="1" level="7" />
@@ -87,6 +88,7 @@
 			<stat name="eldritch knight:spellcasting:slots:3" value="2" level="13" />
 			<stat name="eldritch knight:spellcasting:slots:3" value="1" level="16" />
 			<stat name="eldritch knight:spellcasting:slots:4" value="1" level="19" />
+
 			<select type="Spell" name="Cantrip (Eldritch Knight)" supports="Wizard, 0" level="3" number="2" spellcasting="Eldritch Knight" />
 			<select type="Spell" name="Cantrip (Eldritch Knight)" supports="Wizard, 0" level="10" number="1" spellcasting="Eldritch Knight" />
 			<select type="Spell" name="Spellcasting (Eldritch Knight)" supports="($(spellcasting:list)||Wizard), 1" level="3" number="1" spellcasting="Eldritch Knight" />
