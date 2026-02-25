@@ -2,7 +2,7 @@
 <elements>
 	<info>
 		<name>Half-Orc</name>
-		<update version="0.2.2">
+		<update version="0.2.3">
 			<file name="race-halforc.xml" url="https://raw.githubusercontent.com/AuroraLegacy/elements/master/core/players-handbook/races/race-halforc.xml" />
 		</update>
 	</info>
@@ -46,10 +46,10 @@
 			<set name="weight" modifier="2d6">140 lb.</set>
 		</setters>
 		<rules>
-			<stat name="strength" value="2" requirements="!ID_WOTC_WGTE_GRANTS_DARKMARKED,!ID_INTERNAL_GRANTS_DRAGONMARK,!ID_WOTC_TCOE_OPTION_CUSTOMIZED_ASI" />
-			<stat name="constitution" value="1" requirements="!ID_WOTC_WGTE_GRANTS_DARKMARKED,!ID_INTERNAL_GRANTS_DRAGONMARK,!ID_WOTC_TCOE_OPTION_CUSTOMIZED_ASI" />
-			<select type="Ability Score Improvement" name="Custom Ability Score Improvement +2 (Half-Orc)" supports="Custom Ability Score Increase 2" requirements="!ID_WOTC_WGTE_GRANTS_DARKMARKED,!ID_INTERNAL_GRANTS_DRAGONMARK,ID_WOTC_TCOE_OPTION_CUSTOMIZED_ASI" />
-			<select type="Ability Score Improvement" name="Custom Ability Score Improvement +1 (Half-Orc)" supports="Custom Ability Score Increase 1" requirements="!ID_WOTC_WGTE_GRANTS_DARKMARKED,!ID_INTERNAL_GRANTS_DRAGONMARK,ID_WOTC_TCOE_OPTION_CUSTOMIZED_ASI" />
+			<stat name="strength" value="2" requirements="!(ID_WOTC_WGTE_GRANTS_DARKMARKED||ID_INTERNAL_GRANTS_DRAGONMARK||ID_WOTC_TCOE_OPTION_CUSTOMIZED_ASI||ID_INTERNAL_GRANTS_BACKGROUND_ASI)" />
+			<stat name="constitution" value="1" requirements="!(ID_WOTC_WGTE_GRANTS_DARKMARKED||ID_INTERNAL_GRANTS_DRAGONMARK||ID_WOTC_TCOE_OPTION_CUSTOMIZED_ASI||ID_INTERNAL_GRANTS_BACKGROUND_ASI)" />
+			<select type="Ability Score Improvement" name="Custom Ability Score Improvement +2 (Half-Orc)" supports="Custom Ability Score Increase 2" requirements="ID_WOTC_TCOE_OPTION_CUSTOMIZED_ASI,!(ID_WOTC_WGTE_GRANTS_DARKMARKED||ID_INTERNAL_GRANTS_DRAGONMARK||ID_INTERNAL_GRANTS_BACKGROUND_ASI)" />
+			<select type="Ability Score Improvement" name="Custom Ability Score Improvement +1 (Half-Orc)" supports="Custom Ability Score Increase 1" requirements="ID_WOTC_TCOE_OPTION_CUSTOMIZED_ASI,!(ID_WOTC_WGTE_GRANTS_DARKMARKED||ID_INTERNAL_GRANTS_DRAGONMARK||ID_INTERNAL_GRANTS_BACKGROUND_ASI)" />
 			<stat name="innate speed" value="30" bonus="base"/>
 			<grant type="Size" id="ID_SIZE_MEDIUM" />
 			<grant type="Vision" id="ID_VISION_DARKVISION" requirements="!ID_INTERNAL_GRANTS_DRAGONMARK" />
@@ -59,6 +59,7 @@
 			<grant type="Language" id="ID_LANGUAGE_COMMON" requirements="!ID_WOTC_TCOE_OPTION_CUSTOMIZED_LANGUAGE" />
 			<grant type="Language" id="ID_LANGUAGE_ORC" requirements="!ID_INTERNAL_GRANTS_DRAGONMARK,!ID_WOTC_TCOE_OPTION_CUSTOMIZED_LANGUAGE" />
 			<select type="Language" name="Customized Language" supports="Custom Race Language" number="2" requirements="ID_WOTC_TCOE_OPTION_CUSTOMIZED_LANGUAGE" />
+			<grant type="Grants" id="ID_INTERNAL_GRANT_RACE_HALF_ORC"/>
 			<select type="Race Variant" name="Half-Orc Variant" supports="Half-Orc Variant" optional="true" />
 		</rules>
 	</element>	
