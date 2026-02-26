@@ -9,7 +9,7 @@
 		</update>
 	</info>
 
-	<element name="Artisan" type="Background" source="Player’s Handbook 2024" id="ID_WOTC_PHB24_BACKGROUND_ARTISAN">
+	<element name="Artisan" type="Background" source="Player’s Handbook (2024)" id="ID_WOTC_PHB24_BACKGROUND_ARTISAN">
 		<description>
 			<ul class="unstyled" style="text-indent:-1em; margin-left:1em; margin-bottom:5px">
 				<li><strong>Ability Scores:</strong> Strength, Dexterity, Intelligence</li>
@@ -26,12 +26,29 @@
 		<rules>
 			<grant type="Ability Score Improvement" id="ID_WOTC_INTERNAL_ABILITY_SCORE_IMPROVEMENT_COMBINATION_STR_DEX_INT" />
 			<grant type="Feat" id="ID_WOTC_PHB24_FEAT_CRAFTER" />
-			<grant type="Proficiency" id="ID_WOTC_PHB24_PROFICIENCY_SKILL_INVESTIGATION" />
-			<grant type="Proficiency" id="ID_WOTC_PHB24_PROFICIENCY_SKILL_PERSUASION" />
+			<grant type="Proficiency" id="ID_PROFICIENCY_SKILL_INVESTIGATION" />
+			<grant type="Proficiency" id="ID_PROFICIENCY_SKILL_PERSUASION" />
 			<grant type="Grants" id="ID_INTERNAL_GRANTS_BACKGROUND_ASI" />
 			<select type="Proficiency" name="Tool Proficiency (Artisan)" supports="Tool, Artisan tools" />
 		</rules>
 	</element>
 
-	<!-- Todo: Add Equipment Pack for this Background. Example element is in the Acolyte Background. -->
+	<element name="Background Equipment Pack (Artisan)" type="Item" source="Player’s Handbook (2024)" id="ID_WOTC_PHB24_ITEM_BACKGROUND_EQUIPMENT_PACK_ARTISAN">
+		<description>
+			<p style="margin-bottom:5px">This pack contains items that are given to a character of Artisan Background, if you chose option A for Equipment.</p>
+			<p>You will receive following items by extracting contents of this pack:</p>
+			<p class="indent">• 2 Pouches</p>
+			<p class="indent">• Traveler's Clothes</p>
+			<p><b>Note:</b> This pack doesn't include the Artisan’s Tools of the same kind as Proficiency gained from this Background (can be taken from "Tools" Equipment category) and 32 GP.</p>
+		</description>
+		<setters>
+			<set name="category">Equipment Packs</set>
+			<set name="cost">—</set>
+			<set name="weight">—</set>
+		</setters>
+		<extract>
+			<item amount="2">ID_WOTC_PHB24_ITEM_POUCH</item>
+			<item>ID_WOTC_PHB24_ITEM_CLOTHES_TRAVELERS</item>
+		</extract>
+	</element>
 </elements>

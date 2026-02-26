@@ -2,7 +2,9 @@
 <elements>
 	<info>
 		<name>Rogue</name>
-		<update version="0.3.3">
+		<description>The Rogue class from the Player’s Handbook.</description>
+		<author url="http://dnd.wizards.com/products/tabletop-games/rpg-products/rpg_playershandbook">Wizards of the Coast</author>
+		<update version="0.3.4">
 			<file name="class-rogue.xml" url="https://raw.githubusercontent.com/AuroraLegacy/elements/master/core/players-handbook/classes/class-rogue.xml" />
 		</update>
 	</info>
@@ -124,7 +126,7 @@
 		</rules>
 		<multiclass id="ID_WOTC_PHB_MULTICLASS_ROGUE">
 			<prerequisite>Dexterity 13</prerequisite>
-			<requirements>[dex:13]</requirements>
+			<requirements>([dex:13],!(ID_WOTC_PHB24_CLASS_ROGUE||ID_WOTC_PHB24_MULTICLASS_ROGUE))||ID_INTERNAL_GRANTS_MULTICLASS_UNLOCKER</requirements>
 			<setters>
 				<set name="multiclass proficiencies">Light armor, one skill from the class’s skill list, thieves’ tools</set>
 			</setters>
@@ -136,20 +138,20 @@
 			</rules>
 		</multiclass>
 	</element>
+
 	<element name="Expertise" type="Class Feature" source="Player’s Handbook" id="ID_WOTC_PHB_CLASS_FEATURE_ROGUE_EXPERTISE">
 		<requirements>!ID_INTERNAL_FEATURE_REPLACEMENT_ROGUE_EXPERTISE</requirements>
 		<description>
 			<p> At 1st level, choose two of your skill proficiencies, or one of your skill proficiencies and your proficiency with thieves’ tools. Your proficiency bonus is doubled for any ability check you make that uses either of the chosen proficiencies.</p>
 			<p> At 6th level, you can choose two more of your proficiencies (in skills or with thieves’ tools) to gain this benefit. </p>
 		</description>
-		<sheet display="false">
-			<description>Your proficiency bonus is doubled for any ability check you make that uses either of the chosen proficiencies.</description>
-		</sheet>
+		<sheet display="false" />
 		<rules>
 			<select type="Class Feature" name="Expertise (Rogue)" level="1" number="2" supports="ID_INTERNAL_SUPPORT_EXPERTISE"/>
 			<select type="Class Feature" name="Expertise (Rogue)" level="6" number="2" supports="ID_INTERNAL_SUPPORT_EXPERTISE"/>
 		</rules>
 	</element>
+
 	<element name="Sneak Attack" type="Class Feature" source="Player’s Handbook" id="ID_WOTC_PHB_CLASS_FEATURE_ROGUE_SNEAKATTACK">
 		<requirements>!ID_INTERNAL_FEATURE_REPLACEMENT_ROGUE_SNEAK_ATTACK</requirements>
 		<description>
@@ -158,7 +160,7 @@
 			<p class="indent">The amount of the extra damage increases as you gain levels in this class, as shown in the Sneak Attack column of the Rogue table.</p>
 		</description>
 		<sheet>
-			<description>Once per turn, you can deal an extra {{sneak-attack:count}}d{{sneak-attack:die}} damage to one creature you hit with an attack if you have advantage on the attack roll. The attack must use a finesse or a ranged weapon.
+			<description>Once per turn, you can deal an extra {{sneak-attack:count}}d{{sneak-attack:die}} damage to one creature you hit with an attack if you have advantage on the attack roll. The attack must use a finesse or a ranged weapon. &#13;
 			You don’t need advantage on the attack roll if another enemy of the target is within 5 feet of it, that enemy isn’t incapacitated, and you don’t have disadvantage on the attack roll.</description>
 		</sheet>
 		<rules>
@@ -175,29 +177,29 @@
 			<stat name="sneak-attack:die" value="6" bonus="die" />
 		</rules>
 	</element>
+
 	<element name="Thieves’ Cant" type="Class Feature" source="Player’s Handbook" id="ID_WOTC_PHB_CLASS_FEATURE_ROGUE_THIEVES_CANT">
 		<requirements>!ID_INTERNAL_FEATURE_REPLACEMENT_ROGUE_THIEVES_CANT</requirements>
 		<description>
 			<p>During your rogue training you learned thieves’ cant, a secret mix of dialect, jargon, and code that allows you to hide messages in seemingly normal conversation. Only another creature that knows thieves’ cant understands such messages. It takes four times longer to convey such a message than it does to speak the same idea plainly.</p>
 			<p>In addition, you understand a set of secret signs and symbols used to convey short, simple messages, such as whether an area is dangerous or the territory of a thieves’ guild, whether loot is nearby, or whether the people in an area are easy marks or will provide a safe house for thieves on the run.</p>
 		</description>
-		<sheet>
-			<description>A secret mix of dialect, jargon, and code that allows you to hide messages in seemingly normal conversation. Only another creature that knows thieves’ cant understands such messages. It takes four times longer to convey such a message than it does to speak the same idea plainly.
-			In addition, you understand a set of secret signs and symbols used to convey short, simple messages, such as whether an area is dangerous or the territory of a thieves’ guild, whether loot is nearby, or whether the people in an area are easy marks or will provide a safe house for thieves on the run.</description>
-		</sheet>
+		<sheet display="false" />
 		<rules>
 			<grant type="Language" id="ID_WOTC_PHB_LANGUAGE_THIEVES_CANT" />
 		</rules>
 	</element>
+
 	<element name="Cunning Action" type="Class Feature" source="Player’s Handbook" id="ID_WOTC_PHB_CLASS_FEATURE_ROGUE_CUNNINGACTION">
 		<requirements>!ID_INTERNAL_FEATURE_REPLACEMENT_ROGUE_CUNNING_ACTION</requirements>
 		<description>
 			<p>Starting at 2nd level, your quick thinking and agility allow you to move and act quickly. You can take a bonus action on each of your turns in combat. This action can be used only to take the Dash, Disengage, or Hide action.</p>
 		</description>
-		<sheet>
-			<description>You can take a bonus action on each of your turns in combat. This action can be used only to take the Dash, Disengage, or Hide action.</description>
+		<sheet action="Bonus Action">
+			<description>You can take the Dash, Disengage, or Hide action.</description>
 		</sheet>
 	</element>
+
 	<element name="Roguish Archetype" type="Class Feature" source="Player’s Handbook" id="ID_WOTC_PHB_CLASS_FEATURE_ROGUE_ROGUISHARCHETYPE">
 		<requirements>!ID_INTERNAL_FEATURE_REPLACEMENT_ROGUE_ROGUISH_ARCHETYPE</requirements>
 		<description>
@@ -208,6 +210,7 @@
 			<select type="Archetype" name="Roguish Archetype" supports="Roguish Archetype" level="3"/>
 		</rules>
 	</element>
+
 	<element name="Ability Score Improvement" type="Class Feature" source="Player’s Handbook" id="ID_WOTC_PHB_CLASS_FEATURE_ROGUE_ABILITYSCOREIMPROVEMENT_ROGUE">
 		<requirements>!ID_INTERNAL_FEATURE_REPLACEMENT_ROGUE_ABILITY_SCORE_IMPROVEMENT</requirements>
 		<compendium display="false" />
@@ -224,6 +227,7 @@
 			<select type="Class Feature" name="Improvement Option (Rogue 19)" supports="Improvement Option,Rogue,19" level="19" />
 		</rules>
 	</element>
+
 	<element name="Uncanny Dodge" type="Class Feature" source="Player’s Handbook" id="ID_WOTC_PHB_CLASS_FEATURE_ROGUE_UNCANNY_DODGE">
 		<requirements>!ID_INTERNAL_FEATURE_REPLACEMENT_ROGUE_UNCANNY_DODGE</requirements>
 		<description>
@@ -233,6 +237,7 @@
 			<description>When an attacker that you can see hits you with an attack, you can halve the attack’s damage against you.</description>
 		</sheet>
 	</element>
+
 	<element name="Evasion" type="Class Feature" source="Player’s Handbook" id="ID_WOTC_PHB_CLASS_FEATURE_ROGUE_EVASION">
 		<requirements>!ID_INTERNAL_FEATURE_REPLACEMENT_ROGUE_EVASION</requirements>
 		<description>
@@ -242,6 +247,7 @@
 			<description>When you are subjected to an effect that allows you to make a Dexterity saving throw to take only half damage, you instead take no damage if you succeed on the saving throw, and only half damage if you fail.</description>
 		</sheet>
 	</element>
+
 	<element name="Reliable Talent" type="Class Feature" source="Player’s Handbook" id="ID_WOTC_PHB_CLASS_FEATURE_ROGUE_RELIABLETALENT">
 		<requirements>!ID_INTERNAL_FEATURE_REPLACEMENT_ROGUE_RELIABLE_TALENT</requirements>
 		<description>
@@ -251,6 +257,7 @@
 			<description>Whenever you make an ability check that lets you add your proficiency bonus, you can treat a d20 roll of 9 or lower as a 10.</description>
 		</sheet>
 	</element>
+
 	<element name="Blindsense" type="Class Feature" source="Player’s Handbook" id="ID_WOTC_PHB_CLASS_FEATURE_ROGUE_BLINDSENSE">
 		<requirements>!ID_INTERNAL_FEATURE_REPLACEMENT_ROGUE_BLIND_SENSE</requirements>
 		<description>
@@ -260,18 +267,18 @@
 			<description>If you are able to hear, you are aware of the location of any hidden or invisible creature within 10 feet of you.</description>
 		</sheet>
 	</element>
+
 	<element name="Slippery Mind" type="Class Feature" source="Player’s Handbook" id="ID_WOTC_PHB_CLASS_FEATURE_ROGUE_SLIPPERYMIND">
 		<requirements>!ID_INTERNAL_FEATURE_REPLACEMENT_ROGUE_SLIPPERY_MIND</requirements>
 		<description>
 			<p>By 15th level, you have acquired greater mental strength. You gain proficiency in Wisdom saving throws.</p>
 		</description>
-		<sheet display="false">
-			<description>You have acquired greater mental strength. You gain proficiency in Wisdom saving throws.</description>
-		</sheet>
+		<sheet display="false" />
 		<rules>
 			<grant type="Proficiency" id="ID_PROFICIENCY_SAVINGTHROW_WISDOM" />
 		</rules>
 	</element>
+
 	<element name="Elusive" type="Class Feature" source="Player’s Handbook" id="ID_WOTC_PHB_CLASS_FEATURE_ROGUE_ELUSIVE">
 		<requirements>!ID_INTERNAL_FEATURE_REPLACEMENT_ROGUE_ELUSIVE</requirements>
 		<description>
@@ -281,6 +288,7 @@
 			<description>No attack roll has advantage against you while you aren’t incapacitated.</description>
 		</sheet>
 	</element>
+
 	<element name="Stroke of Luck" type="Class Feature" source="Player’s Handbook" id="ID_WOTC_PHB_CLASS_FEATURE_ROGUE_STROKEOFLUCK">
 		<requirements>!ID_INTERNAL_FEATURE_REPLACEMENT_ROGUE_STROKE_OF_LUCK</requirements>
 		<description>
@@ -319,7 +327,7 @@
 		</description>
 		<sheet display="false" />
 		<rules>
-			<stat name="acrobatics:proficiency" value="proficiency" bonus="double" />
+			<grant type="Proficiency" id="ID_INTERNAL_PROFICIENCY_SKILL_EXPERTISE_ACROBATICS" />
 		</rules>
 	</element>
 	<element name="Skill Expertise (Animal Handling)" type="Class Feature" source="Player’s Handbook" id="ID_EXPERTISE_SKILL_ANIMALHANDLING">
@@ -333,7 +341,7 @@
 		</description>
 		<sheet display="false" />
 		<rules>
-			<stat name="animal handling:proficiency" value="proficiency" bonus="double" />
+			<grant type="Proficiency" id="ID_INTERNAL_PROFICIENCY_SKILL_EXPERTISE_ANIMAL_HANDLING" />
 		</rules>
 	</element>
 	<element name="Skill Expertise (Arcana)" type="Class Feature" source="Player’s Handbook" id="ID_EXPERTISE_SKILL_ARCANA">
@@ -347,7 +355,7 @@
 		</description>
 		<sheet display="false" />
 		<rules>
-			<stat name="arcana:proficiency" value="proficiency" bonus="double" />
+			<grant type="Proficiency" id="ID_INTERNAL_PROFICIENCY_SKILL_EXPERTISE_ARCANA" />
 		</rules>
 	</element>
 	<element name="Skill Expertise (Athletics)" type="Class Feature" source="Player’s Handbook" id="ID_EXPERTISE_SKILL_ATHLETICS">
@@ -361,7 +369,7 @@
 		</description>
 		<sheet display="false" />
 		<rules>
-			<stat name="athletics:proficiency" value="proficiency" bonus="double" />
+			<grant type="Proficiency" id="ID_INTERNAL_PROFICIENCY_SKILL_EXPERTISE_ATHLETICS" />
 		</rules>
 	</element>
 	<element name="Skill Expertise (Deception)" type="Class Feature" source="Player’s Handbook" id="ID_EXPERTISE_SKILL_DECEPTION">
@@ -375,7 +383,7 @@
 		</description>
 		<sheet display="false" />
 		<rules>
-			<stat name="deception:proficiency" value="proficiency" bonus="double" />
+			<grant type="Proficiency" id="ID_INTERNAL_PROFICIENCY_SKILL_EXPERTISE_DECEPTION" />
 		</rules>
 	</element>
 	<element name="Skill Expertise (History)" type="Class Feature" source="Player’s Handbook" id="ID_EXPERTISE_SKILL_HISTORY">
@@ -389,7 +397,7 @@
 		</description>
 		<sheet display="false" />
 		<rules>
-			<stat name="history:proficiency" value="proficiency" bonus="double" />
+			<grant type="Proficiency" id="ID_INTERNAL_PROFICIENCY_SKILL_EXPERTISE_HISTORY" />
 		</rules>
 	</element>
 	<element name="Skill Expertise (Insight)" type="Class Feature" source="Player’s Handbook" id="ID_EXPERTISE_SKILL_INSIGHT">
@@ -403,7 +411,7 @@
 		</description>
 		<sheet display="false" />
 		<rules>
-			<stat name="insight:proficiency" value="proficiency" bonus="double" />
+			<grant type="Proficiency" id="ID_INTERNAL_PROFICIENCY_SKILL_EXPERTISE_INSIGHT" />
 		</rules>
 	</element>
 	<element name="Skill Expertise (Intimidation)" type="Class Feature" source="Player’s Handbook" id="ID_EXPERTISE_SKILL_INTIMIDATION">
@@ -417,7 +425,7 @@
 		</description>
 		<sheet display="false" />
 		<rules>
-			<stat name="intimidation:proficiency" value="proficiency" bonus="double" />
+			<grant type="Proficiency" id="ID_INTERNAL_PROFICIENCY_SKILL_EXPERTISE_INTIMIDATION" />
 		</rules>
 	</element>
 	<element name="Skill Expertise (Investigation)" type="Class Feature" source="Player’s Handbook" id="ID_EXPERTISE_SKILL_INVESTIGATION">
@@ -431,7 +439,7 @@
 		</description>
 		<sheet display="false" />
 		<rules>
-			<stat name="investigation:proficiency" value="proficiency" bonus="double" />
+			<grant type="Proficiency" id="ID_INTERNAL_PROFICIENCY_SKILL_EXPERTISE_INVESTIGATION" />
 		</rules>
 	</element>
 	<element name="Skill Expertise (Medicine)" type="Class Feature" source="Player’s Handbook" id="ID_EXPERTISE_SKILL_MEDICINE">
@@ -445,7 +453,7 @@
 		</description>
 		<sheet display="false" />
 		<rules>
-			<stat name="medicine:proficiency" value="proficiency" bonus="double" />
+			<grant type="Proficiency" id="ID_INTERNAL_PROFICIENCY_SKILL_EXPERTISE_MEDICINE" />
 		</rules>
 	</element>
 	<element name="Skill Expertise (Nature)" type="Class Feature" source="Player’s Handbook" id="ID_EXPERTISE_SKILL_NATURE">
@@ -459,7 +467,7 @@
 		</description>
 		<sheet display="false" />
 		<rules>
-			<stat name="nature:proficiency" value="proficiency" bonus="double" />
+			<grant type="Proficiency" id="ID_INTERNAL_PROFICIENCY_SKILL_EXPERTISE_NATURE" />
 		</rules>
 	</element>
 	<element name="Skill Expertise (Perception)" type="Class Feature" source="Player’s Handbook" id="ID_EXPERTISE_SKILL_PERCEPTION">
@@ -473,7 +481,7 @@
 		</description>
 		<sheet display="false" />
 		<rules>
-			<stat name="perception:proficiency" value="proficiency" bonus="double" />
+			<grant type="Proficiency" id="ID_INTERNAL_PROFICIENCY_SKILL_EXPERTISE_PERCEPTION" />
 		</rules>
 	</element>
 	<element name="Skill Expertise (Performance)" type="Class Feature" source="Player’s Handbook" id="ID_EXPERTISE_SKILL_PERFORMANCE">
@@ -487,7 +495,7 @@
 		</description>
 		<sheet display="false" />
 		<rules>
-			<stat name="performance:proficiency" value="proficiency" bonus="double" />
+			<grant type="Proficiency" id="ID_INTERNAL_PROFICIENCY_SKILL_EXPERTISE_PERFORMANCE" />
 		</rules>
 	</element>
 	<element name="Skill Expertise (Persuasion)" type="Class Feature" source="Player’s Handbook" id="ID_EXPERTISE_SKILL_PERSUASION">
@@ -501,7 +509,7 @@
 		</description>
 		<sheet display="false" />
 		<rules>
-			<stat name="persuasion:proficiency" value="proficiency" bonus="double" />
+			<grant type="Proficiency" id="ID_INTERNAL_PROFICIENCY_SKILL_EXPERTISE_PERSUASION" />
 		</rules>
 	</element>
 	<element name="Skill Expertise (Religion)" type="Class Feature" source="Player’s Handbook" id="ID_EXPERTISE_SKILL_RELIGION">
@@ -515,7 +523,7 @@
 		</description>
 		<sheet display="false" />
 		<rules>
-			<stat name="religion:proficiency" value="proficiency" bonus="double" />
+			<grant type="Proficiency" id="ID_INTERNAL_PROFICIENCY_SKILL_EXPERTISE_RELIGION" />
 		</rules>
 	</element>
 	<element name="Skill Expertise (Sleight of Hand)" type="Class Feature" source="Player’s Handbook" id="ID_EXPERTISE_SKILL_SLEIGHTOFHAND">
@@ -529,7 +537,7 @@
 		</description>
 		<sheet display="false" />
 		<rules>
-			<stat name="sleight of hand:proficiency" value="proficiency" bonus="double" />
+			<grant type="Proficiency" id="ID_INTERNAL_PROFICIENCY_SKILL_EXPERTISE_SLEIGHT_OF_HAND" />
 		</rules>
 	</element>
 	<element name="Skill Expertise (Stealth)" type="Class Feature" source="Player’s Handbook" id="ID_EXPERTISE_SKILL_STEALTH">
@@ -543,7 +551,7 @@
 		</description>
 		<sheet display="false" />
 		<rules>
-			<stat name="stealth:proficiency" value="proficiency" bonus="double" />
+			<grant type="Proficiency" id="ID_INTERNAL_PROFICIENCY_SKILL_EXPERTISE_STEALTH" />
 		</rules>
 	</element>
 	<element name="Skill Expertise (Survival)" type="Class Feature" source="Player’s Handbook" id="ID_EXPERTISE_SKILL_SURVIVAL">
@@ -557,7 +565,7 @@
 		</description>
 		<sheet display="false" />
 		<rules>
-			<stat name="survival:proficiency" value="proficiency" bonus="double" />
+			<grant type="Proficiency" id="ID_INTERNAL_PROFICIENCY_SKILL_EXPERTISE_SURVIVAL" />
 		</rules>
 	</element>
 	<element name="Tool Expertise (Thieves’ Tools)" type="Class Feature" source="Player’s Handbook" id="ID_EXPERTISE_TOOL_THIEVES_TOOLS">
@@ -573,7 +581,7 @@
         	<description>Your proficiency bonus is doubled for any Thieves’ Tools check you make.</description>
 		</sheet>
 		<rules>
-			<stat name="thieves tools:proficiency" value="proficiency" bonus="double" />
+			<grant type="Proficiency" id="ID_INTERNAL_EXPERTISE_TOOL_THIEVES_TOOLS" />
 		</rules>
 	</element>
 

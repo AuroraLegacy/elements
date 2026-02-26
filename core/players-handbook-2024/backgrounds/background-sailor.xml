@@ -9,7 +9,7 @@
 		</update>
 	</info>
 
-	<element name="Sailor" type="Background" source="Player’s Handbook 2024" id="ID_WOTC_PHB24_BACKGROUND_SAILOR">
+	<element name="Sailor" type="Background" source="Player’s Handbook (2024)" id="ID_WOTC_PHB24_BACKGROUND_SAILOR">
 		<description>
 			<ul class="unstyled" style="text-indent:-1em; margin-left:1em; margin-bottom:5px">
 				<li><strong>Ability Scores:</strong> Strength, Dexterity, Wisdom</li>
@@ -26,12 +26,33 @@
 		<rules>
 			<grant type="Ability Score Improvement" id="ID_INTERNAL_ABILITY_SCORE_IMPROVEMENT_COMBINATION_STR_DEX_WIS" />
 			<grant type="Feat" id="ID_WOTC_PHB24_FEAT_TAVERN_BRAWLER" />
-			<grant type="Proficiency" id="ID_WOTC_PHB24_PROFICIENCY_SKILL_ACROBATICS" />
-			<grant type="Proficiency" id="ID_WOTC_PHB24_PROFICIENCY_SKILL_PERCEPTION" /> 
+			<grant type="Proficiency" id="ID_PROFICIENCY_SKILL_ACROBATICS" />
+			<grant type="Proficiency" id="ID_PROFICIENCY_SKILL_PERCEPTION" /> 
 			<grant type="Grants" id="ID_INTERNAL_GRANTS_BACKGROUND_ASI" />
-			<grant type="Proficiency" id="ID_WOTC_PHB24_PROFICIENCY_TOOL_PROFICIENCY_NAVIGATORS_TOOLS" />	
+			<grant type="Proficiency" id="ID_PROFICIENCY_TOOL_PROFICIENCY_NAVIGATORS_TOOLS" />	
 		</rules>
 	</element>
 
-	<!-- Todo: Add Equipment Pack for this Background. Example element is in the Acolyte Background. -->
+	<element name="Background Equipment Pack (Sailor)" type="Item" source="Player’s Handbook (2024)" id="ID_WOTC_PHB24_ITEM_BACKGROUND_EQUIPMENT_PACK_SAILOR">
+		<description>
+			<p style="margin-bottom:5px">This pack contains items that are given to a character of Sailor Background, if you chose option A for Equipment.</p>
+			<p>You will receive following items by extracting contents of this pack:</p>
+			<p class="indent">• Dagger</p>
+			<p class="indent">• Navigator's Tools</p>
+			<p class="indent">• Rope</p>
+			<p class="indent">• Traveler’s Clothes</p>
+			<p><b>Note:</b> This pack doesn't include 20 GP.</p>
+		</description>
+		<setters>
+			<set name="category">Equipment Packs</set>
+			<set name="cost">—</set>
+			<set name="weight">—</set>
+		</setters>
+		<extract>
+			<item>ID_WOTC_PHB24_WEAPON_DAGGER</item>
+			<item>ID_WOTC_PHB24_ITEM_TOOL_NAVIGATORS_TOOLS</item>
+			<item>ID_WOTC_PHB24_ITEM_ROPE</item>
+			<item>ID_WOTC_PHB24_ITEM_CLOTHES_TRAVELERS</item>
+		</extract>
+	</element>
 </elements>

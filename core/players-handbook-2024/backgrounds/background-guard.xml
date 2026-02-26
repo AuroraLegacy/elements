@@ -9,14 +9,14 @@
 		</update>
 	</info>
 
-	<element name="Guard" type="Background" source="Player’s Handbook 2024" id="ID_WOTC_PHB24_BACKGROUND_GUARD">
+	<element name="Guard" type="Background" source="Player’s Handbook (2024)" id="ID_WOTC_PHB24_BACKGROUND_GUARD">
 		<description>
 			<ul class="unstyled" style="text-indent:-1em; margin-left:1em; margin-bottom:5px">
 				<li><strong>Ability Scores:</strong> Strength, Intelligence, Wisdom</li>
 				<li><strong>Feat:</strong> Alert</li>
 				<li><strong>Skill Proficiencies:</strong> Athletics and Perception</li>
 				<li><strong>Tool Proficiency:</strong><i> Choose one kind of Gaming Set</i></li>
-				<li><strong>Equipment:</strong><i> Choose A or B:</i> (A) Spear, Light Crossbow, 20 Bolts, Gaming Set (same as above). Hooded Lantern, Manacles, Quiver, Traveler's Clothes, 12 GP; or (B) 50 GP</li>
+				<li><strong>Equipment:</strong><i> Choose A or B:</i> (A) Spear, Light Crossbow, 20 Bolts, Gaming Set (same as above), Hooded Lantern, Manacles, Quiver, Traveler's Clothes, 12 GP; or (B) 50 GP</li>
 			</ul>
 			<p>Your feet ache when you remember the countless hours you spent at your post in the tower. You were trained to keep one eye looking outside the wall, watching for marauders sweeping from the nearby forest, and your other eye looking inside the wall, searching for cutpurses and troublemakers.</p>
 		</description>
@@ -26,12 +26,39 @@
 		<rules>
 			<grant type="Ability Score Improvement" id="ID_INTERNAL_ABILITY_SCORE_IMPROVEMENT_COMBINATION_STR_INT_WIS" />
 			<grant type="Feat" id="ID_WOTC_PHB24_FEAT_ALERT" />
-			<grant type="Proficiency" id="ID_WOTC_PHB24_PROFICIENCY_SKILL_ATHLETICS" />
-			<grant type="Proficiency" id="ID_WOTC_PHB24_PROFICIENCY_SKILL_PERCEPTION" />
+			<grant type="Proficiency" id="ID_PROFICIENCY_SKILL_ATHLETICS" />
+			<grant type="Proficiency" id="ID_PROFICIENCY_SKILL_PERCEPTION" />
 			<grant type="Grants" id="ID_INTERNAL_GRANTS_BACKGROUND_ASI" />
 			<select type="Proficiency" name="Gaming Set (Guard)" supports="Gaming Set" />
 		</rules>
 	</element>
 
-	<!-- Todo: Add Equipment Pack for this Background. Example element is in the Acolyte Background. -->
+	<element name="Background Equipment Pack (Guard)" type="Item" source="Player’s Handbook (2024)" id="ID_WOTC_PHB24_ITEM_BACKGROUND_EQUIPMENT_PACK_GUARD">
+		<description>
+			<p style="margin-bottom:5px">This pack contains items that are given to a character of Guard Background, if you chose option A for Equipment.</p>
+			<p>You will receive following items by extracting contents of this pack:</p>
+			<p class="indent">• Spear</p>
+			<p class="indent">• Light Crossbow</p>
+			<p class="indent">• 20 Bolts</p>
+			<p class="indent">• Hooded Lantern</p>
+			<p class="indent">• Manacles</p>
+			<p class="indent">• Quiver</p>
+			<p class="indent">• Traveler's Clothes</p>
+			<p><b>Note:</b> This pack doesn't include the Gaming Set of the same kind as Proficiency gained from this Background (can be taken from "Tools" Equipment category) and 12 GP.</p>
+		</description>
+		<setters>
+			<set name="category">Equipment Packs</set>
+			<set name="cost">—</set>
+			<set name="weight">—</set>
+		</setters>
+		<extract>
+			<item>ID_WOTC_PHB24_WEAPON_SPEAR</item>
+			<item>ID_WOTC_PHB24_WEAPON_CROSSBOW_LIGHT</item>
+			<item amount="20">ID_WOTC_PHB24_ITEM_BOLT</item>
+			<item>ID_WOTC_PHB24_ITEM_LANTERN_HOODED</item>
+			<item>ID_WOTC_PHB24_ITEM_MANACLES</item>
+			<item>ID_WOTC_PHB24_ITEM_QUIVER</item>
+			<item>ID_WOTC_PHB24_ITEM_CLOTHES_TRAVELERS</item>
+		</extract>
+	</element>
 </elements>

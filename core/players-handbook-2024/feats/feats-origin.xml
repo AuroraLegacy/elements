@@ -1,14 +1,15 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <elements>
 	<info>
-		<name></name>
+		<name>Origin Feats</name>
 		<update version="0.0.1">
 			<file name="feats-origin.xml" url="https://raw.githubusercontent.com/AuroraLegacy/elements/master/core/players-handbook-2024/feats/feats-origin.xml" />
 		</update>
 	</info>
-		
-	<element name="Alert" type="Feat" source="Player’s Handbook 2024" id="ID_WOTC_PHB24_FEAT_ALERT">
+
+	<element name="Alert" type="Feat" source="Player’s Handbook (2024)" id="ID_WOTC_PHB24_FEAT_ALERT">
 		<supports>Origin</supports>
+		<requirements>!ID_PHB_FEAT_ALERT||ID_WOTC_PHB24_GRANTS_FEAT_UNLOCKER</requirements>
 		<description>
 			<p class="flavor">Origin Feat</p>
 			<p>You gain the following benefits.</p>
@@ -19,11 +20,11 @@
 			<description>Immediately after you roll Initiative, you can swap yours with that of one willing ally in the same combat. You can't make this swap if you or the ally has the Incapacitated condition.</description>
 		</sheet>
 		<rules>
-			<stat name="initiative" value="proficiency" bonus="proficiency" />			
+			<stat name="initiative" value="proficiency" bonus="proficiency" />
 		</rules>
 	</element>
 
-	<element name="Crafter" type="Feat" source="Player’s Handbook 2024" id="ID_WOTC_PHB24_FEAT_CRAFTER">
+	<element name="Crafter" type="Feat" source="Player’s Handbook (2024)" id="ID_WOTC_PHB24_FEAT_CRAFTER">
 		<supports>Origin</supports>
 		<description>
 			<p class="flavor">Origin Feat</p>
@@ -53,12 +54,13 @@
 			<description>Whenever you buy a nonmagical item, you receive a 20% discount on it. When you finish a Long Rest, you can craft one piece of gear from the Fast Crafting table, provided you have tools and proficiency associated with that item. The item lasts until you finish another Long Rest.</description>
 		</sheet>
 		<rules>
-			<select type="Proficiency" name="Tool Proficiency (Crafter)" supports="ID_WOTC_PHB24_PROFICIENCY_TOOL_PROFICIENCY_CARPENTERS_TOOLS|ID_WOTC_PHB24_PROFICIENCY_TOOL_PROFICIENCY_LEATHERWORKERS_TOOLS|ID_WOTC_PHB24_PROFICIENCY_TOOL_PROFICIENCY_MASONS_TOOLS|ID_WOTC_PHB24_PROFICIENCY_TOOL_PROFICIENCY_POTTERS_TOOLS|ID_WOTC_PHB24_PROFICIENCY_TOOL_PROFICIENCY_SMITHS_TOOLS|ID_WOTC_PHB24_PROFICIENCY_TOOL_PROFICIENCY_TINKERS_TOOLS|ID_WOTC_PHB24_PROFICIENCY_TOOL_PROFICIENCY_WEAVERS_TOOLS|ID_WOTC_PHB24_PROFICIENCY_TOOL_PROFICIENCY_WOODCARVERS_TOOLS" number="3"/>
+			<select type="Proficiency" name="Tool Proficiency (Crafter)" supports="ID_PROFICIENCY_TOOL_PROFICIENCY_CARPENTERS_TOOLS|ID_PROFICIENCY_TOOL_PROFICIENCY_LEATHERWORKERS_TOOLS|ID_PROFICIENCY_TOOL_PROFICIENCY_MASONS_TOOLS|ID_PROFICIENCY_TOOL_PROFICIENCY_POTTERS_TOOLS|ID_PROFICIENCY_TOOL_PROFICIENCY_SMITHS_TOOLS|ID_PROFICIENCY_TOOL_PROFICIENCY_TINKERS_TOOLS|ID_PROFICIENCY_TOOL_PROFICIENCY_WEAVERS_TOOLS|ID_PROFICIENCY_TOOL_PROFICIENCY_WOODCARVERS_TOOLS" number="3"/>
 		</rules>
 	</element>
 
-	<element name="Healer" type="Feat" source="Player’s Handbook 2024" id="ID_WOTC_PHB24_FEAT_HEALER">
+	<element name="Healer" type="Feat" source="Player’s Handbook (2024)" id="ID_WOTC_PHB24_FEAT_HEALER">
 		<supports>Origin</supports>
+		<requirements>!ID_PHB_FEAT_HEALER||ID_WOTC_PHB24_GRANTS_FEAT_UNLOCKER</requirements>
 		<description>
 			<p class="flavor">Origin Feat</p>
 			<p>You gain the following benefits.</p>
@@ -67,13 +69,14 @@
 		</description>
 		<sheet>
 			<description>You gain the following benefits: &#13;
-			• You can spend one use of a Healer's Kit to tend to a creature within 5ft. of yourself. That creature can expend one of its Hit Point Dice, and you then roll that die. It regains a number of HP equal to the roll + {{proficiency}}. &#13;
+			• You can spend one use of a Healer's Kit to tend to a creature within 5ft. of yourself. That creature can expend one of its Hit Dice, and you then roll that die. It regains a number of HP equal to the roll + {{proficiency}}. &#13;
 			• Whenever you roll a 1 on a die to restore HP with a spell or the benefit above, you can reroll it, you must use the new result.</description>
 		</sheet>
 	</element>
 
-	<element name="Lucky" type="Feat" source="Player’s Handbook 2024" id="ID_WOTC_PHB24_FEAT_LUCKY">
+	<element name="Lucky" type="Feat" source="Player’s Handbook (2024)" id="ID_WOTC_PHB24_FEAT_LUCKY">
 		<supports>Origin</supports>
+		<requirements>!ID_PHB_FEAT_LUCKY||ID_WOTC_PHB24_GRANTS_FEAT_UNLOCKER</requirements>
 		<description>
 			<p class="flavor">Origin Feat</p>
 			<p>You gain the following benefits.</p>
@@ -87,8 +90,9 @@
 		</sheet>
 	</element>
 
-	<element name="Magic Initiate" type="Feat" source="Player’s Handbook 2024" id="ID_WOTC_PHB24_FEAT_MAGIC_INITIATE">
+	<element name="Magic Initiate" type="Feat" source="Player’s Handbook (2024)" id="ID_WOTC_PHB24_FEAT_MAGIC_INITIATE">
 		<supports>Origin</supports>
+		<requirements>!ID_PHB_FEAT_MAGICINITIATE||ID_WOTC_PHB24_GRANTS_FEAT_UNLOCKER</requirements>
 		<description>
 			<p class="flavor">Origin Feat</p>
 			<p>You gain the following benefits.</p>
@@ -102,7 +106,7 @@
 			<select type="Feat Feature" name="Spell List (Magic Initiate)" supports="ID_WOTC_PHB24_FEAT_MAGIC_INITIATE_CLERIC|ID_WOTC_PHB24_FEAT_MAGIC_INITIATE_DRUID|ID_WOTC_PHB24_FEAT_MAGIC_INITIATE_WIZARD"/>
 		</rules>
 	</element>
-	<element name="Magic Initiate" type="Feat" source="Player’s Handbook 2024" id="ID_WOTC_PHB24_FEAT_MAGIC_INITIATE_2">
+	<element name="Magic Initiate" type="Feat" source="Player’s Handbook (2024)" id="ID_WOTC_PHB24_FEAT_MAGIC_INITIATE_2">
 		<supports>Origin</supports>
 		<compendium display="false" />
 		<requirements>ID_WOTC_PHB24_FEAT_MAGIC_INITIATE</requirements>
@@ -119,7 +123,7 @@
 			<select type="Feat Feature" name="Spell List (Magic Initiate)" supports="ID_WOTC_PHB24_FEAT_MAGIC_INITIATE_CLERIC|ID_WOTC_PHB24_FEAT_MAGIC_INITIATE_DRUID|ID_WOTC_PHB24_FEAT_MAGIC_INITIATE_WIZARD"/>
 		</rules>
 	</element>
-	<element name="Magic Initiate" type="Feat" source="Player’s Handbook 2024" id="ID_WOTC_PHB24_FEAT_MAGIC_INITIATE_3">
+	<element name="Magic Initiate" type="Feat" source="Player’s Handbook (2024)" id="ID_WOTC_PHB24_FEAT_MAGIC_INITIATE_3">
 		<supports>Origin</supports>
 		<compendium display="false" />
 		<requirements>ID_WOTC_PHB24_FEAT_MAGIC_INITIATE_2</requirements>
@@ -136,8 +140,8 @@
 			<select type="Feat Feature" name="Spell List (Magic Initiate)" supports="ID_WOTC_PHB24_FEAT_MAGIC_INITIATE_CLERIC|ID_WOTC_PHB24_FEAT_MAGIC_INITIATE_DRUID|ID_WOTC_PHB24_FEAT_MAGIC_INITIATE_WIZARD"/>
 		</rules>
 	</element>
-	
-	<element name="Cleric" type="Feat Feature" source="Player’s Handbook 2024" id="ID_WOTC_PHB24_FEAT_MAGIC_INITIATE_CLERIC">
+
+	<element name="Cleric" type="Feat Feature" source="Player’s Handbook (2024)" id="ID_WOTC_PHB24_FEAT_MAGIC_INITIATE_CLERIC">
 		<compendium display="false" />
 		<description>
 			<p>You learn two cantrips of your choice from the Cleric's spell list.</p>
@@ -151,7 +155,7 @@
 			<select type="Spell" name="Level 1 Spell (Magic Initiate)" supports="1,Cleric" />
 		</rules>
 	</element>
-	<element name="Intelligence" type="Feat Feature" source="Player’s Handbook 2024" id="ID_WOTC_PHB24_FEAT_FEATURE_MAGIC_INITIATE_CLERIC_INTELLIGENCE">
+	<element name="Intelligence" type="Feat Feature" source="Player’s Handbook (2024)" id="ID_WOTC_PHB24_FEAT_FEATURE_MAGIC_INITIATE_CLERIC_INTELLIGENCE">
 		<compendium display="false" />
 		<description>
 			<p>Your spellcasting ability for this feat's spells is Intelligence.</p>
@@ -161,7 +165,7 @@
 			Whenever you gain a new level, you can replace one of the spells you chose for this feat with a different spell of the same level from the chosen spell list.</description>
 		</sheet>
 	</element>
-	<element name="Wisdom" type="Feat Feature" source="Player’s Handbook 2024" id="ID_WOTC_PHB24_FEAT_FEATURE_MAGIC_INITIATE_CLERIC_WISDOM">
+	<element name="Wisdom" type="Feat Feature" source="Player’s Handbook (2024)" id="ID_WOTC_PHB24_FEAT_FEATURE_MAGIC_INITIATE_CLERIC_WISDOM">
 		<compendium display="false" />
 		<description>
 			<p>Your spellcasting ability for this feat's spells is Wisdom.</p>
@@ -171,7 +175,7 @@
 			Whenever you gain a new level, you can replace one of the spells you chose for this feat with a different spell of the same level from the chosen spell list.</description>
 		</sheet>
 	</element>
-	<element name="Charisma" type="Feat Feature" source="Player’s Handbook 2024" id="ID_WOTC_PHB24_FEAT_FEATURE_MAGIC_INITIATE_CLERIC_CHARISMA">
+	<element name="Charisma" type="Feat Feature" source="Player’s Handbook (2024)" id="ID_WOTC_PHB24_FEAT_FEATURE_MAGIC_INITIATE_CLERIC_CHARISMA">
 		<compendium display="false" />
 		<description>
 			<p>Your spellcasting ability for this feat's spells is Charisma.</p>
@@ -182,7 +186,7 @@
 		</sheet>
 	</element>
 
-	<element name="Druid" type="Feat Feature" source="Player’s Handbook 2024" id="ID_WOTC_PHB24_FEAT_MAGIC_INITIATE_DRUID">
+	<element name="Druid" type="Feat Feature" source="Player’s Handbook (2024)" id="ID_WOTC_PHB24_FEAT_MAGIC_INITIATE_DRUID">
 		<compendium display="false" />
 		<description>
 			<p>You learn two cantrips of your choice from the Druid's spell list.</p>
@@ -196,7 +200,7 @@
 			<select type="Spell" name="Level 1 Spell (Magic Initiate)" supports="1,Druid" />
 		</rules>
 	</element>
-	<element name="Intelligence" type="Feat Feature" source="Player’s Handbook 2024" id="ID_WOTC_PHB24_FEAT_FEATURE_MAGIC_INITIATE_DRUID_INTELLIGENCE">
+	<element name="Intelligence" type="Feat Feature" source="Player’s Handbook (2024)" id="ID_WOTC_PHB24_FEAT_FEATURE_MAGIC_INITIATE_DRUID_INTELLIGENCE">
 		<compendium display="false" />
 		<description>
 			<p>Your spellcasting ability for this feat's spells is Intelligence.</p>
@@ -206,7 +210,7 @@
 			Whenever you gain a new level, you can replace one of the spells you chose for this feat with a different spell of the same level from the chosen spell list.</description>
 		</sheet>
 	</element>
-	<element name="Wisdom" type="Feat Feature" source="Player’s Handbook 2024" id="ID_WOTC_PHB24_FEAT_FEATURE_MAGIC_INITIATE_DRUID_WISDOM">
+	<element name="Wisdom" type="Feat Feature" source="Player’s Handbook (2024)" id="ID_WOTC_PHB24_FEAT_FEATURE_MAGIC_INITIATE_DRUID_WISDOM">
 		<compendium display="false" />
 		<description>
 			<p>Your spellcasting ability for this feat's spells is Wisdom.</p>
@@ -216,7 +220,7 @@
 			Whenever you gain a new level, you can replace one of the spells you chose for this feat with a different spell of the same level from the chosen spell list.</description>
 		</sheet>
 	</element>
-	<element name="Charisma" type="Feat Feature" source="Player’s Handbook 2024" id="ID_WOTC_PHB24_FEAT_FEATURE_MAGIC_INITIATE_DRUID_CHARISMA">
+	<element name="Charisma" type="Feat Feature" source="Player’s Handbook (2024)" id="ID_WOTC_PHB24_FEAT_FEATURE_MAGIC_INITIATE_DRUID_CHARISMA">
 		<compendium display="false" />
 		<description>
 			<p>Your spellcasting ability for this feat's spells is Charisma.</p>
@@ -227,7 +231,7 @@
 		</sheet>
 	</element>
 
-	<element name="Wizard" type="Feat Feature" source="Player’s Handbook 2024" id="ID_WOTC_PHB24_FEAT_MAGIC_INITIATE_WIZARD">
+	<element name="Wizard" type="Feat Feature" source="Player’s Handbook (2024)" id="ID_WOTC_PHB24_FEAT_MAGIC_INITIATE_WIZARD">
 		<compendium display="false" />
 		<description>
 			<p>You learn two cantrips of your choice from the Wizard's spell list.</p>
@@ -241,7 +245,7 @@
 			<select type="Spell" name="Level 1 Spell (Magic Initiate)" supports="1,Wizard" />
 		</rules>
 	</element>
-	<element name="Intelligence" type="Feat Feature" source="Player’s Handbook 2024" id="ID_WOTC_PHB24_FEAT_FEATURE_MAGIC_INITIATE_WIZARD_INTELLIGENCE">
+	<element name="Intelligence" type="Feat Feature" source="Player’s Handbook (2024)" id="ID_WOTC_PHB24_FEAT_FEATURE_MAGIC_INITIATE_WIZARD_INTELLIGENCE">
 		<compendium display="false" />
 		<description>
 			<p>Your spellcasting ability for this feat's spells is Intelligence.</p>
@@ -251,7 +255,7 @@
 			Whenever you gain a new level, you can replace one of the spells you chose for this feat with a different spell of the same level from the chosen spell list.</description>
 		</sheet>
 	</element>
-	<element name="Wisdom" type="Feat Feature" source="Player’s Handbook 2024" id="ID_WOTC_PHB24_FEAT_FEATURE_MAGIC_INITIATE_WIZARD_WISDOM">
+	<element name="Wisdom" type="Feat Feature" source="Player’s Handbook (2024)" id="ID_WOTC_PHB24_FEAT_FEATURE_MAGIC_INITIATE_WIZARD_WISDOM">
 		<compendium display="false" />
 		<description>
 			<p>Your spellcasting ability for this feat's spells is Wisdom.</p>
@@ -261,7 +265,7 @@
 			Whenever you gain a new level, you can replace one of the spells you chose for this feat with a different spell of the same level from the chosen spell list.</description>
 		</sheet>
 	</element>
-	<element name="Charisma" type="Feat Feature" source="Player’s Handbook 2024" id="ID_WOTC_PHB24_FEAT_FEATURE_MAGIC_INITIATE_WIZARD_CHARISMA">
+	<element name="Charisma" type="Feat Feature" source="Player’s Handbook (2024)" id="ID_WOTC_PHB24_FEAT_FEATURE_MAGIC_INITIATE_WIZARD_CHARISMA">
 		<compendium display="false" />
 		<description>
 			<p>Your spellcasting ability for this feat's spells is Charisma.</p>
@@ -272,7 +276,7 @@
 		</sheet>
 	</element>
 
-	<element name="Musician" type="Feat" source="Player’s Handbook 2024" id="ID_WOTC_PHB24_FEAT_MUSICIAN">
+	<element name="Musician" type="Feat" source="Player’s Handbook (2024)" id="ID_WOTC_PHB24_FEAT_MUSICIAN">
 		<supports>Origin</supports>
 		<description>
 			<p class="flavor">Origin Feat</p>
@@ -288,8 +292,9 @@
 		</rules>
 	</element>
 
-	<element name="Savage Attacker" type="Feat" source="Player’s Handbook 2024" id="ID_WOTC_PHB24_FEAT_SAVAGE_ATTACKER">
+	<element name="Savage Attacker" type="Feat" source="Player’s Handbook (2024)" id="ID_WOTC_PHB24_FEAT_SAVAGE_ATTACKER">
 		<supports>Origin</supports>
+		<requirements>!ID_PHB_FEAT_SAVAGEATTACKER||ID_WOTC_PHB24_GRANTS_FEAT_UNLOCKER</requirements>
 		<description>
 			<p class="flavor">Origin Feat</p>
 			<p>You've trained to deal particularly damaging strikes. Once per turn when you hit a target with a weapon, you can roll the weapon's damage dice twice and use either roll against the target.</p>
@@ -299,8 +304,9 @@
 		</sheet>
 	</element>
 
-	<element name="Skilled" type="Feat" source="Player’s Handbook 2024" id="ID_WOTC_PHB24_FEAT_SKILLED">
+	<element name="Skilled" type="Feat" source="Player’s Handbook (2024)" id="ID_WOTC_PHB24_FEAT_SKILLED">
 		<supports>Origin</supports>
+		<requirements>!ID_PHB_FEAT_SKILLED||ID_WOTC_PHB24_GRANTS_FEAT_UNLOCKER</requirements>
 		<description>
 			<p class="flavor">Origin Feat</p>
 			<p>You gain proficiency in any combination of three skills or tools of your choice.</p>
@@ -311,10 +317,10 @@
 			<select type="Proficiency" name="Skill or Tool Proficiency (Skilled)" supports="Skill||Tool" number="3" />
 		</rules>
 	</element>
-	<element name="Skilled" type="Feat" source="Player’s Handbook 2024" id="ID_WOTC_PHB24_FEAT_SKILLED_2">
+	<element name="Skilled" type="Feat" source="Player’s Handbook (2024)" id="ID_WOTC_PHB24_FEAT_SKILLED_2">
 		<supports>Origin</supports>
-		<compendium display="false" />
 		<requirements>ID_WOTC_PHB24_FEAT_SKILLED</requirements>
+		<compendium display="false" />
 		<description>
 			<p class="flavor">Origin Feat</p>
 			<p>You gain proficiency in any combination of three skills or tools of your choice.</p>
@@ -325,10 +331,10 @@
 			<select type="Proficiency" name="Skill or Tool Proficiency (Skilled)" supports="Skill||Tool" number="3" />
 		</rules>
 	</element>
-	<element name="Skilled" type="Feat" source="Player’s Handbook 2024" id="ID_WOTC_PHB24_FEAT_SKILLED_3">
+	<element name="Skilled" type="Feat" source="Player’s Handbook (2024)" id="ID_WOTC_PHB24_FEAT_SKILLED_3">
 		<supports>Origin</supports>
-		<compendium display="false" />
 		<requirements>ID_WOTC_PHB24_FEAT_SKILLED_2</requirements>
+		<compendium display="false" />
 		<description>
 			<p class="flavor">Origin Feat</p>
 			<p>You gain proficiency in any combination of three skills or tools of your choice.</p>
@@ -339,10 +345,10 @@
 			<select type="Proficiency" name="Skill or Tool Proficiency (Skilled)" supports="Skill||Tool" number="3" />
 		</rules>
 	</element>
-	<element name="Skilled" type="Feat" source="Player’s Handbook 2024" id="ID_WOTC_PHB24_FEAT_SKILLED_4">
+	<element name="Skilled" type="Feat" source="Player’s Handbook (2024)" id="ID_WOTC_PHB24_FEAT_SKILLED_4">
 		<supports>Origin</supports>
-		<compendium display="false" />
 		<requirements>ID_WOTC_PHB24_FEAT_SKILLED_3</requirements>
+		<compendium display="false" />
 		<description>
 			<p class="flavor">Origin Feat</p>
 			<p>You gain proficiency in any combination of three skills or tools of your choice.</p>
@@ -353,10 +359,10 @@
 			<select type="Proficiency" name="Skill or Tool Proficiency (Skilled)" supports="Skill||Tool" number="3" />
 		</rules>
 	</element>
-	<element name="Skilled" type="Feat" source="Player’s Handbook 2024" id="ID_WOTC_PHB24_FEAT_SKILLED_5">
+	<element name="Skilled" type="Feat" source="Player’s Handbook (2024)" id="ID_WOTC_PHB24_FEAT_SKILLED_5">
 		<supports>Origin</supports>
-		<compendium display="false" />
 		<requirements>ID_WOTC_PHB24_FEAT_SKILLED_4</requirements>
+		<compendium display="false" />
 		<description>
 			<p class="flavor">Origin Feat</p>
 			<p>You gain proficiency in any combination of three skills or tools of your choice.</p>
@@ -367,10 +373,10 @@
 			<select type="Proficiency" name="Skill or Tool Proficiency (Skilled)" supports="Skill||Tool" number="3" />
 		</rules>
 	</element>
-	<element name="Skilled" type="Feat" source="Player’s Handbook 2024" id="ID_WOTC_PHB24_FEAT_SKILLED_6">
+	<element name="Skilled" type="Feat" source="Player’s Handbook (2024)" id="ID_WOTC_PHB24_FEAT_SKILLED_6">
 		<supports>Origin</supports>
-		<compendium display="false" />
 		<requirements>ID_WOTC_PHB24_FEAT_SKILLED_5</requirements>
+		<compendium display="false" />
 		<description>
 			<p class="flavor">Origin Feat</p>
 			<p>You gain proficiency in any combination of three skills or tools of your choice.</p>
@@ -381,10 +387,10 @@
 			<select type="Proficiency" name="Skill or Tool Proficiency (Skilled)" supports="Skill||Tool" number="3" />
 		</rules>
 	</element>
-	<element name="Skilled" type="Feat" source="Player’s Handbook 2024" id="ID_WOTC_PHB24_FEAT_SKILLED_7">
+	<element name="Skilled" type="Feat" source="Player’s Handbook (2024)" id="ID_WOTC_PHB24_FEAT_SKILLED_7">
 		<supports>Origin</supports>
-		<compendium display="false" />
 		<requirements>ID_WOTC_PHB24_FEAT_SKILLED_6</requirements>
+		<compendium display="false" />
 		<description>
 			<p class="flavor">Origin Feat</p>
 			<p>You gain proficiency in any combination of three skills or tools of your choice.</p>
@@ -395,10 +401,10 @@
 			<select type="Proficiency" name="Skill or Tool Proficiency (Skilled)" supports="Skill||Tool" number="3" />
 		</rules>
 	</element>
-	<element name="Skilled" type="Feat" source="Player’s Handbook 2024" id="ID_WOTC_PHB24_FEAT_SKILLED_8">
+	<element name="Skilled" type="Feat" source="Player’s Handbook (2024)" id="ID_WOTC_PHB24_FEAT_SKILLED_8">
 		<supports>Origin</supports>
-		<compendium display="false" />
 		<requirements>ID_WOTC_PHB24_FEAT_SKILLED_7</requirements>
+		<compendium display="false" />
 		<description>
 			<p class="flavor">Origin Feat</p>
 			<p>You gain proficiency in any combination of three skills or tools of your choice.</p>
@@ -409,10 +415,10 @@
 			<select type="Proficiency" name="Skill or Tool Proficiency (Skilled)" supports="Skill||Tool" number="3" />
 		</rules>
 	</element>
-	<element name="Skilled" type="Feat" source="Player’s Handbook 2024" id="ID_WOTC_PHB24_FEAT_SKILLED_9">
+	<element name="Skilled" type="Feat" source="Player’s Handbook (2024)" id="ID_WOTC_PHB24_FEAT_SKILLED_9">
 		<supports>Origin</supports>
-		<compendium display="false" />
 		<requirements>ID_WOTC_PHB24_FEAT_SKILLED_8</requirements>
+		<compendium display="false" />
 		<description>
 			<p class="flavor">Origin Feat</p>
 			<p>You gain proficiency in any combination of three skills or tools of your choice.</p>
@@ -424,8 +430,9 @@
 		</rules>
 	</element>
 
-	<element name="Tavern Brawler" type="Feat" source="Player’s Handbook 2024" id="ID_WOTC_PHB24_FEAT_TAVERN_BRAWLER">
+	<element name="Tavern Brawler" type="Feat" source="Player’s Handbook (2024)" id="ID_WOTC_PHB24_FEAT_TAVERN_BRAWLER">
 		<supports>Origin</supports>
+		<requirements>!ID_PHB_FEAT_TAVERNBRAWLER||ID_WOTC_PHB24_GRANTS_FEAT_UNLOCKER</requirements>
 		<description>
 			<p class="flavor">Origin Feat</p>
 			<p>You gain the following benefits.</p>
@@ -437,13 +444,16 @@
 		<sheet>
 			<description>You gain following benefits: &#13;
 			• When you hit with your Unarmed Strike and deal damage, you can deal 1d4+{{strength:modifier}} Bludgeoning damage, and once per turn you can also push the target of that attack 5ft. away from you. &#13;
-			• Whenever you roll a 1 for damage for your Unarmed Strike, you can reroll the die, and you must use the new roll. &#13;
-			• You have proficiency with improvised weapons.</description>
+			• Whenever you roll a 1 for damage for your Unarmed Strike, you can reroll the die, and you must use the new roll.</description>
 		</sheet>
+		<rules>
+			<grant type="Proficiency" id="ID_ALE_PROFICIENCY_WEAPON_PROFICIENCY_IMPROVISED_WEAPONS" />
+		</rules>
 	</element>
 
-	<element name="Tough" type="Feat" source="Player’s Handbook 2024" id="ID_WOTC_PHB24_FEAT_TOUGH">
+	<element name="Tough" type="Feat" source="Player’s Handbook (2024)" id="ID_WOTC_PHB24_FEAT_TOUGH">
 		<supports>Origin</supports>
+		<requirements>!ID_PHB_FEAT_TOUGH||ID_WOTC_PHB24_GRANTS_FEAT_UNLOCKER</requirements>
 		<description>
 			<p class="flavor">Origin Feat</p>
 			<p>Your Hit Point maximum increases by an amount equal to twice your character level when you gain this feat. Whenever you gain a character level thereafter, your Hit Point maximum increases by an additional 2 Hit Points.</p>

@@ -9,14 +9,14 @@
 		</update>
 	</info>
 
-	<element name="Merchant" type="Background" source="Player’s Handbook 2024" id="ID_WOTC_PHB24_BACKGROUND_MERCHANT">
+	<element name="Merchant" type="Background" source="Player’s Handbook (2024)" id="ID_WOTC_PHB24_BACKGROUND_MERCHANT">
 		<description>
 			<ul class="unstyled" style="text-indent:-1em; margin-left:1em; margin-bottom:5px">
 				<li><strong>Ability Scores:</strong> Constitution, Intelligence, Charisma</li>
 				<li><strong>Feat:</strong> Lucky</li>
 				<li><strong>Skill Proficiencies:</strong> Animal Handling and Persuasion</li>
 				<li><strong>Tool Proficiency:</strong> Navigator's Tools</li>
-				<li><strong>Equipment:</strong><i> Choose A or B:</i> (A) Navigator's Tools, 2 Pouches, Traveler's Clothes, 22 CP; or (B) 50 GP</li>
+				<li><strong>Equipment:</strong><i> Choose A or B:</i> (A) Navigator's Tools, 2 Pouches, Traveler's Clothes, 22 GP; or (B) 50 GP</li>
 			</ul>
 			<p>You were apprenticed to a trader, caravan master, or shopkeeper, learning the fundamentals of commerce. You traveled broadly, and you earned a living by buying and selling the raw materials artisans need to practice their craft or finished works from such crafters. You might have transported goods from one place to another (by ship, wagon, or caravan) or bought them from traveling traders and sold them in your own shop.</p>
 		</description>
@@ -26,12 +26,31 @@
 		<rules>
 			<grant type="Ability Score Improvement" id="ID_INTERNAL_ABILITY_SCORE_IMPROVEMENT_COMBINATION_CON_INT_CHA" />
 			<grant type="Feat" id="ID_WOTC_PHB24_FEAT_LUCKY" />
-			<grant type="Proficiency" id="ID_WOTC_PHB24_PROFICIENCY_SKILL_ANIMALHANDLING" />
-			<grant type="Proficiency" id="ID_WOTC_PHB24_PROFICIENCY_SKILL_PERSUASION" />
+			<grant type="Proficiency" id="ID_PROFICIENCY_SKILL_ANIMALHANDLING" />
+			<grant type="Proficiency" id="ID_PROFICIENCY_SKILL_PERSUASION" />
 			<grant type="Grants" id="ID_INTERNAL_GRANTS_BACKGROUND_ASI" />
-			<grant type="Proficiency" id="ID_WOTC_PHB24_PROFICIENCY_TOOL_PROFICIENCY_NAVIGATORS_TOOLS" />
+			<grant type="Proficiency" id="ID_PROFICIENCY_TOOL_PROFICIENCY_NAVIGATORS_TOOLS" />
 		</rules>
 	</element>
 
-	<!-- Todo: Add Equipment Pack for this Background. Example element is in the Acolyte Background. -->
+	<element name="Background Equipment Pack (Merchant)" type="Item" source="Player’s Handbook (2024)" id="ID_WOTC_PHB24_ITEM_BACKGROUND_EQUIPMENT_PACK_MERCHANT">
+		<description>
+			<p style="margin-bottom:5px">This pack contains items that are given to a character of Merchant Background, if you chose option A for Equipment.</p>
+			<p>You will receive following items by extracting contents of this pack:</p>
+			<p class="indent">• Navigator's Tools</p>
+			<p class="indent">• 2 Pouches</p>
+			<p class="indent">• Traveler's Clothes</p>
+			<p><b>Note:</b> This pack doesn't include 22 GP.</p>
+		</description>
+		<setters>
+			<set name="category">Equipment Packs</set>
+			<set name="cost">—</set>
+			<set name="weight">—</set>
+		</setters>
+		<extract>
+			<item>ID_WOTC_PHB24_ITEM_TOOL_NAVIGATORS_TOOLS</item>
+			<item amount="2">ID_WOTC_PHB24_ITEM_POUCH</item>
+			<item>ID_WOTC_PHB24_ITEM_CLOTHES_TRAVELERS</item>
+		</extract>
+	</element>
 </elements>

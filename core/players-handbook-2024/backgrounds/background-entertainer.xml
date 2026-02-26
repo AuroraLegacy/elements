@@ -9,7 +9,7 @@
 		</update>
 	</info>
 
-	<element name="Entertainer" type="Background" source="Player’s Handbook 2024" id="ID_WOTC_PHB24_BACKGROUND_ENTERTAINER">
+	<element name="Entertainer" type="Background" source="Player’s Handbook (2024)" id="ID_WOTC_PHB24_BACKGROUND_ENTERTAINER">
 		<description>
 			<ul class="unstyled" style="text-indent:-1em; margin-left:1em; margin-bottom:5px">
 				<li><strong>Ability Scores:</strong> Strength, Dexterity, Charisma</li>
@@ -26,12 +26,33 @@
 		<rules>
 			<grant type="Ability Score Improvement" id="ID_INTERNAL_ABILITY_SCORE_IMPROVEMENT_COMBINATION_STR_DEX_CHA" />
 			<grant type="Feat" id="ID_WOTC_PHB24_FEAT_MUSICIAN" />
-			<grant type="Proficiency" id="ID_WOTC_PHB24_PROFICIENCY_SKILL_ACROBATICS" />
-			<grant type="Proficiency" id="ID_WOTC_PHB24_PROFICIENCY_SKILL_PERFORMANCE" />
+			<grant type="Proficiency" id="ID_PROFICIENCY_SKILL_ACROBATICS" />
+			<grant type="Proficiency" id="ID_PROFICIENCY_SKILL_PERFORMANCE" />
 			<grant type="Grants" id="ID_INTERNAL_GRANTS_BACKGROUND_ASI" />
 			<select type="Proficiency" name="Musical Instrument (Entertainer)" supports="Musical Instrument" />
 		</rules>
 	</element>
 
-	<!-- Todo: Add Equipment Pack for this Background. Example element is in the Acolyte Background. -->
+	<element name="Background Equipment Pack (Entertainer)" type="Item" source="Player’s Handbook (2024)" id="ID_WOTC_PHB24_ITEM_BACKGROUND_EQUIPMENT_PACK_ENTERTAINER">
+		<description>
+			<p style="margin-bottom:5px">This pack contains items that are given to a character of Entertainer Background, if you chose option A for Equipment.</p>
+			<p>You will receive following items by extracting contents of this pack:</p>
+			<p class="indent">• 2 Costumes</p>
+			<p class="indent">• Mirror</p>
+			<p class="indent">• Perfume</p>
+			<p class="indent">• Traveler's Clothes</p>
+			<p><b>Note:</b> This pack doesn't include the Musical Instrument of the same kind as Proficiency gained from this Background (can be taken from "Musical Instruments" Equipment category) and 11 GP.</p>
+		</description>
+		<setters>
+			<set name="category">Equipment Packs</set>
+			<set name="cost">—</set>
+			<set name="weight">—</set>
+		</setters>
+		<extract>
+			<item amount="2">ID_WOTC_PHB24_ITEM_COSTUME</item>
+			<item>ID_WOTC_PHB24_ITEM_MIRROR</item>
+			<item>ID_WOTC_PHB24_ITEM_PERFUME</item>
+			<item>ID_WOTC_PHB24_ITEM_CLOTHES_TRAVELERS</item>
+		</extract>
+	</element>
 </elements>
