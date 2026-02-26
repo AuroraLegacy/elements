@@ -4,7 +4,7 @@
 		<name>Unearthed Arcana: Races of Ravnica</name>
 		<description>A group of races from the world of Ravnica have arrived in Unearthed Arcana: loxodons, Simic hybrids, vedalken, and viashino. While native to Ravnica, these folk could potentially be used in any D&amp;D world. They are destined for the upcoming book Guildmasters' Guide to Ravnica, out this November. Now is your chance to help shape their final forms!</description>
 		<author url="http://dnd.wizards.com/articles/unearthed-arcana/races-ravnica">Wizards of the Coast</author>
-		<update version="0.0.5">
+		<update version="0.0.6">
 			<file name="20180813.xml" url="https://raw.githubusercontent.com/AuroraLegacy/elements/master/unearthed-arcana/2018/20180813.xml" />
 		</update>
 	</info>
@@ -53,10 +53,10 @@
 		</setters>
 		<sheet display="false" />
 		<rules>
-			<stat name="dexterity" value="2" requirements="!ID_WOTC_TCOE_OPTION_CUSTOMIZED_ASI" />
-			<stat name="strength" value="1" requirements="!ID_WOTC_TCOE_OPTION_CUSTOMIZED_ASI" />
-			<select type="Ability Score Improvement" name="Custom Ability Score Improvement +2 (Viashino)" supports="Custom Ability Score Increase 2" requirements="ID_WOTC_TCOE_OPTION_CUSTOMIZED_ASI" />
-			<select type="Ability Score Improvement" name="Custom Ability Score Improvement +1 (Viashino)" supports="Custom Ability Score Increase 1" requirements="ID_WOTC_TCOE_OPTION_CUSTOMIZED_ASI" />
+			<stat name="dexterity" value="2" requirements="!(ID_WOTC_TCOE_OPTION_CUSTOMIZED_ASI||ID_INTERNAL_GRANTS_BACKGROUND_ASI)" />
+			<stat name="strength" value="1" requirements="!(ID_WOTC_TCOE_OPTION_CUSTOMIZED_ASI||ID_INTERNAL_GRANTS_BACKGROUND_ASI)" />
+			<select type="Ability Score Improvement" name="Custom Ability Score Improvement +2 (Viashino)" supports="Custom Ability Score Increase 2" requirements="ID_WOTC_TCOE_OPTION_CUSTOMIZED_ASI,!ID_INTERNAL_GRANTS_BACKGROUND_ASI" />
+			<select type="Ability Score Improvement" name="Custom Ability Score Improvement +1 (Viashino)" supports="Custom Ability Score Increase 1" requirements="ID_WOTC_TCOE_OPTION_CUSTOMIZED_ASI,!ID_INTERNAL_GRANTS_BACKGROUND_ASI" />
 			<grant type="Size" id="ID_SIZE_MEDIUM" />
 			<stat name="innate speed" value="30" bonus="base" />
 			<grant type="Racial Trait" id="ID_WOTC_UA20180813_RACIAL_TRAIT_VIASHINO_BITE" />

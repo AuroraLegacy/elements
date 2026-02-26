@@ -4,7 +4,7 @@
 		<name>Unearthed Arcana: Elf Subraces</name>
 		<description>When you choose the subrace of your elf character, you can choose one of the following options, in addition to those in the <i>Player’s Handbook</i>.</description>
 		<author url="http://dnd.wizards.com/articles/unearthed-arcana/elf-subraces">Wizards of the Coast</author>
-		<update version="0.0.6">
+		<update version="0.0.7">
 			<file name="20171113.xml" url="https://raw.githubusercontent.com/AuroraLegacy/elements/master/unearthed-arcana/2017/20171113.xml" />
 		</update>
 	</info>
@@ -65,8 +65,8 @@
 	  		<set name="weight" modifier="1d6">75 lb.</set>
 		</setters>
 		<rules>
-			<stat name="strength" value="1" requirements="!ID_WOTC_TCOE_OPTION_CUSTOMIZED_ASI" />
-			<select type="Ability Score Improvement" name="Custom Ability Score Improvement +1 (Grugach)" supports="Custom Ability Score Increase 1" requirements="ID_WOTC_TCOE_OPTION_CUSTOMIZED_ASI" />
+			<stat name="strength" value="1" requirements="!(ID_WOTC_TCOE_OPTION_CUSTOMIZED_ASI||ID_INTERNAL_GRANTS_BACKGROUND_ASI)" />
+			<select type="Ability Score Improvement" name="Custom Ability Score Improvement +1 (Grugach)" supports="Custom Ability Score Increase 1" requirements="ID_WOTC_TCOE_OPTION_CUSTOMIZED_ASI,!ID_INTERNAL_GRANTS_BACKGROUND_ASI" />
 			<grant type="Racial Trait" name="ID_WOTC_UA20171113_RACIAL_TRAIT_GRUGACH_WEAPON_TRAINING" />
 			<grant type="Racial Trait" name="ID_WOTC_UA20171113_RACIAL_TRAIT_GRUGACH_CANTRIP" />
 			<grant type="Language" id="ID_LANGUAGE_SYLVAN" requirements="!ID_WOTC_TCOE_OPTION_CUSTOMIZED_LANGUAGE" />
