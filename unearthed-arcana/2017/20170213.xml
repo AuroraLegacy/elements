@@ -4,7 +4,7 @@
 		<name>Unearthed Arcana: Warlock and Wizard</name>
 		<description>The warlock and the wizard reach new arcane horizons this week. The warlock receives two playtest options for the Otherworldly Patron feature: the Hexblade and the Raven Queen. That class also gets a collection of playtest options for its Eldritch Invocations feature. Meanwhile, the wizard receives a playtest option for the Arcane Tradition feature: Lore Mastery.</description>
 		<author url="http://dnd.wizards.com/articles/unearthed-arcana/warlock-and-wizard">Wizards of the Coast</author>
-		<update version="0.0.9">
+		<update version="0.1.1">
 			<file name="20170213.xml" url="https://raw.githubusercontent.com/AuroraLegacy/elements/master/unearthed-arcana/2017/20170213.xml" />
 		</update>
 	</info>
@@ -88,6 +88,16 @@
 			<extend>ID_PHB_SPELL_LOCATE_CREATURE</extend>
 			<extend>ID_PHB_SPELL_COMMUNE</extend>
 			<extend>ID_PHB_SPELL_CONE_OF_COLD</extend>
+			<extend>ID_WOTC_PHB24_SPELL_FALSE_LIFE</extend>
+			<extend>ID_WOTC_PHB24_SPELL_SANCTUARY</extend>
+			<extend>ID_WOTC_PHB24_SPELL_SILENCE</extend>
+			<extend>ID_WOTC_PHB24_SPELL_SPIRITUAL_WEAPON</extend>
+			<extend>ID_WOTC_PHB24_SPELL_FEIGN_DEATH</extend>
+			<extend>ID_WOTC_PHB24_SPELL_SPEAK_WITH_DEAD</extend>
+			<extend>ID_WOTC_PHB24_SPELL_ICE_STORM</extend>
+			<extend>ID_WOTC_PHB24_SPELL_LOCATE_CREATURE</extend>
+			<extend>ID_WOTC_PHB24_SPELL_COMMUNE</extend>
+			<extend>ID_WOTC_PHB24_SPELL_CONE_OF_COLD</extend>
 		</spellcasting>
 	</element>
 	<element name="Sentinel Raven" type="Archetype Feature" source="Unearthed Arcana: Warlock and Wizard" id="ID_WOTC_UA_ARCHETYPE_FEATURE_RAVEN_QUEEN_SENTINEL_RAVEN">
@@ -196,7 +206,7 @@
 	<element name="Chronicle of the Raven Queen" type="Class Feature" source="Unearthed Arcana: Warlock and Wizard" id="ID_WOTC_UA_CLASS_FEATURE_ELDRITCH_INVOCATION_CHRONICLE_OF_THE_RAVEN_QUEEN">
 		<supports>Eldritch Invocation, Pact of the Tome</supports>
 		<prerequisite>Raven Queen patron, Pact of the Tome feature</prerequisite>
-		<requirements>ID_WOTC_UA_ARCHETYPE_RAVEN_QUEEN,ID_WOTC_PHB_CLASS_FEATURE_WARLOCK_PACT_BOON_PACT_OF_THE_TOME</requirements>
+		<requirements>ID_WOTC_UA_ARCHETYPE_RAVEN_QUEEN,(ID_WOTC_PHB_CLASS_FEATURE_WARLOCK_PACT_BOON_PACT_OF_THE_TOME||ID_WOTC_PHB24_CLASS_FEATURE_ELDRITCH_INVOCATION_PACT_OF_THE_TOME)</requirements>
 		<description>
 			<p class="flavor">Prerequisite: Raven Queen patron, Pact of the Tome feature</p>
 			<p>You can place a corpse’s hand or similar appendage on your Book of Shadows and ask one question aloud. After 1 minute, the answer appears written in blood in your book. The answer is provided by the dead creature’s spirit to the best of its knowledge and is translated into a language of your choice. You must use this ability within 1 minute of a creature’s death, and a given creature can only be asked one question in this manner.</p>
@@ -208,7 +218,7 @@
 	<element name="Claw of Acamar" type="Class Feature" source="Unearthed Arcana: Warlock and Wizard" id="ID_WOTC_UA20170213_CLASS_FEATURE_ELDRITCH_INVOCATION_CLAW_OF_ACAMAR">
 		<supports>Eldritch Invocation</supports>
 		<prerequisite>The Great Old One patron, Pact of the Blade feature</prerequisite>
-		<requirements>ID_WOTC_PHB_ARCHETYPE_OTHERWORLDLY_PATRON_THE_GREAT_OLD_ONE,ID_WOTC_PHB_CLASS_FEATURE_WARLOCK_PACT_BOON_PACT_OF_THE_BLADE</requirements>
+		<requirements>ID_WOTC_PHB_ARCHETYPE_OTHERWORLDLY_PATRON_THE_GREAT_OLD_ONE,(ID_WOTC_PHB_CLASS_FEATURE_WARLOCK_PACT_BOON_PACT_OF_THE_BLADE||ID_WOTC_PHB24_CLASS_FEATURE_ELDRITCH_INVOCATION_PACT_OF_THE_BLADE)</requirements>
 		<description>
 			<p><em>Prerequisite: The Great Old One patron, Pact of the Blade feature</em></p>
 			<p>You can create a black, lead flail using your Pact of the Blade feature. The flail’s head is sculpted to resemble a pair of grasping tentacles. The weapon has the reach property. When you hit a creature with it, you can expend a spell slot to deal an additional 2d8 necrotic damage to the target per spell level, and you can reduce the creature’s speed to 0 feet until the end of your next turn.</p>
@@ -232,7 +242,7 @@
 	<element name="Curse Bringer" type="Class Feature" source="Unearthed Arcana: Warlock and Wizard" id="ID_WOTC_UA20170213_CLASS_FEATURE_ELDRITCH_INVOCATION_CURSE_BRINGER">
 		<supports>Eldritch Invocation</supports>
 		<prerequisite>The Hexblade patron, Pact of the Blade feature</prerequisite>
-		<requirements>ID_WOTC_XGTE_ARCHETYPE_HEXBLADE,ID_WOTC_PHB_CLASS_FEATURE_WARLOCK_PACT_BOON_PACT_OF_THE_BLADE</requirements>
+		<requirements>ID_WOTC_XGTE_ARCHETYPE_HEXBLADE,(ID_WOTC_PHB_CLASS_FEATURE_WARLOCK_PACT_BOON_PACT_OF_THE_BLADE||ID_WOTC_PHB24_CLASS_FEATURE_ELDRITCH_INVOCATION_PACT_OF_THE_BLADE)</requirements>
 		<description>
 			<p><em>Prerequisite: The Hexblade patron, Pact of the Blade feature</em></p>
 			<p>You can create a greatsword forged from silver, with black runes etched into its blade, using your Pact of the Blade feature. If you reduce a target cursed by your Hexblade’s Curse to 0 hit points with this sword, you can immediately change the target of the curse to a different creature. This change doesn’t extend the curse’s duration.</p>
@@ -306,7 +316,7 @@
 	<element name="Improved Pact Weapon" type="Class Feature" source="Unearthed Arcana: Warlock and Wizard" id="ID_WOTC_UA20170213_CLASS_FEATURE_ELDRITCH_INVOCATION_IMPROVED_PACT_WEAPON">
 		<supports>Eldritch Invocation</supports>
 		<prerequisite>5th level, Pact of the Blade feature</prerequisite>
-		<requirements>[level:5],ID_WOTC_PHB_CLASS_FEATURE_WARLOCK_PACT_BOON_PACT_OF_THE_BLADE</requirements>
+		<requirements>[level:5],(ID_WOTC_PHB_CLASS_FEATURE_WARLOCK_PACT_BOON_PACT_OF_THE_BLADE||ID_WOTC_PHB24_CLASS_FEATURE_ELDRITCH_INVOCATION_PACT_OF_THE_BLADE)</requirements>
 		<description>
 			<p><em>Prerequisite: 5th level, Pact of the Blade feature</em></p>
 			<p>Any weapon you create using your Pact of the Blade feature is a +1 weapon. This invocation doesn’t affect a magic weapon you transformed into your pact weapon.</p>
@@ -318,7 +328,7 @@
 	<element name="Mace of Dispater" type="Class Feature" source="Unearthed Arcana: Warlock and Wizard" id="ID_WOTC_UA20170213_CLASS_FEATURE_ELDRITCH_INVOCATION_MACE_OF_DISPATER">
 		<supports>Eldritch Invocation</supports>
 		<prerequisite>The Fiend patron, Pact of the Blade feature</prerequisite>
-		<requirements>ID_WOTC_PHB_ARCHETYPE_OTHERWORLDLY_PATRON_FIEND,ID_WOTC_PHB_CLASS_FEATURE_WARLOCK_PACT_BOON_PACT_OF_THE_BLADE</requirements>
+		<requirements>ID_WOTC_PHB_ARCHETYPE_OTHERWORLDLY_PATRON_FIEND,(ID_WOTC_PHB_CLASS_FEATURE_WARLOCK_PACT_BOON_PACT_OF_THE_BLADE||ID_WOTC_PHB24_CLASS_FEATURE_ELDRITCH_INVOCATION_PACT_OF_THE_BLADE)</requirements>
 		<description>
 			<p><em>Prerequisite: The Fiend patron, Pact of the Blade feature</em></p>
 			<p>When you create your pact weapon as a mace, it manifests as an iron mace forged in Dis, the second of the Nine Hells. When you hit a creature with it, you can expend a spell slot to deal an additional 2d8 force damage to the target per spell level, and you can knock the target prone if it is Huge or smaller.</p>
@@ -330,7 +340,7 @@
 	<element name="Moon Bow" type="Class Feature" source="Unearthed Arcana: Warlock and Wizard" id="ID_WOTC_UA20170213_CLASS_FEATURE_ELDRITCH_INVOCATION_MOON_BOW">
 		<supports>Eldritch Invocation</supports>
 		<prerequisite>The Archfey patron, Pact of the Blade feature</prerequisite>
-		<requirements>ID_WOTC_PHB_ARCHETYPE_OTHERWORLDLY_PATRON_THE_ARCHFEY,ID_WOTC_PHB_CLASS_FEATURE_WARLOCK_PACT_BOON_PACT_OF_THE_BLADE</requirements>
+		<requirements>ID_WOTC_PHB_ARCHETYPE_OTHERWORLDLY_PATRON_THE_ARCHFEY,(ID_WOTC_PHB_CLASS_FEATURE_WARLOCK_PACT_BOON_PACT_OF_THE_BLADE||ID_WOTC_PHB24_CLASS_FEATURE_ELDRITCH_INVOCATION_PACT_OF_THE_BLADE)</requirements>
 		<description>
 			<p><em>Prerequisite: The Archfey patron, Pact of the Blade feature</em></p>
 			<p>You can create a longbow using your Pact of the Blade feature. When you draw back its string and fire, it creates an arrow of white wood, which vanishes after 1 minute. You have advantage on attack rolls against lycanthropes with the bow. When you hit a creature with it, you can expend a spell slot to deal an additional 2d8 radiant damage to the target per spell level.</p>
@@ -421,7 +431,7 @@
 	<element name="Superior Pact Weapon" type="Class Feature" source="Unearthed Arcana: Warlock and Wizard" id="ID_WOTC_UA20170213_CLASS_FEATURE_ELDRITCH_INVOCATION_SUPERIOR_PACT_WEAPON">
 		<supports>Eldritch Invocation</supports>
 		<prerequisite>9th level, Pact of the Blade feature</prerequisite>
-		<requirements>[level:9],ID_WOTC_PHB_CLASS_FEATURE_WARLOCK_PACT_BOON_PACT_OF_THE_BLADE</requirements>
+		<requirements>[level:9],(ID_WOTC_PHB_CLASS_FEATURE_WARLOCK_PACT_BOON_PACT_OF_THE_BLADE||ID_WOTC_PHB24_CLASS_FEATURE_ELDRITCH_INVOCATION_PACT_OF_THE_BLADE)</requirements>
 		<description>
 			<p><em>Prerequisite: 9th level, Pact of the Blade feature</em></p>
 			<p>Any weapon you create using your Pact of the Blade feature is a +2 weapon. This invocation doesn’t affect a magic weapon you transformed into your pact weapon.</p>
@@ -458,7 +468,7 @@
 	<element name="Ultimate Pact Weapon" type="Class Feature" source="Unearthed Arcana: Warlock and Wizard" id="ID_WOTC_UA20170213_CLASS_FEATURE_ELDRITCH_INVOCATION_ULTIMATE_PACT_WEAPON">
 		<supports>Eldritch Invocation</supports>
 		<prerequisite>15th level, Pact of the Blade feature</prerequisite>
-		<requirements>[level:15],ID_WOTC_PHB_CLASS_FEATURE_WARLOCK_PACT_BOON_PACT_OF_THE_BLADE</requirements>
+		<requirements>[level:15],(ID_WOTC_PHB_CLASS_FEATURE_WARLOCK_PACT_BOON_PACT_OF_THE_BLADE||ID_WOTC_PHB24_CLASS_FEATURE_ELDRITCH_INVOCATION_PACT_OF_THE_BLADE)</requirements>
 		<description>
 			<p><em>Prerequisite: 15th level, Pact of the Blade feature</em></p>
 			<p>Any weapon you create using your Pact of the Blade feature is a +3 weapon. This invocation doesn’t affect a magic weapon you transformed into your pact weapon.</p>

@@ -4,7 +4,7 @@
 		<name>Eldritch Invocations</name>
 		<description>The Eldritch Invocations from Tasha’s Cauldron of Everything</description>
 		<author url="http://dnd.wizards.com/products/tabletop-games/rpg-products/tashas-cauldron-everything">Tasha’s Cauldron of Everything</author>
-		<update version="0.0.2">
+		<update version="0.0.4">
 			<file name="eldritch-invocations.xml" url="https://raw.githubusercontent.com/AuroraLegacy/elements/master/supplements/tashas-cauldron-of-everything/eldritch-invocations.xml" />
 		</update>
 	</info>
@@ -24,6 +24,7 @@
 
 	<element name="Eldritch Mind" type="Class Feature" source="Tasha’s Cauldron of Everything" id="ID_WOTC_TCOE_CLASS_FEATURE_ELDRITCH_MIND">
 		<supports>Eldritch Invocation</supports>
+		<requirements>!ID_WOTC_PHB24_CLASS_FEATURE_ELDRITCH_INVOCATION_ELDRITCH_MIND</requirements>
 		<description>
 			<p>You have advantage on Constitution saving throws that you make to maintain your concentration on a spell.</p>
 		</description>
@@ -35,7 +36,7 @@
 	<element name="Far Scribe" type="Class Feature" source="Tasha’s Cauldron of Everything" id="ID_WOTC_TCOE_CLASS_FEATURE_FAR_SCRIBE">
 		<supports>Eldritch Invocation</supports>
 		<prerequisite>5th level, Pact of the Tome</prerequisite>
-		<requirements>[level:5],ID_WOTC_PHB_CLASS_FEATURE_WARLOCK_PACT_BOON_PACT_OF_THE_TOME</requirements>
+		<requirements>[level:5],(ID_WOTC_PHB_CLASS_FEATURE_WARLOCK_PACT_BOON_PACT_OF_THE_TOME||ID_WOTC_PHB24_CLASS_FEATURE_ELDRITCH_INVOCATION_PACT_OF_THE_TOME)</requirements>
 		<description>
 			<p><em>Prerequisite: 5th level, Pact of the Tome</em></p>
 			<p>A new page appears in your Book of Shadows. With your permission, a creature can use its action to write its name on that page, which can contain a number of names equal to your proficiency bonus.</p>
@@ -52,7 +53,7 @@
 	<element name="Gift of the Protectors" type="Class Feature" source="Tasha’s Cauldron of Everything" id="ID_WOTC_TCOE_CLASS_FEATURE_GIFT_OF_THE_PROTECTORS">
 		<supports>Eldritch Invocation</supports>
 		<prerequisite>9th level, Pact of the Tome</prerequisite>
-		<requirements>[level:9],ID_WOTC_PHB_CLASS_FEATURE_WARLOCK_PACT_BOON_PACT_OF_THE_TOME</requirements>
+		<requirements>([level:9],(ID_WOTC_PHB_CLASS_FEATURE_WARLOCK_PACT_BOON_PACT_OF_THE_TOME||ID_WOTC_PHB24_CLASS_FEATURE_ELDRITCH_INVOCATION_PACT_OF_THE_TOME)),!ID_WOTC_PHB24_CLASS_FEATURE_ELDRITCH_INVOCATION_GIFT_OF_THE_PROTECTORS</requirements>
 		<description>
 			<p><em>Prerequisite: 9th level, Pact of the Tome</em></p>
 			<p>A new page appears in your Book of Shadows. With your permission, a creature can use its action to write its name on that page, which can contain a number of names equal to your proficiency bonus.</p>
@@ -69,7 +70,7 @@
 	<element name="Investment of the Chain Master" type="Class Feature" source="Tasha’s Cauldron of Everything" id="ID_WOTC_TCOE_CLASS_FEATURE_INVESTMENT_OF_THE_CHAIN_MASTER">
 		<supports>Eldritch Invocation</supports>
 		<prerequisite>Pact of the Chain</prerequisite>
-		<requirements>ID_WOTC_PHB_CLASS_FEATURE_WARLOCK_PACT_BOON_PACT_OF_THE_CHAIN</requirements>
+		<requirements>(ID_WOTC_PHB_CLASS_FEATURE_WARLOCK_PACT_BOON_PACT_OF_THE_CHAIN||ID_WOTC_PHB24_CLASS_FEATURE_ELDRITCH_INVOCATION_PACT_OF_THE_CHAIN),!ID_WOTC_PHB24_CLASS_FEATURE_ELDRITCH_INVOCATION_INVESTMENT_OF_THE_CHAIN_MASTER</requirements>
 		<description>
 			<p><em>Prerequisite: Pact of the Chain</em></p>
 			<p>When you cast find familiar, you infuse the summoned familiar with a measure of your eldritch power, granting the creature the following benefits:</p>
