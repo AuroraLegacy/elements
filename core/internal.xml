@@ -1560,7 +1560,7 @@
 		</setters>
 		<rules>
 			<stat name="strength" value="1" alt="Ability Score Increase" />
-			<stat name="strength:max" value="10" bonus="ability"/>
+			<stat name="strength:max:extra" value="10" bonus="base" />
 		</rules>
 	</element>
 	<element name="Dexterity +1" type="Ability Score Improvement" source="Internal" id="ID_INTERNAL_ABILITY_SCORE_IMPROVEMENT_BOON_DEXTERITY">
@@ -1573,7 +1573,7 @@
 		</setters>
 		<rules>
 			<stat name="dexterity" value="1" alt="Ability Score Increase" />
-			<stat name="dexterity:max" value="10" bonus="ability"/>
+			<stat name="dexterity:max:extra" value="10" bonus="base" />
 		</rules>
 	</element>
 	<element name="Constitution +1" type="Ability Score Improvement" source="Internal" id="ID_INTERNAL_ABILITY_SCORE_IMPROVEMENT_BOON_CONSTITUTION">
@@ -1586,7 +1586,7 @@
 		</setters>
 		<rules>
 			<stat name="constitution" value="1" alt="Ability Score Increase" />
-			<stat name="constitution:max" value="10" bonus="ability"/>
+			<stat name="constitution:max:extra" value="10" bonus="base" />
 		</rules>
 	</element>
 	<element name="Intelligence +1" type="Ability Score Improvement" source="Internal" id="ID_INTERNAL_ABILITY_SCORE_IMPROVEMENT_BOON_INTELLIGENCE">
@@ -1599,7 +1599,7 @@
 		</setters>
 		<rules>
 			<stat name="intelligence" value="1" alt="Ability Score Increase" />
-			<stat name="intelligence:max" value="10" bonus="ability"/>
+			<stat name="intelligence:max:extra" value="10" bonus="base" />
 		</rules>
 	</element>
 	<element name="Wisdom +1" type="Ability Score Improvement" source="Internal" id="ID_INTERNAL_ABILITY_SCORE_IMPROVEMENT_BOON_WISDOM">
@@ -1612,7 +1612,7 @@
 		</setters>
 		<rules>
 			<stat name="wisdom" value="1" alt="Ability Score Increase" />
-			<stat name="wisdom:max" value="10" bonus="ability"/>
+			<stat name="wisdom:max:extra" value="10" bonus="base" />
 		</rules>
 	</element>
 	<element name="Charisma +1" type="Ability Score Improvement" source="Internal" id="ID_INTERNAL_ABILITY_SCORE_IMPROVEMENT_BOON_CHARISMA">
@@ -1625,10 +1625,104 @@
 		</setters>
 		<rules>
 			<stat name="charisma" value="1" alt="Ability Score Increase" />
-			<stat name="charisma:max" value="10" bonus="ability"/>
+			<stat name="charisma:max:extra" value="10" bonus="base" />
 		</rules>
 	</element>
-	
+
+	<element name="Ability Score Maximum Over 20" type="Grants" source="Internal" id="ID_INTERNAL_GRANTS_ABILITY_SCORE_MAXIMUM_OVER_20">
+		<rules>
+			<!-- gives ability to reach Ability Score 21 with Ability Score Max setting on -->
+			<stat name="strength:max" value="1" requirements="[strength:max:extra:1],![strength:max:extra:2]" />
+			<stat name="dexterity:max" value="1" requirements="[dexterity:max:extra:1],![dexterity:max:extra:2]" />
+			<stat name="constitution:max" value="1" requirements="[constitution:max:extra:1],![constitution:max:extra:2]" />
+			<stat name="intelligence:max" value="1" requirements="[intelligence:max:extra:1],![intelligence:max:extra:2]" />
+			<stat name="wisdom:max" value="1" requirements="[wisdom:max:extra:1],![wisdom:max:extra:2]" />
+			<stat name="charisma:max" value="1" requirements="[charisma:max:extra:1],![charisma:max:extra:2]" />
+			<!-- gives ability to reach Ability Score 22 with Ability Score Max setting on -->
+			<stat name="strength:max" value="2" requirements="[strength:max:extra:2],![strength:max:extra:3]" />
+			<stat name="dexterity:max" value="2" requirements="[dexterity:max:extra:2],![dexterity:max:extra:3]" />
+			<stat name="constitution:max" value="2" requirements="[constitution:max:extra:2],![constitution:max:extra:3]" />
+			<stat name="intelligence:max" value="2" requirements="[intelligence:max:extra:2],![intelligence:max:extra:3]" />
+			<stat name="wisdom:max" value="2" requirements="[wisdom:max:extra:2],![wisdom:max:extra:3]" />
+			<stat name="charisma:max" value="2" requirements="[charisma:max:extra:2],![charisma:max:extra:3]" />
+			<!-- gives ability to reach Ability Score 23 with Ability Score Max setting on -->
+			<stat name="strength:max" value="3" requirements="[strength:max:extra:3],![strength:max:extra:4]" />
+			<stat name="dexterity:max" value="3" requirements="[dexterity:max:extra:3],![dexterity:max:extra:4]" />
+			<stat name="constitution:max" value="3" requirements="[constitution:max:extra:3],![constitution:max:extra:4]" />
+			<stat name="intelligence:max" value="3" requirements="[intelligence:max:extra:3],![intelligence:max:extra:4]" />
+			<stat name="wisdom:max" value="3" requirements="[wisdom:max:extra:3],![wisdom:max:extra:4]" />
+			<stat name="charisma:max" value="3" requirements="[charisma:max:extra:3],![charisma:max:extra:4]" />
+			<!-- gives ability to reach Ability Score 24 with Ability Score Max setting on -->
+			<stat name="strength:max" value="4" requirements="[strength:max:extra:4],![strength:max:extra:5]" />
+			<stat name="dexterity:max" value="4" requirements="[dexterity:max:extra:4],![dexterity:max:extra:5]" />
+			<stat name="constitution:max" value="4" requirements="[constitution:max:extra:4],![constitution:max:extra:5]" />
+			<stat name="intelligence:max" value="4" requirements="[intelligence:max:extra:4],![intelligence:max:extra:5]" />
+			<stat name="wisdom:max" value="4" requirements="[wisdom:max:extra:4],![wisdom:max:extra:5]" />
+			<stat name="charisma:max" value="4" requirements="[charisma:max:extra:4],![charisma:max:extra:5]" />
+			<!-- gives ability to reach Ability Score 25 with Ability Score Max setting on -->
+			<stat name="strength:max" value="5" requirements="[strength:max:extra:5],![strength:max:extra:6]" />
+			<stat name="dexterity:max" value="5" requirements="[dexterity:max:extra:5],![dexterity:max:extra:6]" />
+			<stat name="constitution:max" value="5" requirements="[constitution:max:extra:5],![constitution:max:extra:6]" />
+			<stat name="intelligence:max" value="5" requirements="[intelligence:max:extra:5],![intelligence:max:extra:6]" />
+			<stat name="wisdom:max" value="5" requirements="[wisdom:max:extra:5],![wisdom:max:extra:6]" />
+			<stat name="charisma:max" value="5" requirements="[charisma:max:extra:5],![charisma:max:extra:6]" />
+			<!-- gives ability to reach Ability Score 26 with Ability Score Max setting on -->
+			<stat name="strength:max" value="6" requirements="[strength:max:extra:6],![strength:max:extra:7]" />
+			<stat name="dexterity:max" value="6" requirements="[dexterity:max:extra:6],![dexterity:max:extra:7]" />
+			<stat name="constitution:max" value="6" requirements="[constitution:max:extra:6],![constitution:max:extra:7]" />
+			<stat name="intelligence:max" value="6" requirements="[intelligence:max:extra:6],![intelligence:max:extra:7]" />
+			<stat name="wisdom:max" value="6" requirements="[wisdom:max:extra:6],![wisdom:max:extra:7]" />
+			<stat name="charisma:max" value="6" requirements="[charisma:max:extra:6],![charisma:max:extra:7]" />
+			<!-- gives ability to reach Ability Score 27 with Ability Score Max setting on -->
+			<stat name="strength:max" value="7" requirements="[strength:max:extra:7],![strength:max:extra:8]" />
+			<stat name="dexterity:max" value="7" requirements="[dexterity:max:extra:7],![dexterity:max:extra:8]" />
+			<stat name="constitution:max" value="7" requirements="[constitution:max:extra:7],![constitution:max:extra:8]" />
+			<stat name="intelligence:max" value="7" requirements="[intelligence:max:extra:7],![intelligence:max:extra:8]" />
+			<stat name="wisdom:max" value="7" requirements="[wisdom:max:extra:7],![wisdom:max:extra:8]" />
+			<stat name="charisma:max" value="7" requirements="[charisma:max:extra:7],![charisma:max:extra:8]" />
+			<!-- gives ability to reach Ability Score 28 with Ability Score Max setting on -->
+			<stat name="strength:max" value="8" requirements="[strength:max:extra:8],![strength:max:extra:9]" />
+			<stat name="dexterity:max" value="8" requirements="[dexterity:max:extra:8],![dexterity:max:extra:9]" />
+			<stat name="constitution:max" value="8" requirements="[constitution:max:extra:8],![constitution:max:extra:9]" />
+			<stat name="intelligence:max" value="8" requirements="[intelligence:max:extra:8],![intelligence:max:extra:9]" />
+			<stat name="wisdom:max" value="8" requirements="[wisdom:max:extra:8],![wisdom:max:extra:9]" />
+			<stat name="charisma:max" value="8" requirements="[charisma:max:extra:8],![charisma:max:extra:9]" />
+			<!-- gives ability to reach Ability Score 29 with Ability Score Max setting on -->
+			<stat name="strength:max" value="9" requirements="[strength:max:extra:9],![strength:max:extra:10]" />
+			<stat name="dexterity:max" value="9" requirements="[dexterity:max:extra:9],![dexterity:max:extra:10]" />
+			<stat name="constitution:max" value="9" requirements="[constitution:max:extra:9],![constitution:max:extra:10]" />
+			<stat name="intelligence:max" value="9" requirements="[intelligence:max:extra:9],![intelligence:max:extra:10]" />
+			<stat name="wisdom:max" value="9" requirements="[wisdom:max:extra:9],![wisdom:max:extra:10]" />
+			<stat name="charisma:max" value="9" requirements="[charisma:max:extra:9],![charisma:max:extra:10]" />
+			<!-- gives ability to reach Ability Score 30 with Ability Score Max setting on -->
+			<stat name="strength:max" value="10" requirements="[strength:max:extra:10],![strength:max:extra:11]" />
+			<stat name="dexterity:max" value="10" requirements="[dexterity:max:extra:10],![dexterity:max:extra:11]" />
+			<stat name="constitution:max" value="10" requirements="[constitution:max:extra:10],![constitution:max:extra:11]" />
+			<stat name="intelligence:max" value="10" requirements="[intelligence:max:extra:10],![intelligence:max:extra:11]" />
+			<stat name="wisdom:max" value="10" requirements="[wisdom:max:extra:10],![wisdom:max:extra:11]" />
+			<stat name="charisma:max" value="10" requirements="[charisma:max:extra:10],![charisma:max:extra:11]" />
+			<!-- gives ability to reach Ability Score 31 with Ability Score Max setting on -->
+			<stat name="strength:max" value="11" requirements="[strength:max:extra:11],![strength:max:extra:12]" />
+			<stat name="dexterity:max" value="11" requirements="[dexterity:max:extra:11],![dexterity:max:extra:12]" />
+			<stat name="constitution:max" value="11" requirements="[constitution:max:extra:11],![constitution:max:extra:12]" />
+			<stat name="intelligence:max" value="11" requirements="[intelligence:max:extra:11],![intelligence:max:extra:12]" />
+			<stat name="wisdom:max" value="11" requirements="[wisdom:max:extra:11],![wisdom:max:extra:12]" />
+			<stat name="charisma:max" value="11" requirements="[charisma:max:extra:11],![charisma:max:extra:12]" />
+			<!-- gives ability to reach Ability Score 32 with Ability Score Max setting on -->
+			<stat name="strength:max" value="12" requirements="[strength:max:extra:12],![strength:max:extra:13]" />
+			<stat name="dexterity:max" value="12" requirements="[dexterity:max:extra:12],![dexterity:max:extra:13]" />
+			<stat name="constitution:max" value="12" requirements="[constitution:max:extra:12],![constitution:max:extra:13]" />
+			<stat name="intelligence:max" value="12" requirements="[intelligence:max:extra:12],![intelligence:max:extra:13]" />
+			<stat name="wisdom:max" value="12" requirements="[wisdom:max:extra:12],![wisdom:max:extra:13]" />
+			<stat name="charisma:max" value="12" requirements="[charisma:max:extra:12],![charisma:max:extra:13]" />
+		</rules>
+	</element>
+	<append id="ID_INTERNAL_GRANTS_CHARACTER_BASE">
+		<rules>
+			<grant type="Grants" id="ID_INTERNAL_GRANTS_ABILITY_SCORE_MAXIMUM_OVER_20" />
+		</rules>
+	</append>
+
 	<!-- 5e 2024: ASI Combinations elements for Backgrounds -->
 	<element name="Strength, Dexterity, Constitution" type="Ability Score Improvement" source="Internal" id="ID_INTERNAL_ABILITY_SCORE_IMPROVEMENT_COMBINATION_STR_DEX_CON">
 		<supports>Custom Background Ability Score Combination</supports>
