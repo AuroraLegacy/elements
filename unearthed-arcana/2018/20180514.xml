@@ -4,7 +4,7 @@
 		<name>Unearthed Arcana: Centaurs and Minotaurs</name>
 		<description>Centaurs gallop into Unearthed Arcana this month—a playtest option for when you choose your character’s race. Another type of character from Greek myth joins them: minotaurs. We first showed off minotaurs in a 2015 installment of Unearthed Arcana, and we present revised versions of their traits today.</description>
 		<author url="http://dnd.wizards.com/articles/unearthed-arcana/centaurs-and-minotaurs">Wizards of the Coast</author>
-		<update version="0.0.7">
+		<update version="0.0.8">
 			<file name="20180514.xml" url="https://raw.githubusercontent.com/AuroraLegacy/elements/master/unearthed-arcana/2018/20180514.xml" />
 		</update>
 	</info>
@@ -59,8 +59,10 @@
 		</setters>
 		<sheet display="false" />
 		<rules>
-			<stat name="strength" value="2" />
-			<stat name="wisdom" value="1" />
+			<stat name="strength" value="2" requirements="!(ID_WOTC_TCOE_OPTION_CUSTOMIZED_ASI||ID_INTERNAL_GRANTS_BACKGROUND_ASI)" />
+			<stat name="wisdom" value="1" requirements="!(ID_WOTC_TCOE_OPTION_CUSTOMIZED_ASI||ID_INTERNAL_GRANTS_BACKGROUND_ASI)" />
+			<select type="Ability Score Improvement" name="Custom Ability Score Improvement +2 (Centaur)" supports="Custom Ability Score Increase 2" requirements="ID_WOTC_TCOE_OPTION_CUSTOMIZED_ASI,!ID_INTERNAL_GRANTS_BACKGROUND_ASI" />
+			<select type="Ability Score Improvement" name="Custom Ability Score Improvement +1 (Centaur)" supports="Custom Ability Score Increase 1" requirements="ID_WOTC_TCOE_OPTION_CUSTOMIZED_ASI,!ID_INTERNAL_GRANTS_BACKGROUND_ASI" />
 			<stat name="innate speed" value="40" bonus="base" />
 			<grant type="Size" id="ID_SIZE_MEDIUM" />
 			<grant type="Racial Trait" id="ID_WOTC_UA20180514_RACIAL_TRAIT_CENTAUR_CHARGE" />
@@ -68,8 +70,10 @@
 			<grant type="Racial Trait" id="ID_WOTC_UA20180514_RACIAL_TRAIT_CENTAUR_EQUINE_BUILD"/>
 			<grant type="Racial Trait" id="ID_WOTC_UA20180514_RACIAL_TRAIT_CENTAUR_SURVIVOR"/>
 			<grant type="Racial Trait" id="ID_WOTC_UA20180514_RACIAL_TRAIT_CENTAUR_HYBRID_NATURE"/>
-			<grant type="Language" id="ID_LANGUAGE_COMMON" />
-			<grant type="Language" id="ID_LANGUAGE_SYLVAN" />
+			<grant type="Language" id="ID_LANGUAGE_COMMON" requirements="!ID_WOTC_TCOE_OPTION_CUSTOMIZED_LANGUAGE" />
+			<grant type="Language" id="ID_LANGUAGE_SYLVAN" requirements="!ID_WOTC_TCOE_OPTION_CUSTOMIZED_LANGUAGE" />
+			<select type="Language" name="Customized Language" supports="Custom Race Language" number="2" requirements="ID_WOTC_TCOE_OPTION_CUSTOMIZED_LANGUAGE" />
+			<grant type="Grants" id="ID_INTERNAL_GRANT_RACE_CENTAUR" />
 		</rules>
 	</element>
 	<element name="Charge" type="Racial Trait" source="Unearthed Arcana: Centaurs and Minotaurs" id="ID_WOTC_UA20180514_RACIAL_TRAIT_CENTAUR_CHARGE">
@@ -111,7 +115,8 @@
 			<description>You have proficiency in the Survival skill.</description>
 		</sheet>
 		<rules>
-			<grant type="Proficiency" id="ID_PROFICIENCY_SKILL_SURVIVAL" />
+			<grant type="Proficiency" id="ID_PROFICIENCY_SKILL_SURVIVAL" requirements="!ID_WOTC_TCOE_OPTION_CUSTOMIZED_PROFICIENCY" />
+			<select type="Proficiency" name="Customized Skill Proficiency (Survivor)" supports="Skill" requirements="ID_WOTC_TCOE_OPTION_CUSTOMIZED_PROFICIENCY" />
 		</rules>
 	</element>
 	<element name="Hybrid Nature" type="Racial Trait" source="Unearthed Arcana: Centaurs and Minotaurs" id="ID_WOTC_UA20180514_RACIAL_TRAIT_CENTAUR_HYBRID_NATURE">
@@ -166,8 +171,10 @@
 			<set name="names-format">{{name}} of clan {{clan}}</set>
 		</setters>
 		<rules>
-			<stat name="strength" value="2" />
-			<stat name="constitution" value="1" />
+			<stat name="strength" value="2" requirements="!(ID_WOTC_TCOE_OPTION_CUSTOMIZED_ASI||ID_INTERNAL_GRANTS_BACKGROUND_ASI)" />
+			<stat name="constitution" value="1" requirements="!(ID_WOTC_TCOE_OPTION_CUSTOMIZED_ASI||ID_INTERNAL_GRANTS_BACKGROUND_ASI)" />
+			<select type="Ability Score Improvement" name="Custom Ability Score Improvement +2 (Minotaur)" supports="Custom Ability Score Increase 2" requirements="ID_WOTC_TCOE_OPTION_CUSTOMIZED_ASI,!ID_INTERNAL_GRANTS_BACKGROUND_ASI" />
+			<select type="Ability Score Improvement" name="Custom Ability Score Improvement +1 (Minotaur)" supports="Custom Ability Score Increase 1" requirements="ID_WOTC_TCOE_OPTION_CUSTOMIZED_ASI,!ID_INTERNAL_GRANTS_BACKGROUND_ASI" />
 			<stat name="innate speed" value="30" bonus="base" />
 			<grant type="Size" id="ID_SIZE_MEDIUM" />
 			<grant type="Racial Trait" id="ID_WOTC_UA20180514_RACIAL_TRAIT_MINOTAUR_HORNS" />
@@ -175,8 +182,10 @@
 			<grant type="Racial Trait" id="ID_WOTC_UA20180514_RACIAL_TRAIT_MINOTAUR_HAMMERING_HORNS"/>
 			<grant type="Racial Trait" id="ID_WOTC_UA20180514_RACIAL_TRAIT_MINOTAUR_MENACING"/>
 			<grant type="Racial Trait" id="ID_WOTC_UA20180514_RACIAL_TRAIT_MINOTAUR_HYBRID_NATURE"/>
-			<grant type="Language" id="ID_LANGUAGE_COMMON" />
-			<grant type="Language" id="ID_WOTC_UA20180514_LANGUAGE_MINOTAUR" />
+			<grant type="Language" id="ID_LANGUAGE_COMMON" requirements="!ID_WOTC_TCOE_OPTION_CUSTOMIZED_LANGUAGE" />
+			<grant type="Language" id="ID_WOTC_UA20180514_LANGUAGE_MINOTAUR" requirements="!ID_WOTC_TCOE_OPTION_CUSTOMIZED_LANGUAGE" />
+			<select type="Language" name="Customized Language" supports="Custom Race Language||UA20180514 Minotaur Language" number="2" requirements="ID_WOTC_TCOE_OPTION_CUSTOMIZED_LANGUAGE" />
+			<grant type="Grants" id="ID_INTERNAL_GRANT_RACE_MINOTAUR" />
 		</rules>
 	</element>
 	<element name="Horns" type="Racial Trait" source="Unearthed Arcana: Centaurs and Minotaurs" id="ID_WOTC_UA20180514_RACIAL_TRAIT_MINOTAUR_HORNS">
@@ -216,7 +225,8 @@
 			<description>You have proficiency in the Intimidation skill.</description>
 		</sheet>
 		<rules>
-			<grant type="Proficiency" id="ID_PROFICIENCY_SKILL_INTIMIDATION" />
+			<grant type="Proficiency" id="ID_PROFICIENCY_SKILL_INTIMIDATION" requirements="!ID_WOTC_TCOE_OPTION_CUSTOMIZED_PROFICIENCY" />
+			<select type="Proficiency" name="Customized Skill Proficiency (Menacing)" supports="Skill" requirements="ID_WOTC_TCOE_OPTION_CUSTOMIZED_PROFICIENCY" />
 		</rules>
 	</element>
 	<element name="Hybrid Nature" type="Racial Trait" source="Unearthed Arcana: Centaurs and Minotaurs" id="ID_WOTC_UA20180514_RACIAL_TRAIT_MINOTAUR_HYBRID_NATURE">
@@ -230,7 +240,7 @@
 		
 	<!-- Minotaur Language -->
 	<element name="Minotaur" type="Language" source="Unearthed Arcana: Centaurs and Minotaurs" id="ID_WOTC_UA20180514_LANGUAGE_MINOTAUR">
-		<supports>Exotic</supports>
+		<supports>Exotic||UA20180514 Minotaur Language</supports>
 		<description>
 			<p>Typically spoken by minotaurs.</p>
 		</description>
