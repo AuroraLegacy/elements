@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<elements>
+	<info>
+		<name>Vampire Devotee</name>
+		<description>The Vampire Devotee Background from Astarion’s Book of Hungers.</description>
+		<author url="https://marketplace.dndbeyond.com/adventures/DBRWE7DB3">Wizards of the Coast</author>
+		<update version="0.0.1">
+			<file name="background-vampire-devotee.xml" url="https://raw.githubusercontent.com/AuroraLegacy/elements/master/supplements/astarions-book-of-hungers/backgrounds/background-vampire-devotee.xml" />
+		</update>
+	</info>
+
+	<element name="Vampire Devotee" type="Background" source="Astarion’s Book of Hungers" id="ID_WOTC_ABH_BACKGROUND_VAMPIRE_DEVOTEE">
+		<description>
+			<ul class="unstyled" style="text-indent:-1em; margin-left:1em; margin-bottom:5px">
+				<li><strong>Ability Scores:</strong> Strength, Constitution, Charisma</li>
+				<li><strong>Feat:</strong> Vampire's Plaything</li>
+				<li><strong>Skill Proficiencies:</strong> Persuasion and Stealth</li>
+				<li><strong>Tool Proficiency:</strong> Cook's Utensils</li>
+				<li><strong>Equipment:</strong><i> Choose A or B:</i> (A) Cook's Utensils, Fine Clothes, 2 Glass Bottles, Healer's Kit, Perfume, Lamp, Oil (3 flasks), Waterskin, 19 GP; or (B) 50 GP</li>
+			</ul>
+			<p>You were in service to a vampire or a small group of vampires lairing together. The Undead drank your blood more times than you can count. You might have served willingly, perhaps with aspirations of one day becoming a vampire yourself. Or you might have been magically charmed and retain only a few muddled memories of your time as a vampire familiar. In either case, your time in the vampire den is over.</p>
+		</description>
+		<setters>
+			<set name="short">Strength, Constitution, Charisma, Vampire's Plaything Feat, Persuasion and Stealth Skills, and Cook's Utensils</set>
+		</setters>
+		<rules>
+			<grant type="Ability Score Improvement" id="ID_INTERNAL_ABILITY_SCORE_IMPROVEMENT_COMBINATION_STR_CON_CHA" />
+			<grant type="Feat" id="ID_WOTC_ABH_FEAT_VAMPIRES_PLAYTHING" />
+			<grant type="Proficiency" id="ID_PROFICIENCY_SKILL_PERSUASION" />
+			<grant type="Proficiency" id="ID_PROFICIENCY_SKILL_STEALTH" />
+			<grant type="Grants" id="ID_INTERNAL_GRANTS_BACKGROUND_ASI" />
+			<grant type="Proficiency" id="ID_PROFICIENCY_TOOL_PROFICIENCY_COOKS_UTENSILS" />
+		</rules>
+	</element>
+
+</elements>
