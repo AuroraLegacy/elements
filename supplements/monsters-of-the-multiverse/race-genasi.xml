@@ -2,7 +2,7 @@
 <elements>
 	<info>
 		<name>Genasi from Monsters of the Multiverse</name>
-		<update version="0.0.2">
+		<update version="0.0.3">
 			<file name="race-genasi.xml" url="https://raw.githubusercontent.com/AuroraLegacy/elements/master/supplements/monsters-of-the-multiverse/race-genasi.xml" />
 		</update>
 	</info>
@@ -60,10 +60,11 @@
 		</description>
 		<sheet display="false" />
 		<rules>
-			<select type="Ability Score Improvement" name="Ability Score Improvement Option (Genasi)" supports="Custom Ability Score Improvement Option" />
+			<select type="Ability Score Improvement" name="Ability Score Improvement Option (Genasi)" supports="Custom Ability Score Improvement Option" requirements="!ID_INTERNAL_GRANTS_BACKGROUND_ASI" />
 			<select type="Racial Trait" name="Size (Genasi)" supports="ID_INTERNAL_RACIAL_TRAIT_SMALL|ID_INTERNAL_RACIAL_TRAIT_MEDIUM" />
 			<stat name="innate speed" value="30" bonus="base" />
 			<grant type="Vision" id="ID_VISION_DARKVISION" />
+			<grant type="Grants" id="ID_INTERNAL_GRANT_RACE_GENASI" />
 
 			<grant type="Language" id="ID_LANGUAGE_COMMON" requirements="!ID_WOTC_TCOE_OPTION_CUSTOMIZED_LANGUAGE" />
 			<select type="Language" name="Customized Language (Genasi)" supports="Custom Race Language"  requirements="ID_WOTC_TCOE_OPTION_CUSTOMIZED_LANGUAGE" />
@@ -93,6 +94,7 @@
 		<sheet display="false" />
 		<rules>
 			<stat name="innate speed" value="35" bonus="base" />
+			<grant type="Grants" id="ID_INTERNAL_GRANT_RACE_AIR_GENASI" />
 			<grant type="Racial Trait" id="ID_WOTC_MOTM_RACIAL_TRAIT_AIR_GENASI_UNENDING_BREATH" />
 			<grant type="Racial Trait" id="ID_WOTC_MOTM_RACIAL_TRAIT_AIR_GENASI_LIGHTNING_RESISTANCE" />
 			<grant type="Racial Trait" id="ID_WOTC_MOTM_RACIAL_TRAIT_AIR_GENASI_MINGLE_WITH_THE_WIND" />
@@ -199,6 +201,7 @@
 		</description>
 		<sheet display="false" />
 		<rules>
+			<grant type="Grants" id="ID_INTERNAL_GRANT_RACE_EARTH_GENASI" />
 			<grant type="Racial Trait" id="ID_WOTC_MOTM_RACIAL_TRAIT_EARTH_GENASI_EARTH_WALK" />
 			<grant type="Racial Trait" id="ID_WOTC_MOTM_RACIAL_TRAIT_EARTH_GENASI_MERGE_WITH_STONE" />
 		</rules>
@@ -283,6 +286,7 @@
 		</description>
 		<sheet display="false" />
 		<rules>
+			<grant type="Grants" id="ID_INTERNAL_GRANT_RACE_FIRE_GENASI" />
 			<grant type="Racial Trait" id="ID_WOTC_MOTM_RACIAL_TRAIT_FIRE_GENASI_FIRE_RESISTANCE" />
 			<grant type="Racial Trait" id="ID_WOTC_MOTM_RACIAL_TRAIT_FIRE_GENASI_REACH_TO_THE_BLAZE" />
 		</rules>
@@ -380,6 +384,7 @@
 		<sheet display="false" />
 		<rules>
 			<stat name="innate speed:swim" value="innate speed" bonus="base" />
+			<grant type="Grants" id="ID_INTERNAL_GRANT_RACE_WATER_GENASI" />
 			<grant type="Racial Trait" id="ID_WOTC_MOTM_RACIAL_TRAIT_WATER_GENASI_ACID_RESISTANCE" />
 			<grant type="Racial Trait" id="ID_WOTC_MOTM_RACIAL_TRAIT_WATER_GENASI_AMPHIBIOUS" />
 			<grant type="Racial Trait" id="ID_WOTC_MOTM_RACIAL_TRAIT_WATER_GENASI_CALL_TO_THE_WAVE" />

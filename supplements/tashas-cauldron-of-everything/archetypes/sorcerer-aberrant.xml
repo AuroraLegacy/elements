@@ -4,10 +4,11 @@
 		<name>Aberrant Mind</name>
 		<description>The Aberrant Mind from Tasha’s Cauldron of Everything</description>
 		<author url="http://dnd.wizards.com/products/tabletop-games/rpg-products/tashas-cauldron-everything">Tasha’s Cauldron of Everything</author>
-		<update version="0.0.5">
+		<update version="0.0.6">
 			<file name="sorcerer-aberrant.xml" url="https://raw.githubusercontent.com/AuroraLegacy/elements/master/supplements/tashas-cauldron-of-everything/archetypes/sorcerer-aberrant.xml" />
 		</update>
 	</info>
+
 	<element name="Aberrant Mind" type="Archetype" source="Tasha’s Cauldron of Everything" id="ID_WOTC_TCOE_ARCHETYPE_SORCERER_ABERRANT_MIND">
 		<supports>Sorcerous Origin</supports>
 		<description>
@@ -63,16 +64,27 @@
 		</sheet>
 		<rules>
 			<select type="Spell" name="Cantrip (Psionic Spells)" supports="0,(Divination||Enchantment),(Sorcerer||Warlock||Wizard)" level="1" default="ID_WOTC_TCOE_SPELL_MIND_SLIVER" spellcasting="Sorcerer" allowReplace="false" />
-			<select type="Spell" name="1st Additional Spell (Psionic Spells)" supports="1,(Divination||Enchantment),(Sorcerer||Warlock||Wizard)||Arms of Hadar" level="1" default="ID_PHB_SPELL_ARMS_OF_HADAR" spellcasting="Sorcerer" allowReplace="false" />
-			<select type="Spell" name="2nd Additional Spell (Psionic Spells)" supports="1,(Divination||Enchantment),(Sorcerer||Warlock||Wizard)||Dissonant Whispers" level="1" default="ID_PHB_SPELL_DISSONANT_WHISPERS" spellcasting="Sorcerer" allowReplace="false" />
-			<select type="Spell" name="3rd Additional Spell (Psionic Spells)" supports="2,(Divination||Enchantment),(Sorcerer||Warlock||Wizard)||Calm Emotions" level="3" default="ID_PHB_SPELL_CALM_EMOTIONS" spellcasting="Sorcerer" allowReplace="false" />
-			<select type="Spell" name="4th Additional Spell (Psionic Spells)" supports="2,(Divination||Enchantment),(Sorcerer||Warlock||Wizard)" level="3" default="ID_PHB_SPELL_DETECT_THOUGHTS" spellcasting="Sorcerer" allowReplace="false" />
-			<select type="Spell" name="5th Additional Spell (Psionic Spells)" supports="3,(Divination||Enchantment),(Sorcerer||Warlock||Wizard)||Hunger of Hadar" level="5" default="ID_PHB_SPELL_HUNGER_OF_HADAR" spellcasting="Sorcerer" allowReplace="false" />
-			<select type="Spell" name="6th Additional Spell (Psionic Spells)" supports="3,(Divination||Enchantment),(Sorcerer||Warlock||Wizard)||Sending" level="5" default="ID_PHB_SPELL_SENDING" spellcasting="Sorcerer" allowReplace="false" />
-			<select type="Spell" name="7th Additional Spell (Psionic Spells)" supports="4,(Divination||Enchantment),(Sorcerer||Warlock||Wizard)||Evards Black Tentacles" level="7" default="ID_PHB_SPELL_EVARDS_BLACK_TENTACLES" spellcasting="Sorcerer" allowReplace="false" />
+			<!-- original selections -->
+			<select type="Spell" name="1st Additional Spell (Psionic Spells)" supports="1,(Divination||Enchantment),(Sorcerer||Warlock||Wizard)||Arms of Hadar" level="1" default="ID_PHB_SPELL_ARMS_OF_HADAR" spellcasting="Sorcerer" allowReplace="false" requirements="ID_WOTC_PHB_CLASS_FEATURE_SORCERER_SORCEROUS_ORIGIN" />
+			<select type="Spell" name="2nd Additional Spell (Psionic Spells)" supports="1,(Divination||Enchantment),(Sorcerer||Warlock||Wizard)||Dissonant Whispers" level="1" default="ID_PHB_SPELL_DISSONANT_WHISPERS" spellcasting="Sorcerer" allowReplace="false" requirements="ID_WOTC_PHB_CLASS_FEATURE_SORCERER_SORCEROUS_ORIGIN" />
+			<select type="Spell" name="3rd Additional Spell (Psionic Spells)" supports="2,(Divination||Enchantment),(Sorcerer||Warlock||Wizard)||Calm Emotions" level="3" default="ID_PHB_SPELL_CALM_EMOTIONS" spellcasting="Sorcerer" allowReplace="false" requirements="ID_WOTC_PHB_CLASS_FEATURE_SORCERER_SORCEROUS_ORIGIN" />
+			<select type="Spell" name="4th Additional Spell (Psionic Spells)" supports="2,(Divination||Enchantment),(Sorcerer||Warlock||Wizard)" level="3" default="ID_PHB_SPELL_DETECT_THOUGHTS" spellcasting="Sorcerer" allowReplace="false" requirements="ID_WOTC_PHB_CLASS_FEATURE_SORCERER_SORCEROUS_ORIGIN" />
+			<select type="Spell" name="5th Additional Spell (Psionic Spells)" supports="3,(Divination||Enchantment),(Sorcerer||Warlock||Wizard)||Hunger of Hadar" level="5" default="ID_PHB_SPELL_HUNGER_OF_HADAR" spellcasting="Sorcerer" allowReplace="false" requirements="ID_WOTC_PHB_CLASS_FEATURE_SORCERER_SORCEROUS_ORIGIN" />
+			<select type="Spell" name="6th Additional Spell (Psionic Spells)" supports="3,(Divination||Enchantment),(Sorcerer||Warlock||Wizard)||Sending" level="5" default="ID_PHB_SPELL_SENDING" spellcasting="Sorcerer" allowReplace="false" requirements="ID_WOTC_PHB_CLASS_FEATURE_SORCERER_SORCEROUS_ORIGIN" />
+			<select type="Spell" name="7th Additional Spell (Psionic Spells)" supports="4,(Divination||Enchantment),(Sorcerer||Warlock||Wizard)||Evards Black Tentacles" level="7" default="ID_PHB_SPELL_EVARDS_BLACK_TENTACLES" spellcasting="Sorcerer" allowReplace="false" requirements="ID_WOTC_PHB_CLASS_FEATURE_SORCERER_SORCEROUS_ORIGIN" />
 			<select type="Spell" name="8th Additional Spell (Psionic Spells)" supports="4,(Divination||Enchantment),(Sorcerer||Warlock||Wizard)||Summon Aberration" level="7" default="ID_WOTC_TCOE_SPELL_SUMMON_ABERRATION" spellcasting="Sorcerer" allowReplace="false" />
-			<select type="Spell" name="9th Additional Spell (Psionic Spells)" supports="5,(Divination||Enchantment),(Sorcerer||Warlock||Wizard)" level="9" default="ID_PHB_SPELL_RARYS_TELEPATHIC_BOND" spellcasting="Sorcerer" allowReplace="false" />
-			<select type="Spell" name="10th Additional Spell (Psionic Spells)" supports="5,(Divination||Enchantment),(Sorcerer||Warlock||Wizard)||Telekinesis" level="9" default="ID_PHB_SPELL_TELEKINESIS" spellcasting="Sorcerer" allowReplace="false" />
+			<select type="Spell" name="9th Additional Spell (Psionic Spells)" supports="5,(Divination||Enchantment),(Sorcerer||Warlock||Wizard)" level="9" default="ID_PHB_SPELL_RARYS_TELEPATHIC_BOND" spellcasting="Sorcerer" allowReplace="false" requirements="ID_WOTC_PHB_CLASS_FEATURE_SORCERER_SORCEROUS_ORIGIN" />
+			<select type="Spell" name="10th Additional Spell (Psionic Spells)" supports="5,(Divination||Enchantment),(Sorcerer||Warlock||Wizard)||Telekinesis" level="9" default="ID_PHB_SPELL_TELEKINESIS" spellcasting="Sorcerer" allowReplace="false" requirements="ID_WOTC_PHB_CLASS_FEATURE_SORCERER_SORCEROUS_ORIGIN" />
+			<!-- selections for PHB24 Sorcerer, 8th spell above is excluded as it works as intended -->
+			<select type="Spell" name="1st Additional Spell (Psionic Spells)" supports="1,(Divination||Enchantment),(Sorcerer||Warlock||Wizard)||Arms of Hadar" level="1" default="ID_WOTC_PHB24_SPELL_ARMS_OF_HADAR" spellcasting="Sorcerer" allowReplace="false" requirements="ID_WOTC_PHB24_CLASS_FEATURE_SORCERER_SORCERER_SUBCLASS" />
+			<select type="Spell" name="2nd Additional Spell (Psionic Spells)" supports="1,(Divination||Enchantment),(Sorcerer||Warlock||Wizard)||Dissonant Whispers" level="1" default="ID_WOTC_PHB24_SPELL_DISSONANT_WHISPERS" spellcasting="Sorcerer" allowReplace="false" requirements="ID_WOTC_PHB24_CLASS_FEATURE_SORCERER_SORCERER_SUBCLASS" />
+			<select type="Spell" name="3rd Additional Spell (Psionic Spells)" supports="2,(Divination||Enchantment),(Sorcerer||Warlock||Wizard)||Calm Emotions" level="3" default="ID_WOTC_PHB24_SPELL_CALM_EMOTIONS" spellcasting="Sorcerer" allowReplace="false" requirements="ID_WOTC_PHB24_CLASS_FEATURE_SORCERER_SORCERER_SUBCLASS" />
+			<select type="Spell" name="4th Additional Spell (Psionic Spells)" supports="2,(Divination||Enchantment),(Sorcerer||Warlock||Wizard)" level="3" default="ID_WOTC_PHB24_SPELL_DETECT_THOUGHTS" spellcasting="Sorcerer" allowReplace="false" requirements="ID_WOTC_PHB24_CLASS_FEATURE_SORCERER_SORCERER_SUBCLASS" />
+			<select type="Spell" name="5th Additional Spell (Psionic Spells)" supports="3,(Divination||Enchantment),(Sorcerer||Warlock||Wizard)||Hunger of Hadar" level="5" default="ID_WOTC_PHB24_SPELL_HUNGER_OF_HADAR" spellcasting="Sorcerer" allowReplace="false" requirements="ID_WOTC_PHB24_CLASS_FEATURE_SORCERER_SORCERER_SUBCLASS" />
+			<select type="Spell" name="6th Additional Spell (Psionic Spells)" supports="3,(Divination||Enchantment),(Sorcerer||Warlock||Wizard)||Sending" level="5" default="ID_WOTC_PHB24_SPELL_SENDING" spellcasting="Sorcerer" allowReplace="false" requirements="ID_WOTC_PHB24_CLASS_FEATURE_SORCERER_SORCERER_SUBCLASS" />
+			<select type="Spell" name="7th Additional Spell (Psionic Spells)" supports="4,(Divination||Enchantment),(Sorcerer||Warlock||Wizard)||Evards Black Tentacles" level="7" default="ID_WOTC_PHB24_SPELL_EVARDS_BLACK_TENTACLES" spellcasting="Sorcerer" allowReplace="false" requirements="ID_WOTC_PHB24_CLASS_FEATURE_SORCERER_SORCERER_SUBCLASS" />
+			<select type="Spell" name="9th Additional Spell (Psionic Spells)" supports="5,(Divination||Enchantment),(Sorcerer||Warlock||Wizard)" level="9" default="ID_WOTC_PHB24_SPELL_RARYS_TELEPATHIC_BOND" spellcasting="Sorcerer" allowReplace="false" requirements="ID_WOTC_PHB24_CLASS_FEATURE_SORCERER_SORCERER_SUBCLASS" />
+			<select type="Spell" name="10th Additional Spell (Psionic Spells)" supports="5,(Divination||Enchantment),(Sorcerer||Warlock||Wizard)||Telekinesis" level="9" default="ID_WOTC_PHB24_SPELL_TELEKINESIS" spellcasting="Sorcerer" allowReplace="false" requirements="ID_WOTC_PHB24_CLASS_FEATURE_SORCERER_SORCERER_SUBCLASS" />
 		</rules>
 	</element>
 	<element name="Telepathic Speech" type="Archetype Feature" source="Tasha’s Cauldron of Everything" id="ID_WOTC_TCOE_ARCHETYPE_FEATURE_ABERRANT_MIND_TELEPATHIC_SPEECH">
@@ -83,7 +95,7 @@
 		</description>
 		<sheet action="Bonus Action">
 			<description>Choose one creature you can see within 30 feet of you. You and the chosen creature can speak telepathically with each other while the two of you are within {{telepathic speech:distance}} miles of each other. To understand each other, you each must speak mentally in a language the other knows.
-			The telepathic connection lasts for 1 minute. It ends early if you are incapacitated or die or if you use this ability to form a connection with a different creature.</description>		
+			The telepathic connection lasts for 1 minute. It ends early if you are incapacitated or die or if you use this ability to form a connection with a different creature.</description>
 			<description level="2">Choose one creature you can see within 30 feet of you. You and the chosen creature can speak telepathically with each other while the two of you are within {{telepathic speech:distance}} miles of each other. To understand each other, you each must speak mentally in a language the other knows.
 			The telepathic connection lasts for {{level:sorcerer}} minutes. It ends early if you are incapacitated or die or if you use this ability to form a connection with a different creature.</description>
 		</sheet>
@@ -149,6 +161,7 @@
 			You can spend 5 sorcery points to use this feature again.</description>
 		</sheet>
 	</element>
+
 	<append id="ID_PHB_SPELL_ARMS_OF_HADAR">
 		<supports>Arms of Hadar</supports>
 	</append>
@@ -172,6 +185,28 @@
 	</append>
 	<append id="ID_PHB_SPELL_TELEKINESIS">
 		<supports>Telekinesis</supports>
-	</append>	
-  
+	</append>
+
+	<append id="ID_WOTC_PHB24_SPELL_ARMS_OF_HADAR">
+		<supports>Arms of Hadar</supports>
+	</append>
+	<append id="ID_WOTC_PHB24_SPELL_DISSONANT_WHISPERS">
+		<supports>Dissonant Whispers</supports>
+	</append>
+	<append id="ID_WOTC_PHB24_SPELL_CALM_EMOTIONS">
+		<supports>Calm Emotions</supports>
+	</append>
+	<append id="ID_WOTC_PHB24_SPELL_HUNGER_OF_HADAR">
+		<supports>Hunger of Hadar</supports>
+	</append>
+	<append id="ID_WOTC_PHB24_SPELL_SENDING">
+		<supports>Sending</supports>
+	</append>
+	<append id="ID_WOTC_PHB24_SPELL_EVARDS_BLACK_TENTACLES">
+		<supports>Evards Black Tentacles</supports>
+	</append>
+	<append id="ID_WOTC_PHB24_SPELL_TELEKINESIS">
+		<supports>Telekinesis</supports>
+	</append>
+
 </elements>
