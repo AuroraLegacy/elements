@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<elements>
+	<info>
+		<name>Purple Dragon Squire</name>
+		<description>The Purple Dragon Squire background from Forgotten Realms: Heroes of Faerûn.</description>
+		<author url="https://dndstore.wizards.com/us/en/product/1246485/heroes-of-faerun">Wizards of the Coast</author>
+		<update version="0.0.1">
+			<file name="background-purple-dragon-squire.xml" url="https://raw.githubusercontent.com/AuroraLegacy/elements/master/supplements/forgotten-realms-heroes-of-faerun/backgrounds/background-purple-dragon-squire.xml" />
+		</update>
+	</info>
+
+	<element name="Purple Dragon Squire" type="Background" source="Forgotten Realms: Heroes of Faerûn" id="ID_WOTC_FRHOF_BACKGROUND_PURPLE_DRAGON_SQUIRE">
+		<description>
+			<ul class="unstyled" style="text-indent:-1em; margin-left:1em; margin-bottom:5px">
+				<li><strong>Ability Scores:</strong> Strength, Wisdom, Charisma</li>
+				<li><strong>Feat:</strong> Purple Dragon Rook</li>
+				<li><strong>Skill Proficiencies:</strong> Animal Handling and Insight</li>
+				<li><strong>Tool Proficiency:</strong> Navigator’s Tools</li>
+				<li><strong>Equipment:</strong><i> Choose A or B:</i> (A) Spear, Navigator’s Tools, Fine Clothes, 9 GP; or (B) 50 GP</li>
+			</ul>
+			<p>You’ve pledged your life to the safety of Cormyr and sought admission to that realm’s order of elite warriors: the Purple Dragon Knights. But before you have the chance to join the ranks officially, you must first serve as a knight’s squire. You’ve found a liege willing to take you on and teach you the order’s ways. Will you uphold the Purple Dragon Knights’ ideals of glory, honor, and strength and prove yourself worthy of knighthood?</p>
+			<p class="indent"><strong><em>Trinket.</em></strong> Roll on the Purple Dragon Knight Trinkets table to determine what trinket you have from your time with the Purple Dragon Knights.</p>
+			<h5>Purple Dragon Knight Trinkets</h5>
+			<table>
+				<thead>
+					<tr><td>d6</td><td>Trinket</td></tr>
+				</thead>
+				<tr><td>1</td><td>An amethyst dragon wyrmling’s claw</td></tr>
+				<tr><td>2</td><td>A common purple quartz cut to resemble a dragon’s eye</td></tr>
+				<tr><td>3</td><td>A signal whistle audible only to amethyst dragons</td></tr>
+				<tr><td>4</td><td>A robin’s egg encased in amber</td></tr>
+				<tr><td>5</td><td>A whetstone that leaves any blade it hones faintly glittery</td></tr>
+				<tr><td>6</td><td>A vamplate taken from a slain rival jouster</td></tr>
+			</table>
+		</description>
+		<setters>
+			<set name="short">Strength, Wisdom, Charisma, Purple Dragon Rook Feat, Animal Handling and Insight Skills, and Navigator’s Tools</set>
+		</setters>
+		<rules>
+			<grant type="Ability Score Improvement" id="ID_INTERNAL_ABILITY_SCORE_IMPROVEMENT_COMBINATION_STR_WIS_CHA" />
+			<grant type="Feat" id="ID_WOTC_FRHOF_FEAT_PURPLE_DRAGON_ROOK" />
+			<grant type="Proficiency" id="ID_PROFICIENCY_SKILL_ANIMALHANDLING" />
+			<grant type="Proficiency" id="ID_PROFICIENCY_SKILL_INSIGHT" />
+			<grant type="Grants" id="ID_INTERNAL_GRANTS_BACKGROUND_ASI" />
+			<grant type="Proficiency" id="ID_PROFICIENCY_TOOL_PROFICIENCY_NAVIGATORS_TOOLS" />
+			<select type="List" name="Purple Dragon Knight Trinkets" optional="true" >
+				<item id="1">An amethyst dragon wyrmling’s claw</item>
+				<item id="2">A common purple quartz cut to resemble a dragon’s eye</item>
+				<item id="3">A signal whistle audible only to amethyst dragons</item>
+				<item id="4">A robin’s egg encased in amber</item>
+				<item id="5">A whetstone that leaves any blade it hones faintly glittery</item>
+				<item id="6">A vamplate taken from a slain rival jouster</item>
+			</select>
+		</rules>
+	</element>
+
+</elements>
