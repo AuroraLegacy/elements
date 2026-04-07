@@ -1,0 +1,186 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<elements>
+	<info>
+		<name>Spellfire Sorcery</name>
+		<description>The Spellfire Sorcery subclass from Forgotten Realms: Heroes of Faerûn.</description>
+		<author url="https://dndstore.wizards.com/us/en/product/1246485/heroes-of-faerun">Wizards of the Coast</author>
+		<update version="0.0.1">
+			<file name="sorcerer-spellfire.xml" url="https://raw.githubusercontent.com/AuroraLegacy/elements/master/supplements/forgotten-realms-heroes-of-faerun/archetypes/sorcerer-spellfire.xml" />
+		</update>
+	</info>
+
+	<element name="Spellfire Sorcery" type="Archetype" source="Forgotten Realms: Heroes of Faerûn" id="ID_WOTC_FRHOF_ARCHETYPE_SORCERER_SPELLFIRE_SORCERY">
+		<supports>Sorcerous Origin</supports>
+		<description>
+			<p class="flavor">Wield Raw Magic</p>
+			<p>Your innate power stems from the source of magic itself: the Weave. This connection manifests as a rare ability known as spellfire, and you surge with radiant bursts of this raw magic. Your talent with spellfire allows you to heal allies, sear enemies, and absorb powerful spells.</p>
+			<p class="indent">Wielders of spellfire tend to have a penchant for wandering. Many travel between cosmopolitan settlements, such as those along the Sword Coast, and wield their magic in service of the common good. Others realize their own strange powers by roaming equally strange lands, from the magic-blasted wastes of the desert of Anauroch to the god-touched wilds of the Old Empires. Wherever they go in the Realms, spellfire Sorcerers are courted by factions with interests in the arcane arts, such as the Harpers, Cult of the Dragon, and Red Wizards.</p>
+			<div element="ID_WOTC_FRHOF_ARCHETYPE_FEATURE_SORCERER_SPELLFIRE_SPELLFIRE_BURST"/>
+			<div element="ID_WOTC_FRHOF_ARCHETYPE_FEATURE_SORCERER_SPELLFIRE_SPELLFIRE_SPELLS"/>
+			<div element="ID_WOTC_FRHOF_ARCHETYPE_FEATURE_SORCERER_SPELLFIRE_ABSORB_SPELLS"/>
+			<div element="ID_WOTC_FRHOF_ARCHETYPE_FEATURE_SORCERER_SPELLFIRE_HONED_SPELLFIRE"/>
+			<div element="ID_WOTC_FRHOF_ARCHETYPE_FEATURE_SORCERER_SPELLFIRE_CROWN_OF_SPELLFIRE"/>
+		</description>
+		<sheet display="false" />
+		<rules>
+			<grant type="Archetype Feature" id="ID_WOTC_FRHOF_ARCHETYPE_FEATURE_SORCERER_SPELLFIRE_SPELLFIRE_BURST" level="3" />
+			<grant type="Archetype Feature" id="ID_WOTC_FRHOF_ARCHETYPE_FEATURE_SORCERER_SPELLFIRE_SPELLFIRE_SPELLS" level="3" />
+			<grant type="Archetype Feature" id="ID_WOTC_FRHOF_ARCHETYPE_FEATURE_SORCERER_SPELLFIRE_ABSORB_SPELLS" level="6" />
+			<grant type="Archetype Feature" id="ID_WOTC_FRHOF_ARCHETYPE_FEATURE_SORCERER_SPELLFIRE_HONED_SPELLFIRE" level="14" />
+			<grant type="Archetype Feature" id="ID_WOTC_FRHOF_ARCHETYPE_FEATURE_SORCERER_SPELLFIRE_CROWN_OF_SPELLFIRE" level="18" />
+		</rules>
+	</element>
+
+	<element name="Level 3: Spellfire Burst" type="Archetype Feature" source="Forgotten Realms: Heroes of Faerûn" id="ID_WOTC_FRHOF_ARCHETYPE_FEATURE_SORCERER_SPELLFIRE_SPELLFIRE_BURST">
+		<requirements>!ID_INTERNAL_FRHOF_FEATURE_REPLACEMENT_SORCERER_SPELLFIRE_SPELLFIRE_BURST</requirements>
+		<description>
+			<p>When you spend at least 1 Sorcery Point as part of a Magic action or a Bonus Action on your turn, you can unleash one of the following magical effects of your choice. You can do so only once per turn.</p>
+			<p class="indent"><b><i>Bolstering Flames.</i></b> You or one creature you can see within 30 feet of yourself gains Temporary Hit Points equal to 1d4 plus your Charisma modifier.</p>
+			<p class="indent"><b><i>Radiant Fire.</i></b> One creature you can see within 30 feet of yourself takes 1d4 Fire or Radiant damage (your choice).</p>
+		</description>
+		<sheet alt="Spellfire Burst" usage="Sorcery Point, 1/Turn">
+			<description>When you spend at least 1 Sorcery Point as part of a Magic action or a Bonus Action on your turn, you can unleash one of the following magical effects of your choice.</description>
+		</sheet>
+		<rules>
+			<select type="Archetype Feature" name="Bolstering Flames" supports="Spellfire Bolstering Flames" default="ID_WOTC_FRHOF_ARCHETYPE_FEATURE_SORCERER_SPELLFIRE_SPELLFIRE_BURST_BOLSTERING_FLAMES" />
+			<select type="Archetype Feature" name="Radiant Fire" supports="Spellfire Radiant Fire" default="ID_WOTC_FRHOF_ARCHETYPE_FEATURE_SORCERER_SPELLFIRE_SPELLFIRE_BURST_RADIANT_FIRE" />
+		</rules>
+	</element>
+	<element name="Bolstering Flames" type="Archetype Feature" source="Forgotten Realms: Heroes of Faerûn" id="ID_WOTC_FRHOF_ARCHETYPE_FEATURE_SORCERER_SPELLFIRE_SPELLFIRE_BURST_BOLSTERING_FLAMES">
+		<compendium display="false" />
+		<supports>Spellfire Bolstering Flames</supports>
+		<description>
+			<p>You or one creature you can see within 30 feet of yourself gains Temporary Hit Points equal to 1d4 plus your Charisma modifier.</p>
+		</description>
+		<sheet>
+			<description>You or one creature you can see within 30 feet of yourself gains 1d4+{{bolstering flames:thp}} Temporary Hit Points.</description>
+		</sheet>
+		<rules>
+			<stat name="bolstering flames:thp" value="charisma:modifier" />
+			<stat name="bolstering flames:thp" value="level:sorcerer" requirements="ID_WOTC_FRHOF_ARCHETYPE_FEATURE_SORCERER_SPELLFIRE_HONED_SPELLFIRE" />
+		</rules>
+	</element>
+	<element name="Radiant Fire" type="Archetype Feature" source="Forgotten Realms: Heroes of Faerûn" id="ID_WOTC_FRHOF_ARCHETYPE_FEATURE_SORCERER_SPELLFIRE_SPELLFIRE_BURST_RADIANT_FIRE">
+		<compendium display="false" />
+		<supports>Spellfire Radiant Fire</supports>
+		<description>
+			<p>One creature you can see within 30 feet of yourself takes 1d4 Fire or Radiant damage (your choice).</p>
+		</description>
+		<sheet>
+			<description>One creature you can see within 30 feet of yourself takes 1d4 Fire or Radiant damage (your choice).</description>
+			<description level="14">One creature you can see within 30 feet of yourself takes 1d8 Fire or Radiant damage (your choice).</description>
+		</sheet>
+	</element>
+
+	<element name="Level 3: Spellfire Spells" type="Archetype Feature" source="Forgotten Realms: Heroes of Faerûn" id="ID_WOTC_FRHOF_ARCHETYPE_FEATURE_SORCERER_SPELLFIRE_SPELLFIRE_SPELLS">
+		<requirements>!ID_INTERNAL_FRHOF_FEATURE_REPLACEMENT_SORCERER_SPELLFIRE_SPELLFIRE_SPELLS</requirements>
+		<description>
+			<p>When you reach a Sorcerer level specified in the Spellfire Spells table, you thereafter always have the listed spells prepared.</p>
+			<h5>SPELLFIRE SPELLS</h5>
+			<table>
+				<thead>
+					<tr><td class="col-15" style="text-align:center">Sorcerer Level</td><td>Prepared Spells</td></tr>
+				</thead>
+				<tr><td style="text-align:center">3</td><td><em>Cure Wounds, Guiding Bolt, Lesser Restoration, Scorching Ray</em></td></tr>
+				<tr><td style="text-align:center">5</td><td><em>Aura of Vitality, Dispel Magic</em></td></tr>
+				<tr><td style="text-align:center">7</td><td><em>Fire Shield, Wall of Fire</em></td></tr>
+				<tr><td style="text-align:center">9</td><td><em>Greater Restoration, Flame Strike</em></td></tr>
+			</table>
+		</description>
+		<sheet display="false" />
+		<rules>
+			<grant type="Spell" id="ID_WOTC_PHB24_SPELL_CURE_WOUNDS" spellcasting="Sorcerer" />
+			<grant type="Spell" id="ID_WOTC_PHB24_SPELL_GUIDING_BOLT" spellcasting="Sorcerer" />
+			<grant type="Spell" id="ID_WOTC_PHB24_SPELL_LESSER_RESTORATION" spellcasting="Sorcerer" />
+			<grant type="Spell" id="ID_WOTC_PHB24_SPELL_SCORCHING_RAY" spellcasting="Sorcerer" />
+			<grant type="Spell" id="ID_WOTC_PHB24_SPELL_AURA_OF_VITALITY" level="5" spellcasting="Sorcerer" />
+			<grant type="Spell" id="ID_WOTC_PHB24_SPELL_DISPEL_MAGIC" level="5" spellcasting="Sorcerer" />
+			<grant type="Spell" id="ID_WOTC_PHB24_SPELL_FIRE_SHIELD" level="7" spellcasting="Sorcerer" />
+			<grant type="Spell" id="ID_WOTC_PHB24_SPELL_WALL_OF_FIRE" level="7" spellcasting="Sorcerer" />
+			<grant type="Spell" id="ID_WOTC_PHB24_SPELL_GREATER_RESTORATION" level="9" spellcasting="Sorcerer" />
+			<grant type="Spell" id="ID_WOTC_PHB24_SPELL_FLAME_STRIKE" level="9" spellcasting="Sorcerer" />
+		</rules>
+	</element>
+
+	<element name="Level 6: Absorb Spells" type="Archetype Feature" source="Forgotten Realms: Heroes of Faerûn" id="ID_WOTC_FRHOF_ARCHETYPE_FEATURE_SORCERER_SPELLFIRE_ABSORB_SPELLS">
+		<requirements>!ID_INTERNAL_FRHOF_FEATURE_REPLACEMENT_SORCERER_SPELLFIRE_ABSORB_SPELLS</requirements>
+		<description>
+			<p>You always have the <i>Counterspell</i> spell prepared.</p>
+			<p class="indent">Additionally, whenever a target fails the saving throw against a Counterspell you cast, you regain 1d4 Sorcery Points.</p>
+		</description>
+		<sheet alt="Absorb Spells">
+			<description>Whenever a target fails the saving throw against a Counterspell you cast, you regain 1d4 Sorcery Points.</description>
+		</sheet>
+		<rules>
+			<grant type="Spell" id="ID_WOTC_PHB24_SPELL_COUNTERSPELL" spellcasting="Sorcerer" />
+		</rules>
+	</element>
+
+	<element name="Level 14: Honed Spellfire" type="Archetype Feature" source="Forgotten Realms: Heroes of Faerûn" id="ID_WOTC_FRHOF_ARCHETYPE_FEATURE_SORCERER_SPELLFIRE_HONED_SPELLFIRE">
+		<requirements>!ID_INTERNAL_FRHOF_FEATURE_REPLACEMENT_SORCERER_SPELLFIRE_HONED_SPELLFIRE</requirements>
+		<description>
+			<p>Your Spellfire Burst improves. You add your Sorcerer level to the Temporary Hit Points gained from Bolstering Flames, and the damage of your Radiant Fire increases to 1d8.</p>
+		</description>
+		<sheet display="false"/>
+	</element>
+
+	<element name="Level 18: Crown of Spellfire" type="Archetype Feature" source="Forgotten Realms: Heroes of Faerûn" id="ID_WOTC_FRHOF_ARCHETYPE_FEATURE_SORCERER_SPELLFIRE_CROWN_OF_SPELLFIRE">
+		<requirements>!ID_INTERNAL_FRHOF_FEATURE_REPLACEMENT_SORCERER_SPELLFIRE_CROWN_OF_SPELLFIRE</requirements>
+		<description>
+			<p>When you use Innate Sorcery, you can alter it and infuse yourself with the essence of spellfire, gaining the following benefits while this use of Innate Sorcery is active. Once you use this feature to alter Innate Sorcery, you can’t use it again until you finish a Long Rest unless you spend 5 Sorcery Points (no action required) to restore your use of it.</p>
+			<p class="indent"><b><i>Burning Life Force.</i></b> Once per turn when you are hit by an attack roll, you can expend a number of Hit Point Dice, up to a maximum equal to your Charisma modifier (minimum of one). Roll the expended dice, and reduce the amount of damage from that attack equal to the total rolled.</p>
+			<p class="indent"><b><i>Flight.</i></b> You gain a Fly Speed of 60 feet and can hover.</p>
+			<p class="indent"><b><i>Spell Avoidance.</i></b> When you’re subjected to a spell or magical effect that allows you to make a saving throw to take only half damage, you instead take no damage if you succeed on the save and only half damage if you fail. You can’t use this benefit if you have the Incapacitated condition.</p>
+		</description>
+		<sheet alt="Crown of Spellfire" usage="Innate Sorcery - 1/Long Rest">
+			<description>When you use Innate Sorcery, you can alter it and gain the following benefits while this use of Innate Sorcery is active. You can spend 5 Sorcery Points (no action required) to restore your use of this feature.</description>
+		</sheet>
+		<rules>
+			<select type="Archetype Feature" name="Burning Life Force" supports="Spellfire Burning Life Force" default="ID_WOTC_FRHOF_ARCHETYPE_FEATURE_SORCERER_SPELLFIRE_CROWN_OF_SPELLFIRE_BURNING_LIFE_FORCE" />
+			<select type="Archetype Feature" name="Radiant Fire" supports="Spellfire Flight" default="ID_WOTC_FRHOF_ARCHETYPE_FEATURE_SORCERER_SPELLFIRE_CROWN_OF_SPELLFIRE_FLIGHT" />
+			<select type="Archetype Feature" name="Radiant Fire" supports="Spellfire Spell Avoidance" default="ID_WOTC_FRHOF_ARCHETYPE_FEATURE_SORCERER_SPELLFIRE_CROWN_OF_SPELLFIRE_SPELL_AVOIDANCE" />
+		</rules>
+	</element>
+	<element name="Burning Life Force" type="Archetype Feature" source="Forgotten Realms: Heroes of Faerûn" id="ID_WOTC_FRHOF_ARCHETYPE_FEATURE_SORCERER_SPELLFIRE_CROWN_OF_SPELLFIRE_BURNING_LIFE_FORCE">
+		<compendium display="false" />
+		<supports>Spellfire Burning Life Force</supports>
+		<description>
+			<p>Once per turn when you are hit by an attack roll, you can expend a number of Hit Point Dice, up to a maximum equal to your Charisma modifier (minimum of one). Roll the expended dice, and reduce the amount of damage from that attack equal to the total rolled.</p>
+		</description>
+		<sheet usage="1/Turn">
+			<description>When you are hit by an attack roll, you can expend up to {{burning life force:count}} Hit Point Dice. Roll the expended dice, and reduce the amount of damage from that attack equal to the total rolled.</description>
+		</sheet>
+		<rules>
+			<stat name="burning life force:count" value="1" bonus="base"/>
+			<stat name="burning life force:count" value="charisma:modifier" bonus="base"/>
+		</rules>
+	</element>
+	<element name="Flight" type="Archetype Feature" source="Forgotten Realms: Heroes of Faerûn" id="ID_WOTC_FRHOF_ARCHETYPE_FEATURE_SORCERER_SPELLFIRE_CROWN_OF_SPELLFIRE_FLIGHT">
+		<compendium display="false" />
+		<supports>Spellfire Flight</supports>
+		<description>
+			<p>You gain a Fly Speed of 60 feet and can hover.</p>
+		</description>
+		<sheet>
+			<description>You gain a Fly Speed of 60 feet and can hover.</description>
+		</sheet>
+	</element>
+	<element name="Spell Avoidance" type="Archetype Feature" source="Forgotten Realms: Heroes of Faerûn" id="ID_WOTC_FRHOF_ARCHETYPE_FEATURE_SORCERER_SPELLFIRE_CROWN_OF_SPELLFIRE_SPELL_AVOIDANCE">
+		<compendium display="false" />
+		<supports>Spellfire Spell Avoidance</supports>
+		<description>
+			<p>When you’re subjected to a spell or magical effect that allows you to make a saving throw to take only half damage, you instead take no damage if you succeed on the save and only half damage if you fail. You can’t use this benefit if you have the Incapacitated condition.</p>
+		</description>
+		<sheet>
+			<description>When you’re subjected to a spell or magical effect that allows you to make a saving throw to take only half damage, you instead take no damage if you succeed on the save and only half damage if you fail. You can’t use this benefit if you have the Incapacitated condition.</description>
+		</sheet>
+	</element>
+
+	<!--Feature Replacement Grants-->
+	<element name="Spellfire Burst Feature Replacement" type="Grants" source="Internal" id="ID_INTERNAL_FRHOF_FEATURE_REPLACEMENT_SORCERER_SPELLFIRE_SPELLFIRE_BURST" />
+	<element name="Spellfire Spells Feature Replacement" type="Grants" source="Internal" id="ID_INTERNAL_FRHOF_FEATURE_REPLACEMENT_SORCERER_SPELLFIRE_SPELLFIRE_SPELLS" />
+	<element name="Absorb Spells Feature Replacement" type="Grants" source="Internal" id="ID_INTERNAL_FRHOF_FEATURE_REPLACEMENT_SORCERER_SPELLFIRE_ABSORB_SPELLS" />
+	<element name="Honed Spellfire Feature Replacement" type="Grants" source="Internal" id="ID_INTERNAL_FRHOF_FEATURE_REPLACEMENT_SORCERER_SPELLFIRE_HONED_SPELLFIRE" />
+	<element name="Crown of Spellfire Feature Replacement" type="Grants" source="Internal" id="ID_INTERNAL_FRHOF_FEATURE_REPLACEMENT_SORCERER_SPELLFIRE_CROWN_OF_SPELLFIRE" />
+
+</elements>
