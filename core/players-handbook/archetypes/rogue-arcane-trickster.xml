@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <elements>
 	<info>
-		<update version="0.0.1">
+		<update version="0.0.2">
 			<file name="rogue-arcane-trickster.xml" url="https://raw.githubusercontent.com/AuroraLegacy/elements/master/core/players-handbook/archetypes/rogue-arcane-trickster.xml" />
 		</update>
 	</info>
@@ -25,7 +25,6 @@
 			<grant type="Archetype Feature" id="ID_WOTC_PHB_ARCHETYPE_FEATURE_ARCANE_TRICKSTER_MAGICAL_AMBUSH" level="9"/>
 			<grant type="Archetype Feature" id="ID_WOTC_PHB_ARCHETYPE_FEATURE_ARCANE_TRICKSTER_VERSATILE_TRICKSTER" level="13"/>
 			<grant type="Archetype Feature" id="ID_WOTC_PHB_ARCHETYPE_FEATURE_ARCANE_TRICKSTER_SPELL_THIEF" level="17"/>
-			<grant type="Grants" id="ID_INTERNAL_GRANT_MULTICLASS_SPELLCASTING_SLOTS_THIRD" requirements="ID_INTERNAL_GRANT_MULTICLASS" />
 		</rules>
 	</element>
 
@@ -75,6 +74,9 @@
 			<list>Wizard,(Enchantment||Illusion)</list>
 		</spellcasting>
 		<rules>
+			<grant type="Grants" id="ID_INTERNAL_GRANTS_SPELLCASTING_FEATURE" />
+			<grant type="Grants" id="ID_INTERNAL_GRANT_MULTICLASS_SPELLCASTING_SLOTS_THIRD" requirements="ID_INTERNAL_GRANT_MULTICLASS"/>
+
 			<stat name="arcane trickster:spellcasting:slots:1" value="2" level="3" />
 			<stat name="arcane trickster:spellcasting:slots:1" value="1" level="4" />
 			<stat name="arcane trickster:spellcasting:slots:1" value="1" level="7" />
@@ -83,6 +85,7 @@
 			<stat name="arcane trickster:spellcasting:slots:3" value="2" level="13" />
 			<stat name="arcane trickster:spellcasting:slots:3" value="1" level="16" />
 			<stat name="arcane trickster:spellcasting:slots:4" value="1" level="19" />
+
 			<grant type="Spell" id="ID_PHB_SPELL_MAGE_HAND" level="3" spellcasting="Arcane Trickster" />
 			<select type="Spell" name="Cantrip (Arcane Trickster)" supports="Wizard, 0" level="3" number="2" spellcasting="Arcane Trickster" />
 			<select type="Spell" name="Cantrip (Arcane Trickster)" supports="Wizard, 0" level="10" number="1" spellcasting="Arcane Trickster" />

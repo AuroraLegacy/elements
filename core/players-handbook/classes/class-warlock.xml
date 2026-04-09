@@ -4,7 +4,7 @@
 		<name>Warlock</name>
 		<description>The Warlock class from the Player’s Handbook.</description>
 		<author url="http://dnd.wizards.com/products/tabletop-games/rpg-products/rpg_playershandbook">Wizards of the Coast</author>
-		<update version="0.3.9">
+		<update version="0.4.0">
 			<file name="class-warlock.xml" url="https://raw.githubusercontent.com/AuroraLegacy/elements/master/core/players-handbook/classes/class-warlock.xml" />
 		</update>
 	</info>
@@ -111,7 +111,7 @@
 		</rules>
 		<multiclass id="ID_WOTC_PHB_MULTICLASS_WARLOCK">
 			<prerequisite>Charisma 13</prerequisite>
-			<requirements>[cha:13]</requirements>
+			<requirements>([cha:13],!(ID_WOTC_PHB24_CLASS_WARLOCK||ID_WOTC_PHB24_MULTICLASS_WARLOCK))||ID_INTERNAL_GRANTS_MULTICLASS_UNLOCKER</requirements>
 			<setters>
 				<set name="multiclass proficiencies">Light armor, simple weapons</set>
 			</setters>
@@ -161,7 +161,7 @@
 			<list>Warlock</list>
 		</spellcasting>
 		<rules>
-			<!-- add not full but single _not counting as multiclass spellcaster due to pact magic -->
+			<grant type="Grants" id="ID_INTERNAL_GRANTS_PACT_MAGIC_FEATURE" />
 			<grant type="Grants" id="ID_INTERNAL_GRANT_MULTICLASS_SPELLCASTING_SLOTS_SOLO" requirements="ID_INTERNAL_GRANT_MULTICLASS"/>
 
 			<stat name="warlock:spellcasting:slots:count" value="1" level="1"/>
