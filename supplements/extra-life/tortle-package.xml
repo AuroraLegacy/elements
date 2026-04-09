@@ -2,7 +2,7 @@
 <elements>
 	<info>
 		<name>The Tortle Package</name>
-		<update version="0.0.1">
+		<update version="0.0.2">
 			<file name="tortle-package.xml" url="https://raw.githubusercontent.com/AuroraLegacy/elements/master/supplements/extra-life/tortle-package.xml" />
 		</update>
 	</info>
@@ -57,7 +57,7 @@
 			<p class="indent"><b><i>Shell Defense. </i></b>You can withdraw into your shell as an action. Until you emerge, you gain a +4 bonus to AC, and you have advantage on Strength and Constitution saving throws. While in your shell, you are prone, your speed is 0 and can't increase, you have disadvantage on Dexterity saving throws, you can't take reactions, and the only action you can take is a bonus action to emerge from your shell.</p>
 			<p class="indent"><b><i>Survival Instinct. </i></b>You gain proficiency in the Survival skill. Tortles have finely honed survival instincts.</p>
 			<p class="indent"><b><i>Languages. </i></b>You can speak, read, and write Common and Aquan.</p>
-		</description>        
+		</description>
 		<setters>
 			<set name="names" type="male">Baka, Damu, Gar, Gura, Ini, Jappa, Kinlek, Krull, Lim, Lop, Nortle, Nulka, Olo, Ploqwat, Quee, Queg, Quott, Sunny, Tibor, Ubo, Uhok, Wabu, Xelbuk, Xopa, Yog</set>
 			<set name="names-format">{{name}}</set>
@@ -66,15 +66,16 @@
 		</setters>
 		<sheet display="false"/>
 		<rules>
-			<stat name="strength" value="2" requirements="!ID_WOTC_TCOE_OPTION_CUSTOMIZED_ASI" />
-			<stat name="wisdom" value="1" requirements="!ID_WOTC_TCOE_OPTION_CUSTOMIZED_ASI" />
-			<select type="Ability Score Improvement" name="Custom Ability Score Improvement +2 (Tortle)" supports="Custom Ability Score Increase 2" requirements="ID_WOTC_TCOE_OPTION_CUSTOMIZED_ASI" />
-			<select type="Ability Score Improvement" name="Custom Ability Score Improvement +1 (Tortle)" supports="Custom Ability Score Increase 1" requirements="ID_WOTC_TCOE_OPTION_CUSTOMIZED_ASI" />
+			<stat name="strength" value="2" requirements="!(ID_WOTC_TCOE_OPTION_CUSTOMIZED_ASI||ID_INTERNAL_GRANTS_BACKGROUND_ASI)" />
+			<stat name="wisdom" value="1" requirements="!(ID_WOTC_TCOE_OPTION_CUSTOMIZED_ASI||ID_INTERNAL_GRANTS_BACKGROUND_ASI)" />
+			<select type="Ability Score Improvement" name="Custom Ability Score Improvement +2 (Tortle)" supports="Custom Ability Score Increase 2" requirements="ID_WOTC_TCOE_OPTION_CUSTOMIZED_ASI,!ID_INTERNAL_GRANTS_BACKGROUND_ASI" />
+			<select type="Ability Score Improvement" name="Custom Ability Score Improvement +1 (Tortle)" supports="Custom Ability Score Increase 1" requirements="ID_WOTC_TCOE_OPTION_CUSTOMIZED_ASI,!ID_INTERNAL_GRANTS_BACKGROUND_ASI" />
 			<stat name="innate speed" value="30" bonus="base"/>
 			<grant type="Size" id="ID_SIZE_MEDIUM" />
 			<grant type="Language" id="ID_LANGUAGE_COMMON" requirements="!ID_WOTC_TCOE_OPTION_CUSTOMIZED_LANGUAGE" />
 			<grant type="Language" id="ID_MM_LANGUAGE_AQUAN" requirements="!ID_WOTC_TCOE_OPTION_CUSTOMIZED_LANGUAGE" />
 			<select type="Language" name="Customized Language" supports="Custom Race Language||Tortle Language" number="2" requirements="ID_WOTC_TCOE_OPTION_CUSTOMIZED_LANGUAGE" />
+			<grant type="Grants" id="ID_INTERNAL_GRANT_RACE_TORTLE"/>
 			<grant type="Racial Trait" id="ID_WOTC_TOA_RACIAL_TRAIT_TORTLE_CLAWS" />
 			<grant type="Racial Trait" id="ID_WOTC_TOA_RACIAL_TRAIT_TORTLE_HOLD_BREATH" />
 			<grant type="Racial Trait" id="ID_WOTC_TOA_RACIAL_TRAIT_TORTLE_NATURAL_ARMOR" />

@@ -2,7 +2,7 @@
 <elements>
 	<info>
 		<name>Spells</name>
-		<update version="0.5.5">
+		<update version="0.5.6">
 			<file name="spells.xml" url="https://raw.githubusercontent.com/AuroraLegacy/elements/master/core/players-handbook/spells.xml" />
 		</update>
 	</info>
@@ -3021,6 +3021,9 @@
 			<set name="isConcentration">false</set>
 			<set name="isRitual">true</set>
 		</setters>
+		<rules>
+			<select type="Companion" name="Find Familiar" supports="Familiar" requirements="!(ID_WOTC_PHB_CLASS_FEATURE_WARLOCK_PACT_BOON_PACT_OF_THE_CHAIN||ID_WOTC_PHB24_CLASS_FEATURE_ELDRITCH_INVOCATION_PACT_OF_THE_CHAIN)" />
+		</rules>
 	</element>
 	<element name="Find Steed" type="Spell" source="Player’s Handbook" id="ID_PHB_SPELL_FIND_STEED">
 		<supports>Paladin</supports>

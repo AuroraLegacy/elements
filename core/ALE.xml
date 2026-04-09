@@ -1,0 +1,2830 @@
+<?xml version="1.0" encoding="utf-8"?>
+<elements>
+	<info>
+		<name>Aurora Legacy Essentials</name>
+		<description>Elements that have functionality similar to Internals, but can appear in the Compendium.</description>
+		<update version="0.0.1">
+			<file name="ALE.xml" url="https://raw.githubusercontent.com/AuroraLegacy/elements/master/core/ALE.xml" />
+		</update>
+	</info>
+
+	<element name="Aurora Legacy Essentials" type="Source" source="Core" id="ID_SOURCE_AURORA_LEGACY_ESSENTIALS">
+		<description>
+			<p>The <i>Aurora Legacy Essentials</i> is a collection of elements that function in a similar way to <i>Internal</i> elements, allowing compatibility between original 5e (2014) and updated rules (2024). But while <i>Internal</i> elements are hidden from the Compendium (as those elements often don't even contain any descriptions), the elements of this source still appear as any other elements, which gives the ability for the user to quickly look up and reference relevant rules.</p>
+		</description>
+		<setters>
+			<set name="abbreviation">ALE</set>
+			<set name="url" />
+			<set name="author" url="https://github.com/AuroraLegacy/elements">Aurora Legacy Team</set>
+			<set name="official">true</set>
+			<set name="core">true</set>
+			<set name="information">The contents of this source are required for the proper functionality of the Aurora Legacy repository.</set>
+			<set name="release">00000000</set>
+		</setters>
+	</element>
+
+	<!-- Proficiencies. Override the same elements within the app. Used by both the original PHB and PHB24 -->
+	<element name="Acrobatics" type="Proficiency" source="Aurora Legacy Essentials" id="ID_PROFICIENCY_SKILL_ACROBATICS">
+		<supports>Skill,Dexterity,ID_PROFICIENCY_SKILL,ID_CLASS_ROGUE,Rogue,ID_CLASS_BARD,Bard,ID_CLASS_FIGHTER,Fighter,ID_CLASS_MONK,Monk, PHB24 Fighter, PHB24 Rogue</supports>
+		<description>
+			<p>Your Dexterity (Acrobatics) check covers your attempt to stay on your feet in a tricky situation, such as when you’re trying to run across a sheet of ice, balance on a tightrope, or stay upright on a rocking ship’s deck. The GM might also call for a Dexterity (Acrobatics) check to see if you can perform acrobatic stunts, including dives, rolls, somersaults, and flips.</p>
+		</description>
+		<rules>
+			<stat name="acrobatics:proficiency" value="proficiency" bonus="proficiency" />
+		</rules>
+	</element>
+
+	<element name="Animal Handling" type="Proficiency" source="Aurora Legacy Essentials" id="ID_PROFICIENCY_SKILL_ANIMALHANDLING">
+		<supports>Skill,Wisdom,ID_PROFICIENCY_SKILL,ID_CLASS_BARBARIAN,Barbarian,ID_CLASS_DRUID,Druid,ID_CLASS_BARD,Bard,ID_CLASS_FIGHTER,Fighter,ID_CLASS_RANGER,Ranger, PHB24 Fighter</supports>
+		<description>
+			<p>When there is any question whether you can calm down a domesticated animal, keep a mount from getting spooked, or intuit an animal’s intentions, the GM might call for a Wisdom (Animal Handling) check. You also make a Wisdom (Animal Handling) check to control your mount when you attempt a risky maneuver.</p>
+		</description>
+		<rules>
+			<stat name="animal handling:proficiency" value="proficiency" bonus="proficiency" />
+		</rules>
+	</element>
+
+	<element name="Arcana" type="Proficiency" source="Aurora Legacy Essentials" id="ID_PROFICIENCY_SKILL_ARCANA">
+		<supports>Skill,Intelligence,ID_PROFICIENCY_SKILL,ID_CLASS_SORCERER,Sorcerer,ID_CLASS_DRUID,Druid,ID_CLASS_BARD,Bard,ID_CLASS_WARLOCK,Warlock,ID_CLASS_WIZARD,Wizard, PHB24 Wizard</supports>
+		<description>
+			<p>Your Intelligence (Arcana) check measures your ability to recall lore about spells, magic items, eldritch symbols, magical traditions, the planes of existence, and the inhabitants of those planes.</p>
+		</description>
+		<rules>
+			<stat name="arcana:proficiency" value="proficiency" bonus="proficiency" />
+		</rules>
+	</element>
+
+	<element name="Athletics" type="Proficiency" source="Aurora Legacy Essentials" id="ID_PROFICIENCY_SKILL_ATHLETICS">
+		<supports>Skill,Strength,ID_PROFICIENCY_SKILL,ID_CLASS_BARBARIAN,Barbarian,ID_CLASS_ROGUE,Rogue,ID_CLASS_BARD,Bard,ID_CLASS_FIGHTER,Fighter,ID_CLASS_MONK,Monk,ID_CLASS_PALADIN,Paladin,ID_CLASS_RANGER,Ranger, PHB24 Fighter, PHB24 Rogue</supports>
+		<description>
+			<p>Your Strength (Athletics) check covers difficult situations you encounter while climbing, jumping, or swimming. Examples include the following activities:</p>
+			<ul>
+				<li>You attempt to climb a sheer or slippery cliff, avoid hazards while scaling a wall, or cling to a surface while something is trying to knock you off.</li>
+				<li>You try to jump an unusually long distance or pull off a stunt midjump.</li>
+				<li>You struggle to swim or stay afloat in treacherous currents, storm-tossed waves, or areas of thick seaweed. Or another creature tries to push or pull you underwater or otherwise interfere with your swimming.</li>
+			</ul>
+		</description>
+		<rules>
+			<stat name="athletics:proficiency" value="proficiency" bonus="proficiency" />
+		</rules>
+	</element>
+
+	<element name="Deception" type="Proficiency" source="Aurora Legacy Essentials" id="ID_PROFICIENCY_SKILL_DECEPTION">
+		<supports>Skill,Charisma,ID_PROFICIENCY_SKILL,ID_CLASS_ROGUE,Rogue,ID_CLASS_SORCERER,Sorcerer,ID_CLASS_BARD,Bard,ID_CLASS_WARLOCK,Warlock, PHB24 Rogue</supports>
+		<description>
+			<p>Your Charisma (Deception) check determines whether you can convincingly hide the truth, either verbally or through your actions. This deception can encompass everything from misleading others through ambiguity to telling outright lies. Typical situations include trying to fast-talk a guard, con a merchant, earn money through gambling, pass yourself off in a disguise, dull someone’s suspicions with false assurances, or maintain a straight face while telling a blatant lie.</p>
+		</description>
+		<rules>
+			<stat name="deception:proficiency" value="proficiency" bonus="proficiency" />
+		</rules>
+	</element>
+
+	<element name="History" type="Proficiency" source="Aurora Legacy Essentials" id="ID_PROFICIENCY_SKILL_HISTORY">
+		<supports>Skill,Intelligence,ID_PROFICIENCY_SKILL,ID_CLASS_CLERIC,Cleric,ID_CLASS_BARD,Bard,ID_CLASS_FIGHTER,Fighter,ID_CLASS_MONK,Monk,ID_CLASS_WARLOCK,Warlock,ID_CLASS_WIZARD,Wizard, PHB24 Fighter, PHB24 Wizard</supports>
+		<description>
+			<p>Your Intelligence (History) check measures your ability to recall lore about historical events, legendary people, ancient kingdoms, past disputes, recent wars, and lost civilizations.</p>
+		</description>
+		<rules>
+			<stat name="history:proficiency" value="proficiency" bonus="proficiency" />
+		</rules>
+	</element>
+
+	<element name="Insight" type="Proficiency" source="Aurora Legacy Essentials" id="ID_PROFICIENCY_SKILL_INSIGHT">
+		<supports>Skill,Wisdom,ID_PROFICIENCY_SKILL,ID_CLASS_ROGUE,Rogue,ID_CLASS_SORCERER,Sorcerer,ID_CLASS_CLERIC,Cleric,ID_CLASS_DRUID,Druid,ID_CLASS_BARD,Bard,ID_CLASS_FIGHTER,Fighter,ID_CLASS_MONK,Monk,ID_CLASS_PALADIN,Paladin,ID_CLASS_RANGER,Ranger,ID_CLASS_WIZARD,Wizard, PHB24 Rogue, PHB24 Wizard</supports>
+		<description>
+			<p>Your Wisdom (Insight) check decides whether you can determine the true intentions of a creature, such as when searching out a lie or predicting someone’s next move. Doing so involves gleaning clues from body language, speech habits, and changes in mannerisms.</p>
+		</description>
+		<rules>
+			<stat name="insight:proficiency" value="proficiency" bonus="proficiency" />
+		</rules>
+	</element>
+
+	<element name="Intimidation" type="Proficiency" source="Aurora Legacy Essentials" id="ID_PROFICIENCY_SKILL_INTIMIDATION">
+		<supports>Skill,Charisma,ID_PROFICIENCY_SKILL,ID_CLASS_BARBARIAN,Barbarian,ID_CLASS_ROGUE,Rogue,ID_CLASS_SORCERER,Sorcerer,ID_CLASS_BARD,Bard,ID_CLASS_FIGHTER,Fighter,ID_CLASS_PALADIN,Paladin,ID_CLASS_WARLOCK,Warlock, PHB24 Fighter, PHB24 Rogue</supports>
+		<description>
+			<p>When you attempt to influence someone through overt threats, hostile actions, and physical violence, the GM might ask you to make a Charisma (Intimidation) check. Examples include trying to pry information out of a prisoner, convincing street thugs to back down from a confrontation, or using the edge of a broken bottle to convince a sneering vizier to reconsider a decision.</p>
+		</description>
+		<rules>
+			<stat name="intimidation:proficiency" value="proficiency" bonus="proficiency" />
+		</rules>
+	</element>
+
+	<element name="Investigation" type="Proficiency" source="Aurora Legacy Essentials" id="ID_PROFICIENCY_SKILL_INVESTIGATION">
+		<supports>Skill,Intelligence,ID_PROFICIENCY_SKILL,ID_CLASS_ROGUE,Rogue,ID_CLASS_BARD,Bard,ID_CLASS_RANGER,Ranger,ID_CLASS_WARLOCK,Warlock,ID_CLASS_WIZARD,Wizard, PHB24 Rogue, PHB24 Wizard</supports>
+		<description>
+			<p>When you look around for clues and make deductions based on those clues, you make an Intelligence (Investigation) check. You might deduce the location of a hidden object, discern from the appearance of a wound what kind of weapon dealt it, or determine the weakest point in a tunnel that could cause it to collapse. Poring through ancient scrolls in search of a hidden fragment of knowledge might also call for an Intelligence (Investigation) check.</p>
+		</description>
+		<rules>
+			<stat name="investigation:proficiency" value="proficiency" bonus="proficiency" />
+		</rules>
+	</element>
+
+	<element name="Medicine" type="Proficiency" source="Aurora Legacy Essentials" id="ID_PROFICIENCY_SKILL_MEDICINE">
+		<supports>Skill,Wisdom,ID_PROFICIENCY_SKILL,ID_CLASS_CLERIC,Cleric,ID_CLASS_DRUID,Druid,ID_CLASS_BARD,Bard,ID_CLASS_PALADIN,Paladin,ID_CLASS_WIZARD,Wizard, PHB24 Wizard</supports>
+		<description>
+			<p>A Wisdom (Medicine) check lets you try to stabilize a dying companion or diagnose an illness.</p>
+		</description>
+		<rules>
+			<stat name="medicine:proficiency" value="proficiency" bonus="proficiency" />
+		</rules>
+	</element>
+
+	<element name="Nature" type="Proficiency" source="Aurora Legacy Essentials" id="ID_PROFICIENCY_SKILL_NATURE">
+		<supports>Skill,Intelligence,ID_PROFICIENCY_SKILL,ID_CLASS_BARBARIAN,Barbarian,ID_CLASS_DRUID,Druid,ID_CLASS_BARD,Bard,ID_CLASS_RANGER,Ranger,ID_CLASS_WARLOCK,Warlock, PHB24 Wizard</supports>
+		<description>
+			<p>Your Intelligence (Nature) check measures your ability to recall lore about terrain, plants and animals, the weather, and natural cycles.</p>
+		</description>
+		<rules>
+			<stat name="nature:proficiency" value="proficiency" bonus="proficiency" />
+		</rules>
+	</element>
+
+	<element name="Perception" type="Proficiency" source="Aurora Legacy Essentials" id="ID_PROFICIENCY_SKILL_PERCEPTION">
+		<supports>Skill,Wisdom,ID_PROFICIENCY_SKILL,ID_CLASS_BARBARIAN,Barbarian,ID_CLASS_ROGUE,Rogue,ID_CLASS_DRUID,Druid,ID_CLASS_BARD,Bard,ID_CLASS_FIGHTER,Fighter,ID_CLASS_RANGER,Ranger, PHB24 Fighter, PHB24 Rogue</supports>
+		<description>
+			<p>Your Wisdom (Perception) check lets you spot, hear, or otherwise detect the presence of something. It measures your general awareness of your surroundings and the keenness of your senses. For example, you might try to hear a conversation through a closed door, eavesdrop under an open window, or hear monsters moving stealthily in the forest. Or you might try to spot things that are obscured or easy to miss, whether they are orcs lying in ambush on a road, thugs hiding in the shadows of an alley, or candlelight under a closed secret door.</p>
+		</description>
+		<rules>
+			<stat name="perception:proficiency" value="proficiency" bonus="proficiency" />
+		</rules>
+	</element>
+
+	<element name="Performance" type="Proficiency" source="Aurora Legacy Essentials" id="ID_PROFICIENCY_SKILL_PERFORMANCE">
+		<supports>Skill,Charisma,ID_PROFICIENCY_SKILL,ID_CLASS_ROGUE,Rogue,ID_CLASS_BARD,Bard</supports>
+		<description>
+			<p>Your Charisma (Performance) check determines how well you can delight an audience with music, dance, acting, storytelling, or some other form of entertainment.</p>
+		</description>
+		<rules>
+			<stat name="performance:proficiency" value="proficiency" bonus="proficiency" />
+		</rules>
+	</element>
+
+	<element name="Persuasion" type="Proficiency" source="Aurora Legacy Essentials" id="ID_PROFICIENCY_SKILL_PERSUASION">
+		<supports>Skill,Charisma,ID_PROFICIENCY_SKILL,ID_CLASS_ROGUE,Rogue,ID_CLASS_SORCERER,Sorcerer,ID_CLASS_CLERIC,Cleric,ID_CLASS_BARD,Bard,ID_CLASS_PALADIN,Paladin, PHB24 Fighter, PHB24 Rogue</supports>
+		<description>
+			<p>When you attempt to influence someone or a group of people with tact, social graces, or good nature, the GM might ask you to make a Charisma (Persuasion) check. Typically, you use persuasion when acting in good faith, to foster friendships, make cordial requests, or exhibit proper etiquette. Examples of persuading others include convincing a chamberlain to let your party see the king, negotiating peace between warring tribes, or inspiring a crowd of townsfolk.</p>
+		</description>
+		<rules>
+			<stat name="persuasion:proficiency" value="proficiency" bonus="proficiency" />
+		</rules>
+	</element>
+
+	<element name="Religion" type="Proficiency" source="Aurora Legacy Essentials" id="ID_PROFICIENCY_SKILL_RELIGION">
+		<supports>Skill,Intelligence,ID_PROFICIENCY_SKILL,ID_CLASS_SORCERER,Sorcerer,ID_CLASS_CLERIC,Cleric,ID_CLASS_DRUID,Druid,ID_CLASS_BARD,Bard,ID_CLASS_MONK,Monk,ID_CLASS_PALADIN,Paladin,ID_CLASS_WARLOCK,Warlock,ID_CLASS_WIZARD,Wizard, PHB24 Wizard</supports>
+		<description>
+			<p>Your Intelligence (Religion) check measures your ability to recall lore about deities, rites and prayers, religious hierarchies, holy symbols, and the practices of secret cults.</p>
+		</description>
+		<rules>
+			<stat name="religion:proficiency" value="proficiency" bonus="proficiency" />
+		</rules>
+	</element>
+
+	<element name="Sleight of Hand" type="Proficiency" source="Aurora Legacy Essentials" id="ID_PROFICIENCY_SKILL_SLEIGHTOFHAND">
+		<supports>Skill,Dexterity,ID_PROFICIENCY_SKILL,ID_CLASS_ROGUE,Rogue,ID_CLASS_BARD,Bard, PHB24 Rogue</supports>
+		<description>
+			<p>Whenever you attempt an act of legerdemain or manual trickery, such as planting something on someone else or concealing an object on your person, make a Dexterity (Sleight of Hand) check. The GM might also call for a Dexterity (Sleight of Hand) check to determine whether you can lift a coin purse off another person or slip something out of another person’s pocket.</p>
+		</description>
+		<rules>
+			<stat name="sleight of hand:proficiency" value="proficiency" bonus="proficiency" />
+		</rules>
+	</element>
+
+	<element name="Stealth" type="Proficiency" source="Aurora Legacy Essentials" id="ID_PROFICIENCY_SKILL_STEALTH">
+		<supports>Skill,Dexterity,ID_PROFICIENCY_SKILL,ID_CLASS_ROGUE,Rogue,ID_CLASS_BARD,Bard,ID_CLASS_MONK,Monk,ID_CLASS_RANGER,Ranger, PHB24 Rogue</supports>
+		<description>
+			<p>Make a Dexterity (Stealth) check when you attempt to conceal yourself from enemies, slink past guards, slip away without being noticed, or sneak up on someone without being seen or heard.</p>
+		</description>
+		<rules>
+			<stat name="stealth:proficiency" value="proficiency" bonus="proficiency" />
+		</rules>
+	</element>
+
+	<element name="Survival" type="Proficiency" source="Aurora Legacy Essentials" id="ID_PROFICIENCY_SKILL_SURVIVAL">
+		<supports>Skill,Wisdom,ID_PROFICIENCY_SKILL,ID_CLASS_BARBARIAN,Barbarian,ID_CLASS_DRUID,Druid,ID_CLASS_BARD,Bard,ID_CLASS_FIGHTER,Fighter,ID_CLASS_RANGER,Ranger, PHB24 Fighter</supports>
+		<description>
+			<p>The GM might ask you to make a Wisdom (Survival) check to follow tracks, hunt wild game, guide your group through frozen wastelands, identify signs that owlbears live nearby, predict the weather, or avoid quicksand and other natural hazards.</p>
+		</description>
+		<rules>
+			<stat name="survival:proficiency" value="proficiency" bonus="proficiency" />
+		</rules>
+	</element>
+
+	<!-- Tool Proficiencies -->
+	<element name="Tool Proficiency (Alchemist’s supplies)" type="Proficiency" source="Aurora Legacy Essentials" id="ID_PROFICIENCY_TOOL_PROFICIENCY_ALCHEMISTS_SUPPLIES">
+		<supports>Tool, Artisan tools</supports>
+		<description>
+			<p style="margin-bottom:-0.5px">Description from the original <i>Player’s Handbook</i>, page 154:</p>
+			<div class="sidebar">
+				<p>These special tools include the items needed to pursue a craft or trade. Proficiency with a set of artisan’s tools lets you add your proficiency bonus to any ability checks you make using the tools in your craft.</p>
+			</div>
+			<p style="margin-bottom:-0.5px">Description from the <i>Xanathar’s Guide to Everything</i>, page 79:</p>
+			<div class="sidebar">
+				<p>Alchemist’s supplies enable a character to produce useful concoctions, such as acid or alchemist’s fire.</p>
+				<p class="indent"><b><i>Components.</i></b> Alchemist’s supplies include two glass beakers, a metal frame to hold a beaker in place over an open flame, a glass stirring rod, a small mortar and pestle, and a pouch of common alchemical ingredients, including salt, powdered iron, and purified water.</p>
+				<p class="indent"><b><i>Arcana.</i></b> Proficiency with alchemist’s supplies allows you to unlock more information on Arcana checks involving potions and similar materials.</p>
+				<p class="indent"><b><i>Investigation.</i></b> When you inspect an area for clues, proficiency with alchemist’s supplies grants additional insight into any chemicals or other substances that might have been used in the area.</p>
+				<p class="indent"><b><i>Alchemical Crafting.</i></b> You can use this tool proficiency to create alchemical items. A character can spend money to collect raw materials, which weigh 1 pound for every 50 gp spent. The DM can allow a character to make a check using the indicated skill with advantage. As part of a long rest, you can use alchemist’s supplies to make one dose of acid, alchemist’s fire, antitoxin, oil, perfume, or soap. Subtract half the value of the created item from the total gp worth of raw materials you are carrying.</p>
+				<h5>ALCHEMIST'S SUPPLIES</h5>
+				<table>
+					<thead>
+						<tr><td>Activity</td><td class="col-10">DC</td></tr>
+					</thead>
+					<tr><td>Create a puff of thick smoke</td><td>10</td></tr>
+					<tr><td>Identify a poison</td><td>10</td></tr>
+					<tr><td>Identify a substance</td><td>15</td></tr>
+					<tr><td>Start a fire</td><td>15</td></tr>
+					<tr><td>Neutralize acid</td><td>20</td></tr>
+				</table>
+			</div>
+			<p style="margin-bottom:-0.5px">Description from the <i>Player’s Handbook (2024)</i>, page 220:</p>
+			<div class="sidebar">
+				<ul class="unstyled">
+					<li style="margin-bottom:-1em"><strong>Ability:</strong> Intelligence</li>
+					<li style="text-align:right; margin-top:-1em"><strong>Weight:</strong> 8 lb.</li>
+					<li><strong>Utilize:</strong> Identify a substance (DC 15), or start a fire (DC 15)</li>
+					<li><strong>Craft:</strong> Acid, Alchemist's Fire, Component Pouch, Oil, Paper, Perfume</li>
+				</ul>
+			</div>
+		</description>
+	</element>
+
+	<element name="Tool Proficiency (Brewer’s supplies)" type="Proficiency" source="Aurora Legacy Essentials" id="ID_PROFICIENCY_TOOL_PROFICIENCY_BREWERS_SUPPLIES">
+		<supports>Tool, Artisan tools</supports>
+		<description>
+			<p style="margin-bottom:-0.5px">Description from the original <i>Player’s Handbook</i>, page 154:</p>
+			<div class="sidebar">
+				<p>These special tools include the items needed to pursue a craft or trade. Proficiency with a set of artisan’s tools lets you add your proficiency bonus to any ability checks you make using the tools in your craft.</p>
+			</div>
+			<p style="margin-bottom:-0.5px">Description from the <i>Xanathar’s Guide to Everything</i>, page 79:</p>
+			<div class="sidebar">
+				<p>Brewing is the art of producing beer. Not only does beer serve as an alcoholic beverage, but the process of brewing purifies water. Crafting beer takes weeks of fermentation, but only a few hours of work.</p>
+				<p class="indent"><b><i>Components.</i></b> Brewer’s supplies include a large glass jug, a quantity of hops, a siphon, and several feet of tubing.</p>
+				<p class="indent"><b><i>History.</i></b> Proficiency with brewer’s supplies gives you additional insight on Intelligence (History) checks concerning events that involve alcohol as a significant element.</p>
+				<p class="indent"><b><i>Medicine.</i></b> This tool proficiency grants additional insight when you treat anyone suffering from alcohol poisoning or when you can use alcohol to dull pain.</p>
+				<p class="indent"><b><i>Persuasion.</i></b> A stiff drink can help soften the hardest heart. Your proficiency with brewer’s supplies can help you ply someone with drink, giving them just enough alcohol to mellow their mood.</p>
+				<p class="indent"><b><i>Potable Water.</i></b> Your knowledge of brewing enables you to purify water that would otherwise be undrinkable. As part of a long rest, you can purify up to 6 gallons of water, or 1 gallon as part of a short rest.</p>
+				<h5>ALCHEMIST'S SUPPLIES</h5>
+				<table>
+					<thead>
+						<tr><td>Activity</td><td class="col-10">DC</td></tr>
+					</thead>
+					<tr><td>Detect poison or impurities in a drink</td><td>10</td></tr>
+					<tr><td>Identify alcohol</td><td>15</td></tr>
+					<tr><td>Ignore effects of alcohol</td><td>20</td></tr>
+				</table>
+			</div>
+			<p style="margin-bottom:-0.5px">Description from the <i>Player’s Handbook (2024)</i>, page 220:</p>
+			<div class="sidebar">
+				<ul class="unstyled">
+					<li style="margin-bottom:-1em"><strong>Ability:</strong> Intelligence</li>
+					<li style="text-align:right; margin-top:-1em"><strong>Weight:</strong> 9 lb.</li>
+					<li><strong>Utilize:</strong> Detect poisoned drink (DC 15), or identify alcohol (DC 10)</li>
+					<li><strong>Craft:</strong> Antitoxin</li>
+				</ul>
+			</div>
+		</description>
+	</element>
+
+	<element name="Tool Proficiency (Calligrapher's supplies)" type="Proficiency" source="Aurora Legacy Essentials" id="ID_PROFICIENCY_TOOL_PROFICIENCY_CALLIGRAPHERS_SUPPLIES">
+		<supports>Tool, Artisan tools</supports>
+		<description>
+			<p style="margin-bottom:-0.5px">Description from the original <i>Player’s Handbook</i>, page 154:</p>
+			<div class="sidebar">
+				<p>These special tools include the items needed to pursue a craft or trade. Proficiency with a set of artisan’s tools lets you add your proficiency bonus to any ability checks you make using the tools in your craft.</p>
+			</div>
+			<p style="margin-bottom:-0.5px">Description from the <i>Xanathar’s Guide to Everything</i>, pages 79-80:</p>
+			<div class="sidebar">
+				<p>Calligraphy treats writing as a delicate, beautiful art. Calligraphers produce text that is pleasing to the eye, using a style that is difficult to forge. Their supplies also give them some ability to examine scripts and determine if they are legitimate, since a calligrapher’s training involves long hours of studying writing and attempting to replicate its style and design.</p>
+				<p class="indent"><b><i>Components.</i></b> Calligrapher’s supplies include ink, a dozen sheets of parchment, and three quills.</p>
+				<p class="indent"><b><i>Arcana.</i></b> Although calligraphy is of little help in deciphering the content of magical writings, proficiency with these supplies can aid in identifying who wrote a script of a magical nature.</p>
+				<p class="indent"><b><i>History.</i></b> This tool proficiency can augment the benefit of successful checks made to analyze or investigate ancient writings, scrolls, or other texts, including runes etched in stone or messages in frescoes or other displays.</p>
+				<p class="indent"><b><i>Decipher Treasure Map.</i></b> This tool proficiency grants you expertise in examining maps. You can make an Intelligence check to determine a map’s age, whether a map includes any hidden messages, or similar facts.</p>
+				<h5>CALLIGRAPHER'S SUPPLIES</h5>
+				<table>
+					<thead>
+						<tr><td>Activity</td><td class="col-10">DC</td></tr>
+					</thead>
+					<tr><td>Identify writer of nonmagical script</td><td>10</td></tr>
+					<tr><td>Determine writer's state of mind</td><td>15</td></tr>
+					<tr><td>Spot forged text</td><td>15</td></tr>
+					<tr><td>Forge a signature</td><td>20</td></tr>
+				</table>
+			</div>
+			<p style="margin-bottom:-0.5px">Description from the <i>Player’s Handbook (2024)</i>, page 220:</p>
+			<div class="sidebar">
+				<ul class="unstyled">
+					<li style="margin-bottom:-1em"><strong>Ability:</strong> Dexterity</li>
+					<li style="text-align:right; margin-top:-1em"><strong>Weight:</strong> 5 lb.</li>
+					<li><strong>Utilize:</strong> Write text with impressive flourishes that guard against forgery (DC 15)</li>
+					<li><strong>Craft:</strong> Ink, <i>Spell Scroll</i></li>
+				</ul>
+			</div>
+		</description>
+	</element>
+
+	<element name="Tool Proficiency (Carpenter’s tools)" type="Proficiency" source="Aurora Legacy Essentials" id="ID_PROFICIENCY_TOOL_PROFICIENCY_CARPENTERS_TOOLS">
+		<supports>Tool, Artisan tools</supports>
+		<description>
+			<p style="margin-bottom:-0.5px">Description from the original <i>Player’s Handbook</i>, page 154:</p>
+			<div class="sidebar">
+				<p>These special tools include the items needed to pursue a craft or trade. Proficiency with a set of artisan’s tools lets you add your proficiency bonus to any ability checks you make using the tools in your craft.</p>
+			</div>
+			<p style="margin-bottom:-0.5px">Description from the <i>Xanathar’s Guide to Everything</i>, page 80:</p>
+			<div class="sidebar">
+				<p>Skill at carpentry enables a character to construct wooden structures. A carpenter can build a house, a shack, a wooden cabinet, or similar items.</p>
+				<p class="indent"><b><i>Components.</i></b> Carpenter's tools include a saw, a hammer, nails, a hatchet, a square, a ruler, an adze, a plane, and a chisel.</p>
+				<p class="indent"><b><i>History.</i></b> This tool proficiency aids you in identifying the use of the origin of wooden buildings and other large wooden objects.</p>
+				<p class="indent"><b><i>Investigation.</i></b> You gain additional insight when inspecting areas within wooden structures, because you know tricks of construction that can conceal areas from discovery.</p>
+				<p class="indent"><b><i>Perception.</i></b> You can spot irregularities in wooden walls or floors, making it easier to find trap doors and secret passages.</p>
+				<p class="indent"><b><i>Stealth.</i></b> You can quickly assess the weak spots in wooden floor, making it easier to avoid the places that creak and groan when they're stepped on.</p>
+				<p class="indent"><b><i>Fortify.</i></b> With 1 minute of work and raw materials, you can make a door or window harder to force open. Increase the DC needed to open by 5.</p>
+				<p class="indent"><b><i>Temporary Shelter.</i></b> As part of a long rest, you can construct a lean-to or a similar shelter to keep your group dry and in the shade for the duration of rest. Because it was fashioned quickly from whatever wood was available, the shelter collapses 1d3 days after being assembled.</p>
+				<h5>CARPENTER'S TOOLS</h5>
+				<table>
+					<thead>
+						<tr><td>Activity</td><td class="col-10">DC</td></tr>
+					</thead>
+					<tr><td>Build a simple wooden structure</td><td>10</td></tr>
+					<tr><td>Design a complex wooden structure</td><td>15</td></tr>
+					<tr><td>Find a weak point in a wooden wall</td><td>15</td></tr>
+					<tr><td>Pry apart a door</td><td>20</td></tr>
+				</table>
+			</div>
+			<p style="margin-bottom:-0.5px">Description from the <i>Player’s Handbook (2024)</i>, page 220:</p>
+			<div class="sidebar">
+				<ul class="unstyled">
+					<li style="margin-bottom:-1em"><strong>Ability:</strong> Strength</li>
+					<li style="text-align:right; margin-top:-1em"><strong>Weight:</strong> 6 lb.</li>
+					<li><strong>Utilize:</strong> Seal or pry open a door or container (DC 20)</li>
+					<li><strong>Craft:</strong> Club, Greatclub, Quarterstaff, Barrel, Chest, Ladder, Pole, Portable Ram, Torch</li>
+				</ul>
+			</div>
+		</description>
+	</element>
+
+	<element name="Tool Proficiency (Cartographer’s tools)" type="Proficiency" source="Aurora Legacy Essentials" id="ID_PROFICIENCY_TOOL_PROFICIENCY_CARTOGRAPHERS_TOOLS">
+		<supports>Tool, Artisan tools</supports>
+		<description>
+			<p style="margin-bottom:-0.5px">Description from the original <i>Player’s Handbook</i>, page 154:</p>
+			<div class="sidebar">
+				<p>These special tools include the items needed to pursue a craft or trade. Proficiency with a set of artisan’s tools lets you add your proficiency bonus to any ability checks you make using the tools in your craft.</p>
+			</div>
+			<p style="margin-bottom:-0.5px">Description from the <i>Xanathar’s Guide to Everything</i>, page 80:</p>
+			<div class="sidebar">
+				<p>Using cartographer's tools, you can create accurate maps to make travel easier for yourself and those who come after you. These maps can range from large-scale depictions of mountain ranges to diagrams that show the layout of a dungeon level.</p>
+				<p class="indent"><b><i>Components.</i></b> Cartographer's tools consist of a quill, ink, parchment, a pair of compasses, calipers, and a ruler.</p>
+				<p class="indent"><b><i>Arcana, History, Religion.</i></b> You can use your knowledge of maps and locations to unearth more detailed information when you use these skills. For instance, you might spot hidden messages in a map, identify when the map was made to determine if geographical features have changed since then, and so forth.</p>
+				<p class="indent"><b><i>Nature.</i></b> Your familiarity with physical geography makes it easier for you to answer questions or solve issues relating to the terrain around you.</p>
+				<p class="indent"><b><i>Survival.</i></b> Your understanding of geography makes it easier to find paths to civilization, to predict areas where villages or towns might be found, and to avoid becoming lost. You have studied so many maps that common patterns, such as how trade routes evolve and where settlements arise in relation to geographic locations, are familiar to you.</p>
+				<p class="indent"><b><i>Craft a Map.</i></b> While traveling, you can draw a map as you go in addition to engaging in other activity.</p>
+				<h5>CARTOGRAPHER’S TOOLS</h5>
+				<table>
+					<thead>
+						<tr><td>Activity</td><td class="col-10">DC</td></tr>
+					</thead>
+					<tr><td>Determine a map’s age and origin</td><td>10</td></tr>
+					<tr><td>Estimate direction and distance to a landmark</td><td>15</td></tr>
+					<tr><td>Discern that a map is fake</td><td>15</td></tr>
+					<tr><td>Fill in a missing part of a map</td><td>20</td></tr>
+				</table>
+			</div>
+			<p style="margin-bottom:-0.5px">Description from the <i>Player’s Handbook (2024)</i>, page 220:</p>
+			<div class="sidebar">
+				<ul class="unstyled">
+					<li style="margin-bottom:-1em"><strong>Ability:</strong> Wisdom</li>
+					<li style="text-align:right; margin-top:-1em"><strong>Weight:</strong> 6 lb.</li>
+					<li><strong>Utilize:</strong> Draft a map of a small area (DC 15)</li>
+					<li><strong>Craft:</strong> Map</li>
+				</ul>
+			</div>
+		</description>
+	</element>
+
+	<element name="Tool Proficiency (Cobbler’s tools)" type="Proficiency" source="Aurora Legacy Essentials" id="ID_PROFICIENCY_TOOL_PROFICIENCY_COBBLERS_TOOLS">
+		<supports>Tool, Artisan tools</supports>
+		<description>
+			<p style="margin-bottom:-0.5px">Description from the original <i>Player’s Handbook</i>, page 154:</p>
+			<div class="sidebar">
+				<p>These special tools include the items needed to pursue a craft or trade. Proficiency with a set of artisan’s tools lets you add your proficiency bonus to any ability checks you make using the tools in your craft.</p>
+			</div>
+			<p style="margin-bottom:-0.5px">Description from the <i>Xanathar’s Guide to Everything</i>, page 80:</p>
+			<div class="sidebar">
+				<p>Although the cobbler's trade might seem too humble for an adventurer, a good pair of boots will see a character across rugged wilderness and through deadly dungeons.</p>
+				<p class="indent"><b><i>Components.</i></b> Cobbler's tools consist of a hammer, an awl, a knife, a shoe stand, a cutter, spare leather, and thread.</p>
+				<p class="indent"><b><i>Arcana, History.</i></b> Your knowledge of shoes aids you in identifying the magical properties of enchanted boots or the history of such items.</p>
+				<p class="indent"><b><i>Investigation.</i></b> Footwear holds a surprising number of secrets. You can learn where someone has recently visited by examining the wear and the dirt that has accumulated on their shoes. Your experience in repairing shoes makes it easier for you to identify where damage might come from.</p>
+				<p class="indent"><b><i>Maintain Shoes.</i></b> As part of a long rest, you can repair your companions' shoes. For the next 24 hours, up to six creatures of your choice who wear shoes you worked on can travel up to 10 hours a day without making saving throws to avoid exhaustion.</p>
+				<p class="indent"><b><i>Craft Hidden Compartment.</i></b> With 8 hours of work, you can add a hidden compartment to a pair of shoes. The compartment can hold an object up to 3 inches long and 1 inch wide and deep. You make an Intelligence check using your tool proficiency to determine the Intelligence (Investigation) check DC needed to find the compartment.</p>
+				<h5>COBBLER’S TOOLS</h5>
+				<table>
+					<thead>
+						<tr><td>Activity</td><td class="col-10">DC</td></tr>
+					</thead>
+					<tr><td>Determine a shoe’s age and origin</td><td>10</td></tr>
+					<tr><td>Find a hidden compartment in a boot heel</td><td>15</td></tr>
+				</table>
+			</div>
+			<p style="margin-bottom:-0.5px">Description from the <i>Player’s Handbook (2024)</i>, page 220:</p>
+			<div class="sidebar">
+				<ul class="unstyled">
+					<li style="margin-bottom:-1em"><strong>Ability:</strong> Dexterity</li>
+					<li style="text-align:right; margin-top:-1em"><strong>Weight:</strong> 5 lb.</li>
+					<li><strong>Utilize:</strong> Modify footwear to give Advantage on the wearer’s next Dexterity (Acrobatics) check (DC 10)</li>
+					<li><strong>Craft:</strong> Climber's Kit</li>
+				</ul>
+			</div>
+		</description>
+	</element>
+
+	<element name="Tool Proficiency (Cook’s utensils)" type="Proficiency" source="Aurora Legacy Essentials" id="ID_PROFICIENCY_TOOL_PROFICIENCY_COOKS_UTENSILS">
+		<supports>Tool, Artisan tools</supports>
+		<description>
+			<p style="margin-bottom:-0.5px">Description from the original <i>Player’s Handbook</i>, page 154:</p>
+			<div class="sidebar">
+				<p>These special tools include the items needed to pursue a craft or trade. Proficiency with a set of artisan’s tools lets you add your proficiency bonus to any ability checks you make using the tools in your craft.</p>
+			</div>
+			<p style="margin-bottom:-0.5px">Description from the <i>Xanathar’s Guide to Everything</i>, pages 80-81:</p>
+			<div class="sidebar">
+				<p>Adventuring is a hard life. With a cook along on the journey, you meals will be much better than the typical mix of hardtack and dried fruit.</p>
+				<p class="indent"><b><i>Components.</i></b> Cock's utensils include a metal pot, knives, forks, a stirring spoon, and a ladle.</p>
+				<p class="indent"><b><i>History.</i></b> Your knowledge of cooking techniques allows you to assess the social patterns involved in a culture’s eating habits.</p>
+				<p class="indent"><b><i>Medicine.</i></b> When administering treatment, you can transform medicine that is bitter or sour into a pleasing concoction.</p>
+				<p class="indent"><b><i>Survival.</i></b> When foraging for food, you can make do with ingredients you scavenge that others would be unable to transform into nourishing meals.</p>
+				<p class="indent"><b><i>Prepare Meals.</i></b> As part of a short rest, you can prepare a tasty meal that helps your companions regain their strength. You and up to five creatures of your choice regain 1 extra hit point per Hit Die spent during a short rest, provided you have access to your cook’s utensils and sufficient food.</p>
+				<h5>COOK’S UTENSILS</h5>
+				<table>
+					<thead>
+						<tr><td>Activity</td><td class="col-10">DC</td></tr>
+					</thead>
+					<tr><td>Create a typical meal</td><td>10</td></tr>
+					<tr><td>Duplicate a meal</td><td>10</td></tr>
+					<tr><td>Spot poison or impurities in food</td><td>15</td></tr>
+					<tr><td>Create a gourmet meal</td><td>15</td></tr>
+				</table>
+			</div>
+			<p style="margin-bottom:-0.5px">Description from the <i>Player’s Handbook (2024)</i>, page 220:</p>
+			<div class="sidebar">
+				<ul class="unstyled">
+					<li style="margin-bottom:-1em"><strong>Ability:</strong> Wisdom</li>
+					<li style="text-align:right; margin-top:-1em"><strong>Weight:</strong> 8 lb.</li>
+					<li><strong>Utilize:</strong> Improve food’s flavor (DC 10), or detect spoiled or poisoned food (DC 15)</li>
+					<li><strong>Craft:</strong> Rations</li>
+				</ul>
+			</div>
+		</description>
+	</element>
+
+	<element name="Tool Proficiency (Glassblower’s tools)" type="Proficiency" source="Aurora Legacy Essentials" id="ID_PROFICIENCY_TOOL_PROFICIENCY_GLASSBLOWERS_TOOLS">
+		<supports>Tool, Artisan tools</supports>
+		<description>
+			<p style="margin-bottom:-0.5px">Description from the original <i>Player’s Handbook</i>, page 154:</p>
+			<div class="sidebar">
+				<p>These special tools include the items needed to pursue a craft or trade. Proficiency with a set of artisan’s tools lets you add your proficiency bonus to any ability checks you make using the tools in your craft.</p>
+			</div>
+			<p style="margin-bottom:-0.5px">Description from the <i>Xanathar’s Guide to Everything</i>, page 82:</p>
+			<div class="sidebar">
+				<p>Someone who is proficient with glassblower’s tools has not only the ability to shape glass, but also specialized knowledge of the methods used to produce glass objects.</p>
+				<p class="indent"><b><i>Components.</i></b> The tools include a blowpipe, a small marver, blocks, and tweezers. You need a source of heat to work glass.</p>
+				<p class="indent"><b><i>Arcana, History.</i></b> Your knowledge of glassmaking techniques aids you when you examine glass objects, such as potion bottles or glass items found in a treasure hoard. For instance, you can study how a glass potion bottle has been changed by its contents to help determine a potion’s effects. (A potion might leave behind a residue, deform the glass, or stain it.)</p>
+				<p class="indent"><b><i>Investigation.</i></b> When you study an area, your knowledge can aid you if the clues include broken glass or glass objects.</p>
+				<p class="indent"><b><i>Identify Weakness.</i></b> With 1 minute of study, you can identify the weak points in a glass object. Any damage dealt to the object by striking a weak spot is doubled.</p>
+				<h5>GLASSBLOWER’S TOOLS</h5>
+				<table>
+					<thead>
+						<tr><td>Activity</td><td class="col-10">DC</td></tr>
+					</thead>
+					<tr><td>Identify source of glass</td><td>10</td></tr>
+					<tr><td>Determine what a glass object once held</td><td>20</td></tr>
+				</table>
+			</div>
+			<p style="margin-bottom:-0.5px">Description from the <i>Player’s Handbook (2024)</i>, page 220:</p>
+			<div class="sidebar">
+				<ul class="unstyled">
+					<li style="margin-bottom:-1em"><strong>Ability:</strong> Intelligence</li>
+					<li style="text-align:right; margin-top:-1em"><strong>Weight:</strong> 5 lb.</li>
+					<li><strong>Utilize:</strong> Discern what a glass object held in the past 24 hours (DC 15)</li>
+					<li><strong>Craft:</strong> Glass Bottle, Magnifying Glass, Spyglass, Vial</li>
+				</ul>
+			</div>
+		</description>
+	</element>
+
+	<element name="Tool Proficiency (Jeweler’s tools)" type="Proficiency" source="Aurora Legacy Essentials" id="ID_PROFICIENCY_TOOL_PROFICIENCY_JEWELERS_TOOLS">
+		<supports>Tool, Artisan tools</supports>
+		<description>
+			<p style="margin-bottom:-0.5px">Description from the original <i>Player’s Handbook</i>, page 154:</p>
+			<div class="sidebar">
+				<p>These special tools include the items needed to pursue a craft or trade. Proficiency with a set of artisan’s tools lets you add your proficiency bonus to any ability checks you make using the tools in your craft.</p>
+			</div>
+			<p style="margin-bottom:-0.5px">Description from the <i>Xanathar’s Guide to Everything</i>, page 82:</p>
+			<div class="sidebar">
+				<p>Training with jeweler’s tools includes the basic techniques needed to beautify gems. It also gives you expertise in identifying precious stones.</p>
+				<p class="indent"><b><i>Components.</i></b> Jeweler’s tools consist of a small saw and hammer, files, pliers, and tweezers.</p>
+				<p class="indent"><b><i>Arcana.</i></b> Proficiency with jeweler’s tools grants you knowledge about the reputed mystical uses of gems. This insight proves handy when you make Arcana checks related to gems or gem-encrusted items.</p>
+				<p class="indent"><b><i>Investigation.</i></b> When you inspect jeweled objects, your proficiency with jeweler’s tools aids you in picking out clues they might hold.</p>
+				<p class="indent"><b><i>Identify Gems.</i></b> You can identify gems and determine their value at a glance.</p>
+				<h5>JEWELER’S TOOLS</h5>
+				<table>
+					<thead>
+						<tr><td>Activity</td><td class="col-10">DC</td></tr>
+					</thead>
+					<tr><td>Modify a gem’s appearance</td><td>15</td></tr>
+					<tr><td>Determine a gem’s history</td><td>20</td></tr>
+				</table>
+			</div>
+			<p style="margin-bottom:-0.5px">Description from the <i>Player’s Handbook (2024)</i>, page 220:</p>
+			<div class="sidebar">
+				<ul class="unstyled">
+					<li style="margin-bottom:-1em"><strong>Ability:</strong> Intelligence</li>
+					<li style="text-align:right; margin-top:-1em"><strong>Weight:</strong> 2 lb.</li>
+					<li><strong>Utilize:</strong> Discern a gem’s value (DC 15)</li>
+					<li><strong>Craft:</strong> Arcane Focus, Holy Symbol</li>
+				</ul>
+			</div>
+		</description>
+	</element>
+
+	<element name="Tool Proficiency (Leatherworker’s tools)" type="Proficiency" source="Aurora Legacy Essentials" id="ID_PROFICIENCY_TOOL_PROFICIENCY_LEATHERWORKERS_TOOLS">
+		<supports>Tool, Artisan tools</supports>
+		<description>
+			<p style="margin-bottom:-0.5px">Description from the original <i>Player’s Handbook</i>, page 154:</p>
+			<div class="sidebar">
+				<p>These special tools include the items needed to pursue a craft or trade. Proficiency with a set of artisan’s tools lets you add your proficiency bonus to any ability checks you make using the tools in your craft.</p>
+			</div>
+			<p style="margin-bottom:-0.5px">Description from the <i>Xanathar’s Guide to Everything</i>, page 82-83:</p>
+			<div class="sidebar">
+				<p>Knowledge of leatherworking extends to lore concerning animal hides and their properties. It also confers knowledge of leather armor and similar goods.</p>
+				<p class="indent"><b><i>Components.</i></b> Leatherworker’s tools include a knife, a small mallet, an edger, a hole punch, thread, and leather scraps.</p>
+				<p class="indent"><b><i>Arcana.</i></b> Your expertise in working with leather grants you added insight when you inspect magic items crafted from leather, such as boots and some cloaks.</p>
+				<p class="indent"><b><i>Investigation.</i></b> You gain added insight when studying leather items or clues related to them, as you draw on your knowledge of leather to pick out details that others would overlook.</p>
+				<p class="indent"><b><i>Identify Hides.</i></b> When looking at a hide or a leather item, you can determine the source of the leather and any special techniques used to treat it. For example, you can spot the difference between leather crafted using dwarven methods and leather crafted using halfling methods.</p>
+				<h5>LEATHERWORKER’S TOOLS</h5>
+				<table>
+					<thead>
+						<tr><td>Activity</td><td class="col-10">DC</td></tr>
+					</thead>
+					<tr><td>Modify a leather item’s appearance</td><td>10</td></tr>
+					<tr><td>Determine a leather item’s history</td><td>20</td></tr>
+				</table>
+			</div>
+			<p style="margin-bottom:-0.5px">Description from the <i>Player’s Handbook (2024)</i>, page 220:</p>
+			<div class="sidebar">
+				<ul class="unstyled">
+					<li style="margin-bottom:-1em"><strong>Ability:</strong> Dexterity</li>
+					<li style="text-align:right; margin-top:-1em"><strong>Weight:</strong> 5 lb.</li>
+					<li><strong>Utilize:</strong> Add a design to a leather item (DC 10)</li>
+					<li><strong>Craft:</strong> Sling, Whip, Hide Armor, Leather Armor, Studded Leather Armor, Backpack, Crossbow Bolt Case, Map or Scroll Case, Parchment, Pouch, Quiver, Waterskin</li>
+				</ul>
+			</div>
+		</description>
+	</element>
+
+	<element name="Tool Proficiency (Mason’s tools)" type="Proficiency" source="Aurora Legacy Essentials" id="ID_PROFICIENCY_TOOL_PROFICIENCY_MASONS_TOOLS">
+		<supports>Tool, Artisan tools</supports>
+		<description>
+			<p style="margin-bottom:-0.5px">Description from the original <i>Player’s Handbook</i>, page 154:</p>
+			<div class="sidebar">
+				<p>These special tools include the items needed to pursue a craft or trade. Proficiency with a set of artisan’s tools lets you add your proficiency bonus to any ability checks you make using the tools in your craft.</p>
+			</div>
+			<p style="margin-bottom:-0.5px">Description from the <i>Xanathar’s Guide to Everything</i>, page 83:</p>
+			<div class="sidebar">
+				<p>Mason’s tools allow you to craft stone structures, including walls and buildings crafted from brick.</p>
+				<p class="indent"><b><i>Components.</i></b> Mason’s tools consist of a trowel, a hammer, a chisel, brushes, and a square.</p>
+				<p class="indent"><b><i>History.</i></b> Your expertise aids you in identifying a stone building’s date of construction and purpose, along with insight into who might have built it.</p>
+				<p class="indent"><b><i>Investigation.</i></b> You gain additional insight when inspecting areas within stone structures.</p>
+				<p class="indent"><b><i>Perception.</i></b> You can spot irregularities in stone walls or floors, making it easier to find trap doors and secret passages.</p>
+				<p class="indent"><b><i>Demolition.</i></b> Your knowledge of masonry allows you to spot weak points in brick walls. You deal double damage to such structures with your weapon attacks.</p>
+				<h5>MASON’S TOOLS</h5>
+				<table>
+					<thead>
+						<tr><td>Activity</td><td class="col-10">DC</td></tr>
+					</thead>
+					<tr><td>Chisel a small hole in a stone wall</td><td>10</td></tr>
+					<tr><td>Find a weak point in a stone wall</td><td>15</td></tr>
+				</table>
+			</div>
+			<p style="margin-bottom:-0.5px">Description from the <i>Player’s Handbook (2024)</i>, page 221:</p>
+			<div class="sidebar">
+				<ul class="unstyled">
+					<li style="margin-bottom:-1em"><strong>Ability:</strong> Strength</li>
+					<li style="text-align:right; margin-top:-1em"><strong>Weight:</strong> 8 lb.</li>
+					<li><strong>Utilize:</strong> Chisel a symbol or hole in stone (DC 10)</li>
+					<li><strong>Craft:</strong> Block and Tackle</li>
+				</ul>
+			</div>
+		</description>
+	</element>
+
+	<element name="Tool Proficiency (Painter’s supplies)" type="Proficiency" source="Aurora Legacy Essentials" id="ID_PROFICIENCY_TOOL_PROFICIENCY_PAINTERS_SUPPLIES">
+		<supports>Tool, Artisan tools</supports>
+		<description>
+			<p style="margin-bottom:-0.5px">Description from the original <i>Player’s Handbook</i>, page 154:</p>
+			<div class="sidebar">
+				<p>These special tools include the items needed to pursue a craft or trade. Proficiency with a set of artisan’s tools lets you add your proficiency bonus to any ability checks you make using the tools in your craft.</p>
+			</div>
+			<p style="margin-bottom:-0.5px">Description from the <i>Xanathar’s Guide to Everything</i>, page 83:</p>
+			<div class="sidebar">
+				<p>Proficiency with painter’s supplies represents your ability to paint and draw. You also acquire an understanding of art history, which can aid you in examining works of art.</p>
+				<p class="indent"><b><i>Components.</i></b> Painter’s supplies include an easel, canvas, paints, brushes, charcoal sticks, and a palette.</p>
+				<p class="indent"><b><i>Arcana, History, Religion.</i></b> Your expertise aids you in uncovering lore of any sort that is attached to a work of art, such as the magical properties of a painting or the origins of a strange mural found in a dungeon.</p>
+				<p class="indent"><b><i>Investigation, Perception.</i></b> When you inspect a painting or a similar work of visual art, your knowledge of the practices behind creating it can grant you additional insight.</p>
+				<p class="indent"><b><i>Painting and Drawing.</i></b> As part of a short or long rest, you can produce a simple work of art. Although your work might lack precision, you can capture an image or a scene, or make a quick copy of a piece of art you saw.</p>
+				<h5>PAINTER’S SUPPLIES</h5>
+				<table>
+					<thead>
+						<tr><td>Activity</td><td class="col-10">DC</td></tr>
+					</thead>
+					<tr><td>Paint an accurate portrait</td><td>10</td></tr>
+					<tr><td>Create a painting with a hidden message</td><td>20</td></tr>
+				</table>
+			</div>
+			<p style="margin-bottom:-0.5px">Description from the <i>Player’s Handbook (2024)</i>, page 221:</p>
+			<div class="sidebar">
+				<ul class="unstyled">
+					<li style="margin-bottom:-1em"><strong>Ability:</strong> Wisdom</li>
+					<li style="text-align:right; margin-top:-1em"><strong>Weight:</strong> 5 lb.</li>
+					<li><strong>Utilize:</strong> Paint a recognizable image of something you've seen (DC 10)</li>
+					<li><strong>Craft:</strong> Druidic Focus, Holy Symbol</li>
+				</ul>
+			</div>
+		</description>
+	</element>
+
+	<element name="Tool Proficiency (Potter’s tools)" type="Proficiency" source="Aurora Legacy Essentials" id="ID_PROFICIENCY_TOOL_PROFICIENCY_POTTERS_TOOLS">
+		<supports>Tool, Artisan tools</supports>
+		<description>
+			<p style="margin-bottom:-0.5px">Description from the original <i>Player’s Handbook</i>, page 154:</p>
+			<div class="sidebar">
+				<p>These special tools include the items needed to pursue a craft or trade. Proficiency with a set of artisan’s tools lets you add your proficiency bonus to any ability checks you make using the tools in your craft.</p>
+			</div>
+			<p style="margin-bottom:-0.5px">Description from the <i>Xanathar’s Guide to Everything</i>, page 84:</p>
+			<div class="sidebar">
+				<p>Potter’s tools are used to create a variety of ceramic objects, most typically pots and similar vessels.</p>
+				<p class="indent"><b><i>Components.</i></b> Potter’s tools include potter’s needles, ribs, scrapers, a knife, and calipers.</p>
+				<p class="indent"><b><i>History.</i></b> Your expertise aids you in identifying ceramic objects, including when they were created and their likely place or culture of origin.</p>
+				<p class="indent"><b><i>Investigation, Perception.</i></b> You gain additional insight when inspecting ceramics, uncovering clues others would overlook by spotting minor irregularities.</p>
+				<p class="indent"><b><i>Reconstruction.</i></b> By examining pottery shards, you can determine an object’s original, intact form and its likely purpose.</p>
+				<h5>POTTER’S TOOLS</h5>
+				<table>
+					<thead>
+						<tr><td>Activity</td><td class="col-10">DC</td></tr>
+					</thead>
+					<tr><td>Determine what a vessel once held</td><td>10</td></tr>
+					<tr><td>Create a serviceable pot</td><td>15</td></tr>
+					<tr><td>Find a weak point in a ceramic object</td><td>20</td></tr>
+				</table>
+			</div>
+			<p style="margin-bottom:-0.5px">Description from the <i>Player’s Handbook (2024)</i>, page 221:</p>
+			<div class="sidebar">
+				<ul class="unstyled">
+					<li style="margin-bottom:-1em"><strong>Ability:</strong> Intelligence</li>
+					<li style="text-align:right; margin-top:-1em"><strong>Weight:</strong> 3 lb.</li>
+					<li><strong>Utilize:</strong> Discern what a ceramic object held in the past 24 hours (DC 15)</li>
+					<li><strong>Craft:</strong> Jug, Lamp</li>
+				</ul>
+			</div>
+		</description>
+	</element>
+
+	<element name="Tool Proficiency (Smith’s tools)" type="Proficiency" source="Aurora Legacy Essentials" id="ID_PROFICIENCY_TOOL_PROFICIENCY_SMITHS_TOOLS">
+		<supports>Tool, Artisan tools</supports>
+		<description>
+			<p style="margin-bottom:-0.5px">Description from the original <i>Player’s Handbook</i>, page 154:</p>
+			<div class="sidebar">
+				<p>These special tools include the items needed to pursue a craft or trade. Proficiency with a set of artisan’s tools lets you add your proficiency bonus to any ability checks you make using the tools in your craft.</p>
+			</div>
+			<p style="margin-bottom:-0.5px">Description from the <i>Xanathar’s Guide to Everything</i>, page 84:</p>
+			<div class="sidebar">
+				<p>Smith’s tools allow you to work metal, heating it to alter its shape, repair damage, or work raw ingots into useful items.</p>
+				<p class="indent"><b><i>Components.</i></b> Smith’s tools include hammers, tongs, charcoal, rags, and a whetstone.</p>
+				<p class="indent"><b><i>Arcana and History.</i></b> Your expertise lends you additional insight when examining metal objects, such as weapons.</p>
+				<p class="indent"><b><i>Investigation.</i></b> You can spot clues and make deductions that others might overlook when an investigation involves armor, weapons, or other metalwork.</p>
+				<p class="indent"><b><i>Repair.</i></b> With access to your tools and an open flame hot enough to make metal pliable, you can restore 10 hit points to a damaged metal object for each hour of work.</p>
+				<h5>SMITH’S TOOLS</h5>
+				<table>
+					<thead>
+						<tr><td>Activity</td><td class="col-10">DC</td></tr>
+					</thead>
+					<tr><td>Sharpen a dull blade</td><td>10</td></tr>
+					<tr><td>Repair a suit of armor</td><td>15</td></tr>
+					<tr><td>Sunder a nonmagical metal object</td><td>15</td></tr>
+				</table>
+			</div>
+			<p style="margin-bottom:-0.5px">Description from the <i>Player’s Handbook (2024)</i>, page 221:</p>
+			<div class="sidebar">
+				<ul class="unstyled">
+					<li style="margin-bottom:-1em"><strong>Ability:</strong> Strength</li>
+					<li style="text-align:right; margin-top:-1em"><strong>Weight:</strong> 8 lb.</li>
+					<li><strong>Utilize:</strong> Pry open a door or container (DC 20)</li>
+					<li><strong>Craft:</strong> Any Melee weapon (except Club, Greatclub, Quarterstaff, and Whip), Medium armor (except Hide), Heavy armor, Ball Bearings, Bucket, Caltrops, Chain, Crowbar, Firearm Bullets, Grappling Hook, Iron Pot, Iron Spikes, Sling Bullets</li>
+				</ul>
+			</div>
+		</description>
+	</element>
+
+	<element name="Tool Proficiency (Tinker’s tools)" type="Proficiency" source="Aurora Legacy Essentials" id="ID_PROFICIENCY_TOOL_PROFICIENCY_TINKERS_TOOLS">
+		<supports>Tool, Artisan tools</supports>
+		<description>
+			<p style="margin-bottom:-0.5px">Description from the original <i>Player’s Handbook</i>, page 154:</p>
+			<div class="sidebar">
+				<p>These special tools include the items needed to pursue a craft or trade. Proficiency with a set of artisan’s tools lets you add your proficiency bonus to any ability checks you make using the tools in your craft.</p>
+			</div>
+			<p style="margin-bottom:-0.5px">Description from the <i>Xanathar’s Guide to Everything</i>, pages 84-85:</p>
+			<div class="sidebar">
+				<p>A set of tinker’s tools is designed to enable you to repair many mundane objects. Though you can’t manufacture much with tinker’s tools, you can mend torn clothes, sharpen a worn sword, and patch a tattered suit of chain mail.</p>
+				<p class="indent"><b><i>Components.</i></b> Tinker’s tools include a variety of hand tools, thread, needles, a whetstone, scraps of cloth and leather, and a small pot of glue.</p>
+				<p class="indent"><b><i>History.</i></b> You can determine the age and origin of objects, even if you have only a few pieces remaining from the original.</p>
+				<p class="indent"><b><i>Investigation.</i></b> When you inspect a damaged object, you gain knowledge of how it was damaged and how long ago.</p>
+				<p class="indent"><b><i>Repair.</i></b> You can restore 10 hit points to a damaged object for each hour of work. For any object, you need access to the raw materials required to repair it. For metal objects, you need access to an open flame hot enough to make the metal pliable.</p>
+				<h5>TINKER’S TOOLS</h5>
+				<table>
+					<thead>
+						<tr><td>Activity</td><td class="col-10">DC</td></tr>
+					</thead>
+					<tr><td>Temporarily repair a disabled device</td><td>10</td></tr>
+					<tr><td>Repair an item in half the time</td><td>15</td></tr>
+					<tr><td>Improvise a temporary item using scraps</td><td>20</td></tr>
+				</table>
+			</div>
+			<p style="margin-bottom:-0.5px">Description from the <i>Player’s Handbook (2024)</i>, page 221:</p>
+			<div class="sidebar">
+				<ul class="unstyled">
+					<li style="margin-bottom:-1em"><strong>Ability:</strong> Dexterity</li>
+					<li style="text-align:right; margin-top:-1em"><strong>Weight:</strong> 10 lb.</li>
+					<li><strong>Utilize:</strong> Assemble a Tiny item composed of scrap, which falls apart in 1 minute (DC 20)</li>
+					<li><strong>Craft:</strong> Musket, Pistol, Bell, Bullseye Lantern, Flask, Hooded Lantern, Hunting Trap, Lock, Manacles, Mirror, Shovel, Signal Whistle, Tinderbox</li>
+				</ul>
+			</div>
+		</description>
+	</element>
+
+	<element name="Tool Proficiency (Weaver’s tools)" type="Proficiency" source="Aurora Legacy Essentials" id="ID_PROFICIENCY_TOOL_PROFICIENCY_WEAVERS_TOOLS">
+		<supports>Tool, Artisan tools</supports>
+		<description>
+			<p style="margin-bottom:-0.5px">Description from the original <i>Player’s Handbook</i>, page 154:</p>
+			<div class="sidebar">
+				<p>These special tools include the items needed to pursue a craft or trade. Proficiency with a set of artisan’s tools lets you add your proficiency bonus to any ability checks you make using the tools in your craft.</p>
+			</div>
+			<p style="margin-bottom:-0.5px">Description from the <i>Xanathar’s Guide to Everything</i>, page 85:</p>
+			<div class="sidebar">
+				<p>Weaver’s tools allow you to create cloth and tailor it into articles of clothing.</p>
+				<p class="indent"><b><i>Components.</i></b> Weaver’s tools include thread, needles, and scraps of cloth. You know how to work a loom, but such equipment is too large to transport.</p>
+				<p class="indent"><b><i>Arcana, History.</i></b> Your expertise lends you additional insight when examining cloth objects, including cloaks and robes.</p>
+				<p class="indent"><b><i>Investigation.</i></b> Using your knowledge of the process of creating cloth objects, you can spot clues and make deductions that others would overlook when you examine tapestries, upholstery, clothing, and other woven items.</p>
+				<p class="indent"><b><i>Repair.</i></b> As part of a short rest, you can repair a single damaged cloth object.</p>
+				<p class="indent"><b><i>Craft Clothing.</i></b> Assuming you have access to sufficient cloth and thread, you can create an outfit for a creature as part of a long rest.</p>
+				<h5>WEAVER’S TOOLS</h5>
+				<table>
+					<thead>
+						<tr><td>Activity</td><td class="col-10">DC</td></tr>
+					</thead>
+					<tr><td>Repurpose cloth</td><td>10</td></tr>
+					<tr><td>Mend a hole in a piece of cloth</td><td>10</td></tr>
+					<tr><td>Tailor an outfit</td><td>15</td></tr>
+				</table>
+			</div>
+			<p style="margin-bottom:-0.5px">Description from the <i>Player’s Handbook (2024)</i>, page 221:</p>
+			<div class="sidebar">
+				<ul class="unstyled">
+					<li style="margin-bottom:-1em"><strong>Ability:</strong> Dexterity</li>
+					<li style="text-align:right; margin-top:-1em"><strong>Weight:</strong> 5 lb.</li>
+					<li><strong>Utilize:</strong> Mend a tear in clothing (DC 10), or sew a Tiny design (DC 10)</li>
+					<li><strong>Craft:</strong> Padded Armor, Basket, Bedroll, Blanket, Fine Clothes, Net, Robe, Rope, Sack, String, Tent, Traveler’s Clothes</li>
+				</ul>
+			</div>
+		</description>
+	</element>
+
+	<element name="Tool Proficiency (Woodcarver’s tools)" type="Proficiency" source="Aurora Legacy Essentials" id="ID_PROFICIENCY_TOOL_PROFICIENCY_WOODCARVERS_TOOLS">
+		<supports>Tool, Artisan tools</supports>
+		<description>
+			<p style="margin-bottom:-0.5px">Description from the original <i>Player’s Handbook</i>, page 154:</p>
+			<div class="sidebar">
+				<p>These special tools include the items needed to pursue a craft or trade. Proficiency with a set of artisan’s tools lets you add your proficiency bonus to any ability checks you make using the tools in your craft.</p>
+			</div>
+			<p style="margin-bottom:-0.5px">Description from the <i>Xanathar’s Guide to Everything</i>, page 85:</p>
+			<div class="sidebar">
+				<p>Woodcarver’s tools allow you to craft intricate objects from wood, such as wooden tokens or arrows</p>
+				<p class="indent"><b><i>Components.</i></b> Woodcarver’s tools consist of a knife, a gouge, and a small saw.</p>
+				<p class="indent"><b><i>Arcana, History.</i></b> Your expertise lends you additional insight when you examine wooden objects, such as figurines or arrows.</p>
+				<p class="indent"><b><i>Nature.</i></b> Your knowledge of wooden objects gives you some added insight when you examine trees.</p>
+				<p class="indent"><b><i>Repair.</i></b> As part of a short rest, you can repair a single damaged wooden object.</p>
+				<p class="indent"><b><i>Craft Arrows.</i></b> As part of a short rest, you can craft up to five arrows. As part of a long rest, you can craft up to twenty. You must have enough wood on hand to produce them.</p>
+				<h5>WOODCARVER’S TOOLS</h5>
+				<table>
+					<thead>
+						<tr><td>Activity</td><td class="col-10">DC</td></tr>
+					</thead>
+					<tr><td>Craft a small wooden figurine</td><td>10</td></tr>
+					<tr><td>Carve an intricate pattern in wood</td><td>15</td></tr>
+				</table>
+			</div>
+			<p style="margin-bottom:-0.5px">Description from the <i>Player’s Handbook (2024)</i>, page 221:</p>
+			<div class="sidebar">
+				<ul class="unstyled">
+					<li style="margin-bottom:-1em"><strong>Ability:</strong> Dexterity</li>
+					<li style="text-align:right; margin-top:-1em"><strong>Weight:</strong> 5 lb.</li>
+					<li><strong>Utilize:</strong> Carve a pattern in wood (DC 10)</li>
+					<li><strong>Craft:</strong> Club, Greatclub, Quarterstaff, Ranged weapons (except Pistol, Musket, and Sling), Arcane Focus, Arrows, Bolts, Druidic Focus, Ink Pen, Needles</li>
+				</ul>
+			</div>
+		</description>
+	</element>
+
+	<element name="Tool Proficiency (Musical instrument)" type="Proficiency" source="Aurora Legacy Essentials" id="ID_PROFICIENCY_TOOL_PROFICIENCY_MUSICAL_INSTRUMENT">
+		<description>
+			<p>Several of the most common types of musical instruments are shown on the table as examples. If you have proficiency with a given musical instrument, you can add your proficiency bonus to any ability checks you make to play music with the instrument. A bard can use a musical instrument as a spellcasting focus, as described in chapter 10. Each type of musical instrument requires a separate proficiency.</p>
+		</description>
+		<rules>
+			<grant type="Proficiency" id="ID_PROFICIENCY_TOOL_PROFICIENCY_BAGPIPES" />
+			<grant type="Proficiency" id="ID_PROFICIENCY_TOOL_PROFICIENCY_DRUM" />
+			<grant type="Proficiency" id="ID_PROFICIENCY_TOOL_PROFICIENCY_DULCIMER" />
+			<grant type="Proficiency" id="ID_PROFICIENCY_TOOL_PROFICIENCY_FLUTE" />
+			<grant type="Proficiency" id="ID_PROFICIENCY_TOOL_PROFICIENCY_LUTE" />
+			<grant type="Proficiency" id="ID_PROFICIENCY_TOOL_PROFICIENCY_LYRE" />
+			<grant type="Proficiency" id="ID_PROFICIENCY_TOOL_PROFICIENCY_HORN" />
+			<grant type="Proficiency" id="ID_PROFICIENCY_TOOL_PROFICIENCY_PAN_FLUTE" />
+			<grant type="Proficiency" id="ID_PROFICIENCY_TOOL_PROFICIENCY_SHAWM" />
+			<grant type="Proficiency" id="ID_PROFICIENCY_TOOL_PROFICIENCY_VIOL" />
+		</rules>
+	</element>
+
+	<element name="Tool Proficiency (Bagpipes)" type="Proficiency" source="Aurora Legacy Essentials" id="ID_PROFICIENCY_TOOL_PROFICIENCY_BAGPIPES">
+		<supports>Tool, ID_PROFICIENCY_MUSICAL_INSTRUMENT, Musical Instrument</supports>
+		<description>
+			<p style="margin-bottom:-0.5px">Description of <b>Musical Instrument</b> from the original <i>Player’s Handbook</i>, page 154:</p>
+			<div class="sidebar">
+				<p>Several of the most common types of musical instruments are shown on the table as examples. If you have proficiency with a given musical instrument, you can add your proficiency bonus to any ability checks you make to play music with the instrument. A bard can use a musical instrument as a spellcasting focus.</p>
+			</div>
+			<p style="margin-bottom:-0.5px">Description of <b>Musical Instrument</b> from the <i>Xanathar’s Guide to Everything</i>, page 83:</p>
+			<div class="sidebar">
+				<p>Proficiency with a musical instrument indicates you are familiar with the techniques used to play it. You also have knowledge of some songs commonly performed with that instrument.</p>
+				<p class="indent"><b><i>History.</i></b> Your expertise aids you in recalling lore related to your instrument.</p>
+				<p class="indent"><b><i>Performance.</i></b> Your ability to put on a good show is improved when you incorporate an instrument into your act.</p>
+				<p class="indent"><b><i>Compose a Tune.</i></b> As part of a long rest, you can compose a new tune and lyrics for your instrument. You might use this ability to impress a noble or spread scandalous rumors with a catchy tune.</p>
+				<h5>MUSICAL INSTRUMENT</h5>
+				<table>
+					<thead>
+						<tr><td>Activity</td><td class="col-10">DC</td></tr>
+					</thead>
+					<tr><td>Identify a tune</td><td>10</td></tr>
+					<tr><td>Improvise a tune</td><td>20</td></tr>
+				</table>
+			</div>
+			<p style="margin-bottom:-0.5px">Description of <b>Musical Instrument</b> from the <i>Player’s Handbook (2024)</i>, page 221:</p>
+			<div class="sidebar">
+				<ul class="unstyled">
+					<li style="margin-bottom:-1em"><strong>Ability:</strong> Charisma</li>
+					<li style="text-align:right; margin-top:-1em"><strong>Weight:</strong> 6 lb.</li>
+					<li><strong>Utilize:</strong> Play a known tune (DC 10), or improvise a song (DC 15)</li>
+				</ul>
+			</div>
+		</description>
+	</element>
+
+	<element name="Tool Proficiency (Drum)" type="Proficiency" source="Aurora Legacy Essentials" id="ID_PROFICIENCY_TOOL_PROFICIENCY_DRUM">
+		<supports>Tool, ID_PROFICIENCY_MUSICAL_INSTRUMENT, Musical Instrument</supports>
+		<description>
+			<p style="margin-bottom:-0.5px">Description of <b>Musical Instrument</b> from the original <i>Player’s Handbook</i>, page 154:</p>
+			<div class="sidebar">
+				<p>Several of the most common types of musical instruments are shown on the table as examples. If you have proficiency with a given musical instrument, you can add your proficiency bonus to any ability checks you make to play music with the instrument. A bard can use a musical instrument as a spellcasting focus.</p>
+			</div>
+			<p style="margin-bottom:-0.5px">Description of <b>Musical Instrument</b> from the <i>Xanathar’s Guide to Everything</i>, page 83:</p>
+			<div class="sidebar">
+				<p>Proficiency with a musical instrument indicates you are familiar with the techniques used to play it. You also have knowledge of some songs commonly performed with that instrument.</p>
+				<p class="indent"><b><i>History.</i></b> Your expertise aids you in recalling lore related to your instrument.</p>
+				<p class="indent"><b><i>Performance.</i></b> Your ability to put on a good show is improved when you incorporate an instrument into your act.</p>
+				<p class="indent"><b><i>Compose a Tune.</i></b> As part of a long rest, you can compose a new tune and lyrics for your instrument. You might use this ability to impress a noble or spread scandalous rumors with a catchy tune.</p>
+				<h5>MUSICAL INSTRUMENT</h5>
+				<table>
+					<thead>
+						<tr><td>Activity</td><td class="col-10">DC</td></tr>
+					</thead>
+					<tr><td>Identify a tune</td><td>10</td></tr>
+					<tr><td>Improvise a tune</td><td>20</td></tr>
+				</table>
+			</div>
+			<p style="margin-bottom:-0.5px">Description of <b>Musical Instrument</b> from the <i>Player’s Handbook (2024)</i>, page 221:</p>
+			<div class="sidebar">
+				<ul class="unstyled">
+					<li style="margin-bottom:-1em"><strong>Ability:</strong> Charisma</li>
+					<li style="text-align:right; margin-top:-1em"><strong>Weight:</strong> 3 lb.</li>
+					<li><strong>Utilize:</strong> Play a known tune (DC 10), or improvise a song (DC 15)</li>
+				</ul>
+			</div>
+		</description>
+	</element>
+
+	<element name="Tool Proficiency (Dulcimer)" type="Proficiency" source="Aurora Legacy Essentials" id="ID_PROFICIENCY_TOOL_PROFICIENCY_DULCIMER">
+		<supports>Tool, ID_PROFICIENCY_MUSICAL_INSTRUMENT, Musical Instrument</supports>
+		<description>
+			<p style="margin-bottom:-0.5px">Description of <b>Musical Instrument</b> from the original <i>Player’s Handbook</i>, page 154:</p>
+			<div class="sidebar">
+				<p>Several of the most common types of musical instruments are shown on the table as examples. If you have proficiency with a given musical instrument, you can add your proficiency bonus to any ability checks you make to play music with the instrument. A bard can use a musical instrument as a spellcasting focus.</p>
+			</div>
+			<p style="margin-bottom:-0.5px">Description of <b>Musical Instrument</b> from the <i>Xanathar’s Guide to Everything</i>, page 83:</p>
+			<div class="sidebar">
+				<p>Proficiency with a musical instrument indicates you are familiar with the techniques used to play it. You also have knowledge of some songs commonly performed with that instrument.</p>
+				<p class="indent"><b><i>History.</i></b> Your expertise aids you in recalling lore related to your instrument.</p>
+				<p class="indent"><b><i>Performance.</i></b> Your ability to put on a good show is improved when you incorporate an instrument into your act.</p>
+				<p class="indent"><b><i>Compose a Tune.</i></b> As part of a long rest, you can compose a new tune and lyrics for your instrument. You might use this ability to impress a noble or spread scandalous rumors with a catchy tune.</p>
+				<h5>MUSICAL INSTRUMENT</h5>
+				<table>
+					<thead>
+						<tr><td>Activity</td><td class="col-10">DC</td></tr>
+					</thead>
+					<tr><td>Identify a tune</td><td>10</td></tr>
+					<tr><td>Improvise a tune</td><td>20</td></tr>
+				</table>
+			</div>
+			<p style="margin-bottom:-0.5px">Description of <b>Musical Instrument</b> from the <i>Player’s Handbook (2024)</i>, page 221:</p>
+			<div class="sidebar">
+				<ul class="unstyled">
+					<li style="margin-bottom:-1em"><strong>Ability:</strong> Charisma</li>
+					<li style="text-align:right; margin-top:-1em"><strong>Weight:</strong> 10 lb.</li>
+					<li><strong>Utilize:</strong> Play a known tune (DC 10), or improvise a song (DC 15)</li>
+				</ul>
+			</div>
+		</description>
+	</element>
+
+	<element name="Tool Proficiency (Flute)" type="Proficiency" source="Aurora Legacy Essentials" id="ID_PROFICIENCY_TOOL_PROFICIENCY_FLUTE">
+		<supports>Tool, ID_PROFICIENCY_MUSICAL_INSTRUMENT, Musical Instrument</supports>
+		<description>
+			<p style="margin-bottom:-0.5px">Description of <b>Musical Instrument</b> from the original <i>Player’s Handbook</i>, page 154:</p>
+			<div class="sidebar">
+				<p>Several of the most common types of musical instruments are shown on the table as examples. If you have proficiency with a given musical instrument, you can add your proficiency bonus to any ability checks you make to play music with the instrument. A bard can use a musical instrument as a spellcasting focus.</p>
+			</div>
+			<p style="margin-bottom:-0.5px">Description of <b>Musical Instrument</b> from the <i>Xanathar’s Guide to Everything</i>, page 83:</p>
+			<div class="sidebar">
+				<p>Proficiency with a musical instrument indicates you are familiar with the techniques used to play it. You also have knowledge of some songs commonly performed with that instrument.</p>
+				<p class="indent"><b><i>History.</i></b> Your expertise aids you in recalling lore related to your instrument.</p>
+				<p class="indent"><b><i>Performance.</i></b> Your ability to put on a good show is improved when you incorporate an instrument into your act.</p>
+				<p class="indent"><b><i>Compose a Tune.</i></b> As part of a long rest, you can compose a new tune and lyrics for your instrument. You might use this ability to impress a noble or spread scandalous rumors with a catchy tune.</p>
+				<h5>MUSICAL INSTRUMENT</h5>
+				<table>
+					<thead>
+						<tr><td>Activity</td><td class="col-10">DC</td></tr>
+					</thead>
+					<tr><td>Identify a tune</td><td>10</td></tr>
+					<tr><td>Improvise a tune</td><td>20</td></tr>
+				</table>
+			</div>
+			<p style="margin-bottom:-0.5px">Description of <b>Musical Instrument</b> from the <i>Player’s Handbook (2024)</i>, page 221:</p>
+			<div class="sidebar">
+				<ul class="unstyled">
+					<li style="margin-bottom:-1em"><strong>Ability:</strong> Charisma</li>
+					<li style="text-align:right; margin-top:-1em"><strong>Weight:</strong> 1 lb.</li>
+					<li><strong>Utilize:</strong> Play a known tune (DC 10), or improvise a song (DC 15)</li>
+				</ul>
+			</div>
+		</description>
+	</element>
+
+	<element name="Tool Proficiency (Lute)" type="Proficiency" source="Aurora Legacy Essentials" id="ID_PROFICIENCY_TOOL_PROFICIENCY_LUTE">
+		<supports>Tool, ID_PROFICIENCY_MUSICAL_INSTRUMENT, Musical Instrument</supports>
+		<description>
+			<p style="margin-bottom:-0.5px">Description of <b>Musical Instrument</b> from the original <i>Player’s Handbook</i>, page 154:</p>
+			<div class="sidebar">
+				<p>Several of the most common types of musical instruments are shown on the table as examples. If you have proficiency with a given musical instrument, you can add your proficiency bonus to any ability checks you make to play music with the instrument. A bard can use a musical instrument as a spellcasting focus.</p>
+			</div>
+			<p style="margin-bottom:-0.5px">Description of <b>Musical Instrument</b> from the <i>Xanathar’s Guide to Everything</i>, page 83:</p>
+			<div class="sidebar">
+				<p>Proficiency with a musical instrument indicates you are familiar with the techniques used to play it. You also have knowledge of some songs commonly performed with that instrument.</p>
+				<p class="indent"><b><i>History.</i></b> Your expertise aids you in recalling lore related to your instrument.</p>
+				<p class="indent"><b><i>Performance.</i></b> Your ability to put on a good show is improved when you incorporate an instrument into your act.</p>
+				<p class="indent"><b><i>Compose a Tune.</i></b> As part of a long rest, you can compose a new tune and lyrics for your instrument. You might use this ability to impress a noble or spread scandalous rumors with a catchy tune.</p>
+				<h5>MUSICAL INSTRUMENT</h5>
+				<table>
+					<thead>
+						<tr><td>Activity</td><td class="col-10">DC</td></tr>
+					</thead>
+					<tr><td>Identify a tune</td><td>10</td></tr>
+					<tr><td>Improvise a tune</td><td>20</td></tr>
+				</table>
+			</div>
+			<p style="margin-bottom:-0.5px">Description of <b>Musical Instrument</b> from the <i>Player’s Handbook (2024)</i>, page 221:</p>
+			<div class="sidebar">
+				<ul class="unstyled">
+					<li style="margin-bottom:-1em"><strong>Ability:</strong> Charisma</li>
+					<li style="text-align:right; margin-top:-1em"><strong>Weight:</strong> 2 lb.</li>
+					<li><strong>Utilize:</strong> Play a known tune (DC 10), or improvise a song (DC 15)</li>
+				</ul>
+			</div>
+		</description>
+	</element>
+
+	<element name="Tool Proficiency (Lyre)" type="Proficiency" source="Aurora Legacy Essentials" id="ID_PROFICIENCY_TOOL_PROFICIENCY_LYRE">
+		<supports>Tool, ID_PROFICIENCY_MUSICAL_INSTRUMENT, Musical Instrument</supports>
+		<description>
+			<p style="margin-bottom:-0.5px">Description of <b>Musical Instrument</b> from the original <i>Player’s Handbook</i>, page 154:</p>
+			<div class="sidebar">
+				<p>Several of the most common types of musical instruments are shown on the table as examples. If you have proficiency with a given musical instrument, you can add your proficiency bonus to any ability checks you make to play music with the instrument. A bard can use a musical instrument as a spellcasting focus.</p>
+			</div>
+			<p style="margin-bottom:-0.5px">Description of <b>Musical Instrument</b> from the <i>Xanathar’s Guide to Everything</i>, page 83:</p>
+			<div class="sidebar">
+				<p>Proficiency with a musical instrument indicates you are familiar with the techniques used to play it. You also have knowledge of some songs commonly performed with that instrument.</p>
+				<p class="indent"><b><i>History.</i></b> Your expertise aids you in recalling lore related to your instrument.</p>
+				<p class="indent"><b><i>Performance.</i></b> Your ability to put on a good show is improved when you incorporate an instrument into your act.</p>
+				<p class="indent"><b><i>Compose a Tune.</i></b> As part of a long rest, you can compose a new tune and lyrics for your instrument. You might use this ability to impress a noble or spread scandalous rumors with a catchy tune.</p>
+				<h5>MUSICAL INSTRUMENT</h5>
+				<table>
+					<thead>
+						<tr><td>Activity</td><td class="col-10">DC</td></tr>
+					</thead>
+					<tr><td>Identify a tune</td><td>10</td></tr>
+					<tr><td>Improvise a tune</td><td>20</td></tr>
+				</table>
+			</div>
+			<p style="margin-bottom:-0.5px">Description of <b>Musical Instrument</b> from the <i>Player’s Handbook (2024)</i>, page 221:</p>
+			<div class="sidebar">
+				<ul class="unstyled">
+					<li style="margin-bottom:-1em"><strong>Ability:</strong> Charisma</li>
+					<li style="text-align:right; margin-top:-1em"><strong>Weight:</strong> 2 lb.</li>
+					<li><strong>Utilize:</strong> Play a known tune (DC 10), or improvise a song (DC 15)</li>
+				</ul>
+			</div>
+		</description>
+	</element>
+
+	<element name="Tool Proficiency (Horn)" type="Proficiency" source="Aurora Legacy Essentials" id="ID_PROFICIENCY_TOOL_PROFICIENCY_HORN">
+		<supports>Tool, ID_PROFICIENCY_MUSICAL_INSTRUMENT, Musical Instrument</supports>
+		<description>
+			<p style="margin-bottom:-0.5px">Description of <b>Musical Instrument</b> from the original <i>Player’s Handbook</i>, page 154:</p>
+			<div class="sidebar">
+				<p>Several of the most common types of musical instruments are shown on the table as examples. If you have proficiency with a given musical instrument, you can add your proficiency bonus to any ability checks you make to play music with the instrument. A bard can use a musical instrument as a spellcasting focus.</p>
+			</div>
+			<p style="margin-bottom:-0.5px">Description of <b>Musical Instrument</b> from the <i>Xanathar’s Guide to Everything</i>, page 83:</p>
+			<div class="sidebar">
+				<p>Proficiency with a musical instrument indicates you are familiar with the techniques used to play it. You also have knowledge of some songs commonly performed with that instrument.</p>
+				<p class="indent"><b><i>History.</i></b> Your expertise aids you in recalling lore related to your instrument.</p>
+				<p class="indent"><b><i>Performance.</i></b> Your ability to put on a good show is improved when you incorporate an instrument into your act.</p>
+				<p class="indent"><b><i>Compose a Tune.</i></b> As part of a long rest, you can compose a new tune and lyrics for your instrument. You might use this ability to impress a noble or spread scandalous rumors with a catchy tune.</p>
+				<h5>MUSICAL INSTRUMENT</h5>
+				<table>
+					<thead>
+						<tr><td>Activity</td><td class="col-10">DC</td></tr>
+					</thead>
+					<tr><td>Identify a tune</td><td>10</td></tr>
+					<tr><td>Improvise a tune</td><td>20</td></tr>
+				</table>
+			</div>
+			<p style="margin-bottom:-0.5px">Description of <b>Musical Instrument</b> from the <i>Player’s Handbook (2024)</i>, page 221:</p>
+			<div class="sidebar">
+				<ul class="unstyled">
+					<li style="margin-bottom:-1em"><strong>Ability:</strong> Charisma</li>
+					<li style="text-align:right; margin-top:-1em"><strong>Weight:</strong> 2 lb.</li>
+					<li><strong>Utilize:</strong> Play a known tune (DC 10), or improvise a song (DC 15)</li>
+				</ul>
+			</div>
+		</description>
+	</element>
+
+	<element name="Tool Proficiency (Pan flute)" type="Proficiency" source="Aurora Legacy Essentials" id="ID_PROFICIENCY_TOOL_PROFICIENCY_PAN_FLUTE">
+		<supports>Tool, ID_PROFICIENCY_MUSICAL_INSTRUMENT, Musical Instrument</supports>
+		<description>
+			<p style="margin-bottom:-0.5px">Description of <b>Musical Instrument</b> from the original <i>Player’s Handbook</i>, page 154:</p>
+			<div class="sidebar">
+				<p>Several of the most common types of musical instruments are shown on the table as examples. If you have proficiency with a given musical instrument, you can add your proficiency bonus to any ability checks you make to play music with the instrument. A bard can use a musical instrument as a spellcasting focus.</p>
+			</div>
+			<p style="margin-bottom:-0.5px">Description of <b>Musical Instrument</b> from the <i>Xanathar’s Guide to Everything</i>, page 83:</p>
+			<div class="sidebar">
+				<p>Proficiency with a musical instrument indicates you are familiar with the techniques used to play it. You also have knowledge of some songs commonly performed with that instrument.</p>
+				<p class="indent"><b><i>History.</i></b> Your expertise aids you in recalling lore related to your instrument.</p>
+				<p class="indent"><b><i>Performance.</i></b> Your ability to put on a good show is improved when you incorporate an instrument into your act.</p>
+				<p class="indent"><b><i>Compose a Tune.</i></b> As part of a long rest, you can compose a new tune and lyrics for your instrument. You might use this ability to impress a noble or spread scandalous rumors with a catchy tune.</p>
+				<h5>MUSICAL INSTRUMENT</h5>
+				<table>
+					<thead>
+						<tr><td>Activity</td><td class="col-10">DC</td></tr>
+					</thead>
+					<tr><td>Identify a tune</td><td>10</td></tr>
+					<tr><td>Improvise a tune</td><td>20</td></tr>
+				</table>
+			</div>
+			<p style="margin-bottom:-0.5px">Description of <b>Musical Instrument</b> from the <i>Player’s Handbook (2024)</i>, page 221:</p>
+			<div class="sidebar">
+				<ul class="unstyled">
+					<li style="margin-bottom:-1em"><strong>Ability:</strong> Charisma</li>
+					<li style="text-align:right; margin-top:-1em"><strong>Weight:</strong> 2 lb.</li>
+					<li><strong>Utilize:</strong> Play a known tune (DC 10), or improvise a song (DC 15)</li>
+				</ul>
+			</div>
+		</description>
+	</element>
+
+	<element name="Tool Proficiency (Shawm)" type="Proficiency" source="Aurora Legacy Essentials" id="ID_PROFICIENCY_TOOL_PROFICIENCY_SHAWM">
+		<supports>Tool, ID_PROFICIENCY_MUSICAL_INSTRUMENT, Musical Instrument</supports>
+		<description>
+			<p style="margin-bottom:-0.5px">Description of <b>Musical Instrument</b> from the original <i>Player’s Handbook</i>, page 154:</p>
+			<div class="sidebar">
+				<p>Several of the most common types of musical instruments are shown on the table as examples. If you have proficiency with a given musical instrument, you can add your proficiency bonus to any ability checks you make to play music with the instrument. A bard can use a musical instrument as a spellcasting focus.</p>
+			</div>
+			<p style="margin-bottom:-0.5px">Description of <b>Musical Instrument</b> from the <i>Xanathar’s Guide to Everything</i>, page 83:</p>
+			<div class="sidebar">
+				<p>Proficiency with a musical instrument indicates you are familiar with the techniques used to play it. You also have knowledge of some songs commonly performed with that instrument.</p>
+				<p class="indent"><b><i>History.</i></b> Your expertise aids you in recalling lore related to your instrument.</p>
+				<p class="indent"><b><i>Performance.</i></b> Your ability to put on a good show is improved when you incorporate an instrument into your act.</p>
+				<p class="indent"><b><i>Compose a Tune.</i></b> As part of a long rest, you can compose a new tune and lyrics for your instrument. You might use this ability to impress a noble or spread scandalous rumors with a catchy tune.</p>
+				<h5>MUSICAL INSTRUMENT</h5>
+				<table>
+					<thead>
+						<tr><td>Activity</td><td class="col-10">DC</td></tr>
+					</thead>
+					<tr><td>Identify a tune</td><td>10</td></tr>
+					<tr><td>Improvise a tune</td><td>20</td></tr>
+				</table>
+			</div>
+			<p style="margin-bottom:-0.5px">Description of <b>Musical Instrument</b> from the <i>Player’s Handbook (2024)</i>, page 221:</p>
+			<div class="sidebar">
+				<ul class="unstyled">
+					<li style="margin-bottom:-1em"><strong>Ability:</strong> Charisma</li>
+					<li style="text-align:right; margin-top:-1em"><strong>Weight:</strong> 1 lb.</li>
+					<li><strong>Utilize:</strong> Play a known tune (DC 10), or improvise a song (DC 15)</li>
+				</ul>
+			</div>
+		</description>
+	</element>
+
+	<element name="Tool Proficiency (Viol)" type="Proficiency" source="Aurora Legacy Essentials" id="ID_PROFICIENCY_TOOL_PROFICIENCY_VIOL">
+		<supports>Tool, ID_PROFICIENCY_MUSICAL_INSTRUMENT, Musical Instrument</supports>
+		<description>
+			<p style="margin-bottom:-0.5px">Description of <b>Musical Instrument</b> from the original <i>Player’s Handbook</i>, page 154:</p>
+			<div class="sidebar">
+				<p>Several of the most common types of musical instruments are shown on the table as examples. If you have proficiency with a given musical instrument, you can add your proficiency bonus to any ability checks you make to play music with the instrument. A bard can use a musical instrument as a spellcasting focus.</p>
+			</div>
+			<p style="margin-bottom:-0.5px">Description of <b>Musical Instrument</b> from the <i>Xanathar’s Guide to Everything</i>, page 83:</p>
+			<div class="sidebar">
+				<p>Proficiency with a musical instrument indicates you are familiar with the techniques used to play it. You also have knowledge of some songs commonly performed with that instrument.</p>
+				<p class="indent"><b><i>History.</i></b> Your expertise aids you in recalling lore related to your instrument.</p>
+				<p class="indent"><b><i>Performance.</i></b> Your ability to put on a good show is improved when you incorporate an instrument into your act.</p>
+				<p class="indent"><b><i>Compose a Tune.</i></b> As part of a long rest, you can compose a new tune and lyrics for your instrument. You might use this ability to impress a noble or spread scandalous rumors with a catchy tune.</p>
+				<h5>MUSICAL INSTRUMENT</h5>
+				<table>
+					<thead>
+						<tr><td>Activity</td><td class="col-10">DC</td></tr>
+					</thead>
+					<tr><td>Identify a tune</td><td>10</td></tr>
+					<tr><td>Improvise a tune</td><td>20</td></tr>
+				</table>
+			</div>
+			<p style="margin-bottom:-0.5px">Description of <b>Musical Instrument</b> from the <i>Player’s Handbook (2024)</i>, page 221:</p>
+			<div class="sidebar">
+				<ul class="unstyled">
+					<li style="margin-bottom:-1em"><strong>Ability:</strong> Charisma</li>
+					<li style="text-align:right; margin-top:-1em"><strong>Weight:</strong> 1 lb.</li>
+					<li><strong>Utilize:</strong> Play a known tune (DC 10), or improvise a song (DC 15)</li>
+				</ul>
+			</div>
+		</description>
+	</element>
+
+	<element name="Tool Proficiency (Navigator’s tools)" type="Proficiency" source="Aurora Legacy Essentials" id="ID_PROFICIENCY_TOOL_PROFICIENCY_NAVIGATORS_TOOLS">
+		<supports>Tool</supports>
+		<description>
+			<p style="margin-bottom:-0.5px">Description from the original <i>Player’s Handbook</i>, page 154:</p>
+			<div class="sidebar">
+				<p>This set of instruments is used for navigation at sea. Proficiency with navigator’s tools lets you chart a ship’s course and follow navigation charts. In addition, these tools allow you to add your proficiency bonus to any ability check you make to avoid getting lost at sea.</p>
+			</div>
+			<p style="margin-bottom:-0.5px">Description from the <i>Xanathar’s Guide to Everything</i>, page 83:</p>
+			<div class="sidebar">
+				<p>Proficiency with navigator’s tools helps you determine a true course based on observing the stars. It also grants you insight into charts and maps while developing your sense of direction.</p>
+				<p class="indent"><b><i>Components.</i></b> Navigator’s tools include a sextant, a compass, calipers, a ruler, parchment, ink, and a quill.</p>
+				<p class="indent"><b><i>Survival.</i></b> Knowledge of navigator’s tools helps you avoid becoming lost and also grants you insight into the most likely location for roads and settlements.</p>
+				<p class="indent"><b><i>Sighting.</i></b> By taking careful measurements, you can determine your position on a nautical chart and the time of day.</p>
+				<h5>NAVIGATOR’S TOOLS</h5>
+				<table>
+					<thead>
+						<tr><td>Activity</td><td class="col-10">DC</td></tr>
+					</thead>
+					<tr><td>Plot a course</td><td>10</td></tr>
+					<tr><td>Discover your position on a nautical chart</td><td>15</td></tr>
+				</table>
+			</div>
+			<p style="margin-bottom:-0.5px">Description from the <i>Player’s Handbook (2024)</i>, page 221:</p>
+			<div class="sidebar">
+				<ul class="unstyled">
+					<li style="margin-bottom:-1em"><strong>Ability:</strong> Wisdom</li>
+					<li style="text-align:right; margin-top:-1em"><strong>Weight:</strong> 2 lb.</li>
+					<li><strong>Utilize:</strong> Plot a course (DC 10), or determine position by stargazing (DC 15)</li>
+				</ul>
+			</div>
+		</description>
+	</element>
+
+	<element name="Tool Proficiency (Thieves’ tools)" type="Proficiency" source="Aurora Legacy Essentials" id="ID_PROFICIENCY_TOOL_PROFICIENCY_THIEVES_TOOLS">
+		<supports>Tool, Thieves tools</supports>
+		<description>
+			<p style="margin-bottom:-0.5px">Description from the original <i>Player’s Handbook</i>, page 154:</p>
+			<div class="sidebar">
+				<p>This set of tools includes a small file, a set of lock picks, a small mirror mounted on a metal handle, a set of narrow-bladed scissors, and a pair of pliers. Proficiency with these tools lets you add your proficiency bonus to any ability checks you make to disarm traps or open locks.</p>
+			</div>
+			<p style="margin-bottom:-0.5px">Description from the <i>Xanathar’s Guide to Everything</i>, page 84:</p>
+			<div class="sidebar">
+				<p>Perhaps the most common tools used by adventurers, thieves’ tools are designed for picking locks and foiling traps. Proficiency with the tools also grants you a general knowledge of traps and locks.</p>
+				<p class="indent"><b><i>Components.</i></b> Thieves’ tools include a small file, a set of lock picks, a small mirror mounted on a metal handle, a set of narrow-bladed scissors, and a pair of pliers.</p>
+				<p class="indent"><b><i>History.</i></b> Your knowledge of traps grants you insight when answering questions about locations that are renowned for their traps.</p>
+				<p class="indent"><b><i>Investigation and Perception.</i></b> You gain additional insight when looking for traps, because you have learned a variety of common signs that betray their presence.</p>
+				<p class="indent"><b><i>Seta Trap.</i></b> Just as you can disable traps, you can also set them. As part of a short rest, you can create a trap using items you have on hand. The total of your check becomes the DC for someone else’s attempt to discover or disable the trap. The trap deals damage appropriate to the materials used in crafting it (such as poison or a weapon) or damage equal to half the total of your check, whichever the DM deems appropriate.</p>
+				<h5>THIEVES’ TOOLS</h5>
+				<table>
+					<thead>
+						<tr><td>Activity</td><td class="col-10">DC</td></tr>
+					</thead>
+					<tr><td>Pick a lock</td><td>Varies</td></tr>
+					<tr><td>Disable a trap</td><td>Varies</td></tr>
+				</table>
+			</div>
+			<p style="margin-bottom:-0.5px">Description from the <i>Player’s Handbook (2024)</i>, page 221:</p>
+			<div class="sidebar">
+				<ul class="unstyled">
+					<li style="margin-bottom:-1em"><strong>Ability:</strong> Dexterity</li>
+					<li style="text-align:right; margin-top:-1em"><strong>Weight:</strong> 1 lb.</li>
+					<li><strong>Utilize:</strong> Pick a lock (DC 15), or disarm a trap (DC 15)</li>
+				</ul>
+			</div>
+		</description>
+	</element>
+
+	<element name="Tool Proficiency (Vehicles (land))" type="Proficiency" source="Aurora Legacy Essentials" id="ID_PROFICIENCY_TOOL_PROFICIENCY_VEHICLES_LAND">
+		<supports>Tool, Vehicles</supports>
+		<description>
+			<p style="margin-bottom:-0.5px">Description of <b>Vehicle Proficiency</b> from the original <i>Player’s Handbook</i>, page 155:</p>
+			<div class="sidebar">
+				<p>If you have proficiency with a certain kind of vehicle (land or water), you can add your proficiency bonus to any check you make to control that kind of vehicle in difficult circumstances.</p>
+			</div>
+			<p style="margin-bottom:-0.5px">Description from the <i>Xanathar’s Guide to Everything</i>, page 82:</p>
+			<div class="sidebar">
+				<p>Proficiency with land vehicles covers a wide range of options, from chariots and howdahs to wagons and carts. Proficiency with vehicles grants the knowledge needed to handle vehicles of that type, along with knowledge of how to repair and maintain them.</p>
+				<p class="indent"><b><i>Arcana.</i></b> When you study a magic vehicle, this tool proficiency aids you in uncovering lore or determining how the vehicle operates.</p>
+				<p class="indent"><b><i>Investigation, Perception.</i></b> When you inspect a vehicle for clues or hidden information, your proficiency aids you in noticing things that others might miss.</p>
+				<p class="indent"><b><i>Vehicle Handling.</i></b> When piloting a vehicle, you can apply your proficiency bonus to the vehicle’s AC and saving throws.</p>
+				<h5>VEHICLES</h5>
+				<table>
+					<thead>
+						<tr><td>Activity</td><td class="col-10">DC</td></tr>
+					</thead>
+					<tr><td>Navigate rough terrain or waters</td><td>10</td></tr>
+					<tr><td>Assess a vehicle’s condition</td><td>15</td></tr>
+					<tr><td>Take a tight corner at high speed</td><td>20</td></tr>
+				</table>
+			</div>
+		</description>
+	</element>
+
+	<element name="Tool Proficiency (Vehicles (water))" type="Proficiency" source="Aurora Legacy Essentials" id="ID_PROFICIENCY_TOOL_PROFICIENCY_VEHICLES_WATER">
+		<supports>Tool, Vehicles</supports>
+		<description>
+			<p style="margin-bottom:-0.5px">Description of <b>Vehicle Proficiency</b> from the original <i>Player’s Handbook</i>, page 155:</p>
+			<div class="sidebar">
+				<p>If you have proficiency with a certain kind of vehicle (land or water), you can add your proficiency bonus to any check you make to control that kind of vehicle in difficult circumstances.</p>
+			</div>
+			<p style="margin-bottom:-0.5px">Description from the <i>Xanathar’s Guide to Everything</i>, page 82:</p>
+			<div class="sidebar">
+				<p>Proficiency with water vehicles covers anything that navigates waterways. Proficiency with vehicles grants the knowledge needed to handle vehicles of that type, along with knowledge of how to repair and maintain them.</p>
+				<p class="indent">In addition, a character proficient with water vehicles is knowledgeable about anything a professional sailor would be familiar with, such as information about the sea and islands, tying knots, and assessing weather and sea conditions.</p>
+				<p class="indent"><b><i>Arcana.</i></b> When you study a magic vehicle, this tool proficiency aids you in uncovering lore or determining how the vehicle operates.</p>
+				<p class="indent"><b><i>Investigation, Perception.</i></b> When you inspect a vehicle for clues or hidden information, your proficiency aids you in noticing things that others might miss.</p>
+				<p class="indent"><b><i>Vehicle Handling.</i></b> When piloting a vehicle, you can apply your proficiency bonus to the vehicle’s AC and saving throws.</p>
+				<h5>VEHICLES</h5>
+				<table>
+					<thead>
+						<tr><td>Activity</td><td class="col-10">DC</td></tr>
+					</thead>
+					<tr><td>Navigate rough terrain or waters</td><td>10</td></tr>
+					<tr><td>Assess a vehicle’s condition</td><td>15</td></tr>
+					<tr><td>Take a tight corner at high speed</td><td>20</td></tr>
+				</table>
+			</div>
+		</description>
+	</element>
+
+	<element name="Tool Proficiency (Gaming set)" type="Proficiency" source="Aurora Legacy Essentials" id="ID_PROFICIENCY_GAMING_SET_PROFICIENCY_GAMING_SET">
+		<description>
+			<p>This item encompasses a wide range of game pieces, including dice and decks of cards (for games such as Three-Dragon Ante). A few common examples appear on the Tools table, but other kinds of gaming sets exist. If you are proficient with a gaming set, you can add your proficiency bonus to ability checks you make to play a game with that set. Each type of gaming set requires a separate proficiency.</p>
+		</description>
+		<rules>
+			<grant type="Proficiency" id="ID_PROFICIENCY_GAMING_SET_PROFICIENCY_DICE_SET" />
+			<grant type="Proficiency" id="ID_PROFICIENCY_GAMING_SET_PROFICIENCY_DRAGONCHESS_SET" />
+			<grant type="Proficiency" id="ID_PROFICIENCY_GAMING_SET_PROFICIENCY_PLAYING_CARD_SET" />
+			<grant type="Proficiency" id="ID_PROFICIENCY_GAMING_SET_PROFICIENCY_THREE_DRAGON_ANTE_SET" />
+		</rules>
+	</element>
+
+	<element name="Tool Proficiency (Dice set)" type="Proficiency" source="Aurora Legacy Essentials" id="ID_PROFICIENCY_GAMING_SET_PROFICIENCY_DICE_SET">
+		<supports>Tool, Gaming Set</supports>
+		<description>
+			<p style="margin-bottom:-0.5px">Description of <b>Gaming Set</b> from the original <i>Player’s Handbook</i>, page 154:</p>
+			<div class="sidebar">
+				<p>This item encompasses a wide range of game pieces. If you are proficient with a gaming set, you can add your proficiency bonus to ability checks you make to play a game with that set. Each type of gaming set requires a separate proficiency.</p>
+			</div>
+			<p style="margin-bottom:-0.5px">Description of <b>Gaming Set</b> from the <i>Xanathar’s Guide to Everything</i>, page 81:</p>
+			<div class="sidebar">
+				<p>Proficiency with a gaming set applies to one type of game, such as Three-Dragon Ante or games of chance that use dice.</p>
+				<p class="indent"><b><i>Components.</i></b> A gaming set has all the pieces needed to play a specific game or type of game, such as a complete deck of cards or a board and tokens.</p>
+				<p class="indent"><b><i>History.</i></b> Your mastery of a game includes knowledge of its history, as well as of important events it was connected to or prominent historical figures involved with it.</p>
+				<p class="indent"><b><i>Insight.</i></b> Playing games with someone is a good way to gain understanding of their personality, granting you a better ability to discern their lies from their truths and read their mood.</p>
+				<p class="indent"><b><i>Sleight of Hand.</i></b> Sleight of Hand is a useful skill for cheating at a game, as it allows you to swap pieces, palm cards, or alter a die roll. Alternatively, engrossing a target in a game by manipulating the components with dexterous movements is a great distraction for a pickpocketing attempt.</p>
+				<h5>FORGERY KIT</h5>
+				<table>
+					<thead>
+						<tr><td>Activity</td><td class="col-10">DC</td></tr>
+					</thead>
+					<tr><td>Catch a player cheating</td><td>15</td></tr>
+					<tr><td>Gain insight into an opponent’s personality</td><td>15</td></tr>
+				</table>
+			</div>
+			<p style="margin-bottom:-0.5px">Description of <b>Gaming Set</b> from the <i>Player’s Handbook (2024)</i>, page 221:</p>
+			<div class="sidebar">
+				<ul class="unstyled">
+					<li style="margin-bottom:-1em"><strong>Ability:</strong> Wisdom</li>
+					<li style="text-align:right; margin-top:-1em"><strong>Weight:</strong> — lb.</li>
+					<li><strong>Utilize:</strong> Discern whether someone is cheating (DC 10), or win the game (DC 20)</li>
+				</ul>
+			</div>
+		</description>
+	</element>
+
+	<element name="Tool Proficiency (Dragonchess set)" type="Proficiency" source="Aurora Legacy Essentials" id="ID_PROFICIENCY_GAMING_SET_PROFICIENCY_DRAGONCHESS_SET">
+		<supports>Tool, Gaming Set</supports>
+		<description>
+			<p style="margin-bottom:-0.5px">Description of <b>Gaming Set</b> from the original <i>Player’s Handbook</i>, page 154:</p>
+			<div class="sidebar">
+				<p>This item encompasses a wide range of game pieces. If you are proficient with a gaming set, you can add your proficiency bonus to ability checks you make to play a game with that set. Each type of gaming set requires a separate proficiency.</p>
+			</div>
+			<p style="margin-bottom:-0.5px">Description of <b>Gaming Set</b> from the <i>Xanathar’s Guide to Everything</i>, page 81:</p>
+			<div class="sidebar">
+				<p>Proficiency with a gaming set applies to one type of game, such as Three-Dragon Ante or games of chance that use dice.</p>
+				<p class="indent"><b><i>Components.</i></b> A gaming set has all the pieces needed to play a specific game or type of game, such as a complete deck of cards or a board and tokens.</p>
+				<p class="indent"><b><i>History.</i></b> Your mastery of a game includes knowledge of its history, as well as of important events it was connected to or prominent historical figures involved with it.</p>
+				<p class="indent"><b><i>Insight.</i></b> Playing games with someone is a good way to gain understanding of their personality, granting you a better ability to discern their lies from their truths and read their mood.</p>
+				<p class="indent"><b><i>Sleight of Hand.</i></b> Sleight of Hand is a useful skill for cheating at a game, as it allows you to swap pieces, palm cards, or alter a die roll. Alternatively, engrossing a target in a game by manipulating the components with dexterous movements is a great distraction for a pickpocketing attempt.</p>
+				<h5>FORGERY KIT</h5>
+				<table>
+					<thead>
+						<tr><td>Activity</td><td class="col-10">DC</td></tr>
+					</thead>
+					<tr><td>Catch a player cheating</td><td>15</td></tr>
+					<tr><td>Gain insight into an opponent’s personality</td><td>15</td></tr>
+				</table>
+			</div>
+			<p style="margin-bottom:-0.5px">Description of <b>Gaming Set</b> from the <i>Player’s Handbook (2024)</i>, page 221:</p>
+			<div class="sidebar">
+				<ul class="unstyled">
+					<li style="margin-bottom:-1em"><strong>Ability:</strong> Wisdom</li>
+					<li style="text-align:right; margin-top:-1em"><strong>Weight:</strong> — lb.</li>
+					<li><strong>Utilize:</strong> Discern whether someone is cheating (DC 10), or win the game (DC 20)</li>
+				</ul>
+			</div>
+		</description>
+	</element>
+
+	<element name="Tool Proficiency (Playing card set)" type="Proficiency" source="Aurora Legacy Essentials" id="ID_PROFICIENCY_GAMING_SET_PROFICIENCY_PLAYING_CARD_SET">
+		<supports>Tool, Gaming Set</supports>
+		<description>
+			<p style="margin-bottom:-0.5px">Description of <b>Gaming Set</b> from the original <i>Player’s Handbook</i>, page 154:</p>
+			<div class="sidebar">
+				<p>This item encompasses a wide range of game pieces. If you are proficient with a gaming set, you can add your proficiency bonus to ability checks you make to play a game with that set. Each type of gaming set requires a separate proficiency.</p>
+			</div>
+			<p style="margin-bottom:-0.5px">Description of <b>Gaming Set</b> from the <i>Xanathar’s Guide to Everything</i>, page 81:</p>
+			<div class="sidebar">
+				<p>Proficiency with a gaming set applies to one type of game, such as Three-Dragon Ante or games of chance that use dice.</p>
+				<p class="indent"><b><i>Components.</i></b> A gaming set has all the pieces needed to play a specific game or type of game, such as a complete deck of cards or a board and tokens.</p>
+				<p class="indent"><b><i>History.</i></b> Your mastery of a game includes knowledge of its history, as well as of important events it was connected to or prominent historical figures involved with it.</p>
+				<p class="indent"><b><i>Insight.</i></b> Playing games with someone is a good way to gain understanding of their personality, granting you a better ability to discern their lies from their truths and read their mood.</p>
+				<p class="indent"><b><i>Sleight of Hand.</i></b> Sleight of Hand is a useful skill for cheating at a game, as it allows you to swap pieces, palm cards, or alter a die roll. Alternatively, engrossing a target in a game by manipulating the components with dexterous movements is a great distraction for a pickpocketing attempt.</p>
+				<h5>FORGERY KIT</h5>
+				<table>
+					<thead>
+						<tr><td>Activity</td><td class="col-10">DC</td></tr>
+					</thead>
+					<tr><td>Catch a player cheating</td><td>15</td></tr>
+					<tr><td>Gain insight into an opponent’s personality</td><td>15</td></tr>
+				</table>
+			</div>
+			<p style="margin-bottom:-0.5px">Description of <b>Gaming Set</b> from the <i>Player’s Handbook (2024)</i>, page 221:</p>
+			<div class="sidebar">
+				<ul class="unstyled">
+					<li style="margin-bottom:-1em"><strong>Ability:</strong> Wisdom</li>
+					<li style="text-align:right; margin-top:-1em"><strong>Weight:</strong> — lb.</li>
+					<li><strong>Utilize:</strong> Discern whether someone is cheating (DC 10), or win the game (DC 20)</li>
+				</ul>
+			</div>
+		</description>
+	</element>
+
+	<element name="Tool Proficiency (Three-Dragon Ante set)" type="Proficiency" source="Aurora Legacy Essentials" id="ID_PROFICIENCY_GAMING_SET_PROFICIENCY_THREE_DRAGON_ANTE_SET">
+		<supports>Tool, Gaming Set</supports>
+		<description>
+			<p style="margin-bottom:-0.5px">Description of <b>Gaming Set</b> from the original <i>Player’s Handbook</i>, page 154:</p>
+			<div class="sidebar">
+				<p>This item encompasses a wide range of game pieces. If you are proficient with a gaming set, you can add your proficiency bonus to ability checks you make to play a game with that set. Each type of gaming set requires a separate proficiency.</p>
+			</div>
+			<p style="margin-bottom:-0.5px">Description of <b>Gaming Set</b> from the <i>Xanathar’s Guide to Everything</i>, page 81:</p>
+			<div class="sidebar">
+				<p>Proficiency with a gaming set applies to one type of game, such as Three-Dragon Ante or games of chance that use dice.</p>
+				<p class="indent"><b><i>Components.</i></b> A gaming set has all the pieces needed to play a specific game or type of game, such as a complete deck of cards or a board and tokens.</p>
+				<p class="indent"><b><i>History.</i></b> Your mastery of a game includes knowledge of its history, as well as of important events it was connected to or prominent historical figures involved with it.</p>
+				<p class="indent"><b><i>Insight.</i></b> Playing games with someone is a good way to gain understanding of their personality, granting you a better ability to discern their lies from their truths and read their mood.</p>
+				<p class="indent"><b><i>Sleight of Hand.</i></b> Sleight of Hand is a useful skill for cheating at a game, as it allows you to swap pieces, palm cards, or alter a die roll. Alternatively, engrossing a target in a game by manipulating the components with dexterous movements is a great distraction for a pickpocketing attempt.</p>
+				<h5>FORGERY KIT</h5>
+				<table>
+					<thead>
+						<tr><td>Activity</td><td class="col-10">DC</td></tr>
+					</thead>
+					<tr><td>Catch a player cheating</td><td>15</td></tr>
+					<tr><td>Gain insight into an opponent’s personality</td><td>15</td></tr>
+				</table>
+			</div>
+			<p style="margin-bottom:-0.5px">Description of <b>Gaming Set</b> from the <i>Player’s Handbook (2024)</i>, page 221:</p>
+			<div class="sidebar">
+				<ul class="unstyled">
+					<li style="margin-bottom:-1em"><strong>Ability:</strong> Wisdom</li>
+					<li style="text-align:right; margin-top:-1em"><strong>Weight:</strong> — lb.</li>
+					<li><strong>Utilize:</strong> Discern whether someone is cheating (DC 10), or win the game (DC 20)</li>
+				</ul>
+			</div>
+		</description>
+	</element>
+
+	<element name="Tool Proficiency (Disguise kit)" type="Proficiency" source="Aurora Legacy Essentials" id="ID_PROFICIENCY_TOOL_PROFICIENCY_DISGUISE_KIT">
+		<supports>Tool, Kit</supports>
+		<description>
+			<p style="margin-bottom:-0.5px">Description from the original <i>Player’s Handbook</i>, page 154:</p>
+			<div class="sidebar">
+				<p>This pouch of cosmetics, hair dye, and small props lets you create disguises that change your physical appearance. Proficiency with this kit lets you add your proficiency bonus to any ability checks you make to create a visual disguise.</p>
+			</div>
+			<p style="margin-bottom:-0.5px">Description from the <i>Xanathar’s Guide to Everything</i>, page 81:</p>
+			<div class="sidebar">
+				<p>The perfect tool for anyone who wants to engage in trickery, a disguise kit enables its owner to adopt a false identity.</p>
+				<p class="indent"><b><i>Components.</i></b> A disguise kit includes cosmetics, hair dye, small props, and a few pieces of clothing.</p>
+				<p class="indent"><b><i>Deception.</i></b> In certain cases, a disguise can improve your ability to weave convincing lies.</p>
+				<p class="indent"><b><i>Intimidation.</i></b> The right disguise can make you look more fearsome, whether you want to scare someone away by posing as a plague victim or intimidate a gang of thugs by taking the appearance of a bully.</p>
+				<p class="indent"><b><i>Performance.</i></b> A cunning disguise can enhance an audience’s enjoyment of a performance, provided the disguise is properly designed to evoke the desired reaction.</p>
+				<p class="indent"><b><i>Persuasion.</i></b> Folk tend to trust a person in uniform. If you disguise yourself as an authority figure, your efforts to persuade others are often more effective.</p>
+				<p class="indent"><b><i>Create Disguise.</i></b> As part of a long rest, you can create a disguise. It takes you 1 minute to don such a disguise once you have created it. You can carry only one such disguise on you at a time without drawing undue attention, unless you have a bag of holding or a similar method to keep them hidden. Each disguise weighs 1 pound.</p>
+				<p class="indent">At other times, it takes 10 minutes to craft a disguise that involves moderate changes to your appearance, and 30 minutes for one that requires more extensive changes.</p>
+				<h5>DISGUISE KIT</h5>
+				<table>
+					<thead>
+						<tr><td>Activity</td><td class="col-10">DC</td></tr>
+					</thead>
+					<tr><td>Cover injuries or distinguishing marks</td><td>10</td></tr>
+					<tr><td>Spot a disguise being used by someone else</td><td>15</td></tr>
+					<tr><td>Copy a humanoid’s appearance</td><td>20</td></tr>
+				</table>
+			</div>
+			<p style="margin-bottom:-0.5px">Description from the <i>Player’s Handbook (2024)</i>, page 221:</p>
+			<div class="sidebar">
+				<ul class="unstyled">
+					<li style="margin-bottom:-1em"><strong>Ability:</strong> Charisma</li>
+					<li style="text-align:right; margin-top:-1em"><strong>Weight:</strong> 3 lb.</li>
+					<li><strong>Utilize:</strong> Apply makeup (DC 10)</li>
+					<li><strong>Craft:</strong> Costume</li>
+				</ul>
+			</div>
+		</description>
+	</element>
+
+	<element name="Tool Proficiency (Forgery kit)" type="Proficiency" source="Aurora Legacy Essentials" id="ID_PROFICIENCY_TOOL_PROFICIENCY_FORGERY_KIT">
+		<supports>Tool, Kit</supports>
+		<description>
+			<p style="margin-bottom:-0.5px">Description from the original <i>Player’s Handbook</i>, page 154:</p>
+			<div class="sidebar">
+				<p>This small box contains a variety of papers and parchments, pens and inks, seals and sealing wax, gold and silver leaf, and other supplies necessary to create convincing forgeries of physical documents. Proficiency with this kit lets you add your proficiency bonus to any ability checks you make to create a physical forgery of a document.</p>
+			</div>
+			<p style="margin-bottom:-0.5px">Description from the <i>Xanathar’s Guide to Everything</i>, page 81:</p>
+			<div class="sidebar">
+				<p>A forgery kit is designed to duplicate documents and to make it easier to copy a person’s seal or signature.</p>
+				<p class="indent"><b><i>Components.</i></b> A forgery kit includes several different types of ink, a variety of parchments and papers, several quills, seals and sealing wax, gold and silver leaf, and small tools to sculpt melted wax to mimic a seal.</p>
+				<p class="indent"><b><i>Arcana.</i></b> A forgery kit can be used in conjunction with the Arcana skill to determine if a magic item is real or fake.</p>
+				<p class="indent"><b><i>Deception.</i></b> A well-crafted forgery, such as papers proclaiming you to be a noble or a writ that grants you safe passage, can lend credence to a lie.</p>
+				<p class="indent"><b><i>History.</i></b> A forgery kit combined with your knowledge of history improves your ability to create fake historical documents or to tell if an old document is authentic.</p>
+				<p class="indent"><b><i>Investigation.</i></b> When you examine objects, proficiency with a forgery kit is useful for determining how an object was made and whether it is genuine.</p>
+				<p class="indent"><b><i>Other Tools.</i></b> Knowledge of other tools makes your forgeries that much more believable. For example, you could combine proficiency with a forgery kit and proficiency with cartographer’s tools to make a fake map.</p>
+				<p class="indent"><b><i>Quick Fake.</i></b> As part of a short rest, you can produce a forged document no more than one page in length. As part of a long rest, you can produce a document that is up to four pages long. Your Intelligence check using a forgery kit determines the DC for someone else’s Intelligence (Investigation) check to spot the fake.</p>
+				<h5>FORGERY KIT</h5>
+				<table>
+					<thead>
+						<tr><td>Activity</td><td class="col-10">DC</td></tr>
+					</thead>
+					<tr><td>Mimic handwriting</td><td>15</td></tr>
+					<tr><td>Duplicate a wax seal</td><td>20</td></tr>
+				</table>
+			</div>
+			<p style="margin-bottom:-0.5px">Description from the <i>Player’s Handbook (2024)</i>, page 221:</p>
+			<div class="sidebar">
+				<ul class="unstyled">
+					<li style="margin-bottom:-1em"><strong>Ability:</strong> Dexterity</li>
+					<li style="text-align:right; margin-top:-1em"><strong>Weight:</strong> 5 lb.</li>
+					<li><strong>Utilize:</strong> Mimic 10 or fewer words of someone else’s handwriting (DC 15), or duplicate a wax seal (DC 20)</li>
+				</ul>
+			</div>
+		</description>
+	</element>
+
+	<element name="Tool Proficiency (Herbalism kit)" type="Proficiency" source="Aurora Legacy Essentials" id="ID_PROFICIENCY_TOOL_PROFICIENCY_HERBALISM_KIT">
+		<supports>Tool, Kit</supports>
+		<description>
+			<p style="margin-bottom:-0.5px">Description from the original <i>Player’s Handbook</i>, page 154:</p>
+			<div class="sidebar">
+				<p>This kit contains a variety of instruments such as clippers, mortar and pestle, and pouches and vials used by herbalists to create remedies and potions. Proficiency with this kit lets you add your proficiency bonus to any ability checks you make to identify or apply herbs. Also, proficiency with this kit is required to create antitoxin and potions of healing.</p>
+			</div>
+			<p style="margin-bottom:-0.5px">Description from the <i>Xanathar’s Guide to Everything</i>, page 82:</p>
+			<div class="sidebar">
+				<p>Proficiency with an herbalism kit allows you to identify plants and safely collect their useful elements.</p>
+				<p class="indent"><b><i>Components.</i></b> An herbalism kit includes pouches to store herbs, clippers and leather gloves for collecting plants, a mortar and pestle, and several glass jars.</p>
+				<p class="indent"><b><i>Arcana.</i></b> Your knowledge of the nature and uses of herbs can add insight to your magical studies that deal with plants and your attempts to identify potions.</p>
+				<p class="indent"><b><i>Investigation.</i></b> When you inspect an area overgrown with plants, your proficiency can help you pick out details and clues that others might miss.</p>
+				<p class="indent"><b><i>Medicine.</i></b> Your mastery of herbalism improves your ability to treat illnesses and wounds by augmenting your methods of care with medicinal plants.</p>
+				<p class="indent"><b><i>Nature and Survival.</i></b> When you travel in the wild, your skill in herbalism makes it easier to identify plants and spot sources of food that others might overlook.</p>
+				<p class="indent"><b><i>Identify Plants.</i></b> You can identify most plants with a quick inspection of their appearance and smell.</p>
+				<h5>HERBALISM KIT</h5>
+				<table>
+					<thead>
+						<tr><td>Activity</td><td class="col-10">DC</td></tr>
+					</thead>
+					<tr><td>Find plants</td><td>15</td></tr>
+					<tr><td>Identify poison</td><td>20</td></tr>
+				</table>
+			</div>
+			<p style="margin-bottom:-0.5px">Description from the <i>Player’s Handbook (2024)</i>, page 221:</p>
+			<div class="sidebar">
+				<ul class="unstyled">
+					<li style="margin-bottom:-1em"><strong>Ability:</strong> Intelligence</li>
+					<li style="text-align:right; margin-top:-1em"><strong>Weight:</strong> 3 lb.</li>
+					<li><strong>Utilize:</strong> Identify a plant (DC 10)</li>
+					<li><strong>Craft:</strong> Antitoxin, Candle, Healer’s Kit, <i>Potion of Healing</i></li>
+				</ul>
+			</div>
+		</description>
+	</element>
+
+	<element name="Tool Proficiency (Poisoner’s kit)" type="Proficiency" source="Aurora Legacy Essentials" id="ID_PROFICIENCY_TOOL_PROFICIENCY_POISONERS_KIT">
+		<supports>Tool, Kit</supports>
+		<description>
+			<p style="margin-bottom:-0.5px">Description from the original <i>Player’s Handbook</i>, page 154:</p>
+			<div class="sidebar">
+				<p>A poisoner’s kit includes the vials, chemicals, and other equipment necessary for the creation of poisons. Proficiency with this kit lets you add your proficiency bonus to any ability checks you make to craft or use poisons.</p>
+			</div>
+			<p style="margin-bottom:-0.5px">Description from the <i>Xanathar’s Guide to Everything</i>, page 83:</p>
+			<div class="sidebar">
+				<p>A poisoner’s kit is a favored resource for thieves, assassins, and others who engage in skulduggery. It allows you to apply poisons and create them from various materials. Your knowledge of poisons also helps you treat them.</p>
+				<p class="indent"><b><i>Components.</i></b> A poisoner’s kit includes glass vials, a mortar and pestle, chemicals, and a glass stirring rod.</p>
+				<p class="indent"><b><i>History.</i></b> Your training with poisons can help you when you try to recall facts about infamous poisonings.</p>
+				<p class="indent"><b><i>Investigation, Perception.</i></b> Your knowledge of poisons has taught you to handle those substances carefully, giving you an edge when you inspect poisoned objects or try to extract clues from events that involve poison.</p>
+				<p class="indent"><b><i>Medicine.</i></b> When you treat the victim of a poison, your knowledge grants you added insight into how to provide the best care to your patient.</p>
+				<p class="indent"><b><i>Nature, Survival.</i></b> Working with poisons enables you to acquire lore about which plants and animals are poisonous.</p>
+				<p class="indent"><b><i>Handle Poison.</i></b> Your proficiency allows you to handle and apply a poison without risk of exposing yourself to its effects.</p>
+				<h5>POISONER’S KIT</h5>
+				<table>
+					<thead>
+						<tr><td>Activity</td><td class="col-10">DC</td></tr>
+					</thead>
+					<tr><td>Spot a poisoned object</td><td>10</td></tr>
+					<tr><td>Determine the effects of a poison</td><td>20</td></tr>
+				</table>
+			</div>
+			<p style="margin-bottom:-0.5px">Description from the <i>Player’s Handbook (2024)</i>, page 221:</p>
+			<div class="sidebar">
+				<ul class="unstyled">
+					<li style="margin-bottom:-1em"><strong>Ability:</strong> Intelligence</li>
+					<li style="text-align:right; margin-top:-1em"><strong>Weight:</strong> 2 lb.</li>
+					<li><strong>Utilize:</strong> Detect a poisoned object (DC 10)</li>
+					<li><strong>Craft:</strong> Basic Poison</li>
+				</ul>
+			</div>
+		</description>
+	</element>
+
+	<!-- Skill Expertise -->
+	<element name="Skill Expertise (Acrobatics)" type="Proficiency" source="Aurora Legacy Essentials" id="ID_INTERNAL_PROFICIENCY_SKILL_EXPERTISE_ACROBATICS">
+		<supports>Expertise, Skill Expertise, ID_INTERNAL_SUPPORT_EXPERTISE</supports>
+		<requirements>ID_PROFICIENCY_SKILL_ACROBATICS</requirements>
+		<description>
+			<p>Your proficiency bonus is doubled for any Acrobatics check you make.</p>
+			<div class="reference">
+				<div element="ID_PROFICIENCY_SKILL_ACROBATICS" />
+			</div>
+		</description>
+		<sheet display="false" />
+		<rules>
+			<stat name="acrobatics:proficiency" value="proficiency" bonus="double" />
+		</rules>
+	</element>
+
+	<element name="Skill Expertise (Animal Handling)" type="Proficiency" source="Aurora Legacy Essentials" id="ID_INTERNAL_PROFICIENCY_SKILL_EXPERTISE_ANIMAL_HANDLING">
+		<supports>Expertise, Skill Expertise, ID_INTERNAL_SUPPORT_EXPERTISE</supports>
+		<requirements>ID_PROFICIENCY_SKILL_ANIMALHANDLING</requirements>
+		<description>
+			<p>Your proficiency bonus is doubled for any Animal Handling check you make.</p>
+			<div class="reference">
+				<div element="ID_PROFICIENCY_SKILL_ANIMALHANDLING" />
+			</div>
+		</description>
+		<sheet display="false" />
+		<rules>
+			<stat name="animal handling:proficiency" value="proficiency" bonus="double" />
+		</rules>
+	</element>
+
+	<element name="Skill Expertise (Arcana)" type="Proficiency" source="Aurora Legacy Essentials" id="ID_INTERNAL_PROFICIENCY_SKILL_EXPERTISE_ARCANA">
+		<supports>Expertise, Skill Expertise, ID_INTERNAL_SUPPORT_EXPERTISE</supports>
+		<requirements>ID_PROFICIENCY_SKILL_ARCANA</requirements>
+		<description>
+			<p>Your proficiency bonus is doubled for any Arcana check you make.</p>
+			<div class="reference">
+				<div element="ID_PROFICIENCY_SKILL_ARCANA" />
+			</div>
+		</description>
+		<sheet display="false" />
+		<rules>
+			<stat name="arcana:proficiency" value="proficiency" bonus="double" />
+		</rules>
+	</element>
+
+	<element name="Skill Expertise (Athletics)" type="Proficiency" source="Aurora Legacy Essentials" id="ID_INTERNAL_PROFICIENCY_SKILL_EXPERTISE_ATHLETICS">
+		<supports>Expertise, Skill Expertise, ID_INTERNAL_SUPPORT_EXPERTISE</supports>
+		<requirements>ID_PROFICIENCY_SKILL_ATHLETICS</requirements>
+		<description>
+			<p>Your proficiency bonus is doubled for any Athletics check you make.</p>
+			<div class="reference">
+				<div element="ID_PROFICIENCY_SKILL_ATHLETICS" />
+			</div>
+		</description>
+		<sheet display="false" />
+		<rules>
+			<stat name="athletics:proficiency" value="proficiency" bonus="double" />
+		</rules>
+	</element>
+
+	<element name="Skill Expertise (Deception)" type="Proficiency" source="Aurora Legacy Essentials" id="ID_INTERNAL_PROFICIENCY_SKILL_EXPERTISE_DECEPTION">
+		<supports>Expertise, Skill Expertise, ID_INTERNAL_SUPPORT_EXPERTISE</supports>
+		<requirements>ID_PROFICIENCY_SKILL_DECEPTION</requirements>
+		<description>
+			<p>Your proficiency bonus is doubled for any Deception check you make.</p>
+			<div class="reference">
+				<div element="ID_PROFICIENCY_SKILL_DECEPTION" />
+			</div>
+		</description>
+		<sheet display="false" />
+		<rules>
+			<stat name="deception:proficiency" value="proficiency" bonus="double" />
+		</rules>
+	</element>
+
+	<element name="Skill Expertise (History)" type="Proficiency" source="Aurora Legacy Essentials" id="ID_INTERNAL_PROFICIENCY_SKILL_EXPERTISE_HISTORY">
+		<supports>Expertise, Skill Expertise, ID_INTERNAL_SUPPORT_EXPERTISE</supports>
+		<requirements>ID_PROFICIENCY_SKILL_HISTORY</requirements>
+		<description>
+			<p>Your proficiency bonus is doubled for any History check you make.</p>
+			<div class="reference">
+				<div element="ID_PROFICIENCY_SKILL_HISTORY" />
+			</div>
+		</description>
+		<sheet display="false" />
+		<rules>
+			<stat name="history:proficiency" value="proficiency" bonus="double" />
+		</rules>
+	</element>
+
+	<element name="Skill Expertise (Insight)" type="Proficiency" source="Aurora Legacy Essentials" id="ID_INTERNAL_PROFICIENCY_SKILL_EXPERTISE_INSIGHT">
+		<supports>Expertise, Skill Expertise, ID_INTERNAL_SUPPORT_EXPERTISE</supports>
+		<requirements>ID_PROFICIENCY_SKILL_INSIGHT</requirements>
+		<description>
+			<p>Your proficiency bonus is doubled for any Insight check you make.</p>
+			<div class="reference">
+				<div element="ID_PROFICIENCY_SKILL_INSIGHT" />
+			</div>
+		</description>
+		<sheet display="false" />
+		<rules>
+			<stat name="insight:proficiency" value="proficiency" bonus="double" />
+		</rules>
+	</element>
+
+	<element name="Skill Expertise (Intimidation)" type="Proficiency" source="Aurora Legacy Essentials" id="ID_INTERNAL_PROFICIENCY_SKILL_EXPERTISE_INTIMIDATION">
+		<supports>Expertise, Skill Expertise, ID_INTERNAL_SUPPORT_EXPERTISE</supports>
+		<requirements>ID_PROFICIENCY_SKILL_INTIMIDATION</requirements>
+		<description>
+			<p>Your proficiency bonus is doubled for any Intimidation check you make.</p>
+			<div class="reference">
+				<div element="ID_PROFICIENCY_SKILL_INTIMIDATION" />
+			</div>
+		</description>
+		<sheet display="false" />
+		<rules>
+			<stat name="intimidation:proficiency" value="proficiency" bonus="double" />
+		</rules>
+	</element>
+
+	<element name="Skill Expertise (Investigation)" type="Proficiency" source="Aurora Legacy Essentials" id="ID_INTERNAL_PROFICIENCY_SKILL_EXPERTISE_INVESTIGATION">
+		<supports>Expertise, Skill Expertise, ID_INTERNAL_SUPPORT_EXPERTISE</supports>
+		<requirements>ID_PROFICIENCY_SKILL_INVESTIGATION</requirements>
+		<description>
+			<p>Your proficiency bonus is doubled for any Investigation check you make.</p>
+			<div class="reference">
+				<div element="ID_PROFICIENCY_SKILL_INVESTIGATION" />
+			</div>
+		</description>
+		<sheet display="false" />
+		<rules>
+			<stat name="investigation:proficiency" value="proficiency" bonus="double" />
+		</rules>
+	</element>
+
+	<element name="Skill Expertise (Medicine)" type="Proficiency" source="Aurora Legacy Essentials" id="ID_INTERNAL_PROFICIENCY_SKILL_EXPERTISE_MEDICINE">
+		<supports>Expertise, Skill Expertise, ID_INTERNAL_SUPPORT_EXPERTISE</supports>
+		<requirements>ID_PROFICIENCY_SKILL_MEDICINE</requirements>
+		<description>
+			<p>Your proficiency bonus is doubled for any Medicine check you make.</p>
+			<div class="reference">
+				<div element="ID_PROFICIENCY_SKILL_MEDICINE" />
+			</div>
+		</description>
+		<sheet display="false" />
+		<rules>
+			<stat name="medicine:proficiency" value="proficiency" bonus="double" />
+		</rules>
+	</element>
+
+	<element name="Skill Expertise (Nature)" type="Proficiency" source="Aurora Legacy Essentials" id="ID_INTERNAL_PROFICIENCY_SKILL_EXPERTISE_NATURE">
+		<supports>Expertise, Skill Expertise, ID_INTERNAL_SUPPORT_EXPERTISE</supports>
+		<requirements>ID_PROFICIENCY_SKILL_NATURE</requirements>
+		<description>
+			<p>Your proficiency bonus is doubled for any Nature check you make.</p>
+			<div class="reference">
+				<div element="ID_PROFICIENCY_SKILL_NATURE" />
+			</div>
+		</description>
+		<sheet display="false" />
+		<rules>
+			<stat name="nature:proficiency" value="proficiency" bonus="double" />
+		</rules>
+	</element>
+
+	<element name="Skill Expertise (Perception)" type="Proficiency" source="Aurora Legacy Essentials" id="ID_INTERNAL_PROFICIENCY_SKILL_EXPERTISE_PERCEPTION">
+		<supports>Expertise, Skill Expertise, ID_INTERNAL_SUPPORT_EXPERTISE</supports>
+		<requirements>ID_PROFICIENCY_SKILL_PERCEPTION</requirements>
+		<description>
+			<p>Your proficiency bonus is doubled for any Perception check you make.</p>
+			<div class="reference">
+				<div element="ID_PROFICIENCY_SKILL_PERCEPTION" />
+			</div>
+		</description>
+		<sheet display="false" />
+		<rules>
+			<stat name="perception:proficiency" value="proficiency" bonus="double" />
+		</rules>
+	</element>
+
+	<element name="Skill Expertise (Performance)" type="Proficiency" source="Aurora Legacy Essentials" id="ID_INTERNAL_PROFICIENCY_SKILL_EXPERTISE_PERFORMANCE">
+		<supports>Expertise, Skill Expertise, ID_INTERNAL_SUPPORT_EXPERTISE</supports>
+		<requirements>ID_PROFICIENCY_SKILL_PERFORMANCE</requirements>
+		<description>
+			<p>Your proficiency bonus is doubled for any Performance check you make.</p>
+			<div class="reference">
+				<div element="ID_PROFICIENCY_SKILL_PERFORMANCE" />
+			</div>
+		</description>
+		<sheet display="false" />
+		<rules>
+			<stat name="performance:proficiency" value="proficiency" bonus="double" />
+		</rules>
+	</element>
+
+	<element name="Skill Expertise (Persuasion)" type="Proficiency" source="Aurora Legacy Essentials" id="ID_INTERNAL_PROFICIENCY_SKILL_EXPERTISE_PERSUASION">
+		<supports>Expertise, Skill Expertise, ID_INTERNAL_SUPPORT_EXPERTISE</supports>
+		<requirements>ID_PROFICIENCY_SKILL_PERSUASION</requirements>
+		<description>
+			<p>Your proficiency bonus is doubled for any Persuasion check you make.</p>
+			<div class="reference">
+				<div element="ID_PROFICIENCY_SKILL_PERSUASION" />
+			</div>
+		</description>
+		<sheet display="false" />
+		<rules>
+			<stat name="persuasion:proficiency" value="proficiency" bonus="double" />
+		</rules>
+	</element>
+
+	<element name="Skill Expertise (Religion)" type="Proficiency" source="Aurora Legacy Essentials" id="ID_INTERNAL_PROFICIENCY_SKILL_EXPERTISE_RELIGION">
+		<supports>Expertise, Skill Expertise, ID_INTERNAL_SUPPORT_EXPERTISE</supports>
+		<requirements>ID_PROFICIENCY_SKILL_RELIGION</requirements>
+		<description>
+			<p>Your proficiency bonus is doubled for any Religion check you make.</p>
+			<div class="reference">
+				<div element="ID_PROFICIENCY_SKILL_RELIGION" />
+			</div>
+		</description>
+		<sheet display="false" />
+		<rules>
+			<stat name="religion:proficiency" value="proficiency" bonus="double" />
+		</rules>
+	</element>
+
+	<element name="Skill Expertise (Sleight of Hand)" type="Proficiency" source="Aurora Legacy Essentials" id="ID_INTERNAL_PROFICIENCY_SKILL_EXPERTISE_SLEIGHT_OF_HAND">
+		<supports>Expertise, Skill Expertise, ID_INTERNAL_SUPPORT_EXPERTISE</supports>
+		<requirements>ID_PROFICIENCY_SKILL_SLEIGHTOFHAND</requirements>
+		<description>
+			<p>Your proficiency bonus is doubled for any Sleight of Hand check you make.</p>
+			<div class="reference">
+				<div element="ID_PROFICIENCY_SKILL_SLEIGHTOFHAND" />
+			</div>
+		</description>
+		<sheet display="false" />
+		<rules>
+			<stat name="sleight of hand:proficiency" value="proficiency" bonus="double" />
+		</rules>
+	</element>
+
+	<element name="Skill Expertise (Stealth)" type="Proficiency" source="Aurora Legacy Essentials" id="ID_INTERNAL_PROFICIENCY_SKILL_EXPERTISE_STEALTH">
+		<supports>Expertise, Skill Expertise, ID_INTERNAL_SUPPORT_EXPERTISE</supports>
+		<requirements>ID_PROFICIENCY_SKILL_STEALTH</requirements>
+		<description>
+			<p>Your proficiency bonus is doubled for any Stealth check you make.</p>
+			<div class="reference">
+				<div element="ID_PROFICIENCY_SKILL_STEALTH" />
+			</div>
+		</description>
+		<sheet display="false" />
+		<rules>
+			<stat name="stealth:proficiency" value="proficiency" bonus="double" />
+		</rules>
+	</element>
+
+	<element name="Skill Expertise (Survival)" type="Proficiency" source="Aurora Legacy Essentials" id="ID_INTERNAL_PROFICIENCY_SKILL_EXPERTISE_SURVIVAL">
+		<supports>Expertise, Skill Expertise, ID_INTERNAL_SUPPORT_EXPERTISE</supports>
+		<requirements>ID_PROFICIENCY_SKILL_SURVIVAL</requirements>
+		<description>
+			<p>Your proficiency bonus is doubled for any Survival check you make.</p>
+			<div class="reference">
+				<div element="ID_PROFICIENCY_SKILL_SURVIVAL" />
+			</div>
+		</description>
+		<sheet display="false" />
+		<rules>
+			<stat name="survival:proficiency" value="proficiency" bonus="double" />
+		</rules>
+	</element>
+
+	<element name="Tool Expertise (Thieves’ Tools)" type="Proficiency" source="Aurora Legacy Essentials" id="ID_INTERNAL_PROFICIENCY_TOOL_EXPERTISE_THIEVES_TOOLS">
+		<supports>Expertise, Tool Expertise, ID_INTERNAL_SUPPORT_EXPERTISE</supports>
+		<requirements>ID_INTERNAL_PROFICIENCY_TOOL_PROFICIENCY_THIEVES_TOOLS</requirements>
+		<description>
+			<p>Your proficiency bonus is doubled for any Thieves’ Tools check you make.</p>
+			<div class="reference">
+				<div element="ID_PROFICIENCY_TOOL_PROFICIENCY_THIEVES_TOOLS" />
+			</div>
+		</description>
+		<sheet display="false" />
+		<rules>
+			<stat name="thieves tools:proficiency" value="proficiency" bonus="double" />
+			<grant type="Class Feature" id="ID_INTERNAL_CLASS_FEATURE_TOOL_EXPERTISE_THIEVES_TOOLS" />
+		</rules>
+	</element>
+	<!-- Class Feature needed to display a description of Tool Expertise. Requirements block this element from displaying when character already has original PHB's Expertise element, typically gained from the Rogue class. Requirements aren't necessary for any other (future) tool expertise elements. -->
+	<element name="Tool Expertise (Thieves’ Tools)" type="Class Feature" source="Aurora Legacy Essentials" id="ID_INTERNAL_CLASS_FEATURE_TOOL_EXPERTISE_THIEVES_TOOLS">
+		<requirements>!ID_EXPERTISE_TOOL_THIEVES_TOOLS</requirements>
+		<sheet>
+        	<description>Your proficiency bonus is doubled for any Thieves’ Tools check you make.</description>
+		</sheet>
+	</element>
+
+	<!-- Saving Throws -->
+	<element name="Saving Throw Proficiency (Strength)" type="Proficiency" source="Aurora Legacy Essentials" id="ID_PROFICIENCY_SAVINGTHROW_STRENGTH">
+		<supports>Saving Throw</supports>
+		<rules>
+			<stat name="strength:save:proficiency" value="proficiency" bonus="proficiency" alt="Proficiency" />
+		</rules>
+	</element>
+
+	<element name="Saving Throw Proficiency (Dexterity)" type="Proficiency" source="Aurora Legacy Essentials" id="ID_PROFICIENCY_SAVINGTHROW_DEXTERITY">
+		<supports>Saving Throw</supports>
+		<rules>
+			<stat name="dexterity:save:proficiency" value="proficiency" bonus="proficiency" alt="Proficiency" />
+		</rules>
+	</element>
+
+	<element name="Saving Throw Proficiency (Constitution)" type="Proficiency" source="Aurora Legacy Essentials" id="ID_PROFICIENCY_SAVINGTHROW_CONSTITUTION">
+		<supports>Saving Throw</supports>
+		<rules>
+			<stat name="constitution:save:proficiency" value="proficiency" bonus="proficiency" alt="Proficiency" />
+		</rules>
+	</element>
+
+	<element name="Saving Throw Proficiency (Intelligence)" type="Proficiency" source="Aurora Legacy Essentials" id="ID_PROFICIENCY_SAVINGTHROW_INTELLIGENCE">
+		<supports>Saving Throw</supports>
+		<rules>
+			<stat name="intelligence:save:proficiency" value="proficiency" bonus="proficiency" alt="Proficiency" />
+		</rules>
+	</element>
+
+	<element name="Saving Throw Proficiency (Wisdom)" type="Proficiency" source="Aurora Legacy Essentials" id="ID_PROFICIENCY_SAVINGTHROW_WISDOM">
+		<supports>Saving Throw</supports>
+		<rules>
+			<stat name="wisdom:save:proficiency" value="proficiency" bonus="proficiency" alt="Proficiency" />
+		</rules>
+	</element>
+
+	<element name="Saving Throw Proficiency (Charisma)" type="Proficiency" source="Aurora Legacy Essentials" id="ID_PROFICIENCY_SAVINGTHROW_CHARISMA">
+		<supports>Saving Throw</supports>
+		<rules>
+			<stat name="charisma:save:proficiency" value="proficiency" bonus="proficiency" alt="Proficiency" />
+		</rules>
+	</element>
+
+	<element name="Weapon Proficiency (Simple Weapons)" type="Proficiency" source="Aurora Legacy Essentials" id="ID_PROFICIENCY_WEAPON_PROFICIENCY_SIMPLE_WEAPONS">
+		<rules>
+			<grant type="Proficiency" id="ID_PROFICIENCY_WEAPON_PROFICIENCY_SIMPLE_MELEE_WEAPONS" />
+			<grant type="Proficiency" id="ID_PROFICIENCY_WEAPON_PROFICIENCY_SIMPLE_RANGED_WEAPONS" />
+		</rules>
+	</element>
+
+	<element name="Weapon Proficiency (Simple Melee Weapons)" type="Proficiency" source="Aurora Legacy Essentials" id="ID_PROFICIENCY_WEAPON_PROFICIENCY_SIMPLE_MELEE_WEAPONS">
+		<rules>
+			<grant type="Proficiency" id="ID_PROFICIENCY_WEAPON_PROFICIENCY_CLUB" />
+			<grant type="Proficiency" id="ID_PROFICIENCY_WEAPON_PROFICIENCY_DAGGER" />
+			<grant type="Proficiency" id="ID_PROFICIENCY_WEAPON_PROFICIENCY_GREATCLUB" />
+			<grant type="Proficiency" id="ID_PROFICIENCY_WEAPON_PROFICIENCY_HANDAXE" />
+			<grant type="Proficiency" id="ID_PROFICIENCY_WEAPON_PROFICIENCY_JAVELIN" />
+			<grant type="Proficiency" id="ID_PROFICIENCY_WEAPON_PROFICIENCY_LIGHT_HAMMER" />
+			<grant type="Proficiency" id="ID_PROFICIENCY_WEAPON_PROFICIENCY_MACE" />
+			<grant type="Proficiency" id="ID_PROFICIENCY_WEAPON_PROFICIENCY_QUARTERSTAFF" />
+			<grant type="Proficiency" id="ID_PROFICIENCY_WEAPON_PROFICIENCY_SICKLE" />
+			<grant type="Proficiency" id="ID_PROFICIENCY_WEAPON_PROFICIENCY_SPEAR" />
+			<grant type="Proficiency" id="ID_PROFICIENCY_WEAPON_PROFICIENCY_UNARMED_STRIKE" />
+		</rules>
+	</element>
+
+	<element name="Weapon Proficiency (Simple Ranged Weapons)" type="Proficiency" source="Aurora Legacy Essentials" id="ID_PROFICIENCY_WEAPON_PROFICIENCY_SIMPLE_RANGED_WEAPONS">
+		<rules>
+			<grant type="Proficiency" id="ID_PROFICIENCY_WEAPON_PROFICIENCY_CROSSBOW_LIGHT" />
+			<grant type="Proficiency" id="ID_PROFICIENCY_WEAPON_PROFICIENCY_DART" />
+			<grant type="Proficiency" id="ID_PROFICIENCY_WEAPON_PROFICIENCY_SHORTBOW" />
+			<grant type="Proficiency" id="ID_PROFICIENCY_WEAPON_PROFICIENCY_SLING" />
+		</rules>
+	</element>
+
+	<element name="Weapon Proficiency (Martial Weapons)" type="Proficiency" source="Aurora Legacy Essentials" id="ID_PROFICIENCY_WEAPON_PROFICIENCY_MARTIAL_WEAPONS">
+		<rules>
+			<grant type="Proficiency" id="ID_PROFICIENCY_WEAPON_PROFICIENCY_MARTIAL_MELEE_WEAPONS" />
+			<grant type="Proficiency" id="ID_PROFICIENCY_WEAPON_PROFICIENCY_MARTIAL_RANGED_WEAPONS" />
+		</rules>
+	</element>
+
+	<element name="Weapon Proficiency (Martial Melee Weapons)" type="Proficiency" source="Aurora Legacy Essentials" id="ID_PROFICIENCY_WEAPON_PROFICIENCY_MARTIAL_MELEE_WEAPONS">
+		<rules>
+			<grant type="Proficiency" id="ID_PROFICIENCY_WEAPON_PROFICIENCY_BATTLEAXE" />
+			<grant type="Proficiency" id="ID_PROFICIENCY_WEAPON_PROFICIENCY_FLAIL" />
+			<grant type="Proficiency" id="ID_PROFICIENCY_WEAPON_PROFICIENCY_GLAIVE" />
+			<grant type="Proficiency" id="ID_PROFICIENCY_WEAPON_PROFICIENCY_GREATAXE" />
+			<grant type="Proficiency" id="ID_PROFICIENCY_WEAPON_PROFICIENCY_GREATSWORD" />
+			<grant type="Proficiency" id="ID_PROFICIENCY_WEAPON_PROFICIENCY_HALBERD" />
+			<grant type="Proficiency" id="ID_PROFICIENCY_WEAPON_PROFICIENCY_LANCE" />
+			<grant type="Proficiency" id="ID_PROFICIENCY_WEAPON_PROFICIENCY_LONGSWORD" />
+			<grant type="Proficiency" id="ID_PROFICIENCY_WEAPON_PROFICIENCY_MAUL" />
+			<grant type="Proficiency" id="ID_PROFICIENCY_WEAPON_PROFICIENCY_MORNINGSTAR" />
+			<grant type="Proficiency" id="ID_PROFICIENCY_WEAPON_PROFICIENCY_PIKE" />
+			<grant type="Proficiency" id="ID_PROFICIENCY_WEAPON_PROFICIENCY_RAPIER" />
+			<grant type="Proficiency" id="ID_PROFICIENCY_WEAPON_PROFICIENCY_SCIMITAR" />
+			<grant type="Proficiency" id="ID_PROFICIENCY_WEAPON_PROFICIENCY_SHORTSWORD" />
+			<grant type="Proficiency" id="ID_PROFICIENCY_WEAPON_PROFICIENCY_TRIDENT" />
+			<grant type="Proficiency" id="ID_PROFICIENCY_WEAPON_PROFICIENCY_WAR_PICK" />
+			<grant type="Proficiency" id="ID_PROFICIENCY_WEAPON_PROFICIENCY_WARHAMMER" />
+			<grant type="Proficiency" id="ID_PROFICIENCY_WEAPON_PROFICIENCY_WHIP" />
+		</rules>
+	</element>
+
+	<element name="Weapon Proficiency (Martial Ranged Weapons)" type="Proficiency" source="Aurora Legacy Essentials" id="ID_PROFICIENCY_WEAPON_PROFICIENCY_MARTIAL_RANGED_WEAPONS">
+		<rules>
+			<grant type="Proficiency" id="ID_PROFICIENCY_WEAPON_PROFICIENCY_BLOWGUN" />
+			<grant type="Proficiency" id="ID_PROFICIENCY_WEAPON_PROFICIENCY_CROSSBOW_HAND" />
+			<grant type="Proficiency" id="ID_PROFICIENCY_WEAPON_PROFICIENCY_CROSSBOW_HEAVY" />
+			<grant type="Proficiency" id="ID_PROFICIENCY_WEAPON_PROFICIENCY_LONGBOW" />
+			<grant type="Proficiency" id="ID_PROFICIENCY_WEAPON_PROFICIENCY_NET" />
+		</rules>
+	</element>
+
+	<element name="Weapon Proficiency (Club)" type="Proficiency" source="Aurora Legacy Essentials" id="ID_PROFICIENCY_WEAPON_PROFICIENCY_CLUB">
+		<supports>Weapon, Simple, Melee, ID_INTERNAL_WEAPON_CATEGORY_SIMPLE_MELEE, ID_INTERNAL_DAMAGE_TYPE_BLUDGEONING, ID_INTERNAL_WEAPON_PROPERTY_LIGHT, ID_INTERNAL_WEAPON_GROUP_CLUBS</supports>
+	</element>
+
+	<element name="Weapon Proficiency (Dagger)" type="Proficiency" source="Aurora Legacy Essentials" id="ID_PROFICIENCY_WEAPON_PROFICIENCY_DAGGER">
+		<supports>Weapon, Simple, Melee, ID_INTERNAL_WEAPON_CATEGORY_SIMPLE_MELEE, ID_INTERNAL_DAMAGE_TYPE_PIERCING, ID_INTERNAL_WEAPON_PROPERTY_FINESSE, ID_INTERNAL_WEAPON_PROPERTY_LIGHT, ID_INTERNAL_WEAPON_PROPERTY_THROWN</supports>
+	</element>
+
+	<element name="Weapon Proficiency (Greatclub)" type="Proficiency" source="Aurora Legacy Essentials" id="ID_PROFICIENCY_WEAPON_PROFICIENCY_GREATCLUB">
+		<supports>Weapon, Simple, Melee, ID_INTERNAL_WEAPON_CATEGORY_SIMPLE_MELEE, ID_INTERNAL_DAMAGE_TYPE_BLUDGEONING, ID_INTERNAL_WEAPON_PROPERTY_TWOHANDED, ID_INTERNAL_WEAPON_GROUP_CLUBS</supports>
+	</element>
+
+	<element name="Weapon Proficiency (Handaxe)" type="Proficiency" source="Aurora Legacy Essentials" id="ID_PROFICIENCY_WEAPON_PROFICIENCY_HANDAXE">
+		<supports>Weapon, Simple, Melee, ID_INTERNAL_WEAPON_CATEGORY_SIMPLE_MELEE, ID_INTERNAL_DAMAGE_TYPE_SLASHING, ID_INTERNAL_WEAPON_PROPERTY_LIGHT, ID_INTERNAL_WEAPON_PROPERTY_THROWN, ID_INTERNAL_WEAPON_GROUP_AXES</supports>
+	</element>
+
+	<element name="Weapon Proficiency (Javelin)" type="Proficiency" source="Aurora Legacy Essentials" id="ID_PROFICIENCY_WEAPON_PROFICIENCY_JAVELIN">
+		<supports>Weapon, Simple, Melee, ID_INTERNAL_WEAPON_CATEGORY_SIMPLE_MELEE, ID_INTERNAL_DAMAGE_TYPE_PIERCING, ID_INTERNAL_WEAPON_PROPERTY_THROWN</supports>
+	</element>
+
+	<element name="Weapon Proficiency (Light Hammer)" type="Proficiency" source="Aurora Legacy Essentials" id="ID_PROFICIENCY_WEAPON_PROFICIENCY_LIGHT_HAMMER">
+		<supports>Weapon, Simple, Melee, ID_INTERNAL_WEAPON_CATEGORY_SIMPLE_MELEE, ID_INTERNAL_DAMAGE_TYPE_BLUDGEONING, ID_INTERNAL_WEAPON_PROPERTY_LIGHT, ID_INTERNAL_WEAPON_PROPERTY_THROWN, ID_INTERNAL_WEAPON_GROUP_HAMMERS</supports>
+	</element>
+
+	<element name="Weapon Proficiency (Mace)" type="Proficiency" source="Aurora Legacy Essentials" id="ID_PROFICIENCY_WEAPON_PROFICIENCY_MACE">
+		<supports>Weapon, Simple, Melee, ID_INTERNAL_WEAPON_CATEGORY_SIMPLE_MELEE, ID_INTERNAL_DAMAGE_TYPE_BLUDGEONING, ID_INTERNAL_WEAPON_GROUP_MACES</supports>
+	</element>
+
+	<element name="Weapon Proficiency (Quarterstaff)" type="Proficiency" source="Aurora Legacy Essentials" id="ID_PROFICIENCY_WEAPON_PROFICIENCY_QUARTERSTAFF">
+		<supports>Weapon, Simple, Melee, ID_INTERNAL_WEAPON_CATEGORY_SIMPLE_MELEE, ID_INTERNAL_DAMAGE_TYPE_BLUDGEONING, ID_INTERNAL_WEAPON_PROPERTY_VERSATILE, ID_INTERNAL_WEAPON_GROUP_POLEARMS</supports>
+	</element>
+
+	<element name="Weapon Proficiency (Sickle)" type="Proficiency" source="Aurora Legacy Essentials" id="ID_PROFICIENCY_WEAPON_PROFICIENCY_SICKLE">
+		<supports>Weapon, Simple, Melee, ID_INTERNAL_WEAPON_CATEGORY_SIMPLE_MELEE, ID_INTERNAL_DAMAGE_TYPE_SLASHING, ID_INTERNAL_WEAPON_PROPERTY_LIGHT</supports>
+	</element>
+
+	<element name="Weapon Proficiency (Spear)" type="Proficiency" source="Aurora Legacy Essentials" id="ID_PROFICIENCY_WEAPON_PROFICIENCY_SPEAR">
+		<supports>Weapon, Simple, Melee, ID_INTERNAL_WEAPON_CATEGORY_SIMPLE_MELEE, ID_INTERNAL_DAMAGE_TYPE_PIERCING, ID_INTERNAL_WEAPON_PROPERTY_THROWN, ID_INTERNAL_WEAPON_PROPERTY_VERSATILE, ID_INTERNAL_WEAPON_GROUP_SPEARS, ID_INTERNAL_WEAPON_GROUP_POLEARMS</supports>
+	</element>
+
+	<element name="Weapon Proficiency (Unarmed Strike)" type="Proficiency" source="Aurora Legacy Essentials" id="ID_PROFICIENCY_WEAPON_PROFICIENCY_UNARMED_STRIKE">
+		<supports>Weapon, Simple, Melee</supports>
+	</element>
+
+	<element name="Weapon Proficiency (Dart)" type="Proficiency" source="Aurora Legacy Essentials" id="ID_PROFICIENCY_WEAPON_PROFICIENCY_DART">
+		<supports>Weapon, Simple, Ranged, ID_INTERNAL_WEAPON_CATEGORY_SIMPLE_RANGED, ID_INTERNAL_DAMAGE_TYPE_PIERCING, ID_INTERNAL_WEAPON_PROPERTY_FINESSE, ID_INTERNAL_WEAPON_PROPERTY_THROWN</supports>
+	</element>
+
+	<element name="Weapon Proficiency (Light Crossbow)" type="Proficiency" source="Aurora Legacy Essentials" id="ID_PROFICIENCY_WEAPON_PROFICIENCY_CROSSBOW_LIGHT">
+		<supports>Weapon, Simple, Ranged, ID_INTERNAL_WEAPON_CATEGORY_SIMPLE_RANGED, ID_INTERNAL_DAMAGE_TYPE_PIERCING, ID_INTERNAL_WEAPON_PROPERTY_AMMUNITION, ID_INTERNAL_WEAPON_PROPERTY_LOADING, ID_INTERNAL_WEAPON_PROPERTY_TWOHANDED, ID_INTERNAL_WEAPON_GROUP_CROSSBOWS</supports>
+	</element>
+
+	<element name="Weapon Proficiency (Shortbow)" type="Proficiency" source="Aurora Legacy Essentials" id="ID_PROFICIENCY_WEAPON_PROFICIENCY_SHORTBOW">
+		<supports>Weapon, Simple, Ranged, ID_INTERNAL_WEAPON_CATEGORY_SIMPLE_RANGED, ID_INTERNAL_DAMAGE_TYPE_PIERCING, ID_INTERNAL_WEAPON_PROPERTY_AMMUNITION, ID_INTERNAL_WEAPON_PROPERTY_TWOHANDED, ID_INTERNAL_WEAPON_GROUP_BOWS</supports>
+	</element>
+
+	<element name="Weapon Proficiency (Sling)" type="Proficiency" source="Aurora Legacy Essentials" id="ID_PROFICIENCY_WEAPON_PROFICIENCY_SLING">
+		<supports>Weapon, Simple, Ranged, ID_INTERNAL_WEAPON_CATEGORY_SIMPLE_RANGED, ID_INTERNAL_DAMAGE_TYPE_BLUDGEONING, ID_INTERNAL_WEAPON_PROPERTY_AMMUNITION</supports>
+	</element>
+
+	<element name="Weapon Proficiency (Battleaxe)" type="Proficiency" source="Aurora Legacy Essentials" id="ID_PROFICIENCY_WEAPON_PROFICIENCY_BATTLEAXE">
+		<supports>Weapon, Martial, Melee, ID_INTERNAL_WEAPON_CATEGORY_MARTIAL_MELEE, ID_INTERNAL_DAMAGE_TYPE_SLASHING, ID_INTERNAL_WEAPON_PROPERTY_VERSATILE, ID_INTERNAL_WEAPON_GROUP_AXES</supports>
+	</element>
+
+	<element name="Weapon Proficiency (Flail)" type="Proficiency" source="Aurora Legacy Essentials" id="ID_PROFICIENCY_WEAPON_PROFICIENCY_FLAIL">
+		<supports>Weapon, Martial, Melee, ID_INTERNAL_WEAPON_CATEGORY_MARTIAL_MELEE, ID_INTERNAL_DAMAGE_TYPE_BLUDGEONING</supports>
+	</element>
+
+	<element name="Weapon Proficiency (Glaive)" type="Proficiency" source="Aurora Legacy Essentials" id="ID_PROFICIENCY_WEAPON_PROFICIENCY_GLAIVE">
+		<supports>Weapon, Martial, Melee, ID_INTERNAL_WEAPON_CATEGORY_MARTIAL_MELEE, ID_INTERNAL_DAMAGE_TYPE_SLASHING, ID_INTERNAL_WEAPON_PROPERTY_HEAVY, ID_INTERNAL_WEAPON_PROPERTY_REACH, ID_INTERNAL_WEAPON_PROPERTY_TWOHANDED, ID_INTERNAL_WEAPON_GROUP_POLEARMS</supports>
+	</element>
+
+	<element name="Weapon Proficiency (Greataxe)" type="Proficiency" source="Aurora Legacy Essentials" id="ID_PROFICIENCY_WEAPON_PROFICIENCY_GREATAXE">
+		<supports>Weapon, Martial, Melee, ID_INTERNAL_WEAPON_CATEGORY_MARTIAL_MELEE, ID_INTERNAL_DAMAGE_TYPE_SLASHING, ID_INTERNAL_WEAPON_PROPERTY_HEAVY, ID_INTERNAL_WEAPON_PROPERTY_TWOHANDED, ID_INTERNAL_WEAPON_GROUP_AXES</supports>
+	</element>
+
+	<element name="Weapon Proficiency (Greatsword)" type="Proficiency" source="Aurora Legacy Essentials" id="ID_PROFICIENCY_WEAPON_PROFICIENCY_GREATSWORD">
+		<supports>Weapon, Martial, Melee, ID_INTERNAL_WEAPON_CATEGORY_MARTIAL_MELEE, ID_INTERNAL_DAMAGE_TYPE_SLASHING, ID_INTERNAL_WEAPON_PROPERTY_HEAVY, ID_INTERNAL_WEAPON_PROPERTY_TWOHANDED, ID_INTERNAL_WEAPON_GROUP_SWORDS</supports>
+	</element>
+
+	<element name="Weapon Proficiency (Halberd)" type="Proficiency" source="Aurora Legacy Essentials" id="ID_PROFICIENCY_WEAPON_PROFICIENCY_HALBERD">
+		<supports>Weapon, Martial, Melee, ID_INTERNAL_WEAPON_CATEGORY_MARTIAL_MELEE, ID_INTERNAL_DAMAGE_TYPE_SLASHING, ID_INTERNAL_WEAPON_PROPERTY_HEAVY, ID_INTERNAL_WEAPON_PROPERTY_REACH, ID_INTERNAL_WEAPON_PROPERTY_TWOHANDED, ID_INTERNAL_WEAPON_GROUP_POLEARMS</supports>
+	</element>
+
+	<element name="Weapon Proficiency (Lance)" type="Proficiency" source="Aurora Legacy Essentials" id="ID_PROFICIENCY_WEAPON_PROFICIENCY_LANCE">
+		<supports>Weapon, Martial, Melee, ID_INTERNAL_WEAPON_CATEGORY_MARTIAL_MELEE, ID_INTERNAL_DAMAGE_TYPE_PIERCING, ID_INTERNAL_WEAPON_PROPERTY_REACH, ID_INTERNAL_WEAPON_PROPERTY_SPECIAL, ID_INTERNAL_WEAPON_PROPERTY_SPECIAL_LANCE, ID_WOTC_PHB24_WEAPON_PROPERTY_HEAVY, ID_WOTC_PHB24_WEAPON_GROUP_POLEARMS</supports>
+	</element>
+
+	<element name="Weapon Proficiency (Longsword)" type="Proficiency" source="Aurora Legacy Essentials" id="ID_PROFICIENCY_WEAPON_PROFICIENCY_LONGSWORD">
+		<supports>Weapon, Martial, Melee, ID_INTERNAL_WEAPON_CATEGORY_MARTIAL_MELEE, ID_INTERNAL_DAMAGE_TYPE_SLASHING, ID_INTERNAL_WEAPON_PROPERTY_VERSATILE, ID_INTERNAL_WEAPON_GROUP_SWORDS</supports>
+	</element>
+
+	<element name="Weapon Proficiency (Maul)" type="Proficiency" source="Aurora Legacy Essentials" id="ID_PROFICIENCY_WEAPON_PROFICIENCY_MAUL">
+		<supports>Weapon, Martial, Melee, ID_INTERNAL_WEAPON_CATEGORY_MARTIAL_MELEE, ID_INTERNAL_DAMAGE_TYPE_BLUDGEONING, ID_INTERNAL_WEAPON_PROPERTY_HEAVY, ID_INTERNAL_WEAPON_PROPERTY_TWOHANDED, ID_INTERNAL_WEAPON_GROUP_MAULS</supports>
+	</element>
+
+	<element name="Weapon Proficiency (Morningstar)" type="Proficiency" source="Aurora Legacy Essentials" id="ID_PROFICIENCY_WEAPON_PROFICIENCY_MORNINGSTAR">
+		<supports>Weapon, Martial, Melee, ID_INTERNAL_WEAPON_CATEGORY_MARTIAL_MELEE, ID_INTERNAL_DAMAGE_TYPE_PIERCING</supports>
+	</element>
+
+	<element name="Weapon Proficiency (Pike)" type="Proficiency" source="Aurora Legacy Essentials" id="ID_PROFICIENCY_WEAPON_PROFICIENCY_PIKE">
+		<supports>Weapon, Martial, Melee, ID_INTERNAL_WEAPON_CATEGORY_MARTIAL_MELEE, ID_INTERNAL_DAMAGE_TYPE_PIERCING, ID_INTERNAL_WEAPON_PROPERTY_HEAVY, ID_INTERNAL_WEAPON_PROPERTY_REACH, ID_INTERNAL_WEAPON_PROPERTY_TWOHANDED, ID_INTERNAL_WEAPON_GROUP_POLEARMS</supports>
+	</element>
+
+	<element name="Weapon Proficiency (Rapier)" type="Proficiency" source="Aurora Legacy Essentials" id="ID_PROFICIENCY_WEAPON_PROFICIENCY_RAPIER">
+		<supports>Weapon, Martial, Melee, ID_INTERNAL_WEAPON_CATEGORY_MARTIAL_MELEE, ID_INTERNAL_DAMAGE_TYPE_PIERCING, ID_INTERNAL_WEAPON_PROPERTY_FINESSE, ID_INTERNAL_WEAPON_GROUP_SWORDS</supports>
+	</element>
+
+	<element name="Weapon Proficiency (Scimitar)" type="Proficiency" source="Aurora Legacy Essentials" id="ID_PROFICIENCY_WEAPON_PROFICIENCY_SCIMITAR">
+		<supports>Weapon, Martial, Melee, ID_INTERNAL_WEAPON_CATEGORY_MARTIAL_MELEE, ID_INTERNAL_DAMAGE_TYPE_SLASHING, ID_INTERNAL_WEAPON_PROPERTY_FINESSE, ID_INTERNAL_WEAPON_PROPERTY_LIGHT, ID_INTERNAL_WEAPON_GROUP_SWORDS</supports>
+	</element>
+
+	<element name="Weapon Proficiency (Shortsword)" type="Proficiency" source="Aurora Legacy Essentials" id="ID_PROFICIENCY_WEAPON_PROFICIENCY_SHORTSWORD">
+		<supports>Weapon, Martial, Melee, ID_INTERNAL_WEAPON_CATEGORY_MARTIAL_MELEE, ID_INTERNAL_DAMAGE_TYPE_PIERCING, ID_INTERNAL_WEAPON_PROPERTY_FINESSE, ID_INTERNAL_WEAPON_PROPERTY_LIGHT, ID_INTERNAL_WEAPON_GROUP_SWORDS</supports>
+	</element>
+
+	<element name="Weapon Proficiency (Trident)" type="Proficiency" source="Aurora Legacy Essentials" id="ID_PROFICIENCY_WEAPON_PROFICIENCY_TRIDENT">
+		<supports>Weapon, Martial, Melee, ID_INTERNAL_WEAPON_CATEGORY_MARTIAL_MELEE, ID_INTERNAL_DAMAGE_TYPE_PIERCING, ID_INTERNAL_WEAPON_PROPERTY_THROWN, ID_INTERNAL_WEAPON_PROPERTY_VERSATILE</supports>
+	</element>
+
+	<element name="Weapon Proficiency (Warhammer)" type="Proficiency" source="Aurora Legacy Essentials" id="ID_PROFICIENCY_WEAPON_PROFICIENCY_WARHAMMER">
+		<supports>Weapon, Martial, Melee, ID_INTERNAL_WEAPON_CATEGORY_MARTIAL_MELEE, ID_INTERNAL_DAMAGE_TYPE_BLUDGEONING, ID_INTERNAL_WEAPON_PROPERTY_VERSATILE, ID_INTERNAL_WEAPON_GROUP_HAMMERS</supports>
+	</element>
+
+	<element name="Weapon Proficiency (War Pick)" type="Proficiency" source="Aurora Legacy Essentials" id="ID_PROFICIENCY_WEAPON_PROFICIENCY_WAR_PICK">
+		<supports>Weapon, Martial, Melee, ID_INTERNAL_WEAPON_CATEGORY_MARTIAL_MELEE, ID_INTERNAL_DAMAGE_TYPE_PIERCING, ID_WOTC_PHB24_WEAPON_PROPERTY_VERSATILE</supports>
+	</element>
+
+	<element name="Weapon Proficiency (Whip)" type="Proficiency" source="Aurora Legacy Essentials" id="ID_PROFICIENCY_WEAPON_PROFICIENCY_WHIP">
+		<supports>Weapon, Martial, Melee, ID_INTERNAL_WEAPON_CATEGORY_MARTIAL_MELEE, ID_INTERNAL_DAMAGE_TYPE_SLASHING, ID_INTERNAL_WEAPON_PROPERTY_FINESSE, ID_INTERNAL_WEAPON_PROPERTY_REACH</supports>
+	</element>
+
+	<element name="Weapon Proficiency (Blowgun)" type="Proficiency" source="Aurora Legacy Essentials" id="ID_PROFICIENCY_WEAPON_PROFICIENCY_BLOWGUN">
+		<supports>Weapon, Martial, Ranged, ID_INTERNAL_WEAPON_CATEGORY_MARTIAL_RANGED, ID_INTERNAL_DAMAGE_TYPE_PIERCING, ID_INTERNAL_WEAPON_PROPERTY_AMMUNITION, ID_INTERNAL_WEAPON_PROPERTY_LOADING</supports>
+	</element>
+
+	<element name="Weapon Proficiency (Hand Crossbow)" type="Proficiency" source="Aurora Legacy Essentials" id="ID_PROFICIENCY_WEAPON_PROFICIENCY_CROSSBOW_HAND">
+		<supports>Weapon, Martial, Ranged, ID_INTERNAL_WEAPON_CATEGORY_MARTIAL_RANGED,ID_INTERNAL_DAMAGE_TYPE_PIERCING,ID_INTERNAL_WEAPON_PROPERTY_AMMUNITION,ID_INTERNAL_WEAPON_PROPERTY_LIGHT,ID_INTERNAL_WEAPON_PROPERTY_LOADING, ID_INTERNAL_WEAPON_GROUP_CROSSBOWS</supports>
+	</element>
+
+	<element name="Weapon Proficiency (Heavy Crossbow)" type="Proficiency" source="Aurora Legacy Essentials" id="ID_PROFICIENCY_WEAPON_PROFICIENCY_CROSSBOW_HEAVY">
+		<supports>Weapon, Martial, Ranged, ID_INTERNAL_WEAPON_CATEGORY_MARTIAL_RANGED, ID_INTERNAL_DAMAGE_TYPE_PIERCING, ID_INTERNAL_WEAPON_PROPERTY_AMMUNITION, ID_INTERNAL_WEAPON_PROPERTY_HEAVY, ID_INTERNAL_WEAPON_PROPERTY_LOADING, ID_INTERNAL_WEAPON_PROPERTY_TWOHANDED, ID_INTERNAL_WEAPON_GROUP_CROSSBOWS</supports>
+	</element>
+
+	<element name="Weapon Proficiency (Longbow)" type="Proficiency" source="Aurora Legacy Essentials" id="ID_PROFICIENCY_WEAPON_PROFICIENCY_LONGBOW">
+		<supports>Weapon, Martial, Ranged, ID_INTERNAL_WEAPON_CATEGORY_MARTIAL_RANGED, ID_INTERNAL_DAMAGE_TYPE_PIERCING, ID_INTERNAL_WEAPON_PROPERTY_AMMUNITION, ID_INTERNAL_WEAPON_PROPERTY_HEAVY, ID_INTERNAL_WEAPON_PROPERTY_TWOHANDED, ID_INTERNAL_WEAPON_GROUP_BOWS</supports>
+	</element>
+
+	<element name="Weapon Proficiency (Net)" type="Proficiency" source="Aurora Legacy Essentials" id="ID_PROFICIENCY_WEAPON_PROFICIENCY_NET">
+		<supports>Weapon, Martial, Ranged, ID_INTERNAL_WEAPON_CATEGORY_MARTIAL_RANGED, ID_INTERNAL_WEAPON_PROPERTY_SPECIAL, ID_INTERNAL_WEAPON_PROPERTY_SPECIAL_NET, ID_INTERNAL_WEAPON_PROPERTY_THROWN</supports>
+	</element>
+
+	<element name="Weapon Proficiency (Swords)" type="Proficiency" source="Aurora Legacy Essentials" id="ID_INTERNAL_PROFICIENCY_GROUP_SWORDS">
+		<supports>ID_INTERNAL_PROFICIENCY_WEAPON, ID_INTERNAL_PROFICIENCY_GROUP</supports>
+		<rules>
+			<grant type="Proficiency" id="ID_PROFICIENCY_WEAPON_PROFICIENCY_GREATSWORD" />
+			<grant type="Proficiency" id="ID_PROFICIENCY_WEAPON_PROFICIENCY_LONGSWORD" />
+			<grant type="Proficiency" id="ID_PROFICIENCY_WEAPON_PROFICIENCY_RAPIER" />
+			<grant type="Proficiency" id="ID_PROFICIENCY_WEAPON_PROFICIENCY_SCIMITAR" />
+			<grant type="Proficiency" id="ID_PROFICIENCY_WEAPON_PROFICIENCY_SHORTSWORD" />
+		</rules>
+	</element>
+
+	<element name="Weapon Proficiency (Axes)" type="Proficiency" source="Aurora Legacy Essentials" id="ID_INTERNAL_PROFICIENCY_GROUP_AXES">
+		<supports>ID_INTERNAL_PROFICIENCY_WEAPON, ID_INTERNAL_PROFICIENCY_GROUP</supports>
+		<rules>
+			<grant type="Proficiency" id="ID_PROFICIENCY_WEAPON_PROFICIENCY_HANDAXE" />
+			<grant type="Proficiency" id="ID_PROFICIENCY_WEAPON_PROFICIENCY_BATTLEAXE" />
+			<grant type="Proficiency" id="ID_PROFICIENCY_WEAPON_PROFICIENCY_GREATAXE" />
+		</rules>
+	</element>
+
+	<element name="Weapon Proficiency (Maces)" type="Proficiency" source="Aurora Legacy Essentials" id="ID_INTERNAL_PROFICIENCY_GROUP_MACES">
+		<supports>ID_INTERNAL_PROFICIENCY_WEAPON, ID_INTERNAL_PROFICIENCY_GROUP</supports>
+		<rules>
+			<grant type="Proficiency" id="ID_PROFICIENCY_WEAPON_PROFICIENCY_MACE" />
+		</rules>
+	</element>
+
+	<element name="Weapon Proficiency (Hammers)" type="Proficiency" source="Aurora Legacy Essentials" id="ID_INTERNAL_PROFICIENCY_GROUP_HAMMERS">
+		<supports>ID_INTERNAL_PROFICIENCY_WEAPON, ID_INTERNAL_PROFICIENCY_GROUP</supports>
+		<rules>
+			<grant type="Proficiency" id="ID_PROFICIENCY_WEAPON_PROFICIENCY_LIGHT_HAMMER" />
+			<grant type="Proficiency" id="ID_PROFICIENCY_WEAPON_PROFICIENCY_WARHAMMER" />
+		</rules>
+	</element>
+
+	<element name="Weapon Proficiency (Mauls)" type="Proficiency" source="Aurora Legacy Essentials" id="ID_INTERNAL_PROFICIENCY_GROUP_MAULS">
+		<supports>ID_INTERNAL_PROFICIENCY_WEAPON, ID_INTERNAL_PROFICIENCY_GROUP</supports>
+		<rules>
+			<grant type="Proficiency" id="ID_PROFICIENCY_WEAPON_PROFICIENCY_MAUL" />
+		</rules>
+	</element>
+
+	<element name="Weapon Proficiency (Bows)" type="Proficiency" source="Aurora Legacy Essentials" id="ID_INTERNAL_PROFICIENCY_GROUP_BOWS">
+		<supports>ID_INTERNAL_PROFICIENCY_WEAPON, ID_INTERNAL_PROFICIENCY_GROUP</supports>
+		<rules>
+			<grant type="Proficiency" id="ID_PROFICIENCY_WEAPON_PROFICIENCY_SHORTBOW" />
+			<grant type="Proficiency" id="ID_PROFICIENCY_WEAPON_PROFICIENCY_LONGBOW" />
+		</rules>
+	</element>
+
+	<element name="Weapon Proficiency (Crossbows)" type="Proficiency" source="Aurora Legacy Essentials" id="ID_INTERNAL_PROFICIENCY_GROUP_CROSSBOWS">
+		<supports>ID_INTERNAL_PROFICIENCY_WEAPON, ID_INTERNAL_PROFICIENCY_GROUP</supports>
+		<rules>
+			<grant type="Proficiency" id="ID_PROFICIENCY_WEAPON_PROFICIENCY_CROSSBOW_LIGHT" />
+			<grant type="Proficiency" id="ID_PROFICIENCY_WEAPON_PROFICIENCY_CROSSBOW_HAND" />
+			<grant type="Proficiency" id="ID_PROFICIENCY_WEAPON_PROFICIENCY_CROSSBOW_HEAVY" />
+		</rules>
+	</element>
+
+	<element name="Weapon Proficiency (Spears)" type="Proficiency" source="Aurora Legacy Essentials" id="ID_INTERNAL_PROFICIENCY_GROUP_SPEARS">
+		<supports>ID_INTERNAL_PROFICIENCY_WEAPON, ID_INTERNAL_PROFICIENCY_GROUP</supports>
+		<rules>
+			<grant type="Proficiency" id="ID_PROFICIENCY_WEAPON_PROFICIENCY_SPEAR" />
+		</rules>
+	</element>
+
+	<element name="Weapon Proficiency (Clubs)" type="Proficiency" source="Aurora Legacy Essentials" id="ID_INTERNAL_PROFICIENCY_GROUP_CLUBS">
+		<supports>ID_INTERNAL_PROFICIENCY_WEAPON, ID_INTERNAL_PROFICIENCY_GROUP</supports>
+		<rules>
+			<grant type="Proficiency" id="ID_PROFICIENCY_WEAPON_PROFICIENCY_CLUB" />
+			<grant type="Proficiency" id="ID_PROFICIENCY_WEAPON_PROFICIENCY_GREATCLUB" />
+		</rules>
+	</element>
+
+	<!-- Armor Proficiencies. Overrides the same elements within the app, so they can be used with disabled PHB Source
+	to do: add descriptions from original PHB -->
+	<element name="Armor Proficiency (Light Armor)" type="Proficiency" source="Aurora Legacy Essentials" id="ID_PROFICIENCY_ARMOR_PROFICIENCY_LIGHT_ARMOR">
+		<description>
+			<p>Made from supple and thin materials, light armor favors agile adventurers since it offers some protection without sacrificing mobility. If you wear light armor, you add your Dexterity modifier to the base number from your armor type to determine your Armor Class.</p>
+		</description>
+		<rules>
+			<grant type="Proficiency" id="ID_PROFICIENCY_ARMOR_PROFICIENCY_PADDED" />
+			<grant type="Proficiency" id="ID_PROFICIENCY_ARMOR_PROFICIENCY_LEATHER" />
+			<grant type="Proficiency" id="ID_PROFICIENCY_ARMOR_PROFICIENCY_STUDDED_LEATHER" />
+		</rules>
+	</element>
+
+	<element name="Armor Proficiency (Medium Armor)" type="Proficiency" source="Aurora Legacy Essentials" id="ID_PROFICIENCY_ARMOR_PROFICIENCY_MEDIUM_ARMOR">
+		<description>
+			<p>Medium armor offers more protection than light armor, but it also impairs movement more. If you wear medium armor, you add your Dexterity modifier, to a maximum of +2, to the base number from your armor type to determine your Armor Class.</p>
+		</description>
+		<rules>
+			<grant type="Proficiency" id="ID_PROFICIENCY_ARMOR_PROFICIENCY_HIDE" />
+			<grant type="Proficiency" id="ID_PROFICIENCY_ARMOR_PROFICIENCY_CHAIN_SHIRT" />
+			<grant type="Proficiency" id="ID_PROFICIENCY_ARMOR_PROFICIENCY_SCALE_MAIL" />
+			<grant type="Proficiency" id="ID_PROFICIENCY_ARMOR_PROFICIENCY_BREASTPLATE" />
+			<grant type="Proficiency" id="ID_PROFICIENCY_ARMOR_PROFICIENCY_HALF_PLATE" />
+		</rules>
+	</element>
+
+	<element name="Armor Proficiency (Heavy Armor)" type="Proficiency" source="Aurora Legacy Essentials" id="ID_PROFICIENCY_ARMOR_PROFICIENCY_HEAVY_ARMOR">
+		<description>
+			<p>Of all the armor categories, heavy armor offers the best protection. These suits of armor cover the entire body and are designed to stop a wide range of attacks. Only proficient warriors can manage their weight and bulk.</p>
+			<p class="indent">Heavy armor doesn’t let you add your Dexterity modifier to your Armor Class, but it also doesn’t penalize you if your Dexterity modifier is negative.</p>
+		</description>
+		<rules>
+			<grant type="Proficiency" id="ID_PROFICIENCY_ARMOR_PROFICIENCY_RING_MAIL" />
+			<grant type="Proficiency" id="ID_PROFICIENCY_ARMOR_PROFICIENCY_CHAIN_MAIL" />
+			<grant type="Proficiency" id="ID_PROFICIENCY_ARMOR_PROFICIENCY_SPLINT" />
+			<grant type="Proficiency" id="ID_PROFICIENCY_ARMOR_PROFICIENCY_PLATE" />
+		</rules>
+	</element>
+
+	<element name="Armor Proficiency (Shields)" type="Proficiency" source="Aurora Legacy Essentials" id="ID_PROFICIENCY_ARMOR_PROFICIENCY_SHIELDS">
+		<description>
+			<p>A shield is made from wood or metal and is carried in one hand. Wielding a shield increases your Armor Class by 2. You can benefit from only one shield at a time.</p>
+		</description>
+		<rules>
+			<grant type="Proficiency" id="ID_PROFICIENCY_ARMOR_PROFICIENCY_SHIELD" />
+		</rules>
+	</element>
+
+	<element name="Armor Proficiency (Padded)" type="Proficiency" source="Aurora Legacy Essentials" id="ID_PROFICIENCY_ARMOR_PROFICIENCY_PADDED">
+		<supports>Light Armor, ID_INTERNAL_ARMOR_GROUP_LIGHT</supports>
+	</element>
+
+	<element name="Armor Proficiency (Leather)" type="Proficiency" source="Aurora Legacy Essentials" id="ID_PROFICIENCY_ARMOR_PROFICIENCY_LEATHER">
+		<supports>Light Armor, ID_INTERNAL_ARMOR_GROUP_LIGHT</supports>
+	</element>
+
+	<element name="Armor Proficiency (Studded Leather)" type="Proficiency" source="Aurora Legacy Essentials" id="ID_PROFICIENCY_ARMOR_PROFICIENCY_STUDDED_LEATHER">
+		<supports>Light Armor, ID_INTERNAL_ARMOR_GROUP_LIGHT</supports>
+	</element>
+
+	<element name="Armor Proficiency (Hide)" type="Proficiency" source="Aurora Legacy Essentials" id="ID_PROFICIENCY_ARMOR_PROFICIENCY_HIDE">
+		<supports>Medium Armor, ID_INTERNAL_ARMOR_GROUP_MEDIUM</supports>
+	</element>
+
+	<element name="Armor Proficiency (Chain Shirt)" type="Proficiency" source="Aurora Legacy Essentials" id="ID_PROFICIENCY_ARMOR_PROFICIENCY_CHAIN_SHIRT">
+		<supports>Medium Armor, ID_INTERNAL_ARMOR_GROUP_MEDIUM</supports>
+	</element>
+
+	<element name="Armor Proficiency (Scale Mail)" type="Proficiency" source="Aurora Legacy Essentials" id="ID_PROFICIENCY_ARMOR_PROFICIENCY_SCALE_MAIL">
+		<supports>Medium Armor, ID_INTERNAL_ARMOR_GROUP_MEDIUM</supports>
+	</element>
+
+	<element name="Armor Proficiency (Breastplate)" type="Proficiency" source="Aurora Legacy Essentials" id="ID_PROFICIENCY_ARMOR_PROFICIENCY_BREASTPLATE">
+		<supports>Medium Armor, ID_INTERNAL_ARMOR_GROUP_MEDIUM</supports>
+	</element>
+
+	<element name="Armor Proficiency (Half Plate)" type="Proficiency" source="Aurora Legacy Essentials" id="ID_PROFICIENCY_ARMOR_PROFICIENCY_HALF_PLATE">
+		<supports>Medium Armor, ID_INTERNAL_ARMOR_GROUP_MEDIUM</supports>
+	</element>
+
+	<element name="Armor Proficiency (Ring Mail)" type="Proficiency" source="Aurora Legacy Essentials" id="ID_PROFICIENCY_ARMOR_PROFICIENCY_RING_MAIL">
+		<supports>Heavy Armor, ID_INTERNAL_ARMOR_GROUP_HEAVY</supports>
+	</element>
+
+	<element name="Armor Proficiency (Chain Mail)" type="Proficiency" source="Aurora Legacy Essentials" id="ID_PROFICIENCY_ARMOR_PROFICIENCY_CHAIN_MAIL">
+		<supports>Heavy Armor, ID_INTERNAL_ARMOR_GROUP_HEAVY</supports>
+	</element>
+
+	<element name="Armor Proficiency (Splint)" type="Proficiency" source="Aurora Legacy Essentials" id="ID_PROFICIENCY_ARMOR_PROFICIENCY_SPLINT">
+		<supports>Heavy Armor, ID_INTERNAL_ARMOR_GROUP_HEAVY</supports>
+	</element>
+
+	<element name="Armor Proficiency (Plate)" type="Proficiency" source="Aurora Legacy Essentials" id="ID_PROFICIENCY_ARMOR_PROFICIENCY_PLATE">
+		<supports>Heavy Armor, ID_INTERNAL_ARMOR_GROUP_HEAVY</supports>
+	</element>
+
+	<element name="Armor Proficiency (Shield)" type="Proficiency" source="Aurora Legacy Essentials" id="ID_PROFICIENCY_ARMOR_PROFICIENCY_SHIELD">
+		<supports>Shield, ID_INTERNAL_ARMOR_GROUP_SHIELD</supports>
+	</element>
+
+	<!-- Weapon Proficiencies -->
+	<element name="Weapon Proficiency (Improvised Weapons)" type="Proficiency" source="Aurora Legacy Essentials" id="ID_ALE_PROFICIENCY_WEAPON_PROFICIENCY_IMPROVISED_WEAPONS">
+		<supports>Improvised Weapons</supports>
+		<description>
+			<p>Sometimes characters don’t have their weapons and have to attack with whatever is close at hand. An improvised weapon includes any object you can wield in one or two hands, such as broken glass, a table leg, a frying pan, a wagon wheel, or a dead goblin.</p>
+			<p class="indent">In many cases, an improvised weapon is similar to an actual weapon and can be treated as such. For example, a table leg is akin to a club. At the DM’s option, a character proficient with a weapon can use a similar object as if it were that weapon and use his or her proficiency bonus.</p>
+			<p class="indent">An object that bears no resemblance to a weapon deals 1d4 damage (the DM assigns a damage type appropriate to the object). If a character uses a ranged weapon to make a melee attack, or throws a melee weapon that does not have the thrown property, it also deals 1d4 damage. An improvised thrown weapon has a normal range of 20 feet and a long range of 60 feet.</p>
+		</description>
+	</element>
+
+	<!-- Alignments. Overrides the same elements within the app, so they can be used with disabled PHB Source -->
+	<element name="Lawful Good" type="Alignment" source="Aurora Legacy Essentials" id="ID_ALIGNMENT_LAWFUL_GOOD">
+		<supports />
+		<description>
+			<p>Lawful good (LG) creatures can be counted on to do the right thing as expected by society. Gold dragons, paladins, and most dwarves are lawful good.</p>
+		</description>
+		<setters>
+			<set name="Abbreviation">LG</set>
+		</setters>
+		<rules />
+	</element>
+
+	<element name="Neutral Good" type="Alignment" source="Aurora Legacy Essentials" id="ID_ALIGNMENT_NEUTRAL_GOOD">
+		<supports />
+		<description>
+			<p>Neutral good (NG) folk do the best they can to help others according to their needs. Many celestials, some cloud giants, and most gnomes are neutral good.</p>
+		</description>
+		<setters>
+			<set name="Abbreviation">NG</set>
+		</setters>
+		<rules />
+	</element>
+
+	<element name="Chaotic Good" type="Alignment" source="Aurora Legacy Essentials" id="ID_ALIGNMENT_CHAOTIC_GOOD">
+		<supports />
+		<description>
+			<p>Chaotic good (CG) creatures act as their conscience directs, with little regard for what others expect. Copper dragons, many elves, and unicorns are chaotic good.</p>
+		</description>
+		<setters>
+			<set name="Abbreviation">CG</set>
+		</setters>
+		<rules />
+	</element>
+
+	<element name="Lawful Neutral" type="Alignment" source="Aurora Legacy Essentials" id="ID_ALIGNMENT_LAWFUL_NEUTRAL">
+		<supports />
+		<description>
+			<p>Lawful neutral (LN) individuals act in accordance with law, tradition, or personal codes. Many monks and some wizards are lawful neutral.</p>
+		</description>
+		<setters>
+			<set name="Abbreviation">LW</set>
+		</setters>
+		<rules />
+	</element>
+
+	<element name="Neutral" type="Alignment" source="Aurora Legacy Essentials" id="ID_ALIGNMENT_NEUTRAL">
+		<supports />
+		<description>
+			<p>Neutral (N) is the alignment of those who prefer to steer clear of moral questions and don’t take sides, doing what seems best at the time. Lizardfolk, most druids, and many humans are neutral.</p>
+		</description>
+		<setters>
+			<set name="Abbreviation">N</set>
+		</setters>
+		<rules />
+	</element>
+
+	<element name="Chaotic Neutral" type="Alignment" source="Aurora Legacy Essentials" id="ID_ALIGNMENT_CHAOTIC_NEUTRAL">
+		<supports />
+		<description>
+			<p>Chaotic neutral (CN) creatures follow their whims, holding their personal freedom above all else. Many barbarians and rogues, and some bards, are chaotic neutral.</p>
+		</description>
+		<setters>
+			<set name="Abbreviation">CN</set>
+		</setters>
+		<rules />
+	</element>
+
+	<element name="Lawful Evil" type="Alignment" source="Aurora Legacy Essentials" id="ID_ALIGNMENT_LAWFUL_EVIL">
+		<supports />
+		<description>
+			<p>Lawful evil (LE) creatures methodically take what they want, within the limits of a code of tradition, loyalty, or order. Devils, blue dragons, and hobgoblins are lawful evil.</p>
+		</description>
+		<setters>
+			<set name="Abbreviation">LE</set>
+		</setters>
+		<rules />
+	</element>
+
+	<element name="Neutral Evil" type="Alignment" source="Aurora Legacy Essentials" id="ID_ALIGNMENT_NEUTRAL_EVIL">
+		<supports />
+		<description>
+			<p>Neutral evil (NE) is the alignment of those who do whatever they can get away with, without compassion or qualms. Many drow, some cloud giants, and yugoloths are neutral evil.</p>
+		</description>
+		<setters>
+			<set name="Abbreviation">NE</set>
+		</setters>
+		<rules />
+	</element>
+
+	<element name="Chaotic Evil" type="Alignment" source="Aurora Legacy Essentials" id="ID_ALIGNMENT_CHAOTIC_EVIL">
+		<supports />
+		<description>
+			<p>Chaotic evil (CE) creatures act with arbitrary violence, spurred by their greed, hatred, or bloodlust. Demons, red dragons, and orcs are chaotic evil.</p>
+		</description>
+		<setters>
+			<set name="Abbreviation">CE</set>
+		</setters>
+		<rules />
+	</element>
+
+	<!-- Languages. Overrides the same elements within the app, so they can be used with disabled PHB Source -->
+	<element name="Common" type="Language" source="Aurora Legacy Essentials" id="ID_LANGUAGE_COMMON">
+		<supports>Standard</supports>
+		<description>
+			<p>Typically spoken by humans.</p>
+		</description>
+		<setters>
+			<set name="standard">true</set>
+			<set name="speakers">Humans</set>
+			<set name="script">Common</set>
+		</setters>
+	</element>
+
+	<element name="Dwarvish" type="Language" source="Aurora Legacy Essentials" id="ID_LANGUAGE_DWARVISH">
+		<supports>Standard</supports>
+		<description>
+			<p>Typically spoken by dwarves.</p>
+		</description>
+		<setters>
+			<set name="standard">true</set>
+			<set name="speakers">Dwarves</set>
+			<set name="script">Dwarvish</set>
+		</setters>
+	</element>
+
+	<element name="Elvish" type="Language" source="Aurora Legacy Essentials" id="ID_LANGUAGE_ELVISH">
+		<supports>Standard</supports>
+		<description>
+			<p>Typically spoken by elves.</p>
+		</description>
+		<setters>
+			<set name="standard">true</set>
+			<set name="speakers">Elves</set>
+			<set name="script">Elvish</set>
+		</setters>
+	</element>
+
+	<element name="Giant" type="Language" source="Aurora Legacy Essentials" id="ID_LANGUAGE_GIANT">
+		<supports>Standard</supports>
+		<description>
+			<p>Typically spoken by ogres and giants.</p>
+		</description>
+		<setters>
+			<set name="standard">true</set>
+			<set name="speakers">Ogres, giants</set>
+			<set name="script">Dwarvish</set>
+		</setters>
+	</element>
+
+	<element name="Gnomish" type="Language" source="Aurora Legacy Essentials" id="ID_LANGUAGE_GNOMISH">
+		<supports>Standard</supports>
+		<description>
+			<p>Typically spoken by gnomes.</p>
+		</description>
+		<setters>
+			<set name="standard">true</set>
+			<set name="speakers">Gnomes</set>
+			<set name="script">Dwarvish</set>
+		</setters>
+	</element>
+
+	<element name="Goblin" type="Language" source="Aurora Legacy Essentials" id="ID_LANGUAGE_GOBLIN">
+		<supports>Standard</supports>
+		<description>
+			<p>Typically spoken by goblinoids.</p>
+		</description>
+		<setters>
+			<set name="standard">true</set>
+			<set name="speakers">Goblinoids</set>
+			<set name="script">Dwarvish</set>
+		</setters>
+	</element>
+
+	<element name="Halfling" type="Language" source="Aurora Legacy Essentials" id="ID_LANGUAGE_HALFLING">
+		<supports>Standard</supports>
+		<description>
+			<p>Typically spoken by halflings.</p>
+		</description>
+		<setters>
+			<set name="standard">true</set>
+			<set name="speakers">Halflings</set>
+			<set name="script">Common</set>
+		</setters>
+	</element>
+
+	<element name="Orc" type="Language" source="Aurora Legacy Essentials" id="ID_LANGUAGE_ORC">
+		<supports>Standard</supports>
+		<description>
+			<p>Typically spoken by orcs.</p>
+		</description>
+		<setters>
+			<set name="standard">true</set>
+			<set name="speakers">Orcs</set>
+			<set name="script">Dwarvish</set>
+		</setters>
+	</element>
+
+	<!-- Rare Languages (uses "Exotic" or "Secret" support for pre-2024 rules)-->
+	<element name="Abyssal" type="Language" source="Aurora Legacy Essentials" id="ID_LANGUAGE_ABYSSAL">
+		<supports>Exotic, Rare</supports>
+		<description>
+			<p>Typically spoken by demons.</p>
+		</description>
+		<setters>
+			<set name="exotic">true</set>
+			<set name="speakers">Demons</set>
+			<set name="script">Infernal</set>
+		</setters>
+	</element>
+
+	<element name="Celestial" type="Language" source="Aurora Legacy Essentials" id="ID_LANGUAGE_CELESTIAL">
+		<supports>Exotic, Rare</supports>
+		<description>
+			<p>Typically spoken by celestials</p>
+		</description>
+		<setters>
+			<set name="exotic">true</set>
+			<set name="speakers">Celestials</set>
+			<set name="script">Celestial</set>
+		</setters>
+	</element>
+
+	<element name="Deep Speech" type="Language" source="Aurora Legacy Essentials" id="ID_LANGUAGE_DEEP_SPEECH">
+		<supports>Exotic, Rare</supports>
+		<description>
+			<p>Typically spoken by mind flayers and beholders.</p>
+		</description>
+		<setters>
+			<set name="exotic">true</set>
+			<set name="speakers">Mind flayers, beholders</set>
+			<set name="script">—</set>
+		</setters>
+	</element>
+
+	<element name="Infernal" type="Language" source="Aurora Legacy Essentials" id="ID_LANGUAGE_INFERNAL">
+		<supports>Exotic, Rare</supports>
+		<description>
+			<p>Typically spoken by devils.</p>
+		</description>
+		<setters>
+			<set name="exotic">true</set>
+			<set name="speakers">Devils</set>
+			<set name="script">Infernal</set>
+		</setters>
+	</element>
+
+	<element name="Primordial" type="Language" source="Aurora Legacy Essentials" id="ID_LANGUAGE_PRIMORDIAL">
+		<supports>Exotic, Rare</supports>
+		<description>
+			<p>Typically spoken by elementals.</p>
+			<p>The Primordial language includes the Auran, Aquan, Ignan, and Terran dialects, one for each of the four elemental planes.</p>
+		</description>
+		<setters>
+			<set name="exotic">true</set>
+			<set name="speakers">Elementals</set>
+			<set name="script">Dwarvish</set>
+		</setters>
+	</element>
+
+	<element name="Sylvan" type="Language" source="Aurora Legacy Essentials" id="ID_LANGUAGE_SYLVAN">
+		<supports>Exotic, Rare</supports>
+		<description>
+			<p>Typically spoken by fey creatures.</p>
+		</description>
+		<setters>
+			<set name="exotic">true</set>
+			<set name="speakers">Fey creatures</set>
+			<set name="script">Elvish</set>
+		</setters>
+	</element>
+
+	<element name="Undercommon" type="Language" source="Aurora Legacy Essentials" id="ID_LANGUAGE_UNDERCOMMON">
+		<supports>Exotic, Rare</supports>
+		<description>
+			<p>Typically spoken by underdark traders.</p>
+		</description>
+		<setters>
+			<set name="exotic">true</set>
+			<set name="speakers">Underdark traders</set>
+			<set name="script">Elvish</set>
+		</setters>
+	</element>
+
+	<element name="Druidic" type="Language" source="Aurora Legacy Essentials" id="ID_LANGUAGE_DRUIDIC">
+		<supports>Secret, Rare</supports>
+		<description>
+			<p>The secret language of druids. You can speak the language and use it to leave hidden messages. You and others who know this language automatically spot such a message. Others spot the message’s presence with a successful DC 15 Wisdom (Perception) check but can’t decipher it without magic.</p>
+		</description>
+		<setters>
+			<set name="secret">true</set>
+			<set name="speakers">Druids</set>
+		</setters>
+	</element>
+
+	<element name="Thieves’ Cant" type="Language" source="Aurora Legacy Essentials" id="ID_WOTC_PHB_LANGUAGE_THIEVES_CANT">
+		<supports>Secret, Rare</supports>
+		<description>
+			<p>A secret mix of dialect, jargon, and code that allows you to hide messages in seemingly normal conversation. Only another creature that knows thieves’ cant understands such messages. It takes four times longer to convey such a message than it does to speak the same idea plainly.</p>
+		</description>
+		<setters>
+			<set name="secret">true</set>
+			<set name="speakers">Rogues</set>
+		</setters>
+	</element>
+
+	<!-- Vision elements -->
+	<element name="Darkvision" type="Vision" source="Aurora Legacy Essentials" id="ID_VISION_DARKVISION">
+		<requirements>!ID_VISION_SUPERIORDARKVISION</requirements>
+		<description>
+			<p>Many creatures in the worlds of D&amp;D, especially those that dwell underground, have darkvision. Within a specified range, a creature with darkvision can see in darkness as if the darkness were dim light, so areas of darkness are only lightly obscured as far as that creature is concerned. However, the creature can’t discern color in darkness, only shades of gray.</p>
+		</description>
+		<sheet>
+			<description>You can see in dim light within {{darkvision:range}} feet of you as if it were bright light, and in darkness as if it were dim light.</description>
+		</sheet>
+		<rules>
+			<stat name="darkvision:range" value="60" bonus="base" />
+		</rules>
+	</element>
+
+	<element name="Blindsight" type="Vision" source="Aurora Legacy Essentials" id="ID_VISION_BLINDSIGHT">
+		<description>
+			<p>A creature with blindsight can perceive its surroundings without relying on sight, within a specific radius. Creatures without eyes, such as oozes, and creatures with echolocation or heightened senses, such as bats and true dragons, have this sense.</p>
+		</description>
+		<sheet>
+			<description>You perceive your surroundings within {{blindsight:range}} feet without relying on sight.</description>
+		</sheet>
+		<rules>
+			<stat name="blindsight:range" value="0" bonus="base" />
+		</rules>
+	</element>
+
+	<element name="Truesight" type="Vision" source="Aurora Legacy Essentials" id="ID_VISION_TRUESIGHT">
+		<description>
+			<p>A creature with truesight can, out to a specific range, see in normal and magical darkness, see invisible creatures and objects, automatically detect visual illusions and succeed on saving throws against them, and perceives the original form of a shapechanger or a creature that is transformed by magic. Furthermore, the creature can see into the Ethereal Plane.</p>
+		</description>
+		<sheet>
+			<description>You can see in normal and magical darkness, see invisible creatures and objects, automatically detect visual illusions and succeed on saving throws against them, and perceives the original form of a shapechanger or a creature that is transformed by magic within {{truesight:range}} feet. Furthermore, the creature can see into the Ethereal Plane.</description>
+		</sheet>
+		<rules>
+			<stat name="truesight:range" value="0" bonus="base" />
+		</rules>
+	</element>
+
+	<element name="Tremorsense" type="Vision" source="Aurora Legacy Essentials" id="ID_VISION_TREMORSENSE">
+		<description>
+			<p>A monster with tremorsense can detect and pinpoint the origin of vibrations within a specific radius, provided that the monster and the source of the vibrations are in contact with the same ground or substance.</p>
+			<p class="indent">Tremorsense can't be used to detect flying or incorporeal creatures. Many burrowing creatures, such as ankhegs, have this special sense.</p>
+		</description>
+		<sheet>
+			<description>You can detect and pinpoint the origin of vibrations within {{tremorsense:range}} feet, provided that the monster and the source of the vibrations are in contact with the same ground or substance. Tremorsense can't be used to detect flying or incorporeal creatures.</description>
+		</sheet>
+		<rules>
+			<stat name="tremorsense:range" value="0" bonus="base" />
+		</rules>
+	</element>
+
+	<!-- Ranger's Favored Terrain features, also used by Fighter's Scout subclass from UA20160104 -->
+	<element name="Arctic" type="Class Feature" source="Aurora Legacy Essentials" id="ID_WOTC_CLASSFEATURE_RANGER_NATURAL_EXPLORER_FT_ARCTIC">
+		<supports>Favored Terrain</supports>
+		<description>
+			<p>You are particularly familiar with one type of natural environment and are adept at traveling and surviving in such regions. When you make an Intelligence or Wisdom check related to your favored terrain, your proficiency bonus is doubled if you are using a skill that you’re proficient in.</p>
+			<p class="indent">While traveling for an hour or more in your favored terrain, you gain the following benefits:</p>
+			<ul>
+				<li>Difficult terrain doesn’t slow your group’s travel.</li>
+				<li>Your group can’t become lost except by magical means.</li>
+				<li>Even when you are engaged in another activity while traveling (such as foraging, navigating, or tracking), you remain alert to danger.</li>
+				<li>If you are traveling alone, you can move stealthily at a normal pace.</li>
+				<li>When you forage, you find twice as much food as you normally would.</li>
+				<li>While tracking other creatures, you also learn their exact number, their sizes, and how long ago they passed through the area.</li>
+			</ul>
+		</description>		
+	</element>
+
+	<element name="Coast" type="Class Feature" source="Aurora Legacy Essentials" id="ID_WOTC_CLASSFEATURE_RANGER_NATURAL_EXPLORER_FT_COAST">
+		<supports>Favored Terrain</supports>
+		<description>
+			<p>You are particularly familiar with one type of natural environment and are adept at traveling and surviving in such regions. When you make an Intelligence or Wisdom check related to your favored terrain, your proficiency bonus is doubled if you are using a skill that you’re proficient in.</p>
+			<p class="indent">While traveling for an hour or more in your favored terrain, you gain the following benefits:</p>
+			<ul>
+				<li>Difficult terrain doesn’t slow your group’s travel.</li>
+				<li>Your group can’t become lost except by magical means.</li>
+				<li>Even when you are engaged in another activity while traveling (such as foraging, navigating, or tracking), you remain alert to danger.</li>
+				<li>If you are traveling alone, you can move stealthily at a normal pace.</li>
+				<li>When you forage, you find twice as much food as you normally would.</li>
+				<li>While tracking other creatures, you also learn their exact number, their sizes, and how long ago they passed through the area.</li>
+			</ul>
+		</description>		
+	</element>
+
+	<element name="Desert" type="Class Feature" source="Aurora Legacy Essentials" id="ID_WOTC_CLASSFEATURE_RANGER_NATURAL_EXPLORER_FT_DESERT">
+		<supports>Favored Terrain</supports>
+		<description>
+			<p>You are particularly familiar with one type of natural environment and are adept at traveling and surviving in such regions. When you make an Intelligence or Wisdom check related to your favored terrain, your proficiency bonus is doubled if you are using a skill that you’re proficient in.</p>
+			<p class="indent">While traveling for an hour or more in your favored terrain, you gain the following benefits:</p>
+			<ul>
+				<li>Difficult terrain doesn’t slow your group’s travel.</li>
+				<li>Your group can’t become lost except by magical means.</li>
+				<li>Even when you are engaged in another activity while traveling (such as foraging, navigating, or tracking), you remain alert to danger.</li>
+				<li>If you are traveling alone, you can move stealthily at a normal pace.</li>
+				<li>When you forage, you find twice as much food as you normally would.</li>
+				<li>While tracking other creatures, you also learn their exact number, their sizes, and how long ago they passed through the area.</li>
+			</ul>
+		</description>		
+	</element>
+
+	<element name="Forest" type="Class Feature" source="Aurora Legacy Essentials" id="ID_WOTC_CLASSFEATURE_RANGER_NATURAL_EXPLORER_FT_FOREST">
+		<supports>Favored Terrain</supports>
+		<description>
+			<p>You are particularly familiar with one type of natural environment and are adept at traveling and surviving in such regions. When you make an Intelligence or Wisdom check related to your favored terrain, your proficiency bonus is doubled if you are using a skill that you’re proficient in.</p>
+			<p class="indent">While traveling for an hour or more in your favored terrain, you gain the following benefits:</p>
+			<ul>
+				<li>Difficult terrain doesn’t slow your group’s travel.</li>
+				<li>Your group can’t become lost except by magical means.</li>
+				<li>Even when you are engaged in another activity while traveling (such as foraging, navigating, or tracking), you remain alert to danger.</li>
+				<li>If you are traveling alone, you can move stealthily at a normal pace.</li>
+				<li>When you forage, you find twice as much food as you normally would.</li>
+				<li>While tracking other creatures, you also learn their exact number, their sizes, and how long ago they passed through the area.</li>
+			</ul>
+		</description>		
+	</element>
+
+	<element name="Grassland" type="Class Feature" source="Aurora Legacy Essentials" id="ID_WOTC_CLASSFEATURE_RANGER_NATURAL_EXPLORER_FT_GRASSLAND">
+		<supports>Favored Terrain</supports>
+		<description>
+			<p>You are particularly familiar with one type of natural environment and are adept at traveling and surviving in such regions. When you make an Intelligence or Wisdom check related to your favored terrain, your proficiency bonus is doubled if you are using a skill that you’re proficient in.</p>
+			<p class="indent">While traveling for an hour or more in your favored terrain, you gain the following benefits:</p>
+			<ul>
+				<li>Difficult terrain doesn’t slow your group’s travel.</li>
+				<li>Your group can’t become lost except by magical means.</li>
+				<li>Even when you are engaged in another activity while traveling (such as foraging, navigating, or tracking), you remain alert to danger.</li>
+				<li>If you are traveling alone, you can move stealthily at a normal pace.</li>
+				<li>When you forage, you find twice as much food as you normally would.</li>
+				<li>While tracking other creatures, you also learn their exact number, their sizes, and how long ago they passed through the area.</li>
+			</ul>
+		</description>		
+	</element>
+
+	<element name="Mountain" type="Class Feature" source="Aurora Legacy Essentials" id="ID_WOTC_CLASSFEATURE_RANGER_NATURAL_EXPLORER_FT_MOUNTAIN">
+		<supports>Favored Terrain</supports>
+		<description>
+			<p>You are particularly familiar with one type of natural environment and are adept at traveling and surviving in such regions. When you make an Intelligence or Wisdom check related to your favored terrain, your proficiency bonus is doubled if you are using a skill that you’re proficient in.</p>
+			<p class="indent">While traveling for an hour or more in your favored terrain, you gain the following benefits:</p>
+			<ul>
+				<li>Difficult terrain doesn’t slow your group’s travel.</li>
+				<li>Your group can’t become lost except by magical means.</li>
+				<li>Even when you are engaged in another activity while traveling (such as foraging, navigating, or tracking), you remain alert to danger.</li>
+				<li>If you are traveling alone, you can move stealthily at a normal pace.</li>
+				<li>When you forage, you find twice as much food as you normally would.</li>
+				<li>While tracking other creatures, you also learn their exact number, their sizes, and how long ago they passed through the area.</li>
+			</ul>
+		</description>		
+	</element>
+
+	<element name="Swamp" type="Class Feature" source="Aurora Legacy Essentials" id="ID_WOTC_CLASSFEATURE_RANGER_NATURAL_EXPLORER_FT_SWAMP">
+		<supports>Favored Terrain</supports>
+		<description>
+			<p>You are particularly familiar with one type of natural environment and are adept at traveling and surviving in such regions. When you make an Intelligence or Wisdom check related to your favored terrain, your proficiency bonus is doubled if you are using a skill that you’re proficient in.</p>
+			<p class="indent">While traveling for an hour or more in your favored terrain, you gain the following benefits:</p>
+			<ul>
+				<li>Difficult terrain doesn’t slow your group’s travel.</li>
+				<li>Your group can’t become lost except by magical means.</li>
+				<li>Even when you are engaged in another activity while traveling (such as foraging, navigating, or tracking), you remain alert to danger.</li>
+				<li>If you are traveling alone, you can move stealthily at a normal pace.</li>
+				<li>When you forage, you find twice as much food as you normally would.</li>
+				<li>While tracking other creatures, you also learn their exact number, their sizes, and how long ago they passed through the area.</li>
+			</ul>
+		</description>		
+	</element>
+
+	<element name="Underdark" type="Class Feature" source="Aurora Legacy Essentials" id="ID_WOTC_CLASSFEATURE_RANGER_NATURAL_EXPLORER_FT_UNDERDARK">
+		<supports>Favored Terrain</supports>
+		<description>
+			<p>You are particularly familiar with one type of natural environment and are adept at traveling and surviving in such regions. When you make an Intelligence or Wisdom check related to your favored terrain, your proficiency bonus is doubled if you are using a skill that you’re proficient in.</p>
+			<p class="indent">While traveling for an hour or more in your favored terrain, you gain the following benefits:</p>
+			<ul>
+				<li>Difficult terrain doesn’t slow your group’s travel.</li>
+				<li>Your group can’t become lost except by magical means.</li>
+				<li>Even when you are engaged in another activity while traveling (such as foraging, navigating, or tracking), you remain alert to danger.</li>
+				<li>If you are traveling alone, you can move stealthily at a normal pace.</li>
+				<li>When you forage, you find twice as much food as you normally would.</li>
+				<li>While tracking other creatures, you also learn their exact number, their sizes, and how long ago they passed through the area.</li>
+			</ul>
+		</description>		
+	</element>
+
+</elements>
