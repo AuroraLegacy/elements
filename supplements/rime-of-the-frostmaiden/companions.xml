@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<elements>
+	<info>
+		<update version="0.0.1">
+			<file name="companions.xml" url="https://raw.githubusercontent.com/AuroraLegacy/elements/master/supplements/rime-of-the-frostmaiden/companions.xml" />
+		</update>
+	</info>
+
+	<element name="Fox" type="Companion" source="Icewind Dale: Rime of the Frostmaiden" id="ID_WOTC_IDROTF_COMPANION_FOX">
+		<supports>Familiar, Variant Familiar</supports>
+		<description>
+			<p>The white arctic foxes of Icewind Dale live in burrows and are acclimated to cold weather. They prowl the outskirts of Ten-Towns and nearby forests for food, hunting hares or stealing fish. These timid creatures avoid contact with humanoids, but they are sometimes used as mounts by chwingas.</p>
+		</description>
+		<setters>
+			<set name="strength">2</set>
+			<set name="dexterity">16</set>
+			<set name="constitution">11</set>
+			<set name="intelligence">3</set>
+			<set name="wisdom">12</set>
+			<set name="charisma">6</set>
+			<set name="ac">13</set>
+			<set name="hp">2 (1d4)</set>
+			<set name="speed">30 ft., burrow 5 ft.</set>
+			<set name="senses">darkvision 60 ft., passive Perception 13</set>
+			<set name="languages">—</set>
+			<set name="skills">Perception +3, Stealth +5</set>
+			<set name="type">Beast</set>
+			<set name="size">Tiny</set>
+			<set name="alignment">unaligned</set>
+			<set name="challenge">0</set>
+			<set name="traits">ID_WOTC_IDROTF_COMPANION_TRAIT_FOX_KEEN_HEARING</set>
+			<set name="actions">ID_WOTC_IDROTF_COMPANION_ACTION_FOX_BITE</set>
+		</setters>
+		<rules>
+			<stat name="companion:ac" value="13" />
+			<stat name="companion:hp:max" value="2" bonus="base" />
+			<stat name="companion:speed" value="30" bonus="base" />
+			<stat name="companion:speed:burrow" value="5" bonus="base" />
+			<stat name="companion:perception:proficiency" value="companion:proficiency" bonus="base" />
+			<stat name="companion:stealth:proficiency" value="companion:proficiency" bonus="base" />
+		</rules>
+	</element>
+	
+	<element name="Keen Senses" type="Companion Trait" source="Icewind Dale: Rime of the Frostmaiden" id="ID_WOTC_IDROTF_COMPANION_TRAIT_FOX_KEEN_HEARING">
+		<description>
+			<p>The fox has advantage on Wisdom (Perception) checks that rely on hearing.</p>
+		</description>
+		<sheet>
+			<description>The fox has advantage on Wisdom (Perception) checks that rely on hearing.</description>
+		</sheet>
+	</element>
+	
+	<element name="Bite" type="Companion Action" source="Icewind Dale: Rime of the Frostmaiden" id="ID_WOTC_IDROTF_COMPANION_ACTION_FOX_BITE">
+		<description>
+			<p>Melee Weapon Attack: +5 to hit, reach 5 ft., one creature. Hit: 1 piercing damage.</p>
+		</description>
+		<sheet>
+			<description>Melee Weapon Attack: +5 to hit, reach 5 ft., one creature. Hit: 1 piercing damage.</description>
+		</sheet>
+	</element>
+
+	<element name="Hare" type="Companion" source="Icewind Dale: Rime of the Frostmaiden" id="ID_WOTC_IDROTF_COMPANION_HARE">
+		<supports>Familiar, Variant Familiar</supports>
+		<description>
+			<p>Snowshoe hares are gentle herbivores that live in burrows throughout Icewind Dale. They have shorter ears than other hares and are acclimated to cold weather.</p>
+		</description>
+		<setters>
+			<set name="strength">1</set>
+			<set name="dexterity">17</set>
+			<set name="constitution">9</set>
+			<set name="intelligence">2</set>
+			<set name="wisdom">11</set>
+			<set name="charisma">4</set>
+			<set name="ac">13</set>
+			<set name="hp">1 (1d4 - 1)</set>
+			<set name="speed">20 ft., burrow 5 ft.</set>
+			<set name="senses">passive Perception 12</set>
+			<set name="languages">—</set>
+			<set name="skills">Perception +2, Stealth +5</set>
+			<set name="type">Beast</set>
+			<set name="size">Tiny</set>
+			<set name="alignment">unaligned</set>
+			<set name="challenge">0</set>
+			<set name="traits">ID_WOTC_IDROTF_COMPANION_TRAIT_HARE_ESCAPE</set>
+		</setters>
+		<rules>
+			<stat name="companion:ac" value="13" />
+			<stat name="companion:hp:max" value="1" bonus="base" />
+			<stat name="companion:speed" value="20" bonus="base" />
+			<stat name="companion:speed:burrow" value="5" bonus="base" />
+			<stat name="companion:perception:proficiency" value="companion:proficiency" bonus="base" />
+			<stat name="companion:stealth:proficiency" value="companion:proficiency" bonus="base" />
+		</rules>
+	</element>
+	
+	<element name="Escape" type="Companion Trait" source="Icewind Dale: Rime of the Frostmaiden" id="ID_WOTC_IDROTF_COMPANION_TRAIT_HARE_ESCAPE">
+		<description>
+			<p>The hare can take the Dash, Disengage, or Hide action as a bonus action on each of its turns.</p>
+		</description>
+		<sheet>
+			<description>The hare can take the Dash, Disengage, or Hide action as a bonus action on each of its turns.</description>
+		</sheet>
+	</element>
+	
+</elements>
