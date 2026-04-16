@@ -4,7 +4,7 @@
 		<name>Ranger</name>
 		<description>The Ranger class from the Player’s Handbook.</description>
 		<author url="http://dnd.wizards.com/products/tabletop-games/rpg-products/rpg_playershandbook">Wizards of the Coast</author>
-		<update version="0.3.2">
+		<update version="0.3.3">
 			<file name="class-ranger.xml" url="https://raw.githubusercontent.com/AuroraLegacy/elements/master/core/players-handbook/classes/class-ranger.xml" />
 		</update>
 	</info>
@@ -125,7 +125,7 @@
 		</rules>
 		<multiclass id="ID_WOTC_PHB_MULTICLASS_RANGER">
 			<prerequisite>Dexterity 13 and Wisdom 13</prerequisite>
-			<requirements>([dex:13],[wis:13])</requirements>
+			<requirements>(([dex:13],[wis:13]),!(ID_WOTC_PHB24_CLASS_RANGER||ID_WOTC_PHB24_MULTICLASS_RANGER))||ID_INTERNAL_GRANTS_MULTICLASS_UNLOCKER</requirements>
 			<setters>
 				<set name="multiclass proficiencies">Light armor, medium armor, shields, simple weapons, martial weapons, one skill from the class’s skill list</set>
 			</setters>
@@ -236,7 +236,9 @@
 			<list>Ranger</list>
 		</spellcasting>
 		<rules>
+			<grant type="Grants" id="ID_INTERNAL_GRANTS_SPELLCASTING_FEATURE" />
 			<grant type="Grants" id="ID_INTERNAL_GRANT_MULTICLASS_SPELLCASTING_SLOTS_HALF" requirements="ID_INTERNAL_GRANT_MULTICLASS"/>
+
 			<stat name="ranger:spellcasting:slots:1" value="2" level="2" />
 			<stat name="ranger:spellcasting:slots:1" value="1" level="3" />
 			<stat name="ranger:spellcasting:slots:1" value="1" level="5" />
@@ -249,6 +251,7 @@
 			<stat name="ranger:spellcasting:slots:4" value="1" level="17" />
 			<stat name="ranger:spellcasting:slots:5" value="1" level="17" />
 			<stat name="ranger:spellcasting:slots:5" value="1" level="19" />
+
 			<select type="Spell" name="Spellcasting (Ranger)" supports="$(spellcasting:list),$(spellcasting:slots)" level="2" number="2" spellcasting="Ranger"/>
 			<select type="Spell" name="Spellcasting (Ranger)" supports="$(spellcasting:list),$(spellcasting:slots)" level="3" spellcasting="Ranger" />
 			<select type="Spell" name="Spellcasting (Ranger)" supports="$(spellcasting:list),$(spellcasting:slots)" level="5" spellcasting="Ranger" />
@@ -669,126 +672,7 @@
         </description>
     </element>
 
-	<element name="Arctic" type="Class Feature" source="Player’s Handbook" id="ID_WOTC_CLASSFEATURE_RANGER_NATURAL_EXPLORER_FT_ARCTIC">
-		<supports>Favored Terrain</supports>
-		<description>
-			<p>You are particularly familiar with one type of natural environment and are adept at traveling and surviving in such regions. When you make an Intelligence or Wisdom check related to your favored terrain, your proficiency bonus is doubled if you are using a skill that you’re proficient in.</p>
-			<p class="indent">While traveling for an hour or more in your favored terrain, you gain the following benefits:</p>
-			<ul>
-				<li>Difficult terrain doesn’t slow your group’s travel.</li>
-				<li>Your group can’t become lost except by magical means.</li>
-				<li>Even when you are engaged in another activity while traveling (such as foraging, navigating, or tracking), you remain alert to danger.</li>
-				<li>If you are traveling alone, you can move stealthily at a normal pace.</li>
-				<li>When you forage, you find twice as much food as you normally would.</li>
-				<li>While tracking other creatures, you also learn their exact number, their sizes, and how long ago they passed through the area.</li>
-			</ul>
-		</description>		
-	</element>
-	<element name="Coast" type="Class Feature" source="Player’s Handbook" id="ID_WOTC_CLASSFEATURE_RANGER_NATURAL_EXPLORER_FT_COAST">
-		<supports>Favored Terrain</supports>
-		<description>
-			<p>You are particularly familiar with one type of natural environment and are adept at traveling and surviving in such regions. When you make an Intelligence or Wisdom check related to your favored terrain, your proficiency bonus is doubled if you are using a skill that you’re proficient in.</p>
-			<p class="indent">While traveling for an hour or more in your favored terrain, you gain the following benefits:</p>
-			<ul>
-				<li>Difficult terrain doesn’t slow your group’s travel.</li>
-				<li>Your group can’t become lost except by magical means.</li>
-				<li>Even when you are engaged in another activity while traveling (such as foraging, navigating, or tracking), you remain alert to danger.</li>
-				<li>If you are traveling alone, you can move stealthily at a normal pace.</li>
-				<li>When you forage, you find twice as much food as you normally would.</li>
-				<li>While tracking other creatures, you also learn their exact number, their sizes, and how long ago they passed through the area.</li>
-			</ul>
-		</description>		
-	</element>
-	<element name="Desert" type="Class Feature" source="Player’s Handbook" id="ID_WOTC_CLASSFEATURE_RANGER_NATURAL_EXPLORER_FT_DESERT">
-		<supports>Favored Terrain</supports>
-		<description>
-			<p>You are particularly familiar with one type of natural environment and are adept at traveling and surviving in such regions. When you make an Intelligence or Wisdom check related to your favored terrain, your proficiency bonus is doubled if you are using a skill that you’re proficient in.</p>
-			<p class="indent">While traveling for an hour or more in your favored terrain, you gain the following benefits:</p>
-			<ul>
-				<li>Difficult terrain doesn’t slow your group’s travel.</li>
-				<li>Your group can’t become lost except by magical means.</li>
-				<li>Even when you are engaged in another activity while traveling (such as foraging, navigating, or tracking), you remain alert to danger.</li>
-				<li>If you are traveling alone, you can move stealthily at a normal pace.</li>
-				<li>When you forage, you find twice as much food as you normally would.</li>
-				<li>While tracking other creatures, you also learn their exact number, their sizes, and how long ago they passed through the area.</li>
-			</ul>
-		</description>		
-	</element>
-	<element name="Forest" type="Class Feature" source="Player’s Handbook" id="ID_WOTC_CLASSFEATURE_RANGER_NATURAL_EXPLORER_FT_FOREST">
-		<supports>Favored Terrain</supports>
-		<description>
-			<p>You are particularly familiar with one type of natural environment and are adept at traveling and surviving in such regions. When you make an Intelligence or Wisdom check related to your favored terrain, your proficiency bonus is doubled if you are using a skill that you’re proficient in.</p>
-			<p class="indent">While traveling for an hour or more in your favored terrain, you gain the following benefits:</p>
-			<ul>
-				<li>Difficult terrain doesn’t slow your group’s travel.</li>
-				<li>Your group can’t become lost except by magical means.</li>
-				<li>Even when you are engaged in another activity while traveling (such as foraging, navigating, or tracking), you remain alert to danger.</li>
-				<li>If you are traveling alone, you can move stealthily at a normal pace.</li>
-				<li>When you forage, you find twice as much food as you normally would.</li>
-				<li>While tracking other creatures, you also learn their exact number, their sizes, and how long ago they passed through the area.</li>
-			</ul>
-		</description>		
-	</element>
-	<element name="Grassland" type="Class Feature" source="Player’s Handbook" id="ID_WOTC_CLASSFEATURE_RANGER_NATURAL_EXPLORER_FT_GRASSLAND">
-		<supports>Favored Terrain</supports>
-		<description>
-			<p>You are particularly familiar with one type of natural environment and are adept at traveling and surviving in such regions. When you make an Intelligence or Wisdom check related to your favored terrain, your proficiency bonus is doubled if you are using a skill that you’re proficient in.</p>
-			<p class="indent">While traveling for an hour or more in your favored terrain, you gain the following benefits:</p>
-			<ul>
-				<li>Difficult terrain doesn’t slow your group’s travel.</li>
-				<li>Your group can’t become lost except by magical means.</li>
-				<li>Even when you are engaged in another activity while traveling (such as foraging, navigating, or tracking), you remain alert to danger.</li>
-				<li>If you are traveling alone, you can move stealthily at a normal pace.</li>
-				<li>When you forage, you find twice as much food as you normally would.</li>
-				<li>While tracking other creatures, you also learn their exact number, their sizes, and how long ago they passed through the area.</li>
-			</ul>
-		</description>		
-	</element>
-	<element name="Mountain" type="Class Feature" source="Player’s Handbook" id="ID_WOTC_CLASSFEATURE_RANGER_NATURAL_EXPLORER_FT_MOUNTAIN">
-		<supports>Favored Terrain</supports>
-		<description>
-			<p>You are particularly familiar with one type of natural environment and are adept at traveling and surviving in such regions. When you make an Intelligence or Wisdom check related to your favored terrain, your proficiency bonus is doubled if you are using a skill that you’re proficient in.</p>
-			<p class="indent">While traveling for an hour or more in your favored terrain, you gain the following benefits:</p>
-			<ul>
-				<li>Difficult terrain doesn’t slow your group’s travel.</li>
-				<li>Your group can’t become lost except by magical means.</li>
-				<li>Even when you are engaged in another activity while traveling (such as foraging, navigating, or tracking), you remain alert to danger.</li>
-				<li>If you are traveling alone, you can move stealthily at a normal pace.</li>
-				<li>When you forage, you find twice as much food as you normally would.</li>
-				<li>While tracking other creatures, you also learn their exact number, their sizes, and how long ago they passed through the area.</li>
-			</ul>
-		</description>		
-	</element>
-	<element name="Swamp" type="Class Feature" source="Player’s Handbook" id="ID_WOTC_CLASSFEATURE_RANGER_NATURAL_EXPLORER_FT_SWAMP">
-		<supports>Favored Terrain</supports>
-		<description>
-			<p>You are particularly familiar with one type of natural environment and are adept at traveling and surviving in such regions. When you make an Intelligence or Wisdom check related to your favored terrain, your proficiency bonus is doubled if you are using a skill that you’re proficient in.</p>
-			<p class="indent">While traveling for an hour or more in your favored terrain, you gain the following benefits:</p>
-			<ul>
-				<li>Difficult terrain doesn’t slow your group’s travel.</li>
-				<li>Your group can’t become lost except by magical means.</li>
-				<li>Even when you are engaged in another activity while traveling (such as foraging, navigating, or tracking), you remain alert to danger.</li>
-				<li>If you are traveling alone, you can move stealthily at a normal pace.</li>
-				<li>When you forage, you find twice as much food as you normally would.</li>
-				<li>While tracking other creatures, you also learn their exact number, their sizes, and how long ago they passed through the area.</li>
-			</ul>
-		</description>		
-	</element>
-	<element name="Underdark" type="Class Feature" source="Player’s Handbook" id="ID_WOTC_CLASSFEATURE_RANGER_NATURAL_EXPLORER_FT_UNDERDARK">
-		<supports>Favored Terrain</supports>
-		<description>
-			<p>You are particularly familiar with one type of natural environment and are adept at traveling and surviving in such regions. When you make an Intelligence or Wisdom check related to your favored terrain, your proficiency bonus is doubled if you are using a skill that you’re proficient in.</p>
-			<p class="indent">While traveling for an hour or more in your favored terrain, you gain the following benefits:</p>
-			<ul>
-				<li>Difficult terrain doesn’t slow your group’s travel.</li>
-				<li>Your group can’t become lost except by magical means.</li>
-				<li>Even when you are engaged in another activity while traveling (such as foraging, navigating, or tracking), you remain alert to danger.</li>
-				<li>If you are traveling alone, you can move stealthily at a normal pace.</li>
-				<li>When you forage, you find twice as much food as you normally would.</li>
-				<li>While tracking other creatures, you also learn their exact number, their sizes, and how long ago they passed through the area.</li>
-			</ul>
-		</description>		
-	</element>
+	<!-- Favored Terrain elements were moved to Core's ALE.xml file -->
 
 	<!--Feature Replacement Grants-->
 	<element name="Favored Enemy Feature Replacement" type="Grants" source="Internal" id="ID_INTERNAL_FEATURE_REPLACEMENT_RANGER_FAVORED_ENEMY" />

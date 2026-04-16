@@ -2,9 +2,9 @@
 <elements>
 	<info>
 		<name>Sorcerer</name>
-		<description>Sorcerer from the Player’s Handbook.</description>
+		<description>The Sorcerer class from the Player’s Handbook.</description>
 		<author url="http://dnd.wizards.com/products/tabletop-games/rpg-products/rpg_playershandbook">Wizards of the Coast</author>
-		<update version="0.2.9">
+		<update version="0.3.0">
 			<file name="class-sorcerer.xml" url="https://raw.githubusercontent.com/AuroraLegacy/elements/master/core/players-handbook/classes/class-sorcerer.xml" />
 		</update>
 	</info>
@@ -111,7 +111,7 @@
 		</rules>
 		<multiclass id="ID_WOTC_PHB_MULTICLASS_SORCERER">
 			<prerequisite>Charisma 13</prerequisite>
-			<requirements>[cha:13]</requirements>
+			<requirements>([cha:13],!(ID_WOTC_PHB24_CLASS_SORCERER||ID_WOTC_PHB24_MULTICLASS_SORCERER))||ID_INTERNAL_GRANTS_MULTICLASS_UNLOCKER</requirements>
 			<setters>
 				<set name="multiclass proficiencies">—</set>
 			</setters>
@@ -149,7 +149,9 @@
 			<list>Sorcerer</list>
 		</spellcasting>
 		<rules>
+			<grant type="Grants" id="ID_INTERNAL_GRANTS_SPELLCASTING_FEATURE" />
 			<grant type="Grants" id="ID_INTERNAL_GRANT_MULTICLASS_SPELLCASTING_SLOTS_FULL" requirements="ID_INTERNAL_GRANT_MULTICLASS" />
+
 			<stat name="sorcerer:spellcasting:slots:1" value="2" level="1" />
 			<stat name="sorcerer:spellcasting:slots:1" value="1" level="2" />
 			<stat name="sorcerer:spellcasting:slots:1" value="1" level="3" />
@@ -271,8 +273,10 @@
 		</sheet>
 	</element>
 
+	<!-- Metamagic Options -->
 	<element name="Careful Spell" type="Class Feature" source="Player’s Handbook" id="ID_WOTC_PHB_CLASS_FEATURE_SORCERER_METAMAGIC_CAREFUL_SPELL">
 		<supports>Metamagic</supports>
+		<requirements>!ID_WOTC_PHB24_CLASS_FEATURE_SORCERER_METAMAGIC_CAREFUL_SPELL</requirements>
 		<description>
 			<p>When you cast a spell that forces other creatures to make a saving throw, you can protect some of those creatures from the spell’s full force. To do so, you spend 1 sorcery point and choose a number of those creatures up to your Charisma modifier (minimum of one creature). A chosen creature automatically succeeds on its saving throw against the spell.</p>
 		</description>
@@ -286,6 +290,7 @@
 	</element>
 	<element name="Distant Spell" type="Class Feature" source="Player’s Handbook" id="ID_WOTC_PHB_CLASS_FEATURE_SORCERER_METAMAGIC_DISTANT_SPELL">
 		<supports>Metamagic</supports>
+		<requirements>!ID_WOTC_PHB24_CLASS_FEATURE_SORCERER_METAMAGIC_DISTANT_SPELL</requirements>
 		<description>
 			<p>When you cast a spell that has a range of 5 feet or greater, you can spend 1 sorcery point to double the range of the spell. When you cast a spell that has a range of touch, you can spend 1 sorcery point to make the range of the spell 30 feet.</p>
 		</description>
@@ -295,6 +300,7 @@
 	</element>
 	<element name="Empowered Spell" type="Class Feature" source="Player’s Handbook" id="ID_WOTC_PHB_CLASS_FEATURE_SORCERER_METAMAGIC_EMPOWERED_SPELL">
 		<supports>Metamagic</supports>
+		<requirements>!ID_WOTC_PHB24_CLASS_FEATURE_SORCERER_METAMAGIC_EMPOWERED_SPELL</requirements>
 		<description>
 			<p>When you roll damage for a spell, you can spend 1 sorcery point to reroll a number of the damage dice up to your Charisma modifier (minimum of one). You must use the new rolls.</p>
 			<p class="indent">You can use Empowered Spell even if you have already used a different Metamagic option during the casting of the spell.</p>
@@ -309,6 +315,7 @@
 	</element>
 	<element name="Extended Spell" type="Class Feature" source="Player’s Handbook" id="ID_WOTC_PHB_CLASS_FEATURE_SORCERER_METAMAGIC_EXTENDED_SPELL">
 		<supports>Metamagic</supports>
+		<requirements>!ID_WOTC_PHB24_CLASS_FEATURE_SORCERER_METAMAGIC_EXTENDED_SPELL</requirements>
 		<description>
 			<p>When you cast a spell that has a duration of 1 minute or longer, you can spend 1 sorcery point to double its duration, to a maximum duration of 24 hours.</p>
 		</description>
@@ -318,6 +325,7 @@
 	</element>
 	<element name="Heightened Spell" type="Class Feature" source="Player’s Handbook" id="ID_WOTC_PHB_CLASS_FEATURE_SORCERER_METAMAGIC_HEIGHTENED_SPELL">
 		<supports>Metamagic</supports>
+		<requirements>!ID_WOTC_PHB24_CLASS_FEATURE_SORCERER_METAMAGIC_HEIGHTENED_SPELL</requirements>
 		<description>
 			<p>When you cast a spell that forces a creature to make a saving throw to resist its effects, you can spend 3 sorcery points to give one target of the spell disadvantage on its first saving throw made against the spell.</p>
 		</description>
@@ -327,6 +335,7 @@
 	</element>
 	<element name="Quickened Spell" type="Class Feature" source="Player’s Handbook" id="ID_WOTC_PHB_CLASS_FEATURE_SORCERER_METAMAGIC_QUICKEND_SPELL">
 		<supports>Metamagic</supports>
+		<requirements>!ID_WOTC_PHB24_CLASS_FEATURE_SORCERER_METAMAGIC_QUICKEND_SPELL</requirements>
 		<description>
 			<p>When you cast a spell that has a casting time of 1 action, you can spend 2 sorcery points to change the casting time to 1 bonus action for this casting.</p>
 		</description>
@@ -336,6 +345,7 @@
 	</element>
 	<element name="Subtle Spell" type="Class Feature" source="Player’s Handbook" id="ID_WOTC_PHB_CLASS_FEATURE_SORCERER_METAMAGIC_SUBTLE_SPELL">
 		<supports>Metamagic</supports>
+		<requirements>!ID_WOTC_PHB24_CLASS_FEATURE_SORCERER_METAMAGIC_SUBTLE_SPELL</requirements>
 		<description>
 			<p>When you cast a spell, you can spend 1 sorcery point to cast it without any somatic or verbal components.</p>
 		</description>
@@ -345,6 +355,7 @@
 	</element>
 	<element name="Twinned Spell" type="Class Feature" source="Player’s Handbook" id="ID_WOTC_PHB_CLASS_FEATURE_SORCERER_METAMAGIC_TWINNED_SPELL">
 		<supports>Metamagic</supports>
+		<requirements>!ID_WOTC_PHB24_CLASS_FEATURE_SORCERER_METAMAGIC_TWINNED_SPELL</requirements>
 		<description>
 			<p>When you cast a spell that targets only one creature and doesn’t have a range of self, you can spend a number of sorcery points equal to the spell’s level to target a second creature in range with the same spell (1 sorcery point if the spell is a cantrip). To be eligible, a spell must be incapable of targeting more than one creature at the spell’s current level. For example, magic missile and scorching ray aren’t eligible, but ray of frost and chromatic orb are.</p>
 		</description>

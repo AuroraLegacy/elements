@@ -4,12 +4,13 @@
 		<name>Feats</name>
 		<description>Feats from the Player’s Handbook.</description>
 		<author url="http://dnd.wizards.com/products/tabletop-games/rpg-products/rpg_playershandbook">Wizards of the Coast</author>
-		<update version="0.1.9">
+		<update version="0.2.0">
 			<file name="feats.xml" url="https://raw.githubusercontent.com/AuroraLegacy/elements/master/core/players-handbook/feats.xml" />
 		</update>
 	</info>
 
 	<element name="Actor" type="Feat" source="Player’s Handbook" id="ID_PHB_FEAT_ACTOR">
+		<requirements>!ID_WOTC_PHB24_FEAT_ACTOR||ID_WOTC_PHB_GRANTS_FEAT_UNLOCKER</requirements>
 		<description>
 			<p>Skilled at mimicry and dramatics, you gain the following benefits</p>
 			<ul>
@@ -26,7 +27,9 @@
 			<stat name="charisma" value="1" />
 		</rules>
 	</element>
+
 	<element name="Alert" type="Feat" source="Player’s Handbook" id="ID_PHB_FEAT_ALERT">
+		<requirements>!ID_WOTC_PHB24_FEAT_ALERT||ID_WOTC_PHB_GRANTS_FEAT_UNLOCKER</requirements>
 		<description>
 			<p>Always on the lookout for danger, you gain the following benefits:</p>
 			<ul>
@@ -36,14 +39,16 @@
 			</ul>
 		</description>
 		<sheet>
-			<description>You can’t be surprised while you are conscious.
+			<description>You can’t be surprised while you are conscious. &#13;
 			Other creatures don’t gain advantage on attack rolls against you as a result of being unseen by you.</description>
 		</sheet>
 		<rules>
 			<stat name="initiative" value="5" />
 		</rules>
 	</element>
+
 	<element name="Athlete" type="Feat" source="Player’s Handbook" id="ID_PHB_FEAT_ATHLETE">
+		<requirements>!ID_WOTC_PHB24_FEAT_ATHLETE||ID_WOTC_PHB_GRANTS_FEAT_UNLOCKER</requirements>
 		<description>
 			<p>You have undergone extensive physical training to gain the following benefits:</p>
 			<ul>
@@ -62,7 +67,9 @@
 			<select type="Ability Score Improvement" name="Athlete" supports="ID_PHB_FEAT_ASI_STRENGTH|ID_PHB_FEAT_ASI_DEXTERITY" />
 		</rules>
 	</element>
+
 	<element name="Charger" type="Feat" source="Player’s Handbook" id="ID_PHB_FEAT_CHARGER">
+		<requirements>!ID_WOTC_PHB24_FEAT_CHARGER||ID_WOTC_PHB_GRANTS_FEAT_UNLOCKER</requirements>
 		<description>
 			<p>When you use your action to Dash, you can use a bonus action to make one melee weapon attack or to shove a creature.</p>
 			<p class="indent">If you move at least 10 feet in a straight line immediately before taking this bonus action, you either gain a +5 bonus to the attack’s damage roll (if you chose to make a melee attack and hit) or push the target up to 10 feet away from you (if you chose to shove and you succeed).</p>
@@ -72,7 +79,9 @@
 			If you move at least 10 feet in a straight line immediately before taking this bonus action, you either gain a +5 bonus to the attack’s damage roll (if you chose to make a melee attack and hit) or push the target up to 10 feet away from you (if you chose to shove and you succeed).</description>
 		</sheet>
 	</element>
+
 	<element name="Crossbow Expert" type="Feat" source="Player’s Handbook" id="ID_PHB_FEAT_CROSSBOWEXPERT">
+		<requirements>!ID_WOTC_PHB24_FEAT_CROSSBOW_EXPERT||ID_WOTC_PHB_GRANTS_FEAT_UNLOCKER</requirements>
 		<description>
 			<p>Thanks to extensive practice with the crossbow, you gain the following benefits:</p>
 			<ul>
@@ -87,9 +96,10 @@
 			When you use the Attack action and attack with a one-handed weapon, you can use a bonus action to attack with a hand crossbow you are holding.</description>
 		</sheet>
 	</element>
+
 	<element name="Defensive Duelist" type="Feat" source="Player’s Handbook" id="ID_PHB_FEAT_DEFENSIVE_DUELIST">
 		<prerequisite>Dexterity 13 or higher</prerequisite>
-		<requirements>[dex:13]</requirements>
+		<requirements>([dex:13],!ID_WOTC_PHB24_FEAT_DEFENSIVE_DUELIST)||ID_WOTC_PHB_GRANTS_FEAT_UNLOCKER</requirements>
 		<description>
 			<p><i>Prerequisite: Dexterity 13 or higher</i></p>
 			<p>When you are wielding a finesse weapon with which you are proficient and another creature hits you with a melee attack, you can use your reaction to add your proficiency bonus to your AC for that attack, potentially causing the attack to miss you.</p>
@@ -101,7 +111,9 @@
 			<stat name="defensive duelist:ac" value="proficiency" />
 		</rules>
 	</element>
+
 	<element name="Dual Wielder" type="Feat" source="Player’s Handbook" id="ID_PHB_FEAT_DUALWIELDER">
+		<requirements>!ID_WOTC_PHB24_FEAT_DUAL_WIELDER||ID_WOTC_PHB_GRANTS_FEAT_UNLOCKER</requirements>
 		<description>
 			<p>You master fighting with two weapons, gaining the following benefits:</p>
 			<ul>
@@ -119,6 +131,7 @@
 			<stat name="ac:misc" value="1" equipped="[primary:any],[secondary:any],![primary:versatile]" />
 		</rules>
 	</element>
+
 	<element name="Dungeon Delver" type="Feat" source="Player’s Handbook" id="ID_PHB_FEAT_DUNGEON_DELVER">
 		<description>
 			<p>Alert to the hidden traps and secret doors found in many dungeons, you gain the following benefits:</p>
@@ -137,7 +150,9 @@
 		</sheet>
 		<!-- todo: traps resistance condition -->
 	</element>
+
 	<element name="Durable" type="Feat" source="Player’s Handbook" id="ID_PHB_FEAT_DURABLE">
+		<requirements>!ID_WOTC_PHB24_FEAT_DURABLE||ID_WOTC_PHB_GRANTS_FEAT_UNLOCKER</requirements>
 		<description>
 			<p>Hardy and resilient, you gain the following benefits:</p>
 			<ul>
@@ -156,9 +171,10 @@
 			<stat name="durable:hd:bonus" value="durable:constitution modifier" bonus="feat:durable" />
 		</rules>
 	</element>
+
 	<element name="Elemental Adept" type="Feat" source="Player’s Handbook" id="ID_PHB_FEAT_ELEMENTAL_ADEPT">
 		<prerequisite>The ability to cast at least one spell</prerequisite>
-		<requirements>[type:spell]</requirements>
+		<requirements>([type:spell],!ID_WOTC_PHB24_FEAT_ELEMENTAL_ADEPT)||ID_WOTC_PHB_GRANTS_FEAT_UNLOCKER</requirements>
 		<description>
 			<p><i>Prerequisite: The ability to cast at least one spell</i></p>
 			<p>When you gain this feat, choose one of the following damage types: acid, cold, fire, lightning, or thunder.</p>
@@ -280,10 +296,10 @@
 			<select type="Feat Feature" name="Elemental Adept" supports="Elemental Adept" />
 		</rules>
 	</element>
-	<!-- /elemental adept -->
+
 	<element name="Grappler" type="Feat" source="Player’s Handbook" id="ID_PHB_FEAT_GRAPPLER">
 		<prerequisite>Strength 13 or higher</prerequisite>
-		<requirements>[str:13]</requirements>
+		<requirements>([str:13],!ID_WOTC_PHB24_FEAT_GRAPPLER)||ID_WOTC_PHB_GRANTS_FEAT_UNLOCKER</requirements>
 		<description>
 			<p class="flavor">Prerequisite: Strength 13 or higher</p>
 			<p>You’ve developed the skills necessary to hold your own in close-quarters grappling. You gain the following benefits:</p>
@@ -297,7 +313,9 @@
 			You can use your action to try to pin a creature grappled by you. To do so, make another grapple check. If you succeed, you and the creature are both restrained until the grapple ends.</description>
 		</sheet>
 	</element>
+
 	<element name="Great Weapon Master" type="Feat" source="Player’s Handbook" id="ID_PHB_FEAT_GREATWEAPONMASTER">
+		<requirements>!ID_WOTC_PHB24_FEAT_GREAT_WEAPON_MASTER||ID_WOTC_PHB_GRANTS_FEAT_UNLOCKER</requirements>
 		<description>
 			<p>You’ve learned to put the weight of a weapon to your advantage, letting its momentum empower your strikes. You gain the following benefits:</p>
 			<ul>
@@ -310,7 +328,9 @@
 			Before you make a melee attack with a heavy weapon that you are proficient with, you can choose to take a - 5 penalty to the attack roll. If the attack hits, you add +10 to the attack’s damage.</description>
 		</sheet>
 	</element>
+
 	<element name="Healer" type="Feat" source="Player’s Handbook" id="ID_PHB_FEAT_HEALER">
+		<requirements>!ID_WOTC_PHB24_FEAT_HEALER||ID_WOTC_PHB_GRANTS_FEAT_UNLOCKER</requirements>
 		<description>
 			<p>You are an able physician, allowing you to mend wounds quickly and get your allies back in the fight. You gain the following benefits:</p>
 			<ul>
@@ -323,9 +343,10 @@
 			When you use a healer’s kit to stabilize a dying creature, that creature also regains 1 hit point.</description>
 		</sheet>
 	</element>
+
 	<element name="Heavily Armored" type="Feat" source="Player’s Handbook" id="ID_PHB_FEAT_HEAVILYARMORED">
 		<prerequisite>Proficiency with medium armor</prerequisite>
-		<requirements>ID_PROFICIENCY_ARMOR_PROFICIENCY_MEDIUM_ARMOR</requirements>
+		<requirements>(ID_PROFICIENCY_ARMOR_PROFICIENCY_MEDIUM_ARMOR,!ID_WOTC_PHB24_FEAT_HEAVILY_ARMORED)||ID_WOTC_PHB_GRANTS_FEAT_UNLOCKER</requirements>
 		<description>
 			<p><i>Prerequisite: Proficiency with medium armor</i></p>
 			<p>You have trained to master the use of heavy armor, gaining the following benefits:</p>
@@ -342,9 +363,10 @@
 			<grant type="Proficiency" id="ID_PROFICIENCY_ARMOR_PROFICIENCY_HEAVY_ARMOR" />
 		</rules>
 	</element>
+
 	<element name="Heavy Armor Master" type="Feat" source="Player’s Handbook" id="ID_PHB_FEAT_HEAVYARMORMASTER">
 		<prerequisite>Proficiency with heavy armor</prerequisite>
-		<requirements>ID_PROFICIENCY_ARMOR_PROFICIENCY_HEAVY_ARMOR</requirements>
+		<requirements>(ID_PROFICIENCY_ARMOR_PROFICIENCY_HEAVY_ARMOR,!ID_WOTC_PHB24_FEAT_HEAVY_ARMOR_MASTER)||ID_WOTC_PHB_GRANTS_FEAT_UNLOCKER</requirements>
 		<description>
 			<p><i>Prerequisite: Proficiency with heavy armor</i></p>
 			<p>You can use your armor to deflect strikes that would kill others. You gain the following benefits:</p>
@@ -360,9 +382,10 @@
 			<stat name="strength" value="1" />
 		</rules>
 	</element>
+
 	<element name="Inspiring Leader" type="Feat" source="Player’s Handbook" id="ID_PHB_FEAT_INSPIRINGLEADER">
 		<prerequisite>Charisma 13 or higher</prerequisite>
-		<requirements>[cha:13]</requirements>
+		<requirements>([cha:13],!ID_WOTC_PHB24_FEAT_INSPIRING_LEADER)||ID_WOTC_PHB_GRANTS_FEAT_UNLOCKER</requirements>
 		<description>
 			<p><i>Prerequisite: Charisma 13 or higher</i></p>
 			<p>You can spend 10 minutes inspiring your companions, shoring up their resolve to fight. When you do so, choose up to six friendly creatures (which can include yourself) within 30 feet of you who can see or hear you and who can understand you. Each creature can gain temporary hit points equal to your level + your Charisma modifier. A creature can’t gain temporary hit points from this feat again until it has finished a short or long rest.</p>
@@ -375,7 +398,9 @@
 			<stat name="inspiring leader:hp:temp" value="charisma:modifier" />
 		</rules>
 	</element>
+
 	<element name="Keen Mind" type="Feat" source="Player’s Handbook" id="ID_PHB_FEAT_KEENMIND">
+		<requirements>!ID_WOTC_PHB24_FEAT_KEEN_MIND||ID_WOTC_PHB_GRANTS_FEAT_UNLOCKER</requirements>
 		<description>
 			<p>You have a mind that can track time, direction, and detail with uncanny precision. You gain the following benefits:</p>
 			<ul>
@@ -394,7 +419,9 @@
 			<stat name="intelligence" value="1" />
 		</rules>
 	</element>
+
 	<element name="Lightly Armored" type="Feat" source="Player’s Handbook" id="ID_PHB_FEAT_LIGHTLYARMORED">
+		<requirements>!ID_WOTC_PHB24_FEAT_LIGHTLY_ARMORED||ID_WOTC_PHB_GRANTS_FEAT_UNLOCKER</requirements>
 		<description>
 			<p>You have trained to master the use of light armor, gaining the following benefits:</p>
 			<ul>
@@ -410,6 +437,7 @@
 			<grant type="Proficiency" id="ID_PROFICIENCY_ARMOR_PROFICIENCY_LIGHT_ARMOR" />
 		</rules>
 	</element>
+
 	<element name="Linguist" type="Feat" source="Player’s Handbook" id="ID_PHB_FEAT_LINGUIST">
 		<description>
 			<p>You have studied languages and codes, gaining the following benefits:</p>
@@ -429,7 +457,9 @@
 			<stat name="linguist:dc" value="proficiency" />
 		</rules>
 	</element>
+
 	<element name="Lucky" type="Feat" source="Player’s Handbook" id="ID_PHB_FEAT_LUCKY">
+		<requirements>!ID_WOTC_PHB24_FEAT_LUCKY||ID_WOTC_PHB_GRANTS_FEAT_UNLOCKER</requirements>
 		<description>
 			<p>You have inexplicable luck that seems to kick in at just the right moment.</p>
 			<p class="indent">You have 3 luck points. Whenever you make an attack roll, an ability check, or a saving throw, you can spend one luck point to roll an additional d20. You can choose to spend one of your luck points after you roll the die, but before the outcome is determined. You choose which of the d20s is used for the attack roll, ability check, or saving throw.</p>
@@ -442,7 +472,9 @@
 			You can also spend one luck point when an attack roll is made against you. Roll a d20, and then choose whether the attack uses the attacker’s roll or yours.</description>
 		</sheet>
 	</element>
+
 	<element name="Mage Slayer" type="Feat" source="Player’s Handbook" id="ID_PHB_FEAT_MAGESLAYER">
+		<requirements>!ID_WOTC_PHB24_FEAT_MAGE_SLAYER||ID_WOTC_PHB_GRANTS_FEAT_UNLOCKER</requirements>
 		<description>
 			<p>You have practiced techniques useful in melee combat against spellcasters, gaining the following benefits:</p>
 			<ul>
@@ -457,7 +489,9 @@
 			You have advantage on saving throws against spells cast by creatures within 5 feet of you.</description>
 		</sheet>
 	</element>
+
 	<element name="Magic Initiate" type="Feat" source="Player’s Handbook" id="ID_PHB_FEAT_MAGICINITIATE">
+		<requirements>!ID_WOTC_PHB24_FEAT_MAGIC_INITIATE||ID_WOTC_PHB_GRANTS_FEAT_UNLOCKER</requirements>
 		<description>
 			<p>Choose a class: bard, cleric, druid, sorcerer, warlock, or wizard. You learn two cantrips of your choice from that class’s spell list.</p>
 			<p class="indent">In addition, choose one 1st-level spell to learn from that same list. Using this feat, you can cast the spell once at its lowest level, and you must finish a long rest before you can cast it in this way again.</p>
@@ -558,7 +592,7 @@
 			<select type="Spell" name="1st-level Spell (Magic Initiate)" supports="1,Wizard" />
 		</rules>
 	</element>
-	<!-- /magic initiate -->
+
 	<element name="Martial Adept" type="Feat" source="Player’s Handbook" id="ID_PHB_FEAT_MARTIALADEPT">
 		<description>
 			<p>You have martial training that allows you to perform special combat maneuvers. You gain the following benefits:</p>
@@ -587,9 +621,10 @@
 			<stat name="superiority dice:amount" value="1" requirements="ID_ARCHETYPE_FEATURE_BATTLE_MASTER_COMBAT_SUPERIORITY" />
 		</rules>
 	</element>
+
 	<element name="Medium Armor Master" type="Feat" source="Player’s Handbook" id="ID_PHB_FEAT_MEDIUMARMORMASTER">
 		<prerequisite>Proficiency with medium armor</prerequisite>
-		<requirements>ID_PROFICIENCY_ARMOR_PROFICIENCY_MEDIUM_ARMOR</requirements>
+		<requirements>(ID_PROFICIENCY_ARMOR_PROFICIENCY_MEDIUM_ARMOR,!ID_WOTC_PHB24_FEAT_MEDIUM_ARMOR_MASTER)||ID_WOTC_PHB_GRANTS_FEAT_UNLOCKER</requirements>
 		<description>
 			<p><i>Prerequisite: Proficiency with medium armor</i></p>
 			<p>You have practiced moving in medium armor to gain the following benefits:</p>
@@ -605,6 +640,7 @@
 			<stat name="ac:armored:dexterity:cap" value="3" bonus="base" />
 		</rules>
 	</element>
+
 	<element name="Mobile" type="Feat" source="Player’s Handbook" id="ID_PHB_FEAT_MOBILE">
 		<description>
 			<p>You are exceptionally speedy and agile. You gain the following benefits:</p>
@@ -626,9 +662,10 @@
 			<stat name="innate speed:burrow:misc" value="10" requirements="[innate speed:burrow:1]" />
 		</rules>
 	</element>
+
 	<element name="Moderately Armored" type="Feat" source="Player’s Handbook" id="ID_PHB_FEAT_MODERATELYARMORED">
 		<prerequisite>Proficiency with light armor</prerequisite>
-		<requirements>ID_PROFICIENCY_ARMOR_PROFICIENCY_LIGHT_ARMOR</requirements>
+		<requirements>(ID_PROFICIENCY_ARMOR_PROFICIENCY_LIGHT_ARMOR,!ID_WOTC_PHB24_FEAT_MODERATELY_ARMORED)||ID_WOTC_PHB_GRANTS_FEAT_UNLOCKER</requirements>
 		<description>
 			<p><i>Prerequisite: Proficiency with light armor</i></p>
 			<p>You have trained to master the use of medium armor and shields, gaining the following benefits:</p>
@@ -646,7 +683,9 @@
 			<grant type="Proficiency" id="ID_PROFICIENCY_ARMOR_PROFICIENCY_SHIELDS" />
 		</rules>
 	</element>
+
 	<element name="Mounted Combatant" type="Feat" source="Player’s Handbook" id="ID_PHB_FEAT_MOUNTEDCOMBATANT">
+		<requirements>!ID_WOTC_PHB24_FEAT_MOUNTED_COMBATANT||ID_WOTC_PHB_GRANTS_FEAT_UNLOCKER</requirements>
 		<description>
 			<p>You are a dangerous foe to face while mounted. While you are mounted and aren’t incapacitated, you gain the following benefits:</p>
 			<ul>
@@ -661,7 +700,9 @@
 			If your mount is subjected to an effect that allows it to make a Dexterity saving throw to take only half damage, it instead takes no damage if it succeeds on the saving throw, and only half damage if it fails.</description>
 		</sheet>
 	</element>
+
 	<element name="Observant" type="Feat" source="Player’s Handbook" id="ID_PHB_FEAT_OBSERVANT">
+		<requirements>!ID_WOTC_PHB24_FEAT_OBSERVANT||ID_WOTC_PHB_GRANTS_FEAT_UNLOCKER</requirements>
 		<description>
 			<p>Quick to notice details of your environment, you gain the following benefits:</p>
 			<ul>
@@ -680,7 +721,9 @@
 			<stat name="investigation:passive" value="5" />
 		</rules>
 	</element>
+
 	<element name="Polearm Master" type="Feat" source="Player’s Handbook" id="ID_PHB_FEAT_POLEARMMASTER">
+		<requirements>!ID_WOTC_PHB24_FEAT_POLEARM_MASTER||ID_WOTC_PHB_GRANTS_FEAT_UNLOCKER</requirements>
 		<description>
 			<p>You can keep your enemies at bay with reach weapons. You gain the following benefits:</p>
 			<ul>
@@ -693,7 +736,9 @@
 			While you are wielding a glaive, halberd, pike, quarterstaff, or spear, other creatures provoke an opportunity attack from you when they enter your reach.</description>
 		</sheet>
 	</element>
+
 	<element name="Resilient" type="Feat" source="Player’s Handbook" id="ID_PHB_FEAT_RESILIENT">
+		<requirements>!ID_WOTC_PHB24_FEAT_RESILIENT||ID_WOTC_PHB_GRANTS_FEAT_UNLOCKER</requirements>
 		<description>
 			<p>Choose one ability score. You gain the following benefits:</p>
 			<ul>
@@ -784,10 +829,10 @@
 			<grant type="Proficiency" id="ID_PROFICIENCY_SAVINGTHROW_CHARISMA" />
 		</rules>
 	</element>
-	<!-- /resilient -->
+
 	<element name="Ritual Caster" type="Feat" source="Player’s Handbook" id="ID_PHB_FEAT_RITUALCASTER">
 		<prerequisite>Intelligence or Wisdom 13 or higher</prerequisite>
-		<requirements>[int:13]||[wis:13]</requirements>
+		<requirements>(([int:13]||[wis:13]),!ID_WOTC_PHB24_FEAT_RITUAL_CASTER)||ID_WOTC_PHB_GRANTS_FEAT_UNLOCKER</requirements>
 		<description>
 			<p><i>Prerequisite: Intelligence or Wisdom 13 or higher</i></p>
 			<p>You have learned a number of spells that you can cast as rituals. These spells are written in a ritual book, which you must have in hand while casting one of them.</p>
@@ -798,7 +843,7 @@
 			<description>You have learned a number of spells that you can cast as rituals.</description>
 		</sheet>
 		<rules>
-			<!-- todo: grant ID_INTERNAL_RITUAL-->
+			<grant type="Grants" id="ID_INTERNAL_RITUAL_CASTING" />
 			<select type="Feat Feature" name="Ritual Caster" supports="Ritual Caster" />
 		</rules>
 	</element>
@@ -886,8 +931,9 @@
 			<select type="Spell" name="1st-level Spell (Ritual Caster)" supports="Ritual,1,Wizard" number="2" />
 		</rules>
 	</element>
-	<!-- /ritual caster -->
+
 	<element name="Savage Attacker" type="Feat" source="Player’s Handbook" id="ID_PHB_FEAT_SAVAGEATTACKER">
+		<requirements>!ID_WOTC_PHB24_FEAT_SAVAGE_ATTACKER||ID_WOTC_PHB_GRANTS_FEAT_UNLOCKER</requirements>
 		<description>
 			<p>Once per turn when you roll damage for a melee weapon attack, you can reroll the weapon's damage dice as use either total.</p>
 		</description>
@@ -895,7 +941,9 @@
 			<description>Once per turn when you roll damage for a melee weapon attack, you can reroll the weapon's damage dice as use either total.</description>
 		</sheet>
 	</element>
+
 	<element name="Sentinel" type="Feat" source="Player’s Handbook" id="ID_PHB_FEAT_SENTINEL">
+		<requirements>!ID_WOTC_PHB24_FEAT_SENTINEL||ID_WOTC_PHB_GRANTS_FEAT_UNLOCKER</requirements>
 		<description>
 			<p>You have mastered techniques to take advantage of every drop in any enemy’s guard, gaining the following benefits:</p>
 			<ul>
@@ -910,7 +958,9 @@
 			When a creature within 5 feet of you makes an attack against a target other than you, you can use your reaction to make a melee weapon attack against the attacking creature.</description>
 		</sheet>
 	</element>
+
 	<element name="Sharpshooter" type="Feat" source="Player’s Handbook" id="ID_PHB_FEAT_SHARPSHOOTER">
+		<requirements>!ID_WOTC_PHB24_FEAT_SHARPSHOOTER||ID_WOTC_PHB_GRANTS_FEAT_UNLOCKER</requirements>
 		<description>
 			<p>You have mastered ranged weapons and can make shots that others find impossible. You gain the following benefits:</p>
 			<ul>
@@ -925,7 +975,9 @@
 			Before you make an attack with a ranged weapon that you are proficient with, you can choose to take a - 5 penalty to the attack roll. If the attack hits, you add +10 to the attack’s damage.</description>
 		</sheet>
 	</element>
+
 	<element name="Shield Master" type="Feat" source="Player’s Handbook" id="ID_PHB_FEAT_SHIELDMASTER">
+		<requirements>!ID_WOTC_PHB24_FEAT_SHIELD_MASTER||ID_WOTC_PHB_GRANTS_FEAT_UNLOCKER</requirements>
 		<description>
 			<p>You use shields not just for protection but also for offense. You gain the following benefits while you are wielding a shield:</p>
 			<ul>
@@ -940,7 +992,9 @@
 			If you are subjected to an effect that allows you to make a Dexterity saving throw to take only half damage, you can use your reaction to take no damage if you succeed on the saving throw, interposing your shield between yourself and the source of the effect.</description>
 		</sheet>
 	</element>
+
 	<element name="Skilled" type="Feat" source="Player’s Handbook" id="ID_PHB_FEAT_SKILLED">
+		<requirements>!ID_WOTC_PHB24_FEAT_SKILLED||ID_WOTC_PHB_GRANTS_FEAT_UNLOCKER</requirements>
 		<description>
 			<p>You gain proficiency in any combination of three skills or tools of your choice.</p>
 		</description>
@@ -949,9 +1003,10 @@
 			<select type="Proficiency" name="Skill Proficiency (Skilled)" supports="Skill||Tool" number="3" />
 		</rules>
 	</element>
+
 	<element name="Skulker" type="Feat" source="Player’s Handbook" id="ID_PHB_FEAT_SKULKER">
 		<prerequisite>Dexterity 13 or higher</prerequisite>
-		<requirements>[dex:13]</requirements>
+		<requirements>([dex:13],!ID_WOTC_PHB24_FEAT_SKULKER)||ID_WOTC_PHB_GRANTS_FEAT_UNLOCKER</requirements>
 		<description>
 			<p class="flavor">Prerequisite: Dexterity 13 or higher</p>
 			<p>You are expert at slinking through shadows. You gain the following benefits:</p>
@@ -967,9 +1022,10 @@
 			Dim light doesn’t impose disadvantage on your Perception checks relying on sight.</description>
 		</sheet>
 	</element>
+
 	<element name="Spell Sniper" type="Feat" source="Player’s Handbook" id="ID_PHB_FEAT_SPELLSNIPER">
 		<prerequisite>The ability to cast at least one spell</prerequisite>
-		<requirements>[type:spell]</requirements>
+		<requirements>([type:spell],!ID_WOTC_PHB24_FEAT_SPELLSNIPER)||ID_WOTC_PHB_GRANTS_FEAT_UNLOCKER</requirements>
 		<description>
 			<p><i>Prerequisite: The ability to cast at least one spell</i></p>
 			<p>You have learned techniques to enhance your attacks with certain kinds of spells, gaining the following benefits:</p>
@@ -987,7 +1043,9 @@
 			<select type="Spell" name="Spell Sniper" supports="0,(Bard||Cleric||Druid||Sorcerer||Warlock||Wizard), Spell Attack" />
 		</rules>
 	</element>
+
 	<element name="Tavern Brawler" type="Feat" source="Player’s Handbook" id="ID_PHB_FEAT_TAVERNBRAWLER">
+		<requirements>!ID_WOTC_PHB24_FEAT_TAVERN_BRAWLER||ID_WOTC_PHB_GRANTS_FEAT_UNLOCKER</requirements>
 		<description>
 			<p>Accustomed to rough-and-tumble fighting using whatever weapons happen to be at hand, you gain the following benefits:</p>
 			<ul>
@@ -1004,10 +1062,12 @@
 		</sheet>
 		<rules>
 			<select type="Ability Score Improvement" name="Ability Score Increase (Tavern Brawler)" supports="ID_PHB_FEAT_ASI_STRENGTH|ID_PHB_FEAT_ASI_CONSTITUTION" />
-			<!-- todo: You are proficient with improvised weapons. -->
+			<grant type="Proficiency" id="ID_ALE_PROFICIENCY_WEAPON_PROFICIENCY_IMPROVISED_WEAPONS" />
 		</rules>
 	</element>
+
 	<element name="Tough" type="Feat" source="Player’s Handbook" id="ID_PHB_FEAT_TOUGH">
+		<requirements>!ID_WOTC_PHB24_FEAT_TOUGH||ID_WOTC_PHB_GRANTS_FEAT_UNLOCKER</requirements>
 		<description>
 			<p>Your hit points maximum increases by an amount equal to twice your level when you gain this feat. Whenever you gain a level thereafter, your hit points maximum increases by an additional 2 hit points.</p>
 		</description>
@@ -1020,7 +1080,9 @@
 			<stat name="hp" value="tough:hp" />
 		</rules>
 	</element>
+
 	<element name="War Caster" type="Feat" source="Player’s Handbook" id="ID_PHB_FEAT_WARCASTER">
+		<requirements>!ID_WOTC_PHB24_FEAT_WAR_CASTER||ID_WOTC_PHB_GRANTS_FEAT_UNLOCKER</requirements>
 		<description>
 			<p><i>Prerequisite: The ability to cast at least one spell</i></p>
 			<p>You have practiced casting spells in the midst of combat, learning techniques that grant you the following benefits:</p>
@@ -1036,7 +1098,9 @@
 			When a hostile creature’s movement provokes an opportunity attack from you, you can use your reaction to cast a spell at the creature, rather than making an opportunity attack. The spell must have a casting time of 1 action and must target only that creature.</description>
 		</sheet>
 	</element>
+
 	<element name="Weapon Master" type="Feat" source="Player’s Handbook" id="ID_PHB_FEAT_WEAPONMASTER">
+		<requirements>!ID_WOTC_PHB24_FEAT_WEAPON_MASTER||ID_WOTC_PHB_GRANTS_FEAT_UNLOCKER</requirements>
 		<description>
 			<p>You have practiced extensively with a variety of weapons, gaining the following benefits:</p>
 			<ul>
@@ -1130,4 +1194,23 @@
 			<stat name="charisma" value="1" alt="Ability Score Increase" />
 		</rules>
 	</element>
+
+	<!-- Feat Unlocker -->
+	<element name="Feat Unlocker" type="Item" source="Player’s Handbook" id="ID_WOTC_PHB_ITEM_FEAT_UNLOCKER">
+		<compendium display="false" />
+		<description>
+			<p>Once equipped, this item allows you to ignore prerequisites for all of the <i>Player’s Handbook</i> Feats.</p>
+			<p><u><b>Note.</b></u> This item in combination with the Feat Unlocker for the <i>Player’s Handbook (2024)</i>, can be used to allow selection of duplicate Feats.</p>
+		</description>
+		<setters>
+			<set name="category">Additional Feature</set>
+			<set name="slot">misc</set>
+			<set name="inventory-hidden">true</set>
+		</setters>
+		<rules>
+			<grant type="Grants" id="ID_WOTC_PHB_GRANTS_FEAT_UNLOCKER" />
+		</rules>
+	</element>
+
+	<element name="Feat Unlocker" type="Grants" source="Player’s Handbook" id="ID_WOTC_PHB_GRANTS_FEAT_UNLOCKER" />
 </elements>

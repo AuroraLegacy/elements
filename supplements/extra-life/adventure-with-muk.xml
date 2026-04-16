@@ -2,7 +2,7 @@
 <elements>
 	<info>
 		<name>Adventure with Muk</name>
-		<update version="0.0.1">
+		<update version="0.0.2">
 			<file name="adventure-with-muk.xml" url="https://raw.githubusercontent.com/AuroraLegacy/elements/master/supplements/extra-life/adventure-with-muk.xml" />
 		</update>
 	</info>
@@ -25,7 +25,7 @@
 		</setters>
 	</element>
 
-	<element name="Dankwood Goblin" type="Race" source="Adventure with Muk" id="ID_WOTC_AWM_RACE_DANKWOOD_GOBLIN">
+	<element name="Goblin (Dankwood)" type="Race" source="Adventure with Muk" id="ID_WOTC_AWM_RACE_DANKWOOD_GOBLIN">
 		<description>
 			<p class="flavor">Ahh the Dankwood goblins! I have adventured far and wide in my time and never have I met such unique and interesting goblins as these. Perhaps it is the magical nature of the Dankwood itself as this forest was once rumored to have been the ancient sanctum of a powerful Netherese wizard, but who is to say? This world is a wondrous one and everywhere you go, something new is there to dazzle and amaze!</p>
 			<p style="text-align:right">–Guardian Leafy Skiptoes</p>
@@ -42,18 +42,19 @@
 			<p class="indent"><b><i>Nimble Escape. </i></b>You can take the Disengage or Hide action as a bonus action on each of your turns.</p>
 			<p class="indent"><b><i>Languages. </i></b>You can speak, read, and write Common and Goblin.</p>
 		</description>
-		<sheet display="false"/>
+		<sheet display="false" alt="Dankwood Goblin" />
 		<rules>
-			<stat name="dexterity" value="2" requirements="!ID_WOTC_TCOE_OPTION_CUSTOMIZED_ASI" />
-			<stat name="wisdom" value="1" requirements="!ID_WOTC_TCOE_OPTION_CUSTOMIZED_ASI" />
-			<select type="Ability Score Improvement" name="Custom Ability Score Improvement +2 (Dankwood Goblin)" supports="Custom Ability Score Increase 2" requirements="ID_WOTC_TCOE_OPTION_CUSTOMIZED_ASI" />
-			<select type="Ability Score Improvement" name="Custom Ability Score Improvement +1 (Dankwood Goblin)" supports="Custom Ability Score Increase 1" requirements="ID_WOTC_TCOE_OPTION_CUSTOMIZED_ASI" />
+			<stat name="dexterity" value="2" requirements="!(ID_WOTC_TCOE_OPTION_CUSTOMIZED_ASI||ID_INTERNAL_GRANTS_BACKGROUND_ASI)" />
+			<stat name="wisdom" value="1" requirements="!(ID_WOTC_TCOE_OPTION_CUSTOMIZED_ASI||ID_INTERNAL_GRANTS_BACKGROUND_ASI)" />
+			<select type="Ability Score Improvement" name="Custom Ability Score Improvement +2 (Dankwood Goblin)" supports="Custom Ability Score Increase 2" requirements="ID_WOTC_TCOE_OPTION_CUSTOMIZED_ASI,!ID_INTERNAL_GRANTS_BACKGROUND_ASI" />
+			<select type="Ability Score Improvement" name="Custom Ability Score Improvement +1 (Dankwood Goblin)" supports="Custom Ability Score Increase 1" requirements="ID_WOTC_TCOE_OPTION_CUSTOMIZED_ASI,!ID_INTERNAL_GRANTS_BACKGROUND_ASI" />
 			<stat name="innate speed" value="30" bonus="base"/>
 			<grant type="Size" id="ID_SIZE_SMALL" />
 			<grant type="Vision" id="ID_VISION_DARKVISION" />
 			<grant type="Language" id="ID_LANGUAGE_COMMON" requirements="!ID_WOTC_TCOE_OPTION_CUSTOMIZED_LANGUAGE" />
 			<grant type="Language" id="ID_LANGUAGE_GOBLIN" requirements="!ID_WOTC_TCOE_OPTION_CUSTOMIZED_LANGUAGE" />
 			<select type="Language" name="Customized Language" supports="Custom Race Language" number="2" requirements="ID_WOTC_TCOE_OPTION_CUSTOMIZED_LANGUAGE" />
+			<grant type="Grants" id="ID_INTERNAL_GRANT_RACE_GOBLIN"/>
 			<grant type="Racial Trait" id="ID_WOTC_AWM_RACIAL_TRAIT_DANKWOOD_GOBLIN_SPEAK_WITH_SMALL_BEASTS" />
 			<grant type="Racial Trait" id="ID_WOTC_AWM_RACIAL_TRAIT_DANKWOOD_GOBLIN_NIMBLE_ESCAPE" />
 		</rules>
