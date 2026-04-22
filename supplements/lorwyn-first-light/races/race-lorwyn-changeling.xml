@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<elements>
+	<info>
+		<name>Lorwyn Changeling</name>
+		<description>The Lorwyn Changeling species from Lorwyn: First Light.</description>
+		<author url="https://marketplace.dndbeyond.com/category/DBU4HPAC7">Wizards of the Coast</author>
+		<update version="0.0.1">
+			<file name="race-lorwyn-changeling.xml" url="https://raw.githubusercontent.com/AuroraLegacy/elements/master/supplements/lorwyn-first-light/races/race-lorwyn-changeling.xml" />
+		</update>
+	</info>
+	
+	<element name="Lorwyn Changeling" type="Race" source="Lorwyn: First Light" id="ID_WOTC_LFL_RACE_LORWYN_CHANGELING">
+		<description>
+			<p>The changelings of Lorwyn are charismatic shapeshifters able to crudely mimic the forms of creatures and plants. Unlike most shapeshifters, however, their innate powers don't allow them to truly disguise themselves; rather, their transformations are purely surface level.</p>
+			<p class="indent">No matter their form, Lorwyn changelings keep their key traits: blue-green skin, tufts of tentacle-like fur, and bulbous yellow eyes with slitted pupils. The true changeling identity of a bug-eyed tree, teal elk, or furry boulder is always easy to spot. These counterfeits are so plain that many Lorwyn denizens find the effect inexplicably charming.</p>
+			<p class="indent">Changelings from Lorwyn live in a vast, mystical cave called Velis Vel Grotto (see chapter 2). Once per year, many changelings make a pilgrimage to the grotto to contemplate their past deeds.</p>
+			<h5>LORWYN CHANGELING TRAITS</h5>
+			<ul class="unstyled" style="text-indent:-1em; margin-left:1em; margin-bottom:5px">
+				<li><strong>Creature Type:</strong> Fey</li>
+				<li><strong>Size:</strong> Medium (about 4–7 feet tall) or Small (about 2–4 feet tall), chosen when you select this species</li>
+				<li><strong>Speed:</strong> 30 feet</li>
+			</ul>
+			<p>As an Lorwyn Changeling, you have these special traits.</p>
+			<p class="indent"><strong><em>Shape Self.</em></strong> As an Action, you can reshape your body to a two-legged Humanoid shape or to a four-legged Beast shape. While you have a Humanoid shape, you can wear clothing and armor made for a Humanoid of your size.</p>
+			<p class="indent"><strong><em>Darkvision.</em></strong> You have Darkvision with a range of 120 feet.</p>
+			<p class="indent"><strong><em>Delightful Imitator.</em></strong> You have proficiency in the Deception or Performance skill.</p>
+			<p class="indent"><strong><em>Unpredictable Movement.</em></strong> When you roll Initiative and don't have Disadvantage on that roll, you can take the Dash action as a Reaction.</p>
+		</description>
+		<sheet display="false" />
+		<rules>
+			<grant type="Racial Trait" id="ID_INTERNAL_RACIAL_TRAIT_TYPE_FEY" />
+			<select type="Ability Score Improvement" name="Ability Score Improvement Option (Lorwyn Changeling)" supports="Custom Ability Score Improvement Option" requirements="!ID_INTERNAL_GRANTS_BACKGROUND_ASI" />
+			<select type="Racial Trait" name="Size (Lorwyn Changeling)" supports="ID_INTERNAL_RACIAL_TRAIT_SMALL|ID_INTERNAL_RACIAL_TRAIT_MEDIUM" />
+			<stat name="innate speed" value="30" bonus="base" />
+
+			<grant type="Language" id="ID_LANGUAGE_COMMON" requirements="!ID_WOTC_TCOE_OPTION_CUSTOMIZED_LANGUAGE" />
+			<select type="Language" name="Language (Lorwyn Changeling)" supports="Standard" number="2" requirements="!ID_WOTC_TCOE_OPTION_CUSTOMIZED_LANGUAGE" />
+			<select type="Language" name="Customized Language (Lorwyn Changeling)" supports="Custom Race Language" requirements="ID_WOTC_TCOE_OPTION_CUSTOMIZED_LANGUAGE" number="3" />
+
+			<grant type="Vision" id="ID_VISION_DARKVISION" requirements="!ID_INTERNAL_LFL_RACIAL_TRAIT_REPLACEMENT_LORWYN_CHANGELING_DARKVISION" />
+			<stat name="darkvision:range" value="120" bonus="base" />
+			<grant type="Racial Trait" id="ID_WOTC_LFL_RACIAL_TRAIT_LORWYN_CHANGELING_SHAPE_SELF" />
+			<grant type="Racial Trait" id="ID_WOTC_LFL_RACIAL_TRAIT_LORWYN_CHANGELING_DELIGHTFUL_IMITATOR" />
+			<grant type="Racial Trait" id="ID_WOTC_LFL_RACIAL_TRAIT_LORWYN_CHANGELING_UNPREDICTABLE_MOVEMENT" />
+		</rules>
+	</element>
+
+	<element name="Shape Self" type="Racial Trait" source="Lorwyn: First Light" id="ID_WOTC_LFL_RACIAL_TRAIT_LORWYN_CHANGELING_SHAPE_SELF">
+		<requirements>!ID_INTERNAL_LFL_RACIAL_TRAIT_REPLACEMENT_LORWYN_CHANGELING_SHAPE_SELF</requirements>
+		<description>
+			<p>As an Action, you can reshape your body to a two-legged Humanoid shape or to a four-legged Beast shape. While you have a Humanoid shape, you can wear clothing and armor made for a Humanoid of your size.</p>
+		</description>
+		<sheet action="Action">
+			<description>You can reshape your body to a two-legged Humanoid shape or to a four-legged Beast shape. While you have a Humanoid shape, you can wear clothing and armor made for a Humanoid of your size.</description>
+		</sheet>
+	</element>
+
+	<element name="Delightful Imitator" type="Racial Trait" source="Lorwyn: First Light" id="ID_WOTC_LFL_RACIAL_TRAIT_LORWYN_CHANGELING_DELIGHTFUL_IMITATOR">
+		<requirements>!ID_INTERNAL_LFL_RACIAL_TRAIT_REPLACEMENT_LORWYN_CHANGELING_DELIGHTFUL_IMITATOR</requirements>
+		<description>
+			<p>You have proficiency in the Deception or Performance skill.</p>
+		</description>
+		<sheet display="false" />
+		<rules>
+			<select type="Proficiency" name="Skill Proficiency (Delightful Imitator)" supports="ID_PROFICIENCY_SKILL_DECEPTION|ID_PROFICIENCY_SKILL_PERFORMANCE" requirements="!ID_WOTC_TCOE_OPTION_CUSTOMIZED_PROFICIENCY" />
+			<select type="Proficiency" name="Customized Skill Proficiency (Delightful Imitator)" supports="Skill" requirements="ID_WOTC_TCOE_OPTION_CUSTOMIZED_PROFICIENCY" />
+		</rules>
+	</element>
+
+	<element name="Unpredictable Movement" type="Racial Trait" source="Lorwyn: First Light" id="ID_WOTC_LFL_RACIAL_TRAIT_LORWYN_CHANGELING_UNPREDICTABLE_MOVEMENT">
+		<requirements>!ID_INTERNAL_LFL_RACIAL_TRAIT_REPLACEMENT_LORWYN_CHANGELING_UNPREDICTABLE_MOVEMENT</requirements>
+		<description>
+			<p>When you roll Initiative and don't have Disadvantage on that roll, you can take the Dash action as a Reaction.</p>
+		</description>
+		<sheet action="Reaction">
+			<description>When you roll Initiative and don't have Disadvantage on that roll, you can take the Dash action.</description>
+		</sheet>
+	</element>
+
+	<!--racial trait replacement grants-->
+	<element name="Lorwyn Changeling Darkvision Replacement" type="Grants" source="Internal" id="ID_INTERNAL_LFL_RACIAL_TRAIT_REPLACEMENT_LORWYN_CHANGELING_DARKVISION" />
+	<element name="Shape Self Replacement" type="Grants" source="Internal" id="ID_INTERNAL_LFL_RACIAL_TRAIT_REPLACEMENT_LORWYN_CHANGELING_SHAPE_SELF" />
+	<element name="Delightful Imitator Replacement" type="Grants" source="Internal" id="ID_INTERNAL_LFL_RACIAL_TRAIT_REPLACEMENT_LORWYN_CHANGELING_DELIGHTFUL_IMITATOR" />
+	<element name="Unpredictable Movement Replacement" type="Grants" source="Internal" id="ID_INTERNAL_LFL_RACIAL_TRAIT_REPLACEMENT_LORWYN_CHANGELING_UNPREDICTABLE_MOVEMENT" />
+
+</elements>

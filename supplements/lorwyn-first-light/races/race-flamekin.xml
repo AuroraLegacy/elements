@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<elements>
+	<info>
+		<name>Flamekin</name>
+		<description>The Flamekin species from Lorwyn: First Light.</description>
+		<author url="https://marketplace.dndbeyond.com/category/DBU4HPAC7">Wizards of the Coast</author>
+		<update version="0.0.1">
+			<file name="race-flamekin.xml" url="https://raw.githubusercontent.com/AuroraLegacy/elements/master/supplements/lorwyn-first-light/races/race-flamekin.xml" />
+		</update>
+	</info>
+	
+	<element name="Flamekin" type="Race" source="Lorwyn: First Light" id="ID_WOTC_LFL_RACE_FLAMEKIN">
+		<description>
+			<p>Flamekin are people made from two key elements of creation: fire and stone. As a result, many flamekin feel a strong connection to the natural world. Flamekin's bodies radiate harmless magical flames, though they possess innate magic that allows them to create burning flames in a multitude of forms.</p>
+			<p class="indent">Flamekin view self-discovery and self-expression the noblest of aspirations and believe that self-realization is the most important thing an individual can do with their life. Flamekin call this lifelong pursuit the Path of Flame.</p>
+			<p class="indent">Flamekin dwell in either Lorwyn or Shadowmoor. Physically and culturally, they are similar in both lands.</p>
+			<div class="sidebar">
+				<h5>CINDERS</h5>
+				<p>In Shadowmoor, some flamekin who have stifled their heated emotions are known as Cinders because their magical flames have dampened. Though they still have fiery abilities, these Cinders are visually distinct from other flamekin. While some eventually regain their blazing flames, others turn into rimekin.</p>
+			</div>
+			<h5>FLAMEKIN TRAITS</h4>
+			<ul class="unstyled" style="text-indent:-1em; margin-left:1em; margin-bottom:5px">
+				<li><strong>Creature Type:</strong> Humanoid</li>
+				<li><strong>Size:</strong> Medium (about 4–7 feet tall) or Small (about 2–4 feet tall), chosen when you select this species</li>
+				<li><strong>Speed:</strong> 30 feet</li>
+			</ul>
+			<p>As a Flamekin, you have these special traits.</p>
+			<p class="indent"><strong><em>Darkvision.</em></strong> You have Darkvision with a range of 60 feet.</p>
+			<p class="indent"><strong><em>Fire Resistance.</em></strong> You have Resistance to Fire damage.</p> 
+			<p class="indent"><strong><em>Reach to the Blaze.</em></strong> You know the <i>Produce Flame</i> cantrip. Additionally, you learn the <i>Burning Hands</i> spell when you reach 3rd level, and the <i>Flame Blade</i> spell once you reach 5th level. You can cast each of these spells once without a spell slot, and you regain the ability to cast them in this way when you finish a Long Rest. You can also cast these spells using any spell slots you have of the appropriate level. Intelligence, Wisdom, or Charisma is your spellcasting ability for the spells you cast with this trait (choose the ability when you select this species).</p>
+		</description>
+		<sheet display="false" />
+		<rules>
+			<select type="Ability Score Improvement" name="Ability Score Improvement Option (Flamekin)" supports="Custom Ability Score Improvement Option" requirements="!ID_INTERNAL_GRANTS_BACKGROUND_ASI" />
+			<select type="Racial Trait" name="Size (Flamekin)" supports="ID_INTERNAL_RACIAL_TRAIT_SMALL|ID_INTERNAL_RACIAL_TRAIT_MEDIUM" />
+			<stat name="innate speed" value="30" bonus="base" />
+
+			<grant type="Language" id="ID_LANGUAGE_COMMON" requirements="!ID_WOTC_TCOE_OPTION_CUSTOMIZED_LANGUAGE" />
+			<select type="Language" name="Language (Flamekin)" supports="Standard" number="2" requirements="!ID_WOTC_TCOE_OPTION_CUSTOMIZED_LANGUAGE" />
+			<select type="Language" name="Customized Language (Flamekin)" supports="Custom Race Language" requirements="ID_WOTC_TCOE_OPTION_CUSTOMIZED_LANGUAGE" number="3" />
+
+			<grant type="Vision" id="ID_VISION_DARKVISION" requirements="ID_INTERNAL_LFL_RACIAL_TRAIT_REPLACEMENT_FLAMEKIN_DARKVISION" />
+			<grant type="Condition" id="ID_INTERNAL_CONDITION_DAMAGE_RESISTANCE_FIRE" />
+			<grant type="Racial Trait" id="ID_WOTC_LFL_RACIAL_TRAIT_FLAMEKIN_REACH_TO_THE_BLAZE" />
+		</rules>
+	</element>
+
+	<element name="Reach to the Blaze" type="Racial Trait" source="Lorwyn: First Light" id="ID_WOTC_LFL_RACIAL_TRAIT_FLAMEKIN_REACH_TO_THE_BLAZE">
+		<requirements>!ID_INTERNAL_LFL_RACIAL_TRAIT_REPLACEMENT_FLAMEKIN_REACH_TO_THE_BLAZE</requirements>
+		<description>
+			<p>You know the <i>Produce Flame</i> cantrip. Starting at 3rd level, you can cast the <i>Burning Hands</i> spell with this trait. Starting at 5th level, you can also cast the <i>Flame Blade</i> spell with this trait, without a material component. Once you cast <i>Burning Hands</i> or <i>Flame Blade</i> with this trait, you can't cast that spell with it again until you finish a Long Rest. You can also cast either of those spells using any spell slots you have of the appropriate level.</p>
+			<p class="indent">Intelligence, Wisdom, or Charisma is your spellcasting ability for these spells when you cast them with this trait (choose when you select this race).</p>
+		</description>
+		<sheet display="false"/>
+		<rules>
+			<select type="Racial Trait" name="Spellcasting Ability (Reach to the Blaze)" supports="ID_WOTC_LFL_RACIAL_TRAIT_FLAMEKIN_REACH_TO_THE_BLAZE_INTELLIGENCE|ID_WOTC_LFL_RACIAL_TRAIT_FLAMEKIN_REACH_TO_THE_BLAZE_WISDOM|ID_WOTC_LFL_RACIAL_TRAIT_FLAMEKIN_REACH_TO_THE_BLAZE_CHARISMA" />
+		</rules>
+	</element>
+	<element name="Intelligence" type="Racial Trait" source="Lorwyn: First Light" id="ID_WOTC_LFL_RACIAL_TRAIT_FLAMEKIN_REACH_TO_THE_BLAZE_INTELLIGENCE">
+		<compendium display="false" />
+		<description>
+			<p>Intelligence is your spellcasting ability for the spells you cast with this trait.</p>
+		</description>
+		<sheet alt="Reach to the Blaze">
+			<description>You know the Produce Flame cantrip. Intelligence is your spellcasting ability for it.</description>
+			<description level="3">You know the Produce Flame cantrip. You can cast the Burning Hands spell once per Long Rest. Intelligence is your spellcasting ability for the spells you cast with this trait. You can also cast this spell using any spell slots you have of the appropriate level.</description>
+			<description level="3">You know the Produce Flame cantrip. You can cast the Burning Hands and Flame Blade spells once each per Long Rest. Intelligence is your spellcasting ability for the spells you cast with this trait. You can also cast this spell using any spell slots you have of the appropriate level.</description>
+		</sheet>
+		<rules>
+			<grant type="Spell" id="ID_WOTC_PHB24_SPELL_PRODUCE_FLAME" />
+			<grant type="Spell" id="ID_WOTC_PHB24_SPELL_BURNING_HANDS" level="3" />
+			<grant type="Spell" id="ID_WOTC_PHB24_SPELL_FLAME_BLADE" level="5" />
+		</rules>
+	</element>
+	<element name="Wisdom" type="Racial Trait" source="Lorwyn: First Light" id="ID_WOTC_LFL_RACIAL_TRAIT_FLAMEKIN_REACH_TO_THE_BLAZE_WISDOM">
+		<compendium display="false" />
+		<description>
+			<p>Wisdom is your spellcasting ability for the spells you cast with this trait.</p>
+		</description>
+		<sheet alt="Reach to the Blaze">
+			<description>You know the Produce Flame cantrip. Wisdom is your spellcasting ability for it.</description>
+			<description level="3">You know the Produce Flame cantrip. You can cast the Burning Hands spell once per Long Rest. Wisdom is your spellcasting ability for the spells you cast with this trait. You can also cast this spell using any spell slots you have of the appropriate level.</description>
+			<description level="3">You know the Produce Flame cantrip. You can cast the Burning Hands and Flame Blade spells  once each per Long Rest. Wisdom is your spellcasting ability for the spells you cast with this trait. You can also cast this spell using any spell slots you have of the appropriate level.</description>
+		</sheet>
+		<rules>
+			<grant type="Spell" id="ID_WOTC_PHB24_SPELL_PRODUCE_FLAME" />
+			<grant type="Spell" id="ID_WOTC_PHB24_SPELL_BURNING_HANDS" level="3" />
+			<grant type="Spell" id="ID_WOTC_PHB24_SPELL_FLAME_BLADE" level="5" />
+		</rules>
+	</element>
+	<element name="Charisma" type="Racial Trait" source="Lorwyn: First Light" id="ID_WOTC_LFL_RACIAL_TRAIT_FLAMEKIN_REACH_TO_THE_BLAZE_CHARISMA">
+		<compendium display="false" />
+		<description>
+			<p>Charisma is your spellcasting ability for the spells you cast with this trait.</p>
+		</description>
+		<sheet alt="Reach to the Blaze">
+			<description>You know the Produce Flame cantrip. Charisma is your spellcasting ability for it.</description>
+			<description level="3">You know the Produce Flame cantrip. You can cast the Burning Hands spell once per Long Rest. Charisma is your spellcasting ability for the spells you cast with this trait. You can also cast this spell using any spell slots you have of the appropriate level.</description>
+			<description level="3">You know the Produce Flame cantrip. You can cast the Burning Hands and Flame Blade spells  once each per Long Rest. Charisma is your spellcasting ability for the spells you cast with this trait. You can also cast this spell using any spell slots you have of the appropriate level.</description>
+		</sheet>
+		<rules>
+			<grant type="Spell" id="ID_WOTC_PHB24_SPELL_PRODUCE_FLAME" />
+			<grant type="Spell" id="ID_WOTC_PHB24_SPELL_BURNING_HANDS" level="3" />
+			<grant type="Spell" id="ID_WOTC_PHB24_SPELL_FLAME_BLADE" level="5" />
+		</rules>
+	</element>
+
+	<!--racial trait replacement grants-->
+	<element name="Flamekin Darkvision Replacement" type="Grants" source="Internal" id="ID_INTERNAL_LFL_RACIAL_TRAIT_REPLACEMENT_FLAMEKIN_DARKVISION" />
+	<element name="Reach to the Blaze Replacement" type="Grants" source="Internal" id="ID_INTERNAL_LFL_RACIAL_TRAIT_REPLACEMENT_FLAMEKIN_REACH_TO_THE_BLAZE" />
+
+</elements>

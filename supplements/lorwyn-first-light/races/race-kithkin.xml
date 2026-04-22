@@ -1,0 +1,151 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<elements>
+	<info>
+		<name>Kithkin</name>
+		<description>The Kithkin species from Lorwyn: First Light.</description>
+		<author url="https://marketplace.dndbeyond.com/category/DBU4HPAC7">Wizards of the Coast</author>
+		<update version="0.0.1">
+			<file name="race-kithkin.xml" url="https://raw.githubusercontent.com/AuroraLegacy/elements/master/supplements/lorwyn-first-light/races/race-kithkin.xml" />
+		</update>
+	</info>
+	
+	<element name="Kithkin" type="Race" source="Lorwyn: First Light" id="ID_WOTC_LFL_RACE_KITHKIN">
+		<description>
+			<p>Kithkin are short folk with stout legs, long arms, and sturdy torsos. Their broad faces; round ears; and large, expressive eyes lend them a vaguely ursine appearance.</p>
+			<p class="indent">Most kithkin are linked by an empathic web that lets them sense the feelings of nearby kithkin. Because of this connection, many kithkin trust each other implicitly.</p>
+			<p class="indent">Some kithkin remove themselves from this empathic web temporarily or even permanently for a variety of reasons, often due to trauma suffered during the Phyrexian invasion. Regardless, kithkin typically believe that betraying their own is a heinous crime.</p>
+			<h4>In Lorwyn</h4>
+			<p>Lorwyn kithkin live in pastoral villages called clachans and welcome outsiders into their communities. These kithkin collect their cultural heritage in a tome called the Book of Kith and Kin. They also often entertain many superstitions, particularly related to Lorwyn's incarnations of nature.</p>
+			<h4>In Shadowmoor</h4>
+			<p>Shadowmoor kithkin are more insular and xenophobic. They mostly live in fortified settlements called douns, where strict customs to preserve the social order. Shadowmoor kithkin leaders keep a close eye on their communities, monitoring for any sign of crime or treason.</p>
+			
+			<h5>KITHKIN TRAITS</h5>
+			<ul class="unstyled" style="text-indent:-1em; margin-left:1em; margin-bottom:5px">
+				<li><strong>Creature Type:</strong> Humanoid</li>
+				<li><strong>Size:</strong> Small</li>
+				<li><strong>Speed:</strong> 30 feet</li>
+			</ul>
+			<p>As a Kithkin, you have these special traits.</p>
+			<p class="indent"><strong><em>Brave.</em></strong> You have Advantage on saving throws you make to avoid or end the Frightened condition.</p> 
+			<p class="indent"><strong><em>Halfling Nimbleness.</em></strong> You can move through the space of any creature that is of a size larger than you, but you can't stop in the same space.</p> 
+			<p class="indent"><strong><em>Luck.</em></strong> When you roll a 1 on the d20 of a D20 Test, you can reroll the die, and you must use the new roll.</p> 
+			<p class="indent"><strong><em>Naturally Stealthy.</em></strong> You can take the Hide action even when you are obscured only by a creature that is at least one size larger than you.</p> 
+			<p class="indent"><strong><em>Kithkin Lineage.</em></strong> As a native of either Lorwyn and Shadowmoor, you may gain additional traits.</p>
+			<h5>Kithkin Lineage</h5>
+			<table>
+				<thead>
+					<tr><td>Lineage</td><td class="col-50">Traits</td></tr>
+				</thead>
+				<tr><td>Lorwyn</td><td>You do not gain any additional traits.</td></tr>
+				<tr><td>Shadowmoor</td><td>You have Darkvision with a range of 120 feet.</td></tr>
+			</table>
+		</description>
+		<sheet display="false" />
+		<rules>
+			<grant type="Grants" id="ID_INTERNAL_GRANT_RACE_HALFLING" />
+			<select type="Ability Score Improvement" name="Ability Score Improvement Option (Kithkin)" supports="Custom Ability Score Improvement Option" requirements="!ID_INTERNAL_GRANTS_BACKGROUND_ASI" />
+			<grant type="Size" id="ID_SIZE_SMALL" />
+			<stat name="innate speed" value="30" bonus="base" />
+
+			<grant type="Language" id="ID_LANGUAGE_COMMON" requirements="!ID_WOTC_TCOE_OPTION_CUSTOMIZED_LANGUAGE" />
+			<select type="Language" name="Language (Kithkin)" supports="Standard" number="2" requirements="!ID_WOTC_TCOE_OPTION_CUSTOMIZED_LANGUAGE" />
+			<select type="Language" name="Customized Language (Kithkin)" supports="Custom Race Language"  requirements="ID_WOTC_TCOE_OPTION_CUSTOMIZED_LANGUAGE" number="3" />
+
+			<grant type="Racial Trait" id="ID_WOTC_LFL_RACIAL_TRAIT_KITHKIN_BRAVE" />
+			<grant type="Racial Trait" id="ID_WOTC_LFL_RACIAL_TRAIT_KITHKIN_HALFLING_NIMBLENESS" />
+			<grant type="Racial Trait" id="ID_WOTC_LFL_RACIAL_TRAIT_KITHKIN_LUCK" />
+			<grant type="Racial Trait" id="ID_WOTC_LFL_RACIAL_TRAIT_KITHKIN_NATURALLY_STEALTHY" />
+			<grant type="Racial Trait" id="ID_WOTC_LFL_RACIAL_TRAIT_KITHKIN_KITHKIN_LINEAGE" />
+		</rules>
+	</element>
+
+	<element name="Brave" type="Racial Trait" source="Lorwyn: First Light" id="ID_WOTC_LFL_RACIAL_TRAIT_KITHKIN_BRAVE">
+		<requirements>!ID_INTERNAL_LFL_RACIAL_TRAIT_REPLACEMENT_KITHKIN_BRAVE</requirements>
+		<description>
+			<p>You have Advantage on saving throws you make to avoid or end the Frightened condition.</p> 
+		</description>
+		<sheet>
+			<description>You have Advantage on saving throws you make to avoid or end the Frightened condition.</description>
+		</sheet>
+	</element>
+
+	<element name="Halfling Nimbleness" type="Racial Trait" source="Lorwyn: First Light" id="ID_WOTC_LFL_RACIAL_TRAIT_KITHKIN_HALFLING_NIMBLENESS">
+		<requirements>!ID_INTERNAL_LFL_RACIAL_TRAIT_REPLACEMENT_KITHKIN_HALFLING_NIMBLENESS</requirements>
+		<description>
+			<p>You can move through the space of any creature that is of a size larger than you, but you can't stop in the same space.</p> 
+		</description>
+		<sheet>
+			<description>You can move through the space of any creature that is of a size larger than you, but you can't stop in the same space.</description>
+		</sheet>
+	</element>
+
+	<element name="Luck" type="Racial Trait" source="Lorwyn: First Light" id="ID_WOTC_LFL_RACIAL_TRAIT_KITHKIN_LUCK">
+		<requirements>!ID_INTERNAL_LFL_RACIAL_TRAIT_REPLACEMENT_KITHKIN_LUCK</requirements>
+		<description>
+			<p>When you roll a 1 on the d20 of a D20 Test, you can reroll the die, and you must use the new roll.</p> 
+		</description>
+		<sheet>
+			<description>When you roll a 1 on the d20 of a D20 Test, you can reroll the die, and you must use the new roll.</description>
+		</sheet>
+	</element>
+
+	<element name="Naturally Stealthy" type="Racial Trait" source="Lorwyn: First Light" id="ID_WOTC_LFL_RACIAL_TRAIT_KITHKIN_NATURALLY_STEALTHY">
+		<requirements>!ID_INTERNAL_LFL_RACIAL_TRAIT_REPLACEMENT_KITHKIN_NATURALLY_STEALTHY</requirements>
+		<description>
+			<p>You can take the Hide action even when you are obscured only by a creature that is at least one size larger than you.</p> 
+		</description>
+		<sheet>
+			<description>You can take the Hide action even when you are obscured only by a creature that is at least one size larger than you.</description>
+		</sheet>
+	</element>
+
+	<element name="Kithkin Lineage" type="Racial Trait" source="Lorwyn: First Light" id="ID_WOTC_LFL_RACIAL_TRAIT_KITHKIN_KITHKIN_LINEAGE">
+		<requirements>!ID_INTERNAL_LFL_RACIAL_TRAIT_REPLACEMENT_KITHKIN_KITHKIN_LINEAGE</requirements>
+		<description>
+			<p>As a native of either Lorwyn and Shadowmoor, you may gain additional traits.</p>
+			<h5>Kithkin Lineage</h5>
+			<table>
+				<thead>
+					<tr><td>Lineage</td><td class="col-50">Traits</td></tr>
+				</thead>
+				<tr><td>Lorwyn</td><td>You do not gain any additional traits.</td></tr>
+				<tr><td>Shadowmoor</td><td>You have Darkvision with a range of 120 feet.</td></tr>
+			</table>
+		</description>
+		<sheet display="false"/>
+		<rules>
+			<select type="Racial Trait" name="Kithkin Lineage" supports="Kithkin Lineage" />
+		</rules>
+	</element>
+
+	<element name="Lorwyn" type="Racial Trait" source="Lorwyn: First Light" id="ID_WOTC_LFL_RACIAL_TRAIT_KITHKIN_KITHKIN_LINEAGE_LORWYN">
+		<compendium display="false" />
+		<supports>Kithkin Lineage</supports>
+		<description>
+			<div element="ID_WOTC_LFL_RACIAL_TRAIT_KITHKIN_KITHKIN_LINEAGE" />
+		</description>
+		<sheet display="false" />
+	</element>
+	<element name="Shadowmoor" type="Racial Trait" source="Lorwyn: First Light" id="ID_WOTC_LFL_RACIAL_TRAIT_KITHKIN_KITHKIN_LINEAGE_SHADOWMOOR">
+		<compendium display="false" />
+		<supports>Kithkin Lineage</supports>
+		<description>
+			<div element="ID_WOTC_LFL_RACIAL_TRAIT_KITHKIN_KITHKIN_LINEAGE" />
+		</description>
+		<sheet alt="Kithkin Lineage: Shadowmoor">
+			<description>You have Darkvision with a range of 120 feet.</description>
+		</sheet>
+		<rules>
+			<grant type="Vision" id="ID_VISION_DARKVISION" requirements="ID_INTERNAL_LFL_RACIAL_TRAIT_REPLACEMENT_KITHKIN_SHADOWMOOR_DARKVISION"/>
+			<stat name="darkvision:range" value="120" bonus="base" />
+		</rules>
+	</element>
+
+	<!--racial trait replacement grants-->
+	<element name="Brave Replacement" type="Grants" source="Internal" id="ID_INTERNAL_LFL_RACIAL_TRAIT_REPLACEMENT_KITHKIN_BRAVE" />
+	<element name="Halfling Nimbleness Replacement" type="Grants" source="Internal" id="ID_INTERNAL_LFL_RACIAL_TRAIT_REPLACEMENT_KITHKIN_HALFLING_NIMBLENESS" />
+	<element name="Luck Replacement" type="Grants" source="Internal" id="ID_INTERNAL_LFL_RACIAL_TRAIT_REPLACEMENT_KITHKIN_LUCK" />
+	<element name="Naturally Stealthy Replacement" type="Grants" source="Internal" id="ID_INTERNAL_LFL_RACIAL_TRAIT_REPLACEMENT_KITHKIN_NATURALLY_STEALTHY" />
+	<element name="Kithkin Lineage Replacement" type="Grants" source="Internal" id="ID_INTERNAL_LFL_RACIAL_TRAIT_REPLACEMENT_KITHKIN_KITHKIN_LINEAGE" />
+	<element name="Shadowmoor Kithkin Darkvision Replacement" type="Grants" source="Internal" id="ID_INTERNAL_LFL_RACIAL_TRAIT_REPLACEMENT_KITHKIN_SHADOWMOOR_DARKVISION" />
+</elements>

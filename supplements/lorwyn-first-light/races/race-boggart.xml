@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<elements>
+	<info>
+		<name>Boggart</name>
+		<description>The Boggart species from Lorwyn: First Light.</description>
+		<author url="https://marketplace.dndbeyond.com/category/DBU4HPAC7">Wizards of the Coast</author>
+		<update version="0.0.1">
+			<file name="race-boggart.xml" url="https://raw.githubusercontent.com/AuroraLegacy/elements/master/supplements/lorwyn-first-light/races/race-boggart.xml" />
+		</update>
+	</info>
+	
+	<element name="Boggart" type="Race" source="Lorwyn: First Light" id="ID_WOTC_LFL_RACE_BOGGART">
+		<description>
+			<p>Boggarts are Small, squat goblinoids found in the realm of Lorwyn-Shadowmoor. They possess bestial physical features, including horns and animal-like snouts. Beyond these commonalities, boggart appearances vary widely. One boggart may look like a hedgehog, with spiky fur and beady eyes, while another might sport the snout and fleshy ears of a swine. Boggarts tend to love crafting potions and commonly gravitate to specific areas of expertise, as noted in the sections below.</p>
+			<h4>In Lorwyn</h4>
+			<p>Boggarts in Lorwyn are born into communal warrens where laws and hierarchies are considered suggestions. The oldest and most powerful boggarts, known as "aunties," serve as respected leaders who keep the peace. Lorwyn boggarts value sharing knowledge and past experiences with their communities. Many are willing to brave great dangers in pursuit of new experiences, and adventurers are common.</p>
+			<p class="indent">Lorwyn boggarts also have a knack for magic. Boggarts who feel drawn to learning and using these natural affinities often become Druids. A Lorwyn boggart might alternatively find a calling as a Ranger, especially the Fey Wanderer subclass, or as a Wizard, especially the Diviner subclass, as boggarts have proven fond of ascertaining information through divination magic.</p>
+			<h4>In Shadowmoor</h4>
+			<p>Boggarts in Shadowmoor generally have sharper physical features than Lorwyn boggarts, including additional sets of horns. They are also known for body modifications, such as riveting armored plates to their flesh. Shadowmoor boggart society is chaotic and decentralized; their communities are few and likely to be found in isolated or dangerous environments. Aunties in Shadowmoor wander the lands, greeting those they meet with arbitrary tests, boons, or even curses.</p>
+			<p class="indent">Like their Lorwyn counterparts, Shadowmoor boggarts are drawn to magic. These boggarts might become Warlocks, particularly leaning toward the Archfey Patron subclass; some might believe their patron is Isilu. Others prove to be Sorcerers and are especially likely to manifest their power in the form of the Wild Magic Sorcery subclass.</p>
+			<h5>BOGGART TRAITS</h5>
+			<ul class="unstyled" style="text-indent:-1em; margin-left:1em; margin-bottom:5px">
+				<li><strong>Creature Type:</strong> Humanoid (Goblinoid)</li>
+				<li><strong>Size:</strong> Small</li>
+				<li><strong>Speed:</strong> 30 feet</li>
+			</ul>
+			<p>As a Boggart, you have these special traits.</p>
+			<p class="indent"><strong><em>Darkvision.</em></strong> You have Darkvision with a range of 60 feet.</p>
+			<p class="indent"><strong><em>Fey Ancestry.</em></strong> You have Advantage on saving throws you make to avoid or end the Charmed condition.</p>
+			<p class="indent"><strong><em>Fury of the Small.</em></strong> When you damage a creature with an attack or a spell and the creature's size is larger than yours, you can cause the attack or spell to deal extra damage to the creature. The extra damage equals your proficiency bonus.</p>
+			<p class="indent">You can use this trait a number of times equal to your proficiency bonus, regaining all expended uses when you finish a long rest, and you can use it no more than once per turn.</p>
+			<p class="indent"><strong><em>Nimble Escape.</em></strong> You can take the Disengage or Hide action as a bonus action on each of your turns.</p>
+		</description>
+		<sheet display="false" />
+		<rules>
+			<grant type="Racial Trait" id="ID_INTERNAL_RACIAL_TRAIT_TYPE_HUMANOID_GOBLINOID" />
+			<select type="Ability Score Improvement" name="Ability Score Improvement Option (Boggart)" supports="Custom Ability Score Improvement Option" requirements="!ID_INTERNAL_GRANTS_BACKGROUND_ASI" />
+			<grant type="Size" id="ID_SIZE_SMALL" />
+			<stat name="innate speed" value="30" bonus="base" />
+
+			<grant type="Language" id="ID_LANGUAGE_COMMON" requirements="!ID_WOTC_TCOE_OPTION_CUSTOMIZED_LANGUAGE" />
+			<select type="Language" name="Language (Boggart)" supports="Standard" number="2" requirements="!ID_WOTC_TCOE_OPTION_CUSTOMIZED_LANGUAGE" />
+			<select type="Language" name="Customized Language (Boggart)" supports="Custom Race Language"  requirements="ID_WOTC_TCOE_OPTION_CUSTOMIZED_LANGUAGE" number="3" />
+
+			<grant type="Vision" id="ID_VISION_DARKVISION" requirements="!ID_INTERNAL_LFL_RACIAL_TRAIT_REPLACEMENT_BOGGART_DARKVISION" />
+			<grant type="Racial Trait" id="ID_WOTC_LFL_RACIAL_TRAIT_BOGGART_FEY_ANCESTRY" />
+			<grant type="Racial Trait" id="ID_WOTC_LFL_RACIAL_TRAIT_BOGGART_FURY_OF_THE_SMALL" />
+			<grant type="Racial Trait" id="ID_WOTC_LFL_RACIAL_TRAIT_BOGGART_NIMBLE_ESCAPE" />
+		</rules>
+	</element>
+
+	<element name="Fey Ancestry" type="Racial Trait" source="Lorwyn: First Light" id="ID_WOTC_LFL_RACIAL_TRAIT_BOGGART_FEY_ANCESTRY">
+		<requirements>!ID_INTERNAL_LFL_RACIAL_TRAIT_REPLACEMENT_BOGGART_FEY_ANCESTRY</requirements>
+		<description>
+			<p>You have Advantage on saving throws you make to avoid or end the Charmed condition.</p>
+		</description>
+		<sheet>
+			<description>You have Advantage on saving throws you make to avoid or end the Charmed condition.</description>
+		</sheet>
+	</element>
+
+	<element name="Fury of the Small" type="Racial Trait" source="Lorwyn: First Light" id="ID_WOTC_LFL_RACIAL_TRAIT_BOGGART_FURY_OF_THE_SMALL">
+		<requirements>!ID_INTERNAL_LFL_RACIAL_TRAIT_REPLACEMENT_BOGGART_FURY_OF_THE_SMALL</requirements>
+		<description>
+			<p>When you damage a creature with an attack or a spell and the creature's size is larger than yours, you can cause the attack or spell to deal extra damage to the creature. The extra damage equals your proficiency bonus.</p>
+			<p class="indent">You can use this trait a number of times equal to your proficiency bonus, regaining all expended uses when you finish a long rest, and you can use it no more than once per turn.</p>
+		</description>
+		<sheet usage="1/Turn, {{proficiency}}/Long Rest">
+			<description>When you damage a creature with an attack or a spell and the creature's size is larger than yours, you can cause the attack or spell to deal {{proficiency}} extra damage.</description>
+		</sheet>
+	</element>
+
+	<element name="Nimble Escape" type="Racial Trait" source="Lorwyn: First Light" id="ID_WOTC_LFL_RACIAL_TRAIT_BOGGART_NIMBLE_ESCAPE">
+		<requirements>!ID_INTERNAL_LFL_RACIAL_TRAIT_REPLACEMENT_BOGGART_NIMBLE_ESCAPE</requirements>
+		<description>
+			<p>You can take the Disengage or Hide action as a bonus action on each of your turns.</p>
+		</description>
+		<sheet action="Bonus Action">
+			<description>You can take the Disengage or Hide action.</description>
+		</sheet>
+	</element>
+
+	<!--racial trait replacement grants-->
+	<element name="Darkvision Trait Replacement" type="Grants" source="Internal" id="ID_INTERNAL_LFL_RACIAL_TRAIT_REPLACEMENT_BOGGART_DARKVISION" />
+	<element name="Fey Ancestry Replacement" type="Grants" source="Internal" id="ID_INTERNAL_LFL_RACIAL_TRAIT_REPLACEMENT_BOGGART_FEY_ANCESTRY" />
+	<element name="Fury of the Small Replacement" type="Grants" source="Internal" id="ID_INTERNAL_LFL_RACIAL_TRAIT_REPLACEMENT_BOGGART_FURY_OF_THE_SMALL" />
+	<element name="Nimble Escape Replacement" type="Grants" source="Internal" id="ID_INTERNAL_LFL_RACIAL_TRAIT_REPLACEMENT_BOGGART_NIMBLE_ESCAPE" />
+
+</elements>
