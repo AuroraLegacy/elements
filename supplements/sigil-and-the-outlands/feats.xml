@@ -2,7 +2,7 @@
 <elements>
 	<info>
 		<name>Feats</name>
-		<update version="0.0.3">
+		<update version="0.0.4">
 			<file name="feats.xml" url="https://raw.githubusercontent.com/AuroraLegacy/elements/master/supplements/sigil-and-the-outlands/feats.xml" />
 		</update>
 	</info>
@@ -109,9 +109,42 @@
 		</description>
 		<sheet display="false" />
 		<rules>
+			<select type="Feat Feature" name="Resistance (Planar Adaptation)" supports="Planar Adaptation" />
 			<grant type="Feat Feature" id="ID_WOTC_SATO_FEAT_PLANAR_WANDERER_PORTAL_CRACKER" />
 			<grant type="Feat Feature" id="ID_WOTC_SATO_FEAT_PLANAR_WANDERER_PORTAL_SENSE" />
-			<select type="Condition" name="Resistance (Planar Adaptation)" supports="ID_INTERNAL_CONDITION_DAMAGE_RESISTANCE_ACID|ID_INTERNAL_CONDITION_DAMAGE_RESISTANCE_COLD|ID_INTERNAL_CONDITION_DAMAGE_RESISTANCE_FIRE" />
+		</rules>
+	</element>
+	<element name="Acid" type="Feat Feature" source="Sigil and the Outlands" id="ID_WOTC_SATO_FEAT_PLANAR_WANDERER_ACID_RESISTANCE">
+		<supports>Planar Adaptation</supports>
+		<compendium display="false" />
+		<description>
+			<p>When you finish a long rest, you gain resistance to acid damage until you finish your next long rest.</p>
+		</description>
+		<sheet display="false" />
+		<rules>
+			<grant type="Condition" id="ID_INTERNAL_CONDITION_DAMAGE_RESISTANCE_ACID" />
+		</rules>
+	</element>
+	<element name="Cold" type="Feat Feature" source="Sigil and the Outlands" id="ID_WOTC_SATO_FEAT_PLANAR_WANDERER_COLD_RESISTANCE">
+		<supports>Planar Adaptation</supports>
+		<compendium display="false" />
+		<description>
+			<p>When you finish a long rest, you gain resistance to cold damage until you finish your next long rest.</p>
+		</description>
+		<sheet display="false" />
+		<rules>
+			<grant type="Condition" id="ID_INTERNAL_CONDITION_DAMAGE_RESISTANCE_COLD" />
+		</rules>
+	</element>
+	<element name="Fire" type="Feat Feature" source="Sigil and the Outlands" id="ID_WOTC_SATO_FEAT_PLANAR_WANDERER_FIRE_RESISTANCE">
+		<supports>Planar Adaptation</supports>
+		<compendium display="false" />
+		<description>
+			<p>When you finish a long rest, you gain resistance to fire damage until you finish your next long rest.</p>
+		</description>
+		<sheet display="false" />
+		<rules>
+			<grant type="Condition" id="ID_INTERNAL_CONDITION_DAMAGE_RESISTANCE_FIRE" />
 		</rules>
 	</element>
 	<element name="Portal Cracker" type="Feat Feature" source="Sigil and the Outlands" id="ID_WOTC_SATO_FEAT_PLANAR_WANDERER_PORTAL_CRACKER">
