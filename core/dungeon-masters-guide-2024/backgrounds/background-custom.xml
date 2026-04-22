@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<elements>
+	<info>
+		<name>Custom Background</name>
+		<description>Custom Background from the Dungeon Master’s Guide 2024</description>
+		<author url="https://marketplace.dndbeyond.com/core-rules/3710000?pid=DB3710000">Wizards of the Coast</author>
+		<update version="0.0.1">
+			<file name="background-custom.xml" url="https://raw.githubusercontent.com/AuroraLegacy/elements/master/core/dungeon-masters-guide-2024/backgrounds/background-custom.xml" />
+		</update>
+	</info>
+
+	<element name="Custom Background" type="Background" source="Dungeon Master’s Guide (2024)" id="ID_WOTC_DMG24_BACKGROUND_CUSTOM">
+		<description>
+			<ul class="unstyled" style="text-indent:-1em; margin-left:1em; margin-bottom:5px">
+				<li><strong>Ability Scores:</strong> Choose Any 3 Ability Scores</li>
+				<li><strong>Feat:</strong> Choose any Origin Feat</li>
+				<li><strong>Skill Proficiencies:</strong> Choose Any 2 Skills</li>
+				<li><strong>Tool Proficiency:</strong> Choose 1 Tool Proficiency</li>
+				<li><strong>Equipment:</strong><i> Choose A or B:</i> (A) A package of equipment worth 50 GP or less (cannot include martial weapons or armor); or (B) 50 GP</li>
+			</ul>
+			<p>A character's background represents what the character did prior to becoming an adventurer. Creating a unique background or customizing an existing one from the Player's Handbook can reflect the particular theme of your campaign or elements of your world.</p>
+		</description>
+		<setters>
+			<set name="short">Any 3 Ability Scores, 1 Origin Feat, 2 Skills, and 1 Tool Proficiency</set>
+		</setters>
+		<rules>
+			<select type="Ability Score Improvement" name="Ability Score Improvement Option (Custom Background)" supports="Custom Background Ability Score Combination" />
+			<select type="Proficiency" name="Skill Proficiency (Custom Background)" supports="Skill,!Expertise" number="2" />
+			<select type="Proficiency" name="Tool Proficiency (Custom Background)" supports="Tool" />  
+			<grant type="Grants" id="ID_INTERNAL_GRANTS_BACKGROUND_ASI" />
+			<select type="Feat" name="Origin Feat (Custom Background)" supports="Origin" />
+		</rules>
+	</element>
+</elements>
