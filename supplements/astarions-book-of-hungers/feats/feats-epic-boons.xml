@@ -1,0 +1,133 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<elements>
+	<info>
+		<name>Epic Boon Category Feats</name>
+		<description>Epic Boon Feats from Astarion’s Book of Hungers.</description>
+		<author url="https://marketplace.dndbeyond.com/adventures/DBRWE7DB3">Wizards of the Coast</author>
+		<update version="0.0.1">
+			<file name="feats-epic-boons.xml" url="https://raw.githubusercontent.com/AuroraLegacy/elements/master/supplements/astarions-book-of-hungers/feats/feats-epic-boons.xml" />
+		</update>
+	</info>
+		
+	<element name="Boon of Blazing Dawn" type="Feat" source="Astarion’s Book of Hungers" id="ID_WOTC_ABH_FEAT_BOON_OF_BLAZING_DAWN">
+		<requirements>[level:19]</requirements>
+		<supports>Epic Boon</supports>
+		<prerequisite>Level 19+</prerequisite>
+		<description>
+			<p class="flavor">Epic Boon Feat (Prerequisite: Level 19+)</p>
+			<p>You gain the following benefits.</p>
+			<p class="indent"><b><i>Ability Score Increase.</i></b> Increase one ability score of your choice by 1, to a maximum of 30.</p>
+			<p class="indent"><b><i>Beloved of the Sun.</i></b> You have Immunity to Radiant damage.</p>
+			<p class="indent"><b><i>Blazing Strike.</i></b> When you hit a creature with a weapon attack, the damage can be Radiant or the weapon's normal damage type (your choice).</p>
+			<p class="indent"><b><i>Burst of Sunlight.</i></b> Once per turn when you hit a creature with an attack that deals Radiant damage, you can emit Bright Light in a 30-foot radius from yourself and Dim Light for an additional 30 feet until the start of your next turn. This light is sunlight.</p>
+		</description>
+		<sheet>
+			<description>When you hit a creature with a weapon attack, the damage can be Radiant or the weapon's normal damage type (your choice).</description>
+		</sheet>
+		<rules>
+			<grant type="Condition" id="ID_INTERNAL_CONDITION_DAMAGE_IMMUNITY_RADIANT" />
+			<select type="Ability Score Improvement" name="Ability Score Increase (Boon of Blazing Dawn)" supports="Boon Ability Score Increase" />
+			<select type="Feat Feature" name="Burst of Sunlight" supports="Burst of Sunlight" default="ID_WOTC_ABH_FEAT_FEATURE_BOON_OF_BLAZING_DAWN_BURST_OF_SUNLIGHT"/>
+		</rules>
+	</element>
+	<element name="Burst of Sunlight" type="Feat Feature" source="Astarion’s Book of Hungers" id="ID_WOTC_ABH_FEAT_FEATURE_BOON_OF_BLAZING_DAWN_BURST_OF_SUNLIGHT">
+		<compendium display="false" />
+		<supports>Burst of Sunlight</supports>
+		<description>
+			<p>Once per turn when you hit a creature with an attack that deals Radiant damage, you can emit Bright Light in a 30-foot radius from yourself and Dim Light for an additional 30 feet until the start of your next turn. This light is sunlight.</p>
+		</description>
+		<sheet usage="1/Turn">
+			<description>When you hit a creature with an attack that deals Radiant damage, you can emit Bright Light in a 30-foot radius from yourself and Dim Light for an additional 30 feet until the start of your next turn. This light is sunlight.</description>
+		</sheet>
+	</element>
+
+	<element name="Boon of Looming Shadows" type="Feat" source="Astarion’s Book of Hungers" id="ID_WOTC_ABH_FEAT_BOON_OF_LOOMING_SHADOWS">
+		<requirements>[level:19]</requirements>
+		<supports>Epic Boon</supports>
+		<prerequisite>Level 19+</prerequisite>
+		<description>
+			<p class="flavor">Epic Boon Feat (Prerequisite: Level 19+)</p>
+			<p>You gain the following benefits.</p>
+			<p class="indent"><b><i>Ability Score Increase.</i></b> Increase one ability score of your choice by 1, to a maximum of 30.</p>
+			<p class="indent"><b><i>Shadowy Stretch.</i></b> When you take the Attack action, your reach for your Melee weapon attacks increases by 10 feet until the end of your turn.</p>
+			<p class="indent"><b><i>Dancing Silhouette.</i></b> You can take the Dodge action as a Bonus Action.</p>
+		</description>
+		<sheet>
+			<description>When you take the Attack action, your reach for your Melee weapon attacks increases by 10 feet until the end of your turn.</description>
+		</sheet>
+		<rules>
+			<select type="Ability Score Improvement" name="Ability Score Increase (Boon of Looming Shadows)" supports="Boon Ability Score Increase" />
+			<select type="Feat Feature" name="Dancing Silhouette" supports="Dancing Silhouette" default="ID_WOTC_ABH_FEAT_FEATURE_BOON_OF_LOOMING_SHADOWS_DANCING_SILHOUETTE"/>
+		</rules>
+	</element>
+	<element name="Dancing Silhouette" type="Feat Feature" source="Astarion’s Book of Hungers" id="ID_WOTC_ABH_FEAT_FEATURE_BOON_OF_LOOMING_SHADOWS_DANCING_SILHOUETTE">
+		<compendium display="false" />
+		<supports>Dancing Silhouette</supports>
+		<description>
+			<p>You can take the Dodge action as a Bonus Action.</p>
+		</description>
+		<sheet action="Bonus Action">
+			<description>You can take the Dodge action.</description>
+		</sheet>
+	</element>
+
+	<element name="Boon of Misty Escape" type="Feat" source="Astarion’s Book of Hungers" id="ID_WOTC_ABH_FEAT_BOON_OF_MISTY_ESCAPE">
+		<requirements>[level:19]</requirements>
+		<supports>Epic Boon</supports>
+		<prerequisite>Level 19+</prerequisite>
+		<description>
+			<p class="flavor">Epic Boon Feat (Prerequisite: Level 19+)</p>
+			<p>You gain the following benefits.</p>
+			<p class="indent"><b><i>Ability Score Increase.</i></b> Increase one ability score of your choice by 1, to a maximum of 30.</p>
+			<p class="indent"><b><i>Gaseous Form.</i></b> If you drop to 0 Hit Points but aren't killed outright, you can instead drop to 1 Hit Point and cast <i>Gaseous Form</i> without expending a spell slot (no action required). When you cast this spell this way, you can target only yourself, your Fly Speed is 20 feet, and you regain 10 Hit Points at the start of each of your turns for the spell's duration. The spell's spellcasting ability is the ability increased by this feat.</p>
+			<p class="indent">Once you use this benefit, you can't do so again until you finish a Long Rest.</p>
+			<div class="reference">
+				<div element="ID_WOTC_PHB24_SPELL_GASEOUS_FORM" />
+			</div>
+		</description>
+		<sheet display="false" />
+		<rules>
+			<select type="Feat Feature" name="Boon of Misty Escape" supports="Boon of Misty Escape" />
+		</rules>
+	</element>
+	<element name="Intelligence" type="Feat Feature" source="Astarion’s Book of Hungers" id="ID_WOTC_ABH_FEAT_FEATURE_BOON_OF_MISTY_ESCAPE_INTELLIGENCE">
+		<compendium display="false" />
+		<supports>Boon of Misty Escape</supports>
+		<description>
+			<p>Increase your Intelligence by 1, to a maximum of 30.</p>
+		</description>
+		<sheet alt="Boon of Misty Escape" usage="1/Long Rest">
+			<description>If you drop to 0 Hit Points but aren't killed outright, you can instead drop to 1 Hit Point and cast <i>Gaseous Form</i> without expending a spell slot (no action required). When you cast this spell this way, you can target only yourself, your Fly Speed is 20 feet, and you regain 10 Hit Points at the start of each of your turns for the spell's duration. The spell's spellcasting ability is Intelligence.</description>
+		</sheet>
+		<rules>
+			<stat name="intelligence" value="1" alt="Boon of Misty Escape" />
+		</rules>
+	</element>
+	<element name="Wisdom" type="Feat Feature" source="Astarion’s Book of Hungers" id="ID_WOTC_ABH_FEAT_FEATURE_BOON_OF_MISTY_ESCAPE_WISDOM">
+		<compendium display="false" />
+		<supports>Boon of Misty Escape</supports>
+		<description>
+			<p>Increase your Wisdom by 1, to a maximum of 30.</p>
+		</description>
+		<sheet alt="Boon of Misty Escape" usage="1/Long Rest">
+			<description>If you drop to 0 Hit Points but aren't killed outright, you can instead drop to 1 Hit Point and cast <i>Gaseous Form</i> without expending a spell slot (no action required). When you cast this spell this way, you can target only yourself, your Fly Speed is 20 feet, and you regain 10 Hit Points at the start of each of your turns for the spell's duration. The spell's spellcasting ability is Wisdom.</description>
+		</sheet>
+		<rules>
+			<stat name="wisdom" value="1" alt="Boon of Misty Escape" />
+		</rules>
+	</element>
+	<element name="Charisma" type="Feat Feature" source="Astarion’s Book of Hungers" id="ID_WOTC_ABH_FEAT_FEATURE_BOON_OF_MISTY_ESCAPE_CHARISMA">
+		<compendium display="false" />
+		<supports>Boon of Misty Escape</supports>
+		<description>
+			<p>Increase your Charisma by 1, to a maximum of 30.</p>
+		</description>
+		<sheet alt="Boon of Misty Escape" usage="1/Long Rest">
+			<description>If you drop to 0 Hit Points but aren't killed outright, you can instead drop to 1 Hit Point and cast <i>Gaseous Form</i> without expending a spell slot (no action required). When you cast this spell this way, you can target only yourself, your Fly Speed is 20 feet, and you regain 10 Hit Points at the start of each of your turns for the spell's duration. The spell's spellcasting ability is Charisma.</description>
+		</sheet>
+		<rules>
+			<stat name="charisma" value="1" alt="Boon of Misty Escape" />
+		</rules>
+	</element>
+
+</elements>

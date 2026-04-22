@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<elements>
+	<info>
+		<name>Dhampir</name>
+		<description>The Dhampir species from Astarion’s Book of Hungers.</description>
+		<author url="https://marketplace.dndbeyond.com/adventures/DBRWE7DB3">Wizards of the Coast</author>
+		<update version="0.0.1">
+			<file name="race-dhampir.xml" url="https://raw.githubusercontent.com/AuroraLegacy/elements/master/supplements/astarions-book-of-hungers/races/race-dhampir.xml" />
+		</update>
+	</info>
+	
+	<element name="Dhampir" type="Race" source="Astarion’s Book of Hungers" id="ID_WOTC_ABH_RACE_DHAMPIR">
+		<description>
+			<p>Dhampirs are living people who possess vampiric prowess but are cursed with macabre hunger. Most dhampirs thirst for blood, but some gain sustenance from dreams, life energy, or other vital sources. Dhampirs must choose whether to fight to control their hunger or give in to predatory urges.</p>
+			<p class="indent">Dhampirs often arise from encounters with vampires; some are the descendants of a powerful vampire, while others are partially transformed by a vampire's bite. All manner of macabre bargains and necromantic influences might also give rise to a dhampir. Regardless of their origins, dhampirs exhibit their vampiric nature in various ways, including increased speed and a life-draining bite.</p>
+			
+			<h4>Dhampir Traits</h4>
+			<ul class="unstyled" style="text-indent:-1em; margin-left:1em; margin-bottom:5px">
+				<li><strong>Creature Type:</strong> Humanoid</li>
+				<li><strong>Size:</strong> Medium (about 4–7 feet tall) or Small (about 2–4 feet tall), chosen when you select this species</p>
+				<li><strong>Speed:</strong> 35 feet, Climb equal to your walking speed</p>
+			</ul>
+			<p>As a Dhampir, you have these special traits.</p>
+			<p class="indent"><strong><em>Darkvision.</em></strong> You have Darkvision with a range of 60 feet.</p>
+			<p class="indent"><strong><em>Spider Climb.</em></strong> You have a Climb Speed equal to your Speed. When you reach character level 3, you can move up, down, and across vertical surfaces and along ceilings while leaving your hands free.</p> 
+			<p class="indent"><strong><em>Trace of Undeath.</em></strong> You have Resistance to Necrotic damage.</p> 
+			<p class="indent"><strong><em>Vampiric Bite.</em></strong> When you use your Unarmed Strike and deal damage, you can choose to bite with your fangs. You deal Piercing damage equal to 1d4 plus your Constitution modifier instead of the normal damage of an Unarmed Strike.</p>
+			<p class="indent">In addition, when you deal this damage to a creature that isn't a Construct or an Undead, you can empower yourself in one of the following ways:</p>
+			<ul class="unstyled">
+				<li style="margin-left:1em;text-indent:-1em;"><b>Drain.</b> You regain Hit Points equal to the Piercing damage dealt.</li>
+				<li style="margin-left:1em;text-indent:-1em;"><b>Strengthen.</b> You gain a bonus to the next ability check or attack roll you make within the next minute; the bonus is equal to the Piercing damage dealt.</li>
+			</ul>
+			<p class="indent">You can empower yourself with this trait a number of times equal to your Proficiency Bonus, and you regain all expended uses when you finish a Long Rest.</p>
+		</description>
+		<sheet display="false" />
+		<rules>
+			<grant type="Grants" id="ID_INTERNAL_GRANT_RACE_DHAMPIR" />
+			<select type="Ability Score Improvement" name="Ability Score Improvement Option (Dhampir)" supports="Custom Ability Score Improvement Option" requirements="!ID_INTERNAL_GRANTS_BACKGROUND_ASI" />
+			<select type="Racial Trait" name="Size (Dhampir)" supports="ID_INTERNAL_RACIAL_TRAIT_SMALL|ID_INTERNAL_RACIAL_TRAIT_MEDIUM" />
+			<stat name="innate speed" value="35" bonus="base" />
+			<stat name="speed:climb" value="speed" bonus="base" />
+
+			<grant type="Language" id="ID_LANGUAGE_COMMON" requirements="!ID_WOTC_TCOE_OPTION_CUSTOMIZED_LANGUAGE" />
+			<select type="Language" name="Language (Dhampir)" supports="Standard" number="2" requirements="!ID_WOTC_TCOE_OPTION_CUSTOMIZED_LANGUAGE" />
+			<select type="Language" name="Customized Language (Dhampir)" supports="Custom Race Language"  requirements="ID_WOTC_TCOE_OPTION_CUSTOMIZED_LANGUAGE" number="3" />
+
+			<grant type="Vision" id="ID_VISION_DARKVISION" requirements="!ID_INTERNAL_ABH_RACIAL_TRAIT_REPLACEMENT_DHAMPIR_DARKVISION" />
+			<grant type="Condition" id="ID_INTERNAL_CONDITION_DAMAGE_RESISTANCE_NECROTIC" />
+			<grant type="Racial Trait" id="ID_WOTC_ABH_RACIAL_TRAIT_DHAMPIR_SPIDER_CLIMB" requirements="!ID_WOTC_ABH_RACIAL_TRAIT_REPLACEMENT_DHAMPIR_SPIDER_CLIMB" />
+			<grant type="Racial Trait" id="ID_WOTC_ABH_RACIAL_TRAIT_DHAMPIR_VAMPIRIC_BITE" requirements="!ID_WOTC_ABH_RACIAL_TRAIT_REPLACEMENT_DHAMPIR_VAMPIRIC_BITE" />
+		</rules>
+	</element>
+
+	<element name="Spider Climb" type="Racial Trait" source="Astarion’s Book of Hungers" id="ID_WOTC_ABH_RACIAL_TRAIT_DHAMPIR_SPIDER_CLIMB">
+		<requirements>!ID_INTERNAL_ABH_RACIAL_TRAIT_REPLACEMENT_DHAMPIR_SPIDER_CLIMB</requirements>
+		<description>
+			<p>You have a Climb Speed equal to your Speed. When you reach character level 3, you can move up, down, and across vertical surfaces and along ceilings while leaving your hands free.</p> 
+		</description>
+		<sheet>
+			<description level="3">You can move up, down, and across vertical surfaces and along ceilings while leaving your hands free.</description>
+		</sheet>
+	</element>
+
+	<element name="Vampiric Bite" type="Racial Trait" source="Astarion’s Book of Hungers" id="ID_WOTC_ABH_RACIAL_TRAIT_DHAMPIR_VAMPIRIC_BITE">
+		<requirements>!ID_INTERNAL_ABH_RACIAL_TRAIT_REPLACEMENT_DHAMPIR_VAMPIRIC_BITE</requirements>
+		<description>
+			<p>When you use your Unarmed Strike and deal damage, you can choose to bite with your fangs. You deal Piercing damage equal to 1d4 plus your Constitution modifier instead of the normal damage of an Unarmed Strike.</p>
+			<p class="indent">In addition, when you deal this damage to a creature that isn't a Construct or an Undead, you can empower yourself in one of the following ways:</p>
+			<ul class="unstyled">
+				<li style="margin-left:1em;text-indent:-1em;"><b>Drain.</b> You regain Hit Points equal to the Piercing damage dealt.</li>
+				<li style="margin-left:1em;text-indent:-1em;"><b>Strengthen.</b> You gain a bonus to the next ability check or attack roll you make within the next minute; the bonus is equal to the Piercing damage dealt.</li>
+			</ul>
+			<p class="indent">You can empower yourself with this trait a number of times equal to your Proficiency Bonus, and you regain all expended uses when you finish a Long Rest.</p> 
+		</description>
+		<sheet usage="{{proficiency}}/Long Rest">
+			<description>When you use your Unarmed Strike and deal damage, you can choose to bite with your fangs. You deal 1d4+{{constitution:modifier}} Piercing damage instead of the normal damage of an Unarmed Strike. &#13;
+			When you deal this damage to a creature that isn't a Construct or Undead, you can either regain Hit Points equal to the damage dealt, or gain a bonus equal to the damage dealt to the next ability check or attack roll you make within the next minute.
+			</description>
+		</sheet>
+	</element>
+
+	<element name="Race Dhampir" type="Grants" source="Internal" id="ID_INTERNAL_GRANT_RACE_DHAMPIR" />
+
+	<!--racial trait replacement grants-->
+	<element name="Darkvision Trait Replacement" type="Grants" source="Internal" id="ID_INTERNAL_ABH_RACIAL_TRAIT_REPLACEMENT_DHAMPIR_DARKVISION" />
+	<element name="Spider Climb Replacement" type="Grants" source="Internal" id="ID_INTERNAL_ABH_RACIAL_TRAIT_REPLACEMENT_DHAMPIR_SPIDER_CLIMB" />
+	<element name="Vampire Bite Replacement" type="Grants" source="Internal" id="ID_INTERNAL_ABH_RACIAL_TRAIT_REPLACEMENT_DHAMPIR_VAMPIRIC_BITE" />
+
+</elements>
