@@ -1,0 +1,171 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<elements>
+	<info>
+		<name>Companions</name>
+		<description>Companions from Forgotten Realms: Heroes of Faerûn.</description>
+		<author url="https://dndstore.wizards.com/us/en/product/1246485/heroes-of-faerun">Wizards of the Coast</author>
+		<update version="0.0.1">
+			<file name="companions.xml" url="https://raw.githubusercontent.com/AuroraLegacy/elements/master/supplements/forgotten-realms-heroes-of-faerun/misc/companions.xml" />
+		</update>
+	</info>
+
+	<!--Mechanical Wonders-->
+	<element name="Domestic Wonder" type="Companion" source="Forgotten Realms: Heroes of Faerûn" id="ID_WOTC_FRHOF_COMPANION_DOMESTIC_WONDER">
+		<description>
+			<p>A <i>Mechanical Wonder</i> is a semi-autonomous object imbued with magical power. <i>Mechanical Wonders</i> vary greatly in size and form depending on their function.</p>
+			<p class="indent">A <i>Mechanical Wonder</i> is a dormant object until activated. To activate a <i>Mechanical Wonder</i>, you must wind the wonder with a handheld key unique to that wonder. It takes 1 minute to wind a <i>Mechanical Wonder</i>. While you wind it, you must take the Utilize action each turn.</p>
+			<p class="indent">Once wound, a <i>Mechanical Wonder</i> remains activated for the duration specified in the wonder’s description.</p>
+			<h5>DOMESTIC WONDER</h5>
+			<p>This bipedal wonder is designed to assist with household duties. It vaguely resembles whatever species its creator used as inspiration. An activated domestic wonder uses the Domestic Wonder stat block. The wonder is an ally to you and your allies. In combat, the wonder shares your Initiative count, but it takes its turn immediately after yours. It obeys your verbal commands (no action required by you). If you don’t issue any, it takes the Dodge action and uses its movement to avoid danger. The domestic wonder is destroyed if it drops to 0 Hit Points.</p>
+		</description>
+		<setters>
+			<set name="strength">13</set>
+			<set name="dexterity">8</set>
+			<set name="constitution">13</set>
+			<set name="intelligence">3</set>
+			<set name="wisdom">8</set>
+			<set name="charisma">1</set>
+			<set name="ac">9</set>
+			<set name="hp">5 (1d8+1)</set>
+			<set name="speed">30 ft.</set>
+			<set name="skills" />
+			<set name="immunities">Poison, Exhausted, Poisoned</set>
+			<set name="senses">Passive Perception 9</set>
+			<set name="languages">Understands Common but can’t speak</set>
+			<set name="type">Construct</set>
+			<set name="size">Medium</set>
+			<set name="alignment">unaligned</set>
+			<set name="challenge">0</set>
+			<set name="proficiency">2</set>
+			<set name="traits">ID_WOTC_FRHOF_COMPANION_TRAIT_DOMESTIC_WONDER_MECHANICAL_DETERMINATION,ID_WOTC_FRHOF_COMPANION_TRAIT_DOMESTIC_WONDER_WINDUP_OPERATION</set>
+		</setters>
+		<rules>
+			<stat name="companion:ac" value="9" />
+			<stat name="companion:hp:max" value="5" bonus="base" />
+			<stat name="companion:speed" value="30" bonus="base" />
+		</rules>
+	</element>
+	<element name="Mechanical Determination" type="Companion Trait" source="Forgotten Realms: Heroes of Faerûn" id="ID_WOTC_FRHOF_COMPANION_TRAIT_DOMESTIC_WONDER_MECHANICAL_DETERMINATION">
+		<compendium display="false" />
+		<description>
+			<p>If damage reduces the wonder to 0 Hit Points, it makes a Constitution saving throw with a DC of 5 plus the damage taken unless the damage is Lightning or from a Critical Hit. On a successful save, the wonder drops to 1 Hit Point instead.</p>
+		</description>
+		<sheet>
+			<description>If damage reduces the wonder to 0 Hit Points, it makes a Constitution saving throw with a DC of 5 plus the damage taken unless the damage is Lightning or from a Critical Hit. On a successful save, the wonder drops to 1 Hit Point instead.</description>
+		</sheet>
+	</element>
+	<element name="Wind-Up Operation" type="Companion Trait" source="Forgotten Realms: Heroes of Faerûn" id="ID_WOTC_FRHOF_COMPANION_TRAIT_DOMESTIC_WONDER_WINDUP_OPERATION">
+		<compendium display="false" />
+		<description>
+			<p>The wonder has the Unconscious condition until another creature winds it with the wonder’s unique key for 1 minute. Once wound, the wonder operates for 10 days or until a creature touches the wonder with its key as a Utilize action to deactivate it, after which the wonder has the Unconscious condition until it is wound again.</p>
+		</description>
+		<sheet>
+			<description>The wonder has the Unconscious condition until another creature winds it with the wonder’s unique key for 1 minute. Once wound, the wonder operates for 10 days or until a creature touches the wonder with its key as a Utilize action to deactivate it, after which the wonder has the Unconscious condition until it is wound again.</description>
+		</sheet>
+	</element>
+	<element name="Flying Snake" type="Companion" source="Forgotten Realms: Heroes of Faerûn" id="ID_WOTC_FRHOF_COMPANION_FLYING_SNAKE">
+		<description>
+			<p class="flavor">Our partners in the Zhentarim provide these remarkable pets, fully domesticated and trained to deliver messages. Always wear gloves when handling venomous creatures.</p>
+		</description>
+		<setters>
+			<set name="strength">4</set>
+			<set name="dexterity">15</set>
+			<set name="constitution">11</set>
+			<set name="intelligence">2</set>
+			<set name="wisdom">12</set>
+			<set name="charisma">5</set>
+			<set name="ac">14</set>
+			<set name="hp">5 (2d4)</set>
+			<set name="speed">30 ft., fly 60 ft., swim 30 ft.</set>
+			<set name="skills" />
+			<set name="senses">Blindsight 10ft., Passive Perception 11</set>
+			<set name="languages">—</set>
+			<set name="type">Monstrosity</set>
+			<set name="size">Tiny</set>
+			<set name="alignment">unaligned</set>
+			<set name="challenge">1/8</set>
+			<set name="proficiency">2</set>
+			<set name="traits">ID_WOTC_FRHOF_COMPANION_TRAIT_FLYING_SNAKE_FLYBY</set>
+			<set name="actions">ID_WOTC_FRHOF_COMPANION_ACTION_FLYING_SNAKE_BITE</set>
+		</setters>
+		<rules>
+			<stat name="companion:ac" value="14" />
+			<stat name="companion:hp:max" value="5" bonus="base" />
+			<stat name="companion:speed" value="30" bonus="base" />
+			<stat name="companion:speed:fly" value="60" bonus="base" />
+			<stat name="companion:speed:swim" value="30" bonus="base" />
+		</rules>
+	</element>
+	<element name="Flyby" type="Companion Trait" source="Forgotten Realms: Heroes of Faerûn" id="ID_WOTC_FRHOF_COMPANION_TRAIT_FLYING_SNAKE_FLYBY">
+		<compendium display="false" />
+		<description>
+			<p>The snake doesn’t provoke an Opportunity Attack when it flies out of an enemy’s reach.</p>
+		</description>
+		<sheet>
+			<description>The snake doesn’t provoke an Opportunity Attack when it flies out of an enemy’s reach.</description>
+		</sheet>
+	</element>
+	<element name="Bite" type="Companion Action" source="Forgotten Realms: Heroes of Faerûn" id="ID_WOTC_FRHOF_COMPANION_ACTION_FLYING_SNAKE_BITE">
+		<compendium display="false" />
+		<description>
+			<p><i>Melee Attack Roll:</i> +4, reach 5 ft. <i>Hit:</i> 1 Piercing damage plus 5 (2d4) Poison damage.</p>
+		</description>
+		<sheet>
+			<description>Melee Weapon Attack: +4 to hit, reach 5 ft., one target. Hit: 1 Piercing damage plus 5 (2d4) Poison damage.</description>
+		</sheet>
+	</element>
+
+	<!--Statblocks for reference -->
+	<element name="Domestic Wonder" type="Information" source="Forgotten Realms: Heroes of Faerûn" id="ID_WOTC_FRHOF_INFORMATION_DOMESTIC_WONDER_STATBLOCK">
+		<compendium display="false" />
+		<description>
+			<p><i>Medium Construct, Unaligned</i></p>
+			<ul class="unstyled mb">
+			<li><b>AC</b> 9</li>
+			<li><b>HP</b> 5 (1d8 + 1)</li>
+			<li><b>Speed</b> 30 ft.</li>
+			</ul>
+			<table style="text-align:center">
+				<thead><tr><td> </td><td> </td><td>MOD</td><td>SAVE</td><td> </td><td> </td><td>MOD</td><td>SAVE</td><td> </td><td> </td><td>MOD</td><td>SAVE</td></tr></thead>
+				<tr><td>STR</td><td>13</td><td>+1</td><td>+1</td><td>DEX</td><td>8</td><td>-1</td><td>-1</td><td>CON</td><td>13</td><td>+1</td><td>+1</td></tr>
+				<tr><td>INT</td><td>3</td><td>-4</td><td>-4</td><td>WIS</td><td>8</td><td>-1</td><td>-1</td><td>CHA</td><td>1</td><td>-5</td><td>-5</td></tr>
+			</table>
+			<ul class="unstyled mb">
+				<li><b>Immunities</b> Poison, Exhaustion, Poisoned</li>
+				<li><b>Senses</b> Passive Perception 9</li>
+				<li><b>Languages</b> Understands Common but can’t speak</li>
+				<li><b>CR</b> None (XP 0; PB +2)</li>
+			</ul>
+			<h4 class="caption">TRAITS</h4>
+			<p><b><i>Mechanical Determination. </i></b> If damage reduces the wonder to 0 Hit Points, it makes a Constitution saving throw with a DC of 5 plus the damage taken unless the damage is Lightning or from a Critical Hit. On a successful save, the wonder drops to 1 Hit Point instead.</p>
+			<p><b><i>Wind-Up Operation. </i></b> The wonder has the Unconscious condition until another creature winds it with the wonder’s unique key for 1 minute. Once wound, the wonder operates for 10 days or until a creature touches the wonder with its key as a Utilize action to deactivate it, after which the wonder has the Unconscious condition until it is wound again.</p>
+		</description>
+	</element>
+	<element name="Flying Snake" type="Information" source="Forgotten Realms: Heroes of Faerûn" id="ID_WOTC_FRHOF_INFORMATION_FLYING_SNAKE_STATBLOCK">
+		<compendium display="false" />
+		<description>
+			<p class="flavor">Our partners in the Zhentarim provide these remarkable pets, fully domesticated and trained to deliver messages. Always wear gloves when handling venomous creatures.</p>
+			<p><i>Tiny Beast, Unaligned</i></p>
+			<ul class="unstyled mb">
+			<li><b>AC</b> 14</li>
+			<li><b>HP</b> 5 (2d4)</li>
+			<li><b>Speed</b> 30 ft., fly 60 ft., swim 30 ft.</li>
+			</ul>
+			<table style="text-align:center">
+				<thead><tr><td> </td><td> </td><td>MOD</td><td>SAVE</td><td> </td><td> </td><td>MOD</td><td>SAVE</td><td> </td><td> </td><td>MOD</td><td>SAVE</td></tr></thead>
+				<tr><td>STR</td><td>4</td><td>-3</td><td>-3</td><td>DEX</td><td>15</td><td>+2</td><td>+2</td><td>CON</td><td>11</td><td>+0</td><td>+0</td></tr>
+				<tr><td>INT</td><td>2</td><td>-4</td><td>-4</td><td>WIS</td><td>12</td><td>+1</td><td>+1</td><td>CHA</td><td>5</td><td>-3</td><td>-3</td></tr>
+			</table>
+			<ul class="unstyled mb">
+				<li><b>Senses</b> Blindsight 10ft., Passive Perception 11</li>
+				<li><b>Languages</b> —</li>
+				<li><b>CR</b> 1/8 (XP 25; PB +2)</li>
+			</ul>
+			<h4 class="caption">TRAITS</h4>
+			<p><b><i>Flyby. </i></b> The snake doesn’t provoke an Opportunity Attack when it flies out of an enemy’s reach.</p>
+			<h4 class="caption">ACTIONS</h4>
+			<p><b><i>Bite. </i></b> <i>Melee Attack Roll:</i> +4, reach 5 ft.  <i>Hit:</i> 1 Piercing damage plus 5 (2d4) Poison damage.</p>
+		</description>
+	</element>
+
+</elements>

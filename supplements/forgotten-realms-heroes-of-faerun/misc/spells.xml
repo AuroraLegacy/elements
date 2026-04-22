@@ -1,0 +1,504 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<elements>
+	<info>
+		<name>Spells</name>
+		<description>Spells from the Player’s Handbook 2024.</description>
+		<author url="https://dndstore.wizards.com/us/en/product/1001494/2024-player-s-handbook-digital-plus-physical-bundle">Wizards of the Coast</author>
+		<update version="0.0.3">
+			<file name="spells.xml" url="https://raw.githubusercontent.com/AuroraLegacy/elements/master/core/players-handbook-2024/spells.xml" />
+		</update>
+	</info>
+
+	<element name="Alustriel's Mooncloak" type="Spell" source="Forgotten Realms: Heroes of Faerûn" id="ID_WOTC_FRHOF_SPELL_ALUSTRIELS_MOONCLOAK">
+		<supports>Bard, Druid, Ranger, Wizard, Healing Spell</supports>
+		<description>
+			<p>For the duration, moonlight fills a 20-foot Emanation originating from you with Dim Light. While in that area, you and your allies have Half Cover and Resistance to Cold, Lightning, and Radiant damage.</p>
+			<p class="indent">While the spell lasts, you can use one of the following options, ending the spell immediately:</p>
+			<p class="indent"><b><i>Liberation.</i></b> When you fail a saving throw to avoid or end the Frightened, Grappled, or Restrained condition, you can take a Reaction to succeed on the save instead.</p>
+			<p class="indent"><b><i>Respite.</i></b> As a Magic action, you or an ally within the area regains Hit Points equal to 4d10 plus your spellcasting ability modifier.</p>
+		</description>
+		<setters>
+			<set name="keywords">emanation, healing, cover, cold, lightning, radiant</set>
+			<set name="level">5</set>
+			<set name="school">Abjuration</set>
+			<set name="time">Action</set>
+			<set name="isRitual">false</set>
+			<set name="range">Self (20-foot Emanation)</set>
+			<set name="hasVerbalComponent">true</set>
+			<set name="hasSomaticComponent">true</set>
+			<set name="hasMaterialComponent">true</set>
+			<set name="materialComponent">a moonstone worth 50+ GP</set>
+			<set name="isConcentration">true</set>
+			<set name="duration">Concentration, up to 1 minute</set>
+		</setters>
+	</element>
+	<element name="Backlash" type="Spell" source="Forgotten Realms: Heroes of Faerûn" id="ID_WOTC_FRHOF_SPELL_BACKLASH">
+		<supports>Bard, Sorcerer, Warlock, Wizard, Ranged, Damaging Spell, Spell Saving Throw</supports>
+		<description>
+			<p>You ward yourself against destructive energy, reducing the damage taken by 4d6 plus your spellcasting ability modifier.</p>
+			<p class="indent">If the triggering damage was from a creature within range, you can force the creature to make a Constitution saving throw. The creature takes 4d6 Force damage on a failed save or half as much damage on a successful one.</p>
+			<p class="indent"><b><i>Using a Higher-Level Spell Slot.</i></b> The damage reduction and Force damage from this spell both increase by 1d6 for every spell slot level above 4.</p>
+		</description>
+		<setters>
+			<set name="keywords">force, reaction</set>
+			<set name="level">4</set>
+			<set name="school">Abjuration</set>
+			<set name="time">Reaction, which you take in response to taking damage</set>
+			<set name="isRitual">false</set>
+			<set name="range">60 feet</set>
+			<set name="hasVerbalComponent">true</set>
+			<set name="hasSomaticComponent">false</set>
+			<set name="hasMaterialComponent">false</set>
+			<set name="isConcentration">false</set>
+			<set name="duration">Instantaneous</set>
+		</setters>
+	</element>
+	<element name="Blade of Disaster" type="Spell" source="Forgotten Realms: Heroes of Faerûn" id="ID_WOTC_FRHOF_SPELL_BLADE_OF_DISASTER">
+		<supports>Sorcerer, Warlock, Wizard, Damaging Spell, Spell Attack</supports>
+		<description>
+			<p>You create a 3-foot-long blade-shaped planar rift that lasts for the duration. The rift appears within range in a space of your choice, and you can immediately make up to two melee spell attacks, each one against a creature or object within 5 feet of the rift. On a hit, the target takes 10d6 Force damage. This attack scores a Critical Hit if the number on the d20 is 18 or higher.</p>
+			<p class="indent">As a Bonus Action on your later turns, you can move the rift up to 60 feet and repeat the two attacks against a creature or an object within 5 feet of it. You can direct the attacks at the same target or at different ones.</p>
+			<p class="indent">The blade can harmlessly pass through any barrier, including ones created by spells like Wall of Force.</p>
+		</description>
+		<setters>
+			<set name="keywords">force, bonus action</set>
+			<set name="level">9</set>
+			<set name="school">Conjuration</set>
+			<set name="time">Bonus Action</set>
+			<set name="isRitual">false</set>
+			<set name="range">60 feet</set>
+			<set name="hasVerbalComponent">true</set>
+			<set name="hasSomaticComponent">true</set>
+			<set name="hasMaterialComponent">false</set>
+			<set name="materialComponent" />
+			<set name="isConcentration">true</set>
+			<set name="duration">Concentration, up to 1 minute</set>
+		</setters>
+	</element>
+	<element name="Cacophonic Shield" type="Spell" source="Forgotten Realms: Heroes of Faerûn" id="ID_WOTC_FRHOF_SPELL_CACOPHONIC_SHIELD">
+		<supports>Bard, Sorcerer, Wizard, Damaging Spell, Spell Saving Throw</supports>
+		<description>
+			<p>Thunderous reverberations fill a 10-foot Emanation originating from you for the duration. Whenever the Emanation enters a creature’s space and whenever a creature enters the Emanation or ends its turn there, the creature makes a Constitution saving throw. On a failed save, the creature takes 3d6 Thunder damage and has the Deafened condition until the start of your next turn. On a successful save, the creature takes half as much damage only. A creature makes this save only once per turn. When you cast this spell, you can designate creatures to be unaffected by it.</p>
+			<p class="indent">In addition, you have Resistance to Thunder damage, and ranged attack rolls against you are made with Disadvantage.</p>
+			<p class="indent"><b><i>Using a Higher-Level Spell Slot.</i></b> Using a Higher-Level Spell Slot. The damage increases by 1d6 for each spell slot level above 3.</p>
+		</description>
+		<setters>
+			<set name="keywords">thunder, deafened, Emanation</set>
+			<set name="level">3</set>
+			<set name="school">Evocation</set>
+			<set name="time">Action</set>
+			<set name="isRitual">false</set>
+			<set name="range">Self</set>
+			<set name="hasVerbalComponent">true</set>
+			<set name="hasSomaticComponent">true</set>
+			<set name="hasMaterialComponent">false</set>
+			<set name="isConcentration">true</set>
+			<set name="duration">Concentration, up to 10 minutes</set>
+		</setters>
+	</element>
+	<element name="Conjure Constructs" type="Spell" source="Forgotten Realms: Heroes of Faerûn" id="ID_WOTC_FRHOF_SPELL_CONJURE_CONSTRUCTS">
+		<supports>Wizard, Spell Saving Throw, Damaging Spell</supports>
+		<description>
+			<p>You conjure a group of intangible, orderly spirits that appear as a Medium group of modrons or other Constructs in an unoccupied space you can see within range. The spirits last for the duration.</p>
+			<p class="indent">When you cast this spell and as a Magic action on subsequent turns, you can command the spirits to target one creature or object you can see within 5 feet of the spirits and create one of the following effects:</p>
+			<p class="indent"><b><i>Clockwork Force.</i></b> The target makes a Dexterity saving throw, taking 3d6 Force damage on a failed save or half as much damage on a successful one.</p>
+			<p class="indent"><b><i>Orderly Ward.</i></b> The target gains Temporary Hit Points equal to 1d6 plus your spellcasting ability modifier.</p>
+			<p class="indent">When you move on your turn, you can also move the spirits up to 30 feet to an unoccupied space you can see.</p>
+			<p class="indent"><b><i>Using a Higher-Level Spell Slot.</i></b> The damage and Temporary Hit Points both increase by 1d6 for each spell slot level above 3.</p>
+		</description>
+		<setters>
+			<set name="keywords">summon, force, thp</set>
+			<set name="level">3</set>
+			<set name="school">Conjuraiton</set>
+			<set name="time">Action</set>
+			<set name="isRitual">false</set>
+			<set name="range">60 feet</set>
+			<set name="hasVerbalComponent">true</set>
+			<set name="hasSomaticComponent">true</set>
+			<set name="hasMaterialComponent">true</set>
+			<set name="materialComponent">a brass cog</set>
+			<set name="isConcentration">true</set>
+			<set name="duration">Concentration, up to 10 minutes</set>
+		</setters>
+	</element>
+	<element name="Death Armor" type="Spell" source="Forgotten Realms: Heroes of Faerûn" id="ID_WOTC_FRHOF_SPELL_DEATH_ARMOR">
+		<supports>Sorcerer, Wizard, Damaging Spell</supports>
+		<description>
+			<p>For the duration, an inky aura surrounds one creature you touch. The target has Advantage on Death Saving Throws, and once per turn, when a creature within 5 feet of the target hits it with a melee attack roll, the attacker takes 2d4 Necrotic damage.</p>
+		</description>
+		<setters>
+			<set name="keywords">necrotic</set>
+			<set name="level">2</set>
+			<set name="school">Necromancy</set>
+			<set name="time">Action</set>
+			<set name="isRitual">false</set>
+			<set name="range">Touch</set>
+			<set name="hasVerbalComponent">true</set>
+			<set name="hasSomaticComponent">true</set>
+			<set name="hasMaterialComponent">true</set>
+			<set name="materialComponent">an onyx worth 50+ GP, which the spell consumes</set>
+			<set name="isConcentration">false</set>
+			<set name="duration">1 hour</set>
+		</setters>
+	</element>
+	<element name="Deryan’s Helpful Homunculi" type="Spell" source="Forgotten Realms: Heroes of Faerûn" id="ID_WOTC_FRHOF_SPELL_DERYANS_HELPFUL_HOMUNCULI">
+		<supports>Cleric, Wizard</supports>
+		<description>
+			<p>You summon a group of helpful spirits, which lasts for the duration. The spirits appear as homunculi or as another Construct of your choice but are intangible and invulnerable, and they are considered to have proficiency in the Arcana skill and with the set of Artisan’s Tools used in the spell’s casting.</p>
+			<p class="indent">If you are crafting an item, the spirits function as a single assistant for your crafting, halving the crafting time.</p>
+		</description>
+		<setters>
+			<set name="keywords">summon, arcana, crafting</set>
+			<set name="level">2</set>
+			<set name="school">Conjuration</set>
+			<set name="time">Action or Ritual</set>
+			<set name="isRitual">true</set>
+			<set name="range">Self</set>
+			<set name="hasVerbalComponent">true</set>
+			<set name="hasSomaticComponent">true</set>
+			<set name="hasMaterialComponent">true</set>
+			<set name="materialComponent">powdered gemstones worth 100+ GP, which the spell consumes, and one set of Artisan’s Tools with which you have proficiency</set>
+			<set name="isConcentration">false</set>
+			<set name="duration">8 hours</set>
+		</setters>
+	</element>
+	<element name="Dirge" type="Spell" source="Forgotten Realms: Heroes of Faerûn" id="ID_WOTC_FRHOF_SPELL_DIRGE">
+		<supports>Bard, Cleric, Damaging Spell, Spell Saving Throw, Circle Spell</supports>
+		<description>
+			<p>Deathly power fills a 60-foot Emanation originating from you for the duration.</p>
+			<p class="indent">When you cast this spell, you can designate creatures to be unaffected by it. Any other creature can’t regain Hit Points while in the Emanation. Whenever the Emanation enters a creature’s space and whenever a creature enters the Emanation or ends its turn there, the creature makes a Constitution saving throw. On a failed save, the creature takes 3d10 Necrotic damage and has the Prone condition. On a successful save, the creature takes half as much damage and its Speed is halved. A creature makes this save only once per turn.</p>
+			<p><b><i>Casting as a Circle Spell.</i></b> Casting this as a Circle spell requires a minimum of two secondary casters. If the spell is cast as a Circle spell, its duration becomes Concentration, up to 10 minutes.</p>
+			<p class="indent">A creature that fails its save against the spell’s effect also gains 1 Exhaustion level. While the creature has Exhaustion levels, finishing a Long Rest neither restores lost Hit Points nor reduces the creature’s Exhaustion level.</p>
+			<p class="indent">When the spell is cast, each secondary caster must expend a level 4+ spell slot; otherwise, the spell fails.</p>
+		</description>
+		<setters>
+			<set name="keywords">necrotic, emanation, prone, circle spell, exhaustion</set>
+			<set name="level">6</set>
+			<set name="school">Enchantment</set>
+			<set name="time">Action</set>
+			<set name="isRitual">false</set>
+			<set name="range">Self (60-foot Emanation)</set>
+			<set name="hasVerbalComponent">true</set>
+			<set name="hasSomaticComponent">false</set>
+			<set name="hasMaterialComponent">false</set>
+			<set name="materialComponent" />
+			<set name="isConcentration">true</set>
+			<set name="duration">Concentration, up to 1 minute</set>
+		</setters>
+	</element>
+	<element name="Doomtide" type="Spell" source="Forgotten Realms: Heroes of Faerûn" id="ID_WOTC_FRHOF_SPELL_DOOMTIDE">
+		<supports>Bard, Cleric, Warlock, Damaging Spell, Spell Saving Throw, Circle Spell</supports>
+		<description>
+			<p>You create a 20-foot-radius Sphere of inky fog within range. The fog is magical Darkness and lasts for the duration or until a strong wind (such as the one created by the Gust of Wind spell) disperses it, ending the spell.</p>
+			<p class="indent">Each creature in the Sphere when it appears makes a Wisdom saving throw. On a failed save, a creature takes 5d6 Psychic damage and subtracts 1d6 from its saving throws until the end of its next turn. On a successful save, a creature takes half as much damage only. A creature also makes this save when the Sphere moves into its space, when it enters the Sphere, or when it ends its turn inside the Sphere. A creature makes this save only once per turn.</p>
+			<p class="indent">The Sphere moves 10 feet away from you at the start of each of your turns.</p>
+			<p><b><i>Casting as a Circle Spell.</i></b> Casting this as a Circle spell requires a minimum of five secondary casters. In addition to the spell’s usual components, you must provide a special component (a string of three black pearls from Pandemonium), which the spell consumes. The spell’s range increases to 1 mile, and its duration increases to until dispelled (no Concentration required). The spell ends early if any caster who participated in this casting contributes to another casting of Doomtide as a Circle spell.</p>
+			<p class="indent">When the spell is cast, each secondary caster must expend a level 3+ spell slot; otherwise, the spell fails.</p>
+		</description>
+		<setters>
+			<set name="keywords">psychic, sphere, circle spell</set>
+			<set name="level">4</set>
+			<set name="school">Conjuration</set>
+			<set name="time">Action</set>
+			<set name="isRitual">false</set>
+			<set name="range">120 feet</set>
+			<set name="hasVerbalComponent">true</set>
+			<set name="hasSomaticComponent">true</set>
+			<set name="hasMaterialComponent">true</set>
+			<set name="materialComponent">soot and a dried eel</set>
+			<set name="isConcentration">true</set>
+			<set name="duration">Concentration, up to 1 minute</set>
+		</setters>
+	</element>
+	<element name="Elminster’s Effulgent Spheres" type="Spell" source="Forgotten Realms: Heroes of Faerûn" id="ID_WOTC_FRHOF_SPELL_ELMINSTERS_EFFULGENT_SPHERES">
+		<supports>Druid, Sorcerer, Wizard, Damaging Spell, Ranged, Spell Attack</supports>
+		<description>
+			<p>Six chromatic spheres orbit you for the duration. While the spheres are present, you can expend spheres to create the following effects:</p>
+			<p class="indent"><b><i>Absorb Energy.</i></b> When you take Acid, Cold, Fire, Lightning, or Thunder damage, you can take a Reaction to expend one sphere and give yourself Resistance to the triggering damage type until the start of your next turn.</p>
+			<p class="indent"><b><i>Energy Blast.</i></b> As a Bonus Action, you send one sphere hurtling toward a target within 120 feet of yourself. Make a ranged spell attack. On a hit, the target takes 3d6 Acid, Cold, Fire, Lightning, or Thunder damage (your choice). Regardless of whether you hit, the sphere is expended.</p>
+			<p class="indent">The spell ends early if you have no more spheres remaining.</p>
+			<p class="indent"><b><i>Using a Higher-Level Spell Slot.</i></b> The number of spheres increases by 1 for every spell slot level above 6.</p>
+		</description>
+		<setters>
+			<set name="keywords">reaction, resistance, acid, cold, fire, lightning, thunder</set>
+			<set name="level">6</set>
+			<set name="school">Evocation</set>
+			<set name="time">Action</set>
+			<set name="isRitual">false</set>
+			<set name="range">Self</set>
+			<set name="hasVerbalComponent">true</set>
+			<set name="hasSomaticComponent">true</set>
+			<set name="hasMaterialComponent">true</set>
+			<set name="materialComponent">an opal worth 1,000 GP+</set>
+			<set name="isConcentration">false</set>
+			<set name="duration">1 hour</set>
+		</setters>
+	</element>
+	<element name="Elminster’s Elusion" type="Spell" source="Forgotten Realms: Heroes of Faerûn" id="ID_WOTC_FRHOF_SPELL_ELMINSTERS_ELUSION">
+		<supports>Wizard</supports>
+		<description>
+			<p>Arcane wards protect you against magic for the duration. You have Advantage on saving throws against spells and magical effects. Additionally, if you succeed on a saving throw against a spell or magical effect and would normally take half as much damage, you instead take no damage.</p>
+		</description>
+		<setters>
+			<set name="keywords">bonus action</set>
+			<set name="level">2</set>
+			<set name="school">Abjuration</set>
+			<set name="time">Bonus Action</set>
+			<set name="isRitual">false</set>
+			<set name="range">Self</set>
+			<set name="hasVerbalComponent">true</set>
+			<set name="hasSomaticComponent">true</set>
+			<set name="hasMaterialComponent">false</set>
+			<set name="materialComponent" />
+			<set name="isConcentration">true</set>
+			<set name="duration">Concentration, up to 10 minutes</set>
+		</setters>
+	</element>
+	<element name="Holy Star of Mystra" type="Spell" source="Forgotten Realms: Heroes of Faerûn" id="ID_WOTC_FRHOF_SPELL_HOLY_STAR_OF_MYSTRA">
+		<supports>Cleric, Wizard, Damaging Spell, Ranged, Spell Attack</supports>
+		<description>
+			<p>You create a glowing mote of energy that hovers above you for the duration. The mote sheds Bright Light in a 5-foot radius and Dim Light for an additional 5 feet.</p>
+			<p class="indent">When you cast this spell and as a Bonus Action on later turns, you can unleash a shining bolt from the mote, targeting one creature within 120 feet of yourself. Make a ranged spell attack. On a hit, the target takes Force or Radiant damage (your choice) equal to 4d10 plus your spellcasting ability modifier.</p>
+			<p class="indent">In addition, while the mote is present, you have Three-Quarters Cover, and if you succeed on a saving throw against a spell of level 7 or lower that targeted only you and didn’t create an area of effect, you can take a Reaction to deflect that spell back at the spell’s caster; the caster makes a saving throw against that spell using that caster’s own spell save DC.</p>
+		</description>
+		<setters>
+			<set name="keywords">light, bonus action, cover, force, radiant</set>
+			<set name="level">8</set>
+			<set name="school">Evocation</set>
+			<set name="time">Bonus Action</set>
+			<set name="isRitual">false</set>
+			<set name="range">Self</set>
+			<set name="hasVerbalComponent">true</set>
+			<set name="hasSomaticComponent">true</set>
+			<set name="hasMaterialComponent">false</set>
+			<set name="materialComponent" />
+			<set name="isConcentration">true</set>
+			<set name="duration">Concentration, up to 1 minute</set>
+		</setters>
+	</element>
+	<element name="Laeral’s Silver Lance" type="Spell" source="Forgotten Realms: Heroes of Faerûn" id="ID_WOTC_FRHOF_SPELL_LAERALS_SILVER_LANCE">
+		<supports>Cleric, Sorcerer, Wizard, Damaging Spell, Spell Saving Throw</supports>
+		<description>
+			<p>Silver energy bursts out from you in a 120-foot-long, 5-foot-wide Line. Each creature of your choice in the Line makes a Strength saving throw. On a failed save, a creature takes 3d10 Force damage and has the Prone condition. On a successful save, a creature takes half as much damage only.</p>
+			<p class="indent"><b><i>Using a Higher-Level Spell Slot.</i></b> The damage increases by 1d10 for every spell slot level above 3.</p>
+		</description>
+		<setters>
+			<set name="keywords">force, prone, line</set>
+			<set name="level">3</set>
+			<set name="school">Evocation</set>
+			<set name="time">Action</set>
+			<set name="isRitual">false</set>
+			<set name="range">Self (120-foot Line)</set>
+			<set name="hasVerbalComponent">true</set>
+			<set name="hasSomaticComponent">true</set>
+			<set name="hasMaterialComponent">true</set>
+			<set name="materialComponent">a silver pin worth 250+ GP</set>
+			<set name="isConcentration">false</set>
+			<set name="duration">Instantaneous</set>
+		</setters>
+	</element>
+	<element name="Simbul’s Synostodweomer" type="Spell" source="Forgotten Realms: Heroes of Faerûn" id="ID_WOTC_FRHOF_SPELL_SIMBULS_SYNOSTODWEOMER">
+		<supports>Sorcerer, Wizard, Healing Spell</supports>
+		<description>
+			<p>You imbue one creature you touch with magical healing energy for the duration. Whenever the target casts a spell using a spell slot, the target can immediately roll a number of unexpended Hit Point Dice equal to the spell slot’s level and regain Hit Points equal to the roll’s total plus your spellcasting ability modifier; those dice are then expended.</p>
+		</description>
+		<setters>
+			<set name="keywords">healing, hit dice</set>
+			<set name="level">7</set>
+			<set name="school">Transmutation</set>
+			<set name="time">Action</set>
+			<set name="isRitual">false</set>
+			<set name="range">Touch</set>
+			<set name="hasVerbalComponent">true</set>
+			<set name="hasSomaticComponent">true</set>
+			<set name="hasMaterialComponent">false</set>
+			<set name="materialComponent" />
+			<set name="isConcentration">false</set>
+			<set name="duration">1 hour</set>
+		</setters>
+	</element>
+	<element name="Songal’s Elemental Suffusion" type="Spell" source="Forgotten Realms: Heroes of Faerûn" id="ID_WOTC_FRHOF_SPELL_SONGALS_ELEMENTAL_SUFFUSION">
+		<supports>Druid, Sorcerer, Wizard, Wizard, Damaging Spell, Spell Saving Throw, Circle Spell</supports>
+		<description>
+			<p>You imbue yourself with the elemental power of genies. You gain the following benefits until the spell ends:</p>
+			<p class="indent"><b><i>Elemental Immunity.</i></b> When you cast this spell, choose one of the following damage types: Acid, Cold, Fire, Lightning, or Thunder. You have Resistance to the chosen damage type.</p>
+			<p class="indent"><b><i>Elemental Pulse.</i></b> When you cast this spell and at the start of each of your subsequent turns, you release a burst of elemental energy in a 15-foot Emanation originating from yourself. Each creature of your choice in that area makes a Dexterity saving throw. On a failed save, a creature takes 2d6 Acid, Cold, Fire, Lightning, or Thunder damage (your choice) and has the Prone condition. On a successful save, a creature takes half as much damage only.</p>
+			<p class="indent"><b><i>Flight</i></b> You gain a Fly Speed of 30 feet and can hover.</p>
+			<p><b><i>Casting as a Circle Spell.</i></b> If the spell is cast as a Circle spell, its casting time increases to 1 minute, and its duration increases to Concentration, up to 10 minutes. For each secondary caster who participates in the casting, you can choose one additional creature, to a maximum of nine additional creatures. The chosen creatures also gain the benefits of the spell for its duration.</p>
+			<p class="indent">When the spell is cast, each secondary caster must expend a level 2+ spell slot; otherwise, the spell fails.</p>
+		</description>
+		<setters>
+			<set name="keywords">acid, cold, fire, lightning, thunder, prone, flight, resistance, circle spell</set>
+			<set name="level">5</set>
+			<set name="school">Transmutation</set>
+			<set name="time">Action</set>
+			<set name="isRitual">false</set>
+			<set name="range">Self</set>
+			<set name="hasVerbalComponent">true</set>
+			<set name="hasSomaticComponent">true</set>
+			<set name="hasMaterialComponent">true</set>
+			<set name="materialComponent">a pearl worth 100+ GP</set>
+			<set name="isConcentration">true</set>
+			<set name="duration">Concentration, up to 1 minute</set>
+		</setters>
+	</element>
+	<element name="Spellfire Flare" type="Spell" source="Forgotten Realms: Heroes of Faerûn" id="ID_WOTC_FRHOF_SPELL_SPELLFIRE_FLARE">
+		<supports>Sorcerer, Wizard, Damaging Spell, Ranged, Spell Attack</supports>
+		<description>
+			<p>You unleash a blast of brilliant fire. Make a ranged spell attack against a target within range; a target gains no benefit from Half Cover or Three-Quarters Cover for this attack roll. On a hit, the target takes 2d10 Radiant damage.</p>
+			<p class="indent"><b><i>Using a Higher-Level Spell Slot.</i></b> You create an additional blast for each spell slot level above 1. You can direct the blasts at the same target or at different ones. Make a separate attack roll for each blast.</p>
+		</description>
+		<setters>
+			<set name="keywords">radiant</set>
+			<set name="level">1</set>
+			<set name="school">Evocation</set>
+			<set name="time">Action</set>
+			<set name="isRitual">false</set>
+			<set name="range">60 feet</set>
+			<set name="hasVerbalComponent">true</set>
+			<set name="hasSomaticComponent">true</set>
+			<set name="hasMaterialComponent">false</set>
+			<set name="materialComponent" />
+			<set name="isConcentration">false</set>
+			<set name="duration">Instantaneous</set>
+		</setters>
+	</element>
+	<element name="Spellfire Storm" type="Spell" source="Forgotten Realms: Heroes of Faerûn" id="ID_WOTC_FRHOF_SPELL_SPELLFIRE_STORM">
+		<supports>Sorcerer, Wizard, Damaging Spell, Spell Saving Throw</supports>
+		<description>
+			<p>You conjure a pillar of spellfire in a 20-foot-radius, 20-foot-high Cylinder centered on a point within range. The area of the Cylinder is Bright Light, and each creature in it when it appears makes a Constitution saving throw, taking 4d10 Radiant damage on a failed save or half as much damage on a successful one. A creature also makes this save when it enters the spell’s area for the first time on a turn or ends its turn there. A creature makes this save only once per turn.</p>
+			<p class="indent">In addition, whenever a creature in the Cylinder casts a spell, that creature makes a Constitution saving throw. On a failed save, the spell dissipates with no effect, and the action, Bonus Action, or Reaction used to cast it is wasted. If that spell was cast with a spell slot, the slot isn’t expended.</p>
+			<p class="indent">When you cast this spell, you can designate creatures to be unaffected by it.</p>
+			<p class="indent"><b><i>Using a Higher-Level Spell Slot.</i></b> The damage increases by 1d10 for every spell slot level above 4.</p>
+			<p><b><i>Casting as a Circle Spell.</i></b> In addition to the spell’s usual components, you must provide a special component (a blue star sapphire worth 25,000+ GP), which the spell consumes. The spell’s range increases to 1 mile, and it no longer requires Concentration. When the spell is cast, each secondary caster must expend a level 3+ spell slot; otherwise, the spell fails.</p>
+			<p class="indent">The number of secondary casters determines the spell’s area of effect and duration, as shown in the table below. The spell ends early if any caster who participated in this casting contributes to another casting of Spellfire Storm as a Circle spell.</p>
+			<table>
+				<thead>
+					<tr><td class="col-15" style="text-align:center">Secondary Casters</td><td>Area of Effect</td><td>Duration</td></tr>
+				</thead>
+				<tr><td style="text-align:center">1-3</td><td>40-foot-radius, 40-foot-high Cylinder</td><td>1 hour</td></tr>
+				<tr><td style="text-align:center">4-6</td><td>60-foot-radius, 60-foot-high Cylinder</td><td>8 hours</td></tr>
+				<tr><td style="text-align:center">7+</td><td>100-foot-radius, 100-foot-high Cylinder</td><td>24 hours</td></tr>
+			</table>
+		</description>
+		<setters>
+			<set name="keywords">radiant, light, cylinder, circle spell</set>
+			<set name="level">4</set>
+			<set name="school">Evocation</set>
+			<set name="time">Action</set>
+			<set name="isRitual">false</set>
+			<set name="range">60 feet</set>
+			<set name="hasVerbalComponent">true</set>
+			<set name="hasSomaticComponent">true</set>
+			<set name="hasMaterialComponent">false</set>
+			<set name="materialComponent" />
+			<set name="isConcentration">true</set>
+			<set name="duration">Concentration, up to 1 minute</set>
+		</setters>
+	</element>
+	<element name="Syluné’s Viper" type="Spell" source="Forgotten Realms: Heroes of Faerûn" id="ID_WOTC_FRHOF_SPELL_SYLUNES_VIPER">
+		<supports>Druid, Wizard, Damaging Spell, Ranged, Spell Attack</supports>
+		<description>
+			<p>A shimmering, spectral snake encircles your body for the duration. You gain 15 Temporary Hit Points; the spell ends early if you have no Temporary Hit Points left.</p>
+			<p class="indent">While the spell is active, you gain the following benefits:</p>
+			<p class="indent"><b><i>Climbing.</i></b> You gain a Climb Speed equal to your Speed.</p>
+			<p class="indent"><b><i>Venomous Bite.</i></b> As a Magic action, you can make a ranged spell attack using the snake against one creature within 50 feet. On a hit, the target takes 1d6 Force damage and has the Poisoned condition until the start of your next turn. While Poisoned, the target has the Incapacitated condition.</p>
+			<p class="indent"><b><i>Using a Higher-Level Spell Slot.</i></b> For each spell slot level above 3, the number of Temporary Hit Points you gain from this spell increases by 5, and the damage of Venomous Bite increases by 1d6.</p>
+		</description>
+		<setters>
+			<set name="keywords">poison, poisoned, incapacitated, thp</set>
+			<set name="level">3</set>
+			<set name="school">Conjuration</set>
+			<set name="time">Bonus Action</set>
+			<set name="isRitual">false</set>
+			<set name="range">Self</set>
+			<set name="hasVerbalComponent">true</set>
+			<set name="hasSomaticComponent">true</set>
+			<set name="hasMaterialComponent">true</set>
+			<set name="materialComponent">a snake fang</set>
+			<set name="isConcentration">false</set>
+			<set name="duration">1 hour</set>
+		</setters>
+	</element>
+	<element name="Wardaway" type="Spell" source="Forgotten Realms: Heroes of Faerûn" id="ID_WOTC_FRHOF_SPELL_WARDAWAY">
+		<supports>Bard, Cleric, Paladin, Wizard, Damaging Spell, Spell Saving Throw</supports>
+		<description>
+			<p>You hurl a disorienting magical force toward one creature within range. The target makes a Constitution saving throw; Constructs and Undead automatically succeed on this save.</p>
+			<p class="indent">On a failed save, the target takes 2d4 Force damage, its Speed is halved until the start of your next turn, and on its next turn, it can take only an action or a Bonus Action (but not both). On a successful save, the target takes half as much damage only.</p>
+			<p class="indent"><b><i>Using a Higher-Level Spell Slot.</i></b> The damage increases by 2d4 for every spell slot level above 1.</p>
+		</description>
+		<setters>
+			<set name="keywords">force</set>
+			<set name="level">1</set>
+			<set name="school">Abjuration</set>
+			<set name="time">Action</set>
+			<set name="isRitual">false</set>
+			<set name="range">60 feet</set>
+			<set name="hasVerbalComponent">true</set>
+			<set name="hasSomaticComponent">true</set>
+			<set name="hasMaterialComponent">true</set>
+			<set name="materialComponent">a miniature clay hand</set>
+			<set name="isConcentration">false</set>
+			<set name="duration">Instantaneous</set>
+		</setters>
+	</element>
+
+	<!-- Circle Casting Information -->
+	<element name="Circle Casting" type="Information" source="Forgotten Realms: Heroes of Faerûn" id="ID_WOTC_FRHOF_INFORMATION_CIRCLE_CASTING">
+		<description>
+			<h3>CIRCLE MAGIC</h3>
+			<p>Millennia ago, elf mages researching alternative magical traditions developed a technique by which many spellcasters working together could cast spells beyond the limit of any individual. This technique became known as circle magic, and although it was initially developed by elves, spellcasters in Thay and Rashemen reinvented the technique, and from there it quickly spread to other realms in Faerûn.</p>
+			<h4>WHAT IS A CIRCLE SPELL?</h4>
+			<p>When a group of spellcasters collectively channel their magic into a single spell, they can enhance and augment the spell’s magic in powerful ways. A spell cast in this way is known as a Circle spell.</p>
+			<h4>ELIGIBLE SPELLS</h4>
+			<p>Any spell that has a casting time of an action or 1 minute or longer and is cast using a spell slot can be cast as a Circle spell. To cast a Circle spell, follow the usual rules for spellcasting, as described in the Player’s Handbook , as well as the following rules for Circle spells.</p>
+			<h4>CASTING A CIRCLE SPELL</h4>
+			<p>A Circle spell has one primary caster (“you” in these rules). Unless otherwise specified, you as the primary caster decide the spell’s targets, maintain Concentration if required by the spell’s Duration entry, provide the spell’s components, expend the slot for casting the spell, and decide any of the other options noted in the spell’s description. The spell’s effects originate from you.</p>
+			<h4>ELIGIBLE SPELLS</h4>
+			<p>Any spell that has a casting time of an action or 1 minute or longer and is cast using a spell slot can be cast as a Circle spell. To cast a Circle spell, follow the usual rules for spellcasting, as described in the Player’s Handbook , as well as the following rules for Circle spells.</p>
+			<h5>Initiating a Circle Spell</h5>
+			<p>You take a Magic action to initiate casting a Circle spell. When you do so, choose which Circle casting option (see "Circle Casting Options" below) you’re using for this casting; you must also meet any of the other requirements described in that option’s text. Until the Circle spell’s casting is complete (see below), you must maintain Concentration on the spell.</p>
+			<p class="indent">If a Reaction would trigger when a creature casts a spell—such as the Reaction taken to cast Counterspell—it also triggers when you take this action to initiate a Circle spell.</p>
+			<h5>Secondary Casters</h5>
+			<p>Casting a Circle spell requires that one or more other spellcasters, called secondary casters, lend their magic to the spell. A secondary caster must have either the Spellcasting or Pact Magic feature to participate in a Circle spell.</p>
+			<p class="indent">After you initiate the spell, each secondary caster takes the Magic action to contribute to the spell. A secondary caster can take this action only while within 30 feet of you and before the start of your next turn.</p>
+			<h5>Completing the Casting</h5>
+			<p>If the spell has a casting time of an action, the Circle spell’s effects occur immediately after the final secondary caster takes the required action to contribute to the spell. You decide which secondary caster is the final one.</p>
+			<p class="indent">If the spell has a casting time of 1 minute or more, you and each secondary caster must take the Magic action on each of your turns for the entire casting time, and you must each maintain Concentration while you do so. In this case, if any caster’s Concentration is broken, the spell fails.</p>
+			<div class="sidebar">
+				<h5>NPC SECONDARY CASTERS</h5>
+				<p>Some Circle spells require secondary casters to expend one or more spell slots to participate in the spell’s casting. At the DM’s discretion, NPCs capable of casting spells—such as spellcasters hired in settlements—can meet this requirement by expending one or more limited uses of any spells of the same level or higher in place of the required spell slots.</p>
+			</div>
+			<h5>Spell Failure</h5>
+			<p>If a Circle spell fails, nothing happens. You don’t expend a spell slot, and any Material components aren’t consumed. To cast the spell again, you must start over.</p>
+			<h4>CIRCLE CASTING OPTIONS</h4>
+			<p>The following options provide ways to enhance a spell when casting it as a Circle spell. You can use only one Circle casting option on a spell at a time.</p>
+			<p class="indent">Some spells have a “Casting as a Circle Spell” section in their description. Instead of using one of the following options, you can create the effect described in that section when casting the spell as a Circle spell. Such effects are often uniquely powerful and specific to their respective spells.</p>
+			<h5>Augment</h5>
+			<p>When you cast a spell with a range of at least 5 feet, you can increase the range of the spell by 1,000 feet per secondary caster contributing to the spell, up to a maximum of a 1-mile increase.</p>
+			<h5>Distribute</h5>
+			<p>When you cast a spell that requires Concentration, you can distribute the mental load of the spell among you and the secondary casters. Once the casting is complete, you and all secondary casters can maintain Concentration on this spell. As long as at least one caster who contributed to the spell maintains this Concentration, the spell’s effects remain active.</p>
+			<h5>Expand</h5>
+			<p>When you cast a spell that creates an area of effect, you can increase one dimension of the spell’s area of effect for this casting by 10 feet per secondary caster contributing to the spell. For example, if a spell creates a 20-foot-radius Sphere, casting it as a Circle spell with two secondary casters would increase the radius to 40 feet. A spell that creates a Line that is 5 feet wide and 300 feet long, cast as a Circle spell with two secondary casters, could make a Line that is either 25 feet wide or 320 feet long.</p>
+			<p class="indent">Each secondary caster contributing to the spell must expend a spell slot (no action required). If the spell fails, these spell slots aren’t expended.</p>
+			<h5>Prolong</h5>
+			<p>When you cast a spell that has a duration of 1 minute or longer, you can increase the duration of the spell depending on the number of secondary casters contributing to the spell, as detailed in the table below.</p>
+			<p class="indent">Each secondary caster contributing to the spell must expend a spell slot (no action required). If the spell fails, these spell slots aren’t expended.</p>
+			<table>
+				<thead>
+					<tr><td class="col-15" style="text-align:center">Secondary Casters</td><td>The Spell Increases Duration By...</td></tr>
+				</thead>
+				<tr><td style="text-align:center">1-3</td><td>1 hour</td></tr>
+				<tr><td style="text-align:center">4-6</td><td>8 hours</td></tr>
+				<tr><td style="text-align:center">7+</td><td>24 hours</td></tr>
+			</table>
+			<h5>Safeguard</h5>
+			<p>When you cast a spell that creates an area of effect, you can carve out a safe zone within that area of effect that is unaffected by the spell for its duration. This safe zone consists of a number of 5-foot Cubes equal to your spellcasting ability modifier plus the number of secondary casters contributing to the spell (minimum of one Cube). You can arrange the Cubes as you like, but each Cube must be contiguous with at least one other Cube.</p>
+			<p class="indent">If the spell’s area of effect can be moved, the safe zone moves with it.</p>
+			<h5>Supplant</h5>
+			<p>When you cast a spell that requires at least one Material component with a specified cost that is consumed by the spell, you can reduce the minimum cost of one such Material component by 50 GP per each secondary caster contributing to the spell. For example, casting Revivify as a Circle spell with two secondary casters would reduce the Material component’s minimum cost to 200 GP.</p>
+			<p class="indent">Each secondary caster contributing to the spell must expend a spell slot of a level greater than or equal to the spell’s level (no action required). If the spell fails, these spell slots aren’t expended.</p>
+		</description>
+	</element>
+
+</elements>

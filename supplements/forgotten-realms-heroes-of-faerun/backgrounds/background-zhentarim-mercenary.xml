@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<elements>
+	<info>
+		<name>Zhentarim Mercenary</name>
+		<description>The Zhentarim Mercenary background from Forgotten Realms: Heroes of Faerûn.</description>
+		<author url="https://dndstore.wizards.com/us/en/product/1246485/heroes-of-faerun">Wizards of the Coast</author>
+		<update version="0.0.1">
+			<file name="background-zhentarim-mercenary.xml" url="https://raw.githubusercontent.com/AuroraLegacy/elements/master/supplements/forgotten-realms-heroes-of-faerun/backgrounds/background-zhentarim-mercenary.xml" />
+		</update>
+	</info>
+
+	<element name="Zhentarim Mercenary" type="Background" source="Forgotten Realms: Heroes of Faerûn" id="ID_WOTC_FRHOF_BACKGROUND_ZHENTARIM_MERCENARY">
+		<description>
+			<ul class="unstyled" style="text-indent:-1em; margin-left:1em; margin-bottom:5px">
+				<li><strong>Ability Scores:</strong> Strength, Dexterity, Charisma</li>
+				<li><strong>Feat:</strong> Zhentarim Ruffian</li>
+				<li><strong>Skill Proficiencies:</strong> Intimidation and Perception</li>
+				<li><strong>Tool Proficiency:</strong> Forgery Kit</li>
+				<li><strong>Equipment:</strong><i> Choose A or B:</i> (A) Club, Dagger, Forgery Kit, Fine Clothes, Hooded Lantern, Oil (3 flasks), 2 Pouches, String, Tinderbox, 11 GP; or (B) 50 GP</li>
+			</ul>
+			<p>Maybe you needed the money. Maybe you longed for a family, no matter how dubious. Or maybe you’re just good at getting the job done by any means necessary. Whatever your reason, you enlisted with the Zhentarim, the most notorious mercenary guild in the Realms. Though the Zhentarim’s leaders insist the organization is more like a family than a shadowy syndicate, few families exhibit as much dishonesty, nepotism, and corruption as this one. You’ve honed your cunning, reflexes, and blade to climb the guild’s ranks.</p>
+			<p class="indent"><strong><em>Trinket.</em></strong> Roll on the Zhentarim Trinkets table to determine what trinket you have from your time with the Zhentarim.</p>
+			<h5>Zhentarim Trinkets</h5>
+			<table>
+				<thead>
+					<tr><td>d6</td><td>Trinket</td></tr>
+				</thead>
+				<tr><td>1</td><td>A broken dagger etched with your name</td></tr>
+				<tr><td>2</td><td>A glass eye that always turns to face you</td></tr>
+				<tr><td>3</td><td>A gold-colored serpent’s tooth</td></tr>
+				<tr><td>4</td><td>A counterfeit gold coin</td></tr>
+				<tr><td>5</td><td>A crystal tattoo needle</td></tr>
+				<tr><td>6</td><td>A contract on a slip of parchment that’s impervious to creases, tears, and fire</td></tr>
+			</table>
+		</description>
+		<setters>
+			<set name="short">Strength, Dexterity, Charisma, Zhentarim Ruffian Feat, Intimidation and Perception Skills, and Forgery Kit</set>
+		</setters>
+		<rules>
+			<grant type="Ability Score Improvement" id="ID_INTERNAL_ABILITY_SCORE_IMPROVEMENT_COMBINATION_STR_DEX_CHA" />
+			<grant type="Feat" id="ID_WOTC_FRHOF_FEAT_ZHENTARIM_RUFFIAN" />
+			<grant type="Proficiency" id="ID_PROFICIENCY_SKILL_INTIMIDATION" />
+			<grant type="Proficiency" id="ID_PROFICIENCY_SKILL_PERCEPTION" />
+			<grant type="Grants" id="ID_INTERNAL_GRANTS_BACKGROUND_ASI" />
+			<grant type="Proficiency" id="ID_PROFICIENCY_TOOL_PROFICIENCY_FORGERY_KIT" />
+			<select type="List" name="Zhentarim Trinkets" optional="true" >
+				<item id="1">A broken dagger etched with your name</item>
+				<item id="2">A glass eye that always turns to face you</item>
+				<item id="3">A gold-colored serpent’s tooth</item>
+				<item id="4">A counterfeit gold coin</item>
+				<item id="5">A crystal tattoo needle</item>
+				<item id="6">A contract on a slip of parchment that’s impervious to creases, tears, and fire</item>
+			</select>
+		</rules>
+	</element>
+
+</elements>

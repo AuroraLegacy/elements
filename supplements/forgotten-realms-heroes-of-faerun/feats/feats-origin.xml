@@ -1,0 +1,326 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<elements>
+	<info>
+		<name>Origin Feats</name>
+		<description>Origin Feats from Forgotten Realms: Heroes of Faerûn.</description>
+		<author url="https://dndstore.wizards.com/us/en/product/1246485/heroes-of-faerun">Wizards of the Coast</author>
+		<update version="0.0.1">
+			<file name="feats-origin.xml" url="https://raw.githubusercontent.com/AuroraLegacy/elements/master/supplements/forgotten-realms-heroes-of-faerun/feats/feats-origin.xml" />
+		</update>
+	</info>
+		
+	<element name="Cult of the Dragon Initiate" type="Feat" source="Forgotten Realms: Heroes of Faerûn" id="ID_WOTC_FRHOF_FEAT_CULT_OF_THE_DRAGON_INITIATE">
+		<supports>Origin</supports>
+		<prerequisite>Origin Feat, Forgotten Realms Campaign</prerequisite>
+		<description>
+			<p class="flavor">Origin Feat</p>
+			<p>You gain the following benefits.</p>
+			<p class="indent"><b><i>Dragon's Tongue.</i></b> You know Draconic. If you already know Draconic when you select this feat, you instead learn one language of your choice.</p>
+			<p class="indent"><b><i>Dragon’s Terror.</i></b> You can take a Magic action to instill terror in a creature you can see within 30 feet of yourself. The target must succeed on a Wisdom saving throw (DC 8 plus your Wisdom modifier and Proficiency Bonus) or have the Frightened condition until the end of your next turn. If the target succeeds on the save or when the effect ends for a target, the target is immune to this effect for 24 hours.</p>
+			<p class="indent"><b><i>Inspired by Fear.</i></b> When you cause a creature to have the Frightened condition and you are the source of its fear, you can gain Heroic Inspiration if you lack it. Once you use this benefit, you can’t use it again until you finish a Short or Long Rest.</p>
+		</description>
+		<sheet>
+			<description>You gain the following benefits.</description>
+		</sheet>
+		<rules>
+			<select type="Language" name="Language Proficiency (Cult of the Dragon Initiate)" supports="Standard||Exotic" default="ID_WOTC_PHB24_LANGUAGE_DRACONIC" />
+			<select type="Feat Feature" name="Dragon Terror" supports="Dragon Terror" default="ID_WOTC_FRHOF_FEAT_FEATURE_CULT_OF_THE_DRAGON_INITIATE_DRAGONS_TERROR" />
+			<select type="Feat Feature" name="Inspired by Fear" supports="Inspired by Fear" default="ID_WOTC_FRHOF_FEAT_FEATURE_CULT_OF_THE_DRAGON_INITIATE_INSPIRED_BY_FEAR" />
+		</rules>
+	</element>
+	<element name="Dragon's Terror" type="Feat Feature" source="Forgotten Realms: Heroes of Faerûn" id="ID_WOTC_FRHOF_FEAT_FEATURE_CULT_OF_THE_DRAGON_INITIATE_DRAGONS_TERROR">
+		<compendium display="false" />
+		<supports>Dragon Terror</supports>
+		<description>
+			<p>You can take a Magic action to instill terror in a creature you can see within 30 feet of yourself. The target must succeed on a Wisdom saving throw (DC 8 plus your Wisdom modifier and Proficiency Bonus) or have the Frightened condition until the end of your next turn. If the target succeeds on the save or when the effect ends for a target, the target is immune to this effect for 24 hours.</p>
+		</description>
+		<sheet action="Action">
+			<description>Choose a creature you can see within 30 feet of yourself. The target must succeed on a DC{{dragon terror:dc}} Wisdom saving throw or have the Frightened condition until the end of your next turn. If the target succeeds on the save or when the effect ends for a target, the target is immune to this effect for 24 hours.</description>
+		</sheet>
+		<rules>
+			<stat name="dragon terror:dc" value="8" />
+			<stat name="dragon terror:dc" value="proficiency" />
+			<stat name="dragon terror:dc" value="wisdom:modifier" />
+		</rules>
+	</element>
+	<element name="Inspired by Fear" type="Feat Feature" source="Forgotten Realms: Heroes of Faerûn" id="ID_WOTC_FRHOF_FEAT_FEATURE_CULT_OF_THE_DRAGON_INITIATE_INSPIRED_BY_FEAR">
+		<compendium display="false" />
+		<supports>Inspired by Fear</supports>
+		<description>
+			<p>When you cause a creature to have the Frightened condition and you are the source of its fear, you can gain Heroic Inspiration if you lack it. Once you use this benefit, you can’t use it again until you finish a Short or Long Rest.</p>
+		</description>
+		<sheet usage="1/Short Rest">
+			<description>When you cause a creature to have the Frightened condition and you are the source of its fear, you can gain Heroic Inspiration if you lack it.</description>
+		</sheet>
+	</element>
+
+	<element name="Emerald Enclave Fledgling" type="Feat" source="Forgotten Realms: Heroes of Faerûn" id="ID_WOTC_FRHOF_FEAT_EMERALD_ENCLAVE_FLEDGLING">
+		<supports>Origin</supports>
+		<prerequisite>Origin Feat, Forgotten Realms Campaign</prerequisite>
+		<description>
+			<p class="flavor">Origin Feat</p>
+			<p>You gain the following benefits.</p>
+			<p class="indent"><b><i>Speak with Animals.</i></b> You always have the <i>Speak with Animals</i> spell prepared and can cast it with any spell slots you have. Intelligence, Wisdom, or Charisma is your spellcasting ability for this spell (choose when you select this feat). When you cast this spell as a Ritual, its duration is 8 hours.</p>
+			<p class="indent"><b><i>Tag Team.</i></b> When you take the Help action, you can switch places with a willing ally within 5 feet of yourself as part of that same action. This movement doesn’t provoke Opportunity Attacks. You can’t use this benefit if the ally has the Incapacitated condition.</p>
+		</description>
+		<sheet>
+			<description>You gain the following benefits.</description>
+		</sheet>
+		<rules>
+			<select type="Feat Feature" name="Spellcasting Ability (Emerald Enclave Fledgling)" supports="Fledgling Speak with Animals" />
+			<select type="Feat Feature" name="Tag Team" supports="Tag Team" default="ID_WOTC_FRHOF_FEAT_FEATURE_EMERALD_ENCLAVE_TAG_TEAM" />
+			<grant type="Spell" id="ID_WOTC_PHB24_SPELL_SPEAK_WITH_ANIMALS" alt="Emerald Enclave Fledgling"/>
+		</rules>
+	</element>
+	<element name="Intelligence" type="Feat Feature" source="Forgotten Realms: Heroes of Faerûn" id="ID_WOTC_FRHOF_FEAT_FEATURE_EMERALD_ENCLAVE_FLEDGLING_SPEAK_WITH_ANIMALS_INTELLIGENCE">
+		<compendium display="false" />
+		<supports>Fledgling Speak with Animals</supports>
+		<description>
+			<p>You always have the <i>Speak with Animals</i> spell prepared and can cast it with any spell slots you have. Intelligence is your spellcasting ability for this spell (choose when you select this feat). When you cast this spell as a Ritual, its duration is 8 hours.</p>
+		</description>
+		<sheet alt="Speak with Animals">
+			<description>You always have the Speak with Animals spell prepared and can cast it with any spell slots you have, using Intelligence as your spellcasting ability. When you cast this spell as a Ritual, its duration is 8 hours.</description>
+		</sheet>
+	</element>
+	<element name="Wisdom" type="Feat Feature" source="Forgotten Realms: Heroes of Faerûn" id="ID_WOTC_FRHOF_FEAT_FEATURE_EMERALD_ENCLAVE_FLEDGLING_SPEAK_WITH_ANIMALS_WISDOM">
+		<compendium display="false" />
+		<supports>Fledgling Speak with Animals</supports>
+		<description>
+			<p>You always have the <i>Speak with Animals</i> spell prepared and can cast it with any spell slots you have. Wisdom is your spellcasting ability for this spell. When you cast this spell as a Ritual, its duration is 8 hours.</p>
+		</description>
+		<sheet alt="Speak with Animals">
+			<description>You always have the Speak with Animals spell prepared and can cast it with any spell slots you have, using Wisdom as your spellcasting ability. When you cast this spell as a Ritual, its duration is 8 hours.</description>
+		</sheet>
+	</element>
+	<element name="Charisma" type="Feat Feature" source="Forgotten Realms: Heroes of Faerûn" id="ID_WOTC_FRHOF_FEAT_FEATURE_EMERALD_ENCLAVE_FLEDGLING_SPEAK_WITH_ANIMALS_CHARISMA">
+		<compendium display="false" />
+		<supports>Fledgling Speak with Animals</supports>
+		<description>
+			<p>You always have the <i>Speak with Animals</i> spell prepared and can cast it with any spell slots you have. Charisma is your spellcasting ability for this spell. When you cast this spell as a Ritual, its duration is 8 hours.</p>
+		</description>
+		<sheet alt="Speak with Animals">
+			<description>You always have the Speak with Animals spell prepared and can cast it with any spell slots you have, using Charisma as your spellcasting ability. When you cast this spell as a Ritual, its duration is 8 hours.</description>
+		</sheet>
+	</element>
+	<element name="Tag Team" type="Feat Feature" source="Forgotten Realms: Heroes of Faerûn" id="ID_WOTC_FRHOF_FEAT_FEATURE_EMERALD_ENCLAVE_TAG_TEAM">
+		<compendium display="false" />
+		<supports>Tag Team</supports>
+		<description>
+			<p>When you take the Help action, you can switch places with a willing ally within 5 feet of yourself as part of that same action. This movement doesn’t provoke Opportunity Attacks. You can’t use this benefit if the ally has the Incapacitated condition.</p>
+		</description>
+		<sheet>
+			<description>When you take the Help action, you can switch places with a willing ally who isn't Incapacitated within 5 feet of yourself as part of that same action. This movement doesn’t provoke Opportunity Attacks.</description>
+		</sheet>
+	</element>
+
+	<element name="Harper Agent" type="Feat" source="Forgotten Realms: Heroes of Faerûn" id="ID_WOTC_FRHOF_FEAT_HARPER_AGENT">
+		<supports>Origin</supports>
+		<prerequisite>Origin Feat, Forgotten Realms Campaign</prerequisite>
+		<description>
+			<p class="flavor">Origin Feat</p>
+			<p>You gain the following benefits.</p>
+			<p class="indent"><b><i>Thieves' Cant.</i></b> You know Thieves’ Cant.</p>
+			<p class="indent"><b><i>Instrument Training.</i></b> You gain proficiency with a Musical Instrument of your choice.</p>
+			<p class="indent"><b><i>Distracting Melody.</i></b> When you take the Help action to assist an ally’s attack roll, the enemy you’re distracting can be within 30 feet of you, rather than within 5 feet of you, provided the enemy can see or hear you.</p>
+		</description>
+		<sheet>
+			<description>When you take the Help action to assist an ally’s attack roll, the enemy you’re distracting can be within 30 feet of you, rather than within 5 feet of you, provided the enemy can see or hear you.</description>
+		</sheet>
+		<rules>
+			<grant type="Language" id="ID_LANGUAGE_THIEVES_CANT" />
+			<select type="Proficiency" name="Musical Instrument Proficiency (Harper Agent)" supports="Musical Instrument" />
+		</rules>
+	</element>
+
+	<element name="Lords' Alliance Agent" type="Feat" source="Forgotten Realms: Heroes of Faerûn" id="ID_WOTC_FRHOF_FEAT_LORDS_ALLIANCE_AGENT">
+		<supports>Origin</supports>
+		<prerequisite>Origin Feat, Forgotten Realms Campaign</prerequisite>
+		<description>
+			<p class="flavor">Origin Feat</p>
+			<p>You gain the following benefits.</p>
+			<p class="indent"><b><i>Inspiring Strike.</i></b> Once per turn when you score a Critical Hit against a creature, you can choose an ally within 30 feet of yourself who can see or hear you and who lacks Heroic Inspiration. That ally gains Heroic Inspiration.</p>
+			<p class="indent"><b><i>Reassert Honor.</i></b> When an enemy you can see deals damage to an ally of yours that is within 5 feet of you, you have Advantage on your next attack roll against that enemy before the end of your next turn.</p>
+		</description>
+		<sheet>
+			<description>You gain the following benefits.</description>
+		</sheet>
+		<rules>
+			<select type="Feat Feature" name="Inspiring Strike" supports="Inspiring Strike" default="ID_WOTC_FRHOF_FEAT_FEATURE_LORDS_ALLIANCE_AGENT_INSPIRING_STRIKE" />
+			<select type="Feat Feature" name="Reassert Honor" supports="Reassert Honor" default="ID_WOTC_FRHOF_FEAT_FEATURE_LORDS_ALLIANCE_AGENT_REASSERT_HONOR" />
+		</rules>
+	</element>
+	<element name="Inspiring Strike" type="Feat Feature" source="Forgotten Realms: Heroes of Faerûn" id="ID_WOTC_FRHOF_FEAT_FEATURE_LORDS_ALLIANCE_AGENT_INSPIRING_STRIKE">
+		<compendium display="false" />
+		<supports>Inspiring Strike</supports>
+		<description>
+			<p>Once per turn when you score a Critical Hit against a creature, you can choose an ally within 30 feet of yourself who can see or hear you and who lacks Heroic Inspiration. That ally gains Heroic Inspiration.</p>
+		</description>
+		<sheet usage="1/Turn">
+			<description>when you score a Critical Hit against a creature, you can choose an ally within 30 feet of yourself who can see or hear you. That ally gains Heroic Inspiration.</description>
+		</sheet>
+	</element>
+	<element name="Reassert Honor" type="Feat Feature" source="Forgotten Realms: Heroes of Faerûn" id="ID_WOTC_FRHOF_FEAT_FEATURE_LORDS_ALLIANCE_AGENT_REASSERT_HONOR">
+		<compendium display="false" />
+		<supports>Reassert Honor</supports>
+		<description>
+			<p>When an enemy you can see deals damage to an ally of yours that is within 5 feet of you, you have Advantage on your next attack roll against that enemy before the end of your next turn.</p>
+		</description>
+		<sheet>
+			<description>When an enemy you can see deals damage to an ally of yours that is within 5 feet of you, you have Advantage on your next attack roll against that enemy before the end of your next turn.</description>
+		</sheet>
+	</element>
+
+	<element name="Purple Dragon Rook" type="Feat" source="Forgotten Realms: Heroes of Faerûn" id="ID_WOTC_FRHOF_FEAT_PURPLE_DRAGON_ROOK">
+		<supports>Origin</supports>
+		<prerequisite>Origin Feat, Forgotten Realms Campaign</prerequisite>
+		<description>
+			<p class="flavor">Origin Feat</p>
+			<p>You gain the following benefits.</p>
+			<p class="indent"><b><i>Entreat.</i></b> You gain proficiency in one of the following skills: <i>Insight, Performance,</i> or <i>Persuasion.</i></p>
+			<p class="indent"><b><i>Rallying Cry.</i></b> When you roll Initiative and don’t have the Incapacitated condition, you can choose a number of creatures equal to your Proficiency Bonus that you can see within 30 feet of yourself. Those creatures gain Heroic Inspiration.</p>
+			<p class="indent">Once you use this benefit, you can’t do so again until you finish a Long Rest.</p>
+		</description>
+		<sheet usage="1/Long Rest">
+			<description>When you roll Initiative and don’t have the Incapacitated condition, choose up to {{proficiency}} creatures that you can see within 30 feet of yourself. Those creatures gain Heroic Inspiration.</description>
+		</sheet>
+		<rules>
+			<select type="Proficiency" name="Skill Proficiency (Purple Dragon Rook)" supports="ID_PROFICIENCY_SKILL_INSIGHT|ID_PROFICIENCY_SKILL_PERFORMANCE|ID_PROFICIENCY_SKILL_PERSUASION" />
+		</rules>
+	</element>
+
+	<element name="Spellfire Spark" type="Feat" source="Forgotten Realms: Heroes of Faerûn" id="ID_WOTC_FRHOF_FEAT_SPELLFIRE_SPARK">
+		<supports>Origin</supports>
+		<prerequisite>Origin Feat, Forgotten Realms Campaign</prerequisite>
+		<description>
+			<p class="flavor">Origin Feat</p>
+			<p>You gain the following benefits.</p>
+			<p class="indent"><b><i>Magic Absorption.</i></b> Once per turn, when you take damage from a spell or magical effect, you reduce the total damage taken by 1d4. You can’t use this benefit if you have the Incapacitated condition.</p>
+			<p class="indent"><b><i>Spellfire Flame.</i></b> You learn the <i>Sacred Flame</i> cantrip. Intelligence, Wisdom, or Charisma is your spellcasting ability for this spell (choose when you select this feat). You can also cast this cantrip as a Bonus Action a number of times equal to your Proficiency Bonus, and you regain all expended uses when you finish a Long Rest.</p>
+		</description>
+		<sheet>
+			<description>You gain the following benefits.</description>
+		</sheet>
+		<rules>
+			<select type="Feat Feature" name="Magic Absorption" supports="Magic Absorption" default="ID_WOTC_FRHOF_FEAT_FEATURE_SPELLFIRE_SPARK_MAGIC_ABSORPTION" />
+			<select type="Feat Feature" name="Spellcasting Ability (Spellfire Spark)" supports="Spellfire Flame" />
+			<grant type="Spell" id="ID_WOTC_PHB24_SPELL_SACRED_FLAME" alt="Spellfire Spark"/>
+		</rules>
+	</element>
+	<element name="Magic Absorption" type="Feat Feature" source="Forgotten Realms: Heroes of Faerûn" id="ID_WOTC_FRHOF_FEAT_FEATURE_SPELLFIRE_SPARK_MAGIC_ABSORPTION">
+		<compendium display="false" />
+		<supports>Magic Absorption</supports>
+		<description>
+			<p>Once per turn, when you take damage from a spell or magical effect, you reduce the total damage taken by 1d4. You can’t use this benefit if you have the Incapacitated condition.</p>
+		</description>
+		<sheet usage="1/Turn">
+			<description>When you take damage from a spell or magical effect and don't have the Incapacitated condition, you reduce the total damage taken by 1d4.</description>
+		</sheet>
+	</element>
+	<element name="Intelligence" type="Feat Feature" source="Forgotten Realms: Heroes of Faerûn" id="ID_WOTC_FRHOF_FEAT_FEATURE_SPELLFIRE_SPARK_SPELLFIRE_FLAME_INTELLIGENCE">
+		<compendium display="false" />
+		<supports>Spellfire Flame</supports>
+		<description>
+			<p>You learn the <i>Sacred Flame</i> cantrip. Intelligence is your spellcasting ability for this spell. You can also cast this cantrip as a Bonus Action a number of times equal to your Proficiency Bonus, and you regain all expended uses when you finish a Long Rest.</p>
+		</description>
+		<sheet alt="Spellfire Flame" usage="{{proficiency}}/Long Rest">
+			<description>You can cast Sacred Flame as a Bonus Action, using Intelligence as your spellcasting ability.</description>
+		</sheet>
+	</element>
+	<element name="Wisdom" type="Feat Feature" source="Forgotten Realms: Heroes of Faerûn" id="ID_WOTC_FRHOF_FEAT_FEATURE_SPELLFIRE_SPARK_SPELLFIRE_FLAME_WISDOM">
+		<compendium display="false" />
+		<supports>Spellfire Flame</supports>
+		<description>
+			<p>You learn the <i>Sacred Flame</i> cantrip. Wisdom is your spellcasting ability for this spell. You can also cast this cantrip as a Bonus Action a number of times equal to your Proficiency Bonus, and you regain all expended uses when you finish a Long Rest.</p>
+		</description>
+		<sheet alt="Spellfire Flame" usage="{{proficiency}}/Long Rest">
+			<description>You can cast Sacred Flame as a Bonus Action, using Wisdom as your spellcasting ability.</description>
+		</sheet>
+	</element>
+	<element name="Charisma" type="Feat Feature" source="Forgotten Realms: Heroes of Faerûn" id="ID_WOTC_FRHOF_FEAT_FEATURE_SPELLFIRE_SPARK_SPELLFIRE_FLAME_CHARISMA">
+		<compendium display="false" />
+		<supports>Spellfire Flame</supports>
+		<description>
+			<p>You learn the <i>Sacred Flame</i> cantrip. Charisma is your spellcasting ability for this spell. You can also cast this cantrip as a Bonus Action a number of times equal to your Proficiency Bonus, and you regain all expended uses when you finish a Long Rest.</p>
+		</description>
+		<sheet alt="Spellfire Flame" usage="{{proficiency}}/Long Rest">
+			<description>You can cast Sacred Flame as a Bonus Action, using Charisma as your spellcasting ability.</description>
+		</sheet>
+	</element>
+
+	<element name="Tyro of the Gauntlet" type="Feat" source="Forgotten Realms: Heroes of Faerûn" id="ID_WOTC_FRHOF_FEAT_TYRO_OF_THE_GAUNTLET">
+		<supports>Origin</supports>
+		<prerequisite>Origin Feat, Forgotten Realms Campaign</prerequisite>
+		<description>
+			<p class="flavor">Origin Feat</p>
+			<p>You gain the following benefits.</p>
+			<p class="indent"><b><i>Stand as One.</i></b> When an ally within 5 feet of you is subjected to an effect that would push or pull it, you can take a Reaction to prevent that ally from being pushed or pulled. To receive this benefit, the ally can’t have the Incapacitated condition.</p>
+			<p class="indent"><b><i>Vigilant.</i></b> When you take the Ready action, the next attack roll made against you has Disadvantage before the start of your next turn.</p>
+		</description>
+		<sheet>
+			<description>You gain the following benefits.</description>
+		</sheet>
+		<rules>
+			<select type="Feat Feature" name="Stand as One" supports="Stand as One" default="ID_WOTC_FRHOF_FEAT_FEATURE_TYRO_OF_THE_GAUNTLET_STAND_AS_ONE" />
+			<select type="Feat Feature" name="Vigilant" supports="Vigilant" default="ID_WOTC_FRHOF_FEAT_FEATURE_TYRO_OF_THE_GAUNTLET_VIGILANT" />
+		</rules>
+	</element>
+	<element name="Stand as One" type="Feat Feature" source="Forgotten Realms: Heroes of Faerûn" id="ID_WOTC_FRHOF_FEAT_FEATURE_TYRO_OF_THE_GAUNTLET_STAND_AS_ONE">
+		<compendium display="false" />
+		<supports>Stand as One</supports>
+		<description>
+			<p>When an ally within 5 feet of you is subjected to an effect that would push or pull it, you can take a Reaction to prevent that ally from being pushed or pulled. To receive this benefit, the ally can’t have the Incapacitated condition.</p>
+		</description>
+		<sheet action="Reaction">
+			<description>When an ally within 5 feet of you without the Incapacitated condition is subjected to an effect that would push or pull it, you can prevent that ally from being pushed or pulled.</description>
+		</sheet>
+	</element>
+	<element name="Vigilant" type="Feat Feature" source="Forgotten Realms: Heroes of Faerûn" id="ID_WOTC_FRHOF_FEAT_FEATURE_TYRO_OF_THE_GAUNTLET_VIGILANT">
+		<compendium display="false" />
+		<supports>Vigilant</supports>
+		<description>
+			<p>When you take the Ready action, the next attack roll made against you has Disadvantage before the start of your next turn.</p>
+		</description>
+		<sheet>
+			<description>When you take the Ready action, the next attack roll made against you has Disadvantage before the start of your next turn.</description>
+		</sheet>
+	</element>
+
+	<element name="Zhentarim Ruffian" type="Feat" source="Forgotten Realms: Heroes of Faerûn" id="ID_WOTC_FRHOF_FEAT_ZHENTARIM_RUFFIAN">
+		<supports>Origin</supports>
+		<prerequisite>Origin Feat, Forgotten Realms Campaign</prerequisite>
+		<description>
+			<p class="flavor">Origin Feat</p>
+			<p>You gain the following benefits.</p>
+			<p class="indent"><b><i>Exploit Opening.</i></b> When you roll damage for an Opportunity Attack, you can roll the damage dice twice and use either roll against the target.</p>
+			<p class="indent"><b><i>Family First.</i></b> If you have Heroic Inspiration when you roll Initiative, you can expend it to give yourself and your allies Advantage on that Initiative roll.</p>
+		</description>
+		<sheet>
+			<description>You gain the following benefits.</description>
+		</sheet>
+		<rules>
+			<select type="Feat Feature" name="Exploit Opening" supports="Exploit Opening" default="ID_WOTC_FRHOF_FEAT_FEATURE_ZHENTARIM_RUFFIAN_EXPLOIT_OPENING" />
+			<select type="Feat Feature" name="Family First" supports="Family First" default="ID_WOTC_FRHOF_FEAT_FEATURE_ZHENTARIM_RUFFIAN_FAMILY_FIRST" />
+		</rules>
+	</element>
+	<element name="Exploit Opening" type="Feat Feature" source="Forgotten Realms: Heroes of Faerûn" id="ID_WOTC_FRHOF_FEAT_FEATURE_ZHENTARIM_RUFFIAN_EXPLOIT_OPENING">
+		<compendium display="false" />
+		<supports>Exploit Opening</supports>
+		<description>
+			<p>When you roll damage for an Opportunity Attack, you can roll the damage dice twice and use either roll against the target.</p>
+		</description>
+		<sheet>
+			<description>When you roll damage for an Opportunity Attack, you can roll the damage dice twice and use either roll against the target.</description>
+		</sheet>
+	</element>
+	<element name="Family First" type="Feat Feature" source="Forgotten Realms: Heroes of Faerûn" id="ID_WOTC_FRHOF_FEAT_FEATURE_ZHENTARIM_RUFFIAN_FAMILY_FIRST">
+		<compendium display="false" />
+		<supports>Family First</supports>
+		<description>
+			<p>If you have Heroic Inspiration when you roll Initiative, you can expend it to give yourself and your allies Advantage on that Initiative roll.</p>
+		</description>
+		<sheet>
+			<description>If you have Heroic Inspiration when you roll Initiative, you can expend it to give yourself and your allies Advantage on that Initiative roll.</description>
+		</sheet>
+	</element>
+
+</elements>

@@ -1,0 +1,189 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<elements>
+	<info>
+		<name>Oath of the Noble Genies</name>
+		<description>The Oath of the Noble Genies subclass from Forgotten Realms: Heroes of Faerûn.</description>
+		<author url="https://dndstore.wizards.com/us/en/product/1246485/heroes-of-faerun">Wizards of the Coast</author>
+		<update version="0.0.1">
+			<file name="paladin-noble-genies.xml" url="https://raw.githubusercontent.com/AuroraLegacy/elements/master/supplements/forgotten-realms-heroes-of-faerun/archetypes/paladin-noble-genies.xml" />
+		</update>
+	</info>
+
+	<element name="Oath of the Noble Genies" type="Archetype" source="Forgotten Realms: Heroes of Faerûn" id="ID_WOTC_FRHOF_ARCHETYPE_PALADIN_OATH_OF_THE NOBLE_GENIES">
+		<supports>Sacred Oath</supports>
+		<description>
+			<p class="flavor">Brandish the Elemental Splendor of Genies</p>
+			<p>Paladins sworn to the Oath of the Noble Genies revere the forces of the Elemental Planes. Through taking this oath, Paladins draw power from the four different types of genies—dao, masters of earth; djinn, masters of air; efreet, masters of fire; and marids, masters of water. In Faerûn, many Paladins who swear this oath hail from Calimshan, a land teeming with genies.</p> 
+			<p class="indent">Paladins who swear this oath often undertake quests that take them all over the Realms and across the multiverse—including the Elemental Planes. These paladins share the following tenets:</p>
+			<ul>
+				<li>Sow the seeds of creation amid the ashes of destruction.</li>
+				<li>Lead with splendor and grace.</li>
+				<li>Respect the elements, and fear their wrath.</li>
+			</ul>
+			<div element="ID_WOTC_FRHOF_ARCHETYPE_FEATURE_PALADIN_NOBLE_GENIES_ELEMENTAL_SMITE" />
+			<div element="ID_WOTC_FRHOF_ARCHETYPE_FEATURE_PALADIN_NOBLE_GENIES_GENIE_SPELLS" />
+			<div element="ID_WOTC_FRHOF_ARCHETYPE_FEATURE_PALADIN_NOBLE_GENIES_GENIES_SPLENDOR" />
+			<div element="ID_WOTC_FRHOF_ARCHETYPE_FEATURE_PALADIN_NOBLE_GENIES_AURA_OF_ELEMENTAL_SHIELDING" />
+			<div element="ID_WOTC_FRHOF_ARCHETYPE_FEATURE_PALADIN_NOBLE_GENIES_ELEMENTAL_REBUKE" />
+			<div element="ID_WOTC_FRHOF_ARCHETYPE_FEATURE_PALADIN_NOBLE_GENIES_NOBLE_SCION" />
+		</description>
+		<sheet display="false" />
+		<rules>
+			<grant type="Archetype Feature" id="ID_WOTC_FRHOF_ARCHETYPE_FEATURE_PALADIN_NOBLE_GENIES_ELEMENTAL_SMITE" level="3" />
+			<grant type="Archetype Feature" id="ID_WOTC_FRHOF_ARCHETYPE_FEATURE_PALADIN_NOBLE_GENIES_GENIE_SPELLS" level="3" />
+			<grant type="Archetype Feature" id="ID_WOTC_FRHOF_ARCHETYPE_FEATURE_PALADIN_NOBLE_GENIES_GENIES_SPLENDOR" level="3" />
+			<grant type="Archetype Feature" id="ID_WOTC_FRHOF_ARCHETYPE_FEATURE_PALADIN_NOBLE_GENIES_AURA_OF_ELEMENTAL_SHIELDING" level="7" />
+			<grant type="Archetype Feature" id="ID_WOTC_FRHOF_ARCHETYPE_FEATURE_PALADIN_NOBLE_GENIES_ELEMENTAL_REBUKE" level="15" />
+			<grant type="Archetype Feature" id="ID_WOTC_FRHOF_ARCHETYPE_FEATURE_PALADIN_NOBLE_GENIES_NOBLE_SCION" level="20" />
+		</rules>
+	</element>
+
+	<element name="Level 3: Elemental Smite" type="Archetype Feature" source="Forgotten Realms: Heroes of Faerûn" id="ID_WOTC_FRHOF_ARCHETYPE_FEATURE_PALADIN_NOBLE_GENIES_ELEMENTAL_SMITE">
+		<requirements>!ID_INTERNAL_FRHOF_FEATURE_REPLACEMENT_PALADIN_NOBLE_GENIES_ELEMENTAL_SMITE</requirements>
+		<description>
+			<p>Immediately after you cast <i>Divine Smite</i>, you can expend one use of your Channel Divinity and invoke one of the following effects.</p>
+			<p class="indent"><b><i>Dao's Crush.</i></b> Earth rises up around the target of your <i>Divine Smite</i>. The target has the Grappled condition (escape DC equal to your spell save DC). While Grappled, the target has the Restrained condition.</p>
+			<p class="indent"><b><i>Djinni's Escape.</i></b> You teleport to an unoccupied space you can see within 30 feet of yourself and take on a semi-incorporeal form, which lasts until the end of your next turn. While in this form, you have Resistance to Bludgeoning, Piercing, and Slashing damage, and you have Immunity to the Grappled, Prone, and Restrained conditions.</p>
+			<p class="indent"><b><i>Efreeti's Fury.</i></b> The target of your <i>Divine Smite</i> takes an extra 2d4 Fire damage, and fire jumps from the target to another creature you can see within 30 feet of yourself. The second creature also takes 2d4 Fire damage.</p>
+			<p class="indent"><b><i>Marid's Surge.</i></b> The target of your <i>Divine Smite</i> and each creature of your choice in a 10-foot Emanation originating from you make a Strength saving throw against your spell save DC. On a failed save, a creature is pushed 15 feet straight away from you and has the Prone condition.</p>
+		</description>
+		<sheet alt="Elemental Smite" usage="Channel Divinity">
+			<description>Immediately after you cast Divine Smite, you can invoke one of the following effects.</description>
+		</sheet>
+		<rules>
+			<select type="Archetype Feature" name="Elemental Smite" supports="Dao Crush" default="ID_WOTC_FRHOF_ARCHETYPE_FEATURE_PALADIN_NOBLE_GENIES_ELEMENTAL_SMITE_DAOS_CRUSH"/>
+			<select type="Archetype Feature" name="Elemental Smite" supports="Djinni Escape" default="ID_WOTC_FRHOF_ARCHETYPE_FEATURE_PALADIN_NOBLE_GENIES_ELEMENTAL_SMITE_DJINNIS_ESCAPE"/>
+			<select type="Archetype Feature" name="Elemental Smite" supports="Efreeti Fury" default="ID_WOTC_FRHOF_ARCHETYPE_FEATURE_PALADIN_NOBLE_GENIES_ELEMENTAL_SMITE_EFREETIS_FURY"/>
+			<select type="Archetype Feature" name="Elemental Smite" supports="Marid Surge" default="ID_WOTC_FRHOF_ARCHETYPE_FEATURE_PALADIN_NOBLE_GENIES_ELEMENTAL_SMITE_MARIDS_SURGE"/>
+		</rules>
+	</element>
+	<element name="Dao's Crush" type="Archetype Feature" source="Forgotten Realms: Heroes of Faerûn" id="ID_WOTC_FRHOF_ARCHETYPE_FEATURE_PALADIN_NOBLE_GENIES_ELEMENTAL_SMITE_DAOS_CRUSH">
+		<supports>Dao Crush</supports>
+		<description>
+			<p>Earth rises up around the target of your <i>Divine Smite</i>. The target has the Grappled condition (escape DC equal to your spell save DC). While Grappled, the target has the Restrained condition.</p>
+		</description>
+		<sheet alt="Dao's Crush">
+			<description>The target has the Grappled condition (escape DC{{paladin:spellcasting:dc}}). While Grappled, the target has the Restrained condition.</description>
+		</sheet>
+	</element>
+	<element name="Djinni's Escape" type="Archetype Feature" source="Forgotten Realms: Heroes of Faerûn" id="ID_WOTC_FRHOF_ARCHETYPE_FEATURE_PALADIN_NOBLE_GENIES_ELEMENTAL_SMITE_DJINNIS_ESCAPE">
+		<supports>Djinni Escape</supports>
+		<description>
+			<p>You teleport to an unoccupied space you can see within 30 feet of yourself and take on a semi-incorporeal form, which lasts until the end of your next turn. While in this form, you have Resistance to Bludgeoning, Piercing, and Slashing damage, and you have Immunity to the Grappled, Prone, and Restrained conditions.</p>
+		</description>
+		<sheet alt="Djinni's Escape">
+			<description>You teleport to an unoccupied space you can see within 30 feet of yourself. Until the end of your next turn, you have Resistance to Bludgeoning, Piercing, and Slashing damage, and Immunity to the Grappled, Prone, and Restrained conditions.</description>
+		</sheet>
+	</element>
+	<element name="Efreeti's Fury" type="Archetype Feature" source="Forgotten Realms: Heroes of Faerûn" id="ID_WOTC_FRHOF_ARCHETYPE_FEATURE_PALADIN_NOBLE_GENIES_ELEMENTAL_SMITE_EFREETIS_FURY">
+		<supports>Efreeti Fury</supports>
+		<description>
+			<p>The target of your <i>Divine Smite</i> takes an extra 2d4 Fire damage, and fire jumps from the target to another creature you can see within 30 feet of yourself. The second creature also takes 2d4 Fire damage.</p>
+		</description>
+		<sheet alt="Efreeti's Fury">
+			<description>The target takes an extra 2d4 Fire damage, and fire jumps from the target to another creature you can see within 30 feet of yourself. The second creature also takes 2d4 Fire damage.</description>
+		</sheet>
+	</element>
+	<element name="Marid's Surge" type="Archetype Feature" source="Forgotten Realms: Heroes of Faerûn" id="ID_WOTC_FRHOF_ARCHETYPE_FEATURE_PALADIN_NOBLE_GENIES_ELEMENTAL_SMITE_MARIDS_SURGE">
+		<supports>Marid Surge</supports>
+		<description>
+			<p>The target of your <i>Divine Smite</i> and each creature of your choice in a 10-foot Emanation originating from you make a Strength saving throw against your spell save DC. On a failed save, a creature is pushed 15 feet straight away from you and has the Prone condition.</p>
+		</description>
+		<sheet alt="Marid's Surge">
+			<description>The target and each creature of your choice in a 10-foot Emanation originating from you make a DC{{paladin:spellcasting:dc}} Strength saving throw. On a failed save, a creature is pushed 15 feet straight away from you and has the Prone condition.</description>
+		</sheet>
+	</element>
+	<element name="Level 3: Genie Spells" type="Archetype Feature" source="Forgotten Realms: Heroes of Faerûn" id="ID_WOTC_FRHOF_ARCHETYPE_FEATURE_PALADIN_NOBLE_GENIES_GENIE_SPELLS">
+		<requirements>!ID_INTERNAL_FRHOF_FEATURE_REPLACEMENT_PALADIN_NOBLE_GENIES_GENIE_SPELLS</requirements>
+		<description>
+			<p>When you reach a Paladin level specified in the Genie Spells table, you thereafter always have the listed spells prepared.</p>
+			<h5>GENIE SPELLS</h5>
+			<table>
+				<thead>
+					<tr><td class="col-15" style="text-align:center">Paladin Level</td><td>Spells</td></tr>
+				</thead>
+				<tr><td style="text-align:center">3</td><td><i>Chromatic Orb, Elementalism, Thunderous Smite</i></td></tr>
+				<tr><td style="text-align:center">5</td><td><i>Mirror Image, Phantasmal Force</i></td></tr>
+				<tr><td style="text-align:center">9</td><td><i>Fly, Gaseous Form</i></td></tr>
+				<tr><td style="text-align:center">13</td><td><i>Conjure Minor Elementals, Summon Elemental</i></td></tr>
+				<tr><td style="text-align:center">17</td><td><i>Banishing Smite, Contact Other Plane</i></td></tr>
+			</table>
+		</description>
+		<sheet display="false" />
+		<rules> 
+			<grant type="Spell" id="ID_WOTC_PHB24_SPELL_CHROMATIC_ORB" level="3" spellcasting="Paladin" prepared="true" />
+			<grant type="Spell" id="ID_WOTC_PHB24_SPELL_ELEMENTALISM" level="3" spellcasting="Paladin" prepared="true" />
+			<grant type="Spell" id="ID_WOTC_PHB24_SPELL_THUNDEROUS_SMITE" level="3" spellcasting="Paladin" prepared="true" />
+			<grant type="Spell" id="ID_WOTC_PHB24_SPELL_MIRROR_IMAGE" level="5" spellcasting="Paladin" prepared="true" />
+			<grant type="Spell" id="ID_WOTC_PHB24_SPELL_PHANTASMAL_FORCE" level="5" spellcasting="Paladin" prepared="true" />
+			<grant type="Spell" id="ID_WOTC_PHB24_SPELL_FLY" level="9" spellcasting="Paladin" prepared="true" />
+			<grant type="Spell" id="ID_WOTC_PHB24_SPELL_GASEOUS_FORM" level="9" spellcasting="Paladin" prepared="true" />
+			<grant type="Spell" id="ID_WOTC_PHB24_SPELL_CONJURE_MINOR_ELEMENTALS" level="13" spellcasting="Paladin" prepared="true" />
+			<grant type="Spell" id="ID_WOTC_PHB24_SPELL_SUMMON_ELEMENTAL" level="13" spellcasting="Paladin" prepared="true" />
+			<grant type="Spell" id="ID_WOTC_PHB24_SPELL_BANISHING_SMITE" level="17" spellcasting="Paladin" prepared="true" />
+			<grant type="Spell" id="ID_WOTC_PHB24_SPELL_CONTACT_OTHER_PLANE" level="17" spellcasting="Paladin" prepared="true" />
+		</rules>
+	</element>
+	<element name="Level 3: Genie's Splendor" type="Archetype Feature" source="Forgotten Realms: Heroes of Faerûn" id="ID_WOTC_FRHOF_ARCHETYPE_FEATURE_PALADIN_NOBLE_GENIES_GENIES_SPLENDOR">
+		<requirements>!ID_INTERNAL_FRHOF_FEATURE_REPLACEMENT_PALADIN_NOBLE_GENIES_GENIES_SPLENDOR</requirements>
+		<description>
+			<p>When you aren't wearing any armor, your base Armor Class equals 10 plus your Dexterity and Charisma modifiers. You can use a Shield and still gain this benefit.</p>
+			<p class="indent">You also gain proficiency in one of the following skills of your choice: Acrobatics, Intimidation, Performance, or Persuasion.</p>
+		</description>
+		<sheet alt="Genie's Splendor" >
+			<description>While you aren't wearing armor, your base Armor Class equals {{ac:genies splendor}}. You can use a Shield and still gain this benefit.</description>
+		</sheet>
+		<rules>
+			<stat name="ac:genies splendor" value="10" />
+			<stat name="ac:genies splendor" value="dexterity:modifier" />
+			<stat name="ac:genies splendor" value="charisma:modifier" />
+			<stat name="ac:calculation" value="ac:genies splendor" bonus="calculation" equipped="[armor:none]" alt="Genie's Splendor (Paladin)" />
+			<select type="Proficiency" name="Skill Proficiency (Genie's Splendor)" supports="ID_PROFICIENCY_SKILL_ACROBATICS|ID_PROFICIENCY_SKILL_INTIMIDATION|ID_PROFICIENCY_SKILL_PERFORMANCE|ID_PROFICIENCY_SKILL_PERSUASION" />
+		</rules>
+	</element>
+
+	<element name="Level 7: Aura of Elemental Shielding" type="Archetype Feature" source="Forgotten Realms: Heroes of Faerûn" id="ID_WOTC_FRHOF_ARCHETYPE_FEATURE_PALADIN_NOBLE_GENIES_AURA_OF_ELEMENTAL_SHIELDING">
+		<requirements>!ID_INTERNAL_FRHOF_FEATURE_REPLACEMENT_PALADIN_NOBLE_GENIES_AURA_OF_ELEMENTAL_SHIELDING</requirements>
+		<description>
+			<p>Choose one of the following damage types: Acid, Cold, Fire, Lightning, or Thunder. You and your allies have Resistance to that damage type while in your Aura of Protection.</p>
+			<p class="indent">At the start of each of your turns, you can change the damage type affected by this feature to one of the other listed options (no action required).</p>
+		</description>
+		<sheet alt="Aura of Elemental Shielding">
+			<description>Choose one of the following damage types: Acid, Cold, Fire, Lightning, or Thunder. You and your allies have Resistance to that damage type while in your Aura of Protection. You can change this damage type at the start of each of your turns (no action required).</description>
+		</sheet>
+	</element>
+	<element name="Level 15: Elemental Rebuke" type="Archetype Feature" source="Forgotten Realms: Heroes of Faerûn" id="ID_WOTC_FRHOF_ARCHETYPE_FEATURE_PALADIN_NOBLE_GENIES_ELEMENTAL_REBUKE">
+		<requirements>!ID_INTERNAL_FRHOF_FEATURE_REPLACEMENT_PALADIN_NOBLE_GENIES_ELEMENTAL_REBUKE</requirements>
+		<description>
+			<p>When you are hit by an attack roll, you can take a Reaction to halve the attack's damage against yourself (round down) and force the attacker to make a Dexterity saving throw against your spell save DC. On a failed save, the attacker takes damage equal to 2d10 plus your Charisma modifier of one of the following types (your choice): Acid, Cold, Fire, Lightning, or Thunder. On a successful save, the attacker takes half as much damage.</p>
+			<p class="indent">You can use this feature a number of times equal to your Charisma modifier (minimum of once), and you regain all expended uses when you finish a Long Rest.</p>
+		</description>
+		<sheet alt="Elemental Rebuke" action="Reaction" usage="{{elemental rebuke:uses}}/Long Rest">
+			<description>When you are hit by an attack roll, you can halve the attack's damage against yourself (round down) and force the attacker to make a DC{{paladin:spellcasting:dc}} Dexterity saving throw. On a failed save, the attacker takes 2d10+{{charisma:modifier}} damage of one of the following types (your choice): Acid, Cold, Fire, Lightning, or Thunder. On a successful save, the attacker takes half as much damage.</description>
+		</sheet>
+		<rules>
+			<stat name="elemental rebuke:uses" value="1" bonus="base" />
+			<stat name="elemental rebuke:uses" value="charisma:modifier" bonus="base" />
+		</rules>
+	</element>
+	<element name="Level 20: Noble Scion" type="Archetype Feature" source="Forgotten Realms: Heroes of Faerûn" id="ID_WOTC_FRHOF_ARCHETYPE_FEATURE_PALADIN_NOBLE_GENIES_NOBLE_SCION">
+		<requirements>!ID_INTERNAL_FRHOF_FEATURE_REPLACEMENT_PALADIN_NOBLE_GENIES_NOBLE_SCION</requirements>
+		<description>
+			<p>As a Bonus Action, you gain the benefits below for 10 minutes or until you end them (no action required). Once you use this feature, you can't use it again until you finish a Long Rest. You can also restore your use of it by expending a level 5 spell slot (no action required).</p>
+			<p class="indent"><b><i>Flight.</i></b> You have a Fly Speed of 60 feet and can hover.</p>
+			<p class="indent"><b><i>Minor Wish.</i></b> When you or an ally in your Aura of Protection fails a D20 Test, you can take a Reaction to make you or that ally succeed instead.</p>
+		</description>
+		<sheet alt="Noble Scion" action="Bonus Action" usage="1/Long Rest">
+			<description>For 10 minutes or until you end it, you have a Fly Speed of 60 feet and can hover, and when you or an ally in your Aura of Protection fails a D20 Test, you can take a Reaction to make you or that ally succeed instead. &#13;
+			You can restore your use of this feature by expending a level 5 spell slot (no action required).</description>
+		</sheet>
+	</element>
+
+	<!--Feature Replacement Grants-->
+	<element name="Elemental Smite Feature Replacement" type="Grants" source="Internal" id="ID_INTERNAL_FRHOF_FEATURE_REPLACEMENT_PALADIN_NOBLE_GENIES_ELEMENTAL_SMITE" />
+	<element name="Genie Spells Feature Replacement" type="Grants" source="Internal" id="ID_INTERNAL_FRHOF_FEATURE_REPLACEMENT_PALADIN_NOBLE_GENIES_GENIE_SPELLS" />
+	<element name="Genie's Splendor Feature Replacement" type="Grants" source="Internal" id="ID_INTERNAL_FRHOF_FEATURE_REPLACEMENT_PALADIN_NOBLE_GENIES_GENIES_SPLENDOR" />
+	<element name="Aura of Elemental Shielding Feature Replacement" type="Grants" source="Internal" id="ID_INTERNAL_FRHOF_FEATURE_REPLACEMENT_PALADIN_NOBLE_GENIES_AURA_OF_ELEMENTAL_SHIELDING" />
+	<element name="Elemental Rebuke Feature Replacement" type="Grants" source="Internal" id="ID_INTERNAL_FRHOF_FEATURE_REPLACEMENT_PALADIN_NOBLE_GENIES_ELEMENTAL_REBUKE" />
+	<element name="Noble Scion Feature Replacement" type="Grants" source="Internal" id="ID_INTERNAL_FRHOF_FEATURE_REPLACEMENT_PALADIN_NOBLE_GENIES_NOBLE_SCION" />
+</elements>

@@ -1,0 +1,183 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<elements>
+	<info>
+		<name>Winter Walker</name>
+		<description>The Winter Walker subclass from Forgotten Realms: Heroes of Faerûn.</description>
+		<author url="https://dndstore.wizards.com/us/en/product/1246485/heroes-of-faerun">Wizards of the Coast</author>
+		<update version="0.0.1">
+			<file name="ranger-winter-walker.xml" url="https://raw.githubusercontent.com/AuroraLegacy/elements/master/supplements/forgotten-realms-heroes-of-faerun/archetypes/ranger-winter-walker.xml" />
+		</update>
+	</info>
+
+	<element name="Winter Walker" type="Archetype" source="Forgotten Realms: Heroes of Faerûn" id="ID_WOTC_FRHOF_ARCHETYPE_RANGER_WINTER_WALKER">
+		<supports>Ranger Archetype, Ranger Conclave</supports>
+		<description>
+			<p class="flavor">Withstand the Horrors of Frigid Wastelands</p>
+			<p>Winter Walkers hone their craft in the bleak and frozen wilds of places like Icewind Dale. These ruthless, rimed Rangers hunt monsters that haunt arctic wastelands, eventually becoming frigid terrors themselves. Winter Walkers are well versed in the phenomena of Icewind Dale, including the latent magic of fallen Netherese cities, endemic monsters like yetis and crag cats, and the rising threat of Underdark invaders. Due to their cold pragmatism, terrifying magic, and mastery of the region, Winter Walkers are regarded with equal parts respect and fear. Ten-Towns citizens say that Winter Walkers’ frequent exposure to malignant entities gives them their fearsome powers. Many Reghed nomads, on the other hand, believe that nature spirits bestow on Winter Walkers a unique curse.</p>
+			<div element="ID_WOTC_FRHOF_ARCHETYPE_FEATURE_RANGER_WINTER_WALKER_FRIGID_EXPLORER" />
+			<div element="ID_WOTC_FRHOF_ARCHETYPE_FEATURE_RANGER_WINTER_WALKER_HUNTERS_RIME" />
+			<div element="ID_WOTC_FRHOF_ARCHETYPE_FEATURE_RANGER_WINTER_WALKER_WINTER_WALKER_SPELLS" />
+			<div element="ID_WOTC_FRHOF_ARCHETYPE_FEATURE_RANGER_WINTER_WALKER_FORTIFYING_SOUL" />
+			<div element="ID_WOTC_FRHOF_ARCHETYPE_FEATURE_RANGER_WINTER_WALKER_CHILLING_RETRIBUTION" />
+			<div element="ID_WOTC_FRHOF_ARCHETYPE_FEATURE_RANGER_WINTER_WALKER_FROZEN_HAUNT" />
+		</description>
+		<sheet display="false" />
+		<rules>
+			<grant type="Archetype Feature" id="ID_WOTC_FRHOF_ARCHETYPE_FEATURE_RANGER_WINTER_WALKER_FRIGID_EXPLORER" level="3" />
+			<grant type="Archetype Feature" id="ID_WOTC_FRHOF_ARCHETYPE_FEATURE_RANGER_WINTER_WALKER_HUNTERS_RIME" level="3" />
+			<grant type="Archetype Feature" id="ID_WOTC_FRHOF_ARCHETYPE_FEATURE_RANGER_WINTER_WALKER_WINTER_WALKER_SPELLS" level="3" />
+			<grant type="Archetype Feature" id="ID_WOTC_FRHOF_ARCHETYPE_FEATURE_RANGER_WINTER_WALKER_FORTIFYING_SOUL" level="7" />
+			<grant type="Archetype Feature" id="ID_WOTC_FRHOF_ARCHETYPE_FEATURE_RANGER_WINTER_WALKER_CHILLING_RETRIBUTION" level="11" />
+			<grant type="Archetype Feature" id="ID_WOTC_FRHOF_ARCHETYPE_FEATURE_RANGER_WINTER_WALKER_FROZEN_HAUNT" level="15" />
+		</rules>
+	</element>
+
+	<element name="Level 3: Frigid Explorer" type="Archetype Feature" source="Forgotten Realms: Heroes of Faerûn" id="ID_WOTC_FRHOF_ARCHETYPE_FEATURE_RANGER_WINTER_WALKER_FRIGID_EXPLORER">
+		<requirements>!ID_INTERNAL_FRHOF_FEATURE_REPLACEMENT_RANGER_WINTER_WALKER_FRIGID_EXPLORER</requirements>
+		<description>
+			<p>You gain the following benefits.</p>
+			<p class="indent"><b><i>Biting Cold.</i></b> Damage from your weapon attacks, Ranger spells, and Ranger features ignores Resistance to Cold damage.</p>
+			<p class="indent"><b><i>Frost Resistance.</i></b> You have Resistance to Cold damage.</p>
+			<p class="indent"><b><i>Polar Strikes.</i></b> When you hit a creature with an attack roll using a weapon, you can deal an extra 1d4 Cold damage to the target, which can take this extra damage only once per turn. When you reach Ranger level 11, this extra damage increases to 1d6.</p>
+		</description>
+		<sheet alt="Frigid Explorer">
+			<description>You gain the following benefits:</description>
+		</sheet>
+		<rules>
+			<select type="Archetype Feature" name="Biting Cold" supports="Biting Cold" default="ID_WOTC_FRHOF_ARCHETYPE_FEATURE_RANGER_WINTER_WALKER_BITING_COLD" />
+			<select type="Archetype Feature" name="Polar Strikes" supports="Polar Strikes" default="ID_WOTC_FRHOF_ARCHETYPE_FEATURE_RANGER_WINTER_WALKER_POLAR_STRIKES" />
+			<grant type="Condition" id="ID_INTERNAL_CONDITION_DAMAGE_RESISTANCE_COLD"/>
+		</rules>
+	</element>
+	<element name="Biting Cold" type="Archetype Feature" source="Forgotten Realms: Heroes of Faerûn" id="ID_WOTC_FRHOF_ARCHETYPE_FEATURE_RANGER_WINTER_WALKER_BITING_COLD">
+		<compendium display="false" />
+		<supports>Biting Cold</supports>
+		<description>
+			<p>Damage from your weapon attacks, Ranger spells, and Ranger features ignores Resistance to Cold damage.</p>
+		</description>
+		<sheet>
+			<description>Damage from your weapon attacks, Ranger spells, and Ranger features ignores Resistance to Cold damage.</description>
+		</sheet>
+	</element>
+	<element name="Polar Strikes" type="Archetype Feature" source="Forgotten Realms: Heroes of Faerûn" id="ID_WOTC_FRHOF_ARCHETYPE_FEATURE_RANGER_WINTER_WALKER_POLAR_STRIKES">
+		<compendium display="false" />
+		<supports>Polar Strikes</supports>
+		<description>
+			<p>When you hit a creature with an attack roll using a weapon, you can deal an extra 1d4 Cold damage to the target, which can take this extra damage only once per turn. When you reach Ranger level 11, this extra damage increases to 1d6.</p>
+		</description>
+		<sheet usage="1/Turn">
+			<description>When you hit a creature with an attack roll using a weapon, you can deal an extra 1d4 Cold damage to the target.</description>
+			<description level="11">When you hit a creature with an attack roll using a weapon, you can deal an extra 1d6 Cold damage to the target.</description>
+		</sheet>
+	</element>
+	<element name="Level 3: Hunter's Rime" type="Archetype Feature" source="Forgotten Realms: Heroes of Faerûn" id="ID_WOTC_FRHOF_ARCHETYPE_FEATURE_RANGER_WINTER_WALKER_HUNTERS_RIME">
+		<requirements>!ID_INTERNAL_FRHOF_FEATURE_REPLACEMENT_RANGER_WINTER_WALKER_HUNTERS_RIME</requirements>
+		<description>
+			<p>Ice rimes you and your prey, protecting you and hindering them. When you cast <i>Hunter’s Mark</i>, you gain Temporary Hit Points equal to 1d10 plus your Ranger level.</p>
+			<p class="indent">Additionally, while a creature is marked by your Hunter’s Mark, it can’t take the Disengage action.</p>
+		</description>
+		<sheet alt="Hunter's Rime">
+			<description>When you cast Hunter's Mark, you gain 1d10+{{level:ranger}} Temporary Hit Points, and the target of your Hunter's Mark cannot take the Disengage action.</description>
+		</sheet>
+	</element>
+	<element name="Level 3: Winter Walker Spells" type="Archetype Feature" source="Forgotten Realms: Heroes of Faerûn" id="ID_WOTC_FRHOF_ARCHETYPE_FEATURE_RANGER_WINTER_WALKER_WINTER_WALKER_SPELLS">
+		<requirements>!ID_INTERNAL_FRHOF_FEATURE_REPLACEMENT_RANGER_WINTER_WALKER_WINTER_WALKER_SPELLS</requirements>
+		<description>
+			<p>When you reach a Ranger level specified in the Winter Walker Spells table, you thereafter always have the listed spells prepared.</p>
+			<h5>WINTER WALKER SPELLS</h5>
+			<table>
+				<thead>
+					<tr><td class="col-15" style="text-align:center">Ranger Level</td><td>Prepared Spells</td></tr>
+				</thead>
+				<tr><td style="text-align:center">3</td><td><em>Ice Knife</em></td></tr>
+				<tr><td style="text-align:center">5</td><td><em>Hold Person</em></td></tr>
+				<tr><td style="text-align:center">9</td><td><em>Remove Curse</em></td></tr>
+				<tr><td style="text-align:center">13</td><td><em>Ice Storm</em></td></tr>
+				<tr><td style="text-align:center">17</td><td><em>Cone of Cold</em></td></tr>
+			</table>
+		</description>
+		<sheet display="false" />
+		<rules>
+			<grant type="Spell" id="ID_WOTC_PHB24_SPELL_ICE_KNIFE" level="3" spellcasting="Ranger" />
+			<grant type="Spell" id="ID_WOTC_PHB24_SPELL_HOLD_PERSON" level="5" spellcasting="Ranger" />
+			<grant type="Spell" id="ID_WOTC_PHB24_SPELL_REMOVE_CURSE" level="9" spellcasting="Ranger" />
+			<grant type="Spell" id="ID_WOTC_PHB24_SPELL_ICE_STORM" level="13" spellcasting="Ranger" />
+			<grant type="Spell" id="ID_WOTC_PHB24_SPELL_CONE_OF_COLD" level="17" spellcasting="Ranger" />
+		</rules>
+	</element>
+
+	<element name="Level 7: Fortifying Soul" type="Archetype Feature" source="Forgotten Realms: Heroes of Faerûn" id="ID_WOTC_FRHOF_ARCHETYPE_FEATURE_RANGER_WINTER_WALKER_FORTIFYING_SOUL">
+		<requirements>!ID_INTERNAL_FRHOF_FEATURE_REPLACEMENT_RANGER_WINTER_WALKER_FORTIFYING_SOUL</requirements>
+		<description>
+			<p>Your experience surviving harrowing environments allows you to bolster your allies in addition to yourself. As a Magic action, choose a number of creatures you can see equal to your Wisdom modifier (minimum of one). Each chosen creature regains Hit Points equal to 1d10 plus your Ranger level and has Advantage on saving throws to avoid or end the Frightened condition for 1 hour.</p>
+			<p class="indent">Once you use this feature, you can’t use it again until you finish a Long Rest.</p>
+		</description>
+		<sheet alt="Fortifying Soul" action="Action" usage="1/Long Rest">
+			<description>Choose up to {{fortifying soul:count}} creatures you can see. Each chosen creature regains 1d10+{{level:ranger}} Hit Points and has Advantage on saving throws to avoid or end the Frightened condition for 1 hour.</description>
+		</sheet>
+		<rules>
+			<stat name="fortifying soul:count" value="1" bonus="base" />
+			<stat name="fortifying soul:count" value="wisdom:modifier" bonus="base" />
+		</rules>
+	</element>
+
+	<element name="Level 11: Chilling Retribution" type="Archetype Feature" source="Forgotten Realms: Heroes of Faerûn" id="ID_WOTC_FRHOF_ARCHETYPE_FEATURE_RANGER_WINTER_WALKER_CHILLING_RETRIBUTION">
+		<requirements>!ID_INTERNAL_FRHOF_FEATURE_REPLACEMENT_RANGER_WINTER_WALKER_CHILLING_RETRIBUTION</requirements>
+		<description>
+			<p>When a creature hits you with an attack roll, you can take a Reaction to force the creature to make a Wisdom saving throw against your spell save DC. On a failed save, the target has the Stunned condition until the end of your next turn. While the target is Stunned, its Speed is reduced to 0 feet.</p>
+			<p class="indent">You can use this feature a number of times equal to your Wisdom modifier (minimum of once), and you regain all expended uses when you finish a Long Rest.</p>
+		</description>
+		<sheet alt="Chilling Retribution" action="Reaction" usage="{{chilling retribution:uses}}/Long Rest">
+			<description>When a creature hits you with an attack roll, you can force it to make a DC{{ranger:spellcasting:dc}} Wisdom saving throw. On a failed save, the target has the Stunned condition and its Speed is reduced to 0 until the end of your next turn.</description>
+		</sheet>
+		<rules>
+			<stat name="chilling retribution:uses" value="1" bonus="base" />
+			<stat name="chilling retribution:uses" value="wisdom:modifier" bonus="base" />
+		</rules>
+	</element>
+
+	<element name="Level 15: Frozen Haunt" type="Archetype Feature" source="Forgotten Realms: Heroes of Faerûn" id="ID_WOTC_FRHOF_ARCHETYPE_FEATURE_RANGER_WINTER_WALKER_FROZEN_HAUNT">
+		<requirements>!ID_INTERNAL_FRHOF_FEATURE_REPLACEMENT_RANGER_WINTER_WALKER_FROZEN_HAUNT</requirements>
+		<description>
+			<p>When you cast Hunter’s Mark, you can adopt a ghostly, snowy form. This form lasts until the spell ends, and while you are in this form, you gain the following benefits. Once you use this feature, you can’t use it again until you finish a Long Rest unless you expend a level 4+ spell slot (no action required).</p>
+			<p class="indent"><b><i>Frozen Soul.</i></b> You have Immunity to Cold damage. When you first adopt this form and at the start of each of your subsequent turns, each creature of your choice in a 15-foot Emanation originating from you takes 2d4 Cold damage.</p>
+			<p class="indent"><b><i>Partially Incorporeal.</i></b> You have Immunity to the Grappled, Prone, and Restrained conditions. You can move through creatures and objects as if they were Difficult Terrain, but you take 1d10 Force damage if you end your turn inside a creature or an object. If the form ends while you are inside a creature or an object, you are shunted to the nearest unoccupied space.</p>
+		</description>
+		<sheet alt="Frozen Haunt" usage="1/Long Rest">
+			<description>When you cast Hunter’s Mark, you can adopt a ghostly, snowy form. This form lasts until the spell ends, and while you are in this form, you gain the following benefits. You can restore your use of this feature by expending a level 4 spell slot (no action required).</description>
+		</sheet>
+		<rules>
+			<select type="Archetype Feature" name="Frozen Soul" supports="Frozen Soul" default="ID_WOTC_FRHOF_ARCHETYPE_FEATURE_RANGER_WINTER_WALKER_FROZEN_HAUNT_FROZEN_SOUL" />
+			<select type="Archetype Feature" name="Partially Incorporeal" supports="Partially Incorporeal" default="ID_WOTC_FRHOF_ARCHETYPE_FEATURE_RANGER_WINTER_WALKER_FROZEN_HAUNT_PARTIALLY_INCORPOREAL" />
+		</rules>
+	</element>
+	<element name="Frozen Soul" type="Archetype Feature" source="Forgotten Realms: Heroes of Faerûn" id="ID_WOTC_FRHOF_ARCHETYPE_FEATURE_RANGER_WINTER_WALKER_FROZEN_HAUNT_FROZEN_SOUL">
+		<compendium display="false" />
+		<supports>Frozen Soul</supports>
+		<description>
+			<p>You have Immunity to Cold damage. When you first adopt this form and at the start of each of your subsequent turns, each creature of your choice in a 15-foot Emanation originating from you takes 2d4 Cold damage.</p>
+		</description>
+		<sheet>
+			<description>You have Immunity to Cold damage. When you first adopt this form and at the start of each of your subsequent turns, each creature of your choice in a 15-foot Emanation originating from you takes 2d4 Cold damage.</description>
+		</sheet>
+	</element>
+	<element name="Partially Incorporeal" type="Archetype Feature" source="Forgotten Realms: Heroes of Faerûn" id="ID_WOTC_FRHOF_ARCHETYPE_FEATURE_RANGER_WINTER_WALKER_FROZEN_HAUNT_PARTIALLY_INCORPOREAL">
+		<compendium display="false" />
+		<supports>Partially Incorporeal</supports>
+		<description>
+			<p>You have Immunity to the Grappled, Prone, and Restrained conditions. You can move through creatures and objects as if they were Difficult Terrain, but you take 1d10 Force damage if you end your turn inside a creature or an object. If the form ends while you are inside a creature or an object, you are shunted to the nearest unoccupied space.</p>
+		</description>
+		<sheet>
+			<description>You have Immunity to the Grappled, Prone, and Restrained conditions. You can move through creatures and objects as if they were Difficult Terrain, but you take 1d10 Force damage if you end your turn inside a creature or an object. If the form ends while you are inside a creature or an object, you are shunted to the nearest unoccupied space.</description>
+		</sheet>
+	</element>
+
+<!--Feature Replacement Grants-->
+	<element name="Frigid Explorer Feature Replacement" type="Grants" source="Internal" id="ID_INTERNAL_FRHOF_FEATURE_REPLACEMENT_RANGER_WINTER_WALKER_FRIGID_EXPLORER" />
+	<element name="Hunter's Rime Feature Replacement" type="Grants" source="Internal" id="ID_INTERNAL_FRHOF_FEATURE_REPLACEMENT_RANGER_WINTER_WALKER_HUNTERS_RIME" />
+	<element name="Winter Walker Spells Feature Replacement" type="Grants" source="Internal" id="ID_INTERNAL_FRHOF_FEATURE_REPLACEMENT_RANGER_WINTER_WALKER_WINTER_WALKER_SPELLS" />
+	<element name="Fortifying Soul Feature Replacement" type="Grants" source="Internal" id="ID_INTERNAL_FRHOF_FEATURE_REPLACEMENT_RANGER_WINTER_WALKER_FORTIFYING_SOUL" />
+	<element name="Chilling Retribution Feature Replacement" type="Grants" source="Internal" id="ID_INTERNAL_FRHOF_FEATURE_REPLACEMENT_RANGER_WINTER_WALKER_CHILLING_RETRIBUTION" />	
+	<element name="Frozen Haunt Feature Replacement" type="Grants" source="Internal" id="ID_INTERNAL_FRHOF_FEATURE_REPLACEMENT_RANGER_WINTER_WALKER_FROZEN_HAUNT" />	
+
+</elements>

@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<elements>
+	<info>
+		<name>Emerald Enclave Caretaker</name>
+		<description>The Emerald Enclave Caretaker background from Forgotten Realms: Heroes of Faerûn.</description>
+		<author url="https://dndstore.wizards.com/us/en/product/1246485/heroes-of-faerun">Wizards of the Coast</author>
+		<update version="0.0.1">
+			<file name="background-emerald-enclave-caretaker.xml" url="https://raw.githubusercontent.com/AuroraLegacy/elements/master/supplements/forgotten-realms-heroes-of-faerun/backgrounds/background-emerald-enclave-caretaker.xml" />
+		</update>
+	</info>
+
+	<element name="Emerald Enclave Caretaker" type="Background" source="Forgotten Realms: Heroes of Faerûn" id="ID_WOTC_FRHOF_BACKGROUND_EMERALD_ENCLAVE_CARETAKER">
+		<description>
+			<ul class="unstyled" style="text-indent:-1em; margin-left:1em; margin-bottom:5px">
+				<li><strong>Ability Scores:</strong> Constitution, Intelligence, Wisdom</li>
+				<li><strong>Feat:</strong> Emerald Enclave Fledgling</li>
+				<li><strong>Skill Proficiencies:</strong> Nature and Survival</li>
+				<li><strong>Tool Proficiency:</strong> Herbalism Kit</li>
+				<li><strong>Equipment:</strong><i> Choose A or B:</i> (A) Shortbow, 20 Arrows, Herbalism Kit, Bedroll, Blanket, Pouch, Tent, Traveler’s Clothes, 13 GP; or (B) 50 GP</li>
+			</ul>
+			<p>As a Caretaker with the Emerald Enclave, you take care of those who care for the world. Either alongside your fellow Emerald Enclave members or by yourself, you’ve learned essential skills for living with the land: how to track game, where to forage for useful herbs, and even how to forecast the weather. You use these talents to maintain the balance between civilization and the wilds and to rid the world of unnatural creatures.</p>
+			<p class="indent"><strong><em>Trinket.</em></strong> Roll on the Emerald Enclave Trinkets table to determine what trinket you have from your time with the Emerald Enclave.</p>
+			<h5>Emerald Enclave Trinkets</h5>
+			<table>
+				<thead>
+					<tr><td>d6</td><td>Trinket</td></tr>
+				</thead>
+				<tr><td>1</td><td>A pair of earrings made from oak leaves that never wilt</td></tr>
+				<tr><td>2</td><td>A miniature model cottage made of twigs</td></tr>
+				<tr><td>3</td><td>A green-glowing firefly in a bottle</td></tr>
+				<tr><td>4</td><td>A gourd that sounds like rustling leaves when held to one’s ear</td></tr>
+				<tr><td>5</td><td>A preserved rabbit’s foot on a leather strap</td></tr>
+				<tr><td>6</td><td>An antler shaped like an Elvish rune</td></tr>
+			</table>
+		</description>
+		<setters>
+			<set name="short">Constitution, Intelligence, Wisdom, Emerald Enclave Fledgling Feat, Nature and Survival Skills, and Herbalism Kit</set>
+		</setters>
+		<rules>
+			<grant type="Ability Score Improvement" id="ID_INTERNAL_ABILITY_SCORE_IMPROVEMENT_COMBINATION_CON_INT_WIS" />
+			<grant type="Feat" id="ID_WOTC_FRHOF_FEAT_EMERALD_ENCLAVE_FLEDGING" />
+			<grant type="Proficiency" id="ID_PROFICIENCY_SKILL_NATURE" />
+			<grant type="Proficiency" id="ID_PROFICIENCY_SKILL_SURVIVAL" />
+			<grant type="Grants" id="ID_INTERNAL_GRANTS_BACKGROUND_ASI" />
+			<grant type="Proficiency" id="ID_PROFICIENCY_TOOL_PROFICIENCY_HERBALISM_KIT" />
+			<select type="List" name="Emerald Enclave Trinkets" optional="true" >
+				<item id="1">A pair of earrings made from oak leaves that never wilt</item>
+				<item id="2">A miniature model cottage made of twigs</item>
+				<item id="3">A green-glowing firefly in a bottle</item>
+				<item id="4">A gourd that sounds like rustling leaves when held to one’s ear</item>
+				<item id="5">A preserved rabbit’s foot on a leather strap</item>
+				<item id="6">An antler shaped like an Elvish rune</item>
+			</select>
+		</rules>
+	</element>
+
+</elements>
