@@ -9,7 +9,7 @@ Please take a moment to review the [contributing guidelines](https://github.com/
 ## Extending Content
 Go to the _Additional Content_ tab in Aurora, enter the URL of the index file, and have Aurora download the content to the custom folder for you. When these files get updated, Aurora will be able to keep content files up to date automatically.
 
-<u>**Warning:**</u> Users who previously used content from now archived Aurora repository, must first delete following folders and files in "_custom_" folder (you can open it through the Additional Content tab's "Content Folder" button), before using links above: "core" folder, "_supplements_" folder, "_unearthed-arcana_" folder, "_core.index_" file, "_supplements.index_" file, "_unearthed-arcana.index_" file. <br/>
+<u>**Warning:**</u> Users who previously used content from now archived Aurora repository, must first delete following folders and files in "_custom_" folder (you can open it through the Additional Content tab's "Content Folder" button), before using links below: "core" folder, "_supplements_" folder, "_unearthed-arcana_" folder, "_core.index_" file, "_supplements.index_" file, "_unearthed-arcana.index_" file. <br/>
 This also applies to users who want to change from Individual Indexes Download to All in One Download. <br/>
 _**Additionally**_, old characters may require re-selecting some options, due to changes in new files (that includes errata, and general fixes).
 
