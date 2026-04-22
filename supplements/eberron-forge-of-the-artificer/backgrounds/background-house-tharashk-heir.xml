@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<elements>
+	<info>
+		<name>House Tharashk Heir</name>
+		<description>House Tharashk Heir background from Eberron: Forge of the Artificer.</description>
+		<author url="https://marketplace.dndbeyond.com/category/5147000?pid=D5147000">Wizards of the Coast</author>
+		<update version="0.0.1">
+			<file name="background-house-tharashk-heir.xml" url="https://raw.githubusercontent.com/AuroraLegacy/elements/master/supplements/eberron-forge-of-the-artificer/backgrounds/background-house-tharashk-heir.xml" />
+		</update>
+	</info>
+
+	<element name="House Tharashk Heir" type="Background" source="Eberron: Forge of the Artificer" id="ID_WOTC_EFOTA_BACKGROUND_HOUSE_THARASHK_HEIR">
+		<description>
+			<ul class="unstyled" style="text-indent:-1em; margin-left:1em; margin-bottom:5px">
+				<li><strong>Ability Scores:</strong> Constitution, Intelligence, Wisdom</li>
+				<li><strong>Feat:</strong> Mark of Finding</li>
+				<li><strong>Skill Proficiencies:</strong> Perception and Survival</li>
+				<li><strong>Tool Proficiency:</strong><i> Choose one kind of Gaming Set</i></li>
+				<li><strong>Equipment:</strong><i> Choose A or B:</i> (A) Gaming Set (same as above), Climber’s Kit, Fine Clothes, Hunting Trap, Manacles, 2 GP; or (B) 50 GP</li>
+			</ul>
+			<p>Heirs of other houses lead lives of luxury, but in House Tharashk you learned self-reliance from an early age. What your young house lacks in resources, it makes up for in spirit and determination. Tharashk has a destiny to fulfill, and you have a part in it. Whether in combat or in social interaction, you have learned to play the role of the hunter: study your enemies, exploit their weaknesses, and do whatever it takes to achieve victory.</p>
+		</description>
+		<setters>
+			<set name="short">Constitution, Intelligence, Wisdom, Mark of Finding Feat, Perception and Survival Skills, One Kind of Gaming Set</set>
+		</setters>
+		<rules>
+			<grant type="Ability Score Improvement" id="ID_INTERNAL_ABILITY_SCORE_IMPROVEMENT_COMBINATION_CON_INT_WIS" />
+			<grant type="Feat" id="ID_WOTC_EFOTA_FEAT_MARK_OF_FINDING" />
+			<grant type="Proficiency" id="ID_PROFICIENCY_SKILL_PERCEPTION" />
+			<grant type="Proficiency" id="ID_PROFICIENCY_SKILL_SURVIVAL" />
+			<select type="Proficiency" name="Gaming Set Proficiency (House Tharashk Heir)" supports="Gaming Set" />
+			<grant type="Grants" id="ID_INTERNAL_GRANTS_BACKGROUND_ASI" />
+		</rules>
+	</element>
+</elements>

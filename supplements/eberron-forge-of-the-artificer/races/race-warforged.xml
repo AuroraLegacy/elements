@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<elements>
+	<info>
+		<name>Warforged</name>
+		<description>The Warforged species from Eberron: Forge of the Artificer.</description>
+		<author url="https://marketplace.dndbeyond.com/category/5147000?pid=D5147000">Wizards of the Coast</author>
+		<update version="0.0.1">
+			<file name="race-warforged.xml" url="https://raw.githubusercontent.com/AuroraLegacy/elements/master/supplements/eberron-forge-of-the-artificer/races/race-warforged.xml" />
+		</update>
+	</info>
+	
+	<element name="Warforged" type="Race" source="Eberron: Forge of the Artificer" id="ID_WOTC_EFOTA_RACE_WARFORGED">
+		<description>
+			<p>Warforged are mechanical beings built as weapons to fight in the Last War. An unexpected breakthrough produced sentient beings made from wood and metal that nevertheless can feel pain and emotion.</p>
+			<p class="indent">Warforged comprise a blend of organic and inorganic materials. Rootlike cords infused with alchemical fluids serve as their muscles, wrapped around a framework of steel, darkwood, or stone. Armored plates form a protective outer shell and reinforce joints. The more a warforged cultivates their individuality, the more likely they are to modify their body, seeking out an artificer to customize the look of their face, limbs, and plating.</p>
+			
+			<h4>Warforged Traits</h4>
+			<p style="margin-top:15px"><strong><em>Creature Type:</em></strong> Construct</p>
+			<p><strong><em>Size:</em></strong> Medium (about 6–8 feet tall) or Small (about 3–4 feet tall), chosen when you select this species</p>
+			<p><strong><em>Speed:</em></strong> 30 feet</p>
+			
+			<p>As a Warforged, you have these special traits.</p>
+			<p class="indent"><strong><em>Construct Resilience.</em></strong> You have Resistance to Poison damage. You also have Advantage on saving throws to avoid or end the Poisoned condition.</p>
+			<p class="indent"><strong><em>Integrated Protection.</em></strong> You gain a +1 bonus to your Armor Class. In addition, armor you have donned can’t be removed against your will while you’re alive.</p>
+			<p class="indent"><strong><em>Sentry's Rest.</em></strong> You don’t need to sleep, and magic can’t put you to sleep. You can finish a Long Rest in 6 hours if you spend those hours in an inactive, motionless state. During this time, you appear inert but remain conscious.</p> 
+			<p class="indent"><strong><em>Specialized Design.</em></strong> You gain one skill proficiency and one tool proficiency of your choice.</p> 
+			<p class="indent"><strong><em>Tireless.</em></strong> You don’t gain Exhaustion levels from dehydration, malnutrition, or suffocation.</p> 
+		</description>
+		<sheet display="false" />
+		<rules>
+			<grant type="Racial Trait" id="ID_INTERNAL_RACIAL_TRAIT_TYPE_CONSTRUCT" />
+			<select type="Ability Score Improvement" name="Ability Score Improvement Option (Warforged)" supports="Custom Ability Score Improvement Option" requirements="!ID_INTERNAL_GRANTS_BACKGROUND_ASI" />
+			<select type="Racial Trait" name="Size (Warforged)" supports="ID_INTERNAL_RACIAL_TRAIT_SMALL|ID_INTERNAL_RACIAL_TRAIT_MEDIUM" />
+			<stat name="innate speed" value="30" bonus="base" />
+
+			<grant type="Language" id="ID_LANGUAGE_COMMON" requirements="!ID_WOTC_TCOE_OPTION_CUSTOMIZED_LANGUAGE" />
+			<select type="Language" name="Customized Language (Warforged)" supports="Custom Race Language" requirements="ID_WOTC_TCOE_OPTION_CUSTOMIZED_LANGUAGE" />
+			<select type="Language" name="Language (Warforged)" supports="Standard||Exotic" number="2" />
+			
+			<select type="Proficiency" name="Skill Proficiency (Warforged)" supports="Skill" requirements="!ID_WOTC_EFOTA_RACIAL_TRAIT_REPLACEMENT_WARFORGED_SPECIALIZED_DESIGN" />
+			<select type="Proficiency" name="Tool Proficiency (Warforged)" supports="Tool" requirements="!ID_WOTC_EFOTA_RACIAL_TRAIT_REPLACEMENT_WARFORGED_SPECIALIZED_DESIGN" />
+
+			<grant type="Racial Trait" id="ID_WOTC_EFOTA_RACIAL_TRAIT_WARFORGED_CONSTRUCT_RESILIENCE" requirements="!ID_WOTC_EFOTA_RACIAL_TRAIT_REPLACEMENT_WARFORGED_CONSTRUCT_RESILIENCE" />
+			<grant type="Racial Trait" id="ID_WOTC_EFOTA_RACIAL_TRAIT_WARFORGED_INTEGRATED_PROTECTION" requirements="!ID_WOTC_EFOTA_RACIAL_TRAIT_REPLACEMENT_WARFORGED_INTEGRATED_PROTECTION" />
+			<grant type="Racial Trait" id="ID_WOTC_EFOTA_RACIAL_TRAIT_WARFORGED_SENTRYS_REST" requirements="!ID_WOTC_EFOTA_RACIAL_TRAIT_REPLACEMENT_WARFORGED_SENTRYS_REST" />
+			<grant type="Racial Trait" id="ID_WOTC_EFOTA_RACIAL_TRAIT_WARFORGED_TIRELESS" requirements="!ID_WOTC_EFOTA_RACIAL_TRAIT_REPLACEMENT_WARFORGED_TIRELESS" />
+		</rules>
+	</element>
+
+	<element name="Construct Resilience" type="Racial Trait" source="Eberron: Forge of the Artificer" id="ID_WOTC_EFOTA_RACIAL_TRAIT_WARFORGED_CONSTRUCT_RESILIENCE">
+		<description>
+			<p>You have Resistance to Poison damage. You also have Advantage on saving throws to avoid or end the Poisoned condition.</p>
+		</description>
+		<sheet>
+			<description>You have Advantage on saving throws to avoid or end the Poisoned condition.</description>
+		</sheet>
+		<rules>
+			<grant type="Condition" id="ID_INTERNAL_CONDITION_DAMAGE_RESISTANCE_POISON" />
+		</rules>
+	</element>
+	<element name="Integrated Protection" type="Racial Trait" source="Eberron: Forge of the Artificer" id="ID_WOTC_EFOTA_RACIAL_TRAIT_WARFORGED_INTEGRATED_PROTECTION">
+		<description>
+			<p>You gain a +1 bonus to your Armor Class. In addition, armor you have donned can’t be removed against your will while you’re alive.</p>
+		</description>
+		<sheet>
+			<description>Armor you have donned can’t be removed against your will while you’re alive.</description>
+		</sheet>
+		<rules>
+			<stat name="ac:misc" value="1" alt="Integrated Protection" />
+		</rules>
+	</element>
+	<element name="Sentry's Rest" type="Racial Trait" source="Eberron: Forge of the Artificer" id="ID_WOTC_EFOTA_RACIAL_TRAIT_WARFORGED_SENTRYS_REST">
+		<description>
+			<p>You don’t need to sleep, and magic can’t put you to sleep. You can finish a Long Rest in 6 hours if you spend those hours in an inactive, motionless state. During this time, you appear inert but remain conscious.</p>
+		</description>
+		<sheet>
+			<description>You don’t need to sleep, and magic can’t put you to sleep. You can finish a Long Rest in 6 hours if you spend those hours in an inactive, motionless state. During this time, you appear inert but remain conscious.</description>
+		</sheet>
+	</element>
+	<element name="Tireless" type="Racial Trait" source="Eberron: Forge of the Artificer" id="ID_WOTC_EFOTA_RACIAL_TRAIT_WARFORGED_TIRELESS">
+		<description>
+			<p>You don’t gain Exhaustion levels from dehydration, malnutrition, or suffocation.</p>
+		</description>
+		<sheet>
+			<description>You don’t gain Exhaustion levels from dehydration, malnutrition, or suffocation.</description>
+		</sheet>
+	</element>
+
+	<!--racial trait replacement grants-->
+	<element name="Construct Resilience Replacement" type="Grants" source="Internal" id="ID_WOTC_EFOTA_RACIAL_TRAIT_REPLACEMENT_WARFORGED_CONSTRUCT_RESILIENCE" />
+	<element name="Integrated Protection Replacement" type="Grants" source="Internal" id="ID_WOTC_EFOTA_RACIAL_TRAIT_REPLACEMENT_WARFORGED_INTEGRATED_PROTECTION" />
+	<element name="Sentry's Rest Protection Replacement" type="Grants" source="Internal" id="ID_WOTC_EFOTA_RACIAL_TRAIT_REPLACEMENT_WARFORGED_SENTRYS_REST" />
+	<element name="Specialized Design Protection Replacement" type="Grants" source="Internal" id="ID_WOTC_EFOTA_RACIAL_TRAIT_REPLACEMENT_WARFORGED_SPECIALIZED_DESIGN" />
+	<element name="Tireless Protection Replacement" type="Grants" source="Internal" id="ID_WOTC_EFOTA_RACIAL_TRAIT_REPLACEMENT_WARFORGED_TIRELESS" />
+
+</elements>

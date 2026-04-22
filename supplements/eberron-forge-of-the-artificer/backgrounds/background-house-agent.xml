@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<elements>
+	<info>
+		<name>House Agent</name>
+		<description>House Agent background from Eberron: Forge of the Artificer.</description>
+		<author url="https://marketplace.dndbeyond.com/category/5147000?pid=D5147000">Wizards of the Coast</author>
+		<update version="0.0.1">
+			<file name="background-house-agent.xml" url="https://raw.githubusercontent.com/AuroraLegacy/elements/master/supplements/eberron-forge-of-the-artificer/backgrounds/background-house-agent.xml" />
+		</update>
+	</info>
+
+	<element name="House Agent" type="Background" source="Eberron: Forge of the Artificer" id="ID_WOTC_EFOTA_BACKGROUND_HOUSE_AGENT">
+		<description>
+			<ul class="unstyled" style="text-indent:-1em; margin-left:1em; margin-bottom:5px">
+				<li><strong>Ability Scores:</strong> Strength, Intelligence, Charisma</li>
+				<li><strong>Feat:</strong> Lucky</li>
+				<li><strong>Skill Proficiencies:</strong> Investigation and Persuasion</li>
+				<li><strong>Tool Proficiency:</strong><i> Choose one kind of Artisan’s Tools</i></li>
+				<li><strong>Equipment:</strong><i> Choose A or B:</i> (A) Artisan’s Tools (same as above), Fine Clothes, 20 GP; or (B) 50 GP</li>
+			</ul>
+			<p>You are connected to one of the dragonmarked houses, but you haven’t (yet) manifested a dragonmark. You might be a member of the family by birth or an employee of the house with no familial connection. You’ve earned your living by doing the business of the house, serving as the hands, feet, and eyes of house leadership in the world. You might have many old friends, mentors, and rivals in the house you serve, plus allies or enemies in other houses.</p>
+		</description>
+		<setters>
+			<set name="short">Strength, Intelligence, Charisma, Lucky Feat, Investigation and Persuasion Skills, One Kind of Artisan's Tools</set>
+		</setters>
+		<rules>
+			<grant type="Ability Score Improvement" id="ID_INTERNAL_ABILITY_SCORE_IMPROVEMENT_COMBINATION_STR_INT_CHA" />
+			<grant type="Feat" id="ID_WOTC_PHB24_FEAT_LUCKY" />
+			<grant type="Proficiency" id="ID_PROFICIENCY_SKILL_INVESTIGATION" />
+			<grant type="Proficiency" id="ID_PROFICIENCY_SKILL_PERSUASION" />
+			<select type="Proficiency" name="Artisan's Tool Proficiency (House Agent)" supports="Artisan tools" />
+			<grant type="Grants" id="ID_INTERNAL_GRANTS_BACKGROUND_ASI" />
+		</rules>
+	</element>
+</elements>

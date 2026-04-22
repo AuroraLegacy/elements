@@ -1,0 +1,32 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<elements>
+	<info>
+		<name>Armor</name>
+		<description>Magic Armor from Eberron: Forge of the Artificer.</description>
+		<author url="https://marketplace.dndbeyond.com/category/5147000?pid=D5147000">Wizards of the Coast</author>
+		<update version="0.0.1">
+			<file name="items-armor.xml" url="https://raw.githubusercontent.com/AuroraLegacy/elements/master/supplements/eberron-forge-of-the-artificer/items/items-armor.xml" />
+		</update>
+	</info>
+
+	<!-- shields -->
+	<element name="Repulsion Shield" type="Magic Item" source="Eberron: Forge of the Artificer" id="ID_WOTC_EFOTA_MAGIC_ITEM_REPULSION_SHIELD">
+		<description>
+			<p>You gain a +1 bonus to Armor Class while wielding this shield.</p>
+			<p class="indent">The shield has 4 charges. While holding it, when a Large or smaller creature within 5 feet of you hits you with a melee attack roll, you can take a Reaction to expend 1 of the shield’s charges and push the attacker up to 15 feet straight away. The shield regains 1d4 expended charges daily at dawn.</p>
+		</description>
+		<setters>
+			<set name="keywords">shield,reaction</set>
+			<set name="category">Magic Armor</set>
+			<set name="cost" currency="gp">410</set>
+			<set name="type" addition="shield">Armor</set>
+			<set name="rarity">Uncommon</set>
+			<set name="charges">4</set>
+			<set name="enhancement">1</set>
+			<set name="armor">ID_INTERNAL_ARMOR_GROUP_SHIELD</set>
+		</setters>
+		<rules>
+			<stat name="ac:shield" value="1" bonus="enhancement" />
+		</rules>
+	</element>
+</elements>
