@@ -1,0 +1,251 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<elements>
+	<info>
+		<name>Elf (Lorwyn)</name>
+		<description>The Elf species from Lorwyn: First Light.</description>
+		<author url="https://marketplace.dndbeyond.com/category/DBU4HPAC7">Wizards of the Coast</author>
+		<update version="0.0.1">
+			<file name="race-elf.xml" url="https://raw.githubusercontent.com/AuroraLegacy/elements/master/supplements/lorwyn-first-light/races/race-elf.xml" />
+		</update>
+	</info>
+	
+	<element name="Elf (Lorywn/Shadowmoor)" type="Race" source="Lorwyn: First Light" id="ID_WOTC_LFL_RACE_ELF">
+		<description>
+			<p>Elves in the realm of Lorwyn-Shadowmoor possess black, pupilless eyes; curved horns; legs that end in cloven hooves; and pointed ears. The elves of Lorwyn exhibit stark differences physically as well as culturally from their Shadowmoor counterparts.</p>
+			<h4>In Lorwyn</h4>
+			<p>The horns of Lorwyn elves are stubby like a goat's or curved like a ram's, but always ridged. Their pointed ears are long and slender.</p>
+			<p class="indent">In Lorwyn, elves value beauty above all, though what any given elf deems beautiful can seem arbitrary. Some Lorwyn elves assume authority over the land's other peoples, using their fallen empire to support their claims.</p>
+			<p class="indent">These elves blame the fall of their empire on outside threats, especially the Phyrexian invasion. Though the invasion was the empire's death knell, its people's self-importance and unwillingness to collaborate with other species had already led to the empire's decline.</p>
+			<h4>In Shadowmoor</h4>
+			<p>Shadowmoor elves' horns are long, wavy, and covered with a rough, thorny texture. Their pointed ears are usually longer than those of their Lorwyn counterparts.</p>
+			<p class="indent">Like Lorwyn elves, Shadowmoor elves protect beauty, though a Shadowmoor elf's definition of "beautiful" can be abstract. Many of their kind believe beauty is gained or lost in accordance with one's actions; in particular, they consider heroism and self-sacrifice the highest forms of beauty.</p>
+			<p class="indent">Bloomseekers are Shadowmoor elves who study and explore Lorwyn. Each one carries a <i>Reliquary of Twilight</i>. Alongside Safewrights—Shadowmoor elves who venture across their realm in search of beautiful things—Bloomseekers are among the most trusted and revered members of their society.</p>
+			<h5>ELF TRAITS</h5>
+			<ul class="unstyled" style="text-indent:-1em; margin-left:1em; margin-bottom:5px">
+				<li><strong>Creature Type:</strong> Humanoid</li>
+				<li><strong>Size:</strong> Medium (about 5–6 feet tall)</li>
+				<li><strong>Speed:</strong> 30 feet</li>
+			</ul>
+			<p>As an Elf, you have these special traits.</p>
+			<p class="indent"><strong><em>Darkvision.</em></strong> You have Darkvision with a range of 60 feet.</p>
+			<p class="indent"><strong><em>Elven Lineage.</em></strong> You are part of a lineage that grants you supernatural abilities. Choose a lineage from the Elven Lineages table. You gain the level 1 benefit of that lineage.</p>
+			<p class="indent">When you reach character levels 3 and 5, you learn a higher-level spell, as shown on the table. You always have that spell prepared. You can cast it once without a spell slot, and you regain the ability to cast it in that way when you finish a Long Rest. You can also cast the spell using any spell slots you have of the appropriate level. Intelligence, Wisdom, or Charisma is your spellcasting ability for the spells you cast with this trait (choose the ability when you select the lineage).</p>
+			<p class="indent"><strong><em>Fey Ancestry.</em></strong> You have Advantage on saving throws you make to avoid or end the Charmed condition.</p>
+			<p class="indent"><strong><em>Keen Senses.</em></strong> You have proficiency in the Insight, Perception, or Survival skill.</p>
+			<p class="indent"><strong><em>Trance.</em></strong> You don’t need to sleep, and magic can’t put you to sleep. You can finish a Long Rest in 4 hours if you spend those hours in a trancelike meditation, during which you retain consciousness.</p>
+			<h5>Elven Lineage</h5>
+			<table>
+				<thead>
+					<tr><td>Lineage</td><td class="col-50">Level 1</td><td>Level 3</td><td>Level 5</td></tr>
+				</thead>
+				<tr><td>Lorwyn</td><td>You know the <i>Thorn Whip</i> cantrip. Whenever you finish a Long Rest, you can replace that cantrip with a different cantrip from the Druid spell list.</td><td><i>Command</i></td><td><i>Silence</i></td></tr>
+				<tr><td>Shadowmoor</td><td>The range of your Darkvision increases to 120 feet. You also know the <i>Starry Wisp</i> cantrip.</td><td><i>Heroism</i></td><td><i>Gentle Repose</i></td></tr>
+			</table>
+		</description>
+		<sheet display="false" />
+		<rules>
+			<grant type="Grants" id="ID_INTERNAL_GRANT_RACE_ELF" />
+			<select type="Ability Score Improvement" name="Ability Score Improvement Option (Elf)" supports="Custom Ability Score Improvement Option" requirements="!ID_INTERNAL_GRANTS_BACKGROUND_ASI" />
+			<grant type="Size" id="ID_SIZE_MEDIUM" />
+			<stat name="innate speed" value="30" bonus="base" />
+
+			<grant type="Language" id="ID_LANGUAGE_COMMON" requirements="!ID_WOTC_TCOE_OPTION_CUSTOMIZED_LANGUAGE" />
+			<select type="Language" name="Language (Elf)" supports="Standard" number="2" requirements="!ID_WOTC_TCOE_OPTION_CUSTOMIZED_LANGUAGE" />
+			<select type="Language" name="Customized Language (Elf)" supports="Custom Race Language"  requirements="ID_WOTC_TCOE_OPTION_CUSTOMIZED_LANGUAGE" number="3" />
+
+			<grant type="Vision" id="ID_VISION_DARKVISION" requirements="!ID_INTERNAL_PHB24_RACIAL_TRAIT_REPLACEMENT_ELF_DARKVISION" />
+			<grant type="Racial Trait" id="ID_WOTC_LFL_RACIAL_TRAIT_ELF_ELVEN_LINEAGE" />
+			<grant type="Racial Trait" id="ID_WOTC_LFL_RACIAL_TRAIT_ELF_FEY_ANCESTRY" />
+			<grant type="Racial Trait" id="ID_WOTC_LFL_RACIAL_TRAIT_ELF_KEEN_SENSES" />
+			<grant type="Racial Trait" id="ID_WOTC_LFL_RACIAL_TRAIT_ELF_TRANCE" />
+		</rules>
+	</element>
+
+	<element name="Elven Lineage" type="Racial Trait" source="Lorwyn: First Light" id="ID_WOTC_LFL_RACIAL_TRAIT_ELF_ELVEN_LINEAGE">
+		<requirements>!ID_INTERNAL_LFL_RACIAL_TRAIT_REPLACEMENT_ELF_ELVEN_LINEAGE</requirements>
+		<description>
+			<p>You are part of a lineage that grants you supernatural abilities. Choose a lineage from the Elven Lineages table. You gain the level 1 benefit of that lineage.</p>
+			<p class="indent">When you reach character levels 3 and 5, you learn a higher-level spell, as shown on the table. You always have that spell prepared. You can cast it once without a spell slot, and you regain the ability to cast it in that way when you finish a Long Rest. You can also cast the spell using any spell slots you have of the appropriate level. Intelligence, Wisdom, or Charisma is your spellcasting ability for the spells you cast with this trait (choose the ability when you select the lineage).</p>
+			<h5>Elven Lineage</h5>
+			<table>
+				<thead>
+					<tr><td>Lineage</td><td class="col-50">Level 1</td><td>Level 3</td><td>Level 5</td></tr>
+				</thead>
+				<tr><td>Lorwyn</td><td>You know the <i>Thorn Whip</i> cantrip. Whenever you finish a Long Rest, you can replace that cantrip with a different cantrip from the Druid spell list.</td><td><i>Command</i></td><td><i>Silence</i></td></tr>
+				<tr><td>Shadowmoor</td><td>The range of your Darkvision increases to 120 feet. You also know the <i>Starry Wisp</i> cantrip.</td><td><i>Heroism</i></td><td><i>Gentle Repose</i></td></tr>
+			</table>
+		</description>
+		<sheet display="false" />
+		<rules>
+			<select type="Racial Trait" name="Elven Lineage" supports="Lorwyn Elf Lineage" />
+		</rules>
+	</element>
+
+	<element name="Lorwyn" type="Racial Trait" source="Lorwyn: First Light" id="ID_WOTC_LFL_RACIAL_TRAIT_ELF_ELVEN_LINEAGE_LORWYN">
+		<compendium display="false" />
+		<supports>Lorwyn Elf Lineage</supports>
+		<description>
+			<p>The horns of Lorwyn elves are stubby like a goat's or curved like a ram's, but always ridged. Their pointed ears are long and slender.</p>
+			<p class="indent">In Lorwyn, elves value beauty above all, though what any given elf deems beautiful can seem arbitrary. Some Lorwyn elves assume authority over the land's other peoples, using their fallen empire to support their claims.</p>
+			<p class="indent">These elves blame the fall of their empire on outside threats, especially the Phyrexian invasion. Though the invasion was the empire's death knell, its people's self-importance and unwillingness to collaborate with other species had already led to the empire's decline.</p>
+			<p>As a Lorwyn Elf, you learn the <i>Thorn Whip</i> cantrip. Whenever you finish a Long Rest, you can replace that cantrip with a different cantrip from the Druid spell list.</p>
+			<p class="indent">Additionally, you learn <i>Command</i> spell when you reach 3rd level, and <i>Silence</i> spell once you reach 5th level. You can cast each of these spells once without a spell slot, and you regain the ability to cast them in this way when you finish a Long Rest. You can also cast these spells using any spell slots you have of the appropriate level.</p>
+		</description>
+		<sheet display="false" />
+		<rules>
+			<grant type="Grants" id="ID_INTERNAL_GRANT_RACE_LORWYN_ELF" />
+			<select type="Racial Trait" name="Spellcasting Ability (Elven Lineage)" supports="ID_WOTC_LFL_RACIAL_TRAIT_ELF_ELVEN_LINEAGE_LORWYN_INTELLIGENCE|ID_WOTC_LFL_RACIAL_TRAIT_ELF_ELVEN_LINEAGE_LORWYN_WISDOM|ID_WOTC_LFL_RACIAL_TRAIT_ELF_ELVEN_LINEAGE_LORWYN_CHARISMA" />
+		</rules>
+	</element>
+	<element name="Intelligence" type="Racial Trait" source="Lorwyn: First Light" id="ID_WOTC_LFL_RACIAL_TRAIT_ELF_ELVEN_LINEAGE_LORWYN_INTELLIGENCE">
+		<compendium display="false" />
+		<description>
+			<p>Intelligence is your spellcasting ability for the spells you cast with Elven Lineage trait.</p>
+		</description>
+		<sheet alt="Elven Lineage (Lorwyn)">
+			<description>You know the Thorn Whip cantrip. Whenever you finish a Long Rest, you can replace it with a different cantrip from the Druid spell list. Intelligence is your spellcasting ability for it.</description>
+			<description level="3">You know the Thorn Whip cantrip. When you complete a long rest, you can replace it with a different cantrip from the Druid spell list. Additionally, you can also cast the Command spell once per Long Rest. Intelligence is your spellcasting ability for the spells you cast with this trait. You can also cast this spell using any spell slots you have of the appropriate level.</description>
+			<description level="5">You know the Thorn Whip cantrip. When you complete a long rest, you can replace it with a different cantrip from the Druid spell list. Additionally, you can also cast the Command and Silence spells once per Long Rest. Intelligence is your spellcasting ability for the spells you cast with this trait. You can also cast either of these spells using any spell slots you have of the appropriate level.</description>
+		</sheet>
+		<rules>
+			<select type="Spell" name="Druid Cantrip (Lorwyn Elf)" supports="0,Druid" default="ID_WOTC_PHB24_SPELL_THORN_WHIP" />
+			<grant type="Spell" id="ID_WOTC_PHB24_SPELL_COMMAND" level="3" />
+			<grant type="Spell" id="ID_WOTC_PHB24_SPELL_SILENCE" level="5" />
+		</rules>
+	</element>
+	<element name="Wisdom" type="Racial Trait" source="Lorwyn: First Light" id="ID_WOTC_LFL_RACIAL_TRAIT_ELF_ELVEN_LINEAGE_LORWYN_WISDOM">
+		<compendium display="false" />
+		<description>
+			<p>Wisdom is your spellcasting ability for the spells you cast with Elven Lineage trait.</p>
+		</description>
+		<sheet alt="Elven Lineage (Lorwyn)">
+			<description>You know the Thorn Whip cantrip. Whenever you finish a Long Rest, you can replace it with a different cantrip from the Druid spell list. Wisdom is your spellcasting ability for it.</description>
+			<description level="3">You know the Thorn Whip cantrip. When you complete a long rest, you can replace it with a different cantrip from the Druid spell list. Additionally, you can also cast the Command spell once per Long Rest. Wisdom is your spellcasting ability for the spells you cast with this trait. You can also cast this spell using any spell slots you have of the appropriate level.</description>
+			<description level="5">You know the Thorn Whip cantrip. When you complete a long rest, you can replace it with a different cantrip from the Druid spell list. Additionally, you can also cast the Command and Silence spells once per Long Rest. Wisdom is your spellcasting ability for the spells you cast with this trait. You can also cast either of these spells using any spell slots you have of the appropriate level.</description>
+		</sheet>
+		<rules>
+			<select type="Spell" name="Druid Cantrip (Lorwyn Elf)" supports="0,Druid" default="ID_WOTC_PHB24_SPELL_THORN_WHIP" />
+			<grant type="Spell" id="ID_WOTC_PHB24_SPELL_COMMAND" level="3" />
+			<grant type="Spell" id="ID_WOTC_PHB24_SPELL_SILENCE" level="5" />
+		</rules>
+	</element>
+	<element name="Charisma" type="Racial Trait" source="Lorwyn: First Light" id="ID_WOTC_LFL_RACIAL_TRAIT_ELF_ELVEN_LINEAGE_LORWYN_CHARISMA">
+		<compendium display="false" />
+		<description>
+			<p>Charisma is your spellcasting ability for the spells you cast with Elven Lineage trait.</p>
+		</description>
+		<sheet alt="Elven Lineage (Lorwyn)">
+			<description>You know the Thorn Whip cantrip. Whenever you finish a Long Rest, you can replace it with a different cantrip from the Druid spell list. Charisma is your spellcasting ability for it.</description>
+			<description level="3">You know the Thorn Whip cantrip. When you complete a long rest, you can replace it with a different cantrip from the Druid spell list. Additionally, you can also cast the Command spell once per Long Rest. Charisma is your spellcasting ability for the spells you cast with this trait. You can also cast this spell using any spell slots you have of the appropriate level.</description>
+			<description level="5">You know the Thorn Whip cantrip. When you complete a long rest, you can replace it with a different cantrip from the Druid spell list. Additionally, you can also cast the Command and Silence spells once per Long Rest. Charisma is your spellcasting ability for the spells you cast with this trait. You can also cast either of these spells using any spell slots you have of the appropriate level.</description>
+		</sheet>
+		<rules>
+			<select type="Spell" name="Druid Cantrip (Lorwyn Elf)" supports="0,Druid" default="ID_WOTC_PHB24_SPELL_THORN_WHIP" />
+			<grant type="Spell" id="ID_WOTC_PHB24_SPELL_COMMAND" level="3" />
+			<grant type="Spell" id="ID_WOTC_PHB24_SPELL_SILENCE" level="5" />
+		</rules>
+	</element>
+
+	<element name="Shadowmoor" type="Racial Trait" source="Lorwyn: First Light" id="ID_WOTC_LFL_RACIAL_TRAIT_ELF_ELVEN_LINEAGE_SHADOWMOOR">
+		<description>
+			<p>Shadowmoor elves' horns are long, wavy, and covered with a rough, thorny texture. Their pointed ears are usually longer than those of their Lorwyn counterparts.</p>
+			<p class="indent">Like Lorwyn elves, Shadowmoor elves protect beauty, though a Shadowmoor elf's definition of "beautiful" can be abstract. Many of their kind believe beauty is gained or lost in accordance with one's actions; in particular, they consider heroism and self-sacrifice the highest forms of beauty.</p>
+			<p class="indent">Bloomseekers are Shadowmoor elves who study and explore Lorwyn. Each one carries a <i>Reliquary of Twilight</i>. Alongside Safewrights—Shadowmoor elves who venture across their realm in search of beautiful things—Bloomseekers are among the most trusted and revered members of their society.</p>
+			<p>As a Shadowmoor Elf, the range of your Darkvision increases to 120 feet, and you learn the <i>Starry Wisp</i> cantrip.</p>
+			<p class="indent">Additionally, you learn the <i>Heroism</i> spell when you reach 3rd level, and the <i>Gentle Repose</i> spell once you reach 5th level. You can cast each of these spells once without a spell slot, and you regain the ability to cast them in this way when you finish a Long Rest. You can also cast these spells using any spell slots you have of the appropriate level.</p>
+		</description>
+		<sheet display="false" />
+		<rules>
+			<grant type="Grants" id="ID_INTERNAL_GRANT_RACE_SHADOWMOOR_ELF" />
+			<stat name="darkvision:range" value="120" bonus="base" />
+			<select type="Racial Trait" name="Spellcasting Ability (Elven Lineage)" supports="ID_WOTC_LFL_RACIAL_TRAIT_ELF_ELVEN_LINEAGE_SHADOWMOOR_INTELLIGENCE|ID_WOTC_LFL_RACIAL_TRAIT_ELF_ELVEN_LINEAGE_SHADOWMOOR_WISDOM|ID_WOTC_LFL_RACIAL_TRAIT_ELF_ELVEN_LINEAGE_SHADOWMOOR_CHARISMA" />
+		</rules>
+	</element>
+	<element name="Intelligence" type="Racial Trait" source="Player’s Handbook (2024)" id="ID_WOTC_LFL_RACIAL_TRAIT_ELF_ELVEN_LINEAGE_SHADOWMOOR_INTELLIGENCE">
+		<compendium display="false" />
+		<description>
+			<p>Intelligence is your spellcasting ability for the spells you cast with Elven Lineage trait.</p>
+		</description>
+		<sheet alt="Elven Lineage (Shadowmoor)">
+			<description>You know the Starry Wisp cantrip. Intelligence is your spellcasting ability for it.</description>
+			<description level="3">You know the Starry Wisp cantrip, and you can cast the Heroism spell once per Long Rest. Intelligence is your spellcasting ability for the spells you cast with this trait. You can also cast this spell using any spell slots you have of the appropriate level.</description>
+			<description level="5">You know the Starry Wisp cantrip, and you can cast the Heroism and Gentle Repose spells once each per Long Rest. Intelligence is your spellcasting ability for the spells you cast with this trait. You can also cast either of those spells using any spell slots you have of the appropriate level.</description>
+		</sheet>
+		<rules>
+			<grant type="Spell" id="ID_WOTC_PHB24_SPELL_STARRY_WISP" />
+			<grant type="Spell" id="ID_WOTC_PHB24_SPELL_HEROISM" level="3" />
+			<grant type="Spell" id="ID_WOTC_PHB24_SPELL_GENTLE_REPOSE" level="5" />
+		</rules>
+	</element>
+	<element name="Wisdom" type="Racial Trait" source="Player’s Handbook (2024)" id="ID_WOTC_LFL_RACIAL_TRAIT_ELF_ELVEN_LINEAGE_SHADOWMOOR_WISDOM">
+		<compendium display="false" />
+		<description>
+			<p>Wisdom is your spellcasting ability for the spells you cast with Elven Lineage trait.</p>
+		</description>
+		<sheet alt="Elven Lineage (Shadowmoor)">
+			<description>You know the Starry Wisp cantrip. Wisdom is your spellcasting ability for it.</description>
+			<description level="3">You know the Starry Wisp cantrip, and you can cast the Heroism spell once per Long Rest. Wisdom is your spellcasting ability for the spells you cast with this trait. You can also cast this spell using any spell slots you have of the appropriate level.</description>
+			<description level="5">You know the Starry Wisp cantrip, and you can cast the Heroism and Gentle Repose spells once each per Long Rest. Wisdom is your spellcasting ability for the spells you cast with this trait. You can also cast either of those spells using any spell slots you have of the appropriate level.</description>
+		</sheet>
+		<rules>
+			<grant type="Spell" id="ID_WOTC_PHB24_SPELL_STARRY_WISP" />
+			<grant type="Spell" id="ID_WOTC_PHB24_SPELL_HEROISM" level="3" />
+			<grant type="Spell" id="ID_WOTC_PHB24_SPELL_GENTLE_REPOSE" level="5" />
+		</rules>
+	</element>
+	<element name="Charisma" type="Racial Trait" source="Player’s Handbook (2024)" id="ID_WOTC_LFL_RACIAL_TRAIT_ELF_ELVEN_LINEAGE_SHADOWMOOR_CHARISMA">
+		<compendium display="false" />
+		<description>
+			<p>Charisma is your spellcasting ability for the spells you cast with Elven Lineage trait.</p>
+		</description>
+		<sheet alt="Elven Lineage (Shadowmoor)">
+			<description>You know the Starry Wisp cantrip. Charisma is your spellcasting ability for it.</description>
+			<description level="3">You know the Starry Wisp cantrip, and you can cast the Heroism spell once per Long Rest. Charisma is your spellcasting ability for the spells you cast with this trait. You can also cast this spell using any spell slots you have of the appropriate level.</description>
+			<description level="5">You know the Starry Wisp cantrip, and you can cast the Heroism and Gentle Repose spells once each per Long Rest. Charisma is your spellcasting ability for the spells you cast with this trait. You can also cast either of those spells using any spell slots you have of the appropriate level.</description>
+		</sheet>
+		<rules>
+			<grant type="Spell" id="ID_WOTC_PHB24_SPELL_STARRY_WISP" />
+			<grant type="Spell" id="ID_WOTC_PHB24_SPELL_HEROISM" level="3" />
+			<grant type="Spell" id="ID_WOTC_PHB24_SPELL_GENTLE_REPOSE" level="5" />
+		</rules>
+	</element>
+
+	<element name="Fey Ancestry" type="Racial Trait" source="Lorwyn: First Light" id="ID_WOTC_LFL_RACIAL_TRAIT_ELF_FEY_ANCESTRY">
+		<requirements>!ID_INTERNAL_LFL_RACIAL_TRAIT_REPLACEMENT_ELF_FEY_ANCESTRY</requirements>
+		<description>
+			<p>You have Advantage on saving throws you make to avoid or end the Charmed condition.</p>
+		</description>
+		<sheet>
+			<description>You have Advantage on saving throws you make to avoid or end the Charmed condition.</description>
+		</sheet>
+	</element>
+
+	<element name="Keen Senses" type="Racial Trait" source="Lorwyn: First Light" id="ID_WOTC_LFL_RACIAL_TRAIT_ELF_KEEN_SENSES">
+		<requirements>!ID_INTERNAL_LFL_RACIAL_TRAIT_REPLACEMENT_ELF_KEEN_SENSES</requirements>
+		<description>
+			<p>You have proficiency in the Insight, Perception, or Survival skill.</p>
+		</description>
+		<sheet display="false" />
+		<rules>
+			<select type="Proficiency" name="Skill Proficiency (Keen Senses)" supports="ID_PROFICIENCY_SKILL_INSIGHT|ID_PROFICIENCY_SKILL_PERCEPTION|ID_PROFICIENCY_SKILL_SURVIVAL" requirements="!ID_WOTC_TCOE_OPTION_CUSTOMIZED_PROFICIENCY" />
+			<select type="Proficiency" name="Customized Skill Proficiency (Keen Senses)" supports="Skill" requirements="ID_WOTC_TCOE_OPTION_CUSTOMIZED_PROFICIENCY" />
+		</rules>
+	</element>
+
+	<element name="Trance" type="Racial Trait" source="Lorwyn: First Light" id="ID_WOTC_LFL_RACIAL_TRAIT_ELF_TRANCE">
+		<requirements>!ID_INTERNAL_LFL_RACIAL_TRAIT_REPLACEMENT_ELF_TRANCE</requirements>
+		<description>
+			<p>You don’t need to sleep, and magic can’t put you to sleep. You can finish a Long Rest in 4 hours if you spend those hours in a trancelike meditation, during which you retain consciousness.</p>
+		</description>
+		<sheet>
+			<description>You don’t need to sleep, and magic can’t put you to sleep. You can finish a Long Rest in 4 hours if you spend those hours in a trancelike meditation, during which you retain consciousness.</description>
+		</sheet>
+	</element>
+
+	<!--racial trait replacement grants-->
+	<element name="Elven Lineage Replacement" type="Grants" source="Internal" id="ID_INTERNAL_LFL_RACIAL_TRAIT_REPLACEMENT_ELF_ELVEN_LINEAGE" />
+	<element name="Fey Ancestry Replacement" type="Grants" source="Internal" id="ID_INTERNAL_LFL_RACIAL_TRAIT_REPLACEMENT_ELF_FEY_ANCESTRY" />
+	<element name="Keen Senses Replacement" type="Grants" source="Internal" id="ID_INTERNAL_LFL_RACIAL_TRAIT_REPLACEMENT_ELF_KEEN_SENSES" />
+	<element name="Trance Replacement" type="Grants" source="Internal" id="ID_INTERNAL_LFL_RACIAL_TRAIT_REPLACEMENT_ELF_TRANCE" />
+
+</elements>

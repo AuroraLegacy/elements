@@ -1,0 +1,171 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<elements>
+	<info>
+		<name>Faerie</name>
+		<description>The Faerie species from Lorwyn: First Light.</description>
+		<author url="https://marketplace.dndbeyond.com/category/DBU4HPAC7">Wizards of the Coast</author>
+		<update version="0.0.1">
+			<file name="race-faerie.xml" url="https://raw.githubusercontent.com/AuroraLegacy/elements/master/supplements/lorwyn-first-light/races/race-faerie.xml" />
+		</update>
+	</info>
+	
+	<element name="Faerie" type="Race" source="Lorwyn: First Light" id="ID_WOTC_LFL_RACE_FAERIE">
+		<description>
+			<p>Known for their mischief, faeries resemble insects with humanoid features. Their size and shape may vary, but all have antennae, black eyes, chitinous skin, and insectoid legs and wings. Every faerie is born from a flower and possesses innate magic, which many use to play pranks.</p>
+			<p class="indent">Some Lorwyn faeries serve Queen Oura, who has proclaimed herself the faeries' ruler. Not all faeries recognize Oura's authority, however. In Shadowmoor, faeries might instead worship Queen Maralen, the elf who overthrew the previous faerie queen and, some say, ushered in the clashing of Lorwyn and Shadowmoor.</p>
+			<h5>FAERIE TRAITS</h5>
+			<ul class="unstyled" style="text-indent:-1em; margin-left:1em; margin-bottom:5px">
+				<li><strong>Creature Type:</strong> Fey</li>
+				<li><strong>Size:</strong> Small </li>
+				<li><strong>Speed:</strong> 30 feet, Fly speed equal to your Speed</li>
+			</ul>
+			<p>As a Faerie, you have these special traits.</p>
+			<p class="indent"><strong><em>Fairy Magic.</em></strong> You know the <i>Druidcraft</i> cantrip. Additionally, you learn the <i>Faerie Fire</i> spell when you reach 3rd level, and the <i>Enlarge/Reduce</i> spell once you reach 5th level. You can cast each of these spells once without a spell slot, and you regain the ability to cast them in this way when you finish a Long Rest. You can also cast these spells using any spell slots you have of the appropriate level. Intelligence, Wisdom, or Charisma is your spellcasting ability for the spells you cast with this trait (choose the ability when you select this species).</p>
+			<p class="indent"><strong><em>Flight.</em></strong> Because of your wings, you have a Fly speed equal to your Speed. You can't use this Fly speed if you're wearing medium or heavy armor.</p>
+			<p class="indent"><strong><em>Faerie Lineage.</em></strong> As a native of either Lorwyn and Shadowmoor, you may gain additional traits.</p>
+			<h5>Faerie Lineage</h5>
+			<table>
+				<thead>
+					<tr><td>Lineage</td><td class="col-50">Traits</td></tr>
+				</thead>
+				<tr><td>Lorwyn</td><td>You do not gain any additional traits.</td></tr>
+				<tr><td>Shadowmoor</td><td>You have Darkvision with a range of 120 feet.</td></tr>
+			</table>
+		</description>
+		<sheet display="false" />
+		<rules>
+			<grant type="Racial Trait" id="ID_INTERNAL_RACIAL_TRAIT_TYPE_FEY" />
+			<select type="Ability Score Improvement" name="Ability Score Improvement Option (Faerie)" supports="Custom Ability Score Improvement Option" requirements="!ID_INTERNAL_GRANTS_BACKGROUND_ASI" />
+			<grant type="Size" id="ID_SIZE_SMALL" />
+			<stat name="innate speed" value="30" bonus="base" />
+
+			<grant type="Language" id="ID_LANGUAGE_COMMON" requirements="!ID_WOTC_TCOE_OPTION_CUSTOMIZED_LANGUAGE" />
+			<select type="Language" name="Language (Faerie)" supports="Standard" number="2" requirements="!ID_WOTC_TCOE_OPTION_CUSTOMIZED_LANGUAGE" />
+			<select type="Language" name="Customized Language (Faerie)" supports="Custom Race Language" requirements="ID_WOTC_TCOE_OPTION_CUSTOMIZED_LANGUAGE" number="3" />
+
+			<grant type="Racial Trait" id="ID_WOTC_LFL_RACIAL_TRAIT_FAERIE_FLIGHT" />
+			<grant type="Racial Trait" id="ID_WOTC_LFL_RACIAL_TRAIT_FAERIE_FAIRY_MAGIC" />
+			<grant type="Racial Trait" id="ID_WOTC_LFL_RACIAL_TRAIT_FAERIE_FAERIE_LINEAGE" />
+		</rules>
+	</element>
+	
+	<element name="Flight" type="Racial Trait" source="Lorwyn: First Light" id="ID_WOTC_LFL_RACIAL_TRAIT_FAERIE_FLIGHT">
+		<requirements>!ID_INTERNAL_LFL_RACIAL_TRAIT_REPLACEMENT_FAERIE_FLIGHT</requirements>
+		<description>
+			<p>Because of your wings, you have a Fly Speed equal to your walking speed. You can't use this Fly Speed if you're wearing medium or heavy armor.</p>
+		</description>
+		<sheet>
+			<description>You have a Fly Speed of {{innate:speed}. You can't use this Fly Speed if you're wearing medium or heavy armor.</description>
+		</sheet>
+		<rules>
+			<stat name="innate speed:fly" value="innate speed" bonus="base" equipped="![armor:medium],![armor:heavy]" />
+		</rules>
+	</element>
+
+	<element name="Fairy Magic" type="Racial Trait" source="Lorwyn: First Light" id="ID_WOTC_LFL_RACIAL_TRAIT_FAERIE_FAIRY_MAGIC">
+		<requirements>!ID_INTERNAL_LFL_RACIAL_TRAIT_REPLACEMENT_FAERIE_FAIRY_MAGIC</requirements>
+		<description>
+			<p>You know the <i>Druidcraft</i> cantrip. Additionally, you learn the <i>Faerie Fire</i> spell when you reach 3rd level, and the <i>Enlarge/Reduce</i> spell once you reach 5th level. You can cast each of these spells once without a spell slot, and you regain the ability to cast them in this way when you finish a Long Rest. You can also cast these spells using any spell slots you have of the appropriate level. Intelligence, Wisdom, or Charisma is your spellcasting ability for the spells you cast with this trait (choose the ability when you select this species).</p>
+		</description>
+		<sheet display="false"/>
+		<rules>
+			<select type="Racial Trait" name="Spellcasting Ability (Fairy Magic)" supports="ID_WOTC_LFL_RACIAL_TRAIT_FAERIE_FAIRY_MAGIC_INTELLIGENCE|ID_WOTC_LFL_RACIAL_TRAIT_FAERIE_FAIRY_MAGIC_WISDOM|ID_WOTC_LFL_RACIAL_TRAIT_FAERIE_FAIRY_MAGIC_CHARISMA" />
+		</rules>
+	</element>
+	<element name="Intelligence" type="Racial Trait" source="Lorwyn: First Light" id="ID_WOTC_LFL_RACIAL_TRAIT_FAERIE_FAIRY_MAGIC_INTELLIGENCE">
+		<compendium display="false" />
+		<description>
+			<p>Intelligence is your spellcasting ability for the spells you cast with this trait.</p>
+		</description>
+		<sheet alt="Fairy Magic">
+			<description>You know the Druidcraft cantrip. Intelligence is your spellcasting ability for it.</description>
+			<description level="3">You know the Druidcraft cantrip. You can cast the Faerie Fire spell once per Long Rest. Intelligence is your spellcasting ability for the spells you cast with this trait. You can also cast this spell using any spell slots you have of the appropriate level.</description>
+			<description level="3">You know the Druidcraft cantrip. You can cast the Faerie Fire and Enlarge/Reduce spells once each per Long Rest. Intelligence is your spellcasting ability for the spells you cast with this trait. You can also cast this spell using any spell slots you have of the appropriate level.</description>
+		</sheet>
+		<rules>
+			<grant type="Spell" id="ID_WOTC_PHB24_SPELL_DRUIDCRAFT" />
+			<grant type="Spell" id="ID_WOTC_PHB24_SPELL_FAERIE_FIRE" level="3" />
+			<grant type="Spell" id="ID_WOTC_PHB24_SPELL_ENLARGE_REDUCE" level="5" />
+		</rules>
+	</element>
+	<element name="Wisdom" type="Racial Trait" source="Lorwyn: First Light" id="ID_WOTC_LFL_RACIAL_TRAIT_FAERIE_FAIRY_MAGIC_WISDOM">
+		<compendium display="false" />
+		<description>
+			<p>Wisdom is your spellcasting ability for the spells you cast with this trait.</p>
+		</description>
+		<sheet alt="Fairy Magic">
+			<description>You know the Druidcraft cantrip. Wisdom is your spellcasting ability for it.</description>
+			<description level="3">You know the Druidcraft cantrip. You can cast the Faerie Fire spell once per Long Rest. Wisdom is your spellcasting ability for the spells you cast with this trait. You can also cast this spell using any spell slots you have of the appropriate level.</description>
+			<description level="3">You know the Druidcraft cantrip. You can cast the Faerie Fire and Enlarge/Reduce spells once each per Long Rest. Wisdom is your spellcasting ability for the spells you cast with this trait. You can also cast this spell using any spell slots you have of the appropriate level.</description>
+		</sheet>
+		<rules>
+			<grant type="Spell" id="ID_WOTC_PHB24_SPELL_DRUIDCRAFT" />
+			<grant type="Spell" id="ID_WOTC_PHB24_SPELL_FAERIE_FIRE" level="3" />
+			<grant type="Spell" id="ID_WOTC_PHB24_SPELL_ENLARGE_REDUCE" level="5" />
+		</rules>
+	</element>
+	<element name="Charisma" type="Racial Trait" source="Lorwyn: First Light" id="ID_WOTC_LFL_RACIAL_TRAIT_FAERIE_FAIRY_MAGIC_CHARISMA">
+		<compendium display="false" />
+		<description>
+			<p>Charisma is your spellcasting ability for the spells you cast with this trait.</p>
+		</description>
+		<sheet alt="Fairy Magic">
+			<description>You know the Druidcraft cantrip. Charisma is your spellcasting ability for it.</description>
+			<description level="3">You know the Druidcraft cantrip. You can cast the Faerie Fire spell once per Long Rest. Charisma is your spellcasting ability for the spells you cast with this trait. You can also cast this spell using any spell slots you have of the appropriate level.</description>
+			<description level="3">You know the Druidcraft cantrip. You can cast the Faerie Fire and Enlarge/Reduce spells once each per Long Rest. Charisma is your spellcasting ability for the spells you cast with this trait. You can also cast this spell using any spell slots you have of the appropriate level.</description>
+		</sheet>
+		<rules>
+			<grant type="Spell" id="ID_WOTC_PHB24_SPELL_DRUIDCRAFT" />
+			<grant type="Spell" id="ID_WOTC_PHB24_SPELL_FAERIE_FIRE" level="3" />
+			<grant type="Spell" id="ID_WOTC_PHB24_SPELL_ENLARGE_REDUCE" level="5" />
+		</rules>
+	</element>
+	
+	<element name="Faerie Lineage" type="Racial Trait" source="Lorwyn: First Light" id="ID_WOTC_LFL_RACIAL_TRAIT_FAERIE_FAERIE_LINEAGE">
+		<requirements>!ID_INTERNAL_LFL_RACIAL_TRAIT_REPLACEMENT_FAERIE_FAERIE_LINEAGE</requirements>
+		<description>
+			<p>As a native of either Lorwyn and Shadowmoor, you may gain additional traits.</p>
+			<h5>Faerie Lineage</h5>
+			<table>
+				<thead>
+					<tr><td>Lineage</td><td class="col-50">Traits</td></tr>
+				</thead>
+				<tr><td>Lorwyn</td><td>You do not gain any additional traits.</td></tr>
+				<tr><td>Shadowmoor</td><td>You have Darkvision with a range of 120 feet.</td></tr>
+			</table>
+		</description>
+		<sheet display="false" />
+		<rules>
+			<select type="Racial Trait" name="Faerie Lineage" supports="Faerie Lineage" />
+		</rules>
+	</element>
+	<element name="Lorwyn" type="Racial Trait" source="Lorwyn: First Light" id="ID_WOTC_LFL_RACIAL_TRAIT_FAERIE_FAERIE_LINEAGE_LORWYN">
+		<compendium display="false" />
+		<supports>Faerie Lineage</supports>
+		<description>
+			<div element="ID_WOTC_LFL_RACIAL_TRAIT_FAERIE_FAERIE_LINEAGE" />
+		</description>
+		<sheet display="false" />
+	</element>
+	<element name="Shadowmoor" type="Racial Trait" source="Lorwyn: First Light" id="ID_WOTC_LFL_RACIAL_TRAIT_FAERIE_FAERIE_LINEAGE_SHADOWMOOR">
+		<compendium display="false" />
+		<supports>Faerie Lineage</supports>
+		<description>
+			<div element="ID_WOTC_LFL_RACIAL_TRAIT_FAERIE_FAERIE_LINEAGE" />
+		</description>
+		<sheet alt="Faerie Lineage (Shadowmoor)">
+			<description>You have Darkvision with a range of 120 feet.</description>
+		</sheet>
+		<rules>
+			<grant type="Vision" id="ID_VISION_DARKVISION" requirements="!ID_INTERNAL_LFL_RACIAL_TRAIT_REPLACEMENT_FAERIE_SHADOWMOOR_DARKVISION" />
+			<stat name="darkvision:range" value="120" bonus="base" />
+		</rules>
+	</element>
+
+	<!--racial trait replacement grants-->
+	<element name="Flight Replacement" type="Grants" source="Internal" id="ID_INTERNAL_LFL_RACIAL_TRAIT_REPLACEMENT_FAERIE_FLIGHT" />
+	<element name="Fairy Magic Replacement" type="Grants" source="Internal" id="ID_INTERNAL_LFL_RACIAL_TRAIT_REPLACEMENT_FAERIE_FAIRY_MAGIC" />
+	<element name="Faerie Lineage Replacement" type="Grants" source="Internal" id="ID_INTERNAL_LFL_RACIAL_TRAIT_REPLACEMENT_FAERIE_FAERIE_LINEAGE" />
+	<element name="Shadowmoor Darkvision Replacement" type="Grants" source="Internal" id="ID_INTERNAL_LFL_RACIAL_TRAIT_REPLACEMENT_FAERIE_SHADOWMOOR_DARKVISION" />
+
+</elements>

@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<elements>
+	<info>
+		<name>Origin Feats</name>
+		<description>Origin Feats from Lorwyn: First Light.</description>
+		<author url="https://marketplace.dndbeyond.com/category/DBU4HPAC7">Wizards of the Coast</author>
+		<update version="0.0.1">
+			<file name="feats-origin.xml" url="https://raw.githubusercontent.com/AuroraLegacy/elements/master/supplements/lorwyn-first-light/feats/feats-origin.xml" />
+		</update>
+	</info>
+		
+	<element name="Child of the Sun" type="Feat" source="Lorwyn: First Light" id="ID_WOTC_LFL_FEAT_CHILD_OF_THE_SUN">
+		<supports>Origin</supports>
+		<prerequisite>Origin Feat</prerequisite>
+		<description>
+			<p class="flavor">Origin Feat</p>
+			<p>You gain the following benefits.</p>
+			<p class="indent"><b><i>Eyes of Eirdu.</i></b> You and allies within 10 feet of you have Advantage on saving throws made to avoid or end the Blinded condition.</p>
+			<p class="indent"><b><i>Faerie Fire.</i></b> You learn the <i>Faerie Fire</i> spell. Intelligence, Wisdom, or Charisma is your spellcasting ability for this spell (choose when you select this feat). You can cast it once without a spell slot, and you regain the ability to cast it in that way when you finish a Long Rest. You can also cast the spell using any spell slots you have.</p>
+			<p class="indent">When you cast <i>Faerie Fire</i> without a spell slot using this benefit, taking damage can't break your Concentration on the spell.</p>
+		</description>
+		<sheet >
+			<description>You and allies within 10 feet of you have Advantage on saving throws made to avoid or end the Blinded condition.</description>
+		</sheet>
+		<rules>
+			<grant type="Spell" id="ID_WOTC_PHB24_SPELL_FAERIE_FIRE" />
+			<select type="Feat Feature" name="Spellcasting Ability (Child of the Sun)" supports="Child of the Sun" />
+		</rules>
+	</element>
+	<element name="Intelligence" type="Feat Feature" source="Lorwyn: First Light" id="ID_WOTC_LFL_FEAT_FEATURE_CHILD_OF_THE_SUN_FAERIE_FIRE_INTELLIGENCE">
+		<compendium display="false" />
+		<supports>Child of the Sun</supports>
+		<description>
+			<p>You learn the <i>Faerie Fire</i> spell. Intelligence is your spellcasting ability for this spell. You can cast it once without a spell slot, and you regain the ability to cast it in that way when you finish a Long Rest. You can also cast it with any spell slots you have.</p>
+			<p class="indent">When you cast <i>Faerie Fire</i> without a spell slot using this benefit, taking damage can't break your Concentration on the spell.</p>
+		</description>
+		<sheet alt="Faerie Fire" usage="1/Long Rest">
+			<description>You always have the Faerie Fire spell prepared and can cast once without a spell slot. When you do so, damage can't break your Concentration on the spell. You can also cast it with any spell slots you have. Intelligence is your spellcasting ability for this spell.</description>
+		</sheet>
+	</element>
+	<element name="Wisdom" type="Feat Feature" source="Lorwyn: First Light" id="ID_WOTC_LFL_FEAT_FEATURE_CHILD_OF_THE_SUN_FAERIE_FIRE_WISDOM">
+		<compendium display="false" />
+		<supports>Child of the Sun</supports>
+		<description>
+			<p>You learn the <i>Faerie Fire</i> spell. Wisdom is your spellcasting ability for this spell. You can cast it once without a spell slot, and you regain the ability to cast it in that way when you finish a Long Rest. You can also cast it with any spell slots you have.</p>
+			<p class="indent">When you cast <i>Faerie Fire</i> without a spell slot using this benefit, taking damage can't break your Concentration on the spell.</p>
+		</description>
+		<sheet alt="Faerie Fire" usage="1/Long Rest">
+			<description>You always have the Faerie Fire spell prepared and can cast once without a spell slot. When you do so, damage can't break your Concentration on the spell. You can also cast it with any spell slots you have. Wisdom is your spellcasting ability for this spell.</description>
+		</sheet>
+	</element>
+	<element name="Charisma" type="Feat Feature" source="Lorwyn: First Light" id="ID_WOTC_LFL_FEAT_FEATURE_CHILD_OF_THE_SUN_FAERIE_FIRE_CHARISMA">
+		<compendium display="false" />
+		<supports>Child of the Sun</supports>
+		<description>
+			<p>You learn the <i>Faerie Fire</i> spell. Charisma is your spellcasting ability for this spell. You can cast it once without a spell slot, and you regain the ability to cast it in that way when you finish a Long Rest. You can also cast it with any spell slots you have.</p>
+			<p class="indent">When you cast <i>Faerie Fire</i> without a spell slot using this benefit, taking damage can't break your Concentration on the spell.</p>
+		</description>
+		<sheet alt="Faerie Fire" usage="1/Long Rest">
+			<description>You always have the Faerie Fire spell prepared and can cast once without a spell slot. When you do so, damage can't break your Concentration on the spell. You can also cast it with any spell slots you have. Charisma is your spellcasting ability for this spell.</description>
+		</sheet>
+	</element>
+
+	<element name="Shadowmoor Hexer" type="Feat" source="Lorwyn: First Light" id="ID_WOTC_LFL_FEAT_SHADOWMOOR_HEXER">
+		<supports>Origin</supports>
+		<prerequisite>Origin Feat</prerequisite>
+		<description>
+			<p class="flavor">Origin Feat</p>
+			<p>You gain the following benefits.</p>
+			<p class="indent"><b><i>Hex.</i></b> You always have the <i>Hex</i> spell prepared. Intelligence, Wisdom, or Charisma is your spellcasting ability for this spell (choose when you select this feat). You can cast it once without a spell slot, and you regain the ability to cast it in that way when you finish a Long Rest. You can also cast the spell using any spell slots you have.</p>
+			<p class="indent"><b><i>Curse Magic.</i></b> When a creature that you've cursed with <i>Hex</i> hits you with an attack roll, the creature takes Psychic damage equal to your Proficiency Bonus. A creature takes this damage only once per turn.</p>
+		</description>
+		<sheet usage="1/Turn">
+			<description>When a creature that you've cursed with Hex hits you with an attack roll, the creature takes {{proficiency}} Psychic damage.</description>
+		</sheet>
+		<rules>
+			<grant type="Spell" id="ID_WOTC_PHB24_SPELL_HEX" />
+			<select type="Feat Feature" name="Spellcasting Ability (Shadowmoor Hexer)" supports="Shadowmoor Hexer" />
+		</rules>
+	</element>
+	<element name="Intelligence" type="Feat Feature" source="Lorwyn: First Light" id="ID_WOTC_LFL_FEAT_FEATURE_SHADOWMOOR_HEXER_HEX_INTELLIGENCE">
+		<compendium display="false" />
+		<supports>Shadowmoor Hexer</supports>
+		<description>
+			<p>You always have the <i>Hex</i> spell prepared. Intelligence is your spellcasting ability for this spell. You can cast it once without a spell slot, and you regain the ability to cast it in that way when you finish a Long Rest. You can also cast the spell using any spell slots you have.</p>
+		</description>
+		<sheet alt="Hex" usage="1/Long Rest">
+			<description>You always have the Hex spell prepared, and can cast it once without a spell slot. You can also cast the spell using any spell slots you have. Intelligence is your spellcasting ability for this spell.</description>
+		</sheet>
+	</element>
+	<element name="Wisdom" type="Feat Feature" source="Lorwyn: First Light" id="ID_WOTC_LFL_FEAT_FEATURE_SHADOWMOOR_HEXER_HEX_WISDOM">
+		<compendium display="false" />
+		<supports>Shadowmoor Hexer</supports>
+		<description>
+			<p>You always have the <i>Hex</i> spell prepared. Wisdom is your spellcasting ability for this spell. You can cast it once without a spell slot, and you regain the ability to cast it in that way when you finish a Long Rest. You can also cast the spell using any spell slots you have.</p>
+		</description>
+		<sheet alt="Hex" usage="1/Long Rest">
+			<description>You always have the Hex spell prepared, and can cast it once without a spell slot. You can also cast the spell using any spell slots you have. Wisdom is your spellcasting ability for this spell.</description>
+		</sheet>
+	</element>
+	<element name="Charisma" type="Feat Feature" source="Lorwyn: First Light" id="ID_WOTC_LFL_FEAT_FEATURE_SHADOWMOOR_HEXER_HEX_CHARISMA">
+		<compendium display="false" />
+		<supports>Shadowmoor Hexer</supports>
+		<description>
+			<p>You always have the <i>Hex</i> spell prepared. Charisma is your spellcasting ability for this spell. You can cast it once without a spell slot, and you regain the ability to cast it in that way when you finish a Long Rest. You can also cast the spell using any spell slots you have.</p>
+		</description>
+		<sheet alt="Hex" usage="1/Long Rest">
+			<description>You always have the Hex spell prepared, and can cast it once without a spell slot. You can also cast the spell using any spell slots you have. Charisma is your spellcasting ability for this spell.</description>
+		</sheet>
+	</element>
+
+</elements>
