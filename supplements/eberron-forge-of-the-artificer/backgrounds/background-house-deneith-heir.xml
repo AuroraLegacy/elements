@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<elements>
+	<info>
+		<name>House Deneith Heir</name>
+		<description>House Deneith Heir background from Eberron: Forge of the Artificer.</description>
+		<author url="https://marketplace.dndbeyond.com/category/5147000?pid=D5147000">Wizards of the Coast</author>
+		<update version="0.0.1">
+			<file name="background-house-deneith-heir.xml" url="https://raw.githubusercontent.com/AuroraLegacy/elements/master/supplements/eberron-forge-of-the-artificer/backgrounds/background-house-deneith-heir.xml" />
+		</update>
+	</info>
+
+	<element name="House Deneith Heir" type="Background" source="Eberron: Forge of the Artificer" id="ID_WOTC_EFOTA_BACKGROUND_HOUSE_DENEITH_HEIR">
+		<description>
+			<ul class="unstyled" style="text-indent:-1em; margin-left:1em; margin-bottom:5px">
+				<li><strong>Ability Scores:</strong> Strength, Constitution, Wisdom</li>
+				<li><strong>Feat:</strong> Mark of Sentinel</li>
+				<li><strong>Skill Proficiencies:</strong> Insight and Perception</li>
+				<li><strong>Tool Proficiency:</strong><i> Choose one kind of Gaming Set</i></li>
+				<li><strong>Equipment:</strong><i> Choose A or B:</i> (A) Spear, Shortbow, 20 Arrows, Gaming Set (same as above), Fine Clothes, Healer’s Kit, Quiver, 1 GP; or (B) 50 GP</li>
+			</ul>
+			<p>As an heir of House Deneith, you’ve been trained for combat—not to seek it out, but not to shy from it either. You’ve learned the importance of duty, honor, and the laws used to govern society when duty and honor fail. As you established your name in the house, you might have worked as a bodyguard for some minor dignitary, as a mercenary, or as a marshal hunting fugitives. Now you’re prepared to claim your rightful standing in the mightiest of the dragonmarked houses.</p>
+		</description>
+		<setters>
+			<set name="short">Strength, Constitution, Wisdom, Mark of Sentinel Feat, Insight and Perception Skills, One Kind of Gaming Set</set>
+		</setters>
+		<rules>
+			<grant type="Ability Score Improvement" id="ID_INTERNAL_ABILITY_SCORE_IMPROVEMENT_COMBINATION_STR_CON_WIS" />
+			<grant type="Feat" id="ID_WOTC_EFOTA_FEAT_MARK_OF_SENTINEL" />
+			<grant type="Proficiency" id="ID_PROFICIENCY_SKILL_INSIGHT" />
+			<grant type="Proficiency" id="ID_PROFICIENCY_SKILL_PERCEPTION" />
+			<select type="Proficiency" name="Gaming Set Proficiency (House Deneith Heir)" supports="Gaming Set" />
+			<grant type="Grants" id="ID_INTERNAL_GRANTS_BACKGROUND_ASI" />
+		</rules>
+	</element>
+</elements>

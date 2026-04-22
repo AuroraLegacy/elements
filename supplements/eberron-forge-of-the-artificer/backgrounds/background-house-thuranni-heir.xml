@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<elements>
+	<info>
+		<name>House Thuranni Heir</name>
+		<description>House Thuranni Heir background from Eberron: Forge of the Artificer.</description>
+		<author url="https://marketplace.dndbeyond.com/category/5147000?pid=D5147000">Wizards of the Coast</author>
+		<update version="0.0.1">
+			<file name="background-house-thuranni-heir.xml" url="https://raw.githubusercontent.com/AuroraLegacy/elements/master/supplements/eberron-forge-of-the-artificer/backgrounds/background-house-thuranni-heir.xml" />
+		</update>
+	</info>
+
+	<element name="House Thuranni Heir" type="Background" source="Eberron: Forge of the Artificer" id="ID_WOTC_EFOTA_BACKGROUND_HOUSE_THURANNI_HEIR">
+		<description>
+			<ul class="unstyled" style="text-indent:-1em; margin-left:1em; margin-bottom:5px">
+				<li><strong>Ability Scores:</strong> Dexterity, Intelligence, Charisma</li>
+				<li><strong>Feat:</strong> Mark of Shadow</li>
+				<li><strong>Skill Proficiencies:</strong> Performance and Stealth</li>
+				<li><strong>Tool Proficiency:</strong><i> Choose one kind of Musical Instrument</i></li>
+				<li><strong>Equipment:</strong><i> Choose A or B:</i> (A) Musical Instrument (same as above), Costume, Fine Clothes, 13 GP; or (B) 50 GP</li>
+			</ul>
+			<p>Given House Thuranni’s short history and focus on espionage, its leaders expect you to further the interests of the house at every opportunity. During the house’s formative years as an independent entity, every move you make has been watched closely. This isn’t to say that every Thuranni heir must actively spy at the behest of house elders. But even the house’s most insular artists and artisans must keep up with current political events and pass on or collect information when asked.</p>
+		</description>
+		<setters>
+			<set name="short">Dexterity, Intelligence, Charisma, Mark of Shadow Feat, Performance and Stealth Skills, One Kind of Musical Instrument</set>
+		</setters>
+		<rules>
+			<grant type="Ability Score Improvement" id="ID_INTERNAL_ABILITY_SCORE_IMPROVEMENT_COMBINATION_DEX_INT_CHA" />
+			<grant type="Feat" id="ID_WOTC_EFOTA_FEAT_MARK_OF_SHADOW" />
+			<grant type="Proficiency" id="ID_PROFICIENCY_SKILL_PERFORMANCE" />
+			<grant type="Proficiency" id="ID_PROFICIENCY_SKILL_STEALTH" />
+			<select type="Proficiency" name="Musical Instrument Proficiency (House Thuranni Heir)" supports="Musical Instrument" />
+			<grant type="Grants" id="ID_INTERNAL_GRANTS_BACKGROUND_ASI" />
+		</rules>
+	</element>
+</elements>
