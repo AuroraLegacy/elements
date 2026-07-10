@@ -4,7 +4,7 @@
 		<name>Way of the Long Death</name>
 		<description>Way of the Long Death archetype from the Sword Coast Adventurer’s Guide.</description>
 		<author url="http://dnd.wizards.com/products/tabletop-games/rpg-products/sc-adventurers-guide">Wizards of the Coast</author>
-		<update version="0.0.6">
+		<update version="0.0.7">
 			<file name="monk-longdeath.xml" url="https://raw.githubusercontent.com/AuroraLegacy/elements/master/supplements/sword-coast-adventurers-guide/classes/monk-longdeath.xml" />
 		</update>
 	</info>
@@ -45,8 +45,12 @@
 			<p>At 6th level, you gain the ability to unsettle or terrify those around you as an action, for your soul has been touched by the shadow of death. When you take this action, each creature within 30 feet of you that can see you must succeed on a Wisdom saving throw or be frightened of you until the end of your next turn.</p>
 		</description>
 		<sheet action="Action">
-			<description>Each creature within 30 feet of you that can see you must succeed on a DC {{ki:dc}} Wisdom saving throw or be frightened of you until the end of your next turn.</description>
+			<description>Each creature within 30 feet of you that can see you must succeed on a DC {{hour of reaping:dc}} Wisdom saving throw or be frightened of you until the end of your next turn.</description>
 		</sheet>
+		<rules>
+			<stat name="hour of reaping:dc" value="ki:dc" bonus="base" />
+			<stat name="hour of reaping:dc" value="monks focus:dc" bonus="base" />
+		</rules>
 	</element>
 	<element name="Mastery of Death" type="Archetype Feature" source="Sword Coast Adventurer’s Guide" id="ID_WOTC_SCAG_ARCHETYPE_FEATURE_WAY_OF_THE_LONG_DEATH_MASTERY_OF_DEATH">
 		<description>
