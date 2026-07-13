@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<elements>
+	<info>
+		<update version="0.0.1">
+			<file name="companions.xml" url="https://raw.githubusercontent.com/AuroraLegacy/elements/master/supplements/storm-kings-thunder/companions.xml" />
+		</update>
+	</info>
+	
+	<element name="Tressym" type="Companion" source="Storm King’s Thunder" id="ID_WOTC_SKT_COMPANION_TRESSYM">
+		<supports>Familiar, Variant Familiar</supports>
+		<description>
+			<p>A tressym is a mischievous winged cat as big as a house cat, with a wingspan of 3 feet.</p>
+			<p class="indent">Thought to be the results of wizardly experimentation on house cats, tressym are intelligent and have been known to form strong friendships with humanoids, particularly rangers and wizards. Tressym get along well with others of their kind, but they rarely lair or hunt together. They peacefully ignore bats, faerie dragons, and the like, but they hate stirges and evil flying monsters such as manticores. They also enjoy teasing dogs.</p>
+			<p class="indent">Tressym feed on small rodents, birds, and insects, stalking and pouncing on prey much as normal cats do, but with the added advantage of flight. Tressym don't, however, attack nestlings or despoil eggs.</p>
+			<p class="indent">Tressym mate with others of their kind, but they don't mate for life. A tressym can also mate with a normal cat, though only one out of every ten of their offspring will be a tressym; the others will be normal cats.</p>
+			<p class="indent">Tressym have good memories, particularly when it comes to danger. For example, a tressym that sees a human use a <em>wand of lightning bolts</em> remembers the danger of "sticks of wood held by humans" for the rest of its life. A lucky, healthy tressym can live to be 20 years old.</p>
+			<p class="indent">With the DM's permission, a person who casts the <em>find familiar</em> spell can choose to conjure a tressym instead of a normal cat.</p>
+		</description>
+		<setters>
+			<set name="strength">3</set>
+			<set name="dexterity">15</set>
+			<set name="constitution">10</set>
+			<set name="intelligence">11</set>
+			<set name="wisdom">12</set>
+			<set name="charisma">12</set>
+			<set name="ac">12</set>
+			<set name="hp">5 (2d4)</set>
+			<set name="speed">40 ft., climb 30 ft., fly 40 ft.</set>
+			<set name="senses">darkvision 60 ft., passive Perception 15</set>
+			<set name="Immunities">poison</set>
+			<set name="conditionImmunities">poisoned</set>
+			<set name="skills">Perception +5, Stealth +4</set>
+			<set name="languages">understands Common but can't speak</set>
+			<set name="type">Monstrosity</set>
+			<set name="size">Small</set>
+			<set name="alignment">any alignment</set>
+			<set name="challenge">0</set>
+			<set name="traits">ID_WOTC_SKT_COMPANION_TRAIT_TRESSYM_DETECT_INVISIBILITY,ID_WOTC_SKT_COMPANION_TRAIT_TRESSYM_KEEN_SMELL,ID_WOTC_SKT_COMPANION_TRAIT_TRESSYM_POISON_SENSE</set>
+			<set name="actions">ID_WOTC_SKT_COMPANION_ACTION_TRESSYM_CLAWS</set>
+		</setters>
+		<rules>
+			<stat name="companion:ac" value="12" />
+			<stat name="companion:hp:max" value="5" bonus="base" />
+			<stat name="companion:speed" value="40" bonus="base" />
+			<stat name="companion:speed:climb" value="30" bonus="base" />
+			<stat name="companion:speed:fly" value="40" bonus="base" />
+			<stat name="companion:perception:proficiency" value="companion:proficiency" bonus="base" />
+			<stat name="companion:perception:proficiency" value="companion:proficiency" bonus="double" />
+			<stat name="companion:stealth:proficiency" value="companion:proficiency" bonus="base" />
+		</rules>
+	</element>
+
+	<element name="Detect Invisibility" type="Companion Trait" source="Storm King’s Thunder" id="ID_WOTC_SKT_COMPANION_TRAIT_TRESSYM_DETECT_INVISIBILITY">
+		<description>
+			<p>Within 60 feet of the tressym, magical invisibility fails to conceal anything from the tressym's sight.</p>
+		</description>
+		<sheet>
+			<description>Within 60 feet of the tressym, magical invisibility fails to conceal anything from the tressym's sight.</description>
+		</sheet>
+	</element>
+	
+	<element name="Keen Smell" type="Companion Trait" source="Storm King’s Thunder" id="ID_WOTC_SKT_COMPANION_TRAIT_TRESSYM_KEEN_SMELL">
+		<description>
+			<p>Within 60 feet of the tressym, magical invisibility fails to conceal anything from the tressym's sight.</p>
+		</description>
+		<sheet>
+			<description>Within 60 feet of the tressym, magical invisibility fails to conceal anything from the tressym's sight.</description>
+		</sheet>
+	</element>
+	
+	<element name="Poison Sense" type="Companion Trait" source="Storm King’s Thunder" id="ID_WOTC_SKT_COMPANION_TRAIT_TRESSYM_POISON_SENSE">
+		<description>
+			<p>The tressym can detect whether a substance is poisonous by taste, touch, or smell.</p>
+		</description>
+		<sheet>
+			<description>The tressym can detect whether a substance is poisonous by taste, touch, or smell.</description>
+		</sheet>
+	</element>
+
+	<element name="Claws" type="Companion Action" source="Storm King’s Thunder" id="ID_WOTC_SKT_COMPANION_ACTION_TRESSYM_CLAWS">
+		<description>
+			<p>Melee Weapon Attack: +0 to hit, reach 5 ft., one target. Hit: 1 slashing damage.</p>
+		</description>
+		<sheet>
+			<description>Melee Weapon Attack: +0 to hit, reach 5 ft., one target. Hit: 1 slashing damage.</description>
+		</sheet>
+	</element>
+</elements>
