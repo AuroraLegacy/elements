@@ -2,7 +2,7 @@
 <elements>
 	<info>
 		<name>Lost Laboratory of Kwalish</name>
-		<update version="0.0.3">
+		<update version="0.0.4">
 			<file name="lost-laboratory-of-kwalish.xml" url="https://raw.githubusercontent.com/AuroraLegacy/elements/master/supplements/extra-life/lost-laboratory-of-kwalish.xml" />
 		</update>
 	</info>
@@ -100,4 +100,414 @@
 			<set name="isRitual">false</set>
 		</setters>
 	</element>
+
+<!-- Blade of the Medusa -->
+	<element name="Blade of the Medusa" type="Magic Item" source="Lost Laboratory of Kwalish" id="ID_LLOK_MAGIC_ITEM_BLADE_OF_THE_MEDUSA">
+		<description>
+			<p>When you attack a creature with this magic weapon and roll a 20 on the attack roll, the creature must make a DC 15 Constitution saving throw in addition to suffering the attack’s normal effects. On a failed save, the creature is restrained and must make another Constitution saving throw at the end of each of its turns. If it successfully saves against this effect three times, the effect ends. If it fails its saves three times, it is turned to stone and subjected to the petrified condition for 1 hour.</p>
+			<p class="indent">A creature is immune to this effect if it is immune to damage of the weapon’s type, does not have a body made of flesh, or has legendary actions.</p>
+			<p class="indent"><b><i>Curse.</i></b>This weapon is cursed, and becoming attuned to it extends the curse to you. Until the curse is broken with a remove curse spell or similar magic, you are unwilling to part with the weapon. Whenever you attack a creature with this weapon and roll a 1 on the attack roll, you must succeed on a DC 15 Constitution saving throw or be restrained and forced to make additional saves against being petrified, as above.</p>
+		</description>
+		<setters>
+			<set name="category">Magic Weapons</set>
+			<set name="cost" currency="gp">0</set>
+			<set name="weight" lb="0">0 lb.</set>
+			<set name="type" addition="any sword">Weapon</set>
+			<set name="rarity">Very Rare</set>
+			<set name="weapon">ID_INTERNAL_WEAPON_GROUP_SWORDS</set>
+			<set name="name-format">{{parent}} of the Medusa</set>
+			<set name="attunement">true</set>
+		</setters>
+	</element>
+
+<!-- Deck of Several Things -->
+	<element name="Deck of Several Things" type="Magic Item" source="Lost Laboratory of Kwalish" id="ID_LLOK_MAGIC_ITEM_DECK_OF_SEVERAL_THINGS">
+		<description>
+			<p>Stored in a leather pouch, this unique deck contains twenty-two colored cards made of some strong but unknown metal, each of which features a design printed as a mosaic of raised dots. Before you draw a card, you must declare how many cards you intend to draw and then draw them randomly (you can use an altered deck of playing cards to simulate the deck). Any cards drawn in excess of this number have no effect. Otherwise, as soon as you draw a card from the deck, its magic takes effect. You must draw each card no more than 1 hour after the previous draw. If you fail to draw the chosen number, the remaining number of cards fly from the deck on their own and take effect all at once.</p>
+			<p class="indent">Once a card is drawn, it fades from existence. Unless the card is the Fool or the Jester, the card reappears in the deck, making it possible to draw the same card twice.</p>
+			<table>
+				<thead>
+					<tr><td>Playing Card</td><td>Card</td></tr>
+				</thead>
+				<tr><td>Ace of diamonds</td><td>Vizier</td></tr>
+				<tr><td>King of diamonds</td><td>Sun</td></tr>
+				<tr><td>Queen of diamonds</td><td>Moon</td></tr>
+				<tr><td>Jack of diamonds</td><td>Star</td></tr>
+				<tr><td>Two of diamonds</td><td>Comet</td></tr>
+				<tr><td>Ace of hearts</td><td>The Fates</td></tr>
+				<tr><td>King of hearts</td><td>Throne</td></tr>
+				<tr><td>Queen of hearts</td><td>Key</td></tr>
+				<tr><td>Jack of hearts</td><td>Knight</td></tr>
+				<tr><td>Two of hearts</td><td>Gem</td></tr>
+				<tr><td>Ace of clubs</td><td>Talons</td></tr>
+				<tr><td>King of clubs</td><td>The Void</td></tr>
+				<tr><td>Queen of clubs</td><td>Flames</td></tr>
+				<tr><td>Jack of clubs</td><td>Skull</td></tr>
+				<tr><td>Two of clubs</td><td>Idiot</td></tr>
+				<tr><td>Ace of spades</td><td>Donjon</td></tr>
+				<tr><td>King of spades</td><td>Ruin</td></tr>
+				<tr><td>Queen of spades</td><td>Euryale</td></tr>
+				<tr><td>Jack of spades</td><td>Rogue</td></tr>
+				<tr><td>Two of spades</td><td>Balance</td></tr>
+				<tr><td>Joker (with TM)</td><td>Fool</td></tr>
+				<tr><td>Joker (without TM)</td><td>Jester</td></tr>
+			</table>
+			<p class="indent"><b><i>Balance.</i></b> Your mind suffers a wrenching alteration, causing your alignment to change for the duration of the adventure. Lawful becomes chaotic, good becomes evil, and vice versa. If you are true neutral or unaligned, this card has no effect on you.</p>
+			<p class="indent"><b><i>Comet.</i></b> If you single-handedly defeat the next hostile monster or group of monsters you encounter, you have advantage on ability checks made using one skill of your choice for the duration of the adventure. Otherwise, this card has no effect.</p>
+			<p class="indent"><b><i>Donjon.</i></b> You are instantly teleported to and confined within the prison of the Monastery of the Distressed Body (area M6). Everything you were wearing and carrying stays behind in the space you occupied when you disappeared. You draw no more cards.</p>
+			<p class="indent"><b><i>Euryale.</i></b> The card’s medusa-like visage curses you. You take a −1 penalty on saving throws for the duration of the adventure.</p>
+			<p class="indent"><b><i>The Fates.</i></b> Reality’s fabric unravels and spins anew, allowing you to avoid or erase one event as if it never happened. You can use the card’s magic as soon as you draw the card or at any other point during the adventure.</p>
+			<p class="indent"><b><i>Flames.</i></b> The Grand Master of the Monastery of the Distressed Body becomes your enemy. The bone devil seeks your ruin, savoring your suffering before attempting to slay you. If the Grand Master has already been defeated, you gain the enmity of Garret Levistusson’s patron—a similarly powerful devil.</p>
+			<p class="indent"><b><i>Fool.</i></b> For the duration of the adventure, you lose proficiency with one skill or gain disadvantage on all checks made with one skill (with the skill and the penalty determined by the DM). Discard this card and draw from the deck again, counting both draws as one of your declared draws.</p>
+			<p class="indent"><b><i>Gem.</i></b> The 1,000 gp hoard of the leprechaun from the Wilderness Encounters table (see appendix A of the <i>Lost Laboratory of Kwalish</i>) appears at your feet. If that treasure has already been claimed, you gain an equivalent hoard.</p>
+			<p class="indent"><b><i>Idiot.</i></b> Reduce your Intelligence by 1d4 + 1 (to a minimum score of 1) for the duration of the adventure. You can draw one additional card beyond your declared draws.</p>
+			<p class="indent"><b><i>Jester.</i></b> You gain proficiency in a skill of your choice for the duration of the adventure, or you can draw two additional cards beyond your declared draws.</p>
+			<p class="indent"><b><i>Key.</i></b> A common or uncommon magic weapon with which you are proficient, or a <i>spell scroll</i> featuring a spell of a level you can cast, appears in your hands. The DM chooses the weapon or spell, which you possess for the duration of this adventure.</p>
+			<p class="indent"><b><i>Knight.</i></b> You gain the service of any of the NPCs in the “Hirelings” section not currently with the party, who appears in a space you choose within 30 feet of you. The NPC serves you loyally for the duration of the adventure, believing that the fates have drawn them to you. You control this character.</p>
+			<p class="indent"><b><i>Moon.</i></b> You are granted the ability to cast any spell of 5th level or lower, and can use that ability 1d3 times for the duration of the adventure.</p>
+			<p class="indent"><b><i>Rogue.</i></b> An NPC of the DM’s choice becomes secretly hostile toward you. The identity of your new enemy isn’t known until the NPC or someone else reveals it. Any enchantment spell cast on the NPC at 6th level or higher can end the NPC’s hostility toward you.</p>
+			<p class="indent"><b><i>Ruin.</i></b> All forms of wealth that you carry or own, other than magic items, are lost to you. This wealth can be recovered either in the treasury of the Monastery of the Distressed Body (area M10) or Kwalish’s lab in Daoine Gloine (area O7), whichever comes later in the adventure.</p>
+			<p class="indent"><b><i>Skull.</i></b> You summon an avatar of death—a mechanical skeleton (use <b>bone naga</b> statistics) clad in a tattered black robe. It appears in a space of the DM’s choice within 10 feet of you and attacks you, warning all others that you must win the battle alone. The avatar fights until you die or it drops to 0 hit points, whereupon it disappears. If anyone tries to help you, the helper summons its own avatar of death. A creature slain by an avatar of death can’t be restored to life.</p>
+			<p class="indent"><b><i>Star.</i></b> Increase one of your ability scores by 1 for the duration of the adventure. The score can exceed 20 but can’t exceed 24.</p>
+			<p class="indent"><b><i>Sun.</i></b> You gain proficiency in the skill of your choice for the duration of the adventure. In addition, a common or uncommon wondrous item appears in your hands. The DM chooses the item, which you possess for the duration of this adventure.</p>
+			<p class="indent"><b><i>Talons.</i></b> Every magic item you wear or carry is lost to you. These items can be recovered either in the treasury of the Monastery of the Distressed Body (area M10) or Kwalish’s lab in Daoine Gloine (area O7), whichever comes later in the adventure.</p>
+			<p class="indent"><b><i>Throne.</i></b> You gain proficiency in the Persuasion skill and you double your proficiency bonus on checks made with that skill for the duration of the adventure. In addition, the Monastery of the Distressed Body’s brains in jars regard you thereafter as the monastery’s rightful master. You must defeat or otherwise clear out the Grand Master and its servants before you can claim the monastery as yours.</p>
+			<p class="indent"><b><i>Vizier.</i></b> At any one time you choose within the duration of the adventure, you can ask a question in meditation and mentally receive a truthful answer to that question. Besides information, the answer helps you solve a puzzling problem or other dilemma. In other words, the knowledge comes with wisdom on how to apply it. </p>
+			<p class="indent"><b><i>Void.</i></b> This black card spells disaster. Your soul is drawn from your body and held within machinery in either the control room of the Monastery of the Distressed Body (area M8) or Kwalish’s lab in Daoine Gloine (area O7), whichever comes later in the adventure. While your soul is trapped in this way, your body is incapacitated. <i>Divination</i>, <i>contact other plane</i>, or a similar spell of 4th level or higher reveals the location of the machinery that holds your soul. You draw no more cards.</p>
+		</description>
+		<setters>
+			<set name="category">Wondrous Items</set>
+			<set name="weight">0 lb.</set>
+			<set name="type">Wondrous Item</set>
+			<set name="rarity">Legendary</set>
+		</setters>
+	</element>
+
+
+
+<!-- Galder’s Bubble Pipe -->
+	<element name="Galder's Bubble Pipe" type="Magic Item" source="Lost Laboratory of Kwalish" id="ID_LLOK_MAGIC_ITEM_GALDERS_BUBBLE_PIPE">
+		<description>
+			<p>This finely carved pipe blows odorless bubbles instead of smoke when used. The pipe has 3 charges, and it regains all spent charges daily at dawn. While you hold the pipe, you can expend charges to gain access to the following properties:</p>
+			<ul>
+				<li>You can cast <i>fog cloud</i> as an action (1 charge).</li>
+				<li>You can cast <i>misty step</i> as a bonus action (2 charges).</li>
+				<li>You can summon a steam mephit as an action (3 charges). The mephit is friendly to you, obeys your verbal commands, and acts on its own turn in the initiative order. It disappears in a harmless puff of steam after 1 minute or if it ends its turn more than 60 feet from the pipe.</li>
+			</ul>
+		</description>
+		<setters>
+			<set name="category">Wondrous Items</set>
+			<set name="weight">0 lb.</set>
+			<set name="type">Wondrous Item</set>
+			<set name="rarity">Rare</set>
+			<set name="attunement">true</set>
+		</setters>
+	</element>
+
+<!-- Gambler’s Blade -->
+	<element name="Gambler's Blade +1" type="Magic Item" source="Lost Laboratory of Kwalish" id="ID_LLOK_MAGIC_ITEM_GAMBLERS_BLADE_1">
+		<description>
+			<p>Choose a magical bonus of +1 to +3. This sword gains that bonus to its attack and damage rolls. For each point of bonus you choose for the sword, you take a corresponding penalty (−1 to −3) to your death saving throws. You can change this magical bonus each day at dawn.</p>
+			<p class="indent"><b><i>Curse.</i></b>This weapon is cursed, and becoming attuned to it extends the curse to you. Until the curse is broken with a remove curse spell or similar magic, you are unwilling to part with the weapon.</p>
+		</description>
+		<setters>
+			<set name="category">Magic Weapons</set>
+			<set name="cost" currency="gp">0</set>
+			<set name="weight" lb="0">0 lb.</set>
+			<set name="type" addition="any sword">Weapon</set>
+			<set name="rarity">Rare</set>
+			<set name="enhancement">1</set>
+			<set name="weapon">ID_INTERNAL_WEAPON_GROUP_SWORDS</set>
+			<set name="name-format">Gambler's {{parent}} +{{enhancement}}</set>
+			<set name="attunement">true</set>
+		</setters>
+	</element>
+
+	<element name="Gambler's Blade +2" type="Magic Item" source="Lost Laboratory of Kwalish" id="ID_LLOK_MAGIC_ITEM_GAMBLERS_BLADE_2">
+		<description>
+			<p>Choose a magical bonus of +1 to +3. This sword gains that bonus to its attack and damage rolls. For each point of bonus you choose for the sword, you take a corresponding penalty (−1 to −3) to your death saving throws. You can change this magical bonus each day at dawn.</p>
+			<p class="indent"><b><i>Curse.</i></b>This weapon is cursed, and becoming attuned to it extends the curse to you. Until the curse is broken with a remove curse spell or similar magic, you are unwilling to part with the weapon.</p>
+		</description>
+		<setters>
+			<set name="category">Magic Weapons</set>
+			<set name="cost" currency="gp">0</set>
+			<set name="weight" lb="0">0 lb.</set>
+			<set name="type" addition="any sword">Weapon</set>
+			<set name="rarity">Rare</set>
+			<set name="enhancement">2</set>
+			<set name="weapon">ID_INTERNAL_WEAPON_GROUP_SWORDS</set>
+			<set name="name-format">Gambler's {{parent}} +{{enhancement}}</set>
+			<set name="attunement">true</set>
+		</setters>
+	</element>
+
+	<element name="Gambler's Blade +3" type="Magic Item" source="Lost Laboratory of Kwalish" id="ID_LLOK_MAGIC_ITEM_GAMBLERS_BLADE_3">
+		<description>
+			<p>Choose a magical bonus of +1 to +3. This sword gains that bonus to its attack and damage rolls. For each point of bonus you choose for the sword, you take a corresponding penalty (−1 to −3) to your death saving throws. You can change this magical bonus each day at dawn.</p>
+			<p class="indent"><b><i>Curse.</i></b>This weapon is cursed, and becoming attuned to it extends the curse to you. Until the curse is broken with a remove curse spell or similar magic, you are unwilling to part with the weapon.</p>
+		</description>
+		<setters>
+			<set name="category">Magic Weapons</set>
+			<set name="cost" currency="gp">0</set>
+			<set name="weight" lb="0">0 lb.</set>
+			<set name="type" addition="any sword">Weapon</set>
+			<set name="rarity">Rare</set>
+			<set name="enhancement">3</set>
+			<set name="weapon">ID_INTERNAL_WEAPON_GROUP_SWORDS</set>
+			<set name="name-format">Gambler's {{parent}} +{{enhancement}}</set>
+			<set name="attunement">true</set>
+		</setters>
+	</element>
+
+<!-- Heward’s Hireling Armor -->
+   <element name="Heward's Hireling Armor" type="Magic Item" source="Lost Laboratory of Kwalish" id="ID_LLOK_MAGIC_ITEM_HEWARDS_HIRELING_ARMOR">
+	   <description>
+		   <p>A number of Kwalish’s experiments were attempts to research the works of the legendary mage Heward, who first crafted what he named <i>hireling armor</i>. While wearing this armor, you gain a +1 bonus to AC. In addition, the armor’s animated straps can assist with the drawing and sheathing of weapons, such that you can draw or stow two one-handed weapons when you would normally be able to draw or stow only one.</p>
+		   <p class="indent">This armor also has six pockets, each of which is an extradimensional space. Each pocket can hold up to 20 pounds of material, not exceeding a volume of 2 cubic feet. The armor always weighs 10 pounds, regardless of its pockets’ contents. Placing an object into one of the armor’s pockets follows the normal rules for interacting with objects. Retrieving an item from a pocket of the armor requires you to use an action. When you reach into a pocket for a specific item, the item is always magically on top.</p>
+		   <p class="indent">Placing the armor inside an extradimensional space created by a <i>bag of holding</i>, a <i>Heward’s handy haversack</i>, or a similar item instantly destroys both items and opens a gate to the Astral Plane. The gate originates where the one item was placed inside the other. Any creature within 10 feet of the gate is sucked through it and deposited in a random location on the Astral Plane. The gate then closes. The gate is one-way only and can’t be reopened.</p>
+	   </description>
+	   <setters>
+		   <set name="category">Magic Armor</set>
+		   <set name="cost" currency="gp">0</set>
+		   <set name="type" addition="leather">Armor</set>
+		   <set name="rarity">Very Rare</set>
+			<set name="armor">Leather</set>
+			<set name="enhancement">1</set>
+		   <set name="attunement">true</set>
+	   </setters>
+	   <rules>
+		   <stat name="ac:armored:enhancement" value="1" bonus="enhancement" />
+	   </rules>
+   </element>
+
+<!-- Ioun Stone -->
+	<element name="Ioun Stone, Supreme Intellect" type="Magic Item" source="Lost Laboratory of Kwalish" id="ID_LLOK_MAGIC_ITEM_IOUN_STONE_SUPREME_INTELLECT">
+		<description>
+			<p>You gain a +1 bonus to Intelligence checks while this faceted sphere orbits your head.</p>
+			<p>An <em>Ioun stone</em> is named after Ioun, a god of knowledge and prophecy revered on some worlds. Many types of <em>Ioun stone</em> exist, each type a distinct combination of shape and color.</p>
+			<p class="indent">When you use an action to toss one of these stones into the air, the stone orbits your head at a distance of 1d3 feet and confers a benefit to you. Thereafter, another creature must use an action to grasp or net the stone to separate it from you, either by making a successful attack roll against AC 24 or a successful DC 24 Dexterity (Acrobatics) check. You can use an action to seize and stow the stone, ending its effect.</p>
+			<p class="indent">A stone has AC 24, 10 hit points, and resistance to all damage. It is considered to be an object that is being worn while it orbits your head.</p>
+		</description>
+		<setters>
+			<set name="keywords">ioun</set>
+			<set name="category">Wondrous Items</set>
+			<set name="cost" currency="gp">0</set>
+			<set name="weight" lb="0">0 lb.</set>
+			<set name="slot">misc</set>
+			<set name="type">Wondrous Item</set>
+			<set name="attunement">true</set>
+			<set name="rarity">Rare</set>
+		</setters>
+	</element>
+
+	<element name="Ioun Stone, Historical Knowledge" type="Magic Item" source="Lost Laboratory of Kwalish" id="ID_LLOK_MAGIC_ITEM_IOUN_STONE_HISTORICAL_KNOWLEDGE">
+		<description>
+			<p>You gain proficiency in the History skill, or a +1 bonus to checks with that skill if already proficient, while this polished, steely sphere orbits your head.</p>
+			<p>An <em>Ioun stone</em> is named after Ioun, a god of knowledge and prophecy revered on some worlds. Many types of <em>Ioun stone</em> exist, each type a distinct combination of shape and color.</p>
+			<p class="indent">When you use an action to toss one of these stones into the air, the stone orbits your head at a distance of 1d3 feet and confers a benefit to you. Thereafter, another creature must use an action to grasp or net the stone to separate it from you, either by making a successful attack roll against AC 24 or a successful DC 24 Dexterity (Acrobatics) check. You can use an action to seize and stow the stone, ending its effect.</p>
+			<p class="indent">A stone has AC 24, 10 hit points, and resistance to all damage. It is considered to be an object that is being worn while it orbits your head.</p>
+		</description>
+		<setters>
+			<set name="keywords">ioun</set>
+			<set name="category">Wondrous Items</set>
+			<set name="cost" currency="gp">0</set>
+			<set name="weight" lb="0">0 lb.</set>
+			<set name="slot">misc</set>
+			<set name="type">Wondrous Item</set>
+			<set name="attunement">true</set>
+			<set name="rarity">Rare</set>
+		</setters>
+	</element>
+
+	<element name="Ioun Stone, Natural Knowledge" type="Magic Item" source="Lost Laboratory of Kwalish" id="ID_LLOK_MAGIC_ITEM_IOUN_STONE_NATURAL_KNOWLEDGE">
+		<description>
+			<p>You gain proficiency in the Nature skill, or a +1 bonus to checks with that skill if already proficient, while this burnished, brassy stone orbits your head.</p>
+			<p>An <em>Ioun stone</em> is named after Ioun, a god of knowledge and prophecy revered on some worlds. Many types of <em>Ioun stone</em> exist, each type a distinct combination of shape and color.</p>
+			<p class="indent">When you use an action to toss one of these stones into the air, the stone orbits your head at a distance of 1d3 feet and confers a benefit to you. Thereafter, another creature must use an action to grasp or net the stone to separate it from you, either by making a successful attack roll against AC 24 or a successful DC 24 Dexterity (Acrobatics) check. You can use an action to seize and stow the stone, ending its effect.</p>
+			<p class="indent">A stone has AC 24, 10 hit points, and resistance to all damage. It is considered to be an object that is being worn while it orbits your head.</p>
+		</description>
+		<setters>
+			<set name="keywords">ioun</set>
+			<set name="category">Wondrous Items</set>
+			<set name="cost" currency="gp">0</set>
+			<set name="weight" lb="0">0 lb.</set>
+			<set name="slot">misc</set>
+			<set name="type">Wondrous Item</set>
+			<set name="attunement">true</set>
+			<set name="rarity">Rare</set>
+		</setters>
+	</element>
+
+	<element name="Ioun Stone, Religious Knowledge" type="Magic Item" source="Lost Laboratory of Kwalish" id="ID_LLOK_MAGIC_ITEM_IOUN_STONE_RELIGIOUS_KNOWLEDGE">
+		<description>
+			<p>You gain proficiency in the Religion skill, or a +1 bonus to checks with that skill if already proficient, while this tiny golden gem orbits your head.</p>
+			<p>An <em>Ioun stone</em> is named after Ioun, a god of knowledge and prophecy revered on some worlds. Many types of <em>Ioun stone</em> exist, each type a distinct combination of shape and color.</p>
+			<p class="indent">When you use an action to toss one of these stones into the air, the stone orbits your head at a distance of 1d3 feet and confers a benefit to you. Thereafter, another creature must use an action to grasp or net the stone to separate it from you, either by making a successful attack roll against AC 24 or a successful DC 24 Dexterity (Acrobatics) check. You can use an action to seize and stow the stone, ending its effect.</p>
+			<p class="indent">A stone has AC 24, 10 hit points, and resistance to all damage. It is considered to be an object that is being worn while it orbits your head.</p>
+		</description>
+		<setters>
+			<set name="keywords">ioun</set>
+			<set name="category">Wondrous Items</set>
+			<set name="cost" currency="gp">0</set>
+			<set name="weight" lb="0">0 lb.</set>
+			<set name="slot">misc</set>
+			<set name="type">Wondrous Item</set>
+			<set name="attunement">true</set>
+			<set name="rarity">Rare</set>
+		</setters>
+	</element>
+
+	<element name="Ioun Stone, Language Knowledge" type="Magic Item" source="Lost Laboratory of Kwalish" id="ID_LLOK_MAGIC_ITEM_IOUN_STONE_LANGUAGE_KNOWLEDGE">
+		<description>
+			<p>You are fluent in one additional language while this pulsating bit of red jeweled crystal orbits your head. The DM chooses the language bestowed by the stone.</p>
+			<p>An <em>Ioun stone</em> is named after Ioun, a god of knowledge and prophecy revered on some worlds. Many types of <em>Ioun stone</em> exist, each type a distinct combination of shape and color.</p>
+			<p class="indent">When you use an action to toss one of these stones into the air, the stone orbits your head at a distance of 1d3 feet and confers a benefit to you. Thereafter, another creature must use an action to grasp or net the stone to separate it from you, either by making a successful attack roll against AC 24 or a successful DC 24 Dexterity (Acrobatics) check. You can use an action to seize and stow the stone, ending its effect.</p>
+			<p class="indent">A stone has AC 24, 10 hit points, and resistance to all damage. It is considered to be an object that is being worn while it orbits your head.</p>
+		</description>
+		<setters>
+			<set name="keywords">ioun</set>
+			<set name="category">Wondrous Items</set>
+			<set name="cost" currency="gp">0</set>
+			<set name="weight" lb="0">0 lb.</set>
+			<set name="slot">misc</set>
+			<set name="type">Wondrous Item</set>
+			<set name="attunement">true</set>
+			<set name="rarity">Rare</set>
+		</setters>
+	</element>
+
+	<element name="Ioun Stone, Self-Preservation" type="Magic Item" source="Lost Laboratory of Kwalish" id="ID_LLOK_MAGIC_ITEM_IOUN_STONE_SELF_PRESERVATION">
+		<description>
+			<p>You gain a +1 bonus to Intelligence saving throws while this silvery gem orbits your head.</p>
+			<p>An <em>Ioun stone</em> is named after Ioun, a god of knowledge and prophecy revered on some worlds. Many types of <em>Ioun stone</em> exist, each type a distinct combination of shape and color.</p>
+			<p class="indent">When you use an action to toss one of these stones into the air, the stone orbits your head at a distance of 1d3 feet and confers a benefit to you. Thereafter, another creature must use an action to grasp or net the stone to separate it from you, either by making a successful attack roll against AC 24 or a successful DC 24 Dexterity (Acrobatics) check. You can use an action to seize and stow the stone, ending its effect.</p>
+			<p class="indent">A stone has AC 24, 10 hit points, and resistance to all damage. It is considered to be an object that is being worn while it orbits your head.</p>
+		</description>
+		<setters>
+			<set name="keywords">ioun</set>
+			<set name="category">Wondrous Items</set>
+			<set name="cost" currency="gp">0</set>
+			<set name="weight" lb="0">0 lb.</set>
+			<set name="slot">misc</set>
+			<set name="type">Wondrous Item</set>
+			<set name="attunement">true</set>
+			<set name="rarity">Rare</set>
+		</setters>
+	</element>
+
+<!-- Leather Golem Armor -->
+   <element name="Leather Golem Armor" type="Magic Item" source="Lost Laboratory of Kwalish" id="ID_KBP_VOM_MAGIC_ITEM_LEATHER_GOLEM_ARMOR">
+	   <description>
+		   <p>Strange rituals have repurposed the body of a flesh golem into this partially sentient suit of leather armor. While wearing this armor, you gain a +1 bonus to AC and to saving throws against spells and other magical effects. In addition, you gain the following properties:</p>
+		   <ul>
+			<li><b><i>Immutable Form.</i></b> You are immune to any spell or effect that would alter your form.</li>
+			<li><b><i>Lightning Absorption.</i></b> You gain resistance to lightning damage. Whenever you take lightning damage, you gain 5 temporary hit points.</li>
+		   </ul>
+		   <p class="indent"><b><i>Curse.</i></b> This armor is cursed, and becoming attuned to it extends the curse to you. Until the curse is broken with a <i>remove curse</i> spell or similar magic, you are unwilling to part with the armor. In addition, while you wear the cursed armor, you gain the following properties:</p>
+		   <ul>
+			<li><b><i>Aversion of Fire.</i></b> If you take fire damage, you have disadvantage on attack rolls and ability checks until the end of your next turn.</li>
+			<li><b><i>Berserk.</i></b> Whenever a critical hit is made against you, roll a d6. On a 6, the armor causes you to go berserk. On each of your turns while berserk, you attack the nearest creature you can see. If no creature is near enough to move to and attack, you attack an object, with preference for an object smaller than yourself. Once the armor causes you to go berserk, it cannot be removed. You continue to attack until you are incapacitated or until another creature is able to calm you with appropriate magic (such as a calm emotions spell) or a successful DC 15 Charisma (Persuasion) check.</li>
+		   </ul>
+	   </description>
+	   <setters>
+		   <set name="category">Magic Armor</set>
+		   <set name="cost" currency="gp">0</set>
+		   <set name="type" addition="leather">Armor</set>
+		   <set name="rarity">Rare</set>
+			<set name="armor">Leather</set>
+			<set name="enhancement">1</set>
+		   <set name="attunement">true</set>
+	   </setters>
+	   <rules>
+		   <stat name="ac:armored:enhancement" value="1" bonus="enhancement" />
+		   <grant type="Condition" id="ID_INTERNAL_CONDITION_DAMAGE_RESISTANCE_LIGHTNING" />
+	   </rules>
+   </element>
+
+<!-- Polymorph Blade -->
+	<element name="Polymorph Blade" type="Magic Item" source="Lost Laboratory of Kwalish" id="ID_LLOK_MAGIC_ITEM_POLYMORPH_BLADE">
+		<description>
+			<p>When you attack a creature with this magic weapon and roll a 20 on the attack roll, the creature must make a DC 15 Wisdom saving throw in addition to suffering the attack’s normal effects. On a failed save, the creature also suffers the effects of a <i>polymorph</i> spell. Roll a d20 and consult the following table to determine the form the target creature is transformed into.</p>
+			<table>
+				<thead>
+					<tr><td>d20</td><td>New Form</td></tr>
+				</thead>
+				<tr><td>1</td><td>Tyrannosaurus</td></tr>
+				<tr><td>2</td><td>Giant Ape</td></tr>
+				<tr><td>3</td><td>Elephant</td></tr>
+				<tr><td>4</td><td>Giant Scorpion</td></tr>
+				<tr><td>5</td><td>Rhinoceros</td></tr>
+				<tr><td>6</td><td>Polar Bear</td></tr>
+				<tr><td>7</td><td>Giant Toad</td></tr>
+				<tr><td>8</td><td>Giant Eagle</td></tr>
+				<tr><td>9</td><td>Black Bear</td></tr>
+				<tr><td>10</td><td>Crocodile</td></tr>
+				<tr><td>11</td><td>Wolf</td></tr>
+				<tr><td>12</td><td>Horse</td></tr>
+				<tr><td>13</td><td>Ox</td></tr>
+				<tr><td>14</td><td>Giant Frog</td></tr>
+				<tr><td>15</td><td>Poisonous Snake</td></tr>
+				<tr><td>16</td><td>Hawk</td></tr>
+				<tr><td>17</td><td>Octopus</td></tr>
+				<tr><td>18</td><td>Cat</td></tr>
+				<tr><td>19</td><td>Rat</td></tr>
+				<tr><td>20</td><td>Rabbit</td></tr>
+			</table>
+			<p class="indent">A creature is immune to this effect if it is immune to damage of the weapon’s type, is a shapechanger, or has legendary actions.</p>
+			<p class="indent"><b><i>Curse.</i></b>This weapon is cursed, and becoming attuned to it extends the curse to you. Until the curse is broken with a remove curse spell or similar magic, you are unwilling to part with the weapon. Whenever you attack a creature with this weapon and roll a 1 on the attack roll, you suffer the effect of a <i>polymorph</i> spell for 1 hour, rolling on the table to determine your new form.</p>
+		</description>
+		<setters>
+			<set name="category">Magic Weapons</set>
+			<set name="cost" currency="gp">0</set>
+			<set name="weight" lb="0">0 lb.</set>
+			<set name="type" addition="any sword">Weapon</set>
+			<set name="rarity">Very Rare</set>
+			<set name="weapon">ID_INTERNAL_WEAPON_GROUP_SWORDS</set>
+			<set name="name-format">Polymorph {{parent}}</set>
+		</setters>
+	</element>
+
+<!-- Powered Armor -->
+   <element name="Powered Armor" type="Magic Item" source="Lost Laboratory of Kwalish" id="ID_LLOK_MAGIC_ITEM_POWERED_ARMOR">
+	   <description>
+		   <p><i>Powered armor</i> resembles a suit of unusual plate armor, with finely articulated joints connected by an oily, black, leather-like material. The armor has been worked to create the appearance of a heavily muscled warrior, and its great helm is unusual in that it has no openings—only a broad glass plate in the front with a second piece of glass above it. Strange plates, tubing, and large metal bosses adorn the armor in seemingly random fashion. On the back of the armor’s left gauntlet is a rectangular metal box, from which projects a short rod tipped with a cone-shaped red crystal.</p>
+			<p class="indent">While wearing this armor, you gain the following benefits:</p>
+			<ul>
+				<li>You have a +1 bonus to AC.</li>
+				<li>Your Strength score is 18 (this has no effect if your Strength is already 18 or higher).</li>
+				<li>You have advantage on death saving throws.</li>
+			</ul>
+			<p class="indent">The armor has further capabilities that can be powered either by energy cells or by your own life energy. You can use a bonus action to draw power from an energy cell or sacrifice hit points to gain one of the following benefits:</p>
+		   	<ul>
+				<li>Emit a force field to gain 2d6 + 5 temporary hit points (1 charge or 5 hit points).</li>
+				<li>Activate boosters to gain a flying speed of 15 feet for 1 minute (1 charge or 5 hit points).</li>
+				<li>Fire arm-mounted laser: <i>Ranged Weapon Attack:</i> +8 to hit, range 120 feet, one target. <i>Hit:</i> 2d6 radiant damage (1 charge or 5 hit points).</li>
+				<li>Translate any writing you can see in any nonmagical language, to a total of one thousand words over 1 minute (1 charge or 5 hit points).</li>
+				<li>Fill the armor with air, allowing you to breathe normally in any environment for up to 1 hour (1 charge or 5 hit points).</li>
+				<li>Gain darkvision to a range of 60 feet for up to 1 hour (1 charge or 5 hit points).</li>
+			</ul>
+			<p class="indent">The armor can accept only one energy cell at a time. It is found with one energy cell attached, containing 2d10 charges.</p>
+			<div class="sidebar">
+				<h5>Powered Armor Options</h5>
+				<p>Depending on where and how it appears in the adventure, you might wish to modify the features of Kwalish’s legendary <i>powered armor</i>.</p>
+				<p class="indent"><b><i>Automatic Defenses.</i></b> Unless Kwalish deactivates the suit’s automatic defenses, no one can approach the armor without setting those defenses off. Treat the armor as a <b>shield guardian</b> that has stored a <i>magic missile</i> spell cast using a 4th-level spell slot. When the armor is reduced to 0 hit points, its defenses are rendered inert and it can be safely approached.</p>
+				<p class="indent"><b><i>Battle of Wills.</i></b> When donned by a new user, the armor deems itself superior and attempts to take possession of that user. The user must succeed on a DC 13 Charisma saving throw or be possessed by the armor. While possessed, the user is incapacitated and loses control of its body but retains its awareness. The armor uses the possessed user’s statistics (as adjusted by the armor), but doesn’t gain access to the user’s knowledge, features, or proficiencies.</p>
+				<p class="indent">Freeing a creature trapped inside the armor first requires defeating the armor’s automatic defenses (as above). The trapped creature can also attempt a DC 20 Charisma saving throw each day at dawn. On a successful save, the armor no longer controls the creature and can be safely donned by that creature at any time.</p>
+				<p class="indent"><b><i>Stasis.</i></b> Whenever a creature wearing the armor drops to 0 hit points, the armor places that creature into a state of stasis. While in this state, the creature is stable and does not make death saving throws, but the armor takes control of the creature (as above). Additionally, the armor attempts to assume the identity of the user, assuring their allies that nothing is amiss. Freeing the user first requires defeating the armor’s automatic defenses (as above). A creature in stasis does not make Charisma saving throws to break the armor’s control.</p>
+				<p class="indent"><i><b>Alternative Power.</b> Powered armor</i> originally required energy cells to fuel it, but was adapted by Kwalish to be fueled by the life energy of the creature wearing it. You might decide that the armor can also draw power from additional sources, or that energy cells can be recharged with the aid of a tinker, inventor, or artificer. It might also be possible for allies to connect to the armor through the use of magic that generates a conduit something like an astral silver cord. While so connected, a willing ally can give up hit points as a reaction to fuel the armor’s abilities.</p>
+			</div>
+	   </description>
+	   <setters>
+		   <set name="category">Magic Armor</set>
+		   <set name="cost" currency="gp">0</set>
+		   <set name="type" addition="plate">Armor</set>
+		   <set name="rarity">Legendary</set>
+		   <set name="armor">Plate</set>
+		   <set name="attunement">true</set>
+	   </setters>
+	   <rules>
+		   <stat name="ac:armored:enhancement" value="1" bonus="enhancement" />
+		   <stat name="strength:score:set" value="18" bonus="base" />
+	   </rules>
+   </element>
 </elements>
