@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<elements>
+	<info>
+		<name>Khoravar</name>
+		<description>The Khoravar species from Eberron: Forge of the Artificer.</description>
+		<author url="https://marketplace.dndbeyond.com/category/5147000?pid=D5147000">Wizards of the Coast</author>
+		<update version="0.0.1">
+			<file name="race-khoravar.xml" url="https://raw.githubusercontent.com/AuroraLegacy/elements/master/supplements/eberron-forge-of-the-artificer/races/race-khoravar.xml" />
+		</update>
+	</info>
+	
+	<element name="Khoravar" type="Race" source="Eberron: Forge of the Artificer" id="ID_WOTC_EFOTA_RACE_KHORAVAR">
+		<description>
+			<p>Over the course of centuries, those descended from both humans and elves have developed their own communities and traditions in Khorvaire. The rise of House Lyrandar and House Medani has strengthened this identity. Members of these communities call themselves Khoravar, an Elvish term meaning “children of Khorvaire,” as they dislike the term “half-elf.”</p>
+			<p class="indent">Many Khoravar espouse the idea of being “the bridge between,” believing they are called to facilitate communication and cooperation between members of different cultures or species. Khoravar who follow this philosophy often become bards, diplomats, mediators, or translators. Others, fascinated by their distant connection to the Fey, seek to build bridges between the Material Plane and the Feywild of Thelanis. These Khoravar often become druids or warlocks with archfey patrons.</p>
+			
+			<h4>Khoravar Traits</h4>
+			<p style="margin-top:15px"><strong><em>Creature Type:</em></strong> Humanoid</p>
+			<p><strong><em>Size:</em></strong> Medium (about 4–6 feet tall) or Small (about 2–4 feet tall), chosen when you select this species</p>
+			<p><strong><em>Speed:</em></strong> 30 feet</p>
+			
+			<p>As a Khoravar, you have these special traits.</p>
+			<p class="indent"><strong><em>Darkvision.</em></strong> You have Darkvision with a range of 60 feet.</p>
+			<p class="indent"><strong><em>Fey Ancestry.</em></strong> You have Advantage on saving throws you make to avoid or end the Charmed condition.</p> 
+			<p class="indent"><strong><em>Fey Gift.</em></strong> You know the <i>Friends</i> cantrip. Whenever you finish a Long Rest, you can replace that cantrip with a different cantrip from the Cleric, Druid, or Wizard spell list. Intelligence, Wisdom, or Charisma is your spellcasting ability for the spell you cast with this trait (chosen when you select this species).</p>
+			<p class="indent"><strong><em>Lethargy Resilience.</em></strong> When you fail a saving throw to avoid or end the Unconscious condition, you can succeed instead. Once you use this trait, you can’t do so again until you finish 1d4 Long Rests.</p>
+			<p class="indent"><strong><em>Skill Versatility.</em></strong> You gain proficiency in one skill or with one tool of your choice. Whenever you finish a Long Rest, you can replace it with another skill or tool proficiency.</p>
+		</description>
+		<sheet display="false" />
+		<rules>
+			<grant type="Grants" id="ID_INTERNAL_GRANT_RACE_ELF" />
+			<select type="Ability Score Improvement" name="Ability Score Improvement Option (Khoravar)" supports="Custom Ability Score Improvement Option" requirements="!ID_INTERNAL_GRANTS_BACKGROUND_ASI" />
+			<select type="Racial Trait" name="Size (Khoravar)" supports="ID_INTERNAL_RACIAL_TRAIT_SMALL|ID_INTERNAL_RACIAL_TRAIT_MEDIUM" />
+			<stat name="innate speed" value="30" bonus="base" />
+			<grant type="Vision" id="ID_VISION_DARKVISION" />
+			<stat name="darkvision:range" value="60" bonus="base" />
+
+			<grant type="Language" id="ID_LANGUAGE_COMMON" requirements="!ID_WOTC_TCOE_OPTION_CUSTOMIZED_LANGUAGE" />
+			<select type="Language" name="Customized Language (Khoravar)" supports="Custom Race Language" requirements="ID_WOTC_TCOE_OPTION_CUSTOMIZED_LANGUAGE" />
+			<select type="Language" name="Language (Khoravar)" supports="Standard||Exotic" number="2" />
+
+			<grant type="Racial Trait" id="ID_WOTC_EFOTA_RACIAL_TRAIT_KHORAVAR_FEY_ANCESTRY" requirements="!ID_WOTC_EFOTA_RACIAL_TRAIT_REPLACEMENT_KHORAVAR_FEY_ANCESTRY" />
+			<select type="Racial Trait" name="Spellcasting Ability (Fey Gift)" supports="Fey Gift Khoravar" requirements="!ID_WOTC_EFOTA_RACIAL_TRAIT_REPLACEMENT_KHORAVAR_FEY_GIFT" />
+			<grant type="Racial Trait" id="ID_WOTC_EFOTA_RACIAL_TRAIT_KHORAVAR_LETHARGY_RESILIENCE" requirements="!ID_WOTC_EFOTA_RACIAL_TRAIT_REPLACEMENT_KHORAVAR_LETHARGY_RESILIENCE" />
+			<grant type="Racial Trait" id="ID_WOTC_EFOTA_RACIAL_TRAIT_KHORAVAR_SKILL_VERSATILITY" requirements="!ID_WOTC_EFOTA_RACIAL_TRAIT_REPLACEMENT_KHORAVAR_SKILL_VERSATILITY" />
+		</rules>
+	</element>
+
+	<element name="Fey Ancestry" type="Racial Trait" source="Eberron: Forge of the Artificer" id="ID_WOTC_EFOTA_RACIAL_TRAIT_KHORAVAR_FEY_ANCESTRY">
+		<description>
+			<p>You have Advantage on saving throws you make to avoid or end the Charmed condition.</p>
+		</description>
+		<sheet>
+			<description>You have Advantage on saving throws you make to avoid or end the Charmed condition.</description>
+		</sheet>
+	</element>
+
+	<element name="Intelligence" type="Racial Trait" source="Eberron: Forge of the Artificer" id="ID_WOTC_EFOTA_RACIAL_TRAIT_KHORAVAR_FEY_GIFT_INTELLIGENCE">
+		<supports>Fey Gift Khoravar</supports>
+		<description>
+			<p>You know the <i>Friends</i> cantrip. Whenever you finish a Long Rest, you can replace that cantrip with a different cantrip from the Cleric, Druid, or Wizard spell list. Intelligence is your spellcasting ability for the spell you cast with this trait.</p> 
+		</description>
+		<sheet alt="Fey Gift">
+			<description>You know the Friends cantrip. Whenever you finish a Long Rest, you can replace that cantrip with a different cantrip from the Cleric, Druid, or Wizard spell list. Intelligence is your spellcasting ability for this spell.</description>
+		</sheet>
+		<rules>
+			<select type="Spell" name="Cantrip (Fey Gift)" supports="0,(Cleric||Druid||Wizard)" default="ID_WOTC_PHB24_SPELL_FRIENDS" />
+		</rules>
+	</element>
+	<element name="Wisdom" type="Racial Trait" source="Eberron: Forge of the Artificer" id="ID_WOTC_EFOTA_RACIAL_TRAIT_KHORAVAR_FEY_GIFT_WISDOM">
+		<supports>Fey Gift Khoravar</supports>
+		<description>
+			<p>You know the <i>Friends</i> cantrip. Whenever you finish a Long Rest, you can replace that cantrip with a different cantrip from the Cleric, Druid, or Wizard spell list. Wisdom is your spellcasting ability for the spell you cast with this trait.</p> 
+		</description>
+		<sheet alt="Fey Gift">
+			<description>You know the Friends cantrip. Whenever you finish a Long Rest, you can replace that cantrip with a different cantrip from the Cleric, Druid, or Wizard spell list. Wisdom is your spellcasting ability for this spell.</description>
+		</sheet>
+		<rules>
+			<select type="Spell" name="Cantrip (Fey Gift)" supports="0,(Cleric||Druid||Wizard)" default="ID_WOTC_PHB24_SPELL_FRIENDS" />
+		</rules>
+	</element>
+	<element name="Charisma" type="Racial Trait" source="Eberron: Forge of the Artificer" id="ID_WOTC_EFOTA_RACIAL_TRAIT_KHORAVAR_FEY_GIFT_CHARISMA">
+		<supports>Fey Gift Khoravar</supports>
+		<description>
+			<p>You know the <i>Friends</i> cantrip. Whenever you finish a Long Rest, you can replace that cantrip with a different cantrip from the Cleric, Druid, or Wizard spell list. Charisma is your spellcasting ability for the spell you cast with this trait.</p> 
+		</description>
+		<sheet alt="Fey Gift">
+			<description>You know the Friends cantrip. Whenever you finish a Long Rest, you can replace that cantrip with a different cantrip from the Cleric, Druid, or Wizard spell list. Charisma is your spellcasting ability for this spell.</description>
+		</sheet>
+		<rules>
+			<select type="Spell" name="Cantrip (Fey Gift)" supports="0,(Cleric||Druid||Wizard)" default="ID_WOTC_PHB24_SPELL_FRIENDS" />
+		</rules>
+	</element>
+
+	<element name="Lethargy Resilience" type="Racial Trait" source="Eberron: Forge of the Artificer" id="ID_WOTC_EFOTA_RACIAL_TRAIT_KHORAVAR_LETHARGY_RESILIENCE">
+		<description>
+			<p>When you fail a saving throw to avoid or end the Unconscious condition, you can succeed instead. Once you use this trait, you can’t do so again until you finish 1d4 Long Rests.</p>
+		</description>
+		<sheet usage="1/1d4 Long Rests">
+			<description>When you fail a saving throw to avoid or end the Unconscious condition, you can succeed instead.</description>
+		</sheet>
+	</element>
+
+	<element name="Skill Versatility" type="Racial Trait" source="Eberron: Forge of the Artificer" id="ID_WOTC_EFOTA_RACIAL_TRAIT_KHORAVAR_SKILL_VERSATILITY">
+		<description>
+			<p>You gain proficiency in one skill or with one tool of your choice. Whenever you finish a Long Rest, you can replace it with another skill or tool proficiency.</p>
+		</description>
+		<sheet display="false"/>
+		<rules>
+			<select type="Proficiency" name="Skill Proficiency (Khoravar)" supports="Skill||Tool" />
+		</rules>
+	</element>
+
+	<!--racial trait replacement grants-->
+	<element name="Fey Ancestry Replacement" type="Grants" source="Internal" id="ID_WOTC_EFOTA_RACIAL_TRAIT_REPLACEMENT_KHORAVAR_FEY_ANCESTRY" />
+	<element name="Fey Gift Replacement" type="Grants" source="Internal" id="ID_WOTC_EFOTA_RACIAL_TRAIT_REPLACEMENT_KHORAVAR_FEY_GIFT" />
+	<element name="Lethargy Resilience Replacement" type="Grants" source="Internal" id="ID_WOTC_EFOTA_RACIAL_TRAIT_REPLACEMENT_KHORAVAR_LETHARGY_RESILIENCE" />
+	<element name="Skill Versatility Replacement" type="Grants" source="Internal" id="ID_WOTC_EFOTA_RACIAL_TRAIT_REPLACEMENT_KHORAVAR_SKILL_VERSATILITY" />
+
+</elements>

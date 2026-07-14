@@ -1,0 +1,192 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<elements>
+	<info>
+		<name>Alchemist</name>
+		<description>The Alchemist subclass from Eberron: Forge of the Artificer.</description>
+		<author url="https://marketplace.dndbeyond.com/category/5147000?pid=D5147000">Wizards of the Coast</author>
+		<update version="0.0.1">
+			<file name="artificer-alchemist.xml" url="https://raw.githubusercontent.com/AuroraLegacy/elements/master/supplements/eberron-forge-of-the-artificer/archetypes/artificer-alchemist.xml" />
+		</update>
+	</info>
+
+	<element name="Alchemist" type="Archetype" source="Eberron: Forge of the Artificer" id="ID_WOTC_EFOTA_ARCHETYPE_ARTIFICER_ALCHEMIST">
+		<supports>Artificer Subclass</supports>
+		<description>
+			<p class="flavor">Craft Magic Elixirs and Potions</p>
+			<p>An Alchemist is an expert at combining reagents to produce magical effects. Alchemists use their creations to give life and to leech it away.</p>
+			<div element="ID_WOTC_EFOTA_ARCHETYPE_FEATURE_ARTIFICER_ALCHEMIST_TOOLS_OF_THE_TRADE" />
+			<div element="ID_WOTC_EFOTA_ARCHETYPE_FEATURE_ARTIFICER_ALCHEMIST_ALCHEMIST_SPELLS" />
+			<div element="ID_WOTC_EFOTA_ARCHETYPE_FEATURE_ARTIFICER_ALCHEMIST_EXPERIMENTAL_ELIXIR" />
+			<div element="ID_WOTC_EFOTA_ARCHETYPE_FEATURE_ARTIFICER_ALCHEMIST_ALCHEMICAL_SAVANT" />
+			<div element="ID_WOTC_EFOTA_ARCHETYPE_FEATURE_ARTIFICER_ALCHEMIST_RESTORATIVE_REAGENTS" />
+			<div element="ID_WOTC_EFOTA_ARCHETYPE_FEATURE_ARTIFICER_ALCHEMIST_CHEMICAL_MASTERY" />
+		</description>
+		<sheet display="false" />
+		<rules>
+			<grant type="Archetype Feature" id="ID_WOTC_EFOTA_ARCHETYPE_FEATURE_ARTIFICER_ALCHEMIST_TOOLS_OF_THE_TRADE" level="3" />
+			<grant type="Archetype Feature" id="ID_WOTC_EFOTA_ARCHETYPE_FEATURE_ARTIFICER_ALCHEMIST_ALCHEMIST_SPELLS" level="3" />
+			<grant type="Archetype Feature" id="ID_WOTC_EFOTA_ARCHETYPE_FEATURE_ARTIFICER_ALCHEMIST_EXPERIMENTAL_ELIXIR" level="3" />
+			<grant type="Archetype Feature" id="ID_WOTC_EFOTA_ARCHETYPE_FEATURE_ARTIFICER_ALCHEMIST_ALCHEMICAL_SAVANT" level="5" />
+			<grant type="Archetype Feature" id="ID_WOTC_EFOTA_ARCHETYPE_FEATURE_ARTIFICER_ALCHEMIST_RESTORATIVE_REAGENTS" level="9" />
+			<grant type="Archetype Feature" id="ID_WOTC_EFOTA_ARCHETYPE_FEATURE_ARTIFICER_ALCHEMIST_CHEMICAL_MASTERY" level="15" />
+		</rules>
+	</element>
+
+	<element name="Level 3: Tools of the Trade" type="Archetype Feature" source="Eberron: Forge of the Artificer" id="ID_WOTC_EFOTA_ARCHETYPE_FEATURE_ARTIFICER_ALCHEMIST_TOOLS_OF_THE_TRADE">
+		<requirements>!ID_INTERNAL_EFOTA_FEATURE_REPLACEMENT_ARTIFICER_ALCHEMIST_TOOLS_OF_THE_TRADE</requirements>
+		<description>
+			<p>You gain the following benefits.</p>
+			<p class="indent"><b><i>Tool Proficiency.</i></b> You gain proficiency with Alchemist’s Supplies and the Herbalism Kit. If you already have one of these proficiencies, you gain proficiency with one other type of Artisan’s Tools of your choice (or with two other types if you have both).</p>
+			<p class="indent"><b><i>Potion Crafting.</i></b> When you brew a potion using the crafting rules in the Dungeon Master’s Guide, the amount of time required to craft it is halved.</p>
+		</description>
+		<sheet alt="Tools of the Trade">
+			<description>When you brew a potion using the crafting rules, the amount of time required to craft it is halved.</description>
+		</sheet>
+		<rules>
+			<select type="Proficiency" name="Tool Proficiency (Alchemist)" supports="Artisan tools" default="ID_PROFICIENCY_TOOL_PROFICIENCY_ALCHEMISTS_SUPPLIES" />
+			<select type="Proficiency" name="Tool Proficiency (Alchemist)" supports="Artisan tools" default="ID_PROFICIENCY_TOOL_PROFICIENCY_HERBALISM_KIT" />
+		</rules>
+	</element>
+	<element name="Level 3: Alchemist Spells" type="Archetype Feature" source="Eberron: Forge of the Artificer" id="ID_WOTC_EFOTA_ARCHETYPE_FEATURE_ARTIFICER_ALCHEMIST_ALCHEMIST_SPELLS">
+		<requirements>!ID_INTERNAL_EFOTA_FEATURE_REPLACEMENT_ARTIFICER_ALCHEMIST_ALCHEMIST_SPELLS</requirements>
+		<description>
+			<p>When you reach an Artificer level specified in the Alchemist Spells table, you thereafter always have the listed spells prepared.</p>
+			<h5 class="caption">ALCHEMIST SPELLS</h5>
+			<table>
+				<thead>
+					<tr><td class="col-15" style="text-align:center">Artificer Level</td><td>Spells</td></tr>
+				</thead>
+				<tr><td style="text-align:center">3</td><td><i>Healing Word, Ray of Sickness</i></td></tr>
+				<tr><td style="text-align:center">5</td><td><i>Flaming Sphere, Melf’s Acid Arrow</i></td></tr>
+				<tr><td style="text-align:center">9</td><td><i>Gaseous Form, Mass Healing Word</i></td></tr>
+				<tr><td style="text-align:center">13</td><td><i>Death Ward, Vitriolic Sphere</i></td></tr>
+				<tr><td style="text-align:center">17</td><td><i>Cloudkill, Raise Dead</i></td></tr>
+			</table>
+		</description>
+		<sheet display="false" />
+		<rules>
+			<grant type="Spell" id="ID_WOTC_PHB24_SPELL_HEALING_WORD" spellcasting="Artificer" level="3" prepared="true" />
+			<grant type="Spell" id="ID_WOTC_PHB24_SPELL_RAY_OF_SICKNESS" spellcasting="Artificer" level="3" prepared="true" />
+			<grant type="Spell" id="ID_WOTC_PHB24_SPELL_FLAMING_SPHERE" spellcasting="Artificer" level="5" prepared="true" />
+			<grant type="Spell" id="ID_WOTC_PHB24_SPELL_MELFS_ACID_ARROW" spellcasting="Artificer" level="5" prepared="true" />
+			<grant type="Spell" id="ID_WOTC_PHB24_SPELL_GASEOUS_FORM" spellcasting="Artificer" level="9" prepared="true" />
+			<grant type="Spell" id="ID_WOTC_PHB24_SPELL_MASS_HEALING_WORD" spellcasting="Artificer" level="9" prepared="true" />
+			<grant type="Spell" id="ID_WOTC_PHB24_SPELL_DEATH_WARD" spellcasting="Artificer" level="13" prepared="true" />
+			<grant type="Spell" id="ID_WOTC_PHB24_SPELL_VITRIOLIC_SPHERE" spellcasting="Artificer" level="13" prepared="true" />
+			<grant type="Spell" id="ID_WOTC_PHB24_SPELL_CLOUDKILL" spellcasting="Artificer" level="17" prepared="true" />
+			<grant type="Spell" id="ID_WOTC_PHB24_SPELL_RAISE_DEAD" spellcasting="Artificer" level="17" prepared="true" />
+		</rules>
+	</element>
+	<element name="Level 3: Experimental Elixir" type="Archetype Feature" source="Eberron: Forge of the Artificer" id="ID_WOTC_EFOTA_ARCHETYPE_FEATURE_ARTIFICER_ALCHEMIST_EXPERIMENTAL_ELIXIR">
+		<requirements>!ID_INTERNAL_EFOTA_FEATURE_REPLACEMENT_ARTIFICER_ALCHEMIST_EXPERIMENTAL_ELIXIR</requirements>
+		<description>
+			<p>Whenever you finish a Long Rest while holding Alchemist’s Supplies, you can use that tool to magically produce two elixirs. For each elixir, roll on the Experimental Elixir table for the elixir’s effect, which is triggered when someone drinks the elixir. The elixir appears in a vial, and the vial vanishes when the elixir is drunk or poured out. If any elixir remains when you finish a Long Rest, the elixir and its vial vanish.</p>
+			<p class="indent"><b><i>Drinking an Elixir.</i></b> As a Bonus Action, a creature can drink the elixir or administer it to another creature within 5 feet of itself.</p>
+			<p class="indent"><b><i>Creating Additional Elixirs.</i></b> As a Magic action while holding Alchemist’s Supplies, you can expend one spell slot to create another elixir. When you do so, you choose its effect from the Experimental Elixir table rather than rolling.</p>
+			<p class="indent">When you reach certain Artificer levels, you can make an additional elixir at the end of each Long Rest: a total of three at level 5, four at level 9, and five at level 15.</p>
+			<h5 class="caption">EXPERIMENTAL ELIXIR</h5>
+			<table class="class-features">
+				<thead>
+					<tr><td class="col-10">1d6</td><td class="left">Effect</td></tr>
+				</thead>
+				<tr><td>1</td><td class="left"><b><i>Healing.</i></b> The drinker regains a number of Hit Points equal to 2d8 plus your Intelligence modifier. The number of Hit Points restored increases by 1d8 when you reach Artificer levels 9 (3d8) and 15 (4d8).</td></tr>
+				<tr><td>2</td><td class="left"><b><i>Swiftness.</i></b> The drinker’s Speed increases by 10 feet for 1 hour. This bonus increases when you reach Artificer levels 9 (15 feet) and 15 (20 feet).</td></tr>
+				<tr><td>1</td><td class="left"><b><i>Resilience.</i></b> The drinker gains a +1 bonus to AC for 10 minutes. The duration increases when you reach Artificer levels 9 (1 hour) and 15 (8 hours).</td></tr>
+				<tr><td>1</td><td class="left"><b><i>Boldness.</i></b> The drinker can roll 1d4 and add the number rolled to every attack roll and saving throw it makes for the next minute. The duration increases when you reach Artificer levels 9 (10 minutes) and 15 (1 hour).</td></tr>
+				<tr><td>1</td><td class="left"><b><i>Flight.</i></b> The drinker gains a Fly Speed of 10 feet for 10 minutes. The Fly Speed increases when you reach Artificer levels 9 (20 feet) and 15 (30 feet).</td></tr>
+				<tr><td>1</td><td class="left">You determine the elixir’s effect by choosing one of the other rows in this table.</td></tr>
+			</table>
+		</description>
+		<sheet alt="Experimental Elixir">
+			<description>Whenever you finish a Long Rest while holding Alchemist’s Supplies, you can magically produce up to {{experimental elixir:count}} Elixirs. Roll on the Experimental Elixirs table for each, after which each appears in its own vial. A vial vanishes when the elixir is drunk, poured out, or you finish a Long Rest. &#13;
+			You can create additional Elixirs by expending a spell slot for each one. When you do so, you choose its effect instead of rolling on the table. &#13;
+			As a Bonus Action, a creature can drink the elixir or administer it to another creature within 5 feet of itself.</description>
+		</sheet>
+		<rules>
+			<stat name="experimental elixir:count" value="2" bonus="base" />
+			<stat name="experimental elixir:count" value="3" bonus="base" level="5" />
+			<stat name="experimental elixir:count" value="4" bonus="base" level="9" />
+			<stat name="experimental elixir:count" value="5" bonus="base" level="15" />
+		</rules>
+	</element>
+
+	<element name="Level 5: Alchemical Savant" type="Archetype Feature" source="Eberron: Forge of the Artificer" id="ID_WOTC_EFOTA_ARCHETYPE_FEATURE_ARTIFICER_ALCHEMIST_ALCHEMICAL_SAVANT">
+		<requirements>!ID_INTERNAL_EFOTA_FEATURE_REPLACEMENT_ARTIFICER_ALCHEMIST_ALCHEMICAL_SAVANT</requirements>
+		<description>
+			<p>Whenever you cast a spell using your Alchemist’s Supplies as the Spellcasting Focus, you gain a bonus to one roll of the spell. That roll must restore Hit Points or be a damage roll that deals Acid, Fire, or Poison damage. The bonus equals your Intelligence modifier (minimum bonus of +1).</p>
+		</description>
+		<sheet alt="Alchemical Savant">
+			<description>Whenever you cast a spell using your Alchemist’s Supplies that restores Hit Points or deals Acid, Fire, or Poison damage, you gain a +{{alchemical savant:bonus}} bonus to one roll of the spell.</description>
+		</sheet>
+		<rules>
+			<stat name="alchemical savant:bonus" value="1" bonus="base" />
+			<stat name="alchemical savant:bonus" value="intelligence:modifier" bonus="base" />
+		</rules>
+	</element>
+
+	<element name="Level 9: Restorative Reagents" type="Archetype Feature" source="Eberron: Forge of the Artificer" id="ID_WOTC_EFOTA_ARCHETYPE_FEATURE_ARTIFICER_ALCHEMIST_RESTORATIVE_REAGENTS">
+		<requirements>!ID_INTERNAL_EFOTA_FEATURE_REPLACEMENT_ARTIFICER_ALCHEMIST_RESTORATIVE_REAGENTS</requirements>
+		<description>
+			<p>You can cast <i>Lesser Restoration</i> without expending a spell slot and without preparing the spell, provided you use Alchemist’s Supplies as the Spellcasting Focus. You can do so a number of times equal to your Intelligence modifier (minimum of once), and you regain all expended uses when you finish a Long Rest.</p>
+		</description>
+		<sheet alt="Restorative Reagents" usage="{{restorative reagents:usage}}/Long Rest">
+			<description>You can cast Lesser Restoration without expending a spell slot and without preparing the spell, provided you use Alchemist’s Supplies as the Spellcasting Focus.</description>
+		</sheet>
+		<rules>
+			<grant type="Spell" id="ID_WOTC_PHB24_SPELL_LESSER_RESTORATION" spellcasting="Artificer" alt="Restorative Reagents" />
+			<stat name="restorative reagents:usage" value="1" bonus="base" />
+			<stat name="restorative reagents:usage" value="intelligence:modifier" bonus="base" />
+		</rules>
+	</element>
+
+	<element name="Level 15: Chemical Mastery" type="Archetype Feature" source="Eberron: Forge of the Artificer" id="ID_WOTC_EFOTA_ARCHETYPE_FEATURE_ARTIFICER_ALCHEMIST_CHEMICAL_MASTERY">
+		<requirements>!ID_INTERNAL_EFOTA_FEATURE_REPLACEMENT_ARTIFICER_ALCHEMIST_CHEMICAL_MASTERY</requirements>
+		<description>
+			<p>You gain the following benefits.</p>
+			<p class="indent"><b><i>Alchemical Eruption.</i></b> When you cast an Artificer spell that deals Acid, Fire, or Poison damage to a target, you can also deal 2d8 Force damage to that target. You can use this benefit only once on each of your turns.</p>
+			<p class="indent"><b><i>Chemical Resistance.</i></b> You gain Resistance to Acid damage and Poison damage. You also gain Immunity to the Poisoned condition.</p>
+			<p class="indent"><b><i>Conjured Cauldron.</i></b> You can cast <i>Tasha’s Bubbling Cauldron</i> without expending a spell slot, without preparing the spell, and without Material components, provided you use Alchemist’s Supplies as the Spellcasting Focus. Once you use this feature, you can’t use it again until you finish a Long Rest.</p>
+			<div class="reference">
+				<div element="ID_WOTC_PHB24_SPELL_TASHAS_BUBBLING_CAULDRON" />
+			</div>
+		</description>
+		<sheet alt="Chemical Mastery">
+			<description>You have Immunity to the Poisoned condition, and you gain the following benefits.</description>
+		</sheet>
+		<rules>
+			<grant type="Condition" id="ID_INTERNAL_CONDITION_DAMAGE_RESISTANCE_ACID" />
+			<grant type="Condition" id="ID_INTERNAL_CONDITION_DAMAGE_RESISTANCE_POISON" />
+			<grant type="Spell" id="ID_WOTC_PHB24_SPELL_TASHAS_BUBBLING_CAULDRON" spellcasting="Artificer" alt="Chemical Mastery"/>
+			<select type="Archetype Feature" name="Alchemical Eruption" supports="Alchemical Eruption" default="ID_WOTC_EFOTA_ARCHETYPE_FEATURE_ARTIFICER_ALCHEMIST_CHEMICAL_MASTERY_ALCHEMICAL_ERUPTION" />
+			<select type="Archetype Feature" name="Conjured Cauldron" supports="Conjured Cauldron" default="ID_WOTC_EFOTA_ARCHETYPE_FEATURE_ARTIFICER_ALCHEMIST_CHEMICAL_MASTERY_CONJURED_CAULDRON" />
+		</rules>
+	</element>
+	<element name="Alchemical Eruption" type="Archetype Feature" source="Eberron: Forge of the Artificer" id="ID_WOTC_EFOTA_ARCHETYPE_FEATURE_ARTIFICER_ALCHEMIST_CHEMICAL_MASTERY_ALCHEMICAL_ERUPTION">
+		<compendium display="false" />
+		<supports>Alchemical Eruption</supports>
+		<description>
+			<p>When you cast an Artificer spell that deals Acid, Fire, or Poison damage to a target, you can also deal 2d8 Force damage to that target. You can use this benefit only once on each of your turns.</p>
+		</description>
+		<sheet usage="1/Turn">
+			<description>When you cast an Artificer spell that deals Acid, Fire, or Poison damage to a target, you can also deal 2d8 Force damage to that target.</description>
+		</sheet>
+	</element>
+	<element name="Conjured Cauldron" type="Archetype Feature" source="Eberron: Forge of the Artificer" id="ID_WOTC_EFOTA_ARCHETYPE_FEATURE_ARTIFICER_ALCHEMIST_CHEMICAL_MASTERY_CONJURED_CAULDRON">
+		<compendium display="false" />
+		<supports>Conjured Cauldron</supports>
+		<description>
+			<p>You can cast <i>Tasha’s Bubbling Cauldron</i> without expending a spell slot, without preparing the spell, and without Material components, provided you use Alchemist’s Supplies as the Spellcasting Focus. Once you use this feature, you can’t use it again until you finish a Long Rest.</p>
+		</description>
+		<sheet usage="1/Long Rest">
+			<description>You can cast Tasha’s Bubbling Cauldron without expending a spell slot, without preparing the spell, and without Material components, provided you use Alchemist’s Supplies as the Spellcasting Focus.</description>
+		</sheet>
+	</element>
+
+	<!--Feature Replacement Grants-->
+	<element name="Tools of the Trade Feature Replacement" type="Grants" source="Internal" id="ID_INTERNAL_EFOTA_FEATURE_REPLACEMENT_ARTIFICER_ALCHEMIST_TOOLS_OF_THE_TRADE" />
+	<element name="Alchemist Spells Feature Replacement" type="Grants" source="Internal" id="ID_INTERNAL_EFOTA_FEATURE_REPLACEMENT_ARTIFICER_ALCHEMIST_ALCHEMIST_SPELLS" />
+	<element name="Experimental Elixir Feature Replacement" type="Grants" source="Internal" id="ID_INTERNAL_EFOTA_FEATURE_REPLACEMENT_ARTIFICER_ALCHEMIST_EXPERIMENTAL_ELIXIR" />
+	<element name="Alchemical Savant Feature Replacement" type="Grants" source="Internal" id="ID_INTERNAL_EFOTA_FEATURE_REPLACEMENT_ARTIFICER_ALCHEMIST_ALCHEMICAL_SAVANT" />
+	<element name="Restorative Reagents Feature Replacement" type="Grants" source="Internal" id="ID_INTERNAL_EFOTA_FEATURE_REPLACEMENT_ARTIFICER_ALCHEMIST_RESTORATIVE_REAGENTS" />
+	<element name="Chemical Mastery Feature Replacement" type="Grants" source="Internal" id="ID_INTERNAL_EFOTA_FEATURE_REPLACEMENT_ARTIFICER_ALCHEMIST_CHEMICAL_MASTERY" />
+</elements>

@@ -1,0 +1,193 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<elements>
+	<info>
+		<name>Cartographer</name>
+		<description>The Cartographer subclass from Eberron: Forge of the Artificer.</description>
+		<author url="https://marketplace.dndbeyond.com/category/5147000?pid=D5147000">Wizards of the Coast</author>
+		<update version="0.0.1">
+			<file name="artificer-cartographer.xml" url="https://raw.githubusercontent.com/AuroraLegacy/elements/master/supplements/eberron-forge-of-the-artificer/archetypes/artificer-cartographer.xml" />
+		</update>
+	</info>
+
+	<element name="Cartographer" type="Archetype" source="Eberron: Forge of the Artificer" id="ID_WOTC_EFOTA_ARCHETYPE_ARTIFICER_CARTOGRAPHER">
+		<supports>Artificer Subclass</supports>
+		<description>
+			<p class="flavor">Chart Advantageous Courses through Turmoil</p>
+			<p>Cartographers are the premier navigators and reconnaissance agents. Using their creations, Cartographers can highlight threats, safeguard allies, and carve portals to distant locations.</p>
+			<div element="ID_WOTC_EFOTA_ARCHETYPE_FEATURE_ARTIFICER_CARTOGRAPHER_TOOLS_OF_THE_TRADE" />
+			<div element="ID_WOTC_EFOTA_ARCHETYPE_FEATURE_ARTIFICER_CARTOGRAPHER_CARTOGRAPHER_SPELLS" />
+			<div element="ID_WOTC_EFOTA_ARCHETYPE_FEATURE_ARTIFICER_CARTOGRAPHER_ADVENTURERS_ATLAS" />
+			<div element="ID_WOTC_EFOTA_ARCHETYPE_FEATURE_ARTIFICER_CARTOGRAPHER_MAPPING_MAGIC" />
+			<div element="ID_WOTC_EFOTA_ARCHETYPE_FEATURE_ARTIFICER_CARTOGRAPHER_GUIDED_PRECISION" />
+			<div element="ID_WOTC_EFOTA_ARCHETYPE_FEATURE_ARTIFICER_CARTOGRAPHER_INGENIOUS_MOVEMENT" />
+			<div element="ID_WOTC_EFOTA_ARCHETYPE_FEATURE_ARTIFICER_CARTOGRAPHER_SUPERIOR_ATLAS" />
+		</description>
+		<sheet display="false" />
+		<rules>
+			<grant type="Archetype Feature" id="ID_WOTC_EFOTA_ARCHETYPE_FEATURE_ARTIFICER_CARTOGRAPHER_TOOLS_OF_THE_TRADE" level="3" />
+			<grant type="Archetype Feature" id="ID_WOTC_EFOTA_ARCHETYPE_FEATURE_ARTIFICER_CARTOGRAPHER_CARTOGRAPHER_SPELLS" level="3" />
+			<grant type="Archetype Feature" id="ID_WOTC_EFOTA_ARCHETYPE_FEATURE_ARTIFICER_CARTOGRAPHER_ADVENTURERS_ATLAS" level="3" />
+			<grant type="Archetype Feature" id="ID_WOTC_EFOTA_ARCHETYPE_FEATURE_ARTIFICER_CARTOGRAPHER_MAPPING_MAGIC" level="3" />
+			<grant type="Archetype Feature" id="ID_WOTC_EFOTA_ARCHETYPE_FEATURE_ARTIFICER_CARTOGRAPHER_GUIDED_PRECISION" level="5" />
+			<grant type="Archetype Feature" id="ID_WOTC_EFOTA_ARCHETYPE_FEATURE_ARTIFICER_CARTOGRAPHER_INGENIOUS_MOVEMENT" level="9" />
+			<grant type="Archetype Feature" id="ID_WOTC_EFOTA_ARCHETYPE_FEATURE_ARTIFICER_CARTOGRAPHER_SUPERIOR_ATLAS" level="15" />
+		</rules>
+	</element>
+
+	<element name="Level 3: Tools of the Trade" type="Archetype Feature" source="Eberron: Forge of the Artificer" id="ID_WOTC_EFOTA_ARCHETYPE_FEATURE_ARTIFICER_CARTOGRAPHER_TOOLS_OF_THE_TRADE">
+		<requirements>!ID_INTERNAL_EFOTA_FEATURE_REPLACEMENT_ARTIFICER_CARTOGRAPHER_TOOLS_OF_THE_TRADE</requirements>
+		<description>
+			<p>You gain the following benefits.</p>
+			<p class="indent"><b><i>Tool Proficiency.</i></b> You gain proficiency with Calligrapher’s Supplies and Cartographer’s Tools. If you already have one of these proficiencies, you gain proficiency with one other type of Artisan’s Tools of your choice (or with two other types if you have both).</p>
+			<p class="indent"><b><i>Scroll Crafting.</i></b> When you scribe a Spell Scroll using the crafting rules in the Player’s Handbook, the amount of time required to craft it is halved.</p>
+		</description>
+		<sheet alt="Tools of the Trade">
+			<description>When you scribe a Spell Scroll using the crafting rules, the amount of time required to craft it is halved.</description>
+		</sheet>
+		<rules>
+			<select type="Proficiency" name="Tool Proficiency (Cartographer)" supports="Artisan tools" default="ID_PROFICIENCY_TOOL_PROFICIENCY_CALLIGRAPHERS_SUPPLIES" />
+			<select type="Proficiency" name="Tool Proficiency (Cartographer)" supports="Artisan tools" default="ID_PROFICIENCY_TOOL_PROFICIENCY_CARTOGRAPHERS_TOOLS" />
+		</rules>
+	</element>
+	<element name="Level 3: Cartographer Spells" type="Archetype Feature" source="Eberron: Forge of the Artificer" id="ID_WOTC_EFOTA_ARCHETYPE_FEATURE_ARTIFICER_CARTOGRAPHER_CARTOGRAPHER_SPELLS">
+		<requirements>!ID_INTERNAL_EFOTA_FEATURE_REPLACEMENT_ARTIFICER_CARTOGRAPHER_CARTOGRAPHER_SPELLS</requirements>
+		<description>
+			<p>When you reach an Artificer level specified in the Cartographer Spells table, you thereafter always have the listed spells prepared.</p>
+			<h5 class="caption">CARTOGRAPHER SPELLS</h5>
+			<table>
+				<thead>
+					<tr><td class="col-15" style="text-align:center">Artificer Level</td><td>Spells</td></tr>
+				</thead>
+				<tr><td style="text-align:center">3</td><td><i>Faerie Fire, Guiding Bolt, Healing Word</i></td></tr>
+				<tr><td style="text-align:center">5</td><td><i>Locate Object, Mind Spike</i></td></tr>
+				<tr><td style="text-align:center">9</td><td><i>Call Lightning, Clairvoyance</i></td></tr>
+				<tr><td style="text-align:center">13</td><td><i>Banishment, Locate Creature</i></td></tr>
+				<tr><td style="text-align:center">17</td><td><i>Scrying, Teleportation Circle</i></td></tr>
+			</table>
+		</description>
+		<sheet display="false" />
+		<rules>
+			<grant type="Spell" id="ID_WOTC_PHB24_SPELL_FAERIE_FIRE" spellcasting="Artificer" level="3" prepared="true" />
+			<grant type="Spell" id="ID_WOTC_PHB24_SPELL_GUIDING_BOLT" spellcasting="Artificer" level="3" prepared="true" />
+			<grant type="Spell" id="ID_WOTC_PHB24_SPELL_HEALING_WORD" spellcasting="Artificer" level="3" prepared="true" />
+			<grant type="Spell" id="ID_WOTC_PHB24_SPELL_LOCATE_OBJECT" spellcasting="Artificer" level="5" prepared="true" />
+			<grant type="Spell" id="ID_WOTC_PHB24_SPELL_MIND_SPIKE" spellcasting="Artificer" level="5" prepared="true" />
+			<grant type="Spell" id="ID_WOTC_PHB24_SPELL_CALL_LIGHTNING" spellcasting="Artificer" level="9" prepared="true" />
+			<grant type="Spell" id="ID_WOTC_PHB24_SPELL_CLAIRVOYANCE" spellcasting="Artificer" level="9" prepared="true" />
+			<grant type="Spell" id="ID_WOTC_PHB24_SPELL_BANISHMENT" spellcasting="Artificer" level="13" prepared="true" />
+			<grant type="Spell" id="ID_WOTC_PHB24_SPELL_LOCATE_CREATURE" spellcasting="Artificer" level="13" prepared="true" />
+			<grant type="Spell" id="ID_WOTC_PHB24_SPELL_SCRYING" spellcasting="Artificer" level="17" prepared="true" />
+			<grant type="Spell" id="ID_WOTC_PHB24_SPELL_TELEPORTATION_CIRCLE" spellcasting="Artificer" level="17" prepared="true" />
+		</rules>
+	</element>
+	<element name="Level 3: Adventurer's Atlas" type="Archetype Feature" source="Eberron: Forge of the Artificer" id="ID_WOTC_EFOTA_ARCHETYPE_FEATURE_ARTIFICER_CARTOGRAPHER_ADVENTURERS_ATLAS">
+		<requirements>!ID_INTERNAL_EFOTA_FEATURE_REPLACEMENT_ARTIFICER_CARTOGRAPHER_ADVENTURERS_ATLAS</requirements>
+		<description>
+			<p>Whenever you finish a Long Rest while holding Cartographer’s Tools, you can use that tool to create a set of magical maps by touching at least two creatures (one of whom can be yourself), up to a maximum number of creatures equal to 1 plus your Intelligence modifier (minimum of two creatures). Each target receives a magical map, which constantly updates to show the relative position of all the map holders but is illegible to all others. The maps last until you die or until you use this feature again, at which point any existing maps created by this feature immediately vanish.</p>
+			<p class="indent">While carrying the map, a target gains the following benefits.</p>
+			<p class="indent"><b><i>Awareness.</i></b> The target adds 1d4 to its Initiative rolls.</p>
+			<p class="indent"><b><i>Positioning.</i></b> The target knows the location of all other map holders that are on the same plane of existence as itself. When casting a spell or creating another effect that requires being able to see the effect’s target, a map holder can target another map holder regardless of sight or cover, so long as the other map holder is still within the effect’s range.</p>
+		</description>
+		<sheet alt="Adventurer's Atlas">
+			<description>Whenever you finish a Long Rest while holding Cartographer’s Tools, you can create a set of magical maps by touching up to {{adventurers atlas:count}} creatures. Each target receives a magical map, which constantly updates to show the relative position of all the map holders but is illegible to all others. The maps last until you die or until you use this feature again, at which point any existing maps created by this feature immediately vanish. &#13;
+			While holding the map, a creature adds 1d4 to its Initiative rolls, and knows the location of all other map holders on the same plane of existence at itself. creating another effect that requires being able to see the effect’s target, a map holder can target another map holder regardless of sight or cover, so long as the other map holder is still within the effect’s range.</description>
+		</sheet>
+		<rules>
+			<stat name="adventurers atlas:count" value="1" />
+			<stat name="adventurers atlas:count" value="1" bonus="base" />
+			<stat name="adventurers atlas:count" value="intelligence:modifier" bonus="base" />
+		</rules>
+	</element>
+	<element name="Level 3: Mapping Magic" type="Archetype Feature" source="Eberron: Forge of the Artificer" id="ID_WOTC_EFOTA_ARCHETYPE_FEATURE_ARTIFICER_CARTOGRAPHER_MAPPING_MAGIC">
+		<requirements>!ID_INTERNAL_EFOTA_FEATURE_REPLACEMENT_ARTIFICER_CARTOGRAPHER_MAPPING_MAGIC</requirements>
+		<description>
+			<p>You gain the following benefits.</p>
+			<p class="indent"><b><i>Illuminated Cartography.</i></b> You can cast <i>Faerie Fire</i> without expending a spell slot, outlining the affected creatures as if in ink. You can do so a number of times equal to your Intelligence modifier (minimum of once), and you regain all expended uses when you finish a Long Rest.</p>
+			<p class="indent"><b><i>Portal Jump.</i></b> On your turn, you can spend an amount of movement equal to half your Speed (round down) to teleport to an unoccupied space you can see within 10 feet of yourself or within 5 feet of a creature that is within 30 feet of you and holding one of your Adventurer’s Atlas maps. You can’t use this benefit if your Speed is 0.</p>
+		</description>
+		<sheet alt="Mapping Magic">
+			<description>On your turn, you can spend an amount of movement equal to half your Speed (round down) to teleport to an unoccupied space you can see within 10 feet of yourself or within 5 feet of a creature that is within 30 feet of you and holding one of your Adventurer’s Atlas maps. You can’t use this benefit if your Speed is 0.</description>
+		</sheet>
+		<rules>
+			<select type="Archetype Feature" name="Illuminated Cartography" supports="Illuminated Cartography" default="ID_WOTC_EFOTA_ARCHETYPE_FEATURE_ARTIFICER_CARTOGRAPHER_MAPPING_MAGIC_ILLUMINATED_CARTOGRAPHY" />
+		</rules>
+	</element>
+	<element name="Illuminated Cartography" type="Archetype Feature" source="Eberron: Forge of the Artificer" id="ID_WOTC_EFOTA_ARCHETYPE_FEATURE_ARTIFICER_CARTOGRAPHER_MAPPING_MAGIC_ILLUMINATED_CARTOGRAPHY">
+		<compendium display="false" />
+		<supports>Illuminated Cartography</supports>
+		<description>
+			<p>You can cast <i>Faerie Fire</i> without expending a spell slot, outlining the affected creatures as if in ink. You can do so a number of times equal to your Intelligence modifier (minimum of once), and you regain all expended uses when you finish a Long Rest.</p>
+		</description>
+		<sheet usage="{{illuminated cartography:uses}}/Long Rest">
+			<description>You can cast Faerie Fire without expending a spell slot, outlining the affected creatures as if in ink.</description>
+			<description level="5">You can cast Faerie Fire without expending a spell slot, outlining the affected creatures as if in ink. Taking damage can't cause you to lose Concentration on the spell.</description>
+		</sheet>
+		<rules>
+			<stat name="illuminated cartography:uses" value="1" bonus="base" />
+			<stat name="illuminated cartography:uses" value="intelligence:modifier" bonus="base" />
+		</rules>
+	</element>
+
+	<element name="Level 5: Guided Precision" type="Archetype Feature" source="Eberron: Forge of the Artificer" id="ID_WOTC_EFOTA_ARCHETYPE_FEATURE_ARTIFICER_CARTOGRAPHER_GUIDED_PRECISION">
+		<requirements>!ID_INTERNAL_EFOTA_FEATURE_REPLACEMENT_ARTIFICER_CARTOGRAPHER_GUIDED_PRECISION</requirements>
+		<description>
+			<p>Once per turn, whenever you cast a spell from your Cartographer Spells list or hit a creature affected by your <i>Faerie Fire</i> with an attack roll, you can add your Intelligence modifier to one damage roll of the spell or attack.</p>
+			<p class="indent">In addition, taking damage can’t cause you to lose Concentration on <i>Faerie Fire.</i></p>
+		</description>
+		<sheet alt="Guided Precision" usage="1/Turn">
+			<description>Whenever you cast a spell from your Cartographer Spells list or hit a creature affected by your <i>Faerie Fire</i> with an attack roll, you can add +{{intelligence:modifier}} to one damage roll of the spell or attack.</description>
+		</sheet>
+	</element>
+
+	<element name="Level 9: Ingenious Movement" type="Archetype Feature" source="Eberron: Forge of the Artificer" id="ID_WOTC_EFOTA_ARCHETYPE_FEATURE_ARTIFICER_CARTOGRAPHER_INGENIOUS_MOVEMENT">
+		<requirements>!ID_INTERNAL_EFOTA_FEATURE_REPLACEMENT_ARTIFICER_CARTOGRAPHER_INGENIOUS_MOVEMENT</requirements>
+		<description>
+			<p>When you use your Flash of Genius, you or a willing creature of your choice that you can see within 30 feet of yourself can teleport up to 30 feet to an unoccupied space you can see as part of that same Reaction.</p>
+		</description>
+		<sheet alt="Ingenious Movement" usage="Flash of Genius">
+			<description>When you use your Flash of Genius, you or a willing creature of your choice that you can see within 30 feet of yourself can teleport up to 30 feet to an unoccupied space you can see as part of that same Reaction.</description>
+		</sheet>
+	</element>
+
+	<element name="Level 15: Superior Atlas" type="Archetype Feature" source="Eberron: Forge of the Artificer" id="ID_WOTC_EFOTA_ARCHETYPE_FEATURE_ARTIFICER_CARTOGRAPHER_SUPERIOR_ATLAS">
+		<requirements>!ID_INTERNAL_EFOTA_FEATURE_REPLACEMENT_ARTIFICER_CARTOGRAPHER_SUPERIOR_ATLAS</requirements>
+		<description>
+			<p>Your Adventurer’s Atlas improves, gaining the following benefits.</p>
+			<p class="indent"><b><i>Safe Haven.</i></b> When a map holder would be reduced to 0 Hit Points but not killed outright, that creature can destroy its map. The creature’s Hit Points instead change to a number equal to twice your Artificer level, and the creature is teleported to an unoccupied space within 5 feet of you or another map holder of its choice.</p>
+			<p class="indent"><b><i>Unerring Path.</i></b> If you are one of the map holders for your Adventurer’s Atlas, you can cast <i>Find the Path</i> without expending a spell slot, without preparing the spell, and without needing spell components. Once you use this benefit, you can’t use it again until you finish a Long Rest.</p>
+			<div class="reference">
+				<div element="ID_WOTC_PHB24_SPELL_FIND_THE_PATH" />
+			</div>
+		</description>
+		<sheet alt="Superior Atlas">
+			<description>When a map holder would be reduced to 0 Hit Points but not killed outright, that creature can destroy its map. The creature’s Hit Points instead changes to {{superior atlas:hp}}, and the creature is teleported to an unoccupied space within 5 feet of you or another map holder of its choice.</description>
+		</sheet>
+		<rules>
+			<stat name="superior atlas:hp" value="level:artificer" />
+			<stat name="superior atlas:hp" value="level:artificer" />
+			<select type="Archetype Feature" name="Unerring Path" supports="Unerring Path" default="ID_WOTC_EFOTA_ARCHETYPE_FEATURE_ARTIFICER_CARTOGRAPHER_SUPERIOR_ATLAS_UNERRING_PATH" />
+		</rules>
+	</element>
+	<element name="Unerring Path" type="Archetype Feature" source="Eberron: Forge of the Artificer" id="ID_WOTC_EFOTA_ARCHETYPE_FEATURE_ARTIFICER_CARTOGRAPHER_SUPERIOR_ATLAS_UNERRING_PATH">
+		<compendium display="false" />
+		<supports>Unerring Path</supports>
+		<description>
+			<p>If you are one of the map holders for your Adventurer’s Atlas, you can cast <i>Find the Path</i> without expending a spell slot, without preparing the spell, and without needing spell components. Once you use this benefit, you can’t use it again until you finish a Long Rest.</p>
+			<div class="reference">
+				<div element="ID_WOTC_PHB24_SPELL_FIND_THE_PATH" />
+			</div>
+		</description>
+		<sheet usage="1/Long Rest">
+			<description>If you are one of the map holders for your Adventurer’s Atlas, you can cast Find the Path without expending a spell slot, without preparing the spell, and without needing spell components.</description>
+		</sheet>
+	</element>
+
+	<!--Feature Replacement Grants-->
+	<element name="Tools of the Trade Feature Replacement" type="Grants" source="Internal" id="ID_INTERNAL_EFOTA_FEATURE_REPLACEMENT_ARTIFICER_CARTOGRAPHER_TOOLS_OF_THE_TRADE" />
+	<element name="Cartographer Spells Feature Replacement" type="Grants" source="Internal" id="ID_INTERNAL_EFOTA_FEATURE_REPLACEMENT_ARTIFICER_CARTOGRAPHER_CARTOGRAPHER_SPELLS" />
+	<element name="Adventurer's Atlas Feature Replacement" type="Grants" source="Internal" id="ID_INTERNAL_EFOTA_FEATURE_REPLACEMENT_ARTIFICER_CARTOGRAPHER_ADVENTURERS_ATLAS" />
+	<element name="Mapping Magic Feature Replacement" type="Grants" source="Internal" id="ID_INTERNAL_EFOTA_FEATURE_REPLACEMENT_ARTIFICER_CARTOGRAPHER_MAPPING_MAGIC" />
+	<element name="Guided Precision Feature Replacement" type="Grants" source="Internal" id="ID_INTERNAL_EFOTA_FEATURE_REPLACEMENT_ARTIFICER_CARTOGRAPHER_GUIDED_PRECISION" />
+	<element name="Ingenious Movement Feature Replacement" type="Grants" source="Internal" id="ID_INTERNAL_EFOTA_FEATURE_REPLACEMENT_ARTIFICER_CARTOGRAPHER_INGENIOUS_MOVEMENT" />
+	<element name="Superior Atlas Feature Replacement" type="Grants" source="Internal" id="ID_INTERNAL_EFOTA_FEATURE_REPLACEMENT_ARTIFICER_CARTOGRAPHER_SUPERIOR_ATLAS" />
+</elements>

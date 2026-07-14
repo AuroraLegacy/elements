@@ -1,0 +1,146 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<elements>
+	<info>
+		<name>Spells</name>
+		<description>Spells from Eberron: Forge of the Artificer.</description>
+		<author url="https://marketplace.dndbeyond.com/category/5147000?pid=D5147000">Wizards of the Coast</author>
+		<update version="0.0.1">
+			<file name="spells.xml" url="https://raw.githubusercontent.com/AuroraLegacy/elements/master/supplements/eberron-forge-of-the-artificer/spells.xml" />
+		</update>
+	</info>
+
+	<element name="Homunculus Servant" type="Spell" source="Eberron: Forge of the Artificer" id="ID_WOTC_EFOTA_SPELL_HOMUNCULUS_SERVANT">
+		<supports>Artificer</supports>
+		<description>
+			<p>You summon a special homunculus in an unoccupied space within range. This creature uses the Homunculus Servant stat block. If you already have a homunculus from this spell, the homunculus is replaced by the new one. You determine the homunculus’s appearance, such as a mechanical-looking bird, winged vial, or miniature animate cauldron.</p>
+			<p class="indent"><b><i>Combat.</i></b> The homunculus is an ally to you and your allies. In combat, it shares your Initiative count, but it takes its turn immediately after yours. It obeys your commands (no action required by you). If you don’t issue any, it takes the Dodge action and uses its movement to avoid danger.</p>
+			<p><b><i>Using a Higher-Level Spell Slot.</i></b> Use the spell slot’s level for the spell’s level in the stat block.</p>
+			<div class="reference">
+				<div element="ID_WOTC_EFOTA_INFORMATION_HOMUNCULUS_SERVANT_STATBLOCK" />
+			</div>
+		</description>
+		<setters>
+			<set name="keywords">summon</set>
+			<set name="level">2</set>
+			<set name="school">Conjuration</set>
+			<set name="time">1 hour or Ritual</set>
+			<set name="duration">Instantaneous</set>
+			<set name="range">10 feet</set>
+			<set name="hasVerbalComponent">true</set>
+			<set name="hasSomaticComponent">true</set>
+			<set name="hasMaterialComponent">true</set>
+			<set name="materialComponent">a gem worth 100+ GP</set>
+			<set name="isConcentration">false</set>
+			<set name="isRitual">true</set>
+		</setters>
+	</element>
+
+	<!--Companion and Statblock-->
+	<element name="Homunculus Servant" type="Companion" source="Eberron: Forge of the Artificer" id="ID_WOTC_EFOTA_COMPANION_HOMUNCULUS_SERVANT">
+		<supports>Homunculus Servant EFOTA Version</supports>
+		<description>
+			<p>You summon a special homunculus in an unoccupied space within range. If you already have a homunculus from this spell, the homunculus is replaced by the new one. You determine the homunculus’s appearance, such as a mechanical-looking bird, winged vial, or miniature animate cauldron.</p>
+			<p class="indent">The homunculus is an ally to you and your allies. In combat, it shares your Initiative count, but it takes its turn immediately after yours. It obeys your commands (no action required by you). If you don’t issue any, it takes the Dodge action and uses its movement to avoid danger.</p>
+			<p><b>Proficiency Bonus (PB)</b> equals your bonus</p>
+		</description>
+		<setters>
+			<set name="size">Tiny</set>
+			<set name="type">Construct</set>
+			<set name="alignment">Neutral</set>
+			<set name="ac">13</set>
+			<set name="hp">5 + 5 per spell level (the homunculus has a number of Hit Dice [d4s] equal to the spell’s level)</set>
+			<set name="speed">20 ft., Fly 30 ft.</set>
+			<set name="strength">4</set>
+			<set name="dexterity">15</set>
+			<set name="constitution">12</set>
+			<set name="intelligence">10</set>
+			<set name="wisdom">10</set>
+			<set name="charisma">7</set>
+			<set name="immunities">Poison</set>
+			<set name="conditionImmunities">Exhaustion, Poisoned</set>
+			<set name="senses">Darkvision 60 ft.; Passive Perception 10</set>
+			<set name="languages">Telepathy 1 mile (works only with you)</set>
+			<set name="challenge">—</set>
+			<set name="traits">ID_WOTC_EFOTA_COMPANION_TRAIT_HOMUNCULUS_SERVANT_EVASION,ID_WOTC_EFOTA_COMPANION_TRAIT_HOMUNCULUS_SERVANT_MAGIC_BOND</set>
+			<set name="actions">ID_WOTC_EFOTA_COMPANION_ACTION_HOMUNCULUS_SERVANT_FORCE_STRIKE</set>
+			<set name="reactions">ID_WOTC_EFOTA_COMPANION_REACTION_HOMUNCULUS_SERVANT_CHANNEL_MAGIC</set>
+		</setters>
+		<rules>
+			<stat name="companion:ac" value="13" bonus="base" />
+			<stat name="companion:hp:max" value="15" />
+			<stat name="companion:speed" value="20" bonus="base" />
+			<stat name="companion:speed:fly" value="30" bonus="base" />
+			<stat name="companion:proficiency" value="proficiency" bonus="base" />
+			<stat name="companion:proficiency" value="-2" bonus="base companion PB removal"/>
+		</rules>
+	</element>
+	<element name="Evasion" type="Companion Trait" source="Eberron: Forge of the Artificer" id="ID_WOTC_EFOTA_COMPANION_TRAIT_HOMUNCULUS_SERVANT_EVASION">
+		<description>
+			<p>If the homunculus is subjected to an effect that allows it to make a Dexterity saving throw to take only half damage, the homunculus instead takes no damage if it succeeds on the save and only half damage if it fails. It can’t use this trait if it has the Incapacitated condition.</p>
+		</description>
+		<sheet>
+			<description>If the homunculus is subjected to an effect that allows it to make a Dexterity saving throw to take only half damage, the homunculus instead takes no damage if it succeeds on the save and only half damage if it fails. It can’t use this trait if it has the Incapacitated condition.</description>
+		</sheet>
+	</element>
+	<element name="Magic Bond" type="Companion Trait" source="Eberron: Forge of the Artificer" id="ID_WOTC_EFOTA_COMPANION_TRAIT_HOMUNCULUS_SERVANT_MAGIC_BOND">
+		<description>
+			<p>Add the spell’s level to any ability check or saving throw the homunculus makes.</p>
+		</description>
+		<sheet>
+			<description>Add the spell’s level to any ability check or saving throw the homunculus makes.</description>
+		</sheet>
+	</element>
+	<element name="Force Strike" type="Companion Action" source="Eberron: Forge of the Artificer" id="ID_WOTC_EFOTA_COMPANION_ACTION_HOMUNCULUS_SERVANT_FORCE_STRIKE">
+		<description>
+			<p><i>Melee or Ranged Attack Roll:</i> Bonus equals your spell attack modifier, reach 5 ft. or range 30 ft. <i>Hit:</i> 1d6 plus the spell’s level Force damage.</p>
+		</description>
+		<sheet>
+			<description>Melee or Ranged Attack Roll: Bonus equals your spell attack modifier, reach 5 ft. or range 30 ft. Hit: 1d6 plus the spell’s level Force damage.</description>
+		</sheet>
+	</element>
+	<element name="Channel Magic" type="Companion Reaction" source="Eberron: Forge of the Artificer" id="ID_WOTC_EFOTA_COMPANION_REACTION_HOMUNCULUS_SERVANT_CHANNEL_MAGIC">
+		<description>
+			<p><i>Trigger:</i> You cast a spell that has a range of touch while the homunculus is within 120 feet of you. <i>Response:</i> The homunculus delivers the spell through its touch.</p>
+		</description>
+		<sheet>
+			<description>Trigger: You cast a spell that has a range of touch while the homunculus is within 120 feet of you. Response: The homunculus delivers the spell through its touch.</description>
+		</sheet>
+	</element>
+
+	<element name="Homunculus Servant" type="Information" source="Eberron: Forge of the Artificer" id="ID_WOTC_EFOTA_INFORMATION_HOMUNCULUS_SERVANT_STATBLOCK">
+		<description>
+			<p style="margin-bottom:-5px"><i>Tiny Construct, Neutral</i></p>
+			<h4 style="margin-top:5px" />
+			<ul class="unstyled">
+				<li><b>Armor Class</b> 13</li>
+				<li><b>Hit Points</b> 5 + 5 per spell level (the homunculus has a number of Hit Dice [d4s] equal to the spell’s level)</li>
+				<li><b>Speed</b> 20 ft., Fly 30 ft.</li>
+			</ul>
+			<table style="text-align:center;margin-top:10px;margin-bottom:10px">
+				<thead><tr><td>STR</td><td>DEX</td><td>CON</td><td>INT</td><td>WIS</td><td>CHA</td></tr></thead>
+				<tr><td>4 (-3)</td><td>15 (+2)</td><td>12 (+1)</td><td>10 (+0)</td><td>10 (+0)</td><td>7 (-2)</td></tr>
+			</table>
+			<ul class="unstyled">
+				<li><b>Damage Immunities</b> Poison</li>
+				<li><b>Condition Immunities</b> Exhaustion, Poisoned</li>
+				<li><b>Senses</b> Darkvision 60 ft.; Passive Perception 10</li>
+				<li><b>Languages</b> Telepathy 1 mile (works only with you)</li>
+				<li style="margin-bottom:-1em"><b>Challenge</b> —</li>
+				<li style="text-align:right; margin-top:-1em"><b>Proficiency Bonus (PB)</b> equals your bonus</li>
+			</ul>
+			<h4 style="margin-top:5px; margin-bottom:10px" />
+			<ul class="unstyled">
+				<li><b><i>Evasion.</i></b> If the homunculus is subjected to an effect that allows it to make a Dexterity saving throw to take only half damage, the homunculus instead takes no damage if it succeeds on the save and only half damage if it fails. It can’t use this trait if it has the Incapacitated condition.</li>
+				<li><b><i>Magic Bond.</i></b> Add the spell’s level to any ability check or saving throw the homunculus makes.</li>
+			</ul>
+			<h4 style="margin-top:10px">Actions</h4>
+			<ul class="unstyled">
+				<li><i><b>Force Strike.</b> Melee or Ranged Attack Roll:</i> Bonus equals your spell attack modifier, reach 5 ft. or range 30 ft. <i>Hit:</i> 1d6 plus the spell’s level Force damage.</li>
+			</ul>
+			<h4 style="margin-top:10px">Reactions</h4>
+			<ul class="unstyled">
+				<li><b><i>Channel Magic.</i></b> <i>Trigger:</i> You cast a spell that has a range of touch while the homunculus is within 120 feet of you. <i>Response:</i> The homunculus delivers the spell through its touch.</li>
+			</ul>
+		</description>
+	</element>
+</elements>

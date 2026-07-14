@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<elements>
+	<info>
+		<name>Kalashtar</name>
+		<description>The Kalashtar species from Eberron: Forge of the Artificer.</description>
+		<author url="https://marketplace.dndbeyond.com/category/5147000?pid=D5147000">Wizards of the Coast</author>
+		<update version="0.0.1">
+			<file name="race-kalashtar.xml" url="https://raw.githubusercontent.com/AuroraLegacy/elements/master/supplements/eberron-forge-of-the-artificer/races/race-kalashtar.xml" />
+		</update>
+	</info>
+	
+	<element name="Kalashtar" type="Race" source="Eberron: Forge of the Artificer" id="ID_WOTC_EFOTA_RACE_KALASHTAR">
+		<description>
+			<p>Kalashtar (pronounced kal-ASH-tar) are created from the union of humanity and renegade spirits called quori from the plane of dreams. Kalashtar appear human, but their spiritual connection affects them in a variety of ways. They have symmetrical, slightly angular features, and their eyes often glow when they are concentrating or expressing strong emotions.</p>
+			<p class="indent">Kalashtar can’t communicate directly with their quori spirits. Rather, kalashtar might experience them as a source of instinct and inspiration, drawing on the spirits’ memories when the kalashtar sleep. This connection grants kalashtar minor psionic abilities, as well as protection from psionic attacks.</p>
+			
+			<h4>Kalashtar Traits</h4>
+			<p style="margin-top:15px"><strong><em>Creature Type:</em></strong> Aberration</p>
+			<p><strong><em>Size:</em></strong> Medium (about 6–7 feet tall)</p>
+			<p><strong><em>Speed:</em></strong> 30 feet</p>
+			
+			<p>As a Kalashtar, you have these special traits.</p>
+			<p class="indent"><strong><em>Dual Mind.</em></strong> You have Advantage on Wisdom and Charisma saving throws.</p>
+			<p class="indent"><strong><em>Mental Discipline.</em></strong> You have Resistance to Psychic damage.</p> 
+			<p class="indent"><strong><em>Mind Link.</em></strong> You have telepathy with a range in feet equal to 10 times your level. When you’re using this trait to speak telepathically to a creature, you can take a Magic action to give that creature the ability to speak telepathically with you for 1 hour or until you take another Magic action to end this effect.</p>
+			<p class="indent"><strong><em>Severed from Dreams.</em></strong> You can’t be the target of the <i>Dream</i> spell. In addition, when you finish a Long Rest, you gain proficiency in one skill of your choice. This proficiency lasts until you finish another Long Rest.</p>
+		</description>
+		<sheet display="false" />
+		<rules>
+			<grant type="Racial Trait" id="ID_INTERNAL_RACIAL_TRAIT_TYPE_ABERRATION" />
+			<select type="Ability Score Improvement" name="Ability Score Improvement Option (Kalashtar)" supports="Custom Ability Score Improvement Option" requirements="!ID_INTERNAL_GRANTS_BACKGROUND_ASI" />
+			<grant type="Size" id="ID_SIZE_MEDIUM" />
+			<stat name="innate speed" value="30" bonus="base" />
+
+			<grant type="Language" id="ID_LANGUAGE_COMMON" requirements="!ID_WOTC_TCOE_OPTION_CUSTOMIZED_LANGUAGE" />
+			<select type="Language" name="Customized Language (Kalashtar)" supports="Custom Race Language" requirements="ID_WOTC_TCOE_OPTION_CUSTOMIZED_LANGUAGE" />
+			<select type="Language" name="Language (Kalashtar)" supports="Standard||Exotic" number="2" />
+
+			<grant type="Condition" id="ID_INTERNAL_CONDITION_DAMAGE_RESISTANCE_PSYCHIC" />
+
+			<grant type="Racial Trait" id="ID_WOTC_EFOTA_RACIAL_TRAIT_KALASHTAR_DUAL_MIND" requirements="!ID_WOTC_EFOTA_RACIAL_TRAIT_REPLACEMENT_KALASHTAR_DUAL_MIND" />
+			<grant type="Racial Trait" id="ID_WOTC_EFOTA_RACIAL_TRAIT_KALASHTAR_MIND_LINK" requirements="!ID_WOTC_EFOTA_RACIAL_TRAIT_REPLACEMENT_KALASHTAR_MIND_LINK" />
+			<grant type="Racial Trait" id="ID_WOTC_EFOTA_RACIAL_TRAIT_KALASHTAR_SEVERED_FROM_DREAMS" requirements="!ID_WOTC_EFOTA_RACIAL_TRAIT_REPLACEMENT_KALASHTAR_SEVERED_FROM_DREAMS" />
+		</rules>
+	</element>
+
+	<element name="Dual Mind" type="Racial Trait" source="Eberron: Forge of the Artificer" id="ID_WOTC_EFOTA_RACIAL_TRAIT_KALASHTAR_DUAL_MIND">
+		<description>
+			<p>You have Advantage on Wisdom and Charisma saving throws.</p>
+		</description>
+		<sheet>
+			<description>You have Advantage on Wisdom and Charisma saving throws.</description>
+		</sheet>
+	</element>
+	<element name="Mind Link" type="Racial Trait" source="Eberron: Forge of the Artificer" id="ID_WOTC_EFOTA_RACIAL_TRAIT_KALASHTAR_MIND_LINK">
+		<description>
+			<p>You have telepathy with a range in feet equal to 10 times your level. When you’re using this trait to speak telepathically to a creature, you can take a Magic action to give that creature the ability to speak telepathically with you for 1 hour or until you take another Magic action to end this effect.</p> 
+		</description>
+		<sheet>
+			<description>You have telepathy of {{mind link:distance}} feet. When you’re using this trait to speak telepathically to a creature, you can take a Magic action to give that creature the ability to speak telepathically with you for 1 hour or until you take another Magic action to end this effect.</description>
+		</sheet>
+		<rules>
+			<stat name="mind link:distance" value="level" />
+			<stat name="mind link:distance" value="level" />
+			<stat name="mind link:distance" value="level" />
+			<stat name="mind link:distance" value="level" />
+			<stat name="mind link:distance" value="level" />
+			<stat name="mind link:distance" value="level" />
+			<stat name="mind link:distance" value="level" />
+			<stat name="mind link:distance" value="level" />
+			<stat name="mind link:distance" value="level" />
+			<stat name="mind link:distance" value="level" />
+		</rules>
+	</element>
+	<element name="Severed From Dreams" type="Racial Trait" source="Eberron: Forge of the Artificer" id="ID_WOTC_EFOTA_RACIAL_TRAIT_KALASHTAR_SEVERED_FROM_DREAMS">
+		<description>
+			<p>You can’t be the target of the Dream spell. In addition, when you finish a Long Rest, you gain proficiency in one skill of your choice. This proficiency lasts until you finish another Long Rest.</p>
+		</description>
+		<sheet>
+			<description>You can’t be the target of the Dream spell. In addition, when you finish a Long Rest, you gain proficiency in one skill of your choice. This proficiency lasts until you finish another Long Rest.</description>
+		</sheet>
+		<rules>
+			<select type="Proficiency" name="Skill Proficiency (Kalashtar)" supports="Skill" />
+		</rules>
+	</element>
+
+	<!--racial trait replacement grants-->
+	<element name="Dual Mind Replacement" type="Grants" source="Internal" id="ID_WOTC_EFOTA_RACIAL_TRAIT_REPLACEMENT_KALASHTAR_DUAL_MIND" />
+	<element name="Mind Link Replacement" type="Grants" source="Internal" id="ID_WOTC_EFOTA_RACIAL_TRAIT_REPLACEMENT_KALASHTAR_MIND_LINK" />
+	<element name="Severed from Dreams Replacement" type="Grants" source="Internal" id="ID_WOTC_EFOTA_RACIAL_TRAIT_REPLACEMENT_KALASHTAR_SEVERED_FROM_DREAMS" />
+
+</elements>

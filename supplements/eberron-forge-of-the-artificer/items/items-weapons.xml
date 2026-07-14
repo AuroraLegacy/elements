@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<elements>
+	<info>
+		<name>Weapons</name>
+		<description>Magic Weapons from Eberron: Forge of the Artificer.</description>
+		<author url="https://marketplace.dndbeyond.com/category/5147000?pid=D5147000">Wizards of the Coast</author>
+		<update version="0.0.1">
+			<file name="items-weapons.xml" url="https://raw.githubusercontent.com/AuroraLegacy/elements/master/supplements/eberron-forge-of-the-artificer/items/items-weapons.xml" />
+		</update>
+	</info>
+	
+	<element name="Dazzling Weapon" type="Magic Item" source="Eberron: Forge of the Artificer" id="ID_WOTC_EFOTA_MAGIC_ITEM_DAZZLING_WEAPON">
+		<description>
+			<p>This magic weapon grants a +1 bonus to attack and damage rolls made with it. While holding it, you can take a Bonus Action to cause it to shed Bright Light in a 30-foot radius and Dim Light for an additional 30 feet. You can extinguish the light as a Bonus Action.</p>
+			<p class="indent">The weapon has 4 charges. You can take a Reaction immediately after being hit by an attack roll to expend 1 of the weapon’s charges and force the attacker to make a DC 15 Constitution saving throw. On a failed save, the attacker has the Blinded condition until the end of its next turn. The weapon regains 1d4 expended charges daily at dawn.</p>
+		</description>
+		<setters>
+			<set name="category">Magic Weapons</set>
+			<set name="cost" currency="gp">4000</set>
+			<set name="type" addition="any">Weapon</set>
+			<set name="rarity">Rare</set>
+			<set name="enhancement">1</set>
+			<set name="charges">4</set>
+			<set name="attunement">true</set>
+			<set name="weapon">ID_INTERNAL_WEAPON_CATEGORY_SIMPLE_MELEE||ID_INTERNAL_WEAPON_CATEGORY_SIMPLE_RANGED||ID_INTERNAL_WEAPON_CATEGORY_MARTIAL_MELEE||ID_INTERNAL_WEAPON_CATEGORY_MARTIAL_RANGED</set>
+			<set name="name-format">Dazzling {{parent}}</set>
+		</setters>
+	</element>
+	<element name="Repeating Shot" type="Magic Item" source="Eberron: Forge of the Artificer" id="ID_WOTC_EFOTA_MAGIC_ITEM_REPEATING_SHOT">
+		<description>
+			<p>This magic weapon grants a +1 bonus to attack and damage rolls made with it when it’s used to make a ranged attack, and it ignores the Loading property if it has that property.</p>
+			<p class="indent">If the weapon lacks ammunition, it produces its own, automatically creating one piece of magic ammunition when the wielder makes a ranged attack roll with it. The ammunition created by the weapon vanishes the instant after it hits or misses a target.</p>
+		</description>
+		<setters>
+			<set name="category">Magic Weapons</set>
+			<set name="cost" currency="gp">400</set>
+			<set name="type" addition="any Simple or Martial with the Ammunition property">Weapon</set>
+			<set name="rarity">Uncommon</set>
+			<set name="enhancement">1</set>
+			<set name="attunement">true</set>
+			<set name="weapon">ID_INTERNAL_WEAPON_CATEGORY_SIMPLE_RANGED||ID_INTERNAL_WEAPON_CATEGORY_MARTIAL_RANGED||!Dart</set>
+			<set name="name-format">Repeating Shot {{parent}}</set>
+		</setters>
+	</element>
+	<element name="Returning Weapon" type="Magic Item" source="Eberron: Forge of the Artificer" id="ID_WOTC_EFOTA_MAGIC_ITEM_RETURNING_WEAPON">
+		<description>
+			<p>This magic weapon grants a +1 bonus to attack and damage rolls made with it, and it returns to your hand immediately after you use it to make a ranged attack roll.</p>
+		</description>
+		<setters>
+			<set name="category">Magic Weapons</set>
+			<set name="cost" currency="gp">400</set>
+			<set name="type" addition="any Simple or Martial with the Thrown Property">Weapon</set>
+			<set name="rarity">Uncommon</set>
+			<set name="enhancement">1</set>
+			<set name="weapon">(ID_INTERNAL_WEAPON_CATEGORY_SIMPLE_MELEE||ID_INTERNAL_WEAPON_CATEGORY_SIMPLE_RANGED||ID_INTERNAL_WEAPON_CATEGORY_MARTIAL_MELEE||ID_INTERNAL_WEAPON_CATEGORY_MARTIAL_RANGED),ID_WOTC_PHB24_WEAPON_PROPERTY_THROWN</set>
+			<set name="name-format">Returning {{parent}}</set>
+		</setters>
+	</element>
+</elements>

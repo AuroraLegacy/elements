@@ -1,0 +1,286 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<elements>
+	<info>
+		<name>Battle Smith</name>
+		<description>The Battle Smith subclass from Eberron: Forge of the Artificer.</description>
+		<author url="https://marketplace.dndbeyond.com/category/5147000?pid=D5147000">Wizards of the Coast</author>
+		<update version="0.0.1">
+			<file name="artificer-battlesmith.xml" url="https://raw.githubusercontent.com/AuroraLegacy/elements/master/supplements/eberron-forge-of-the-artificer/archetypes/artificer-battlesmith.xml" />
+		</update>
+	</info>
+
+	<element name="Battle Smith" type="Archetype" source="Eberron: Forge of the Artificer" id="ID_WOTC_EFOTA_ARCHETYPE_ARTIFICER_BATTLE_SMITH">
+		<supports>Artificer Subclass</supports>
+		<description>
+			<p class="flavor">Command a Construct Guardian</p>
+			<p>A Battle Smith is a combination of protector and medic, an expert at defending others and repairing both materiel and personnel. To aid in their work, Battle Smiths are accompanied by a Steel Defender, a protective companion of their own creation.</p>
+			<div element="ID_WOTC_EFOTA_ARCHETYPE_FEATURE_ARTIFICER_BATTLE_SMITH_TOOLS_OF_THE_TRADE" />
+			<div element="ID_WOTC_EFOTA_ARCHETYPE_FEATURE_ARTIFICER_BATTLE_SMITH_BATTLE_SMITH_SPELLS" />
+			<div element="ID_WOTC_EFOTA_ARCHETYPE_FEATURE_ARTIFICER_BATTLE_SMITH_BATTLE_READY" />
+			<div element="ID_WOTC_EFOTA_ARCHETYPE_FEATURE_ARTIFICER_BATTLE_SMITH_STEEL_DEFENDER" />
+			<div class="reference">
+				<div element="ID_WOTC_EFOTA_INFORMATION_STEEL_DEFENDER_STATBLOCK" />
+			</div>
+			<div element="ID_WOTC_EFOTA_ARCHETYPE_FEATURE_ARTIFICER_BATTLE_SMITH_EXTRA_ATTACK" />
+			<div element="ID_WOTC_EFOTA_ARCHETYPE_FEATURE_ARTIFICER_BATTLE_SMITH_ARCANE_JOLT" />
+			<div element="ID_WOTC_EFOTA_ARCHETYPE_FEATURE_ARTIFICER_BATTLE_SMITH_IMPROVED_DEFENDER" />
+		</description>
+		<sheet display="false" />
+		<rules>
+			<grant type="Archetype Feature" id="ID_WOTC_EFOTA_ARCHETYPE_FEATURE_ARTIFICER_BATTLE_SMITH_TOOLS_OF_THE_TRADE" level="3" />
+			<grant type="Archetype Feature" id="ID_WOTC_EFOTA_ARCHETYPE_FEATURE_ARTIFICER_BATTLE_SMITH_BATTLE_SMITH_SPELLS" level="3" />
+			<grant type="Archetype Feature" id="ID_WOTC_EFOTA_ARCHETYPE_FEATURE_ARTIFICER_BATTLE_SMITH_BATTLE_READY" level="3" />
+			<grant type="Archetype Feature" id="ID_WOTC_EFOTA_ARCHETYPE_FEATURE_ARTIFICER_BATTLE_SMITH_STEEL_DEFENDER" level="3" />
+			<grant type="Archetype Feature" id="ID_WOTC_EFOTA_ARCHETYPE_FEATURE_ARTIFICER_BATTLE_SMITH_EXTRA_ATTACK" level="5" />
+			<grant type="Archetype Feature" id="ID_WOTC_EFOTA_ARCHETYPE_FEATURE_ARTIFICER_BATTLE_SMITH_ARCANE_JOLT" level="9" />
+			<grant type="Archetype Feature" id="ID_WOTC_EFOTA_ARCHETYPE_FEATURE_ARTIFICER_BATTLE_SMITH_IMPROVED_DEFENDER" level="15" />
+		</rules>
+	</element>
+	<element name="Level 3: Tools of the Trade" type="Archetype Feature" source="Eberron: Forge of the Artificer" id="ID_WOTC_EFOTA_ARCHETYPE_FEATURE_ARTIFICER_BATTLE_SMITH_TOOLS_OF_THE_TRADE">
+		<requirements>!ID_INTERNAL_EFOTA_FEATURE_REPLACEMENT_ARTIFICER_BATTLE_SMITH_TOOLS_OF_THE_TRADE</requirements>
+		<description>
+			<p>You gain the following benefits.</p>
+			<p class="indent"><b><i>Tool Proficiency.</i></b> You gain proficiency with Smith’s Tools. If you already have this proficiency, you gain proficiency with one other type of Artisan’s Tools of your choice.</p>
+			<p class="indent"><b><i>Weapon Crafting.</i></b> When you craft a nonmagical or magic weapon, the amount of time required to craft it is halved.</p>
+		</description>
+		<sheet alt="Tools of the Trade">
+			<description>When you craft a nonmagical or magic weapon, the amount of time required to craft it is halved.</description>
+		</sheet>
+		<rules>
+			<select type="Proficiency" name="Tool Proficiency (Battle Smith)" supports="Artisan tools" default="ID_PROFICIENCY_TOOL_PROFICIENCY_SMITHS_TOOLS" />
+		</rules>
+	</element>
+	<element name="Level 3: Battle Smith Spells" type="Archetype Feature" source="Eberron: Forge of the Artificer" id="ID_WOTC_EFOTA_ARCHETYPE_FEATURE_ARTIFICER_BATTLE_SMITH_BATTLE_SMITH_SPELLS">
+		<requirements>!ID_INTERNAL_EFOTA_FEATURE_REPLACEMENT_ARTIFICER_BATTLE_SMITH_BATTLE_SMITH_SPELLS</requirements>
+		<description>
+			<p>When you reach an Artificer level specified in the Battle Smith Spells table, you thereafter always have the listed spells prepared.</p>
+			<h5 class="caption">BATTLE SMITH SPELLS</h5>
+			<table>
+				<thead>
+					<tr><td class="col-15" style="text-align:center">Artificer Level</td><td>Spells</td></tr>
+				</thead>
+				<tr><td style="text-align:center">3</td><td><i>Heroism, Shield</i></td></tr>
+				<tr><td style="text-align:center">5</td><td><i>Shining Smite, Warding Bond</i></td></tr>
+				<tr><td style="text-align:center">9</td><td><i>Aura of Vitality, Conjure Barrage</i></td></tr>
+				<tr><td style="text-align:center">13</td><td><i>Aura of Purity, Fire Shield</i></td></tr>
+				<tr><td style="text-align:center">17</td><td><i>Banishing Smite, Mass Cure Wounds</i></td></tr>
+			</table>
+		</description>
+		<sheet display="false" />
+		<rules>
+			<grant type="Spell" id="ID_WOTC_PHB24_SPELL_HEROISM" spellcasting="Artificer" level="3" prepared="true" />
+			<grant type="Spell" id="ID_WOTC_PHB24_SPELL_SHIELD" spellcasting="Artificer" level="3" prepared="true" />
+			<grant type="Spell" id="ID_WOTC_PHB24_SPELL_SHINING_SMITE" spellcasting="Artificer" level="5" prepared="true" />
+			<grant type="Spell" id="ID_WOTC_PHB24_SPELL_WARDING_BOND" spellcasting="Artificer" level="5" prepared="true" />
+			<grant type="Spell" id="ID_WOTC_PHB24_SPELL_AURA_OF_VITALITY" spellcasting="Artificer" level="9" prepared="true" />
+			<grant type="Spell" id="ID_WOTC_PHB24_SPELL_CONJURE_BARRAGE" spellcasting="Artificer" level="9" prepared="true" />
+			<grant type="Spell" id="ID_WOTC_PHB24_SPELL_AURA_OF_PURITY" spellcasting="Artificer" level="13" prepared="true" />
+			<grant type="Spell" id="ID_WOTC_PHB24_SPELL_FIRE_SHIELD" spellcasting="Artificer" level="13" prepared="true" />
+			<grant type="Spell" id="ID_WOTC_PHB24_SPELL_BANISHING_SMITE" spellcasting="Artificer" level="17" prepared="true" />
+			<grant type="Spell" id="ID_WOTC_PHB24_SPELL_MASS_CURE_WOUNDS" spellcasting="Artificer" level="17" prepared="true" />
+		</rules>
+	</element>
+	<element name="Level 3: Battle Ready" type="Archetype Feature" source="Eberron: Forge of the Artificer" id="ID_WOTC_EFOTA_ARCHETYPE_FEATURE_ARTIFICER_BATTLE_SMITH_BATTLE_READY">
+		<requirements>!ID_INTERNAL_EFOTA_FEATURE_REPLACEMENT_ARTIFICER_BATTLE_SMITH_BATTLE_READY</requirements>
+		<description>
+			<p>Your combat training and your experiments with magic have paid off in two ways.</p>
+			<p class="indent"><b><i>Arcane Empowerment.</i></b> When you attack with a magic weapon, you can use your Intelligence modifier, instead of your Strength or Dexterity modifier, for the attack and damage rolls.</p>
+			<p class="indent"><b><i>Weapon Knowledge.</i></b> You gain proficiency with Martial weapons. You can use a weapon with which you have proficiency as a Spellcasting Focus for your Artificer spells.</p>
+		</description>
+		<sheet alt="Battle Ready">
+			<description>When you attack with a magic weapon, you can use your Intelligence modifier, instead of your Strength or Dexterity modifier, for the attack and damage rolls. You can also use any weapon with which you have proficiency as a Spellcasting Focus for your Artificer spells.</description>
+		</sheet>
+		<rules>
+			<grant type="Proficiency" id="ID_PROFICIENCY_WEAPON_PROFICIENCY_MARTIAL_WEAPONS" />
+		</rules>
+	</element>
+	<element name="Level 3: Steel Defender" type="Archetype Feature" source="Eberron: Forge of the Artificer" id="ID_WOTC_EFOTA_ARCHETYPE_FEATURE_ARTIFICER_BATTLE_SMITH_STEEL_DEFENDER">
+		<requirements>!ID_INTERNAL_EFOTA_FEATURE_REPLACEMENT_ARTIFICER_BATTLE_SMITH_STEEL_DEFENDER</requirements>
+		<description>
+			<p>Your tinkering has borne you a companion, a Steel Defender (see the stat block). You determine the defender’s appearance and whether it has two legs or four; your choices don’t affect the defender’s game statistics.</p>
+			<p class="indent">The defender is Friendly to you and your allies and obeys you. It vanishes if you die.</p>
+			<p class="indent"><b><i>The Defender in Combat.</i></b> In combat, the defender acts during your turn. It can move and take its Reaction on its own, but the only action it takes is the Dodge action unless you take a Bonus Action to command it to take an action. If you have the Incapacitated condition, the defender acts on its own and isn’t limited to the Dodge action.</p>
+			<p class="indent"><b><i>Restoring or Replacing the Defender.</i></b> If the defender has died within the last hour, you can take a Magic action to touch it and expend a spell slot. The defender returns to life after 1 minute with all its Hit Points restored.</p>
+			<p class="indent">Whenever you finish a Long Rest, you can create a new defender if you have Smith’s Tools in hand. If you already have a defender from this feature, the first one vanishes.</p>
+			<div class="reference">
+				<div element="ID_WOTC_EFOTA_INFORMATION_STEEL_DEFENDER_STATBLOCK" />
+			</div>
+		</description>
+		<sheet alt="Steel Defender">
+			<description>In combat, the defender acts during your turn. It can move and take its Reaction on its own, but the only action it takes is the Dodge action unless you take a Bonus Action to command it to take an action. If you have the Incapacitated condition, the defender acts on its own and isn’t limited to the Dodge action. &#13;
+			If the defender has died within the last hour, you can take a Magic action to touch it and expend a spell slot. The defender returns to life after 1 minute with all its Hit Points restored. &#13;
+			Whenever you finish a Long Rest, you can create a new defender if you have Smith’s Tools in hand. If you already have a defender from this feature, the first one vanishes.</description>
+		</sheet>
+		<rules>
+			<select type="Companion" name="Steel Defender" supports="Steel Defender EFOTA Version" default="ID_WOTC_EFOTA_COMPANION_ARTIFICER_BATTLE_SMITH_STEEL_DEFENDER" />
+		</rules>
+	</element>
+
+	<element name="Level 5: Extra Attack" type="Archetype Feature" source="Eberron: Forge of the Artificer" id="ID_WOTC_EFOTA_ARCHETYPE_FEATURE_ARTIFICER_BATTLE_SMITH_EXTRA_ATTACK">
+		<requirements>!ID_INTERNAL_EFOTA_FEATURE_REPLACEMENT_ARTIFICER_BATTLE_SMITH_EXTRA_ATTACK</requirements>
+		<description>
+			<p>You can attack twice instead of once whenever you take the Attack action on your turn. You can forgo one of your attacks when you take the Attack action to command your Steel Defender to take the Force-Empowered Rend action.</p>
+		</description>
+		<sheet alt="Extra Attack">
+			<description>You can attack twice instead of once whenever you take the Attack action on your turn. You can forgo one of your attacks when you take the Attack action to command your Steel Defender to take the Force-Empowered Rend action.</description>
+		</sheet>
+		<rules>
+			<stat name="extra attack:count" value="2" level="5" bonus="extra attack" />
+		</rules>
+	</element>
+
+	<element name="Level 9: Arcane Jolt" type="Archetype Feature" source="Eberron: Forge of the Artificer" id="ID_WOTC_EFOTA_ARCHETYPE_FEATURE_ARTIFICER_BATTLE_SMITH_ARCANE_JOLT">
+		<requirements>!ID_INTERNAL_EFOTA_FEATURE_REPLACEMENT_ARTIFICER_BATTLE_SMITH_ARCANE_JOLT</requirements>
+		<description>
+			<p>When either you hit a target with an attack roll using a magic weapon or your Steel Defender hits a target, you can channel magical energy through the strike to create one of the following effects:</p>
+			<p class="indent"><b><i>Destructive Energy.</i></b> The target takes an extra 2d6 Force damage.</p>
+			<p class="indent"><b><i>Restorative Energy.</i></b> Choose one creature or object you can see within 30 feet of the target. Healing energy flows into the chosen recipient, restoring 2d6 Hit Points to it.</p>
+			<p class="indent">You can use this energy a number of times equal to your Intelligence modifier (minimum of once), but you can do so no more than once per turn. You regain all expended uses when you finish a Long Rest.</p>
+		</description>
+		<sheet alt="Arcane Jolt" usage="{{arcane jolt:usage}}/Long Rest">
+			<description>Once per turn when either you hit a target with an attack roll using a magic weapon or your Steel Defender hits a target, you can either deal an additional {{arcane jolt:dice:amount}}d6 to the target or restore {{arcane jolt:dice:amount}}d6 Hit Points to one creature or object you can see within 30 feet of the target.</description>
+		</sheet>
+		<rules>
+			<stat name="arcane jolt:dice:amount" value="2" bonus="base" />
+			<stat name="arcane jolt:usage" value="1" bonus="base" />
+			<stat name="arcane jolt:usage" value="intelligence:modifier" bonus="base" />
+		</rules>
+	</element>
+
+	<element name="Level 15: Improved Defender" type="Archetype Feature" source="Eberron: Forge of the Artificer" id="ID_WOTC_EFOTA_ARCHETYPE_FEATURE_ARTIFICER_BATTLE_SMITH_IMPROVED_DEFENDER">
+		<requirements>!ID_INTERNAL_EFOTA_FEATURE_REPLACEMENT_ARTIFICER_BATTLE_SMITH_IMPROVED_DEFENDER</requirements>
+		<description>
+			<p>Your Arcane Jolt and Steel Defender have become more powerful, granting these benefits.</p>
+			<p class="indent"><b><i>Improved Jolt.</i></b> The extra damage and healing of your Arcane Jolt both increase to 4d6.</p>
+			<p class="indent"><b><i>Improved Deflection.</i></b> Whenever your Steel Defender uses its Deflect Attack, the attacker takes Force damage equal to 1d4 plus your Intelligence modifier.</p>
+		</description>
+		<sheet alt="Improved Defender">
+			<description>Whenever your Steel Defender uses its Deflect Attack, the attacker takes 1d4+{{intelligence:modifier}} Force damage.</description>
+		</sheet>
+		<rules>
+			<stat name="arcane jolt:dice:amount" value="4" bonus="base" />
+		</rules>
+	</element>
+
+	<!--Feature Replacement Grants-->
+	<element name="Tools of the Trade Feature Replacement" type="Grants" source="Internal" id="ID_INTERNAL_EFOTA_FEATURE_REPLACEMENT_ARTIFICER_BATTLE_SMITH_TOOLS_OF_THE_TRADE" />
+	<element name="Battle Smith Spells Feature Replacement" type="Grants" source="Internal" id="ID_INTERNAL_EFOTA_FEATURE_REPLACEMENT_ARTIFICER_BATTLE_SMITH_BATTLE_SMITH_SPELLS" />
+	<element name="Battle Ready Feature Replacement" type="Grants" source="Internal" id="ID_INTERNAL_EFOTA_FEATURE_REPLACEMENT_ARTIFICER_BATTLE_SMITH_BATTLE_READY" />
+	<element name="Steel Defender Feature Replacement" type="Grants" source="Internal" id="ID_INTERNAL_EFOTA_FEATURE_REPLACEMENT_ARTIFICER_BATTLE_SMITH_STEEL_DEFENDER" />
+	<element name="Extra Attack Feature Replacement" type="Grants" source="Internal" id="ID_INTERNAL_EFOTA_FEATURE_REPLACEMENT_ARTIFICER_BATTLE_SMITH_EXTRA_ATTACK" />
+	<element name="Arcane Jolt Feature Replacement" type="Grants" source="Internal" id="ID_INTERNAL_EFOTA_FEATURE_REPLACEMENT_ARTIFICER_BATTLE_SMITH_ARCANE_JOLT" />
+	<element name="Improved Defender Feature Replacement" type="Grants" source="Internal" id="ID_INTERNAL_EFOTA_FEATURE_REPLACEMENT_ARTIFICER_BATTLE_SMITH_IMPROVED_DEFENDER" />
+
+	<!--Companion-->
+	<element name="Steel Defender" type="Companion" source="Eberron: Forge of the Artificer" id="ID_WOTC_EFOTA_COMPANION_ARTIFICER_BATTLE_SMITH_STEEL_DEFENDER">
+		<supports>Steel Defender EFOTA Version</supports>
+		<description>
+			<p>Your tinkering has borne you a companion. You determine the defender’s appearance and whether it has two legs or four; your choices don’t affect the defender’s game statistics. The defender is Friendly to you and your allies and obeys you. It vanishes if you die.</p>
+			<p><b>Proficiency Bonus (PB)</b> equals your bonus</p>
+		</description>
+		<setters>
+			<set name="size">Medium</set>
+			<set name="type">Construct</set>
+			<set name="alignment">Neutral</set>
+			<set name="ac">12 + you Intelligence modifier (natural armor)</set>
+			<set name="hp">5 + five times your Artificer level (the defender has a number of Hit Dice [d8s] equal to your Artificer level)</set>
+			<set name="speed">40 ft.</set>
+			<set name="strength">14</set>
+			<set name="dexterity">12</set>
+			<set name="constitution">14</set>
+			<set name="intelligence">4</set>
+			<set name="wisdom">10</set>
+			<set name="charisma">6</set>
+			<set name="immunities">Poison</set>
+			<set name="conditionImmunities">Charmed, Exhaustion, Poisoned</set>
+			<set name="senses">Darkvision 60 ft.; Passive Perception 10</set>
+			<set name="languages">Understands the languages you know</set>
+			<set name="challenge">—</set>
+			<set name="traits">ID_WOTC_EFOTA_COMPANION_TRAIT_STEEL_DEFENDER_STEEL_BOND</set>
+			<set name="actions">ID_WOTC_EFOTA_COMPANION_ACTION_STEEL_DEFENDER_FORCE_EMPOWERED_REND,ID_WOTC_EFOTA_COMPANION_ACTION_STEEL_DEFENDER_REPAIR</set>
+			<set name="reactions">ID_WOTC_EFOTA_COMPANION_REACTION_STEEL_DEFENDER_DEFLECT_ATTACK</set>
+		</setters>
+		<rules>
+			<stat name="companion:ac" value="12" bonus="base" />
+			<stat name="companion:ac" value="intelligence:modifier" bonus="ability"/>
+			<stat name="companion:hp:max" value="5" />
+			<stat name="companion:hp:max" value="level:artificer" />
+			<stat name="companion:hp:max" value="level:artificer" />
+			<stat name="companion:hp:max" value="level:artificer" />
+			<stat name="companion:hp:max" value="level:artificer" />
+			<stat name="companion:hp:max" value="level:artificer" />
+			<stat name="companion:speed" value="40" bonus="base" />
+			<stat name="companion:proficiency" value="proficiency" bonus="base" />
+			<stat name="companion:proficiency" value="-2" bonus="base companion PB removal"/>
+		</rules>
+	</element>
+	<element name="Steel Bond" type="Companion Trait" source="Eberron: Forge of the Artificer" id="ID_WOTC_EFOTA_COMPANION_TRAIT_STEEL_DEFENDER_STEEL_BOND">
+		<description>
+			<p>Add your Proficiency Bonus to any ability check or saving throw the defender makes.</p>
+		</description>
+		<sheet>
+			<description>Add your Proficiency Bonus to any ability check or saving throw the defender makes.</description>
+		</sheet>
+	</element>
+	<element name="Force-Empowered Rend" type="Companion Action" source="Eberron: Forge of the Artificer" id="ID_WOTC_EFOTA_COMPANION_ACTION_STEEL_DEFENDER_FORCE_EMPOWERED_REND">
+		<description>
+			<p><i>Melee Attack Roll:</i> Bonus equals your spell attack modifier, reach 5 ft. Hit: 1d8 + 2 plus your Intelligence modifier Force damage.</p>
+		</description>
+		<sheet>
+			<description>Melee Attack Roll: Bonus equals your spell attack modifier, reach 5 ft. Hit: 1d8 + 2 + your Intelligence modifier Force damage.</description>
+		</sheet>
+	</element>
+	<element name="Repair" type="Companion Action" source="Eberron: Forge of the Artificer" id="ID_WOTC_EFOTA_COMPANION_ACTION_STEEL_DEFENDER_REPAIR">
+		<description>
+			<p>The defender, or one Construct or object it can see within 5 feet of itself, regains a number of Hit Points equal to 2d8 plus your Intelligence modifier.</p>
+		</description>
+		<sheet usage="3/Day">
+			<description>The defender, or one Construct or object it can see within 5 feet of itself, regains 2d8 + your Intelligence modifier Hit Points.</description>
+		</sheet>
+	</element>
+	<element name="Deflect Attack" type="Companion Reaction" source="Eberron: Forge of the Artificer" id="ID_WOTC_EFOTA_COMPANION_REACTION_STEEL_DEFENDER_DEFLECT_ATTACK">
+		<description>
+			<p><i>Trigger:</i> A creature the defender can see within 5 feet of itself makes an attack roll against a creature other than the defender. <i>Response:</i> The triggering creature makes the attack roll with Disadvantage.</p>
+		</description>
+		<sheet>
+			<description>Trigger: A creature the defender can see within 5 feet of itself makes an attack roll against a creature other than the defender. Response: The triggering creature makes the attack roll with Disadvantage.</description>
+		</sheet>
+	</element>
+
+	<element name="Steel Defender" type="Information" source="Eberron: Forge of the Artificer" id="ID_WOTC_EFOTA_INFORMATION_STEEL_DEFENDER_STATBLOCK">
+		<description>
+			<p style="margin-bottom:-5px"><i>Medium construct</i></p>
+			<h4 style="margin-top:5px" />
+			<ul class="unstyled">
+				<li><b>Armor Class</b> 12 + your Intelligence modifier</li>
+				<li><b>Hit Points</b> 5 + five times your Artificer level (the defender has a number of Hit Dice [d8s] equal to your Artificer level)</li>
+				<li><b>Speed</b> 40 ft.</li>
+			</ul>
+			<table style="text-align:center;margin-top:10px;margin-bottom:10px">
+				<thead><tr><td>STR</td><td>DEX</td><td>CON</td><td>INT</td><td>WIS</td><td>CHA</td></tr></thead>
+				<tr><td>14 (+2)</td><td>12 (+1)</td><td>14 (+2)</td><td>4 (-3)</td><td>10 (+0)</td><td>6 (-2)</td></tr>
+			</table>
+			<ul class="unstyled">
+				<li><b>Damage Immunities</b> Poison</li>
+				<li><b>Condition Immunities</b> Charmed, Exhaustion, Poisoned</li>
+				<li><b>Senses</b> Darkvision 60 ft.; Passive Perception 10</li>
+				<li><b>Languages</b> Understands the languages you know</li>
+				<li style="margin-bottom:-1em"><b>Challenge</b> —</li>
+				<li style="text-align:right; margin-top:-1em"><b>Proficiency Bonus (PB)</b> equals your bonus</li>
+			</ul>
+			<h4 style="margin-top:5px; margin-bottom:10px" />
+			<ul class="unstyled">
+				<li><b><i>Steel Bond.</i></b> Add your Proficiency Bonus to any ability check or saving throw the defender makes.</li>
+			</ul>
+			<h4 style="margin-top:10px">Actions</h4>
+			<ul class="unstyled">
+				<li><i><b>Force-Empowered Rend.</b> Melee Weapon Attack:</i> Bonus equals your spell attack modifier, reach 5 ft. <i>Hit:</i> 1d8 + 2 plus your Intelligence modifier Force damage.</li>
+				<li><i><b>Repair (3/Day).</b></i> The defender, or one Construct or object it can see within 5 feet of itself, regains a number of Hit Points equal to 2d8 plus your Intelligence modifier.</li>
+			</ul>
+			<h4 style="margin-top:10px">Reactions</h4>
+			<ul class="unstyled">
+				<li><b><i>Deflect Attack.</i></b> <i>Trigger:</i> A creature the defender can see within 5 feet of itself makes an attack roll against a creature other than the defender. <i>Response:</i> The triggering creature makes the attack roll with Disadvantage.</li>
+			</ul>
+		</description>
+	</element>
+</elements>

@@ -1,0 +1,251 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<elements>
+	<info>
+		<name>Artillerist</name>
+		<description>The Artillerist subclass from Eberron: Forge of the Artificer.</description>
+		<author url="https://marketplace.dndbeyond.com/category/5147000?pid=D5147000">Wizards of the Coast</author>
+		<update version="0.0.1">
+			<file name="artificer-artillerist.xml" url="https://raw.githubusercontent.com/AuroraLegacy/elements/master/supplements/eberron-forge-of-the-artificer/archetypes/artificer-artillerist.xml" />
+		</update>
+	</info>
+
+	<element name="Artillerist" type="Archetype" source="Eberron: Forge of the Artificer" id="ID_WOTC_EFOTA_ARCHETYPE_ARTIFICER_ARTILLERIST">
+		<supports>Artificer Subclass</supports>
+		<description>
+			<p class="flavor">Wield Destructive Power from Afar</p>
+			<p>An Artillerist specializes in using magic to hurl energy, projectiles, and explosions on a battlefield.</p>
+			<div element="ID_WOTC_EFOTA_ARCHETYPE_FEATURE_ARTIFICER_ARTILLERIST_TOOLS_OF_THE_TRADE" />
+			<div element="ID_WOTC_EFOTA_ARCHETYPE_FEATURE_ARTIFICER_ARTILLERIST_ARTILLERIST_SPELLS" />
+			<div element="ID_WOTC_EFOTA_ARCHETYPE_FEATURE_ARTIFICER_ARTILLERIST_ELDRITCH_CANNON" />
+			<div class="reference">
+				<div element="ID_WOTC_EFOTA_INFORMATION_ELDRITCH_CANNON_STATBLOCK" />
+			</div>
+			<div element="ID_WOTC_EFOTA_ARCHETYPE_FEATURE_ARTIFICER_ARTILLERIST_ARCANE_FIREARM" />
+			<div element="ID_WOTC_EFOTA_ARCHETYPE_FEATURE_ARTIFICER_ARTILLERIST_EXPLOSIVE_CANNON" />
+			<div element="ID_WOTC_EFOTA_ARCHETYPE_FEATURE_ARTIFICER_ARTILLERIST_FORTIFIED_POSITION" />
+		</description>
+		<sheet display="false" />
+		<rules>
+			<grant type="Archetype Feature" id="ID_WOTC_EFOTA_ARCHETYPE_FEATURE_ARTIFICER_ARTILLERIST_TOOLS_OF_THE_TRADE" level="3" />
+			<grant type="Archetype Feature" id="ID_WOTC_EFOTA_ARCHETYPE_FEATURE_ARTIFICER_ARTILLERIST_ARTILLERIST_SPELLS" level="3" />
+			<grant type="Archetype Feature" id="ID_WOTC_EFOTA_ARCHETYPE_FEATURE_ARTIFICER_ARTILLERIST_ELDRITCH_CANNON" level="3" />
+			<grant type="Archetype Feature" id="ID_WOTC_EFOTA_ARCHETYPE_FEATURE_ARTIFICER_ARTILLERIST_ARCANE_FIREARM" level="5" />
+			<grant type="Archetype Feature" id="ID_WOTC_EFOTA_ARCHETYPE_FEATURE_ARTIFICER_ARTILLERIST_EXPLOSIVE_CANNON" level="9" />
+			<grant type="Archetype Feature" id="ID_WOTC_EFOTA_ARCHETYPE_FEATURE_ARTIFICER_ARTILLERIST_FORTIFIED_POSITION" level="15" />
+		</rules>
+	</element>
+
+	<element name="Level 3: Tools of the Trade" type="Archetype Feature" source="Eberron: Forge of the Artificer" id="ID_WOTC_EFOTA_ARCHETYPE_FEATURE_ARTIFICER_ARTILLERIST_TOOLS_OF_THE_TRADE">
+		<requirements>!ID_INTERNAL_EFOTA_FEATURE_REPLACEMENT_ARTIFICER_ARTILLERIST_TOOLS_OF_THE_TRADE</requirements>
+		<description>
+			<p>You gain the following benefits.</p>
+			<p class="indent"><b><i>Ranged Weaponry.</i></b> You gain proficiency with Martial Ranged weapons.</p>
+			<p class="indent"><b><i>Tool Proficiency.</i></b> You gain proficiency with Woodcarver’s Tools. If you already have this proficiency, you gain proficiency with one other type of Artisan’s Tools of your choice.</p>
+			<p class="indent"><b><i>Wand Crafting.</i></b> When you craft a magic Wand, the amount of time required to craft it is halved.</p>
+		</description>
+		<sheet alt="Tools of the Trade">
+			<description>When you craft a magic Wand, the amount of time required to craft it is halved.</description>
+		</sheet>
+		<rules>
+			<grant type="Proficiency" id="ID_PROFICIENCY_WEAPON_PROFICIENCY_MARTIAL_RANGED_WEAPONS" />
+			<select type="Proficiency" name="Tool Proficiency (Artillerist)" supports="Artisan tools" default="ID_PROFICIENCY_TOOL_PROFICIENCY_WOODCARVERS_TOOLS" />
+		</rules>
+	</element>
+	<element name="Level 3: Artillerist Spells" type="Archetype Feature" source="Eberron: Forge of the Artificer" id="ID_WOTC_EFOTA_ARCHETYPE_FEATURE_ARTIFICER_ARTILLERIST_ARTILLERIST_SPELLS">
+		<requirements>!ID_INTERNAL_EFOTA_FEATURE_REPLACEMENT_ARTIFICER_ARTILLERIST_ARTILLERIST_SPELLS</requirements>
+		<description>
+			<p>When you reach an Artificer level specified in the Artillerist Spells table, you thereafter always have the listed spells prepared.</p>
+			<h5 class="caption">ARTILLERIST SPELLS</h5>
+			<table>
+				<thead>
+					<tr><td class="col-15" style="text-align:center">Artificer Level</td><td>Spells</td></tr>
+				</thead>
+				<tr><td style="text-align:center">3</td><td><i>Shield, Thunderwave</i></td></tr>
+				<tr><td style="text-align:center">5</td><td><i>Scorching Ray, Shatter</i></td></tr>
+				<tr><td style="text-align:center">9</td><td><i>Fireball, Wind Wall</i></td></tr>
+				<tr><td style="text-align:center">13</td><td><i>Ice Storm, Wall of Fire</i></td></tr>
+				<tr><td style="text-align:center">17</td><td><i>Cone of Cold, Wall of Force</i></td></tr>
+			</table>
+		</description>
+		<sheet display="false" />
+		<rules>
+			<grant type="Spell" id="ID_WOTC_PHB24_SPELL_SHIELD" spellcasting="Artificer" level="3" prepared="true" />
+			<grant type="Spell" id="ID_WOTC_PHB24_SPELL_THUNDERWAVE" spellcasting="Artificer" level="3" prepared="true" />
+			<grant type="Spell" id="ID_WOTC_PHB24_SPELL_SCORCHING_RAY" spellcasting="Artificer" level="5" prepared="true" />
+			<grant type="Spell" id="ID_WOTC_PHB24_SPELL_SHATTER" spellcasting="Artificer" level="5" prepared="true" />
+			<grant type="Spell" id="ID_WOTC_PHB24_SPELL_FIREBALL" spellcasting="Artificer" level="9" prepared="true" />
+			<grant type="Spell" id="ID_WOTC_PHB24_SPELL_WIND_WALL" spellcasting="Artificer" level="9" prepared="true" />
+			<grant type="Spell" id="ID_WOTC_PHB24_SPELL_ICE_STORM" spellcasting="Artificer" level="13" prepared="true" />
+			<grant type="Spell" id="ID_WOTC_PHB24_SPELL_WALL_OF_FIRE" spellcasting="Artificer" level="13" prepared="true" />
+			<grant type="Spell" id="ID_WOTC_PHB24_SPELL_CONE_OF_COLD" spellcasting="Artificer" level="17" prepared="true" />
+			<grant type="Spell" id="ID_WOTC_PHB24_SPELL_WALL_OF_FORCE" spellcasting="Artificer" level="17" prepared="true" />
+		</rules>
+	</element>
+	<element name="Level 3: Eldritch Cannon" type="Archetype Feature" source="Eberron: Forge of the Artificer" id="ID_WOTC_EFOTA_ARCHETYPE_FEATURE_ARTIFICER_ARTILLERIST_ELDRITCH_CANNON">
+		<requirements>!ID_INTERNAL_EFOTA_FEATURE_REPLACEMENT_ARTIFICER_ARTILLERIST_ELDRITCH_CANNON</requirements>
+		<description>
+			<p>Using Smith’s Tools or Woodcarver’s Tools, you can take a Magic action to create a Small or Tiny Eldritch Cannon in an unoccupied space on a horizontal surface within 5 feet of yourself. The cannon’s game statistics appear below. You determine its appearance, including whether you carry it or not (and your choice of legs or wheels, for the latter). It disappears if it is reduced to 0 Hit Points or after 1 hour. You can dismiss it early as a Magic action.</p>
+			<p class="indent">Once you create a cannon, you can’t do so again until you finish a Long Rest or expend a spell slot to create one. You can have only one cannon at a time and can’t create one while you already have one.</p>
+			<div class="reference">
+				<div element="ID_WOTC_EFOTA_INFORMATION_ELDRITCH_CANNON_STATBLOCK" />
+			</div>
+		</description>
+		<sheet alt="Eldritch Cannon" action="Action">
+			<description>You can magically create an Eldritch Cannon in an unoccupied space on a horizontal surface within 5 feet of you. It disappears if it is reduced to 0 Hit Points or after 1 hour. You can dismiss it early as a Magic action. Once you create a cannon, you can’t do so again until you finish a Long Rest or expend a spell slot to create one. You can have only one cannon at a time and can’t create one while you already have one.&#13;
+			Your cannon has the following abilities:
+			</description>
+			<description level="15">You can magically create one or two Eldritch Cannons in an unoccupied space on a horizontal surface within 5 feet of you. Each disappears if it is reduced to 0 Hit Points or after 1 hour. You can dismiss either early as a Magic action. Once you create a cannon in this way, you can’t do so again until you finish a Long Rest or expend a spell slot to create one. You can have only two cannons at a time and can’t create a third while you already have two.&#13;
+			Your cannons have the following abilities, and you can activate both cannons with the same Bonus Action:</description>
+			</sheet>
+		<rules>
+			<select type="Archetype Feature" name="Flamethrower" supports="Eldritch Cannon Flamethrower" default="ID_WOTC_EFOTA_ARCHETYPE_FEATURE_ARTIFICER_ARTILLERIST_ELDRITCH_CANNON_FLAMETHROWER" />
+			<select type="Archetype Feature" name="Force Ballista" supports="Eldritch Cannon Force Ballista" default="ID_WOTC_EFOTA_ARCHETYPE_FEATURE_ARTIFICER_ARTILLERIST_ELDRITCH_CANNON_FORCE_BALLISTA" />
+			<select type="Archetype Feature" name="Protector" supports="Eldritch Cannon Protector" default="ID_WOTC_EFOTA_ARCHETYPE_FEATURE_ARTIFICER_ARTILLERIST_ELDRITCH_CANNON_PROTECTOR" />
+		</rules>
+	</element>
+	<element name="Flamethrower" type="Archetype Feature" source="Eberron: Forge of the Artificer" id="ID_WOTC_EFOTA_ARCHETYPE_FEATURE_ARTIFICER_ARTILLERIST_ELDRITCH_CANNON_FLAMETHROWER">
+		<compendium display="false" />
+		<supports>Eldritch Cannon Flamethrower</supports>
+		<requirements>!ID_INTERNAL_EFOTA_FEATURE_REPLACEMENT_ARTIFICER_ARTILLERIST_ELDRITCH_CANNON_FLAMETHROWER</requirements>
+		<description>
+			<p>The cannon blasts fire in a 15-foot Cone. Each creature in that area makes a Dexterity saving throw against your spell save DC, taking 2d8 Fire damage on a failed save or half as much damage on a successful one. Flammable objects in the Cone that aren’t being worn or carried start burning.</p>
+		</description>
+		<sheet action="Bonus Action">
+			<description>The cannon blasts fire in a 15-foot Cone. Each creature in that area makes a DC{{artificer:spellcasting:dc}} Dexterity saving throw, taking {{flamethrower:dice:amount}}d8 Fire damage on a failed save or half as much damage on a successful one. Flammable objects in the Cone that aren’t being worn or carried start burning.</description>
+		</sheet>
+		<rules>
+			<stat name="flamethrower:dice:amount" value="2" bonus="base" />
+		</rules>
+	</element>
+	<element name="Force Ballista" type="Archetype Feature" source="Eberron: Forge of the Artificer" id="ID_WOTC_EFOTA_ARCHETYPE_FEATURE_ARTIFICER_ARTILLERIST_ELDRITCH_CANNON_FORCE_BALLISTA">
+		<compendium display="false" />
+		<supports>Eldritch Cannon Force Ballista</supports>
+		<requirements>!ID_INTERNAL_EFOTA_FEATURE_REPLACEMENT_ARTIFICER_ARTILLERIST_ELDRITCH_CANNON_FORCE_BALLISTA</requirements>
+		<description>
+			<p>Make a ranged spell attack originating from the cannon at one creature or object within 120 feet of it. On a hit, the target takes 2d8 Force damage, and if the target is a creature, it is pushed up to 5 feet away from the cannon.</p>
+		</description>
+		<sheet action="Bonus Action">
+			<description>Make a ranged spell attack at one creature or object within 120 feet of it. On a hit, the target takes {{force ballista:dice:amount}}d8 Force damage, and if the target is a creature, it is pushed up to 5 feet away from the cannon.</description>
+		</sheet>
+		<rules>
+			<stat name="force ballista:dice:amount" value="2" bonus="base" />
+		</rules>
+	</element>
+	<element name="Protector" type="Archetype Feature" source="Eberron: Forge of the Artificer" id="ID_WOTC_EFOTA_ARCHETYPE_FEATURE_ARTIFICER_ARTILLERIST_ELDRITCH_CANNON_PROTECTOR">
+		<compendium display="false" />
+		<supports>Eldritch Cannon Protector</supports>
+		<requirements>!ID_INTERNAL_EFOTA_FEATURE_REPLACEMENT_ARTIFICER_ARTILLERIST_ELDRITCH_CANNON_PROTECTOR</requirements>
+		<description>
+			<p>The cannon emits a burst of positive energy that grants itself and each creature of your choice within 10 feet of the cannon a number of Temporary Hit Points equal to 1d8 plus your Intelligence modifier (minimum of +1).</p>
+		</description>
+		<sheet action="Bonus Action">
+			<description>The cannon emits a burst of positive energy that grants itself and each creature of your choice within 10 feet of {{protector:dice:amount}}d8+{{protector:temporary hp}} Temporary Hit Points.</description>
+		</sheet>
+		<rules>
+			<stat name="protector:temporary hp" value="1" bonus="base" />
+			<stat name="protector:temporary hp" value="intelligence:modifier" bonus="base" />
+			<stat name="protector:dice:amount" value="1" bonus="base" />
+		</rules>
+	</element>
+
+	<element name="Level 5: Arcane Firearm" type="Archetype Feature" source="Eberron: Forge of the Artificer" id="ID_WOTC_EFOTA_ARCHETYPE_FEATURE_ARTIFICER_ARTILLERIST_ARCANE_FIREARM">
+		<requirements>!ID_INTERNAL_EFOTA_FEATURE_REPLACEMENT_ARTIFICER_ARTILLERIST_ARCANE_FIREARM</requirements>
+		<description>
+			<p>When you finish a Long Rest, you can use Woodcarver’s Tools to carve special sigils into a Rod, Staff, Wand, or Martial Ranged weapon and thereby turn it into your Arcane Firearm. The sigils disappear from the object if you later carve them on a different item. The sigils otherwise last indefinitely.</p>
+			<p class="indent">You can use your Arcane Firearm as a Spellcasting Focus for your Artificer spells. When you cast an Artificer spell through the firearm, roll 1d8, and you gain a bonus to one of the spell’s damage rolls equal to the number rolled.</p>
+		</description>
+		<sheet alt="Arcane Firearm">
+			<description>When you finish a Long Rest, you can use Woodcarver’s Tools to carve special sigils into a Rod, Staff, Wand, or Martial Ranged weapon and thereby turn it into your Arcane Firearm. The sigils disappear from the object if you later carve them on a different item. The sigils otherwise last indefinitely. &#13;
+			When you cast an Artificer spell through the firearm, roll 1d8, and you gain a bonus to one of the spell’s damage rolls equal to the number rolled.</description>
+		</sheet>
+	</element>
+
+	<element name="Level 9: Explosive Cannon" type="Archetype Feature" source="Eberron: Forge of the Artificer" id="ID_WOTC_EFOTA_ARCHETYPE_FEATURE_ARTIFICER_ARTILLERIST_EXPLOSIVE_CANNON">
+		<requirements>!ID_INTERNAL_EFOTA_FEATURE_REPLACEMENT_ARTIFICER_ARTILLERIST_EXPLOSIVE_CANNON</requirements>
+		<description>
+			<p>Every Eldritch Cannon you create is now more destructive. You gain the following benefits.</p>
+			<p class="indent"><b><i>Detonate.</i></b> When your cannon takes damage, you can take a Reaction to command the cannon to detonate if you are within 60 feet of it. Doing so destroys the cannon and forces each creature within 20 feet of it to make a Dexterity saving throw against your spell save DC, taking 3d10 Force damage on a failed save or half as much damage on a successful one.</p>
+			<p class="indent"><b><i>Firepower.</i></b> The cannon’s damage rolls and the number of Temporary Hit Points granted by Protector increase by 1d8.</p>
+		</description>
+		<sheet display="false" />
+		<rules>	
+			<stat name="flamethrower:dice:amount" value="3" bonus="base" />
+			<stat name="force ballista:dice:amount" value="3" bonus="base" />
+			<stat name="protector:dice:amount" value="2" bonus="base" />
+		</rules>
+	</element>
+	<element name="Detonate" type="Archetype Feature" source="Eberron: Forge of the Artificer" id="ID_WOTC_EFOTA_ARCHETYPE_FEATURE_ARTIFICER_ARTILLERIST_EXPLOSIVE_CANNON_DETONATE">
+		<compendium display="false" />
+		<supports>Eldritch Cannon Detonate</supports>
+		<requirements>!ID_INTERNAL_EFOTA_FEATURE_REPLACEMENT_ARTIFICER_ARTILLERIST_EXPLOSIVE_CANNON_DETONATE</requirements>
+		<description>
+			<p>When your cannon takes damage, you can take a Reaction to command the cannon to detonate if you are within 60 feet of it. Doing so destroys the cannon and forces each creature within 20 feet of it to make a Dexterity saving throw against your spell save DC, taking 3d10 Force damage on a failed save or half as much damage on a successful one.</p>
+		</description>
+		<sheet action="Reaction">
+			<description>When your cannon takes damage while you are within 60 feet of it, you can command the cannon to detonate. Doing so destroys the cannon and forces each creature within 20 feet of it to make a DC{{artificer:spellcasting:dc}} Dexterity saving throw, taking 3d10 Force damage on a failed save or half as much damage on a successful one.</description>
+		</sheet>
+	</element>
+	<append id="ID_WOTC_EFOTA_ARCHETYPE_FEATURE_ARTIFICER_ARTILLERIST_ELDRITCH_CANNON">
+		<rules>
+			<select type="Archetype Feature" name="Detonate" supports="Eldritch Cannon Detonate" default="ID_WOTC_EFOTA_ARCHETYPE_FEATURE_ARTIFICER_ARTILLERIST_EXPLOSIVE_CANNON_DETONATE" requirements="ID_WOTC_EFOTA_ARCHETYPE_FEATURE_ARTIFICER_ARTILLERIST_EXPLOSIVE_CANNON" />
+		</rules>
+	</append>
+
+	<element name="Level 15: Fortified Position" type="Archetype Feature" source="Eberron: Forge of the Artificer" id="ID_WOTC_EFOTA_ARCHETYPE_FEATURE_ARTIFICER_ARTILLERIST_FORTIFIED_POSITION">
+		<requirements>!ID_INTERNAL_EFOTA_FEATURE_REPLACEMENT_ARTIFICER_ARTILLERIST_FORTIFIED_POSITION</requirements>
+		<description>
+			<p>You’re a master at forming well-defended emplacements using your Eldritch Cannon. You gain the following benefits.</p>
+			<p class="indent"><b><i>Double Firepower.</i></b> You can now have two cannons at the same time, and you can create two with the same Magic action. (If you expend a spell slot to create the first cannon, you must expend another spell slot to create the second.) You can activate both of them with the same Bonus Action, ordering them to use the same activation option or different ones. You can’t create a third cannon while you have two.</p>
+			<p class="indent"><b><i>Shimmering Field Projection.</i></b> You and your allies have Half Cover while within 10 feet of your Eldritch Cannon.</p>
+		</description>
+		<sheet display="false"/>
+	</element>
+	<element name="Shimmering Field Projection" type="Archetype Feature" source="Eberron: Forge of the Artificer" id="ID_WOTC_EFOTA_ARCHETYPE_FEATURE_ARTIFICER_ARTILLERIST_FORTIFIED_POSITION_SHIMMERING_FIELD_PROJECTION">
+		<compendium display="false" />
+		<supports>Eldritch Cannon Shimmering Field Projection</supports>
+		<requirements>!ID_INTERNAL_EFOTA_FEATURE_REPLACEMENT_ARTIFICER_ARTILLERIST_FORTIFIED_POSITION_SHIMMERING_FIELD_PROJECTION</requirements>
+		<description>
+			<p>You and your allies have Half Cover while within 10 feet of your Eldritch Cannon.</p>
+		</description>
+		<sheet>
+			<description>You and your allies have Half Cover while within 10 feet of your Eldritch Cannon.</description>
+		</sheet>
+	</element>
+	<append id="ID_WOTC_EFOTA_ARCHETYPE_FEATURE_ARTIFICER_ARTILLERIST_ELDRITCH_CANNON">
+		<rules>
+			<select type="Archetype Feature" name="Shimmering Field Projection" supports="Eldritch Cannon Shimmering Field Projection" default="ID_WOTC_EFOTA_ARCHETYPE_FEATURE_ARTIFICER_ARTILLERIST_FORTIFIED_POSITION_SHIMMERING_FIELD_PROJECTION" requirements="ID_WOTC_EFOTA_ARCHETYPE_FEATURE_ARTIFICER_ARTILLERIST_FORTIFIED_POSITION" />
+		</rules>
+	</append>
+
+	<!-- Cannon Statblock -->
+	<element name="Eldritch Cannon" type="Information" source="Eberron: Forge of the Artificer" id="ID_WOTC_EFOTA_INFORMATION_ELDRITCH_CANNON_STATBLOCK">
+		<compendium display="false" />
+		<description>
+			<p><i>Small or Tiny Object</i></p>
+			<ul class="unstyled mb">
+			<li><b>AC</b> 18</li>
+			<li><b>HP</b> 5 x your Artificer level (casting <i>Mending</i> on the cannon restores 2d6 Hit Points to it)</li>
+			<li><b>Immunities</b> 40 ft.</li>
+			</ul>
+			<p><b><i>Activate Cannon (Requires You to Be within 60 Feet of the Cannon). </i></b> As a Bonus Action, you order the cannon to use the Flamethrower, Force Ballista, or Protector option below; you can direct the cannon to move up to 15 feet before or after that option:</p>
+			<ul class="unstyled mb">
+			<li><b>Flamethrower.</b> The cannon blasts fire in a 15-foot Cone. Each creature in that area makes a Dexterity saving throw against your spell save DC, taking 2d8 Fire damage on a failed save or half as much damage on a successful one. Flammable objects in the Cone that aren’t being worn or carried start burning.</li>
+			<li><b>Force Ballista.</b> Make a ranged spell attack originating from the cannon at one creature or object within 120 feet of it. On a hit, the target takes 2d8 Force damage, and if the target is a creature, it is pushed up to 5 feet away from the cannon.</li>
+			<li><b>Protector.</b> The cannon emits a burst of positive energy that grants itself and each creature of your choice within 10 feet of the cannon a number of Temporary Hit Points equal to 1d8 plus your Intelligence modifier (minimum of +1).</li>
+			</ul>
+		</description>
+	</element>
+
+	<!--Feature Replacement Grants-->
+	<element name="Tools of the Trade Feature Replacement" type="Grants" source="Internal" id="ID_INTERNAL_EFOTA_FEATURE_REPLACEMENT_ARTIFICER_ARTILLERIST_TOOLS_OF_THE_TRADE" />
+	<element name="Artillerist Spells Feature Replacement" type="Grants" source="Internal" id="ID_INTERNAL_EFOTA_FEATURE_REPLACEMENT_ARTIFICER_ARTILLERIST_ARTILLERIST_SPELLS" />
+	<element name="Eldritch Cannon Feature Replacement" type="Grants" source="Internal" id="ID_INTERNAL_EFOTA_FEATURE_REPLACEMENT_ARTIFICER_ARTILLERIST_ELDRITCH_CANNON" />
+	<element name="Flamethrower Feature Replacement" type="Grants" source="Internal" id="ID_INTERNAL_EFOTA_FEATURE_REPLACEMENT_ARTIFICER_ARTILLERIST_ELDRITCH_CANNON_FLAMETHROWER" />
+	<element name="Force Ballista Feature Replacement" type="Grants" source="Internal" id="ID_INTERNAL_EFOTA_FEATURE_REPLACEMENT_ARTIFICER_ARTILLERIST_ELDRITCH_CANNON_FORCE_BALLISTA" />
+	<element name="Protector Feature Replacement" type="Grants" source="Internal" id="ID_INTERNAL_EFOTA_FEATURE_REPLACEMENT_ARTIFICER_ARTILLERIST_ELDRITCH_CANNON_PROTECTOR" />
+	<element name="Arcane Firearm Feature Replacement" type="Grants" source="Internal" id="ID_INTERNAL_EFOTA_FEATURE_REPLACEMENT_ARTIFICER_ARTILLERIST_ARCANE_FIREARM" />
+	<element name="Explosive Cannon Feature Replacement" type="Grants" source="Internal" id="ID_INTERNAL_EFOTA_FEATURE_REPLACEMENT_ARTIFICER_ARTILLERIST_EXPLOSIVE_CANNON" />
+	<element name="Detonate Feature Replacement" type="Grants" source="Internal" id="ID_INTERNAL_EFOTA_FEATURE_REPLACEMENT_ARTIFICER_ARTILLERIST_EXPLOSIVE_CANNON_DETONATE" />
+	<element name="Fortified Position Feature Replacement" type="Grants" source="Internal" id="ID_INTERNAL_EFOTA_FEATURE_REPLACEMENT_ARTIFICER_ARTILLERIST_FORTIFIED_POSITION" />
+	<element name="Shimmering Field Projection Feature Replacement" type="Grants" source="Internal" id="ID_INTERNAL_EFOTA_FEATURE_REPLACEMENT_ARTIFICER_ARTILLERIST_FORTIFIED_POSITION_SHIMMERING_FIELD_PROJECTION" />
+</elements>
