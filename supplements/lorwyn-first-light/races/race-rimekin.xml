@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<elements>
+	<info>
+		<name>Rimekin</name>
+		<description>The Rimekin species from Lorwyn: First Light.</description>
+		<author url="https://marketplace.dndbeyond.com/category/DBU4HPAC7">Wizards of the Coast</author>
+		<update version="0.0.1">
+			<file name="race-rimekin.xml" url="https://raw.githubusercontent.com/AuroraLegacy/elements/master/supplements/lorwyn-first-light/races/race-rimekin.xml" />
+		</update>
+	</info>
+	
+	<element name="Rimekin" type="Race" source="Lorwyn: First Light" id="ID_WOTC_LFL_RACE_RIMEKIN">
+		<description>
+			<p>Rimekin hail from both Lorwyn and Shadowmoor, though the first rimekin arose from flamekin during the Phyrexian invasion. These flamekin approached their problems with cold logic and rejected reactionary responses. As a result, the magical flames that engulfed their bodies took on a frigid air, and they became rimekin.</p>
+			<p class="indent">Like flamekin, rimekin possess innate magic, but the flames they conjure burn icy blue rather than red hot. Further, these "flames" emanate a chilling cold rather than blazing heat. This effect extends, superficially, to the items rimekin touch. Any armor worn or weapons wielded by rimekin become coated in layers of spiky yet harmless hoarfrost.</p>
+			<h5>RIMEKIN TRAITS</h5>
+			<ul class="unstyled" style="text-indent:-1em; margin-left:1em; margin-bottom:5px">
+				<li><strong>Creature Type:</strong> Humanoid</li>
+				<li><strong>Size:</strong> Medium (about 4–7 feet tall) or Small (about 2–4 feet tall), chosen when you select this species</li>
+				<li><strong>Speed:</strong> 30 feet</li>
+			</ul>
+			<p>As a Rimekin, you have these special traits.</p>
+			<p class="indent"><strong><em>Darkvision.</em></strong> You have Darkvision with a range of 60 feet.</p> 
+			<p class="indent"><strong><em>Cold Resistance.</em></strong> You have Resistance to Cold damage.</p> 
+			<p class="indent"><strong><em>Cold Fire Magic.</em></strong> You know the <i>Ray of Frost</i> cantrip. When you reach character levels 3 and 5, you learn the <i>Ice Knife</i> spell and the <i>Flame Blade</i> spell, respectively. You always have those spells prepared. You can cast each once without a spell slot, and you regain the ability to cast these spells in this way when you finish a Long Rest. You can also cast the spells using any spell slots you have of the appropriate level. When you cast <i>Flame Blade</i> using this trait, the spell deals Cold damage instead of Fire damage.</p>
+			<p class="indent">Intelligence, Wisdom, or Charisma is your spellcasting ability for these spells when you cast them with this trait (choose when you select this race).</p>
+		</description>
+		<sheet display="false" />
+		<rules>
+			<select type="Ability Score Improvement" name="Ability Score Improvement Option (Rimekin)" supports="Custom Ability Score Improvement Option" requirements="!ID_INTERNAL_GRANTS_BACKGROUND_ASI" />
+			<select type="Racial Trait" name="Size (Rimekin)" supports="ID_INTERNAL_RACIAL_TRAIT_SMALL|ID_INTERNAL_RACIAL_TRAIT_MEDIUM" />
+			<stat name="innate speed" value="30" bonus="base" />
+
+			<grant type="Language" id="ID_LANGUAGE_COMMON" requirements="!ID_WOTC_TCOE_OPTION_CUSTOMIZED_LANGUAGE" />
+			<select type="Language" name="Language (Rimekin)" supports="Standard" number="2" requirements="!ID_WOTC_TCOE_OPTION_CUSTOMIZED_LANGUAGE" />
+			<select type="Language" name="Customized Language (Rimekin)" supports="Custom Race Language" requirements="ID_WOTC_TCOE_OPTION_CUSTOMIZED_LANGUAGE" number="3" />
+
+			<grant type="Condition" id="ID_INTERNAL_CONDITION_DAMAGE_RESISTANCE_COLD" />
+			<grant type="Vision" id="ID_VISION_DARKVISION" requirements="ID_INTERNAL_LFL_RACIAL_TRAIT_REPLACEMENT_RIMEKIN_DARKVISION" />
+			<grant type="Racial Trait" id="ID_WOTC_LFL_RACIAL_TRAIT_RIMEKIN_COLD_FIRE_MAGIC" />
+		</rules>
+	</element>
+
+	<element name="Cold Fire Magic" type="Racial Trait" source="Lorwyn: First Light" id="ID_WOTC_LFL_RACIAL_TRAIT_RIMEKIN_COLD_FIRE_MAGIC">
+		<requirements>!ID_INTERNAL_LFL_RACIAL_TRAIT_REPLACEMENT_RIMEKIN_COLD_FIRE_MAGIC</requirements>
+		<description>
+			<p>You know the <i>Ray of Frost</i> cantrip. When you reach character levels 3 and 5, you learn the <i>Ice Knife</i> spell and the <i>Flame Blade</i> spell, respectively. You always have those spells prepared. You can cast each once without a spell slot, and you regain the ability to cast these spells in this way when you finish a Long Rest. You can also cast the spells using any spell slots you have of the appropriate level. When you cast <i>Flame Blade</i> using this trait, the spell deals Cold damage instead of Fire damage.</p>
+			<p class="indent">Intelligence, Wisdom, or Charisma is your spellcasting ability for these spells when you cast them with this trait (choose when you select this race).</p>
+		</description>
+		<sheet display="false"/>
+		<rules>
+			<select type="Racial Trait" name="Spellcasting Ability (Cold Fire Magic)" supports="ID_WOTC_LFL_RACIAL_TRAIT_RIMEKIN_COLD_FIRE_MAGIC_INTELLIGENCE|ID_WOTC_LFL_RACIAL_TRAIT_RIMEKIN_COLD_FIRE_MAGIC_WISDOM|ID_WOTC_LFL_RACIAL_TRAIT_RIMEKIN_COLD_FIRE_MAGIC_CHARISMA" />
+		</rules>
+	</element>
+	<element name="Intelligence" type="Racial Trait" source="Lorwyn: First Light" id="ID_WOTC_LFL_RACIAL_TRAIT_RIMEKIN_COLD_FIRE_MAGIC_INTELLIGENCE">
+		<compendium display="false" />
+		<description>
+			<p>Intelligence is your spellcasting ability for the spells you cast with this trait.</p>
+		</description>
+		<sheet alt="Cold Fire Magic">
+			<description>You know the Ray of Frost cantrip. Intelligence is your spellcasting ability for it.</description>
+			<description level="3">You know the Ray of Frost cantrip. You can cast the Ice Knife spell once per Long Rest. Intelligence is your spellcasting ability for the spells you cast with this trait. You can also cast this spell using any spell slots you have of the appropriate level.</description>
+			<description level="5">You know the Ray of Frost cantrip. You can cast the Ice Knife and Flame Blade spells once each per Long Rest. When you cast Flame Blade using this trait, it deals Cold damage instead of Fire damage. Intelligence is your spellcasting ability for the spells you cast with this trait. You can also cast these spells using any spell slots you have of the appropriate level.</description>
+		</sheet>
+		<rules>
+			<grant type="Spell" id="ID_WOTC_PHB24_SPELL_RAY_OF_FROST" />
+			<grant type="Spell" id="ID_WOTC_PHB24_SPELL_ICE_KNIFE" level="3" />
+			<grant type="Spell" id="ID_WOTC_PHB24_SPELL_FLAME_BLADE" level="5" />
+		</rules>
+	</element>
+	<element name="Wisdom" type="Racial Trait" source="Lorwyn: First Light" id="ID_WOTC_LFL_RACIAL_TRAIT_RIMEKIN_COLD_FIRE_MAGIC_WISDOM">
+		<compendium display="false" />
+		<description>
+			<p>Wisdom is your spellcasting ability for the spells you cast with this trait.</p>
+		</description>
+		<sheet alt="Cold Fire Magic">
+			<description>You know the Ray of Frost cantrip. Wisdom is your spellcasting ability for it.</description>
+			<description level="3">You know the Ray of Frost cantrip. You can cast the Ice Knife spell once per Long Rest. Wisdom is your spellcasting ability for the spells you cast with this trait. You can also cast this spell using any spell slots you have of the appropriate level.</description>
+			<description level="5">You know the Ray of Frost cantrip. You can cast the Ice Knife and Flame Blade spells once each per Long Rest. When you cast Flame Blade using this trait, it deals Cold damage instead of Fire damage. Wisdom is your spellcasting ability for the spells you cast with this trait. You can also cast these spells using any spell slots you have of the appropriate level.</description>
+		</sheet>
+		<rules>
+			<grant type="Spell" id="ID_WOTC_PHB24_SPELL_RAY_OF_FROST" />
+			<grant type="Spell" id="ID_WOTC_PHB24_SPELL_ICE_KNIFE" level="3" />
+			<grant type="Spell" id="ID_WOTC_PHB24_SPELL_FLAME_BLADE" level="5" />
+		</rules>
+	</element>
+	<element name="Charisma" type="Racial Trait" source="Lorwyn: First Light" id="ID_WOTC_LFL_RACIAL_TRAIT_RIMEKIN_COLD_FIRE_MAGIC_CHARISMA">
+		<compendium display="false" />
+		<description>
+			<p>Charisma is your spellcasting ability for the spells you cast with this trait.</p>
+		</description>
+		<sheet alt="Cold Fire Magic">
+			<description>You know the Ray of Frost cantrip. Charisma is your spellcasting ability for it.</description>
+			<description level="3">You know the Ray of Frost cantrip. You can cast the Ice Knife spell once per Long Rest. Charisma is your spellcasting ability for the spells you cast with this trait. You can also cast this spell using any spell slots you have of the appropriate level.</description>
+			<description level="5">You know the Ray of Frost cantrip. You can cast the Ice Knife and Flame Blade spells once each per Long Rest. When you cast Flame Blade using this trait, it deals Cold damage instead of Fire damage. Charisma is your spellcasting ability for the spells you cast with this trait. You can also cast these spells using any spell slots you have of the appropriate level.</description>
+		</sheet>
+		<rules>
+			<grant type="Spell" id="ID_WOTC_PHB24_SPELL_RAY_OF_FROST" />
+			<grant type="Spell" id="ID_WOTC_PHB24_SPELL_ICE_KNIFE" level="3" />
+			<grant type="Spell" id="ID_WOTC_PHB24_SPELL_FLAME_BLADE" level="5" />
+		</rules>
+	</element>
+
+	<!--racial trait replacement grants-->
+	<element name="Rimekin Darkvision Replacement" type="Grants" source="Internal" id="ID_INTERNAL_LFL_RACIAL_TRAIT_REPLACEMENT_RIMEKIN_DARKVISION" />
+	<element name="Cold Fire Magic Replacement" type="Grants" source="Internal" id="ID_INTERNAL_LFL_RACIAL_TRAIT_REPLACEMENT_RIMEKIN_COLD_FIRE_MAGIC" />
+
+</elements>
