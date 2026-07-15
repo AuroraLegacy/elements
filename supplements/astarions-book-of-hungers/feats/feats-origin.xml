@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<elements>
+	<info>
+		<name>Origin Feats</name>
+		<description>Origin Feats from Astarion’s Book of Hungers.</description>
+		<author url="https://marketplace.dndbeyond.com/adventures/DBRWE7DB3">Wizards of the Coast</author>
+		<update version="0.0.1">
+			<file name="feats-origin.xml" url="https://raw.githubusercontent.com/AuroraLegacy/elements/master/supplements/astarions-book-of-hungers/feats/feats-origin.xml" />
+		</update>
+	</info>
+		
+	<element name="Tireless Reveler" type="Feat" source="Astarion’s Book of Hungers" id="ID_WOTC_ABH_FEAT_TIRELESS_REVELER">
+		<supports>Origin</supports>
+		<prerequisite>Origin Feat</prerequisite>
+		<description>
+			<p class="flavor">Origin Feat</p>
+			<p>When an ally you can see within 60 feet of yourself expends Heroic Inspiration, you can gain Heroic Inspiration if you lack it. You can use this benefit a number of times equal to your Proficiency Bonus, and you regain all expended uses when you finish a Short or Long Rest.</p>
+		</description>
+		<sheet usage="{{proficiency}}/Short Rest" >
+			<description>When an ally you can see within 60 feet of yourself expends Heroic Inspiration, you can gain Heroic Inspiration if you lack it.</description>
+		</sheet>
+	</element>
+
+	<element name="Vampire's Plaything" type="Feat" source="Astarion’s Book of Hungers" id="ID_WOTC_ABH_FEAT_VAMPIRES_PLAYTHING">
+		<supports>Origin</supports>
+		<prerequisite>Origin Feat</prerequisite>
+		<description>
+			<p class="flavor">Origin Feat</p>
+			<p>You gain the following benefits.</p>
+			<p class="indent"><b><i>Decanting.</i></b> When you finish a Long Rest, you can create one <i>Potion of Healing</i> or an <i>Antitoxin</i>, as long as you have an empty vial or flask. These liquids evaporate when you finish another Long Rest.</p>
+			<p class="indent"><b><i>Timely Retreat.</i></b> You can take a Bonus Action to take the Dash action or the Disengage action. You can use this benefit a number of times equal to your Proficiency Bonus, and you recover all expended uses when you finish a Long Rest.</p>
+			<p class="indent"><b><i>Vampiric Connection.</i></b> The DM determines the fate of your former vampire master. While you and your former vampire master are on the same plane of existence, the vampire can communicate with you telepathically, and you can choose to allow the vampire to perceive through your senses.</p>
+		</description>
+		<sheet>
+			<description>You gain the following benefits.</description>
+		</sheet>
+		<rules>
+			<select type="Feat Feature" name="Decanting" supports="Decanting" default="ID_WOTC_ABH_FEAT_FEATURE_VAMPIRES_PLAYTHING_DECANTING"/>
+			<select type="Feat Feature" name="Timely Retreat" supports="Timely Retreat" default="ID_WOTC_ABH_FEAT_FEATURE_VAMPIRES_PLAYTHING_TIMELY_RETREAT"/>
+			<select type="Feat Feature" name="Vampiric Connection" supports="Vampiric Connection" default="ID_WOTC_ABH_FEAT_FEATURE_VAMPIRES_PLAYTHING_VAMPIRIC_CONNECTION"/>
+		</rules>
+	</element>
+	<element name="Decanting" type="Feat Feature" source="Astarion’s Book of Hungers" id="ID_WOTC_ABH_FEAT_FEATURE_VAMPIRES_PLAYTHING_DECANTING">
+		<compendium display="false" />
+		<supports>Decanting</supports>
+		<description>
+			<p>When you finish a Long Rest, you can create one <i>Potion of Healing</i> or an <i>Antitoxin</i>, as long as you have an empty vial or flask. These liquids evaporate when you finish another Long Rest.</p>
+		</description>
+		<sheet>
+			<description>When you finish a Long Rest, you can create one Potion of Healing or an Antitoxin, as long as you have an empty vial or flask. These liquids evaporate when you finish another Long Rest.</description>
+		</sheet>
+	</element>
+	<element name="Timely Retreat" type="Feat Feature" source="Astarion’s Book of Hungers" id="ID_WOTC_ABH_FEAT_FEATURE_VAMPIRES_PLAYTHING_TIMELY_RETREAT">
+		<compendium display="false" />
+		<supports>Timely Retreat</supports>
+		<description>
+			<p>You can take a Bonus Action to take the Dash action or the Disengage action. You can use this benefit a number of times equal to your Proficiency Bonus, and you recover all expended uses when you finish a Long Rest.</p>
+		</description>
+		<sheet action="Bonus Action" usage="{{proficiency}}/Long Rest">
+			<description>You can take the Dash action or the Disengage action.</description>
+		</sheet>
+	</element>
+	<element name="Vampiric Connection" type="Feat Feature" source="Astarion’s Book of Hungers" id="ID_WOTC_ABH_FEAT_FEATURE_VAMPIRES_PLAYTHING_VAMPIRIC_CONNECTION">
+		<compendium display="false" />
+		<supports>Vampiric Connection</supports>
+		<description>
+			<p>The DM determines the fate of your former vampire master. While you and your former vampire master are on the same plane of existence, the vampire can communicate with you telepathically, and you can choose to allow the vampire to perceive through your senses.</p>
+		</description>
+		<sheet>
+			<description>If your former vampire master is still alive and on the same plane of existence as you, they can communicate with you telepathically, and you can choose to allow them to perceive through your senses.</description>
+		</sheet>
+	</element>
+
+	<element name="Vampire Hunter" type="Feat" source="Astarion’s Book of Hungers" id="ID_WOTC_ABH_FEAT_VAMPIRE_HUNTER">
+		<supports>Origin</supports>
+		<prerequisite>Origin Feat</prerequisite>
+		<description>
+			<p class="flavor">Origin Feat</p>
+			<p>You gain the following benefits.</p>
+			<p class="indent"><b><i>Adroit Escape.</i></b> You have Advantage on checks to escape from nonmagical restraints or the Grappled condition.</p>
+			<p class="indent"><b><i>Vitality Ward.</i></b> When you take Necrotic damage, you can take a Reaction to mitigate the damage. Roll a number of d6s equal to your Proficiency Bonus, and add them together. Reduce the Necrotic damage you take by this total. Once you use this benefit, you can't use it again until you finish a Short or Long Rest.</p>
+		</description>
+		<sheet>
+			<description>You gain the following benefits.</description>
+		</sheet>
+		<rules>
+			<select type="Feat Feature" name="Adroit Escape" supports="Adroit Escape" default="ID_WOTC_ABH_FEAT_FEATURE_VAMPIRE_HUNTER_ADROIT_ESCAPE"/>
+			<select type="Feat Feature" name="Vitality Ward" supports="Vitality Ward" default="ID_WOTC_ABH_FEAT_FEATURE_VAMPIRE_HUNTER_VITALITY_WARD"/>
+		</rules>
+	</element>
+	<element name="Adroit Escape" type="Feat Feature" source="Astarion’s Book of Hungers" id="ID_WOTC_ABH_FEAT_FEATURE_VAMPIRE_HUNTER_ADROIT_ESCAPE">
+		<compendium display="false" />
+		<supports>Adroit Escape</supports>
+		<description>
+			<p>You have Advantage on checks to escape from nonmagical restraints or the Grappled condition.</p>
+		</description>
+		<sheet>
+			<description>You have Advantage on checks to escape from nonmagical restraints or the Grappled condition.</description>
+		</sheet>
+	</element>
+	<element name="Vitality Ward" type="Feat Feature" source="Astarion’s Book of Hungers" id="ID_WOTC_ABH_FEAT_FEATURE_VAMPIRE_HUNTER_VITALITY_WARD">
+		<compendium display="false" />
+		<supports>Vitality Ward</supports>
+		<description>
+			<p>When you take Necrotic damage, you can take a Reaction to mitigate the damage. Roll a number of d6s equal to your Proficiency Bonus, and add them together. Reduce the Necrotic damage you take by this total. Once you use this benefit, you can't use it again until you finish a Short or Long Rest.</p>
+		</description>
+		<sheet action="Reaction" usage="1/Short Rest">
+			<description>When you take Necrotic damage, you can roll {{proficiency}}d6 and reduce the Necrotic damage you take by this total.</description>
+		</sheet>
+	</element>
+
+</elements>

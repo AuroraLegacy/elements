@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<elements>
+	<info>
+		<name>Carouser</name>
+		<description>The Carouser Background from Astarion’s Book of Hungers.</description>
+		<author url="https://marketplace.dndbeyond.com/adventures/DBRWE7DB3">Wizards of the Coast</author>
+		<update version="0.0.1">
+			<file name="background-carouser.xml" url="https://raw.githubusercontent.com/AuroraLegacy/elements/master/supplements/astarions-book-of-hungers/backgrounds/background-carouser.xml" />
+		</update>
+	</info>
+
+	<element name="Carouser" type="Background" source="Astarion’s Book of Hungers" id="ID_WOTC_ABH_BACKGROUND_CAROUSER">
+		<description>
+			<ul class="unstyled" style="text-indent:-1em; margin-left:1em; margin-bottom:5px">
+				<li><strong>Ability Scores:</strong> Dexterity, Intelligence, Charisma</li>
+				<li><strong>Feat:</strong> Tireless Reveler</li>
+				<li><strong>Skill Proficiencies:</strong> Deception and Persuasion</li>
+				<li><strong>Tool Proficiency:</strong> Choose one kind of Gaming Set</li>
+				<li><strong>Equipment:</strong><i> Choose A or B:</i> (A) Dagger, Gaming Set (same as above), Fine Clothes, Glass Bottle, Mirror, Perfume, Pouch, Tinderbox, 19 GP; or (B) 50 GP</li>
+			</ul>
+			<p>You grew to adulthood in the beating heart of a large city, such as Baldur's Gate. You spent countless evenings in taverns, playhouses, parlors, and gambling dens, savoring all the city had to offer. You're a natural at interacting with people to learn their secrets, whether over a high-stakes game or at a high-class soiree. You might have been thrown out of an establishment or ten, but only by people who don't know how to party.</p>
+		</description>
+		<setters>
+			<set name="short">Dexterity, Intelligence, Charisma, Tireless Reveler Feat, Deception and Persuasion Skills, and one kind of Gaming Set</set>
+		</setters>
+		<rules>
+			<grant type="Ability Score Improvement" id="ID_INTERNAL_ABILITY_SCORE_IMPROVEMENT_COMBINATION_DEX_INT_CHA" />
+			<grant type="Feat" id="ID_WOTC_ABH_FEAT_TIRELESS_REVELER" />
+			<grant type="Proficiency" id="ID_PROFICIENCY_SKILL_DECEPTION" />
+			<grant type="Proficiency" id="ID_PROFICIENCY_SKILL_PERSUASION" />
+			<grant type="Grants" id="ID_INTERNAL_GRANTS_BACKGROUND_ASI" />
+			<select type="Proficiency" name="Gaming Set Proficiency (Carouser)" supports="Gaming Set" />
+		</rules>
+	</element>
+
+</elements>
