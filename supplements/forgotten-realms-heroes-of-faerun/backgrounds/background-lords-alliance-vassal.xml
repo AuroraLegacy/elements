@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<elements>
+	<info>
+		<name>Lords' Alliance Vassal</name>
+		<description>The Lords' Alliance Vassal background from Forgotten Realms: Heroes of Faerûn.</description>
+		<author url="https://dndstore.wizards.com/us/en/product/1246485/heroes-of-faerun">Wizards of the Coast</author>
+		<update version="0.0.1">
+			<file name="background-lords-alliance-vassal.xml" url="https://raw.githubusercontent.com/AuroraLegacy/elements/master/supplements/forgotten-realms-heroes-of-faerun/backgrounds/background-lords-alliance-vassal.xml" />
+		</update>
+	</info>
+
+	<element name="Lords' Alliance Vassal" type="Background" source="Forgotten Realms: Heroes of Faerûn" id="ID_WOTC_FRHOF_BACKGROUND_LORDS_ALLIANCE_VASSAL">
+		<description>
+			<ul class="unstyled" style="text-indent:-1em; margin-left:1em; margin-bottom:5px">
+				<li><strong>Ability Scores:</strong> Strength, Intelligence, Charisma</li>
+				<li><strong>Feat:</strong> Lords’ Alliance Agent</li>
+				<li><strong>Skill Proficiencies:</strong> Insight and Persuasion</li>
+				<li><strong>Tool Proficiency:</strong> Calligrapher’s Supplies</li>
+				<li><strong>Equipment:</strong><i> Choose A or B:</i> (A) 2 Javelins, Calligrapher’s Supplies, Fine Clothes, Ink, 5 Ink Pens, Parchment (9 sheets), 13 GP; or (B) 50 GP</li>
+			</ul>
+			<p>You’ve pledged your loyalty to a member-city of the Lords’ Alliance. As an Alliance agent, you must uphold the tenets of the Alliance and seek to increase safety and prosperity along the Sword Coast . You’re sworn to bring honor and glory to your lord’s house, whether that means securing trade roads for a merchant-lord of Waterdeep or vanquishing monsters upriver of Daggerford. You’ve trained in the arts of swordplay and statecraft and are as deft with a blade as you are with a quill.</p>
+			<p class="indent"><strong><em>Trinket.</em></strong> Roll on the Lords' Alliance Trinkets table to determine what trinket you have from your time with the Lords' Alliance.</p>
+			<h5>Lords' Alliance Trinkets</h5>
+			<table>
+				<thead>
+					<tr><td>d6</td><td>Trinket</td></tr>
+				</thead>
+				<tr><td>1</td><td>A scrap from a defeated army’s banner</td></tr>
+				<tr><td>2</td><td>A bit and bridle engraved with the name of a famous steed</td></tr>
+				<tr><td>3</td><td>The broken blade of a sword used in a famous battle</td></tr>
+				<tr><td>4</td><td>The left glove of a lord who went mysteriously missing</td></tr>
+				<tr><td>5</td><td>An articulated toy horse and knight</td></tr>
+				<tr><td>6</td><td>A spaulder emblazoned with the insignia of an unidentified lord</td></tr>
+			</table>
+		</description>
+		<setters>
+			<set name="short">Strength, Intelligence, Charisma, Lords’ Alliance Agent Feat, Insight and Persuasion Skills, and Calligrapher’s Supplies</set>
+		</setters>
+		<rules>
+			<grant type="Ability Score Improvement" id="ID_INTERNAL_ABILITY_SCORE_IMPROVEMENT_COMBINATION_STR_INT_CHA" />
+			<grant type="Feat" id="ID_WOTC_FRHOF_FEAT_LORDS_ALLIANCE_AGENT" />
+			<grant type="Proficiency" id="ID_PROFICIENCY_SKILL_INSIGHT" />
+			<grant type="Proficiency" id="ID_PROFICIENCY_SKILL_PERSUASION" />
+			<grant type="Grants" id="ID_INTERNAL_GRANTS_BACKGROUND_ASI" />
+			<grant type="Proficiency" id="ID_PROFICIENCY_TOOL_PROFICIENCY_CALLIGRAPHERS_SUPPLIES" />
+			<select type="List" name="Lords' Alliance Trinkets" optional="true" >
+				<item id="1">A scrap from a defeated army’s banner</item>
+				<item id="2">A bit and bridle engraved with the name of a famous steed</item>
+				<item id="3">The broken blade of a sword used in a famous battle</item>
+				<item id="4">The left glove of a lord who went mysteriously missing</item>
+				<item id="5">An articulated toy horse and knight</item>
+				<item id="6">A spaulder emblazoned with the insignia of an unidentified lord</item>
+			</select>
+		</rules>
+	</element>
+
+</elements>

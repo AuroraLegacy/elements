@@ -1,0 +1,171 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<elements>
+	<info>
+		<name>Scion of the Three</name>
+		<description>The Scion of the Three subclass from Forgotten Realms: Heroes of Faerûn.</description>
+		<author url="https://dndstore.wizards.com/us/en/product/1246485/heroes-of-faerun">Wizards of the Coast</author>
+		<update version="0.0.1">
+			<file name="rogue-scion-of-the-three.xml" url="https://raw.githubusercontent.com/AuroraLegacy/elements/master/supplements/forgotten-realms-heroes-of-faerun/archetypes/rogue-scion-of-the-three.xml" />
+		</update>
+	</info>
+
+	<element name="Scion of the Three" type="Archetype" source="Forgotten Realms: Heroes of Faerûn" id="ID_WOTC_FRHOF_ARCHETYPE_ROGUE_SCION_OF_THE_THREE">
+		<supports>Roguish Archetype</supports>
+		<description>
+			<p class="flavor">Become a Gruesome Agent of Malice</p>
+			<p>A Scion of the Three draws power from a group of malevolent gods known in Baldur’s Gate as the Dead Three: Bane , a god of tyranny; Bhaal , a god of violence and murder; and Myrkul , a god of death. While some Rogues of this subclass pledge themselves ardently to those three macabre gods, others are thrust on this path by a curse. Either way, a scion’s power manifests as various occult gifts, as well as an uncanny talent for striking and terrifying foes.</p>
+			<p class="indent">Scions of the Three are most common in Baldur’s Gate, where the Dead Three lived as mortals before ascending to godhood. Underground cults to Bane, Bhaal, and Myrkul often count Scions of the Three among their most useful agents. Outside Baldur’s Gate, secular thieves’ guilds such as the Shadow Thieves of Amn or the Xanathar Guild in Waterdeep might call on a Scion of the Three to undertake an especially violent contract.</p>
+			<div element="ID_WOTC_FRHOF_ARCHETYPE_FEATURE_ROGUE_SCION_OF_THE_THREE_BLOODTHIRST" />
+			<div element="ID_WOTC_FRHOF_ARCHETYPE_FEATURE_ROGUE_SCION_OF_THE_THREE_DREAD_ALLEGIANCE" />
+			<div element="ID_WOTC_FRHOF_ARCHETYPE_FEATURE_ROGUE_SCION_OF_THE_THREE_STRIKE_FEAR" />
+			<div element="ID_WOTC_FRHOF_ARCHETYPE_FEATURE_ROGUE_SCION_OF_THE_THREE_AURA_OF_MALEVOLENCE" />
+			<div element="ID_WOTC_FRHOF_ARCHETYPE_FEATURE_ROGUE_SCION_OF_THE_THREE_DREAD_INCARNATE" />
+		</description>
+		<sheet display="false" />
+		<rules>
+			<grant type="Archetype Feature" id="ID_WOTC_FRHOF_ARCHETYPE_FEATURE_ROGUE_SCION_OF_THE_THREE_BLOODTHIRST" level="3"/>
+			<grant type="Archetype Feature" id="ID_WOTC_FRHOF_ARCHETYPE_FEATURE_ROGUE_SCION_OF_THE_THREE_DREAD_ALLEGIANCE" level="3"/>
+			<grant type="Archetype Feature" id="ID_WOTC_FRHOF_ARCHETYPE_FEATURE_ROGUE_SCION_OF_THE_THREE_STRIKE_FEAR" level="9"/>
+			<grant type="Archetype Feature" id="ID_WOTC_FRHOF_ARCHETYPE_FEATURE_ROGUE_SCION_OF_THE_THREE_AURA_OF_MALEVOLENCE" level="13"/>
+			<grant type="Archetype Feature" id="ID_WOTC_FRHOF_ARCHETYPE_FEATURE_ROGUE_SCION_OF_THE_THREE_DREAD_INCARNATE" level="17"/>
+		</rules>
+	</element>
+
+	<element name="Level 3: Bloodthirst" type="Archetype Feature" source="Forgotten Realms: Heroes of Faerûn" id="ID_WOTC_FRHOF_ARCHETYPE_FEATURE_ROGUE_SCION_OF_THE_THREE_BLOODTHIRST">
+		<requirements>!ID_INTERNAL_FRHOF_FEATURE_REPLACEMENT_ROGUE_SCION_OF_THE_THREE_BLOODTHIRST</requirements>
+		<description>
+			<p>When an enemy you can see within 30 feet of yourself takes damage and is Bloodied after taking that damage but not killed outright, you can take a Reaction and teleport to an unoccupied space you can see within 5 feet of that enemy. You can then make one melee attack. You can use this feature a number of times equal to your Intelligence modifier (minimum of once), and you regain all expended uses when you finish a Long Rest.</p>
+		</description>
+		<sheet alt="Bloodthirst" action="Reaction" usage="{{bloodthirst:uses}}/Long Rest">
+			<description>When an enemy you can see within 30 feet of yourself takes damage and is Bloodied after taking that damage but not killed outright, you can teleport to an unoccupied space you can see within 5 feet of that enemy and make one melee attack.</description>
+			<description level="17">When an enemy you can see within 30 feet of yourself takes damage and is Bloodied after taking that damage but not killed outright, you can teleport to an unoccupied space you can see within 5 feet of that enemy and make one melee attack. &#13;
+			You regain one expended use when you finish a Short Rest.</description>
+		</sheet>
+		<rules>
+			<stat name="bloodthirst:uses" value="1" bonus="base" />
+			<stat name="bloodthirst:uses" value="intelligence:modifier" bonus="base" />
+		</rules>
+	</element>
+	<element name="Level 3: Dread Allegiance" type="Archetype Feature" source="Forgotten Realms: Heroes of Faerûn" id="ID_WOTC_FRHOF_ARCHETYPE_FEATURE_ROGUE_SCION_OF_THE_THREE_DREAD_ALLEGIANCE">
+		<requirements>!ID_INTERNAL_FRHOF_FEATURE_REPLACEMENT_ROGUE_SCION_OF_THE_THREE_DREAD_ALLEGIANCE</requirements>
+		<description>
+			<p>Choose one of the Dead Three: Bane, Bhaal, or Myrkul. You gain Resistance to one type of damage and the ability to cast a cantrip, as detailed in the table below; Intelligence is your spellcasting ability for this cantrip. When you finish a Long Rest, you can change your choice.</p>
+			<table class="class-features">
+				<thead>
+					<tr><td class="col-10">God</td><td class="left">Damage Resistance</td><td class="left">Cantrip</td></tr>
+				</thead>
+				<tr><td>Bane</td><td class="left">Psychic</td><td class="left"><i>Minor Illusion</i></td></tr>
+				<tr><td>Bhaal</td><td class="left">Poison</td><td class="left"><i>Blade Ward</i></td></tr>
+				<tr><td>Myrkul</td><td class="left">Necrotic</td><td class="left"><i>Chill Touch</i></td></tr>
+			</table>
+		</description>
+		<sheet alt="Dread Allegiance" >
+			<description>Choose one of the Dead Three gods. When you finish a Long Rest, you can change your choice.</description>
+		</sheet>
+		<rules>
+			<select type="Archetype Feature" name="Dread Allegiance Option" supports="Dread Allegiance"/>
+		</rules>
+		<spellcasting name="Scion of the Three" ability="Intelligence" prepare="false" allowReplace="true" />
+	</element>
+	<element name="Bane" type="Archetype Feature" source="Forgotten Realms: Heroes of Faerûn" id="ID_WOTC_FRHOF_ARCHETYPE_FEATURE_ROGUE_SCION_OF_THE_THREE_DREAD_ALLEGIANCE_BANE">
+		<compendium display="false" />
+		<supports>Dread Allegiance</supports>
+		<description>
+			<p>Your Dread Allegiance is to Bane, the god of tyrants and ambition. You gain Resistance to Psychic damage and can cast <i>Minor Illusion</i> using Intelligence as your spellcasting ability.</p>
+		</description>
+		<sheet alt="Bane">
+			<description>You have Resistance to Psychic Damage and can cast Minor Illusion, using Intelligence as your spellcasting ability.</description>
+		</sheet>
+		<rules>
+			<grant type="Condition" id="ID_INTERNAL_CONDITION_DAMAGE_RESISTANCE_PSYCHIC"/>
+			<grant type="Spell" id="ID_WOTC_PHB24_SPELL_MINOR_ILLUSION" spellcasting="Scion of the Three"/>
+			<stat name="dread allegiance:resistance" value="Psychic" inline="true" />
+		</rules>
+	</element>
+	<element name="Bhaal" type="Archetype Feature" source="Forgotten Realms: Heroes of Faerûn" id="ID_WOTC_FRHOF_ARCHETYPE_FEATURE_ROGUE_SCION_OF_THE_THREE_DREAD_ALLEGIANCE_BHAAL">
+		<compendium display="false" />
+		<supports>Dread Allegiance</supports>
+		<description>
+			<p>Your Dread Allegiance is to Bhaal, the god of murder. You gain Resistance to Poison damage and can cast <i>Blade Ward</i> using Intelligence as your spellcasting ability.</p>
+		</description>
+		<sheet alt="Bhaal">
+			<description>You have Resistance to Poison Damage and can cast Blade Ward, using Intelligence as your spellcasting ability.</description>
+		</sheet>
+		<rules>
+			<grant type="Condition" id="ID_INTERNAL_CONDITION_DAMAGE_RESISTANCE_POISON"/>
+			<grant type="Spell" id="ID_WOTC_PHB24_SPELL_BLADE_WARD" spellcasting="Scion of the Three"/>
+			<stat name="dread allegiance:resistance" value="Poison" inline="true" />
+		</rules>
+	</element>
+	<element name="Myrkul" type="Archetype Feature" source="Forgotten Realms: Heroes of Faerûn" id="ID_WOTC_FRHOF_ARCHETYPE_FEATURE_ROGUE_SCION_OF_THE_THREE_DREAD_ALLEGIANCE_MYKRUL">
+		<compendium display="false" />
+		<supports>Dread Allegiance</supports>
+		<description>
+			<p>Your Dread Allegiance is to Myrkul, the god of death, decay, and undeath. You gain Resistance to Necrotic damage and can cast <i>Chill Touch</i> using Intelligence as your spellcasting ability.</p>
+		</description>
+		<sheet alt="Myrkul">
+			<description>You have Resistance to Necrotic Damage and can cast Chill Touch, using Intelligence as your spellcasting ability.</description>
+		</sheet>
+		<rules>
+			<grant type="Condition" id="ID_INTERNAL_CONDITION_DAMAGE_RESISTANCE_NECROTIC"/>
+			<grant type="Spell" id="ID_WOTC_PHB24_SPELL_CHILL_TOUCH" spellcasting="Scion of the Three"/>
+			<stat name="dread allegiance:resistance" value="Necrotic" inline="true" />
+		</rules>
+	</element>
+
+	<element name="Level 9: Strike Fear" type="Archetype Feature" source="Forgotten Realms: Heroes of Faerûn" id="ID_WOTC_FRHOF_ARCHETYPE_FEATURE_ROGUE_SCION_OF_THE_THREE_STRIKE_FEAR">
+		<requirements>!ID_INTERNAL_FRHOF_FEATURE_REPLACEMENT_ROGUE_SCION_OF_THE_THREE_STRIKE_FEAR</requirements>
+		<description>
+			<p>You gain the following Cunning Strike option.</p>
+			<p class="indent"><em><strong>Terrify (Cost: 1d6).</strong></em> The target must succeed on a Wisdom saving throw, or it has the Frightened condition for 1 minute. While the target is Frightened in this way, you have Advantage on attack rolls against the target. The Frightened target repeats the save at the end of each of its turns, ending the effect on itself on a success.</p>
+		</description>
+		<sheet display="false" />
+	</element>
+	<element name="Terrify (Cost: 1d6)" type="Archetype Feature" source="Forgotten Realms: Heroes of Faerûn" id="ID_WOTC_FRHOF_ARCHETYPE_FEATURE_ROGUE_SCION_OF_THE_THREE_STRIKE_FEAR_TERRIFY">
+		<compendium display="false" />
+		<requirements>!ID_INTERNAL_FRHOF_FEATURE_REPLACEMENT_ROGUE_SCION_OF_THE_THREE_STRIKE_FEAR_TERRIFY</requirements>
+		<supports>PHB24 Cunning Strike Terrify</supports>
+		<compendium display="false" />
+		<description>
+			<p>The target must succeed on a Wisdom saving throw, or it has the Frightened condition for 1 minute. While the target is Frightened in this way, you have Advantage on attack rolls against the target. The Frightened target repeats the save at the end of each of its turns, ending the effect on itself on a success.</p>
+		</description>
+		<sheet alt="Terrify (1d6)">
+			<description>The target must succeed on a DC{{cunning strike:dc}} Wisdom saving throw, or it has the Frightened condition for 1 minute. While the target is Frightened in this way, you have Advantage on attack rolls against the target. The Frightened target repeats the save at the end of each of its turns, ending the effect on itself on a success.</description>
+		</sheet>
+	</element>
+	<append id="ID_WOTC_PHB24_CLASS_FEATURE_ROGUE_CUNNING_STRIKE">
+		<rules>
+			<select type="Archetype Feature" name="Terrify" supports="PHB24 Cunning Strike Terrify" default="ID_WOTC_FRHOF_ARCHETYPE_FEATURE_ROGUE_SCION_OF_THE_THREE_STRIKE_FEAR_TERRIFY" requirements="ID_WOTC_FRHOF_ARCHETYPE_FEATURE_ROGUE_SCION_OF_THE_THREE_STRIKE_FEAR" />
+		</rules>
+	</append>
+
+	<element name="Level 13: Aura of Malevolence" type="Archetype Feature" source="Forgotten Realms: Heroes of Faerûn" id="ID_WOTC_FRHOF_ARCHETYPE_FEATURE_ROGUE_SCION_OF_THE_THREE_AURA_OF_MALEVOLENCE">
+		<requirements>!ID_INTERNAL_FRHOF_FEATURE_REPLACEMENT_ROGUE_SCION_OF_THE_THREE_AURA_OF_MALEVOLENCE</requirements>
+		<description>
+			<p>You radiate malignant power associated with one of the Dead Three. When you use Bloodthirst and teleport, each creature of your choice within 10 feet of either the space you left or your destination space (your choice) takes damage equal to your Intelligence modifier; the damage type is the same as the damage Resistance granted by your choice in the Dread Allegiance feature. Damage dealt by this feature ignores Resistance.</p>
+		</description>
+		<sheet alt="Aura of Malevolence" usage="Bloodthirst">
+			<description>When you use Bloodthirst and teleport, each creature of your choice within 10 feet of either the space you left or your destination space (your choice) takes {{intelligence:modifier}} {{dread allegiance:resistance}} damage. Damage dealt by this feature ignores Resistance.</description>
+		</sheet>
+	</element>
+
+	<element name="Level 17: Dread Incarnate" type="Archetype Feature" source="Forgotten Realms: Heroes of Faerûn" id="ID_WOTC_FRHOF_ARCHETYPE_FEATURE_ROGUE_SCION_OF_THE_THREE_DREAD_INCARNATE">
+		<requirements>!ID_INTERNAL_FRHOF_FEATURE_REPLACEMENT_ROGUE_SCION_OF_THE_THREE_DREAD_INCARNATE</requirements>
+		<description>
+			<p>You gain the following benefits.</p>
+			<p class="indent"><b><i>Cutthroat.</i></b> You regain one expended use of Bloodthirst when you finish a Short Rest.</p>
+			<p class="indent"><b><i>Murderous Intent.</i></b> When you roll for your Sneak Attack damage, you can treat a roll of a 1 or 2 on the die as a 3.</p>
+		</description>
+		<sheet alt="Dread Incarnate">
+			<description>When you roll for your Sneak Attack damage, you can treat a roll of 1 or 2 on the die as a 3.</description>
+		</sheet>
+	</element>
+	
+	<!--Feature Replacement Grants-->
+	<element name="Bloodthirst Feature Replacement" type="Grants" source="Internal" id="ID_INTERNAL_FRHOF_FEATURE_REPLACEMENT_ROGUE_SCION_OF_THE_THREE_BLOODTHIRST" />
+	<element name="Dread Allegiance Feature Replacement" type="Grants" source="Internal" id="ID_INTERNAL_FRHOF_FEATURE_REPLACEMENT_ROGUE_SCION_OF_THE_THREE_DREAD_ALLEGIANCE" />
+	<element name="Strike Fear Feature Replacement" type="Grants" source="Internal" id="ID_INTERNAL_FRHOF_FEATURE_REPLACEMENT_ROGUE_SCION_OF_THE_THREE_STRIKE_FEAR" />
+	<element name="Terrify (Cunning Strike) Feature Replacement" type="Grants" source="Internal" id="ID_INTERNAL_FRHOF_FEATURE_REPLACEMENT_ROGUE_SCION_OF_THE_THREE_STRIKE_FEAR_TERRIFY" />
+	<element name="Aura of Malevolence Feature Replacement" type="Grants" source="Internal" id="ID_INTERNAL_FRHOF_FEATURE_REPLACEMENT_ROGUE_SCION_OF_THE_THREE_AURA_OF_MALEVOLENCE" />
+	<element name="Dread Incarnate Feature Replacement" type="Grants" source="Internal" id="ID_INTERNAL_FRHOF_FEATURE_REPLACEMENT_ROGUE_SCION_OF_THE_THREE_DREAD_INCARNATE" />
+</elements>

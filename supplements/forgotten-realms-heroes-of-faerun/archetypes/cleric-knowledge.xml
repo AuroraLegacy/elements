@@ -1,0 +1,181 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<elements>
+	<info>
+		<name>Knowledge Domain</name>
+		<description>The Knowledge Domain subclass from Forgotten Realms: Heroes of Faerûn.</description>
+		<author url="https://dndstore.wizards.com/us/en/product/1246485/heroes-of-faerun">Wizards of the Coast</author>
+		<update version="0.0.1">
+			<file name="cleric-knowledge.xml" url="https://raw.githubusercontent.com/AuroraLegacy/elements/master/supplements/forgotten-realms-heroes-of-faerun/archetypes/cleric-knowledge.xml" />
+		</update>
+	</info>
+
+	<element name="Knowledge Domain" type="Archetype" source="Forgotten Realms: Heroes of Faerûn" id="ID_WOTC_FRHOF_ARCHETYPE_CLERIC_KNOWLEDGE_DOMAIN">
+		<supports>Cleric Subclass</supports>
+		<description>
+			<p class="flavor">Unearth Secrets and Master the Mind</p>
+			<p>The Knowledge Domain values learning and understanding above all. Clerics who tap into this domain study esoteric lore, collect old tomes, delve into secret places, and examine the processes of the mind. To them, knowledge is more valuable than material wealth, and learning is an act of worship. Libraries, universities, and other educational institutions also draw on the power of the Knowledge Domain.</p>
+			<p class="indent">Gods of knowledge vary from masters of arcane magic to patrons of craft and invention. In Faerûn, Clerics of the Knowledge Domain worship deities of learning and ingenuity such as Oghma and Gond, among many others.</p>
+			<div element="ID_WOTC_FRHOF_ARCHETYPE_FEATURE_KNOWLEDGE_DOMAIN_BLESSINGS_OF_KNOWLEDGE" />
+			<div element="ID_WOTC_FRHOF_ARCHETYPE_FEATURE_KNOWLEDGE_DOMAIN_KNOWLEDGE_DOMAIN_SPELLS" />
+			<div element="ID_WOTC_FRHOF_ARCHETYPE_FEATURE_KNOWLEDGE_DOMAIN_MIND_MAGIC" />
+			<div element="ID_WOTC_FRHOF_ARCHETYPE_FEATURE_KNOWLEDGE_DOMAIN_UNFETTERED_MIND" />
+			<div element="ID_WOTC_FRHOF_ARCHETYPE_FEATURE_KNOWLEDGE_DOMAIN_DIVINE_FOREKNOWLEDGE" />
+		</description>
+		<sheet display="false"/>
+		<rules>
+			<grant type="Archetype Feature" id="ID_WOTC_FRHOF_ARCHETYPE_FEATURE_KNOWLEDGE_DOMAIN_BLESSINGS_OF_KNOWLEDGE" level="3"/>
+			<grant type="Archetype Feature" id="ID_WOTC_FRHOF_ARCHETYPE_FEATURE_KNOWLEDGE_DOMAIN_KNOWLEDGE_DOMAIN_SPELLS" level="3"/>
+			<grant type="Archetype Feature" id="ID_WOTC_FRHOF_ARCHETYPE_FEATURE_KNOWLEDGE_DOMAIN_MIND_MAGIC" level="3"/>
+			<grant type="Archetype Feature" id="ID_WOTC_FRHOF_ARCHETYPE_FEATURE_KNOWLEDGE_DOMAIN_UNFETTERED_MIND" level="6"/>
+			<grant type="Archetype Feature" id="ID_WOTC_FRHOF_ARCHETYPE_FEATURE_KNOWLEDGE_DOMAIN_DIVINE_FOREKNOWLEDGE" level="17"/>
+		</rules>
+	</element>
+
+	<element name="Level 3: Blessings of Knowledge" type="Archetype Feature" source="Forgotten Realms: Heroes of Faerûn" id="ID_WOTC_FRHOF_ARCHETYPE_FEATURE_KNOWLEDGE_DOMAIN_BLESSINGS_OF_KNOWLEDGE">
+		<requirements>!ID_INTERNAL_FRHOF_FEATURE_REPLACEMENT_CLERIC_KNOWLEDGE_DOMAIN_BLESSINGS_OF_KNOWLEDGE</requirements>
+		<description>
+			<p>You gain proficiency with one type of Artisan's Tools of your choice and in two of the following skills of your choice: <i>Arcana, History, Nature,</i> or <i>Religion</i>. You have Expertise in those two skills.</p>
+		</description>
+		<sheet alt="Blessings of Knowledge" display="false" />
+		<rules>
+			<select type="Proficiency" name="Artisan Tool Proficiency (Blessings of Knowledge)" supports="Artisan tools" />
+			<select type="Archetype Feature" name="Skill Expertise (Blessings of Knowledge)" supports="Blessings of Knowledge 2024" number="2" />
+		</rules>
+	</element>
+
+	<element name="Arcana" type="Archetype Feature" source="Forgotten Realms: Heroes of Faerûn" id="ID_WOTC_FRHOF_ARCHETYPE_FEATURE_KNOWLEDGE_DOMAIN_BLESSINGS_OF_KNOWLEDGE_ARCANA_EXPERTISE">
+		<supports>Blessings of Knowledge 2024</supports>
+		<description>
+			<p>You have Expertise in Arcana.</p>
+			<div class="reference">
+				<div element="ID_PROFICIENCY_SKILL_ARCANA" />
+			</div>
+		</description>
+		<sheet display="false" />
+		<rules>
+			<grant type="Proficiency" id="ID_PROFICIENCY_SKILL_ARCANA" />
+			<grant type="Proficiency" id="ID_INTERNAL_PROFICIENCY_SKILL_EXPERTISE_ARCANA" />
+		</rules>
+	</element>
+	<element name="History" type="Archetype Feature" source="Forgotten Realms: Heroes of Faerûn" id="ID_WOTC_FRHOF_ARCHETYPE_FEATURE_KNOWLEDGE_DOMAIN_BLESSINGS_OF_KNOWLEDGE_HISTORY_EXPERTISE">
+		<supports>Blessings of Knowledge 2024</supports>
+		<description>
+			<p>You have Expertise in History.</p>
+			<div class="reference">
+				<div element="ID_PROFICIENCY_SKILL_HISTORY" />
+			</div>
+		</description>
+		<sheet display="false" />
+		<rules>
+			<grant type="Proficiency" id="ID_PROFICIENCY_SKILL_HISTORY" />
+			<grant type="Proficiency" id="ID_INTERNAL_PROFICIENCY_SKILL_EXPERTISE_HISTORY" />
+		</rules>
+	</element>
+	<element name="Nature" type="Archetype Feature" source="Forgotten Realms: Heroes of Faerûn" id="ID_WOTC_FRHOF_ARCHETYPE_FEATURE_KNOWLEDGE_DOMAIN_BLESSINGS_OF_KNOWLEDGE_NATURE_EXPERTISE">
+		<supports>Blessings of Knowledge 2024</supports>
+		<description>
+			<p>You have Expertise in Nature.</p>
+			<div class="reference">
+				<div element="ID_PROFICIENCY_SKILL_NATURE" />
+			</div>
+		</description>
+		<sheet display="false" />
+		<rules>
+			<grant type="Proficiency" id="ID_PROFICIENCY_SKILL_NATURE" />
+			<grant type="Proficiency" id="ID_INTERNAL_PROFICIENCY_SKILL_EXPERTISE_NATURE" />
+		</rules>
+	</element>
+	<element name="Religion" type="Archetype Feature" source="Forgotten Realms: Heroes of Faerûn" id="ID_WOTC_FRHOF_ARCHETYPE_FEATURE_KNOWLEDGE_DOMAIN_BLESSINGS_OF_KNOWLEDGE_RELIGION_EXPERTISE">
+		<supports>Blessings of Knowledge 2024</supports>
+		<description>
+			<p>You have Expertise in Religion.</p>
+			<div class="reference">
+				<div element="ID_PROFICIENCY_SKILL_RELIGION" />
+			</div>
+		</description>
+		<sheet display="false" />
+		<rules>
+			<grant type="Proficiency" id="ID_PROFICIENCY_SKILL_RELIGION" />
+			<grant type="Proficiency" id="ID_INTERNAL_PROFICIENCY_SKILL_EXPERTISE_RELIGION" />
+		</rules>
+	</element>
+
+	<element name="Level 3: Knowledge Domain Spells" type="Archetype Feature" source="Forgotten Realms: Heroes of Faerûn" id="ID_WOTC_FRHOF_ARCHETYPE_FEATURE_KNOWLEDGE_DOMAIN_KNOWLEDGE_DOMAIN_SPELLS">
+		<requirements>!ID_INTERNAL_FRHOF_FEATURE_REPLACEMENT_CLERIC_KNOWLEDGE_DOMAIN_KNOWLEDGE_DOMAIN_SPELLS</requirements>
+		<description>
+			<p>When you reach a Cleric level specified in the Knowledge Domain Spells table, you thereafter always have the listed spells prepared.</p>
+			<h5>KNOWLEDGE DOMAIN SPELLS</h5>
+			<table>
+				<thead>
+					<tr><td class="col-15" style="text-align:center">Cleric Level</td><td>Prepared Spells</td></tr>
+				</thead>
+				<tr><td style="text-align:center">3</td><td><i>Command, Comprehend Languages*, Detect Magic*, Detect Thoughts*, Identify*, Mind Spike*</i></td></tr>
+				<tr><td style="text-align:center">5</td><td><i>Dispel Magic, Nondetection, Tongues*</i></td></tr>
+				<tr><td style="text-align:center">7</td><td><i>Arcane Eye*, Banishment, Confusion</i></td></tr>
+				<tr><td style="text-align:center">9</td><td><i>Legend Lore*, Scrying*, Synaptic Static</i></td></tr>
+			</table>
+		</description>
+		<sheet display="false" />
+		<rules>
+			<grant type="Spell" id="ID_WOTC_PHB24_SPELL_COMMAND" level="3" spellcasting="Cleric" prepared="true" />
+			<grant type="Spell" id="ID_WOTC_PHB24_SPELL_COMPREHEND_LANGUAGES" level="3" spellcasting="Cleric" prepared="true" />
+			<grant type="Spell" id="ID_WOTC_PHB24_SPELL_DETECT_MAGIC" level="3" spellcasting="Cleric" prepared="true" />
+			<grant type="Spell" id="ID_WOTC_PHB24_SPELL_DETECT_THOUGHTS" level="3" spellcasting="Cleric" prepared="true" />
+			<grant type="Spell" id="ID_WOTC_PHB24_SPELL_IDENTIFY" level="3" spellcasting="Cleric" prepared="true" />
+			<grant type="Spell" id="ID_WOTC_PHB24_SPELL_MIND_SPIKE" level="3" spellcasting="Cleric" prepared="true" />
+			<grant type="Spell" id="ID_WOTC_PHB24_SPELL_DISPEL_MAGIC" level="5" spellcasting="Cleric" prepared="true" />
+			<grant type="Spell" id="ID_WOTC_PHB24_SPELL_NONDETECTION" level="5" spellcasting="Cleric" prepared="true" />
+			<grant type="Spell" id="ID_WOTC_PHB24_SPELL_TONGUES" level="5" spellcasting="Cleric" prepared="true" />
+			<grant type="Spell" id="ID_WOTC_PHB24_SPELL_ARCANE_EYE" level="7" spellcasting="Cleric" prepared="true" />
+			<grant type="Spell" id="ID_WOTC_PHB24_SPELL_BANISHMENT" level="7" spellcasting="Cleric" prepared="true" />
+			<grant type="Spell" id="ID_WOTC_PHB24_SPELL_CONFUSION" level="7" spellcasting="Cleric" prepared="true" />
+			<grant type="Spell" id="ID_WOTC_PHB24_SPELL_LEGEND_LORE" level="9" spellcasting="Cleric" prepared="true" />
+			<grant type="Spell" id="ID_WOTC_PHB24_SPELL_SCRYING" level="9" spellcasting="Cleric" prepared="true" />
+			<grant type="Spell" id="ID_WOTC_PHB24_SPELL_SYNAPTIC_STATIC" level="9" spellcasting="Cleric" prepared="true" />
+		</rules>
+	</element>
+
+	<element name="Level 3: Mind Magic" type="Archetype Feature" source="Forgotten Realms: Heroes of Faerûn" id="ID_WOTC_FRHOF_ARCHETYPE_FEATURE_KNOWLEDGE_DOMAIN_MIND_MAGIC">
+		<requirements>!ID_INTERNAL_FRHOF_FEATURE_REPLACEMENT_CLERIC_KNOWLEDGE_DOMAIN_MIND_MAGIC</requirements>
+		<description>
+			<p>As a Magic action, you can expend one use of your Channel Divinity to manifest your magical knowledge. Choose one spell from the Divination school on the Knowledge Domain Spells table that you have prepared. As part of that action, you cast that spell without expending a spell slot or needing Material components.</p>
+		</description>
+		<sheet alt="Mind Magic" action="Action" usage="Channel Divinity">
+			<description>Choose one spell from the Divination school on the Knowledge Domain Spells table that you have prepared. You cast that spell without expending a spell slot or needing Material components.</description>
+		</sheet>
+	</element>
+	
+	<element name="Level 6: Unfettered Mind" type="Archetype Feature" source="Forgotten Realms: Heroes of Faerûn" id="ID_WOTC_FRHOF_ARCHETYPE_FEATURE_KNOWLEDGE_DOMAIN_UNFETTERED_MIND">
+		<requirements>!ID_INTERNAL_FRHOF_FEATURE_REPLACEMENT_CLERIC_KNOWLEDGE_DOMAIN_UNFETTERED_MIND</requirements>
+		<description>
+			<p>You gain telepathy out to 60 feet. When you use this telepathy, you can simultaneously contact a number of creatures equal to your Wisdom modifier (minimum of one).</p>
+			<p class="indent">Additionally, you gain proficiency in Intelligence saving throws. If you already have this proficiency, you instead gain saving throw proficiency with one ability in which you lack it.</p>
+		</description>
+		<sheet alt="Unfettered Mind">
+			<description>You gain telepathy of 60ft. When you use this telepathy, you can simultaneously contact {{unfettered mind:count}} creatures.</description>
+		</sheet>
+		<rules>
+			<stat name="unfettered mind:count" value="1" bonus="base" />
+			<stat name="unfettered mind:count" value="wisdom:modifier" bonus="base" />
+			<select type="Proficiency" name="Saving Throw Proficiency (Unfettered Mind)" supports="Saving Throw" default="ID_PROFICIENCY_SAVINGTHROW_INTELLIGENCE" />
+		</rules>
+	</element>
+
+	<element name="Level 17: Divine Foreknowledge" type="Archetype Feature" source="Forgotten Realms: Heroes of Faerûn" id="ID_WOTC_FRHOF_ARCHETYPE_FEATURE_KNOWLEDGE_DOMAIN_DIVINE_FOREKNOWLEDGE">
+		<requirements>!ID_INTERNAL_FRHOF_FEATURE_REPLACEMENT_CLERIC_KNOWLEDGE_DOMAIN_DIVINE_FOREKNOWLEDGE</requirements>
+		<description>
+			<p>As a Bonus Action, you magically expand your mind to the future. For 1 hour, you have Advantage on D20 Tests. Once you use this feature, you can't use it again until you finish a Long Rest. You can also restore your use of this feature by expending a level 6+ spell slot (no action required).</p>
+		</description>
+		<sheet alt="Divine Foreknowledge" action="Bonus Action" usage="1/Long Rest">
+			<description>You grant yourself Advantage on D20 Tests for 1 hour. &#13;
+			You can restore your use of this feature by expending a level 6+ spell slot (no action required).</description>
+		</sheet>
+	</element>
+	
+	<!--Feature Replacement Grants-->
+	<element name="Blessings of Knowledge Feature Replacement" type="Grants" source="Internal" id="ID_INTERNAL_FRHOF_FEATURE_REPLACEMENT_CLERIC_KNOWLEDGE_DOMAIN_BLESSINGS_OF_KNOWLEDGE" />
+	<element name="Knowledge Domain Spells Feature Replacement" type="Grants" source="Internal" id="ID_INTERNAL_FRHOF_FEATURE_REPLACEMENT_CLERIC_KNOWLEDGE_DOMAIN_KNOWLEDGE_DOMAIN_SPELLS" />
+	<element name="Mind Magic Feature Replacement" type="Grants" source="Internal" id="ID_INTERNAL_FRHOF_FEATURE_REPLACEMENT_CLERIC_KNOWLEDGE_DOMAIN_MIND_MAGIC" />
+	<element name="Unfettered Mind Feature Replacement" type="Grants" source="Internal" id="ID_INTERNAL_FRHOF_FEATURE_REPLACEMENT_CLERIC_KNOWLEDGE_DOMAIN_UNFETTERED_MIND" />
+	<element name="Divine Foreknowledge Feature Replacement" type="Grants" source="Internal" id="ID_INTERNAL_FRHOF_FEATURE_REPLACEMENT_CLERIC_KNOWLEDGE_DOMAIN_DIVINE_FOREKNOWLEDGE" />
+</elements>

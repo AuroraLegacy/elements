@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<elements>
+	<info>
+		<name>Dragon Cultist</name>
+		<description>The Dragon Cultist background from Forgotten Realms: Heroes of Faerûn.</description>
+		<author url="https://dndstore.wizards.com/us/en/product/1246485/heroes-of-faerun">Wizards of the Coast</author>
+		<update version="0.0.1">
+			<file name="background-dragon-cultist.xml" url="https://raw.githubusercontent.com/AuroraLegacy/elements/master/supplements/forgotten-realms-heroes-of-faerun/backgrounds/background-dragon-cultist.xml" />
+		</update>
+	</info>
+
+	<element name="Dragon Cultist" type="Background" source="Forgotten Realms: Heroes of Faerûn" id="ID_WOTC_FRHOF_BACKGROUND_DRAGON_CULTIST">
+		<description>
+			<ul class="unstyled" style="text-indent:-1em; margin-left:1em; margin-bottom:5px">
+				<li><strong>Ability Scores:</strong> Dexterity, Constitution, Intelligence</li>
+				<li><strong>Feat:</strong> Cult of the Dragon Initiate</li>
+				<li><strong>Skill Proficiencies:</strong> Deception and Stealth</li>
+				<li><strong>Tool Proficiency:</strong> Calligrapher’s Supplies</li>
+				<li><strong>Equipment:</strong><i> Choose A or B:</i> (A) Calligrapher’s Supplies, Dagger, Glass Bottle, Lamp, Manacles, Oil (5 flasks), 2 Pouches, Robe, Rope, 30 GP; or (B) 50 GP</li>
+			</ul>
+			<p>You are an initiate of the Cult of the Dragon. You discovered or were brought to a cell cult, where you exemplified the values honored by dragon cultists: duplicity, secrecy, and determination. In exchange for your oath to serve the cult, the cult offered you the company of fellow dragon worshipers, plus access to resources that might help further your studies in the realms of arcana and occultism.</p>
+			<p class="indent"><strong><em>Trinket.</em></strong> Roll on the Cult of the Dragon Trinkets table to determine what trinket you have from your time with the Cult of the Dragon.</p>
+			<h5>Cult of the Dragon Trinkets</h5>
+			<table>
+				<thead>
+					<tr><td>d6</td><td>Trinket</td></tr>
+				</thead>
+				<tr><td>1</td><td>A dragon claw pendant on a leather cord</td></tr>
+				<tr><td>2</td><td>Ashes of a dracolich in a small brass canister</td></tr>
+				<tr><td>3</td><td>A map of an unknown dragon’s lair</td></tr>
+				<tr><td>4</td><td>A black pearl etched with a Draconic rune</td></tr>
+				<tr><td>5</td><td>A drop of dragon’s blood preserved in amber</td></tr>
+				<tr><td>6</td><td>A scrap of purple silk</td></tr>
+			</table>
+		</description>
+		<setters>
+			<set name="short">Dexterity, Constitution, Intelligence, Cult of the Dragon Initiate Feat, Deception and Stealth Skills, and Calligrapher’s Supplies</set>
+		</setters>
+		<rules>
+			<grant type="Ability Score Improvement" id="ID_INTERNAL_ABILITY_SCORE_IMPROVEMENT_COMBINATION_DEX_CON_INT" />
+			<grant type="Feat" id="ID_WOTC_FRHOF_FEAT_CULT_OF_THE_DRAGON_INITIATE" />
+			<grant type="Proficiency" id="ID_PROFICIENCY_SKILL_DECEPTION" />
+			<grant type="Proficiency" id="ID_PROFICIENCY_SKILL_STEALTH" />
+			<grant type="Grants" id="ID_INTERNAL_GRANTS_BACKGROUND_ASI" />
+			<grant type="Proficiency" id="ID_PROFICIENCY_TOOL_PROFICIENCY_CALLIGRAPHERS_SUPPLIES" />
+			<select type="List" name="Cult of the Dragon Trinkets" optional="true" >
+				<item id="1">A dragon claw pendant on a leather cord</item>
+				<item id="2">Ashes of a dracolich in a small brass canister</item>
+				<item id="3">A map of an unknown dragon’s lair</item>
+				<item id="4">A black pearl etched with a Draconic rune</item>
+				<item id="5">A drop of dragon’s blood preserved in amber</item>
+				<item id="6">A scrap of purple silk</item>
+			</select>
+		</rules>
+	</element>
+
+</elements>

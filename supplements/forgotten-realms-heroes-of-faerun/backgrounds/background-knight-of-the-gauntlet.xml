@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<elements>
+	<info>
+		<name>Knight of the Gauntlet</name>
+		<description>The Knight of the Gauntlet background from Forgotten Realms: Heroes of Faerûn.</description>
+		<author url="https://dndstore.wizards.com/us/en/product/1246485/heroes-of-faerun">Wizards of the Coast</author>
+		<update version="0.0.1">
+			<file name="background-knight-of-the-gauntlet.xml" url="https://raw.githubusercontent.com/AuroraLegacy/elements/master/supplements/forgotten-realms-heroes-of-faerun/backgrounds/background-knight-of-the-gauntlet.xml" />
+		</update>
+	</info>
+
+	<element name="Knight of the Gauntlet" type="Background" source="Forgotten Realms: Heroes of Faerûn" id="ID_WOTC_FRHOF_BACKGROUND_KNIGHT_OF_THE_GAUNTLET">
+		<description>
+			<ul class="unstyled" style="text-indent:-1em; margin-left:1em; margin-bottom:5px">
+				<li><strong>Ability Scores:</strong> Strength, Intelligence, Wisdom</li>
+				<li><strong>Feat:</strong> Tyro of the Gauntlet</li>
+				<li><strong>Skill Proficiencies:</strong> Athletics and Medicine</li>
+				<li><strong>Tool Proficiency:</strong> Smith’s Tools</li>
+				<li><strong>Equipment:</strong><i> Choose A or B:</i> (A) Spear, Smith’s Tools, Bullseye Lantern, Holy Symbol, Manacles, Oil (5 flasks), Tinderbox, Traveler’s Clothes, 9 GP; or (B) 50 GP</li>
+			</ul>
+			<p>Not all who answer the call of a higher power are content to pore over scripture in a stuffy temple apse. You chose the path of the holy warrior by joining the Order of the Gauntlet. As a knight of the Gauntlet, you exercise righteous scorn for the forces of evil, unswerving camaraderie for your siblings in arms, and heartfelt compassion for the survivors of war. With weapon and holy symbol in hand, you’ve sworn not to rest until the light of justice has vanquished the shadow of chaos across Faerûn.</p>
+			<p class="indent"><strong><em>Trinket.</em></strong> Roll on the Order of the Gauntlet Trinkets table to determine what trinket you have from your time with the Order of the Gauntlet.</p>
+			<h5>Order of the Gauntlet Trinkets</h5>
+			<table>
+				<thead>
+					<tr><td>d6</td><td>Trinket</td></tr>
+				</thead>
+				<tr><td>1</td><td>A white feather as heavy as lead</td></tr>
+				<tr><td>2</td><td>An empty vial made from stained glass</td></tr>
+				<tr><td>3</td><td>A single cone of gold-flecked incense</td></tr>
+				<tr><td>4</td><td>A silken blindfold</td></tr>
+				<tr><td>5</td><td>One half of a pair of manacles</td></tr>
+				<tr><td>6</td><td>A tarnished aspergillum</td></tr>
+			</table>
+		</description>
+		<setters>
+			<set name="short">Strength, Intelligence, Wisdom, Tyro of the Gauntlet Feat, Athletics and Medicine Skills, and Smith’s Tools</set>
+		</setters>
+		<rules>
+			<grant type="Ability Score Improvement" id="ID_INTERNAL_ABILITY_SCORE_IMPROVEMENT_COMBINATION_STR_INT_WIS" />
+			<grant type="Feat" id="ID_WOTC_FRHOF_FEAT_TYRO_OF_THE_GAUNTLET" />
+			<grant type="Proficiency" id="ID_PROFICIENCY_SKILL_ATHLETICS" />
+			<grant type="Proficiency" id="ID_PROFICIENCY_SKILL_MEDICINE" />
+			<grant type="Grants" id="ID_INTERNAL_GRANTS_BACKGROUND_ASI" />
+			<grant type="Proficiency" id="ID_PROFICIENCY_TOOL_PROFICIENCY_SMITHS_TOOLS" />
+			<select type="List" name="Order of the Gauntlet Trinkets" optional="true" >
+				<item id="1">A white feather as heavy as lead</item>
+				<item id="2">An empty vial made from stained glass</item>
+				<item id="3">A single cone of gold-flecked incense</item>
+				<item id="4">A silken blindfold</item>
+				<item id="5">One half of a pair of manacles</item>
+				<item id="6">A tarnished aspergillum</item>
+			</select>
+		</rules>
+	</element>
+
+</elements>

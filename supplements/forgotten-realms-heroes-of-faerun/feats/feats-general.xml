@@ -1,0 +1,551 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<elements>
+	<info>
+		<name>General Category Feats</name>
+		<description>General Feats from Forgotten Realms: Heroes of Faerûn.</description>
+		<author url="https://dndstore.wizards.com/us/en/product/1246485/heroes-of-faerun">Wizards of the Coast</author>
+		<update version="0.0.1">
+			<file name="feats-general.xml" url="https://raw.githubusercontent.com/AuroraLegacy/elements/master/supplements/forgotten-realms-heroes-of-faerun/feats/feats-general.xml" />
+		</update>
+	</info>
+
+	<element name="Cold Caster" type="Feat" source="Forgotten Realms: Heroes of Faerûn" id="ID_WOTC_FRHOF_FEAT_COLD_CASTER">
+		<requirements>[level:4]</requirements>
+		<supports>General</supports>
+		<prerequisite>Level 4+</prerequisite>
+		<description>
+			<p class="flavor">General Feat (Prerequisite: Level 4+)</p>
+			<p>You gain the following benefits.</p>
+			<p class="indent"><b><i>Ability Score Increase.</i></b> Increase your Intelligence, Wisdom, or Charisma score by 1, to a maximum of 20.</p>
+			<p class="indent"><b><i>Cantrip.</i></b> You learn the <i>Ray of Frost</i> cantrip. If you already know it, you learn a different Wizard cantrip of your choice. The spell’s spellcasting ability is the ability increased by this feat.</p>
+			<p class="indent"><b><i>Frostbite.</i></b> Once per turn when you hit a creature with an attack roll and deal Cold damage, you can temporarily negate the creature’s defenses. The creature subtracts 1d4 from the next saving throw it makes before the end of your next turn.</p>
+			<div class="reference">
+				<div element="ID_WOTC_PHB24_SPELL_RAY_OF_FROST" />
+			</div>
+		</description>
+		<sheet display="false" />
+		<rules>
+			<select type="Feat Feature" name="Ability Score Increase (Cold Caster)" supports="Cold Caster" />
+			<select type="Spell" name="Cantrip (Cold Caster)" supports="0,Wizard" default="ID_WOTC_PHB24_SPELL_RAY_OF_FROST" alt="Cold Caster" />
+		</rules>
+	</element>
+	<element name="Intelligence" type="Feat Feature" source="Forgotten Realms: Heroes of Faerûn" id="ID_WOTC_FRHOF_FEAT_FEATURE_COLD_CASTER_INTELLIGENCE">
+		<compendium display="false" />
+		<supports>Cold Caster</supports>
+		<description>
+			<p>Increase your Intelligence by 1, to a maximum of 20.</p>
+		</description>
+		<sheet alt="Cold Caster" usage="1/Turn">
+			<description>When you hit a creature with an attack roll and deal Cold damage, the creature subtracts 1d4 from the next saving throw it makes before the end of your next turn. Intelligence is the spellcasting ability for this feat's cantrip.</description>
+		</sheet>
+		<rules>
+			<stat name="intelligence" value="1" alt="Cold Caster" />
+		</rules>
+	</element>
+	<element name="Wisdom" type="Feat Feature" source="Forgotten Realms: Heroes of Faerûn" id="ID_WOTC_FRHOF_FEAT_FEATURE_COLD_CASTER_WISDOM">
+		<compendium display="false" />
+		<supports>Cold Caster</supports>
+		<description>
+			<p>Increase your Wisdom by 1, to a maximum of 20.</p>
+		</description>
+		<sheet alt="Cold Caster" usage="1/Turn">
+			<description>When you hit a creature with an attack roll and deal Cold damage, the creature subtracts 1d4 from the next saving throw it makes before the end of your next turn. Wisdom is the spellcasting ability for this feat's cantrip.</description>
+		</sheet>
+		<rules>
+			<stat name="wisdom" value="1" alt="Cold Caster" />
+		</rules>
+	</element>
+	<element name="Charisma" type="Feat Feature" source="Forgotten Realms: Heroes of Faerûn" id="ID_WOTC_FRHOF_FEAT_FEATURE_COLD_CASTER_CHARISMA">
+		<compendium display="false" />
+		<supports>Cold Caster</supports>
+		<description>
+			<p>Increase your Charisma by 1, to a maximum of 20.</p>
+		</description>
+		<sheet alt="Cold Caster" usage="1/Turn">
+			<description>When you hit a creature with an attack roll and deal Cold damage, the creature subtracts 1d4 from the next saving throw it makes before the end of your next turn. Charisma is the spellcasting ability for this feat's cantrip.</description>
+		</sheet>
+		<rules>
+			<stat name="charisma" value="1" alt="Cold Caster" />
+		</rules>
+	</element>
+
+	<element name="Dragonscarred" type="Feat" source="Forgotten Realms: Heroes of Faerûn" id="ID_WOTC_FRHOF_FEAT_DRAGONSCARRED">
+		<requirements>[level:4],ID_WOTC_FRHOF_FEAT_CULT_OF_THE_DRAGON_INITIATE</requirements>
+		<supports>General</supports>
+		<prerequisite>Level 4+, Cult of the Dragon Initiate Feat</prerequisite>
+		<description>
+			<p class="flavor">General Feat (Prerequisite: Level 4+, Cult of the Dragon Initiate Feat)</p>
+			<p>You gain the following benefits.</p>
+			<p class="indent"><b><i>Ability Score Increase.</i></b> Increase your Constitution or Charisma score by 1, to a maximum of 20.</p>
+			<p class="indent"><b><i>Damage Resistance.</i></b> When you gain this feat, choose Acid, Cold, Fire, Lightning, or Poison. You have Resistance to the chosen damage type.</p>
+			<p class="indent"><b><i>Fearsome Power.</i></b> When you deal damage to a creature as part of the Attack or Magic action on your turn, you can use the Dragon’s Terror benefit of the Cult of the Dragon Initiate feat as a Bonus Action this turn.</p>
+			<div class="reference">
+				<div element="ID_WOTC_FRHOF_FEAT_FEATURE_CULT_OF_THE_DRAGON_INITIATE_DRAGONS_TERROR" />
+			</div>
+		</description>
+		<sheet>
+			<description>When you deal damage to a creature as part of the Attack or Magic action on your turn, you can use Dragon’s Terror as a Bonus Action this turn.</description>
+		</sheet>
+		<rules>
+			<select type="Ability Score Improvement" name="Ability Score Increase (Dragonscarred)" supports="ID_INTERNAL_ABILITY_SCORE_IMPROVEMENT_FEAT_CONSTITUTION|ID_INTERNAL_ABILITY_SCORE_IMPROVEMENT_FEAT_CHARISMA" />
+			<select type="Condition" name="Damage Resistance (Dragonscarred)" supports="ID_INTERNAL_CONDITION_DAMAGE_RESISTANCE_ACID|ID_INTERNAL_CONDITION_DAMAGE_RESISTANCE_COLD|ID_INTERNAL_CONDITION_DAMAGE_RESISTANCE_FIRE|ID_INTERNAL_CONDITION_DAMAGE_RESISTANCE_LIGHTNING|ID_INTERNAL_CONDITION_DAMAGE_RESISTANCE_POISON" />
+		</rules>
+	</element>
+
+	<element name="Enclave Magic" type="Feat" source="Forgotten Realms: Heroes of Faerûn" id="ID_WOTC_FRHOF_FEAT_ENCLAVE_MAGIC">
+		<requirements>[level:4],ID_WOTC_FRHOF_FEAT_EMERALD_ENCLAVE_FLEDGLING</requirements>
+		<supports>General</supports>
+		<prerequisite>Level 4+, Emerald Enclave Fledgling Feat</prerequisite>
+		<description>
+			<p class="flavor">General Feat (Prerequisite: Level 4+, Emerald Enclave Fledgling Feat)</p>
+			<p>You gain the following benefits.</p>
+			<p class="indent"><b><i>Ability Score Increase.</i></b> Increase your Intelligence, Wisdom, or Charisma score by 1, to a maximum of 20.</p>
+			<p class="indent"><b><i>Friend to Animals.</i></b> You have Advantage on ability checks when taking the Influence action with Beasts.</p>
+			<p class="indent"><b><i>Two Hearts, One Mind.</i></b> You always have the <i>Beast Sense</i> spell prepared. You can cast it once without a spell slot, and you regain the ability to cast it in that way when you finish a Long Rest. When you cast it without a spell slot using this feature, it doesn’t require Concentration. You can also cast the spell using any spell slots you have of the appropriate level. The spell’s spellcasting ability is the ability increased by this feat.</p>
+			<div class="reference">
+				<div element="ID_WOTC_PHB24_SPELL_BEAST_SENSE" />
+			</div>
+		</description>
+		<sheet>
+			<description>You have Advantage on ability checks when taking the Influence action with Beasts.</description>
+		</sheet>
+		<rules>
+			<select type="Feat Feature" name="Ability Score Increase (Enclave Magic)" supports="Enclave Magic" />
+			<grant type="Spell" id="ID_WOTC_PHB24_SPELL_BEAST_SENSE" alt="Enclave Magic"/>
+		</rules>
+	</element>
+	<element name="Intelligence" type="Feat Feature" source="Forgotten Realms: Heroes of Faerûn" id="ID_WOTC_FRHOF_FEAT_FEATURE_ENCLAVE_MAGIC_INTELLIGENCE">
+		<compendium display="false" />
+		<supports>Enclave Magic</supports>
+		<description>
+			<p>Increase your Intelligence by 1, to a maximum of 20.</p>
+		</description>
+		<sheet alt="Two Hearts, One Mind" usage="1/Long Rest">
+			<description>You always have the Beast Sense spell prepared, and can cast it once without a spell slot. When you cast it without a spell slot using this feature, it doesn’t require Concentration. You can also cast the spell using any spell slots you have of the appropriate level. The spell’s spellcasting ability is Intelligence.</description>
+		</sheet>
+		<rules>
+			<stat name="intelligence" value="1" alt="Enclave Magic" />
+		</rules>
+	</element>
+	<element name="Wisdom" type="Feat Feature" source="Forgotten Realms: Heroes of Faerûn" id="ID_WOTC_FRHOF_FEAT_FEATURE_ENCLAVE_MAGIC_WISDOM">
+		<compendium display="false" />
+		<supports>Enclave Magic</supports>
+		<description>
+			<p>Increase your Wisdom by 1, to a maximum of 20.</p>
+		</description>
+		<sheet alt="Two Hearts, One Mind" usage="1/Long Rest">
+			<description>You always have the Beast Sense spell prepared, and can cast it once without a spell slot. When you cast it without a spell slot using this feature, it doesn’t require Concentration. You can also cast the spell using any spell slots you have of the appropriate level. The spell’s spellcasting ability is Wisdom.</description>
+		</sheet>
+		<rules>
+			<stat name="wisdom" value="1" alt="Enclave Magic" />
+		</rules>
+	</element>
+	<element name="Charisma" type="Feat Feature" source="Forgotten Realms: Heroes of Faerûn" id="ID_WOTC_FRHOF_FEAT_FEATURE_ENCLAVE_MAGIC_CHARISMA">
+		<compendium display="false" />
+		<supports>Enclave Magic</supports>
+		<description>
+			<p>Increase your Charisma by 1, to a maximum of 20.</p>
+		</description>
+		<sheet alt="Two Hearts, One Mind" usage="1/Long Rest">
+			<description>You always have the Beast Sense spell prepared, and can cast it once without a spell slot. When you cast it without a spell slot using this feature, it doesn’t require Concentration. You can also cast the spell using any spell slots you have of the appropriate level. The spell’s spellcasting ability is Charisma.</description>
+		</sheet>
+		<rules>
+			<stat name="charisma" value="1" alt="Enclave Magic" />
+		</rules>
+	</element>
+
+	<element name="Fairy Trickster" type="Feat" source="Forgotten Realms: Heroes of Faerûn" id="ID_WOTC_FRHOF_FEAT_FAIRY_TRICKSTER">
+		<requirements>[level:4]</requirements>
+		<supports>General</supports>
+		<prerequisite>Level 4+</prerequisite>
+		<description>
+			<p class="flavor">General Feat (Prerequisite: Level 4+)</p>
+			<p>You gain the following benefits.</p>
+			<p class="indent"><b><i>Ability Score Increase.</i></b> Increase your Dexterity or Charisma ability score by 1, to a maximum of 20.</p>
+			<p class="indent"><b><i>Faerie Trod Trotter.</i></b> When you take the Disengage action on your turn, Difficult Terrain doesn’t cost you extra movement for the rest of that turn.</p>
+			<p class="indent"><b><i>Flustering Strike.</i></b> When you hit a creature with an attack roll, you can attempt to fluster the target. The target must succeed on a Wisdom saving throw (DC 8 plus the ability modifier of the score increased by this feat and your Proficiency Bonus) or have Disadvantage on saving throws until the end of your next turn.</p>
+			<p class="indent">You can use this benefit a number of times equal to your Proficiency Bonus, and you regain all expended uses when you finish a Long Rest.</p>
+		</description>
+		<sheet>
+			<description>When you take the Disengage action on your turn, Difficult Terrain doesn’t cost you extra movement for the rest of that turn.</description>
+		</sheet>
+		<rules>
+			<select type="Feat Feature" name="Ability Score Increase (Fairy Trickster)" supports="Fairy Trickster" />
+		</rules>
+	</element>
+	<element name="Dexterity" type="Feat Feature" source="Forgotten Realms: Heroes of Faerûn" id="ID_WOTC_FRHOF_FEAT_FEATURE_FAIRY_TRICKSTER_DEXTERITY">
+		<compendium display="false" />
+		<supports>Fairy Trickster</supports>
+		<description>
+			<p>Increase your Dexterity by 1, to a maximum of 20.</p>
+		</description>
+		<sheet alt="Flustering Strike" usage="{{proficiency}}/Long Rest">
+			<description>When you hit a creature with an attack roll, you can attempt to fluster the target. The target must succeed on a DC{{flustering strike:dc}} Wisdom saving throw or have Disadvantage on saving throws until the end of your next turn.</description>
+		</sheet>
+		<rules>
+			<stat name="dexterity" value="1" alt="Fairy Trickster" />
+			<stat name="flustering strike:dc" value="8" />
+			<stat name="flustering strike:dc" value="proficiency" />
+			<stat name="flustering strike:dc" value="dexterity" />
+		</rules>
+	</element>
+	<element name="Charisma" type="Feat Feature" source="Forgotten Realms: Heroes of Faerûn" id="ID_WOTC_FRHOF_FEAT_FEATURE_FAIRY_TRICKSTER_CHARISMA">
+		<compendium display="false" />
+		<supports>Fairy Trickster</supports>
+		<description>
+			<p>Increase your Charisma by 1, to a maximum of 20.</p>
+		</description>
+		<sheet alt="Flustering Strike" usage="{{proficiency}}/Long Rest">
+			<description>When you hit a creature with an attack roll, you can attempt to fluster the target. The target must succeed on a DC{{flustering strike:dc}} Wisdom saving throw or have Disadvantage on saving throws until the end of your next turn.</description>
+		</sheet>
+		<rules>
+			<stat name="charisma" value="1" alt="Fairy Trickster" />
+			<stat name="flustering strike:dc" value="8" />
+			<stat name="flustering strike:dc" value="proficiency" />
+			<stat name="flustering strike:dc" value="charisma" />
+		</rules>
+	</element>
+
+	<element name="Genie Magic" type="Feat" source="Forgotten Realms: Heroes of Faerûn" id="ID_WOTC_FRHOF_FEAT_GENIE_MAGIC">
+		<requirements>[level:4]</requirements>
+		<supports>General</supports>
+		<prerequisite>Level 4+</prerequisite>
+		<description>
+			<p class="flavor">General Feat (Prerequisite: Level 4+)</p>
+			<p>You gain the following benefits.</p>
+			<p class="indent"><b><i>Ability Score Increase.</i></b> Increase your Intelligence, Wisdom, or Charisma score by 1, to a maximum of 20.</p>
+			<p class="indent"><b><i>Wish Magic.</i></b> As a Magic action, you can cast a level 1 spell of your choice from the Sorcerer spell list that has a casting time of an action. Once you use this benefit, you can’t do so again until you finish a Long Rest. The spell’s spellcasting ability is the ability increased by this feat.</p>
+			<p class="indent">When you reach level 11, the spell you cast with this feat is cast as though using a level 2 spell slot. When you reach level 17, the spell is cast as though using a level 3 spell slot.</p>
+		</description>
+		<sheet display="false"/>
+		<rules>
+			<select type="Feat Feature" name="Ability Score Increase (Genie Magic)" supports="Genie Magic" />
+		</rules>
+	</element>
+	<element name="Intelligence" type="Feat Feature" source="Forgotten Realms: Heroes of Faerûn" id="ID_WOTC_FRHOF_FEAT_FEATURE_GENIE_MAGIC_INTELLIGENCE">
+		<compendium display="false" />
+		<supports>Genie Magic</supports>
+		<description>
+			<p>Increase your Intelligence by 1, to a maximum of 20.</p>
+		</description>
+		<sheet alt="Genie Magic" action="Action" usage="1/Long Rest">
+			<description>You can cast a level 1 spell of your choice from the Sorcerer spell list that has a casting time of an action. Your spellcasting ability for this spell is Intelligence.</description>
+			<description level="11">You can cast a level 1 spell of your choice from the Sorcerer spell list that has a casting time of an action as if you cast it with a level 2 spell slot. Your spellcasting ability for this spell is Intelligence.</description>
+			<description level="17">You can cast a level 1 spell of your choice from the Sorcerer spell list that has a casting time of an action as if you cast it with a level 3 spell slot. Your spellcasting ability for this spell is Intelligence.</description>
+		</sheet>
+		<rules>
+			<stat name="intelligence" value="1" alt="Genie Magic" />
+		</rules>
+	</element>
+	<element name="Wisdom" type="Feat Feature" source="Forgotten Realms: Heroes of Faerûn" id="ID_WOTC_FRHOF_FEAT_FEATURE_GENIE_MAGIC_WISDOM">
+		<compendium display="false" />
+		<supports>Genie Magic</supports>
+		<description>
+			<p>Increase your Wisdom by 1, to a maximum of 20.</p>
+		</description>
+		<sheet alt="Genie Magic" action="Action" usage="1/Long Rest">
+			<description>You can cast a level 1 spell of your choice from the Sorcerer spell list that has a casting time of an action. Your spellcasting ability for this spell is Wisdom.</description>
+			<description level="11">You can cast a level 1 spell of your choice from the Sorcerer spell list that has a casting time of an action as if you cast it with a level 2 spell slot. Your spellcasting ability for this spell is Wisdom.</description>
+			<description level="17">You can cast a level 1 spell of your choice from the Sorcerer spell list that has a casting time of an action as if you cast it with a level 3 spell slot. Your spellcasting ability for this spell is Wisdom.</description>
+		</sheet>
+		<rules>
+			<stat name="wisdom" value="1" alt="Genie Magic" />
+		</rules>
+	</element>
+	<element name="Charisma" type="Feat Feature" source="Forgotten Realms: Heroes of Faerûn" id="ID_WOTC_FRHOF_FEAT_FEATURE_GENIE_MAGIC_CHARISMA">
+		<compendium display="false" />
+		<supports>Genie Magic</supports>
+		<description>
+			<p>Increase your Charisma by 1, to a maximum of 20.</p>
+		</description>
+		<sheet alt="Genie Magic" action="Action" usage="1/Long Rest">
+			<description>You can cast a level 1 spell of your choice from the Sorcerer spell list that has a casting time of an action. Your spellcasting ability for this spell is Charisma.</description>
+			<description level="11">You can cast a level 1 spell of your choice from the Sorcerer spell list that has a casting time of an action as if you cast it with a level 2 spell slot. Your spellcasting ability for this spell is Charisma.</description>
+			<description level="17">You can cast a level 1 spell of your choice from the Sorcerer spell list that has a casting time of an action as if you cast it with a level 3 spell slot. Your spellcasting ability for this spell is Charisma.</description>
+		</sheet>
+		<rules>
+			<stat name="charisma" value="1" alt="Genie Magic" />
+		</rules>
+	</element>
+
+	<element name="Harper Teamwork" type="Feat" source="Forgotten Realms: Heroes of Faerûn" id="ID_WOTC_FRHOF_FEAT_HARPER_TEAMWORK">
+		<requirements>[level:4],ID_WOTC_FRHOF_FEAT_HARPER_AGENT</requirements>
+		<supports>General</supports>
+		<prerequisite>Level 4+, Harper Agent Feat</prerequisite>
+		<description>
+			<p class="flavor">General Feat (Prerequisite: Level 4+, Harper Agent Feat )</p>
+			<p>You gain the following benefits.</p>
+			<p class="indent"><b><i>Ability Score Increase.</i></b> Increase your Dexterity or Charisma ability score by 1, to a maximum of 20.</p>
+			<p class="indent"><b><i>Withering Wordplay.</i></b> When you take the Help action to assist an ally’s attack roll against an enemy, that enemy also has Disadvantage on the first saving throw it makes before the start of your next turn.</p>
+			<p class="indent"><b><i>Inspiring Willpower.</i></b> If you succeed on a saving throw to end the Frightened or Paralyzed condition on yourself, you can choose one ally you can see within 30 feet of yourself that has the same condition. That condition immediately ends for that ally.</p>
+		</description>
+		<sheet>
+			<description>When you take the Help action to assist an ally’s attack roll against an enemy, that enemy also has Disadvantage on the first saving throw it makes before the start of your next turn. &#13;
+			Additionally, if you succeed on a saving throw to end the Frightened or Paralyzed condition on yourself, you can choose one ally you can see within 30 feet of yourself that has the same condition. That condition immediately ends for that ally.</description>
+		</sheet>
+		<rules>
+			<select type="Ability Score Improvement" name="Ability Score Increase (Harper Teamwork)" supports="ID_INTERNAL_ABILITY_SCORE_IMPROVEMENT_FEAT_DEXTERITY|ID_INTERNAL_ABILITY_SCORE_IMPROVEMENT_FEAT_CHARISMA" />
+		</rules>
+	</element>
+
+	<element name="Lordly Resolve" type="Feat" source="Forgotten Realms: Heroes of Faerûn" id="ID_WOTC_FRHOF_FEAT_LORDLY_RESOLVE">
+		<requirements>[level:4],ID_WOTC_FRHOF_FEAT_LORDS_ALLIANCE_AGENT</requirements>
+		<supports>General</supports>
+		<prerequisite>Level 4+, Lords' Alliance Agent Feat</prerequisite>
+		<description>
+			<p class="flavor">General Feat (Prerequisite: Level 4+, Lords’ Alliance Agent Feat)</p>
+			<p>You gain the following benefits.</p>
+			<p class="indent"><b><i>Ability Score Increase.</i></b> Increase your Strength or Charisma score by 1, to a maximum of 20.</p>
+			<p class="indent"><b><i>Standard Bearer.</i></b> As a Bonus Action, choose up to three creatures within 60 feet of yourself that can see you. Each target can immediately take a Reaction to right itself and end the Prone condition, provided its Speed isn’t 0.</p>
+			<p class="indent">Additionally, you bolster the targets’ resolve, which lasts for 1 minute or until you have the Incapacitated condition. While bolstered, a target can’t be possessed or gain the Charmed or Frightened condition; if a target is already possessed, Charmed, or Frightened, the target has Advantage on any new saving throw against the relevant effect.</p>
+			<p class="indent">Once you use this benefit, you can’t do so again until you finish a Long Rest.</p>
+		</description>
+		<sheet action="Bonus Action" usage="1/Long Rest">
+			<description>Choose up to 3 creatures within 60 feet of yourself that can see you. Each target can immediately take a Reaction to end the Prone condition, provided its Speed isn’t 0.&#13;
+			Additionally, for 1 minute or until you have the Incapacitated condition, each target can't be possessed or gain the Charmed or Frightened condition; if they are already possessed, Charmed, or Frightened, they have Advantage on any new saving throws against the relevant effect.</description>
+		</sheet>
+		<rules>
+			<select type="Ability Score Improvement" name="Ability Score Increase (Lordly Resolve)" supports="ID_INTERNAL_ABILITY_SCORE_IMPROVEMENT_FEAT_STRENGTH|ID_INTERNAL_ABILITY_SCORE_IMPROVEMENT_FEAT_CHARISMA" />
+		</rules>
+	</element>
+
+	<element name="Mythal Touched" type="Feat" source="Forgotten Realms: Heroes of Faerûn" id="ID_WOTC_FRHOF_FEAT_MYTHAL_TOUCHED">
+		<requirements>[level:4]</requirements>
+		<supports>General</supports>
+		<prerequisite>Level 4+</prerequisite>
+		<description>
+			<p class="flavor">General Feat (Prerequisite: Level 4+)</p>
+			<p>You gain the following benefits.</p>
+			<p class="indent"><b><i>Ability Score Increase.</i></b> Increase your Intelligence, Wisdom, or Charisma score by 1, to a maximum of 20.</p>
+			<p class="indent"><b><i>Mythal Ward.</i></b> If a spell attack hits you or you fail a saving throw against a spell, you can take a Reaction to roll on the Mythal-Touched Magic table to create a magical effect. If an effect requires a saving throw, the DC equals 8 plus the modifier of the ability increased by this feat and your Proficiency Bonus.</p>
+			<p class="indent">You can use this benefit a number of times equal to your Proficiency Bonus, and you regain all expended uses when you finish a Long Rest.</p>
+			<h5>Mythal-Touched Magic</h5>
+			<table class="class-features">
+				<thead>
+					<tr><td class="col-10">1d20</td><td class="left">Effect</td></tr>
+				</thead>
+				<tr><td>1-2</td><td class="left">You and each creature within 15 feet of you make a Dexterity saving throw, taking Force damage equal to 1d8 times the level of the triggering spell on a failed save or half as much damage on a successful one.</td></tr>
+				<tr><td>3-7</td><td class="left">You and the triggering spell’s caster form a telepathic link for 1 hour.</td></tr>
+				<tr><td>8-10</td><td class="left">Gravity is reversed in a 15-foot-radius, 60-foot-tall Cylinder centered on you for 1 minute, per the <i>Reverse Gravity</i> spell.</td></tr>
+				<tr><td>11-13</td><td class="left">You and the triggering spell’s caster each make a Constitution saving throw. On a failed save, the creature has the Stunned condition until the end of its next turn.</td></tr>
+				<tr><td>14-17</td><td class="left">You gain a +2 bonus to AC for 1 minute, potentially turning the triggering spell into a miss if it was a spell attack.</td></tr>
+				<tr><td>18-19</td><td class="left">Any flammable, nonmagical object within 10 feet of the triggering spell’s caster that isn’t being worn or carried by another creature bursts into flame, takes 1d4 Fire damage, and is <i>Burning</i>.</td></tr>
+				<tr><td>20</td><td class="left">The triggering spell dissipates with no effect, and the action, Bonus Action, or Reaction used to cast it is wasted. If that spell was cast with a spell slot, the slot isn’t expended.</td></tr>
+			</table>
+		</description>
+		<sheet action="Reaction" usage="{{proficiency}}/Long Rest">
+			<description>If a spell attack hits you or you fail a saving throw against a spell, you can roll on the Mythal-Touched Magic table to create a magical effect. If an effect requires a saving throw, the DC is {{mythal touched:dc}}.</description>
+		</sheet>
+		<rules>
+			<select type="Feat Feature" name="Ability Score Increase (Mythal Touched)" supports="Mythal Touched" />
+		</rules>
+	</element>
+	<element name="Intelligence" type="Feat Feature" source="Forgotten Realms: Heroes of Faerûn" id="ID_WOTC_FRHOF_FEAT_FEATURE_MYTHAL_TOUCHED_INTELLIGENCE">
+		<compendium display="false" />
+		<supports>Mythal Touched</supports>
+		<description>
+			<p>Increase your Intelligence by 1, to a maximum of 20.</p>
+		</description>
+		<sheet display="false"/>
+		<rules>
+			<stat name="intelligence" value="1" alt="Mythal Touched" />
+			<stat name="mythal touched:dc" value="8" />
+			<stat name="mythal touched:dc" value="proficiency" />
+			<stat name="mythal touched:dc" value="intelligence" />
+		</rules>
+	</element>
+	<element name="Wisdom" type="Feat Feature" source="Forgotten Realms: Heroes of Faerûn" id="ID_WOTC_FRHOF_FEAT_FEATURE_MYTHAL_TOUCHED_WISDOM">
+		<compendium display="false" />
+		<supports>Mythal Touched</supports>
+		<description>
+			<p>Increase your Wisdom by 1, to a maximum of 20.</p>
+		</description>
+		<sheet display="false"/>
+		<rules>
+			<stat name="wisdom" value="1" alt="Mythal Touched" />
+			<stat name="mythal touched:dc" value="8" />
+			<stat name="mythal touched:dc" value="proficiency" />
+			<stat name="mythal touched:dc" value="wisdom" />
+		</rules>
+	</element>
+	<element name="Charisma" type="Feat Feature" source="Forgotten Realms: Heroes of Faerûn" id="ID_WOTC_FRHOF_FEAT_FEATURE_MYTHAL_TOUCHED_CHARISMA">
+		<compendium display="false" />
+		<supports>Mythal Touched</supports>
+		<description>
+			<p>Increase your Charisma by 1, to a maximum of 20.</p>
+		</description>
+		<sheet display="false"/>
+		<rules>
+			<stat name="charisma" value="1" alt="Mythal Touched" />
+			<stat name="mythal touched:dc" value="8" />
+			<stat name="mythal touched:dc" value="proficiency" />
+			<stat name="mythal touched:dc" value="charisma" />
+		</rules>
+	</element>
+
+	<element name="Order's Resilience" type="Feat" source="Forgotten Realms: Heroes of Faerûn" id="ID_WOTC_FRHOF_FEAT_ORDERS_RESILIENCE">
+		<requirements>[level:4],ID_WOTC_FRHOF_FEAT_TYRO_OF_THE_GAUNTLET</requirements>
+		<supports>General</supports>
+		<prerequisite>Level 4+, Tyro of the Gauntlet Feat</prerequisite>
+		<description>
+			<p class="flavor">General Feat (Prerequisite: Level 4+, Tyro of the Gauntlet Feat)</p>
+			<p>You gain the following benefits.</p>
+			<p class="indent"><b><i>Ability Score Increase.</i></b> Increase your Strength, Wisdom, or Charisma score by 1, to a maximum of 20.</p>
+			<p class="indent"><b><i>Resurge.</i></b> When you have the Prone condition, you can right yourself with only 5 feet of movement.</p>
+			<p class="indent"><b><i>Stronger Together.</i></b> If you are within 5 feet of an ally that doesn’t have the Incapacitated condition, you and that ally have Advantage on Strength saving throws. You can’t use this benefit while you have the Incapacitated condition.</p>
+		</description>
+		<sheet>
+			<description>When you have the Prone condition, you can right yourself with only 5 feet of movement.&#13;
+			If you are within 5 feet of an ally and neither of you have the Incapacitated condition, you and that ally have Advantage on Strength saving throws.</description>
+		</sheet>
+		<rules>
+			<select type="Ability Score Improvement" name="Ability Score Increase (Order's Resilience)" supports="ID_INTERNAL_ABILITY_SCORE_IMPROVEMENT_FEAT_STRENGTH|ID_INTERNAL_ABILITY_SCORE_IMPROVEMENT_FEAT_WISDOM|ID_INTERNAL_ABILITY_SCORE_IMPROVEMENT_FEAT_CHARISMA" />
+		</rules>
+	</element>
+
+	<element name="Purple Dragon Commandant" type="Feat" source="Forgotten Realms: Heroes of Faerûn" id="ID_WOTC_FRHOF_FEAT_PURPLE_DRAGON_COMMANDANT">
+		<requirements>[level:4],ID_WOTC_FRHOF_PURPLE_DRAGON_ROOK</requirements>
+		<supports>General</supports>
+		<prerequisite>Level 4+, Purple Dragon Rook Feat</prerequisite>
+		<description>
+			<p class="flavor">General Feat (Prerequisite: Level 4+, Purple Dragon Rook Feat)</p>
+			<p>You gain the following benefits.</p>
+			<p class="indent"><b><i>Ability Score Increase.</i></b> Increase your Strength or Dexterity score by 1, to a maximum of 20.</p>
+			<p class="indent"><b><i>Encourage Ally.</i></b> As a Bonus Action, you bolster one ally you can see within 30 feet. The ally gains Temporary Hit Points equal to 2d6 plus the modifier of the ability score increased by this feat. You can take this Bonus Action a number of times equal to your Proficiency Bonus, and you regain all uses when you finish a Long Rest.</p>
+			<p class="indent"><b><i>Last Stand.</i></b> You have Advantage on attack rolls while Bloodied.</p>
+		</description>
+		<sheet>
+			<description>You have Advantage on attack rolls while Bloodied.</description>
+		</sheet>
+		<rules>
+			<select type="Feat Feature" name="Ability Score Increase (Purple Dragon Commandant)" supports="Purple Dragon Commandant" />
+		</rules>
+	</element>
+	<element name="Strength" type="Feat Feature" source="Forgotten Realms: Heroes of Faerûn" id="ID_WOTC_FRHOF_FEAT_FEATURE_PURPLE_DRAGON_COMMANDANT_STRENGTH">
+		<compendium display="false" />
+		<supports>Purple Dragon Commandant</supports>
+		<description>
+			<p>Increase your Strength by 1, to a maximum of 20.</p>
+		</description>
+		<sheet alt="Encourage Ally" action="Bonus Action" usage="{{proficiency}}/Long Rest">
+			<description>You bolster one ally you can see within 30 feet. The ally gains 2d6+{{strength:modifier}} Temporary Hit Points.</description>
+		</sheet>
+		<rules>
+			<stat name="strength" value="1" alt="Purple Dragon Commandant" />
+		</rules>
+	</element>
+	<element name="Dexterity" type="Feat Feature" source="Forgotten Realms: Heroes of Faerûn" id="ID_WOTC_FRHOF_FEAT_FEATURE_PURPLE_DRAGON_COMMANDANT_DEXTERITY">
+		<compendium display="false" />
+		<supports>Purple Dragon Commandant</supports>
+		<description>
+			<p>Increase your Dexterity by 1, to a maximum of 20.</p>
+		</description>
+		<sheet alt="Encourage Ally" action="Bonus Action" usage="{{proficiency}}/Long Rest">
+			<description>You bolster one ally you can see within 30 feet. The ally gains 2d6+{{dexterity:modifier}} Temporary Hit Points.</description>
+		</sheet>
+		<rules>
+			<stat name="dexterity" value="1" alt="Purple Dragon Commandant" />
+		</rules>
+	</element>
+
+	<element name="Spellfire Adept" type="Feat" source="Forgotten Realms: Heroes of Faerûn" id="ID_WOTC_FRHOF_FEAT_SPELLFIRE_ADEPT">
+		<requirements>[level:4],ID_WOTC_FRHOF_FEAT_SPELLFIRE_SPARK</requirements>
+		<supports>General</supports>
+		<prerequisite>Level 4+, Spellfire Spark Feat</prerequisite>
+		<description>
+			<p class="flavor">General Feat (Prerequisite: Level 4+, Spellfire Spark Feat)</p>
+			<p>You gain the following benefits.</p>
+			<p class="indent"><b><i>Ability Score Increase.</i></b> Increase your Intelligence, Wisdom, or Charisma score by 1, to a maximum of 20.</p>
+			<p class="indent"><b><i>Fueled Spellfire.</i></b> Once per turn, when a spell you cast deals Radiant damage, you can expend up to two Hit Point Dice, roll them, and add the total rolled to one damage roll of the spell.</p>
+			<p class="indent"><b><i>Searing Spellfire.</i></b> When you make a damage roll that deals Radiant damage, it ignores Resistance to Radiant damage.</p>
+		</description>
+		<sheet>
+			<description>Radiant damage you deal ignores Resistance to Radiant damage.</description>
+		</sheet>
+		<rules>
+			<select type="Feat Feature" name="Ability Score Increase (Spellfire Adept)" supports="Spellfire Adept" />
+		</rules>
+	</element>
+	<element name="Intelligence" type="Feat Feature" source="Forgotten Realms: Heroes of Faerûn" id="ID_WOTC_FRHOF_FEAT_FEATURE_SPELLFIRE_ADEPT_INTELLIGENCE">
+		<compendium display="false" />
+		<supports>Spellfire Adept</supports>
+		<description>
+			<p>Increase your Intelligence by 1, to a maximum of 20.</p>
+		</description>
+		<sheet alt="Fueled Spellfire" usage="1/Turn">
+			<description>When a spell you cast deals Radiant damage, you can expend up to two Hit Point Dice, roll them, and add the total rolled to one damage roll of the spell.</description>
+		</sheet>
+		<rules>
+			<stat name="intelligence" value="1" alt="Spellfire Adept" />
+		</rules>
+	</element>
+	<element name="Wisdom" type="Feat Feature" source="Forgotten Realms: Heroes of Faerûn" id="ID_WOTC_FRHOF_FEAT_FEATURE_SPELLFIRE_ADEPT_WISDOM">
+		<compendium display="false" />
+		<supports>Spellfire Adept</supports>
+		<description>
+			<p>Increase your Wisdom by 1, to a maximum of 20.</p>
+		</description>
+		<sheet alt="Fueled Spellfire" usage="1/Turn">
+			<description>When a spell you cast deals Radiant damage, you can expend up to two Hit Point Dice, roll them, and add the total rolled to one damage roll of the spell.</description>
+		</sheet>
+		<rules>
+			<stat name="wisdom" value="1" alt="Spellfire Adept" />
+		</rules>
+	</element>
+	<element name="Charisma" type="Feat Feature" source="Forgotten Realms: Heroes of Faerûn" id="ID_WOTC_FRHOF_FEAT_FEATURE_SPELLFIRE_ADEPT_CHARISMA">
+		<compendium display="false" />
+		<supports>Spellfire Adept</supports>
+		<description>
+			<p>Increase your Charisma by 1, to a maximum of 20.</p>
+		</description>
+		<sheet alt="Fueled Spellfire" usage="1/Turn">
+			<description>When a spell you cast deals Radiant damage, you can expend up to two Hit Point Dice, roll them, and add the total rolled to one damage roll of the spell.</description>
+		</sheet>
+		<rules>
+			<stat name="charisma" value="1" alt="Spellfire Adept" />
+		</rules>
+	</element>
+
+	<element name="Street Justice" type="Feat" source="Forgotten Realms: Heroes of Faerûn" id="ID_WOTC_FRHOF_FEAT_STREET_JUSTICE">
+		<requirements>[level:4]</requirements>
+		<supports>General</supports>
+		<prerequisite>Level 4+</prerequisite>
+		<description>
+			<p class="flavor">General Feat (Prerequisite: Level 4+)</p>
+			<p>You gain the following benefits.</p>
+			<p class="indent"><b><i>Ability Score Increase.</i></b> Increase your Strength, or Dexterity score by 1, to a maximum of 20.</p>
+			<p class="indent"><b><i>Headlock.</i></b> Your allies have Advantage on attack rolls against a creature Grappled by you.</p>
+			<p class="indent"><b><i>Sturdy Knot.</i></b> When you use Chain, Manacles, or Rope to bind a creature, add your Proficiency Bonus to the DC to escape or burst the Chain, Manacles, or Rope.</p>
+			<p class="indent"><b><i>Tough Talk.</i></b> A creature’s Hostile attitude doesn’t impose Disadvantage on your Charisma (Intimidation) checks to influence that creature.</p>
+		</description>
+		<sheet>
+			<description>Your allies have Advantage on attack rolls against creatures Grappled by you, and a creature's Hostile attitude doesn't impose Disadvantage on your Charisma (Intimidation) checks to influence it. &#13;
+			When you use Chain, Manacles, or Rope to bind a creature, add +{{proficiency}} to the DC to escape or burst the Chain, Manacles, or Rope.</description>
+		</sheet>
+		<rules>
+			<select type="Ability Score Improvement" name="Ability Score Increase (Street Justice)" supports="ID_INTERNAL_ABILITY_SCORE_IMPROVEMENT_FEAT_STRENGTH|ID_INTERNAL_ABILITY_SCORE_IMPROVEMENT_FEAT_DEXTERITY" />
+		</rules>
+	</element>
+
+	<element name="Zhentarim Tactics" type="Feat" source="Forgotten Realms: Heroes of Faerûn" id="ID_WOTC_FRHOF_FEAT_ZHENTARIM_TACTICS">
+		<requirements>[level:4],ID_WOTC_FRHOF_FEAT_ZHENTARIM_RUFFIAN</requirements>
+		<supports>General</supports>
+		<prerequisite>Level 4+, Zhentarim Ruffian Feat</prerequisite>
+		<description>
+			<p class="flavor">General Feat (Prerequisite: Level 4+, Zhentarim Ruffian Feat)</p>
+			<p>You gain the following benefits.</p>
+			<p class="indent"><b><i>Ability Score Increase.</i></b> Increase your Dexterity or Charisma score by 1, to a maximum of 20.</p>
+			<p class="indent"><b><i>Retaliate.</i></b> Immediately after a creature within 5 feet of you hits you with a melee attack, you can make an Opportunity Attack against that creature.</p>
+			<p class="indent"><b><i>Versatile Merc.</i></b> When you finish a Long Rest, choose a skill in which you have proficiency. You have Expertise in that skill until you finish your next Long Rest.</p>
+		</description>
+		<sheet>
+			<description>Immediately after a creature within 5 feet of you hits you with a melee attack, you can make an Opportunity Attack against that creature. &#13;
+			When you finish a Long Rest, choose a skill in which you have proficiency. You have Expertise in that skill until you finish your next Long Rest.</description>
+		</sheet>
+		<rules>
+			<select type="Ability Score Improvement" name="Ability Score Increase (Zhentarim Tactics)" supports="ID_INTERNAL_ABILITY_SCORE_IMPROVEMENT_FEAT_STRENGTH|ID_INTERNAL_ABILITY_SCORE_IMPROVEMENT_FEAT_DEXTERITY" />
+			<select type="Proficiency" name="Expertise (Zhentarim Tactics)" supports="Expertise" />
+		</rules>
+	</element>
+
+</elements>

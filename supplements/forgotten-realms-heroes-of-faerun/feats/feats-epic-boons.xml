@@ -1,0 +1,364 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<elements>
+	<info>
+		<name>Epic Boon Category Feats</name>
+		<description>Epic Boon Feats from Forgotten Realms: Heroes of Faerûn.</description>
+		<author url="https://dndstore.wizards.com/us/en/product/1246485/heroes-of-faerun">Wizards of the Coast</author>
+		<update version="0.0.1">
+			<file name="feats-epic-boons.xml" url="https://raw.githubusercontent.com/AuroraLegacy/elements/master/supplements/forgotten-realms-heroes-of-faerun/feats/feats-epic-boons.xml" />
+		</update>
+	</info>
+		
+	<element name="Boon of Bloodshed" type="Feat" source="Forgotten Realms: Heroes of Faerûn" id="ID_WOTC_FRHOF_FEAT_BOON_OF_BLOODSHED">
+		<requirements>[level:19]</requirements>
+		<supports>Epic Boon</supports>
+		<prerequisite>Level 19+</prerequisite>
+		<description>
+			<p class="flavor">Epic Boon Feat (Prerequisite: Level 19+)</p>
+			<p>You gain the following benefits.</p>
+			<p class="indent"><b><i>Ability Score Increase.</i></b> Increase one ability score of your choice by 1, to a maximum of 30.</p>
+			<p class="indent"><b><i>Killer's Fortune.</i></b> When an enemy you can see is reduced to 0 Hit Points, you gain Advantage on the next attack roll you make before the end of your next turn.</p>
+			<p class="indent"><b><i>Power from Pain.</i></b> Once per turn, when you make an attack roll while Bloodied, you can deal extra damage to the target equal to your Proficiency Bonus. The extra damage’s type is the same as the attack’s type.</p>
+		</description>
+		<sheet>
+			<description>When an enemy you can see is reduced to 0 Hit Points, you gain Advantage on the next attack roll you make before the end of your next turn.</description>
+		</sheet>
+		<rules>
+			<select type="Ability Score Improvement" name="Ability Score Increase (Boon of Bloodshed)" supports="Boon Ability Score Increase" />
+			<select type="Feat Feature" name="Power from Pain" supports="ID_WOTC_FRHOF_FEAT_FEATURE_BOON_OF_BLOODSHED_POWER_FROM_PAIN" default="ID_WOTC_FRHOF_FEAT_FEATURE_BOON_OF_BLOODSHED_POWER_FROM_PAIN"/>
+		</rules>
+	</element>
+	<element name="Power from Pain" type="Feat Feature" source="Forgotten Realms: Heroes of Faerûn" id="ID_WOTC_FRHOF_FEAT_FEATURE_BOON_OF_BLOODSHED_POWER_FROM_PAIN">
+		<compendium display="false" />
+		<supports>ID_WOTC_FRHOF_FEAT_FEATURE_BOON_OF_BLOODSHED_POWER_FROM_PAIN</supports>
+		<description>
+			<p>Once per turn, when you make an attack roll while Bloodied, you can deal extra damage to the target equal to your Proficiency Bonus. The extra damage’s type is the same as the attack’s type.</p>
+		</description>
+		<sheet usage="1/Turn">
+			<description>When you make an attack roll while Bloodied, you can deal +{{proficiency}} extra damage to the target.</description>
+		</sheet>
+	</element>
+
+	<element name="Boon of Bountiful Health" type="Feat" source="Forgotten Realms: Heroes of Faerûn" id="ID_WOTC_FRHOF_FEAT_BOON_OF_BOUNTIFUL_HEALTH">
+		<requirements>[level:19]</requirements>
+		<supports>Epic Boon</supports>
+		<prerequisite>Level 19+</prerequisite>
+		<description>
+			<p class="flavor">Epic Boon Feat (Prerequisite: Level 19+)</p>
+			<p>You gain the following benefits.</p>
+			<p class="indent"><b><i>Ability Score Increase.</i></b> Increase one ability score of your choice by 1, to a maximum of 30.</p>
+			<p class="indent"><b><i>Augmented Health.</i></b> When you gain Temporary Hit Points, increase the number of Temporary Hit Points you gain by 5.</p>
+			<p class="indent"><b><i>Superior Recuperation.</i></b> When you spend one or more Hit Point Dice to regain Hit Points, you can instead use the highest number possible for each die.</p>
+		</description>
+		<sheet>
+			<description>When you gain Temporary Hit Points, increase the number you gain by 5. &#13;
+			When you spend one of more Hit Point Dice to regain Hit Points, you can instead use the highest number possible for each die.</description>
+		</sheet>
+		<rules>
+			<select type="Ability Score Improvement" name="Ability Score Increase (Boon of Bountiful Health)" supports="Boon Ability Score Increase" />
+		</rules>
+	</element>
+
+	<element name="Boon of Communication" type="Feat" source="Forgotten Realms: Heroes of Faerûn" id="ID_WOTC_FRHOF_FEAT_BOON_OF_COMMUNICATION">
+		<requirements>[level:19]</requirements>
+		<supports>Epic Boon</supports>
+		<prerequisite>Level 19+</prerequisite>
+		<description>
+			<p class="flavor">Epic Boon Feat (Prerequisite: Level 19+)</p>
+			<p>You gain the following benefits.</p>
+			<p class="indent"><b><i>Ability Score Increase.</i></b> Increase your Intelligence, Wisdom, or Charisma score by 1, to a maximum of 30.</p>
+			<p class="indent"><b><i>Cunning Speaker.</i></b> You don’t have Disadvantage on ability checks to influence Hostile creatures.</p>
+			<p class="indent"><b><i>Gifted Interpreter.</i></b> You understand the literal meaning of any language you hear or see signed, and you can understand the literal meaning of any written language you see.</p>
+			<p class="indent"><b><i>Mental Communication.</i></b> You gain telepathy with a range of 120 feet.</p>
+		</description>
+		<sheet>
+			<description>You don’t have Disadvantage on ability checks to influence Hostile creatures, and can understand the literal meaning of any language you hear or see signed or written. &#13;
+			You also have telepathy with a range of 120 feet.</description>
+		</sheet>
+		<rules>
+			<select type="Ability Score Improvement" name="Ability Score Increase (Boon of Communication)" supports="ID_INTERNAL_ABILITY_SCORE_IMPROVEMENT_BOON_INTELLIGENCE|ID_INTERNAL_ABILITY_SCORE_IMPROVEMENT_BOON_WISDOM|ID_INTERNAL_ABILITY_SCORE_IMPROVEMENT_BOON_CHARISMA" />
+		</rules>
+	</element>
+
+	<element name="Boon of Desperate Resilience" type="Feat" source="Forgotten Realms: Heroes of Faerûn" id="ID_WOTC_FRHOF_FEAT_BOON_OF_DESPERATE_RESILIENCE">
+		<requirements>[level:19]</requirements>
+		<supports>Epic Boon</supports>
+		<prerequisite>Level 19+</prerequisite>
+		<description>
+			<p class="flavor">Epic Boon Feat (Prerequisite: Level 19+)</p>
+			<p>You gain the following benefits.</p>
+			<p class="indent"><b><i>Ability Score Increase.</i></b> Increase your Strength or Constitution score by 1, to a maximum of 30.</p>
+			<p class="indent"><b><i>Defense of Body and Mind.</i></b> While you are Bloodied, you have Resistance to every damage type except Force.</p>
+		</description>
+		<sheet>
+			<description>While you are Bloodied, you have Resistance to every damage type except Force.</description>
+		</sheet>
+		<rules>
+			<select type="Ability Score Improvement" name="Ability Score Increase (Boon of Desperate Resilience)" supports="ID_INTERNAL_ABILITY_SCORE_IMPROVEMENT_BOON_STRENGTH|ID_INTERNAL_ABILITY_SCORE_IMPROVEMENT_BOON_CONSTITUTION" />
+		</rules>
+	</element>
+
+	<element name="Boon of Exquisite Radiance" type="Feat" source="Forgotten Realms: Heroes of Faerûn" id="ID_WOTC_FRHOF_FEAT_BOON_OF_EXQUISITE_RADIANCE">
+		<requirements>[level:19]</requirements>
+		<supports>Epic Boon</supports>
+		<prerequisite>Level 19+</prerequisite>
+		<description>
+			<p class="flavor">Epic Boon Feat (Prerequisite: Level 19+)</p>
+			<p>You gain the following benefits.</p>
+			<p class="indent"><b><i>Ability Score Increase.</i></b> Increase one ability score of your choice by 1, to a maximum of 30.</p>
+			<p class="indent"><b><i>Eternal Rest.</i></b> Creatures you reduce to 0 Hit Points can’t become Undead.</p>
+			<p class="indent"><b><i>Powerful Radiance.</i></b> When you make a damage roll that deals Radiant damage, you can instead use the highest number possible for each damage die. Once you use this benefit, you can’t do so again until you finish a Long Rest.</p>
+		</description>
+		<sheet>
+			<description>Creatures you reduce to 0 Hit Points can’t become Undead.</description>
+		</sheet>
+		<rules>
+			<select type="Ability Score Improvement" name="Ability Score Increase (Boon of Exquisite Radiance)" supports="Boon Ability Score Increase" />
+			<select type="Feat Feature" name="Powerful Radiance" supports="ID_WOTC_FRHOF_FEAT_FEATURE_BOON_OF_EXQUISITE_RADIANCE_POWERFUL_RADIANCE_" default="ID_WOTC_FRHOF_FEAT_FEATURE_BOON_OF_EXQUISITE_RADIANCE_POWERFUL_RADIANCE_"/>
+		</rules>
+	</element>
+	<element name="Powerful Radiance" type="Feat Feature" source="Forgotten Realms: Heroes of Faerûn" id="ID_WOTC_FRHOF_FEAT_FEATURE_BOON_OF_EXQUISITE_RADIANCE_POWERFUL_RADIANCE_">
+		<compendium display="false" />
+		<supports>ID_WOTC_FRHOF_FEAT_FEATURE_BOON_OF_EXQUISITE_RADIANCE_POWERFUL_RADIANCE_</supports>
+		<description>
+			<p>When you make a damage roll that deals Radiant damage, you can instead use the highest number possible for each damage die. Once you use this benefit, you can’t do so again until you finish a Long Rest.</p>
+		</description>
+		<sheet usage="1/Long Rest">
+			<description>When you make a damage roll that deals Radiant damage, you can instead use the highest number possible for each damage die.</description>
+		</sheet>
+	</element>
+
+	<element name="Boon of Fluid Forms" type="Feat" source="Forgotten Realms: Heroes of Faerûn" id="ID_WOTC_FRHOF_FEAT_BOON_OF_FLUID_FORMS">
+		<requirements>[level:19]</requirements>
+		<supports>Epic Boon</supports>
+		<prerequisite>Level 19+</prerequisite>
+		<description>
+			<p class="flavor">Epic Boon Feat (Prerequisite: Level 19+)</p>
+			<p>You gain the following benefits.</p>
+			<p class="indent"><b><i>Ability Score Increase.</i></b> Increase your Intelligence, Wisdom, or Charisma score by 1, to a maximum of 30.</p>
+			<p class="indent"><b><i>Shapechanger.</i></b> You can take a Magic action to shape-shift into a Beast, Humanoid, or Monstrosity with a Challenge Rating no higher than 10. When you shape-shift, you gain a number of Temporary Hit Points equal to the Hit Points of the form. The shape-shifting effect lasts for 1 hour, and it ends early if you have no Temporary Hit Points left or if you take a Magic action to return to your true form.</p>
+			<p class="indent">Your game statistics are replaced by the stat block of the chosen form, but you retain your creature type; alignment; personality; Intelligence, Wisdom, and Charisma scores; Hit Points; Hit Point Dice; proficiencies; and ability to communicate. If you have the Spellcasting or Pact Magic feature, you retain it too. Upon shape-shifting, you determine whether your equipment drops to the ground or changes in size and shape to fit the new form while you’re in it.</p>
+			<p class="indent">Once you use this benefit, you can’t do so again until you finish a Long Rest.</p>
+			<p class="indent"><b><i>Hardy Transformation.</i></b> When you gain Temporary Hit Points when you shape-shift, increase that number of Temporary Hit Points by 20.</p>
+		</description>
+		<sheet>
+			<description>Creatures you reduce to 0 Hit Points can’t become Undead.</description>
+		</sheet>
+		<rules>
+			<select type="Ability Score Improvement" name="Ability Score Increase (Boon of Fluid Forms)" supports="ID_INTERNAL_ABILITY_SCORE_IMPROVEMENT_BOON_INTELLIGENCE|ID_INTERNAL_ABILITY_SCORE_IMPROVEMENT_BOON_WISDOM|ID_INTERNAL_ABILITY_SCORE_IMPROVEMENT_BOON_CHARISMA" />
+			<select type="Feat Feature" name="Shapechanger" supports="ID_WOTC_FRHOF_FEAT_FEATURE_BOON_OF_FLUID_FORMS_SHAPECHANGER" default="ID_WOTC_FRHOF_FEAT_FEATURE_BOON_OF_FLUID_FORMS_SHAPECHANGER"/>
+		</rules>
+	</element>
+	<element name="Shapechanger" type="Feat Feature" source="Forgotten Realms: Heroes of Faerûn" id="ID_WOTC_FRHOF_FEAT_FEATURE_BOON_OF_FLUID_FORMS_SHAPECHANGER">
+		<compendium display="false" />
+		<supports>ID_WOTC_FRHOF_FEAT_FEATURE_BOON_OF_FLUID_FORMS_SHAPECHANGER</supports>
+		<description>
+			<p>You can take a Magic action to shape-shift into a Beast, Humanoid, or Monstrosity with a Challenge Rating no higher than 10. When you shape-shift, you gain a number of Temporary Hit Points equal to the Hit Points of the form. The shape-shifting effect lasts for 1 hour, and it ends early if you have no Temporary Hit Points left or if you take a Magic action to return to your true form.</p>
+			<p class="indent">Your game statistics are replaced by the stat block of the chosen form, but you retain your creature type; alignment; personality; Intelligence, Wisdom, and Charisma scores; Hit Points; Hit Point Dice; proficiencies; and ability to communicate. If you have the Spellcasting or Pact Magic feature, you retain it too. Upon shape-shifting, you determine whether your equipment drops to the ground or changes in size and shape to fit the new form while you’re in it.</p>
+			<p class="indent">Once you use this benefit, you can’t do so again until you finish a Long Rest.</p>
+		</description>
+		<sheet action="Action" usage="1/Long Rest">
+			<description>You shape-shift into a Beast, Humanoid, or Monstrosity of CR10 or lower. You gain a number of Temporary Hit Points equal to the Hit Points of the form. Your game statistics are replaced by the statblock of the form, but you retain your creature type, alignment, personality, Intelligence, Wisdom, and Charisma scores, Hit Points, Hit Point Dice, proficiencies, Spellcasting or Pact magic features, and ability to communicate. Upon shape-shifting, you determine whether your equipment drops to the ground or changes in size and shape to fit the new form while you're in it. &#13;
+			The shape-shifting effect lasts for 1 hour, and it ends early if you have no Temporary Hit Points left or take a Magic action to return to your true form.</description>
+		</sheet>
+	</element>
+
+	<element name="Boon of Fortune's Favor" type="Feat" source="Forgotten Realms: Heroes of Faerûn" id="ID_WOTC_FRHOF_FEAT_BOON_OF_FORTUNES_FAVOR">
+		<requirements>[level:19]</requirements>
+		<supports>Epic Boon</supports>
+		<prerequisite>Level 19+</prerequisite>
+		<description>
+			<p class="flavor">Epic Boon Feat (Prerequisite: Level 19+)</p>
+			<p>You gain the following benefits.</p>
+			<p class="indent"><b><i>Ability Score Increase.</i></b> Increase one ability score of your choice by 1, to a maximum of 30.</p>
+			<p class="indent"><b><i>Saving Throw Reroll.</i></b> When you fail a saving throw, you can reroll it and must use the new roll. Once you use this benefit, you can’t do so again until the start of your next turn.</p>
+		</description>
+		<sheet>
+			<description>When you fail a saving throw, you can reroll it and must use the new roll. Once you use this benefit, you can’t do so again until the start of your next turn.</description>
+		</sheet>
+		<rules>
+			<select type="Ability Score Improvement" name="Ability Score Increase (Boon of Fortune's Favor)" supports="Boon Ability Score Increase" />
+		</rules>
+	</element>
+
+	<element name="Boon of Poison Mastery" type="Feat" source="Forgotten Realms: Heroes of Faerûn" id="ID_WOTC_FRHOF_FEAT_BOON_OF_POISON_MASTERY">
+		<requirements>[level:19]</requirements>
+		<supports>Epic Boon</supports>
+		<prerequisite>Level 19+</prerequisite>
+		<description>
+			<p class="flavor">Epic Boon Feat (Prerequisite: Level 19+)</p>
+			<p>You gain the following benefits.</p>
+			<p class="indent"><b><i>Ability Score Increase.</i></b> Increase one ability score of your choice by 1, to a maximum of 30.</p>
+			<p class="indent"><b><i>Antitoxic.</i></b> You have Immunity to Poison damage and the Poisoned condition.</p>
+			<p class="indent"><b><i>Perfect Poisoner.</i></b> Once per turn, when you roll dice to determine Poison damage a creature takes from your attack, spell, or feature, you can instead use the highest number possible for each die.</p>
+		</description>
+		<sheet usage="1/Turn">
+			<description>When you roll dice to determine Poison damage a creature takes from your attack, spell, or feature, you can instead use the highest number possible for each die. &#13;
+			Additionally, you have Immunity to the Poisoned condition.</description>
+		</sheet>
+		<rules>
+			<select type="Ability Score Improvement" name="Ability Score Increase (Boon of Poison Mastery)" supports="Boon Ability Score Increase" />
+			<grant type="Condition" id="ID_INTERNAL_CONDITION_DAMAGE_IMMUNITY_POISON" />
+		</rules>
+	</element>
+
+	<element name="Boon of Revelry" type="Feat" source="Forgotten Realms: Heroes of Faerûn" id="ID_WOTC_FRHOF_FEAT_BOON_OF_REVELRY">
+		<requirements>[level:19]</requirements>
+		<supports>Epic Boon</supports>
+		<prerequisite>Level 19+</prerequisite>
+		<description>
+			<p class="flavor">Epic Boon Feat (Prerequisite: Level 19+)</p>
+			<p>You gain the following benefits.</p>
+			<p class="indent"><b><i>Ability Score Increase.</i></b> Increase your Intelligence, Wisdom, or Charisma score by 1, to a maximum of 30.</p>
+			<p class="indent"><b><i>Inspire Dance.</i></b> You always have the <i>Otto’s Irresistible Dance</i> spell prepared. You can cast it once without a spell slot, and you regain the ability to cast it that way when you finish a Long Rest. You can also cast the spell using any spell slots you have of the appropriate level. The spell’s spellcasting ability is the ability increased by this feat.</p>
+			<p class="indent">When you cast the spell, it requires no spell components, and taking damage doesn’t break your Concentration on it.</p>
+			<p class="indent"><b><i>Sing Out.</i></b> While a creature that failed its saving throw against your Otto’s Irresistible Dance has the Charmed condition from that spell, it can’t cast spells with Verbal components, and it sings delightful nonsense if it can sing.</p>
+		</description>
+		<sheet display="false"/>
+		<rules>
+			<select type="Feat Feature" name="Ability Score Increase (Boon of Revelry)" supports="Boon of Revelry" />
+			<grant type="Spell" id="ID_WOTC_PHB24_SPELL_OTTOS_IRRESISTIBLE_DANCE" alt="Boon of Revelry"/>
+		</rules>
+	</element>
+	<element name="Intelligence" type="Feat Feature" source="Forgotten Realms: Heroes of Faerûn" id="ID_WOTC_FRHOF_FEAT_FEATURE_BOON_OF_REVELRY_INTELLIGENCE">
+		<compendium display="false" />
+		<supports>Boon of Revelry</supports>
+		<description>
+			<p class="indent">Increase your Intelligence score by 1, to a maximum of 30.</p>
+		</description>
+		<sheet alt="Boon of Revelry" usage="1/Long Rest">
+			<description>You can cast Otto's Irresistible Dance once without a spell slot, using Intelligence as your spellcasting ability. When you cast it in this way, it requires no spell components, and taking damage doesn't break your Concentration on it. While a creature that failed its saving throw has the Charmed condition from the spell, it can't cast spells with Verbal components, and it sings delightful nonsense if it can sing.</description>
+		</sheet>
+		<rules>
+			<grant type="Ability Score Improvement" id="ID_INTERNAL_ABILITY_SCORE_IMPROVEMENT_BOON_INTELLIGENCE" alt="Boon of Revelry"/>
+		</rules>
+	</element>
+	<element name="Wisdom" type="Feat Feature" source="Forgotten Realms: Heroes of Faerûn" id="ID_WOTC_FRHOF_FEAT_FEATURE_BOON_OF_REVELRY_WISDOM">
+		<compendium display="false" />
+		<supports>Boon of Revelry</supports>
+		<description>
+			<p class="indent">Increase your Wisdom score by 1, to a maximum of 30.</p>
+		</description>
+		<sheet alt="Boon of Revelry" usage="1/Long Rest">
+			<description>You can cast Otto's Irresistible Dance once without a spell slot, using Wisdom as your spellcasting ability. When you cast it in this way, it requires no spell components, and taking damage doesn't break your Concentration on it. While a creature that failed its saving throw has the Charmed condition from the spell, it can't cast spells with Verbal components, and it sings delightful nonsense if it can sing.</description>
+		</sheet>
+		<rules>
+			<grant type="Ability Score Improvement" id="ID_INTERNAL_ABILITY_SCORE_IMPROVEMENT_BOON_WISDOM" alt="Boon of Revelry"/>
+		</rules>
+	</element>
+	<element name="Charisma" type="Feat Feature" source="Forgotten Realms: Heroes of Faerûn" id="ID_WOTC_FRHOF_FEAT_FEATURE_BOON_OF_REVELRY_CHARISMA">
+		<compendium display="false" />
+		<supports>Boon of Revelry</supports>
+		<description>
+			<p class="indent">Increase your Charisma score by 1, to a maximum of 30.</p>
+		</description>
+		<sheet alt="Boon of Revelry" usage="1/Long Rest">
+			<description>You can cast Otto's Irresistible Dance once without a spell slot, using Charisma as your spellcasting ability. When you cast it in this way, it requires no spell components, and taking damage doesn't break your Concentration on it. While a creature that failed its saving throw has the Charmed condition from the spell, it can't cast spells with Verbal components, and it sings delightful nonsense if it can sing.</description>
+		</sheet>
+		<rules>
+			<grant type="Ability Score Improvement" id="ID_INTERNAL_ABILITY_SCORE_IMPROVEMENT_BOON_CHARISMA" alt="Boon of Revelry"/>
+		</rules>
+	</element>
+
+	<element name="Boon of Terror" type="Feat" source="Forgotten Realms: Heroes of Faerûn" id="ID_WOTC_FRHOF_FEAT_BOON_OF_TERROR">
+		<requirements>[level:19]</requirements>
+		<supports>Epic Boon</supports>
+		<prerequisite>Level 19+</prerequisite>
+		<description>
+			<p class="flavor">Epic Boon Feat (Prerequisite: Level 19+)</p>
+			<p>You gain the following benefits.</p>
+			<p class="indent"><b><i>Ability Score Increase.</i></b> Increase your Charisma score by 1, to a maximum of 30.</p>
+			<p class="indent"><b><i>Fearless.</i></b> You have Immunity to the Frightened condition.</p>
+			<p class="indent"><b><i>Flee, Fools!</i></b> When a creature with the Frightened condition starts its turn within 60 feet of you, you can take a Reaction to stoke its terror, provided you can see the creature and it isn’t behind Total Cover. If you do so, the creature must succeed on a Wisdom saving throw (DC 8 plus your Charisma modifier and your Proficiency Bonus) or spend its turn moving away from you by the fastest available means. Once you use this benefit, you can’t use it again until you finish a Short or Long Rest.</p>
+			<p class="indent"><b><i>Intimidating.</i></b> You gain Proficiency in the Intimidation skill if you don’t already have it. You also gain Expertise in Intimidation.</p>
+		</description>
+		<sheet>
+			<description>You have Immunity to the Frightened Condition.</description>
+		</sheet>
+		<rules>
+			<grant type="Ability Score Improvement" id="ID_INTERNAL_ABILITY_SCORE_IMPROVEMENT_BOON_CHARISMA" />
+			<grant type="Proficiency" id="ID_PROFICIENCY_SKILL_INTIMIDATION" />
+			<grant type="Proficiency" id="ID_INTERNAL_PROFICIENCY_SKILL_EXPERTISE_INTIMIDATION" />
+			<select type="Feat Feature" name="Flee, Fools!" supports="ID_WOTC_FRHOF_FEAT_FEATURE_BOON_OF_TERROR_FLEE_FOOLS" default="ID_WOTC_FRHOF_FEAT_FEATURE_BOON_OF_TERROR_FLEE_FOOLS" />
+		</rules>
+	</element>
+	<element name="Flee, Fools!" type="Feat Feature" source="Forgotten Realms: Heroes of Faerûn" id="ID_WOTC_FRHOF_FEAT_FEATURE_BOON_OF_TERROR_FLEE_FOOLS">
+		<compendium display="false" />
+		<supports>ID_WOTC_FRHOF_FEAT_FEATURE_BOON_OF_TERROR_FLEE_FOOLS</supports>
+		<description>
+			<p>When a creature with the Frightened condition starts its turn within 60 feet of you, you can take a Reaction to stoke its terror, provided you can see the creature and it isn’t behind Total Cover. If you do so, the creature must succeed on a Wisdom saving throw (DC 8 plus your Charisma modifier and your Proficiency Bonus) or spend its turn moving away from you by the fastest available means. Once you use this benefit, you can’t use it again until you finish a Short or Long Rest.</p>
+		</description>
+		<sheet action="Reaction" usage="1/Short Rest">
+			<description>When a creature with the Frightened condition starts its turn within 60 feet of you and isn't behind Total Cover, you can force it to make a DC{{flee fools:dc}} Wisdom saving throw. On a failure, it spends its turn moving away from you by the fastest available means.</description>
+		</sheet>
+		<rules>
+			<stat name="flee fools:dc" value="8" />
+			<stat name="flee fools:dc" value="proficiency" />
+			<stat name="flee fools:dc" value="charisma:modifier" />
+		</rules>
+	</element>
+
+	<element name="Boon of the Bright Sun" type="Feat" source="Forgotten Realms: Heroes of Faerûn" id="ID_WOTC_FRHOF_FEAT_BOON_OF_THE_BRIGHT_SUN">
+		<requirements>[level:19]</requirements>
+		<supports>Epic Boon</supports>
+		<prerequisite>Level 19+</prerequisite>
+		<description>
+			<p class="flavor">Epic Boon Feat (Prerequisite: Level 19+)</p>
+			<p>You gain the following benefits.</p>
+			<p class="indent"><b><i>Ability Score Increase.</i></b> Increase your Constitution, Wisdom, or Charisma score by 1, to a maximum of 30.</p>
+			<p class="indent"><b><i>Daylight Presence.</i></b> As a Bonus Action, you radiate a 30-foot Emanation of Bright Light that is sunlight. If any of the Emanation’s area overlaps with an area of Darkness created by a spell, that spell is dispelled. The Emanation lasts until you dismiss it (no action required), die, or have the Incapacitated condition.</p>
+			<p class="indent"><b><i>Fortifying Light.</i></b> When your Daylight Presence is active, at the start of each of your turns, you and allies you can see in your Daylight Presence gain 10 Temporary Hit Points.</p>
+		</description>
+		<sheet action="Bonus Action">
+			<description>You radiate a 30-foot Emanation of Bright Light that is sunlight. If any of the Emanation’s area overlaps with an area of Darkness created by a spell, that spell is dispelled. The Emanation lasts until you dismiss it (no action required), die, or have the Incapacitated condition. &#13;
+			While active, you and allies you can see in your Daylight Presence gain 10 Temporary Hit Points at the start of each of their turns.</description>
+		</sheet>
+		<rules>
+			<select type="Ability Score Improvement" name="Ability Score Increase (Boon of the Bright Sun)" supports="ID_INTERNAL_ABILITY_SCORE_IMPROVEMENT_BOON_CONSTITUTION|ID_INTERNAL_ABILITY_SCORE_IMPROVEMENT_BOON_WISDOM|ID_INTERNAL_ABILITY_SCORE_IMPROVEMENT_BOON_CHARISMA" />
+		</rules>
+	</element>
+
+	<element name="Boon of the Furious Storm" type="Feat" source="Forgotten Realms: Heroes of Faerûn" id="ID_WOTC_FRHOF_FEAT_BOON_OF_THE_FURIOUS_STORM">
+		<requirements>[level:19]</requirements>
+		<supports>Epic Boon</supports>
+		<prerequisite>Level 19+</prerequisite>
+		<description>
+			<p class="flavor">Epic Boon Feat (Prerequisite: Level 19+)</p>
+			<p>You gain the following benefits.</p>
+			<p class="indent"><b><i>Ability Score Increase.</i></b> Increase your Intelligence, Wisdom, or Charisma score by 1, to a maximum of 30.</p>
+			<p class="indent"><b><i>Eye of the Storm.</i></b> You have Resistance to Lightning and Thunder damage. While you are Bloodied, you have Immunity to Lightning and Thunder damage.</p>
+			<p class="indent"><b><i>Storm's Strength.</i></b> Creatures have Disadvantage on saving throws against your spells that deal Lightning or Thunder damage.</p>
+		</description>
+		<sheet>
+			<description>Creatures have Disadvantage on saving throws against your spells that deal Lightning or Thunder damage. &#13;
+			Additionally, you have Immunity to Lightning and Thunder damage while you are Bloodied.</description>
+		</sheet>
+		<rules>
+			<select type="Ability Score Improvement" name="Ability Score Increase (Boon of the Furious Storm)" supports="ID_INTERNAL_ABILITY_SCORE_IMPROVEMENT_BOON_INTELLIGENCE|ID_INTERNAL_ABILITY_SCORE_IMPROVEMENT_BOON_WISDOM|ID_INTERNAL_ABILITY_SCORE_IMPROVEMENT_BOON_CHARISMA" />
+			<grant type="Condition" id="ID_INTERNAL_CONDITION_DAMAGE_RESISTANCE_LIGHTNING" />
+			<grant type="Condition" id="ID_INTERNAL_CONDITION_DAMAGE_RESISTANCE_THUNDER" />
+		</rules>
+	</element>
+
+	<element name="Boon of the Soul Drinker" type="Feat" source="Forgotten Realms: Heroes of Faerûn" id="ID_WOTC_FRHOF_FEAT_BOON_OF_THE_SOUL_DRINKER">
+		<requirements>[level:19]</requirements>
+		<supports>Epic Boon</supports>
+		<prerequisite>Level 19+</prerequisite>
+		<description>
+			<p class="flavor">Epic Boon Feat (Prerequisite: Level 19+)</p>
+			<p>You gain the following benefits.</p>
+			<p class="indent"><b><i>Ability Score Increase.</i></b> Increase one ability score of your choice by 1, to a maximum of 30.</p>
+			<p class="indent"><b><i>Grave Resistance.</i></b> You have Resistance to Cold damage and Necrotic damage.</p>
+			<p class="indent"><b><i>Siphon Life.</i></b> When an enemy within 120 feet of you is reduced to 0 Hit Points, you can take a Reaction to regain 50 Hit Points. Once you use this benefit, you can’t use it again until you finish a Short or Long Rest.</p>
+		</description>
+		<sheet action="Reaction" usage="1/Short Rest">
+			<description>When an enemy within 120 feet of you is reduced to 0 Hit Points, you can regain 50 Hit Points.</description>
+		</sheet>
+		<rules>
+			<select type="Ability Score Improvement" name="Ability Score Increase (Boon of the Soul Drinker)" supports="Boon Ability Score Increase" />
+			<grant type="Condition" id="ID_INTERNAL_CONDITION_DAMAGE_RESISTANCE_COLD" />
+			<grant type="Condition" id="ID_INTERNAL_CONDITION_DAMAGE_RESISTANCE_NECROTIC" />
+		</rules>
+	</element>
+
+</elements>

@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<elements>
+	<info>
+		<name>Harper</name>
+		<description>The Harper background from Forgotten Realms: Heroes of Faerûn.</description>
+		<author url="https://dndstore.wizards.com/us/en/product/1246485/heroes-of-faerun">Wizards of the Coast</author>
+		<update version="0.0.1">
+			<file name="background-harper.xml" url="https://raw.githubusercontent.com/AuroraLegacy/elements/master/supplements/forgotten-realms-heroes-of-faerun/backgrounds/background-harper.xml" />
+		</update>
+	</info>
+
+	<element name="Harper" type="Background" source="Forgotten Realms: Heroes of Faerûn" id="ID_WOTC_FRHOF_BACKGROUND_HARPER">
+		<description>
+			<ul class="unstyled" style="text-indent:-1em; margin-left:1em; margin-bottom:5px">
+				<li><strong>Ability Scores:</strong> Dexterity, Intelligence, Charisma</li>
+				<li><strong>Feat:</strong> Harper Agent</li>
+				<li><strong>Skill Proficiencies:</strong> Performance and Sleight of Hand</li>
+				<li><strong>Tool Proficiency:</strong> Disguise Kit</li>
+				<li><strong>Equipment:</strong><i> Choose A or B:</i> (A) Disguise Kit, Bedroll, Costume, Grappling Hook, Rope, Traveler’s Clothes, 14 GP; or (B) 50 GP</li>
+			</ul>
+			<p>You accepted an invitation to join the Harpers, pledging an oath to uphold the Harper code and act in service to the common good. Like all Harpers, you understand the value of teamwork as well as when it’s best to go it alone. Harper veterans have taught you the order’s secrets—magical melodies, special watchwords, and legerdemain—and have entrusted you to use such knowledge to surveil and undermine the forces of evil.</p>
+			<p class="indent"><strong><em>Trinket.</em></strong> Roll on the Harper Trinkets table to determine what trinket you have from your time with the Harpers.</p>
+			<h5>Harper Trinkets</h5>
+			<table>
+				<thead>
+					<tr><td>d6</td><td>Trinket</td></tr>
+				</thead>
+				<tr><td>1</td><td>A broken harmonica</td></tr>
+				<tr><td>2</td><td>A powder compact with a hidden compartment</td></tr>
+				<tr><td>3</td><td>A 2-foot-long peacock feather</td></tr>
+				<tr><td>4</td><td>A trick coin that’s heads on both sides</td></tr>
+				<tr><td>5</td><td>A pair of red-tinted spectacles</td></tr>
+				<tr><td>6</td><td>A scroll of sheet music for an unknown instrument</td></tr>
+			</table>
+		</description>
+		<setters>
+			<set name="short">Dexterity, Intelligence, Charisma, Harper Agent Feat, Performance and Sleight of Hand Skills, and Disguise Kit</set>
+		</setters>
+		<rules>
+			<grant type="Ability Score Improvement" id="ID_INTERNAL_ABILITY_SCORE_IMPROVEMENT_COMBINATION_DEX_INT_CHA" />
+			<grant type="Feat" id="ID_WOTC_FRHOF_FEAT_HARPER_AGENT" />
+			<grant type="Proficiency" id="ID_PROFICIENCY_SKILL_PERFORMANCE" />
+			<grant type="Proficiency" id="ID_PROFICIENCY_SKILL_SLEIGHTOFHAND" />
+			<grant type="Grants" id="ID_INTERNAL_GRANTS_BACKGROUND_ASI" />
+			<grant type="Proficiency" id="ID_PROFICIENCY_TOOL_PROFICIENCY_DISGUISE_KIT" />
+			<select type="List" name="Harper Trinkets" optional="true" >
+				<item id="1">A broken harmonica</item>
+				<item id="2">A powder compact with a hidden compartment</item>
+				<item id="3">A 2-foot-long peacock feather</item>
+				<item id="4">A trick coin that’s heads on both sides</item>
+				<item id="5">A pair of red-tinted spectacles</item>
+				<item id="6">A scroll of sheet music for an unknown instrument</item>
+			</select>
+		</rules>
+	</element>
+
+</elements>

@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<elements>
+	<info>
+		<name>Banneret</name>
+		<description>The Banneret subclass from Forgotten Realms: Heroes of Faerûn.</description>
+		<author url="https://dndstore.wizards.com/us/en/product/1246485/heroes-of-faerun">Wizards of the Coast</author>
+		<update version="0.0.1">
+			<file name="fighter-banneret.xml" url="https://raw.githubusercontent.com/AuroraLegacy/elements/master/supplements/forgotten-realms-heroes-of-faerun/archetypes/fighter-banneret.xml" />
+		</update>
+	</info>
+
+	<element name="Banneret" type="Archetype" source="Forgotten Realms: Heroes of Faerûn" id="ID_WOTC_FRHOF_ARCHETYPE_FIGHTER_CHAMPION">
+		<supports>Martial Archetype</supports>
+		<description>
+			<p class="flavor">Rally Fellow Heroes with Inspiring Leadership</p>
+			<p>Bannerets are paragons of valor and leadership who protect the innocent and rally fellow adventurers to the causes of justice and freedom. Many are knights serving in Cormyr, the Silver Marches, Damara, Chessenta, or other lands across Faerûn. They wander the realms as knights errant, taking the fight against evil beyond their kingdom's borders.</p>
+			<p class="indent">A Banneret relies on judgment, bravery, and fidelity to the code of chivalry to guide them in defeating evildoers. A lone Banneret is a skilled warrior, but when leading a band of allies one of these warriors can transform even a poorly equipped militia into a ferocious war band.</p>
+			<div element="ID_WOTC_FRHOF_ARCHETYPE_FEATURE_FIGHTER_BANNERET_KNIGHTLY_ENVOY"/>
+			<div element="ID_WOTC_FRHOF_ARCHETYPE_FEATURE_FIGHTER_BANNERET_GROUP_RECOVERY"/>
+			<div element="ID_WOTC_FRHOF_ARCHETYPE_FEATURE_FIGHTER_BANNERET_TEAM_TACTICS"/>
+			<div element="ID_WOTC_FRHOF_ARCHETYPE_FEATURE_FIGHTER_BANNERET_RALLYING_SURGE"/>
+			<div element="ID_WOTC_FRHOF_ARCHETYPE_FEATURE_FIGHTER_BANNERET_SHARED_RESILIENCE"/>
+			<div element="ID_WOTC_FRHOF_ARCHETYPE_FEATURE_FIGHTER_BANNERET_INSPIRING_COMMANDER"/>
+		</description>
+		<sheet display="false" />
+		<rules>
+			<grant type="Archetype Feature" id="ID_WOTC_FRHOF_ARCHETYPE_FEATURE_FIGHTER_BANNERET_KNIGHTLY_ENVOY" level="3"/>
+			<grant type="Archetype Feature" id="ID_WOTC_FRHOF_ARCHETYPE_FEATURE_FIGHTER_BANNERET_GROUP_RECOVERY" level="3"/>
+			<grant type="Archetype Feature" id="ID_WOTC_FRHOF_ARCHETYPE_FEATURE_FIGHTER_BANNERET_TEAM_TACTICS" level="7"/>
+			<grant type="Archetype Feature" id="ID_WOTC_FRHOF_ARCHETYPE_FEATURE_FIGHTER_BANNERET_RALLYING_SURGE" level="10"/>
+			<grant type="Archetype Feature" id="ID_WOTC_FRHOF_ARCHETYPE_FEATURE_FIGHTER_BANNERET_SHARED_RESILIENCE" level="15"/>
+			<grant type="Archetype Feature" id="ID_WOTC_FRHOF_ARCHETYPE_FEATURE_FIGHTER_BANNERET_INSPIRING_COMMANDER" level="18"/>
+		</rules>
+	</element>
+
+	<element name="Level 3: Knightly Envoy" type="Archetype Feature" source="Forgotten Realms: Heroes of Faerûn" id="ID_WOTC_FRHOF_ARCHETYPE_FEATURE_FIGHTER_BANNERET_KNIGHTLY_ENVOY">
+		<requirements>!ID_INTERNAL_FRHOF_FEATURE_REPLACEMENT_FIGHTER_BANNERET_KNIGHTLY_ENVOY</requirements>
+		<description>
+			<p>You know how to conduct yourself with grace as a noble ambassador. You gain the following benefits.</p>
+			<p class="indent"><b><i>Comprehension.</i></b> You can cast the <i>Comprehend Languages</i> spell but only as a Ritual. Charisma is your spellcasting ability for it.</p>
+			<p class="indent"><b><i>Polyglot.</i></b> You learn one language from the language tables in the Player's Handbook or this book. When you finish a Long Rest, you can replace a language learned from this benefit with another language you have heard, seen signed, or read in the past 24 hours.</p>
+			<p class="indent"><b><i>Well Spoken.</i></b> You gain proficiency in one of the following skills of your choice: <i>Insight, Intimidation, Persuasion,</i> or <i>Performance.</i></p>
+			<div class="reference">
+				<div element="ID_WOTC_PHB24_SPELL_COMPREHEND_LANGUAGES" />
+			</div>
+		</description>
+		<sheet alt="Knightly Envoy">
+			<description>You can cast Comprehend Languages as a Ritual. When you finish a Long Rest, you can replace the language with this feature with another you have heard, see signed, or read in the past 24 hours.</description>
+		</sheet>
+		<rules>
+			<select type="Language" name="Language Proficiency (Knightly Envoy)" supports="Standard||Exotic" />
+			<select type="Proficiency" name="Skill Proficiency (Knightly Envoy)" supports="ID_PROFICIENCY_SKILL_INSIGHT|ID_PROFICIENCY_SKILL_INTIMIDATION|ID_PROFICIENCY_SKILL_PERSUASION|ID_PROFICIENCY_SKILL_PERFORMANCE" />
+		</rules>
+	</element>
+	<element name="Level 3: Group Recovery" type="Archetype Feature" source="Forgotten Realms: Heroes of Faerûn" id="ID_WOTC_FRHOF_ARCHETYPE_FEATURE_FIGHTER_BANNERET_GROUP_RECOVERY">
+		<requirements>!ID_INTERNAL_FRHOF_FEATURE_REPLACEMENT_FIGHTER_BANNERET_GROUP_RECOVERY</requirements>
+		<description>
+			<p>When you use your Second Wind to regain Hit Points, you can choose a number of allies within a 30-foot Emanation originating from yourself, up to a number of allies equal to your Charisma modifier (minimum of one). Each of those allies regains Hit Points equal to 1d4 plus your Fighter level. Once you use this ability, you can't use it again until you finish a Short or Long Rest.</p>
+		</description>
+		<sheet alt="Group Recovery" usage="1/Short Rest">
+			<description>When you use your Second Wind to regain Hit Points, you can choose up to {{banneret aura:count}} allies within a 30-foot Emanation originating from yourself. Each of those allies regains 1d4+{{level:fighter}} Hit Points.</description>
+			<description level="7">When you use your Second Wind to regain Hit Points, you can choose up to {{banneret aura:count}} allies within a 30-foot Emanation originating from yourself. Each of those allies regains 1d4+{{level:fighter}} Hit Points and has Advantage on D20 Tests until the start of your next turn.</description>
+			<description level="18">When you use your Second Wind to regain Hit Points, you can choose up to {{banneret aura:count}} allies within a 60-foot Emanation originating from yourself. Each of those allies regains 1d4+{{level:fighter}} Hit Points and has Advantage on D20 Tests until the start of your next turn.</description>
+		</sheet>
+		<rules>
+			<stat name="banneret aura:count" value="1" bonus="base" />
+			<stat name="banneret aura:count" value="charisma:modifier" bonus="base" />
+		</rules>
+	</element>
+
+	<element name="Level 7: Team Tactics" type="Archetype Feature" source="Forgotten Realms: Heroes of Faerûn" id="ID_WOTC_FRHOF_ARCHETYPE_FEATURE_FIGHTER_BANNERET_TEAM_TACTICS">
+		<requirements>!ID_INTERNAL_FRHOF_FEATURE_REPLACEMENT_FIGHTER_BANNERET_TEAM_TACTICS</requirements>
+		<description>
+			<p>When you use Group Recovery, each chosen ally has Advantage on D20 Tests until the start of your next turn.</p>
+		</description>
+		<sheet display="false" />
+	</element>
+
+	<element name="Level 10: Rallying Surge" type="Archetype Feature" source="Forgotten Realms: Heroes of Faerûn" id="ID_WOTC_FRHOF_ARCHETYPE_FEATURE_FIGHTER_BANNERET_RALLYING_SURGE">
+		<requirements>!ID_INTERNAL_FRHOF_FEATURE_REPLACEMENT_FIGHTER_BANNERET_RALLYING_SURGE</requirements>
+		<description>
+			<p>When you use your Action Surge, you can choose allies within a 30-foot Emanation originating from yourself, up to a number of allies equal to your Charisma modifier (minimum of one). Each of those allies can immediately take a Reaction to use one of the following options.</p>
+			<p class="indent"><b><i>Attack.</i></b> The ally makes one attack with a weapon or an Unarmed Strike.</p>
+			<p class="indent"><b><i>Move.</i></b> The ally moves up to half its Speed without provoking an Opportunity Attack.</p>
+		</description>
+		<sheet alt="Rallying Surge">
+			<description>When you use your Action Surge, you can choose up to {{banneret aura:count}} allies within a 30-foot Emanation. Each of those allies can immediately take a Reaction to either make one attack with a weapon or Unarmed Strike, or move up to half its Speed without provoking Opportunity Attacks.</description>
+			<description level="18">When you use your Action Surge, you can choose up to {{banneret aura:count}} allies within a 60-foot Emanation. Each of those allies can immediately take a Reaction to either make one attack with a weapon or Unarmed Strike, or move up to half its Speed without provoking Opportunity Attacks.</description>
+		</sheet>
+	</element>
+
+	<element name="Level 15: Shared Resilience" type="Archetype Feature" source="Forgotten Realms: Heroes of Faerûn" id="ID_WOTC_FRHOF_ARCHETYPE_FEATURE_FIGHTER_BANNERET_SHARED_RESILIENCE">
+		<requirements>!ID_INTERNAL_FRHOF_FEATURE_REPLACEMENT_FIGHTER_BANNERET_SHARED_RESILIENCE</requirements>
+		<description>
+			<p>When an ally you can see within 60 feet of yourself fails a saving throw, you can take a Reaction to expend a use of your Indomitable feature. The ally can immediately reroll the saving throw with a bonus equal to your Fighter level; the ally must use the new roll.</p>
+		</description>
+		<sheet alt="Shared Resilience" action="Reaction" usage="Indomitable" >
+			<description>When an ally you can see within 60 feet of yourself fails a saving throw, you can expend a use of your Indomitable feature and allow the ally to immediately reroll the saving throw with a +{{level:fighter}} bonus; the ally must then use the new roll.</description>
+		</sheet>
+	</element>
+
+	<element name="Level 18: Inspiring Commander" type="Archetype Feature" source="Forgotten Realms: Heroes of Faerûn" id="ID_WOTC_FRHOF_ARCHETYPE_FEATURE_FIGHTER_BANNERET_INSPIRING_COMMANDER">
+		<requirements>!ID_INTERNAL_FRHOF_FEATURE_REPLACEMENT_FIGHTER_BANNERET_INSPIRING_COMMANDER</requirements>
+		<description>
+			<p>You gain the following benefits.</p>
+			<p class="indent"><b><i>Bolstering Rally.</i></b> The area of effect for both Group Recovery and Rallying Surge is now a 60-foot Emanation.</p>
+			<p class="indent"><b><i>Unshakable Bravery.</i></b> You have Immunity to the Charmed and Frightened conditions.</p>
+		</description>
+		<sheet alt="Inspiring Commander">
+			<description>You have Immunity to the Charmed and Frightened conditions.</description>
+		</sheet>
+	</element>
+	
+	<!--Feature Replacement Grants-->
+	<element name="Knightly Envoy Feature Replacement" type="Grants" source="Internal" id="ID_INTERNAL_FRHOF_FEATURE_REPLACEMENT_FIGHTER_BANNERET_KNIGHTLY_ENVOY" />
+	<element name="Group Recovery Feature Replacement" type="Grants" source="Internal" id="ID_INTERNAL_FRHOF_FEATURE_REPLACEMENT_FIGHTER_BANNERET_GROUP_RECOVERY" />
+	<element name="Team Tactics Style Feature Replacement" type="Grants" source="Internal" id="ID_INTERNAL_FRHOF_FEATURE_REPLACEMENT_FIGHTER_BANNERET_TEAM_TACTICS" />
+	<element name="Rallying Surge Feature Replacement" type="Grants" source="Internal" id="ID_INTERNAL_FRHOF_FEATURE_REPLACEMENT_FIGHTER_BANNERET_RALLYING_SURGE" />
+	<element name="Shared Resilience Feature Replacement" type="Grants" source="Internal" id="ID_INTERNAL_FRHOF_FEATURE_REPLACEMENT_FIGHTER_BANNERET_SHARED_RESILIENCE" />
+	<element name="Inspiring Commander Feature Replacement" type="Grants" source="Internal" id="ID_INTERNAL_FRHOF_FEATURE_REPLACEMENT_FIGHTER_BANNERET_INSPIRING_COMMANDER" />
+</elements>

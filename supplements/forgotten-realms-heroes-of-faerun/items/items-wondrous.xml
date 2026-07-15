@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<elements>
+	<info>
+		<name>Wondrous Items</name>
+		<description>Wondrous Items from Forgotten Realms: Heroes of Faerûn.</description>
+		<author url="https://dndstore.wizards.com/us/en/product/1246485/heroes-of-faerun">Wizards of the Coast</author>
+		<update version="0.0.1">
+			<file name="items-wondrous.xml" url="https://raw.githubusercontent.com/AuroraLegacy/elements/master/supplements/forgotten-realms-heroes-of-faerun/items/items-wondrous.xml" />
+		</update>
+	</info>
+
+	<element name="Adventurer's Ring" type="Magic Item" source="Forgotten Realms: Heroes of Faerûn" id="ID_WOTC_FRHOF_MAGIC_ITEM_ADVENTURERS_RING">
+		<prerequisites>Dalelands Wares</prerequisites>
+		<description>
+			<p class="flavor">Lamps are a liability on adventures. Delicate and prone to oil spillage, lamps fill a hand that should otherwise be wielding a weapon or casting a spell. Once you try one of our elegant and practical rings, you’ll never go back to cumbersome flint and fire.</p>
+			<p>While the cover on this ring is open, the ring produces a flame that creates no heat and consumes no fuel. It sheds Bright Light in a 20-foot radius and Dim Light for an additional 20 feet. As a Bonus Action, you can close the cover, smothering the flame, or open it again.</p>
+		</description>
+		<setters>
+			<set name="category">Rings</set>
+			<set name="cost" currency="gp">250</set>
+			<set name="type">Ring</set>
+			<set name="slot">ring</set>
+			<set name="rarity">Common</set>
+		</setters>
+	</element>
+	<element name="Mechanical Wonder (Domestic)" type="Magic Item" source="Forgotten Realms: Heroes of Faerûn" id="ID_WOTC_FRHOF_MAGIC_ITEM_DOMESTIC_WONDER">
+		<prerequisites>Calimshan Wares</prerequisites>
+		<description>
+			<p>A <i>Mechanical Wonder</i> is a semi-autonomous object imbued with magical power. <i>Mechanical Wonders</i> vary greatly in size and form depending on their function.</p>
+			<p class="indent">A <i>Mechanical Wonder</i> is a dormant object until activated. To activate a <i>Mechanical Wonder</i>, you must wind the wonder with a handheld key unique to that wonder. It takes 1 minute to wind a <i>Mechanical Wonder</i>. While you wind it, you must take the Utilize action each turn.</p>
+			<p class="indent">Once wound, a <i>Mechanical Wonder</i> remains activated for the duration specified in the wonder’s description.</p>
+			<h5>DOMESTIC WONDER</h5>
+			<p>This bipedal wonder is designed to assist with household duties. It vaguely resembles whatever species its creator used as inspiration. An activated domestic wonderuses the Domestic Wonder stat block. The wonder is an ally to you and your allies. In combat, the wonder shares your Initiative count, but it takes its turn immediately after yours. It obeys your verbal commands (no action required by you). If you don’t issue any, it takes the Dodge action and uses its movement to avoid danger. The domestic wonderis destroyed if it drops to 0 Hit Points.</p>
+			<div class="reference">
+				<div element="ID_WOTC_FRHOF_INFORMATION_DOMESTIC_WONDER_STATBLOCK" />
+			</div>
+		</description>
+		<setters>
+			<set name="category">Wondrous Items</set>
+			<set name="cost" currency="gp">400</set>
+			<set name="weight" lb="0">—</set>
+			<set name="type">Wondrous Item</set>
+			<set name="rarity">Uncommon</set>
+		</setters>
+	</element> 
+	<element name="Thayan Spell Tattoo" type="Magic Item" source="Forgotten Realms: Heroes of Faerûn" id="ID_WOTC_FRHOF_MAGIC_ITEM_THAYAN_SPELL_TATTOO">
+		<description>
+			<p>This magical tattoo contains the essence of a level 1–3 spell chosen by the tattoo’s creator. While the tattoo is on your body, you always have the associated spell prepared, and you can cast the spell using any spell slots you have of the appropriate level. If you have the Spellcasting or Pact Magic feature, the spell uses your spellcasting ability; otherwise, if the spell requires a saving throw or an attack roll, the spell save DC is 13 and the attack bonus is +5. If your Attunement to the tattoo ends, the tattoo vanishes.</p>
+			<p class="indent">You can also cast the spell once without a spell slot and spell components. Once the spell is cast in this way, the tattoo vanishes.</p>
+		</description>
+		<setters>
+			<set name="category">Wondrous Items</set>
+			<set name="cost" currency="gp">400</set>
+			<set name="type">Tattoo</set>
+			<set name="slot">ring</set>
+			<set name="rarity">Uncommon</set>
+			<set name="attunement">true</set>
+		</setters>
+		<rules>
+			<select type="Spell" name="Spell (Thayan Spell Tattoo)" supports="(1||2||3)" />
+		</rules>
+	</element>
+	<element name="Windskiff" type="Magic Item" source="Forgotten Realms: Heroes of Faerûn" id="ID_WOTC_FRHOF_MAGIC_ITEM_WINDSKIFF">
+		<prerequisites>Moonshae Isles Wares</prerequisites>
+		<description>
+			<p class="flavor">If you want to travel between the Moonshaes, you won’t be able to on foot, by horse, or by cart. You’ll need to sail. And while you could simply hire a boat, where’s the fun in that?</p>
+			<p>This small piece of jewelry has 3 charges and regains all expended charges daily at dawn. While you are holding it, you can take a Magic action to expend 1 charge, which causes the jewelry to transform into a sail-powered personal vehicle. The vehicle is roughly the size and shape of a household door with a 10-foot-tall sail extending from one side. After 1 hour or until you use the item’s command word (no action required), the transformation ends and the <i>Windskiff</i> reverts to its jewelry form.</p>
+			<p class="indent">In vehicle form, a <i>Windskiff</i> is a Medium object with the following statistics: AC 12, HP 30, and Speed 40 ft. The <i>Windskiff</i> hovers a few inches above whatever surface it’s on and can glide; it moves 5 feet horizontally for every 1 foot it descends in the air. A <i>Windskiff</i> and its riders take no damage from falling.</p>
+		</description>
+		<setters>
+			<set name="category">Wondrous Items</set>
+			<set name="cost" currency="gp">4000</set>
+			<set name="weight" lb="0">—</set>
+			<set name="type">Wondrous Item</set>
+			<set name="rarity">Rare</set>
+		</setters>
+	</element>
+
+</elements>

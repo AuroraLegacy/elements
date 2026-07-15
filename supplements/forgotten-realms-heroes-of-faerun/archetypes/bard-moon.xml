@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<elements>
+	<info>
+		<name>College of the Moon</name>
+		<description>The College of the Moon subclass from Forgotten Realms: Heroes of Faerûn.</description>
+		<author url="https://dndstore.wizards.com/us/en/product/1246485/heroes-of-faerun">Wizards of the Coast</author>
+		<update version="0.0.1">
+			<file name="bard-moon.xml" url="https://raw.githubusercontent.com/AuroraLegacy/elements/master/supplements/forgotten-realms-heroes-of-faerun/archetypes/bard-moon.xml" />
+		</update>
+	</info>
+
+	<element name="College of the Moon" type="Archetype" source="Forgotten Realms: Heroes of Faerûn" id="ID_WOTC_FRHOF_ARCHETYPE_BARD_COLLEGE_OF_THE_MOON">
+		<supports>Bard Subclass</supports>
+		<description>
+			<p class="flavor">Inspire Allies with Primal Tales</p>
+			<p>The College of the Moon traces its origins to the ancient druidic circles of the Moonshae Isles, who entrusted the first Bards of this tradition with chronicling the stories of the islands and their people. Bards of this college draw from the isles' fey magic and the primal power of the moonwells to bolster their allies, protect the natural world, and inspire their bardic works.</p>
+			<div element="ID_WOTC_FRHOF_ARCHETYPE_FEATURE_BARD_MOON_MOONS_INSPIRATION" />
+			<div element="ID_WOTC_FRHOF_ARCHETYPE_FEATURE_BARD_MOON_PRIMAL_LORE" />
+			<div element="ID_WOTC_FRHOF_ARCHETYPE_FEATURE_BARD_MOON_BLESSING_OF_MOONLIGHT" />
+			<div element="ID_WOTC_FRHOF_ARCHETYPE_FEATURE_BARD_MOON_EVENTIDES_SPLENDOR" />
+		</description>
+		<sheet display="false" />
+		<rules>
+			<grant type="Archetype Feature" id="ID_WOTC_FRHOF_ARCHETYPE_FEATURE_BARD_MOON_MOONS_INSPIRATION" level="3" />
+			<grant type="Archetype Feature" id="ID_WOTC_FRHOF_ARCHETYPE_FEATURE_BARD_MOON_PRIMAL_LORE" level="3" />
+			<grant type="Archetype Feature" id="ID_WOTC_FRHOF_ARCHETYPE_FEATURE_BARD_MOON_BLESSING_OF_MOONLIGHT" level="6" />
+			<grant type="Archetype Feature" id="ID_WOTC_FRHOF_ARCHETYPE_FEATURE_BARD_MOON_EVENTIDES_SPLENDOR" level="14" />
+		</rules>
+	</element>
+
+	<element name="Level 3: Moon's Inspiration" type="Archetype Feature" source="Forgotten Realms: Heroes of Faerûn" id="ID_WOTC_FRHOF_ARCHETYPE_FEATURE_BARD_MOON_MOONS_INSPIRATION">
+		<requirements>!ID_INTERNAL_FRHOF_FEATURE_REPLACEMENT_BARD_MOON_MOONS_INSPIRATION</requirements>
+		<description>
+			<p>The primal and ever-changing power of the moon flows through you, granting you the following benefits.</p>
+			<p class="indent"><em><strong>Inspired Eclipse.</strong></em> When you take a Bonus Action to give a creature a Bardic Inspiration die, you can have the Invisible condition and teleport up to 30 feet to an unoccupied space you can see as part of that Bonus Action. This invisibility lasts until the start of your next turn and ends early immediately after you make an attack roll, deal damage, or cast a spell.</p>
+			<p class="indent"><em><strong>Lunar Vitality.</strong></em> Once per turn when you restore Hit Points to a creature with a spell, you can expend a Bardic Inspiration die and increase the amount of Hit Points restored by a number equal to a roll of the Bardic Inspiration die. The creature's Speed also increases by 10 feet until the end of its next turn.</p>
+		</description>
+		<sheet alt="Moon's Inspiration">
+			<description>When you give a creature a Bardic Inspiration die, you can have the Invisible condition and teleport up to 30ft to an unoccupied space you can see. This invisibility lasts until the start of your next turn or until immediately after you make an attack roll, deal damage, or cast a spell. &#13;
+			Additionally, once per turn when you restore Hit Points to a creature with a spell, you can expend a Bardic Inspiration die and increase the amount restored by a roll of that die. The creature's Speed also increases by 10ft until the end of its next turn.</description>
+			<description level="14">When you give a creature a Bardic Inspiration die, you and the creature can both have the Invisible condition and teleport up to 30ft to an unoccupied space that can be seen. This invisibility lasts until the start of each creature's next turn or until immediately after the creature makes an attack roll, deals damage, or casts a spell. &#13;
+			Additionally, once per turn when you restore Hit Points to a creature with a spell, you can either expend a Bardic Inspiration die or roll a 1d6 and increase the amount restored by a roll of that die. If you roll a 1d6, you do not expend a use of your Bardic Inspiration. The creature's Speed also increases by 10ft until the end of its next turn.</description>
+		</sheet>
+	</element>
+
+	<element name="Level 3: Primal Lore" type="Archetype Feature" source="Forgotten Realms: Heroes of Faerûn" id="ID_WOTC_FRHOF_ARCHETYPE_FEATURE_BARD_MOON_PRIMAL_LORE">
+		<requirements>!ID_INTERNAL_FRHOF_FEATURE_REPLACEMENT_BARD_MOON_PRIMAL_LORE</requirements>
+		<description>
+			<p>You learn Druidic and one cantrip from the Druid spell list. It counts as a Bard spell for you but doesn't count against the number of cantrips you know. Whenever you gain a Bard level, you can replace this cantrip with another cantrip of your choice from the Druid spell list.</p>
+			<p class="indent">Additionally, choose one of the following skills: <i>Animal Handling, Insight, Medicine, Nature, Perception,</i> or <i>Survival</i>. You have proficiency in that skill.</p>
+		</description>
+		<sheet alt="Primal Lore">
+			<description>Whenever you gain a Bard level, you can replace the cantrip gained by this feature with another of your choice from the Druid spell list.</description>
+		</sheet>
+		<rules>
+			<grant type="Language" id="ID_LANGUAGE_DRUIDIC" />
+			<select type="Spell" name="Cantrip (Primal Lore)" supports="0,Druid" spellcasting="Bard"/>
+			<select type="Proficiency" name="Skill Proficiency (Primal Lore)" supports="ID_PROFICIENCY_SKILL_ANIMALHANDLING|ID_PROFICIENCY_SKILL_INSIGHT|ID_PROFICIENCY_SKILL_MEDICINE|ID_PROFICIENCY_SKILL_NATURE|ID_PROFICIENCY_SKILL_PERCEPTION|ID_PROFICIENCY_SKILL_SURVIVAL" />
+		</rules>
+	</element>
+
+	<element name="Level 6: Blessing of Moonlight" type="Archetype Feature" source="Forgotten Realms: Heroes of Faerûn" id="ID_WOTC_FRHOF_ARCHETYPE_FEATURE_BARD_MOON_BLESSING_OF_MOONLIGHT">
+		<requirements>!ID_INTERNAL_FRHOF_FEATURE_REPLACEMENT_BARD_MOON_BLESSING_OF_MOONLIGHT</requirements>
+		<description>
+			<p>You always have the <i>Moonbeam</i> spell prepared.</p>
+			<p class="indent">When you cast <i>Moonbeam</i>, you can modify the spell so that you glow faintly while the spell is active. While glowing, you shed Dim Light out to 5 feet, and whenever a creature fails its saving throw against the effects of this Moonbeam, another creature of your choice that you can see within 60 feet of yourself regains 2d4 Hit Points.</p>
+			<p class="indent">Once you use this feature to modify a casting of Moonbeam, you can't use it again until you finish a Long Rest.</p>
+		</description>
+		<sheet alt="Blessing of Moonlight" usage="1/Long Rest">
+			<description>When you cast Moonbeam, you can modify the spell so that you shed Dim Light out to 5ft, and whenever a creature fails its saving throw against the spell, one creature of your choice within 60ft of yourself can regain 2d4 Hit Points.</description>
+		</sheet>
+		<rules>
+			<grant type="Spell" id="ID_WOTC_PHB24_SPELL_MOONBEAM" spellcasting="Bard" />
+		</rules>
+	</element>
+
+	<element name="Level 14: Eventide's Splendor" type="Archetype Feature" source="Forgotten Realms: Heroes of Faerûn" id="ID_WOTC_FRHOF_ARCHETYPE_FEATURE_BARD_MOON_EVENTIDES_SPLENDOR">
+		<requirements>!ID_INTERNAL_FRHOF_FEATURE_REPLACEMENT_BARD_MOON_EVENTIDES_SPLENDOR</requirements>
+		<description>
+			<p>You become suffused with the might of the moon, improving your Moon's Inspiration in the following ways.</p>
+			<p class="indent"><em><strong>Shadow of the New Moon.</strong></em> When you use Inspired Eclipse, the creature who received the Bardic Inspiration die can also have the Invisible condition and immediately take a Reaction to teleport up to 30 feet to an unoccupied space it can see. The creature remains Invisible until the start of its next turn.</p>
+			<p class="indent"><em><strong>Vibrance of the Full Moon.</strong></em> When you use Lunar Vitality, you can roll 1d6 and use the number rolled in place of expending a Bardic Inspiration die.</p>
+		</description>
+		<sheet display="false" />
+	</element>
+
+	<!--Feature Replacement Grants-->
+	<element name="Moon's Inspiration Feature Replacement" type="Grants" source="Internal" id="ID_INTERNAL_FRHOF_FEATURE_REPLACEMENT_BARD_MOON_MOONS_INSPIRATION" />
+	<element name="Primal Lore Feature Replacement" type="Grants" source="Internal" id="ID_INTERNAL_FRHOF_FEATURE_REPLACEMENT_BARD_MOON_PRIMAL_LORE" />
+	<element name="Blessing of Moonlight Feature Replacement" type="Grants" source="Internal" id="ID_INTERNAL_FRHOF_FEATURE_REPLACEMENT_BARD_MOON_BLESSING_OF_MOONLIGHT" />
+	<element name="Eventide's Splendor Feature Replacement" type="Grants" source="Internal" id="ID_INTERNAL_FRHOF_FEATURE_REPLACEMENT_BARD_MOON_EVENTIDES_SPLENDOR" />
+
+</elements>
