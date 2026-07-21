@@ -1,0 +1,664 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<elements>
+	<info>
+		<name>Rings</name>
+		<description>Magical Rings from the Dungeon Master’s Guide 2024</description>
+		<author url="https://marketplace.dndbeyond.com/core-rules/3710000?pid=DB3710000">Wizards of the Coast</author>
+		<update version="0.0.1">
+			<file name="items-rings.xml" url="https://raw.githubusercontent.com/AuroraLegacy/elements/master/core/dungeon-masters-guide-2024/items/items-rings.xml" />
+		</update>
+	</info>
+
+	<element name="Ring of Animal Influence" type="Magic Item" source="Dungeon Master’s Guide (2024)" id="ID_WOTC_DMG24_MAGIC_ITEM_RING_OF_ANIMAL_INFLUENCE">
+		<description>
+			<p>This ring has 3 charges, and it regains 1d3 expended charges daily at dawn. While wearing the ring, you can expend 1 charge to cast one of the following spells (save DC 13) from it:</p>
+			<ul>
+				<li><i>Animal Friendship</i></li>
+				<li><i>Fear</i> (affects Beasts only)</li>
+				<li><i>Speak with Animals</i></li>
+			</ul>
+			<div class="reference">
+				<div element="ID_WOTC_PHB24_SPELL_ANIMAL_FRIENDSHIP" />
+			</div>
+			<div class="reference">
+				<div element="ID_WOTC_PHB24_SPELL_FEAR" />
+			</div>
+			<div class="reference">
+				<div element="ID_WOTC_PHB24_SPELL_SPEAK_WITH_ANIMALS" />
+			</div>
+		</description>
+		<setters>
+			<set name="category">Rings</set>
+			<set name="cost" currency="gp">4000</set>
+			<set name="type">Ring</set>
+			<set name="slot">ring</set>
+			<set name="rarity">Rare</set>
+			<set name="charges">3</set>
+		</setters>
+	</element>
+	<element name="Ring of Djinni Summoning" type="Magic Item" source="Dungeon Master’s Guide (2024)" id="ID_WOTC_DMG24_MAGIC_ITEM_RING_OF_DJINNI_SUMMONING">
+		<description>
+			<p>While wearing this ring, you can take a Magic action to summon a particular Djinni from the Elemental Plane of Air. The djinni appears in an unoccupied space you choose within 120 feet of yourself. It remains as long as you maintain Concentration, to a maximum of 1 hour, or until it drops to 0 Hit Points.</p>
+			<p class="indent">While summoned, the djinni is Friendly to you and your allies, and it obeys your commands. If you fail to command it, the djinni defends itself against attackers but takes no other actions.</p>
+			<p class="indent">After the djinni departs, it can't be summoned again for 24 hours, and the ring becomes nonmagical if the djinni dies.</p>
+			<p class="indent">Rings of Djinni Summoning are often created by the djinn they summon and given to mortals as gifts of friendship or tokens of esteem.</p>
+		</description>
+		<setters>
+			<set name="category">Rings</set>
+			<set name="cost" currency="gp">200000</set>
+			<set name="type">Ring</set>
+			<set name="slot">ring</set>
+			<set name="attunement">true</set>
+			<set name="rarity">Legendary</set>
+		</setters>
+	</element>
+
+	<element name="Ring of Air Elemental Command" type="Magic Item" source="Dungeon Master’s Guide (2024)" id="ID_WOTC_DMG24_MAGIC_ITEM_RING_OF_AIR_ELEMENTAL_COMMAND">
+		<description>
+			<p>This <i>Ring of Elemental Command</i> is linked to the Elemental Plane of Air. Every <i>Ring of Elemental Command</i> has the following two properties:</p>
+			<ul>
+				<li><b><i>Elemental Bane.</i></b> While wearing the ring, you have Advantage on attack rolls against Elementals and they have Disadvantage on attack rolls against you.</li>
+				<li><b><i>Elemental Compulsion.</i></b> While wearing the ring, you can take a Magic action to try to compel an Elemental you see within 60 feet of yourself. The Elemental makes a DC 18 Wisdom saving throw. On a failed save, the Elemental has the Charmed condition until the start your next turn, and you determine what it does with its move and action on its next turn.</li>
+			</ul>
+			<p><b><i>Elemental Focus.</i></b> While wearing the ring, you benefit from additional properties corresponding to the ring's linked Elemental Plane:</p>
+			<p class="indent"><b><i>Air.</i></b> You know Auran, you have Resistance to Lightning damage, and you have a Fly Speed equal to your Speed and can hover.</p>
+			<p><b><i>Spellcasting.</i></b> The ring has 5 charges and regains 1d4 + 1 expended charges daily at dawn. While wearing the ring, you can cast a spell from it. A spell cast from the ring has a save DC of 18. Choose the spell from the following list: <i>Chain Lightning</i> (3 charges), <i>Feather Fall</i> (0 charges), <i>Gust of Wind</i> (2 charges), <i>Wind Wall</i> (1 charge)</p>
+			<div class="reference">
+				<div element="ID_WOTC_PHB24_SPELL_CHAIN_LIGHTNING" />
+			</div>
+			<div class="reference">
+				<div element="ID_WOTC_PHB24_SPELL_FEATHER_FALL" />
+			</div>
+			<div class="reference">
+				<div element="ID_WOTC_PHB24_SPELL_GUST_OF_WIND" />
+			</div>
+			<div class="reference">
+				<div element="ID_WOTC_PHB24_SPELL_WIND_WALL" />
+			</div>
+		</description>
+		<setters>
+			<set name="category">Rings</set>
+			<set name="cost" currency="gp">200000</set>
+			<set name="slot">ring</set>
+			<set name="type">Ring</set>
+			<set name="attunement">true</set>
+			<set name="rarity">Legendary</set>
+			<set name="charges">5</set>
+		</setters>
+		<rules>
+			<stat name="speed:fly" value="speed" bonus="base" />
+			<grant type="Condition" id="ID_INTERNAL_CONDITION_DAMAGE_RESISTANCE_LIGHTNING" />
+			<grant type="Language" id="ID_LANGUAGE_PRIMORDIAL" />
+			</rules>
+	</element>
+	<element name="Ring of Earth Elemental Command" type="Magic Item" source="Dungeon Master’s Guide (2024)" id="ID_WOTC_DMG24_MAGIC_ITEM_RING_OF_EARTH_ELEMENTAL_COMMAND">
+		<description>
+			<p>This <i>Ring of Elemental Command</i> is linked to the Elemental Plane of Earth. Every <i>Ring of Elemental Command</i> has the following two properties:</p>
+			<ul>
+				<li><b><i>Elemental Bane.</i></b> While wearing the ring, you have Advantage on attack rolls against Elementals and they have Disadvantage on attack rolls against you.</li>
+				<li><b><i>Elemental Compulsion.</i></b> While wearing the ring, you can take a Magic action to try to compel an Elemental you see within 60 feet of yourself. The Elemental makes a DC 18 Wisdom saving throw. On a failed save, the Elemental has the Charmed condition until the start your next turn, and you determine what it does with its move and action on its next turn.</li>
+			</ul>
+			<p><b><i>Elemental Focus.</i></b> While wearing the ring, you benefit from additional properties corresponding to the ring's linked Elemental Plane:</p>
+			<p class="indent"><b><i>Earth.</i></b> You know Terran, and you have Resistance to Acid damage. Terrain composed of rubble, rocks, or dirt isn't Difficult Terrain for you. In addition, you can move through solid earth or rock as if those areas were Difficult Terrain without disturbing the matter through which you pass. If you end your turn in solid earth or rock, you are shunted out to the nearest unoccupied space you last occupied.</p>
+			<p><b><i>Spellcasting.</i></b> The ring has 5 charges and regains 1d4 + 1 expended charges daily at dawn. While wearing the ring, you can cast a spell from it. A spell cast from the ring has a save DC of 18. Choose the spell from the following list: <i>Earthquake</i> (5 charges), <i>Stone Shape</i> (2 charges), <i>Stoneskin</i> (3 charges), <i>Wall of Stone</i> (3 charges)</p>
+			<div class="reference">
+				<div element="ID_WOTC_PHB24_SPELL_EARTHQUAKE" />
+			</div>
+			<div class="reference">
+				<div element="ID_WOTC_PHB24_SPELL_STONE_SHAPE" />
+			</div>
+			<div class="reference">
+				<div element="ID_WOTC_PHB24_SPELL_STONESKIN" />
+			</div>
+			<div class="reference">
+				<div element="ID_WOTC_PHB24_SPELL_WALL_OF_STONE" />
+			</div>
+		</description>
+		<setters>
+			<set name="category">Rings</set>
+			<set name="cost" currency="gp">200000</set>
+			<set name="slot">ring</set>
+			<set name="type">Ring</set>
+			<set name="attunement">true</set>
+			<set name="rarity">Legendary</set>
+			<set name="charges">5</set>
+		</setters>
+		<rules>
+			<grant type="Condition" id="ID_INTERNAL_CONDITION_DAMAGE_RESISTANCE_ACID" />
+			<grant type="Language" id="ID_LANGUAGE_PRIMORDIAL" />
+		</rules>
+	</element>
+	<element name="Ring of Fire Elemental Command" type="Magic Item" source="Dungeon Master’s Guide (2024)" id="ID_WOTC_DMG24_MAGIC_ITEM_RING_OF_FIRE_ELEMENTAL_COMMAND">
+		<description>
+			<p>This <i>Ring of Elemental Command</i> is linked to the Elemental Plane of Fire. Every <i>Ring of Elemental Command</i> has the following two properties:</p>
+			<ul>
+				<li><b><i>Elemental Bane.</i></b> While wearing the ring, you have Advantage on attack rolls against Elementals and they have Disadvantage on attack rolls against you.</li>
+				<li><b><i>Elemental Compulsion.</i></b> While wearing the ring, you can take a Magic action to try to compel an Elemental you see within 60 feet of yourself. The Elemental makes a DC 18 Wisdom saving throw. On a failed save, the Elemental has the Charmed condition until the start your next turn, and you determine what it does with its move and action on its next turn.</li>
+			</ul>
+			<p><b><i>Elemental Focus.</i></b> While wearing the ring, you benefit from additional properties corresponding to the ring's linked Elemental Plane:</p>
+			<p class="indent"><b><i>Fire.</i></b> You know Ignan, and you have Immunity to Fire damage.</p>
+			<p><b><i>Spellcasting.</i></b> The ring has 5 charges and regains 1d4 + 1 expended charges daily at dawn. While wearing the ring, you can cast a spell from it. A spell cast from the ring has a save DC of 18. Choose the spell from the following list: <i>Burning Hands</i> (1 charge), <i>Fireball</i> (2 charges), <i>Fire Storm</i> (4 charges), <i>Wall of Fire</i> (3 charges)</p>
+			<div class="reference">
+				<div element="ID_WOTC_PHB24_SPELL_BURNING_HANDS" />
+			</div>
+			<div class="reference">
+				<div element="ID_WOTC_PHB24_SPELL_FIREBALL" />
+			</div>
+			<div class="reference">
+				<div element="ID_WOTC_PHB24_SPELL_FIRE_STORM" />
+			</div>
+			<div class="reference">
+				<div element="ID_WOTC_PHB24_SPELL_WALL_OF_FIRE" />
+			</div>
+		</description>
+		<setters>
+			<set name="category">Rings</set>
+			<set name="cost" currency="gp">200000</set>
+			<set name="slot">ring</set>
+			<set name="type">Ring</set>
+			<set name="attunement">true</set>
+			<set name="rarity">Legendary</set>
+			<set name="charges">5</set>
+		</setters>
+		<rules>
+			<grant type="Condition" id="ID_INTERNAL_CONDITION_DAMAGE_IMMUNITY_FIRE" />
+			<grant type="Language" id="ID_LANGUAGE_PRIMORDIAL" />
+		</rules>
+	</element>
+	<element name="Ring of Water Elemental Command" type="Magic Item" source="Dungeon Master’s Guide (2024)" id="ID_WOTC_DMG24_MAGIC_ITEM_RING_OF_WATER_ELEMENTAL_COMMAND">
+		<description>
+			<p>This <i>Ring of Elemental Command</i> is linked to the Elemental Plane of Water. Every <i>Ring of Elemental Command</i> has the following two properties:</p>
+			<ul>
+				<li><b><i>Elemental Bane.</i></b> While wearing the ring, you have Advantage on attack rolls against Elementals and they have Disadvantage on attack rolls against you.</li>
+				<li><b><i>Elemental Compulsion.</i></b> While wearing the ring, you can take a Magic action to try to compel an Elemental you see within 60 feet of yourself. The Elemental makes a DC 18 Wisdom saving throw. On a failed save, the Elemental has the Charmed condition until the start your next turn, and you determine what it does with its move and action on its next turn.</li>
+			</ul>
+			<p><b><i>Elemental Focus.</i></b> While wearing the ring, you benefit from additional properties corresponding to the ring's linked Elemental Plane:</p>
+			<p class="indent"><b><i>Water.</i></b> You know Aquan, you gain a Swim Speed of 60 feet, and you can breathe underwater.</p>
+			<p><b><i>Spellcasting.</i></b> The ring has 5 charges and regains 1d4 + 1 expended charges daily at dawn. While wearing the ring, you can cast a spell from it. A spell cast from the ring has a save DC of 18. Choose the spell from the following list: <i>Create or Destroy Water</i> (1 charge), <i>Ice Storm</i> (2 charges), <i>Tsunami</i> (5 charges), <i>Wall of Ice</i> (3 charges), <i>Water Walk</i> (2 charges).</p>
+			<div class="reference">
+				<div element="ID_WOTC_PHB24_SPELL_CREATE_OR_DESTROY_WATER" />
+			</div>
+			<div class="reference">
+				<div element="ID_WOTC_PHB24_SPELL_ICE_STORM" />
+			</div>
+			<div class="reference">
+				<div element="ID_WOTC_PHB24_SPELL_TSUNAMI" />
+			</div>
+			<div class="reference">
+				<div element="ID_WOTC_PHB24_SPELL_WALL_OF_ICE" />
+			</div>
+			<div class="reference">
+				<div element="ID_WOTC_PHB24_SPELL_WATER_WALK" />
+			</div>
+		</description>
+		<setters>
+			<set name="category">Rings</set>
+			<set name="cost" currency="gp">200000</set>
+			<set name="slot">ring</set>
+			<set name="type">Ring</set>
+			<set name="attunement">true</set>
+			<set name="rarity">Legendary</set>
+			<set name="charges">5</set>
+		</setters>
+		<rules>
+			<stat name="speed:swim" value="60" bonus="base" />
+			<grant type="Language" id="ID_LANGUAGE_PRIMORDIAL" />
+		</rules>
+	</element>
+
+	<element name="Ring of Evasion" type="Magic Item" source="Dungeon Master’s Guide (2024)" id="ID_WOTC_DMG24_MAGIC_ITEM_RING_OF_EVASION">
+		<description>
+			<p>This ring has 3 charges, and it regains 1d3 expended charges daily at dawn. When you fail a Dexterity saving throw while wearing the ring, you can take a Reaction to expend 1 charge to succeed on that save instead.</p>
+		</description>
+		<setters>
+			<set name="category">Rings</set>
+			<set name="cost" currency="gp">4000</set>
+			<set name="type">Ring</set>
+			<set name="slot">ring</set>
+			<set name="attunement">true</set>
+			<set name="rarity">Rare</set>
+			<set name="charges">3</set>
+		</setters>
+	</element>
+	<element name="Ring of Feather Falling" type="Magic Item" source="Dungeon Master’s Guide (2024)" id="ID_WOTC_DMG24_MAGIC_ITEM_RING_OF_FEATHER_FALLING">
+		<description>
+			<p>When you fall while wearing this ring, you descend 60 feet per round and take no damage from falling.</p>
+		</description>
+		<setters>
+			<set name="category">Rings</set>
+			<set name="cost" currency="gp">4000</set>
+			<set name="type">Ring</set>
+			<set name="slot">ring</set>
+			<set name="attunement">true</set>
+			<set name="rarity">Rare</set>
+		</setters>
+	</element>
+	<element name="Ring of Free Action" type="Magic Item" source="Dungeon Master’s Guide (2024)" id="ID_WOTC_DMG24_MAGIC_ITEM_RING_OF_FREE_ACTION">
+		<description>
+			<p>While you wear this ring, Difficult Terrain doesn't cost you extra movement. In addition, magic can neither reduce any of your Speeds nor cause you to have the Paralyzed or Restrained condition.</p>
+		</description>
+		<setters>
+			<set name="category">Rings</set>
+			<set name="cost" currency="gp">4000</set>
+			<set name="type">Ring</set>
+			<set name="slot">ring</set>
+			<set name="attunement">true</set>
+			<set name="rarity">Rare</set>
+		</setters>
+	</element>
+	<element name="Ring of Invisibility" type="Magic Item" source="Dungeon Master’s Guide (2024)" id="ID_WOTC_DMG24_MAGIC_ITEM_RING_OF_INVISIBILITY">
+		<description>
+			<p>While wearing this ring, you can take a Magic action to give yourself the Invisible condition. You remain Invisible until the ring is removed or until you take a Bonus Action to become visible again.</p>
+		</description>
+		<setters>
+			<set name="category">Rings</set>
+			<set name="cost" currency="gp">200000</set>
+			<set name="type">Ring</set>
+			<set name="slot">ring</set>
+			<set name="attunement">true</set>
+			<set name="rarity">Legendary</set>
+		</setters>
+	</element>
+	<element name="Ring of Jumping" type="Magic Item" source="Dungeon Master’s Guide (2024)" id="ID_WOTC_DMG24_MAGIC_ITEM_RING_OF_JUMPING">
+		<description>
+			<p>While wearing this ring, you can cast the <i>Jump</i> spell from it, but can target only yourself when you do so.</p>
+			<div class="reference">
+				<div element="ID_WOTC_PHB24_SPELL_JUMP" />
+			</div>
+		</description>
+		<setters>
+			<set name="category">Rings</set>
+			<set name="cost" currency="gp">400</set>
+			<set name="type">Ring</set>
+			<set name="rarity">Uncommon</set>
+			<set name="slot">ring</set>
+			<set name="equippable">true</set>
+			<set name="attunement">true</set>
+		</setters>
+	</element>
+	<element name="Ring of Mind Shielding" type="Magic Item" source="Dungeon Master’s Guide (2024)" id="ID_WOTC_DMG24_MAGIC_ITEM_RING_OF_MIND_SHIELDING">
+		<description>
+			<p>While wearing this ring, you are immune to magic that allows other creatures to read your thoughts, determine whether you are lying, know your alignment, or know your creature type. Creatures can telepathically communicate with you only if you allow it.</p>
+			<p class="indent">You can take a Magic action to cause the ring to become imperceptible until you take another Magic action to make it perceptible, until you remove the ring, or until you die.</p>
+			<p class="indent">If you die while wearing the ring, your soul enters it, unless it already houses a soul. You can remain in the ring or depart for the afterlife. As long as your soul is in the ring, you can telepathically communicate with any creature wearing it. A wearer can't prevent this telepathic communication.</p>
+		</description>
+		<setters>
+			<set name="category">Rings</set>
+			<set name="cost" currency="gp">400</set>
+			<set name="type">Ring</set>
+			<set name="slot">ring</set>
+			<set name="attunement">true</set>
+			<set name="rarity">Uncommon</set>
+		</setters>
+	</element>
+	<element name="Ring of Protection" type="Magic Item" source="Dungeon Master’s Guide (2024)" id="ID_WOTC_DMG24_MAGIC_ITEM_RING_OF_PROTECTION">
+		<description>
+			<p>You gain a +1 bonus to Armor Class and saving throws while wearing this ring.</p>
+		</description>
+		<setters>
+			<set name="category">Rings</set>
+			<set name="cost" currency="gp">4000</set>
+			<set name="type">Ring</set>
+			<set name="slot">ring</set>
+			<set name="attunement">true</set>
+			<set name="rarity">Rare</set>
+		</setters>
+		<rules>
+			<stat name="ac:misc" value="1" />
+			<stat name="strength:save:misc" value="1" />
+			<stat name="dexterity:save:misc" value="1" />
+			<stat name="constitution:save:misc" value="1" />
+			<stat name="intelligence:save:misc" value="1" />
+			<stat name="wisdom:save:misc" value="1" />
+			<stat name="charisma:save:misc" value="1" />
+		</rules>
+	</element>
+	<element name="Ring of Regeneration" type="Magic Item" source="Dungeon Master’s Guide (2024)" id="ID_WOTC_DMG24_MAGIC_ITEM_RING_OF_REGENERATION">
+		<description>
+			<p>While wearing this ring, you regain 1d6 Hit Points every 10 minutes if you have at least 1 Hit Point. If you lose a body part, the ring causes the missing part to regrow and return to full functionality after 1d6 + 1 days if you have at least 1 Hit Point the whole time.</p>
+		</description>
+		<setters>
+			<set name="category">Rings</set>
+			<set name="cost" currency="gp">40000</set>
+			<set name="slot">ring</set>
+			<set name="type">Ring</set>
+			<set name="attunement">true</set>
+			<set name="rarity">Very Rare</set>
+		</setters>
+	</element>
+
+	<element name="Ring of Resistance, Acid" type="Magic Item" source="Dungeon Master’s Guide (2024)" id="ID_WOTC_DMG24_MAGIC_ITEM_RING_OF_RESISTANCE_ACID">
+		<description>
+			<p>You have Resistance to Acid damage while wearing this ring. The ring is set with pearl.</p>
+		</description>
+		<setters>
+			<set name="category">Rings</set>
+			<set name="cost" currency="gp">4000</set>
+			<set name="slot">ring</set>
+			<set name="type">Ring</set>
+			<set name="attunement">true</set>
+			<set name="rarity">Rare</set>
+		</setters>
+		<rules>
+			<grant type="Condition" id="ID_INTERNAL_CONDITION_DAMAGE_RESISTANCE_ACID" />
+		</rules>
+	</element>
+	<element name="Ring of Resistance, Cold" type="Magic Item" source="Dungeon Master’s Guide (2024)" id="ID_WOTC_DMG24_MAGIC_ITEM_RING_OF_RESISTANCE_COLD">
+		<description>
+			<p>You have Resistance to Cold damage while wearing this ring. The ring is set with tourmaline.</p>
+		</description>
+		<setters>
+			<set name="category">Rings</set>
+			<set name="cost" currency="gp">4000</set>
+			<set name="slot">ring</set>
+			<set name="type">Ring</set>
+			<set name="attunement">true</set>
+			<set name="rarity">Rare</set>
+		</setters>
+		<rules>
+			<grant type="Condition" id="ID_INTERNAL_CONDITION_DAMAGE_RESISTANCE_COLD" />
+		</rules>
+	</element>
+	<element name="Ring of Resistance, Fire" type="Magic Item" source="Dungeon Master’s Guide (2024)" id="ID_WOTC_DMG24_MAGIC_ITEM_RING_OF_RESISTANCE_FIRE">
+		<description>
+			<p>You have Resistance to Fire damage while wearing this ring. The ring is set with garnet.</p>
+		</description>
+		<setters>
+			<set name="category">Rings</set>
+			<set name="cost" currency="gp">4000</set>
+			<set name="slot">ring</set>
+			<set name="type">Ring</set>
+			<set name="attunement">true</set>
+			<set name="rarity">Rare</set>
+		</setters>
+		<rules>
+			<grant type="Condition" id="ID_INTERNAL_CONDITION_DAMAGE_RESISTANCE_FIRE" />
+		</rules>
+	</element>
+	<element name="Ring of Resistance, Force" type="Magic Item" source="Dungeon Master’s Guide (2024)" id="ID_WOTC_DMG24_MAGIC_ITEM_RING_OF_RESISTANCE_FORCE">
+		<description>
+			<p>You have Resistance to Force damage while wearing this ring. The ring is set with sapphire.</p>
+		</description>
+		<setters>
+			<set name="category">Rings</set>
+			<set name="cost" currency="gp">4000</set>
+			<set name="slot">ring</set>
+			<set name="type">Ring</set>
+			<set name="attunement">true</set>
+			<set name="rarity">Rare</set>
+		</setters>
+		<rules>
+			<grant type="Condition" id="ID_INTERNAL_CONDITION_DAMAGE_RESISTANCE_FORCE" />
+		</rules>
+	</element>
+	<element name="Ring of Resistance, Lightning" type="Magic Item" source="Dungeon Master’s Guide (2024)" id="ID_WOTC_DMG24_MAGIC_ITEM_RING_OF_RESISTANCE_LIGHTNING">
+		<description>
+			<p>You have Resistance to Lightning damage while wearing this ring. The ring is set with citrine.</p>
+		</description>
+		<setters>
+			<set name="category">Rings</set>
+			<set name="cost" currency="gp">4000</set>
+			<set name="slot">ring</set>
+			<set name="type">Ring</set>
+			<set name="attunement">true</set>
+			<set name="rarity">Rare</set>
+		</setters>
+		<rules>
+			<grant type="Condition" id="ID_INTERNAL_CONDITION_DAMAGE_RESISTANCE_LIGHTNING" />
+		</rules>
+	</element>
+	<element name="Ring of Resistance, Necrotic" type="Magic Item" source="Dungeon Master’s Guide (2024)" id="ID_WOTC_DMG24_MAGIC_ITEM_RING_OF_RESISTANCE_NECROTIC">
+		<description>
+			<p>You have Resistance to Necrotic damage while wearing this ring. The ring is set with jet.</p>
+		</description>
+		<setters>
+			<set name="category">Rings</set>
+			<set name="cost" currency="gp">4000</set>
+			<set name="slot">ring</set>
+			<set name="type">Ring</set>
+			<set name="attunement">true</set>
+			<set name="rarity">Rare</set>
+		</setters>
+		<rules>
+			<grant type="Condition" id="ID_INTERNAL_CONDITION_DAMAGE_RESISTANCE_NECROTIC" />
+		</rules>
+	</element>
+	<element name="Ring of Resistance, Poison" type="Magic Item" source="Dungeon Master’s Guide (2024)" id="ID_WOTC_DMG24_MAGIC_ITEM_RING_OF_RESISTANCE_POISON">
+		<description>
+			<p>You have Resistance to Poison damage while wearing this ring. The ring is set with amethyst.</p>
+		</description>
+		<setters>
+			<set name="category">Rings</set>
+			<set name="cost" currency="gp">4000</set>
+			<set name="slot">ring</set>
+			<set name="type">Ring</set>
+			<set name="attunement">true</set>
+			<set name="rarity">Rare</set>
+		</setters>
+		<rules>
+			<grant type="Condition" id="ID_INTERNAL_CONDITION_DAMAGE_RESISTANCE_POISON" />
+		</rules>
+	</element>
+	<element name="Ring of Resistance, Psychic" type="Magic Item" source="Dungeon Master’s Guide (2024)" id="ID_WOTC_DMG24_MAGIC_ITEM_RING_OF_RESISTANCE_PSYCHIC">
+		<description>
+			<p>You have Resistance to Psychic damage while wearing this ring. The ring is set with jade.</p>
+		</description>
+		<setters>
+			<set name="category">Rings</set>
+			<set name="cost" currency="gp">4000</set>
+			<set name="slot">ring</set>
+			<set name="type">Ring</set>
+			<set name="attunement">true</set>
+			<set name="rarity">Rare</set>
+		</setters>
+		<rules>
+			<grant type="Condition" id="ID_INTERNAL_CONDITION_DAMAGE_RESISTANCE_PSYCHIC" />
+		</rules>
+	</element>
+	<element name="Ring of Resistance, Radiant" type="Magic Item" source="Dungeon Master’s Guide (2024)" id="ID_WOTC_DMG24_MAGIC_ITEM_RING_OF_RESISTANCE_RADIANT">
+		<description>
+			<p>You have Resistance to Radiant damage while wearing this ring. The ring is set with topaz.</p>
+		</description>
+		<setters>
+			<set name="category">Rings</set>
+			<set name="cost" currency="gp">4000</set>
+			<set name="slot">ring</set>
+			<set name="type">Ring</set>
+			<set name="attunement">true</set>
+			<set name="rarity">Rare</set>
+		</setters>
+		<rules>
+			<grant type="Condition" id="ID_INTERNAL_CONDITION_DAMAGE_RESISTANCE_RADIANT" />
+		</rules>
+	</element>
+	<element name="Ring of Resistance, Thunder" type="Magic Item" source="Dungeon Master’s Guide (2024)" id="ID_WOTC_DMG24_MAGIC_ITEM_RING_OF_RESISTANCE_THUNDER">
+		<description>
+			<p>You have Resistance to Thunder damage while wearing this ring. The ring is set with spinel.</p>
+		</description>
+		<setters>
+			<set name="category">Rings</set>
+			<set name="cost" currency="gp">4000</set>
+			<set name="slot">ring</set>
+			<set name="type">Ring</set>
+			<set name="attunement">true</set>
+			<set name="rarity">Rare</set>
+		</setters>
+		<rules>
+			<grant type="Condition" id="ID_INTERNAL_CONDITION_DAMAGE_RESISTANCE_THUNDER" />
+		</rules>
+	</element>
+
+	<element name="Ring of Shooting Stars" type="Magic Item" source="Dungeon Master’s Guide (2024)" id="ID_WOTC_DMG24_MAGIC_ITEM_RING_OF_SHOOTING_STARS" >
+		<description>
+			<p>You can cast <i>Dancing Lights</i> or <i>Light</i> from the ring.</p>
+			<p>The ring has 6 charges and regains 1d6 expended charges daily at dawn. You can expend its charges to use the properties below.</p>
+			<p class="indent"><b><i>Faerie Fire.</i></b> You can expend 1 charge to cast <i>Faerie Fire</i> from the ring.</p>
+			<p class="indent"><b><i>Lightning Spheres.</i></b> You can expend 2 charges as a Magic action to create up to four 3-foot-diameter spheres of lightning</p>
+			<p class="indent">Each sphere appears in an unoccupied space you can see within 120 feet of yourself. The spheres last as long as you maintain Concentration, up to 1 minute. Each sphere sheds Dim Light in a 30-foot radius.</p>
+			<p class="indent">As a Bonus Action, you can move each sphere up to 30 feet, but no farther than 120 feet away from yourself. The first time the sphere comes within 5 feet of a creature other than you that isn't behind Total Cover, the sphere discharges lightning at that creature and disappears. That creature makes a DC 15 Dexterity saving throw. On a failed save, the creature takes Lightning damage based on the number of spheres you created, as shown in the following table. On a successful save, the creature takes half as much damage.</p>
+			<table>
+				<thead>
+					<tr><td>Spheres</td><td>Lightning Damage</td></tr>
+				</thead>
+				<tbody>
+					<tr><td>1</td><td>4d12</td></tr>
+					<tr><td>2</td><td>5d4</td></tr>
+					<tr><td>3</td><td>2d6</td></tr>
+					<tr><td>4</td><td>2d4</td></tr>
+				</tbody>
+			</table>
+			<p class="indent"><b><i>Shooting Stars.</i></b> You can expend 1 to 3 charges as a Magic action. For every charge you expend, you launch a glowing mote of light from the ring at a point you can see within 60 feet of yourself. Each creature in a 15-foot Cube originating from that point is showered in sparks and makes a DC 15 Dexterity saving throw, taking 5d4 Radiant damage on a failed save or half as much damage on a successful one.</p>
+			<div class="reference">
+				<div element="ID_WOTC_PHB24_SPELL_DANCING_LIGHTS" />
+			</div>
+			<div class="reference">
+				<div element="ID_WOTC_PHB24_SPELL_LIGHT" />
+			</div>
+			<div class="reference">
+				<div element="ID_WOTC_PHB24_SPELL_FAERIE_FIRE" />
+			</div>
+		</description>
+		<setters>
+			<set name="category">Rings</set>
+			<set name="cost" currency="gp">40000</set>
+			<set name="slot">ring</set>
+			<set name="type">Ring</set>
+			<set name="attunement">true</set>
+			<set name="rarity">Very Rare</set>
+			<set name="charges">6</set>
+		</setters>
+	</element>
+	<element name="Ring of Spell Storing" type="Magic Item" source="Dungeon Master’s Guide (2024)" id="ID_WOTC_DMG24_MAGIC_ITEM_RING_OF_SPELL_STORING">
+		<description>
+			<p>This ring stores spells cast into it, holding them until the attuned wearer uses them. The ring can store up to 5 levels worth of spells at a time. When found, it contains 1d6 - 1 levels of stored spells chosen by the DM.</p>
+			<p class="indent">Any creature can cast a spell of level 1 through 5 into the ring by touching the ring as the spell is cast. The spell has no effect other than to be stored in the ring. If the ring can't hold the spell, the spell is expended without effect. The level of the slot used to cast the spell determines how much space it uses.</p>
+			<p class="indent">While wearing this ring, you can cast any spell stored in it. The spell uses the slot level, spell save DC, spell attack bonus, and spellcasting ability of the original caster but is otherwise treated as if you cast the spell. The spell cast from the ring is no longer stored in it, freeing up space.</p>
+		</description>
+		<setters>
+			<set name="category">Rings</set>
+			<set name="cost" currency="gp">4000</set>
+			<set name="type">Ring</set>
+			<set name="slot">ring</set>
+			<set name="attunement">true</set>
+			<set name="rarity">Rare</set>
+		</setters>
+	</element>
+	<element name="Ring of Spell Turning" type="Magic Item" source="Dungeon Master’s Guide (2024)" id="ID_WOTC_DMG24_MAGIC_ITEM_RING_OF_SPELL_TURNING">
+		<description>
+			<p>While wearing this ring, you have Advantage on saving throws against spells. If you succeed on the save for a spell of level 7 or lower, the spell has no effect on you. If that spell targeted only you and didn't create an area of effect, you can take a Reaction to deflect the spell back at the spell's caster; the caster must make a saving throw against the spell using their own spell save DC.</p>
+		</description>
+		<setters>
+			<set name="category">Rings</set>
+			<set name="cost" currency="gp">200000</set>
+			<set name="type">Ring</set>
+			<set name="slot">ring</set>
+			<set name="attunement">true</set>
+			<set name="rarity">Legendary</set>
+		</setters>
+	</element>
+	<element name="Ring of Swimming" type="Magic Item" source="Dungeon Master’s Guide (2024)" id="ID_WOTC_DMG24_MAGIC_ITEM_RING_OF_SWIMMING">
+		<description>
+			<p>You have a Swim Speed of 40 feet while wearing this ring.</p>
+		</description>
+		<setters>
+			<set name="category">Rings</set>
+			<set name="cost" currency="gp">400</set>
+			<set name="type">Ring</set>
+			<set name="slot">ring</set>
+			<set name="rarity">Uncommon</set>
+		</setters>
+		<rules>
+			<stat name="speed:swim" value="40" bonus="base" />
+		</rules>
+	</element>
+	<element name="Ring of Telekinesis" type="Magic Item" source="Dungeon Master’s Guide (2024)" id="ID_WOTC_DMG24_MAGIC_ITEM_RING_OF_TELEKINESIS">
+		<description>
+			<p>While wearing this ring, you can cast <i>Telekinesis</i> from it.</p>
+			<div class="reference">
+				<div element="ID_WOTC_PHB24_SPELL_TELEKINESIS" />
+			</div>
+		</description>
+		<setters>
+			<set name="category">Rings</set>
+			<set name="cost" currency="gp">40000</set>
+			<set name="slot">ring</set>
+			<set name="type">Ring</set>
+			<set name="attunement">true</set>
+			<set name="rarity">Very Rare</set>
+		</setters>
+	</element>
+	<element name="Ring of the Ram" type="Magic Item" source="Dungeon Master’s Guide (2024)" id="ID_WOTC_DMG24_MAGIC_ITEM_RING_OF_THE_RAM">
+		<description>
+			<p>This ring has 3 charges and regains 1d3 expended charges daily at dawn. While wearing the ring, you can take a Magic action to expend 1 to 3 charges to make a ranged spell attack against one creature you can see within 60 feet of yourself. The ring produces a spectral ram's head and makes its attack roll with a +7 bonus. On a hit, for each charge you spend, the target takes 2d10 Force damage and is pushed 5 feet away from you.</p>
+			<p class="indent">Alternatively, you can expend 1 to 3 of the ring's charges as a Magic action to try to break a nonmagical object you can see within 60 feet of yourself that isn't being worn or carried. The ring makes a Strength check with a +5 bonus for each charge you spend.</p>
+		</description>
+		<setters>
+			<set name="category">Rings</set>
+			<set name="cost" currency="gp">4000</set>
+			<set name="type">Ring</set>
+			<set name="slot">ring</set>
+			<set name="attunement">true</set>
+			<set name="rarity">Rare</set>
+			<set name="charges">3</set>
+		</setters>
+	</element>
+	<element name="Ring of Three Wishes" type="Magic Item" source="Dungeon Master’s Guide (2024)" id="ID_WOTC_DMG24_MAGIC_ITEM_RING_OF_THREE_WISHES">
+		<description>
+			<p>While wearing this ring, you can expend 1 of its 3 charges to cast <i>Wish</i> from it. The ring becomes nonmagical when you use the last charge.</p>
+			<div class="reference">
+				<div element="ID_WOTC_PHB24_SPELL_WISH" />
+			</div>
+		</description>
+		<setters>
+			<set name="category">Rings</set>
+			<set name="cost" currency="gp">200000</set>
+			<set name="type">Ring</set>
+			<set name="slot">ring</set>
+			<set name="rarity">Legendary</set>
+			<set name="charges">3</set>
+		</setters>
+	</element>
+	<element name="Ring of Warmth" type="Magic Item" source="Dungeon Master’s Guide (2024)" id="ID_WOTC_DMG24_MAGIC_ITEM_RING_OF_WARMTH">
+		<description>
+			<p>If you take Cold damage while wearing this ring, the ring reduces the damage you take by 2d8.</p>
+			<p class="indent">In addition, while wearing this ring, you and everything you wear and carry are unharmed by temperatures of 0 degrees Fahrenheit or lower.</p>
+		</description>
+		<setters>
+			<set name="category">Rings</set>
+			<set name="cost" currency="gp">400</set>
+			<set name="type">Ring</set>
+			<set name="slot">ring</set>
+			<set name="attunement">true</set>
+			<set name="rarity">Uncommon</set>
+		</setters>
+	</element>
+	<element name="Ring of Water Walking" type="Magic Item" source="Dungeon Master’s Guide (2024)" id="ID_WOTC_DMG24_MAGIC_ITEM_RING_OF_WATER_WALKING">
+		<description>
+			<p>While wearing this ring, you cast <i>Water Walk</i> from it, targeting only yourself.</p>
+			<div class="reference">
+				<div element="ID_WOTC_PHB24_SPELL_WATER_WALK" />
+			</div>
+		</description>
+		<setters>
+			<set name="category">Rings</set>
+			<set name="cost" currency="gp">400</set>
+			<set name="type">Ring</set>
+			<set name="slot">ring</set>
+			<set name="rarity">Uncommon</set>
+		</setters>
+	</element>
+	<element name="Ring of X-ray Vision" type="Magic Item" source="Dungeon Master’s Guide (2024)" id="ID_WOTC_DMG24_MAGIC_ITEM_RING_OF_XRAY_VISION">
+		<description>
+			<p>While wearing this ring, you can take a Magic action to gain X-ray vision with a range of 30 feet for 1 minute. To you, solid objects within that radius appear transparent and don't prevent light from passing through them. The vision can penetrate 1 foot of stone, 1 inch of common metal, or up to 3 feet of wood or dirt. Thicker substances or a thin sheet of lead block the vision.</p>
+			<p class="indent">Whenever you use the ring again before taking a Long Rest, you must succeed on a DC 15 Constitution saving throw or gain 1 Exhaustion level.</p>
+		</description>
+		<setters>
+			<set name="category">Rings</set>
+			<set name="cost" currency="gp">4000</set>
+			<set name="type">Ring</set>
+			<set name="slot">ring</set>
+			<set name="attunement">true</set>
+			<set name="rarity">Rare</set>
+		</setters>
+	</element>
+</elements>
