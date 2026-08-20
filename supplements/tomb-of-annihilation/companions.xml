@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<elements>
+	<info>
+		<update version="0.0.1">
+			<file name="companions.xml" url="https://raw.githubusercontent.com/AuroraLegacy/elements/master/supplements/tomb-of-annihilation/companions.xml" />
+		</update>
+	</info>
+	
+	<!--Almiraj-->
+	<element name="Almiraj" type="Companion" source="Tomb of Annihilation" id="ID_WOTC_TOA_COMPANION_ALMIRAJ">
+		<supports>Familiar</supports>
+		<description>
+			<p>An almiraj (pronounced AWL-meer-ahj) is a large, timid rabbit with a 1-foot-long spiral horn emerging from its forehead, not unlike the horn of a unicorn. If driven to attack, it tries to spear enemies with its horn.</p>
+			<p class="indent">Almiraj were brought to Chult long ago by merchants of the distant land of Zakhara. Skilled at evading predators, these creatures have flourished throughout the tropical peninsula. They live in earthen burrows and can be captured and domesticated. With the DM's permission, the <em>find familiar</em> spell can summon an almiraj.</p>
+		</description>
+		<setters>
+			<set name="size">Small</set>
+			<set name="type">Beast</set>
+			<set name="alignment">unaligned</set>
+			<set name="ac">13</set>
+			<set name="hp">3 (1d6)</set>
+			<set name="speed">50 ft.</set>
+			<set name="strength">2</set>
+			<set name="dexterity">16</set>
+			<set name="constitution">10</set>
+			<set name="intelligence">2</set>
+			<set name="wisdom">14</set>
+			<set name="charisma">10</set>
+			<set name="skills">Perception +4, Stealth +5</set>
+			<set name="senses">darkvision 30 ft., passive Perception 14</set>
+			<set name="languages">—</set>
+			<set name="challenge">0</set>
+			<set name="traits">ID_WOTC_TOA_COMPANION_TRAIT_ALMIRAJ_KEEN_SENSES</set>
+			<set name="actions">ID_WOTC_TOA_COMPANION_ACTION_ALMIRAJ_HORN</set>
+		</setters>
+		<rules>
+			<stat name="companion:ac" value="13" />
+			<stat name="companion:hp:max" value="3" bonus="base" />
+			<stat name="companion:speed" value="50" bonus="base" />
+			<stat name="companion:perception:proficiency" value="companion:proficiency" bonus="base" />
+			<stat name="companion:stealth:proficiency" value="companion:proficiency" bonus="base" />
+		</rules>
+	</element>
+	
+	<element name="Keen Senses" type="Companion Trait" source="Tomb of Annihilation" id="ID_WOTC_TOA_COMPANION_TRAIT_ALMIRAJ_KEEN_SENSES">
+		<description>
+			<p>The almiraj has advantage on Wisdom (Perception) checks that rely on hearing or sight.</p>
+		</description>
+		<sheet>
+			<description>The almiraj has advantage on Wisdom (Perception) checks that rely on hearing or sight.</description>
+		</sheet>
+	</element>
+	
+	<element name="Horn" type="Companion Action" source="Tomb of Annihilation" id="ID_WOTC_TOA_COMPANION_ACTION_ALMIRAJ_HORN">
+		<description>
+			<p>Melee Weapon Attack: +5 to hit, reach 5 ft., one target. Hit: 5 (1d4 + 3) piercing damage.</p>
+		</description>
+		<sheet>
+			<description>Melee Weapon Attack: +5 to hit, reach 5 ft., one target. Hit: 5 (1d4 + 3) piercing damage.</description>
+		</sheet>
+	</element>
+
+	<!--Flying Monkey-->
+	<element name="Flying Monkey" type="Companion" source="Tomb of Annihilation" id="ID_WOTC_TOA_COMPANION_FLYING_MONKEY">
+		<supports>Familiar</supports>
+		<description>
+			<p>Flying monkeys are slightly more clever and curious than common monkeys, and they can be domesticated and taught to obey simple commands. They come in many colors and varieties, with feathered wings that have a span of about 5 feet. With the DM's permission, the <em>find familiar</em> spell can summon a flying monkey.</p>
+		</description>
+		<setters>
+			<set name="size">Small</set>
+			<set name="type">Beast</set>
+			<set name="alignment">unaligned</set>
+			<set name="ac">12</set>
+			<set name="hp">3 (1d6)</set>
+			<set name="speed">30 ft., climb 20 ft., fly 30 ft.</set>
+			<set name="strength">8</set>
+			<set name="dexterity">14</set>
+			<set name="constitution">11</set>
+			<set name="intelligence">5</set>
+			<set name="wisdom">12</set>
+			<set name="charisma">6</set>
+			<set name="senses">passive Perception 11</set>
+			<set name="languages">—</set>
+			<set name="challenge">0</set>
+			<set name="traits">ID_WOTC_TOA_COMPANION_TRAIT_FLYING_MONKEY_PACT_TACTICS</set>
+			<set name="actions">ID_WOTC_TOA_COMPANION_ACTION_FLYING_MONKEY_BITE</set>
+		</setters>
+		<rules>
+			<stat name="companion:ac" value="12" />
+			<stat name="companion:hp:max" value="3" bonus="base" />
+			<stat name="companion:speed" value="30" bonus="base" />
+			<stat name="companion:speed:climb" value="20" bonus="base" />
+			<stat name="companion:speed:fly" value="30" bonus="base" />
+		</rules>
+	</element>
+
+	<element name="Pack Tactics" type="Companion Trait" source="Tomb of Annihilation" id="ID_WOTC_TOA_COMPANION_TRAIT_FLYING_MONKEY_PACT_TACTICS">
+		<description>
+			<p>The flying monkey has advantage on an attack roll against a creature if at least one of the monkey's allies is within 5 feet of the creature and the ally isn't incapacitated.</p>
+		</description>
+		<sheet>
+			<description>The flying monkey has advantage on an attack roll against a creature if at least one of the monkey's allies is within 5 feet of the creature and the ally isn't incapacitated.</description>
+		</sheet>
+	</element>
+
+	<element name="Bite" type="Companion Action" source="Tomb of Annihilation" id="ID_WOTC_TOA_COMPANION_ACTION_FLYING_MONKEY_BITE">
+		<description>
+			<p>Melee Weapon Attack: +1 to hit, reach 5 ft., one target Hit: 1 (1d4 - 1) piercing damage.</p>
+		</description>
+		<sheet>
+			<description>Melee Weapon Attack: +1 to hit, reach 5 ft., one target Hit: 1 (1d4 - 1) piercing damage.</description>
+		</sheet>
+	</element>
+
+</elements>
