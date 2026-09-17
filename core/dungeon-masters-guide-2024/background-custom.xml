@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<elements>
+	<info>
+		<name>Custom Background</name>
+		<description>Custom Background from the Dungeon Master’s Guide (2024)</description>
+		<update version="0.0.1">
+			<file name="background-custom.xml" url="https://raw.githubusercontent.com/AuroraLegacy/elements/master/core/dungeon-masters-guide-2024/background-custom.xml" />
+		</update>
+	</info>
+
+	<element name="Custom Background" type="Background" source="Dungeon Master’s Guide (2024)" id="ID_WOTC_DMG24_BACKGROUND_CUSTOM">
+		<description>
+			<p>A character's background represents what the character did prior to becoming an adventurer. Creating a unique background or customizing an existing one from the <i>Player's Handbook</i> can reflect the particular theme of your campaign or elements of your world.</p>
+			<h5>PARTS OF A BACKGROUND</h5>
+			<p>A background includes the following parts.</p>
+			<p class="indent"><b>Abilities.</b> Choose three abilities that seem appropriate for the background.</p>
+			<p class="indent"><b>Feat.</b> Choose one feat from the Origin category.</p>
+			<p class="indent"><b>Skill Proficiencies.</b> Choose two skills appropriate for the background. There needn't be a relationship between the skill proficiencies a background grants and the ability scores it increases.</p>
+			<p class="indent"><b>Tool Proficiency.</b> Choose one tool used in the practice of the background or often associated with it.</p>
+			<p class="indent"><b>Equipment.</b> Assemble a package of equipment worth 50 GP (including unspent gold). Don't include Martial weapons or armor, as characters get them from their class choices.</p>
+		</description>
+		<setters>
+			<set name="short">Any 3 Abilities, Origin Feat, 2 Skills, and a Tool Proficiency</set>
+		</setters>
+		<rules>
+			<select type="Ability Score Improvement" name="Ability Score Combination" supports="Custom Background Ability Score Combination" />
+			<select type="Feat" name="Origin Feat (Custom Background)" supports="Origin" />
+			<select type="Proficiency" name="Skill Proficiency (Custom Background)" supports="Skill" number="2" />  
+			<select type="Proficiency" name="Tool Proficiency (Custom Background)" supports="Tool" />  
+			<grant type="Grants" id="ID_INTERNAL_GRANTS_BACKGROUND_ASI" />
+		</rules>
+	</element>
+</elements>

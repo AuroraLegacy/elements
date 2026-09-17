@@ -4,7 +4,7 @@
 		<name>Spells</name>
 		<description>Spells from the Player’s Handbook 2024.</description>
 		<author url="https://dndstore.wizards.com/us/en/product/1001494/2024-player-s-handbook-digital-plus-physical-bundle">Wizards of the Coast</author>
-		<update version="0.0.2">
+		<update version="0.0.3">
 			<file name="spells.xml" url="https://raw.githubusercontent.com/AuroraLegacy/elements/master/core/players-handbook-2024/spells.xml" />
 		</update>
 	</info>
@@ -156,11 +156,16 @@
 	<element name="Animate Dead" type="Spell" source="Player’s Handbook (2024)" id="ID_WOTC_PHB24_SPELL_ANIMATE_DEAD">
 		<supports>Cleric, Wizard</supports>
 		<description>
-			<p>Choose a pile of bones or a corpse of a Medium or Small Humanoid within range. The target becomes an Undead creature: a <b>Skeleton</b> if you chose bones or a <b>Zombie</b> if you chose a corpse (see <i>Player's Handbook (2024)</i> pages 356 (Skeleton) and 359 (Zombie) for stat-blocks).</p>
+			<p>Choose a pile of bones or a corpse of a Medium or Small Humanoid within range. The target becomes an Undead creature: a <b>Skeleton</b> if you chose bones or a <b>Zombie</b> if you chose a corpse.</p>
 			<p class="indent">On each of your turns, you can take a Bonus Action to mentally command any creature you made with this spell if the creature is within 60 feet of you (if you control multiple creatures, you can command any of them at the same time, issuing the same command to each one). You decide what action the creature will take and where it will move on its next turn, or you can issue a general command, such as to guard a chamber or corridor. If you issue no commands, the creature takes the Dodge action and moves only to avoid harm. Once given an order, the creature continues to follow it until its task is complete.</p>
 			<p class="indent">The creature is under your control for 24 hours, after which it stops obeying any command you’ve given it. To maintain control of the creature for another 24 hours, you must cast this spell on the creature again before the current 24-hour period ends. This use of the spell reasserts your control over up to four creatures you have animated with this spell rather than animating a new creature.</p>
 			<p class="indent"><b><i>Using a Higher-Level Spell Slot.</i></b> You animate or reassert control over two additional Undead creatures for each spell slot level above 3. Each of the creatures must come from a different corpse or pile of bones.</p>
-			<!-- to do: add a reference to Information type stat-blocks for Skeleton and Zombie here. Then remove "(see <i>Player's Handbook (2024)</i> pages 356 (Skeleton) and 359 (Zombie) for stat-blocks)" part at the end of first paragraph. -->
+			<div class="reference">
+				<div element="ID_WOTC_MM25_INFORMATION_SKELETON_STATBLOCK" />
+			</div>
+			<div class="reference">
+				<div element="ID_WOTC_MM25_INFORMATION_ZOMBIE_STATBLOCK" />
+			</div>
 		</description>
 		<setters>
 			<set name="keywords">control, humanoid, undead, skeleton, zombie, bonus action, upcasting, higher-level spell slot</set>
@@ -201,6 +206,7 @@
 	</element>
 	<element name="Animated Object" type="Information" source="Player’s Handbook (2024)" id="ID_WOTC_PHB24_INFORMATION_ANIMATED_OBJECT">
 		<description>
+			<h4 style="margin-top:0px" />
 			<p style="margin-bottom:5px"><em>Huge or Smaller Construct, Unaligned</em></p>
 			<ul class="unstyled">
 				<li><strong>AC</strong> 15</li>
@@ -219,9 +225,7 @@
 				<li><strong>CR</strong> None (XP 0; PB equals your Proficiency Bonus)</li>
 			</ul>
 			<h4 style="margin-top:5px">Actions</h4>
-			<ul class="unstyled">
-				<li><em><strong>Slam.</strong> Melee Attack Roll:</em> Bonus equals your spell attack modifier, reach 5 ft. <em>Hit:</em> Force damage equal to 1d4 + 3 (Medium or smaller), 2d6 + 3 + your spellcasting ability modifier (Large), or 2d12 + 3 + your spellcasting ability modifier (Huge).</li>
-			</ul>
+				<p><em><strong>Slam.</strong> Melee Attack Roll:</em> Bonus equals your spell attack modifier, reach 5 ft. <em>Hit:</em> Force damage equal to 1d4 + 3 (Medium or smaller), 2d6 + 3 + your spellcasting ability modifier (Large), or 2d12 + 3 + your spellcasting ability modifier (Huge).</p>
 		</description>
 	</element>
 
@@ -516,9 +520,14 @@
 	<element name="Awaken" type="Spell" source="Player’s Handbook (2024)" id="ID_WOTC_PHB24_SPELL_AWAKEN">
 		<supports>Bard, Druid</supports>
 		<description>
-			<p>You spend the casting time tracing magical pathways within a precious gemstone, and then touch the target. The target must be either a Beast or Plant creature with an Intelligence of 3 or less or a natural plant that isn’t a creature. The target gains an Intelligence of 10 and the ability to speak one language you know. If the target is a natural plant, it becomes a Plant creature and gains the ability to move its limbs, roots, vines, creepers, and so forth, and it gains senses similar to a human’s. The DM chooses statistics appropriate for the awakened Plant, such as the statistics for the <b>Awakened Shrub</b> or <b>Awakened Tree</b> (see page 23 of <i>Monster Manual (2025)</i> for stat-blocks).</p>
+			<p>You spend the casting time tracing magical pathways within a precious gemstone, and then touch the target. The target must be either a Beast or Plant creature with an Intelligence of 3 or less or a natural plant that isn’t a creature. The target gains an Intelligence of 10 and the ability to speak one language you know. If the target is a natural plant, it becomes a Plant creature and gains the ability to move its limbs, roots, vines, creepers, and so forth, and it gains senses similar to a human’s. The DM chooses statistics appropriate for the awakened Plant, such as the statistics for the <b>Awakened Shrub</b> or <b>Awakened Tree</b>.</p>
 			<p class="indent">The awakened target has the Charmed condition for 30 days or until you or your allies deal damage to it. When that condition ends, the awakened creature chooses its attitude toward you.</p>
-			<!-- to do: add a reference to Information type stat-blocks for Awakened Shrub and Awakened Tree here. Then replace "(see page 23 of <i>Monster Manual (2025)</i> for stat-blocks)" part at the end of first paragraph with original "in the <i>Monster Manual (2025)</i>". -->
+			<div class="reference">
+				<div element="ID_WOTC_MM25_INFORMATION_AWAKENED_SHRUB_STATBLOCK" />
+			</div>
+			<div class="reference">
+				<div element="ID_WOTC_MM25_INFORMATION_AWAKENED_TREE_STATBLOCK" />
+			</div>
 		</description>
 		<setters>
 			<set name="keywords">beast, plant, intelligence, sentience, charmed</set>
@@ -700,7 +709,7 @@
 		<description>
 			<p>You create a Large hand of shimmering magical energy in an unoccupied space that you can see within range. The hand lasts for the duration, and it moves at your command, mimicking the movements of your own hand.</p>
 			<p class="indent">The hand an object that has AC 20 and Hit Points equal to your Hit Point maximum. If it drops to 0 Hit Points, the spell ends. The hand doesn’t occupy its space.</p>
-			<p class="indent">When you cast the spell and as a Bonus Action on your later turns, you can move the hand up to 60  feet and then cause one of the following effects:</p>
+			<p class="indent">When you cast the spell and as a Bonus Action on your later turns, you can move the hand up to 60 feet and then cause one of the following effects:</p>
 			<ul class="unstyled" style="text-indent:-1em; margin-left:1em; margin-bottom: 1em">
 				<li><strong>Clenched Fist.</strong> The hand strikes a target within 5 feet of it. Make a melee spell attack. On a hit, the target takes 5d8 Force damage.</li>
 				<li><strong>Forceful Hand.</strong> The hand attempts to push a Huge or smaller creature within 5 feet of it. The target must succeed on a Strength saving throw, or the hand pushes the target up to 5 feet plus a number of feet equal to five times your spellcasting ability modifier. The hand moves with the target, remaining within 5 feet of it.</li>
@@ -1755,11 +1764,22 @@
 	<element name="Create Undead" type="Spell" source="Player’s Handbook (2024)" id="ID_WOTC_PHB24_SPELL_CREATE_UNDEAD">
 		<supports>Cleric, Warlock, Wizard</supports>
 		<description>
-			<p>You can cast this spell only at night. Choose up to three corpses of Medium or Small Humanoids within range. Each one becomes a <b>Ghoul</b> under your control (see page 132 of the <i>Monster Manual (2025)</i> for the stat-block).</p>
+			<p>You can cast this spell only at night. Choose up to three corpses of Medium or Small Humanoids within range. Each one becomes a <b>Ghoul</b> under your control.</p>
 			<p class="indent">As a Bonus Action on each of your turns, you can mentally command any creature you animated with this spell if the creature is within 120 feet of you (if you control multiple creatures, you can command any of them at the same time, issuing the same command to them). You decide what action the creature will take and where it will move on its next turn, or you can issue a general command, such as to guard a particular place. If you issue no commands, the creature takes the Dodge action and moves only to avoid harm. Once given an order, the creature continues to follow the order until its task is complete.</p>
 			<p class="indent">The creature is under your control for 24 hours, after which it stops obeying any command you've given it. To maintain control of the creature for another 24 hours, you must cast this spell on the creature before the current 24-hour period ends. This use of the spell reasserts your control over up to three creatures you have animated with this spell rather than animating new ones.</p>
-			<p class="indent"><b><i>Using a Higher-Level Spell Slot.</i></b> If you use a level 7 spell slot, you can animate or reassert control over four <b>Ghouls</b>. If you use a level 8 spell slot, you can animate or reassert control over five <b>Ghouls</b> or two <b>Ghasts</b> or <b>Wights</b>. If you use a level 9 spell slot, you can animate or reassert control over six <b>Ghouls</b>, three <b>Ghasts</b> or <b>Wights</b>, or two <b>Mummies</b> (see <i>Monster Manual (2025)</i> pages 130 (Ghast), 332 (Wight) and 219 (Mummy) for stat-blocks).</p>
-			<!-- to do: Create references with Information type statblocks. Similar to Awaken and Animate Dead spells -->
+			<p class="indent"><b><i>Using a Higher-Level Spell Slot.</i></b> If you use a level 7 spell slot, you can animate or reassert control over four <b>Ghouls</b>. If you use a level 8 spell slot, you can animate or reassert control over five <b>Ghouls</b> or two <b>Ghasts</b> or <b>Wights</b>. If you use a level 9 spell slot, you can animate or reassert control over six <b>Ghouls</b>, three <b>Ghasts</b> or <b>Wights</b>, or two <b>Mummies</b>.</p>
+			<div class="reference">
+				<div element="ID_WOTC_MM25_INFORMATION_GHOUL_STATBLOCK" />
+			</div>
+			<div class="reference">
+				<div element="ID_WOTC_MM25_INFORMATION_GHAST_STATBLOCK" />
+			</div>
+			<div class="reference">
+				<div element="ID_WOTC_MM25_INFORMATION_WIGHT_STATBLOCK" />
+			</div>
+			<div class="reference">
+				<div element="ID_WOTC_MM25_INFORMATION_MUMMY_STATBLOCK" />
+			</div>
 		</description>
 		<setters>
 			<set name="keywords">summon, ghoul, ghast, wight, mummy, bonus action, upcasting, higher-level spell slot</set>
@@ -2887,6 +2907,7 @@
 	</element>
 	<element name="Otherworldly Steed" type="Information" source="Player’s Handbook (2024)" id="ID_WOTC_PHB24_INFORMATION_OTHERWORLDLY_STEED_STATBLOCK">
 		<description>
+			<h4 style="margin-top:0px" />
 			<p style="margin-bottom:5px"><em>Large Celestial, Fey, or Fiend (Your Choice), Neutral</em></p>
 			<ul class="unstyled mb">
 				<li><strong>AC</strong> 10 + the spell's level</li>
@@ -2895,8 +2916,8 @@
 			</ul>
 			<table style="text-align:center;margin-top:2px;margin-bottom:10px">
 				<tr style="font-size:8px"><td colspan="2" /><td>MOD</td><td>SAVE</td><td colspan="2" /><td>MOD</td><td>SAVE</td><td colspan="2" /><td>MOD</td><td>SAVE</td></tr>
-				<tr><td>STR</td><td>18</td><td>+4</td><td>+4</td><td>DEX</td><td>12</td><td>+1</td><td>+1</td><td>CON</td><td>14</td><td>+2</td><td>+2</td></tr>
-				<tr><td>INT</td><td>6</td><td>-2</td><td>-2</td><td>WIS</td><td>12</td><td>+1</td><td>+1</td><td>CHA</td><td>8</td><td>-1</td><td>-1</td></tr>
+				<tr><td><b>STR</b></td><td>18</td><td>+4</td><td>+4</td><td><b>DEX</b></td><td>12</td><td>+1</td><td>+1</td><td><b>CON</b></td><td>14</td><td>+2</td><td>+2</td></tr>
+				<tr><td><b>INT</b></td><td>6</td><td>-2</td><td>-2</td><td><b>WIS</b></td><td>12</td><td>+1</td><td>+1</td><td><b>CHA</b></td><td>8</td><td>-1</td><td>-1</td></tr>
 			</table>
 			<ul class="unstyled mb">
 				<li><strong>Senses</strong> Passive Perception 11</li>
@@ -2904,19 +2925,13 @@
 				<li><strong>CR</strong> None (XP 0; PB equals your Proficiency Bonus)</li>
 			</ul>
 			<h4 style="margin-top:5px">Traits</h4>
-			<ul class="unstyled">
-				<li><strong><em>Life Bond.</em></strong> When you regain Hit Points from a level 1+ spell, the steed regains the same number of Hit Points if you're within 5 feet of it.</li>
-			</ul>
+				<p><strong><em>Life Bond.</em></strong> When you regain Hit Points from a level 1+ spell, the steed regains the same number of Hit Points if you're within 5 feet of it.</p>
 			<h4 style="margin-top:5px">Actions</h4>
-			<ul class="unstyled">
-				<li><em><strong>Otherworldly Slam.</strong> Melee Attack Roll:</em> Bonus equals your spell attack modifier, reach 5 ft. <em>Hit:</em> 1d8 plus the spell's level of Radiant (Celestial), Psychic (Fey), or Necrotic (Fiend) damage.</li>
-			</ul>
+				<p><em><strong>Otherworldly Slam.</strong> Melee Attack Roll:</em> Bonus equals your spell attack modifier, reach 5 ft. <em>Hit:</em> 1d8 plus the spell's level of Radiant (Celestial), Psychic (Fey), or Necrotic (Fiend) damage.</p>
 			<h4 style="margin-top:5px">Bonus Actions</h4>
-			<ul class="unstyled">
-				<li><em><strong>Fell Glare (Fiend Only; Recharges after a Long Rest).</strong> Wisdom Saving Throw:</em> DC equals your spell save DC, one creature within 60 feet the steed can see. <em>Failure:</em> The target has the Frightened condition until the end of your next turn.</li>
-				<li><em><strong>Fey Step (Fey Only; Recharges after a Long Rest).</strong></em> The steed teleports, along with its rider, to an unoccupied space of your choice up to 60 feet away from itself.</li>
-				<li><em><strong>Healing Touch (Celestial Only; Recharges after a Long Rest).</strong></em> One creature within 5 feet of the steed regains a number of Hit Points equal to 2d8 plus the spell's level.</li>
-			</ul>
+				<p><em><strong>Fell Glare (Fiend Only; Recharges after a Long Rest).</strong> Wisdom Saving Throw:</em> DC equals your spell save DC, one creature within 60 feet the steed can see. <em>Failure:</em> The target has the Frightened condition until the end of your next turn.</p>
+				<p><em><strong>Fey Step (Fey Only; Recharges after a Long Rest).</strong></em> The steed teleports, along with its rider, to an unoccupied space of your choice up to 60 feet away from itself.</p>
+				<p><em><strong>Healing Touch (Celestial Only; Recharges after a Long Rest).</strong></em> One creature within 5 feet of the steed regains a number of Hit Points equal to 2d8 plus the spell's level.</p>
 		</description>
 	</element>
 
@@ -2964,7 +2979,9 @@
 		<description>
 			<p>You unleash negative energy toward a creature you can see within range. The target makes a Constitution saving throw, taking 7d8 + 30 Necrotic damage on a failed save or half as much damage on a successful one.</p>
 			<p class="indent">A Humanoid killed by this spell rises at the start of your next turn as a <b>Zombie</b> that follows your verbal orders.</p>
-			<!-- to do: add a reference to Information type stat-blocks for Zombie here. -->
+			<div class="reference">
+				<div element="ID_WOTC_MM25_INFORMATION_ZOMBIE_STATBLOCK" />
+			</div>
 		</description>
 		<setters>
 			<set name="keywords">constitution, save, necrotic, damage, humanoid, zombie</set>
@@ -3083,7 +3100,7 @@
 		<supports>Cleric, Damaging Spell, Spell Saving Throw</supports>
 		<description>
 			<p>A vertical column of brilliant fire roars down from above. Each creature in a 10-foot-radius, 40-foot-high Cylinder centered on a point within range makes a Dexterity saving throw, taking 5d6 Fire damage and 5d6 Radiant damage on a failed save or half as much damage on a successful one.</p>
-			<p class="indent"><b><i>Using a Higher-Level Spell Slot.</i></b>  The Fire damage and the Radiant damage increase by 1d6 for each spell slot level above 5.</p>
+			<p class="indent"><b><i>Using a Higher-Level Spell Slot.</i></b> The Fire damage and the Radiant damage increase by 1d6 for each spell slot level above 5.</p>
 		</description>
 		<setters>
 			<set name="keywords">cylinder, dexterity, save, fire, radiant, upcasting, higher-level spell slot</set>
@@ -3421,7 +3438,9 @@
 		</setters>
 	</element>
 	<element name="Giant Insect" type="Information" source="Player’s Handbook (2024)" id="ID_WOTC_PHB24_INFORMATION_GIANT_INSECT_STATBLOCK">
+		<compendium display="false" />
 		<description>
+			<h4 style="margin-top:0px" />
 			<p style="margin-bottom:5px"><em>Large Beast, Unaligned</em></p>
 			<ul class="unstyled mb">
 				<li><strong>AC</strong> 11 + the spell's level</li>
@@ -3430,8 +3449,8 @@
 			</ul>
 			<table style="text-align:center;margin-top:2px;margin-bottom:10px">
 				<tr style="font-size:8px"><td colspan="2" /><td>MOD</td><td>SAVE</td><td colspan="2" /><td>MOD</td><td>SAVE</td><td colspan="2" /><td>MOD</td><td>SAVE</td></tr>
-				<tr><td>STR</td><td>17</td><td>+3</td><td>+3</td><td>DEX</td><td>12</td><td>+1</td><td>+1</td><td>CON</td><td>15</td><td>+2</td><td>+2</td></tr>
-				<tr><td>INT</td><td>4</td><td>-3</td><td>-3</td><td>WIS</td><td>14</td><td>+2</td><td>+2</td><td>CHA</td><td>3</td><td>-4</td><td>-4</td></tr>
+				<tr><td><b>STR</b></td><td>17</td><td>+3</td><td>+3</td><td><b>DEX</b></td><td>12</td><td>+1</td><td>+1</td><td><b>CON</b></td><td>15</td><td>+2</td><td>+2</td></tr>
+				<tr><td><b>INT</b></td><td>4</td><td>-3</td><td>-3</td><td><b>WIS</b></td><td>14</td><td>+2</td><td>+2</td><td><b>CHA</b></td><td>3</td><td>-4</td><td>-4</td></tr>
 			</table>
 			<ul class="unstyled mb">
 				<li><strong>Senses</strong> Darkvision 60 ft.; Passive Perception 12</li>
@@ -3439,19 +3458,13 @@
 				<li><strong>CR</strong> None (XP 0; PB equals your Proficiency Bonus)</li>
 			</ul>
 			<h4 style="margin-top:5px">Traits</h4>
-			<ul class="unstyled">
-				<li><strong><em>Spider Climb.</em></strong> The insect can climb difficult surfaces, including along ceilings, without needing to make an ability check.</li>
-			</ul>
+				<p><strong><em>Spider Climb.</em></strong> The insect can climb difficult surfaces, including along ceilings, without needing to make an ability check.</p>
 			<h4 style="margin-top:5px">Actions</h4>
-			<ul class="unstyled">
-				<li><em><strong>Multiattack.</strong></em> The insect makes a number of attacks equal to half this spell's level (round down).</li>
-				<li><em><strong>Poison Jab.</strong> Melee Attack Roll:</em> Bonus equals your spell attack modifier, reach 10 ft. <em>Hit:</em> 1d6 + 3 + the spell’s level Piercing damage plus 1d4 Poison damage.</li>
-				<li><em><strong>Web Bolt (Spider Only).</strong> Ranged Attack Roll:</em> Bonus equals your spell attack modifier, range 60 ft. <em>Hit:</em> 1d10 + 3 + the spell’s level Bludgeoning damage, and the target's Speed is reduced to 0 until the start of the insect's next turn.</li>
-			</ul>
+				<p><em><strong>Multiattack.</strong></em> The insect makes a number of attacks equal to half this spell's level (round down).</p>
+				<p><em><strong>Poison Jab.</strong> Melee Attack Roll:</em> Bonus equals your spell attack modifier, reach 10 ft. <em>Hit:</em> 1d6 + 3 + the spell’s level Piercing damage plus 1d4 Poison damage.</p>
+				<p><em><strong>Web Bolt (Spider Only).</strong> Ranged Attack Roll:</em> Bonus equals your spell attack modifier, range 60 ft. <em>Hit:</em> 1d10 + 3 + the spell’s level Bludgeoning damage, and the target's Speed is reduced to 0 until the start of the insect's next turn.</p>
 			<h4 style="margin-top:5px">Bonus Actions</h4>
-			<ul class="unstyled">
-				<li><em><strong>Venomous Spew (Centipede Only).</strong> Constitution Saving Throw:</em> DC equals your spell save DC, one creature the insect can see within 10 feet of itself. <i>Failure:</i> The target has the Poisoned condition until the start of the insect's next turn.</li>
-			</ul>
+				<p><em><strong>Venomous Spew (Centipede Only).</strong> Constitution Saving Throw:</em> DC equals your spell save DC, one creature the insect can see within 10 feet of itself. <i>Failure:</i> The target has the Poisoned condition until the start of the insect's next turn.</p>
 		</description>
 	</element>
 
@@ -4826,7 +4839,7 @@
 		<description>
 			<p>You suggest a course of activity—described in no more than 25 words—to twelve or fewer creatures you can see within range that can hear and understand you. The suggestion must sound achievable and not involve anything that would obviously deal damage to any of the targets or their allies. For example, you could say, "Walk to the village down that road, and help the villagers there harvest crops until sunset." Or you could say, "Now is not the time for violence. Drop your weapons, and dance! Stop in an hour."</p>
 			<p class="indent">Each target must succeed on a Wisdom saving throw or have the Charmed condition for the duration or until you or your allies deal damage to the target. Each Charmed target pursues the suggestion to the best of its ability. The suggested activity can continue for the entire duration, but if the suggested activity can be completed in a shorter time, the spell ends for a target upon completing it.</p>
-			<p class="indent"><b><i>Using a Higher-Level Spell Slot.</i></b>  The duration is longer with a spell slot of level 7 (10 days), 8 (30 days), or 9 (366 days).</p>
+			<p class="indent"><b><i>Using a Higher-Level Spell Slot.</i></b> The duration is longer with a spell slot of level 7 (10 days), 8 (30 days), or 9 (366 days).</p>
 		</description>
 		<setters>
 			<set name="keywords">wisdom, save, charmed, upcasting, higher-level spell slot</set>
@@ -5478,7 +5491,9 @@
 		</setters>
 	</element>
 	<element name="Phantom Steed" type="Information" source="Player’s Handbook (2024)" id="ID_WOTC_PHB24_INFORMATION_PHANTOM_STEED_STATBLOCK">
+		<compendium display="false" />
 		<description>
+			<h4 style="margin-top:0px" />
 			<p style="margin-bottom:5px"><em>Large Beast, Unaligned</em></p>
 			<ul class="unstyled mb">
 				<li style="margin-bottom:-1em"><strong>AC</strong> 11</li>
@@ -5488,8 +5503,8 @@
 			</ul>
 			<table style="text-align:center;margin-top:2px;margin-bottom:10px">
 				<tr style="font-size:8px"><td colspan="2" /><td>MOD</td><td>SAVE</td><td colspan="2" /><td>MOD</td><td>SAVE</td><td colspan="2" /><td>MOD</td><td>SAVE</td></tr>
-				<tr><td>STR</td><td>16</td><td>+3</td><td>+3</td><td>DEX</td><td>13</td><td>+1</td><td>+1</td><td>CON</td><td>12</td><td>+1</td><td>+1</td></tr>
-				<tr><td>INT</td><td>2</td><td>-4</td><td>-4</td><td>WIS</td><td>11</td><td>+0</td><td>+0</td><td>CHA</td><td>7</td><td>-2</td><td>-2</td></tr>
+				<tr><td><b>STR</b></td><td>16</td><td>+3</td><td>+3</td><td><b>DEX</b></td><td>13</td><td>+1</td><td>+1</td><td><b>CON</b></td><td>12</td><td>+1</td><td>+1</td></tr>
+				<tr><td><b>INT</b></td><td>2</td><td>-4</td><td>-4</td><td><b>WIS</b></td><td>11</td><td>+0</td><td>+0</td><td><b>CHA</b></td><td>7</td><td>-2</td><td>-2</td></tr>
 			</table>
 			<ul class="unstyled mb">
 				<li><strong>Senses</strong> Passive Perception 10</li>
@@ -5497,9 +5512,7 @@
 				<li><strong>CR</strong> 1/4 (XP 50; PB +2)</li>
 			</ul>
 			<h4 style="margin-top:5px">Actions</h4>
-			<ul class="unstyled">
-				<li><em><strong>Hooves.</strong> Melee Attack Roll:</em> +5, reach 5 ft. <em>Hit:</em> 7 (1d8 + 3) Bludgeoning damage.</li>
-			</ul>
+				<p><em><strong>Hooves.</strong> Melee Attack Roll:</em> +5, reach 5 ft. <em>Hit:</em> 7 (1d8 + 3) Bludgeoning damage.</p>
 		</description>
 	</element>
 
@@ -6754,7 +6767,7 @@
 		<supports>Artificer, Sorcerer, Warlock, Wizard</supports>
 		<description>
 			<p>Until the spell ends, one willing creature you touch gains the ability to move up, down, and across vertical surfaces and along ceilings, while leaving its hands free. The target also gains a Climb Speed equal to its Speed.</p>
-			<p class="indent"><b><i>Using a Higher-Level Spell Slot.</i></b> You can target one additional creature for each spell slot level about 2.</p>
+			<p class="indent"><b><i>Using a Higher-Level Spell Slot.</i></b> You can target one additional creature for each spell slot level above 2.</p>
 		</description>
 		<setters>
 			<set name="keywords">movement, climb, speed, upcasting, higher-level spell slot</set>
@@ -7017,6 +7030,7 @@
 	</element>
 	<element name="Aberrant Spirit" type="Information" source="Player’s Handbook (2024)" id="ID_WOTC_PHB24_INFORMATION_ABERRANT_SPIRIT_STATBLOCK">
 		<description>
+			<h4 style="margin-top:0px" />
 			<p style="margin-bottom:5px"><em>Medium Aberration, Neutral</em></p>
 			<ul class="unstyled mb">
 				<li><strong>AC</strong> 11 + the spell's level</li>
@@ -7025,8 +7039,8 @@
 			</ul>
 			<table style="text-align:center;margin-top:2px;margin-bottom:10px">
 				<tr style="font-size:8px"><td colspan="2" /><td>MOD</td><td>SAVE</td><td colspan="2" /><td>MOD</td><td>SAVE</td><td colspan="2" /><td>MOD</td><td>SAVE</td></tr>
-				<tr><td>STR</td><td>16</td><td>+3</td><td>+3</td><td>DEX</td><td>10</td><td>+0</td><td>+0</td><td>CON</td><td>15</td><td>+2</td><td>+2</td></tr>
-				<tr><td>INT</td><td>16</td><td>+3</td><td>+3</td><td>WIS</td><td>10</td><td>+0</td><td>+0</td><td>CHA</td><td>6</td><td>-2</td><td>-2</td></tr>
+				<tr><td><b>STR</b></td><td>16</td><td>+3</td><td>+3</td><td><b>DEX</b></td><td>10</td><td>+0</td><td>+0</td><td><b>CON</b></td><td>15</td><td>+2</td><td>+2</td></tr>
+				<tr><td><b>INT</b></td><td>16</td><td>+3</td><td>+3</td><td><b>WIS</b></td><td>10</td><td>+0</td><td>+0</td><td><b>CHA</b></td><td>6</td><td>-2</td><td>-2</td></tr>
 			</table>
 			<ul class="unstyled mb">
 				<li><strong>Immunities</strong> Psychic</li>
@@ -7035,17 +7049,13 @@
 				<li><strong>CR</strong> None (XP 0; PB equals your Proficiency Bonus)</li>
 			</ul>
 			<h4 style="margin-top:5px">Traits</h4>
-			<ul class="unstyled">
-				<li><strong><em>Regeneration (Slaad Only).</em></strong> The spirit regains 5 Hit Points at the start of its turn if it has at least 1 Hit Point.</li>
-				<li><strong><em>Whispering Aura (Mind Flayer Only).</em></strong> At the start of each of the spirit's turns, the spirit emits psionic energy if it doesn't have the Incapacitated condition. <em>Wisdom Saving Throw:</em> DC equals your spell save DC, each creature (other than you) within 5 feet of the spirit. <em>Failure:</em> 2d6 Psychic damage.</li>
-			</ul>
+				<p><strong><em>Regeneration (Slaad Only).</em></strong> The spirit regains 5 Hit Points at the start of its turn if it has at least 1 Hit Point.</p>
+				<p><strong><em>Whispering Aura (Mind Flayer Only).</em></strong> At the start of each of the spirit's turns, the spirit emits psionic energy if it doesn't have the Incapacitated condition. <em>Wisdom Saving Throw:</em> DC equals your spell save DC, each creature (other than you) within 5 feet of the spirit. <em>Failure:</em> 2d6 Psychic damage.</p>
 			<h4 style="margin-top:5px">Actions</h4>
-			<ul class="unstyled">
-				<li><em><strong>Multiattack.</strong></em> The spirit makes a number of attacks equal to half this spell's level (round down).</li>
-				<li><em><strong>Claw (Slaad Only).</strong> Melee Attack Roll:</em> Bonus equals your spell attack modifier, reach 5 ft. <em>Hit:</em> 1d10 + 3 + the spell’s level Slashing damage, and the target can't regain Hit Points until the start of the spirit's next turn.</li>
-				<li><em><strong>Eye Ray (Beholderkin Only).</strong> Ranged Attack Roll:</em> Bonus equals your spell attack modifier, range 150 ft. <em>Hit:</em> 1d8 + 3 + the spell’s level Psychic damage.</li>
-				<li><em><strong>Psychic Slam (Mind Flayer Only).</strong> Melee Attack Roll:</em> Bonus equals your spell attack modifier, reach 5 ft. <em>Hit:</em> 1d8 + 3 + the spell’s level Psychic damage.</li>
-			</ul>
+				<p><em><strong>Multiattack.</strong></em> The spirit makes a number of attacks equal to half this spell's level (round down).</p>
+				<p><em><strong>Claw (Slaad Only).</strong> Melee Attack Roll:</em> Bonus equals your spell attack modifier, reach 5 ft. <em>Hit:</em> 1d10 + 3 + the spell’s level Slashing damage, and the target can't regain Hit Points until the start of the spirit's next turn.</p>
+				<p><em><strong>Eye Ray (Beholderkin Only).</strong> Ranged Attack Roll:</em> Bonus equals your spell attack modifier, range 150 ft. <em>Hit:</em> 1d8 + 3 + the spell’s level Psychic damage.</p>
+				<p><em><strong>Psychic Slam (Mind Flayer Only).</strong> Melee Attack Roll:</em> Bonus equals your spell attack modifier, reach 5 ft. <em>Hit:</em> 1d8 + 3 + the spell’s level Psychic damage.</p>
 		</description>
 	</element>
 
@@ -7075,6 +7085,7 @@
 	</element>
 	<element name="Bestial Spirit" type="Information" source="Player’s Handbook (2024)" id="ID_WOTC_PHB24_INFORMATION_BEASTIAL_SPIRIT_STATBLOCK">
 		<description>
+			<h4 style="margin-top:0px" />
 			<p style="margin-bottom:5px"><em>Small Beast, Neutral</em></p>
 			<ul class="unstyled mb">
 				<li><strong>AC</strong> 11 + the spell's level</li>
@@ -7083,8 +7094,8 @@
 			</ul>
 			<table style="text-align:center;margin-top:2px;margin-bottom:10px">
 				<tr style="font-size:8px"><td colspan="2" /><td>MOD</td><td>SAVE</td><td colspan="2" /><td>MOD</td><td>SAVE</td><td colspan="2" /><td>MOD</td><td>SAVE</td></tr>
-				<tr><td>STR</td><td>18</td><td>+4</td><td>+4</td><td>DEX</td><td>11</td><td>+0</td><td>+0</td><td>CON</td><td>16</td><td>+3</td><td>+3</td></tr>
-				<tr><td>INT</td><td>4</td><td>-3</td><td>-3</td><td>WIS</td><td>14</td><td>+2</td><td>+2</td><td>CHA</td><td>5</td><td>-3</td><td>-3</td></tr>
+				<tr><td><b>STR</b></td><td>18</td><td>+4</td><td>+4</td><td><b>DEX</b></td><td>11</td><td>+0</td><td>+0</td><td><b>CON</b></td><td>16</td><td>+3</td><td>+3</td></tr>
+				<tr><td><b>INT</b></td><td>4</td><td>-3</td><td>-3</td><td><b>WIS</b></td><td>14</td><td>+2</td><td>+2</td><td><b>CHA</b></td><td>5</td><td>-3</td><td>-3</td></tr>
 			</table>
 			<ul class="unstyled mb">
 				<li><strong>Senses</strong> Darkvision 60 ft.; Passive Perception 12</li>
@@ -7092,16 +7103,12 @@
 				<li><strong>CR</strong> None (XP 0; PB equals your Proficiency Bonus)</li>
 			</ul>
 			<h4 style="margin-top:5px">Traits</h4>
-			<ul class="unstyled">
-				<li><strong><em>Flyby (Air Only).</em></strong> The spirit doesn't provoke Opportunity Attacks when it flies out of an enemy's reach.</li>
-				<li><strong><em>Pack Tactics (Land and Water Only).</em></strong> The spirit has Advantage on an attack roll against a creature if at least one of the spirit's allies is within 5 feet of the creature and the ally doesn't have the Incapacitated condition.</li>
-				<li><strong><em>Water Breathing (Water Only).</em></strong> The spirit can breathe only underwater.</li>
-			</ul>
+				<p><strong><em>Flyby (Air Only).</em></strong> The spirit doesn't provoke Opportunity Attacks when it flies out of an enemy's reach.</p>
+				<p><strong><em>Pack Tactics (Land and Water Only).</em></strong> The spirit has Advantage on an attack roll against a creature if at least one of the spirit's allies is within 5 feet of the creature and the ally doesn't have the Incapacitated condition.</p>
+				<p><strong><em>Water Breathing (Water Only).</em></strong> The spirit can breathe only underwater.</p>
 			<h4 style="margin-top:5px">Actions</h4>
-			<ul class="unstyled">
-				<li><em><strong>Multiattack.</strong></em> The spirit makes a number of Rend attacks equal to half this spell's level (round down).</li>
-				<li><em><strong>Rend.</strong> Melee Attack Roll:</em> Bonus equals your spell attack modifier, reach 5 ft. <em>Hit:</em> 1d8 + 4 + the spell’s level Piercing damage.</li>
-			</ul>
+				<p><em><strong>Multiattack.</strong></em> The spirit makes a number of Rend attacks equal to half this spell's level (round down).</p>
+				<p><em><strong>Rend.</strong> Melee Attack Roll:</em> Bonus equals your spell attack modifier, reach 5 ft. <em>Hit:</em> 1d8 + 4 + the spell’s level Piercing damage.</p>
 		</description>
 	</element>
 
@@ -7131,6 +7138,7 @@
 	</element>
 	<element name="Celestial Spirit" type="Information" source="Player’s Handbook (2024)" id="ID_WOTC_PHB24_INFORMATION_CELESTIAL_SPIRIT_STATBLOCK">
 		<description>
+			<h4 style="margin-top:0px" />
 			<p style="margin-bottom:5px"><em>Large Celestial, Neutral</em></p>
 			<ul class="unstyled mb">
 				<li><strong>AC</strong> 11 + the spell's level + 2 (Defender only)</li>
@@ -7139,8 +7147,8 @@
 			</ul>
 			<table style="text-align:center;margin-top:2px;margin-bottom:10px">
 				<tr style="font-size:8px"><td colspan="2" /><td>MOD</td><td>SAVE</td><td colspan="2" /><td>MOD</td><td>SAVE</td><td colspan="2" /><td>MOD</td><td>SAVE</td></tr>
-				<tr><td>STR</td><td>16</td><td>+3</td><td>+3</td><td>DEX</td><td>14</td><td>+2</td><td>+2</td><td>CON</td><td>16</td><td>+3</td><td>+3</td></tr>
-				<tr><td>INT</td><td>10</td><td>+0</td><td>+0</td><td>WIS</td><td>14</td><td>+2</td><td>+2</td><td>CHA</td><td>16</td><td>+3</td><td>+3</td></tr>
+				<tr><td><b>STR</b></td><td>16</td><td>+3</td><td>+3</td><td><b>DEX</b></td><td>14</td><td>+2</td><td>+2</td><td><b>CON</b></td><td>16</td><td>+3</td><td>+3</td></tr>
+				<tr><td><b>INT</b></td><td>10</td><td>+0</td><td>+0</td><td><b>WIS</b></td><td>14</td><td>+2</td><td>+2</td><td><b>CHA</b></td><td>16</td><td>+3</td><td>+3</td></tr>
 			</table>
 			<ul class="unstyled mb">
 				<li><strong>Resistances</strong> Radiant</li>
@@ -7150,12 +7158,10 @@
 				<li><strong>CR</strong> None (XP 0; PB equals your Proficiency Bonus)</li>
 			</ul>
 			<h4 style="margin-top:5px">Actions</h4>
-			<ul class="unstyled">
-				<li><em><strong>Multiattack.</strong></em> The spirit makes a number of attacks equal to half this spell's level (round down).</li>
-				<li><em><strong>Radiant Bow (Avenger Only).</strong> Ranged Attack Roll:</em> Bonus equals your spell attack modifier, range 600 ft.  <em>Hit:</em> 2d6 + 2 + the spell’s level Radiant damage.</li>
-				<li><em><strong>Radiant Mace (Defender Only).</strong> Melee Attack Roll:</em> Bonus equals your spell attack modifier, reach 5 ft.  <em>Hit:</em> 1d10 + 3 + the spell’s level Radiant damage, and the spirit can choose itself or another creature it can see within 10 feet of the target. The chosen creature gains 1d10 Temporary Hit Points.</li>
-				<li><em><strong>Healing Touch (1/Day).</strong></em> The spirit touches another creature. The target regains Hit Points equal to 2d8 + the spell's level.</li>
-			</ul>
+				<p><em><strong>Multiattack.</strong></em> The spirit makes a number of attacks equal to half this spell's level (round down).</p>
+				<p><em><strong>Radiant Bow (Avenger Only).</strong> Ranged Attack Roll:</em> Bonus equals your spell attack modifier, range 600 ft. <em>Hit:</em> 2d6 + 2 + the spell’s level Radiant damage.</p>
+				<p><em><strong>Radiant Mace (Defender Only).</strong> Melee Attack Roll:</em> Bonus equals your spell attack modifier, reach 5 ft. <em>Hit:</em> 1d10 + 3 + the spell’s level Radiant damage, and the spirit can choose itself or another creature it can see within 10 feet of the target. The chosen creature gains 1d10 Temporary Hit Points.</p>
+				<p><em><strong>Healing Touch (1/Day).</strong></em> The spirit touches another creature. The target regains Hit Points equal to 2d8 + the spell's level.</p>
 		</description>
 	</element>
 
@@ -7185,6 +7191,7 @@
 	</element>
 	<element name="Construct Spirit" type="Information" source="Player’s Handbook (2024)" id="ID_WOTC_PHB24_INFORMATION_CONSTRUCT_SPIRIT_STATBLOCK">
 		<description>
+			<h4 style="margin-top:0px" />
 			<p style="margin-bottom:5px"><em>Medium Construct, Neutral</em></p>
 			<ul class="unstyled mb">
 				<li><strong>AC</strong> 13 + the spell's level</li>
@@ -7193,8 +7200,8 @@
 			</ul>
 			<table style="text-align:center;margin-top:2px;margin-bottom:10px">
 				<tr style="font-size:8px"><td colspan="2" /><td>MOD</td><td>SAVE</td><td colspan="2" /><td>MOD</td><td>SAVE</td><td colspan="2" /><td>MOD</td><td>SAVE</td></tr>
-				<tr><td>STR</td><td>18</td><td>+4</td><td>+4</td><td>DEX</td><td>10</td><td>+0</td><td>+0</td><td>CON</td><td>18</td><td>+4</td><td>+4</td></tr>
-				<tr><td>INT</td><td>14</td><td>+2</td><td>+2</td><td>WIS</td><td>11</td><td>+0</td><td>+0</td><td>CHA</td><td>5</td><td>-3</td><td>-3</td></tr>
+				<tr><td><b>STR</b></td><td>18</td><td>+4</td><td>+4</td><td><b>DEX</b></td><td>10</td><td>+0</td><td>+0</td><td><b>CON</b></td><td>18</td><td>+4</td><td>+4</td></tr>
+				<tr><td><b>INT</b></td><td>14</td><td>+2</td><td>+2</td><td><b>WIS</b></td><td>11</td><td>+0</td><td>+0</td><td><b>CHA</b></td><td>5</td><td>-3</td><td>-3</td></tr>
 			</table>
 			<ul class="unstyled mb">
 				<li><strong>Resistances</strong> Poison</li>
@@ -7204,19 +7211,13 @@
 				<li><strong>CR</strong> None (XP 0; PB equals your Proficiency Bonus)</li>
 			</ul>
 			<h4 style="margin-top:5px">Traits</h4>
-			<ul class="unstyled">
-				<li><strong><em>Heated Body (Metal Only).</em></strong> A creature that hits the spirit with a melee attack or that starts its turn in a grapple with the spirit takes 1d10 Fire damage.</li>
-				<li><strong><em>Stone Lethargy (Stone Only).</em></strong> When a creature starts its turn within 10 feet of the spirit, the spirit can target it with magical energy if the spirit can see it. <em>Wisdom Saving Throw:</em> DC equals your spell save DC, the target. <em>Failure:</em> Until the start of its next turn, the target can't make Opportunity Attacks, and its Speed is halved.</li>
-			</ul>
+				<p><strong><em>Heated Body (Metal Only).</em></strong> A creature that hits the spirit with a melee attack or that starts its turn in a grapple with the spirit takes 1d10 Fire damage.</p>
+				<p><strong><em>Stone Lethargy (Stone Only).</em></strong> When a creature starts its turn within 10 feet of the spirit, the spirit can target it with magical energy if the spirit can see it. <em>Wisdom Saving Throw:</em> DC equals your spell save DC, the target. <em>Failure:</em> Until the start of its next turn, the target can't make Opportunity Attacks, and its Speed is halved.</p>
 			<h4 style="margin-top:5px">Actions</h4>
-			<ul class="unstyled">
-				<li><em><strong>Multiattack.</strong></em> The spirit makes a number of Slam attacks equal to half this spell's level (round down).</li>
-				<li><em><strong>Slam.</strong> Melee Attack Roll:</em> Bonus equals your spell attack modifier, reach 5 ft. <em>Hit:</em> 1d8 + 4 + the spell’s level Bludgeoning damage.</li>
-			</ul>
+				<p><em><strong>Multiattack.</strong></em> The spirit makes a number of Slam attacks equal to half this spell's level (round down).</p>
+				<p><em><strong>Slam.</strong> Melee Attack Roll:</em> Bonus equals your spell attack modifier, reach 5 ft. <em>Hit:</em> 1d8 + 4 + the spell’s level Bludgeoning damage.</p>
 			<h4 style="margin-top:5px">Reactions</h4>
-			<ul class="unstyled">
-				<li><em><strong>Berserk Lashing (Clay Only).</strong> Trigger:</em> The spirit takes damage from a creature. <em>Response:</em> The spirit makes a Slam attack against that creature if possible, or the spirit moves up to half its Speed toward that creature without provoking Opportunity Attacks.</li>
-			</ul>
+				<p><em><strong>Berserk Lashing (Clay Only).</strong> Trigger:</em> The spirit takes damage from a creature. <em>Response:</em> The spirit makes a Slam attack against that creature if possible, or the spirit moves up to half its Speed toward that creature without provoking Opportunity Attacks.</p>
 		</description>
 	</element>
 
@@ -7246,6 +7247,7 @@
 	</element>
 	<element name="Draconic Spirit" type="Information" source="Player’s Handbook (2024)" id="ID_WOTC_PHB24_INFORMATION_DRACONIC_SPIRIT_STATBLOCK">
 		<description>
+			<h4 style="margin-top:0px" />
 			<p style="margin-bottom:5px"><em>Large Dragon, Neutral</em></p>
 			<ul class="unstyled mb">
 				<li><strong>AC</strong> 14 + the spell's level</li>
@@ -7254,8 +7256,8 @@
 			</ul>
 			<table style="text-align:center;margin-top:2px;margin-bottom:10px">
 				<tr style="font-size:8px"><td colspan="2" /><td>MOD</td><td>SAVE</td><td colspan="2" /><td>MOD</td><td>SAVE</td><td colspan="2" /><td>MOD</td><td>SAVE</td></tr>
-				<tr><td>STR</td><td>19</td><td>+4</td><td>+4</td><td>DEX</td><td>14</td><td>+2</td><td>+2</td><td>CON</td><td>17</td><td>+3</td><td>+3</td></tr>
-				<tr><td>INT</td><td>10</td><td>+0</td><td>+0</td><td>WIS</td><td>14</td><td>+2</td><td>+2</td><td>CHA</td><td>14</td><td>+2</td><td>+2</td></tr>
+				<tr><td><b>STR</b></td><td>19</td><td>+4</td><td>+4</td><td><b>DEX</b></td><td>14</td><td>+2</td><td>+2</td><td><b>CON</b></td><td>17</td><td>+3</td><td>+3</td></tr>
+				<tr><td><b>INT</b></td><td>10</td><td>+0</td><td>+0</td><td><b>WIS</b></td><td>14</td><td>+2</td><td>+2</td><td><b>CHA</b></td><td>14</td><td>+2</td><td>+2</td></tr>
 			</table>
 			<ul class="unstyled mb">
 				<li><strong>Resistances</strong> Acid, Cold, Fire, Lightning, Poison</li>
@@ -7265,15 +7267,11 @@
 				<li><strong>CR</strong> None (XP 0; PB equals your Proficiency Bonus)</li>
 			</ul>
 			<h4 style="margin-top:5px">Traits</h4>
-			<ul class="unstyled">
-				<li><strong><em>Shared Resistances.</em></strong> When you summon the spirit, choose one of its Resistances. You have Resistance to the chosen damage type until the spell ends.</li>
-			</ul>
+				<p><strong><em>Shared Resistances.</em></strong> When you summon the spirit, choose one of its Resistances. You have Resistance to the chosen damage type until the spell ends.</p>
 			<h4 style="margin-top:5px">Actions</h4>
-			<ul class="unstyled">
-				<li><em><strong>Multiattack.</strong></em> The spirit makes a number of Rend attacks equal to half this spell's level (round down), and it uses its Breath Weapon.</li>
-				<li><em><strong>Rend.</strong> Melee Attack Roll:</em> Bonus equals your spell attack modifier, reach 10 ft.  <em>Hit:</em> 1d6 + 4 + the spell’s level Piercing damage.</li>
-				<li><em><strong>Breath Weapon.</strong> Dexterity Saving Throw:</em> DC equals your spell save DC, each creature in a 30-foot Cone. <em>Failure:</em> 2d6 damage of a type this spirit has Resistance to (your choice when you cast the spell). <em>Success:</em> Half damage.</li>
-			</ul>
+				<p><em><strong>Multiattack.</strong></em> The spirit makes a number of Rend attacks equal to half this spell's level (round down), and it uses its Breath Weapon.</p>
+				<p><em><strong>Rend.</strong> Melee Attack Roll:</em> Bonus equals your spell attack modifier, reach 10 ft. <em>Hit:</em> 1d6 + 4 + the spell’s level Piercing damage.</p>
+				<p><em><strong>Breath Weapon.</strong> Dexterity Saving Throw:</em> DC equals your spell save DC, each creature in a 30-foot Cone. <em>Failure:</em> 2d6 damage of a type this spirit has Resistance to (your choice when you cast the spell). <em>Success:</em> Half damage.</p>
 		</description>
 	</element>
 
@@ -7303,6 +7301,7 @@
 	</element>
 	<element name="Elemental Spirit" type="Information" source="Player’s Handbook (2024)" id="ID_WOTC_PHB24_INFORMATION_ELEMENTAL_SPIRIT_STATBLOCK">
 		<description>
+			<h4 style="margin-top:0px" />
 			<p style="margin-bottom:5px"><em>Medium Elemental, Neutral</em></p>
 			<ul class="unstyled mb">
 				<li><strong>AC</strong> 11 + the spell's level</li>
@@ -7311,8 +7310,8 @@
 			</ul>
 			<table style="text-align:center;margin-top:2px;margin-bottom:10px">
 				<tr style="font-size:8px"><td colspan="2" /><td>MOD</td><td>SAVE</td><td colspan="2" /><td>MOD</td><td>SAVE</td><td colspan="2" /><td>MOD</td><td>SAVE</td></tr>
-				<tr><td>STR</td><td>18</td><td>+4</td><td>+4</td><td>DEX</td><td>15</td><td>+2</td><td>+2</td><td>CON</td><td>17</td><td>+3</td><td>+3</td></tr>
-				<tr><td>INT</td><td>4</td><td>-3</td><td>-3</td><td>WIS</td><td>10</td><td>+0</td><td>+0</td><td>CHA</td><td>16</td><td>+3</td><td>+3</td></tr>
+				<tr><td><b>STR</b></td><td>18</td><td>+4</td><td>+4</td><td><b>DEX</b></td><td>15</td><td>+2</td><td>+2</td><td><b>CON</b></td><td>17</td><td>+3</td><td>+3</td></tr>
+				<tr><td><b>INT</b></td><td>4</td><td>-3</td><td>-3</td><td><b>WIS</b></td><td>10</td><td>+0</td><td>+0</td><td><b>CHA</b></td><td>16</td><td>+3</td><td>+3</td></tr>
 			</table>
 			<ul class="unstyled mb">
 				<li><strong>Resistances</strong> Acid (Water only), Lightning and Thunder (Air only), Piercing and Slashing (Earth only)</li>
@@ -7322,14 +7321,10 @@
 				<li><strong>CR</strong> None (XP 0; PB equals your Proficiency Bonus)</li>
 			</ul>
 			<h4 style="margin-top:5px">Traits</h4>
-			<ul class="unstyled">
-				<li><strong><em>Amorphous Form (Air, Fire, and Water Only).</em></strong> The spirit can move through a space as narrow as 1 inch wide without it counting as Difficult Terrain.</li>
-			</ul>
+				<p><strong><em>Amorphous Form (Air, Fire, and Water Only).</em></strong> The spirit can move through a space as narrow as 1 inch wide without it counting as Difficult Terrain.</p>
 			<h4 style="margin-top:5px">Actions</h4>
-			<ul class="unstyled">
-				<li><em><strong>Multiattack.</strong></em> The spirit makes a number of Slam attacks equal to half this spell's level (round down).</li>
-				<li><em><strong>Slam.</strong> Melee Attack Roll:</em> Bonus equals your spell attack modifier, reach 5 ft. <em>Hit:</em> 1d10 + 4 + the spell’s level Bludgeoning (Earth only), Cold (Water only), Lightning (Air only), or Fire (Fire only) damage.</li>
-			</ul>
+				<p><em><strong>Multiattack.</strong></em> The spirit makes a number of Slam attacks equal to half this spell's level (round down).</p>
+				<p><em><strong>Slam.</strong> Melee Attack Roll:</em> Bonus equals your spell attack modifier, reach 5 ft. <em>Hit:</em> 1d10 + 4 + the spell’s level Bludgeoning (Earth only), Cold (Water only), Lightning (Air only), or Fire (Fire only) damage.</p>
 		</description>
 	</element>
 
@@ -7359,6 +7354,7 @@
 	</element>
 	<element name="Fey Spirit" type="Information" source="Player’s Handbook (2024)" id="ID_WOTC_PHB24_INFORMATION_FEY_SPIRIT_STATBLOCK">
 		<description>
+			<h4 style="margin-top:0px" />
 			<p style="margin-bottom:5px"><em>Small Fey, Neutral</em></p>
 			<ul class="unstyled mb">
 				<li><strong>AC</strong> 12 + the spell's level</li>
@@ -7367,8 +7363,8 @@
 			</ul>
 			<table style="text-align:center;margin-top:2px;margin-bottom:10px">
 				<tr style="font-size:8px"><td colspan="2" /><td>MOD</td><td>SAVE</td><td colspan="2" /><td>MOD</td><td>SAVE</td><td colspan="2" /><td>MOD</td><td>SAVE</td></tr>
-				<tr><td>STR</td><td>13</td><td>+1</td><td>+1</td><td>DEX</td><td>16</td><td>+3</td><td>+3</td><td>CON</td><td>14</td><td>+2</td><td>+2</td></tr>
-				<tr><td>INT</td><td>14</td><td>+2</td><td>+2</td><td>WIS</td><td>11</td><td>+0</td><td>+0</td><td>CHA</td><td>16</td><td>+3</td><td>+3</td></tr>
+				<tr><td><b>STR</b></td><td>13</td><td>+1</td><td>+1</td><td><b>DEX</b></td><td>16</td><td>+3</td><td>+3</td><td><b>CON</b></td><td>14</td><td>+2</td><td>+2</td></tr>
+				<tr><td><b>INT</b></td><td>14</td><td>+2</td><td>+2</td><td><b>WIS</b></td><td>11</td><td>+0</td><td>+0</td><td><b>CHA</b></td><td>16</td><td>+3</td><td>+3</td></tr>
 			</table>
 			<ul class="unstyled mb">
 				<li><strong>Immunities</strong> Charmed</li>
@@ -7377,17 +7373,13 @@
 				<li><strong>CR</strong> None (XP 0; PB equals your Proficiency Bonus)</li>
 			</ul>
 			<h4 style="margin-top:5px">Actions</h4>
-			<ul class="unstyled">
-				<li><em><strong>Multiattack.</strong></em> The spirit makes a number of Fey Blade attacks equal to half this spell's level (round down).</li>
-				<li><em><strong>Fey Blade.</strong> Melee Attack Roll:</em> Bonus equals your spell attack modifier, reach 5 ft.  <em>Hit:</em> 2d6 + 3 + the spell’s level Force damage.</li>
-			</ul>
+				<p><em><strong>Multiattack.</strong></em> The spirit makes a number of Fey Blade attacks equal to half this spell's level (round down).</p>
+				<p><em><strong>Fey Blade.</strong> Melee Attack Roll:</em> Bonus equals your spell attack modifier, reach 5 ft. <em>Hit:</em> 2d6 + 3 + the spell’s level Force damage.</p>
 			<h4 style="margin-top:5px">Bonus Actions</h4>
-			<ul class="unstyled">
-				<li><em><strong>Fey Step.</strong></em> The spirit magically teleports up to 30 feet to an unoccupied space it can see. Then one of the following effects occurs, based on a spirit's chosen mood:</li>
-				<li style="text-indent: -1em; margin-left: 1em"><em><strong>Fuming.</strong></em> The spirit has Advantage on the next attack roll it makes before the end of this turn.</li>
-				<li style="text-indent: -1em; margin-left: 1em"><em><strong>Mirthful.</strong> Wisdom Saving Throw:</em> DC equals your spell save DC, one creature the spirit can see within 10 feet of itself. <em>Failure:</em> The target is Charmed by you and the spirit for 1 minute or until the target takes any damage.</li>
-				<li style="text-indent: -1em; margin-left: 1em"><em><strong>Tricksy.</strong></em> The spirit fills a 10-foot Cube within 5 feet of it with magical Darkness, which lasts until the end of its next turn.</li>
-			</ul>
+				<p style="margin-bottom: 0.3em"><em><strong>Fey Step.</strong></em> The spirit magically teleports up to 30 feet to an unoccupied space it can see. Then one of the following effects occurs, based on a spirit's chosen mood:</p>
+				<p style="text-indent: -1em; margin-left: 1em; margin-bottom:-15px"><strong>Fuming.</strong> The spirit has Advantage on the next attack roll it makes before the end of this turn.</p>
+				<p style="text-indent: -1em; margin-left: 1em; margin-bottom:-15px"><strong>Mirthful.</strong> <em>Wisdom Saving Throw:</em> DC equals your spell save DC, one creature the spirit can see within 10 feet of itself. <em>Failure:</em> The target is Charmed by you and the spirit for 1 minute or until the target takes any damage.</p>
+				<p style="text-indent: -1em; margin-left: 1em; margin-bottom:-15px"><strong>Tricksy.</strong> The spirit fills a 10-foot Cube within 5 feet of it with magical Darkness, which lasts until the end of its next turn.</p>
 		</description>
 	</element>
 
@@ -7417,6 +7409,7 @@
 	</element>
 	<element name="Fiendish Spirit" type="Information" source="Player’s Handbook (2024)" id="ID_WOTC_PHB24_INFORMATION_FIENDISH_SPIRIT_STATBLOCK">
 		<description>
+			<h4 style="margin-top:0px" />
 			<p style="margin-bottom:5px"><em>Large Fiend, Neutral</em></p>
 			<ul class="unstyled mb">
 				<li><strong>AC</strong> 12 + the spell's level</li>
@@ -7425,8 +7418,8 @@
 			</ul>
 			<table style="text-align:center;margin-top:2px;margin-bottom:10px">
 				<tr style="font-size:8px"><td colspan="2" /><td>MOD</td><td>SAVE</td><td colspan="2" /><td>MOD</td><td>SAVE</td><td colspan="2" /><td>MOD</td><td>SAVE</td></tr>
-				<tr><td>STR</td><td>13</td><td>+1</td><td>+1</td><td>DEX</td><td>16</td><td>+3</td><td>+3</td><td>CON</td><td>15</td><td>+2</td><td>+2</td></tr>
-				<tr><td>INT</td><td>10</td><td>+0</td><td>+0</td><td>WIS</td><td>10</td><td>+0</td><td>+0</td><td>CHA</td><td>16</td><td>+3</td><td>+3</td></tr>
+				<tr><td><b>STR</b></td><td>13</td><td>+1</td><td>+1</td><td><b>DEX</b></td><td>16</td><td>+3</td><td>+3</td><td><b>CON</b></td><td>15</td><td>+2</td><td>+2</td></tr>
+				<tr><td><b>INT</b></td><td>10</td><td>+0</td><td>+0</td><td><b>WIS</b></td><td>10</td><td>+0</td><td>+0</td><td><b>CHA</b></td><td>16</td><td>+3</td><td>+3</td></tr>
 			</table>
 			<ul class="unstyled mb">
 				<li><strong>Resistances</strong> Fire</li>
@@ -7436,18 +7429,14 @@
 				<li><strong>CR</strong> None (XP 0; PB equals your Proficiency Bonus)</li>
 			</ul>
 			<h4 style="margin-top:5px">Traits</h4>
-			<ul class="unstyled">
-				<li><strong><em>Death Throes (Demon Only).</em></strong> When the spirit drops to 0 Hit Points or the spell ends, the spirit explodes. <em>Dexterity Saving Throw:</em> DC equals your spell save DC, each creature in a 10-foot Emanation originating from the spirit. <em>Failure:</em> 2d10 plus this spell's level Fire damage. <em>Success:</em> Half damage.</li>
-				<li><strong><em>Devil's Sight (Devil Only).</em></strong> Magical Darkness doesn't impede the spirit's Darkvision.</li>
-				<li><strong><em>Magical Resistance.</em></strong> The spirit has Advantage on saving throws against spells and other magical effects.</li>
-			</ul>
+				<p><strong><em>Death Throes (Demon Only).</em></strong> When the spirit drops to 0 Hit Points or the spell ends, the spirit explodes. <em>Dexterity Saving Throw:</em> DC equals your spell save DC, each creature in a 10-foot Emanation originating from the spirit. <em>Failure:</em> 2d10 plus this spell's level Fire damage. <em>Success:</em> Half damage.</p>
+				<p><strong><em>Devil's Sight (Devil Only).</em></strong> Magical Darkness doesn't impede the spirit's Darkvision.</p>
+				<p><strong><em>Magical Resistance.</em></strong> The spirit has Advantage on saving throws against spells and other magical effects.</p>
 			<h4 style="margin-top:5px">Actions</h4>
-			<ul class="unstyled">
-				<li><em><strong>Multiattack.</strong></em> The spirit makes a number of attacks equal to half this spell's level (round down).</li>
-				<li><em><strong>Bite (Demon Only).</strong> Melee Attack Roll:</em> Bonus equals your spell attack modifier, reach 5 ft. <em>Hit:</em> 1d12 + 3 + the spell’s level Necrotic damage.</li>
-				<li><em><strong>Claws (Yugoloth Only).</strong> Melee Attack Roll:</em> Bonus equals your spell attack modifier, reach 5 ft. <em>Hit:</em> 1d8 + 3 + the spell’s level Slashing damage. Immediately after the attack hits or misses, the spirit can teleport up to 30 feet to an unoccupied space it can see.</li>
-				<li><em><strong>Fiery Strike (Devil Only).</strong> Melee or Ranged Attack Roll:</em> Bonus equals your spell attack modifier, reach 5 ft. or range 150 ft. <em>Hit:</em> 2d6 + 3 + the spell’s level Fire damage.</li>
-			</ul>
+				<p><em><strong>Multiattack.</strong></em> The spirit makes a number of attacks equal to half this spell's level (round down).</p>
+				<p><em><strong>Bite (Demon Only).</strong> Melee Attack Roll:</em> Bonus equals your spell attack modifier, reach 5 ft. <em>Hit:</em> 1d12 + 3 + the spell’s level Necrotic damage.</p>
+				<p><em><strong>Claws (Yugoloth Only).</strong> Melee Attack Roll:</em> Bonus equals your spell attack modifier, reach 5 ft. <em>Hit:</em> 1d8 + 3 + the spell’s level Slashing damage. Immediately after the attack hits or misses, the spirit can teleport up to 30 feet to an unoccupied space it can see.</p>
+				<p><em><strong>Fiery Strike (Devil Only).</strong> Melee or Ranged Attack Roll:</em> Bonus equals your spell attack modifier, reach 5 ft. or range 150 ft. <em>Hit:</em> 2d6 + 3 + the spell’s level Fire damage.</p>
 		</description>
 	</element>
 
@@ -7477,6 +7466,7 @@
 	</element>
 	<element name="Undead Spirit" type="Information" source="Player’s Handbook (2024)" id="ID_WOTC_PHB24_INFORMATION_UNDEAD_SPIRIT_STATBLOCK">
 		<description>
+			<h4 style="margin-top:0px" />
 			<p style="margin-bottom:5px"><em>Medium Undead, Neutral</em></p>
 			<ul class="unstyled mb">
 				<li><strong>AC</strong> 11 + the spell's level</li>
@@ -7485,8 +7475,8 @@
 			</ul>
 			<table style="text-align:center;margin-top:2px;margin-bottom:10px">
 				<tr style="font-size:8px"><td colspan="2" /><td>MOD</td><td>SAVE</td><td colspan="2" /><td>MOD</td><td>SAVE</td><td colspan="2" /><td>MOD</td><td>SAVE</td></tr>
-				<tr><td>STR</td><td>12</td><td>+1</td><td>+1</td><td>DEX</td><td>16</td><td>+3</td><td>+3</td><td>CON</td><td>15</td><td>+2</td><td>+2</td></tr>
-				<tr><td>INT</td><td>4</td><td>-3</td><td>-3</td><td>WIS</td><td>10</td><td>+0</td><td>+0</td><td>CHA</td><td>9</td><td>-1</td><td>-1</td></tr>
+				<tr><td><b>STR</b></td><td>12</td><td>+1</td><td>+1</td><td><b>DEX</b></td><td>16</td><td>+3</td><td>+3</td><td><b>CON</b></td><td>15</td><td>+2</td><td>+2</td></tr>
+				<tr><td><b>INT</b></td><td>4</td><td>-3</td><td>-3</td><td><b>WIS</b></td><td>10</td><td>+0</td><td>+0</td><td><b>CHA</b></td><td>9</td><td>-1</td><td>-1</td></tr>
 			</table>
 			<ul class="unstyled mb">
 				<li><strong>Immunities</strong> Necrotic, Poison; Exhaustion, Frightened, Paralyzed, Poisoned</li>
@@ -7495,17 +7485,13 @@
 				<li><strong>CR</strong> None (XP 0; PB equals your Proficiency Bonus)</li>
 			</ul>
 			<h4 style="margin-top:5px">Traits</h4>
-			<ul class="unstyled">
-				<li><em><strong>Festering Aura (Putrid Only).</strong> Constitution Saving Throw:</em> DC equals your spell save DC, any creature (other than you) that starts its turn within a 5-foot Emanation originating from the spirit. <em>Failure:</em> The creature has the Poisoned condition until the start of its turn.</li>
-				<li><strong><em>Incorporeal Passage (Ghostly Only).</em></strong> The spirit can move through other creatures and objects as if they were Difficult Terrain. If it ends its turn inside an object, it is shunted to the nearest unoccupied space and takes 1d10 Force damage for every 5 feet traveled.</li>
-			</ul>
+				<p><em><strong>Festering Aura (Putrid Only).</strong> Constitution Saving Throw:</em> DC equals your spell save DC, any creature (other than you) that starts its turn within a 5-foot Emanation originating from the spirit. <em>Failure:</em> The creature has the Poisoned condition until the start of its turn.</p>
+				<p><strong><em>Incorporeal Passage (Ghostly Only).</em></strong> The spirit can move through other creatures and objects as if they were Difficult Terrain. If it ends its turn inside an object, it is shunted to the nearest unoccupied space and takes 1d10 Force damage for every 5 feet traveled.</p>
 			<h4 style="margin-top:5px">Actions</h4>
-			<ul class="unstyled">
-				<li><em><strong>Multiattack.</strong></em> The spirit makes a number of attacks equal to half this spell's level (round down).</li>
-				<li><em><strong>Deathly Touch (Ghostly Only).</strong> Melee Attack Roll:</em> Bonus equals your spell attack modifier, reach 5 ft. <em>Hit:</em> 1d8 + 3 + the spell’s level Necrotic damage, and the target has the Frightened condition until the end of its next turn.</li>
-				<li><em><strong>Grave Bolt (Skeletal Only).</strong> Ranged Attack Roll:</em> Bonus equals your spell attack modifier, range 150 ft. <em>Hit:</em> 2d4 + 3 + the spell’s level Necrotic damage.</li>
-				<li><em><strong>Rotting Claw (Putrid Only).</strong> Melee Attack Roll:</em> Bonus equals your spell attack modifier, reach 5 ft. <em>Hit:</em> 1d6 + 3 + the spell’s level Slashing damage. If the target has the Poisoned condition, it has the Paralyzed condition until the end of its next turn.</li>
-			</ul>
+				<p><em><strong>Multiattack.</strong></em> The spirit makes a number of attacks equal to half this spell's level (round down).</p>
+				<p><em><strong>Deathly Touch (Ghostly Only).</strong> Melee Attack Roll:</em> Bonus equals your spell attack modifier, reach 5 ft. <em>Hit:</em> 1d8 + 3 + the spell’s level Necrotic damage, and the target has the Frightened condition until the end of its next turn.</p>
+				<p><em><strong>Grave Bolt (Skeletal Only).</strong> Ranged Attack Roll:</em> Bonus equals your spell attack modifier, range 150 ft. <em>Hit:</em> 2d4 + 3 + the spell’s level Necrotic damage.</p>
+				<p><em><strong>Rotting Claw (Putrid Only).</strong> Melee Attack Roll:</em> Bonus equals your spell attack modifier, reach 5 ft. <em>Hit:</em> 1d6 + 3 + the spell’s level Slashing damage. If the target has the Poisoned condition, it has the Paralyzed condition until the end of its next turn.</p>
 		</description>
 	</element>
 
@@ -7646,7 +7632,7 @@
 		<description>
 			<p>One creature of your choice that you can see within range makes a Wisdom saving throw. On a failed save, it has the Prone and Incapacitated conditions for the duration. During that time, it laughs uncontrollably if it's capable of laughter, and it can't end the Prone condition on itself.</p>
 			<p class="indent">At the end of each of its turns and each time it takes damage, it makes another Wisdom saving throw. The target has Advantage on the save if the save is triggered by damage. On a successful save, the spell ends.</p>
-			<p class="indent"><b><i>Using a Higher-Level Spell Slot.</i></b> You can target one additional creature for each spell slot level about 1.</p>
+			<p class="indent"><b><i>Using a Higher-Level Spell Slot.</i></b> You can target one additional creature for each spell slot level above 1.</p>
 		</description>
 		<setters>
 			<set name="keywords">wisdom, save, prone, incapacitated, upcasting, higher-level spell slot</set>

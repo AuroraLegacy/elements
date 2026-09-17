@@ -2,7 +2,7 @@
 <elements>
 	<info>
 		<name>Unearthed Arcana: Subclasses, Part 5</name>
-		<update version="0.0.2">
+		<update version="0.0.3">
 			<file name="20201026.xml" url="https://raw.githubusercontent.com/AuroraLegacy/elements/master/unearthed-arcana/2020/20201026.xml" />
 		</update>
 	</info>
@@ -78,11 +78,15 @@
 			<p class="indent">You can use this feature a number of times equal to your proficiency bonus, and you regain all expended uses when you finish a long rest. While you have no uses available, you can spend 1 ki point to use this feature again.</p>
 		</description>
 		<sheet usage="{{proficiency}}/Long Rest">
-			<description>When you take the Attack action on your turn, you can replace one of the attacks with an exhalation of draconic energy in either a 20-foot cone or a 30-foot line that is 5 feet wide. Choose a damage type: acid, cold, fire, lightning, or poison. Each creature in the area must make a DC {{ki:dc}} Dexterity save, taking damage of the chosen type equal to two rolls of your Martial Arts die on a failure, or half as much damage on a success.
+			<description>When you take the Attack action on your turn, you can replace one of the attacks with an exhalation of draconic energy in either a 20-foot cone or a 30-foot line that is 5 feet wide. Choose a damage type: acid, cold, fire, lightning, or poison. Each creature in the area must make a DC {{breath of the dragon:dc}} Dexterity save, taking damage of the chosen type equal to two rolls of your Martial Arts die on a failure, or half as much damage on a success.
 			While you have no uses available, you can spend 1 ki point to use this feature again.</description>
-			<description level="11">When you take the Attack action on your turn, you can replace one of the attacks with an exhalation of draconic energy in either a 20-foot cone or a 30-foot line that is 5 feet wide. Choose a damage type: acid, cold, fire, lightning, or poison. Each creature in the area must make a DC {{ki:dc}} Dexterity save, taking damage of the chosen type equal to three rolls of your Martial Arts die on a failure, or half as much damage on a success.
+			<description level="11">When you take the Attack action on your turn, you can replace one of the attacks with an exhalation of draconic energy in either a 20-foot cone or a 30-foot line that is 5 feet wide. Choose a damage type: acid, cold, fire, lightning, or poison. Each creature in the area must make a DC {{breath of the dragon:dc}} Dexterity save, taking damage of the chosen type equal to three rolls of your Martial Arts die on a failure, or half as much damage on a success.
 			While you have no uses available, you can spend 1 ki point to use this feature again.</description>
 		</sheet>
+		<rules>
+			<stat name="breath of the dragon:dc" value="ki:dc" bonus="base" />
+			<stat name="breath of the dragon:dc" value="monks focus:dc" bonus="base" />
+		</rules>
 	</element>
 	<element name="Wings Unfurled" type="Archetype Feature" source="Unearthed Arcana: Subclasses, Part 5" id="ID_WOTC_UA20201026_ARCHETYPE_FEATURE_ASCENDANT_DRAGON_WINGS_UNFURLED">
 		<description>
