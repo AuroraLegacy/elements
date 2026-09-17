@@ -3,8 +3,7 @@
 	<info>
 		<name>Spells</name>
 		<description>Spells from the Player’s Handbook 2024.</description>
-		<author url="https://dndstore.wizards.com/us/en/product/1001494/2024-player-s-handbook-digital-plus-physical-bundle">Wizards of the Coast</author>
-		<update version="0.0.3">
+		<update version="0.0.1">
 			<file name="spells.xml" url="https://raw.githubusercontent.com/AuroraLegacy/elements/master/core/players-handbook-2024/spells.xml" />
 		</update>
 	</info>
@@ -18,11 +17,10 @@
 			<p class="indent"><b><i>Respite.</i></b> As a Magic action, you or an ally within the area regains Hit Points equal to 4d10 plus your spellcasting ability modifier.</p>
 		</description>
 		<setters>
-			<set name="keywords">emanation, healing, cover, cold, lightning, radiant</set>
+			<set name="keywords">emanation, dim light, half cover, cold, lightning, radiant, frightened, grappled, restrained, reaction, magic action, hit points, healing</set>
 			<set name="level">5</set>
 			<set name="school">Abjuration</set>
 			<set name="time">Action</set>
-			<set name="isRitual">false</set>
 			<set name="range">Self (20-foot Emanation)</set>
 			<set name="hasVerbalComponent">true</set>
 			<set name="hasSomaticComponent">true</set>
@@ -40,16 +38,12 @@
 			<p class="indent"><b><i>Using a Higher-Level Spell Slot.</i></b> The damage reduction and Force damage from this spell both increase by 1d6 for every spell slot level above 4.</p>
 		</description>
 		<setters>
-			<set name="keywords">force, reaction</set>
+			<set name="keywords">reaction, force, damage, reduction, constitution, save, upcasting, higher-level spell slot</set>
 			<set name="level">4</set>
 			<set name="school">Abjuration</set>
 			<set name="time">Reaction, which you take in response to taking damage</set>
-			<set name="isRitual">false</set>
 			<set name="range">60 feet</set>
 			<set name="hasVerbalComponent">true</set>
-			<set name="hasSomaticComponent">false</set>
-			<set name="hasMaterialComponent">false</set>
-			<set name="isConcentration">false</set>
 			<set name="duration">Instantaneous</set>
 		</setters>
 	</element>
@@ -61,16 +55,13 @@
 			<p class="indent">The blade can harmlessly pass through any barrier, including ones created by spells like Wall of Force.</p>
 		</description>
 		<setters>
-			<set name="keywords">force, bonus action</set>
+			<set name="keywords">bonus action, melee spell attack, force, damage, critical hit</set>
 			<set name="level">9</set>
 			<set name="school">Conjuration</set>
 			<set name="time">Bonus Action</set>
-			<set name="isRitual">false</set>
 			<set name="range">60 feet</set>
 			<set name="hasVerbalComponent">true</set>
 			<set name="hasSomaticComponent">true</set>
-			<set name="hasMaterialComponent">false</set>
-			<set name="materialComponent" />
 			<set name="isConcentration">true</set>
 			<set name="duration">Concentration, up to 1 minute</set>
 		</setters>
@@ -83,15 +74,13 @@
 			<p class="indent"><b><i>Using a Higher-Level Spell Slot.</i></b> Using a Higher-Level Spell Slot. The damage increases by 1d6 for each spell slot level above 3.</p>
 		</description>
 		<setters>
-			<set name="keywords">thunder, deafened, Emanation</set>
+			<set name="keywords">emanation, aura, constitution, save, thunder, deafened, resistance, upcasting, higher-level spell slot</set>
 			<set name="level">3</set>
 			<set name="school">Evocation</set>
 			<set name="time">Action</set>
-			<set name="isRitual">false</set>
-			<set name="range">Self</set>
+			<set name="range">Self (10-foot Emanation)</set>
 			<set name="hasVerbalComponent">true</set>
 			<set name="hasSomaticComponent">true</set>
-			<set name="hasMaterialComponent">false</set>
 			<set name="isConcentration">true</set>
 			<set name="duration">Concentration, up to 10 minutes</set>
 		</setters>
@@ -107,11 +96,10 @@
 			<p class="indent"><b><i>Using a Higher-Level Spell Slot.</i></b> The damage and Temporary Hit Points both increase by 1d6 for each spell slot level above 3.</p>
 		</description>
 		<setters>
-			<set name="keywords">summon, force, thp</set>
+			<set name="keywords">summon, dexterity, save, force, damage, thp, upcasting, higher-level spell slot</set>
 			<set name="level">3</set>
-			<set name="school">Conjuraiton</set>
+			<set name="school">Conjuration</set>
 			<set name="time">Action</set>
-			<set name="isRitual">false</set>
 			<set name="range">60 feet</set>
 			<set name="hasVerbalComponent">true</set>
 			<set name="hasSomaticComponent">true</set>
@@ -127,17 +115,15 @@
 			<p>For the duration, an inky aura surrounds one creature you touch. The target has Advantage on Death Saving Throws, and once per turn, when a creature within 5 feet of the target hits it with a melee attack roll, the attacker takes 2d4 Necrotic damage.</p>
 		</description>
 		<setters>
-			<set name="keywords">necrotic</set>
+			<set name="keywords">aura, advantage, death saving throws, necrotic damage</set>
 			<set name="level">2</set>
 			<set name="school">Necromancy</set>
 			<set name="time">Action</set>
-			<set name="isRitual">false</set>
 			<set name="range">Touch</set>
 			<set name="hasVerbalComponent">true</set>
 			<set name="hasSomaticComponent">true</set>
 			<set name="hasMaterialComponent">true</set>
 			<set name="materialComponent">an onyx worth 50+ GP, which the spell consumes</set>
-			<set name="isConcentration">false</set>
 			<set name="duration">1 hour</set>
 		</setters>
 	</element>
@@ -148,7 +134,7 @@
 			<p class="indent">If you are crafting an item, the spirits function as a single assistant for your crafting, halving the crafting time.</p>
 		</description>
 		<setters>
-			<set name="keywords">summon, arcana, crafting</set>
+			<set name="keywords">summon, arcana, artisan's tools, crafting</set>
 			<set name="level">2</set>
 			<set name="school">Conjuration</set>
 			<set name="time">Action or Ritual</set>
@@ -158,7 +144,6 @@
 			<set name="hasSomaticComponent">true</set>
 			<set name="hasMaterialComponent">true</set>
 			<set name="materialComponent">powdered gemstones worth 100+ GP, which the spell consumes, and one set of Artisan’s Tools with which you have proficiency</set>
-			<set name="isConcentration">false</set>
 			<set name="duration">8 hours</set>
 		</setters>
 	</element>
@@ -172,16 +157,12 @@
 			<p class="indent">When the spell is cast, each secondary caster must expend a level 4+ spell slot; otherwise, the spell fails.</p>
 		</description>
 		<setters>
-			<set name="keywords">necrotic, emanation, prone, circle spell, exhaustion</set>
+			<set name="keywords">emanation, aura, constitution, save, necrotic, damage, prone, speed, circle spell, exhaustion</set>
 			<set name="level">6</set>
 			<set name="school">Enchantment</set>
 			<set name="time">Action</set>
-			<set name="isRitual">false</set>
 			<set name="range">Self (60-foot Emanation)</set>
 			<set name="hasVerbalComponent">true</set>
-			<set name="hasSomaticComponent">false</set>
-			<set name="hasMaterialComponent">false</set>
-			<set name="materialComponent" />
 			<set name="isConcentration">true</set>
 			<set name="duration">Concentration, up to 1 minute</set>
 		</setters>
@@ -196,11 +177,10 @@
 			<p class="indent">When the spell is cast, each secondary caster must expend a level 3+ spell slot; otherwise, the spell fails.</p>
 		</description>
 		<setters>
-			<set name="keywords">psychic, sphere, circle spell</set>
+			<set name="keywords">sphere, darkness, wisdom, save, psychic, saving throws, circle spell</set>
 			<set name="level">4</set>
 			<set name="school">Conjuration</set>
 			<set name="time">Action</set>
-			<set name="isRitual">false</set>
 			<set name="range">120 feet</set>
 			<set name="hasVerbalComponent">true</set>
 			<set name="hasSomaticComponent">true</set>
@@ -220,17 +200,15 @@
 			<p class="indent"><b><i>Using a Higher-Level Spell Slot.</i></b> The number of spheres increases by 1 for every spell slot level above 6.</p>
 		</description>
 		<setters>
-			<set name="keywords">reaction, resistance, acid, cold, fire, lightning, thunder</set>
+			<set name="keywords">reaction, resistance, acid, cold, fire, lightning, thunder, bonus action, ranged spell attack, damage, upcasting, higher-level spell slot</set>
 			<set name="level">6</set>
 			<set name="school">Evocation</set>
 			<set name="time">Action</set>
-			<set name="isRitual">false</set>
 			<set name="range">Self</set>
 			<set name="hasVerbalComponent">true</set>
 			<set name="hasSomaticComponent">true</set>
 			<set name="hasMaterialComponent">true</set>
 			<set name="materialComponent">an opal worth 1,000 GP+</set>
-			<set name="isConcentration">false</set>
 			<set name="duration">1 hour</set>
 		</setters>
 	</element>
@@ -240,16 +218,13 @@
 			<p>Arcane wards protect you against magic for the duration. You have Advantage on saving throws against spells and magical effects. Additionally, if you succeed on a saving throw against a spell or magical effect and would normally take half as much damage, you instead take no damage.</p>
 		</description>
 		<setters>
-			<set name="keywords">bonus action</set>
+			<set name="keywords">bonus action, advantage, saving throws</set>
 			<set name="level">2</set>
 			<set name="school">Abjuration</set>
 			<set name="time">Bonus Action</set>
-			<set name="isRitual">false</set>
 			<set name="range">Self</set>
 			<set name="hasVerbalComponent">true</set>
 			<set name="hasSomaticComponent">true</set>
-			<set name="hasMaterialComponent">false</set>
-			<set name="materialComponent" />
 			<set name="isConcentration">true</set>
 			<set name="duration">Concentration, up to 10 minutes</set>
 		</setters>
@@ -262,16 +237,13 @@
 			<p class="indent">In addition, while the mote is present, you have Three-Quarters Cover, and if you succeed on a saving throw against a spell of level 7 or lower that targeted only you and didn’t create an area of effect, you can take a Reaction to deflect that spell back at the spell’s caster; the caster makes a saving throw against that spell using that caster’s own spell save DC.</p>
 		</description>
 		<setters>
-			<set name="keywords">light, bonus action, cover, force, radiant</set>
+			<set name="keywords">bright light, dim light, bonus action, ranged spell attack, force, radiant damage, three-quarters cover, reaction, reflect</set>
 			<set name="level">8</set>
 			<set name="school">Evocation</set>
 			<set name="time">Bonus Action</set>
-			<set name="isRitual">false</set>
 			<set name="range">Self</set>
 			<set name="hasVerbalComponent">true</set>
 			<set name="hasSomaticComponent">true</set>
-			<set name="hasMaterialComponent">false</set>
-			<set name="materialComponent" />
 			<set name="isConcentration">true</set>
 			<set name="duration">Concentration, up to 1 minute</set>
 		</setters>
@@ -283,17 +255,15 @@
 			<p class="indent"><b><i>Using a Higher-Level Spell Slot.</i></b> The damage increases by 1d10 for every spell slot level above 3.</p>
 		</description>
 		<setters>
-			<set name="keywords">force, prone, line</set>
+			<set name="keywords">line, strength, save, force, damage, prone, upcasting, higher-level spell slot</set>
 			<set name="level">3</set>
 			<set name="school">Evocation</set>
 			<set name="time">Action</set>
-			<set name="isRitual">false</set>
 			<set name="range">Self (120-foot Line)</set>
 			<set name="hasVerbalComponent">true</set>
 			<set name="hasSomaticComponent">true</set>
 			<set name="hasMaterialComponent">true</set>
 			<set name="materialComponent">a silver pin worth 250+ GP</set>
-			<set name="isConcentration">false</set>
 			<set name="duration">Instantaneous</set>
 		</setters>
 	</element>
@@ -303,17 +273,13 @@
 			<p>You imbue one creature you touch with magical healing energy for the duration. Whenever the target casts a spell using a spell slot, the target can immediately roll a number of unexpended Hit Point Dice equal to the spell slot’s level and regain Hit Points equal to the roll’s total plus your spellcasting ability modifier; those dice are then expended.</p>
 		</description>
 		<setters>
-			<set name="keywords">healing, hit dice</set>
+			<set name="keywords">spell slot, healing, hit dice, hit point dice, hit points</set>
 			<set name="level">7</set>
 			<set name="school">Transmutation</set>
 			<set name="time">Action</set>
-			<set name="isRitual">false</set>
 			<set name="range">Touch</set>
 			<set name="hasVerbalComponent">true</set>
 			<set name="hasSomaticComponent">true</set>
-			<set name="hasMaterialComponent">false</set>
-			<set name="materialComponent" />
-			<set name="isConcentration">false</set>
 			<set name="duration">1 hour</set>
 		</setters>
 	</element>
@@ -328,11 +294,10 @@
 			<p class="indent">When the spell is cast, each secondary caster must expend a level 2+ spell slot; otherwise, the spell fails.</p>
 		</description>
 		<setters>
-			<set name="keywords">acid, cold, fire, lightning, thunder, prone, flight, resistance, circle spell</set>
+			<set name="keywords">resistance, acid, cold, fire, lightning, thunder, start of turn, emanation, dexterity, save, prone, fly speed, circle spell</set>
 			<set name="level">5</set>
 			<set name="school">Transmutation</set>
 			<set name="time">Action</set>
-			<set name="isRitual">false</set>
 			<set name="range">Self</set>
 			<set name="hasVerbalComponent">true</set>
 			<set name="hasSomaticComponent">true</set>
@@ -349,17 +314,13 @@
 			<p class="indent"><b><i>Using a Higher-Level Spell Slot.</i></b> You create an additional blast for each spell slot level above 1. You can direct the blasts at the same target or at different ones. Make a separate attack roll for each blast.</p>
 		</description>
 		<setters>
-			<set name="keywords">radiant</set>
+			<set name="keywords">ranged spell attack, half cover, three-quarters cover, radiant, damage, upcasting, higher-level spell slot</set>
 			<set name="level">1</set>
 			<set name="school">Evocation</set>
 			<set name="time">Action</set>
-			<set name="isRitual">false</set>
 			<set name="range">60 feet</set>
 			<set name="hasVerbalComponent">true</set>
 			<set name="hasSomaticComponent">true</set>
-			<set name="hasMaterialComponent">false</set>
-			<set name="materialComponent" />
-			<set name="isConcentration">false</set>
 			<set name="duration">Instantaneous</set>
 		</setters>
 	</element>
@@ -382,16 +343,13 @@
 			</table>
 		</description>
 		<setters>
-			<set name="keywords">radiant, light, cylinder, circle spell</set>
+			<set name="keywords">cylinder, bright light, constitution, save, radiant, damage, circle spell, upcasting, higher-level spell slot</set>
 			<set name="level">4</set>
 			<set name="school">Evocation</set>
 			<set name="time">Action</set>
-			<set name="isRitual">false</set>
 			<set name="range">60 feet</set>
 			<set name="hasVerbalComponent">true</set>
 			<set name="hasSomaticComponent">true</set>
-			<set name="hasMaterialComponent">false</set>
-			<set name="materialComponent" />
 			<set name="isConcentration">true</set>
 			<set name="duration">Concentration, up to 1 minute</set>
 		</setters>
@@ -406,17 +364,15 @@
 			<p class="indent"><b><i>Using a Higher-Level Spell Slot.</i></b> For each spell slot level above 3, the number of Temporary Hit Points you gain from this spell increases by 5, and the damage of Venomous Bite increases by 1d6.</p>
 		</description>
 		<setters>
-			<set name="keywords">poison, poisoned, incapacitated, thp</set>
+			<set name="keywords">thp, climb speed, magic action, ranged spell attack, force, damage, poisoned, incapacitated, upcasting, higher-level spell slot</set>
 			<set name="level">3</set>
 			<set name="school">Conjuration</set>
 			<set name="time">Bonus Action</set>
-			<set name="isRitual">false</set>
 			<set name="range">Self</set>
 			<set name="hasVerbalComponent">true</set>
 			<set name="hasSomaticComponent">true</set>
 			<set name="hasMaterialComponent">true</set>
 			<set name="materialComponent">a snake fang</set>
-			<set name="isConcentration">false</set>
 			<set name="duration">1 hour</set>
 		</setters>
 	</element>
@@ -428,17 +384,15 @@
 			<p class="indent"><b><i>Using a Higher-Level Spell Slot.</i></b> The damage increases by 2d4 for every spell slot level above 1.</p>
 		</description>
 		<setters>
-			<set name="keywords">force</set>
+			<set name="keywords">constitution, save, force, damage, speed, upcasting, higher-level spell slot</set>
 			<set name="level">1</set>
 			<set name="school">Abjuration</set>
 			<set name="time">Action</set>
-			<set name="isRitual">false</set>
 			<set name="range">60 feet</set>
 			<set name="hasVerbalComponent">true</set>
 			<set name="hasSomaticComponent">true</set>
 			<set name="hasMaterialComponent">true</set>
 			<set name="materialComponent">a miniature clay hand</set>
-			<set name="isConcentration">false</set>
 			<set name="duration">Instantaneous</set>
 		</setters>
 	</element>
@@ -458,7 +412,7 @@
 			<p>Any spell that has a casting time of an action or 1 minute or longer and is cast using a spell slot can be cast as a Circle spell. To cast a Circle spell, follow the usual rules for spellcasting, as described in the Player’s Handbook , as well as the following rules for Circle spells.</p>
 			<h5>Initiating a Circle Spell</h5>
 			<p>You take a Magic action to initiate casting a Circle spell. When you do so, choose which Circle casting option (see "Circle Casting Options" below) you’re using for this casting; you must also meet any of the other requirements described in that option’s text. Until the Circle spell’s casting is complete (see below), you must maintain Concentration on the spell.</p>
-			<p class="indent">If a Reaction would trigger when a creature casts a spell—such as the Reaction taken to cast Counterspell—it also triggers when you take this action to initiate a Circle spell.</p>
+			<p class="indent">If a Reaction would trigger when a creature casts a spell—such as the Reaction taken to cast <i>Counterspell</i>—it also triggers when you take this action to initiate a Circle spell.</p>
 			<h5>Secondary Casters</h5>
 			<p>Casting a Circle spell requires that one or more other spellcasters, called secondary casters, lend their magic to the spell. A secondary caster must have either the Spellcasting or Pact Magic feature to participate in a Circle spell.</p>
 			<p class="indent">After you initiate the spell, each secondary caster takes the Magic action to contribute to the spell. A secondary caster can take this action only while within 30 feet of you and before the start of your next turn.</p>
