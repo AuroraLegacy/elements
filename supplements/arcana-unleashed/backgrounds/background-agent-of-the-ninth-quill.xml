@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<elements>
+	<info>
+		<name>Agent of the Ninth Quill</name>
+		<description>The Agent of the Ninth Quill background from Arcana Unleashed.</description>
+		<update version="0.0.1">
+			<file name="background-agent-of-the-ninth-quill.xml" url="https://raw.githubusercontent.com/AuroraLegacy/elements/master/supplements/arcana-unleashed/backgrounds/background-agent-of-the-ninth-quill.xml" />
+		</update>
+	</info>
+
+	<element name="Agent of the Ninth Quill" type="Background" source="Arcana Unleashed" id="ID_WOTC_AU_BACKGROUND_AGENT_OF_THE_NINTH_QUILL">
+		<description>
+			<ul class="unstyled" style="text-indent:-1em; margin-left:1em; margin-bottom:5px">
+				<li><strong>Ability Scores:</strong> Dexterity, Intelligence, Charisma</li>
+				<li><strong>Feat:</strong> Arcane Infiltrator</li>
+				<li><strong>Skill Proficiencies:</strong> Arcana and Sleight of Hand</li>
+				<li><strong>Tool Proficiency:</strong> Thieves' Tools</li>
+				<li><strong>Equipment:</strong><i> Choose A or B:</i> (A) Dagger, Light Hammer, Thieves' Tools, Iron Spikes, Rope, Traveler's Clothes, 17 GP; or (B) 50 GP</li>
+			</ul>
+			<p>Your sharp mind and keen burgling skills led you to fall in with the Ninth Quill, a collective of thieves, saboteurs, and spies who steal magical lore and relics from others. Through your escapades—from purloining magic items and arcane tomes to sabotaging groups of mages—you've developed cunning skills and magical tricks to further your spy craft.</p>
+			<div class="reference">
+				<div element="ID_WOTC_AU_FEAT_ARCANE_INFILTRATOR" />
+			</div>
+		</description>
+		<setters>
+			<set name="short">Dexterity, Intelligence, Charisma, Arcane Infiltrator Feat, Arcana and Sleight of Hand Skills, and Thieves’ Tools</set>
+		</setters>
+		<rules>
+			<grant type="Ability Score Improvement" id="ID_INTERNAL_ABILITY_SCORE_IMPROVEMENT_COMBINATION_DEX_INT_CHA" />
+			<grant type="Feat" id="ID_WOTC_AU_FEAT_ARCANE_INFILTRATOR" />
+			<grant type="Proficiency" id="ID_PROFICIENCY_SKILL_ARCANA" />
+			<grant type="Proficiency" id="ID_PROFICIENCY_SKILL_SLEIGHTOFHAND" />
+			<grant type="Grants" id="ID_INTERNAL_GRANTS_BACKGROUND_ASI" />
+			<grant type="Proficiency" id="ID_PROFICIENCY_TOOL_PROFICIENCY_THIEVES_TOOLS" />
+		</rules>
+	</element>
+</elements>

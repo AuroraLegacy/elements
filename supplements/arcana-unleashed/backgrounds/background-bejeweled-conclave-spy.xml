@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<elements>
+	<info>
+		<name>Bejeweled Conclave Spy</name>
+		<description>The Bejeweled Conclave Spy background from Arcana Unleashed.</description>
+		<update version="0.0.1">
+			<file name="background-bejeweled-conclave-spy.xml" url="https://raw.githubusercontent.com/AuroraLegacy/elements/master/supplements/arcana-unleashed/backgrounds/background-bejeweled-conclave-spy.xml" />
+		</update>
+	</info>
+
+	<element name="Bejeweled Conclave Spy" type="Background" source="Arcana Unleashed" id="ID_WOTC_AU_BACKGROUND_BEJEWELED_CONCLAVE_SPY">
+		<description>
+			<ul class="unstyled" style="text-indent:-1em; margin-left:1em; margin-bottom:5px">
+				<li><strong>Ability Scores:</strong> Dexterity, Wisdom, Charisma</li>
+				<li><strong>Feat:</strong> Arcane Eloquence</li>
+				<li><strong>Skill Proficiencies:</strong> Deception and Perception</li>
+				<li><strong>Tool Proficiency:</strong> Disguise Kit</li>
+				<li><strong>Equipment:</strong><i> Choose A or B:</i> (A) Disguise Kit, Fine Clothes, Perfume, 5 GP; or (B) 50 GP</li>
+			</ul>
+			<p>Publicly, you're a courtier, a mediator, or an entertainer. But behind that glamorous visage is a mind honed for gathering secrets. Trained by the enchanters of the Bejeweled Conclave, you know how to use your charm and wit (plus a little magic) to infiltrate organizations, uncover information, and broker deals.</p>
+			<div class="reference">
+				<div element="ID_WOTC_AU_FEAT_ARCANE_ELOQUENCE" />
+			</div>
+		</description>
+		<setters>
+			<set name="short">Dexterity, Wisdom, Charisma, Arcane Eloquence Feat, Deception and Perception Skills, and Disguise Kit</set>
+		</setters>
+		<rules>
+			<grant type="Ability Score Improvement" id="ID_INTERNAL_ABILITY_SCORE_IMPROVEMENT_COMBINATION_DEX_WIS_CHA" />
+			<grant type="Feat" id="ID_WOTC_AU_FEAT_ARCANE_ELOQUENCE" />
+			<grant type="Proficiency" id="ID_PROFICIENCY_SKILL_DECEPTION" />
+			<grant type="Proficiency" id="ID_PROFICIENCY_SKILL_PERCEPTION" />
+			<grant type="Grants" id="ID_INTERNAL_GRANTS_BACKGROUND_ASI" />
+			<grant type="Proficiency" id="ID_PROFICIENCY_TOOL_PROFICIENCY_DISGUISE_KIT" />
+		</rules>
+	</element>
+</elements>

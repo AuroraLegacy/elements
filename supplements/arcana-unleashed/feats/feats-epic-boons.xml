@@ -1,0 +1,215 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<elements>
+	<info>
+		<name>Epic Boon Category Feats</name>
+		<description>The Epic Boon Category Feats from Arcana Unleashed.</description>
+		<update version="0.0.1">
+			<file name="feats-epic-boons.xml" url="https://raw.githubusercontent.com/AuroraLegacy/elements/master/supplements/arcana-unleashed/feats/feats-epic-boons.xml" />
+		</update>
+	</info>
+
+	<element name="Boon of Erupting Spellpower" type="Feat" source="Arcana Unleashed" id="ID_WOTC_AU_FEAT_BOON_OF_ERUPTING_SPELLPOWER">
+		<supports>Epic Boon</supports>
+		<requirements>([character:19],(ID_INTERNAL_GRANTS_SPELLCASTING_FEATURE||ID_INTERNAL_GRANTS_PACT_MAGIC_FEATURE))||ID_WOTC_PHB24_GRANTS_FEAT_UNLOCKER</requirements>
+		<prerequisite>Level 19+; Spellcasting or Pact Magic Feature</prerequisite>
+		<description>
+			<p class="flavor">Epic Boon Feat (Prerequisite: Level 19+; Spellcasting or Pact Magic Feature)</p>
+			<p>You gain the following benefits.</p>
+			<p class="indent"><b><i>Ability Score Increase.</i></b> Increase your Intelligence, Wisdom, or Charisma by 1, to a maximum of 30.</p>
+			<p class="indent"><b><i>Spell Overload.</i></b> When you cast a spell that deals damage using a spell slot, you can cause its magical energy to surge. You can treat any 1 or 2 on a damage die rolled for the spell as a 3, and creatures that took damage from the spell also have the Prone condition. Once you use this benefit, you can't do so again until you roll Initiative or finish a Long Rest or Short Rest.</p>
+		</description>
+		<sheet usage="1/Short Rest">
+			<description>When you cast a spell that deals damage using a spell slot, you can treat any 1 or 2 on a damage die rolled for the spell as a 3, and creatures that took damage from the spell also have the Prone condition. &#13;
+			You also regain use of this feature when you roll Initiative.</description>
+		</sheet>
+		<rules>
+			<select type="Ability Score Improvement" name="Ability Score Increase (Boon of Erupting Spellpower)" supports="ID_INTERNAL_ABILITY_SCORE_IMPROVEMENT_BOON_INTELLIGENCE|ID_INTERNAL_ABILITY_SCORE_IMPROVEMENT_BOON_WISDOM|ID_INTERNAL_ABILITY_SCORE_IMPROVEMENT_BOON_CHARISMA" />
+		</rules>
+	</element>
+
+	<element name="Boon of Magic School Mastery" type="Feat" source="Arcana Unleashed" id="ID_WOTC_AU_FEAT_BOON_OF_MAGIC_SCHOOL_MASTERY">
+		<supports>Epic Boon</supports>
+		<requirements>([character:19],(ID_INTERNAL_GRANTS_SPELLCASTING_FEATURE||ID_INTERNAL_GRANTS_PACT_MAGIC_FEATURE))||ID_WOTC_PHB24_GRANTS_FEAT_UNLOCKER</requirements>
+		<prerequisite>Level 19+; Spellcasting or Pact Magic Feature</prerequisite>
+		<description>
+			<p class="flavor">Epic Boon Feat (Prerequisite: Level 19+; Spellcasting or Pact Magic Feature)</p>
+			<p>You gain the following benefits.</p>
+			<p class="indent"><b><i>Ability Score Increase.</i></b> Increase your Intelligence, Wisdom, or Charisma by 1, to a maximum of 30.</p>
+			<p class="indent"><b><i>Mastered School.</i></b> Choose one of the eight schools of magic: Abjuration, Conjuration, Divination, Enchantment, Evocation, Illusion, Necromancy, or Transmutation. Your choice grants you the following features:</p>
+			<ul class="unstyled" style="text-indent:-1em; margin-left:1em">
+				<li><strong>Rote Casting.</strong> Choose a level 1 spell from the chosen school that appears on your class's spell list. You always have that spell prepared and can cast it without a spell slot or spell components.</li>
+				<li><strong>Signature Arcanum.</strong> Choose a level 7 or lower spell from the chosen school. You always have that spell prepared. You can cast it once without a spell slot, and you regain the ability to cast it in this way when you finish a Long Rest.</li>
+				<li>You can also cast these prepared spells using any spell slots you have of the appropriate level.</li>
+			</ul>
+			<p class="indent"><b><i>Repeatable.</i></b> You can take this feat more than once, but you must choose a different school of magic each time.</p>
+		</description>
+		<sheet display="false"/>
+		<rules>
+			<select type="Ability Score Improvement" name="Ability Score Increase (Boon of Magic School Mastery)" supports="ID_INTERNAL_ABILITY_SCORE_IMPROVEMENT_BOON_INTELLIGENCE|ID_INTERNAL_ABILITY_SCORE_IMPROVEMENT_BOON_WISDOM|ID_INTERNAL_ABILITY_SCORE_IMPROVEMENT_BOON_CHARISMA" />
+			<select type="Feat Feature" name="Mastered Magic School (Boon of Magic School Mastery)" supports="Mastered Magic School" />
+		</rules>
+	</element>
+	<element name="Abjuration" type="Feat Feature" source="Arcana Unleashed" id="ID_WOTC_AU_FEAT_BOON_OF_MAGIC_SCHOOL_MASTERY_ABJURATION">
+		<supports>Mastered Magic School</supports>
+		<compendium display="false" />
+		<description>
+			<ul class="unstyled" style="text-indent:-1em; margin-left:1em">
+				<li><strong>Rote Casting.</strong> Choose a level 1 spell from the Abjuration school that appears on your class's spell list. You always have that spell prepared and can cast it without a spell slot or spell components.</li>
+				<li><strong>Signature Arcanum.</strong> Choose a level 7 or lower spell from the Abjuration school. You always have that spell prepared. You can cast it once without a spell slot, and you regain the ability to cast it in this way when you finish a Long Rest.</li>
+				<li>You can also cast these prepared spells using any spell slots you have of the appropriate level.</li>
+			</ul>
+		</description>
+		<sheet alt="Boon of Abjuration School Mastery" >
+			<description>You always can cast this feat's level 1 spell without a spell slot, and can cast this feat's level 7 spell without a spell slot once per Long Rest. You can also cast these spells using spell slots you have of the appropriate level.</description>
+		</sheet>
+		<rules>
+			<select type="Spell" name="Level 1 Spell (Boon of Abjuration School Mastery)" supports="1,Abjuration,$(spellcasting:list)" />
+			<select type="Spell" name="Level 7 Spell (Boon of Abjuration School Mastery)" supports="(1||2||3||4||5||6||7),Abjuration,$(spellcasting:list)" />
+		</rules>
+	</element>
+	<element name="Conjuration" type="Feat Feature" source="Arcana Unleashed" id="ID_WOTC_AU_FEAT_BOON_OF_MAGIC_SCHOOL_MASTERY_CONJURATION">
+		<supports>Mastered Magic School</supports>
+		<compendium display="false" />
+		<description>
+			<ul class="unstyled" style="text-indent:-1em; margin-left:1em">
+				<li><strong>Rote Casting.</strong> Choose a level 1 spell from the Conjuration school that appears on your class's spell list. You always have that spell prepared and can cast it without a spell slot or spell components.</li>
+				<li><strong>Signature Arcanum.</strong> Choose a level 7 or lower spell from the Conjuration school. You always have that spell prepared. You can cast it once without a spell slot, and you regain the ability to cast it in this way when you finish a Long Rest.</li>
+				<li>You can also cast these prepared spells using any spell slots you have of the appropriate level.</li>
+			</ul>
+		</description>
+		<sheet alt="Boon of Conjuration School Mastery" >
+			<description>You always can cast this feat's level 1 spell without a spell slot, and can cast this feat's level 7 spell without a spell slot once per Long Rest. You can also cast these spells using spell slots you have of the appropriate level.</description>
+		</sheet>
+		<rules>
+			<select type="Spell" name="Level 1 Spell (Boon of Conjuration School Mastery)" supports="1,Conjuration,$(spellcasting:list)" />
+			<select type="Spell" name="Level 7 Spell (Boon of Conjuration School Mastery)" supports="(1||2||3||4||5||6||7),Conjuration,$(spellcasting:list)" />
+		</rules>
+	</element>
+	<element name="Divination" type="Feat Feature" source="Arcana Unleashed" id="ID_WOTC_AU_FEAT_BOON_OF_MAGIC_SCHOOL_MASTERY_DIVINATION">
+		<supports>Mastered Magic School</supports>
+		<compendium display="false" />
+		<description>
+			<ul class="unstyled" style="text-indent:-1em; margin-left:1em">
+				<li><strong>Rote Casting.</strong> Choose a level 1 spell from the Divination school that appears on your class's spell list. You always have that spell prepared and can cast it without a spell slot or spell components.</li>
+				<li><strong>Signature Arcanum.</strong> Choose a level 7 or lower spell from the Divination school. You always have that spell prepared. You can cast it once without a spell slot, and you regain the ability to cast it in this way when you finish a Long Rest.</li>
+				<li>You can also cast these prepared spells using any spell slots you have of the appropriate level.</li>
+			</ul>
+		</description>
+		<sheet alt="Boon of Divination School Mastery" >
+			<description>You always can cast this feat's level 1 spell without a spell slot, and can cast this feat's level 7 spell without a spell slot once per Long Rest. You can also cast these spells using spell slots you have of the appropriate level.</description>
+		</sheet>
+		<rules>
+			<select type="Spell" name="Level 1 Spell (Boon of Divination School Mastery)" supports="1,Divination,$(spellcasting:list)" />
+			<select type="Spell" name="Level 7 Spell (Boon of Divination School Mastery)" supports="(1||2||3||4||5||6||7),Divination,$(spellcasting:list)" />
+		</rules>
+	</element>
+	<element name="Enchantment" type="Feat Feature" source="Arcana Unleashed" id="ID_WOTC_AU_FEAT_BOON_OF_MAGIC_SCHOOL_MASTERY_ENCHANTMENT">
+		<supports>Mastered Magic School</supports>
+		<compendium display="false" />
+		<description>
+			<ul class="unstyled" style="text-indent:-1em; margin-left:1em">
+				<li><strong>Rote Casting.</strong> Choose a level 1 spell from the Abjuration school that appears on your class's spell list. You always have that spell prepared and can cast it without a spell slot or spell components.</li>
+				<li><strong>Signature Arcanum.</strong> Choose a level 7 or lower spell from the Abjuration school. You always have that spell prepared. You can cast it once without a spell slot, and you regain the ability to cast it in this way when you finish a Long Rest.</li>
+				<li>You can also cast these prepared spells using any spell slots you have of the appropriate level.</li>
+			</ul>
+		</description>
+		<sheet alt="Boon of Enchantment School Mastery" >
+			<description>You always can cast this feat's level 1 spell without a spell slot, and can cast this feat's level 7 spell without a spell slot once per Long Rest. You can also cast these spells using spell slots you have of the appropriate level.</description>
+		</sheet>
+		<rules>
+			<select type="Spell" name="Level 1 Spell (Boon of Enchantment School Mastery)" supports="1,Enchantment,$(spellcasting:list)" />
+			<select type="Spell" name="Level 7 Spell (Boon of Enchantment School Mastery)" supports="(1||2||3||4||5||6||7),Enchantment,$(spellcasting:list)" />
+		</rules>
+	</element>
+	<element name="Evocation" type="Feat Feature" source="Arcana Unleashed" id="ID_WOTC_AU_FEAT_BOON_OF_MAGIC_SCHOOL_MASTERY_EVOCATION">
+		<supports>Mastered Magic School</supports>
+		<compendium display="false" />
+		<description>
+			<ul class="unstyled" style="text-indent:-1em; margin-left:1em">
+				<li><strong>Rote Casting.</strong> Choose a level 1 spell from the Evocation school that appears on your class's spell list. You always have that spell prepared and can cast it without a spell slot or spell components.</li>
+				<li><strong>Signature Arcanum.</strong> Choose a level 7 or lower spell from the Evocation school. You always have that spell prepared. You can cast it once without a spell slot, and you regain the ability to cast it in this way when you finish a Long Rest.</li>
+				<li>You can also cast these prepared spells using any spell slots you have of the appropriate level.</li>
+			</ul>
+		</description>
+		<sheet alt="Boon of Evocation School Mastery" >
+			<description>You always can cast this feat's level 1 spell without a spell slot, and can cast this feat's level 7 spell without a spell slot once per Long Rest. You can also cast these spells using spell slots you have of the appropriate level.</description>
+		</sheet>
+		<rules>
+			<select type="Spell" name="Level 1 Spell (Boon of Evocation School Mastery)" supports="1,Evocation,$(spellcasting:list)" />
+			<select type="Spell" name="Level 7 Spell (Boon of Evocation School Mastery)" supports="(1||2||3||4||5||6||7),Evocation,$(spellcasting:list)" />
+		</rules>
+	</element>
+	<element name="Illusion" type="Feat Feature" source="Arcana Unleashed" id="ID_WOTC_AU_FEAT_BOON_OF_MAGIC_SCHOOL_MASTERY_ILLUSION">
+		<supports>Mastered Magic School</supports>
+		<compendium display="false" />
+		<description>
+			<ul class="unstyled" style="text-indent:-1em; margin-left:1em">
+				<li><strong>Rote Casting.</strong> Choose a level 1 spell from the Illusion school that appears on your class's spell list. You always have that spell prepared and can cast it without a spell slot or spell components.</li>
+				<li><strong>Signature Arcanum.</strong> Choose a level 7 or lower spell from the Illusion school. You always have that spell prepared. You can cast it once without a spell slot, and you regain the ability to cast it in this way when you finish a Long Rest.</li>
+				<li>You can also cast these prepared spells using any spell slots you have of the appropriate level.</li>
+			</ul>
+		</description>
+		<sheet alt="Boon of Illusion School Mastery" >
+			<description>You always can cast this feat's level 1 spell without a spell slot, and can cast this feat's level 7 spell without a spell slot once per Long Rest. You can also cast these spells using spell slots you have of the appropriate level.</description>
+		</sheet>
+		<rules>
+			<select type="Spell" name="Level 1 Spell (Boon of Illusion School Mastery)" supports="1,Illusion,$(spellcasting:list)" />
+			<select type="Spell" name="Level 7 Spell (Boon of Illusion School Mastery)" supports="(1||2||3||4||5||6||7),Illusion,$(spellcasting:list)" />
+		</rules>
+	</element>
+	<element name="Necromancy" type="Feat Feature" source="Arcana Unleashed" id="ID_WOTC_AU_FEAT_BOON_OF_MAGIC_SCHOOL_MASTERY_NECROMANCY">
+		<supports>Mastered Magic School</supports>
+		<compendium display="false" />
+		<description>
+			<ul class="unstyled" style="text-indent:-1em; margin-left:1em">
+				<li><strong>Rote Casting.</strong> Choose a level 1 spell from the Necromancy school that appears on your class's spell list. You always have that spell prepared and can cast it without a spell slot or spell components.</li>
+				<li><strong>Signature Arcanum.</strong> Choose a level 7 or lower spell from the Necromancy school. You always have that spell prepared. You can cast it once without a spell slot, and you regain the ability to cast it in this way when you finish a Long Rest.</li>
+				<li>You can also cast these prepared spells using any spell slots you have of the appropriate level.</li>
+			</ul>
+		</description>
+		<sheet alt="Boon of Necromancy School Mastery" >
+			<description>You always can cast this feat's level 1 spell without a spell slot, and can cast this feat's level 7 spell without a spell slot once per Long Rest. You can also cast these spells using spell slots you have of the appropriate level.</description>
+		</sheet>
+		<rules>
+			<select type="Spell" name="Level 1 Spell (Boon of Necromancy School Mastery)" supports="1,Necromancy,$(spellcasting:list)" />
+			<select type="Spell" name="Level 7 Spell (Boon of Necromancy School Mastery)" supports="(1||2||3||4||5||6||7),Necromancy,$(spellcasting:list)" />
+		</rules>
+	</element>
+	<element name="Transmutation" type="Feat Feature" source="Arcana Unleashed" id="ID_WOTC_AU_FEAT_BOON_OF_MAGIC_SCHOOL_MASTERY_TRANSMUTATION">
+		<supports>Mastered Magic School</supports>
+		<compendium display="false" />
+		<description>
+			<ul class="unstyled" style="text-indent:-1em; margin-left:1em">
+				<li><strong>Rote Casting.</strong> Choose a level 1 spell from the Transmutation school that appears on your class's spell list. You always have that spell prepared and can cast it without a spell slot or spell components.</li>
+				<li><strong>Signature Arcanum.</strong> Choose a level 7 or lower spell from the Transmutation school. You always have that spell prepared. You can cast it once without a spell slot, and you regain the ability to cast it in this way when you finish a Long Rest.</li>
+				<li>You can also cast these prepared spells using any spell slots you have of the appropriate level.</li>
+			</ul>
+		</description>
+		<sheet alt="Boon of Transmutation School Mastery" >
+			<description>You always can cast this feat's level 1 spell without a spell slot, and can cast this feat's level 7 spell without a spell slot once per Long Rest. You can also cast these spells using spell slots you have of the appropriate level.</description>
+		</sheet>
+		<rules>
+			<select type="Spell" name="Level 1 Spell (Boon of Transmutation School Mastery)" supports="1,Transmutation,$(spellcasting:list)" />
+			<select type="Spell" name="Level 7 Spell (Boon of Transmutation School Mastery)" supports="(1||2||3||4||5||6||7),Transmutation,$(spellcasting:list)" />
+		</rules>
+	</element>
+
+	<element name="Boon of the Iron Mind" type="Feat" source="Arcana Unleashed" id="ID_WOTC_AU_FEAT_BOON_OF_THE_IRON_MIND">
+		<supports>Epic Boon</supports>
+		<requirements>[character:19]||ID_WOTC_PHB24_GRANTS_FEAT_UNLOCKER</requirements>
+		<prerequisite>Level 19+</prerequisite>
+		<description>
+			<p class="flavor">Epic Boon Feat (Prerequisite: Level 19+)</p>
+			<p>You gain the following benefits.</p>
+			<p class="indent"><b><i>Ability Score Increase.</i></b> Increase one ability score of your choice by 1, to a maximum of 30.</p>
+			<p class="indent"><b><i>Unshakable Focus.</i></b> When you are maintaining Concentration on an effect, you lose Concentration only if you cast a spell or activate another effect that requires Concentration, if you have the Petrified or Unconscious condition, or if you die.</p>
+		</description>
+		<sheet>
+			<description>When you are maintaining Concentration on an effect, you lose Concentration only if you cast a spell or activate another effect that requires Concentration, if you have the Petrified or Unconscious condition, or if you die.</description>
+		</sheet>
+		<rules>
+			<select type="Ability Score Improvement" name="Ability Score Increase (Boon of the Iron Mind)" supports="Boon Ability Score Increase" />
+		</rules>
+	</element>
+
+</elements>

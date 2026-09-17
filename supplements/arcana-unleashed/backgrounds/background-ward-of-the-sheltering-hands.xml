@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<elements>
+	<info>
+		<name>Ward of the Sheltering Hands</name>
+		<description>The Ward of the Sheltering Hands background from Arcana Unleashed.</description>
+		<update version="0.0.1">
+			<file name="background-ward-of-the-sheltering-hands.xml" url="https://raw.githubusercontent.com/AuroraLegacy/elements/master/supplements/arcana-unleashed/backgrounds/background-ward-of-the-sheltering-hands.xml" />
+		</update>
+	</info>
+
+	<element name="Ward of the Sheltering Hands" type="Background" source="Arcana Unleashed" id="ID_WOTC_AU_BACKGROUND_WARD_OF_THE_SHELTERING_HANDS">
+		<description>
+			<ul class="unstyled" style="text-indent:-1em; margin-left:1em; margin-bottom:5px">
+				<li><strong>Ability Scores:</strong> Constitution, Wisdom, Charisma</li>
+				<li><strong>Feat:</strong> Arcane Safeguard</li>
+				<li><strong>Skill Proficiencies:</strong> Insight and Medicine</li>
+				<li><strong>Tool Proficiency:</strong> Cook's Utensils</li>
+				<li><strong>Equipment:</strong><i> Choose A or B:</i> (A) Cook's Utensils, Blanket, Healer's Kit, Lamp, Oil (3 flasks), Tinderbox, Traveler's Clothes, Waterskin, 40 GP; or (B) 50 GP</li>
+			</ul>
+			<p>A turn of ill luck led you to the Sheltering Hands, an altruistic organization dedicated to defending the downtrodden. The organization helped you regain your footing and taught you some of its protective magic—in the hope that one day you too would shelter the less fortunate in their time of need.</p>
+			<div class="reference">
+				<div element="ID_WOTC_AU_FEAT_ARCANE_SAFEGUARD" />
+			</div>
+		</description>
+		<setters>
+			<set name="short">Constitution, Wisdom, Charisma, Arcane Safeguard Feat, Insight and Medicine Skills, Cook's Utensils</set>
+		</setters>
+		<rules>
+			<grant type="Ability Score Improvement" id="ID_INTERNAL_ABILITY_SCORE_IMPROVEMENT_COMBINATION_CON_WIS_CHA" />
+			<grant type="Feat" id="ID_WOTC_AU_FEAT_ARCANE_SAFEGUARD" />
+			<grant type="Proficiency" id="ID_PROFICIENCY_SKILL_INSIGHT" />
+			<grant type="Proficiency" id="ID_PROFICIENCY_SKILL_MEDICINE" />
+			<grant type="Grants" id="ID_INTERNAL_GRANTS_BACKGROUND_ASI" />
+			<grant type="Proficiency" id="ID_PROFICIENCY_TOOL_PROFICIENCY_COOKS_UTENSILS" />
+		</rules>
+	</element>
+</elements>

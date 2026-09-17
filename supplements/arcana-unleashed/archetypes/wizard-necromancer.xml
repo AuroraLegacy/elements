@@ -1,0 +1,211 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<elements>
+	<info>
+		<name>Necromancer</name>
+		<description>The Necromancer subclass from Arcana Unleashed.</description>
+		<update version="0.0.1">
+			<file name="wizard-necromancer.xml" url="https://raw.githubusercontent.com/AuroraLegacy/elements/master/supplements/arcana-unleashed/archetypes/wizard-necromancer.xml" />
+		</update>
+	</info>
+
+	<element name="Necromancer" type="Archetype" source="Arcana Unleashed" id="ID_WOTC_AU_ARCHETYPE_WIZARD_NECROMANCER">
+		<supports>Wizard Subclass</supports>
+		<description>
+			<p class="flavor">Command the Powers of Death and Undeath</p>
+			<p>You explore the forces of life, death, and undeath. As a necromancer, you learn to manipulate the energy that animates all creatures, and you draw increasing power from the forbidden secrets in your spellbook. Though many see Necromancers as menacing or villainous, not all Necromancers are evil.</p>
+			<div element="ID_WOTC_AU_ARCHETYPE_WIZARD_NECROMANCER_NECROMANCY_SAVANT" />
+			<div element="ID_WOTC_AU_ARCHETYPE_WIZARD_NECROMANCER_NECROMANCY_SPELLBOOK" />
+			<div element="ID_WOTC_AU_ARCHETYPE_WIZARD_NECROMANCER_GRAVE_POWER" />
+			<div element="ID_WOTC_AU_ARCHETYPE_WIZARD_NECROMANCER_UNDEAD_THRALLS" />
+			<div element="ID_WOTC_AU_ARCHETYPE_WIZARD_NECROMANCER_HARVEST_UNDEAD" />
+			<div element="ID_WOTC_AU_ARCHETYPE_WIZARD_NECROMANCER_DEATHS_MASTER" />
+		</description>
+		<sheet display="false" />
+		<rules>
+			<grant type="Archetype Feature" id="ID_WOTC_AU_ARCHETYPE_WIZARD_NECROMANCER_NECROMANCY_SAVANT" level="3"/>
+			<grant type="Archetype Feature" id="ID_WOTC_AU_ARCHETYPE_WIZARD_NECROMANCER_NECROMANCY_SPELLBOOK" level="3"/>
+			<grant type="Archetype Feature" id="ID_WOTC_AU_ARCHETYPE_WIZARD_NECROMANCER_GRAVE_POWER" level="6"/>
+			<grant type="Archetype Feature" id="ID_WOTC_AU_ARCHETYPE_WIZARD_NECROMANCER_UNDEAD_THRALLS" level="6"/>
+			<grant type="Archetype Feature" id="ID_WOTC_AU_ARCHETYPE_WIZARD_NECROMANCER_HARVEST_UNDEAD" level="10"/>
+			<grant type="Archetype Feature" id="ID_WOTC_AU_ARCHETYPE_WIZARD_NECROMANCER_DEATHS_MASTER" level="14"/>
+		</rules>
+	</element>
+
+	<element name="Level 3: Necromancy Savant" type="Archetype Feature" source="Arcana Unleashed" id="ID_WOTC_AU_ARCHETYPE_WIZARD_NECROMANCER_NECROMANCY_SAVANT">
+		<requirements>!ID_INTERNAL_AU_FEATURE_REPLACEMENT_WIZARD_NECROMANCER_NECROMANCY_SAVANT</requirements>
+		<description>
+			<p>Choose two Wizard spells from the Necromancy school, each of which must be no higher than level 2, and add them to your spellbook for free.</p>
+			<p class="indent">In addition, whenever you gain access to a new level of spell slots in this class, you can add one Wizard spell from the Necromancy school to your spellbook for free. The chosen spell must be of a level for which you have spell slots.</p>
+		</description>
+		<sheet display="false" />
+		<rules>
+			<select type="Spell" name="Necromancy Spell (Necromancy Savant)" supports="$(spellcasting:slots),Necromancy,Wizard" number="2" level="3" spellcasting="Wizard" />
+			<select type="Spell" name="Necromancy Spell (Necromancy Savant)" supports="$(spellcasting:slots),Necromancy,Wizard" level="5" spellcasting="Wizard" />
+			<select type="Spell" name="Necromancy Spell (Necromancy Savant)" supports="$(spellcasting:slots),Necromancy,Wizard" level="7" spellcasting="Wizard" />
+			<select type="Spell" name="Necromancy Spell (Necromancy Savant)" supports="$(spellcasting:slots),Necromancy,Wizard" level="9" spellcasting="Wizard" />
+			<select type="Spell" name="Necromancy Spell (Necromancy Savant)" supports="$(spellcasting:slots),Necromancy,Wizard" level="11" spellcasting="Wizard" />
+			<select type="Spell" name="Necromancy Spell (Necromancy Savant)" supports="$(spellcasting:slots),Necromancy,Wizard" level="13" spellcasting="Wizard" />
+			<select type="Spell" name="Necromancy Spell (Necromancy Savant)" supports="$(spellcasting:slots),Necromancy,Wizard" level="15" spellcasting="Wizard" />
+			<select type="Spell" name="Necromancy Spell (Necromancy Savant)" supports="$(spellcasting:slots),Necromancy,Wizard" level="17" spellcasting="Wizard" />
+		</rules>
+	</element>
+
+	<element name="Level 3: Necromancy Spellbook" type="Archetype Feature" source="Arcana Unleashed" id="ID_WOTC_AU_ARCHETYPE_WIZARD_NECROMANCER_NECROMANCY_SPELLBOOK">
+		<requirements>!ID_INTERNAL_AU_FEATURE_REPLACEMENT_WIZARD_NECROMANCER_NECROMANCY_SPELLBOOK</requirements>
+		<description>
+			<p>Your spellbook's necromantic secrets grant you additional powers. You gain the following benefits.</p>
+			<p class="indent"><em><strong>Necrotic Resistance.</strong></em> You have Resistance to Necrotic damage.</p>
+			<p class="indent"><em><strong>Undead Familiar.</strong></em> The <i>Find Familiar</i> spell appears in your spellbook. When you cast the spell, you choose one of the normal forms for your familiar or one of the following special forms: Skeleton or Zombie. When you choose one of the normal forms, you can choose Undead as its creature type.</p>
+			<p class="indent">Additionally, when you take the Attack action, you can forgo one of your own attacks to allow your familiar to make one attack of its own with its Reaction.</p>
+			<p class="indent"><em><strong>Undead Vitality.</strong></em> When you cast a Necromancy spell using a spell slot, you can choose an Undead creature you can see within 60 feet of yourself to regain a number of Hit Points equal to the level of the spell slot expended plus your Wizard level.</p>
+		</description>
+		<sheet alt="Necromancy Spellbook">
+			<description>Your spellbook's necromantic secrets grant you additional powers.</description>
+		</sheet>
+		<rules>
+			<grant type="Condition" id="ID_INTERNAL_CONDITION_DAMAGE_RESISTANCE_NECROTIC" />
+			<select type="Archetype Feature" name="Undead Familiar" supports="Necromancer Undead Familiar" default="ID_WOTC_AU_ARCHETYPE_WIZARD_NECROMANCER_NECROMANCY_SPELLBOOK_UNDEAD_FAMILIAR" />
+			<select type="Archetype Feature" name="Undead Vitality" supports="Necromancer Undead Vitality" default="ID_WOTC_AU_ARCHETYPE_WIZARD_NECROMANCER_NECROMANCY_SPELLBOOK_UNDEAD_VITALITY" />
+		</rules>
+	</element>
+	<element name="Undead Familiar" type="Archetype Feature" source="Arcana Unleashed" id="ID_WOTC_AU_ARCHETYPE_WIZARD_NECROMANCER_NECROMANCY_SPELLBOOK_UNDEAD_FAMILIAR">
+		<supports>Necromancer Undead Familiar</supports>
+		<compendium display="false"/>
+		<description>
+			<p>The <i>Find Familiar</i> spell appears in your spellbook. When you cast the spell, you choose one of the normal forms for your familiar or one of the following special forms: Skeleton or Zombie. When you choose one of the normal forms, you can choose Undead as its creature type.</p>
+			<p class="indent">Additionally, when you take the Attack action, you can forgo one of your own attacks to allow your familiar to make one attack of its own with its Reaction.</p>
+		</description>
+		<sheet>
+			<description>When you cast Find Familiar, you can choose its form to be a Skeleton or Zombie. If you choose one of its normal forms, you can choose Undead as its creature type. &#13;
+			Additionally, when you take the Attack action, you can forgo one of your own attacks to allow your familiar to make one attack of its own with its Reaction.</description>
+		</sheet>
+		<rules>
+			<grant type="Spell" id="ID_WOTC_PHB24_SPELL_FIND_FAMILIAR" />
+			<select type="Companion" name="Undead Familiar" supports="Familiar||Undead Familiar||Beast,0" />
+		</rules>
+	</element>
+	<element name="Undead Vitality" type="Archetype Feature" source="Arcana Unleashed" id="ID_WOTC_AU_ARCHETYPE_WIZARD_NECROMANCER_NECROMANCY_SPELLBOOK_UNDEAD_VITALITY">
+		<supports>Necromancer Undead Vitality</supports>
+		<compendium display="false"/>
+		<description>
+			<p>When you cast a Necromancy spell using a spell slot, you can choose an Undead creature you can see within 60 feet of yourself to regain a number of Hit Points equal to the level of the spell slot expended plus your Wizard level.</p>
+		</description>
+		<sheet>
+			<description>When you cast a Necromancy spell using a spell slot, you can choose an Undead creature you can see within 60 feet of yourself to regain a number of HPs equal to {{level:wizard}} plus the level of the spell slot expended.</description>
+		</sheet>
+	</element>
+
+	<element name="Level 6: Grave Power" type="Archetype Feature" source="Arcana Unleashed" id="ID_WOTC_AU_ARCHETYPE_WIZARD_NECROMANCER_GRAVE_POWER">
+		<requirements>!ID_INTERNAL_AU_FEATURE_REPLACEMENT_WIZARD_NECROMANCER_GRAVE_POWER</requirements>
+		<description>
+			<p>You have discovered more necromantic insights and inscribed them in your spellbook. While holding your spellbook, you gain the following benefits.</p>
+			<p class="indent"><em><strong>Grave Resilience.</strong></em> When you use Arcane Recovery, your Exhaustion level, if any, decreases by 1.</p>
+			<p class="indent"><em><strong>Overwhelming Necrosis.</strong></em> Damage from your Wizard spells and Wizard features ignores Resistance to Necrotic damage.</p>
+		</description>
+		<sheet alt="Grave Power" >
+			<description>When you use Arcane Recovery, your Exhaustion level, if any, decreases by 1. Additionally, damage from your Wizard spells and features ignores Resistance to Necrotic damage.</description>
+		</sheet>
+	</element>
+
+	<element name="Level 6: Undead Thralls" type="Archetype Feature" source="Arcana Unleashed" id="ID_WOTC_AU_ARCHETYPE_WIZARD_NECROMANCER_UNDEAD_THRALLS">
+		<requirements>!ID_INTERNAL_AU_FEATURE_REPLACEMENT_WIZARD_NECROMANCER_UNDEAD_THRALLS</requirements>
+		<description>
+			<p>You always have <i>Animate Dead</i> prepared and can cast it without expending a spell slot, but you must finish a Long Rest before you can cast it in this way again. Whenever you start casting the spell, you can increase the spell's effective level by 1.</p>
+			<p class="indent">In addition, while holding your spellbook, you gain the following benefits.</p>
+			<p class="indent"><em><strong>Undead Fortitude.</strong></em> Whenever you cast a Necromancy spell that creates or summons an Undead, the Undead's Hit Point maximum and current Hit Points increase by a number equal to your Intelligence modifier plus half your Wizard level (round down).</p>
+			<p class="indent"><em><strong>Withering Strike.</strong></em> Whenever an Undead you control within 60 feet of you hits a creature with an attack roll, the Undead deals extra Necrotic damage equal to your Intelligence modifier (minimum of 1 Necrotic damage).</p>
+		</description>
+		<sheet alt="Undead Thralls" usage="1/Long Rest">
+			<description>You can cast Animate Dead without expending a spell slot. Whenever you start casting the spell, you can increase the spell's effective level by 1. &#13;
+			In addition, while holding your spellbook, you gain the following benefits.</description>
+		</sheet>
+		<rules>
+			<grant type="Spell" id="ID_WOTC_PHB24_SPELL_ANIMATE_DEAD" spellcasting="Wizard" prepared="true" />
+			<select type="Archetype Feature" name="Undead Fortitude" supports="Necromancer Undead Fortitude" default="ID_WOTC_AU_ARCHETYPE_WIZARD_NECROMANCER_UNDEAD_THRALLS_UNDEAD_FORTITUDE" />
+			<select type="Archetype Feature" name="Withering Strike" supports="Necromancer Withering Strike" default="ID_WOTC_AU_ARCHETYPE_WIZARD_NECROMANCER_UNDEAD_THRALLS_WITHERING_STRIKE" />
+		</rules>
+	</element>
+	<element name="Undead Fortitude" type="Archetype Feature" source="Arcana Unleashed" id="ID_WOTC_AU_ARCHETYPE_WIZARD_NECROMANCER_UNDEAD_THRALLS_UNDEAD_FORTITUDE">
+		<supports>Necromancer Undead Fortitude</supports>
+		<compendium display="false"/>
+		<description>
+			<p>Whenever you cast a Necromancy spell that creates or summons an Undead, the Undead's Hit Point maximum and current Hit Points increase by a number equal to your Intelligence modifier plus half your Wizard level (round down).</p>
+		</description>
+		<sheet>
+			<description>Whenever you cast a Necromancy spell that creates or summons an Undead, the Undead's HP maximum and current HPs increase by {{undead fortitude:hp}}.</description>
+		</sheet>
+		<rules>
+			<stat name="undead fortitude:hp" value="intelligence:modifier" />
+			<stat name="undead fortitude:hp" value="level:wizard:half" />
+		</rules>
+	</element>
+	<element name="Withering Strike" type="Archetype Feature" source="Arcana Unleashed" id="ID_WOTC_AU_ARCHETYPE_WIZARD_NECROMANCER_UNDEAD_THRALLS_WITHERING_STRIKE">
+		<supports>Necromancer Withering Strike</supports>
+		<compendium display="false"/>
+		<description>
+			<p>Whenever an Undead you control within 60 feet of you hits a creature with an attack roll, the Undead deals extra Necrotic damage equal to your Intelligence modifier (minimum of 1 Necrotic damage).</p>
+		</description>
+		<sheet>
+			<description>Whenever an Undead you control within 60 feet of you hits a creature with an attack roll, it deals {{withering strike:damage}} extra Necrotic damage.</description>
+		</sheet>
+		<rules>
+			<stat name="withering strike:damage" value="1" bonus="ability"/>
+			<stat name="withering strike:damage" value="intelligence:modifier" bonus="ability"/>
+		</rules>
+	</element>
+
+	<element name="Level 10: Harvest Undead" type="Archetype Feature" source="Arcana Unleashed" id="ID_WOTC_AU_ARCHETYPE_WIZARD_NECROMANCER_HARVEST_UNDEAD">
+		<requirements>!ID_INTERNAL_AU_FEATURE_REPLACEMENT_WIZARD_NECROMANCER_HARVEST_UNDEAD</requirements>
+		<description>
+			<p>You have learned more secrets about the nuances of life and death. Immediately after you become Bloodied but aren't reduced to 0 Hit Points from taking damage, you can take a Reaction to reduce an Undead creature under your control that you can see to 0 Hit Points. You then immediately regain a number of Hit Points equal to your Wizard level.</p>
+		</description>
+		<sheet alt="Harvest Undead" action="Reaction">
+			<description>Immediately after you become Bloodied but aren't reduced to 0 HPs from taking damage, you can reduce an Undead creature under your control that you can see to 0 HPs. You then immediately regain {{level:wizard}} HPs.</description>
+		</sheet>
+	</element>
+
+	<element name="Level 14: Death's Master" type="Archetype Feature" source="Arcana Unleashed" id="ID_WOTC_AU_ARCHETYPE_WIZARD_NECROMANCER_DEATHS_MASTER">
+		<requirements>!ID_INTERNAL_AU_FEATURE_REPLACEMENT_WIZARD_NECROMANCER_DEATHS_MASTER</requirements>
+		<description>
+			<p>Abstruse rituals within your spellbook allow you mastery over undeath. While holding your spellbook, you gain the following benefits.</p>
+			<p class="indent"><em><strong>Bolster Undead.</strong></em> As a Bonus Action, choose any number of Undead you have created or summoned with a Necromancy spell that are within 60 feet of you. Those Undead each gain Temporary Hit Points equal to your Wizard level. Once you use this Bonus Action, you can't do so again until you finish a Long Rest.</p>
+			<p class="indent"><em><strong>Extinguish Undead.</strong></em> When an Undead creature you can see is reduced to 0 Hit Points, you can cause it to explode with necrotic energy. Roll a number of d6s equal to half the creature's unexpended Hit Dice (round up, minimum of 1d6), and add them together. Each creature in a 10-foot Emanation originating from the Undead makes a Dexterity saving throw. On a failed save, a target takes Necrotic damage equal to the number rolled and can't take Reactions until the start of its next turn. On a successful save, a target takes half as much damage only. When you use this feature to explode an Undead creature you don't control, you must take a Reaction and expend a level 5+ spell slot to do so.</p>
+		</description>
+		<sheet alt="Death's Master">
+			<description>While holding your spellbook, you gain the following benefits.</description>
+		</sheet>
+		<rules>
+			<select type="Archetype Feature" name="Bolster Undead" supports="Necromancer Bolster Undead" default="ID_WOTC_AU_ARCHETYPE_WIZARD_NECROMANCER_DEATHS_MASTER_BOLSTER_UNDEAD" />
+			<select type="Archetype Feature" name="Extinguish Undead" supports="Necromancer Extinguish Undead" default="ID_WOTC_AU_ARCHETYPE_WIZARD_NECROMANCER_DEATHS_MASTER_EXTINGUISH_UNDEAD" />
+		</rules>
+	</element>
+	<element name="Bolster Undead" type="Archetype Feature" source="Arcana Unleashed" id="ID_WOTC_AU_ARCHETYPE_WIZARD_NECROMANCER_DEATHS_MASTER_BOLSTER_UNDEAD">
+		<supports>Necromancer Bolster Undead</supports>
+		<compendium display="false"/>
+		<description>
+			<p>As a Bonus Action, choose any number of Undead you have created or summoned with a Necromancy spell that are within 60 feet of you. Those Undead each gain Temporary Hit Points equal to your Wizard level. Once you use this Bonus Action, you can't do so again until you finish a Long Rest.</p>
+		</description>
+		<sheet action="Bonus Action" usage="1/Long Rest">
+			<description>Choose any number of Undead you have created or summoned with a Necromancy spell that are within 60 feet of you. Those Undead each gain {{level:wizard}} THPs.</description>
+		</sheet>
+	</element>
+	<element name="Extinguish Undead" type="Archetype Feature" source="Arcana Unleashed" id="ID_WOTC_AU_ARCHETYPE_WIZARD_NECROMANCER_DEATHS_MASTER_EXTINGUISH_UNDEAD">
+		<supports>Necromancer Extinguish Undead</supports>
+		<compendium display="false"/>
+		<description>
+			<p>When an Undead creature you can see is reduced to 0 Hit Points, you can cause it to explode with necrotic energy. Roll a number of d6s equal to half the creature's unexpended Hit Dice (round up, minimum of 1d6), and add them together. Each creature in a 10-foot Emanation originating from the Undead makes a Dexterity saving throw. On a failed save, a target takes Necrotic damage equal to the number rolled and can't take Reactions until the start of its next turn. On a successful save, a target takes half as much damage only. When you use this feature to explode an Undead creature you don't control, you must take a Reaction and expend a level 5+ spell slot to do so.</p>
+		</description>
+		<sheet>
+			<description>When an Undead creature you can see is reduced to 0 HPs, you can cause it to explode with necrotic energy. Roll a number of d6s equal to half the creature's unexpended Hit Dice (round up, minimum of 1d6), and add them together. Each creature in a 10-foot Emanation originating from the Undead makes a Dexterity saving throw. On a failed save, a target takes Necrotic damage equal to the number rolled and can't take Reactions until the start of its next turn. On a successful save, a target takes half as much damage only. &#13;
+			When you use this feature to explode an Undead creature you don't control, you must take a Reaction and expend a level 5+ spell slot to do so.</description>
+		</sheet>
+	</element>
+
+	<!--Feature Replacement Grants-->
+	<element name="Necromancy Savant Feature Replacement" type="Grants" source="Internal" id="ID_INTERNAL_AU_FEATURE_REPLACEMENT_WIZARD_NECROMANCER_NECROMANCY_SAVANT" />
+	<element name="Necromancy Spellbook Feature Replacement" type="Grants" source="Internal" id="ID_INTERNAL_AU_FEATURE_REPLACEMENT_WIZARD_NECROMANCER_NECROMANCY_SPELLBOOK" />
+	<element name="Grave Power Feature Replacement" type="Grants" source="Internal" id="ID_INTERNAL_AU_FEATURE_REPLACEMENT_WIZARD_NECROMANCER_GRAVE_POWER" />
+	<element name="Undead Thralls Feature Replacement" type="Grants" source="Internal" id="ID_INTERNAL_AU_FEATURE_REPLACEMENT_WIZARD_NECROMANCER_UNDEAD_THRALLS" />
+	<element name="Harvest Undead Feature Replacement" type="Grants" source="Internal" id="ID_INTERNAL_AU_FEATURE_REPLACEMENT_WIZARD_NECROMANCER_HARVEST_UNDEAD" />
+	<element name="Death's Master Feature Replacement" type="Grants" source="Internal" id="ID_INTERNAL_AU_FEATURE_REPLACEMENT_WIZARD_NECROMANCER_DEATHS_MASTER" />
+</elements>

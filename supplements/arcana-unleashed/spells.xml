@@ -1,0 +1,779 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<elements>
+	<info>
+		<name>Spells</name>
+		<description>Spells from Arcana Unleashed.</description>
+		<update version="0.0.1">
+			<file name="spells.xml" url="https://raw.githubusercontent.com/AuroraLegacy/elements/master/supplements/arcana-unleashed/spells.xml" />
+		</update>
+	</info>
+
+	<element name="Aura of Evasion" type="Spell" source="Arcana Unleashed" id="ID_WOTC_AU_SPELL_AURA_OF_EVASION">
+		<supports>Sorcerer, Warlock, Wizard</supports>
+		<description>
+			<p>An aura of alacrity radiates from you in a 30-foot Emanation for the duration. While in the aura, you and your allies have Advantage on Dexterity saving throws. When an affected creature is subjected to an effect that allows it to make a Dexterity saving throw to take only half damage, it takes no damage if it succeeds on the save and only half damage if it fails. A creature with the Incapacitated condition doesn't gain any benefit from being in the aura.</p>
+		</description>
+		<setters>
+			<set name="keywords">aura, emanation, evasion</set>
+			<set name="level">7</set>
+			<set name="school">Abjuration</set>
+			<set name="time">Action</set>
+			<set name="range">Self (30-foot Emanation)</set>
+			<set name="hasVerbalComponent">true</set>
+			<set name="hasSomaticComponent">true</set>
+			<set name="isConcentration">true</set>
+			<set name="duration">Concentration, up to 1 minute</set>
+		</setters>
+	</element>
+
+	<element name="Battle Familiar" type="Spell" source="Arcana Unleashed" id="ID_WOTC_AU_SPELL_BATTLE_FAMILIAR">
+		<supports>Druid, Warlock, Wizard</supports>
+		<description>
+			<p>You conjure a familiar imbued with magical might. The familiar appears in an unoccupied space within range; resembles an animal of your choice but is a Celestial, Fey, or Fiend (your choice); and uses the <i>Battle Familiar</i> stat block. When you cast this spell, choose the Brute, Flyer, or Stalker form. The choice determines certain details in the stat block.</p>
+			<p class="indent"><b><i>Combat.</i></b> The familiar is an ally to you and your allies. It rolls its own Initiative and acts on its own turn.</p>
+			<p class="indent"><b><i>Disappearance of the Familiar.</i></b> The battle familiar disappears when the spell ends, if it drops to 0 Hit Points, or if you die. When it disappears, it leaves behind in its space anything it was wearing or carrying. If you cast this spell again, you decide whether you summon the familiar that disappeared or a different one.</p>
+			<p class="indent"><b><i>One Familiar Only.</i></b> You can't have more than one familiar at a time. If you cast this spell while you already have a familiar from this spell, that familiar is replaced by the new one.</p>
+			<p class="indent">If you have a familiar from the <i>Find Familiar</i> spell when you cast this spell, you empower your existing familiar rather than conjuring a new one. For the duration, your familiar can attack in addition to taking other actions as normal, and your familiar's game statistics are replaced by the <i>Battle Familiar</i> stat block, but it retains its creature type, alignment, Hit Points, Hit Point Dice, and any features granted by the <i>Find Familiar</i> spell. Your familiar gains a number of Temporary Hit Points equal to the Hit Points of the battle familiar. <i>Battle Familiar</i> ends early if the familiar has no more Temporary Hit Points left, and these Temporary Hit Points vanish if any remain when <i>Battle Familiar</i> ends. Your familiar reverts to its previous form when <i>Battle Familiar</i> ends.</p>
+			<p class="indent"><b><i>Using a Higher-Level Spell Slot.</i></b> Use the spell slot's level for the spell's level in the stat block.</p>
+			<div class="reference">
+				<div element="ID_WOTC_AU_INFORMATION_BATTLE_FAMILIAR_STATBLOCK" />
+			</div>
+		</description>
+		<setters>
+			<set name="keywords">summon, beast, celestial, fey, fiend, upcasting, higher-level spell slot</set>
+			<set name="level">2</set>
+			<set name="school">Conjuration</set>
+			<set name="time">Action</set>
+			<set name="range">10 feet</set>
+			<set name="hasVerbalComponent">true</set>
+			<set name="hasSomaticComponent">true</set>
+			<set name="hasMaterialComponent">true</set>
+			<set name="materialComponent">a diamond worth 25+ GP</set>
+			<set name="duration">1 hour</set>
+		</setters>
+	</element>
+	<element name="Battle Familiar" type="Information" source="Arcana Unleashed" id="ID_WOTC_AU_INFORMATION_BATTLE_FAMILIAR_STATBLOCK">
+		<description>
+			<p style="margin-bottom:5px"><em>Medium Celestial, Fey, or Fiend; Neutral</em></p>
+			<ul class="unstyled mb">
+				<li><strong>AC</strong> 11 + the spell's level + 2 (Brute only)</li>
+				<li><strong>HP</strong> 30 (Brute only) or 20 (Flyer or Stalker only) + 5 for each spell level above 2</li>
+				<li><strong>Speed</strong> 40 ft., Fly 30 ft. (hover; Flyer only), Swim 30 ft.</li>
+			</ul>
+			<table style="text-align:center;margin-top:2px;margin-bottom:10px">
+				<tr style="font-size:8px"><td colspan="2" /><td>MOD</td><td>SAVE</td><td colspan="2" /><td>MOD</td><td>SAVE</td><td colspan="2" /><td>MOD</td><td>SAVE</td></tr>
+				<tr><td>STR</td><td>16</td><td>+3</td><td>+3</td><td>DEX</td><td>16</td><td>+3</td><td>+3</td><td>CON</td><td>12</td><td>+1</td><td>+1</td></tr>
+				<tr><td>INT</td><td>8</td><td>-1</td><td>-1</td><td>WIS</td><td>13</td><td>+1</td><td>+1</td><td>CHA</td><td>10</td><td>+0</td><td>+0</td></tr>
+			</table>
+			<ul class="unstyled mb">
+				<li><strong>Immunities</strong> Charmed, Frightened</li>
+				<li><strong>Senses</strong> Passive Perception 11</li>
+				<li><strong>Languages</strong> Understands the languages you know</li>
+				<li><strong>CR</strong> None (XP 0; PB equals your Proficiency Bonus)</li>
+			</ul>
+			<h4 style="margin-top:5px">Traits</h4>
+			<ul class="unstyled">
+				<li><strong><em>Talented.</em></strong> Add half the spell's level (round down) to any ability check or saving throw the familiar makes.</li>
+				<li><strong><em>Flyby (Flyer Only).</em></strong> The spirit doesn't provoke Opportunity Attacks when it flies out of an enemy's reach.</li>
+			</ul>
+			<h4 style="margin-top:5px">Actions</h4>
+			<ul class="unstyled">
+				<li><em><strong>Multiattack.</strong></em> The familiar makes a number of Rend attacks equal to half this spell's level (round down). The familiar can replace one of these attacks with Prowl if available.</li>
+				<li><em><strong>Rend.</strong> Melee Attack Roll:</em> Bonus equals your spell attack modifier, reach 5 ft. <em>Hit:</em> 1d8 + 3 + the spell’s level Force damage.</li>
+				<li><em><strong>Prowl (Stalker Only).</strong></em> The familiar moves up to half its Speed without provoking Opportunity Attacks. At the end of this movement, the familiar can take the Hide action.</li>
+			</ul>
+		</description>
+	</element>
+
+	<element name="Catnap" type="Spell" source="Arcana Unleashed" id="ID_WOTC_AU_SPELL_CATNAP">
+		<supports>Artificer, Bard, Sorcerer, Wizard</supports>
+		<description>
+			<p>You make a calming gesture, and up to three willing creatures of your choice that you can see within range have the Unconscious condition for the spell's duration. The spell ends on a target if it takes damage or another creature takes an action to shake it awake. If a target has the Unconscious condition from this spell for the full duration, that target gains the benefits of finishing a Short Rest, and it can't be affected by this spell again until it finishes a Long Rest.</p>
+			<p class="indent"><b><i>Using a Higher-Level Spell Slot.</i></b> You can target one additional willing creature for each spell slot level above 3.</p>
+		</description>
+		<setters>
+			<set name="keywords">short rest, upcasting, higher-level spell slot</set>
+			<set name="level">3</set>
+			<set name="school">Enchantment</set>
+			<set name="time">Action</set>
+			<set name="range">30 feet</set>
+			<set name="hasSomaticComponent">true</set>
+			<set name="hasMaterialComponent">true</set>
+			<set name="materialComponent">a pinch of sand</set>
+			<set name="duration">10 minutes</set>
+		</setters>
+	</element>
+
+	<element name="Detonate" type="Spell" source="Arcana Unleashed" id="ID_WOTC_AU_SPELL_DETONATE">
+		<supports>Sorcerer, Warlock, Wizard, Damaging Spell, Spell Saving Throw</supports>
+		<description>
+			<p>You create a magical, explosive seed inside a creature you can see within range. The target makes a Constitution saving throw, taking 10d10 Fire damage on a failed save or half as much damage on a successful one.</p>
+			<p class="indent">An explosion then originates from the target. Each creature in a 60-foot Emanation originating from the target (not including the target) makes a Dexterity saving throw, with Disadvantage if this spell reduced the target to 0 Hit Points. A creature takes 10d10 Fire damage on a failed save or half as much damage on a successful one.</p>
+			<p class="indent">A nonmagical object that isn't being worn or carried also takes the damage if it's in the Emanation, and the object starts burning if it's flammable.</p>
+		</description>
+		<setters>
+			<set name="keywords">emanation, damage, dexterity, constitution, save, fire, burning</set>
+			<set name="level">9</set>
+			<set name="school">Evocation</set>
+			<set name="time">Action</set>
+			<set name="range">500 feet</set>
+			<set name="hasVerbalComponent">true</set>
+			<set name="hasSomaticComponent">true</set>
+			<set name="hasMaterialComponent">true</set>
+			<set name="materialComponent">a piece of tinder</set>
+			<set name="duration">Instantaneous</set>
+		</setters>
+	</element>
+
+	<element name="Disruptive Tune" type="Spell" source="Arcana Unleashed" id="ID_WOTC_AU_SPELL_DISRUPTIVE_TUNE">
+		<supports>Bard, Sorcerer, Wizard, Spell Saving Throw</supports>
+		<description>
+			<p>A distracting melody momentarily fills a 20-foot-radius Sphere centered on a point you choose within range. Each creature in the Sphere makes a Constitution saving throw. On a failed save, a target loses Concentration, and it has Disadvantage on Constitution saving throws to maintain Concentration for the spell's duration.</p>
+		</description>
+		<setters>
+			<set name="keywords">sphere, constitution, save, concentration, disadvantage</set>
+			<set name="level">2</set>
+			<set name="school">Abjuration</set>
+			<set name="time">Action</set>
+			<set name="range">120 feet</set>
+			<set name="hasVerbalComponent">true</set>
+			<set name="hasSomaticComponent">true</set>
+			<set name="isConcentration">true</set>
+			<set name="duration">Concentration, up to 1 minute</set>
+		</setters>
+	</element>
+
+	<element name="Distorted Distance" type="Spell" source="Arcana Unleashed" id="ID_WOTC_AU_SPELL_DISTORTED_DISTANCE">
+		<supports>Artificer, Bard, Warlock, Wizard, Damaging Spell, Spell Saving Throw</supports>
+		<description>
+			<p>You create an illusory spatial dilation that fills a 60-foot-radius Sphere centered on a point within range. For each creature you can see in the Sphere, you can choose one of the following effects for it:</p>
+			<p class="indent"><em><strong>Dizzying Elongation.</strong></em> The creature makes an Intelligence saving throw. On a failed save, the creature takes 2d10 Psychic damage, and the Sphere is Difficult Terrain for it until the end of its turn.</p>
+			<p class="indent"><em><strong>Shortened Space.</strong></em> The creature's Speed increases by 20 feet until the end of its next turn.</p>
+			<p class="indent">Until the spell ends, whenever a creature enters the Sphere or ends its turn there, you can choose for it to receive one of these effects. A creature can be affected by this spell only once per turn.</p>
+		</description>
+		<setters>
+			<set name="keywords">sphere, intelligence, speed, damage, psychic, difficult terrain, </set>
+			<set name="level">4</set>
+			<set name="school">Illusion</set>
+			<set name="time">Action</set>
+			<set name="range">120 feet</set>
+			<set name="hasVerbalComponent">true</set>
+			<set name="hasSomaticComponent">true</set>
+			<set name="isConcentration">true</set>
+			<set name="duration">Concentration, up to 10 minutes</set>
+		</setters>
+	</element>
+
+	<element name="Dueling Ground" type="Spell" source="Arcana Unleashed" id="ID_WOTC_AU_SPELL_DUELING_GROUND">
+		<supports>Artificer, Bard, Cleric, Druid, Paladin, Ranger, Sorcerer, Warlock, Wizard</supports>
+		<description>
+			<p>You create a magical dueling ground bounded by a glowing, rune-scribed circle in a 15-foot-radius Sphere centered on a point on the ground you touch.</p>
+			<p class="indent">As part of creating the dueling ground, you designate two willing creatures within the Sphere as the targets. The spell ends early if a creature other than one of the targets enters the Sphere.</p>
+			<p class="indent">If a target drops to 0 Hit Points while in the dueling ground, the target is Stable and teleports to the nearest unoccupied space outside the dueling ground. If a target is subjected to an effect that would kill it instantly without dealing damage while in the dueling ground, the target doesn't die and instead has 0 Hit Points and the Unconscious condition, is Stable, and teleports to the nearest unoccupied space outside the dueling ground.</p>
+			<p class="indent">When only one target remains in the dueling ground, runes matching those on the ground around the Sphere briefly flash around the remaining target's head like a crown.</p>
+			<p class="indent"><b><i>Using a Higher-Level Spell Slot.</i></b> You can target one additional willing creature for each spell slot level above 2.</p>
+		</description>
+		<setters>
+			<set name="keywords">sphere, upcasting, higher-level spell slot</set>
+			<set name="level">2</set>
+			<set name="school">Abjuration</set>
+			<set name="time">10 minutes or Ritual</set>
+			<set name="isRitual">true</set>
+			<set name="range">Touch</set>
+			<set name="hasVerbalComponent">true</set>
+			<set name="hasSomaticComponent">true</set>
+			<set name="hasMaterialComponent">true</set>
+			<set name="materialComponent">a silk flag worth 100+ GP</set>
+			<set name="duration">1 hour</set>
+		</setters>
+	</element>
+
+	<element name="Enervation" type="Spell" source="Arcana Unleashed" id="ID_WOTC_AU_SPELL_ENERVATION">
+		<supports>Sorcerer, Warlock, Wizard, Damaging Spell, Spell Saving Throw, Healing Spell</supports>
+		<description>
+			<p>A tendril of inky darkness reaches out from you to drain life from a creature you can see within range.</p>
+			<p class="indent">The target makes a Dexterity saving throw. On a failed save, the target takes 6d8 Necrotic damage. On each of your subsequent turns, you can take a Bonus Action to deal 2d8 Necrotic damage to the target automatically. The spell ends if the target is ever outside the spell's range or it has Total Cover from you.</p>
+			<p class="indent">On a successful save, the target takes half the initial damage only, and the spell ends.</p>
+			<p class="indent">Whenever this spell deals damage to a target, you regain Hit Points equal to half the amount of Necrotic damage dealt.</p>
+			<p class="indent"><b><i>Using a Higher-Level Spell Slot.</i></b> The initial damage increases by 1d8 for each spell slot level above 5.</p>
+		</description>
+		<setters>
+			<set name="keywords">dexterity, save, necrotic, damage, bonus action, upcasting, higher-level spell slot</set>
+			<set name="level">5</set>
+			<set name="school">Necromancy</set>
+			<set name="time">Action</set>
+			<set name="range">60 feet</set>
+			<set name="hasVerbalComponent">true</set>
+			<set name="hasSomaticComponent">true</set>
+			<set name="isConcentration">true</set>
+			<set name="duration">Concentration, up to 1 minute</set>
+		</setters>
+	</element>
+
+	<element name="Entrancing Mirrors" type="Spell" source="Arcana Unleashed" id="ID_WOTC_AU_SPELL_ENTRANCING_MIRRORS">
+		<supports>Bard, Sorcerer, Warlock, Wizard, Damaging Spell, Spell Saving Throw</supports>
+		<description>
+			<p>You create dozens of illusory mirrors to confuse up to three creatures of your choice that you can see within range.</p>
+			<p class="indent">Each target makes an Intelligence saving throw. On a failed save, a target takes 7d6 Psychic damage and has the Stunned condition. While the target is Stunned, its Speed is halved. On a successful save, a target takes half as much damage only.</p>
+			<p class="indent">A Stunned target repeats the Intelligence saving throw at the end of each of its turns, ending the spell on itself on a success.</p>
+		</description>
+		<setters>
+			<set name="keywords">intelligence, save, speed, debuff, damage, psychic, stunned </set>
+			<set name="level">8</set>
+			<set name="school">Illusion</set>
+			<set name="time">Action</set>
+			<set name="range">90 feet</set>
+			<set name="hasVerbalComponent">true</set>
+			<set name="hasSomaticComponent">true</set>
+			<set name="hasMaterialComponent">true</set>
+			<set name="materialComponent">a mirror shard</set>
+			<set name="isConcentration">true</set>
+			<set name="duration">Concentration, up to 1 minute</set>
+		</setters>
+	</element>
+
+	<element name="Festering Blast" type="Spell" source="Arcana Unleashed" id="ID_WOTC_AU_SPELL_FESTERING_BLAST">
+		<supports>Druid, Sorcerer, Warlock, Wizard, Damaging Spell, Spell Saving Throw</supports>
+		<description>
+			<p>A 60-foot-long, 10-foot-wide Line of miasma blasts from you in a direction you choose. Each creature in the Line must make a Constitution saving throw. On a failed save, a target takes 4d10 Necrotic damage and has the Poisoned condition for the duration.</p>
+			<p class="indent">A creature Poisoned by this spell takes 2d10 Poison damage at the start of each of its turns. At the end of each of its turns, a Poisoned target repeats the save, ending the spell on itself on a success.</p>
+			<p class="indent"><b><i>Using a Higher-Level Spell Slot.</i></b> The initial damage increases by 1d10 for each spell slot level above 4.</p>
+		</description>
+		<setters>
+			<set name="keywords">constitution, save, necrotic, poison, damage, poisoned, debuff, upcasting, higher-level spell slot</set>
+			<set name="level">4</set>
+			<set name="school">Necromancy</set>
+			<set name="time">Action</set>
+			<set name="range">Self (60-foot-long, 10-foot-wide Line)</set>
+			<set name="hasVerbalComponent">true</set>
+			<set name="hasSomaticComponent">true</set>
+			<set name="duration">1 minute</set>
+		</setters>
+	</element>
+
+	<element name="Fractured Awareness" type="Spell" source="Arcana Unleashed" id="ID_WOTC_AU_SPELL_FRACTURED_AWARENESS">
+		<supports>Bard, Sorcerer, Warlock, Wizard, Damaging Spell, Spell Saving Throw</supports>
+		<description>
+			<p>You cause a creature to receive conflicting visions of multiple possible futures. Choose a creature you can see within range. The target makes an Intelligence saving throw. On a failed save, the target takes 12d10 Psychic damage and has Disadvantage on D20 Tests for the duration. On a successful save, the target takes half as much damage only, and the spell ends.</p>
+			<p class="indent">At the end of each of its turns, an affected target repeats the save, ending the spell on a success.</p>
+		</description>
+		<setters>
+			<set name="keywords">intelligence, debuff, damage, psychic, disadvantage </set>
+			<set name="level">7</set>
+			<set name="school">Divination</set>
+			<set name="time">Action</set>
+			<set name="range">120 feet</set>
+			<set name="hasVerbalComponent">true</set>
+			<set name="hasSomaticComponent">true</set>
+			<set name="isConcentration">true</set>
+			<set name="duration">Concentration, up to 1 minute</set>
+		</setters>
+	</element>
+
+	<element name="Grave Ground" type="Spell" source="Arcana Unleashed" id="ID_WOTC_AU_SPELL_GRAVE_GROUND">
+		<supports>Cleric, Warlock, Wizard, Damaging Spell, Spell Saving Throw</supports>
+		<description>
+			<p>Skeletal hands burst from an area on the ground within range. The area consists of up to four 10-foot squares, which you arrange as you like. Each square must be contiguous with at least one other square. That area is Difficult Terrain for your enemies.</p>
+			<p class="indent">Any enemy in that area when the skeletal hands appear makes a Strength saving throw. On a failed save, a creature takes 6d6 Necrotic damage, and until the end of its next turn, the creature subtracts 1d6 from all its damage rolls. An enemy also makes this save if it enters the area or ends its turn there. A creature makes this save only once per turn.</p>
+			<p class="indent"><b><i>Using a Higher-Level Spell Slot.</i></b> The damage increases by 1d6 for each spell slot level above 5.</p>
+		</description>
+		<setters>
+			<set name="keywords">squares, strength, save, necrotic, damage, difficult terrain, debuff, upcasting, higher-level spell slot</set>
+			<set name="level">5</set>
+			<set name="school">Necromancy</set>
+			<set name="time">Action</set>
+			<set name="range">120 feet</set>
+			<set name="hasVerbalComponent">true</set>
+			<set name="hasSomaticComponent">true</set>
+			<set name="hasMaterialComponent">true</set>
+			<set name="materialComponent">a handful of grave dirt</set>
+			<set name="isConcentration">true</set>
+			<set name="duration">Concentration, up to 1 minute</set>
+		</setters>
+	</element>
+
+	<element name="Hindsight" type="Spell" source="Arcana Unleashed" id="ID_WOTC_AU_SPELL_HINDSIGHT">
+		<supports>Wizard</supports>
+		<description>
+			<p>You peer backward through the fabric of time. You see visions of events that occurred within range throughout the past 10 years, racing by at approximately 1 day per second. Throughout the spell's duration, you can freely slow down, pause, rewind, or fast-forward through these visions.</p>
+		</description>
+		<setters>
+			<set name="keywords">seeing, knowledge, information</set>
+			<set name="level">9</set>
+			<set name="school">Divination</set>
+			<set name="time">10 minutes</set>
+			<set name="range">500 feet</set>
+			<set name="hasVerbalComponent">true</set>
+			<set name="hasSomaticComponent">true</set>
+			<set name="hasMaterialComponent">true</set>
+			<set name="materialComponent">a tiny hourglass worth 500+ GP, which the spell consumes</set>
+			<set name="isConcentration">true</set>
+			<set name="duration">Concentration, up to 1 hour</set>
+		</setters>
+	</element>
+
+	<element name="Illusory Dragon" type="Spell" source="Arcana Unleashed" id="ID_WOTC_AU_SPELL_ILLUSORY_DRAGON">
+		<supports>Wizard, Spell Saving Throw, Damaging Spell</supports>
+		<description>
+			<p>By gathering threads of shadow material from the Shadowfell, you create a Huge shadowy dragon in an unoccupied space that you can see within range. The illusion lasts for the spell's duration and occupies its space as if it were a creature. The illusion is tangible because of the shadow material used to create it but has Immunity to all damage and conditions.</p>
+			<p class="indent">When the illusion appears, any enemy that can see it makes a Wisdom saving throw. On a failed save, the creature drops whatever it's holding and has the Frightened condition for the duration. If a creature Frightened in this way ends its turn in a space where it doesn't have line of sight to the illusion, the creature repeats the saving throw, ending the condition on itself on a success.</p>
+			<p class="indent">As a Bonus Action, you can move the illusion up to 60 feet. At any point during its movement, you can cause the shadowy dragon to exhale a blast of energy in a 60-foot Cone. Each creature in the Cone makes an Intelligence saving throw, taking 6d6 Acid, Cold, Fire, Lightning, Necrotic, or Poison damage (your choice when you create the dragon) on a failed save or half as much damage on a successful one.</p>
+			<p class="indent">A creature that takes a Study action to examine the dragon can determine that it is an illusion with a successful Intelligence (Investigation) check against your spell save DC. If a creature discerns the illusion for what it is, the creature can see through the image and has Advantage on saving throws to end the Frightened condition it caused and to resist its exhalation.</p>
+		</description>
+		<setters>
+			<set name="keywords">summon, acid, cold, fire, lightning, necrotic, poison, cone, bonus action, wisdom, intelligence, save, study, investigation, frightened</set>
+			<set name="level">8</set>
+			<set name="school">Illusion</set>
+			<set name="time">Action</set>
+			<set name="range">120 feet</set>
+			<set name="hasSomaticComponent">true</set>
+			<set name="isConcentration">true</set>
+			<set name="duration">Concentration, up to 1 minute</set>
+		</setters>
+	</element>
+
+	<element name="Inflict Doubt" type="Spell" source="Arcana Unleashed" id="ID_WOTC_AU_SPELL_INFLICT_DOUBT">
+		<supports>Bard, Sorcerer, Warlock, Wizard, Spell Saving Throw</supports>
+		<description>
+			<p>You inflict self-doubt on a creature you can see within range. The target must succeed on a Wisdom saving throw or have Disadvantage on D20 Tests for the duration. At the end of each of its turns, the target repeats the save, ending the spell on itself on a success.</p>
+		</description>
+		<setters>
+			<set name="keywords">wisdom, save, disadvantage, debuff</set>
+			<set name="level">3</set>
+			<set name="school">Enchantment</set>
+			<set name="time">Action</set>
+			<set name="range">120 feet</set>
+			<set name="hasVerbalComponent">true</set>
+			<set name="hasSomaticComponent">true</set>
+			<set name="isConcentration">true</set>
+			<set name="duration">Concentration, up to 1 minute</set>
+		</setters>
+	</element>
+
+	<element name="Invulnerability" type="Spell" source="Arcana Unleashed" id="ID_WOTC_AU_SPELL_INVULNERABILITY">
+		<supports>Wizard</supports>
+		<description>
+			<p>You have Immunity to all damage until the spell ends.</p>
+		</description>
+		<setters>
+			<set name="keywords">buff, immunity</set>
+			<set name="level">9</set>
+			<set name="school">Abjuration</set>
+			<set name="time">Action</set>
+			<set name="range">Self</set>
+			<set name="hasVerbalComponent">true</set>
+			<set name="hasSomaticComponent">true</set>
+			<set name="hasMaterialComponent">true</set>
+			<set name="materialComponent">a piece of adamantine worth 500+ GP, which the spell consumes</set>
+			<set name="isConcentration">true</set>
+			<set name="duration">Concentration, up to 1 minute</set>
+		</setters>
+	</element>
+
+	<element name="Iron Body" type="Spell" source="Arcana Unleashed" id="ID_WOTC_AU_SPELL_IRON_BODY">
+		<supports>Sorcerer, Warlock, Wizard</supports>
+		<description>
+			<p>One willing creature you touch transforms into living metal. Until the spell ends, the target's Exhaustion level can't increase; the target has Resistance to Bludgeoning, Fire, Piercing, and Slashing damage; and it has Immunity to Poison damage and the Paralyzed, Petrified, and Poisoned conditions. If the target is Paralyzed, Petrified, or Poisoned when you cast the spell, those conditions immediately end for the target.</p>
+		</description>
+		<setters>
+			<set name="keywords">buff, resistance, bludgeoning, fire, piercing, slashing, exhaustion, immunity, paralyzed, petrified, poisoned</set>
+			<set name="level">8</set>
+			<set name="school">Transmutation</set>
+			<set name="time">Action</set>
+			<set name="range">Touch</set>
+			<set name="hasVerbalComponent">true</set>
+			<set name="hasSomaticComponent">true</set>
+			<set name="hasMaterialComponent">true</set>
+			<set name="materialComponent">diamond dust worth 250+ GP, which the spell consumes</set>
+			<set name="isConcentration">true</set>
+			<set name="duration">Concentration, up to 1 hour</set>
+		</setters>
+	</element>
+
+	<element name="Lightning Ring" type="Spell" source="Arcana Unleashed" id="ID_WOTC_AU_SPELL_LIGHTNING_RING">
+		<supports>Druid, Sorcerer, Warlock, Wizard, Damaging Spell, Spell Saving Throw</supports>
+		<description>
+			<p>A ring of crackling electricity fills a 10-foot Emanation originating from you. Whenever the Emanation enters a creature's space and whenever a creature enters the Emanation or ends its turn there, you can force that creature to make a Constitution saving throw. On a failed save, the creature takes 3d6 Lightning damage plus 3d6 Thunder damage, and it has the Deafened condition for 1 minute. On a successful save, the creature takes half as much damage only.</p>
+			<p class="indent">As a Magic action while the spell is active, you can emit a 60-foot-long, 5-foot-wide Line out from you in a direction you choose. Each creature in the Line makes a Dexterity saving throw, taking 6d6 Lightning damage on a failed save or half as much damage on a successful one.</p>
+		</description>
+		<setters>
+			<set name="keywords">emanation, aura, constitution, lightning, thunder, deafened, line, dexterity, save, action</set>
+			<set name="level">8</set>
+			<set name="school">Evocation</set>
+			<set name="time">Bonus Action</set>
+			<set name="range">Self (10-foot Emanation)</set>
+			<set name="hasVerbalComponent">true</set>
+			<set name="hasSomaticComponent">true</set>
+			<set name="hasMaterialComponent">true</set>
+			<set name="materialComponent">a bit of fur and a glass ring</set>
+			<set name="isConcentration">true</set>
+			<set name="duration">Concentration, up to 10 minutes</set>
+		</setters>
+	</element>
+
+	<element name="Moment of Prescience" type="Spell" source="Arcana Unleashed" id="ID_WOTC_AU_SPELL_MOMENT_OF_PRESCIENCE">
+		<supports>Wizard</supports>
+		<description>
+			<p>You have a powerful sixth sense that guides you at just the right time. Turn the roll of your failed D20 Test into a 20, or turn the roll of the triggering attack roll into a 1.</p>
+		</description>
+		<setters>
+			<set name="keywords">buff, debuff, reroll</set>
+			<set name="level">8</set>
+			<set name="school">Divination</set>
+			<set name="time">Reaction, which you take when you fail a D20 Test or when a creature hits you with an attack roll</set>
+			<set name="range">Self</set>
+			<set name="hasVerbalComponent">true</set>
+			<set name="hasSomaticComponent">true</set>
+			<set name="duration">Instantaneous</set>
+		</setters>
+	</element>
+
+	<element name="Mordenkainen's Lucubration" type="Spell" source="Arcana Unleashed" id="ID_WOTC_AU_SPELL_MORDENKAINENS_LUCUBRATION">
+		<supports>Wizard</supports>
+		<description>
+			<p>You recover up to two expended spell slots of level 2 or lower.</p>
+			<p class="indent"><b><i>Using a Higher-Level Spell Slot.</i></b> The maximum level of spell slots you can recover increases to level 3 (if cast with a level 6-7 spell slot) or level 4 (if cast with a level 8+ spell slot).</p>
+		</description>
+		<setters>
+			<set name="keywords">spell slots, upcasting, higher-level spell slot</set>
+			<set name="level">5</set>
+			<set name="school">Divination</set>
+			<set name="time">Action</set>
+			<set name="range">Self</set>
+			<set name="hasVerbalComponent">true</set>
+			<set name="hasSomaticComponent">true</set>
+			<set name="duration">Instantaneous</set>
+		</setters>
+	</element>
+
+	<element name="Negative Energy Flood" type="Spell" source="Arcana Unleashed" id="ID_WOTC_AU_SPELL_NEGATIVE_ENERGY_FLOOD">
+		<supports>Warlock, Wizard, Damaging Spell, Spell Saving Throw</supports>
+		<description>
+			<p>You send ribbons of negative energy at one creature you can see within range. If the target isn't Undead, it makes a Constitution saving throw, taking 3d10 + 25 Necrotic damage on a failed save or half as much damage on a successful one. A Humanoid killed by this spell rises at the start of your next turn as a Zombie that follows your verbal orders for 24 hours, after which it acts according to its nature.</p>
+			<p class="indent">If the target is Undead, it gains 3d10 Temporary Hit Points.</p>
+			<p class="indent"><b><i>Using a Higher-Level Spell Slot.</i></b> The damage increases by 1d10 for each spell slot level above 5.</p>
+			<div class="reference">
+				<div element="ID_WOTC_MM25_INFORMATION_ZOMBIE_STATBLOCK" />
+			</div>
+		</description>
+		<setters>
+			<set name="keywords">undead, constitution, save, necrotic, damage, thp, zombie, upcasting, higher-level spell slot</set>
+			<set name="level">5</set>
+			<set name="school">Necromancy</set>
+			<set name="time">Action</set>
+			<set name="range">60 feet</set>
+			<set name="hasVerbalComponent">true</set>
+			<set name="hasMaterialComponent">true</set>
+			<set name="materialComponent">a broken bone and a square of black silk</set>
+			<set name="duration">Instantaneous</set>
+		</setters>
+	</element>
+
+	<element name="Power Word Pain" type="Spell" source="Arcana Unleashed" id="ID_WOTC_AU_SPELL_POWER_WORD_PAIN">
+		<supports>Bard, Sorcerer, Warlock, Wizard, Damaging Spell</supports>
+		<description>
+			<p>You speak a word of power that causes waves of intense pain to assail one creature you can see within range. If the target has 100 Hit Points or fewer, it takes 6d8 Force damage and has the Charmed condition for the duration. Otherwise, it takes 6d8 Force damage only.</p>
+			<p class="indent">While the target is Charmed, its Speed can be no more than 10 feet, and it has Disadvantage on D20 Tests except Constitution saving throws. In addition, when the target tries to cast a spell, it must first succeed on a Constitution saving throw, or the spell dissipates with no effect, and the action, Bonus Action, or Reaction used to cast it is wasted. If that spell was cast with a spell slot, the slot isn't expended.</p>
+			<p class="indent">At the end of each of its turns, the Charmed target makes a Constitution saving throw, ending the spell on itself on a successful save.</p>
+		</description>
+		<setters>
+			<set name="keywords">charmed, debuff, damage, force, disadvantage, constitution, save, debuff</set>
+			<set name="level">7</set>
+			<set name="school">Enchantment</set>
+			<set name="time">Action</set>
+			<set name="range">60 feet</set>
+			<set name="hasVerbalComponent">true</set>
+			<set name="duration">1 minute</set>
+		</setters>
+	</element>
+
+	<element name="Reweave Fate" type="Spell" source="Arcana Unleashed" id="ID_WOTC_AU_SPELL_REWEAVE_FATE">
+		<supports>Bard, Cleric, Warlock, Wizard</supports>
+		<description>
+			<p>You untangle a single thread of fate to encourage a different result. The creature that failed the D20 Test can reroll it with Advantage, and the creature must use the new roll. If the D20 Test is successful, the creature gains 6d10 Temporary Hit Points from its strengthened fate.</p>
+		</description>
+		<setters>
+			<set name="keywords">buff, thp, reroll, advantage</set>
+			<set name="level">7</set>
+			<set name="school">Divination</set>
+			<set name="time">Reaction, which you take when a creature you can see within 60 feet of you fails a D20 Test</set>
+			<set name="range">60 feet</set>
+			<set name="hasSomaticComponent">true</set>
+			<set name="duration">Instantaneous</set>
+		</setters>
+	</element>
+
+	<element name="Spirit Lantern" type="Spell" source="Arcana Unleashed" id="ID_WOTC_AU_SPELL_GRAVE_GROUND">
+		<supports>Artificer, Cleric, Warlock, Wizard, Damaging Spell, Spell Saving Throw</supports>
+		<description>
+			<p>You conjure a floating, ghostly black lantern that hovers above you and sheds Dim Light in a 60-foot radius. When an enemy dies within this Dim Light, a fragment of the creature's soul flies into the lantern. The lantern can hold a number of soul fragments equal to your spellcasting ability modifier, and those fragments dissipate when the spell ends.</p>
+			<p class="indent">As a Bonus Action, you can expend a soul fragment to create one of the following effects.</p>
+			<ul class="unstyled" style="text-indent:-1em; margin-left:1em">
+				<li><strong>Drain Life.</strong> The soul fragment darts at a creature of your choice that you can see within 60 feet of yourself. The target makes a Constitution saving throw, taking Necrotic damage equal to 4d8 plus your spellcasting ability modifier on a failed save or half as much damage on a successful one.</li>
+				<li><strong>Repair Undead.</strong> The soul fragment flies into an Undead creature of your choice that you can see within 60 feet of yourself. That creature regains Hit Points equal to 4d8 plus your spellcasting ability modifier.</li>
+				<li><strong>Ward Ally.</strong> The soul fragment darts around a creature of your choice that you can see within 60 feet of yourself. Other creatures have Disadvantage on attack rolls against the chosen creature until the start of your next turn.</li>
+			</ul>
+			</description>
+		<setters>
+			<set name="keywords">dim light, summon, bonus action, constitution, save, damage, necrotic, undead healing, disadvantage</set>
+			<set name="level">5</set>
+			<set name="school">Necromancy</set>
+			<set name="time">Action</set>
+			<set name="range">Self</set>
+			<set name="hasVerbalComponent">true</set>
+			<set name="hasSomaticComponent">true</set>
+			<set name="hasMaterialComponent">true</set>
+			<set name="materialComponent">a black lantern</set>
+			<set name="duration">10 minutes</set>
+		</setters>
+	</element>
+
+	<element name="Summon Dinosaur" type="Spell" source="Arcana Unleashed" id="ID_WOTC_AU_SPELL_SUMMON_DINOSAUR">
+		<supports>Druid</supports>
+		<description>
+			<p>You call forth the spirit of a primeval dinosaur. It manifests in an unoccupied space that you can see within range and uses the Dinosaur Spirit stat block. When you cast the spell, choose Ankylosaur, Triceratops, or Tyrannosaur. The creature resembles a dinosaur of the chosen type, which determines certain details in its stat block. The creature disappears when it drops to 0 Hit Points or when the spell ends.</p>
+			<p class="indent">The creature is an ally to you and your allies. In combat, the creature shares your Initiative count, but it takes its turn immediately after yours. It obeys your verbal commands (no action required by you). If you don't issue any, the creature takes the Dodge action and uses its movement to avoid danger.</p>
+			<p class="indent"><b><i>Using a Higher-Level Spell Slot.</i></b> Use the spell slot's level for the spell's level in the stat block.</p>
+			<div class="reference">
+				<div element="ID_WOTC_AU_INFORMATION_DINOSAUR_SPIRIT_STATBLOCK" />
+			</div>
+		</description>
+		<setters>
+			<set name="keywords">summon, upcasting, higher-level spell slot</set>
+			<set name="level">6</set>
+			<set name="school">Conjuration</set>
+			<set name="time">Action</set>
+			<set name="range">90 feet</set>
+			<set name="hasVerbalComponent">true</set>
+			<set name="hasSomaticComponent">true</set>
+			<set name="hasMaterialComponent">true</set>
+			<set name="materialComponent">polished scale worth 600+ GP</set>
+			<set name="isConcentration">true</set>
+			<set name="duration">Concentration, up to 1 hour</set>
+		</setters>
+	</element>
+	<element name="Dinosaur Spirit" type="Information" source="Arcana Unleashed" id="ID_WOTC_AU_INFORMATION_DINOSAUR_SPIRIT_STATBLOCK">
+		<description>
+			<p style="margin-bottom:5px"><em>Huge Beast (Dinosaur), Neutral</em></p>
+			<ul class="unstyled mb">
+				<li><strong>AC</strong> 11 + the spell's level + 2 (Ankylosaur only)</li>
+				<li><strong>HP</strong> 60 + 10 for each spell level above 6</li>
+				<li><strong>Speed</strong> 40 ft.</li>
+			</ul>
+			<table style="text-align:center;margin-top:2px;margin-bottom:10px">
+				<tr style="font-size:8px"><td colspan="2" /><td>MOD</td><td>SAVE</td><td colspan="2" /><td>MOD</td><td>SAVE</td><td colspan="2" /><td>MOD</td><td>SAVE</td></tr>
+				<tr><td>STR</td><td>21</td><td>+5</td><td>+5</td><td>DEX</td><td>11</td><td>+0</td><td>+0</td><td>CON</td><td>15</td><td>+2</td><td>+2</td></tr>
+				<tr><td>INT</td><td>4</td><td>-3</td><td>-3</td><td>WIS</td><td>12</td><td>+1</td><td>+1</td><td>CHA</td><td>9</td><td>-1</td><td>-1</td></tr>
+			</table>
+			<ul class="unstyled mb">
+				<li><strong>Senses</strong> Passive Perception 11</li>
+				<li><strong>Languages</strong> Understands the languages you know</li>
+				<li><strong>CR</strong> None (XP 0; PB equals your Proficiency Bonus)</li>
+			</ul>
+			<h4 style="margin-top:5px">Traits</h4>
+			<ul class="unstyled">
+				<li><strong><em>Tough.</em></strong> Add half the spell's level (round down) to any Strength or Constitution saving throw the spirit makes.</li>
+				<li><strong><em>Siege Monster (Ankylosaur Only).</em></strong> The spirit deals double damage to objects and structures.</li>
+			</ul>
+			<h4 style="margin-top:5px">Actions</h4>
+			<ul class="unstyled">
+				<li><em><strong>Multiattack.</strong></em> The spirit makes a number of attacks equal to half this spell's level (round down).</li>
+				<li><em><strong>Bite (Tyrannosaur Only).</strong> Melee Attack Roll:</em> Bonus equals your spell attack modifier, reach 10 ft. <em>Hit:</em> 2d10 + 5 + the spell’s level Piercing damage. If the target is a Large or smaller creature, it has the Grappled condition (escape DC equals your spell save DC), and it has the Restrained condition until the grapple ends.</li>
+				<li><em><strong>Gore (Triceratops Only).</strong> Melee Attack Roll:</em> Bonus equals your spell attack modifier, reach 10 ft. <em>Hit:</em> 1d10 + 5 + the spell’s level Piercing damage. If the target is a Huge or smaller creature and the spirit moved 20+ feet straight toward it immediately before the hit, the target takes an extra 1d10 Piercing damage and has the Prone condition.</li>
+				<li><em><strong>Slam.</strong> Melee Attack Roll:</em> Bonus equals your spell attack modifier, reach 10 ft. <em>Hit:</em> 1d10 + 5 + the spell’s level Bludgeoning damage.</li>
+			</ul>
+		</description>
+	</element>
+
+	<element name="Summon Plant" type="Spell" source="Arcana Unleashed" id="ID_WOTC_AU_SPELL_SUMMON_PLANT">
+		<supports>Druid, Ranger</supports>
+		<description>
+			<p>You call forth the spirit of an animated plant. It manifests in an unoccupied space that you can see within range and uses the Plant Spirit stat block. When you cast the spell, choose Fungus, Tree, or Vine. The creature resembles a plant of the chosen type, which determines certain details in its stat block. The creature disappears when it drops to 0 Hit Points or when the spell ends.</p>
+			<p class="indent">The creature is an ally to you and your allies. In combat, the creature shares your Initiative count, but it takes its turn immediately after yours. It obeys your verbal commands (no action required by you). If you don't issue any, it takes the Dodge action and uses its movement to avoid danger.</p>
+			<p class="indent"><b><i>Using a Higher-Level Spell Slot.</i></b> Use the spell slot's level for the spell's level in the stat block.</p>
+			<div class="reference">
+				<div element="ID_WOTC_AU_INFORMATION_PLANT_SPIRIT_STATBLOCK" />
+			</div>
+		</description>
+		<setters>
+			<set name="keywords">summon, upcasting, higher-level spell slot</set>
+			<set name="level">5</set>
+			<set name="school">Conjuration</set>
+			<set name="time">Action</set>
+			<set name="range">90 feet</set>
+			<set name="hasVerbalComponent">true</set>
+			<set name="hasSomaticComponent">true</set>
+			<set name="hasMaterialComponent">true</set>
+			<set name="materialComponent">herbs worth 500+ GP</set>
+			<set name="isConcentration">true</set>
+			<set name="duration">Concentration, up to 1 hour</set>
+		</setters>
+	</element>
+	<element name="Plant Spirit" type="Information" source="Arcana Unleashed" id="ID_WOTC_AU_INFORMATION_PLANT_SPIRIT_STATBLOCK">
+		<description>
+			<p style="margin-bottom:5px"><em>Large Plant, Neutral</em></p>
+			<ul class="unstyled mb">
+				<li><strong>AC</strong> 11 + the spell's level + 2 (Tree only)</li>
+				<li><strong>HP</strong> 50 + 10 for each spell level above 5</li>
+				<li><strong>Speed</strong> 40 ft., Climb 40 ft. (Vine only)</li>
+			</ul>
+			<table style="text-align:center;margin-top:2px;margin-bottom:10px">
+				<tr style="font-size:8px"><td colspan="2" /><td>MOD</td><td>SAVE</td><td colspan="2" /><td>MOD</td><td>SAVE</td><td colspan="2" /><td>MOD</td><td>SAVE</td></tr>
+				<tr><td>STR</td><td>17</td><td>+3</td><td>+3</td><td>DEX</td><td>13</td><td>+1</td><td>+1</td><td>CON</td><td>14</td><td>+2</td><td>+2</td></tr>
+				<tr><td>INT</td><td>10</td><td>+0</td><td>+0</td><td>WIS</td><td>13</td><td>+1</td><td>+1</td><td>CHA</td><td>10</td><td>+0</td><td>+0</td></tr>
+			</table>
+			<ul class="unstyled mb">
+				<li><strong>Vulnerabilities</strong> Fire (Tree only); Slashing (Fungus or Vine only)</li>
+				<li><strong>Senses</strong> Passive Perception 11</li>
+				<li><strong>Languages</strong> Understands the languages you know</li>
+				<li><strong>CR</strong> None (XP 0; PB equals your Proficiency Bonus)</li>
+			</ul>
+			<h4 style="margin-top:5px">Traits</h4>
+			<ul class="unstyled">
+				<li><strong><em>Siege Monster (Tree Only).</em></strong> The spirit deals double damage to objects and structures.</li>
+			</ul>
+			<h4 style="margin-top:5px">Actions</h4>
+			<ul class="unstyled">
+				<li><em><strong>Multiattack.</strong></em> The spirit makes a number of attacks equal to half this spell's level (round down).</li>
+				<li><em><strong>Slam (Tree or Vine Only).</strong> Melee Attack Roll:</em> Bonus equals your spell attack modifier, reach 5 ft. <em>Hit:</em> 1d10 + 3 + the spell’s level Bludgeoning damage.</li>
+				<li><em><strong>Spore Spray (Fungus Only).</strong> Melee Attack Roll:</em> Bonus equals your spell attack modifier, reach 5 ft. or range 30 ft. <em>Hit:</em> 1d4 + the spell's level Poison damage, and the target has the Poisoned condition until the end of its next turn. If the target already has the Poisoned condition, it instead takes an extra 3d4 Poison damage.</li>
+			</ul>
+		</description>
+	</element>
+
+	<element name="Transfix" type="Spell" source="Arcana Unleashed" id="ID_WOTC_AU_SPELL_TRANSFIX">
+		<supports>Bard, Warlock, Wizard, Damaging Spell, Spell Saving Throw</supports>
+		<description>
+			<p>For the duration, your appearance becomes otherworldly and alluring. One creature of your choice that you can see within 60 feet of you must succeed on a Charisma saving throw or have the Charmed condition for the duration.</p>
+			<p class="indent">While Charmed, the target has the Incapacitated condition, and if the target is more than 5 feet away from you, it moves on its turn toward you by the most direct route, trying to get within 5 feet of you. If the Charmed creature ends its turn within 5 feet of you, it takes 4d8 Psychic damage.</p>
+			<p class="indent">The target doesn't avoid Opportunity Attacks when moving toward you, but before moving into damaging terrain (such as lava or a pit), the target repeats the save, ending the spell on itself on a success.</p>
+			<p class="indent">Until the spell ends, you can take a Magic action on subsequent turns to target another creature, but you can't target a creature again if it has succeeded on a save against this casting of the spell.</p>
+			<p class="indent"><em><strong>Using a Higher-Level Spell Slot.</strong></em> The damage increases by 1d8 for each spell slot level above 7.</p>
+		</description>
+		<setters>
+			<set name="keywords">charisma, save, charmed, incapacitated, damage, psychic, debuff, action, upcasting, higher-level spell slot</set>
+			<set name="level">7</set>
+			<set name="school">Enchantment</set>
+			<set name="time">Action</set>
+			<set name="range">Self</set>
+			<set name="hasVerbalComponent">true</set>
+			<set name="hasSomaticComponent">true</set>
+			<set name="isConcentration">true</set>
+			<set name="duration">Concentration, up to 1 minute</set>
+		</setters>
+	</element>
+
+	<element name="Uncertain Footing" type="Spell" source="Arcana Unleashed" id="ID_WOTC_AU_SPELL_UNCERTAIN_FOOTING">
+		<supports>Artificer, Bard, Warlock, Wizard, Spell Saving Throw</supports>
+		<description>
+			<p>You create illusory obstacles such as rocks or spikes in an attempt to confuse up to three creatures you can see within range, affecting their ability to move. Each target makes an Intelligence saving throw. On a failed save, a target's Speed is halved, and it can't take the Dash action. A hampered target repeats the save at the end of each of its turns, ending the spell on itself on a success.</p>
+		</description>
+		<setters>
+			<set name="keywords">intelligence, speed, dash, debuff</set>
+			<set name="level">2</set>
+			<set name="school">Illusion</set>
+			<set name="time">Action</set>
+			<set name="range">120 feet</set>
+			<set name="hasVerbalComponent">true</set>
+			<set name="hasSomaticComponent">true</set>
+			<set name="hasMaterialComponent">true</set>
+			<set name="materialComponent">a distorted lens</set>
+			<set name="isConcentration">true</set>
+			<set name="duration">Concentration, up to 1 minute</set>
+		</setters>
+	</element>
+
+	<element name="Vision of Elapsing Eons" type="Spell" source="Arcana Unleashed" id="ID_WOTC_AU_SPELL_VISION_OF_ELAPSING_EONS">
+		<supports>Bard, Sorcerer, Warlock, Wizard, Damaging Spell, Spell Saving Throw</supports>
+		<description>
+			<p>You trick a creature you can see within range into believing it is watching itself and its surroundings crumble away, as if eons were passing in moments. The target must succeed on an Intelligence saving throw or take 10d12 Psychic damage and have the Paralyzed condition for the duration.</p>
+			<p class="indent">While Paralyzed, the target repeats the save at the end of each of its turns. On a failed save, it gains 1 Exhaustion level. On a successful save, the spell ends. The spell ends early if someone within 5 feet of the target takes an action to shake it free from the illusion.</p>
+		</description>
+		<setters>
+			<set name="keywords">intelligence, save, damage, psychic, paralyzed, exhaustion, debuff</set>
+			<set name="level">9</set>
+			<set name="school">Illusion</set>
+			<set name="time">Action</set>
+			<set name="range">120 feet</set>
+			<set name="hasVerbalComponent">true</set>
+			<set name="hasSomaticComponent">true</set>
+			<set name="duration">1 minute</set>
+		</setters>
+	</element>
+
+	<element name="Wail of the Banshee" type="Spell" source="Arcana Unleashed" id="ID_WOTC_AU_SPELL_WAIL_OF_THE_BANSHEE">
+		<supports>Sorcerer, Warlock, Wizard, Damaging Spell, Spell Saving Throw</supports>
+		<description>
+			<p>You emit a terrible scream that can kill those who hear it. Choose up to ten creatures within range. Each target with 50 Hit Points or fewer dies. Targets with more than 50 Hit Points make a Constitution saving throw. On a failed save, a target takes 12d10 Psychic damage and has the Deafened condition for 1 hour. On a successful save, a target takes half as much damage only. A target is unaffected by the spell if it can't hear you.</p>
+		</description>
+		<setters>
+			<set name="keywords">constitution, save, damage, psychic, deafened</set>
+			<set name="level">9</set>
+			<set name="school">Necromancy</set>
+			<set name="time">Action</set>
+			<set name="range">60 feet</set>
+			<set name="hasVerbalComponent">true</set>
+			<set name="duration">Instantaneous</set>
+		</setters>
+	</element>
+
+	<element name="Waves of Exhaustion" type="Spell" source="Arcana Unleashed" id="ID_WOTC_AU_SPELL_WAVES_OF_EXHAUSTION">
+		<supports>Sorcerer, Warlock, Wizard, Spell Saving Throw</supports>
+		<description>
+			<p>You evoke a nimbus of flickering gray light around your body. For the duration, you can take a Magic action to emit a wave of gray light in a 60-foot Cone. Creatures in that area must succeed on a Constitution saving throw or gain 1 Exhaustion level. This spell can't increase a creature's Exhaustion level above 4.</p>
+		</description>
+		<setters>
+			<set name="keywords">constitution, save, exhaustion, cone, action</set>
+			<set name="level">5</set>
+			<set name="school">Necromancy</set>
+			<set name="time">Bonus Action</set>
+			<set name="range">Self (60-foot Cone)</set>
+			<set name="hasVerbalComponent">true</set>
+			<set name="hasSomaticComponent">true</set>
+			<set name="hasMaterialComponent">true</set>
+			<set name="materialComponent">a piece of dried meat</set>
+			<set name="isConcentration">true</set>
+			<set name="duration">Concentration, up to 1 minute</set>
+		</setters>
+	</element>
+
+	<element name="Wither and Bloom" type="Spell" source="Arcana Unleashed" id="ID_WOTC_AU_SPELL_WITHER_AND_BLOOM">
+		<supports>Druid, Sorcerer, Wizard, Damaging Spell, Spell Saving Throw, Healing Spell</supports>
+		<description>
+			<p>You invoke both death and life in a 10-foot-radius Sphere centered on a point within range. Each creature of your choice in that area makes a Constitution saving throw, taking 3d6 Necrotic damage on a failed save or half as much damage on a successful one. Nonmagical plants in that area that aren't creatures, such as trees and shrubs, wither.</p>
+			<p class="indent">In addition, one creature of your choice in that area can roll one of its unexpended Hit Point Dice and regain a number of Hit Points equal to the roll plus your spellcasting ability modifier. That die is then expended.</p>
+			<p class="indent"><em><strong>Using a Higher-Level Spell Slot.</strong></em> The damage increases by 1d6 for each spell slot level above 2. The number of Hit Point Dice that can be rolled and expended increases by one for each spell slot level above 2. You add your spellcasting modifier to the number of Hit Points regained by this spell only once, regardless of the number of Hit Point Dice rolled and expended.</p>
+		</description>
+		<setters>
+			<set name="keywords">sphere, constitution, save, damage, necrotic, hit point dice, hp dice, hit dice, hd, upcasting, higher-level spell slot</set>
+			<set name="level">5</set>
+			<set name="school">Necromancy</set>
+			<set name="time">Bonus Action</set>
+			<set name="range">Self (60-foot Cone)</set>
+			<set name="hasVerbalComponent">true</set>
+			<set name="hasSomaticComponent">true</set>
+			<set name="hasMaterialComponent">true</set>
+			<set name="materialComponent">a piece of dried meat</set>
+			<set name="isConcentration">true</set>
+			<set name="duration">Concentration, up to 1 minute</set>
+		</setters>
+	</element>
+
+	<element name="Zone of Amicability" type="Spell" source="Arcana Unleashed" id="ID_WOTC_AU_SPELL_ZONE_OF_AMICABILITY">
+		<supports>Bard, Warlock</supports>
+		<description>
+			<p>A magical zone of amicability radiates from you in a 60-foot Emanation for the duration. When you make an ability check to influence a creature in that area, you can treat a d20 roll of 9 or lower as a 10.</p>
+		</description>
+		<setters>
+			<set name="keywords">aura, emanation, ability check, influence, reroll, buff</set>
+			<set name="level">4</set>
+			<set name="school">Enchantment</set>
+			<set name="time">Action</set>
+			<set name="range">Self (60-foot Emanation)</set>
+			<set name="hasVerbalComponent">true</set>
+			<set name="hasSomaticComponent">true</set>
+			<set name="duration">10 minutes</set>
+		</setters>
+	</element>
+
+</elements>

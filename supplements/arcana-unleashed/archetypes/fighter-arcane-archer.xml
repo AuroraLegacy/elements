@@ -1,0 +1,270 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<elements>
+	<info>
+		<name>Arcane Archer</name>
+		<description>The Arcane Archer subclass from Arcana Unleashed.</description>
+		<update version="0.0.1">
+			<file name="fighter-arcane archer.xml" url="https://raw.githubusercontent.com/AuroraLegacy/elements/master/supplements/arcana-unleashed/archetypes/fighter-arcane-archer.xml" />
+		</update>
+	</info>
+
+	<element name="Arcane Archer" type="Archetype" source="Arcana Unleashed" id="ID_WOTC_AU_ARCHETYPE_FIGHTER_ARCANE_ARCHER">
+		<supports>Fighter Subclass</supports>
+		<description>
+			<p class="flavor">Deploy Magical Effects Through Enchanted Ammunition</p>
+			<p>An Arcane Archer studies a unique elven method of archery that weaves magic into attacks to produce supernatural effects. Over the centuries, other folk have learned this technique and broadened it so it applies to ranged weapons of many kinds and to aspects of adventuring life outside of combat.</p>
+			<div element="ID_WOTC_AU_ARCHETYPE_FEATURE_FIGHTER_ARCANE_ARCHER_ARCANE_ARCHER_LORE"/>
+			<div element="ID_WOTC_AU_ARCHETYPE_FEATURE_FIGHTER_ARCANE_ARCHER_ARCANE_SHOT"/>
+			<div element="ID_WOTC_AU_ARCHETYPE_FEATURE_FIGHTER_ARCANE_ARCHER_CURVING_SHOT"/>
+			<div element="ID_WOTC_AU_ARCHETYPE_FEATURE_FIGHTER_ARCANE_ARCHER_MAGICAL_AMMUNITION"/>
+			<div element="ID_WOTC_AU_ARCHETYPE_FEATURE_FIGHTER_ARCANE_ARCHER_EVER_READY_SHOT"/>
+			<div element="ID_WOTC_AU_ARCHETYPE_FEATURE_FIGHTER_ARCANE_ARCHER_INDOMITABLE_TELEPORT"/>
+			<div element="ID_WOTC_AU_ARCHETYPE_FEATURE_FIGHTER_ARCANE_ARCHER_MASTERFUL_SHOTS"/>
+			<div element="ID_WOTC_AU_INFORMATION_FIGHTER_ARCANE_ARCHER_ARCANE_SHOT_OPTIONS"/>
+		</description>
+		<sheet display="false" />
+		<rules>
+			<grant type="Archetype Feature" id="ID_WOTC_AU_ARCHETYPE_FEATURE_FIGHTER_ARCANE_ARCHER_ARCANE_ARCHER_LORE" level="3"/>
+			<grant type="Archetype Feature" id="ID_WOTC_AU_ARCHETYPE_FEATURE_FIGHTER_ARCANE_ARCHER_ARCANE_SHOT" level="3"/>
+			<grant type="Archetype Feature" id="ID_WOTC_AU_ARCHETYPE_FEATURE_FIGHTER_ARCANE_ARCHER_CURVING_SHOT" level="7"/>
+			<grant type="Archetype Feature" id="ID_WOTC_AU_ARCHETYPE_FEATURE_FIGHTER_ARCANE_ARCHER_MAGICAL_AMMUNITION" level="7"/>
+			<grant type="Archetype Feature" id="ID_WOTC_AU_ARCHETYPE_FEATURE_FIGHTER_ARCANE_ARCHER_EVER_READY_SHOT" level="10"/>
+			<grant type="Archetype Feature" id="ID_WOTC_AU_ARCHETYPE_FEATURE_FIGHTER_ARCANE_ARCHER_INDOMITABLE_TELEPORT" level="15"/>
+			<grant type="Archetype Feature" id="ID_WOTC_AU_ARCHETYPE_FEATURE_FIGHTER_ARCANE_ARCHER_MASTERFUL_SHOTS" level="18"/>
+		</rules>
+	</element>
+
+	<element name="Level 3: Arcane Archer Lore" type="Archetype Feature" source="Arcana Unleashed" id="ID_WOTC_AU_ARCHETYPE_FEATURE_FIGHTER_ARCANE_ARCHER_ARCANE_ARCHER_LORE">
+		<requirements>!ID_INTERNAL_AU_FEATURE_REPLACEMENT_FIGHTER_ARCANE_ARCHER_ARCANE_ARCHER_LORE</requirements>
+		<description>
+			<p>You learn magical theory and secrets of nature, granting you the following benefits.</p>
+			<p class="indent"><em><strong>Cantrip.</strong></em> You know either the <i>Druidcraft</i> or the <i>Prestidigitation</i> cantrip. Intelligence is your spellcasting ability for it.</p>
+			<p class="indent"><em><strong>Skills.</strong></em> You gain proficiency in the Arcana and Nature skills. If you already have one of these proficiencies, you instead gain proficiency in a different skill of your choice from the skills available to Fighters at level 1 (or in two skills available to Fighters at level 1 if you have both).</p>
+		</description>
+		<sheet display="false" />
+		<rules>
+			<select type="Spell" name="Cantrip (Wizard)" supports="ID_WOTC_PHB24_SPELL_DRUIDCRAFT|ID_WOTC_PHB24_SPELL_PRESTIDIGITATION" level="3" />
+			<select type="Proficiency" name="Skill Proficiency (Arcane Archer Lore)" supports="ID_PROFICIENCY_SKILL_ACROBATICS|ID_PROFICIENCY_SKILL_ANIMALHANDLING|ID_PROFICIENCY_SKILL_ATHLETICS|ID_PROFICIENCY_SKILL_ARCANA|ID_PROFICIENCY_SKILL_HISTORY|ID_PROFICIENCY_SKILL_INSIGHT|ID_PROFICIENCY_SKILL_INTIMIDATION|ID_PROFICIENCY_SKILL_PERSUASION|ID_PROFICIENCY_SKILL_PERCEPTION|ID_PROFICIENCY_SKILL_SURVIVAL" default="ID_PROFICIENCY_SKILL_ARCANA" />
+			<select type="Proficiency" name="Skill Proficiency (Arcane Archer Lore)" supports="ID_PROFICIENCY_SKILL_ACROBATICS|ID_PROFICIENCY_SKILL_ANIMALHANDLING|ID_PROFICIENCY_SKILL_ATHLETICS|ID_PROFICIENCY_SKILL_HISTORY|ID_PROFICIENCY_SKILL_INSIGHT|ID_PROFICIENCY_SKILL_INTIMIDATION|ID_PROFICIENCY_SKILL_NATURE|ID_PROFICIENCY_SKILL_PERSUASION|ID_PROFICIENCY_SKILL_PERCEPTION|ID_PROFICIENCY_SKILL_SURVIVAL" default="ID_PROFICIENCY_SKILL_NATURE" />
+		</rules>
+	</element>
+
+	<element name="Level 3: Arcane Shot" type="Archetype Feature" source="Arcana Unleashed" id="ID_WOTC_AU_ARCHETYPE_FEATURE_FIGHTER_ARCANE_ARCHER_ARCANE_SHOT">
+		<requirements>!ID_INTERNAL_AU_FEATURE_REPLACEMENT_FIGHTER_ARCANE_ARCHER_ARCANE_SHOT</requirements>
+		<description>
+			<p>You learn to unleash special magical effects with your shots.</p>
+			<p class="indent">You learn two Arcane Shot options of your choice. You learn an additional Arcane Shot option of your choice when you reach Fighter levels 7, 10, 15, and 18. Each time you learn a new Arcane Shot option, you can also replace one option you know with a different one.</p>
+			<p class="indent"><em><strong>Using Arcane Shot.</strong></em> Once per turn when you make a ranged attack using a weapon with the Ammunition property, you can apply one of your Arcane Shot options to that attack. You decide to use the option when you hit a creature and deal damage to it unless the option doesn't involve an attack roll.</p>
+			<p class="indent">You can use this feature a number of times equal to your Intelligence modifier (minimum of once). You regain all expended uses when you finish a Short or Long Rest.</p>
+			<p class="indent"><em><strong>Arcane Shot Die.</strong></em> Arcane Shot options refer to your Arcane Shot Die. Your Arcane Shot Die is a d6.</p>
+			<p class="indent"><em><strong>Saving Throws.</strong></em> If an Arcane Shot option requires a saving throw, the DC equals 8 plus your Intelligence modifier and Proficiency Bonus.</p>
+			<p class="indent"><em><strong>At Higher Levels.</strong></em> Your Arcane Shot Die changes when you reach certain Fighter levels. The Die becomes a d8 at level 10, a d10 at level 15, and a d12 at level 18.</p>
+		</description>
+		<sheet alt="Arcane Shot" usage="1/Turn - {{arcane shot:uses}}/Short Rest" >
+			<description>When you make a ranged attack using a weapon with the Ammunition property, you can apply one of your Arcane Shot options to that attack. You decide to use the option when you hit a creature a deal damage to it unless the option doesn't involve an attack roll. The DC for your Arcane Shot options is {{arcane shot:dc}}.</description>
+			<description level="10">When you make a ranged attack using a weapon with the Ammunition property, you can apply one of your Arcane Shot options to that attack. You decide to use the option when you hit a creature a deal damage to it unless the option doesn't involve an attack roll. The DC for your Arcane Shot options is {{arcane shot:dc}}. You can regain one expended use when you roll Initiative.</description>
+		</sheet>
+		<rules>
+			<stat name="arcane shot:dice" value="6" bonus="arcane shot" />
+			<stat name="arcane shot:dice" value="8" bonus="arcane shot" level="10"/>
+			<stat name="arcane shot:dice" value="10" bonus="arcane shot" level="15"/>
+			<stat name="arcane shot:dice" value="12" bonus="arcane shot" level="18"/>
+			<stat name="arcane shot:uses" value="1" bonus="ability" />
+			<stat name="arcane shot:uses" value="intelligence:modifier" bonus="ability" />
+			<stat name="arcane shot:dc" value="8" />
+			<stat name="arcane shot:dc" value="proficiency" />
+			<stat name="arcane shot:dc" value="intelligence:modifier" bonus="ability" />
+			
+			<select type="Archetype Feature" name="Arcane Shot Option (Fighter 3)" supports="2024 Arcane Shot" number="2"/>
+			<select type="Archetype Feature" name="Arcane Shot Option (Fighter 7)" supports="2024 Arcane Shot" level="7"/>
+			<select type="Archetype Feature" name="Arcane Shot Option (Fighter 10)" supports="2024 Arcane Shot" level="10"/>
+			<select type="Archetype Feature" name="Arcane Shot Option (Fighter 15)" supports="2024 Arcane Shot" level="15"/>
+			<select type="Archetype Feature" name="Arcane Shot Option (Fighter 18)" supports="2024 Arcane Shot" level="18"/>
+		</rules>
+	</element>
+
+	<element name="Level 7: Curving Shot" type="Archetype Feature" source="Arcana Unleashed" id="ID_WOTC_AU_ARCHETYPE_FEATURE_FIGHTER_ARCANE_ARCHER_CURVING_SHOT">
+		<requirements>!ID_INTERNAL_AU_FEATURE_REPLACEMENT_FIGHTER_ARCANE_ARCHER_CURVING_SHOT</requirements>
+		<description>
+			<p>You learn how to direct an errant shot towards a new target. If you make a ranged attack roll with a weapon with the Ammunition property and miss, you can cause the shot to ricochet toward a new target as a Bonus Action immediately after the attack misses. The new target must be a creature you can see within the weapon's range and within 60 feet of the attack's original target. Make an attack roll against the new target.</p>
+		</description>
+		<sheet alt="Curving Shot" action="Bonus Action">
+			<description>If you make a ranged attack roll with a weapon with the Ammunition property and miss, you can cause the shot to ricochet toward a new target immediately after the attack misses, making an attack roll against the new target. The new target must be a creature you can see within the weapon's range and within 60 feet of the attack's original target.</description>
+		</sheet>
+	</element>
+
+	<element name="Level 7: Magical Ammunition" type="Archetype Feature" source="Arcana Unleashed" id="ID_WOTC_AU_ARCHETYPE_FEATURE_FIGHTER_ARCANE_ARCHER_MAGICAL_AMMUNITION">
+		<requirements>!ID_INTERNAL_AU_FEATURE_REPLACEMENT_FIGHTER_ARCANE_ARCHER_MAGICAL_AMMUNITION</requirements>
+		<description>
+			<p>You learn to imbue your ammunition with magical properties. As a Magic action, you can imbue a piece of nonmagical ammunition with one of the following magical properties and fire it at a solid surface you can see within the weapon's range. When the ammunition hits the surface, the ammunition's effect activates, and the ammunition attaches to the surface it hit for the duration of the effect; you can remove an attached piece of ammunition as a Magic action, ending the effect early. When the effect ends, the ammunition is destroyed.</p>
+			<p class="indent">Once you use this feature, you can't do so again until you finish a Short or Long Rest. You can also restore your use of this feature by expending a use of your Second Wind (no action required).</p>
+			<p class="indent"><em><strong>Darkening Ammunition.</strong></em> Magical shadows fill a 15-foot Emanation originating from the ammunition for 1 minute. Nonmagical flames in the Emanation are extinguished, and creatures in the Emanation have a -5 penalty to Wisdom (Perception) checks and Passive Perception.</p>
+			<p class="indent"><em><strong>Unlocking Ammunition.</strong></em> A burst of magic fills a 15-foot Emanation originating from the ammunition. The ammunition also emits a loud knocking sound, audible up to 300 feet away. Any object in the Emanation that is held shut by a nonmagical lock or that is stuck or barred becomes unlocked, unstuck, or unbarred. If such an object has multiple locks, only one of them in unlocked.</p>
+			<p class="indent"><em><strong>Vine Ammunition.</strong></em> A 120-foot-long vine grows from the ammunition. You and other creatures can then climb it. The vine withers away after 10 minutes.</p>
+		</description>
+		<sheet alt="Magical Ammunition" action="Action" usage="1/Short Rest">
+			<description>You can imbue a piece of nonmagical ammunition with one of the following magical properties and fire it at a solid surface you can see within the weapon's range. When the ammunition hits the surface, the ammunition's effect activates, and the ammunition attaches to the surface it hit for the duration of the effect; you can remove an attached piece of ammunition as a Magic action, ending the effect early. When the effect ends, the ammunition is destroyed. &#13;
+			You can restore your use of this feature by expending a use of your Second Wind (no action required).</description>
+		</sheet>
+		<rules>
+			<select type="Archetype Feature" name="Darkening Ammunition (Magical Ammunition)" supports="Darkening Ammunition" default="ID_WOTC_AU_ARCHETYPE_FEATURE_FIGHTER_ARCANE_ARCHER_MAGICAL_AMMUNITION_DARKENING_AMMUNITION" />
+			<select type="Archetype Feature" name="Unlocking Ammunition (Magical Ammunition)" supports="Unlocking Ammunition" default="ID_WOTC_AU_ARCHETYPE_FEATURE_FIGHTER_ARCANE_ARCHER_MAGICAL_AMMUNITION_UNLOCKING_AMMUNITION" />
+			<select type="Archetype Feature" name="Vine Ammunition (Magical Ammunition)" supports="Vine Ammunition" default="ID_WOTC_AU_ARCHETYPE_FEATURE_FIGHTER_ARCANE_ARCHER_MAGICAL_AMMUNITION_VINE_AMMUNITION" />
+		</rules>
+	</element>
+	<element name="Darkening Ammunition" type="Archetype Feature" source="Arcana Unleashed" id="ID_WOTC_AU_ARCHETYPE_FEATURE_FIGHTER_ARCANE_ARCHER_MAGICAL_AMMUNITION_DARKENING_AMMUNITION">
+		<supports>Darkening Ammunition</supports>
+		<compendium display="false"/>
+		<description>
+			<p>Magical shadows fill a 15-foot Emanation originating from the ammunition for 1 minute. Nonmagical flames in the Emanation are extinguished, and creatures in the Emanation have a -5 penalty to Wisdom (Perception) checks and Passive Perception.</p>
+		</description>
+		<sheet>
+			<description>Magical shadows fill a 15-foot Emanation originating from the ammunition for 1 minute. Nonmagical flames in the Emanation are extinguished, and creatures in the Emanation have a -5 penalty to Wisdom (Perception) checks and Passive Perception.</description>
+		</sheet>
+	</element>
+	<element name="Unlocking Ammunition" type="Archetype Feature" source="Arcana Unleashed" id="ID_WOTC_AU_ARCHETYPE_FEATURE_FIGHTER_ARCANE_ARCHER_MAGICAL_AMMUNITION_UNLOCKING_AMMUNITION">
+		<supports>Unlocking Ammunition</supports>
+		<compendium display="false"/>
+		<description>
+			<p>A burst of magic fills a 15-foot Emanation originating from the ammunition. The ammunition also emits a loud knocking sound, audible up to 300 feet away. Any object in the Emanation that is held shut by a nonmagical lock or that is stuck or barred becomes unlocked, unstuck, or unbarred. If such an object has multiple locks, only one of them in unlocked.</p>
+		</description>
+		<sheet>
+			<description>A burst of magic fills a 15-foot Emanation originating from the ammunition. The ammunition also emits a loud knocking sound, audible up to 300 feet away. Any object in the Emanation that is held shut by a nonmagical lock or that is stuck or barred becomes unlocked, unstuck, or unbarred. If such an object has multiple locks, only one of them in unlocked.</description>
+		</sheet>
+	</element>
+	<element name="Vine Ammunition" type="Archetype Feature" source="Arcana Unleashed" id="ID_WOTC_AU_ARCHETYPE_FEATURE_FIGHTER_ARCANE_ARCHER_MAGICAL_AMMUNITION_VINE_AMMUNITION">
+		<supports>Vine Ammunition</supports>
+		<compendium display="false"/>
+		<description>
+			<p>A 120-foot-long vine grows from the ammunition. You and other creatures can then climb it. The vine withers away after 10 minutes.</p>
+		</description>
+		<sheet>
+			<description>A 120-foot-long vine grows from the ammunition. You and other creatures can then climb it. The vine withers away after 10 minutes.</description>
+		</sheet>
+	</element>
+
+	<element name="Level 10: Ever-Ready Shot" type="Archetype Feature" source="Arcana Unleashed" id="ID_WOTC_AU_ARCHETYPE_FEATURE_FIGHTER_ARCANE_ARCHER_EVER_READY_SHOT">
+		<requirements>!ID_INTERNAL_AU_FEATURE_REPLACEMENT_FIGHTER_ARCANE_ARCHER_EVER_READY_SHOT</requirements>
+		<description>
+			<p>When you roll Initiative, you can regain one expended use of Arcane Shot.</p>
+		</description>
+		<sheet display="false" />
+	</element>
+
+	<element name="Level 15: Indomitable Teleport" type="Archetype Feature" source="Arcana Unleashed" id="ID_WOTC_AU_ARCHETYPE_FEATURE_FIGHTER_ARCANE_ARCHER_INDOMITABLE_TELEPORT">
+		<requirements>!ID_INTERNAL_AU_FEATURE_REPLACEMENT_FIGHTER_ARCANE_ARCHER_INDOMITABLE_TELEPORT</requirements>
+		<description>
+			<p>Your magical mastery lets you escape dire situations. When you use your Indomitable feature and succeed on the saving throw, you can teleport up to 60 feet to an unoccupied space you can see.</p>
+		</description>
+		<sheet alt="Indomitable Teleport">
+			<description>When you use your Indomitable feature and succeed on the saving throw, you can teleport up to 60 feet to an unoccupied space you can see.</description>
+		</sheet>
+	</element>
+
+	<element name="Level 18: Masterful Shots" type="Archetype Feature" source="Arcana Unleashed" id="ID_WOTC_AU_ARCHETYPE_FEATURE_FIGHTER_ARCANE_ARCHER_MASTERFUL_SHOTS">
+		<requirements>!ID_INTERNAL_AU_FEATURE_REPLACEMENT_FIGHTER_ARCANE_ARCHER_MASTERFUL_SHOTS</requirements>
+		<description>
+			<p>You employ agility in your sharpshooting. When a creature you can see misses you with an attack roll, you can take a Reaction to move up to half your Speed away from the attacker without provoking Opportunity Attacks. You can then make a ranged attack roll against the attacker as part of this Reaction if the attacker is within the weapon's range.</p>
+		</description>
+		<sheet alt="Masterful Shots" action="Reaction">
+			<description>When a creature you can see misses you with an attack roll, you can move up to {{speed:misc}} feet away from the attacker without provoking Opportunity Attacks. You can then make a ranged attack roll against the attacker as part of this Reaction if the attacker is within the weapon's range.</description>
+		</sheet>
+	</element>
+
+	<element name="Arcane Shot Options" type="Information" source="Arcana Unleashed" id="ID_WOTC_AU_INFORMATION_FIGHTER_ARCANE_ARCHER_ARCANE_SHOT_OPTIONS">
+		<description>
+			<p>The options are presented here in alphabetical order.</p>
+			<p class="indent"><i><b>Banishing Shot.</b></i> Your ammunition temporarily sequesters your target in a harmless demiplane. The creature you hit takes extra Psychic damage equal to one roll of your Arcane Shot Die and must succeed on a Charisma saving throw or be banished. While banished, the creature has the Incapacitated condition and a Speed of 0. At the end of its next turn, the target reappears in the space it left or, if that space is occupied, the nearest unoccupied space.</p>
+			<p class="indent"><i><b>Beguiling Shot.</b></i> Your ammunition beguiles your target. The creature you hit takes extra Psychic damage equal to two rolls of your Arcane Shot Die and must succeed on a Wisdom saving throw or have the Charmed condition until the start of your next turn, treating either you or one of your allies within 30 feet of the target (your choice) as the charmer. The Charmed condition ends early if the charmer attacks the target, deals damage to it, or forces it to make a saving throw.</p>
+			<p class="indent"><i><b>Bursting Shot.</b></i> You imbue your ammunition with explosive magical energy. Immediately after you deal damage to the creature, your target and each creature within a 10-foot Emanation originating from the target take Force damage equal to two rolls of your Arcane Shot Die.</p>
+			<p class="indent"><i><b>Enfeebling Shot.</b></i> Your ammunition saps your target's strength. The creature you hit takes extra Necrotic damage equal to two rolls of your Arcane Shot Die. The target must also succeed on a Constitution saving throw or have the Poisoned condition until the end of its next turn. Whenever a target Poisoned in this way hits with an attack roll, it subtracts an amount equal to one roll of your Arcane Shot Die from the total damage of that attack.</p>
+			<p class="indent"><i><b>Grasping Shot.</b></i> Your ammunition creates clutching brambles around your target. The creature you hit takes extra Slashing damage equal to one roll of your Arcane Shot Die and must succeed on a Strength saving throw or have the Restrained condition for 1 minute or until you use this option again. The target or a creature within reach of it can take an Action to make a Strength (Athletics) check against your Arcane Shot saving throw DC, removing the brambles and ending the Restrained condition on the target on a successful check.</p>
+			<p class="indent"><i><b>Piercing Shot.</b></i> You give your ammunition an ethereal quality. When you use this option, you don't make an attack roll for the attack. Instead, the ammunition shoots forward in a 30-foot-long, 1-foot-wide Line originating from you, then vanishes. The Line ignores cover, as the ammunition phases through solid objects. Each creature in the Line makes a Dexterity saving throw. On a failed save, a creature takes damage as if it were hit plus extra Piercing damage equal to two rolls of your Arcane Shot Die. On a successful save, the creature takes half as much damage.</p>
+			<p class="indent"><i><b>Seeking Shot.</b></i> Your ammunition can seek out a target. When you use this option, you don't make an attack roll for the attack. Instead, choose one creature you have seen in the last minute. The ammunition flies towards the creature, moving around corners if necessary and ignoring Half Cover and Three-Quarters Cover. If the target is within your weapon's long range, the target makes a Dexterity saving throw. On a failed save, the target takes damage as if it were hit plus extra Force damage equal to two rolls of your Arcane Shot Die, and you learn the target's current location. On a successful save, the target takes half as much damage only. If the target is beyond your weapon's long range, the ammunition disappears after traveling as far as it can.</p>
+			<p class="indent"><i><b>Shadow Shot.</b></i> Your ammunition occludes your foe's vision with shadows. The creature you hit takes extra Psychic damage equal to one roll of your Arcane Shot Die, and it must succeed on a Wisdom saving throw or have the Blinded condition until the end of its next turn.</p>
+		</description>
+	</element>
+
+	<!-- Arcane Shot Options -->
+	<element name="Banishing Shot" type="Archetype Feature" source="Arcana Unleashed" id="ID_WOTC_AU_ARCHETYPE_FEATURE_FIGHTER_ARCANE_ARCHER_ARCANE_SHOT_BANISHING_SHOT">
+		<supports>2024 Arcane Shot</supports>
+		<description>
+			<p>Your ammunition temporarily sequesters your target in a harmless demiplane. The creature you hit takes extra Psychic damage equal to one roll of your Arcane Shot Die and must succeed on a Charisma saving throw or be banished. While banished, the creature has the Incapacitated condition and a Speed of 0. At the end of its next turn, the target reappears in the space it left or, if that space is occupied, the nearest unoccupied space.</p>
+		</description>
+		<sheet>
+			<description>The target you hit takes 1d{{arcane shot:dice}} Psychic damage and must succeed on a Charisma saving throw or be banished. While banished, it has the Incapacitated condition and a Speed of 0. At the end of its next turn, it reappears in the space it left or, if that space is occupied, the nearest unoccupied space.</description>
+		</sheet>
+	</element>
+	<element name="Beguiling Shot" type="Archetype Feature" source="Arcana Unleashed" id="ID_WOTC_AU_ARCHETYPE_FEATURE_FIGHTER_ARCANE_ARCHER_ARCANE_SHOT_BEGUILING_SHOT">
+		<supports>2024 Arcane Shot</supports>
+		<description>
+			<p>Your ammunition beguiles your target. The creature you hit takes extra Psychic damage equal to two rolls of your Arcane Shot Die and must succeed on a Wisdom saving throw or have the Charmed condition until the start of your next turn, treating either you or one of your allies within 30 feet of the target (your choice) as the charmer. The Charmed condition ends early if the charmer attacks the target, deals damage to it, or forces it to make a saving throw.</p>
+		</description>
+		<sheet>
+			<description>The target you hit takes 2d{{arcane shot:dice}} Psychic damage and must succeed on a Wisdom saving throw or have the Charmed condition until the start of your next turn, treating either you or one of your allies within 30 feet of the target (your choice) as the charmer. The Charmed condition ends early if the charmer attacks the target, deals damage to it, or forces it to make a saving throw.</description>
+		</sheet>
+	</element>
+	<element name="Bursting Shot" type="Archetype Feature" source="Arcana Unleashed" id="ID_WOTC_AU_ARCHETYPE_FEATURE_FIGHTER_ARCANE_ARCHER_ARCANE_SHOT_BURSTING_SHOT">
+		<supports>2024 Arcane Shot</supports>
+		<description>
+			<p>You imbue your ammunition with explosive magical energy. Immediately after you deal damage to the creature, your target and each creature within a 10-foot Emanation originating from the target take Force damage equal to two rolls of your Arcane Shot Die.</p>
+		</description>
+		<sheet>
+			<description>Immediately after you deal damage to a creature, it and each creature within a 10-foot Emanation originating from it takes 2d{{arcane shot:dice}} Force damage.</description>
+		</sheet>
+	</element>
+	<element name="Enfeebling Shot" type="Archetype Feature" source="Arcana Unleashed" id="ID_WOTC_AU_ARCHETYPE_FEATURE_FIGHTER_ARCANE_ARCHER_ARCANE_SHOT_ENFEEBLING_SHOT">
+		<supports>2024 Arcane Shot</supports>
+		<description>
+			<p>Your ammunition saps your target's strength. The creature you hit takes extra Necrotic damage equal to two rolls of your Arcane Shot Die. The target must also succeed on a Constitution saving throw or have the Poisoned condition until the end of its next turn. Whenever a target Poisoned in this way hits with an attack roll, it subtracts an amount equal to one roll of your Arcane Shot Die from the total damage of that attack.</p>
+		</description>
+		<sheet>
+			<description>The target you hit takes 2d{{arcane shot:dice}} Necrotic damage and must succeed on a Constitution saving throw or have the Poisoned condition until the end of its next turn. Whenever a target Poisoned in this way hits with an attack roll, it subtracts 1d{{arcane shot:dice}} from the total damage of that attack.</description>
+		</sheet>
+	</element>
+	<element name="Grasping Shot" type="Archetype Feature" source="Arcana Unleashed" id="ID_WOTC_AU_ARCHETYPE_FEATURE_FIGHTER_ARCANE_ARCHER_ARCANE_SHOT_GRASPING_SHOT">
+		<supports>2024 Arcane Shot</supports>
+		<description>
+			<p>Your ammunition creates clutching brambles around your target. The creature you hit takes extra Slashing damage equal to one roll of your Arcane Shot Die and must succeed on a Strength saving throw or have the Restrained condition for 1 minute or until you use this option again. The target or a creature within reach of it can take an Action to make a Strength (Athletics) check against your Arcane Shot saving throw DC, removing the brambles and ending the Restrained condition on the target on a successful check.</p>
+		</description>
+		<sheet>
+			<description>The target you hit takes 1d{{arcane shot:dice}} Slashing damage and must succeed on a Strength saving throw or have the Restrained condition for 1 minute or until you use this option again. The target or a creature within reach of it can take an Action to make a Strength (Athletics) check, removing the brambles and ending the Restrained condition on the target on a successful check.</description>
+		</sheet>
+	</element>
+	<element name="Piercing Shot" type="Archetype Feature" source="Arcana Unleashed" id="ID_WOTC_AU_ARCHETYPE_FEATURE_FIGHTER_ARCANE_ARCHER_ARCANE_SHOT_PIERCING_SHOT">
+		<supports>2024 Arcane Shot</supports>
+		<description>
+			<p>You give your ammunition an ethereal quality. When you use this option, you don't make an attack roll for the attack. Instead, the ammunition shoots forward in a 30-foot-long, 1-foot-wide Line originating from you, then vanishes. The Line ignores cover, as the ammunition phases through solid objects. Each creature in the Line makes a Dexterity saving throw. On a failed save, a creature takes damage as if it were hit plus extra Piercing damage equal to two rolls of your Arcane Shot Die. On a successful save, the creature takes half as much damage.</p>
+		</description>
+		<sheet>
+			<description>Your ammunition shoots forward in a 30-foot-long, 1-foot-wide Line originating from you, which ignores cover as the ammunition phases through solid objects. Each creature in the Line makes a Dexterity saving throw. On a failed save, a creature takes damage as if it were hit plus 2d{{arcane shot:dice}} Piercing damage. On a successful save, the creature takes half as much damage.</description>
+		</sheet>
+	</element>
+	<element name="Seeking Shot" type="Archetype Feature" source="Arcana Unleashed" id="ID_WOTC_AU_ARCHETYPE_FEATURE_FIGHTER_ARCANE_ARCHER_ARCANE_SHOT_SEEKING_SHOT">
+		<supports>2024 Arcane Shot</supports>
+		<description>
+			<p>Your ammunition can seek out a target. When you use this option, you don't make an attack roll for the attack. Instead, choose one creature you have seen in the last minute. The ammunition flies towards the creature, moving around corners if necessary and ignoring Half Cover and Three-Quarters Cover. If the target is within your weapon's long range, the target makes a Dexterity saving throw. On a failed save, the target takes damage as if it were hit plus extra Force damage equal to two rolls of your Arcane Shot Die, and you learn the target's current location. On a successful save, the target takes half as much damage only. If the target is beyond your weapon's long range, the ammunition disappears after traveling as far as it can.</p>
+		</description>
+		<sheet>
+			<description>Choose one creature you have seen in the last minute. The ammunition flies towards the creature, moving around corners if necessary and ignoring Half Cover and Three-Quarters Cover. If the target is within your weapon's long range, the target makes a Dexterity saving throw. On a failed save, the target takes damage as if it were hit plus 2d{{arcane shot:dice}} Force damage, and you learn the target's current location. On a successful save, the target takes half as much damage only. If the target is beyond your weapon's long range, the ammunition disappears after traveling as far as it can.</description>
+		</sheet>
+	</element>
+	<element name="Shadow Shot" type="Archetype Feature" source="Arcana Unleashed" id="ID_WOTC_AU_ARCHETYPE_FEATURE_FIGHTER_ARCANE_ARCHER_ARCANE_SHOT_SHADOW_SHOT">
+		<supports>2024 Arcane Shot</supports>
+		<description>
+			<p>Your ammunition occludes your foe's vision with shadows. The creature you hit takes extra Psychic damage equal to one roll of your Arcane Shot Die, and it must succeed on a Wisdom saving throw or have the Blinded condition until the end of its next turn.</p>
+		</description>
+		<sheet>
+			<description>The target you hit takes 1d{{arcane shot:dice}} Psychic damage, and it must succeed on a Wisdom saving throw or have the Blinded condition until the end of its next turn.</description>
+		</sheet>
+	</element>
+	
+	<!--Feature Replacement Grants-->
+	<element name="Arcane Archer Lore Feature Replacement" type="Grants" source="Internal" id="ID_INTERNAL_AU_FEATURE_REPLACEMENT_FIGHTER_ARCANE_ARCHER_ARCANE_ARCHER_LORE" />
+	<element name="Arcane Shot Feature Replacement" type="Grants" source="Internal" id="ID_INTERNAL_AU_FEATURE_REPLACEMENT_FIGHTER_ARCANE_ARCHER_ARCANE_SHOT" />
+	<element name="Curving Shot Feature Replacement" type="Grants" source="Internal" id="ID_INTERNAL_AU_FEATURE_REPLACEMENT_FIGHTER_ARCANE_ARCHER_CURVING_SHOT" />
+	<element name="Magical Ammunition Feature Replacement" type="Grants" source="Internal" id="ID_INTERNAL_AU_FEATURE_REPLACEMENT_FIGHTER_ARCANE_ARCHER_MAGICAL_AMMUNITION" />
+	<element name="Ever-Ready Shot Feature Replacement" type="Grants" source="Internal" id="ID_INTERNAL_AU_FEATURE_REPLACEMENT_FIGHTER_ARCANE_ARCHER_EVER_READY_SHOT" />
+	<element name="Indomitable Teleport Feature Replacement" type="Grants" source="Internal" id="ID_INTERNAL_AU_FEATURE_REPLACEMENT_FIGHTER_ARCANE_ARCHER_INDOMITABLE_TELEPORT" />
+	<element name="Masterful Shots Feature Replacement" type="Grants" source="Internal" id="ID_INTERNAL_AU_FEATURE_REPLACEMENT_FIGHTER_ARCANE_ARCHER_MASTERFUL_SHOTS" />
+</elements>

@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<elements>
+	<info>
+		<name>Armor Items</name>
+		<description>Magical Armors from Arcana Unleashed</description>
+		<update version="0.0.1">
+			<file name="items-armor.xml" url="https://raw.githubusercontent.com/AuroraLegacy/elements/master/supplements/arcana-unleashed/items/items-armor.xml" />
+		</update>
+	</info>
+
+	<element name="Breastplate of the Tyrant (Regal)" type="Magic Item" source="Arcana Unleashed" id="ID_WOTC_AU_MAGIC_ITEM_BREASTPLATE_OF_THE_TYRANT_REGAL">
+		<description>
+			<p class="flavor">This is an example of a complex Evolving Item. See the Complex Evolving Magic Items rule in the Compendium for more information.</p>
+			<p>You have Resistance to Psychic damage while you wear this armor.</p>
+			<p><b><i>Regal.</i></b> While holding or wearing this item, you can cast <i>Yolande's Regal Presence</i> (save DC 17) from it. Once the item has been used to cast this spell, this property can't be used again until the next dawn.</p>
+		</description>
+		<setters>
+			<set name="keywords">resistance, psychic, spell, yolandes regal presence, evolving</set>
+			<set name="category">Magic Armor</set>
+			<set name="type" addition="Any">Armor</set>
+			<set name="armor">ID_INTERNAL_ARMOR_GROUP_LIGHT|ID_INTERNAL_ARMOR_GROUP_MEDIUM|ID_INTERNAL_ARMOR_GROUP_HEAVY</set>
+			<set name="rarity">Very Rare</set>
+			<set name="attunement">true</set>
+			<set name="cost" currency="gp">40000</set>
+			<set name="slot">body</set>
+		</setters>
+		<rules>
+			<grant type="Condition" id="ID_INTERNAL_CONDITION_DAMAGE_RESISTANCE_PSYCHIC" />
+		</rules>
+	</element>
+	<element name="Breastplate of the Tyrant (Subjugating)" type="Magic Item" source="Arcana Unleashed" id="ID_WOTC_AU_MAGIC_ITEM_BREASTPLATE_OF_THE_TYRANT_SUBJUGATING">
+		<description>
+			<p class="flavor">This is an example of a complex Evolving Item. See the Complex Evolving Magic Items rule in the Compendium for more information.</p>
+			<p>You have Resistance to Psychic damage while you wear this armor.</p>
+			<p><b><i>Regal.</i></b> While holding or wearing this item, you can cast <i>Yolande's Regal Presence</i> (save DC 17) from it. Once the item has been used to cast this spell, this property can't be used again until the next dawn.</p>
+			<p><b><i>Subjugating.</i></b> While holding or wearing this item, you can cast <i>Dominate Monster</i> (save DC 18) from it. Once the item has been used to cast this spell, this property can't be used again until the next dawn.</p>
+		</description>
+		<setters>
+			<set name="keywords">resistance, psychic, spell, yolandes regal presence, dominate monster, evolving</set>
+			<set name="category">Magic Armor</set>
+			<set name="type" addition="Any">Armor</set>
+			<set name="armor">ID_INTERNAL_ARMOR_GROUP_LIGHT|ID_INTERNAL_ARMOR_GROUP_MEDIUM|ID_INTERNAL_ARMOR_GROUP_HEAVY</set>
+			<set name="rarity">Legendary</set>
+			<set name="attunement">true</set>
+			<set name="cost" currency="gp">200000</set>
+			<set name="slot">body</set>
+		</setters>
+		<rules>
+			<grant type="Condition" id="ID_INTERNAL_CONDITION_DAMAGE_RESISTANCE_PSYCHIC" />
+		</rules>
+	</element>
+
+	<element name="Tramontane Armor" type="Magic Item" source="Arcana Unleashed" id="ID_WOTC_AU_MAGIC_ITEM_TRAMONTANE_ARMOR">
+		<description>
+			<p>You gain a +1 bonus to Armor Class while wearing this armor. The armor is enchanted to look like a scholarly or priestly robe.</p>
+			<p class="indent"><b><i>Mountain Walker.</i></b> While you're wearing this armor, Difficult Terrain composed of heavy snow, ice, rubble, or undergrowth doesn't cost you extra movement.</p>
+			<p class="indent"><b><i>Grasping Tendrils.</i></b> As a Magic action, you can activate the armor, causing the hems of its sleeves and body to extend into ribbonlike tendrils.</p>
+			<p class="indent">As a Bonus Action while the armor is active, you can force each creature of your choice in a 20-foot Emanation originating from you to make a DC 15 Strength saving throw. On a failed save, a creature has the Grappled condition (escape DC 15) and is pulled up to 20 feet straight toward you.</p>
+			<p class="indent">The armor remains active for 1 minute or until you take another Magic action to deactivate it. Once you activate the armor, it can't be activated again until the next dawn.</p>
+		</description>
+		<setters>
+			<set name="keywords">enhancement, difficult terrain, movement, magic action, emanation, strength, save, grappled</set>
+			<set name="category">Magic Armor</set>
+			<set name="type" addition="Any Light, Medium or Heavy">Armor</set> 
+			<set name="armor">ID_INTERNAL_ARMOR_GROUP_LIGHT|ID_INTERNAL_ARMOR_GROUP_MEDIUM|ID_INTERNAL_ARMOR_GROUP_HEAVY</set>
+			<set name="rarity">Very Rare</set>
+			<set name="attunement">true</set>
+			<set name="enhancement">1</set>
+			<set name="cost" currency="gp">40000</set>
+			<set name="slot">body</set>
+			<set name="name-format">Tramontane {{parent}}</set>
+		</setters>
+		<rules>
+			<stat name="ac:armored:enhancement" value="1" bonus="enhancement" />
+		</rules>
+	</element>
+
+</elements>

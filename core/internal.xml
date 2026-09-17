@@ -3,7 +3,7 @@
 	<info>
 		<name>Internal</name>
 		<description>Elements that should've been part of the app itself</description>
-		<update version="0.1.7">
+		<update version="0.1.8">
 			<file name="internal.xml" url="https://raw.githubusercontent.com/AuroraLegacy/elements/master/core/internal.xml" />
 		</update>
 	</info>
@@ -1664,9 +1664,34 @@
 
 	<element name="Fighting Style Feature" type="Grants" source="Internal" id="ID_INTERNAL_GRANTS_FIGHTING_STYLE_FEATURE" />
 
+	<!-- Spellcasting and Spell Slot Level Indicator Grants for Feats from PHB24 and onward --> 
 	<element name="Spellcasting Feature Grants" type="Grants" source="Internal" id="ID_INTERNAL_GRANTS_SPELLCASTING_FEATURE" />
 
 	<element name="Pact Magic Feature Grants" type="Grants" source="Internal" id="ID_INTERNAL_GRANTS_PACT_MAGIC_FEATURE" />
+
+	<element name="Has Level 1 Spell Slots Grant" type="Grants" source="Internal" id="ID_INTERNAL_GRANTS_HAS_LEVEL_1_SPELL_SLOTS" />
+	<element name="Has Level 2 Spell Slots Grant" type="Grants" source="Internal" id="ID_INTERNAL_GRANTS_HAS_LEVEL_2_SPELL_SLOTS" />
+	<element name="Has Level 3 Spell Slots Grant" type="Grants" source="Internal" id="ID_INTERNAL_GRANTS_HAS_LEVEL_3_SPELL_SLOTS" />
+	<element name="Has Level 4 Spell Slots Grant" type="Grants" source="Internal" id="ID_INTERNAL_GRANTS_HAS_LEVEL_4_SPELL_SLOTS" />
+	<element name="Has Level 5 Spell Slots Grant" type="Grants" source="Internal" id="ID_INTERNAL_GRANTS_HAS_LEVEL_5_SPELL_SLOTS" />
+	<element name="Has Level 6 Spell Slots Grant" type="Grants" source="Internal" id="ID_INTERNAL_GRANTS_HAS_LEVEL_6_SPELL_SLOTS" />
+	<element name="Has Level 7 Spell Slots Grant" type="Grants" source="Internal" id="ID_INTERNAL_GRANTS_HAS_LEVEL_7_SPELL_SLOTS" />
+	<element name="Has Level 8 Spell Slots Grant" type="Grants" source="Internal" id="ID_INTERNAL_GRANTS_HAS_LEVEL_8_SPELL_SLOTS" />
+	<element name="Has Level 9 Spell Slots Grant" type="Grants" source="Internal" id="ID_INTERNAL_GRANTS_HAS_LEVEL_9_SPELL_SLOTS" />
+
+	<append id="ID_INTERNAL_GRANTS_MULTICLASS_SPELLCASTING">
+		<rules>
+			<grant type="Grants" id="ID_INTERNAL_GRANTS_HAS_LEVEL_1_SPELL_SLOTS" requirements="[multiclass:spellcasting:level:1]" />
+			<grant type="Grants" id="ID_INTERNAL_GRANTS_HAS_LEVEL_2_SPELL_SLOTS" requirements="[multiclass:spellcasting:level:3]" />
+			<grant type="Grants" id="ID_INTERNAL_GRANTS_HAS_LEVEL_3_SPELL_SLOTS" requirements="[multiclass:spellcasting:level:5]" />
+			<grant type="Grants" id="ID_INTERNAL_GRANTS_HAS_LEVEL_4_SPELL_SLOTS" requirements="[multiclass:spellcasting:level:7]" />
+			<grant type="Grants" id="ID_INTERNAL_GRANTS_HAS_LEVEL_5_SPELL_SLOTS" requirements="[multiclass:spellcasting:level:9]" />
+			<grant type="Grants" id="ID_INTERNAL_GRANTS_HAS_LEVEL_6_SPELL_SLOTS" requirements="[multiclass:spellcasting:level:11]" />
+			<grant type="Grants" id="ID_INTERNAL_GRANTS_HAS_LEVEL_7_SPELL_SLOTS" requirements="[multiclass:spellcasting:level:13]" />
+			<grant type="Grants" id="ID_INTERNAL_GRANTS_HAS_LEVEL_8_SPELL_SLOTS" requirements="[multiclass:spellcasting:level:15]" />
+			<grant type="Grants" id="ID_INTERNAL_GRANTS_HAS_LEVEL_9_SPELL_SLOTS" requirements="[multiclass:spellcasting:level:17]" />
+		</rules>
+	</append>
 
 	<!-- Generic Ability Score Increases for Feats from PHB24 and onward -->
 	<element name="Strength +1" type="Ability Score Improvement" source="Internal" id="ID_INTERNAL_ABILITY_SCORE_IMPROVEMENT_FEAT_STRENGTH">

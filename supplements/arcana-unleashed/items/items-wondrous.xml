@@ -1,0 +1,833 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<elements>
+	<info>
+		<name>Wondrous Items</name>
+		<description>Wondrous Items from Arcana Unleashed</description>
+		<update version="0.0.1">
+			<file name="items-wondrous.xml" url="https://raw.githubusercontent.com/AuroraLegacy/elements/master/supplements/arcana-unleashed/items/items-wondrous.xml" />
+		</update>
+	</info>
+
+	<element name="Arcane Chatelaine" type="Magic Item" source="Arcana Unleashed" id="ID_WOTC_AU_MAGIC_ITEM_ARCANE_CHATELAINE">
+		<description>
+			<p>This ornate clasp has six spectral keys attached to it. As a Magic action, you can touch one of the keys to a closed door, window, gate, container, or hatch to cast the <i>Arcane Lock</i> spell on it. Once a key is used, it disappears. When all six keys have disappeared, the chatelaine disappears.</p>
+			<div class="reference">
+				<div element="ID_WOTC_PHB24_SPELL_ARCANE_LOCK" />
+			</div>
+		</description>
+		<setters>
+			<set name="keywords">arcane lock, keys, magic action</set>
+			<set name="category">Wondrous Items</set>
+			<set name="type">Wondrous Item</set>
+			<set name="rarity">Rare</set>
+			<set name="cost" currency="gp">4000</set>
+			<set name="slot">misc</set>
+		</setters>
+	</element>
+
+	<element name="Arcanist's Bestiary" type="Magic Item" source="Arcana Unleashed" id="ID_WOTC_AU_MAGIC_ITEM_ARCANISTS_BESTIARY">
+		<description>
+			<p>Hundreds of pages of illustrations, tables, and diagrams about a wide variety of monsters fill this magical tome.</p>
+			<p class="indent"><b><i>Charm Monster.</i></b> While holding the book, you can cast the <i>Charm Monster</i> spell (spell save DC 15) from it. The target has Disadvantage on the saving throw against this spell if it isn't a Humanoid. You can't cast this spell again in this way until the next dawn.</p>
+			<p class="indent"><b><i>Extensive Knowledge.</i></b> When you become attuned to the book, you gain proficiency in one of the following skills of your choice: <i>Arcana, History, Nature</i>, or <i>Religion</i>. Whenever you finish a Long Rest, you can change your choice. If your Attunement to the book ends, you lose this proficiency.</p>
+			<p class="indent"><b><i>Monster Primer.</i></b> While carrying the book, whenever you take a Study action to make an Intelligence (Arcana) check to recall information about an Aberration, Construct, Elemental, Fey, or Monstrosity you can see, on a successful check, you learn whether that creature has any Immunities, Resistances, or Vulnerabilities. If the creature has any, you know what they are.</p>
+			<div class="reference">
+				<div element="ID_WOTC_PHB24_SPELL_CHARM_MONSTER" />
+			</div>
+		</description>
+		<setters>
+			<set name="keywords">charm monster, disadvantage, arcana, history, nature, religion, skill, study action, aberration, construct, elemental, fey, monstrosity, immunity, resistance, vulnerability</set>
+			<set name="category">Wondrous Items</set>
+			<set name="type">Wondrous Item</set>
+			<set name="rarity">Rare</set>
+			<set name="attunement">true</set>
+			<set name="cost" currency="gp">4000</set>
+			<set name="weight" lb="5">5 lb.</set>
+			<set name="slot">misc</set>
+		</setters>
+		<rules>
+			<select type="Proficiency" name="Skill Proficiency (Arcanist's Bestiary)" supports="ID_PROFICIENCY_SKILL_PROFICIENCY_ARCANA|ID_PROFICIENCY_SKILL_PROFICIENCY_HISTORY|ID_PROFICIENCY_SKILL_PROFICIENCY_NATURE|ID_PROFICIENCY_SKILL_PROFICIENCY_RELIGION" />
+		</rules>
+	</element>
+
+	<element name="Bellows of Strangulation" type="Magic Item" source="Arcana Unleashed" id="ID_WOTC_AU_MAGIC_ITEM_BELLOWS_OF_STRANGULATION">
+		<description>
+			<p>This bellows has 6 charges. While you are holding it, you can take a Magic action and use one of three command words to cause one of the following effects:</p>
+			<ul class="unstyled">
+				<li><b>First Command Word.</b> You expend 1 charge to cause the bellows to suck the energy from one creature you can see within 60 feet. The creature must succeed on a DC 15 Constitution saving throw or have the Incapacitated condition for 1 minute. The creature repeats the save at the end of each of its turns, ending the effect on itself on a success.</li>
+				<li><b>Second Command Word.</b> You expend 3 charges to cause the bellows to suck the energy from creatures in a 30-foot Cone. Each creature in that area must succeed on a DC 15 Constitution saving throw or have the Incapacitated condition for 1 minute. An affected creature repeats the save at the end of each of its turns, ending the effect on itself on a success.</li>
+				<li><b>Third Command Word.</b> You expend 5 charges to cast the <i>Cloudkill</i> spell (spell DC 17) from the bellows.</li>
+			</ul>
+			<p class="indent"><b><i>Regaining Charges.</i></b> The bellows regains 1d6 + 1 charges daily at dawn. If you expend the last charge, roll 1d20. On a 1, the bellows explodes in a harmless burst of wind and is lost forever.</p>
+			<div class="reference">
+				<div element="ID_WOTC_PHB24_SPELL_CLOUDKILL" />
+			</div>
+		</description>
+		<setters>
+			<set name="keywords">charges, magic action, recharges, constitution, save, incapacitated, cone, cloudkill</set>
+			<set name="category">Wondrous Items</set>
+			<set name="type">Wondrous Item</set>
+			<set name="rarity">Rare</set>
+			<set name="cost" currency="gp">4000</set>
+			<set name="slot">misc</set>
+			<set name="charges">6</set>
+		</setters>
+	</element>
+
+	<element name="Blood Amulet" type="Magic Item" source="Arcana Unleashed" id="ID_WOTC_AU_MAGIC_ITEM_BLOOD_AMULET">
+		<description>
+			<p>This delicate amulet looks like a diminutive beating heart impaled with spikes. It has 3 charges and regains 1d3 charges daily at dawn.</p>
+			<p class="indent">Whenever you deal damage to a creature, you can expend 1 charge to deal an extra 2d10 Necrotic damage to the target and force it to make a DC 15 Constitution saving throw. On a failed save, the target gains 1 Exhaustion level.</p>
+		</description>
+		<setters>
+			<set name="keywords">charges, recharges, constitution, save, necrotic, damage</set>
+			<set name="category">Wondrous Items</set>
+			<set name="type">Wondrous Item</set>
+			<set name="rarity">Rare</set>
+			<set name="attunement">true</set>
+			<set name="cost" currency="gp">4000</set>
+			<set name="slot">neck</set>
+			<set name="charges">3</set>
+		</setters>
+	</element>
+
+	<element name="Conjurer's Canopy" type="Magic Item" source="Arcana Unleashed" id="ID_WOTC_AU_MAGIC_ITEM_CONJURERS_CANOPY">
+		<description>
+			<p>You can take a Magic action and use a command word to plunge this magical walking stick into the ground, where it stands straight up and projects a canopy of transparent force in a 20-foot Cube originating from the stick. The canopy lasts for 1 hour or until you end the effect early as a Magic action.</p>
+			<p class="indent">The canopy protects creatures and objects within that area from ordinary weather phenomena such as rain or snow. The atmosphere within the canopy's area is comfortable and dry, regardless of the weather. Creatures, objects, and magical effects can still pass through the canopy as usual.</p>
+			<p class="indent">When the canopy disappears, the stick can't be used again for 1d12 hours.</p>
+		</description>
+		<setters>
+			<set name="keywords">magic action, cube, weather</set>
+			<set name="category">Wondrous Items</set>
+			<set name="type">Wondrous Item</set>
+			<set name="rarity">Common</set>
+			<set name="cost" currency="gp">100</set>
+			<set name="slot">misc</set>
+		</setters>
+	</element>
+
+	<element name="Dictation Quill" type="Magic Item" source="Arcana Unleashed" id="ID_WOTC_AU_MAGIC_ITEM_DICTATION_QUILL">
+		<description>
+			<p>When you take a Magic action to set this magic quill next to Paper or Parchment and a bottle of Ink and use a command word, the quill writes your next spoken or signed words, in the language you're using, at a rate of 25 words per minute. The quill writes for 1 hour; until it has no Paper, Parchment, or Ink; or until you use another command word to stop it (no action required).</p>
+		</description>
+		<setters>
+			<set name="keywords">magic action, ink, parchment, paper</set>
+			<set name="category">Wondrous Items</set>
+			<set name="type">Wondrous Item</set>
+			<set name="rarity">Common</set>
+			<set name="cost" currency="gp">100</set>
+			<set name="slot">misc</set>
+		</setters>
+	</element>
+
+	<element name="Dream Weaver" type="Magic Item" source="Arcana Unleashed" id="ID_WOTC_AU_MAGIC_ITEM_DREAM_WEAVER">
+		<description>
+			<p>This magic tapestry can be hung on a wall or another suitable vertical surface. The tapestry magically unravels and reweaves itself to illustrate the content and emotions of your most recent dreams.</p>
+			<p class="indent">You gain the following benefits while the tapestry is hung and you are within 30 feet of it.</p>
+			<p class="indent"><b><i>Dream Wisdom.</i></b> During a Long Rest, you can spend an hour studying the tapestry. At the end of the Long Rest, roll 1d20 and record the number rolled. Once before you finish a Long Rest, you can replace any D20 Test you make with this result. You must choose to do so before you roll the D20 Test.</p>
+			<p class="indent"><b><i>Message Recorder.</i></b> If you are targeted by the <i>Dream</i> spell, the tapestry records the appearance and name of the spell's caster in its design.</p>
+			<p class="indent"><b><i>Mind Wall.</i></b> While you have the <i>Unconscious</i> condition, you have Advantage on Intelligence, Wisdom, and Charisma saving throws.</p>
+		</description>
+		<setters>
+			<set name="keywords">tapestry, long rest, study, reroll, dream, unconscious, advantage, intelligence, wisdom, charisma, saving throws</set>
+			<set name="category">Wondrous Items</set>
+			<set name="type">Wondrous Item</set>
+			<set name="rarity">Rare</set>
+			<set name="attunement">true</set>
+			<set name="cost" currency="gp">4000</set>
+			<set name="slot">misc</set>
+		</setters>
+	</element>
+
+	<element name="Elocutionist's Lexicon" type="Magic Item" source="Arcana Unleashed" id="ID_WOTC_AU_MAGIC_ITEM_ELOCUTIONISTS_LEXICON">
+		<description>
+			<p>While holding this magic dictionary, you can take a Magic action and try to recall a specific word. The book automatically opens to the page containing the exact word you're searching for.</p>
+		</description>
+		<setters>
+			<set name="keywords">magic action</set>
+			<set name="category">Wondrous Items</set>
+			<set name="type">Wondrous Item</set>
+			<set name="rarity">Common</set>
+			<set name="cost" currency="gp">100</set>
+			<set name="weight" lb="5">5 lb.</set>
+			<set name="slot">misc</set>
+		</setters>
+	</element>
+
+	<element name="Ensorcelled Missive" type="Magic Item" source="Arcana Unleashed" id="ID_WOTC_AU_MAGIC_ITEM_ENSORCELLED_MISSIVE">
+		<description>
+			<p>This item functions as a sheet of Parchment. After writing on it, you can take a Magic action to fold or roll the sheet and seal it while speaking or signing a word or short phrase. If a creature unseals the sheet without using the same word or phrase, the writing on the sheet appears as if it were written in an unknown and unintelligible script.</p>
+		</description>
+		<setters>
+			<set name="keywords">magic action, seal, parchment</set>
+			<set name="category">Wondrous Items</set>
+			<set name="type">Wondrous Item</set>
+			<set name="rarity">Common</set>
+			<set name="cost" currency="gp">100</set>
+			<set name="weight" lb="0">—</set>
+			<set name="slot">misc</set>
+		</setters>
+	</element>
+
+	<element name="Evergreen Fertilizer" type="Magic Item" source="Arcana Unleashed" id="ID_WOTC_AU_MAGIC_ITEM_EVERGREEN_FERTILIZER">
+		<description>
+			<p>Once sprinkled on the soil around a nonmagical plant, this pungent powder keeps the plant healthy for the next 365 days.</p>
+		</description>
+		<setters>
+			<set name="keywords">plant</set>
+			<set name="category">Wondrous Items</set>
+			<set name="type">Wondrous Item</set>
+			<set name="rarity">Common</set>
+			<set name="cost" currency="gp">100</set>
+			<set name="slot">misc</set>
+		</setters>
+	</element>
+
+	<element name="Homeward Compass" type="Magic Item" source="Arcana Unleashed" id="ID_WOTC_AU_MAGIC_ITEM_HOMEWARD_COMPASS">
+		<description>
+			<p>While holding this small brass compass, you can take a Magic action to orient the compass to your current location. Thereafter, the compass's needle always points toward that location. The compass can be oriented to only one location at a time. As a Magic action, you can end the compass's current orientation. When it isn't oriented to a particular location, or if the compass is on a different plane of existence than the location to which it is oriented, the compass's needle spins aimlessly.</p>
+		</description>
+		<setters>
+			<set name="keywords">magic action, navigation, location</set>
+			<set name="category">Wondrous Items</set>
+			<set name="type">Wondrous Item</set>
+			<set name="rarity">Common</set>
+			<set name="cost" currency="gp">100</set>
+			<set name="slot">misc</set>
+		</setters>
+	</element>
+
+	<element name="Idol of Good Fortunes (Blemished)" type="Magic Item" source="Arcana Unleashed" id="ID_WOTC_AU_MAGIC_ITEM_IDOL_OF_GOOD_FORTUNES_BLEMISHED">
+		<description>
+			<p>This idol resembles an elephant sitting on its haunches, smiling regally behind its uplifted trunk.</p>
+			<p><b><i>Blemished.</i></b> The idol is made of tarnished bronze, with minor dings and dents scattered over its surface.</p>
+			<p class="indent">You can cast the <i>Augury</i> spell from the idol. The idol speaks the omen aloud in response. Once the idol has been used to cast this spell, it can't be used to cast this spell again until the next dawn.</p>
+			<div class="reference">
+				<div element="ID_WOTC_PHB24_SPELL_AUGURY" />
+			</div>
+		</description>
+		<setters>
+			<set name="keywords">augury, armor class, ac, action, evolving item</set>
+			<set name="category">Wondrous Items</set>
+			<set name="type">Wondrous Item</set>
+			<set name="rarity">Uncommon</set>
+			<set name="attunement">true</set>
+			<set name="cost" currency="gp">400</set>
+		</setters>
+	</element>
+	<element name="Idol of Good Fortunes (Tarnished)" type="Magic Item" source="Arcana Unleashed" id="ID_WOTC_AU_MAGIC_ITEM_IDOL_OF_GOOD_FORTUNES_TARNISHED">
+		<description>
+			<p>This idol resembles an elephant sitting on its haunches, smiling regally behind its uplifted trunk.</p>
+			<p><b><i>Blemished.</i></b> The idol is made of tarnished bronze, with minor dings and dents scattered over its surface.</p>
+			<p class="indent">You can cast the <i>Augury</i> spell from the idol. The idol speaks the omen aloud in response. Once the idol has been used to cast this spell, it can't be used to cast this spell again until the next dawn.</p>
+			<p><b><i>Tarnished.</i></b> The idol is made of gold, with a patina of dust settled into its crevices.</p>
+			<p class="indent">While attuned to the idol, you gain a +1 bonus to your Armor Class. Additionally, while holding the idol, you can take a Magic action to touch a nonmagical trade bar or gemstone. The item is then transformed into coinage equivalent to its value. For example, if you take a Magic action to touch a 5-pound silver bar while holding the idol, the bar is transformed into 25 GP worth of coins.</p>
+			<div class="reference">
+				<div element="ID_WOTC_PHB24_SPELL_AUGURY" />
+			</div>
+		</description>
+		<setters>
+			<set name="keywords">augury, armor class, ac, magic action, evolving item</set>
+			<set name="category">Wondrous Items</set>
+			<set name="type">Wondrous Item</set>
+			<set name="rarity">Rare</set>
+			<set name="attunement">true</set>
+			<set name="cost" currency="gp">4000</set>
+		</setters>
+		<rules>
+			<stat name="ac:misc" value="1" />
+		</rules>
+	</element>
+	<element name="Idol of Good Fortunes (Golden)" type="Magic Item" source="Arcana Unleashed" id="ID_WOTC_AU_MAGIC_ITEM_IDOL_OF_GOOD_FORTUNES_GOLDEN">
+		<description>
+			<p>This idol resembles an elephant sitting on its haunches, smiling regally behind its uplifted trunk.</p>
+			<p><b><i>Blemished.</i></b> The idol is made of tarnished bronze, with minor dings and dents scattered over its surface.</p>
+			<p class="indent">You can cast the <i>Augury</i> spell from the idol. The idol speaks the omen aloud in response. Once the idol has been used to cast this spell, it can't be used to cast this spell again until the next dawn.</p>
+			<p><b><i>Tarnished.</i></b> The idol is made of gold, with a patina of dust settled into its crevices.</p>
+			<p class="indent">While attuned to the idol, you gain a +1 bonus to your Armor Class. Additionally, while holding the idol, you can take a Magic action to touch a nonmagical trade bar or gemstone. The item is then transformed into coinage equivalent to its value. For example, if you take a Magic action to touch a 5-pound silver bar while holding the idol, the bar is transformed into 25 GP worth of coins.</p>
+			<p><b><i>Golden.</i></b>  The idol is made of gleaming gold, and the elephant's eyes are set with shining rubies.</p>
+			<p class="indent">While holding the idol, you can cast <i>Globe of Invulnerability</i> from it. Once the idol has been used to cast this spell, it can't be used to cast this spell again until the next dawn.</p>
+			<div class="reference">
+				<div element="ID_WOTC_PHB24_SPELL_AUGURY" />
+			</div>
+			<div class="reference">
+				<div element="ID_WOTC_PHB24_SPELL_GLOBE_OF_INVULNERABILITY" />
+			</div>
+			</description>
+		<setters>
+			<set name="keywords">augury, globe of invulnerability, armor class, ac, magic action, evolving item</set>
+			<set name="category">Wondrous Items</set>
+			<set name="type">Wondrous Item</set>
+			<set name="rarity">Very Rare</set>
+			<set name="attunement">true</set>
+			<set name="cost" currency="gp">40000</set>
+		</setters>
+		<rules>
+			<stat name="ac:misc" value="1" />
+		</rules>
+	</element>
+
+	<element name="Lucky Foot" type="Magic Item" source="Arcana Unleashed" id="ID_WOTC_AU_MAGIC_ITEM_LUCKY_FOOT">
+		<description>
+			<p>When you roll a 1 on a saving throw or ability check, you can use this preserved rabbit foot's magic to reroll the die. You must use the new roll, and the foot disintegrates.</p>
+		</description>
+		<setters>
+			<set name="keywords">reroll</set>
+			<set name="category">Wondrous Items</set>
+			<set name="type">Wondrous Item</set>
+			<set name="rarity">Common</set>
+			<set name="cost" currency="gp">100</set>
+			<set name="slot">misc</set>
+		</setters>
+	</element>
+
+	<element name="Mage's Manacle" type="Magic Item" source="Arcana Unleashed" id="ID_WOTC_AU_MAGIC_ITEM_MAGES_MANACLE">
+		<description>
+			<p>As a Magic action while wearing this bracelet, you can target a Large or smaller creature within 5 feet of yourself that has the Grappled or Incapacitated condition. The target must succeed on a DC 15 Dexterity saving throw or become magically bound to you by a spectral chain and manacle that spring from the bracelet.</p>
+			<p class="indent">While bound in this way, the creature has the Restrained condition. When you move, the creature moves with you.</p>
+			<p class="indent">A creature remains bound for 8 hours or until you release it (no action required). If the manacle takes damage from a Disintegrate spell, it is destroyed; nothing else can break or harm it. Once the manacle has bound a creature, it can't be used again this way until the next dawn.</p>
+		</description>
+		<setters>
+			<set name="keywords">magic action, grappled, incapacitated, dexterity, save, restrained, movement, binding</set>
+			<set name="category">Wondrous Items</set>
+			<set name="type">Wondrous Item</set>
+			<set name="rarity">Rare</set>
+			<set name="cost" currency="gp">4000</set>
+			<set name="slot">wrist</set>
+		</setters>
+	</element>
+
+	<element name="Magewright's Gloves" type="Magic Item" source="Arcana Unleashed" id="ID_WOTC_AU_MAGIC_ITEM_MAGEWRIGHTS_GLOVES">
+		<description>
+			<p>While you wear these gloves, you work as efficiently as two characters when determining how much time it takes to craft nonmagical items using any of the following tools: Alchemist's Supplies, Brewer's Supplies, Calligrapher's Supplies, Cartographer's Tools, Glassblower's Tools, or Jeweler's Tools.</p>
+		</description>
+		<setters>
+			<set name="keywords">crafting, alchemist's supplies, brewer's suppliers, calligrapher's supplies, cartographer's tools, glassblower's tools, jeweler's tools</set>
+			<set name="category">Wondrous Items</set>
+			<set name="type">Wondrous Item</set>
+			<set name="rarity">Uncommon</set>
+			<set name="attunement">true</set>
+			<set name="cost" currency="gp">400</set>
+			<set name="slot">hand</set>
+		</setters>
+	</element>
+
+	<element name="Necklace of the Beastly Familiar (Giant Octopus)" type="Magic Item" source="Arcana Unleashed" id="ID_WOTC_AU_MAGIC_ITEM_NECKLACE_OF_THE_BEASTLY_FAMILIAR_GIANT_OCTOPUS">
+		<description>
+			<p>This bejeweled necklace is set with azurite and comes with a matching charm that can be worn by your familiar.</p>
+			<p class="indent"><b><i>Familiar.</i></b> While wearing this necklace, you can cast the <i>Find Familiar</i> spell from it. Once the necklace has been used to cast this spell, it can't be used to cast it again until the next dawn.</p>
+			<p class="indent"><b><i>Beast Transformation.</i></b> While your familiar is within 60 feet of you, you can take a Magic action to activate the necklace. Your familiar shape-shifts into a <i>Giant Octopus</i> for 10 minutes.</p>
+			<p class="indent">While your familiar is transformed, its stat block is replaced by the stat block of the Beast form, but it retains its alignment, personality, creature type, Hit Points, and Hit Point Dice. Equipment the familiar is wearing or carrying doesn't change size or shape to match the Beast form, and any equipment that the Beast form can't wear or carry falls to the ground.</p>
+			<p class="indent">Your familiar gains a number of Temporary Hit Points equal to the Hit Points of the Beast form. These Temporary Hit Points vanish if any remain when the transformation ends. The transformation ends early on your familiar if it has no Temporary Hit Points left.</p>
+			<div class="reference">
+				<div element="ID_WOTC_PHB24_SPELL_FIND_FAMILIAR" />
+			</div>
+			<div class="reference">
+				<div element="ID_WOTC_MM25_INFORMATION_GIANT_OCTOPUS_STATBLOCK" />
+			</div>
+		</description>
+		<setters>
+			<set name="keywords">familiar, find familiar, transformation, magic action, giant octopus, summon, thp</set>
+			<set name="category">Wondrous Items</set>
+			<set name="type">Wondrous Item</set>
+			<set name="rarity">Uncommon</set>
+			<set name="attunement" addition="By a Spellcaster">true</set>
+			<set name="cost" currency="gp">400</set>
+			<set name="slot">neck</set>
+		</setters>
+	</element>
+	<element name="Necklace of the Beastly Familiar (Giant Scorpion)" type="Magic Item" source="Arcana Unleashed" id="ID_WOTC_AU_MAGIC_ITEM_NECKLACE_OF_THE_BEASTLY_FAMILIAR_GIANT_SCORPION">
+		<description>
+			<p>This bejeweled necklace is set with chrysoprase and comes with a matching charm that can be worn by your familiar.</p>
+			<p class="indent"><b><i>Familiar.</i></b> While wearing this necklace, you can cast the <i>Find Familiar</i> spell from it. Once the necklace has been used to cast this spell, it can't be used to cast it again until the next dawn.</p>
+			<p class="indent"><b><i>Beast Transformation.</i></b> While your familiar is within 60 feet of you, you can take a Magic action to activate the necklace. Your familiar shape-shifts into a <i>Giant Scorpion</i> for 10 minutes.</p>
+			<p class="indent">While your familiar is transformed, its stat block is replaced by the stat block of the Beast form, but it retains its alignment, personality, creature type, Hit Points, and Hit Point Dice. Equipment the familiar is wearing or carrying doesn't change size or shape to match the Beast form, and any equipment that the Beast form can't wear or carry falls to the ground.</p>
+			<p class="indent">Your familiar gains a number of Temporary Hit Points equal to the Hit Points of the Beast form. These Temporary Hit Points vanish if any remain when the transformation ends. The transformation ends early on your familiar if it has no Temporary Hit Points left.</p>
+			<div class="reference">
+				<div element="ID_WOTC_PHB24_SPELL_FIND_FAMILIAR" />
+			</div>
+			<div class="reference">
+				<div element="ID_WOTC_MM25_INFORMATION_GIANT_SCORPION_STATBLOCK" />
+			</div>
+		</description>
+		<setters>
+			<set name="keywords">familiar, find familiar, transformation, magic action, giant scorpion, summon, thp</set>
+			<set name="category">Wondrous Items</set>
+			<set name="type">Wondrous Item</set>
+			<set name="rarity">Rare</set>
+			<set name="attunement" addition="By a Spellcaster">true</set>
+			<set name="cost" currency="gp">4000</set>
+			<set name="slot">neck</set>
+		</setters>
+	</element>
+	<element name="Necklace of the Beastly Familiar (Hippopotamus)" type="Magic Item" source="Arcana Unleashed" id="ID_WOTC_AU_MAGIC_ITEM_NECKLACE_OF_THE_BEASTLY_FAMILIAR_HIPPOPOTAMUS">
+		<description>
+			<p>This bejeweled necklace is set with zircon and comes with a matching charm that can be worn by your familiar.</p>
+			<p class="indent"><b><i>Familiar.</i></b> While wearing this necklace, you can cast the <i>Find Familiar</i> spell from it. Once the necklace has been used to cast this spell, it can't be used to cast it again until the next dawn.</p>
+			<p class="indent"><b><i>Beast Transformation.</i></b> While your familiar is within 60 feet of you, you can take a Magic action to activate the necklace. Your familiar shape-shifts into a <i>Hippopotamus</i> for 10 minutes.</p>
+			<p class="indent">While your familiar is transformed, its stat block is replaced by the stat block of the Beast form, but it retains its alignment, personality, creature type, Hit Points, and Hit Point Dice. Equipment the familiar is wearing or carrying doesn't change size or shape to match the Beast form, and any equipment that the Beast form can't wear or carry falls to the ground.</p>
+			<p class="indent">Your familiar gains a number of Temporary Hit Points equal to the Hit Points of the Beast form. These Temporary Hit Points vanish if any remain when the transformation ends. The transformation ends early on your familiar if it has no Temporary Hit Points left.</p>
+			<div class="reference">
+				<div element="ID_WOTC_PHB24_SPELL_FIND_FAMILIAR" />
+			</div>
+			<div class="reference">
+				<div element="ID_WOTC_MM25_INFORMATION_HIPPOPOTAMUS_STATBLOCK" />
+			</div>
+		</description>
+		<setters>
+			<set name="keywords">familiar, find familiar, transformation, magic action, hippopotamus, summon, thp</set>
+			<set name="category">Wondrous Items</set>
+			<set name="type">Wondrous Item</set>
+			<set name="rarity">Rare</set>
+			<set name="attunement" addition="By a Spellcaster">true</set>
+			<set name="cost" currency="gp">4000</set>
+			<set name="slot">neck</set>
+		</setters>
+	</element>
+	<element name="Necklace of the Beastly Familiar (Mammoth)" type="Magic Item" source="Arcana Unleashed" id="ID_WOTC_AU_MAGIC_ITEM_NECKLACE_OF_THE_BEASTLY_FAMILIAR_MAMMOTH">
+		<description>
+			<p>This bejeweled necklace is set with zircon and comes with a matching charm that can be worn by your familiar.</p>
+			<p class="indent"><b><i>Familiar.</i></b> While wearing this necklace, you can cast the <i>Find Familiar</i> spell from it. Once the necklace has been used to cast this spell, it can't be used to cast it again until the next dawn.</p>
+			<p class="indent"><b><i>Beast Transformation.</i></b> While your familiar is within 60 feet of you, you can take a Magic action to activate the necklace. Your familiar shape-shifts into a <i>Mammoth</i> for 10 minutes.</p>
+			<p class="indent">While your familiar is transformed, its stat block is replaced by the stat block of the Beast form, but it retains its alignment, personality, creature type, Hit Points, and Hit Point Dice. Equipment the familiar is wearing or carrying doesn't change size or shape to match the Beast form, and any equipment that the Beast form can't wear or carry falls to the ground.</p>
+			<p class="indent">Your familiar gains a number of Temporary Hit Points equal to the Hit Points of the Beast form. These Temporary Hit Points vanish if any remain when the transformation ends. The transformation ends early on your familiar if it has no Temporary Hit Points left.</p>
+			<div class="reference">
+				<div element="ID_WOTC_PHB24_SPELL_FIND_FAMILIAR" />
+			</div>
+			<div class="reference">
+				<div element="ID_WOTC_MM25_INFORMATION_MAMMOTH_STATBLOCK" />
+			</div>
+		</description>
+		<setters>
+			<set name="keywords">familiar, find familiar, transformation, magic action, mammoth, summon, thp</set>
+			<set name="category">Wondrous Items</set>
+			<set name="type">Wondrous Item</set>
+			<set name="rarity">Very Rare</set>
+			<set name="attunement" addition="By a Spellcaster">true</set>
+			<set name="cost" currency="gp">40000</set>
+			<set name="slot">neck</set>
+		</setters>
+	</element>
+	<element name="Necklace of the Beastly Familiar (Tyrannosaurus Rex)" type="Magic Item" source="Arcana Unleashed" id="ID_WOTC_AU_MAGIC_ITEM_NECKLACE_OF_THE_BEASTLY_FAMILIAR_TYRANNOSAURUS_REX">
+		<description>
+			<p>This bejeweled necklace is set with zircon and comes with a matching charm that can be worn by your familiar.</p>
+			<p class="indent"><b><i>Familiar.</i></b> While wearing this necklace, you can cast the <i>Find Familiar</i> spell from it. Once the necklace has been used to cast this spell, it can't be used to cast it again until the next dawn.</p>
+			<p class="indent"><b><i>Beast Transformation.</i></b> While your familiar is within 60 feet of you, you can take a Magic action to activate the necklace. Your familiar shape-shifts into a <i>Tyrannosaurus Rex</i> for 10 minutes.</p>
+			<p class="indent">While your familiar is transformed, its stat block is replaced by the stat block of the Beast form, but it retains its alignment, personality, creature type, Hit Points, and Hit Point Dice. Equipment the familiar is wearing or carrying doesn't change size or shape to match the Beast form, and any equipment that the Beast form can't wear or carry falls to the ground.</p>
+			<p class="indent">Your familiar gains a number of Temporary Hit Points equal to the Hit Points of the Beast form. These Temporary Hit Points vanish if any remain when the transformation ends. The transformation ends early on your familiar if it has no Temporary Hit Points left.</p>
+			<div class="reference">
+				<div element="ID_WOTC_PHB24_SPELL_FIND_FAMILIAR" />
+			</div>
+			<div class="reference">
+				<div element="ID_WOTC_MM25_INFORMATION_TYRANNOSAURUS_REX_STATBLOCK" />
+			</div>
+		</description>
+		<setters>
+			<set name="keywords">familiar, find familiar, transformation, magic action, tyrannosaurus rex, summon, thp</set>
+			<set name="category">Wondrous Items</set>
+			<set name="type">Wondrous Item</set>
+			<set name="rarity">Legendary</set>
+			<set name="attunement" addition="By a Spellcaster">true</set>
+			<set name="cost" currency="gp">200000</set>
+			<set name="slot">neck</set>
+		</setters>
+	</element>
+
+	<element name="Orb of Divination Detection" type="Magic Item" source="Arcana Unleashed" id="ID_WOTC_AU_MAGIC_ITEM_ORB_OF_DIVINATION_DETECTION">
+		<description>
+			<p>This glass orb is a useful defense against meddlesome mages and magic-wielding spies.</p>
+			<p class="indent"><b><i>Detect Divination.</i></b> When you are targeted by a spell from the Divination school, the orb glows bright green for the spell's duration.</p>
+			<p class="indent"><b><i>Spellcasting Focus.</i></b> This orb can be used as an <i>Arcane Focus</i>.</p>
+		</description>
+		<setters>
+			<set name="keywords">detection, arcane focus</set>
+			<set name="category">Wondrous Items</set>
+			<set name="type">Wondrous Item</set>
+			<set name="rarity">Uncommon</set>
+			<set name="attunement">true</set>
+			<set name="cost" currency="gp">400</set>
+			<set name="slot">misc</set>
+		</setters>
+	</element>
+
+	<element name="Orb of Sorcery" type="Magic Item" source="Arcana Unleashed" id="ID_WOTC_AU_MAGIC_ITEM_ORB_OF_SORCERY">
+		<description>
+			<p>Ribbons of varicolored light swirl inside this magical glass orb.</p>
+			<p class="indent"><b><i>Sorcerous Reservoir.</i></b> While holding this orb, you can take a Magic action to regain up to 2 expended Sorcery Points. Once this property is used, it can't be used again until the next dawn.</p>
+			<p class="indent"><b><i>Spellcasting Focus.</i></b> You can use the orb as a Spellcasting Focus for your Sorcerer spells..</p>
+		</description>
+		<setters>
+			<set name="keywords">magic action, arcane focus, sorcerer, sorcery points</set>
+			<set name="category">Wondrous Items</set>
+			<set name="type">Wondrous Item</set>
+			<set name="rarity">Uncommon</set>
+			<set name="attunement" addition="By a Sorcerer">true</set>
+			<set name="cost" currency="gp">400</set>
+			<set name="slot">misc</set>
+		</setters>
+	</element>
+
+	<element name="Prismatic Rune" type="Magic Item" source="Arcana Unleashed" id="ID_WOTC_AU_MAGIC_ITEM_PRISMATIC_RUNE">
+		<description>
+			<p>A magical rune is etched on this small stone made of multicolored quartz. When you finish a Long Rest, choose one of the following damage types: Acid, Cold, Fire, Lightning, or Thunder. The rune is imbued with the chosen damage type until you finish another Long Rest.</p>
+			<p class="indent"><b><i>Charges.</i></b> The rune has 6 charges and regains 1d6 expended charges daily at dawn. When you cast a spell that deals damage, you can expend 1 charge to change the spell's damage type to the damage type chosen for the rune.</p>
+		</description>
+		<setters>
+			<set name="keywords">charges, recharges, acid, cold, fire, lightning, thunder</set>
+			<set name="category">Wondrous Items</set>
+			<set name="type">Wondrous Item</set>
+			<set name="rarity">Rare</set>
+			<set name="attunement" addition="By a Spellcaster">true</set>
+			<set name="cost" currency="gp">4000</set>
+			<set name="slot">misc</set>
+			<set name="charges">6</set>
+		</setters>
+	</element>
+
+	<element name="Queen Ehlissa's Marvelous Nightingale" type="Magic Item" source="Arcana Unleashed" id="ID_WOTC_DMG24_MAGIC_ITEM_QUEEN_EHLISSAS_MARVELOUS_NIGHTINGALE">
+		<description>
+			<p><i>Queen Ehlissa's Marvelous Nightingale</i> is named for its first owner, a queen from the eastern Flanaess in the world of Greyhawk. Its origin is unknown, but one legend holds that it was made to console the queen when a beloved pet songbird met its unfortunate end.</p>
+			<p class="indent">This mechanical songbird has crystal eyes, golden feathers, and a small windup key on its back. As a Magic action, you can cause the bird to spring to life for 10 minutes, during which time it sings a beautiful melody audible within 300 feet, or you can revert the bird to its mechanical form. When the nightingale becomes mechanical again, it can't come to life again for 1 hour.</p>
+			<p class="indent"><b><i>Aura of Truth.</i></b> While the nightingale sings, the effect of a <i>Zone of Truth</i> spell (save DC 18) fills a 15-foot Emanation originating from the nightingale. While attuned to the nightingale, you know which creatures succeed on or fail the saving throw against this effect.</p>
+			<p class="indent"><b><i>Counterspell.</i></b> While the nightingale sings, you can take a Reaction to cast <i>Counterspell</i> (save DC 18) in response to that spell's trigger. Once this property is used, it can't be used again until the next dawn.</p>
+			<p class="indent" style="margin-bottom:5px"><b><i>Random Properties.</i></b> The Artifact has the following random properties:</p>
+			<ul style="margin-top:0px">
+				<li>2 minor beneficial properties</li>
+				<li>1 minor detrimental property</li>
+				<li>1 major detrimental property</li>
+			</ul>
+			<p class="indent"><b><i>Ensemble Casting.</i></b> The nightingale has 6 charges and regains 1d6 + 1 expended charges daily at dawn. As a Bonus Action while the nightingale is singing and within 60 feet of you, you can expend charges to cast one of the spells on the table below from the nightingale (save DC 18). The table shows the number of charges you must expend to cast the spell.</p>
+			<table class="class-features">
+				<thead>
+					<tr><td class="left">Spell</td><td>Charge Cost</td></tr>
+				</thead>
+				<tbody>
+					<tr><td class="left"><i>Calm Emotions</i></td><td>1</td></tr>
+					<tr><td class="left"><i>Compulsion</i></td><td>3</td></tr>
+					<tr><td class="left"><i>Delayed Blast Fireball</i></td><td>6</td></tr>
+					<tr><td class="left"><i>Detect Evil and Good</i></td><td>0</td></tr>
+					<tr><td class="left"><i>Greater Restoration</i></td><td>4</td></tr>
+					<tr><td class="left"><i>Prismatic Spray</i></td><td>6</td></tr>
+					<tr><td class="left"><i>Slow</i></td><td>2</td></tr>
+					<tr><td class="left"><i>Speak with Animals</i></td><td>0</td></tr>
+				</tbody>
+			</table>
+			<p class="indent"><b><i>Destroying the Nightingale.</i></b> The nightingale is destroyed if it is released into a whirlwind in Limbo.</p>
+			<div class="reference">
+				<div element="ID_WOTC_DMG24_ARTIFACT_TABLE" />
+			</div>
+			<div class="reference">
+				<div element="ID_WOTC_PHB24_SPELL_CALM_EMOTIONS" />
+			</div>
+			<div class="reference">
+				<div element="ID_WOTC_PHB24_SPELL_COMPULSION" />
+			</div>
+			<div class="reference">
+				<div element="ID_WOTC_PHB24_SPELL_DELAYED_BLAST_FIREBALL" />
+			</div>
+			<div class="reference">
+				<div element="ID_WOTC_PHB24_SPELL_DETECT_EVIL_AND_GOOD" />
+			</div>
+			<div class="reference">
+				<div element="ID_WOTC_PHB24_SPELL_GREATER_RESTORATION" />
+			</div>
+			<div class="reference">
+				<div element="ID_WOTC_PHB24_SPELL_PRISMATIC_SPRAY" />
+			</div>
+			<div class="reference">
+				<div element="ID_WOTC_PHB24_SPELL_SLOW" />
+			</div>
+			<div class="reference">
+				<div element="ID_WOTC_PHB24_SPELL_SPEAK_WITH_ANIMALS" />
+			</div>
+		</description>
+		<setters>
+			<set name="keywords">magic action, minor beneficial properties, minor detrimental properties, major detrimental properties, spells, charges, recharges, calm emotions, compulsion, delayed blast fireball, detect evil and good, greater restoration, prismatic spray, slow, speak with animals</set>
+			<set name="category">Wondrous Items</set>
+			<set name="type">Wondrous Items</set>
+			<set name="rarity">Artifact</set>
+			<set name="attunement">true</set>
+			<set name="charges">6</set>
+		</setters>
+	</element>
+
+	<element name="Scholar's Anchoring Bangle" type="Magic Item" source="Arcana Unleashed" id="ID_WOTC_AU_MAGIC_ITEM_SCHOLARS_ANCHORING_BANGLE">
+		<description>
+			<p>This heavy magical bracelet inures your mind against potential distractions. While wearing this bracelet, you gain the following benefits.</p>
+			<p class="indent"><b><i>Deep Knowledge.</i></b> When you take the Study action and make an Intelligence check using a skill in which you have proficiency, you can treat a d20 roll of 9 or lower as a 10.</p>
+			<p class="indent"><b><i>Single-Mind Focus.</i></b> When you fail a Constitution saving throw to maintain Concentration, you can take a Reaction to succeed instead. Once you use this property, it can't be used again until the next dawn.</p>
+		</description>
+		<setters>
+			<set name="keywords">study action, constitution, save, concentration, reaction</set>
+			<set name="category">Wondrous Items</set>
+			<set name="type">Wondrous Item</set>
+			<set name="rarity">Rare</set>
+			<set name="attunement">true</set>
+			<set name="cost" currency="gp">4000</set>
+			<set name="slot">wrist</set>
+		</setters>
+	</element>
+
+	<element name="Secret Keeper's Circlet" type="Magic Item" source="Arcana Unleashed" id="ID_WOTC_AU_MAGIC_ITEM_SECRET_KEEPERS_CIRCLET">
+		<description>
+			<p>This circlet allows the wearer to wipe from their memory any knowledge of a specific deed or time in their life, making it useful for those who fear mages plumbing their minds with magic.</p>
+			<p class="indent">While wearing this circlet, you can take a Magic action to specify a trigger such as "after I leave this temple" or "when I cast the <i>Animate Dead</i> spell." For the next 24 hours, if that trigger occurs, the circlet erases your memories of everything from the time you chose the trigger until the trigger occurred. No magic short of a <i>Wish</i> spell can restore your memory of this time. Once you use this property, you can't use it again until the next dawn.</p>
+		</description>
+		<setters>
+			<set name="keywords">memory, trigger, animate dead, wish</set>
+			<set name="category">Wondrous Items</set>
+			<set name="type">Wondrous Item</set>
+			<set name="rarity">Rare</set>
+			<set name="attunement">true</set>
+			<set name="cost" currency="gp">4000</set>
+			<set name="slot">head</set>
+		</setters>
+	</element>
+
+	<element name="Spell Duelist's Trophy" type="Magic Item" source="Arcana Unleashed" id="ID_WOTC_AU_MAGIC_ITEM_SPELL_DUELISTS_TROPHY">
+		<description>
+			<p>This withered hand or talon is attached to a leather cord that can be worn like a necklace or bracelet. You gain the following benefits while wearing the trophy.</p>
+			<p class="indent"><b><i>Dispelling Touch.</i></b> When you hit a creature with a melee spell attack, you can activate the trophy to cast the <i>Dispel Magic</i> spell as part of that attack, targeting the hit creature. Once this property has been used, it can't be used again until the next dawn.</p>
+			<p class="indent"><b><i>Helping Hand.</i></b> When you cast a spell using a spell slot, you can cast it without any Somatic components.</p>
+			<p class="indent"><b><i>Mage Hand.</i></b> You can cast the <i>Mage Hand</i> cantrip from the trophy.</p>
+		</description>
+		<setters>
+			<set name="keywords">melee spell attack, dispel magic, somatic component, mage hand</set>
+			<set name="category">Wondrous Items</set>
+			<set name="type">Wondrous Item</set>
+			<set name="rarity">Rare</set>
+			<set name="attunement" addition="By a Spellcaster">true</set>
+			<set name="cost" currency="gp">4000</set>
+			<set name="slot">misc</set>
+		</setters>
+	</element>
+
+	<element name="Spell-Slinger's Puppet" type="Magic Item" source="Arcana Unleashed" id="ID_WOTC_AU_MAGIC_ITEM_SPELL_SLINGERS_PUPPET">
+		<description>
+			<p>As a Bonus Action while holding this ventriloquist's doll, you can pull the cord on the doll's back to cause the doll to levitate to an unoccupied space you can see within 30 feet of yourself and hover there. While the doll hovers, you can take a Bonus Action to cause the doll to move up to 30 feet to another unoccupied space you can see within 30 feet of yourself. The doll hovers for 1 minute or until you end the effect as a Bonus Action.</p>
+			<p class="indent">While the doll is within 30 feet of you, you can speak using the doll's mouth rather than your own. This allows you to, for instance, cast a spell with a Verbal component even if you can't speak.</p>
+		</description>
+		<setters>
+			<set name="keywords">bonus action, verbal component</set>
+			<set name="category">Wondrous Items</set>
+			<set name="type">Wondrous Item</set>
+			<set name="rarity">Uncommon</set>
+			<set name="attunement">true</set>
+			<set name="cost" currency="gp">400</set>
+			<set name="slot">misc</set>
+		</setters>
+	</element>
+
+	<element name="Sweeping Broom" type="Magic Item" source="Arcana Unleashed" id="ID_WOTC_AU_MAGIC_ITEM_SWEEPING_BROOM">
+		<description>
+			<p>As a Magic action, you can use this unassuming broom's command word, choosing a point you can see on the ground within 60 feet of yourself. The broom animates and sweeps dust and detritus from the ground in a 20-foot square centered on the chosen point. It sweeps that area until you take another Magic action to deactivate it.</p>
+		</description>
+		<setters>
+			<set name="keywords">magic action, cleaning</set>
+			<set name="category">Wondrous Items</set>
+			<set name="type">Wondrous Item</set>
+			<set name="rarity">Common</set>
+			<set name="cost" currency="gp">100</set>
+			<set name="slot">misc</set>
+		</setters>
+	</element>
+
+	<element name="Thespian's Playbill" type="Magic Item" source="Arcana Unleashed" id="ID_WOTC_AU_MAGIC_ITEM_THESPIANS_PLAYBILL">
+		<description>
+			<p>While holding this magical theater program, whenever you take the Study action and make an Intelligence check, you gain a bonus to the check equal to your Charisma modifier (minimum of +1).</p>
+		</description>
+		<setters>
+			<set name="keywords">study action, intelligence, bonus, charisma</set>
+			<set name="category">Wondrous Items</set>
+			<set name="type">Wondrous Item</set>
+			<set name="rarity">Uncommon</set>
+			<set name="attunement">true</set>
+			<set name="cost" currency="gp">400</set>
+			<set name="slot">misc</set>
+		</setters>
+	</element>
+
+	<element name="Thief's Thimble" type="Magic Item" source="Arcana Unleashed" id="ID_WOTC_AU_MAGIC_ITEM_THIEFS_THIMBLE">
+		<description>
+			<p>This magic thimble aids thieves in foiling traps. While wearing this thimble, if you trigger a trap and take damage, the thimble takes the damage instead.</p>
+			<p class="indent">The thimble has 30 Hit Points. If the thimble is reduced to 0 Hit Points, it breaks, and you take any remaining damage.</p>
+		</description>
+		<setters>
+			<set name="keywords">traps, damage, hit points</set>
+			<set name="category">Wondrous Items</set>
+			<set name="type">Wondrous Item</set>
+			<set name="rarity">Uncommon</set>
+			<set name="attunement">true</set>
+			<set name="cost" currency="gp">400</set>
+			<set name="slot">misc</set>
+		</setters>
+	</element>
+
+	<element name="Traveler's Pearl" type="Magic Item" source="Arcana Unleashed" id="ID_WOTC_AU_MAGIC_ITEM_TRAVELERS_PEARL">
+		<description>
+			<p>By using a command word while holding this pearl, you can cast the Teleport spell from it. Once this property is used, it can't be used again until the next dawn.</p>
+		</description>
+		<setters>
+			<set name="keywords">teleport</set>
+			<set name="category">Wondrous Items</set>
+			<set name="type">Wondrous Item</set>
+			<set name="rarity">Legendary</set>
+			<set name="attunement">true</set>
+			<set name="cost" currency="gp">200000</set>
+			<set name="slot">misc</set>
+		</setters>
+	</element>
+
+	<element name="Universal Pantograph" type="Magic Item" source="Arcana Unleashed" id="ID_WOTC_DMG24_MAGIC_ITEM_UNIVERSAL_PANTOGRAPH">
+		<description>
+			<p>This cubical box measures 2 feet on each side. It appears to be made of oak and bound in silver, and its surface is engraved with motifs of marionettes and laughing children.</p>
+			<p class="indent">When a nonmagical item is placed in the box and the lid is closed, a perfect duplicate of the item appears next to the box.</p>
+			<p class="indent"><b><i>Clone.</i></b> As a Magic action, you can cause the pantograph to grow large enough for a Medium creature to crouch within. You can revert the pantograph to its normal size as a Magic action, harmlessly shunting anything that can't fit inside to the nearest unoccupied space.</p>
+			<p class="indent">When a creature is inside the pantograph, you can close the pantograph's lid and sprinkle the pantograph with diamond dust worth at least 100 GP. If you do, the diamond dust is consumed, and you cast the <i>Clone</i> spell, targeting the creature inside the pantograph. After the spell's casting time is finished, the creature is harmlessly shunted from the pantograph, and the pantograph's lid then can't be opened for 120 days, during which time the duplicate from the spell grows within. Once the clone is finished forming, it is harmlessly shunted from the pantograph, and the pantograph returns to its original size. A clone created by the pantograph doesn't need to be contained within a vessel and endures indefinitely while inert.</p>
+			<p class="indent"><b><i>Destroying the Pantograph.</i></b> If the pantograph doesn't contain a clone, it is destroyed after being submerged in a bog in the Feywild for 999 years.</p>
+			<div class="reference">
+				<div element="ID_WOTC_PHB24_SPELL_CLONE" />
+			</div>
+		</description>
+		<setters>
+			<set name="keywords">duplicate, magic action, diamond dust, clone</set>
+			<set name="category">Wondrous Items</set>
+			<set name="type">Wondrous Items</set>
+			<set name="rarity">Artifact</set>
+		</setters>
+	</element>
+
+	<element name="Workshop Wrecker" type="Magic Item" source="Arcana Unleashed" id="ID_WOTC_AU_MAGIC_ITEM_WORKSHOP_WRECKER">
+		<description>
+			<p>When this 3-inch-diameter metal ball is activated as a Magic action, it moves at a rapid speed, bouncing off walls and defying any attempts to capture it. The ball remains active for 1 minute or until you deactivate it by using a command word while within 30 feet of it (no action required). Once the ball is used, it can't be used again until the next dawn.</p>
+			<p class="indent">When you activate the ball and at the beginning of each of your turns while the ball is active, each creature in the area makes a Dexterity saving throw, taking Bludgeoning damage on a failed save. The save DC and amount of damage dealt depend on the approximate size of the area in which the ball is active, as shown on the following table.</p>
+			<p class="indent">A nonmagical object that isn't being worn or carried also takes the damage if it is in the area. In confined areas larger than a 100-foot Cube, the amount of damage caused by the ball is negligible. If the ball is activated in an unconfined area, it flies off in a random direction at a rate of 300 feet per round.</p>
+			<table>
+				<thead>
+					<tr><td class="left">Area</td><td class="center">Save DC</td><td>Bludgeoning Damage</td></tr>
+				</thead>
+				<tbody>
+					<tr><td>15-foot Cube</td><td>18</td><td>6d6+5</td></tr>
+					<tr><td>30-foot Cube</td><td>17</td><td>4d6+4</td></tr>
+					<tr><td>50-foot Cube</td><td>15</td><td>2d6+2</td></tr>
+					<tr><td>100-foot Cube</td><td>14</td><td>1d6+1</td></tr>
+				</tbody>
+			</table>
+		</description>
+		<setters>
+			<set name="keywords">magic action, dexterity, save, bludgeoning, damage, cube</set>
+			<set name="category">Wondrous Items</set>
+			<set name="type">Wondrous Item</set>
+			<set name="rarity">Very Rare</set>
+			<set name="attunement">true</set>
+			<set name="cost" currency="gp">40000</set>
+			<set name="slot">misc</set>
+		</setters>
+	</element>
+
+	<!-- Complex Evolving Item Rules -->
+	<element name="Complex Evolving Magic Items" type="Rule" source="Arcana Unleashed" id="ID_WOTC_AU_INFORMATION_COMPLEX_EVOLVING_MAGIC_ITEMS">
+		<description>
+			<p>Some magic items can grow in strength beyond increasing the bonuses they grant. By granting a magic item new and more powerful magical properties, you can create an evolving magic item that grows in exciting ways.</p>
+			<p class="indent">Using the rules in this section, you can evolve eligible magic items from the Dungeon Master's Guide. At your discretion, items from other sources might be eligible for evolution using these rules.</p>
+			<p class="indent">The following magic items are eligible for complex evolution:</p>
+			<ul class="unstyled">
+				<li><b>Certain Rods and Wands:</b> Any <i>Rod of the Pact Keeper</i> or <i>Wand of the War Mage</i></li>
+				<li><b>Certain Other Uncommon or Rarer Magic Items:</b> Any Armor, Staff, or Weapon that requires Attunement, that isn't cursed, and whose rarity is at most Very Rare</li>
+			</ul>
+			<p><b><i>Complex Evolution Steps.</i></b> To evolve an item with this system, use the following steps in conjunction with the instructions from "When to Evolve Magic Items" earlier in this chapter:</p>
+			<ul class="unstyled">
+				<li><b>1. Choose a Magic Item to Evolve.</b> Pick the eligible magic item you plan to evolve, and note its current rarity.</li>
+				<li><b>2. Determine the Item's New Rarity.</b> The item's new rarity is the next highest rarity.</li>
+				<li><b>3. Roll on or Choose from the New Rarity's Table.</b> Use the Magic Item Properties table for the item's new rarity to select a new property, noting any details such as limited usage. (If the magic item grants a bonus to Armor Class, attack and damage rolls, saving throws, or spell save DCs, don't increase the bonus as part of evolving the item with this system. For example, if you evolve a <i>+1 Wand of the War Mage</i> and give it a new property from this system, the item's bonus remains +1.)</li>
+				<li><b>4: Determine the Item's New Name and Physical Characteristics.</b> Change the evolved item's name to represent its newfound power. If you like, you can give the item a new, more dramatic name. Either way, preface its name with the name of the property it just gained. For example, if you evolve a Sword of Sharpness to be Legendary and grant it the Prismatic property, it would be called a Prismatic Sword of Sharpness.</li>
+				<li>Evolution also causes physical changes; examples include the appearance of magical runes or additional filigree.</li>
+			</ul>
+			<p><b><i>Magic Item Property Tables.</i></b> Roll on or choose from the tables that follow when determining new properties for complex evolving magic items.</p>
+			<div class="reference">
+				<div element="ID_WOTC_AU_INFORMATION_RARE_EVOLVING_MAGIC_ITEM_PROPERTIES_TABLE" />
+			</div>
+			<div class="reference">
+				<div element="ID_WOTC_AU_INFORMATION_VERY_RARE_EVOLVING_MAGIC_ITEM_PROPERTIES_TABLE" />
+			</div>
+			<div class="reference">
+				<div element="ID_WOTC_AU_INFORMATION_LEGENDARY_EVOLVING_MAGIC_ITEM_PROPERTIES_TABLE" />
+			</div>
+		</description>
+	</element>
+	<element name="Rare Evolving Magic Item Properties" type="Rule" source="Arcana Unleashed" id="ID_WOTC_AU_INFORMATION_RARE_EVOLVING_MAGIC_ITEM_PROPERTIES_TABLE">
+		<description>
+			<h5>Rare Evolving Magic Item Properties</h5>
+			<table>
+				<thead>
+					<tr><td class="col-10">1d12</td><td>Property</td></tr>
+				</thead>
+				<tr><td>1</td><td><b>Amicable.</b> When you fail an ability check made to influence a creature while holding or wearing this item, you can roll 1d6 and add the number rolled to the check, potentially turning the failure into a success. This property can be used three times, and the item regains expended uses of this property daily at dawn.</td></tr>
+				<tr><td>2</td><td><b>Conversational.</b> While holding or wearing this item, you can cast <i>Tongues</i> from it. Once the item has been used to cast this spell, this property can't be used again until the next dawn.</td></tr>
+				<tr><td>3</td><td><b>Crusading.</b> While holding or wearing this item, you can cast <i>Crusader's Mantle</i> from it. Once the item has been used to cast this spell, this property can't be used again until the next dawn.</td></tr>
+				<tr><td>4</td><td><b>Displacing.</b> While holding or wearing this item, you can cast <i>Blur</i> from it. Once the item has been used to cast this spell, this property can't be used again until the next dawn.</td></tr>
+				<tr><td>5</td><td><b>Frightening.</b> While holding or wearing this item, you can cast <i>Fear</i> (save DC 15) from it. Once the item has been used to cast this spell, this property can't be used again until the next dawn.</td></tr>
+				<tr><td>6</td><td><b>Fulminating.</b> While holding or wearing this item, you can cast <i>Lightning Bolt</i> (save DC 15) from it. Once the item has been used to cast this spell, this property can't be used again until the next dawn.</td></tr>
+				<tr><td>7</td><td><b>Immolating.</b> While holding or wearing this item, you can cast <i>Fireball</i> (save DC 15) from it. Once the item has been used to cast this spell, this property can't be used again until the next dawn.</td></tr>
+				<tr><td>8</td><td><b>Quickening.</b> As a Bonus Action while holding or wearing this item, you can infuse yourself with magical velocity for 1 minute or until your Concentration ends. While you are infused, your Speed is doubled, and Opportunity Attacks against you are made with Disadvantage. Once this property has been used, it can't be used again until the next dawn.</td></tr>
+				<tr><td>9</td><td><b>Restorative.</b> While holding or wearing this item, you can take a Magic action to cast both <i>Cure Wounds</i> and <i>Lesser Restoration</i>, targeting the same creature. Once this property has been used, it can't be used again until the next dawn.</td></tr>
+				<tr><td>10</td><td><b>Skulking.</b> While holding or wearing this item, you can cast <i>Pass Without A Trace</i> from it. Once the item has been used to cast this spell, this property can't be used again until the next dawn.</td></tr>
+				<tr><td>11</td><td><b>Studious.</b> When you fail an ability check made as part of the Study action while holding or wearing this item, you can roll 1d6 and add the number rolled to the check, potentially turning the failure into a success. This property can be used three times, and the item regains expended uses of this property daily at dawn.</td></tr>
+				<tr><td>12</td><td><b>Vigilant.</b> While holding or wearing this item, you have Advantage on Initiative rolls and Wisdom (Perception) checks.</td></tr>
+			</table>
+		</description>
+		<setters>
+			<set name="keywords">Evolving Items</set>
+		</setters>
+	</element>
+	<element name="Very Rare Evolving Magic Item Properties" type="Rule" source="Arcana Unleashed" id="ID_WOTC_AU_INFORMATION_VERY_RARE_EVOLVING_MAGIC_ITEM_PROPERTIES_TABLE">
+		<description>
+			<h5>Very Rare Evolving Magic Item Properties</h5>
+			<table>
+				<thead>
+					<tr><td class="col-10">1d12</td><td>Property</td></tr>
+				</thead>
+				<tr><td>1</td><td><b>Chilling.</b> While holding or wearing this item, you can cast <i>Cone of Cold</i> (save DC 17) from it. Once the item has been used to cast this spell, this property can't be used again until the next dawn.</td></tr>
+				<tr><td>2</td><td><b>Deceptive.</b> While holding or wearing this item, you can cast <i>Mislead</i> (save DC 17) from it. Once the item has been used to cast this spell, this property can't be used again until the next dawn.</td></tr>
+				<tr><td>3</td><td><b>Far-Seeing.</b> While holding or wearing this item, you can cast <i>Scrying</i> (save DC 17) from it. Once the item has been used to cast this spell, this property can't be used again until the next dawn.</td></tr>
+				<tr><td>4</td><td><b>Fortunate.</b> While attuned to this magic item, you can reroll one failed D20 Test, and you must used the second roll. This property can be used twice, and the item regains expended uses of this property daily at dawn.</td></tr>
+				<tr><td>5</td><td><b>Lunar.</b> While holding or wearing this item, you can cast <i>Fount of Moonlight</i> or <i>Moonbeam</i> (save DC 17) from it. Once the item has been used to cast a spell, it can't be used to cast that spell again until the next dawn.</td></tr>
+				<tr><td>6</td><td><b>Paralyzing.</b> While holding or wearing this item, you can cast <i>Hold Monster</i> (save DC 17) from it. Once the item has been used to cast this spell, this property can't be used again until the next dawn.</td></tr>
+				<tr><td>7</td><td><b>Psionic.</b> While holding or wearing this item, you have telepathy with a range of 30 feet, and you can cast <i>Synaptic Static</i> (save DC 17) from it. Once the item has been used to cast this spell, this property can't be used again until the next dawn.</td></tr>
+				<tr><td>8</td><td><b>Regal.</b> While holding or wearing this item, you can cast <i>Yolande's Regal Presence</i> (save DC 17) from it. Once the item has been used to cast this spell, this property can't be used again until the next dawn.</td></tr>
+				<tr><td>9</td><td><b>Resilient.</b> While holding or wearing this item, you can cast <i>Otiluke's Resilient Sphere</i> (save DC 17) from it. Once the item has been used to cast this spell, this property can't be used again until the next dawn.</td></tr>
+				<tr><td>10</td><td><b>Resistant.</b> While attuned to this item, you have Resistance to one of the following damage types (DM's choice): Acid, Cold, Fire, Lightning, Necrotic, Poison, Psychic, Radiant, or Thunder.</td></tr>
+				<tr><td>11</td><td><b>Traversing.</b> While holding or wearing this item, you can cast <i>Dimension Door</i> or <i>Freedom of Movement</i> from it. Once the item has been used to cast a spell, it can't be used to cast that spell again until the next dawn.</td></tr>
+				<tr><td>12</td><td><b>Withering.</b> While holding or wearing this item, you can cast <i>Blight</i> or <i>Vampiric Touch</i> (save DC 17, +9 to hit with spell attacks) from it. Once the item has been used to cast a spell, it can't be used to cast that spell again until the next dawn.</td></tr>
+			</table>
+		</description>
+		<setters>
+			<set name="keywords">Evolving Items</set>
+		</setters>
+	</element>
+	<element name="Legendary Evolving Magic Item Properties" type="Rule" source="Arcana Unleashed" id="ID_WOTC_AU_INFORMATION_LEGENDARY_EVOLVING_MAGIC_ITEM_PROPERTIES_TABLE">
+		<description>
+			<h5>Legendary Evolving Magic Item Properties</h5>
+			<table>
+				<thead>
+					<tr><td class="col-10">1d10</td><td>Property</td></tr>
+				</thead>
+				<tr><td>1</td><td><b>All-Seeing.</b> While attuned to this item, you have Truesight with a range of 30 feet.</td></tr>
+				<tr><td>2</td><td><b>Empowering.</b> While attuned to this item, one of your ability scores (DM's choice) increases by 2, to a maximum of 24.</td></tr>
+				<tr><td>3</td><td><b>Gravitational.</b> While holding or wearing this item, you can cast <i>Reverse Gravity</i> (save DC 18) from it. Once the item has been used to cast this spell, this property can't be used again until the next dawn.</td></tr>
+				<tr><td>4</td><td><b>Heliacal.</b> While holding or wearing this item, you can cast <i>Sunburst</i> (save DC 18) from it. Once the item has been used to cast this spell, this property can't be used again until the next dawn.</td></tr>
+				<tr><td>5</td><td><b>Prismatic.</b>  While holding or wearing this item, you can cast <i>Prismatic Spray</i> (save DC 18) from it. Once the item has been used to cast this spell, this property can't be used again until the next dawn.</td></tr>
+				<tr><td>6</td><td><b>Spellguarding.</b> While holding or wearing this item, you have Advantage on saving throws against spells and other magical effects.</td></tr>
+				<tr><td>7</td><td><b>Stupefying.</b> While holding or wearing this item, you can cast <i>Power Word Stun</i> (save DC 18) from it. Once the item has been used to cast this spell, this property can't be used again until the next dawn.</td></tr>
+				<tr><td>8</td><td><b>Subjugating.</b> While holding or wearing this item, you can cast <i>Dominate Monster</i> (save DC 18) from it. Once the item has been used to cast this spell, this property can't be used again until the next dawn.</td></tr>
+				<tr><td>9</td><td><b>Tranquil.</b> While holding or wearing this item, you can cast <i>Mind Blank</i> (targeting yourself only) from it. Once the item has been used to cast this spell, this property can't be used again until the next dawn.</td></tr>
+				<tr><td>10</td><td><b>Vanishing.</b> While holding or wearing this item, you can take a Magic action to give yourself the Invisible condition for 1 hour or until you end it (no action required). Once this property has been used, it can't be used again until the next dawn.</td></tr>
+			</table>
+		</description>
+		<setters>
+			<set name="keywords">Evolving Items</set>
+		</setters>
+	</element>
+
+</elements>
