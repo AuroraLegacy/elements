@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<elements>
+	<info>
+		<update version="0.0.1">
+			<file name="bloodhunter-ghostslayer.xml" url="https://raw.githubusercontent.com/AuroraLegacy/elements/master/collaborations/blood-hunter-2022/bloodhunter-ghostslayer.xml" />
+		</update>
+	</info>
+
+	<element name="Order of the Ghostslayer" type="Archetype" source="Blood Hunter (2022)" id="ID_CR_BH22_ARCHETYPE_ORDER_OF_THE_GHOSTSLAYER">
+		<supports>Blood Hunter Order 2022</supports>
+		<description>
+			<p>The Order of the Ghostslayer is the oldest of the blood hunter orders, its members having originally rediscovered the secrets of hemocraft and refined them for combat against the scourge of undeath. Ghostslayers seek out and study the moment of death, obsessing over the mystery of the transition from life, and the unholy power that can cause the dead to rise once more. These zealous blood hunters make it their life’s work to destroy the scourge of undeath wherever it is found, tuning their abilities to engage undead creatures and those who manipulate the necromancy that creates them.</p>
+			<div element="ID_CR_BH22_ARCHETYPE_FEATURE_GHOSTSLAYER_RITE_OF_THE_DAWN" />
+			<div element="ID_CR_BH22_ARCHETYPE_FEATURE_GHOSTSLAYER_CURSE_SPECIALIST" />
+			<div element="ID_CR_BH22_ARCHETYPE_FEATURE_GHOSTSLAYER_AETHER_WALK" />
+			<div element="ID_CR_BH22_ARCHETYPE_FEATURE_GHOSTSLAYER_BRAND_OF_SUNDERING" />
+			<div element="ID_CR_BH22_ARCHETYPE_FEATURE_GHOSTSLAYER_BLOOD_CURSE_OF_THE_EXORCIST" />
+			<div element="ID_CR_BH22_ARCHETYPE_FEATURE_GHOSTSLAYER_RITE_REVIVAL" />
+		</description>
+		<sheet display="false" />
+		<rules>
+			<grant type="Archetype Feature" id="ID_CR_BH22_ARCHETYPE_FEATURE_GHOSTSLAYER_RITE_OF_THE_DAWN" level="3" />
+			<grant type="Archetype Feature" id="ID_CR_BH22_ARCHETYPE_FEATURE_GHOSTSLAYER_CURSE_SPECIALIST" level="3" />
+			<grant type="Archetype Feature" id="ID_CR_BH22_ARCHETYPE_FEATURE_GHOSTSLAYER_AETHER_WALK" level="7" />
+			<grant type="Archetype Feature" id="ID_CR_BH22_ARCHETYPE_FEATURE_GHOSTSLAYER_BRAND_OF_SUNDERING" level="11" />
+			<grant type="Archetype Feature" id="ID_CR_BH22_ARCHETYPE_FEATURE_GHOSTSLAYER_BLOOD_CURSE_OF_THE_EXORCIST" level="15" />
+			<grant type="Archetype Feature" id="ID_CR_BH22_ARCHETYPE_FEATURE_GHOSTSLAYER_RITE_REVIVAL" level="18" />
+		</rules>
+	</element>
+	
+	<element name="Rite of the Dawn" type="Archetype Feature" source="Blood Hunter (2022)" id="ID_CR_BH22_ARCHETYPE_FEATURE_GHOSTSLAYER_RITE_OF_THE_DAWN">
+		<requirements>!ID_CR_BH22_FEATURE_REPLACEMENT_BLOOD_HUNTER_ORDER_OF_THE_GHOSTSLAYER_RITE_OF_THE_DAWN</requirements>
+		<description>
+			<p>When you join this order at 3rd level, you learn the Rite of the Dawn as part of your Crimson Rite feature. When you activate the Rite of the Dawn, the extra damage dealt by your rite is radiant damage. Additionally, while that rite is active on your weapon, you gain the following benefits:</p>
+			<ul>
+				<li>Your weapon sheds bright light out to a range of 20 feet.</li>
+				<li>You have resistance to necrotic damage.</li>
+				<li>When you hit an undead creature with a weapon for which the Rite of the Dawn is active, you roll an additional hemocraft die when determining the extra damage from the rite.</li>
+			</ul>
+		</description>
+		<sheet>
+			<description>Your rite damage is radiant damage. While the rite is active, you gain the following benefits: &#13;
+			• Your weapon sheds bright light out to a range of 20 feet. &#13;
+			• You have resistance to necrotic damage. &#13;
+			• Your weapon deals one additional d{{hemocraft:dice:size}} of rite damage when you hit an undead.</description>
+		</sheet>
+	</element>
+	
+	<element name="Curse Specialist" type="Archetype Feature" source="Blood Hunter (2022)" id="ID_CR_BH22_ARCHETYPE_FEATURE_GHOSTSLAYER_CURSE_SPECIALIST">
+		<requirements>!ID_CR_BH22_FEATURE_REPLACEMENT_BLOOD_HUNTER_ORDER_OF_THE_GHOSTSLAYER_CURSE_SPECIALTIST</requirements>
+		<description>
+			<p>Starting at 3rd level, you learn to master blood curses. You gain an additional use of your Blood Maledict feature. In addition, your blood curses can target any creature, whether it has blood or not.</p>
+		</description>
+		<sheet>
+			<description>Your blood curses can target any creature, whether it has blood or not.</description>
+		</sheet>
+		<rules>
+			<stat name="blood maledict:usage" value="1" />
+		</rules>
+	</element>
+	
+	<element name="Aether Walk" type="Archetype Feature" source="Blood Hunter (2022)" id="ID_CR_BH22_ARCHETYPE_FEATURE_GHOSTSLAYER_AETHER_WALK">
+		<requirements>!ID_CR_BH22_FEATURE_REPLACEMENT_BLOOD_HUNTER_ORDER_OF_THE_GHOSTSLAYER_AETHER_WALK</requirements>
+		<description>
+			<p>Upon reaching 7th level, at the start of your turn, you can magically step into the veil between the planes as long as you aren’t incapacitated. You can move through other creatures and objects as if they were difficult terrain, as well as see and affect creatures and objects on the Ethereal Plane. You take 1d10 force damage if you end your turn inside an object.</p>
+			<p class="indent">This feature lasts for a number of rounds equal to your Hemocraft modifier (minimum of 1 round). If you are inside an object when it ends, you are immediately shunted to the nearest unoccupied space and you take force damage equal to twice the number of feet you moved.</p>
+			<p class="indent">Once you use this feature, you must finish a short or long rest before you can use it again. You can use Aether Walk twice between rests starting at 15th level.</p>
+		</description>
+		<sheet usage="1/Rest">
+			<description>At the start of your turn, you can choose to magically step into the veil between the planes as long as you aren't incapacitated. You can move through other creatures and objects as if they were difficult terrain, as well as see and affect creatures and objects on the Ethereal Plane. You take 1d10 force damage if you end your turn inside an object. This feature lasts for {{aether walk:rounds}} rounds. If you are inside an object when this feature ends, you are immediately shunted to the nearest unoccupied space and you take force damage equal to twice the number of feet you moved.</description>
+			<description level="15" usage="2/Rest">At the start of your turn, you can choose to magically step into the veil between the planes as long as you aren't incapacitated. You can move through other creatures and objects as if they were difficult terrain, as well as see and affect creatures and objects on the Ethereal Plane. You take 1d10 force damage if you end your turn inside an object. This feature lasts for {{aether walk:rounds}} rounds. If you are inside an object when this feature ends, you are immediately shunted to the nearest unoccupied space and you take force damage equal to twice the number of feet you moved.</description>
+		</sheet>
+		<rules>
+			<stat name="aether walk:rounds" value="1" bonus="base" />
+			<stat name="aether walk:rounds" value="hemocraft:modifier" bonus="base" />
+		</rules>
+	</element>
+	
+	<element name="Brand of Sundering" type="Archetype Feature" source="Blood Hunter (2022)" id="ID_CR_BH22_ARCHETYPE_FEATURE_GHOSTSLAYER_BRAND_OF_SUNDERING">
+		<requirements>!ID_CR_BH22_FEATURE_REPLACEMENT_BLOOD_HUNTER_ORDER_OF_THE_GHOSTSLAYER_BRAND_OF_SUNDERING</requirements>
+		<description>
+			<p>Starting at 11th level, your Brand of Castigation exposes a fragment of your foe’s essence, leaving them vulnerable to your Crimson Rite feature. Whenever you hit a creature with a weapon for which you have an active crimson rite, you roll an additional hemocraft die when determining the extra damage from the rite. Additionally, if a branded creature has the Incorporeal Movement trait or a similar feature, it can’t move through creatures or objects while branded.</p>
+		</description>
+		<sheet>
+			<description>Whenever you hit a creature with a weapon for which you have an active crimson rite, you roll an additional hemocraft die when determining the extra damage from the rite. Additionally, if a branded creature has the Incorporeal Movement trait or a similar feature, it can’t move through creatures or objects while branded.</description>
+		</sheet>
+	</element>
+	
+	<element name="Blood Curse of the Exorcist" type="Archetype Feature" source="Blood Hunter (2022)" id="ID_CR_BH22_ARCHETYPE_FEATURE_GHOSTSLAYER_BLOOD_CURSE_OF_THE_EXORCIST">
+		<requirements>!ID_CR_BH22_FEATURE_REPLACEMENT_BLOOD_HUNTER_ORDER_OF_THE_GHOSTSLAYER_BLOOD_CURSE_OF_THE_EXORCIST</requirements>
+		<description>
+			<p>At 15th level, you hone your hemocraft to tear corruption from the minds and bodies of your allies—and to punish those responsible for it. You gain the Blood Curse of the Exorcist for your Blood Maledict feature. This doesn’t count against your number of blood curses known.</p>
+		</description>
+		<sheet display="false" />
+		<rules>
+			<grant type="Class Feature" id="ID_CR_BH22_CLASS_FEATURE_BLOOD_HUNTER_BLOOD_CURSE_OF_THE_EXORCIST" />
+		</rules>
+	</element>
+	
+	<element name="Rite Revival" type="Archetype Feature" source="Blood Hunter (2022)" id="ID_CR_BH22_ARCHETYPE_FEATURE_GHOSTSLAYER_RITE_REVIVAL">
+		<requirements>!ID_CR_BH22_FEATURE_REPLACEMENT_BLOOD_HUNTER_ORDER_OF_THE_GHOSTSLAYER_RITE_REVIVAL</requirements>
+		<description>
+			<p>Upon reaching 18th level, you learn to protect your fading life by reabsorbing the energy you feed to your weapons. If you have one or more crimson rites active and you are reduced to 0 hit points but don’t die outright, you can choose to have all your active crimson rites end and drop to 1 hit point instead.</p>
+		</description>
+		<sheet>
+			<description>If you have one or more crimson rites active and you are reduced to 0 hp but don’t die outright, you can choose to have all your active crimson rites end and drop to 1 hp instead.</description>
+		</sheet>
+	</element>
+
+	<!--Feature Replacement Grants-->
+	<element name="Rite of the Dawn Feature Replacement" type="Grants" source="Internal" id="ID_CR_BH22_FEATURE_REPLACEMENT_BLOOD_HUNTER_ORDER_OF_THE_GHOSTSLAYER_RITE_OF_THE_DAWN" />
+	<element name="Curse Specialtist Feature Replacement" type="Grants" source="Internal" id="ID_CR_BH22_FEATURE_REPLACEMENT_BLOOD_HUNTER_ORDER_OF_THE_GHOSTSLAYER_CURSE_SPECIALTIST" />
+	<element name="Aether Walk Feature Replacement" type="Grants" source="Internal" id="ID_CR_BH22_FEATURE_REPLACEMENT_BLOOD_HUNTER_ORDER_OF_THE_GHOSTSLAYER_AETHER_WALK" />
+	<element name="Blood Curse of the Exorcist Feature Replacement" type="Grants" source="Internal" id="ID_CR_BH22_FEATURE_REPLACEMENT_BLOOD_HUNTER_ORDER_OF_THE_GHOSTSLAYER_BLOOD_CURSE_OF_THE_EXORCIST" />
+	<element name="Rite Revival Feature Replacement" type="Grants" source="Internal" id="ID_CR_BH22_FEATURE_REPLACEMENT_BLOOD_HUNTER_ORDER_OF_THE_GHOSTSLAYER_RITE_REVIVAL" />
+
+</elements>

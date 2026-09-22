@@ -1,0 +1,338 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<elements>
+	<info>
+		<update version="0.0.1">
+			<file name="bloodhunter-mutant.xml" url="https://raw.githubusercontent.com/AuroraLegacy/elements/master/collaborations/blood-hunter-2022/bloodhunter-mutant.xml" />
+		</update>
+	</info>
+
+	<element name="Order of the Mutant" type="Archetype" source="Blood Hunter (2022)" id="ID_CR_BH22_ARCHETYPE_ORDER_OF_THE_MUTANT">
+		<supports>Blood Hunter Order 2022</supports>
+		<description>
+			<p>The process of undertaking the Hunter’s Bane ritual is a painful, scarring, and sometimes fatal experience. Those who survive are irrevocably changed—and not always for the better. Over generations of experimentation, a splinter order of blood hunters honed the way in which hemocraft alters the body, using corrupted alchemy and toxic elixirs to alter their blood even further. Over time, they have modified their capabilities in battle, becoming something beyond what they once were. Calling themselves the Order of the Mutant, these blood hunters now specialize in assessing the strengths and weaknesses of their foes, altering their biology to be best prepared for any conflict.</p>
+			<div element="ID_CR_BH22_ARCHETYPE_FEATURE_MUTANT_MUTAGENCRAFT" />
+			<div element="ID_CR_BH22_ARCHETYPE_FEATURE_MUTANT_FORMULAS" />
+			<div element="ID_CR_BH22_ARCHETYPE_FEATURE_MUTANT_STRANGE_METABOLISM" />
+			<div element="ID_CR_BH22_ARCHETYPE_FEATURE_MUTANT_BRAND_OF_AXIOM" />
+			<div element="ID_CR_BH22_ARCHETYPE_FEATURE_MUTANT_BLOOD_CURSE_OF_CORROSION" />
+			<div element="ID_CR_BH22_ARCHETYPE_FEATURE_MUTANT_EXALTED_MUTATION" />
+		</description>
+		<sheet display="false" />
+		<rules>
+			<grant type="Archetype Feature" id="ID_CR_BH22_ARCHETYPE_FEATURE_MUTANT_MUTAGENCRAFT" level="3" />
+			<grant type="Archetype Feature" id="ID_CR_BH22_ARCHETYPE_FEATURE_MUTANT_FORMULAS" level="3" />
+			<grant type="Archetype Feature" id="ID_CR_BH22_ARCHETYPE_FEATURE_MUTANT_STRANGE_METABOLISM" level="7" />
+			<grant type="Archetype Feature" id="ID_CR_BH22_ARCHETYPE_FEATURE_MUTANT_BRAND_OF_AXIOM" level="11" />
+			<grant type="Archetype Feature" id="ID_CR_BH22_ARCHETYPE_FEATURE_MUTANT_BLOOD_CURSE_OF_CORROSION" level="15" />
+			<grant type="Archetype Feature" id="ID_CR_BH22_ARCHETYPE_FEATURE_MUTANT_EXALTED_MUTATION" level="18" />
+		</rules>
+	</element>
+	
+	<element name="Mutagencraft" type="Archetype Feature" source="Blood Hunter (2022)" id="ID_CR_BH22_ARCHETYPE_FEATURE_MUTANT_MUTAGENCRAFT">
+		<requirements>!ID_CR_BH22_FEATURE_REPLACEMENT_BLOOD_HUNTER_ORDER_OF_THE_MUTANT_MUTAGENCRAFT</requirements>
+		<description>
+			<p>When you choose this archetype at 3rd level, you learn to master forbidden alchemical formulas—known as mutagens—that can temporarily alter your mental and physical abilities.</p>
+			<p class="indent">As a bonus action, you consume a mutagen, whose effects and side effects last until you finish a short or long rest unless otherwise specified. While one or more mutagens are affecting you, you can use an action to focus and flush all mutagens from your system, ending their effects and side effects.</p>
+			<p class="indent">Mutagens are designed for the specific biology of the character who concocted them, and your mutagens have no effect on other creatures. They are also unstable by nature, losing their potency over time and becoming inert if not used before you finish your next short or long rest.</p>
+			<h5 class="caption">Mutagencraft</h5>
+			<table>
+				<thead>
+					<tr><td>Blood Hunter Level</td><td>Mutagens Created</td><td>Formulas Known</td></tr>
+				</thead>
+				<tr><td> 3rd</td><td>1</td><td>4</td></tr>
+				<tr><td> 7th</td><td>2</td><td>5</td></tr>
+				<tr><td> 11th</td><td>2</td><td>6</td></tr>
+				<tr><td> 15th</td><td>3</td><td>7</td></tr>
+				<tr><td> 18th</td><td>3</td><td>8</td></tr>
+			</table>
+		</description>
+		<sheet action="Bonus Action">
+			<description>You can consume a single mutagen, and the effects and side effects last until you finish a short or long rest, unless otherwise specified. While one or more mutagens are affecting you, you can use an action to focus and flush the toxins from your system, ending the effects and side effects of all mutagens. &#13;
+			Mutagens have no effect on other creatures. They also lose their potency and becoming inert if not used before you finish your next short or long rest. &#13;
+			You can concoct a single mutagen when you finish a short or long rest. </description>			
+			<description level="7">You can consume a single mutagen, and the effects and side effects last until you finish a short or long rest, unless otherwise specified. While one or more mutagens are affecting you, you can use an action to focus and flush the toxins from your system, ending the effects and side effects of all mutagens. &#13;
+			Mutagens have no effect on other creatures. They also lose their potency and becoming inert if not used before you finish your next short or long rest. &#13;
+			You can concoct two mutagens when you finish a short or long rest.</description>
+			<description level="15">You can consume a single mutagen, and the effects and side effects last until you finish a short or long rest, unless otherwise specified. While one or more mutagens are affecting you, you can use an action to focus and flush the toxins from your system, ending the effects and side effects of all mutagens. &#13;
+			Mutagens have no effect on other creatures. They also lose their potency and becoming inert if not used before you finish your next short or long rest. &#13;
+			You can concoct three mutagens when you finish a short or long rest.</description>
+		</sheet>
+	</element>
+	
+	<element name="Formulas" type="Archetype Feature" source="Blood Hunter (2022)" id="ID_CR_BH22_ARCHETYPE_FEATURE_MUTANT_FORMULAS">
+		<requirements>!ID_CR_BH22_FEATURE_REPLACEMENT_BLOOD_HUNTER_ORDER_OF_THE_MUTANT_FORMULAS</requirements>
+		<description>
+			<p>The number of mutagens you can concoct when you finish a rest, and the number of formulas you know, increases as you gain levels in the blood hunter class, as shown on the Mutagencraft table above. Additionally, when you learn a new mutagen formula, you can replace one formula you already know with a new mutagen formula. You choose four mutagen formulas to learn from the options detailed at the end of this subclass description, and you can concoct one mutagen when you finish a short or long rest.</p>
+		</description>
+		<sheet />
+		<rules>
+			<select type="Archetype Feature" name="Mutagen Formula" supports="Blood Hunter Mutagen 2022" level="3" number="4" />
+			<select type="Archetype Feature" name="Mutagen Formula" supports="Blood Hunter Mutagen 2022" level="7" />
+			<select type="Archetype Feature" name="Mutagen Formula" supports="Blood Hunter Mutagen 2022" level="11" />
+			<select type="Archetype Feature" name="Mutagen Formula" supports="Blood Hunter Mutagen 2022" level="15" />
+			<select type="Archetype Feature" name="Mutagen Formula" supports="Blood Hunter Mutagen 2022" level="18" />
+		</rules>
+	</element>
+	
+	<element name="Strange Metabolism" type="Archetype Feature" source="Blood Hunter (2022)" id="ID_CR_BH22_ARCHETYPE_FEATURE_MUTANT_STRANGE_METABOLISM">
+		<requirements>!ID_CR_BH22_FEATURE_REPLACEMENT_BLOOD_HUNTER_ORDER_OF_THE_MUTANT_STRANGE_METABOLISM</requirements>
+		<description>
+			<p>When you reach 7th level, your body begins to adapt to toxins and venoms, ignoring their corrupting effects. You gain immunity to poison damage and the poisoned condition.</p>
+			<p class="indent">Additionally, you can trigger a burst of adrenaline that lets you temporarily resist the negative effects of a mutagen. As a bonus action, you can ignore the negative side effect of one mutagen affecting you for 1 minute. Once you do so, you can’t do so again until you finish a long rest.</p>
+		</description>
+		<sheet action="Bonus Action" usage="1/Long Rest">
+			<description>You can ignore the negative side effect of one mutagen affecting you for 1 minute. &#13;
+			Additionally, you have immunity to the poisoned condition.</description>
+		</sheet>
+		<rules>
+			<grant type="Condition" id="ID_INTERNAL_CONDITION_DAMAGE_IMMUNITY_POISON" />
+		</rules>
+	</element>
+	
+	<element name="Brand of Axiom" type="Archetype Feature" source="Blood Hunter (2022)" id="ID_CR_BH22_ARCHETYPE_FEATURE_MUTANT_BRAND_OF_AXIOM">
+		<requirements>!ID_CR_BH22_FEATURE_REPLACEMENT_BLOOD_HUNTER_ORDER_OF_THE_MUTANT_BRAND_OF_AXIOM</requirements>
+		<description>
+			<p>At 11th level, your mutagenic hemocraft lets your Brand of Castigation reveal a foe’s true nature. Any illusion or invisibility in effect on a creature when you brand it ends, and the creature can’t benefit from invisibility or illusion effects while branded by you. If a creature branded by you is in an alternative form (by way of the polymorph spell, the Change Shape action or Shapechanger trait, the Wild Shape feature, and similar effects), it must succeed on a Wisdom saving throw or revert to its true form and be stunned until the end of your next turn. Whenever a branded creature attempts to alter its form, it must succeed on a Wisdom saving throw or have the attempt fail, and it is stunned until the end of your next turn.</p>
+		</description>
+		<sheet>
+			<description>Any illusion or invisibility in effect on a creature when you brand it ends, and the creature can’t benefit from invisibility or illusion effects while branded by you. If a creature branded by you is in an alternative form, they must succeed on a Wisdom saving throw or revert to their true form and be stunned until the end of your next turn. Whenever a branded creature attempts to alter its form, it must succeed on a Wisdom saving throw or the attempt fails, and it is stunned until the end of your next turn.</description>
+		</sheet>
+	</element>
+	
+	<element name="Blood Curse of Corrosion" type="Archetype Feature" source="Blood Hunter (2022)" id="ID_CR_BH22_ARCHETYPE_FEATURE_MUTANT_BLOOD_CURSE_OF_CORROSION">
+		<requirements>!ID_CR_BH22_FEATURE_REPLACEMENT_BLOOD_HUNTER_ORDER_OF_THE_MUTANT_BLOOD_CURSE_OF_CORROSION</requirements>
+		<description>
+			<p>Starting at 15th level, your blood curse can infuse a creature’s body with terrible toxins. You gain the Blood Curse of Corrosion for your Blood Maledict feature. This doesn’t count against your number of blood curses known.</p>
+		</description>
+		<sheet display="false" />
+		<rules>
+			<grant type="Class Feature" id="ID_CR_BH22_CLASS_FEATURE_BLOOD_HUNTER_BLOOD_CURSE_OF_CORROSION" />
+		</rules>
+	</element>
+	
+	<element name="Exalted Mutation" type="Archetype Feature" source="Blood Hunter (2022)" id="ID_CR_BH22_ARCHETYPE_FEATURE_MUTANT_EXALTED_MUTATION">
+		<requirements>!ID_CR_BH22_FEATURE_REPLACEMENT_BLOOD_HUNTER_ORDER_OF_THE_MUTANT_EXALTED_MUTATION</requirements>
+		<description>
+			<p>At 18th level, your body has adapted to produce mutagens naturally in a moment of need. As a bonus action, choose one mutagen currently affecting you. Its effects and side effects end, and you can immediately have a mutagen you know the formula for take effect in its place.</p>
+			<p class="indent">You can use this feature a number of times equal to your Hemocraft modifier (minimum of once). You regain all expended uses when you finish a long rest.</p>
+		</description>
+		<sheet action="Bonus Action" usage="{{exalted mutation:usage}}/Long Rest">
+			<description>Choose one mutagen currently affecting you, its effects end, and you can choose a different mutagen to take effect in its place.</description>
+		</sheet>
+		<rules>
+			<stat name="exalted mutation:usage" value="1" bonus="base" />
+			<stat name="exalted mutation:usage" value="hemocraft:modifier" bonus="base" />
+		</rules>
+	</element>
+
+	<!--Mutagens-->
+	<element name="Aether" type="Archetype Feature" source="Blood Hunter (2022)" id="ID_CR_BH22_ARCHETYPE_FEATURE_MUTANT_MUTAGEN_AETHER">
+		<supports>Blood Hunter Mutagen 2022</supports>
+		<prerequisite>11th level</prerequisite>
+		<requirements>[level:11]</requirements>
+		<description>
+			<p><em>Prerequisite: 11th level</em></p>
+			<p>You have a flying speed of 20 feet for 1 hour. However, you have disadvantage on Strength checks and Dexterity checks during this time.</p>
+		</description>
+		<sheet>
+			<description>You have a flying speed of 20 feet for 1 hour. However, you have disadvantage on Strength and Dexterity checks during this time.</description>
+		</sheet>
+	</element>
+	<element name="Alluring" type="Archetype Feature" source="Blood Hunter (2022)" id="ID_CR_BH22_ARCHETYPE_FEATURE_MUTANT_MUTAGEN_ALLURING">
+		<supports>Blood Hunter Mutagen 2022</supports>
+		<description>
+			<p>Your skin and voice become malleable, allowing you to enhance your appearance and presence. You have advantage on Charisma checks. However, you have disadvantage on initiative rolls.</p>
+		</description>
+		<sheet>
+			<description>You have advantage on Charisma checks. However, you have disadvantage on initiative rolls.</description>
+		</sheet>
+	</element>
+	<element name="Celerity" type="Archetype Feature" source="Blood Hunter (2022)" id="ID_CR_BH22_ARCHETYPE_FEATURE_MUTANT_MUTAGEN_CELERITY">
+		<supports>Blood Hunter Mutagen 2022</supports>
+		<description>
+			<p>Your Dexterity score increases by 3, as does your maximum for that score. However, you have disadvantage on Wisdom saving throws. Your Dexterity score and your maximum increase by 4 if you consume this mutagen at 11th level, and by 5 at 18th level.</p>
+		</description>
+		<sheet>
+			<description>Your Dexterity score increases by 3, as does your Dexterity maximum. However, you have disadvantage on Wisdom saving throws.</description>
+			<description level="11">Your Dexterity score increases by 4, as does your Dexterity maximum. However, you have disadvantage on Wisdom saving throws.</description>
+			<description level="18">Your Dexterity score increases by 5, as does your Dexterity maximum. However, you have disadvantage on Wisdom saving throws.</description>
+		</sheet>
+	</element>
+	<element name="Conversant" type="Archetype Feature" source="Blood Hunter (2022)" id="ID_CR_BH22_ARCHETYPE_FEATURE_MUTANT_MUTAGEN_CONVERSANT">
+		<supports>Blood Hunter Mutagen 2022</supports>
+		<description>
+			<p>You have advantage on Intelligence checks. However, you have disadvantage on Wisdom checks.</p>
+		</description>
+		<sheet>
+			<description>You have advantage on Intelligence checks. However, you have disadvantage on Wisdom checks.</description>
+		</sheet>
+	</element>
+	<element name="Cruelty" type="Archetype Feature" source="Blood Hunter (2022)" id="ID_CR_BH22_ARCHETYPE_FEATURE_MUTANT_MUTAGEN_CRUELTY">
+		<supports>Blood Hunter Mutagen 2022</supports>
+		<prerequisite>11th level</prerequisite>
+		<requirements>[level:11]</requirements>
+		<description>
+			<p><em>Prerequisite: 11th level</em></p>
+			<p>When you use the Attack action, you can make one additional weapon attack as a bonus action. However, you have disadvantage on Intelligence, Wisdom, and Charisma saving throws.</p>
+		</description>
+		<sheet>
+			<description>When you use the Attack action, you can make one additional weapon attack as a bonus action. However, you have disadvantage on Intelligence, Wisdom, and Charisma saving throws.</description>
+		</sheet>
+	</element>
+	<element name="Deftness" type="Archetype Feature" source="Blood Hunter (2022)" id="ID_CR_BH22_ARCHETYPE_FEATURE_MUTANT_MUTAGEN_DEFTNESS">
+		<supports>Blood Hunter Mutagen 2022</supports>
+		<description>
+			<p>You have advantage on Dexterity checks. However, you have disadvantage on Wisdom checks.</p>
+		</description>
+		<sheet>
+			<description>You have advantage on Dexterity checks. However, you have disadvantage on Wisdom checks.</description>
+		</sheet>
+	</element>
+	<element name="Embers" type="Archetype Feature" source="Blood Hunter (2022)" id="ID_CR_BH22_ARCHETYPE_FEATURE_MUTANT_MUTAGEN_EMBERS">
+		<supports>Blood Hunter Mutagen 2022</supports>
+		<description>
+			<p>You have resistance to fire damage and vulnerability to cold damage.</p>
+		</description>
+		<sheet>
+			<description>You have resistance to fire damage and vulnerability to cold damage.</description>
+		</sheet>
+	</element>
+	<element name="Gelid" type="Archetype Feature" source="Blood Hunter (2022)" id="ID_CR_BH22_ARCHETYPE_FEATURE_MUTANT_MUTAGEN_GELID">
+		<supports>Blood Hunter Mutagen 2022</supports>
+		<description>
+			<p>You have resistance to cold damage and vulnerability to fire damage.</p>
+		</description>
+		<sheet>
+			<description>You have resistance to cold damage and vulnerability to fire damage.</description>
+		</sheet>
+	</element>
+	<element name="Impermeable" type="Archetype Feature" source="Blood Hunter (2022)" id="ID_CR_BH22_ARCHETYPE_FEATURE_MUTANT_MUTAGEN_IMPERMEABLE">
+		<supports>Blood Hunter Mutagen 2022</supports>
+		<description>
+			<p>You have resistance to piercing damage and vulnerability to slashing damage.</p>
+		</description>
+		<sheet>
+			<description>You gain resistance to piercing damage. As a side effect, you gain vulnerability to slashing damage.</description>
+		</sheet>
+	</element>
+	<element name="Mobility" type="Archetype Feature" source="Blood Hunter (2022)" id="ID_CR_BH22_ARCHETYPE_FEATURE_MUTANT_MUTAGEN_MOBILITY">
+		<supports>Blood Hunter Mutagen 2022</supports>
+		<description>
+			<p>You have immunity to the grappled and restrained conditions. However, you have disadvantage on Strength checks. At 11th level, you are also immune to the paralyzed condition.</p>
+		</description>
+		<sheet>
+			<description>You have immunity to the grappled and restrained conditions. However, you have disadvantage on Strength checks.</description>
+			<description level="11">You have immunity to the grappled, restrained, and paralyzed conditions. However, you have disadvantage on Strength checks.</description>
+		</sheet>
+	</element>
+	<element name="Nighteye" type="Archetype Feature" source="Blood Hunter (2022)" id="ID_CR_BH22_ARCHETYPE_FEATURE_MUTANT_MUTAGEN_NIGHTEYE">
+		<supports>Blood Hunter Mutagen 2022</supports>
+		<description>
+			<p>You have darkvision out to a range of 60 feet. If you already have darkvision, its range increases by 60 feet. However, you have disadvantage on attack rolls and on Wisdom (Perception) checks that rely on sight when you, the target of your attack, or whatever you are trying to perceive is in direct sunlight.</p>
+		</description>
+		<sheet>
+			<description>You have darkvision out to a range of 60 feet. If you already have darkvision, its range increases by 60 feet. However, you have disadvantage on attack rolls and on Perception checks that rely on sight when you, the target of your attack, or whatever you are trying to perceive is in direct sunlight.</description>
+		</sheet>
+	</element>
+	<element name="Percipient" type="Archetype Feature" source="Blood Hunter (2022)" id="ID_CR_BH22_ARCHETYPE_FEATURE_MUTANT_MUTAGEN_PERCIPIENT">
+		<supports>Blood Hunter Mutagen 2022</supports>
+		<description>
+			<p>You have advantage on Wisdom checks. However, you have disadvantage on Charisma checks.</p>
+		</description>
+		<sheet>
+			<description>You have advantage on Wisdom checks. However, you have disadvantage on Charisma checks.</description>
+		</sheet>
+	</element>
+	<element name="Potency" type="Archetype Feature" source="Blood Hunter (2022)" id="ID_CR_BH22_ARCHETYPE_FEATURE_MUTANT_MUTAGEN_POTENCY">
+		<supports>Blood Hunter Mutagen 2022</supports>
+		<description>
+			<p>Your Strength score increases by 3, as does your maximum for that score. However, you have disadvantage on Dexterity saving throws. Your Strength score and your maximum increase by 4 if you consume this mutagen at 11th level, and by 5 at 18th level.</p>
+		</description>
+		<sheet>
+			<description>Your Strength score increases by 3, as does your maximum for that score. However, you have disadvantage on Dexterity saving throws.</description>
+			<description level="11">Your Strength score increases by 4, as does your maximum for that score. However, you have disadvantage on Dexterity saving throws.</description>
+			<description level="18">Your Strength score increases by 5, as does your maximum for that score. However, you have disadvantage on Dexterity saving throws.</description>
+		</sheet>
+	</element>
+	<element name="Precision" type="Archetype Feature" source="Blood Hunter (2022)" id="ID_CR_BH22_ARCHETYPE_FEATURE_MUTANT_MUTAGEN_PRECISION">
+		<supports>Blood Hunter Mutagen 2022</supports>
+		<prerequisite>11th level</prerequisite>
+		<requirements>[level:11]</requirements>
+		<description>
+			<p><em>Prerequisite: 11th level</em></p>
+			<p>Your weapon attacks score a critical hit on a roll of 19 or 20. However, you have disadvantage on Strength saving throws.</p>
+		</description>
+		<sheet>
+			<description>Your weapon attacks score a critical hit on a roll of 19 or 20. However, you have disadvantage on Strength saving throws.</description>
+		</sheet>
+	</element>
+	<element name="Rapidity" type="Archetype Feature" source="Blood Hunter (2022)" id="ID_CR_BH22_ARCHETYPE_FEATURE_MUTANT_MUTAGEN_RAPIDITY">
+		<supports>Blood Hunter Mutagen 2022</supports>
+		<description>
+			<p>Your speed increases by 10 feet. However, you have disadvantage on Intelligence checks. At 15th level, your speed increases by an additional 5 feet.</p>
+		</description>
+		<sheet>
+			<description>Your speed increases by 10 feet. However, you have disadvantage on Intelligence checks.</description>
+			<description level="15">Your speed increases by 15 feet. However, you have disadvantage on Intelligence checks.</description>
+		</sheet>
+	</element>
+	<element name="Reconstruction" type="Archetype Feature" source="Blood Hunter (2022)" id="ID_CR_BH22_ARCHETYPE_FEATURE_MUTANT_MUTAGEN_RECONSTRUCTION">
+		<supports>Blood Hunter Mutagen 2022</supports>
+		<prerequisite>7th level</prerequisite>
+		<requirements>[level:7]</requirements>
+		<description>
+			<p><em>Prerequisite: 7th level</em></p>
+			<p>For 1 hour, at the start of each of your turns when you have at least 1 hit point but fewer hit points than half your hit point maximum, you regain hit points equal to your proficiency bonus. However, your speed is reduced by 10 feet during this time.</p>
+		</description>
+		<sheet>
+			<description>For 1 hour, at the start of each of your turns, you regain {{proficiency}} hp if you have at least 1 hp but no more than half of your hp left. However, your speed decreases by 10 ft for 1 hour.</description>
+		</sheet>
+	</element>
+	<element name="Sagacity" type="Archetype Feature" source="Blood Hunter (2022)" id="ID_CR_BH22_ARCHETYPE_FEATURE_MUTANT_MUTAGEN_SAGACITY">
+		<supports>Blood Hunter Mutagen 2022</supports>
+		<description>
+			<p>Your Intelligence score increases by 3, as does your maximum for that score. However, you have disadvantage on Charisma saving throws. Your Intelligence score and your maximum increase by 4 if you consume this mutagen at 11th level, and by 5 at 18th level.</p>
+		</description>
+		<sheet>
+			<description>Your Intelligence score increases by 3, as does your Intelligence maximum. However, you gain disadvantage on Charisma saving throws.</description>
+			<description level="11">Your Intelligence score increases by 4, as does your Intelligence maximum. However, you gain disadvantage on Charisma saving throws.</description>
+			<description level="18">Your Intelligence score increases by 5, as does your Intelligence maximum. However, you gain disadvantage on Charisma saving throws.</description>
+		</sheet>
+	</element>
+	<element name="Shielded" type="Archetype Feature" source="Blood Hunter (2022)" id="ID_CR_BH22_ARCHETYPE_FEATURE_MUTANT_MUTAGEN_SHIELDED">
+		<supports>Blood Hunter Mutagen 2022</supports>
+		<description>
+			<p>You have resistance to slashing damage, and you have vulnerability to bludgeoning damage.</p>
+		</description>
+		<sheet>
+			<description>You have resistance to slashing damage, and you have vulnerability to bludgeoning damage.</description>
+		</sheet>
+	</element>
+	<element name="Unbreakable" type="Archetype Feature" source="Blood Hunter (2022)" id="ID_CR_BH22_ARCHETYPE_FEATURE_MUTANT_MUTAGEN_UNBREAKABLE">
+		<supports>Blood Hunter Mutagen 2022</supports>
+		<description>
+			<p>You have resistance to bludgeoning damage, and you have vulnerability to piercing damage.</p>
+		</description>
+		<sheet>
+			<description>You have resistance to bludgeoning damage, and you have vulnerability to piercing damage.</description>
+		</sheet>
+	</element>
+	<element name="Vermillion" type="Archetype Feature" source="Blood Hunter (2022)" id="ID_CR_BH22_ARCHETYPE_FEATURE_MUTANT_MUTAGEN_VERMILLION">
+		<supports>Blood Hunter Mutagen 2022</supports>
+		<description>
+			<p>You gain an additional use of your Blood Maledict feature. However, you have disadvantage on death saving throws.</p>
+		</description>
+		<sheet>
+			<description>You gain an additional use of your Blood Maledict feature. However, you have disadvantage on death saving throws.</description>
+		</sheet>
+	</element>
+
+	<!--Feature Replacement Grants-->
+	<element name="Mutagencraft Feature Replacement" type="Grants" source="Internal" id="ID_CR_BH22_FEATURE_REPLACEMENT_BLOOD_HUNTER_ORDER_OF_THE_MUTANT_MUTAGENCRAFT" />
+	<element name="Formulas Feature Replacement" type="Grants" source="Internal" id="ID_CR_BH22_FEATURE_REPLACEMENT_BLOOD_HUNTER_ORDER_OF_THE_MUTANT_FORMULAS" />
+	<element name="Strange Metabolism Feature Replacement" type="Grants" source="Internal" id="ID_CR_BH22_FEATURE_REPLACEMENT_BLOOD_HUNTER_ORDER_OF_THE_MUTANT_STRANGE_METABOLISM" />
+	<element name="Brand of Axiom Feature Replacement" type="Grants" source="Internal" id="ID_CR_BH22_FEATURE_REPLACEMENT_BLOOD_HUNTER_ORDER_OF_THE_MUTANT_BRAND_OF_AXIOM" />
+	<element name="Blood Curse of Corrosion Feature Replacement" type="Grants" source="Internal" id="ID_CR_BH22_FEATURE_REPLACEMENT_BLOOD_HUNTER_ORDER_OF_THE_MUTANT_BLOOD_CURSE_OF_CORROSION" />
+	<element name="Exalted Mutation Feature Replacement" type="Grants" source="Internal" id="ID_CR_BH22_FEATURE_REPLACEMENT_BLOOD_HUNTER_ORDER_OF_THE_MUTANT_EXALTED_MUTATION" />
+
+</elements>
