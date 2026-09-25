@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<elements>
+	<info>
+		<name>Crucible Storm Chaser</name>
+		<description>The Crucible Storm Chaser background from Arcana Unleashed.</description>
+		<update version="0.0.1">
+			<file name="background-crucible-storm-chaser.xml" url="https://raw.githubusercontent.com/AuroraLegacy/elements/master/supplements/arcana-unleashed/backgrounds/background-crucible-storm-chaser.xml" />
+		</update>
+	</info>
+
+	<element name="Crucible Storm Chaser" type="Background" source="Arcana Unleashed" id="ID_WOTC_AU_BACKGROUND_CRUCIBLE_STORM_CHASER">
+		<description>
+			<ul class="unstyled" style="text-indent:-1em; margin-left:1em; margin-bottom:5px">
+				<li><strong>Ability Scores:</strong> Strength, Constitution, Intelligence</li>
+				<li><strong>Feat:</strong> Arcane Overload</li>
+				<li><strong>Skill Proficiencies:</strong> Athletics and Nature</li>
+				<li><strong>Tool Proficiency:</strong> Glassblower's Tools</li>
+				<li><strong>Equipment:</strong><i> Choose A or B:</i> (A) Glassblower's Tools, Backpack, Rope, Traveler's Clothes, 15 GP; or (B) 50 GP</li>
+			</ul>
+			<p>Your daredevil tendencies and thirst for excitement led you to the Crucible Keepers, an organization dedicated to studying natural and magical catastrophes. From playing with molten glass to charging into a hurricane's eye, you thrive when disaster is mere steps away.</p>
+			<div class="reference">
+				<div element="ID_WOTC_AU_FEAT_ARCANE_OVERLOAD" />
+			</div>
+		</description>
+		<setters>
+			<set name="short">Strength, Constitution, Intelligence, Arcane Overload Feat, Athletics and Nature Skills, Glassblower's Tools</set>
+		</setters>
+		<rules>
+			<grant type="Ability Score Improvement" id="ID_INTERNAL_ABILITY_SCORE_IMPROVEMENT_COMBINATION_STR_CON_INT" />
+			<grant type="Feat" id="ID_WOTC_AU_FEAT_ARCANE_OVERLOAD" />
+			<grant type="Proficiency" id="ID_PROFICIENCY_SKILL_ATHLETICS" />
+			<grant type="Proficiency" id="ID_PROFICIENCY_SKILL_NATURE" />
+			<grant type="Grants" id="ID_INTERNAL_GRANTS_BACKGROUND_ASI" />
+			<grant type="Proficiency" id="ID_PROFICIENCY_TOOL_PROFICIENCY_GLASSBLOWERS_TOOLS" />
+		</rules>
+	</element>
+</elements>

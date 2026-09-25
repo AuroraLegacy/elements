@@ -1,0 +1,149 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<elements>
+	<info>
+		<name>Arcana Domain</name>
+		<description>The Arcana Domain subclass from Arcana Unleashed.</description>
+		<update version="0.0.1">
+			<file name="cleric-arcana.xml" url="https://raw.githubusercontent.com/AuroraLegacy/elements/master/supplements/arcana-unleashed/archetypes/cleric-arcana.xml" />
+		</update>
+	</info>
+
+	<element name="Arcana Domain" type="Archetype" source="Arcana Unleashed" id="ID_WOTC_AU_ARCHETYPE_CLERIC_ARCANA_DOMAIN">
+		<supports>Cleric Subclass</supports>
+		<description>
+			<p class="flavor">Amplify Your Magical Power</p>
+			<p>Magic suffuses the multiverse and fuels both destruction and creation. Clerics with the Arcana Domain view magical knowledge not as power to be used in pursuit of personal ends, but as a gift they have the responsibility to share.</p>
+			<p class="indent">Gods associated with the Arcana Domain know the secrets and potential of magic intimately. These gods are often connected to knowledge, secrecy, or power.</p>
+			<div element="ID_WOTC_AU_ARCHETYPE_FEATURE_ARCANA_DOMAIN_ARCANA_DOMAIN_SPELLS" />
+			<div element="ID_WOTC_AU_ARCHETYPE_FEATURE_ARCANA_DOMAIN_MODIFY_MAGIC" />
+			<div element="ID_WOTC_AU_ARCHETYPE_FEATURE_ARCANA_DOMAIN_STUDENT_OF_ARCANA" />
+			<div element="ID_WOTC_AU_ARCHETYPE_FEATURE_ARCANA_DOMAIN_DISPELLING_RECOVERY" />
+			<div element="ID_WOTC_AU_ARCHETYPE_FEATURE_ARCANA_DOMAIN_MAGICAL_MASTERY" />
+		</description>
+		<sheet display="false" />
+		<rules>
+			<grant type="Archetype Feature" id="ID_WOTC_AU_ARCHETYPE_FEATURE_ARCANA_DOMAIN_ARCANA_DOMAIN_SPELLS" level="3"/>
+			<grant type="Archetype Feature" id="ID_WOTC_AU_ARCHETYPE_FEATURE_ARCANA_DOMAIN_MODIFY_MAGIC" level="3" />
+			<grant type="Archetype Feature" id="ID_WOTC_AU_ARCHETYPE_FEATURE_ARCANA_DOMAIN_STUDENT_OF_ARCANA" level="3" />
+			<grant type="Archetype Feature" id="ID_WOTC_AU_ARCHETYPE_FEATURE_ARCANA_DOMAIN_DISPELLING_RECOVERY" level="6" />
+			<grant type="Archetype Feature" id="ID_WOTC_AU_ARCHETYPE_FEATURE_ARCANA_DOMAIN_MAGICAL_MASTERY" level="17" /> 
+		</rules>
+	</element>
+
+	<element name="Level 3: Arcana Domain Spells" type="Archetype Feature" source="Arcana Unleashed" id="ID_WOTC_AU_ARCHETYPE_FEATURE_ARCANA_DOMAIN_ARCANA_DOMAIN_SPELLS">
+		<requirements>!ID_INTERNAL_AU_FEATURE_REPLACEMENT_CLERIC_ARCANA_DOMAIN_ARCANA_DOMAIN_SPELLS</requirements>
+		<description>
+			<p>Your connection to this divine domain means you always have certain spells ready. When you reach a Cleric level specified in the Arcana Domain Spells table, you thereafter always have the listed spells prepared.</p>
+			<h5>ARCANA DOMAIN SPELLS</h5>
+			<table>
+				<thead>
+					<tr><td class="col-15" style="text-align:center">Cleric Level</td><td>Prepared Spells</td></tr>
+				</thead>
+				<tr><td style="text-align:center">3</td><td><em>Detect Magic, Magic Missile, Magic Weapon, Nystul's Magic Aura</em></td></tr>
+				<tr><td style="text-align:center">5</td><td><em>Counterspell, Dispel Magic</em></td></tr>
+				<tr><td style="text-align:center">7</td><td><em>Arcane Eye, Leomund's Secret Chest</em></td></tr>
+				<tr><td style="text-align:center">9</td><td><em>Bigby's Hand, Teleportation Circle</em></td></tr>
+			</table>
+		</description>
+		<sheet display="false" />
+		<rules>
+			<grant type="Spell" id="ID_WOTC_PHB24_SPELL_DETECT_MAGIC" level="3" spellcasting="Cleric" prepared="true" />
+			<grant type="Spell" id="ID_WOTC_PHB24_SPELL_MAGIC_MISSILE" level="3" spellcasting="Cleric" prepared="true" />
+			<grant type="Spell" id="ID_WOTC_PHB24_SPELL_MAGIC_WEAPON" level="3" spellcasting="Cleric" prepared="true" />
+			<grant type="Spell" id="ID_WOTC_PHB24_SPELL_NYSTULS_MAGIC_AURA" level="3" spellcasting="Cleric" prepared="true" />
+			<grant type="Spell" id="ID_WOTC_PHB24_SPELL_COUNTERSPELL" level="5" spellcasting="Cleric" prepared="true" />
+			<grant type="Spell" id="ID_WOTC_PHB24_SPELL_DISPEL_MAGIC" level="5" spellcasting="Cleric" prepared="true" />
+			<grant type="Spell" id="ID_WOTC_PHB24_SPELL_ARCANE_EYE" level="7" spellcasting="Cleric" prepared="true" />
+			<grant type="Spell" id="ID_WOTC_PHB24_SPELL_LEOMUNDS_SECRET_CHEST" level="7" spellcasting="Cleric" prepared="true" />
+			<grant type="Spell" id="ID_WOTC_PHB24_SPELL_BIGBYS_HAND" level="9" spellcasting="Cleric" prepared="true" />
+			<grant type="Spell" id="ID_WOTC_PHB24_SPELL_TELEPORTATION_CIRCLE" level="9" spellcasting="Cleric" prepared="true" />
+		</rules>
+	</element>
+
+	<element name="Level 3: Modify Magic" type="Archetype Feature" source="Arcana Unleashed" id="ID_WOTC_AU_ARCHETYPE_FEATURE_ARCANA_DOMAIN_MODIFY_MAGIC">
+		<requirements>!ID_INTERNAL_AU_FEATURE_REPLACEMENT_CLERIC_ARCANA_DOMAIN_MODIFY_MAGIC</requirements>
+		<description>
+			<p>You can use your Channel Divinity to alter your spells as you cast them. When you cast a spell, you can expend one use of your Channel Divinity and change the spell in one of the following ways (no action required).</p>
+			<p class="indent"><em><strong>Fortifying Spell.</strong></em> One target of the spell gains a number of Temporary Hit Points equal to 2d8 plus your Cleric level.</p>
+			<p class="indent"><em><strong>Tenacious Spell.</strong></em> When you cast a spell that forces a creature to make a saving throw, and a creature you can see succeeds on that saving throw, roll 1d6 and subtract the number rolled from the target's first saving throw against the spell's effect.</p>
+		</description>
+		<sheet alt="Modify Magic" usage="Channel Divinity">
+			<description>When you cast a spell, you can change the spell in one of the following ways.</description>
+		</sheet>
+		<rules>
+			<select type="Archetype Feature" name="Fortifying Spell (Modify Magic)" supports="Fortifying Spell" default="ID_WOTC_AU_ARCHETYPE_FEATURE_ARCANA_DOMAIN_MODIFY_MAGIC_FORTIFYING_SPELL" />
+			<select type="Archetype Feature" name="Tenacious Spell (Modify Magic)" supports="Tenacious Spell" default="ID_WOTC_AU_ARCHETYPE_FEATURE_ARCANA_DOMAIN_MODIFY_MAGIC_TENACIOUS_SPELL" />
+		</rules>
+	</element>
+	<element name="Fortifying Spell" type="Archetype Feature" source="Arcana Unleashed" id="ID_WOTC_AU_ARCHETYPE_FEATURE_ARCANA_DOMAIN_MODIFY_MAGIC_FORTIFYING_SPELL">
+		<supports>Fortifying Spell</supports>
+		<compendium display="false"/>
+		<description>
+			<p>One target of the spell gains a number of Temporary Hit Points equal to 2d8 plus your Cleric level.</p>
+		</description>
+		<sheet>
+			<description>One target of the spell gains 2d8 + {{level:cleric}} Temporary Hit Points.</description>
+		</sheet>
+	</element>
+	<element name="Tenacious Spell" type="Archetype Feature" source="Arcana Unleashed" id="ID_WOTC_AU_ARCHETYPE_FEATURE_ARCANA_DOMAIN_MODIFY_MAGIC_TENACIOUS_SPELL">
+		<supports>Tenacious Spell</supports>
+		<compendium display="false"/>
+		<description>
+			<p>When you cast a spell that forces a creature to make a saving throw, and a creature you can see succeeds on that saving throw, roll 1d6 and subtract the number rolled from the target's first saving throw against the spell's effect.</p>
+		</description>
+		<sheet>
+			<description>When you cast a spell that forces a creature to make a saving throw, and a creature you can see succeeds on that saving throw, roll 1d6 and subtract the number rolled from the target's first saving throw against the spell's effect.</description>
+		</sheet>
+	</element>
+
+	<element name="Level 3: Student of Arcana" type="Archetype Feature" source="Arcana Unleashed" id="ID_WOTC_AU_ARCHETYPE_FEATURE_ARCANA_DOMAIN_STUDENT_OF_ARCANA">
+		<requirements>!ID_INTERNAL_AU_FEATURE_REPLACEMENT_CLERIC_ARCANA_DOMAIN_STUDENT_OF_ARCANA</requirements>
+		<description>
+			<p>You gain the following benefits.</p>
+			<p class="indent"><em><strong>Magical Knowledge.</strong></em> You gain proficiency in the Arcana skill or one skill of your choice from the skills available to Clerics at level 1.</p>
+			<p class="indent"><em><strong>Cantrips.</strong></em> You learn two Wizard cantrips of your choice. Whenever you gain a Cleric level, you can replace one of these cantrips with another Wizard cantrip.</p>
+		</description>
+		<sheet alt="Student of Arcana">
+			<description>Whenever you gain a Cleric level, you can replace one of the cantrips learned with this feature with another Wizard cantrip.</description>
+		</sheet>
+		<rules>
+			<select type="Proficiency" name="Skill Proficiency (Student of Arcana)" supports="Skill,Cleric" default="ID_PROFICIENCY_SKILL_ARCANA" />
+			<select type="Spell" name="Cantrip (Wizard)" supports="Wizard, 0" level="3" number="2" spellcasting="Cleric" />
+		</rules>
+	</element>
+
+	<element name="Level 6: Dispelling Recovery" type="Archetype Feature" source="Arcana Unleashed" id="ID_WOTC_AU_ARCHETYPE_FEATURE_ARCANA_DOMAIN_DISPELLING_RECOVERY">
+		<requirements>!ID_INTERNAL_AU_FEATURE_REPLACEMENT_CLERIC_ARCANA_DOMAIN_DISPELLING_RECOVERY</requirements>
+		<description>
+			<p>Immediately after you cast a spell with a spell slot that restores Hit Points to a creature or ends a condition on a creature, you can cast <i>Dispel Magic</i> as part of that Action, Bonus Action, or Reaction, and without expending a spell slot.</p>
+			<p class="indent">Once you use this feature, you can't use it again until you finish a Short or Long Rest. You also restore your use of it by expending one use of Channel Divinity (no action required).</p>
+		</description>
+		<sheet alt="Dispelling Recovery" usage="1/Short Rest" >
+			<description>Immediately after you cast a spell with a spell slot that restores Hit Points to a creature or ends a condition on a creature, you can cast Dispel Magic as part of that Action, Bonus Action, or Reaction, and without expending a spell slot. &#13;
+			You can restore your use of this feature by expending one use of Channel Divinity (no action required).</description>
+		</sheet>
+	</element>
+
+	<element name="Level 17: Magical Mastery" type="Archetype Feature" source="Arcana Unleashed" id="ID_WOTC_AU_ARCHETYPE_FEATURE_ARCANA_DOMAIN_MAGICAL_MASTERY">
+		<requirements>!ID_INTERNAL_AU_FEATURE_REPLACEMENT_CLERIC_ARCANA_DOMAIN_MAGICAL_MASTERY</requirements>
+		<description>
+			<p>You learn four Wizard spells, one from each of levels 6,7,8, and 9. You thereafter always have those spells prepared. Whenever you gain a Cleric level, you can replace one of these spells with another Wizard spell of the same level.</p>
+		</description>
+		<sheet alt="Magic Mastery">
+			<description>Whenever you gain a Cleric level, you can replace one of the spells learned from this feature with another Wizard spell of the same level.</description>
+		</sheet>
+		<rules>
+			<select type="Spell" name="Level 6 Spell (Magical Mastery)" supports="Wizard, 6" level="17" spellcasting="Cleric" allowReplace="true"/>
+			<select type="Spell" name="Level 7 Spell (Magical Mastery)" supports="Wizard, 7" level="17" spellcasting="Cleric" allowReplace="true"/>
+			<select type="Spell" name="Level 8 Spell (Magical Mastery)" supports="Wizard, 8" level="17" spellcasting="Cleric" allowReplace="true"/>
+			<select type="Spell" name="Level 9 Spell (Magical Mastery)" supports="Wizard, 9" level="17" spellcasting="Cleric" allowReplace="true"/>
+		</rules>
+	</element>
+	
+	<!--Feature Replacement Grants-->
+	<element name="Arcana Domain Spells Feature Replacement" type="Grants" source="Internal" id="ID_INTERNAL_AU_FEATURE_REPLACEMENT_CLERIC_ARCANA_DOMAIN_ARCANA_DOMAIN_SPELLS" />
+	<element name="Modify Magic Feature Replacement" type="Grants" source="Internal" id="ID_INTERNAL_AU_FEATURE_REPLACEMENT_CLERIC_ARCANA_DOMAIN_MODIFY_MAGIC" />
+	<element name="Student of Arcana Feature Replacement" type="Grants" source="Internal" id="ID_INTERNAL_AU_FEATURE_REPLACEMENT_CLERIC_ARCANA_DOMAIN_STUDENT_OF_ARCANA" />
+	<element name="Dispelling Recovery Feature Replacement" type="Grants" source="Internal" id="ID_INTERNAL_AU_FEATURE_REPLACEMENT_CLERIC_ARCANA_DOMAIN_DISPELLING_RECOVERY" />
+	<element name="Magical Mastery Feature Replacement" type="Grants" source="Internal" id="ID_INTERNAL_AU_FEATURE_REPLACEMENT_CLERIC_ARCANA_DOMAIN_MAGICAL_MASTERY" />
+</elements>

@@ -1,0 +1,976 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<elements>
+	<info>
+		<name>General Category Feats</name>
+		<description>The General Category Feats from Arcana Unleashed.</description>
+		<update version="0.0.1">
+			<file name="feats-general.xml" url="https://raw.githubusercontent.com/AuroraLegacy/elements/master/supplements/arcana-unleashed/feats/feats-general.xml" />
+		</update>
+	</info>
+
+	<element name="Abjuration Adept" type="Feat" source="Arcana Unleashed" id="ID_WOTC_AU_FEAT_ABJURATION_ADEPT">
+		<supports>General</supports>
+		<requirements>([character:4],(ID_INTERNAL_GRANTS_SPELLCASTING_FEATURE||ID_INTERNAL_GRANTS_PACT_MAGIC_FEATURE))||ID_WOTC_PHB24_GRANTS_FEAT_UNLOCKER</requirements>
+		<prerequisite>Level 4+; Spellcasting or Pact Magic Feature</prerequisite>
+		<description>
+			<p class="flavor">General Feat (Prerequisite: Level 4+; Spellcasting or Pact Magic Feature)</p>
+			<p>You gain the following benefits.</p>
+			<p class="indent"><b><i>Ability Score Increase.</i></b> Increase your Intelligence, Wisdom, or Charisma score by 1, to a maximum of 20.</p>
+			<p class="indent"><b><i>Additional Spells.</i></b> Your prowess allows you to always have certain spells at the ready. When you have spell slots of a level specified in the Abjuration Adept Spells table, you thereafter always have the spells listed for that level and lower prepared.</p>
+			<p class="indent"><b><i>Protective Ward.</i></b>  When you cast a spell from the Abjuration school using a spell slot, you or one creature you can see within 30 feet of yourself gains Temporary Hit Points equal to twice the level of spell slot expended.</p>
+			<h5>ABJURATION ADEPT SPELLS</h5>
+			<table>
+				<thead>
+					<tr><td class="col-15" style="text-align:center">Spell Slot Level</td><td>Spell</td></tr>
+				</thead>
+				<tr><td style="text-align:center">1</td><td><em>Shield</em></td></tr>
+				<tr><td style="text-align:center">2</td><td><em>Lesser Restoration</em></td></tr>
+				<tr><td style="text-align:center">3</td><td><em>Protection from Energy</em></td></tr>
+				<tr><td style="text-align:center">4</td><td><em>Banishment</em></td></tr>
+				<tr><td style="text-align:center">5</td><td><em>Mass Cure Wounds</em></td></tr>
+			</table>
+			<div class="reference">
+				<div element="ID_WOTC_PHB24_SPELL_SHIELD" />
+			</div>
+			<div class="reference">
+				<div element="ID_WOTC_PHB24_SPELL_LESSER_RESTORATION" />
+			</div>
+			<div class="reference">
+				<div element="ID_WOTC_PHB24_SPELL_PROTECTION_FROM_ENERGY" />
+			</div>
+			<div class="reference">
+				<div element="ID_WOTC_PHB24_SPELL_BANISHMENT" />
+			</div>
+			<div class="reference">
+				<div element="ID_WOTC_PHB24_SPELL_MASS_CURE_WOUNDS" />
+			</div>
+		</description>
+		<sheet>
+			<description> When you cast a spell from the Abjuration school using a spell slot, you or one creature you can see within 30 feet of yourself gains THPs equal to twice the level of spell slot expended.</description>
+		</sheet>
+		<rules>
+			<select type="Feat Feature" name="Ability Score Increase (Abjuration Adept)" supports="Abjuration Adept" />
+			<grant type="Spell" id="ID_WOTC_PHB24_SPELL_SHIELD" prepared="true"/>
+			<grant type="Spell" id="ID_WOTC_PHB24_SPELL_LESSER_RESTORATION" prepared="true" requirements="ID_INTERNAL_GRANTS_HAS_LEVEL_2_SPELL_SLOTS" />
+			<grant type="Spell" id="ID_WOTC_PHB24_SPELL_PROTECTION_FROM_ENERGY" prepared="true" requirements="ID_INTERNAL_GRANTS_HAS_LEVEL_3_SPELL_SLOTS" />
+			<grant type="Spell" id="ID_WOTC_PHB24_SPELL_BANISHMENT" prepared="true" requirements="ID_INTERNAL_GRANTS_HAS_LEVEL_4_SPELL_SLOTS" />
+			<grant type="Spell" id="ID_WOTC_PHB24_SPELL_MASS_CURE_WOUNDS" prepared="true" requirements="ID_INTERNAL_GRANTS_HAS_LEVEL_5_SPELL_SLOTS" />
+		</rules>
+	</element>
+	<element name="Intelligence" type="Feat Feature" source="Arcana Unleashed" id="ID_WOTC_AU_FEAT_FEATURE_ABJURATION_ADEPT_INTELLIGENCE">
+		<supports>Abjuration Adept</supports>
+		<compendium display="false" />
+		<description>
+			<p>Increase your Intelligence by 1, to a maximum of 20.</p>
+		</description>
+		<sheet display="false"/>
+		<rules>
+			<stat name="intelligence" value="1" alt="Abjuration Adept" />
+		</rules>
+	</element>
+	<element name="Wisdom" type="Feat Feature" source="Arcana Unleashed" id="ID_WOTC_AU_FEAT_FEATURE_ABJURATION_ADEPT_WISDOM">
+		<supports>Abjuration Adept</supports>
+		<compendium display="false" />
+		<description>
+			<p>Increase your Wisdom by 1, to a maximum of 20.</p>
+		</description>
+		<sheet display="false"/>
+		<rules>
+			<stat name="wisdom" value="1" alt="Abjuration Adept" />
+		</rules>
+	</element>
+	<element name="Charisma" type="Feat Feature" source="Arcana Unleashed" id="ID_WOTC_AU_FEAT_FEATURE_ABJURATION_ADEPT_CHARISMA">
+		<supports>Abjuration Adept</supports>
+		<compendium display="false" />
+		<description>
+			<p>Increase your Charisma by 1, to a maximum of 20.</p>
+		</description>
+		<sheet display="false"/>
+		<rules>
+			<stat name="charisma" value="1" alt="Abjuration Adept" />
+		</rules>
+	</element>
+
+	<element name="Conjuration Adept" type="Feat" source="Arcana Unleashed" id="ID_WOTC_AU_FEAT_CONJURATION_ADEPT">
+		<supports>General</supports>
+		<requirements>([character:4],(ID_INTERNAL_GRANTS_SPELLCASTING_FEATURE||ID_INTERNAL_GRANTS_PACT_MAGIC_FEATURE))||ID_WOTC_PHB24_GRANTS_FEAT_UNLOCKER</requirements>
+		<prerequisite>Level 4+; Spellcasting or Pact Magic Feature</prerequisite>
+		<description>
+			<p class="flavor">General Feat (Prerequisite: Level 4+; Spellcasting or Pact Magic Feature)</p>
+			<p>You gain the following benefits.</p>
+			<p class="indent"><b><i>Ability Score Increase.</i></b> Increase your Intelligence, Wisdom, or Charisma score by 1, to a maximum of 20.</p>
+			<p class="indent"><b><i>Additional Spells.</i></b> Your prowess allows you to always have certain spells at the ready. When you have spell slots of a level specified in the Conjuration Adept Spells table, you thereafter always have the spells listed for that level and lower prepared.</p>
+			<p class="indent"><b><i>Persistent Conjuration.</i></b> While maintaining Concentration on a spell from the Conjuration school, you gain a bonus to Constitution saving throws to maintain this Concentration. This bonus is equal to the ability modifier of the score increased by this feat.</p>
+			<h5>CONJURATION ADEPT SPELLS</h5>
+			<table>
+				<thead>
+					<tr><td class="col-15" style="text-align:center">Spell Slot Level</td><td>Spell</td></tr>
+				</thead>
+				<tr><td style="text-align:center">1</td><td><em>Entangle</em></td></tr>
+				<tr><td style="text-align:center">2</td><td><em>Misty Step</em></td></tr>
+				<tr><td style="text-align:center">3</td><td><em>Conjure Animals</em></td></tr>
+				<tr><td style="text-align:center">4</td><td><em>Dimension Door</em></td></tr>
+				<tr><td style="text-align:center">5</td><td><em>Conjure Elemental</em></td></tr>
+			</table>
+			<div class="reference">
+				<div element="ID_WOTC_PHB24_SPELL_ENTANGLE" />
+			</div>
+			<div class="reference">
+				<div element="ID_WOTC_PHB24_SPELL_MISTY_STEP" />
+			</div>
+			<div class="reference">
+				<div element="ID_WOTC_PHB24_SPELL_CONJURE_ANIMALS" />
+			</div>
+			<div class="reference">
+				<div element="ID_WOTC_PHB24_SPELL_DIMENSION_DOOR" />
+			</div>
+			<div class="reference">
+				<div element="ID_WOTC_PHB24_SPELL_CONJURE_ELEMENTAL" />
+			</div>
+		</description>
+		<sheet display="false"/>
+		<rules>
+			<select type="Feat Feature" name="Ability Score Increase (Conjuration Adept)" supports="Conjuration Adept" />
+			<grant type="Spell" id="ID_WOTC_PHB24_SPELL_ENTANGLE" prepared="true"/>
+			<grant type="Spell" id="ID_WOTC_PHB24_SPELL_MISTY_STEP" prepared="true" requirements="ID_INTERNAL_GRANTS_HAS_LEVEL_2_SPELL_SLOTS" />
+			<grant type="Spell" id="ID_WOTC_PHB24_SPELL_CONJURE_ANIMALS" prepared="true" requirements="ID_INTERNAL_GRANTS_HAS_LEVEL_3_SPELL_SLOTS" />
+			<grant type="Spell" id="ID_WOTC_PHB24_SPELL_DIMENSION_DOOR" prepared="true" requirements="ID_INTERNAL_GRANTS_HAS_LEVEL_4_SPELL_SLOTS" />
+			<grant type="Spell" id="ID_WOTC_PHB24_SPELL_CONJURE_ELEMENTAL" prepared="true" requirements="ID_INTERNAL_GRANTS_HAS_LEVEL_5_SPELL_SLOTS" />
+		</rules>
+	</element>
+	<element name="Intelligence" type="Feat Feature" source="Arcana Unleashed" id="ID_WOTC_AU_FEAT_FEATURE_CONJURATION_ADEPT_INTELLIGENCE">
+		<supports>Conjuration Adept</supports>
+		<compendium display="false" />
+		<description>
+			<p>Increase your Intelligence by 1, to a maximum of 20.</p>
+		</description>
+		<sheet alt="Conjuration Adept">
+			<description> While maintaining Concentration on a Conjuration spell, you gain a +{{intelligence:modifier}} bonus to Constitution saving throws to maintain this Concentration.</description>
+		</sheet>
+		<rules>
+			<stat name="intelligence" value="1" alt="Conjuration Adept" />
+		</rules>
+	</element>
+	<element name="Wisdom" type="Feat Feature" source="Arcana Unleashed" id="ID_WOTC_AU_FEAT_FEATURE_CONJURATION_ADEPT_WISDOM">
+		<supports>Conjuration Adept</supports>
+		<compendium display="false" />
+		<description>
+			<p>Increase your Wisdom by 1, to a maximum of 20.</p>
+		</description>
+		<sheet alt="Conjuration Adept">
+			<description> While maintaining Concentration on a Conjuration spell, you gain a +{{wisdom:modifier}} bonus to Constitution saving throws to maintain this Concentration.</description>
+		</sheet>
+		<rules>
+			<stat name="wisdom" value="1" alt="Conjuration Adept" />
+		</rules>
+	</element>
+	<element name="Charisma" type="Feat Feature" source="Arcana Unleashed" id="ID_WOTC_AU_FEAT_FEATURE_ABJURATION_ADEPT_CHARISMA">
+		<supports>Abjuration Adept</supports>
+		<compendium display="false" />
+		<description>
+			<p>Increase your Charisma by 1, to a maximum of 20.</p>
+		</description>
+		<sheet alt="Conjuration Adept">
+			<description> While maintaining Concentration on a Conjuration spell, you gain a +{{charisma:modifier}} bonus to Constitution saving throws to maintain this Concentration.</description>
+		</sheet>
+		<rules>
+			<stat name="charisma" value="1" alt="Conjuration Adept" />
+		</rules>
+	</element>
+
+	<element name="Divination Adept" type="Feat" source="Arcana Unleashed" id="ID_WOTC_AU_FEAT_DIVINATION_ADEPT">
+		<supports>General</supports>
+		<requirements>([character:4],(ID_INTERNAL_GRANTS_SPELLCASTING_FEATURE||ID_INTERNAL_GRANTS_PACT_MAGIC_FEATURE))||ID_WOTC_PHB24_GRANTS_FEAT_UNLOCKER</requirements>
+		<prerequisite>Level 4+; Spellcasting or Pact Magic Feature</prerequisite>
+		<description>
+			<p class="flavor">General Feat (Prerequisite: Level 4+; Spellcasting or Pact Magic Feature)</p>
+			<p>You gain the following benefits.</p>
+			<p class="indent"><b><i>Ability Score Increase.</i></b> Increase your Intelligence, Wisdom, or Charisma score by 1, to a maximum of 20.</p>
+			<p class="indent"><b><i>Additional Spells.</i></b> Your prowess allows you to always have certain spells at the ready. When you have spell slots of a level specified in the Divination Adept Spells table, you thereafter always have the spells listed for that level and lower prepared.</p>
+			<p class="indent"><b><i>Prescient Intervention.</i></b> When a creature you can see within 60 feet of yourself makes a D20 Test, you can take a Reaction to give that creature Advantage or Disadvantage (your choice) on that roll.</p>
+			<p class="indent">Once you use this benefit, you can't do so again until you finish a Long Rest. You can also regain use of this feature when you cast a spell from the Divination school using a spell slot.</p>
+			<h5>DIVINATION ADEPT SPELLS</h5>
+			<table>
+				<thead>
+					<tr><td class="col-15" style="text-align:center">Spell Slot Level</td><td>Spell</td></tr>
+				</thead>
+				<tr><td style="text-align:center">1</td><td><em>Detect Evil and Good</em></td></tr>
+				<tr><td style="text-align:center">2</td><td><em>Mind Spike</em></td></tr>
+				<tr><td style="text-align:center">3</td><td><em>Clairvoyance</em></td></tr>
+				<tr><td style="text-align:center">4</td><td><em>Divination</em></td></tr>
+				<tr><td style="text-align:center">5</td><td><em>Scrying</em></td></tr>
+			</table>
+			<div class="reference">
+				<div element="ID_WOTC_PHB24_SPELL_DETECT_EVIL_AND_GOOD" />
+			</div>
+			<div class="reference">
+				<div element="ID_WOTC_PHB24_SPELL_MIND_SPIKE" />
+			</div>
+			<div class="reference">
+				<div element="ID_WOTC_PHB24_SPELL_CLAIRVOYANCE" />
+			</div>
+			<div class="reference">
+				<div element="ID_WOTC_PHB24_SPELL_DIVINATION" />
+			</div>
+			<div class="reference">
+				<div element="ID_WOTC_PHB24_SPELL_SCRYING" />
+			</div>
+		</description>
+		<sheet action="Reaction" usage="1/Long Rest">
+			<description> When a creature you can see within 60 feet of yourself makes a D20 Test, you can give that creature Advantage or Disadvantage (your choice) on that roll. &#13;
+			You regain use of this feature when you cast a spell from the Divination school using a spell slot.</description>
+		</sheet>
+		<rules>
+			<select type="Feat Feature" name="Ability Score Increase (Divination Adept)" supports="Divination Adept" />
+			<grant type="Spell" id="ID_WOTC_PHB24_SPELL_DETECT_EVIL_AND_GOOD" prepared="true"/>
+			<grant type="Spell" id="ID_WOTC_PHB24_SPELL_MIND_SPIKE" prepared="true" requirements="ID_INTERNAL_GRANTS_HAS_LEVEL_2_SPELL_SLOTS" />
+			<grant type="Spell" id="ID_WOTC_PHB24_SPELL_CLAIRVOYANCE" prepared="true" requirements="ID_INTERNAL_GRANTS_HAS_LEVEL_3_SPELL_SLOTS" />
+			<grant type="Spell" id="ID_WOTC_PHB24_SPELL_DIVINATION" prepared="true" requirements="ID_INTERNAL_GRANTS_HAS_LEVEL_4_SPELL_SLOTS" />
+			<grant type="Spell" id="ID_WOTC_PHB24_SPELL_SCRYING" prepared="true" requirements="ID_INTERNAL_GRANTS_HAS_LEVEL_5_SPELL_SLOTS" />
+		</rules>
+	</element>
+	<element name="Intelligence" type="Feat Feature" source="Arcana Unleashed" id="ID_WOTC_AU_FEAT_FEATURE_DIVINATION_ADEPT_INTELLIGENCE">
+		<supports>Divination Adept</supports>
+		<compendium display="false" />
+		<description>
+			<p>Increase your Intelligence by 1, to a maximum of 20.</p>
+		</description>
+		<sheet display="false"/>
+		<rules>
+			<stat name="intelligence" value="1" alt="Divination Adept" />
+		</rules>
+	</element>
+	<element name="Wisdom" type="Feat Feature" source="Arcana Unleashed" id="ID_WOTC_AU_FEAT_FEATURE_DIVINATION_ADEPT_WISDOM">
+		<supports>Divination Adept</supports>
+		<compendium display="false" />
+		<description>
+			<p>Increase your Wisdom by 1, to a maximum of 20.</p>
+		</description>
+		<sheet display="false"/>
+		<rules>
+			<stat name="wisdom" value="1" alt="Divination Adept" />
+		</rules>
+	</element>
+	<element name="Charisma" type="Feat Feature" source="Arcana Unleashed" id="ID_WOTC_AU_FEAT_FEATURE_DIVINATION_ADEPT_CHARISMA">
+		<supports>Divination Adept</supports>
+		<compendium display="false" />
+		<description>
+			<p>Increase your Charisma by 1, to a maximum of 20.</p>
+		</description>
+		<sheet display="false"/>
+		<rules>
+			<stat name="charisma" value="1" alt="Divination Adept" />
+		</rules>
+	</element>
+
+	<element name="Elemental Familiar" type="Feat" source="Arcana Unleashed" id="ID_WOTC_AU_FEAT_ELEMENTAL_FAMILIAR">
+		<supports>General</supports>
+		<requirements>([character:4],ID_WOTC_AU_FEAT_FAMILIAR_FRIEND)||ID_WOTC_PHB24_GRANTS_FEAT_UNLOCKER</requirements>
+		<prerequisite>Level 4+, Familiar Friend Feat</prerequisite>
+		<description>
+			<p class="flavor">General Feat (Prerequisite: Level 4+, <i>Familiar Friend</i> Feat)</p>
+			<p>You gain the following benefits.</p>
+			<p class="indent"><b><i>Ability Score Increase.</i></b> Increase one ability score of your choice by 1, to a maximum of 20.</p>
+			<p class="indent"><b><i>Elemental Energy.</i></b> You learn how to imbue your familiar with elemental power. When you cast the <i>Find Familiar</i> spell, choose Acid, Cold, Fire, Lightning, or Thunder damage. Your familiar is imbued with this energy until you cast <i>Find Familiar</i> again, granting it the following benefits:</p>
+			<ul class="unstyled" style="margin-left:2em; margin-bottom:1em">
+				<li><b>Elemental Resistance.</b> Your familiar has Resistance to the chosen damage type.</li>
+				<li><b>Energy Pulse.</b> As a Bonus Action, you command your familiar to unleash a burst of elemental energy. Your familiar must be within 120 feet of you and take a Reaction to unleash this burst. Each creature in a 5-foot Emanation originating from your familiar makes a Dexterity saving throw (DC 8 plus your spellcasting ability modifier for the Find Familiar spell and your Proficiency Bonus). On a failed save, a creature takes 2d4 damage of the chosen type, and if the creature is Medium or smaller, it has the Prone condition.</li>
+			</ul>
+		</description>
+		<sheet>
+			<description>When you cast Find Familiar, choose Acid, Cold, Fire, Lightning, or Thunder damage. You familiar is imbued with this energy until you cast Find Familiar again, granting it Resistance to that damage type as well as the following ability:</description>
+		</sheet>
+		<rules>
+			<select type="Ability Score Improvement" name="Ability Score Increase (Elemental Familiar)" supports="Feat Ability Score Increase" />
+			<select type="Feat Feature" name="Elemental Familiar Energy Pulse" supports="Energy Pulse" default="ID_WOTC_AU_FEAT_ELEMENTAL_FAMILIAR_ENERGY_PULSE" />
+		</rules>
+	</element>
+	<element name="Energy Pulse" type="Feat Feature" source="Arcana Unleashed" id="ID_WOTC_AU_FEAT_ELEMENTAL_FAMILIAR_ENERGY_PULSE">
+		<supports>Energy Pulse</supports>
+		<compendium display="false" />
+		<description>
+			<p>As a Bonus Action, you command your familiar to unleash a burst of elemental energy. Your familiar must be within 120 feet of you and take a Reaction to unleash this burst. Each creature in a 5-foot Emanation originating from your familiar makes a Dexterity saving throw (DC 8 plus your spellcasting ability modifier for the Find Familiar spell and your Proficiency Bonus). On a failed save, a creature takes 2d4 damage of the chosen type, and if the creature is Medium or smaller, it has the Prone condition.</p>
+		</description>
+		<sheet action="Bonus Action">
+			<description>You command your familiar to unleash a burst of elemental energy. Your familiar must be within 120 feet of you and take a Reaction to unleash this burst. Each creature in a 5-foot Emanation originating from your familiar makes a DC{{energy pulse:dc}} Dexterity saving throw. On a failed save, a creature takes 2d4 damage of the chosen type, and if the creature is Medium or smaller, it has the Prone condition.</description>
+		</sheet>
+		<rules>
+			<stat name="energy pulse:dc" value="8" bonus="base"/>
+			<stat name="energy pulse:dc" value="proficiency" bonus="proficiency"/>
+			<stat name="energy pulse:dc" value="intelligence:modifier" bonus="ability" requirement="ID_WOTC_AU_FEAT_FEATURE_FAMILIAR_FRIEND_INTELLIGENCE" />
+			<stat name="energy pulse:dc" value="wisdom:modifier" bonus="ability" requirement="ID_WOTC_AU_FEAT_FEATURE_FAMILIAR_FRIEND_WISDOM" />
+			<stat name="energy pulse:dc" value="charisma:modifier" bonus="ability" requirement="ID_WOTC_AU_FEAT_FEATURE_FAMILIAR_FRIEND_CHARISMA" />
+		</rules>
+	</element>
+
+	<element name="Enchantment Adept" type="Feat" source="Arcana Unleashed" id="ID_WOTC_AU_FEAT_ENCHANTMENT_ADEPT">
+		<supports>General</supports>
+		<requirements>([character:4],(ID_INTERNAL_GRANTS_SPELLCASTING_FEATURE||ID_INTERNAL_GRANTS_PACT_MAGIC_FEATURE))||ID_WOTC_PHB24_GRANTS_FEAT_UNLOCKER</requirements>
+		<prerequisite>Level 4+; Spellcasting or Pact Magic Feature</prerequisite>
+		<description>
+			<p class="flavor">General Feat (Prerequisite: Level 4+; Spellcasting or Pact Magic Feature)</p>
+			<p>You gain the following benefits.</p>
+			<p class="indent"><b><i>Ability Score Increase.</i></b> Increase your Intelligence, Wisdom, or Charisma score by 1, to a maximum of 20.</p>
+			<p class="indent"><b><i>Additional Spells.</i></b> Your prowess allows you to always have certain spells at the ready. When you have spell slots of a level specified in the Enchantment Adept Spells table, you thereafter always have the spells listed for that level and lower prepared.</p>
+			<p class="indent"><b><i>Subtle Enchantments.</i></b> When you cast a spell from the Enchantment school using a spell slot, you can cast it without any Verbal, Somatic, or Material components, except Material components that are consumed by the spell or that have a cost specified in the spell.</p>
+			<h5>ENCHANTMENT ADEPT SPELLS</h5>
+			<table>
+				<thead>
+					<tr><td class="col-15" style="text-align:center">Spell Slot Level</td><td>Spell</td></tr>
+				</thead>
+				<tr><td style="text-align:center">1</td><td><em>Dissonant Whispers</em></td></tr>
+				<tr><td style="text-align:center">2</td><td><em>Enthrall</em></td></tr>
+				<tr><td style="text-align:center">3</td><td><em>Hold Person</em></td></tr>
+				<tr><td style="text-align:center">4</td><td><em>Dominate Beast</em></td></tr>
+				<tr><td style="text-align:center">5</td><td><em>Modify Memory</em></td></tr>
+			</table>
+			<div class="reference">
+				<div element="ID_WOTC_PHB24_SPELL_DISSONANT_WHISPERS" />
+			</div>
+			<div class="reference">
+				<div element="ID_WOTC_PHB24_SPELL_ENTHRALL" />
+			</div>
+			<div class="reference">
+				<div element="ID_WOTC_PHB24_SPELL_HOLD_PERSON" />
+			</div>
+			<div class="reference">
+				<div element="ID_WOTC_PHB24_SPELL_DOMINATE_BEAST" />
+			</div>
+			<div class="reference">
+				<div element="ID_WOTC_PHB24_SPELL_MODIFY_MEMORY" />
+			</div>
+		</description>
+		<sheet>
+			<description> When you cast a spell from the Enchantment school using a spell slot, you can cast it without any Verbal, Somatic, or Material components, except those that are consumed by the spell or that have a cost specified in the spell.</description>
+		</sheet>
+		<rules>
+			<select type="Feat Feature" name="Ability Score Increase (Enchantment Adept)" supports="Enchantment Adept" />
+			<grant type="Spell" id="ID_WOTC_PHB24_SPELL_DISSONANT_WHISPERS" prepared="true"/>
+			<grant type="Spell" id="ID_WOTC_PHB24_SPELL_ENTHRALL" prepared="true" requirements="ID_INTERNAL_GRANTS_HAS_LEVEL_2_SPELL_SLOTS" />
+			<grant type="Spell" id="ID_WOTC_PHB24_SPELL_HOLD_PERSON" prepared="true" requirements="ID_INTERNAL_GRANTS_HAS_LEVEL_3_SPELL_SLOTS" />
+			<grant type="Spell" id="ID_WOTC_PHB24_SPELL_DOMINATE_BEAST" prepared="true" requirements="ID_INTERNAL_GRANTS_HAS_LEVEL_4_SPELL_SLOTS" />
+			<grant type="Spell" id="ID_WOTC_PHB24_SPELL_MODIFY_MEMORY" prepared="true" requirements="ID_INTERNAL_GRANTS_HAS_LEVEL_5_SPELL_SLOTS" />
+		</rules>
+	</element>
+	<element name="Intelligence" type="Feat Feature" source="Arcana Unleashed" id="ID_WOTC_AU_FEAT_FEATURE_ENCHANTMENT_ADEPT_INTELLIGENCE">
+		<supports>Enchantment Adept</supports>
+		<compendium display="false" />
+		<description>
+			<p>Increase your Intelligence by 1, to a maximum of 20.</p>
+		</description>
+		<sheet display="false"/>
+		<rules>
+			<stat name="intelligence" value="1" alt="Enchantment Adept" />
+		</rules>
+	</element>
+	<element name="Wisdom" type="Feat Feature" source="Arcana Unleashed" id="ID_WOTC_AU_FEAT_FEATURE_ENCHANTMENT_ADEPT_WISDOM">
+		<supports>Enchantment Adept</supports>
+		<compendium display="false" />
+		<description>
+			<p>Increase your Wisdom by 1, to a maximum of 20.</p>
+		</description>
+		<sheet display="false"/>
+		<rules>
+			<stat name="wisdom" value="1" alt="Enchantment Adept" />
+		</rules>
+	</element>
+	<element name="Charisma" type="Feat Feature" source="Arcana Unleashed" id="ID_WOTC_AU_FEAT_FEATURE_ENCHANTMENT_ADEPT_CHARISMA">
+		<supports>Enchantment Adept</supports>
+		<compendium display="false" />
+		<description>
+			<p>Increase your Charisma by 1, to a maximum of 20.</p>
+		</description>
+		<sheet display="false"/>
+		<rules>
+			<stat name="charisma" value="1" alt="Enchantment Adept" />
+		</rules>
+	</element>
+
+	<element name="Evocation Adept" type="Feat" source="Arcana Unleashed" id="ID_WOTC_AU_FEAT_EVOCATION_ADEPT">
+		<supports>General</supports>
+		<requirements>([character:4],(ID_INTERNAL_GRANTS_SPELLCASTING_FEATURE||ID_INTERNAL_GRANTS_PACT_MAGIC_FEATURE))||ID_WOTC_PHB24_GRANTS_FEAT_UNLOCKER</requirements>
+		<prerequisite>Level 4+; Spellcasting or Pact Magic Feature</prerequisite>
+		<description>
+			<p class="flavor">General Feat (Prerequisite: Level 4+; Spellcasting or Pact Magic Feature)</p>
+			<p>You gain the following benefits.</p>
+			<p class="indent"><b><i>Ability Score Increase.</i></b> Increase your Intelligence, Wisdom, or Charisma score by 1, to a maximum of 20.</p>
+			<p class="indent"><b><i>Additional Spells.</i></b> Your prowess allows you to always have certain spells at the ready. When you have spell slots of a level specified in the Evocation Adept Spells table, you thereafter always have the spells listed for that level and lower prepared.</p>
+			<p class="indent"><b><i>Fueled Evocation.</i></b> Once per turn when you cast an Evocation spell and deal damage, you can roll up to two of your unexpended Hit Point Dice and add the total rolled to one of the spell's damage rolls. Those Hit Point Dice are then expended.</p>
+			<h5>EVOCATION ADEPT SPELLS</h5>
+			<table>
+				<thead>
+					<tr><td class="col-15" style="text-align:center">Spell Slot Level</td><td>Spell</td></tr>
+				</thead>
+				<tr><td style="text-align:center">1</td><td><em>Chromatic Orb</em></td></tr>
+				<tr><td style="text-align:center">2</td><td><em>Shatter</em></td></tr>
+				<tr><td style="text-align:center">3</td><td><em>Fireball</em></td></tr>
+				<tr><td style="text-align:center">4</td><td><em>Vitriolic Sphere</em></td></tr>
+				<tr><td style="text-align:center">5</td><td><em>Wall of Force</em></td></tr>
+			</table>
+			<div class="reference">
+				<div element="ID_WOTC_PHB24_SPELL_CHROMATIC_ORB" />
+			</div>
+			<div class="reference">
+				<div element="ID_WOTC_PHB24_SPELL_SHATTER" />
+			</div>
+			<div class="reference">
+				<div element="ID_WOTC_PHB24_SPELL_FIREBALL" />
+			</div>
+			<div class="reference">
+				<div element="ID_WOTC_PHB24_SPELL_VITRIOLIC_SPHERE" />
+			</div>
+			<div class="reference">
+				<div element="ID_WOTC_PHB24_SPELL_WALL_OF_FORCE" />
+			</div>
+		</description>
+		<sheet usage="1/Turn">
+			<description> When you cast an Evocation spell and deal damage, you can roll up to two of your unexpended Hit Point Dice and add the total rolled to one of the spell's damage rolls. Those Hit Point Dice are then expended.</description>
+		</sheet>
+		<rules>
+			<select type="Feat Feature" name="Ability Score Increase (Evocation Adept)" supports="Evocation Adept" />
+			<grant type="Spell" id="ID_WOTC_PHB24_SPELL_CHROMATIC_ORB" prepared="true"/>
+			<grant type="Spell" id="ID_WOTC_PHB24_SPELL_SHATTER" prepared="true" requirements="ID_INTERNAL_GRANTS_HAS_LEVEL_2_SPELL_SLOTS" />
+			<grant type="Spell" id="ID_WOTC_PHB24_SPELL_FIREBALL" prepared="true" requirements="ID_INTERNAL_GRANTS_HAS_LEVEL_3_SPELL_SLOTS" />
+			<grant type="Spell" id="ID_WOTC_PHB24_SPELL_VITRIOLIC_SPHERE" prepared="true" requirements="ID_INTERNAL_GRANTS_HAS_LEVEL_4_SPELL_SLOTS" />
+			<grant type="Spell" id="ID_WOTC_PHB24_SPELL_WALL_OF_FORCE" prepared="true" requirements="ID_INTERNAL_GRANTS_HAS_LEVEL_5_SPELL_SLOTS" />
+		</rules>
+	</element>
+	<element name="Intelligence" type="Feat Feature" source="Arcana Unleashed" id="ID_WOTC_AU_FEAT_FEATURE_EVOCATION_ADEPT_INTELLIGENCE">
+		<supports>Evocation Adept</supports>
+		<compendium display="false" />
+		<description>
+			<p>Increase your Intelligence by 1, to a maximum of 20.</p>
+		</description>
+		<sheet display="false"/>
+		<rules>
+			<stat name="intelligence" value="1" alt="Evocation Adept" />
+		</rules>
+	</element>
+	<element name="Wisdom" type="Feat Feature" source="Arcana Unleashed" id="ID_WOTC_AU_FEAT_FEATURE_EVOCATION_ADEPT_WISDOM">
+		<supports>Evocation Adept</supports>
+		<compendium display="false" />
+		<description>
+			<p>Increase your Wisdom by 1, to a maximum of 20.</p>
+		</description>
+		<sheet display="false"/>
+		<rules>
+			<stat name="wisdom" value="1" alt="Evocation Adept" />
+		</rules>
+	</element>
+	<element name="Charisma" type="Feat Feature" source="Arcana Unleashed" id="ID_WOTC_AU_FEAT_FEATURE_EVOCATION_ADEPT_CHARISMA">
+		<supports>Evocation Adept</supports>
+		<compendium display="false" />
+		<description>
+			<p>Increase your Charisma by 1, to a maximum of 20.</p>
+		</description>
+		<sheet display="false"/>
+		<rules>
+			<stat name="charisma" value="1" alt="Evocation Adept" />
+		</rules>
+	</element>
+
+	<element name="Illusion Adept" type="Feat" source="Arcana Unleashed" id="ID_WOTC_AU_FEAT_ILLUSION_ADEPT">
+		<supports>General</supports>
+		<requirements>([character:4],(ID_INTERNAL_GRANTS_SPELLCASTING_FEATURE||ID_INTERNAL_GRANTS_PACT_MAGIC_FEATURE))||ID_WOTC_PHB24_GRANTS_FEAT_UNLOCKER</requirements>
+		<prerequisite>Level 4+; Spellcasting or Pact Magic Feature</prerequisite>
+		<description>
+			<p class="flavor">General Feat (Prerequisite: Level 4+; Spellcasting or Pact Magic Feature)</p>
+			<p>You gain the following benefits.</p>
+			<p class="indent"><b><i>Ability Score Increase.</i></b> Increase your Intelligence, Wisdom, or Charisma score by 1, to a maximum of 20.</p>
+			<p class="indent"><b><i>Additional Spells.</i></b> Your prowess allows you to always have certain spells at the ready. When you have spell slots of a level specified in the Illusion Adept Spells table, you thereafter always have the spells listed for that level and lower prepared.</p>
+			<p class="indent"><b><i>Masterful Illusions.</i></b> When you cast a spell from the Illusion school using a spell slot, you can cast it without any Verbal, Somatic, or Material components, except Material components that are consumed by the spell or that have a cost specified in the spell. Additionally, creatures have Disadvantage on Intelligence (Investigation) checks made to discern the true nature of illusions created by your spells.</p>
+			<h5>ILLUSION ADEPT SPELLS</h5>
+			<table>
+				<thead>
+					<tr><td class="col-15" style="text-align:center">Spell Slot Level</td><td>Spell</td></tr>
+				</thead>
+				<tr><td style="text-align:center">1</td><td><em>Silent Image</em></td></tr>
+				<tr><td style="text-align:center">2</td><td><em>Phantasmal Force</em></td></tr>
+				<tr><td style="text-align:center">3</td><td><em>Major Image</em></td></tr>
+				<tr><td style="text-align:center">4</td><td><em>Hallucinatory Terrain</em></td></tr>
+				<tr><td style="text-align:center">5</td><td><em>Seeming</em></td></tr>
+			</table>
+			<div class="reference">
+				<div element="ID_WOTC_PHB24_SPELL_SILENT_IMAGE" />
+			</div>
+			<div class="reference">
+				<div element="ID_WOTC_PHB24_SPELL_PHANTASMAL_FORCE" />
+			</div>
+			<div class="reference">
+				<div element="ID_WOTC_PHB24_SPELL_MAJOR_IMAGE" />
+			</div>
+			<div class="reference">
+				<div element="ID_WOTC_PHB24_SPELL_HALLUCINATORY_TERRAIN" />
+			</div>
+			<div class="reference">
+				<div element="ID_WOTC_PHB24_SPELL_SEEMING" />
+			</div>
+		</description>
+		<sheet>
+			<description> When you cast a spell from the Illusion school using a spell slot, you can cast it without any Verbal, Somatic, or Material components, except Material components that are consumed by the spell or that have a cost specified in the spell. &#13;
+			Additionally, creatures have Disadvantage on Intelligence (Investigation) checks made to discern the true nature of illusions created by your spells.</description>
+		</sheet>
+		<rules>
+			<select type="Feat Feature" name="Ability Score Increase (Illusion Adept)" supports="Illusion Adept" />
+			<grant type="Spell" id="ID_WOTC_PHB24_SPELL_SILENT_IMAGE" prepared="true"/>
+			<grant type="Spell" id="ID_WOTC_PHB24_SPELL_PHANTASMAL_FORCE" prepared="true" requirements="ID_INTERNAL_GRANTS_HAS_LEVEL_2_SPELL_SLOTS" />
+			<grant type="Spell" id="ID_WOTC_PHB24_SPELL_MAJOR_IMAGE" prepared="true" requirements="ID_INTERNAL_GRANTS_HAS_LEVEL_3_SPELL_SLOTS" />
+			<grant type="Spell" id="ID_WOTC_PHB24_SPELL_HALLUCINATORY_TERRAIN" prepared="true" requirements="ID_INTERNAL_GRANTS_HAS_LEVEL_4_SPELL_SLOTS" />
+			<grant type="Spell" id="ID_WOTC_PHB24_SPELL_SEEMING" prepared="true" requirements="ID_INTERNAL_GRANTS_HAS_LEVEL_5_SPELL_SLOTS" />
+		</rules>
+	</element>
+	<element name="Intelligence" type="Feat Feature" source="Arcana Unleashed" id="ID_WOTC_AU_FEAT_FEATURE_ILLUSION_ADEPT_INTELLIGENCE">
+		<supports>Illusion Adept</supports>
+		<compendium display="false" />
+		<description>
+			<p>Increase your Intelligence by 1, to a maximum of 20.</p>
+		</description>
+		<sheet display="false"/>
+		<rules>
+			<stat name="intelligence" value="1" alt="Illusion Adept" />
+		</rules>
+	</element>
+	<element name="Wisdom" type="Feat Feature" source="Arcana Unleashed" id="ID_WOTC_AU_FEAT_FEATURE_ILLUSION_ADEPT_WISDOM">
+		<supports>Illusion Adept</supports>
+		<compendium display="false" />
+		<description>
+			<p>Increase your Wisdom by 1, to a maximum of 20.</p>
+		</description>
+		<sheet display="false"/>
+		<rules>
+			<stat name="wisdom" value="1" alt="Illusion Adept" />
+		</rules>
+	</element>
+	<element name="Charisma" type="Feat Feature" source="Arcana Unleashed" id="ID_WOTC_AU_FEAT_FEATURE_ILLUSION_ADEPT_CHARISMA">
+		<supports>Illusion Adept</supports>
+		<compendium display="false" />
+		<description>
+			<p>Increase your Charisma by 1, to a maximum of 20.</p>
+		</description>
+		<sheet display="false"/>
+		<rules>
+			<stat name="charisma" value="1" alt="Illusion Adept" />
+		</rules>
+	</element>
+
+	<element name="Magic Connoisseur" type="Feat" source="Arcana Unleashed" id="ID_WOTC_AU_FEAT_MAGIC_CONNOISSEUR">
+		<supports>General</supports>
+		<requirements>([character:4],ID_WOTC_PHB24_FEAT_MAGIC_INITIATE)||ID_WOTC_PHB24_GRANTS_FEAT_UNLOCKER</requirements>
+		<prerequisite>Level 4+, Magic Initiate Feat</prerequisite>
+		<description>
+			<p class="flavor">General Feat (Prerequisite: Level 4+, <i>Magic Initiate</i> Feat)</p>
+			<p>You gain the following benefits.</p>
+			<p class="indent"><b><i>Ability Score Increase.</i></b> Increase your Intelligence, Wisdom, or Charisma score by 1, to a maximum of 20.</p>
+			<p class="indent"><b><i>Additional Spells.</i></b> Choose a level 1 and a level 2 spell from the same list you selected for the Magic Initiate feat's cantrips. You always have those spells prepared. You can cast each spell once without a spell slot, and you regain the ability to cast it in this way when you finish a Long Rest. You can also cast those spells using any spell slots you have of the appropriate level. The spellcasting ability for these spells is the same as the spellcasting ability chosen for your Magic Initiate feat's spells.</p>
+			<p class="indent"><b><i>Spell Change.</i></b> Whenever you gain a new level, you can replace one of the spells you chose for this feat with a different spell of the same level from the chosen spell list.</p>
+		</description>
+		<sheet display="false"/>
+		<rules>
+			<select type="Ability Score Improvement" name="Ability Score Increase (Magic Connoisseur)" supports="Feat Ability Score Increase" />
+			<select type="Feat Feature" name="Spellcasting Ability (Magic Connoisseur)" supports="ID_WOTC_AU_FEAT_FEATURE_MAGIC_CONNOISSEUR_INTELLIGENCE|ID_WOTC_AU_FEAT_FEATURE_MAGIC_CONNOISSEUR_WISDOM|ID_WOTC_AU_FEAT_FEATURE_MAGIC_CONNOISSEUR_CHARISMA" />
+		</rules>
+	</element>
+	<element name="Intelligence" type="Feat Feature" source="Arcana Unleashed" id="ID_WOTC_AU_FEAT_FEATURE_MAGIC_CONNOISSEUR_INTELLIGENCE">
+		<compendium display="false" />
+		<description>
+			<p>Increase your Intelligence by 1, to a maximum of 20.</p>
+		</description>
+		<sheet alt="Magic Connoisseur">
+			<description>You can cast each of this feat’s spells without a spell slot once per Long Rest. You can also cast these spells using spell slots you have of the appropriate level. Your spellcasting ability for these spells is Intelligence. &#13;
+			You can replace one of these spells with a different spell of the same level from the chosen spell list when you gain a new level.</description>
+		</sheet>
+		<rules>
+			<stat name="intelligence" value="1" alt="Magic Connoisseur" />
+			<select type="Spell" name="Level 1 Spell (Magic Connoisseur)" supports="1,Cleric" prepared="true" allowReplace="true" requirements="ID_WOTC_PHB24_FEAT_MAGIC_INITIATE_CLERIC" />
+			<select type="Spell" name="Level 2 Spell (Magic Connoisseur)" supports="2,Cleric" prepared="true" allowReplace="true" requirements="ID_WOTC_PHB24_FEAT_MAGIC_INITIATE_CLERIC" />
+
+			<select type="Spell" name="Level 1 Spell (Magic Connoisseur)" supports="1,Druid" prepared="true" allowReplace="true" requirements="ID_WOTC_PHB24_FEAT_MAGIC_INITIATE_DRUID" />
+			<select type="Spell" name="Level 2 Spell (Magic Connoisseur)" supports="2,Druid" prepared="true" allowReplace="true" requirements="ID_WOTC_PHB24_FEAT_MAGIC_INITIATE_DRUID" />
+
+			<select type="Spell" name="Level 1 Spell (Magic Connoisseur)" supports="1,Wizard" prepared="true" allowReplace="true" requirements="ID_WOTC_PHB24_FEAT_MAGIC_INITIATE_WIZARD" />
+			<select type="Spell" name="Level 2 Spell (Magic Connoisseur)" supports="2,Wizard" prepared="true" allowReplace="true" requirements="ID_WOTC_PHB24_FEAT_MAGIC_INITIATE_WIZARD" />
+		</rules>
+	</element>
+	<element name="Wisdom" type="Feat Feature" source="Arcana Unleashed" id="ID_WOTC_AU_FEAT_FEATURE_MAGIC_CONNOISSEUR_WISDOM">
+		<compendium display="false" />
+		<description>
+			<p>Increase your Wisdom by 1, to a maximum of 20.</p>
+		</description>
+		<sheet alt="Magic Connoisseur">
+			<description>You can cast each of this feat’s spells without a spell slot once per Long Rest. You can also cast these spells using spell slots you have of the appropriate level. Your spellcasting ability for these spells is Wisdom. &#13;
+			You can replace one of these spells with a different spell of the same level from the chosen spell list when you gain a new level.</description>
+		</sheet>
+		<rules>
+			<stat name="wisdom" value="1" alt="Magic Connoisseur" />
+			<select type="Spell" name="Level 1 Spell (Magic Connoisseur)" supports="1,Cleric" prepared="true" allowReplace="true" requirements="ID_WOTC_PHB24_FEAT_MAGIC_INITIATE_CLERIC" />
+			<select type="Spell" name="Level 2 Spell (Magic Connoisseur)" supports="2,Cleric" prepared="true" allowReplace="true" requirements="ID_WOTC_PHB24_FEAT_MAGIC_INITIATE_CLERIC" />
+
+			<select type="Spell" name="Level 1 Spell (Magic Connoisseur)" supports="1,Druid" prepared="true" allowReplace="true" requirements="ID_WOTC_PHB24_FEAT_MAGIC_INITIATE_DRUID" />
+			<select type="Spell" name="Level 2 Spell (Magic Connoisseur)" supports="2,Druid" prepared="true" allowReplace="true" requirements="ID_WOTC_PHB24_FEAT_MAGIC_INITIATE_DRUID" />
+
+			<select type="Spell" name="Level 1 Spell (Magic Connoisseur)" supports="1,Wizard" prepared="true" allowReplace="true" requirements="ID_WOTC_PHB24_FEAT_MAGIC_INITIATE_WIZARD" />
+			<select type="Spell" name="Level 2 Spell (Magic Connoisseur)" supports="2,Wizard" prepared="true" allowReplace="true" requirements="ID_WOTC_PHB24_FEAT_MAGIC_INITIATE_WIZARD" />
+		</rules>
+	</element>
+	<element name="Charisma" type="Feat Feature" source="Arcana Unleashed" id="ID_WOTC_AU_FEAT_FEATURE_MAGIC_CONNOISSEUR_CHARISMA">
+		<compendium display="false" />
+		<description>
+			<p>Increase your Charisma by 1, to a maximum of 20.</p>
+		</description>
+		<sheet alt="Fey-Touched">
+			<description>You can cast each of this feat’s spells without a spell slot once per Long Rest. You can also cast these spells using spell slots you have of the appropriate level. Your spellcasting ability for these spells is Charisma. &#13;
+			You can replace one of these spells with a different spell of the same level from the chosen spell list when you gain a new level.</description>
+		</sheet>
+		<rules>
+			<stat name="charisma" value="1" alt="Magic Connoisseur" />
+			<select type="Spell" name="Level 1 Spell (Magic Connoisseur)" supports="1,Cleric" prepared="true" allowReplace="true" requirements="ID_WOTC_PHB24_FEAT_MAGIC_INITIATE_CLERIC" />
+			<select type="Spell" name="Level 2 Spell (Magic Connoisseur)" supports="2,Cleric" prepared="true" allowReplace="true" requirements="ID_WOTC_PHB24_FEAT_MAGIC_INITIATE_CLERIC" />
+
+			<select type="Spell" name="Level 1 Spell (Magic Connoisseur)" supports="1,Druid" prepared="true" allowReplace="true" requirements="ID_WOTC_PHB24_FEAT_MAGIC_INITIATE_DRUID" />
+			<select type="Spell" name="Level 2 Spell (Magic Connoisseur)" supports="2,Druid" prepared="true" allowReplace="true" requirements="ID_WOTC_PHB24_FEAT_MAGIC_INITIATE_DRUID" />
+
+			<select type="Spell" name="Level 1 Spell (Magic Connoisseur)" supports="1,Wizard" prepared="true" allowReplace="true" requirements="ID_WOTC_PHB24_FEAT_MAGIC_INITIATE_WIZARD" />
+			<select type="Spell" name="Level 2 Spell (Magic Connoisseur)" supports="2,Wizard" prepared="true" allowReplace="true" requirements="ID_WOTC_PHB24_FEAT_MAGIC_INITIATE_WIZARD" />
+		</rules>
+	</element>
+
+	<element name="Necromancy Adept" type="Feat" source="Arcana Unleashed" id="ID_WOTC_AU_FEAT_NECROMANCY_ADEPT">
+		<supports>General</supports>
+		<requirements>([character:4],(ID_INTERNAL_GRANTS_SPELLCASTING_FEATURE||ID_INTERNAL_GRANTS_PACT_MAGIC_FEATURE))||ID_WOTC_PHB24_GRANTS_FEAT_UNLOCKER</requirements>
+		<prerequisite>Level 4+; Spellcasting or Pact Magic Feature</prerequisite>
+		<description>
+			<p class="flavor">General Feat (Prerequisite: Level 4+; Spellcasting or Pact Magic Feature)</p>
+			<p>You gain the following benefits.</p>
+			<p class="indent"><b><i>Ability Score Increase.</i></b> Increase your Intelligence, Wisdom, or Charisma score by 1, to a maximum of 20.</p>
+			<p class="indent"><b><i>Additional Spells.</i></b> Your prowess allows you to always have certain spells at the ready. When you have spell slots of a level specified in the Necromancy Adept Spells table, you thereafter always have the spells listed for that level and lower prepared.</p>
+			<p class="indent"><b><i>Life Manipulation.</i></b> When you cast a spell from the Necromancy school using a spell slot, you can immediately roll up to two of your unexpended Hit Point Dice. You regain Hit Points equal to the total rolled plus the level of spell slot expended. Those Hit Point Dice are then expended.</p>
+			<h5>NECROMANCY ADEPT SPELLS</h5>
+			<table>
+				<thead>
+					<tr><td class="col-15" style="text-align:center">Spell Slot Level</td><td>Spell</td></tr>
+				</thead>
+				<tr><td style="text-align:center">1</td><td><em>Inflict Wounds</em></td></tr>
+				<tr><td style="text-align:center">2</td><td><em>Ray of Enfeeblement</em></td></tr>
+				<tr><td style="text-align:center">3</td><td><em>Vampiric Touch</em></td></tr>
+				<tr><td style="text-align:center">4</td><td><em>Blight</em></td></tr>
+				<tr><td style="text-align:center">5</td><td><em>Raise Dead</em></td></tr>
+			</table>
+			<div class="reference">
+				<div element="ID_WOTC_PHB24_SPELL_INFLICT_WOUNDS" />
+			</div>
+			<div class="reference">
+				<div element="ID_WOTC_PHB24_SPELL_RAY_OF_ENFEEBLEMENT" />
+			</div>
+			<div class="reference">
+				<div element="ID_WOTC_PHB24_SPELL_VAMPIRIC_TOUCH" />
+			</div>
+			<div class="reference">
+				<div element="ID_WOTC_PHB24_SPELL_BLIGHT" />
+			</div>
+			<div class="reference">
+				<div element="ID_WOTC_PHB24_SPELL_RAISE_DEAD" />
+			</div>
+		</description>
+		<sheet>
+			<description> When you cast a spell from the Necromancy school using a spell slot, you can immediately roll up to two of your unexpended Hit Point Dice. You regain Hit Points equal to the total rolled plus the level of spell slot expended. Those Hit Point Dice are then expended.</description>
+		</sheet>
+		<rules>
+			<select type="Feat Feature" name="Ability Score Increase (Necromancy Adept)" supports="Necromancy Adept" />
+			<grant type="Spell" id="ID_WOTC_PHB24_SPELL_INFLICT_WOUNDS" prepared="true"/>
+			<grant type="Spell" id="ID_WOTC_PHB24_SPELL_RAY_OF_ENFEEBLEMENT" prepared="true" requirements="ID_INTERNAL_GRANTS_HAS_LEVEL_2_SPELL_SLOTS" />
+			<grant type="Spell" id="ID_WOTC_PHB24_SPELL_VAMPIRIC_TOUCH" prepared="true" requirements="ID_INTERNAL_GRANTS_HAS_LEVEL_3_SPELL_SLOTS" />
+			<grant type="Spell" id="ID_WOTC_PHB24_SPELL_BLIGHT" prepared="true" requirements="ID_INTERNAL_GRANTS_HAS_LEVEL_4_SPELL_SLOTS" />
+			<grant type="Spell" id="ID_WOTC_PHB24_SPELL_RAISE_DEAD" prepared="true" requirements="ID_INTERNAL_GRANTS_HAS_LEVEL_5_SPELL_SLOTS" />
+		</rules>
+	</element>
+	<element name="Intelligence" type="Feat Feature" source="Arcana Unleashed" id="ID_WOTC_AU_FEAT_FEATURE_NECROMANCY_ADEPT_INTELLIGENCE">
+		<supports>Necromancy Adept</supports>
+		<compendium display="false" />
+		<description>
+			<p>Increase your Intelligence by 1, to a maximum of 20.</p>
+		</description>
+		<sheet display="false"/>
+		<rules>
+			<stat name="intelligence" value="1" alt="Necromancy Adept" />
+		</rules>
+	</element>
+	<element name="Wisdom" type="Feat Feature" source="Arcana Unleashed" id="ID_WOTC_AU_FEAT_FEATURE_NECROMANCY_ADEPT_WISDOM">
+		<supports>Necromancy Adept</supports>
+		<compendium display="false" />
+		<description>
+			<p>Increase your Wisdom by 1, to a maximum of 20.</p>
+		</description>
+		<sheet display="false"/>
+		<rules>
+			<stat name="wisdom" value="1" alt="Necromancy Adept" />
+		</rules>
+	</element>
+	<element name="Charisma" type="Feat Feature" source="Arcana Unleashed" id="ID_WOTC_AU_FEAT_FEATURE_NECROMANCY_ADEPT_CHARISMA">
+		<supports>Necromancy Adept</supports>
+		<compendium display="false" />
+		<description>
+			<p>Increase your Charisma by 1, to a maximum of 20.</p>
+		</description>
+		<sheet display="false"/>
+		<rules>
+			<stat name="charisma" value="1" alt="Necromancy Adept" />
+		</rules>
+	</element>
+
+	<element name="Otherworldly Familiar" type="Feat" source="Arcana Unleashed" id="ID_WOTC_AU_FEAT_OTHERWORLDLY_FAMILIAR">
+		<supports>General</supports>
+		<requirements>([character:4],ID_WOTC_AU_FEAT_FAMILIAR_FRIEND)||ID_WOTC_PHB24_GRANTS_FEAT_UNLOCKER</requirements>
+		<prerequisite>Level 4+, Familiar Friend Feat</prerequisite>
+		<description>
+			<p class="flavor">General Feat (Prerequisite: Level 4+, <i>Familiar Friend</i> Feat)</p>
+			<p>You gain the following benefits.</p>
+			<p class="indent"><b><i>Ability Score Increase.</i></b> Increase one ability score of your choice by 1, to a maximum of 20.</p>
+			<p class="indent"><b><i>Otherworldly Power.</i></b> When you cast the <i>Find Familiar</i> spell, you can imbue your familiar with otherworldly might, which lasts until you cast <i>Find Familiar</i> again. While imbued, your familiar gains the following benefits:</p>
+			<ul class="unstyled" style="margin-left:2em; margin-bottom:1em">
+				<li><b>Otherworldly Resistance.</b>  Choose Necrotic, Poison, Psychic, Radiant, or Thunder damage. Your familiar has Resistance to the chosen damage type.</li>
+				<li><b><i>Phase Walk.</i></b> Your familiar can move through other creatures and objects as if they were Difficult Terrain. If your familiar ends its turn inside an object, it is shunted to the last unoccupied space it was in.</li>
+			</ul>
+		</description>
+		<sheet>
+			<description>When you cast Find Familiar, your familiar has Resistance to Necrotic, Poison, Psychic, Radiant, or Thunder damage (choose one). Additionally, your familiar can move through other creatures as if they were Difficult Terrain. If your familiar ends its turn inside an object, it is shunted to the last unoccupied space it was in.</description>
+		</sheet>
+		<rules>
+			<select type="Ability Score Improvement" name="Ability Score Increase (Otherworldly Familiar)" supports="Feat Ability Score Increase" />
+		</rules>
+	</element>
+
+	<element name="Soothing Familiar" type="Feat" source="Arcana Unleashed" id="ID_WOTC_AU_FEAT_SOOTHING_FAMILIAR">
+		<supports>General</supports>
+		<requirements>([character:4],ID_WOTC_AU_FEAT_FAMILIAR_FRIEND)||ID_WOTC_PHB24_GRANTS_FEAT_UNLOCKER</requirements>
+		<prerequisite>Level 4+, Familiar Friend Feat</prerequisite>
+		<description>
+			<p class="flavor">General Feat (Prerequisite: Level 4+, <i>Familiar Friend</i> Feat)</p>
+			<p>You gain the following benefits.</p>
+			<p class="indent"><b><i>Ability Score Increase.</i></b> Increase one ability score of your choice by 1, to a maximum of 20.</p>
+			<p class="indent"><b><i>Healing Beacon.</i></b> Positive energy fills a 5-foot Emanation originating from your familiar as long as it is within 120 feet of you. Whenever an ally in that Emanation rolls a die to determine the number of Hit Points restored to a creature, that ally can treat a roll of 1 or 2 on the die as a 3.</p>
+		</description>
+		<sheet>
+			<description>As long as your familiar is within 120ft of you, it emits a 5-foot Emanation of positive energy. Whenever an ally in that Emanation rolls a die to determine the number of Hit Points restored to a creature, that ally can treat a roll of 1 or 2 on the die as a 3.</description>
+		</sheet>
+		<rules>
+			<select type="Ability Score Improvement" name="Ability Score Increase (Soothing Familiar)" supports="Feat Ability Score Increase" />
+		</rules>
+	</element>
+
+	<element name="Spell Resistant" type="Feat" source="Arcana Unleashed" id="ID_WOTC_AU_FEAT_SPELL_RESISTANT">
+		<supports>General</supports>
+		<requirements>[character:4]||ID_WOTC_PHB24_GRANTS_FEAT_UNLOCKER</requirements>
+		<prerequisite>Level 4+</prerequisite>
+		<description>
+			<p class="flavor">General Feat (Prerequisite: Level 4+)</p>
+			<p>You gain the following benefits.</p>
+			<p class="indent"><b><i>Ability Score Increase.</i></b> Increase your Dexterity or Constitution by 1, to a maximum of 20.</p>
+			<p class="indent"><b><i>Magical Resilience.</i></b> You have Resistance to one of the following damage types (choose when you gain this feat): Necrotic, Psychic, Radiant, or Thunder.</p>
+			<p class="indent"><b><i>Magic Resistant.</i></b> When you would fail a saving throw against a spell or magical effect, you can roll 1d6 and add the number rolled to the save's total, potentially turning the failure into a success. You can use this benefit a number of times equal to your Proficiency Bonus, and you regain all expended uses when you finish a Long Rest.</p>
+		</description>
+		<sheet usage="{{proficiency}}/Long Rest">
+			<description>When you would fail a saving throw against a spell or magical effect, you can roll 1d6 and add the number rolled to the save's total, potentially turning the failure into a success.</description>
+		</sheet>
+		<rules>
+			<select type="Ability Score Improvement" name="Ability Score Increase (Spell Resistant)" supports="ID_INTERNAL_ABILITY_SCORE_IMPROVEMENT_FEAT_DEXTERITY|ID_INTERNAL_ABILITY_SCORE_IMPROVEMENT_FEAT_CONSTITUTION" alt="Ability Score Increase (Spell Resistant)"/>
+		</rules>
+	</element>
+
+	<element name="Spell Subterfuge" type="Feat" source="Arcana Unleashed" id="ID_WOTC_AU_FEAT_SPELL_SUBTERFUGE">
+		<supports>General</supports>
+		<requirements>([character:4],(ID_INTERNAL_GRANTS_SPELLCASTING_FEATURE||ID_INTERNAL_GRANTS_PACT_MAGIC_FEATURE))||ID_WOTC_PHB24_GRANTS_FEAT_UNLOCKER</requirements>
+		<prerequisite>Level 4+; Spellcasting or Pact Magic Feature</prerequisite>
+		<description>
+			<p class="flavor">General Feat (Prerequisite: Level 4+; Spellcasting or Pact Magic Feature)</p>
+			<p>You gain the following benefits.</p>
+			<p class="indent"><b><i>Ability Score Increase.</i></b> Increase your Intelligence, Wisdom, or Charisma score by 1, to a maximum of 20.</p>
+			<p class="indent"><b><i>Shrouding Spells.</i></b> After you cast a spell that has a casting time of an action using a spell slot, you can take both the Dash and Hide actions as a Bonus Action. You can use this benefit a number of times equal to the ability modifier of the score increased by this feat, and you regain all expended uses when you finish a Long Rest.</p>
+			<p class="indent"><b><i>Sneaky Casting.</i></b> If you have the Hide action's Invisible condition, casting a spell with a Verbal component or making a spell attack doesn't end that condition on you if you end the turn behind Three-Quarters Cover or Total Cover.</p>
+		</description>
+		<sheet>
+			<description>If you have the Hide action's Invisible condition, casting a spell with a Verbal component or making a spell attack doesn't end that condition on you if you end the turn behind Three-Quarters Cover or Total Cover.</description>
+		</sheet>
+		<rules>
+			<select type="Feat Feature" name="Ability Score Increase (Spell Subterfuge)" supports="Spell Subterfuge" />
+		</rules>
+	</element>
+	<element name="Intelligence" type="Feat Feature" source="Arcana Unleashed" id="ID_WOTC_AU_FEAT_SPELL_SUBTERFUGE_INTELLIGENCE">
+		<supports>Spell Subterfuge</supports>
+		<compendium display="false" />
+		<description>
+			<p>Increase your Intelligence by 1, to a maximum of 20.</p>
+		</description>
+		<sheet action="Bonus Action" usage="{{intelligence:modifier}}/Long Rest">
+			<description>After you cast a spell that has a casting time of an action using a spell slot, you can take both the Dash and Hide actions.</description>
+		</sheet>
+		<rules>
+			<stat name="intelligence" value="1" alt="Spell Subterfuge" />
+		</rules>
+	</element>
+	<element name="Wisdom" type="Feat Feature" source="Arcana Unleashed" id="ID_WOTC_AU_FEAT_SPELL_SUBTERFUGE_WISDOM">
+		<supports>Spell Subterfuge</supports>
+		<compendium display="false" />
+		<description>
+			<p>Increase your Wisdom by 1, to a maximum of 20.</p>
+		</description>
+		<sheet action="Bonus Action" usage="{{wisdom:modifier}}/Long Rest">
+			<description>After you cast a spell that has a casting time of an action using a spell slot, you can take both the Dash and Hide actions.</description>
+		</sheet>
+		<rules>
+			<stat name="wisdom" value="1" alt="Spell Subterfuge" />
+		</rules>
+	</element>
+	<element name="Charisma" type="Feat Feature" source="Arcana Unleashed" id="ID_WOTC_AU_FEAT_SPELL_SUBTERFUGE_CHARISMA">
+		<supports>Spell Subterfuge</supports>
+		<compendium display="false" />
+		<description>
+			<p>Increase your Charisma by 1, to a maximum of 20.</p>
+		</description>
+		<sheet action="Bonus Action" usage="{{charisma:modifier}}/Long Rest">
+			<description>After you cast a spell that has a casting time of an action using a spell slot, you can take both the Dash and Hide actions.</description>
+		</sheet>
+		<rules>
+			<stat name="charisma" value="1" alt="Spell Subterfuge" />
+		</rules>
+	</element>
+
+	<element name="Transmutation Adept" type="Feat" source="Arcana Unleashed" id="ID_WOTC_AU_FEAT_TRANSMUTATION_ADEPT">
+		<supports>General</supports>
+		<requirements>([character:4],(ID_INTERNAL_GRANTS_SPELLCASTING_FEATURE||ID_INTERNAL_GRANTS_PACT_MAGIC_FEATURE))||ID_WOTC_PHB24_GRANTS_FEAT_UNLOCKER</requirements>
+		<prerequisite>Level 4+; Spellcasting or Pact Magic Feature</prerequisite>
+		<description>
+			<p class="flavor">General Feat (Prerequisite: Level 4+; Spellcasting or Pact Magic Feature)</p>
+			<p>You gain the following benefits.</p>
+			<p class="indent"><b><i>Ability Score Increase.</i></b> Increase your Intelligence, Wisdom, or Charisma score by 1, to a maximum of 20.</p>
+			<p class="indent"><b><i>Additional Spells.</i></b> Your prowess allows you to always have certain spells at the ready. When you have spell slots of a level specified in the Transmutation Adept Spells table, you thereafter always have the spells listed for that level and lower prepared.</p>
+			<p class="indent"><b><i>Magical Augmentation.</i></b> On your turn when you cast a spell from the Transmutation school using a spell slot, your Speed increases by a number of feet equal to five times the level of spell slot expended. This increase lasts until the end of the turn.</p>
+			<h5>TRANSMUTATION ADEPT SPELLS</h5>
+			<table>
+				<thead>
+					<tr><td class="col-15" style="text-align:center">Spell Slot Level</td><td>Spell</td></tr>
+				</thead>
+				<tr><td style="text-align:center">1</td><td><em>Jump</em></td></tr>
+				<tr><td style="text-align:center">2</td><td><em>Spider Climb</em></td></tr>
+				<tr><td style="text-align:center">3</td><td><em>Slow</em></td></tr>
+				<tr><td style="text-align:center">4</td><td><em>Polymorph</em></td></tr>
+				<tr><td style="text-align:center">5</td><td><em>Animate Objects</em></td></tr>
+			</table>
+			<div class="reference">
+				<div element="ID_WOTC_PHB24_SPELL_JUMP" />
+			</div>
+			<div class="reference">
+				<div element="ID_WOTC_PHB24_SPELL_SPIDER_CLIMB" />
+			</div>
+			<div class="reference">
+				<div element="ID_WOTC_PHB24_SPELL_SLOW" />
+			</div>
+			<div class="reference">
+				<div element="ID_WOTC_PHB24_SPELL_POLYMORPH" />
+			</div>
+			<div class="reference">
+				<div element="ID_WOTC_PHB24_SPELL_ANIMATE_OBJECTS" />
+			</div>
+		</description>
+		<sheet>
+			<description> On your turn when you cast a spell from the Transmutation school using a spell slot, your Speed increases by a number of feet equal to five times the level of spell slot expended until the end of your turn.</description>
+		</sheet>
+		<rules>
+			<select type="Feat Feature" name="Ability Score Increase (Transmutation Adept)" supports="Transmutation Adept" />
+			<grant type="Spell" id="ID_WOTC_PHB24_SPELL_JUMP" prepared="true"/>
+			<grant type="Spell" id="ID_WOTC_PHB24_SPELL_SPIDER_CLIMB" prepared="true" requirements="ID_INTERNAL_GRANTS_HAS_LEVEL_2_SPELL_SLOTS" />
+			<grant type="Spell" id="ID_WOTC_PHB24_SPELL_SLOW" prepared="true" requirements="ID_INTERNAL_GRANTS_HAS_LEVEL_3_SPELL_SLOTS" />
+			<grant type="Spell" id="ID_WOTC_PHB24_SPELL_POLYMORPH" prepared="true" requirements="ID_INTERNAL_GRANTS_HAS_LEVEL_4_SPELL_SLOTS" />
+			<grant type="Spell" id="ID_WOTC_PHB24_SPELL_ANIMATE_OBJECTS" prepared="true" requirements="ID_INTERNAL_GRANTS_HAS_LEVEL_5_SPELL_SLOTS" />
+		</rules>
+	</element>
+	<element name="Intelligence" type="Feat Feature" source="Arcana Unleashed" id="ID_WOTC_AU_FEAT_FEATURE_TRANSMUTATION_ADEPT_INTELLIGENCE">
+		<supports>Transmutation Adept</supports>
+		<compendium display="false" />
+		<description>
+			<p>Increase your Intelligence by 1, to a maximum of 20.</p>
+		</description>
+		<sheet display="false"/>
+		<rules>
+			<stat name="intelligence" value="1" alt="Transmutation Adept" />
+		</rules>
+	</element>
+	<element name="Wisdom" type="Feat Feature" source="Arcana Unleashed" id="ID_WOTC_AU_FEAT_FEATURE_TRANSMUTATION_ADEPT_WISDOM">
+		<supports>Transmutation Adept</supports>
+		<compendium display="false" />
+		<description>
+			<p>Increase your Wisdom by 1, to a maximum of 20.</p>
+		</description>
+		<sheet display="false"/>
+		<rules>
+			<stat name="wisdom" value="1" alt="Transmutation Adept" />
+		</rules>
+	</element>
+	<element name="Charisma" type="Feat Feature" source="Arcana Unleashed" id="ID_WOTC_AU_FEAT_FEATURE_TRANSMUTATION_ADEPT_CHARISMA">
+		<supports>Transmutation Adept</supports>
+		<compendium display="false" />
+		<description>
+			<p>Increase your Charisma by 1, to a maximum of 20.</p>
+		</description>
+		<sheet display="false"/>
+		<rules>
+			<stat name="charisma" value="1" alt="Transmutation Adept" />
+		</rules>
+	</element>
+
+	<element name="Warlike Familiar" type="Feat" source="Arcana Unleashed" id="ID_WOTC_AU_FEAT_WARLIKE_FAMILIAR">
+		<supports>General</supports>
+		<requirements>([character:4],ID_WOTC_AU_FEAT_FAMILIAR_FRIEND)||ID_WOTC_PHB24_GRANTS_FEAT_UNLOCKER</requirements>
+		<prerequisite>Level 4+, Familiar Friend Feat</prerequisite>
+		<description>
+			<p class="flavor">General Feat (Prerequisite: Level 4+, <i>Familiar Friend</i> Feat)</p>
+			<p>You gain the following benefits.</p>
+			<p class="indent"><b><i>Ability Score Increase.</i></b> Increase one ability score of your choice by 1, to a maximum of 20.</p>
+			<p class="indent"><b><i>Battle Familiar.</i></b> You always have the <i>Battle Familiar</i> spell prepared. You can cast it once without a spell slot, and you regain the ability to cast it in this way when you finish a Long Rest. You can also cast the spell using any spell slots you have of the appropriate level. Your spellcasting ability for this spell is the one chosen for the Faithful Companion benefit of your <i>Familiar Friend</i> feat.</p>
+			<p class="indent"><b><i>Intercept Attack.</i></b> When a creature within 5 feet of your familiar is hit by an attack roll, your familiar can take a Reaction to add a bonus to the creature's Armor Class against that attack, potentially causing the attack to miss. The bonus is equal to your Proficiency Bonus.</p>
+			<div class="reference">
+				<div element="ID_WOTC_AU_SPELL_BATTLE_FAMILIAR" />
+			</div>
+		</description>
+		<sheet>
+			<description>When a creature within 5 feet of your familiar is hit by an attack roll, your familiar can take a Reaction to add a +{{proficiency}} bonus to the creature's Armor Class against that attack, potentially causing the attack to miss.</description>
+		</sheet>
+		<rules>
+			<select type="Ability Score Improvement" name="Ability Score Increase (Warlike Familiar)" supports="Feat Ability Score Increase" />
+			<grant type="Spell" id="ID_WOTC_AU_SPELL_BATTLE_FAMILIAR" prepared="true"/>
+			<select type="Feat Feature" name="Spellcasting Ability (Warlike Familiar)" supports="Warlike Familiar" default="ID_WOTC_AU_FEAT_WARLIKE_FAMILIAR_BATTLE_FAMILIAR_INTELLIGENCE" requirements="ID_WOTC_AU_FEAT_FEATURE_FAMILIAR_FRIEND_INTELLIGENCE" />
+			<select type="Feat Feature" name="Spellcasting Ability (Warlike Familiar)" supports="Warlike Familiar" default="ID_WOTC_AU_FEAT_WARLIKE_FAMILIAR_BATTLE_FAMILIAR_WISDOM" requirements="ID_WOTC_AU_FEAT_FEATURE_FAMILIAR_FRIEND_WISDOM" />
+			<select type="Feat Feature" name="Spellcasting Ability (Warlike Familiar)" supports="Warlike Familiar" default="ID_WOTC_AU_FEAT_WARLIKE_FAMILIAR_BATTLE_FAMILIAR_CHARISMA" requirements="ID_WOTC_AU_FEAT_FEATURE_FAMILIAR_FRIEND_CHARISMA" />
+		</rules>
+	</element>
+	<element name="Intelligence" type="Feat Feature" source="Arcana Unleashed" id="ID_WOTC_AU_FEAT_WARLIKE_FAMILIAR_BATTLE_FAMILIAR_INTELLIGENCE">
+		<supports>Warlike Familiar</supports>
+		<compendium display="false" />
+		<description>
+			<p>You always have the <i>Battle Familiar</i> spell prepared. You can cast it once without a spell slot, and you regain the ability to cast it in this way when you finish a Long Rest. You can also cast the spell using any spell slots you have of the appropriate level. Your spellcasting ability for this spell is Intelligence.</p>
+		</description>
+		<sheet alt="Battle Familiar" usage="1/Long Rest">
+			<description>You can cast Battle Familiar once without a spell slot. You can also cast the spell using any spell slots you have of the appropriate level. Your spellcasting ability for this spell is Intelligence.</description>
+		</sheet>
+	</element>
+	<element name="Wisdom" type="Feat Feature" source="Arcana Unleashed" id="ID_WOTC_AU_FEAT_WARLIKE_FAMILIAR_BATTLE_FAMILIAR_WISDOM">
+		<supports>Warlike Familiar</supports>
+		<compendium display="false" />
+		<description>
+			<p>You always have the <i>Battle Familiar</i> spell prepared. You can cast it once without a spell slot, and you regain the ability to cast it in this way when you finish a Long Rest. You can also cast the spell using any spell slots you have of the appropriate level. Your spellcasting ability for this spell is Wisdom.</p>
+		</description>
+		<sheet alt="Battle Familiar" usage="1/Long Rest">
+			<description>You can cast Battle Familiar once without a spell slot. You can also cast the spell using any spell slots you have of the appropriate level. Your spellcasting ability for this spell is Wisdom.</description>
+		</sheet>
+	</element>
+	<element name="Charisma" type="Feat Feature" source="Arcana Unleashed" id="ID_WOTC_AU_FEAT_WARLIKE_FAMILIAR_BATTLE_FAMILIAR_CHARISMA">
+		<supports>Warlike Familiar</supports>
+		<compendium display="false" />
+		<description>
+			<p>You always have the <i>Battle Familiar</i> spell prepared. You can cast it once without a spell slot, and you regain the ability to cast it in this way when you finish a Long Rest. You can also cast the spell using any spell slots you have of the appropriate level. Your spellcasting ability for this spell is Charisma.</p>
+		</description>
+		<sheet alt="Battle Familiar" usage="1/Long Rest">
+			<description>You can cast Battle Familiar once without a spell slot. You can also cast the spell using any spell slots you have of the appropriate level. Your spellcasting ability for this spell is Charisma.</description>
+		</sheet>
+	</element>
+
+</elements>

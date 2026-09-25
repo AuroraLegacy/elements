@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<elements>
+	<info>
+		<name>Cosmic Dawn Experiment</name>
+		<description>The Cosmic Dawn Experiment background from Arcana Unleashed.</description>
+		<update version="0.0.1">
+			<file name="background-cosmic-dawn-experiment.xml" url="https://raw.githubusercontent.com/AuroraLegacy/elements/master/supplements/arcana-unleashed/backgrounds/background-cosmic-dawn-experiment.xml" />
+		</update>
+	</info>
+
+	<element name="Cosmic Dawn Experiment" type="Background" source="Arcana Unleashed" id="ID_WOTC_AU_BACKGROUND_COSMIC_DAWN_EXPERIMENT">
+		<description>
+			<ul class="unstyled" style="text-indent:-1em; margin-left:1em; margin-bottom:5px">
+				<li><strong>Ability Scores:</strong> Strength, Dexterity, Constitution</li>
+				<li><strong>Feat:</strong> Transmuted Anatomy</li>
+				<li><strong>Skill Proficiencies:</strong> Athletics and Survival</li>
+				<li><strong>Tool Proficiency:</strong> Choose one kind of Artisan's Tools</li>
+				<li><strong>Equipment:</strong><i> Choose A or B:</i> (A) Artisan's Tools (same as above), Backpack, Robe, Traveler's Clothes, 30 GP; or (B) 50 GP</li>
+			</ul>
+			<p>Your body has been warped by the transmutation practices of the Bringers of the Cosmic Dawn. Perhaps you were inadvertently caught up in one of the organization's experiments, or maybe you were a member of the organization and sought to improve your physical form through magical might. Whatever the case, you use your strange anatomy to your benefit.</p>
+			<div class="reference">
+				<div element="ID_WOTC_AU_FEAT_TRANSMUTED_ANATOMY" />
+			</div>
+		</description>
+		<setters>
+			<set name="short">Strength, Dexterity, Constitution, Transmuted Anatomy Feat, Athletics and Survival Skills, an Artisan's Tool</set>
+		</setters>
+		<rules>
+			<grant type="Ability Score Improvement" id="ID_INTERNAL_ABILITY_SCORE_IMPROVEMENT_COMBINATION_STR_DEX_CON" />
+			<grant type="Feat" id="ID_WOTC_AU_FEAT_TRANSMUTED_ANATOMY" />
+			<grant type="Proficiency" id="ID_PROFICIENCY_SKILL_ATHLETICS" />
+			<grant type="Proficiency" id="ID_PROFICIENCY_SKILL_SURVIVAL" />
+			<grant type="Grants" id="ID_INTERNAL_GRANTS_BACKGROUND_ASI" />
+			<select type="Proficiency" name="Tool Proficiency (Cosmic Dawn Experiment)" supports="Tool, Artisan tools" />
+		</rules>
+	</element>
+</elements>

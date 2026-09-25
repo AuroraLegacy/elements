@@ -1,0 +1,257 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<elements>
+	<info>
+		<name>Transmuter</name>
+		<description>The Transmuter subclass from Arcana Unleashed.</description>
+		<update version="0.0.1">
+			<file name="wizard-transmuter.xml" url="https://raw.githubusercontent.com/AuroraLegacy/elements/master/supplements/arcana-unleashed/archetypes/wizard-transmuter.xml" />
+		</update>
+	</info>
+
+	<element name="Transmuter" type="Archetype" source="Arcana Unleashed" id="ID_WOTC_AU_ARCHETYPE_WIZARD_TRANSMUTER">
+		<supports>Wizard Subclass</supports>
+		<description>
+			<p class="flavor">Step Across Space and Call Creatures from Thin Air</p>
+			<p>A Transmuter considers distance and matter to be flexible guidelines rather than physical laws. Transmuters master magic that moves creatures instantly through space and summons creatures to fight on their behalf.</p>
+			<div element="ID_WOTC_AU_ARCHETYPE_WIZARD_TRANSMUTER_TRANSMUTATION_SAVANT" />
+			<div element="ID_WOTC_AU_ARCHETYPE_WIZARD_TRANSMUTER_TRANSMUTERS_STONE" />
+			<div element="ID_WOTC_AU_ARCHETYPE_WIZARD_TRANSMUTER_WONDROUS_ALTERATION" />
+			<div element="ID_WOTC_AU_ARCHETYPE_WIZARD_TRANSMUTER_EMPOWERED_TRANSMUTATION" />
+			<div element="ID_WOTC_AU_ARCHETYPE_WIZARD_TRANSMUTER_POTENT_STONE" />
+			<div element="ID_WOTC_AU_ARCHETYPE_WIZARD_TRANSMUTER_SHAPE_SHIFTER" />
+			<div element="ID_WOTC_AU_ARCHETYPE_WIZARD_TRANSMUTER_MASTER_TRANSMUTER" />
+		</description>
+		<sheet display="false" />
+		<rules>
+			<grant type="Archetype Feature" id="ID_WOTC_AU_ARCHETYPE_WIZARD_TRANSMUTER_TRANSMUTATION_SAVANT" level="3"/>
+			<grant type="Archetype Feature" id="ID_WOTC_AU_ARCHETYPE_WIZARD_TRANSMUTER_TRANSMUTERS_STONE" level="3"/>
+			<grant type="Archetype Feature" id="ID_WOTC_AU_ARCHETYPE_WIZARD_TRANSMUTER_WONDROUS_ALTERATION" level="3"/>
+			<grant type="Archetype Feature" id="ID_WOTC_AU_ARCHETYPE_WIZARD_TRANSMUTER_EMPOWERED_TRANSMUTATION" level="6"/>
+			<grant type="Archetype Feature" id="ID_WOTC_AU_ARCHETYPE_WIZARD_TRANSMUTER_POTENT_STONE" level="10"/>
+			<grant type="Archetype Feature" id="ID_WOTC_AU_ARCHETYPE_WIZARD_TRANSMUTER_SHAPE_SHIFTER" level="10"/>
+			<grant type="Archetype Feature" id="ID_WOTC_AU_ARCHETYPE_WIZARD_TRANSMUTER_MASTER_TRANSMUTER" level="14"/>
+		</rules>
+	</element>
+
+	<element name="Level 3: Transmutation Savant" type="Archetype Feature" source="Arcana Unleashed" id="ID_WOTC_AU_ARCHETYPE_WIZARD_TRANSMUTER_TRANSMUTATION_SAVANT">
+		<requirements>!ID_INTERNAL_AU_FEATURE_REPLACEMENT_WIZARD_TRANSMUTER_TRANSMUTATION_SAVANT</requirements>
+		<description>
+			<p>Choose two Wizard spells from the Transmutation school, each of which must be no higher than level 2, and add them to your spellbook for free.</p>
+			<p class="indent">In addition, whenever you gain access to a new level of spell slots in this class, you can add one Wizard spell from the Transmutation school to your spellbook for free. The chosen spell must be of a level for which you have spell slots.</p>
+		</description>
+		<sheet display="false" />
+		<rules>
+			<select type="Spell" name="Transmutation Spell (Transmutation Savant)" supports="$(spellcasting:slots),Transmutation,Wizard" number="2" level="3" spellcasting="Wizard" />
+			<select type="Spell" name="Transmutation Spell (Transmutation Savant)" supports="$(spellcasting:slots),Transmutation,Wizard" level="5" spellcasting="Wizard" />
+			<select type="Spell" name="Transmutation Spell (Transmutation Savant)" supports="$(spellcasting:slots),Transmutation,Wizard" level="7" spellcasting="Wizard" />
+			<select type="Spell" name="Transmutation Spell (Transmutation Savant)" supports="$(spellcasting:slots),Transmutation,Wizard" level="9" spellcasting="Wizard" />
+			<select type="Spell" name="Transmutation Spell (Transmutation Savant)" supports="$(spellcasting:slots),Transmutation,Wizard" level="11" spellcasting="Wizard" />
+			<select type="Spell" name="Transmutation Spell (Transmutation Savant)" supports="$(spellcasting:slots),Transmutation,Wizard" level="13" spellcasting="Wizard" />
+			<select type="Spell" name="Transmutation Spell (Transmutation Savant)" supports="$(spellcasting:slots),Transmutation,Wizard" level="15" spellcasting="Wizard" />
+			<select type="Spell" name="Transmutation Spell (Transmutation Savant)" supports="$(spellcasting:slots),Transmutation,Wizard" level="17" spellcasting="Wizard" />
+		</rules>
+	</element>
+
+	<element name="Level 3: Transmuter's Stone" type="Archetype Feature" source="Arcana Unleashed" id="ID_WOTC_AU_ARCHETYPE_WIZARD_TRANSMUTER_TRANSMUTERS_STONE">
+		<requirements>!ID_INTERNAL_AU_FEATURE_REPLACEMENT_WIZARD_TRANSMUTER_TRANSMUTERS_STONE</requirements>
+		<description>
+			<p>When you finish a Long Rest, you can create a magic stone that lasts until you use this feature again. The stone is a Tiny object, and you can use it as a Spellcasting Focus for your Wizard spells. A creature with the stone in its possession gains proficiency in Constitution saving throws and one of the following benefits, which you choose when you create the stone. You can change the stone's benefit when you cast a Transmutation spell using a spell slot.</p>
+			<p class="indent"><em><strong>Darkvision.</strong></em> The bearer gains Darkvision with a range of 60 feet or increases the range of its Darkvision by 60 feet.</p>
+			<p class="indent"><em><strong>Resistance.</strong></em> The bearer gains Resistance to Acid, Cold, Fire, Lightning, Poison, or Thunder damage (your choice each time you choose this benefit).</p>
+			<p class="indent"><em><strong>Speed.</strong></em> The bearer's Speed increases by 10 feet.</p>
+		</description>
+		<sheet alt="Transmuter's Stone">
+			<description>When you finish a Long Rest, you can create a Tiny magic stone which can be used as a Spellcasting Focus for your Wizard spells and lasts until you use this feature again. The creature with the stone gains Proficiency in Constitution saving throws and one of the following benefits (choose when you create the stone). You can change the stone's benefit when you cast a Transmutation spell using a spell slot.</description>
+			<description level="10">When you finish a Long Rest, you can create a Tiny magic stone which can be used as a Spellcasting Focus for your Wizard spells and lasts until you use this feature again. The creature with the stone gains Proficiency in Constitution saving throws and two of the following benefits (choose when you create the stone). Only Resistance can be chosen twice, and if you do so, you must choose two different damage types. You can change either or both of the stone's benefits when you cast a Transmutation spell using a spell slot.</description>
+		</sheet>
+		<rules>
+			<select type="Archetype Feature" name="Transmuter Stone Darkvision" supports="Transmuter Stone Darkvision" default="ID_WOTC_AU_ARCHETYPE_WIZARD_TRANSMUTER_TRANSMUTERS_STONE_DARKVISION" />
+			<select type="Archetype Feature" name="Transmuter Stone Resistance" supports="Transmuter Stone Resistance" default="ID_WOTC_AU_ARCHETYPE_WIZARD_TRANSMUTER_TRANSMUTERS_STONE_RESISTANCE" />
+			<select type="Archetype Feature" name="Transmuter Stone Speed" supports="Transmuter Stone Speed" default="ID_WOTC_AU_ARCHETYPE_WIZARD_TRANSMUTER_TRANSMUTERS_STONE_SPEED" />
+			<select type="Archetype Feature" name="Transmuter Stone Mighty Build" supports="Transmuter Stone Mighty Build" default="ID_WOTC_AU_ARCHETYPE_WIZARD_TRANSMUTER_TRANSMUTERS_STONE_MIGHTY_BUILD" level="10"/>
+			<select type="Archetype Feature" name="Transmuter Stone Tremorsense" supports="Transmuter Stone Tremorsense" default="ID_WOTC_AU_ARCHETYPE_WIZARD_TRANSMUTER_TRANSMUTERS_STONE_TREMORSENSE" level="10"/>
+		</rules>
+	</element>
+	<element name="Darkvision" type="Archetype Feature" source="Arcana Unleashed" id="ID_WOTC_AU_ARCHETYPE_WIZARD_TRANSMUTER_TRANSMUTERS_STONE_DARKVISION">
+		<supports>Transmuter Stone Darkvision</supports>
+		<compendium display="false"/>
+		<description>
+			<p><em><strong>Darkvision.</strong></em> The bearer gains Darkvision with a range of 60 feet or increases the range of its Darkvision by 60 feet.</p>
+		</description>
+		<sheet>
+			<description>The bearer gains Darkvision with a range of 60 feet or increases the range of its Darkvision by 60 feet.</description>
+		</sheet>
+	</element>
+	<element name="Resistance" type="Archetype Feature" source="Arcana Unleashed" id="ID_WOTC_AU_ARCHETYPE_WIZARD_TRANSMUTER_TRANSMUTERS_STONE_RESISTANCE">
+		<supports>Transmuter Stone Resistance</supports>
+		<compendium display="false"/>
+		<description>
+			<p><em><strong>Resistance.</strong></em> The bearer gains Resistance to Acid, Cold, Fire, Lightning, Poison, or Thunder damage (your choice each time you choose this benefit).</p>
+		</description>
+		<sheet>
+			<description>The bearer gains Resistance to Acid, Cold, Fire, Lightning, Poison, or Thunder damage (your choice).</description>
+		</sheet>
+	</element>
+	<element name="Speed" type="Archetype Feature" source="Arcana Unleashed" id="ID_WOTC_AU_ARCHETYPE_WIZARD_TRANSMUTER_TRANSMUTERS_STONE_SPEED">
+		<supports>Transmuter Stone Speed</supports>
+		<compendium display="false"/>
+		<description>
+			<p><em><strong>Speed.</strong></em> The bearer's Speed increases by 10 feet.</p>
+		</description>
+		<sheet>
+			<description> The bearer's Speed increases by 10 feet.</description>
+		</sheet>
+	</element>
+
+	<element name="Level 3: Wondrous Alteration" type="Archetype Feature" source="Arcana Unleashed" id="ID_WOTC_AU_ARCHETYPE_WIZARD_TRANSMUTER_WONDROUS_ALTERATION">
+		<requirements>!ID_INTERNAL_AU_FEATURE_REPLACEMENT_WIZARD_TRANSMUTER_WONDROUS_ALTERATION</requirements>
+		<description>
+			<p>You always have the <i>Alter Self</i> spell prepared and can cast it once without expending a spell slot. You regain the ability to cast it in this way when you finish a Long Rest.</p>
+			<p class="indent">While under the effects of Alter Self, you gain an additional benefit for each of its options.</p>
+			<p class="indent"><em><strong>Aquatic Adaptation.</strong></em> While underwater, you can take the Dash action as a Bonus Action.</p>
+			<p class="indent"><em><strong>Change Appearance.</strong></em> You have Advantage on Charisma (Deception) checks.</p>
+			<p class="indent"><em><strong>Natural Weapons.</strong></em> The damage of your new growth increases to 2d6 damage of the type associated with the growth. You also have Advantage on Constitution saving throws to maintain Concentration.</p>
+		</description>
+		<sheet alt="Wondrous Alteration" usage="1/Long Rest">
+			<description>You can cast Alter Self without expending a spell slot. Whenever you cast it, you gain an additional benefit for each of its options. &#13;
+			Aquatic Adaptation: While underwater, you can take the Dash action as a Bonus Action. &#13;
+			Change Appearance: You have Advantage on Charisma (Deception) checks. &#13;
+			Natural Weapons: The damage of your new growth increases to 2d6. You also have Advantage on Constitution saving throws to maintain Concentration.</description>
+		</sheet>
+		<rules>
+			<grant type="Spell" id="ID_WOTC_PHB24_SPELL_ALTER_SELF" spellcasting="Wizard" prepared="true" />
+		</rules>
+	</element>
+
+	<element name="Level 6: Empowered Transmutation" type="Archetype Feature" source="Arcana Unleashed" id="ID_WOTC_AU_ARCHETYPE_WIZARD_TRANSMUTER_EMPOWERED_TRANSMUTATION">
+		<requirements>!ID_INTERNAL_AU_FEATURE_REPLACEMENT_WIZARD_TRANSMUTER_EMPOWERED_TRANSMUTATION</requirements>
+		<description>
+			<p>When you use a spell slot to cast a Transmutation spell that doesn't make an attack roll or force a saving throw, such as <i>Fly</i> or <i>Magic Weapon</i>, you can increase the spell's effective level by 1.</p>
+			<p class="indent">You can use this feature a number of times equal to your Intelligence modifier (minimum of once), and you regain all expended uses when you finish a Long Rest.</p>
+		</description>
+		<sheet alt="Empowered Transmutation" usage="{{empowered transmutation:uses}}/Long Rest" >
+			<description>When you use a spell slot to cast a Transmutation spell that doesn't make an attack roll or force a saving throw, you can increase the spell's effective level by 1.</description>
+		</sheet>
+		<rules>
+			<stat name="empowered transmutation:uses" value="1" bonus="ability" />
+			<stat name="empowered transmutation:uses" value="intelligence:modifier" bonus="ability" />
+		</rules>
+	</element>
+
+	<element name="Level 10: Potent Stone" type="Archetype Feature" source="Arcana Unleashed" id="ID_WOTC_AU_ARCHETYPE_WIZARD_TRANSMUTER_POTENT_STONE">
+		<requirements>!ID_INTERNAL_AU_FEATURE_REPLACEMENT_WIZARD_TRANSMUTER_POTENT_STONE</requirements>
+		<description>
+			<p>Your Transmuter's Stone is more versatile. When you create your Transmuter's Stone, you can choose up to two benefits. You can choose each option other than Resistance only once. If you choose Resistance twice, you must choose different damage types. You can change either or both benefits when you cast a Transmutation spell using a spell slot.</p>
+			<p class="indent">In addition, the following are now among your benefit options for Transmuter's Stone.</p>
+			<p class="indent"><em><strong>Mighty Build.</strong></em> The bearer has Advantage on Strength saving throws. The bearer also counts as one size larger when determining its carrying capacity.</p>
+			<p class="indent"><em><strong>Tremorsense.</strong></em> The bearer gains Tremorsense with a range of 30 feet.</p>
+		</description>
+		<sheet display="false"/>
+	</element>
+	<element name="Mighty Build" type="Archetype Feature" source="Arcana Unleashed" id="ID_WOTC_AU_ARCHETYPE_WIZARD_TRANSMUTER_TRANSMUTERS_STONE_MIGHTY_BUILD">
+		<supports>Transmuter Stone Mighty Build</supports>
+		<compendium display="false"/>
+		<description>
+			<p><em><strong>Mighty Build.</strong></em> The bearer has Advantage on Strength saving throws. The bearer also counts as one size larger when determining its carrying capacity.</p>
+		</description>
+		<sheet>
+			<description>The bearer has Advantage on Strength saving throws and counts as one size larger when determining its carrying capacity.</description>
+		</sheet>
+	</element>
+	<element name="Tremorsense" type="Archetype Feature" source="Arcana Unleashed" id="ID_WOTC_AU_ARCHETYPE_WIZARD_TRANSMUTER_TRANSMUTERS_STONE_TREMORSENSE">
+		<supports>Transmuter Stone Tremorsense</supports>
+		<compendium display="false"/>
+		<description>
+			<p><em><strong>Tremorsense.</strong></em> The bearer gains Tremorsense with a range of 30 feet.</p>
+		</description>
+		<sheet>
+			<description> The bearer gains Tremorsense with a range of 30 feet.</description>
+		</sheet>
+	</element>
+
+	<element name="Level 10: Shape-Shifter" type="Archetype Feature" source="Arcana Unleashed" id="ID_WOTC_AU_ARCHETYPE_WIZARD_TRANSMUTER_SHAPE_SHIFTER">
+		<requirements>!ID_INTERNAL_AU_FEATURE_REPLACEMENT_WIZARD_TRANSMUTER_SHAPE_SHIFTER</requirements>
+		<description>
+			<p>You always have the <i>Polymorph</i> spell prepared and can cast it once without expending a spell slot. You regain the ability to cast it in this way when you finish a Long Rest.</p>
+			<p class="indent">In addition, when you target yourself with the spell, you can modify the spell to gain the benefits below. Once you modify the spell using this feature, you can't do so again until you finish a Long Rest.</p>
+			<p class="indent"><em><strong>Game Statistics.</strong></em> In addition to retaining the features specified in the spell, you retain your memories and ability to communicate. You also retain your Intelligence, Wisdom, and Charisma scores; proficiencies; class features; and feats.</p>
+			<p class="indent"><em><strong>Transmute Spells.</strong></em> While shape-shifted, you can cast spells, but only Transmutation spells that don't have a Material component that has a specified cost or that is consumed by the spell.</p>
+		</description>
+		<sheet alt="Shape-Shifter" usage="1/Long Rest">
+			<description>You can cast Polymorph without expending a spell slot. &#13;
+			In addition, when you target yourself with the spell, you can modify the spell to gain further benefits: you retain your memories, ability to communicate, your Intelligence, Wisdom, and Charisma scores, proficiencies, class features, feats, and the ability to cast Transmutation spells that don't have a Material component with a specified cost or that is consumed by the spell.</description>
+		</sheet>
+		<rules>
+			<grant type="Spell" id="ID_WOTC_PHB24_SPELL_POLYMORPH" spellcasting="Wizard" prepared="true" />
+		</rules>
+	</element>
+
+	<element name="Level 14: Master Transmuter" type="Archetype Feature" source="Arcana Unleashed" id="ID_WOTC_AU_ARCHETYPE_WIZARD_TRANSMUTER_MASTER_TRANSMUTER">
+		<requirements>!ID_INTERNAL_AU_FEATURE_REPLACEMENT_WIZARD_TRANSMUTER_MASTER_TRANSMUTER</requirements>
+		<description>
+			<p>While you carry your Transmuter's Stone, you can take a Magic action to consume the reserve of transmutation magic stored inside and choose one of the following benefits. After you use the stone in this way, it crumbles to dust. You can prevent the stone from crumbling by expending a level 7+ spell slot as part of the Magic action you take using this feature.</p>
+			<p class="indent"><em><strong>Major Transformation.</strong></em> You can transmute one nonmagical object—no larger than a 10-foot Cube or eight connected 5-foot Cubes—into another nonmagical object of similar size and mass and of equal or lesser value. You must spend 10 minutes handling the object to transform it.</p>
+			<p class="indent"><em><strong>Panacea.</strong></em> You touch a creature as part of this Magic action, and the target regains a number of Hit Points equal to half its Hit Point maximum (round down). The target is cured of all magical contagions, and any curses affecting the target are lifted, including the target's Attunement to a cursed item. If the target has the Poisoned or Petrified condition, those conditions end.</p>
+			<p class="indent"><em><strong>Restore Life.</strong></em> You cast the <i>Raise Dead</i> spell without expending a spell slot, using the stone in place of the required Material components.</p>
+			<p class="indent"><em><strong>Restore Youth.</strong></em> You touch one willing creature as part of this Magic action, and the target's Exhaustion level, if any, decreases to 0, and it permanently appears 3d10 years younger, to a minimum of young adulthood.</p>
+		</description>
+		<sheet alt="Master Transmuter" action="Action">
+			<description>While you carry your Transmuter's Stone, you can consume the reserve of transmutation magic stored inside and choose one of the following benefits. After you use the stone in this way, it crumbles to dust. You can prevent the stone from crumbling by expending a level 7+ spell slot as part of the Magic action you take using this feature.</description>
+		</sheet>
+		<rules>
+			<select type="Archetype Feature" name="Master Transmuter Major Transformation" supports="Master Transmuter Major Transformation" default="ID_WOTC_AU_ARCHETYPE_WIZARD_TRANSMUTER_MASTER_TRANSMUTER_MAJOR_TRANSFORMATION" />
+			<select type="Archetype Feature" name="Master Transmuter Panacea" supports="Master Transmuter Panacea" default="ID_WOTC_AU_ARCHETYPE_WIZARD_TRANSMUTER_MASTER_TRANSMUTER_PANACEA" />
+			<select type="Archetype Feature" name="Master Transmuter Restore Life" supports="Master Transmuter Restore Life" default="ID_WOTC_AU_ARCHETYPE_WIZARD_TRANSMUTER_MASTER_TRANSMUTER_RESTORE_LIFE" />
+			<select type="Archetype Feature" name="Master Transmuter Restore Youth" supports="Master Transmuter Restore Youth" default="ID_WOTC_AU_ARCHETYPE_WIZARD_TRANSMUTER_MASTER_TRANSMUTER_RESTORE_YOUTH" />
+		</rules>
+	</element>
+	<element name="Major Transformation" type="Archetype Feature" source="Arcana Unleashed" id="ID_WOTC_AU_ARCHETYPE_WIZARD_TRANSMUTER_MASTER_TRANSMUTER_MAJOR_TRANSFORMATION">
+		<supports>Master Transmuter Major Transformation</supports>
+		<compendium display="false"/>
+		<description>
+			<p><em><strong>Major Transformation.</strong></em> You can transmute one nonmagical object—no larger than a 10-foot Cube or eight connected 5-foot Cubes—into another nonmagical object of similar size and mass and of equal or lesser value. You must spend 10 minutes handling the object to transform it.</p>
+		</description>
+		<sheet>
+			<description>You can transmute one nonmagical object—no larger than a 10-foot Cube or eight connected 5-foot Cubes—into another nonmagical object of similar size and mass and of equal or lesser value. You must spend 10 minutes handling the object to transform it.</description>
+		</sheet>
+	</element>
+	<element name="Panacea" type="Archetype Feature" source="Arcana Unleashed" id="ID_WOTC_AU_ARCHETYPE_WIZARD_TRANSMUTER_MASTER_TRANSMUTER_PANACEA">
+		<supports>Master Transmuter Panacea</supports>
+		<compendium display="false"/>
+		<description>
+			<p><em><strong>Panacea.</strong></em> You touch a creature as part of this Magic action, and the target regains a number of Hit Points equal to half its Hit Point maximum (round down). The target is cured of all magical contagions, and any curses affecting the target are lifted, including the target's Attunement to a cursed item. If the target has the Poisoned or Petrified condition, those conditions end.</p>
+		</description>
+		<sheet>
+			<description>You touch a creature. It regains a number of Hit Points equal to half its Hit Point maximum (round down), is cured of all magical contagions, and any curses affecting the target are lifted, including the target's Attunement to a cursed item. If the target has the Poisoned or Petrified condition, those conditions end.</description>
+		</sheet>
+	</element>
+	<element name="Restore Life" type="Archetype Feature" source="Arcana Unleashed" id="ID_WOTC_AU_ARCHETYPE_WIZARD_TRANSMUTER_MASTER_TRANSMUTER_RESTORE_LIFE">
+		<supports>Master Transmuter Restore Life</supports>
+		<compendium display="false"/>
+		<description>
+			<p><em><strong>Restore Life.</strong></em> You cast the <i>Raise Dead</i> spell without expending a spell slot, using the stone in place of the required Material components.</p>
+		</description>
+		<sheet>
+			<description>You cast the Raise Dead spell without expending a spell slot, using the stone in place of the required Material components.</description>
+		</sheet>
+	</element>
+	<element name="Restore Youth" type="Archetype Feature" source="Arcana Unleashed" id="ID_WOTC_AU_ARCHETYPE_WIZARD_TRANSMUTER_MASTER_TRANSMUTER_RESTORE_YOUTH">
+		<supports>Master Transmuter Restore Youth</supports>
+		<compendium display="false"/>
+		<description>
+			<p><em><strong>Restore Youth.</strong></em> You touch one willing creature as part of this Magic action, and the target's Exhaustion level, if any, decreases to 0, and it permanently appears 3d10 years younger, to a minimum of young adulthood.</p>
+		</description>
+		<sheet>
+			<description>You touch one willing creature. Its Exhaustion level decreases to 0, and it permanently appears 3d10 years younger, to a minimum of young adulthood.</description>
+		</sheet>
+	</element>
+
+	<!--Feature Replacement Grants-->
+	<element name="Transmutation Savant Feature Replacement" type="Grants" source="Internal" id="ID_INTERNAL_AU_FEATURE_REPLACEMENT_WIZARD_TRANSMUTER_TRANSMUTATION_SAVANT" />
+	<element name="Transmuter's Stone Feature Replacement" type="Grants" source="Internal" id="ID_INTERNAL_AU_FEATURE_REPLACEMENT_WIZARD_TRANSMUTER_TRANSMUTERS_STONE" />
+	<element name="Wondrous Alteration Feature Replacement" type="Grants" source="Internal" id="ID_INTERNAL_AU_FEATURE_REPLACEMENT_WIZARD_TRANSMUTER_WONDROUS_ALTERATION" />
+	<element name="Empowered Transmutation Feature Replacement" type="Grants" source="Internal" id="ID_INTERNAL_AU_FEATURE_REPLACEMENT_WIZARD_TRANSMUTER_EMPOWERED_TRANSMUTATION" />
+	<element name="Potent Stone Feature Replacement" type="Grants" source="Internal" id="ID_INTERNAL_AU_FEATURE_REPLACEMENT_WIZARD_TRANSMUTER_POTENT_STONE" />
+	<element name="Shape-Shifter Feature Replacement" type="Grants" source="Internal" id="ID_INTERNAL_AU_FEATURE_REPLACEMENT_WIZARD_TRANSMUTER_SHAPE_SHIFTER" />
+	<element name="Master Transmuter Feature Replacement" type="Grants" source="Internal" id="ID_INTERNAL_AU_FEATURE_REPLACEMENT_WIZARD_TRANSMUTER_MASTER_TRANSMUTER" />
+</elements>

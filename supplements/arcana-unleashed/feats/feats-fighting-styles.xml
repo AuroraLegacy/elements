@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<elements>
+	<info>
+		<name>Fighting Style Category Feats</name>
+		<description>The Fighting Style Category Feats from Arcana Unleashed.</description>
+		<update version="0.0.1">
+			<file name="feats-fighting-styles.xml" url="https://raw.githubusercontent.com/AuroraLegacy/elements/master/supplements/arcana-unleashed/feats/feats-fighting-styles.xml" />
+		</update>
+	</info>
+
+	<element name="Arcane Warrior" type="Feat" source="Arcana Unleashed" id="ID_WOTC_AU_FEAT_ARCANE_WARRIOR">
+		<supports>Fighting Style</supports>
+		<requirements>ID_INTERNAL_GRANTS_FIGHTING_STYLE_FEATURE||ID_WOTC_PHB24_GRANTS_FEAT_UNLOCKER</requirements>
+		<prerequisite>Fighting Style Feature</prerequisite>
+		<description>
+			<p class="flavor">Fighting Style Feat (Prerequisite: Fighting Style Feature)</p>
+			<p>You learn two Wizard cantrips of your choice. <i>Mage Hand</i> and <i>Ray of Frost</i> are recommended. Intelligence, Wisdom, or Charisma is your spellcasting ability for these spells (choose when you select this feat).</p>
+			<p class="indent">Whenever you gain a level, you can replace one of these cantrips with another Wizard cantrip.</p>
+		</description>
+		<sheet display="false" />
+		<rules>
+			<select type="Feat Feature" name="Spellcasting Ability (Arcane Warrior)" supports="ID_WOTC_AU_FEAT_ARCANE_WARRIOR_INTELLIGENCE|ID_WOTC_AU_FEAT_ARCANE_WARRIOR_WISDOM|ID_WOTC_AU_FEAT_ARCANE_WARRIOR_CHARISMA" />
+			<select type="Spell" name="Cantrip (Arcane Warrior)" supports="0,Wizard" number="2" allowReplace="true"/>
+		</rules>
+	</element>
+	<element name="Intelligence" type="Feat Feature" source="Arcana Unleashed" id="ID_WOTC_AU_FEAT_ARCANE_WARRIOR_INTELLIGENCE">
+		<compendium display="false" />
+		<description>
+			<p>Your spellcasting ability for your chosen Wizard cantrips is Intelligence.</p>
+		</description>
+		<sheet alt="Arcane Warrior">
+			<description>You can cast this feat's cantrips using Intelligence as your spellcasting ability. When you gain a level, you can replace one of these cantrips with another Wizard cantrip.</description>
+		</sheet>
+	</element>
+	<element name="Wisdom" type="Feat Feature" source="Arcana Unleashed" id="ID_WOTC_AU_FEAT_ARCANE_WARRIOR_WISDOM">
+		<compendium display="false" />
+		<description>
+			<p>Your spellcasting ability for your chosen Wizard cantrips is Wisdom.</p>
+		</description>
+		<sheet alt="Arcane Warrior">
+			<description>You can cast this feat's cantrips using Wisdom as your spellcasting ability. When you gain a level, you can replace one of these cantrips with another Wizard cantrip.</description>
+		</sheet>
+	</element>
+	<element name="Charisma" type="Feat Feature" source="Arcana Unleashed" id="ID_WOTC_AU_FEAT_ARCANE_WARRIOR_CHARISMA">
+		<compendium display="false" />
+		<description>
+			<p>Your spellcasting ability for your chosen Wizard cantrips is Charisma.</p>
+		</description>
+		<sheet alt="Arcane Warrior">
+			<description>You can cast this feat's cantrips using Charisma as your spellcasting ability. When you gain a level, you can replace one of these cantrips with another Wizard cantrip.</description>
+		</sheet>
+	</element>
+
+</elements>

@@ -1,0 +1,287 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<elements>
+	<info>
+		<name>Weapons</name>
+		<description>Weapons from Arcana Unleashed</description>
+		<update version="0.0.1">
+			<file name="items-weapons.xml" url="https://raw.githubusercontent.com/AuroraLegacy/elements/master/supplements/arcana-unleashed/items/items-weapons.xml" />
+		</update>
+	</info>
+
+	<element name="Blade of the Guardian (Studious)" type="Magic Item" source="Arcana Unleashed" id="ID_WOTC_AU_MAGIC_ITEM_BLADE_OF_THE_GUARDIAN_STUDIOUS">
+		<description>
+			<p class="flavor">This is an example of a complex Evolving Item. See the Complex Evolving Magic Items rule in the Compendium for more information.</p>
+			<p>As long as this weapon is within your reach and you are attuned to it, you and allies within 30 feet of you gain the following benefits.</p>
+			<p class="indent"><b><i>Alarm.</i></b> The weapon magically awakens each subject who is sleeping naturally when combat begins. This benefit doesn't wake a subject from magically induced sleep.</p>
+			<p class="indent"><b><i>Supernatural Readiness.</i></b> Each subject has Advantage on its Initiative rolls.</p>
+			<p class="indent"><b><i>Studious.</i></b> When you fail an ability check made as part of the Study action while holding or wearing this item, you can roll 1d6 and add the number rolled to the check, potentially turning the failure into a success. This property can be used three times, and the item regains expended uses of this property daily at dawn.</p>
+		</description>
+		<setters>
+			<set name="category">Magic Weapons</set>
+			<set name="type" addition="Greatsword">Weapon</set>
+			<set name="weapon">Greatsword</set>
+			<set name="rarity">Rare</set>
+			<set name="attunement">true</set>
+			<set name="cost" currency="gp">4050</set>
+		</setters>
+		<rules>
+			<grant type="Grants" id="ID_INTERNAL_GRANTS_INITIATIVE_ADVANTAGE" />
+		</rules>
+	</element>
+	<element name="Blade of the Guardian (Resistant)" type="Magic Item" source="Arcana Unleashed" id="ID_WOTC_AU_MAGIC_ITEM_BLADE_OF_THE_GUARDIAN_RESISTANT">
+		<description>
+			<p class="flavor">This is an example of a complex Evolving Item. See the Complex Evolving Magic Items rule in the Compendium for more information.</p>
+			<p>As long as this weapon is within your reach and you are attuned to it, you and allies within 30 feet of you gain the following benefits.</p>
+			<p class="indent"><b><i>Alarm.</i></b> The weapon magically awakens each subject who is sleeping naturally when combat begins. This benefit doesn't wake a subject from magically induced sleep.</p>
+			<p class="indent"><b><i>Supernatural Readiness.</i></b> Each subject has Advantage on its Initiative rolls.</p>
+			<p class="indent"><b><i>Studious.</i></b> When you fail an ability check made as part of the Study action while holding or wearing this item, you can roll 1d6 and add the number rolled to the check, potentially turning the failure into a success. This property can be used three times, and the item regains expended uses of this property daily at dawn.</p>
+			<p class="indent"><b><i>Resistant.</i></b> While attuned to this item, you have Resistance to Fire damage.</p>
+		</description>
+		<setters>
+			<set name="category">Magic Weapons</set>
+			<set name="type" addition="Greatsword">Weapon</set>
+			<set name="weapon">Greatsword</set>
+			<set name="rarity">Very Rare</set>
+			<set name="attunement">true</set>
+			<set name="cost" currency="gp">40050</set>
+		</setters>
+		<rules>
+			<grant type="Grants" id="ID_INTERNAL_GRANTS_INITIATIVE_ADVANTAGE" />
+			<grant type="Condition" id="ID_INTERNAL_CONDITION_DAMAGE_RESISTANCE_FIRE" />
+		</rules>
+	</element>
+	<element name="Blade of the Guardian (All-Seeing)" type="Magic Item" source="Arcana Unleashed" id="ID_WOTC_AU_MAGIC_ITEM_BLADE_OF_THE_GUARDIAN_ALL_SEEING">
+		<description>
+			<p class="flavor">This is an example of a complex Evolving Item. See the Complex Evolving Magic Items rule in the Compendium for more information.</p>
+			<p>As long as this weapon is within your reach and you are attuned to it, you and allies within 30 feet of you gain the following benefits.</p>
+			<p class="indent"><b><i>Alarm.</i></b> The weapon magically awakens each subject who is sleeping naturally when combat begins. This benefit doesn't wake a subject from magically induced sleep.</p>
+			<p class="indent"><b><i>Supernatural Readiness.</i></b> Each subject has Advantage on its Initiative rolls.</p>
+			<p class="indent"><b><i>Studious.</i></b> When you fail an ability check made as part of the Study action while holding or wearing this item, you can roll 1d6 and add the number rolled to the check, potentially turning the failure into a success. This property can be used three times, and the item regains expended uses of this property daily at dawn.</p>
+			<p class="indent"><b><i>Resistant.</i></b> While attuned to this item, you have Resistance to Fire damage.</p>
+			<p class="indent"><b><i>All-Seeing.</i></b> While attuned to this item, you have Truesight with a range of 30 feet.</p>
+		</description>
+		<setters>
+			<set name="category">Magic Weapons</set>
+			<set name="type" addition="Greatsword">Weapon</set>
+			<set name="weapon">Greatsword</set>
+			<set name="rarity">Very Rare</set>
+			<set name="attunement">true</set>
+			<set name="cost" currency="gp">40050</set>
+		</setters>
+		<rules>
+			<grant type="Grants" id="ID_INTERNAL_GRANTS_INITIATIVE_ADVANTAGE" />
+			<grant type="Condition" id="ID_INTERNAL_CONDITION_DAMAGE_RESISTANCE_FIRE" />
+			<grant type="Vision" id="ID_VISION_TRUESIGHT" />
+			<stat name="truesight:range" value="30" bonus="base" />
+		</rules>
+	</element>
+
+	<element name="Dispelling Ammunition" type="Magic Item" source="Arcana Unleashed" id="ID_WOTC_AU_MAGIC_ITEM_AMMUNITION_DISPELLING">
+		<description>
+			<p>When a target takes damage from this magical piece of ammunition, any ongoing spell of level 3 or lower on the target ends. Once it deals damage to a target, the ammunition is no longer magical.</p>
+		</description>
+		<setters>
+			<set name="keywords">arrow, bolt, bullet, dispel</set>
+			<set name="category">Ammunition</set>
+			<set name="type" addition="Any Ammunition">Weapon</set>
+			<set name="rarity">Uncommon</set>
+			<set name="cost" currency="gp">400</set>
+			<set name="name-format">Dispelling {{parent}}</set>
+			<set name="stackable">true</set>
+		</setters>
+	</element>
+
+	<element name="Goading Ammunition" type="Magic Item" source="Arcana Unleashed" id="ID_WOTC_AU_MAGIC_ITEM_AMMUNITION_GOADING">
+		<description>
+			<p>If this piece of magic ammunition hits a creature and deals damage, the target makes a DC 13 Charisma saving throw. On a failed save, the target can't take Reactions until the start of its next turn, as it sputters and rages impotently. Once it hits a target, the ammunition is no longer magical.</p>
+		</description>
+		<setters>
+			<set name="keywords">arrow, bolt, bullet, charisma, save, reactions</set>
+			<set name="category">Ammunition</set>
+			<set name="type" addition="Any Ammunition">Weapon</set>
+			<set name="rarity">Uncommon</set>
+			<set name="cost" currency="gp">400</set>
+			<set name="name-format">Goading {{parent}}</set>
+			<set name="stackable">true</set>
+		</setters>
+	</element>
+
+	<element name="Grave Reaper" type="Magic Item" source="Arcana Unleashed" id="ID_WOTC_AU_MAGIC_ITEM_GRAVE_REAPER">
+		<description>
+			<p>You gain a +2 bonus to attack rolls and damage rolls made with this magic weapon. When you hit a creature with it, the target takes an extra 2d8 Necrotic damage.</p>
+			<p class="indent"><b><i>Soul Lantern.</i></b> While holding this weapon, you can cast the <i>Spirit Lantern</i> spell. When you cast the spell using the weapon, the conjured lantern can hold up to five soul fragments, and the spell's save DC is 17.</p>
+			<p class="indent">Once the weapon has been used to cast the spell, it can't be used to cast it again until the next dawn.</p>
+			<div class="reference">
+				<div element="ID_WOTC_AU_SPELL_SPIRIT_LANTERN" />
+			</div>
+		</description>
+		<setters>
+			<set name="keywords">enhancement, necrotic, spirit lantern</set>
+			<set name="category">Magic Weapons</set>
+			<set name="type" addition="Sickle">Weapon</set>
+			<set name="weapon">Sickle</set>
+			<set name="rarity">Legendary</set>
+			<set name="attunement">true</set>
+			<set name="enhancement">2</set>
+			<set name="cost" currency="gp">200001</set>
+		</setters>
+	</element>
+
+	<element name="Keyholes Dagger (Three)" type="Magic Item" source="Arcana Unleashed" id="ID_WOTC_AU_MAGIC_ITEM_KEYHOLES_DAGGER_THREE">
+		<description>
+			<p>The hilt of this magic weapon is adorned with ornate, decorative keyholes outlined in golden filigree.</p>
+			<p><b><i>Three.</i></b> Three ornamental keyholes adorn the weapon's hilt.</p>
+			<p class="indent">You have a +1 bonus to attack rolls and damage rolls made with this magic weapon. When you take the Attack action, you can transform this weapon into a Handaxe or Mace. It remains transformed in this way until the start of your next turn, at which point it reverts back to its Dagger form. Regardless of the weapon's form, you can use your choice of your Strength or Dexterity modifier for the attack and damage rolls; you must use the same modifier for both rolls.</p>
+		</description>
+		<setters>
+			<set name="keywords">enhancement, attack action, transform, handaxe, mace</set>
+			<set name="category">Magic Weapons</set>
+			<set name="type" addition="Dagger">Weapon</set>
+			<set name="weapon">Dagger</set>
+			<set name="rarity">Uncommon</set>
+			<set name="attunement">true</set>
+			<set name="enhancement">1</set>
+			<set name="cost" currency="gp">402</set>
+		</setters>
+	</element>
+	<element name="Keyholes Dagger (Ten)" type="Magic Item" source="Arcana Unleashed" id="ID_WOTC_AU_MAGIC_ITEM_KEYHOLES_DAGGER_TEN">
+		<description>
+			<p>The hilt of this magic weapon is adorned with ornate, decorative keyholes outlined in golden filigree.</p>
+			<p><b><i>Three.</i></b> Three ornamental keyholes adorn the weapon's hilt.</p>
+			<p class="indent">You have a +1 bonus to attack rolls and damage rolls made with this magic weapon. When you take the Attack action, you can transform this weapon into a Handaxe or Mace. It remains transformed in this way until the start of your next turn, at which point it reverts back to its Dagger form. Regardless of the weapon's form, you can use your choice of your Strength or Dexterity modifier for the attack and damage rolls; you must use the same modifier for both rolls.</p>
+			<p><b><i>Ten.</i></b> Ten ornamental keyholes adorn the weapon's hilt. Your bonus to attack rolls and damage rolls made with this magic weapon increases to +2. Additionally, when you transform the weapon, you can now transform it into any Simple Melee weapon.</p>
+			</description>
+		<setters>
+			<set name="keywords">enhancement, attack action, transform, simple melee weapon</set>
+			<set name="category">Magic Weapons</set>
+			<set name="type" addition="Dagger">Weapon</set>
+			<set name="weapon">Dagger</set>
+			<set name="rarity">Rare</set>
+			<set name="attunement">true</set>
+			<set name="enhancement">2</set>
+			<set name="cost" currency="gp">4002</set>
+		</setters>
+	</element>
+	<element name="Keyholes Dagger (Many)" type="Magic Item" source="Arcana Unleashed" id="ID_WOTC_AU_MAGIC_ITEM_KEYHOLES_DAGGER_MANY">
+		<description>
+			<p>The hilt of this magic weapon is adorned with ornate, decorative keyholes outlined in golden filigree.</p>
+			<p><b><i>Three.</i></b> Three ornamental keyholes adorn the weapon's hilt.</p>
+			<p class="indent">You have a +1 bonus to attack rolls and damage rolls made with this magic weapon. When you take the Attack action, you can transform this weapon into a Handaxe or Mace. It remains transformed in this way until the start of your next turn, at which point it reverts back to its Dagger form. Regardless of the weapon's form, you can use your choice of your Strength or Dexterity modifier for the attack and damage rolls; you must use the same modifier for both rolls.</p>
+			<p><b><i>Ten.</i></b> Ten ornamental keyholes adorn the weapon's hilt. Your bonus to attack rolls and damage rolls made with this magic weapon increases to +2. Additionally, when you transform the weapon, you can now transform it into any Simple Melee weapon.</p>
+			<p><b><i>Many.</i></b> Overlapping ornamental keyholes adorn the weapon's hilt in a dizzying pattern. Your bonus to attack rolls and damage rolls made with this magic weapon increases to +3. When you transform the weapon, you can now also transform it into a Battleaxe, Longsword, Rapier, Scimitar, or Warhammer.</p>
+			<p class="indent">Additionally, when you miss with an attack roll using this weapon, you can reroll the attack, potentially turning the miss into a hit. You must use the second roll. Once used, this property can't be used again until the next dawn.</p>
+			</description>
+		<setters>
+			<set name="keywords">enhancement, attack action, transform, simple melee weapon, battleaxe, longsword, rapier, scimitar, warhammer, reroll</set>
+			<set name="category">Magic Weapons</set>
+			<set name="type" addition="Dagger">Weapon</set>
+			<set name="weapon">Dagger</set>
+			<set name="rarity">Very Rare</set>
+			<set name="attunement">true</set>
+			<set name="enhancement">3</set>
+			<set name="cost" currency="gp">40002</set>
+		</setters>
+	</element>
+
+	<element name="Mage Breaker" type="Magic Item" source="Arcana Unleashed" id="ID_WOTC_AU_MAGIC_ITEM_MAGE_BREAKER">
+		<description>
+			<p>You gain a +1 bonus to attack rolls and damage rolls made with this magic weapon.</p>
+			<p class="indent">When you hit a Concentrating creature with an attack roll using this weapon and deal damage, the creature has Disadvantage on the saving throw it makes to maintain Concentration.</p>
+		</description>
+		<setters>
+			<set name="keywords">enhancement, concentration, concentrating, disadvantage</set>
+			<set name="category">Magic Weapons</set>
+			<set name="type" addition="Dagger">Weapon</set>
+			<set name="weapon">Dagger</set>
+			<set name="rarity">Rare</set>
+			<set name="enhancement">1</set>
+			<set name="cost" currency="gp">4002</set>
+		</setters>
+	</element>
+
+	<element name="Namer's Needle" type="Magic Item" source="Arcana Unleashed" id="ID_WOTC_AU_MAGIC_ITEM_NAMERS_NEEDLE">
+		<description>
+			<p>You gain a +1 bonus to attack rolls and damage rolls made with this magic weapon.</p>
+			<p class="indent"><b><i>Identify Target.</i></b> When you hit a creature with an attack roll using this weapon, you can compel the target to reveal its identity. The target makes a DC 15 Wisdom saving throw. On a failed save, the target says or signs its name clearly and emphatically. On a successful save, the target is immune to this effect for the next 24 hours. If the creature can't speak or sign a language, it automatically succeeds on the save.</p>
+			<p class="indent"><b><i>Named Target.</i></b> When you hit a creature with an attack roll using this weapon, you can say or sign the target's name clearly and emphatically to turn the hit into a Critical Hit. Once this property is used, it can't be used again until the next dawn.</p>
+		</description>
+		<setters>
+			<set name="keywords">enhancement, wisdom, save, name, critical hit</set>
+			<set name="category">Magic Weapons</set>
+			<set name="type" addition="Dagger">Weapon</set>
+			<set name="weapon">Dagger</set>
+			<set name="rarity">Rare</set>
+			<set name="enhancement">1</set>
+			<set name="cost" currency="gp">4002</set>
+		</setters>
+	</element>
+
+	<element name="Wave-Swept Weapon (Barnacled)" type="Magic Item" source="Arcana Unleashed" id="ID_WOTC_AU_MAGIC_ITEM_WAVE_SWEPT_WEAPON_BARNACLED">
+		<description>
+			<p>This weapon is covered in oceanic motifs, from wavelike etchings on its blade to stylized sea monsters embroidered onto its leather hilt.</p>
+			<p><b><i>Barnacled.</i></b> Barnacles dot this blade's guard and the flat sides of its etched blade.</p>
+			<p class="indent">You have a +1 bonus to attack rolls and damage rolls made with this magic weapon. While holding this weapon, you can take a Magic action to touch up to a gallon of liquid and infuse it with brine, turning fresh water into saltwater, for instance.</p>
+		</description>
+		<setters>
+			<set name="keywords">enhancement, magic action</set>
+			<set name="category">Magic Weapons</set>
+			<set name="type" addition="Any Greatsword, Longsword, Rapier, Scimitar, or Shortsword">Weapon</set>
+			<set name="weapon">Greatsword||Longsword||Rapier||Scimitar||Shortsword</set>
+			<set name="name-format">Wave-Swept {{parent}} (Barnacled)</set>
+			<set name="rarity">Uncommon</set>
+			<set name="attunement">true</set>
+			<set name="enhancement">1</set>
+			<set name="cost" currency="gp">400</set>
+		</setters>
+	</element>
+	<element name="Wave-Swept Weapon (Aquatic)" type="Magic Item" source="Arcana Unleashed" id="ID_WOTC_AU_MAGIC_ITEM_WAVE_SWEPT_WEAPON_AQUATIC">
+		<description>
+			<p>This weapon is covered in oceanic motifs, from wavelike etchings on its blade to stylized sea monsters embroidered onto its leather hilt.</p>
+			<p><b><i>Barnacled.</i></b> Barnacles dot this blade's guard and the flat sides of its etched blade.</p>
+			<p class="indent">You have a +1 bonus to attack rolls and damage rolls made with this magic weapon. While holding this weapon, you can take a Magic action to touch up to a gallon of liquid and infuse it with brine, turning fresh water into saltwater, for instance.</p>
+			<p><b><i>Aquatic.</i></b> The wavelike etchings on this weapon's blade glow with light, shedding Bright Light in a 5-foot radius and Dim Light for an additional 5 feet.</p>
+			<p class="indent">Your bonus to attack rolls and damage rolls made with this magic weapon increases to +2. While you hold the weapon, you can breathe underwater, and you have a Swim Speed of 30 feet.</p>
+		</description>
+		<setters>
+			<set name="keywords">enhancement, magic action, bright light, dim light, water breathing, swim speed</set>
+			<set name="category">Magic Weapons</set>
+			<set name="type" addition="Any Greatsword, Longsword, Rapier, Scimitar, or Shortsword">Weapon</set>
+			<set name="weapon">Greatsword||Longsword||Rapier||Scimitar||Shortsword</set>
+			<set name="name-format">Wave-Swept {{parent}} (Aquatic)</set>
+			<set name="rarity">Rare</set>
+			<set name="attunement">true</set>
+			<set name="enhancement">2</set>
+			<set name="cost" currency="gp">4000</set>
+		</setters>
+		<rules>
+			<stat name="speed:swim" value="30" bonus="base" />
+		</rules>
+	</element>
+	<element name="Wave-Swept Weapon (Ascendant)" type="Magic Item" source="Arcana Unleashed" id="ID_WOTC_AU_MAGIC_ITEM_WAVE_SWEPT_WEAPON_ASCENDANT">
+		<description>
+			<p>This weapon is covered in oceanic motifs, from wavelike etchings on its blade to stylized sea monsters embroidered onto its leather hilt.</p>
+			<p><b><i>Barnacled.</i></b> Barnacles dot this blade's guard and the flat sides of its etched blade.</p>
+			<p class="indent">You have a +1 bonus to attack rolls and damage rolls made with this magic weapon. While holding this weapon, you can take a Magic action to touch up to a gallon of liquid and infuse it with brine, turning fresh water into saltwater, for instance.</p>
+			<p><b><i>Aquatic.</i></b> The wavelike etchings on this weapon's blade glow with light, shedding Bright Light in a 5-foot radius and Dim Light for an additional 5 feet.</p>
+			<p class="indent">Your bonus to attack rolls and damage rolls made with this magic weapon increases to +2. While you hold the weapon, you can breathe underwater, and you have a Swim Speed of 30 feet.</p>
+			<p><b><i>Ascendant.</i></b> The sea monsters embroidered on this weapon's hilt are studded with chips of colorful gemstones.</p>
+			<p class="indent">Your bonus to attack rolls and damage rolls made with this magic weapon increases to +3. While you hold this weapon, you have a Fly Speed of 30 feet; when you use this Fly Speed, a salty sea breeze carries you through the air.</p>
+		</description>
+		<setters>
+			<set name="keywords">enhancement, magic action, bright light, dim light, water breathing, swim speed, fly speed</set>
+			<set name="category">Magic Weapons</set>
+			<set name="type" addition="Any Greatsword, Longsword, Rapier, Scimitar, or Shortsword">Weapon</set>
+			<set name="weapon">Greatsword||Longsword||Rapier||Scimitar||Shortsword</set>
+			<set name="name-format">Wave-Swept {{parent}} (Ascendant)</set>
+			<set name="rarity">Very Rare</set>
+			<set name="attunement">true</set>
+			<set name="enhancement">3</set>
+			<set name="cost" currency="gp">40000</set>
+		</setters>
+		<rules>
+			<stat name="speed:swim" value="30" bonus="base" />
+			<stat name="speed:fly" value="30" bonus="base" />
+		</rules>
+	</element>
+
+</elements>
