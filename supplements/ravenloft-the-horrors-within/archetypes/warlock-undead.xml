@@ -1,0 +1,196 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<elements>
+	<info>
+		<name>Undead Patron</name>
+		<description>The Undead Patron subclass from Ravenloft: The Horrors Within</description>
+		<author url="https://dndstore.wizards.com/us/en/product/1001494/2024-player-s-handbook-digital-plus-physical-bundle">Wizards of the Coast</author>
+		<update version="0.0.1">
+			<file name="warlock-undead.xml" url="https://raw.githubusercontent.com/AuroraLegacy/elements/master/supplements/ravenloft-the-horrors-within/archetypes/warlock-undead.xml" />
+		</update>
+	</info>
+
+	<element name="Undead Patron" type="Archetype" source="Ravenloft: The Horrors Within" id="ID_WOTC_RHW_ARCHETYPE_WARLOCK_UNDEAD_PATRON">
+		<supports>Warlock Subclass</supports>
+		<description>
+			<p class="flavor">Defy Death for Profane Power</p>
+			<p>You've made a pact with a creature that defies the cycle of life and death: a powerful lich, a vampire, or another entity of undeath. Having once been mortal, these ancient patrons know firsthand the paths of ambition and the routes past the doors of death. They eagerly share this profane knowledge and other secrets with those who work their will among the living.</p>
+			<div element="ID_WOTC_RHW_ARCHETYPE_FEATURE_WARLOCK_UNDEAD_PATRON_FORM_OF_DREAD" />
+			<div element="ID_WOTC_RHW_ARCHETYPE_FEATURE_WARLOCK_UNDEAD_PATRON_UNDEAD_SPELLS" />
+			<div element="ID_WOTC_RHW_ARCHETYPE_FEATURE_WARLOCK_UNDEAD_PATRON_GRAVE_TOUCHED" />
+			<div element="ID_WOTC_RHW_ARCHETYPE_FEATURE_WARLOCK_UNDEAD_PATRON_NECROTIC_HUSK" />
+			<div element="ID_WOTC_RHW_ARCHETYPE_FEATURE_WARLOCK_UNDEAD_PATRON_SUPERIOR_DREAD" />
+		</description>
+		<sheet display="false" />
+		<rules>
+			<grant type="Archetype Feature" id="ID_WOTC_RHW_ARCHETYPE_FEATURE_WARLOCK_UNDEAD_PATRON_FORM_OF_DREAD" level="3" />
+			<grant type="Archetype Feature" id="ID_WOTC_RHW_ARCHETYPE_FEATURE_WARLOCK_UNDEAD_PATRON_UNDEAD_SPELLS" level="3" />
+			<grant type="Archetype Feature" id="ID_WOTC_RHW_ARCHETYPE_FEATURE_WARLOCK_UNDEAD_PATRON_GRAVE_TOUCHED" level="6" />
+			<grant type="Archetype Feature" id="ID_WOTC_RHW_ARCHETYPE_FEATURE_WARLOCK_UNDEAD_PATRON_NECROTIC_HUSK" level="10" />
+			<grant type="Archetype Feature" id="ID_WOTC_RHW_ARCHETYPE_FEATURE_WARLOCK_UNDEAD_PATRON_SUPERIOR_DREAD" level="14" />
+		</rules>
+	</element>
+
+	<element name="Level 3: Form of Dread" type="Archetype Feature" source="Ravenloft: The Horrors Within" id="ID_WOTC_RHW_ARCHETYPE_FEATURE_WARLOCK_UNDEAD_PATRON_FORM_OF_DREAD">
+		<requirements>!ID_INTERNAL_RHW_FEATURE_REPLACEMENT_WARLOCK_UNDEAD_PATRON_FORM_OF_DREAD</requirements>
+		<description>
+			<p>As a Bonus Action, you transform into an avatar of your patron's dreadful power, gaining the benefits below for 1 minute, until you have the Incapacitated condition, or until you end the form (no action required). You can transform a number of times equal to your Charisma modifier (minimum of once), and you regain all expended uses when you finish a Long Rest.</p>
+			<p class="indent"><b><i>Facsimile of Life.</i></b> You gain Temporary Hit Points equal to 1d10 plus your Warlock level.</p>
+			<p class="indent"><b><i>Fearless Form.</i></b> You have Immunity to the Frightened condition. If you are Frightened when you transform, the condition immediately ends for you.</p>
+			<p class="indent"><b><i>Frightful Avatar.</i></b> Once per turn, when you hit a creature with an attack roll, you can force it to make a Wisdom saving throw against your spell save DC. On a failed save, the target has the Frightened condition until the end of your next turn.</p>
+		</description>
+		<sheet alt="Form of Dread" action="Bonus Action" usage="{{form of dread:uses}}/Long Rest">
+			<description>You transform into an avatar of your patron's dreadful power for 1 minute or until you have the Incapacitated condition, or end the form (no action required). When you transform you immediately gain 1d10 + {{level:warlock}} THPs, and for the duration you have Immunity to the Frightened condition and the following ability:</description>
+			<description level="6">You transform into an avatar of your patron's dreadful power for 1 minute or until you have the Incapacitated condition, or end the form (no action required). When you transform you immediately gain 1d10 + {{level:warlock}} THPs, and for the duration you have Immunity to the Frightened condition and the following abilities:</description>
+			<description level="10">You transform into an avatar of your patron's dreadful power for 1 minute or until you have the Incapacitated condition, or end the form (no action required). When you transform you immediately gain 1d10 + {{level:warlock}} THPs, and for the duration you have Immunity to Necrotic damage and the Frightened condition, and the following abilities:</description>
+			<description level="14">You transform into an avatar of your patron's dreadful power for 1 minute or until you have the Incapacitated condition, or end the form (no action required). When you transform you immediately gain 1d10 + {{level:warlock}} THPs, and for the duration you have Resistance to Bludgeoning, Piercing, and Slashing damage, Immunity to Necrotic damage and the Frightened condition, and the following abilities:</description>
+		</sheet>
+		<rules>
+			<stat name="form of dread:uses" value="1" bonus="ability" />
+			<stat name="form of dread:uses" value="charisma:modifier" bonus="ability" />
+
+			<select type="Archetype Feature" name="Frightful Avatar" supports="RHW Frightful Avatar" default="ID_WOTC_RHW_ARCHETYPE_FEATURE_WARLOCK_UNDEAD_PATRON_FORM_OF_DREAD_FRIGHTFUL_AVATAR" />
+			<select type="Archetype Feature" name="Dreaded Necrosis" supports="RHW Dreaded Necrosis" default="ID_WOTC_RHW_ARCHETYPE_FEATURE_WARLOCK_UNDEAD_PATRON_GRAVE_TOUCHED_DREADED_NECROSIS" level="6" />
+			<select type="Archetype Feature" name="Ghostly Flight" supports="RHW Ghostly Flight" default="ID_WOTC_RHW_ARCHETYPE_FEATURE_WARLOCK_UNDEAD_PATRON_SUPERIOR_DREAD_GHOSTLY_FLIGHT" level="14" />
+			<select type="Archetype Feature" name="Profane Casting" supports="RHW Profane Casting" default="ID_WOTC_RHW_ARCHETYPE_FEATURE_WARLOCK_UNDEAD_PATRON_SUPERIOR_DREAD_PROFANE_CASTING" level="14" />
+		</rules>
+	</element>
+	<element name="Frightful Avatar" type="Archetype Feature" source="Ravenloft: The Horrors Within" id="ID_WOTC_RHW_ARCHETYPE_FEATURE_WARLOCK_UNDEAD_PATRON_FORM_OF_DREAD_FRIGHTFUL_AVATAR">
+		<compendium display="false"/>
+		<requirements>ID_WOTC_RHW_ARCHETYPE_FEATURE_WARLOCK_UNDEAD_PATRON_FORM_OF_DREAD</requirements>
+		<supports>RHW Frightful Avatar</supports>
+		<description>
+			<p>Once per turn, when you hit a creature with an attack roll, you can force it to make a Wisdom saving throw against your spell save DC. On a failed save, the target has the Frightened condition until the end of your next turn.</p>
+		</description>
+		<sheet usage="1/Turn" >
+			<description>When you hit a creature with an attack roll, you can force it to make a Wisdom saving throw. On a failed save, the target has the Frightened condition until the end of your next turn.</description>
+		</sheet>
+	</element>
+
+	<element name="Level 3: Undead Spells" type="Archetype Feature" source="Ravenloft: The Horrors Within" id="ID_WOTC_RHW_ARCHETYPE_FEATURE_WARLOCK_UNDEAD_PATRON_UNDEAD_SPELLS">
+		<requirements>!ID_INTERNAL_RHW_FEATURE_REPLACEMENT_WARLOCK_UNDEAD_PATRON_UNDEAD_SPELLS</requirements>
+		<description>
+			<p>The magic of your patron ensures you always have certain spells ready; when you reach a Warlock level specified in the Undead Spells table, you thereafter always have the listed spells prepared.</p>
+			<h5>UNDEAD SPELLS</h5>
+			<table>
+				<thead>
+					<tr><td class="col-15" style="text-align:center">Warlock Level</td><td>Spells</td></tr>
+				</thead>
+				<tr><td style="text-align:center">3</td><td><em>Bane, Blindness/Deafness, Phantasmal Force, Ray of Sickness</em></td></tr>
+				<tr><td style="text-align:center">5</td><td><em>Speak with Dead, Summon Undead</em></td></tr>
+				<tr><td style="text-align:center">7</td><td><em>Greater Invisibility, Phantasmal Killer</em></td></tr>
+				<tr><td style="text-align:center">9</td><td><em>Antilife Shell, Cloudkill</em></td></tr>
+			</table>
+		</description>
+		<sheet display="false" />
+		<rules>
+			<grant type="Spell" id="ID_WOTC_PHB24_SPELL_BANE" spellcasting="Warlock" />
+			<grant type="Spell" id="ID_WOTC_PHB24_SPELL_RAY_OF_SICKNESS" spellcasting="Warlock" />
+			<grant type="Spell" id="ID_WOTC_PHB24_SPELL_BLINDNESS_DEAFNESS" spellcasting="Warlock" />
+			<grant type="Spell" id="ID_WOTC_PHB24_SPELL_PHANTASMAL_FORCE" spellcasting="Warlock" />
+			<grant type="Spell" id="ID_WOTC_PHB24_SPELL_SPEAK_WITH_DEAD" level="5" spellcasting="Warlock" />
+			<grant type="Spell" id="ID_WOTC_PHB24_SPELL_SUMMON_UNDEAD" level="5" spellcasting="Warlock" />
+			<grant type="Spell" id="ID_WOTC_PHB24_SPELL_GREATER_INVISIBILITY" level="7" spellcasting="Warlock" />
+			<grant type="Spell" id="ID_WOTC_PHB24_SPELL_PHANTASMAL_KILLER" level="7" spellcasting="Warlock" />
+			<grant type="Spell" id="ID_WOTC_PHB24_SPELL_ANTILIFE_SHELL" level="9" spellcasting="Warlock" />
+			<grant type="Spell" id="ID_WOTC_PHB24_SPELL_CLOUDKILL" level="9" spellcasting="Warlock" />
+		</rules>
+	</element>
+
+	<element name="Level 6: Grave Touched" type="Archetype Feature" source="Ravenloft: The Horrors Within" id="ID_WOTC_RHW_ARCHETYPE_FEATURE_WARLOCK_UNDEAD_PATRON_GRAVE_TOUCHED">
+		<requirements>!ID_INTERNAL_RHW_FEATURE_REPLACEMENT_WARLOCK_UNDEAD_PATRON_GRAVE_TOUCHED</requirements>
+		<description>
+			<p>Your patron's powers have a profound effect on your body and magic, granting you the following benefits.</p>
+			<p class="indent"><b><i>Arcane Necrosis.</i></b> Necrotic damage from your attacks, Warlock spells, and Warlock features ignores Resistance to Necrotic damage. Once per turn when you cast a spell that deals damage, you can change that spell's damage type to Necrotic.</p>
+			<p class="indent"><b><i>Dreaded Necrosis.</i></b> When you hit a creature with an attack roll and deal Necrotic damage while using your Form of Dread, you can roll one additional damage die when determining the Necrotic damage the target takes. You can use this benefit only once per turn.</p>
+			<p class="indent"><b><i>Undead Endurance.</i></b> You don't gain Exhaustion levels from dehydration, malnutrition, or suffocation. In addition, you don't need to sleep, and magic can't put you to sleep.</p>
+		</description>
+		<sheet alt="Grave Touched">
+			<description>Necrotic damage from your attacks, Warlock spells, and Warlock features ignores Resistance to Necrotic damage. Additionally, you don't gain Exhaustion levels from dehydration, malnutrition, or suffocation. You don't need to sleep, and magic can't put you to sleep.</description>
+		</sheet>
+		<rules>
+			<select type="Archetype Feature" name="Arcane Necrosis" supports="RHW Arcane Necrosis" default="ID_WOTC_RHW_ARCHETYPE_FEATURE_WARLOCK_UNDEAD_PATRON_GRAVE_TOUCHED_ARCANE_NECROSIS" />
+		</rules>
+	</element>
+	<element name="Arcane Necrosis" type="Archetype Feature" source="Ravenloft: The Horrors Within" id="ID_WOTC_RHW_ARCHETYPE_FEATURE_WARLOCK_UNDEAD_PATRON_GRAVE_TOUCHED_ARCANE_NECROSIS">
+		<compendium display="false"/>
+		<requirements>ID_WOTC_RHW_ARCHETYPE_FEATURE_WARLOCK_UNDEAD_PATRON_FORM_OF_DREAD,ID_WOTC_RHW_ARCHETYPE_FEATURE_WARLOCK_UNDEAD_PATRON_GRAVE_TOUCHED</requirements>
+		<supports>RHW Arcane Necrosis</supports>
+		<description>
+			<p>Once per turn when you cast a spell that deals damage, you can change that spell's damage type to Necrotic.</p>
+		</description>
+		<sheet usage="1/Turn" >
+			<description>When you cast a spell that deals damage, you can change its damage type to Necrotic.</description>
+		</sheet>
+	</element>
+	<element name="Dreaded Necrosis" type="Archetype Feature" source="Ravenloft: The Horrors Within" id="ID_WOTC_RHW_ARCHETYPE_FEATURE_WARLOCK_UNDEAD_PATRON_GRAVE_TOUCHED_DREADED_NECROSIS">
+		<compendium display="false"/>
+		<requirements>ID_WOTC_RHW_ARCHETYPE_FEATURE_WARLOCK_UNDEAD_PATRON_FORM_OF_DREAD,ID_WOTC_RHW_ARCHETYPE_FEATURE_WARLOCK_UNDEAD_PATRON_GRAVE_TOUCHED</requirements>
+		<supports>RHW Dreaded Necrosis</supports>
+		<description>
+			<p>When you hit a creature with an attack roll and deal Necrotic damage while using your Form of Dread, you can roll one additional damage die when determining the Necrotic damage the target takes. You can use this benefit only once per turn.</p>
+		</description>
+		<sheet usage="1/Turn" >
+			<description>When you hit a creature with an attack roll and deal Necrotic damage, you can roll one additional damage die when determining the Necrotic damage the target takes.</description>
+		</sheet>
+	</element>
+
+	<element name="Level 10: Necrotic Husk" type="Archetype Feature" source="Ravenloft: The Horrors Within" id="ID_WOTC_RHW_ARCHETYPE_FEATURE_WARLOCK_UNDEAD_PATRON_NECROTIC_HUSK">
+		<requirements>!ID_INTERNAL_RHW_FEATURE_REPLACEMENT_WARLOCK_UNDEAD_PATRON_NECROTIC_HUSK</requirements>
+		<description>
+			<p>Your connection to undeath saturates your body. You gain the following benefits.</p>
+			<p class="indent"><b><i>Necrotic Resilience.</i></b> You have Resistance to Necrotic damage. While using your Form of Dread, you have Immunity to Necrotic damage.</p>
+			<p class="indent"><b><i>Unholy Resuscitation.</i></b> If you drop to 0 Hit Points and don't die outright, you can cause your body to erupt with deathly energy. Each creature of your choice in a 30-foot Emanation originating from you makes a Constitution saving throw against your spell save DC, taking Necrotic damage equal to 2d10 plus your Charisma modifier on a failed save or half as much damage on a successful one. Your Hit Points then change to twice your Warlock level, and you gain 1 Exhaustion level.</p>
+			<p class="indent">Once you use this benefit, you can't use it again until you finish a Short or Long Rest.</p>
+		</description>
+		<sheet alt="Necrotic Husk" usage="1/Short Rest">
+			<description>If you drop to 0 HPs and don't die outright, you can cause your body to erupt with deathly energy. Each creature of your choice in a 30-foot Emanation originating from you makes a Constitution saving throw, taking 2d10 + {{charisma:modifier}} Necrotic damage on a failed save or half as much damage on a successful one. Your HPs then change to {{necrotic husk:unholy resuscitation:hp}}, and you gain 1 Exhaustion level.</description>
+		</sheet>
+		<rules>
+			<stat name="necrotic husk:unholy resuscitation:hp" value="level:warlock" />
+			<stat name="necrotic husk:unholy resuscitation:hp" value="level:warlock" />
+			
+			<grant type="Condition" id="ID_INTERNAL_CONDITION_DAMAGE_RESISTANCE_NECROTIC"/>
+		</rules>
+	</element>
+
+	<element name="Level 14: Superior Dread" type="Archetype Feature" source="Ravenloft: The Horrors Within" id="ID_WOTC_RHW_ARCHETYPE_FEATURE_WARLOCK_UNDEAD_PATRON_SUPERIOR_DREAD">
+		<requirements>!ID_INTERNAL_RHW_FEATURE_REPLACEMENT_WARLOCK_UNDEAD_PATRON_SUPERIOR_DREAD</requirements>
+		<description>
+			<p>Your Form of Dread improves, granting you the following benefits while you are using it.</p>
+			<p class="indent"><b><i>Dread Resistance.</i></b> You have Resistance to Bludgeoning, Piercing, and Slashing damage.</p>
+			<p class="indent"><b><i>Ghostly Flight.</i></b> You have a Fly Speed equal to your Speed and can hover. You can move through creatures and objects as if they were Difficult Terrain, but you take 1d10 Force damage if you end your turn inside a creature or an object.</p>
+			<p class="indent"><b><i>Profane Casting.</i></b> Whenever you cast a Warlock spell from the Conjuration or Necromancy school, you cast it without any Verbal, Somatic, or Material components, except Material components that are costly or consumed.</p>
+		</description>
+		<sheet display="false"/>
+	</element>
+	<element name="Ghostly Flight" type="Archetype Feature" source="Ravenloft: The Horrors Within" id="ID_WOTC_RHW_ARCHETYPE_FEATURE_WARLOCK_UNDEAD_PATRON_SUPERIOR_DREAD_GHOSTLY_FLIGHT">
+		<compendium display="false"/>
+		<requirements>ID_WOTC_RHW_ARCHETYPE_FEATURE_WARLOCK_UNDEAD_PATRON_FORM_OF_DREAD,ID_WOTC_RHW_ARCHETYPE_FEATURE_WARLOCK_UNDEAD_PATRON_SUPERIOR_DREAD</requirements>
+		<supports>RHW Ghostly Flight</supports>
+		<description>
+			<p>You have a Fly Speed equal to your Speed and can hover. You can move through creatures and objects as if they were Difficult Terrain, but you take 1d10 Force damage if you end your turn inside a creature or an object.</p>
+		</description>
+		<sheet >
+			<description>You have a Fly Speed of {{speed}}ft. and can hover. You can move through creatures and objects as if they were Difficult Terrain, but you take 1d10 Force damage if you end your turn inside a creature or an object.</description>
+		</sheet>
+	</element>
+	<element name="Profane Casting" type="Archetype Feature" source="Ravenloft: The Horrors Within" id="ID_WOTC_RHW_ARCHETYPE_FEATURE_WARLOCK_UNDEAD_PATRON_SUPERIOR_DREAD_PROFANE_CASTING">
+		<compendium display="false"/>
+		<requirements>ID_WOTC_RHW_ARCHETYPE_FEATURE_WARLOCK_UNDEAD_PATRON_FORM_OF_DREAD,ID_WOTC_RHW_ARCHETYPE_FEATURE_WARLOCK_UNDEAD_PATRON_SUPERIOR_DREAD</requirements>
+		<supports>RHW Profane Casting</supports>
+		<description>
+			<p>Whenever you cast a Warlock spell from the Conjuration or Necromancy school, you cast it without any Verbal, Somatic, or Material components, except Material components that are costly or consumed.</p>
+		</description>
+		<sheet >
+			<description>Whenever you cast a Warlock spell from the Conjuration or Necromancy school, you cast it without any Verbal, Somatic, or Material components, except Material components that are costly or consumed.</description>
+		</sheet>
+	</element>
+
+	<!--Feature Replacement Grants-->
+	<element name="Form of Dread Feature Replacement" type="Grants" source="Internal" id="ID_INTERNAL_RHW_FEATURE_REPLACEMENT_WARLOCK_UNDEAD_PATRON_FORM_OF_DREAD" />
+	<element name="Undead Spells Feature Replacement" type="Grants" source="Internal" id="ID_INTERNAL_RHW_FEATURE_REPLACEMENT_WARLOCK_UNDEAD_PATRON_UNDEAD_SPELLS" />
+	<element name="Grave Touched Feature Replacement" type="Grants" source="Internal" id="ID_INTERNAL_RHW_FEATURE_REPLACEMENT_WARLOCK_UNDEAD_PATRON_GRAVE_TOUCHED" />
+	<element name="Necrotic Husk Feature Replacement" type="Grants" source="Internal" id="ID_INTERNAL_RHW_FEATURE_REPLACEMENT_WARLOCK_UNDEAD_PATRON_NECROTIC_HUSK" />
+	<element name="Superior Dread Feature Replacement" type="Grants" source="Internal" id="ID_INTERNAL_RHW_FEATURE_REPLACEMENT_WARLOCK_UNDEAD_PATRON_SUPERIOR_DREAD" />
+
+</elements>

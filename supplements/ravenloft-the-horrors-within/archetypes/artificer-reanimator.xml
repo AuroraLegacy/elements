@@ -1,0 +1,352 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<elements>
+	<info>
+		<name>Reanimator</name>
+		<description>The Reanimator subclass from Ravenloft: The Horrors Within.</description>
+		<update version="0.0.1">
+			<file name="artificer-reanimator.xml" url="https://raw.githubusercontent.com/AuroraLegacy/elements/master/supplements/ravenloft-the-horrors-within/archetypes/artificer-reanimator.xml" />
+		</update>
+	</info>
+
+	<element name="Reanimator" type="Archetype" source="Ravenloft: The Horrors Within" id="ID_WOTC_RHW_ARCHETYPE_ARTIFICER_REANIMATOR">
+		<supports>Artificer Subclass</supports>
+		<description>
+			<p class="flavor">Reassemble Corpses and Raise the Dead</p>
+			<p>Reanimators defy the laws of nature in pursuit of gruesome experiments. These grim Artificers stitch together servants from disparate corpses, use foul magic to strengthen the living, and transform the art of necromancy into a terrifying science.</p>
+			<div element="ID_WOTC_RHW_ARCHETYPE_FEATURE_ARTIFICER_REANIMATOR_REANIMATOR_SPELLS" />
+			<div element="ID_WOTC_RHW_ARCHETYPE_FEATURE_ARTIFICER_REANIMATOR_REANIMATORS_SKILL_SET" />
+			<div element="ID_WOTC_RHW_ARCHETYPE_FEATURE_ARTIFICER_REANIMATOR_REANIMATED_COMPANION" />
+			<div class="reference">
+				<div element="ID_WOTC_RHW_INFORMATION_REANIMATED_COMPANION_STATBLOCK" />
+			</div>
+			<div element="ID_WOTC_RHW_ARCHETYPE_FEATURE_ARTIFICER_REANIMATOR_STRANGE_MODIFICATIONS" />
+			<div element="ID_WOTC_RHW_ARCHETYPE_FEATURE_ARTIFICER_REANIMATOR_IMPROVED_REANIMATION" />
+			<div element="ID_WOTC_RHW_ARCHETYPE_FEATURE_ARTIFICER_REANIMATOR_MACABRE_MODIFICATIONS" />
+			<div element="ID_WOTC_RHW_ARCHETYPE_FEATURE_ARTIFICER_REANIMATOR_REFINED_REANIMATION" />
+		</description>
+		<sheet display="false" />
+		<rules>
+			<grant type="Archetype Feature" id="ID_WOTC_RHW_ARCHETYPE_FEATURE_ARTIFICER_REANIMATOR_REANIMATOR_SPELLS" level="3" />
+			<grant type="Archetype Feature" id="ID_WOTC_RHW_ARCHETYPE_FEATURE_ARTIFICER_REANIMATOR_REANIMATORS_SKILL_SET" level="3" />
+			<grant type="Archetype Feature" id="ID_WOTC_RHW_ARCHETYPE_FEATURE_ARTIFICER_REANIMATOR_REANIMATED_COMPANION" level="3" />
+			<grant type="Archetype Feature" id="ID_WOTC_RHW_ARCHETYPE_FEATURE_ARTIFICER_REANIMATOR_STRANGE_MODIFICATIONS" level="5" />
+			<grant type="Archetype Feature" id="ID_WOTC_RHW_ARCHETYPE_FEATURE_ARTIFICER_REANIMATOR_IMPROVED_REANIMATION" level="9" />
+			<grant type="Archetype Feature" id="ID_WOTC_RHW_ARCHETYPE_FEATURE_ARTIFICER_REANIMATOR_MACABRE_MODIFICATIONS" level="9" />
+			<grant type="Archetype Feature" id="ID_WOTC_RHW_ARCHETYPE_FEATURE_ARTIFICER_REANIMATOR_REFINED_REANIMATION" level="15" />
+		</rules>
+	</element>
+	
+	<element name="Level 3: Reanimator Spells" type="Archetype Feature" source="Ravenloft: The Horrors Within" id="ID_WOTC_RHW_ARCHETYPE_FEATURE_ARTIFICER_REANIMATOR_REANIMATOR_SPELLS">
+		<requirements>!ID_INTERNAL_RHW_FEATURE_REPLACEMENT_ARTIFICER_REANIMATOR_REANIMATOR_SPELLS</requirements>
+		<description>
+			<p>When you reach an Artificer level specified in the Reanimator Spells table, you thereafter always have the listed spells prepared.</p>
+			<h5>REANIMATOR SPELLS</h5>
+			<table>
+				<thead>
+					<tr><td class="col-15" style="text-align:center">Artificer Level</td><td>Spells</td></tr>
+				</thead>
+				<tr><td style="text-align:center">3</td><td><i>False Life, Spare the Dying, Witch Bolt</i></td></tr>
+				<tr><td style="text-align:center">5</td><td><i>Blindness/Deafness, Enhance Ability</i></td></tr>
+				<tr><td style="text-align:center">9</td><td><i>Animate Dead, Lightning Bolt</i></td></tr>
+				<tr><td style="text-align:center">13</td><td><i>Blight, Death Ward</i></td></tr>
+				<tr><td style="text-align:center">17</td><td><i>Antilife Shell, Raise Dead</i></td></tr>
+			</table>
+		</description>
+		<sheet display="false" />
+		<rules>
+			<grant type="Spell" id="ID_WOTC_PHB24_SPELL_FALSE_LIFE" spellcasting="Artificer" level="3" prepared="true" />
+			<grant type="Spell" id="ID_WOTC_PHB24_SPELL_SPARE_THE_DYING" spellcasting="Artificer" level="3" prepared="true" />
+			<grant type="Spell" id="ID_WOTC_PHB24_SPELL_WITCH_BOLT" spellcasting="Artificer" level="3" prepared="true" />
+			<grant type="Spell" id="ID_WOTC_PHB24_SPELL_BLINDNESS_DEAFNESS" spellcasting="Artificer" level="5" prepared="true" />
+			<grant type="Spell" id="ID_WOTC_PHB24_SPELL_ENHANCE_ABILITY" spellcasting="Artificer" level="5" prepared="true" />
+			<grant type="Spell" id="ID_WOTC_PHB24_SPELL_ANIMATE_DEAD" spellcasting="Artificer" level="9" prepared="true" />
+			<grant type="Spell" id="ID_WOTC_PHB24_SPELL_LIGHTNING_BOLT" spellcasting="Artificer" level="9" prepared="true" />
+			<grant type="Spell" id="ID_WOTC_PHB24_SPELL_BLIGHT" spellcasting="Artificer" level="13" prepared="true" />
+			<grant type="Spell" id="ID_WOTC_PHB24_SPELL_DEATH_WARD" spellcasting="Artificer" level="13" prepared="true" />
+			<grant type="Spell" id="ID_WOTC_PHB24_SPELL_ANTILIFE_SHELL" spellcasting="Artificer" level="17" prepared="true" />
+			<grant type="Spell" id="ID_WOTC_PHB24_SPELL_RAISE_DEAD" spellcasting="Artificer" level="17" prepared="true" />
+		</rules>
+	</element>
+	<element name="Level 3: Reanimator's Skill Set" type="Archetype Feature" source="Ravenloft: The Horrors Within" id="ID_WOTC_RHW_ARCHETYPE_FEATURE_ARTIFICER_REANIMATOR_REANIMATORS_SKILL_SET">
+		<requirements>!ID_INTERNAL_RHW_FEATURE_REPLACEMENT_ARTIFICER_REANIMATOR_REANIMATORS_SKILL_SET</requirements>
+		<description>
+			<p>You gain the following benefits.</p>
+			<p class="indent"><b><i>Jolt to Life.</i></b> When you cast <i>Spare the Dying</i>, you can modify the spell so that it sends a jolt of electricity through the target, reviving it. The target regains a number of Hit Points equal to your Artificer level, and each creature of your choice in a 10-foot Emanation originating from the target makes a Dexterity saving throw against your spell save DC, taking 2d4 Lightning damage on a failed save or half as much damage on a successful one.</p>
+			<p class="indent">You can modify the spell this way a number of times equal to your Intelligence modifier, and you regain all expended uses when you finish a Long Rest. The Lightning damage of this feature increases by 1d4 when you reach Artificer levels 11 (3d4) and 17 (4d4).</p>
+			<p class="indent"><b><i>Reanimator's Tools.</i></b> You gain proficiency with Alchemist's Supplies. If you already have this proficiency, you gain proficiency with one other type of Artisan's Tools of your choice.</p>
+		</description>
+		<sheet alt="Reanimator's Skill Set" usage="{{intelligence:modifier}}/Long Rest">
+			<description>When you cast Spare the Dying, the target regains {{level:artificer}} HPs. Each creature of your choice in a 10ft Emanation originating from the target makes a Dexterity saving throw, taking {{reanimators skill set:damage}}d4 Lightning damage on a failed save, or half as much on a successful one.</description>
+		</sheet>
+		<rules>
+			<select type="Proficiency" name="Tool Proficiency (Reanimator)" supports="Artisan tools" default="ID_PROFICIENCY_TOOL_PROFICIENCY_ALCHEMISTS_SUPPLIES" />
+			<stat name="reanimators skill set:damage" value="2" bonus="base" />
+			<stat name="reanimators skill set:damage" value="3" bonus="base" level="11" />
+			<stat name="reanimators skill set:damage" value="4" bonus="base" level="17" />
+		</rules>
+	</element>
+	<element name="Level 3: Reanimated Companion" type="Archetype Feature" source="Ravenloft: The Horrors Within" id="ID_WOTC_RHW_ARCHETYPE_FEATURE_ARTIFICER_REANIMATOR_REANIMATED_COMPANION">
+		<requirements>!ID_INTERNAL_RHW_FEATURE_REPLACEMENT_ARTIFICER_REANIMATOR_REANIMATED_COMPANION</requirements>
+		<description>
+			<p>Using Tinker's Tools or another type of Artisan's Tools with which you have proficiency, you can take a Magic action to create a <b>Reanimated Companion</b> through the power of necromancy and science. The companion manifests in an unoccupied space within 5 feet of you. You determine the companion's appearance; your choices don't affect the companion's game statistics.</p>
+			<p class="indent">The companion is Friendly to you and your allies and obeys you. It lasts until you finish a Long Rest or until you take a Magic action to dismiss it early, at which point it harmlessly collapses into a pile of viscera. It immediately drops to 0 Hit Points and dies (triggering its Death Burst trait) if you die.</p>
+			<p class="indent">Once you create a companion, you can't do so again until you finish a Long Rest or expend a spell slot to create one. You can have only one companion at a time and can't create one while your companion is present.</p>
+			<p class="indent"><b><i>The Companion in Combat.</i></b> In combat, the companion acts during your turn. It can move and take its Reaction on its own, but the only action it takes is the Dodge action unless you take a Bonus Action to command it to take an action. If you have the Incapacitated condition, the companion acts on its own and isn't limited to the Dodge action.</p>
+			<div class="reference">
+				<div element="ID_WOTC_RHW_INFORMATION_REANIMATED_COMPANION_STATBLOCK" />
+			</div>
+		</description>
+		<sheet alt="Reanimated Companion" action="Action" usage="1/Long Rest">
+			<description>In combat, the companion acts during your turn. It can move and take its Reaction on its own, but the only action it takes is the Dodge action unless you take a Bonus Action to command it to take an action. If you have the Incapacitated condition, the defender acts on its own and isn’t limited to the Dodge action. &#13;
+			The companion lasts until you finish a Long Rest, until you take a Magic action to dismiss it, or you die. If you die, it immediately drops to 0 HPs and triggers its Death Burst trait. &#13;
+			While using an Artisan's Tool with which you have proficiency, you can expend a spell slot to create another companion, but can have only one companion at a time and cannot create one while you have a companion present.</description>
+		</sheet>
+		<rules>
+			<grant type="Companion" id="ID_WOTC_RHW_COMPANION_ARTIFICER_REANIMATOR_REANIMATED_COMPANION" />
+		</rules>
+	</element>
+
+	<element name="Level 5: Strange Modifications" type="Archetype Feature" source="Ravenloft: The Horrors Within" id="ID_WOTC_RHW_ARCHETYPE_FEATURE_ARTIFICER_REANIMATOR_STRANGE_MODIFICATIONS">
+		<requirements>!ID_INTERNAL_RHW_FEATURE_REPLACEMENT_ARTIFICER_REANIMATOR_STRANGE_MODIFICATIONS</requirements>
+		<description>
+			<p>Whenever you create a <b>Reanimated Companion</b>, it gains one of the following options of your choice; choose when you create the companion.</p>
+			<p class="indent"><b><i>Arcane Conduit.</i></b> You can cast spells as though you were in the companion's space, but you must use your own senses. Once per turn, when you cast an Artificer spell from the Evocation or Necromancy school and deal damage while your companion is within 120 feet of you, you can add your Intelligence modifier to one damage roll of that spell.</p>
+			<p class="indent"><b><i>Ferocity.</i></b> The damage die of the companion's Dreadful Swipe increases to 1d6.</p>
+		</description>
+		<sheet alt="Strange Modifications">
+			<description>When you create a Reanimated Companion, it gains one of the following options:</description>
+			<description level="9">When you create a Reanimated Companion, it gains two of the following options:</description>
+			<description level="15">When you create a Reanimated Companion, it gains three of the following options:</description>
+		</sheet>
+		<rules>
+			<select type="Archetype Feature" name="Arcane Conduit" supports="Reanimator Arcane Conduit" default="ID_WOTC_RHW_ARCHETYPE_FEATURE_ARTIFICER_REANIMATOR_STRANGE_MODIFICATIONS_ARCANE_CONDUIT" />
+			<select type="Archetype Feature" name="Ferocity" supports="Reanimator Ferocity" default="ID_WOTC_RHW_ARCHETYPE_FEATURE_ARTIFICER_REANIMATOR_STRANGE_MODIFICATIONS_FEROCITY" />
+			<select type="Archetype Feature" name="Bloated" supports="Reanimator Bloated" default="ID_WOTC_RHW_ARCHETYPE_FEATURE_ARTIFICER_REANIMATOR_MACABRE_MODIFICATIONS_BLOATED" level="9" />
+			<select type="Archetype Feature" name="Gaunt" supports="Reanimator Gaunt" default="ID_WOTC_RHW_ARCHETYPE_FEATURE_ARTIFICER_REANIMATOR_MACABRE_MODIFICATIONS_GAUNT" level="9" />
+			<select type="Archetype Feature" name="Moist" supports="Reanimator Moist" default="ID_WOTC_RHW_ARCHETYPE_FEATURE_ARTIFICER_REANIMATOR_MACABRE_MODIFICATIONS_MOIST" level="9" />
+		</rules>
+	</element>
+	<element name="Arcane Conduit" type="Archetype Feature" source="Ravenloft: The Horrors Within" id="ID_WOTC_RHW_ARCHETYPE_FEATURE_ARTIFICER_REANIMATOR_STRANGE_MODIFICATIONS_ARCANE_CONDUIT">
+		<compendium display="false"/>
+		<requirements>ID_WOTC_RHW_ARCHETYPE_FEATURE_ARTIFICER_REANIMATOR_STRANGE_MODIFICATIONS</requirements>
+		<supports>Reanimator Arcane Conduit</supports>
+		<description>
+			<p>You can cast spells as though you were in the companion's space, but you must use your own senses. Once per turn, when you cast an Artificer spell from the Evocation or Necromancy school and deal damage while your companion is within 120 feet of you, you can add your Intelligence modifier to one damage roll of that spell.</p>
+		</description>
+		<sheet alt="Arcane Conduit" usage="1/Turn">
+			<description>You can cast spells as though you were in the companion's space, using your own senses. When you cast a damage-dealing Evocation or Necromancy Artificer Spell while your companion is within 120ft. of you, you add +{{intelligence:modifier}} to one damage roll of the spell.</description>
+		</sheet>
+	</element>
+	<element name="Ferocity" type="Archetype Feature" source="Ravenloft: The Horrors Within" id="ID_WOTC_RHW_ARCHETYPE_FEATURE_ARTIFICER_REANIMATOR_STRANGE_MODIFICATIONS_FEROCITY">
+		<compendium display="false"/>
+		<requirements>ID_WOTC_RHW_ARCHETYPE_FEATURE_ARTIFICER_REANIMATOR_STRANGE_MODIFICATIONS</requirements>
+		<supports>Reanimator Ferocity</supports>
+		<description>
+			<p>The damage die of the companion's Dreadful Swipe increases to 1d6.</p>
+		</description>
+		<sheet alt="Ferocity">
+			<description>The damage die of the companion's Dreadful Swipe increases to 1d6.</description>
+		</sheet>
+	</element>
+
+	<element name="Level 9: Improved Reanimation" type="Archetype Feature" source="Ravenloft: The Horrors Within" id="ID_WOTC_RHW_ARCHETYPE_FEATURE_ARTIFICER_REANIMATOR_IMPROVED_REANIMATION">
+		<requirements>!ID_INTERNAL_RHW_FEATURE_REPLACEMENT_ARTIFICER_REANIMATOR_IMPROVED_REANIMATION</requirements>
+		<description>
+			<p>The damage of your <b>Reanimated Companion's</b> Death Burst increases to 4d4. Necrotic damage dealt by your companion ignores Resistance.</p>
+		</description>
+		<sheet alt="Improved Reanimation">
+			<description>The damage of your Reanimated Companion's Death Burst increases to 4d4. Necrotic damage dealt by your companion ignores Resistance.</description>
+		</sheet>
+	</element>
+	<element name="Level 9: Macabre Modifications" type="Archetype Feature" source="Ravenloft: The Horrors Within" id="ID_WOTC_RHW_ARCHETYPE_FEATURE_ARTIFICER_REANIMATOR_MACABRE_MODIFICATIONS">
+		<requirements>!ID_INTERNAL_RHW_FEATURE_REPLACEMENT_ARTIFICER_REANIMATOR_MACABRE_MODIFICATIONS</requirements>
+		<description>
+			<p>You experiment and alter your companion further. Whenever you create a <b>Reanimated Companion</b>, the companion now gains two options for Strange Modifications, instead of one. Additionally, when picking options for Strange Modifications, you can also choose from the following options.</p>
+			<p class="indent"><b><i>Bloated.</i></b> The companion becomes Large. Whenever it hits a Large or smaller creature with its Dreadful Swipe action, that creature is pushed up to 10 feet away from the companion. Additionally, you can add your Intelligence modifier to the damage dealt by the companion's Death Burst.</p>
+			<p class="indent"><b><i>Gaunt.</i></b> The companion's Speed increases to 45 feet, and it gains a Climb Speed equal to its Speed. It can climb difficult surfaces, including along ceilings, without needing to make an ability check. In addition, whenever a creature of your choice starts its turn within a 10-foot Emanation originating from your companion, the creature must succeed on a Wisdom saving throw against your spell save DC or have the Frightened condition until the start of its next turn.</p>
+			<p class="indent"><b><i>Moist.</i></b> The companion gains a Swim Speed equal to its Speed, and it can move through a space as narrow as 1 inch without expending extra movement to do so. In addition, whenever the companion is hit by an attack roll from a creature within 10 feet of itself, the attacker takes Acid damage equal to your Intelligence modifier.</p>
+		</description>
+		<sheet display="false"/>
+	</element>
+	<element name="Bloated" type="Archetype Feature" source="Ravenloft: The Horrors Within" id="ID_WOTC_RHW_ARCHETYPE_FEATURE_ARTIFICER_REANIMATOR_MACABRE_MODIFICATIONS_BLOATED">
+		<compendium display="false"/>
+		<requirements>ID_WOTC_RHW_ARCHETYPE_FEATURE_ARTIFICER_REANIMATOR_MACABRE_MODIFICATIONS</requirements>
+		<supports>Reanimator Bloated</supports>
+		<description>
+			<p>The companion becomes Large. Whenever it hits a Large or smaller creature with its Dreadful Swipe action, that creature is pushed up to 10 feet away from the companion. Additionally, you can add your Intelligence modifier to the damage dealt by the companion's Death Burst.</p>
+		</description>
+		<sheet alt="Bloated">
+			<description>The companion becomes Large. Whenever it hits a Large or smaller creature with its Dreadful Swipe action, that creature is pushed up to 10 feet away from the companion. Additionally, you add +{{intelligence:modifier}} to the damage dealt by the companion's Death Burst.</description>
+		</sheet>
+	</element>
+	<element name="Gaunt" type="Archetype Feature" source="Ravenloft: The Horrors Within" id="ID_WOTC_RHW_ARCHETYPE_FEATURE_ARTIFICER_REANIMATOR_MACABRE_MODIFICATIONS_GAUNT">
+		<compendium display="false"/>
+		<requirements>ID_WOTC_RHW_ARCHETYPE_FEATURE_ARTIFICER_REANIMATOR_MACABRE_MODIFICATIONS</requirements>
+		<supports>Reanimator Gaunt</supports>
+		<description>
+			<p>The companion's Speed increases to 45 feet, and it gains a Climb Speed equal to its Speed. It can climb difficult surfaces, including along ceilings, without needing to make an ability check. In addition, whenever a creature of your choice starts its turn within a 10-foot Emanation originating from your companion, the creature must succeed on a Wisdom saving throw against your spell save DC or have the Frightened condition until the start of its next turn.</p>
+		</description>
+		<sheet alt="Gaunt">
+			<description>The companion's Speed increases to 45ft., and it gains a Climb Speed equal to its Speed. It can climb difficult surfaces, including along ceilings, without needing to make an ability check. In addition, whenever a creature of your choice starts its turn within 10ft. your companion, the creature must succeed on a Wisdom saving throw or have the Frightened condition until the start of its next turn.</description>
+		</sheet>
+	</element>
+	<element name="Moist" type="Archetype Feature" source="Ravenloft: The Horrors Within" id="ID_WOTC_RHW_ARCHETYPE_FEATURE_ARTIFICER_REANIMATOR_MACABRE_MODIFICATIONS_MOIST">
+		<compendium display="false"/>
+		<requirements>ID_WOTC_RHW_ARCHETYPE_FEATURE_ARTIFICER_REANIMATOR_MACABRE_MODIFICATIONS</requirements>
+		<supports>Reanimator Moist</supports>
+		<description>
+			<p>The companion gains a Swim Speed equal to its Speed, and it can move through a space as narrow as 1 inch without expending extra movement to do so. In addition, whenever the companion is hit by an attack roll from a creature within 10 feet of itself, the attacker takes Acid damage equal to your Intelligence modifier.</p>
+		</description>
+		<sheet alt="Moist">
+			<description>The companion gains a Swim Speed equal to its Speed, and it can move through a space as narrow as 1 inch without expending extra movement to do so. In addition, whenever the companion is hit by an attack roll from a creature within 10 feet of itself, the attacker takes {{intelligence:modifier}} Acid damage.</description>
+		</sheet>
+	</element>
+	
+	<element name="Level 15: Refined Reanimation" type="Archetype Feature" source="Ravenloft: The Horrors Within" id="ID_WOTC_RHW_ARCHETYPE_FEATURE_ARTIFICER_REANIMATOR_REFINED_REANIMATION">
+		<requirements>!ID_INTERNAL_RHW_FEATURE_REPLACEMENT_ARTIFICER_REANIMATOR_REFINED_REANIMATION</requirements>
+		<description>
+			<p>You have mastered the science of revivification, granting you the following benefits.</p>
+			<p class="indent"><b><i>Facilitated Revival.</i></b> You can cast <i>Raise Dead</i> once without expending a spell slot and without Material components, provided you use Tinker's Tools or another type of Artisan's Tools with which you have proficiency as the Spellcasting Focus. Once you use this feature, you can't use it again until you finish a Long Rest.</p>
+			<p class="indent"><b><i>Life Transfer.</i></b> You can siphon the animating magic of your <b>Reanimated Companion</b> to bolster yourself. When you or your companion takes damage, you can take a Reaction to gain a number of Hit Points equal to your companion's current Hit Points. The companion then immediately drops to 0 Hit Points and dies (triggering its Death Burst trait).</p>
+			<p class="indent"><b><i>Superior Modifications.</i></b> Whenever you create a <b>Reanimated Companion</b>, the companion now gains three options for Strange Modifications.</p>
+		</description>
+		<sheet alt="Refined Reanimation">
+			<description>You have the following benefits:</description>
+		</sheet>
+		<rules>
+			<select type="Archetype Feature" name="Facilitated Revival" supports="Reanimator Facilitated Revival" default="ID_WOTC_RHW_ARCHETYPE_FEATURE_ARTIFICER_REANIMATOR_REFINED_REANIMATION_FACILITATED_REVIVAL" />
+			<select type="Archetype Feature" name="Life Transfer" supports="Reanimator Life Transfer" default="ID_WOTC_RHW_ARCHETYPE_FEATURE_ARTIFICER_REANIMATOR_REFINED_REANIMATION_LIFE_TRANSFER" />
+		</rules>
+	</element>
+	<element name="Facilitated Revival" type="Archetype Feature" source="Ravenloft: The Horrors Within" id="ID_WOTC_RHW_ARCHETYPE_FEATURE_ARTIFICER_REANIMATOR_REFINED_REANIMATION_FACILITATED_REVIVAL">
+		<compendium display="false"/>
+		<requirements>ID_WOTC_RHW_ARCHETYPE_FEATURE_ARTIFICER_REANIMATOR_REFINED_REANIMATION</requirements>
+		<supports>Reanimator Facilitated Revival</supports>
+		<description>
+			<p>You can cast <i>Raise Dead</i> once without expending a spell slot and without Material components, provided you use Tinker's Tools or another type of Artisan's Tools with which you have proficiency as the Spellcasting Focus. Once you use this feature, you can't use it again until you finish a Long Rest.</p>
+			<div class="reference">
+				<div element="ID_WOTC_PHB24_SPELL_RAISE_DEAD"/>
+			</div>
+		</description>
+		<sheet alt="Facilitated Revival" usage="1/Long Rest">
+			<description>You can cast Raise Dead once without expending a spell slot and without Material components, provided you use Tinker's Tools or another type of Artisan's Tools with which you have proficiency as the Spellcasting Focus.</description>
+		</sheet>
+	</element>
+	<element name="Life Transfer" type="Archetype Feature" source="Ravenloft: The Horrors Within" id="ID_WOTC_RHW_ARCHETYPE_FEATURE_ARTIFICER_REANIMATOR_REFINED_REANIMATION_LIFE_TRANSFER">
+		<compendium display="false"/>
+		<requirements>ID_WOTC_RHW_ARCHETYPE_FEATURE_ARTIFICER_REANIMATOR_REFINED_REANIMATION</requirements>
+		<supports>Reanimator Life Transfer</supports>
+		<description>
+			<p>You can siphon the animating magic of your <b>Reanimated Companion</b> to bolster yourself. When you or your companion takes damage, you can take a Reaction to gain a number of Hit Points equal to your companion's current Hit Points. The companion then immediately drops to 0 Hit Points and dies (triggering its Death Burst trait).</p>
+		</description>
+		<sheet alt="Life Transfer Revival" action="Reaction">
+			<description>When you or your companion takes damage, you can gain a number of HPs equal to your companion's current HPs. The companion then immediately drops to 0 HPs and dies (triggering its Death Burst trait).</description>
+		</sheet>
+	</element>
+
+	<!--Feature Replacement Grants-->
+	<element name="Reanimator Spells Feature Replacement" type="Grants" source="Internal" id="ID_INTERNAL_RHW_FEATURE_REPLACEMENT_ARTIFICER_REANIMATOR_REANIMATOR_SPELLS" />
+	<element name="Reanimator's Skill Set Feature Replacement" type="Grants" source="Internal" id="ID_INTERNAL_RHW_FEATURE_REPLACEMENT_ARTIFICER_REANIMATOR_REANIMATORS_SKILL_SET" />
+	<element name="Reanimated Companion Feature Replacement" type="Grants" source="Internal" id="ID_INTERNAL_RHW_FEATURE_REPLACEMENT_ARTIFICER_REANIMATOR_REANIMATED_COMPANION" />
+	<element name="Strange Modifications Feature Replacement" type="Grants" source="Internal" id="ID_INTERNAL_RHW_FEATURE_REPLACEMENT_ARTIFICER_REANIMATOR_STRANGE_MODIFICATIONS" />
+	<element name="Improved Reanimation Feature Replacement" type="Grants" source="Internal" id="ID_INTERNAL_RHW_FEATURE_REPLACEMENT_ARTIFICER_REANIMATOR_IMPROVED_REANIMATION" />
+	<element name="Macabre Modifications Feature Replacement" type="Grants" source="Internal" id="ID_INTERNAL_RHW_FEATURE_REPLACEMENT_ARTIFICER_REANIMATOR_MACABRE_MODIFICATIONS" />
+	<element name="Refined Reanimation Feature Replacement" type="Grants" source="Internal" id="ID_INTERNAL_RHW_FEATURE_REPLACEMENT_ARTIFICER_REANIMATOR_REFINED_REANIMATION" />
+
+	<!--Companion-->
+	<element name="Reanimated Companion" type="Companion" source="Ravenloft: The Horrors Within" id="ID_WOTC_RHW_COMPANION_ARTIFICER_REANIMATOR_REANIMATED_COMPANION">
+		<description>
+			<p>You can create a <b>Reanimated Companion</b> through the power of necromancy and science. The companion manifests in an unoccupied space within 5 feet of you. You determine the companion's appearance; your choices don't affect the companion's game statistics. The companion is Friendly to you and your allies and obeys you. It drops to 0 Hit Points if you die (triggering its Death Burst trait).</p>
+			<p><b>Proficiency Bonus (PB)</b> equals your bonus</p>
+		</description>
+		<setters>
+			<set name="size">Medium</set>
+			<set name="type">Undead</set>
+			<set name="alignment">Neutral</set>
+			<set name="ac">10 + you Intelligence modifier (natural armor)</set>
+			<set name="hp">5 + five times your Artificer level (the companion has a number of Hit Dice [d8s] equal to your Artificer level)</set>
+			<set name="speed">30 ft.</set>
+			<set name="strength">11</set>
+			<set name="dexterity">10</set>
+			<set name="constitution">16</set>
+			<set name="intelligence">4</set>
+			<set name="wisdom">10</set>
+			<set name="charisma">6</set>
+			<set name="resistances">Necrotic, Poison</set>
+			<set name="immunities">Lightning</set>
+			<set name="conditionImmunities">Charmed, Exhaustion, Poisoned</set>
+			<set name="senses">Blindsight 60 ft.; Passive Perception 10</set>
+			<set name="languages">Understands the languages you know</set>
+			<set name="challenge">—</set>
+			<set name="traits">ID_WOTC_RHW_COMPANION_TRAIT_REANIMATED_COMPANION_DEATH_BURST,ID_WOTC_RHW_COMPANION_TRAIT_REANIMATED_COMPANION_LIGHTNING_ABSORPTION</set>
+			<set name="actions">ID_WOTC_RHW_COMPANION_ACTION_REANIMATED_COMPANION_DREADFUL_SWIPE</set>
+		</setters>
+		<rules>
+			<stat name="companion:ac" value="10" bonus="base" />
+			<stat name="companion:ac" value="intelligence:modifier" bonus="ability"/>
+			<stat name="companion:hp:max" value="5" />
+			<stat name="companion:hp:max" value="level:artificer" />
+			<stat name="companion:hp:max" value="level:artificer" />
+			<stat name="companion:hp:max" value="level:artificer" />
+			<stat name="companion:hp:max" value="level:artificer" />
+			<stat name="companion:hp:max" value="level:artificer" />
+			<stat name="companion:speed" value="30" bonus="base" />
+			<stat name="companion:proficiency" value="proficiency" bonus="base" />
+			<stat name="companion:proficiency" value="-2" bonus="base companion PB removal"/>
+		</rules>
+	</element>
+	<element name="Death Burst" type="Companion Trait" source="Ravenloft: The Horrors Within" id="ID_WOTC_RHW_COMPANION_TRAIT_REANIMATED_COMPANION_DEATH_BURST">
+		<description>
+			<p>The companion explodes when it dies. <i>Dexterity Saving Throw:</i> DC equals your spell save DC, each creature in a 10-foot Emanation originating from the companion. <i>Failure:</i> 2d4 Necrotic damage. <i>Success:</i> Half damage.</p>
+		</description>
+		<sheet>
+			<description>The companion explodes when it dies. Dexterity Saving Throw: DC equals your spell save DC, each creature in a 10-foot Emanation originating from the companion. Failure: 2d4 Necrotic damage. Success: Half damage.</description>
+		</sheet>
+	</element>
+	<element name="Lightning Absorption" type="Companion Trait" source="Ravenloft: The Horrors Within" id="ID_WOTC_RHW_COMPANION_TRAIT_REANIMATED_COMPANION_LIGHTNING_ABSORPTION">
+		<description>
+			<p>Whenever the companion is subjected to Lightning damage, it regains a number of Hit Points equal to the Lightning damage dealt.</p>
+		</description>
+		<sheet>
+			<description>Whenever the companion is subjected to Lightning damage, it regains a number of HPs equal to the Lightning damage dealt.</description>
+		</sheet>
+	</element>
+	<element name="Dreadful Swipe" type="Companion Action" source="Ravenloft: The Horrors Within" id="ID_WOTC_RHW_COMPANION_ACTION_REANIMATED_COMPANION_DREADFUL_SWIPE">
+		<description>
+			<p><i>Melee Attack Roll:</i> Bonus equals your spell attack modifier, reach 5 ft. Hit: 1d4 plus your Intelligence modifier Necrotic damage, and the target can't take Opportunity Attacks until the start of its next turn.</p>
+		</description>
+		<sheet>
+			<description>Melee Attack Roll: Bonus equals your spell attack modifier, reach 5 ft. Hit: 1d4 + your Intelligence modifier Necrotic damage, and the target can't take Opportunity Attacks until the start of its next turn.</description>
+		</sheet>
+	</element>
+
+	<element name="Reanimated Companion" type="Information" source="Ravenloft: The Horrors Within" id="ID_WOTC_RHW_INFORMATION_REANIMATED_COMPANION_STATBLOCK">
+		<description>
+			<h4 style="margin-top:0px" />
+			<p style="margin-bottom:5px"><i>Medium Undead, Neutral</i></p>
+			<ul class="unstyled mb">
+				<li style="margin-bottom:-1em"><b>AC</b> 10 + your Intelligence Modifier</li>
+				<li style="text-align:right; margin-top:-1em"><b>Initiative</b> +0 (10)</li>
+				<li><b>HP</b> 5 + five times your Artificer level (the companion has a number of Hit Dice [d8s] equal to your Artificer level)</li>
+				<li><b>Speed</b> 30 ft.</li>
+			</ul>
+			<table style="text-align:center;margin-top:2px;margin-bottom:10px">
+				<tr style="font-size:8px"><td colspan="2" /><td>MOD</td><td>SAVE</td><td colspan="2" /><td>MOD</td><td>SAVE</td><td colspan="2" /><td>MOD</td><td>SAVE</td></tr>
+				<tr><td><b>STR</b></td><td>11</td><td>+0</td><td>+0</td><td><b>DEX</b></td><td>10</td><td>+0</td><td>+0</td><td><b>CON</b></td><td>16</td><td>+3</td><td>+3</td></tr>
+				<tr><td><b>INT</b></td><td>4</td><td>-3</td><td>-3</td><td><b>WIS</b></td><td>10</td><td>+0</td><td>+0</td><td><b>CHA</b></td><td>6</td><td>-2</td><td>-2</td></tr>
+			</table>
+			<ul class="unstyled mb">
+				<li><b>Resistances</b> Poison</li>
+				<li><b>Immunities</b> Necrotic, Poison; Charmed, Exhaustion, Poisoned</li>
+				<li><b>Senses</b> Blindsight 60 ft., Passive Perception 10</li>
+				<li><b>Languages</b> Understands the languages you know</li>
+				<li><b>CR</b> None (XP 0; PB equals your Proficiency Bonus)</li>
+			</ul>
+			<h4 style="margin-top:5px">Traits</h4>
+				<p><b><i>Death Burst.</i></b> The companion explodes when it dies. <i>Dexterity Saving Throw:</i> DC equals your spell save DC, each creature in a 10-foot Emanation originating from the companion. <i>Failure:</i> 2d4 Necrotic damage. <i>Success:</i> Half damage.</p>
+				<p><b><i>Lightning Absorption.</i></b> Whenever the companion is subjected to Lightning damage, it regains a number of Hit Points equal to the Lightning damage dealt.</p>
+			<h4 style="margin-top:5px">Actions</h4>
+				<p><i><b>Dreadful Swipe.</b> Melee Attack Roll:</i> Bonus equals your spell attack modifier, reach 5 ft. Hit: 1d4 plus your Intelligence modifier Necrotic damage, and the target can't take Opportunity Attacks until the start of its next turn.</p>
+		</description>
+	</element>
+</elements>

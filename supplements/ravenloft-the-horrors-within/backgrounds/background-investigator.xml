@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<elements>
+	<info>
+		<name>Investigator</name>
+		<description>The Investigator background from Ravenloft: The Horrors Within.</description>
+		<update version="0.0.1">
+			<file name="background-investigator.xml" url="https://raw.githubusercontent.com/AuroraLegacy/elements/master/supplements/ravenloft-the-horrors-within/backgrounds/background-investigator.xml" />
+		</update>
+	</info>
+
+	<element name="Investigator" type="Background" source="Ravenloft: The Horrors Within" id="ID_WOTC_RHW_BACKGROUND_INVESTIGATOR">
+		<description>
+			<ul class="unstyled" style="text-indent:-1em; margin-left:1em; margin-bottom:5px">
+				<li><strong>Ability Scores:</strong> Intelligence, Wisdom, Charisma</li>
+				<li><strong>Feat:</strong> Sharp Eye or a Dark Gift feat of your choice</li>
+				<li><strong>Skill Proficiencies:</strong> Insight and Investigation</li>
+				<li><strong>Tool Proficiency:</strong> Disguise Kit</li>
+				<li><strong>Equipment:</strong><i> Choose A or B:</i> (A) Disguise Kit, Manacles, Shovel, Traveler's Clothes, 3 Vials, and 16 GP; or (B) 50 GP</li>
+			</ul>
+			<p>You relentlessly seek the truth. Perhaps you witnessed something remarkable or terrible and now desire to unravel its mystery, or maybe you're motivated by universal justice and honesty. Whether the cases you're embroiled in are local crimes or eldritch conspiracies, you're driven to reveal what others would keep hidden.</p>
+			<div class="reference">
+				<div element="ID_WOTC_RHW_FEAT_SHARP_EYE" />
+			</div>
+		</description>
+		<setters>
+			<set name="short">Intelligence, Wisdom, Charisma, Sharp Eye Feat or a Dark Gift Feat, Insight and Investigation Skills, Disguise Kit</set>
+		</setters>
+		<rules>
+			<grant type="Ability Score Improvement" id="ID_INTERNAL_ABILITY_SCORE_IMPROVEMENT_COMBINATION_INT_WIS_CHA" />
+			<select type="Feat" name="Origin Feat (Investigator)" supports="Investigator||Dark Gift" />
+			<grant type="Proficiency" id="ID_PROFICIENCY_SKILL_INSIGHT" />
+			<grant type="Proficiency" id="ID_PROFICIENCY_SKILL_INVESTIGATION" />
+			<grant type="Grants" id="ID_INTERNAL_GRANTS_BACKGROUND_ASI" />
+			<grant type="Proficiency" id="ID_PROFICIENCY_TOOL_PROFICIENCY_DISGUISE_KIT" />
+		</rules>
+	</element>
+</elements>
