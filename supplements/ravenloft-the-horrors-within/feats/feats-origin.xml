@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<elements>
+	<info>
+		<name>Origin Feats</name>
+		<description>Origin Feats from Ravenloft: The Horrors Within.</description>
+		<update version="0.0.1">
+			<file name="feats-origin.xml" url="https://raw.githubusercontent.com/AuroraLegacy/elements/master/supplements/ravenloft-the-horrors-within/feats/feats-origin.xml" />
+		</update>
+	</info>
+
+	<element name="Sharp Eye" type="Feat" source="Ravenloft: The Horrors Within" id="ID_WOTC_RHW_FEAT_SHARP_EYE">
+		<supports>Origin, Sharp Eye</supports>
+		<description>
+			<p class="flavor">Origin Feat</p>
+			<p>When you take the Search or Study action, you can give yourself Advantage on any ability check made as part of that action. You can use this feature a number of times equal to your Proficiency Bonus, and you regain all expended uses when you finish a Long Rest. If the check fails, the use of this feature isn't expended.</p>
+		</description>
+		<setters>
+			<set name="keywords">ravenloft</set>
+		</setters>
+		<sheet usage="{{proficiency}}/Long Rest">
+			<description>When you take the Search or Study action, you can give yourself Advantage on any ability check made as part of that action. If the check fails, the use of this feature isn't expended.</description>
+		</sheet>
+	</element>
+
+	<element name="Survivor" type="Feat" source="Ravenloft: The Horrors Within" id="ID_WOTC_RHW_FEAT_SURVIVOR">
+		<supports>Origin, Survivor</supports>
+		<description>
+			<p class="flavor">Origin Feat</p>
+			<p>You gain the following benefits.</p>
+			<p class="indent"><b><i>Hypervigilance.</i></b> Whenever you roll Initiative, you can reroll the d20 if the number rolled is 9 or lower. You must use the new roll.</p>
+			<p class="indent"><b><i>Steel Yourself.</i></b> When you fail a saving throw to avoid or end the Charmed or Frightened condition, you can take a Reaction to add a bonus to the roll, potentially causing it to succeed. The bonus is equal to your Proficiency Bonus.</p>
+			<p class="indent">Once you take this Reaction, you can't do so again until you finish a Long Rest.</p>
+		</description>
+		<setters>
+			<set name="keywords">ravenloft</set>
+		</setters>
+		<sheet>
+			<description>Whenever you roll Initiative, you can reroll the d20 if the number rolled is 9 or lower. You must use the new roll.</description>
+		</sheet>
+		<rules>
+			<select type="Feat Feature" name="Steel Yourself" supports="RHW Steel Yourself" default="ID_WOTC_RHW_FEAT_SURVIVOR_STEEL_YOURSELF" />
+		</rules>
+	</element>
+	<element name="Steel Yourself" type="Feat Feature" source="Ravenloft: The Horrors Within" id="ID_WOTC_RHW_FEAT_SURVIVOR_STEEL_YOURSELF">
+		<compendium display="false"/>
+		<supports>RHW Steel Yourself</supports>
+		<description>
+			<p> When you fail a saving throw to avoid or end the Charmed or Frightened condition, you can take a Reaction to add a bonus to the roll, potentially causing it to succeed. The bonus is equal to your Proficiency Bonus.</p>
+			<p class="indent">Once you take this Reaction, you can't do so again until you finish a Long Rest.</p>
+		</description>
+		<sheet action="Reaction" usage="1/Long Rest">
+			<description>When you fail a saving throw to avoid or end the Charmed or Frightened condition, you can add a +{{proficiency}} bonus to the roll, potentially causing it to succeed.</description>
+		</sheet>
+	</element>
+</elements>

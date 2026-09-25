@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<elements>
+	<info>
+		<name>Reborn</name>
+		<description>The Reborn species from Ravenloft: The Horrors Within.</description>
+		<update version="0.0.1">
+			<file name="race-reborn.xml" url="https://raw.githubusercontent.com/AuroraLegacy/elements/master/supplements/ravenloft-the-horrors-within/races/race-reborn.xml" />
+		</update>
+	</info>
+	
+	<element name="Reborn" type="Race" source="Ravenloft: The Horrors Within" id="ID_WOTC_RHW_RACE_REBORN">
+		<description>
+			<p>Reborn are individuals who have died yet inexplicably still live. Some reborn exhibit the scars of fatal ends, their ashen flesh or bloodless veins making it clear that they've escaped death. Other reborn are marvels of magic or science, being stitched together from disparate beings or bearing mysterious minds in manufactured bodies. Whatever their origins, reborn know a new life and seek experiences and answers all their own.</p>
+			<h5>REBORN TRAITS</h5>
+			<ul class="unstyled" style="text-indent:-1em; margin-left:1em; margin-bottom:5px">
+				<li><strong>Creature Type:</strong> Humanoid</li>
+				<li><strong>Size:</strong> Medium (about 4-7 feet tall) or Small (about 2-4 feet tall), chosen when you select this species</li>
+				<li><strong>Speed:</strong> 30 feet</li>
+			</ul>
+			<p>As a Reborn, you have these special traits.</p>
+			<p class="indent"><strong><em>Escaped Death.</em></strong> You have Advantage on Death Saving Throws.</p>
+			<p class="indent"><strong><em>Everlasting.</em></strong> You don't gain Exhaustion levels from dehydration, malnutrition, or suffocation. You don't need to sleep, and magic can't put you to sleep. You can finish a Long Rest in 4 hours if you spend those hours in an inactive, motionless state, during which you retain consciousness.</p> 
+			<p class="indent"><b><i>Knowledge from a Past Life.</i></b> You gain proficiency in one skill of your choice.</p>
+			<p class="indent">In addition, you can temporarily peer into the past to aid you in the present. When you fail an ability check, you can roll 1d6 and add the number rolled to the d20, potentially turning the failure into a success. You can do this a number of times equal to your Proficiency Bonus, and you regain all expended uses when you finish a Long Rest.</p>
+			<p class="indent"><b>Strange Endurance.</b> You have Resistance to one of the following damage types of your choice: Cold, Necrotic, or Poison.</p>
+		</description>
+		<sheet display="false" />
+		<rules>
+			<grant type="Grants" id="ID_INTERNAL_GRANT_RACE_REBORN" />
+			<select type="Ability Score Improvement" name="Ability Score Improvement Option (Reborn)" supports="Custom Ability Score Improvement Option" requirements="!ID_INTERNAL_GRANTS_BACKGROUND_ASI" />
+			<select type="Racial Trait" name="Size (Reborn)" supports="ID_INTERNAL_RACIAL_TRAIT_SMALL|ID_INTERNAL_RACIAL_TRAIT_MEDIUM" />
+			<stat name="innate speed" value="30" bonus="base" />
+
+			<grant type="Language" id="ID_LANGUAGE_COMMON" requirements="!ID_WOTC_TCOE_OPTION_CUSTOMIZED_LANGUAGE" />
+			<select type="Language" name="Language (Reborn)" supports="Standard" number="2" requirements="!ID_WOTC_TCOE_OPTION_CUSTOMIZED_LANGUAGE" />
+			<select type="Language" name="Customized Language (Reborn)" supports="Custom Race Language"  requirements="ID_WOTC_TCOE_OPTION_CUSTOMIZED_LANGUAGE" number="3" />
+
+			<grant type="Racial Trait" id="ID_WOTC_RHW_RACIAL_TRAIT_REBORN_ESCAPED_DEATH" requirements="!ID_INTERNAL_RHW_RACIAL_TRAIT_REPLACEMENT_REBORN_ESCAPED_DEATH" />
+			<grant type="Racial Trait" id="ID_WOTC_RHW_RACIAL_TRAIT_REBORN_EVERLASTING" requirements="!ID_INTERNAL_RHW_RACIAL_TRAIT_REPLACEMENT_REBORN_EVERLASTING" />
+			<grant type="Racial Trait" id="ID_WOTC_RHW_RACIAL_TRAIT_REBORN_KNOWLEDGE_FROM_A_PAST_LIFE" requirements="!ID_INTERNAL_RHW_RACIAL_TRAIT_REPLACEMENT_REBORN_KNOWLEDGE_FROM_A_PAST_LIFE" />
+			<grant type="Racial Trait" id="ID_WOTC_RHW_RACIAL_TRAIT_REBORN_STRANGE_ENDURANCE" requirements="!ID_INTERNAL_RHW_RACIAL_TRAIT_REPLACEMENT_REBORN_STRANGE_ENDURANCE" />
+		</rules>
+	</element>
+
+	<element name="Escaped Death" type="Racial Trait" source="Ravenloft: The Horrors Within" id="ID_WOTC_RHW_RACIAL_TRAIT_REBORN_ESCAPED_DEATH">
+		<requirements>!ID_INTERNAL_RHW_RACIAL_TRAIT_REPLACEMENT_REBORN_ESCAPED_DEATH</requirements>
+		<description>
+			<p>You have Advantage on Death Saving Throws.</p>
+		</description>
+		<sheet>
+			<description>You have Advantage on Death Saving Throws.</description>
+		</sheet>
+	</element>
+
+	<element name="Everlasting" type="Racial Trait" source="Ravenloft: The Horrors Within" id="ID_WOTC_RHW_RACIAL_TRAIT_REBORN_EVERLASTING">
+		<requirements>!ID_INTERNAL_RHW_RACIAL_TRAIT_REPLACEMENT_REBORN_EVERLASTING</requirements>
+		<description>
+			<p>You don't gain Exhaustion levels from dehydration, malnutrition, or suffocation. You don't need to sleep, and magic can't put you to sleep. You can finish a Long Rest in 4 hours if you spend those hours in an inactive, motionless state, during which you retain consciousness.</p>
+		</description>
+		<sheet>
+			<description>You don't gain Exhaustion levels from dehydration, malnutrition, or suffocation. You don't need to sleep, and magic can't put you to sleep. You can finish a Long Rest in 4 hours if you spend those hours in an inactive, motionless state, during which you retain consciousness.</description>
+		</sheet>
+	</element>
+	
+	<element name="Knowledge from a Past Life" type="Racial Trait" source="Ravenloft: The Horrors Within" id="ID_WOTC_RHW_RACIAL_TRAIT_REBORN_KNOWLEDGE_FROM_A_PAST_LIFE">
+		<requirements>!ID_INTERNAL_RHW_RACIAL_TRAIT_REPLACEMENT_REBORN_KNOWLEDGE_FROM_A_PAST_LIFE</requirements>
+		<description>
+			<p>You gain proficiency in one skill of your choice.</p>
+			<p class="indent">In addition, you can temporarily peer into the past to aid you in the present. When you fail an ability check, you can roll 1d6 and add the number rolled to the d20, potentially turning the failure into a success. You can do this a number of times equal to your Proficiency Bonus, and you regain all expended uses when you finish a Long Rest.</p>
+		</description>
+		<sheet usage="{{proficiency}}/Long Rest">
+			<description>When you fail an ability check, you can roll 1d6 and add the number rolled to the total, potentially turning the failure into a success.</description>
+		</sheet>
+		<rules>
+			<select type="Proficiency" name="Skill Proficiency (Knowledge from a Past Life)" supports="Skill" />
+		</rules>
+	</element>
+
+	<element name="Strange Endurance" type="Racial Trait" source="Ravenloft: The Horrors Within" id="ID_WOTC_RHW_RACIAL_TRAIT_REBORN_STRANGE_ENDURANCE">
+		<requirements>!ID_INTERNAL_RHW_RACIAL_TRAIT_REPLACEMENT_REBORN_STRANGE_ENDURANCE</requirements>
+		<description>
+			<p>You have Resistance to one of the following damage types of your choice: Cold, Necrotic, or Poison.</p>
+		</description>
+		<sheet display="false"/>
+		<rules>
+			<select type="Racial Trait" name="Damage Resistance (Strange Endurance)" supports="ID_WOTC_RHW_RACIAL_TRAIT_REBORN_STRANGE_ENDURANCE_COLD|ID_WOTC_RHW_RACIAL_TRAIT_REBORN_STRANGE_ENDURANCE_NECROTIC|ID_WOTC_RHW_RACIAL_TRAIT_REBORN_STRANGE_ENDURANCE_POISON" />
+		</rules>
+	</element>
+	<element name="Cold" type="Racial Trait" source="Ravenloft: The Horrors Within" id="ID_WOTC_RHW_RACIAL_TRAIT_REBORN_STRANGE_ENDURANCE_COLD">
+		<compendium display="false"/>
+		<description>
+			<p>You have Resistance to Cold damage.</p>
+		</description>
+		<sheet display="false"/>
+		<rules>
+			<grant type="Condition" id="ID_INTERNAL_CONDITION_DAMAGE_RESISTANCE_COLD" />
+		</rules>
+	</element>
+	<element name="Necrotic" type="Racial Trait" source="Ravenloft: The Horrors Within" id="ID_WOTC_RHW_RACIAL_TRAIT_REBORN_STRANGE_ENDURANCE_NECROTIC">
+		<compendium display="false"/>
+		<description>
+			<p>You have Resistance to Necrotic damage.</p>
+		</description>
+		<sheet display="false"/>
+		<rules>
+			<grant type="Condition" id="ID_INTERNAL_CONDITION_DAMAGE_RESISTANCE_NECROTIC" />
+		</rules>
+	</element>
+	<element name="Poison" type="Racial Trait" source="Ravenloft: The Horrors Within" id="ID_WOTC_RHW_RACIAL_TRAIT_REBORN_STRANGE_ENDURANCE_POISON">
+		<compendium display="false"/>
+		<description>
+			<p>You have Resistance to Poison damage.</p>
+		</description>
+		<sheet display="false"/>
+		<rules>
+			<grant type="Condition" id="ID_INTERNAL_CONDITION_DAMAGE_RESISTANCE_POISON" />
+		</rules>
+	</element>
+
+	<!--racial trait replacement grants-->
+	<element name="Escaped Death Replacement" type="Grants" source="Internal" id="ID_INTERNAL_RHW_RACIAL_TRAIT_REPLACEMENT_REBORN_ESCAPED_DEATH" />
+	<element name="Everlasting Replacement" type="Grants" source="Internal" id="ID_INTERNAL_RHW_RACIAL_TRAIT_REPLACEMENT_REBORN_EVERLASTING" />
+	<element name="Knowledge from a Past Life Replacement" type="Grants" source="Internal" id="ID_INTERNAL_RHW_RACIAL_TRAIT_REPLACEMENT_REBORN_KNOWLEDGE_FROM_A_PAST_LIFE" />
+	<element name="Strange Endurance Trait Replacement" type="Grants" source="Internal" id="ID_INTERNAL_RHW_RACIAL_TRAIT_REPLACEMENT_REBORN_STRANGE_ENDURANCE" />
+
+</elements>

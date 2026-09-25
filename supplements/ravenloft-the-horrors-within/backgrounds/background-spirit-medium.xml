@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<elements>
+	<info>
+		<name>Spirit Medium</name>
+		<description>The Spirit Medium background from Ravenloft: The Horrors Within.</description>
+		<update version="0.0.1">
+			<file name="background-spirit-medium.xml" url="https://raw.githubusercontent.com/AuroraLegacy/elements/master/supplements/ravenloft-the-horrors-within/backgrounds/background-spirit-medium.xml" />
+		</update>
+	</info>
+
+	<element name="Spirit Medium" type="Background" source="Ravenloft: The Horrors Within" id="ID_WOTC_RHW_BACKGROUND_SPIRIT_MEDIUM">
+		<description>
+			<ul class="unstyled" style="text-indent:-1em; margin-left:1em; margin-bottom:5px">
+				<li><strong>Ability Scores:</strong> Constitution, Intelligence, Wisdom</li>
+				<li><strong>Feat:</strong> A Dark Gift feat of your choice (Gathered Whispers is recommended)</li>
+				<li><strong>Skill Proficiencies:</strong> Insight and Religion</li>
+				<li><strong>Tool Proficiency:</strong> Choose one kind of Gaming Set</li>
+				<li><strong>Equipment:</strong><i> Choose A or B:</i> (A) Dagger, Gaming Set (same as above), Basket, Bell, 8 Candles, Ink, Ink Pen, Paper (5 sheets), Tinderbox, Traveler's Clothes, and 32 GP; or (B) 50 GP</li>
+			</ul>
+			<p>Through strange rituals and fateful encounters, you've discovered that you bear a unique connection to the spirits of the dead and damned. Your body is a conduit for such spirits, granting you prescient insight from beyond. But these spirits' intentions aren't always innocent, and their gifts come at a haunting cost.</p>
+			<div class="reference">
+				<div element="ID_WOTC_RHW_FEAT_GATHERED_WHISPERS" />
+			</div>
+		</description>
+		<setters>
+			<set name="short">Constitution, Intelligence, Wisdom, a Dark Gift Feat, Insight and Religion Skills, a Gaming Set</set>
+		</setters>
+		<rules>
+			<grant type="Ability Score Improvement" id="ID_INTERNAL_ABILITY_SCORE_IMPROVEMENT_COMBINATION_CON_INT_WIS" />
+			<select type="Feat" name="Origin Feat (Spirit Medium)" supports="Dark Gift" />
+			<grant type="Proficiency" id="ID_PROFICIENCY_SKILL_INSIGHT" />
+			<grant type="Proficiency" id="ID_PROFICIENCY_SKILL_RELIGION" />
+			<grant type="Grants" id="ID_INTERNAL_GRANTS_BACKGROUND_ASI" />
+			<select type="Proficiency" name="Gaming Set (Spirit Medium)" supports="Gaming Set" />
+		</rules>
+	</element>
+</elements>

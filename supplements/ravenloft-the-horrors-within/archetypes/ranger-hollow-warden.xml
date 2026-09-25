@@ -1,0 +1,196 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<elements>
+	<info>
+		<name>Hollow Warden</name>
+		<description>The Hollow Warden subclass from Ravenloft: The Horrors Within</description>
+		<update version="0.0.1">
+			<file name="ranger-hollow-warden.xml" url="https://raw.githubusercontent.com/AuroraLegacy/elements/master/supplements/ravenloft-the-horrors-within/archetypes/ranger-gloom-stalker.xml" />
+		</update>
+	</info>
+
+	<element name="Hollow Warden" type="Archetype" source="Ravenloft: The Horrors Within" id="ID_WOTC_RHW_ARCHETYPE_RANGER_HOLLOW_WARDEN">
+		<supports>Ranger Subclass</supports>
+		<description>
+			<p class="flavor">Draw on the Might of Ancient Wild Terrors</p>
+			<p>Legends tell that the most ancient and bloodthirsty terrors lurk deep within the old places of the earth. Hollow Wardens venerate and draw power from such beings, transforming themselves into merciless and monstrous guardians that stalk jagged coastlines, steep mountain crags, and other dark and wild places.</p>
+			<div element="ID_WOTC_RHW_ARCHETYPE_FEATURE_RANGER_HOLLOW_WARDEN_HOLLOW_WARDEN_SPELLS" />
+			<div element="ID_WOTC_RHW_ARCHETYPE_FEATURE_RANGER_HOLLOW_WARDEN_WRATH_OF_THE_WILD" />
+			<div element="ID_WOTC_RHW_ARCHETYPE_FEATURE_RANGER_HOLLOW_WARDEN_HUNGERING_MIGHT" />
+			<div element="ID_WOTC_RHW_ARCHETYPE_FEATURE_RANGER_HOLLOW_WARDEN_ROT_AND_VIOLENCE" />
+			<div element="ID_WOTC_RHW_ARCHETYPE_FEATURE_RANGER_HOLLOW_WARDEN_ANCIENT_MIGHT" />
+		</description>
+		<sheet display="false" />
+		<rules>
+			<grant type="Archetype Feature" id="ID_WOTC_RHW_ARCHETYPE_FEATURE_RANGER_HOLLOW_WARDEN_HOLLOW_WARDEN_SPELLS" level="3" />
+			<grant type="Archetype Feature" id="ID_WOTC_RHW_ARCHETYPE_FEATURE_RANGER_HOLLOW_WARDEN_WRATH_OF_THE_WILD" level="3" />
+			<grant type="Archetype Feature" id="ID_WOTC_RHW_ARCHETYPE_FEATURE_RANGER_HOLLOW_WARDEN_HUNGERING_MIGHT" level="7" />
+			<grant type="Archetype Feature" id="ID_WOTC_RHW_ARCHETYPE_FEATURE_RANGER_HOLLOW_WARDEN_ROT_AND_VIOLENCE" level="11" />
+			<grant type="Archetype Feature" id="ID_WOTC_RHW_ARCHETYPE_FEATURE_RANGER_HOLLOW_WARDEN_ANCIENT_MIGHT" level="15" />
+		</rules>
+	</element>
+
+	<element name="Level 3: Hollow Warden Spells" type="Archetype Feature" source="Ravenloft: The Horrors Within" id="ID_WOTC_RHW_ARCHETYPE_FEATURE_RANGER_HOLLOW_WARDEN_HOLLOW_WARDEN_SPELLS">
+		<requirements>!ID_INTERNAL_RHW_FEATURE_REPLACEMENT_RANGER_HOLLOW_WARDEN_HOLLOW_WARDEN_SPELLS</requirements>
+		<description>
+			<p>When you reach a Ranger level specified in the Hollow Warden Spells table, you thereafter always have the listed spell prepared.</p>
+			<h5>HOLLOW WARDEN SPELLS</h5>
+			<table class="class-features">
+				<thead>
+					<tr><td class="col-25">Ranger Level</td><td class="left">Spells</td></tr>
+				</thead>
+				<tr><td>3</td><td class="left"><em>Wrathful Smite</em></td></tr>
+				<tr><td>5</td><td class="left"><em>Alter Self</em></td></tr>
+				<tr><td>9</td><td class="left"><em>Phantom Steed</em></td></tr>
+				<tr><td>13</td><td class="left"><em>Dominate Beast</em></td></tr>
+				<tr><td>17</td><td class="left"><em>Steel Wind Strike</em></td></tr>
+			</table>
+		</description>
+		<sheet display="false" />
+		<rules>
+			<grant type="Spell" id="ID_WOTC_PHB24_SPELL_WRATHFUL_SMITE" level="3" spellcasting="Ranger" />
+			<grant type="Spell" id="ID_WOTC_PHB24_SPELL_ALTER_SELF" level="5" spellcasting="Ranger" />
+			<grant type="Spell" id="ID_WOTC_PHB24_SPELL_PHANTOM_STEED" level="9" spellcasting="Ranger" />
+			<grant type="Spell" id="ID_WOTC_PHB24_SPELL_DOMINATE_BEAST" level="13" spellcasting="Ranger" />
+			<grant type="Spell" id="ID_WOTC_PHB24_SPELL_STEEL_WIND_STRIKE" level="17" spellcasting="Ranger" />
+		</rules>
+	</element>
+
+	<element name="Level 3: Wrath of the Wild" type="Archetype Feature" source="Ravenloft: The Horrors Within" id="ID_WOTC_RHW_ARCHETYPE_FEATURE_RANGER_HOLLOW_WARDEN_WRATH_OF_THE_WILD">
+		<requirements>!ID_INTERNAL_RHW_FEATURE_REPLACEMENT_RANGER_HOLLOW_WARDEN_WRATH_OF_THE_WILD</requirements>
+		<description>
+			<p>You draw power from the strange and ancient horrors of the land, causing you to sprout unnatural growths, such as bloody antlers or putrid fangs, or causing your shadow to lengthen or twist around you. As a Bonus Action, you can expend a use of Favored Enemy to transform into a ghastly form, gaining the following benefits for 1 minute or until you have the Incapacitated condition, die, or end the transformation (no action required).</p>
+			<p class="indent"><b><i>Ancient Armor.</i></b> You gain a +1 bonus to AC, as your body is wreathed in rotten bark and beastly bristles. This bonus increases to +2 when you reach Ranger level 11.</p>
+			<p class="indent"><b><i>Prowling Retribution.</i></b> Immediately after a creature you can see within 5 feet of yourself deals damage to you or one of your allies, you can make an Opportunity Attack against that creature.</p>
+			<p class="indent"><b><i>Unnerving Aura.</i></b> When you transform and at the start of each of your subsequent turns, each creature of your choice in a 10-foot Emanation originating from you makes a Wisdom saving throw against your spell save DC. On a failed save, a creature has the Frightened condition until the start of your next turn.</p>
+		</description>
+		<sheet alt="Wrath of the Wild" action="Bonus Action" usage="Favored Enemy">
+			<description>You transform into a ghastly form, gaining the following benefits for 1 minute or until you have the Incapacitated condition, end the transformation (no action required), or die.</description>
+		</sheet>
+		<rules>
+			<select type="Archetype Feature" name="Ancient Armor" supports="Hollow Warden Ancient Armor" default="ID_WOTC_RHW_ARCHETYPE_FEATURE_RANGER_HOLLOW_WARDEN_WRATH_OF_THE_WILD_ANCIENT_ARMOR" />
+			<select type="Archetype Feature" name="Prowling Retribution" supports="Hollow Warden Prowling Retribution" default="ID_WOTC_RHW_ARCHETYPE_FEATURE_RANGER_HOLLOW_WARDEN_WRATH_OF_THE_WILD_PROWLING_RETRIBUTION" />
+			<select type="Archetype Feature" name="Unnerving Aura" supports="Hollow Warden Unnerving Aura" default="ID_WOTC_RHW_ARCHETYPE_FEATURE_RANGER_HOLLOW_WARDEN_WRATH_OF_THE_WILD_UNNERVING_AURA" />
+			<select type="Archetype Feature" name="Hungering Might" supports="Hollow Warden Hungering Might" default="ID_WOTC_RHW_ARCHETYPE_FEATURE_RANGER_HOLLOW_WARDEN_WRATH_OF_THE_WILD_HUNGERING_MIGHT" level="7" />
+			<select type="Archetype Feature" name="Strangling Roots" supports="Hollow Warden Strangling Roots" default="ID_WOTC_RHW_ARCHETYPE_FEATURE_RANGER_HOLLOW_WARDEN_ROT_AND_VIOLENCE_STRANGLING_ROOTS" level="11" />
+			<select type="Archetype Feature" name="Persistent Wrath" supports="Hollow Warden Persistent Wrath" default="ID_WOTC_RHW_ARCHETYPE_FEATURE_RANGER_HOLLOW_WARDEN_ANCIENT_MIGHT_PERSISTENT_WRATH" level="15" />
+		</rules>
+	</element>
+	<element name="Ancient Armor" type="Archetype Feature" source="Ravenloft: The Horrors Within" id="ID_WOTC_RHW_ARCHETYPE_FEATURE_RANGER_HOLLOW_WARDEN_WRATH_OF_THE_WILD_ANCIENT_ARMOR">
+		<compendium display="false"/>
+		<requirements>ID_WOTC_RHW_ARCHETYPE_FEATURE_RANGER_HOLLOW_WARDEN_WRATH_OF_THE_WILD</requirements>
+		<supports>Hollow Warden Ancient Armor</supports>
+		<description>
+			<p> You gain a +1 bonus to AC, as your body is wreathed in rotten bark and beastly bristles. This bonus increases to +2 when you reach Ranger level 11.</p>
+		</description>
+		<sheet>
+			<description>You gain a +{{ancient armor:ac}} bonus to AC.</description>
+		</sheet>
+		<rules>
+			<stat name="ancient armor:ac" value="1" bonus="base"/>
+			<stat name="ancient armor:ac" value="2" bonus="base" level="11"/>
+		</rules>
+	</element>
+	<element name="Prowling Retribution" type="Archetype Feature" source="Ravenloft: The Horrors Within" id="ID_WOTC_RHW_ARCHETYPE_FEATURE_RANGER_HOLLOW_WARDEN_WRATH_OF_THE_WILD_PROWLING_RETRIBUTION">
+		<compendium display="false"/>
+		<requirements>ID_WOTC_RHW_ARCHETYPE_FEATURE_RANGER_HOLLOW_WARDEN_WRATH_OF_THE_WILD</requirements>
+		<supports>Hollow Warden Prowling Retribution</supports>
+		<description>
+			<p>Immediately after a creature you can see within 5 feet of yourself deals damage to you or one of your allies, you can make an Opportunity Attack against that creature.</p>
+		</description>
+		<sheet action="Reaction">
+			<description>Immediately after a creature you can see within 5 feet of yourself deals damage to you or one of your allies, you can make an Opportunity Attack against that creature.</description>
+		</sheet>
+	</element>
+	<element name="Unnerving Aura" type="Archetype Feature" source="Ravenloft: The Horrors Within" id="ID_WOTC_RHW_ARCHETYPE_FEATURE_RANGER_HOLLOW_WARDEN_WRATH_OF_THE_WILD_UNNERVING_AURA">
+		<compendium display="false"/>
+		<requirements>ID_WOTC_RHW_ARCHETYPE_FEATURE_RANGER_HOLLOW_WARDEN_WRATH_OF_THE_WILD</requirements>
+		<supports>Hollow Warden Unnerving Aura</supports>
+		<description>
+			<p>Immediately after a creature you can see within 5 feet of yourself deals damage to you or one of your allies, you can make an Opportunity Attack against that creature.</p>
+		</description>
+		<sheet>
+			<description>When you transform and at the start of each of your subsequent turns, each creature of your choice in a 10-foot Emanation originating from you makes a Wisdom saving throw. On a failed save, a creature has the Frightened condition until the start of your next turn.</description>
+			<description level="11" alt="Menacing Aura">When you transform and at the start of each of your subsequent turns, each creature of your choice in a 10-foot Emanation originating from you makes a Wisdom saving throw. On a failed save, a creature has the Frightened condition, can't regain HPs, or take Reactions until the start of your next turn, .</description>
+		</sheet>
+	</element>
+
+	<element name="Level 7: Hungering Might" type="Archetype Feature" source="Ravenloft: The Horrors Within" id="ID_WOTC_RHW_ARCHETYPE_FEATURE_RANGER_HOLLOW_WARDEN_HUNGERING_MIGHT">
+		<requirements>!ID_INTERNAL_RHW_FEATURE_REPLACEMENT_RANGER_HOLLOW_WARDEN_HUNGERING_MIGHT</requirements>
+		<description>
+			<p>You gain a bonus to Constitution saving throws equal to your Wisdom modifier (minimum of +1).</p>
+			<p class="indent">In addition, once per turn when you hit a creature with an attack roll while you are transformed using Wrath of the Wild, you regain a number of Hit Points equal to 1d10 plus your Wisdom modifier, provided you are Bloodied when you hit.</p>
+		</description>
+		<sheet display="false"/>
+		<rules>
+			<stat name="constitution:save:misc" value="wisdom:modifier" bonus="ability" />
+		</rules>
+	</element>
+	<element name="Hungering Might" type="Archetype Feature" source="Ravenloft: The Horrors Within" id="ID_WOTC_RHW_ARCHETYPE_FEATURE_RANGER_HOLLOW_WARDEN_WRATH_OF_THE_WILD_HUNGERING_MIGHT">
+		<compendium display="false"/>
+		<requirements>ID_WOTC_RHW_ARCHETYPE_FEATURE_RANGER_HOLLOW_WARDEN_HUNGERING_MIGHT</requirements>
+		<supports>Hollow Warden Hungering Might</supports>
+		<description>
+			<p>Once per turn when you hit a creature with an attack roll while you are transformed using Wrath of the Wild, you regain a number of Hit Points equal to 1d10 plus your Wisdom modifier, provided you are Bloodied when you hit.</p>
+		</description>
+		<sheet usage="1/Turn">
+			<description>When you hit a creature with an attack roll while you are Bloodied, you regain 1d10 + {{wisdom:modifier}} HPs.</description>
+		</sheet>
+	</element>
+
+	<element name="Level 11: Rot and Violence" type="Archetype Feature" source="Ravenloft: The Horrors Within" id="ID_WOTC_RHW_ARCHETYPE_FEATURE_RANGER_HOLLOW_WARDEN_ROT_AND_VIOLENCE">
+		<requirements>!ID_INTERNAL_RHW_FEATURE_REPLACEMENT_RANGER_HOLLOW_WARDEN_ROT_AND_VIOLENCE</requirements>
+		<description>
+			<p>Your dedication to wild eldritch beings alters you further. When transformed using Wrath of the Wild, you gain the following additional benefits.</p>
+			<p class="indent"><b><i>Menacing Aura.</i></b> When a creature fails its saving throw against your Unnerving Aura, it also can't regain Hit Points or take Reactions until the start of your next turn.</p>
+			<p class="indent"><b><i>Strangling Roots.</i></b> When you hit a creature with an attack roll using a weapon, you can activate the Sap or Slow mastery property in addition to a different mastery property you're using with that weapon.</p>
+		</description>
+		<sheet display="false" />
+	</element>
+	<element name="Strangling Roots" type="Archetype Feature" source="Ravenloft: The Horrors Within" id="ID_WOTC_RHW_ARCHETYPE_FEATURE_RANGER_HOLLOW_WARDEN_ROT_AND_VIOLENCE_STRANGLING_ROOTS">
+		<compendium display="false"/>
+		<requirements>ID_WOTC_RHW_ARCHETYPE_FEATURE_RANGER_HOLLOW_WARDEN_ROT_AND_VIOLENCE</requirements>
+		<supports>Hollow Warden Strangling Roots</supports>
+		<description>
+			<p>When you hit a creature with an attack roll using a weapon, you can activate the Sap or Slow mastery property in addition to a different mastery property you're using with that weapon.</p>
+		</description>
+		<sheet>
+			<description>When you hit a creature with an attack roll using a weapon, you can activate the Sap or Slow mastery property in addition to a different mastery property you're using with that weapon.</description>
+		</sheet>
+	</element>
+
+	<element name="Level 15: Ancient Might" type="Archetype Feature" source="Ravenloft: The Horrors Within" id="ID_WOTC_RHW_ARCHETYPE_FEATURE_RANGER_HOLLOW_WARDEN_ANCIENT_MIGHT">
+		<requirements>!ID_INTERNAL_RHW_FEATURE_REPLACEMENT_RANGER_HOLLOW_WARDEN_ANCIENT_MIGHT</requirements>
+		<description>
+			<p>You become wholly suffused with the wild's ancient and terrible power, granting you the following benefits.</p>
+			<p class="indent"><b><i>Ominous Strikes.</i></b> When you hit a creature that has the Frightened condition with an attack roll, that attack deals extra damage equal to your Wisdom modifier.</p>
+			<p class="indent"><b><i>Persistent Wrath.</i></b> If you're reduced to 0 Hit Points but not killed outright while transformed using Wrath of the Wild, you can surge with wild power. Your Hit Points instead change to a number equal to twice your Ranger level. Once you use this feature, you can't do so again until you finish a Long Rest. You can also expend a level 4+ spell slot (no action required) to restore your use of this feature.</p>
+			<p class="indent"><b><i>Tireless.</i></b> You have Immunity to the Exhaustion condition.</p>
+		</description>
+		<sheet alt="Ancient Might">
+			<description>You have Immunity to the Exhaustion condition. &#13;
+			When you hit a Frightened creature with an attack roll, the attack deals an extra {{wisdom:modifier}} damage.</description>
+		</sheet>
+	</element>
+	<element name="Persistent Wrath" type="Archetype Feature" source="Ravenloft: The Horrors Within" id="ID_WOTC_RHW_ARCHETYPE_FEATURE_RANGER_HOLLOW_WARDEN_ANCIENT_MIGHT_PERSISTENT_WRATH">
+		<compendium display="false"/>
+		<requirements>ID_WOTC_RHW_ARCHETYPE_FEATURE_RANGER_HOLLOW_WARDEN_ANCIENT_MIGHT</requirements>
+		<supports>Hollow Warden Persistent Wrath</supports>
+		<description>
+			<p>If you're reduced to 0 Hit Points but not killed outright while transformed using Wrath of the Wild, you can surge with wild power. Your Hit Points instead change to a number equal to twice your Ranger level. Once you use this feature, you can't do so again until you finish a Long Rest. You can also expend a level 4+ spell slot (no action required) to restore your use of this feature.</p>
+		</description>
+		<sheet usage="1/Long Rest">
+			<description>If you're reduced to 0 HPs but not killed outright, your HPs instead change to {{persistent wrath:hp}}. You can expend a level 4+ spell slot (no action required) to restore your use of this feature.</description>
+		</sheet>
+		<rules>
+			<stat name="persistent wrath:hp" value="level:ranger" />
+			<stat name="persistent wrath:hp" value="level:ranger" />
+		</rules>
+	</element>
+
+	<!--Feature Replacement Grants-->
+	<element name="Hollow Warden Spells Feature Replacement" type="Grants" source="Internal" id="ID_INTERNAL_RHW_FEATURE_REPLACEMENT_RANGER_HOLLOW_WARDEN_HOLLOW_WARDEN_SPELLS" />
+	<element name="Wrath of the Wild Feature Replacement" type="Grants" source="Internal" id="ID_INTERNAL_RHW_FEATURE_REPLACEMENT_RANGER_HOLLOW_WARDEN_WRATH_OF_THE_WILD" />
+	<element name="Hungering Might Feature Replacement" type="Grants" source="Internal" id="ID_INTERNAL_RHW_FEATURE_REPLACEMENT_RANGER_HOLLOW_WARDEN_HUNGERING_MIGHT" />
+	<element name="Rot and Violence Feature Replacement" type="Grants" source="Internal" id="ID_INTERNAL_RHW_FEATURE_REPLACEMENT_RANGER_HOLLOW_WARDEN_ROT_AND_VIOLENCE" />
+	<element name="Ancient Might Feature Replacement" type="Grants" source="Internal" id="ID_INTERNAL_RHW_FEATURE_REPLACEMENT_RANGER_HOLLOW_WARDEN_ANCIENT_MIGHT" />
+</elements>
