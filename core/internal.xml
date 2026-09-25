@@ -2568,4 +2568,61 @@
 			<stat name="charisma" value="1" alt="Ability Score Increase (Background)" />
 		</rules>
 	</element>
+
+	<!--Weapon Mastery Feature Grant-->
+	<element name="Weapon Mastery Feature" type="Grants" source="Internal" id="ID_INTERNAL_GRANTS_WEAPON_MASTERY_FEATURE" />
+
+	<!--Weapon Mastery Additional Features-->
+	<element name="Weapon Mastery Feature" type="Item" source="Internal" id="ID_INTERNAL_ITEM_WEAPON_MASTERY_FEATURE">
+		<description>
+			<p><i>You can equip this item to “enable” it. It remains hidden from the inventory on your character sheet.</i></p>
+			<p>You gain Weapon Mastery Class Feature.</p>
+			<p><b>Note:</b> This item is intended only for characters that <u>don't</u> have Weapon Mastery feature already (e.g. Monk Class characters). For ability to select more options search for <i>Additional Weapon Mastery</i> item.</p>
+			<p class="indent">Selection for Mastery appears under the <u>CLASS</u> sub-menu.</p>
+			<div class="reference">
+				<div element="ID_INTERNAL_CLASS_FEATURE_WEAPON_MASTERY" />
+			</div>
+		</description>
+		<setters>
+			<set name="category">Additional Feature</set>
+			<set name="slot">misc</set>
+			<set name="inventory-hidden">true</set>
+		</setters>
+		<rules>
+			<grant type="Class Feature" id="ID_INTERNAL_CLASS_FEATURE_WEAPON_MASTERY" />
+		</rules>
+	</element>
+	
+	<element name="Weapon Mastery" type="Class Feature" source="Internal" id="ID_INTERNAL_CLASS_FEATURE_WEAPON_MASTERY">
+		<compendium display="false" />
+		<description>
+			<p>Your training with weapons allows you to use the mastery properties of two kinds of weapons of your choice with which you have proficiency, such as Longbows and Shortswords.</p>
+			<p class="indent">Whenever you finish a Long Rest, you can change the kinds of weapons you chose. For example, you could switch to using the mastery properties of Scimitars and Longswords.</p>
+		</description>
+		<sheet alt="Weapon Mastery">
+			<description>Whenever you finish a Long Rest, you can change one of the weapons you previously chosen for a different one.</description>
+		</sheet>
+		<rules>
+			<grant type="Grants" id="ID_INTERNAL_GRANTS_WEAPON_MASTERY_FEATURE" />
+			<select type="Class Feature" name="Weapon Mastery" supports="Weapon Mastery" number="2" />
+		</rules>
+	</element>
+
+	<!--Weapon Mastery Selection-->
+	<element name="Weapon Mastery Selection" type="Item" source="Internal" id="ID_INTERNAL_ITEM_WEAPON_MASTERY_SELECTION">
+		<description>
+			<p><i>You can equip this item to “enable” it. It remains hidden from the inventory on your character sheet.</i></p>
+			<p>You gain an extra Weapon Mastery of your choice.</p>
+			<p><b>Note:</b> This item is intended only for characters that <u>already have</u> Weapon Mastery feature (e.g. Fighter Class characters). For ability to gain the Class feature itself search for <i>Weapon Mastery Feature</i> item.</p>
+			<p class="indent">Selection for Mastery appears under the <u>CLASS</u> sub-menu.</p>
+		</description>
+		<setters>
+			<set name="category">Additional Feature</set>
+			<set name="slot">misc</set>
+			<set name="inventory-hidden">true</set>
+		</setters>
+		<rules>
+			<select type="Class Feature" name="Weapon Mastery" supports="Weapon Mastery" />
+		</rules>
+	</element>
 </elements>
