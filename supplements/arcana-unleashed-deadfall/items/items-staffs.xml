@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<elements>
+	<info>
+		<name>Staffs</name>
+		<description>Magical Staffs from Arcana Unleashed: Deadfall</description>
+		<update version="0.0.1">
+			<file name="items-staffs.xml" url="https://raw.githubusercontent.com/AuroraLegacy/elements/master/supplements/arcana-unleashed-deadfall/items/items-staffs.xml" />
+		</update>
+	</info>
+
+	<element name="Staff of the Spirit Aegis" type="Magic Item" source="Arcana Unleashed: Deadfall" id="ID_WOTC_AUD_MAGIC_ITEM_STAFF_OF_THE_SPIRIT_AEGIS">
+		<description>
+			<p>This weathered bone staff is topped with a skull and decorated with vertebrae. It can be wielded as a magic Quarterstaff that grants a +3 bonus to attack rolls and damage rolls made with it. While holding the staff, you have Resistance to Necrotic damage.</p>
+			<p class="indent"><b><i>Aura of Haunted Power.</i></b> As a Magic action while holding the staff, you can cause it to radiate supernatural power that fills a 30-foot Emanation originating from you. Creatures of your choice in this Emanation (including yourself) gain the following benefits:</p>
+			<ul class="unstyled" style="text-indent:-1em; margin-left:1em">
+				<li><b>Undead Deterrent.</b> Undead have Disadvantage on attack rolls against the creatures.</li>
+				<li><b>Unholy Protection.</b> The creatures have Resistance to Cold, Necrotic, and Psychic damage, and they have Advantage on saving throws to avoid or end the Frightened condition.</li>
+			</ul>
+			<p class="indent" style="margin-bottom:5px">The Emanation lasts for 1 hour or until you end it (no action required). Once used, this property can't be used again until the next dawn.</p>
+			<p class="indent"><b><i>Illuminating Sight.</i></b> As a Bonus Action while holding the staff, you can cause the eye sockets of the skull atop the staff to emit an unearthly glow; this glow lasts until you stop it (no action required). While the staff glows, it sheds Bright Light in a 15-foot radius and Dim Light for an additional 15 feet. Invisible creatures and objects are visible as long as they are in the staff's Bright Light or Dim Light.</p>
+		</description>
+		<setters>
+			<set name="keywords">enhancement, resistance, necrotic, damage, magic action, emanation, undead, disadvantage, cold, necrotic, psychic, advantage, saving throws, frightened, dawn, bonus action, bright light, dim light, invisible</set>
+			<set name="category">Magic Weapons</set>
+			<set name="type" addition="Staff">Weapon</set>
+			<set name="weapon">Quarterstaff</set>
+			<set name="rarity">Legendary</set>
+			<set name="attunement">true</set>
+			<set name="enhancement">3</set>
+			<set name="cost" currency="gp">200000</set>
+			<set name="weight" lb="4">4 lb.</set>
+		</setters>
+		<rules>
+			<grant type="Condition" id="ID_INTERNAL_CONDITION_DAMAGE_RESISTANCE_NECROTIC" />
+		</rules>
+	</element>
+
+</elements>

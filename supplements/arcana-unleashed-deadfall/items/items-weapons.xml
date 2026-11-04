@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<elements>
+	<info>
+		<name>Weapons</name>
+		<description>Weapons from Arcana Unleashed: Deadfall</description>
+		<update version="0.0.1">
+			<file name="items-weapons.xml" url="https://raw.githubusercontent.com/AuroraLegacy/elements/master/supplements/arcana-unleashed-deadfall/items/items-weapons.xml" />
+		</update>
+	</info>
+
+	<element name="Life-Sapping Blade" type="Magic Item" source="Arcana Unleashed: Deadfall" id="ID_WOTC_AUD_MAGIC_ITEM_LIFE_SAPPING_BLADE">
+		<description>
+			<p>This thin, black, iron blade is popular among Thayan assassins and spies.</p>
+			<p class="indent">You gain a +1 bonus to attack rolls and damage rolls made with this magic weapon. When you hit with an attack roll using this weapon, the target takes an extra 2d4 Necrotic damage, and it can't regain Hit Points until the end of its next turn. If a creature is reduced to 0 Hit Points by an attack using this weapon, the creature immediately dies and can be restored to life only by a Resurrection or True Resurrection spell.</p>
+		</description>
+		<setters>
+			<set name="keywords">enhancement, necrotic, damage, hit points, resurrection, true resurrection</set>
+			<set name="category">Magic Weapons</set>
+			<set name="type" addition="Any Melee Weapon with the Finesse Property">Weapon</set>
+			<set name="weapon">(ID_INTERNAL_WEAPON_CATEGORY_SIMPLE_MELEE||ID_INTERNAL_WEAPON_CATEGORY_MARTIAL_MELEE),ID_INTERNAL_WEAPON_PROPERTY_FINESSE</set>
+			<set name="name-format">Life-Sapping {{parent}}</set>
+			<set name="rarity">Rare</set>
+			<set name="attunement">true</set>
+			<set name="enhancement">1</set>
+			<set name="cost" currency="gp">4000</set>
+		</setters>
+	</element>
+
+	<element name="Sniper's Bracelet Weapon" type="Magic Item" source="Arcana Unleashed: Deadfall" id="ID_WOTC_AUD_MAGIC_ITEM_SNIPERS_BRACELET_WEAPON">
+		<description>
+			<p>As a Magic action while touching this weapon, you can transform it into a bracelet or back into its weapon form. While in bracelet form, it can't be used to make attacks.</p>
+			<p class="indent">If the weapon lacks ammunition while in its weapon form, it produces its own, automatically creating one piece of magic ammunition when you make a ranged attack roll with it. The ammunition vanishes the instant after it hits or misses a target.</p>
+		</description>
+		<setters>
+			<set name="keywords">magic action, ammunition, ranged</set>
+			<set name="category">Magic Weapons</set>
+			<set name="type" addition="Any Heavy Crossbow, Light Crossbow, Longbow, Musket, Pistol, or Shortbow">Weapon</set>
+			<set name="weapon">Heavy Crossbow||Light Crossbow||Longbow||Musket||Pistol||Shortbow</set>
+			<set name="name-format">Sniper's Bracelet {{parent}}</set>
+			<set name="rarity">Common</set>
+			<set name="attunement">false</set>
+			<set name="cost" currency="gp">100</set>
+		</setters>
+	</element>
+
+	<element name="Thayan Sword" type="Magic Item" source="Arcana Unleashed: Deadfall" id="ID_WOTC_AUD_MAGIC_ITEM_THAYAN_SWORD">
+		<description>
+			<p><i>Thayan Swords</i> are often awarded to premier Thayan knights when they complete their training.</p>
+			<p class="indent">You gain a +1 bonus to attack rolls and damage rolls made with this magic weapon.</p>
+			<p class="indent"><b><i>Knights of the Arcane.</i></b> The sword has 4 charges and regains 1d4 charges daily at dawn. While holding the sword, you can expend 1 charge to cast one of the following spells (save DC 15):</p>
+			<ul>
+				<li><i>Searing Smite</i></li>
+				<li><i>Thunderous Smite</i></li>
+				<li><i>Wrathful Smite</i></li>
+			</ul>
+			<p class="indent"><b><i>Resurgent Warrior.</i></b> If you're reduced to 0 Hit Points but not killed outright while holding this sword, you can drop to 1 Hit Point instead. Once used, this property can't be used again until the next dawn.</p>
+			<div class="reference">
+				<div element="ID_WOTC_PHB24_SPELL_SEARING_SMITE" />
+			</div>
+			<div class="reference">
+				<div element="ID_WOTC_PHB24_SPELL_THUNDEROUS_SMITE" />
+			</div>
+			<div class="reference">
+				<div element="ID_WOTC_PHB24_SPELL_WRATHFUL_SMITE" />
+			</div>
+			</description>
+		<setters>
+			<set name="keywords">enhancement, charges, dawn, searing smite, thunderous smite, wrathful smite, hit points</set>
+			<set name="category">Magic Weapons</set>
+			<set name="type" addition="Any Greatsword, Longsword, or Scimitar">Weapon</set>
+			<set name="weapon">Greatsword||Longsword||Scimitar</set>
+			<set name="name-format">Thayan {{parent}}</set>
+			<set name="rarity">Rare</set>
+			<set name="attunement">true</set>
+			<set name="enhancement">1</set>
+			<set name="charges">4</set>
+			<set name="cost" currency="gp">4000</set>
+		</setters>
+	</element>
+
+	<element name="Trick Weapon" type="Magic Item" source="Arcana Unleashed: Deadfall" id="ID_WOTC_AUD_MAGIC_ITEM_TRICK_WEAPON">
+		<description>
+			<p>As a Magic action while touching this weapon, you can transform it into a mundane item or back into its weapon form. It can't be used to make attacks while transformed into a mundane item.</p>
+			<p class="indent">Different Trick Weapons transform into different items. The DM chooses the mundane item or determines it randomly by rolling on the following table.</p>
+			<table>
+				<thead>
+					<tr><td class="col-10">1d10</td><td>The Weapon Transforms Into A...</td></tr>
+				</thead>
+				<tr><td>1</td><td>Bracelet</td></tr>
+				<tr><td>2</td><td>Comb</td></tr>
+				<tr><td>3</td><td>Crutch</td></tr>
+				<tr><td>4</td><td>Fake coin</td></tr>
+				<tr><td>5</td><td>Hairpin</td></tr>
+				<tr><td>6</td><td>Jingle bell</td></tr>
+				<tr><td>7</td><td>Pendant necklace</td></tr>
+				<tr><td>8</td><td>Playing card</td></tr>
+				<tr><td>9</td><td>Quill pen</td></tr>
+				<tr><td>10</td><td>Spoon</td></tr>
+			</table>
+		</description>
+		<setters>
+			<set name="keywords">magic action, trick, disguise</set>
+			<set name="category">Magic Weapons</set>
+			<set name="type" addition="Any Simple or Martial Melee Weapon">Weapon</set>
+			<set name="weapon">ID_INTERNAL_WEAPON_CATEGORY_SIMPLE_MELEE||ID_INTERNAL_WEAPON_CATEGORY_MARTIAL_MELEE</set>
+			<set name="name-format">Trick {{parent}}</set>
+			<set name="rarity">Common</set>
+			<set name="attunement">false</set>
+			<set name="cost" currency="gp">100</set>
+		</setters>
+	</element>
+
+</elements>

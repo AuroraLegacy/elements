@@ -1,0 +1,178 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<elements>
+	<info>
+		<name>Warrior of the Mystic Arts</name>
+		<description>The Warrior of the Mystic Arts subclass from Arcana Unleashed.</description>
+		<update version="0.0.1">
+			<file name="monk-mystic-arts.xml" url="https://raw.githubusercontent.com/AuroraLegacy/elements/master/supplements/arcana-unleashed/archetypes/monk-mystic-arts.xml" />
+		</update>
+	</info>
+
+	<element name="Warrior of the Mystic Arts" type="Archetype" source="Arcana Unleashed" id="ID_WOTC_AU_ARCHETYPE_MONK_WARRIOR_OF_THE_MYSTIC_ARTS">
+		<supports>Monk Subclass</supports>
+		<description>
+			<p class="flavor">Weave Martial and Mystic Arts</p>
+			<p>Warriors of the Mystic Arts wield magic to supplement their martial skill. They harness mystical focus to enhance their magical and physical abilities.</p>
+			<div element="ID_WOTC_AU_ARCHETYPE_FEATURE_MONK_MYSTIC_ARTS_SPELLCASTING"/>
+			<h5>WARRIOR OF THE MYSTIC ARTS SPELLCASTING</h5>
+			<table class="class-features">
+				<tr style="font-weight: bold">
+					<td rowspan="2">Monk Level</td>
+					<td rowspan="2">Spells Prepared</td>
+					<td colspan="4" style="vertical-align:bottom; border-bottom: 0px">Spell Slots per Spell Level</td>
+				</tr>
+				<tr style="font-weight: bold"><td>1</td><td>2</td><td>3</td><td>4</td></tr>
+				<tr><td> 3</td><td> 3</td><td>2</td><td>—</td><td>—</td><td>—</td></tr>
+				<tr><td> 4</td><td> 4</td><td>3</td><td>—</td><td>—</td><td>—</td></tr>
+				<tr><td> 5</td><td> 4</td><td>3</td><td>—</td><td>—</td><td>—</td></tr>
+				<tr><td> 6</td><td> 4</td><td>3</td><td>—</td><td>—</td><td>—</td></tr>
+				<tr><td> 7</td><td> 5</td><td>4</td><td>2</td><td>—</td><td>—</td></tr>
+				<tr><td> 8</td><td> 6</td><td>4</td><td>2</td><td>—</td><td>—</td></tr>
+				<tr><td> 9</td><td> 6</td><td>4</td><td>2</td><td>—</td><td>—</td></tr>
+				<tr><td>10</td><td> 7</td><td>4</td><td>3</td><td>—</td><td>—</td></tr>
+				<tr><td>11</td><td> 8</td><td>4</td><td>3</td><td>—</td><td>—</td></tr>
+				<tr><td>12</td><td> 8</td><td>4</td><td>3</td><td>—</td><td>—</td></tr>
+				<tr><td>13</td><td> 9</td><td>4</td><td>3</td><td>2</td><td>—</td></tr>
+				<tr><td>14</td><td>10</td><td>4</td><td>3</td><td>2</td><td>—</td></tr>
+				<tr><td>15</td><td>10</td><td>4</td><td>3</td><td>2</td><td>—</td></tr>
+				<tr><td>16</td><td>11</td><td>4</td><td>3</td><td>3</td><td>—</td></tr>
+				<tr><td>17</td><td>11</td><td>4</td><td>3</td><td>3</td><td>—</td></tr>
+				<tr><td>18</td><td>11</td><td>4</td><td>3</td><td>3</td><td>—</td></tr>
+				<tr><td>19</td><td>12</td><td>4</td><td>3</td><td>3</td><td>1</td></tr>
+				<tr><td>20</td><td>13</td><td>4</td><td>3</td><td>3</td><td>1</td></tr>
+			</table>
+			<div element="ID_WOTC_AU_ARCHETYPE_FEATURE_MONK_MYSTIC_ARTS_MYSTIC_FIGHTING_STYLE"/>
+			<div element="ID_WOTC_AU_ARCHETYPE_FEATURE_MONK_MYSTIC_ARTS_MYSTIC_FOCUS"/>
+			<div element="ID_WOTC_AU_ARCHETYPE_FEATURE_MONK_MYSTIC_ARTS_FOCUSED_STRIKE"/>
+			<div element="ID_WOTC_AU_ARCHETYPE_FEATURE_MONK_MYSTIC_ARTS_IMPROVED_MYSTIC_FIGHTING_STYLE"/>
+		</description>
+		<sheet display="false" />
+		<rules>
+			<grant type="Archetype Feature" id="ID_WOTC_AU_ARCHETYPE_FEATURE_MONK_MYSTIC_ARTS_SPELLCASTING" level="3"/>
+			<grant type="Archetype Feature" id="ID_WOTC_AU_ARCHETYPE_FEATURE_MONK_MYSTIC_ARTS_MYSTIC_FIGHTING_STYLE" level="6"/>
+			<grant type="Archetype Feature" id="ID_WOTC_AU_ARCHETYPE_FEATURE_MONK_MYSTIC_ARTS_MYSTIC_FOCUS" level="6"/>
+			<grant type="Archetype Feature" id="ID_WOTC_AU_ARCHETYPE_FEATURE_MONK_MYSTIC_ARTS_FOCUSED_STRIKE" level="11"/>
+			<grant type="Archetype Feature" id="ID_WOTC_AU_ARCHETYPE_FEATURE_MONK_MYSTIC_ARTS_IMPROVED_MYSTIC_FIGHTING_STYLE" level="17"/>
+		</rules>
+	</element>
+
+	<element name="Level 3: Spellcasting" type="Archetype Feature" source="Arcana Unleashed" id="ID_WOTC_AU_ARCHETYPE_FEATURE_MONK_MYSTIC_ARTS_SPELLCASTING">
+		<requirements>!ID_INTERNAL_AU_FEATURE_REPLACEMENT_MONK_MYSTIC_ARTS_SPELLCASTING</requirements>
+		<description>
+			<p>You have learned to cast spells.</p>
+			<p class="indent"><strong><em>Cantrips.</em></strong> You know two cantrips of your choice from the Sorcerer spell list. <i>Blade Ward</i> and <i>Thunderclap</i> are recommended. Whenever you gain a Monk level, you can replace one of these cantrips with another cantrip of your choice from the Sorcerer spell list.</p>
+			<p class="indent">When you reach Monk level 10, you learn another Sorcerer cantrip of your choice.</p>
+			<p class="indent"><strong><em>Spell Slots.</em></strong> The Warrior of the Mystic Arts Spellcasting table shows how many spell slots you have to cast your level 1+ spells. You regain all expended slots when you finish a Long Rest.</p>
+			<p class="indent"><strong><em>Prepared Spells of Level 1+.</em></strong> You prepare the list of level 1+ spells that are available for you to cast with this feature. To start, choose three level 1 spells from the Sorcerer spell list. <i>Jump</i>, <i>Magic Missile</i>, and <i>Shield</i> are recommended.</p>
+			<p class="indent">The number of spells on your list increases as you gain Monk levels, as shown in the Prepared Spells column of the Warrior of the Mystic Arts Spellcasting table. Whenever that number increases, choose additional spells from the Sorcerer spell list until the number of spells on your list matches the number on the table. The chosen spells must be of a level for which you have spell slots. For example, if you're a level 7 Monk, your list of prepared spells can include five Sorcerer spells of levels 1 and 2 in any combination.</p>
+			<p class="indent"><strong><em>Changing your Prepared Spells.</em></strong> Whenever you gain a Monk level, you can replace one spell on your list with another Sorcerer spell for which you have spell slots.</p>
+			<p class="indent"><strong><em>Spellcasting Ability.</em></strong> Wisdom is your spellcasting ability for your Sorcerer spells.</p>
+			<p class="indent"><strong><em>Spellcasting Focus.</em></strong> You can use an Arcane Focus as a Spellcasting Focus for your Sorcerer spells.</p>
+			<center>
+				<p><strong>Spell save DC</strong> = 8 + your proficiency bonus + your Wisdom modifier</p>
+				<p><strong>Spell attack modifier</strong> = your proficiency bonus + your Wisdom modifier</p>
+			</center>
+		</description>
+		<sheet alt="Spellcasting">
+			<description>You can replace one of your spells and/or cantrips whenever you gain a Monk level.</description>
+		</sheet>
+		<spellcasting name="Warrior of the Mystic Arts" ability="Wisdom" allowReplace="true">
+			<list>Sorcerer</list>
+		</spellcasting>
+		<rules>
+			<grant type="Grants" id="ID_INTERNAL_GRANTS_SPELLCASTING_FEATURE" />
+			<grant type="Grants" id="ID_INTERNAL_GRANT_MULTICLASS_SPELLCASTING_SLOTS_THIRD" requirements="ID_INTERNAL_GRANT_MULTICLASS"/>
+			<grant type="Grants" id="ID_INTERNAL_RITUAL_CASTING" />
+			<grant type="Grants" id="ID_INTERNAL_GRANTS_HAS_LEVEL_1_SPELL_SLOTS" level="1" />
+			<grant type="Grants" id="ID_INTERNAL_GRANTS_HAS_LEVEL_2_SPELL_SLOTS" level="7" />
+			<grant type="Grants" id="ID_INTERNAL_GRANTS_HAS_LEVEL_3_SPELL_SLOTS" level="13" />
+			<grant type="Grants" id="ID_INTERNAL_GRANTS_HAS_LEVEL_4_SPELL_SLOTS" level="19" />
+			<grant type="Proficiency" id="ID_INTERNAL_PROFICIENCY_SPELLFOCUS_GROUP_ARCANE_FOCUS" />
+
+			<stat name="warrior of the mystic arts:spellcasting:slots:1" value="2" level="3" />
+			<stat name="warrior of the mystic arts:spellcasting:slots:1" value="1" level="4" />
+			<stat name="warrior of the mystic arts:spellcasting:slots:1" value="1" level="7" />
+			<stat name="warrior of the mystic arts:spellcasting:slots:2" value="2" level="7" />
+			<stat name="warrior of the mystic arts:spellcasting:slots:2" value="1" level="10" />
+			<stat name="warrior of the mystic arts:spellcasting:slots:3" value="2" level="13" />
+			<stat name="warrior of the mystic arts:spellcasting:slots:3" value="1" level="16" />
+			<stat name="warrior of the mystic arts:spellcasting:slots:4" value="1" level="19" />
+
+			<select type="Spell" name="Cantrip (Warrior of the Mystic Arts)" supports="Sorcerer, 0" level="3" number="2" spellcasting="Warrior of the Mystic Arts" />
+			<select type="Spell" name="Cantrip (Warrior of the Mystic Arts)" supports="Sorcerer, 0" level="10" spellcasting="Warrior of the Mystic Arts" />
+			<select type="Spell" name="Spell (Warrior of the Mystic Arts)" supports="$(spellcasting:list), $(spellcasting:slots)" level="3" number="3" spellcasting="Warrior of the Mystic Arts" />
+			<select type="Spell" name="Spell (Warrior of the Mystic Arts)" supports="$(spellcasting:list), $(spellcasting:slots)" level="4" spellcasting="Warrior of the Mystic Arts"/>
+			<select type="Spell" name="Spell (Warrior of the Mystic Arts)" supports="$(spellcasting:list), $(spellcasting:slots)" level="7" spellcasting="Warrior of the Mystic Arts"/>
+			<select type="Spell" name="Spell (Warrior of the Mystic Arts)" supports="$(spellcasting:list), $(spellcasting:slots)" level="8" spellcasting="Warrior of the Mystic Arts"/>
+			<select type="Spell" name="Spell (Warrior of the Mystic Arts)" supports="$(spellcasting:list), $(spellcasting:slots)" level="10" spellcasting="Warrior of the Mystic Arts"/>
+			<select type="Spell" name="Spell (Warrior of the Mystic Arts)" supports="$(spellcasting:list), $(spellcasting:slots)" level="11" spellcasting="Warrior of the Mystic Arts"/>
+			<select type="Spell" name="Spell (Warrior of the Mystic Arts)" supports="$(spellcasting:list), $(spellcasting:slots)" level="13" spellcasting="Warrior of the Mystic Arts"/>
+			<select type="Spell" name="Spell (Warrior of the Mystic Arts)" supports="$(spellcasting:list), $(spellcasting:slots)" level="14" spellcasting="Warrior of the Mystic Arts"/>
+			<select type="Spell" name="Spell (Warrior of the Mystic Arts)" supports="$(spellcasting:list), $(spellcasting:slots)" level="16" spellcasting="Warrior of the Mystic Arts"/>
+			<select type="Spell" name="Spell (Warrior of the Mystic Arts)" supports="$(spellcasting:list), $(spellcasting:slots)" level="19" spellcasting="Warrior of the Mystic Arts"/>
+			<select type="Spell" name="Spell (Warrior of the Mystic Arts)" supports="$(spellcasting:list), $(spellcasting:slots)" level="20" spellcasting="Warrior of the Mystic Arts"/>
+		</rules>
+	</element>
+
+	<element name="Level 6: Mystic Fighting Style" type="Archetype Feature" source="Arcana Unleashed" id="ID_WOTC_AU_ARCHETYPE_FEATURE_MONK_MYSTIC_ARTS_MYSTIC_FIGHTING_STYLE">
+		<requirements>!ID_INTERNAL_AU_FEATURE_REPLACEMENT_MONK_MYSTIC_ARTS_MYSTIC_FIGHTING_STYLE</requirements>
+		<description>
+			<p>When you take the Attack action on your turn, you can replace one Unarmed Strike with a casting of one of your Sorcerer cantrips that has a casting time of an Action.</p>
+		</description>
+		<sheet alt="Mystic Fighting Style" action="Attack Action" >
+			<description>You can replace one Unarmed Strike with a casting of one of your Sorcerer cantrips that has a casting time of an Action.</description>
+		</sheet>
+	</element>
+
+	<element name="Level 6: Mystic Focus" type="Archetype Feature" source="Arcana Unleashed" id="ID_WOTC_AU_ARCHETYPE_FEATURE_MONK_MYSTIC_ARTS_MYSTIC_FOCUS">
+		<requirements>!ID_INTERNAL_AU_FEATURE_REPLACEMENT_MONK_MYSTIC_ARTS_MYSTIC_FOCUS</requirements>
+		<description>
+			<p>You keep your magical power and martial focus in perfect balance, allowing you to convert spell slots into Focus Points, or convert Focus Points into spell slots.</p>
+			<p class="indent"><em><strong>Converting Spell Slots to Focus Points.</strong></em> You can expend a spell slot to regain a number of expended Focus Points equal to the slot's level (no action required).</p>
+			<p class="indent"><em><strong>Recovering Spell Slots.</strong></em> When you finish a Short Rest or use Uncanny Metabolism, you can transform unexpended Focus Points to recover one expended spell slot. The Recovering Spell Slots table shows the cost of recovering a spell slot of a given level, and it lists the minimum Monk level you must be to recover a slot. You can recover a spell slot no higher than level 4.</p>
+			<h5>RECOVERING SPELL SLOTS</h5>
+			<table class="class-features">
+				<thead>
+					<tr><td>Spell Slot Level</td><td>Focus Point Cost</td><td>Min. Monk Level</td></tr>
+				</thead>
+				<tr><td>1</td><td>2</td><td>6</td></tr>
+				<tr><td>2</td><td>3</td><td>7</td></tr>
+				<tr><td>3</td><td>5</td><td>13</td></tr>
+				<tr><td>4</td><td>6</td><td>19</td></tr>
+			</table>
+		</description>
+		<sheet alt="Mystic Focus">
+			<description>When you finish a Short Rest or use Uncanny Metabolism, you can transform unexpended Focus Points to recover one expended spell slot (2 > 1st). Alternatively, you can expend one spell slot and gain a number of Focus Points equal to the slot’s level (no action required).</description>
+			<description level="7">When you finish a Short Rest or use Uncanny Metabolism, you can transform unexpended Focus Points to recover one expended spell slot (2 > 1st, 3 > 2nd). Alternatively, you can expend one spell slot and gain a number of Focus Points equal to the slot’s level (no action required).</description>
+			<description level="13">When you finish a Short Rest or use Uncanny Metabolism, you can transform unexpended Focus Points to recover one expended spell slot (2 > 1st, 3 > 2nd, 5 > 3rd). Alternatively, you can expend one spell slot and gain a number of Focus Points equal to the slot’s level (no action required).</description>
+			<description level="19">When you finish a Short Rest or use Uncanny Metabolism, you can transform unexpended Focus Points to recover one expended spell slot (2 > 1st, 3 > 2nd, 5 > 3rd, 6 > 4th). Alternatively, you can expend one spell slot and gain a number of Focus Points equal to the slot’s level (no action required).</description>
+		</sheet>
+	</element>
+
+	<element name="Level 11: Focused Strike" type="Archetype Feature" source="Arcana Unleashed" id="ID_WOTC_AU_ARCHETYPE_FEATURE_MONK_MYSTIC_ARTS_FOCUSED_STRIKE">
+		<requirements>!ID_INTERNAL_AU_FEATURE_REPLACEMENT_MONK_MYSTIC_ARTS_FOCUSED_STRIKE</requirements>
+		<description>
+			<p>When you use your Stunning Strike, whether the target succeeds or fails on the saving throw, the target has Disadvantage on saving throws against your spells until the start of your next turn.</p>
+		</description>
+		<sheet alt="Focused Strike">
+			<description>When you use your Stunning Strike, whether the target succeeds or fails on the saving throw, the target has Disadvantage on saving throws against your spells until the start of your next turn.</description>
+		</sheet>
+	</element>
+
+	<element name="Level 17: Improved Mystic Fighting Style" type="Archetype Feature" source="Arcana Unleashed" id="ID_WOTC_AU_ARCHETYPE_FEATURE_MONK_MYSTIC_ARTS_IMPROVED_MYSTIC_FIGHTING_STYLE">
+		<requirements>!ID_INTERNAL_AU_FEATURE_REPLACEMENT_MONK_MYSTIC_ARTS_IMPROVED_MYSTIC_FIGHTING_STYLE</requirements>
+		<description>
+			<p>When you use Flurry of Blows, you can replace two of the Unarmed Strikes with a casting of one of your level 1 or 2 Sorcerer spells that has a casting time of an Action, and you cast it as part of the same Bonus Action you use to activate Flurry of Blows.</p>
+		</description>
+		<sheet alt="Improved Mystic Fighting Style">
+			<description>When you use Flurry of Blows, you can replace two of the Unarmed Strikes with a casting of one of your level 1 or 2 Sorcerer spells that has a casting time of an Action, and you cast it as part of the same Bonus Action you use to activate Flurry of Blows.</description>
+		</sheet>
+	</element>
+
+	<!--Feature Replacement Grants-->
+	<element name="Spellcasting Feature Replacement" type="Grants" source="Internal" id="ID_INTERNAL_AU_FEATURE_REPLACEMENT_MONK_MYSTIC_ARTS_SPELLCASTING" />
+	<element name="Mystic Fighting Style Feature Replacement" type="Grants" source="Internal" id="ID_INTERNAL_AU_FEATURE_REPLACEMENT_MONK_MYSTIC_ARTS_MYSTIC_FIGHTING_STYLE" />
+	<element name="Mystic Focus Feature Replacement" type="Grants" source="Internal" id="ID_INTERNAL_AU_FEATURE_REPLACEMENT_MONK_MYSTIC_ARTS_MYSTIC_FOCUS" />
+	<element name="Focused Strike Feature Replacement" type="Grants" source="Internal" id="ID_INTERNAL_AU_FEATURE_REPLACEMENT_MONK_MYSTIC_ARTS_FOCUSED_STRIKE" />
+	<element name="Improved Mystic Fighting Style Feature Replacement" type="Grants" source="Internal" id="ID_INTERNAL_AU_FEATURE_REPLACEMENT_MONK_MYSTIC_ARTS_IMPROVED_MYSTIC_FIGHTING_STYLE" />
+</elements>

@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<elements>
+	<info>
+		<name>Phantasmic Circus Trouper</name>
+		<description>The Phantasmic Circus Trouper background from Arcana Unleashed.</description>
+		<update version="0.0.1">
+			<file name="background-phantasmic-circus-trouper.xml" url="https://raw.githubusercontent.com/AuroraLegacy/elements/master/supplements/arcana-unleashed/backgrounds/background-phantasmic-circus-trouper.xml" />
+		</update>
+	</info>
+
+	<element name="Phantasmic Circus Trouper" type="Background" source="Arcana Unleashed" id="ID_WOTC_AU_BACKGROUND_PHANTASMIC_CIRCUS_TROUPER">
+		<description>
+			<ul class="unstyled" style="text-indent:-1em; margin-left:1em; margin-bottom:5px">
+				<li><strong>Ability Scores:</strong> Dexterity, Constitution, Charisma</li>
+				<li><strong>Feat:</strong> Arcane Artist</li>
+				<li><strong>Skill Proficiencies:</strong> Deception and Performance</li>
+				<li><strong>Tool Proficiency:</strong> Disguise Kit</li>
+				<li><strong>Equipment:</strong><i> Choose A or B:</i> (A) Disguise Kit, Gaming Set (any), Costume, Mirror, Traveler's Clothes, 12 GP; or (B) 50 GP</li>
+			</ul>
+			<p>Whether as a performer or a circus hand, you found a home among the members of the Phantasmic Circus. As you traveled across the world bringing magic and wonder to excited audiences, you learned some illusion magic and honed your talents for performance and misdirection.</p>
+			<div class="reference">
+				<div element="ID_WOTC_AU_FEAT_ARCANE_ARTIST" />
+			</div>
+		</description>
+		<setters>
+			<set name="short">Dexterity, Constitution, Charisma, Arcane Artist Feat, Deception and Performance Skills, Disguise Kit</set>
+		</setters>
+		<rules>
+			<grant type="Ability Score Improvement" id="ID_INTERNAL_ABILITY_SCORE_IMPROVEMENT_COMBINATION_DEX_CON_CHA" />
+			<grant type="Feat" id="ID_WOTC_AU_FEAT_ARCANE_ARTIST" />
+			<grant type="Proficiency" id="ID_PROFICIENCY_SKILL_DECEPTION" />
+			<grant type="Proficiency" id="ID_PROFICIENCY_SKILL_PERFORMANCE" />
+			<grant type="Grants" id="ID_INTERNAL_GRANTS_BACKGROUND_ASI" />
+			<grant type="Proficiency" id="ID_PROFICIENCY_TOOL_PROFICIENCY_DISGUISE_KIT" />
+		</rules>
+	</element>
+</elements>
