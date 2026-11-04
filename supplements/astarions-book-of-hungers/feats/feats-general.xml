@@ -9,7 +9,7 @@
 	</info>
 
 	<element name="Bloodlust" type="Feat" source="Astarion’s Book of Hungers" id="ID_WOTC_ABH_FEAT_BLOODLUST">
-		<requirements>[level:4]</requirements>
+		<requirements>[character:4]||ID_WOTC_ABH_GRANTS_FEAT_UNLOCKER</requirements>
 		<supports>General</supports>
 		<prerequisite>Level 4+</prerequisite>
 		<description>
@@ -41,7 +41,7 @@
 	</element>
 
 	<element name="Bomber" type="Feat" source="Astarion’s Book of Hungers" id="ID_WOTC_ABH_FEAT_BOMBER">
-		<requirements>[level:4]</requirements>
+		<requirements>[character:4]||ID_WOTC_ABH_GRANTS_FEAT_UNLOCKER</requirements>
 		<supports>General</supports>
 		<prerequisite>Level 4+</prerequisite>
 		<description>
@@ -60,7 +60,7 @@
 	</element>
 
 	<element name="Cloying Mists" type="Feat" source="Astarion’s Book of Hungers" id="ID_WOTC_ABH_FEAT_CLOYING_MISTS">
-		<requirements>[level:4]</requirements>
+		<requirements>[character:4]||ID_WOTC_ABH_GRANTS_FEAT_UNLOCKER</requirements>
 		<supports>General</supports>
 		<prerequisite>Level 4+</prerequisite>
 		<description>
@@ -123,7 +123,7 @@
 	</element>
 
 	<element name="Delicious Pain" type="Feat" source="Astarion’s Book of Hungers" id="ID_WOTC_ABH_FEAT_DELICIOUS_PAIN">
-		<requirements>[level:4]</requirements>
+		<requirements>[character:4]||ID_WOTC_ABH_GRANTS_FEAT_UNLOCKER</requirements>
 		<supports>General</supports>
 		<prerequisite>Level 4+</prerequisite>
 		<description>
@@ -141,7 +141,7 @@
 	</element>
 
 	<element name="Light Bringer" type="Feat" source="Astarion’s Book of Hungers" id="ID_WOTC_ABH_FEAT_LIGHT_BRINGER">
-		<requirements>[level:4]</requirements>
+		<requirements>[character:4]||ID_WOTC_ABH_GRANTS_FEAT_UNLOCKER</requirements>
 		<supports>General</supports>
 		<prerequisite>Level 4+</prerequisite>
 		<description>
@@ -215,7 +215,7 @@
 	</element>
 
 	<element name="Love Bites" type="Feat" source="Astarion’s Book of Hungers" id="ID_WOTC_ABH_FEAT_LOVE_BITES">
-		<requirements>[level:4]</requirements>
+		<requirements>[character:4]||ID_WOTC_ABH_GRANTS_FEAT_UNLOCKER</requirements>
 		<supports>General</supports>
 		<prerequisite>Level 4+</prerequisite>
 		<description>
@@ -233,7 +233,7 @@
 	</element>
 
 	<element name="Putrefy" type="Feat" source="Astarion’s Book of Hungers" id="ID_WOTC_ABH_FEAT_PUTREFY">
-		<requirements>[level:4]</requirements>
+		<requirements>[character:4]||ID_WOTC_ABH_GRANTS_FEAT_UNLOCKER</requirements>
 		<supports>General</supports>
 		<prerequisite>Level 4+</prerequisite>
 		<description>
@@ -251,7 +251,7 @@
 	</element>
 
 	<element name="Rebuke" type="Feat" source="Astarion’s Book of Hungers" id="ID_WOTC_ABH_FEAT_REBUKE">
-		<requirements>[level:4]</requirements>
+		<requirements>[character:4]||ID_WOTC_ABH_GRANTS_FEAT_UNLOCKER</requirements>
 		<supports>General</supports>
 		<prerequisite>Level 4+</prerequisite>
 		<description>
@@ -269,7 +269,7 @@
 	</element>
 
 	<element name="Treacherous Allure" type="Feat" source="Astarion’s Book of Hungers" id="ID_WOTC_ABH_FEAT_TREACHEROUS_ALLURE">
-		<requirements>[level:4]</requirements>
+		<requirements>[character:4]||ID_WOTC_ABH_GRANTS_FEAT_UNLOCKER</requirements>
 		<supports>General</supports>
 		<prerequisite>Level 4+</prerequisite>
 		<description>
@@ -331,7 +331,7 @@
 	</element>
 
 	<element name="Vampire Touched" type="Feat" source="Astarion’s Book of Hungers" id="ID_WOTC_ABH_FEAT_VAMPIRETOUCHED">
-		<requirements>[level:4]</requirements>
+		<requirements>[character:4]||ID_WOTC_ABH_GRANTS_FEAT_UNLOCKER</requirements>
 		<supports>General</supports>
 		<prerequisite>Level 4+</prerequisite>
 		<description>
@@ -390,4 +390,21 @@
 		</rules>
 	</element>
 
+	<!-- Feat Unlocker -->
+	<element name="Feat Unlocker (ABH)" type="Item" source="Astarion’s Book of Hungers" id="ID_WOTC_ABH_ITEM_FEAT_UNLOCKER">
+		<compendium display="false" />
+		<description>
+			<p>Once equipped, this item allows you to ignore prerequisites for all of the <i>Astarion’s Book of Hungers</i> Feats, including level requirements.</p>
+		</description>
+		<setters>
+			<set name="category">Additional Feature</set>
+			<set name="slot">misc</set>
+			<set name="inventory-hidden">true</set>
+		</setters>
+		<rules>
+			<grant type="Grants" id="ID_WOTC_ABH_GRANTS_FEAT_UNLOCKER" />
+		</rules>
+	</element>
+
+	<element name="Feat Unlocker (ABH)" type="Grants" source="Astarion’s Book of Hungers" id="ID_WOTC_ABH_GRANTS_FEAT_UNLOCKER" />
 </elements>
