@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<elements>
+	<info>
+		<name>College of Spirits</name>
+		<description>The College of Spirits subclass from Ravenloft: The Horrors Within.</description>
+		<update version="0.0.1">
+			<file name="bard-spirits.xml" url="https://raw.githubusercontent.com/AuroraLegacy/elements/master/supplements/ravenloft-the-horrors-within/archetypes/bard-spirits.xml" />
+		</update>
+	</info>
+
+	<element name="College of Spirits" type="Archetype" source="Ravenloft: The Horrors Within" id="ID_WOTC_RHW_ARCHETYPE_BARD_COLLEGE_OF_SPIRITS">
+		<supports>Bard Subclass</supports>
+		<description>
+			<p class="flavor">Call Forth Spirits from Beyond the Grave</p>
+			<p>Bards of the College of Spirits conjure legendary spirits to change the world. But such entities are capricious, and what a Bard summons isn't always entirely under their control.</p>
+			<div element="ID_WOTC_RHW_ARCHETYPE_FEATURE_BARD_SPIRITS_CHANNELER" />
+			<div element="ID_WOTC_RHW_ARCHETYPE_FEATURE_BARD_SPIRITS_SPIRITS_FROM_BEYOND" />
+			<div element="ID_WOTC_RHW_ARCHETYPE_FEATURE_BARD_SPIRITS_EMPOWERED_CHANNELING" />
+			<div element="ID_WOTC_RHW_ARCHETYPE_FEATURE_BARD_SPIRITS_MYSTICAL_CONNECTION" />
+		</description>
+		<sheet display="false" />
+		<rules>
+			<grant type="Archetype Feature" id="ID_WOTC_RHW_ARCHETYPE_FEATURE_BARD_SPIRITS_CHANNELER" level="3" />
+			<grant type="Archetype Feature" id="ID_WOTC_RHW_ARCHETYPE_FEATURE_BARD_SPIRITS_SPIRITS_FROM_BEYOND" level="3" />
+			<grant type="Archetype Feature" id="ID_WOTC_RHW_ARCHETYPE_FEATURE_BARD_SPIRITS_EMPOWERED_CHANNELING" level="6" />
+			<grant type="Archetype Feature" id="ID_WOTC_RHW_ARCHETYPE_FEATURE_BARD_SPIRITS_MYSTICAL_CONNECTION" level="14" />
+		</rules>
+	</element>
+
+	<element name="Level 3: Channeler" type="Archetype Feature" source="Ravenloft: The Horrors Within" id="ID_WOTC_RHW_ARCHETYPE_FEATURE_BARD_SPIRITS_CHANNELER">
+		<requirements>!ID_INTERNAL_RHW_FEATURE_REPLACEMENT_BARD_SPIRITS_CHANNELER</requirements>
+		<description>
+			<p>You learn how to contact spirits beyond the grave, letting their power and knowledge flow through you. You gain the following benefits.</p>
+			<p class="indent"><b><i>Guiding Whispers.</i></b> You know the <i>Guidance</i> cantrip. It has a range of 60 feet when you cast it.</p>
+			<p class="indent"><b><i>Spiritual Focus.</i></b> You employ tools that aid you in channeling spirits. You gain a Gaming Set (playing cards). You have proficiency with this Gaming Set, and you can use it or one of the following items as a Spellcasting Focus for your Bard spells: Arcane Focus (crystal or orb), Candle, or Ink Pen.</p>
+		</description>
+		<sheet alt="Channeler">
+			<description>The range of your Guidance spell is 60ft. Additionally, you can use an arcane crystal, arcane orb, candle, or ink pen as a Spellcasting Focus for your Bard spells.</description>
+		</sheet>
+		<rules>
+			<grant type="Spell" id="ID_WOTC_PHB24_SPELL_GUIDANCE" spellcasting="Bard" allowReplace="false" />
+			<grant type="Proficiency" id="ID_PROFICIENCY_GAMING_SET_PROFICIENCY_PLAYING_CARD_SET" />
+		</rules>
+	</element>
+
+	<element name="Level 3: Spirits from Beyond" type="Archetype Feature" source="Ravenloft: The Horrors Within" id="ID_WOTC_RHW_ARCHETYPE_FEATURE_BARD_SPIRITS_SPIRITS_FROM_BEYOND">
+		<requirements>!ID_INTERNAL_RHW_FEATURE_REPLACEMENT_BARD_SPIRITS_SPIRITS_FROM_BEYOND</requirements>
+		<description>
+			<p>You can call forth spirits of the dead to empower you and your allies. When you take a Bonus Action to give a creature a Bardic Inspiration die, you can call forth the powers of a random spirit. To determine the spirit you channel, roll the Bardic Inspiration die and refer to the Spirits from Beyond table. The spirit remains channeled until you unleash it or until you finish a Short or Long Rest.</p>
+			<p class="indent"><b><i>Controlled Channeling.</i></b> As a Bonus Action, you can expend a use of your Bardic Inspiration and channel a specific spirit. When you do so, choose the spirit from the Spirits from Beyond table rather than rolling. The chosen spirit's corresponding number must be less than or equal to the highest number on your Bardic Inspiration die; for example, if your Bardic Inspiration die is a d8, you can choose to channel any spirit up to (and including) the Shade.</p>
+			<p class="indent"><b><i>Unleashing a Spirit.</i></b> As a Magic action, you can unleash one of your channeled spirits. Choose one creature you can see within 30 feet of yourself as the spirit's target. The spirit then takes effect; if a spirit's effect requires a saving throw, the DC equals your Bard spell save DC.</p>
+			<h5>Spirits from Beyond</h5>
+			<table>
+				<thead>
+					<tr><td class="col-15" style="text-align:center">Bardic Insp. Die</td><td>Spirit and Unleash Effect</td></tr>
+				</thead>
+				<tr><td style="text-align:center">1</td><td><b>Beloved.</b> The target regains Hit Points equal to a roll of your Bardic Inspiration die plus your Charisma modifier.</td></tr>
+				<tr><td style="text-align:center">2</td><td><b>Sharpshooter.</b> The target takes Force damage equal to a roll of your Bardic Inspiration die plus your Charisma modifier.</td></tr>
+				<tr><td style="text-align:center">3</td><td><b>Avenger.</b> Until the end of your next turn, any creature that hits the target with a melee attack roll takes Force damage equal to a roll of your Bardic Inspiration die.</td></tr>
+				<tr><td style="text-align:center">4</td><td><b>Renegade.</b> The target can immediately take a Reaction to teleport up to 30 feet to an unoccupied space it can see.</td></tr>
+				<tr><td style="text-align:center">5</td><td><b>Fortune Teller.</b> The target has Advantage on D20 Tests until the start of your next turn.</td></tr>
+				<tr><td style="text-align:center">6</td><td><b>Wayfarer.</b> The target gains Temporary Hit Points equal to a roll of your Bardic Inspiration die plus your Bard level. While the target has these Temporary Hit Points, its Speed increases by 10 feet.</td></tr>
+				<tr><td style="text-align:center">7</td><td><b>Trickster.</b> The target makes a Wisdom saving throw. On a failed save, the target takes Psychic damage equal to two rolls of your Bardic Inspiration die and has the Charmed condition until the start of your next turn. On a successful save, the target takes half as much damage only.</td></tr>
+				<tr><td style="text-align:center">8</td><td><b>Shade.</b> The target has the Invisible condition until the end of its next turn or until the target makes an attack roll, deals damage, or casts a spell. When the invisibility ends, each creature in a 5-foot Emanation originating from the target must succeed on a Constitution saving throw or take Necrotic damage equal to two rolls of your Bardic Inspiration die.</td></tr>
+				<tr><td style="text-align:center">9</td><td><b>Arsonist.</b>  The target makes a Dexterity saving throw, taking Fire damage equal to four rolls of your Bardic Inspiration die on a failed save or half as much damage on a successful one.</td></tr>
+				<tr><td style="text-align:center">10</td><td><b>Coward.</b> The target and each creature of your choice in a 30-foot Emanation originating from the target must succeed on a Wisdom saving throw or have the Frightened condition until the start of your next turn. While a creature is Frightened, its Speed is halved (round down), and it can take either an action or a Bonus Action, not both.</td></tr>
+				<tr><td style="text-align:center">11</td><td><b>Brute.</b> Each creature of your choice in a 30-foot Emanation originating from the target makes a Strength saving throw. On a failed save, a creature takes Thunder damage equal to three rolls of your Bardic Inspiration die and has the Prone condition. On a successful save, a creature takes half as much damage only.</td></tr>
+				<tr><td style="text-align:center">12</td><td><b>Priest.</b> The target regains Hit Points equal to two rolls of your Bardic Inspiration die, and one of the following conditions of your choice ends on the target: Blinded, Charmed, Deafened, Paralyzed, Poisoned, or Stunned.</td></tr>
+			</table>
+		</description>
+		<sheet alt="Spirits from Beyond" usage="Bardic Inspiration">
+			<description>When you give a creature a Bardic Inspiration die, roll the die and channel the associated spirit on the Spirits from Beyond table until you unleash it or finish a Short or Long Rest. You can then unleash that spirit as a Magic action, targeting a creature you can see within 30 feet of yourself. &#13;
+			Alternatively as a Bonus Action, you can choose to channel a specific spirit. Choose any spirit on the Spirits from Beyond table with a corresponding number equal to or less than {{bardic-inspiration:dice}}, and you channel it until you unleash it or finish a Short or Long Rest.</description>
+			<description level="14">When you give a creature a Bardic Inspiration die, roll the die twice and channel one of the associated spirits on the Spirits from Beyond table until you unleash it or finish a Short or Long Rest. If you roll the same number twice, choose any spirit on the table. You can then unleash that spirit as a Magic action, targeting a creature you can see within 30 feet of yourself. &#13;
+			Alternatively as a Bonus Action, you can choose to channel a specific spirit. Choose any spirit on the Spirits from Beyond table with a corresponding number equal to or less than {{bardic-inspiration:dice}}, and you channel it until you unleash it or finish a Short or Long Rest.</description>
+		</sheet>
+	</element>
+
+	<element name="Level 6: Empowered Channeling" type="Archetype Feature" source="Ravenloft: The Horrors Within" id="ID_WOTC_RHW_ARCHETYPE_FEATURE_BARD_SPIRITS_EMPOWERED_CHANNELING">
+		<requirements>!ID_INTERNAL_RHW_FEATURE_REPLACEMENT_BARD_SPIRITS_EMPOWERED_CHANNELING</requirements>
+		<description>
+			<p>Your ability to channel spirits improves. You gain the following benefits.</p>
+			<p class="indent"><b><i>Power From Beyond.</i></b> Once per turn, when you cast a Bard spell with a spell slot that deals damage or restores Hit Points, roll 1d6. You gain a bonus equal to the number rolled to one of the spell's damage rolls or to the total Hit Points the spell restores.</p>
+			<p class="indent"><b><i>Spiritual Manifestation.</i></b> You always have the <i>Spirit Guardians</i> spell prepared. You can cast the spell once without a spell slot, and you regain the ability to cast it in this way when you finish a Long Rest.</p>
+			<p class="indent">Whenever you cast the spell, you can modify it so the spirits also guard against worldly threats. When you cast the spell in this way, you and allies within the spell's Emanation have Half Cover. Once you modify the spell in this way, you can't do so again until you finish a Short or Long Rest.</p>
+			<div class="reference">
+				<div element="ID_WOTC_PHB24_SPELL_SPIRIT_GUARDIANS"/>
+			</div>
+		</description>
+		<sheet alt="Empowered Channeling" usage="1/Turn">
+			<description>Whenever you cast a Bard spell with a spell slot that deals damage or restores HPs, roll 1d6 and add it to the damage or HPs restored.</description>
+		</sheet>
+		<rules>
+			<select type="Archetype Feature" name="Spiritual Manifestation" supports="RHW Spiritual Manifestation" default="ID_WOTC_RHW_ARCHETYPE_FEATURE_BARD_SPIRITS_EMPOWERED_CHANNELING_SPIRITUAL_MANIFESTATION" />
+		</rules>
+	</element>
+	<element name="Spiritual Manifestation" type="Archetype Feature" source="Ravenloft: The Horrors Within" id="ID_WOTC_RHW_ARCHETYPE_FEATURE_BARD_SPIRITS_EMPOWERED_CHANNELING_SPIRITUAL_MANIFESTATION">
+		<compendium display="false"/>
+		<supports>RHW Spiritual Manifestation</supports>
+		<description>
+			<p> You always have the <i>Spirit Guardians</i> spell prepared. You can cast the spell once without a spell slot, and you regain the ability to cast it in this way when you finish a Long Rest.</p>
+			<p class="indent">Whenever you cast the spell, you can modify it so the spirits also guard against worldly threats. When you cast the spell in this way, you and allies within the spell's Emanation have Half Cover. Once you modify the spell in this way, you can't do so again until you finish a Short or Long Rest.</p>
+		</description>
+		<sheet usage="1/Long Rest">
+			<description>You can cast Spirit Guardians once without a spell slot. Once per Short Rest when you cast the spell, you can modify it so you and allies within the spell's Emanation have Half Cover.</description>
+		</sheet>
+		<rules>
+			<grant type="Spell" id="ID_WOTC_PHB24_SPELL_SPIRIT_GUARDIANS" spellcasting="Bard" allowReplace="false" />
+		</rules>
+	</element>
+
+	<element name="Level 14: Mystical Connection" type="Archetype Feature" source="Ravenloft: The Horrors Within" id="ID_WOTC_RHW_ARCHETYPE_FEATURE_BARD_SPIRITS_MYSTICAL_CONNECTION">
+		<requirements>!ID_INTERNAL_RHW_FEATURE_REPLACEMENT_BARD_SPIRITS_MYSTICAL_CONNECTION</requirements>
+		<description>
+			<p>You gain mastery over the spirits you call forth. Whenever you roll on the Spirits from Beyond table, you can roll the die twice and choose which of the two effects to bestow. If you roll the same number on both dice, you can instead choose any effect on the table.</p>
+		</description>
+		<sheet alt="Mystical Connection" display="false"/>
+	</element>
+
+	<!--Feature Replacement Grants-->
+	<element name="Beguiling Magic Feature Replacement" type="Grants" source="Internal" id="ID_INTERNAL_RHW_FEATURE_REPLACEMENT_BARD_SPIRITS_CHANNELER" />
+	<element name="Spirits from Beyond Feature Replacement" type="Grants" source="Internal" id="ID_INTERNAL_RHW_FEATURE_REPLACEMENT_BARD_SPIRITS_SPIRITS_FROM_BEYOND" />
+	<element name="Empowered Channeling Feature Replacement" type="Grants" source="Internal" id="ID_INTERNAL_RHW_FEATURE_REPLACEMENT_BARD_SPIRITS_EMPOWERED_CHANNELING" />
+	<element name="Mystical Connection Feature Replacement" type="Grants" source="Internal" id="ID_INTERNAL_RHW_FEATURE_REPLACEMENT_BARD_SPIRITS_MYSTICAL_CONNECTION" />
+
+</elements>

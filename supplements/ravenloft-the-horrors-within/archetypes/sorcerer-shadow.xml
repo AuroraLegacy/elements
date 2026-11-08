@@ -1,0 +1,134 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<elements>
+	<info>
+		<name>Shadow Sorcery</name>
+		<description>The Shadow Sorcery subclass from Ravenloft: The Horrors Within</description>
+		<update version="0.0.1">
+			<file name="sorcerer-shadow.xml" url="https://raw.githubusercontent.com/AuroraLegacy/elements/master/supplement/ravenloft-the-horrors-within/archetypes/sorcerer-shadow.xml" />
+		</update>
+	</info>
+
+	<element name="Shadow Sorcery" type="Archetype" source="Ravenloft: The Horrors Within" id="ID_WOTC_RHW_ARCHETYPE_SORCERER_SHADOW_SORCERY">
+		<supports>Sorcerer Subclass</supports>
+		<description>
+			<p class="flavor">Bend Doom and Darkness to Your Will</p>
+			<p>Your innate magic comes from the most nebulous and inscrutable forces of the Shadowfell or from other regions of supernatural darkness. You might trace your lineage to an entity from such a place, or perhaps you were exposed to the sinister energy of a shadow dragon and were transformed by it. Your shadowy magic allows you to command darkness, undeath, and woe.</p>
+			<div element="ID_WOTC_RHW_ARCHETYPE_SORCERER_SHADOW_SORCERY_SHADOW_SPELLS" />
+			<div element="ID_WOTC_RHW_ARCHETYPE_SORCERER_SHADOW_SORCERY_POWER_OF_SHADOW" />
+			<div element="ID_WOTC_RHW_ARCHETYPE_SORCERER_SHADOW_SORCERY_BEASTS_OF_ILL_OMEN" />
+			<div element="ID_WOTC_RHW_ARCHETYPE_SORCERER_SHADOW_SORCERY_SHADOW_WALK" />
+			<div element="ID_WOTC_RHW_ARCHETYPE_SORCERER_SHADOW_SORCERY_UMBRAL_FORM" />
+		</description>
+		<sheet display="false" />
+		<rules>
+			<grant type="Archetype Feature" id="ID_WOTC_RHW_ARCHETYPE_SORCERER_SHADOW_SORCERY_SHADOW_SPELLS" level="3" />
+			<grant type="Archetype Feature" id="ID_WOTC_RHW_ARCHETYPE_SORCERER_SHADOW_SORCERY_POWER_OF_SHADOW" level="3" />
+			<grant type="Archetype Feature" id="ID_WOTC_RHW_ARCHETYPE_SORCERER_SHADOW_SORCERY_BEASTS_OF_ILL_OMEN" level="6" />
+			<grant type="Archetype Feature" id="ID_WOTC_RHW_ARCHETYPE_SORCERER_SHADOW_SORCERY_SHADOW_WALK" level="14" />
+			<grant type="Archetype Feature" id="ID_WOTC_RHW_ARCHETYPE_SORCERER_SHADOW_SORCERY_UMBRAL_FORM" level="18" />
+		</rules>
+	</element>
+
+	<element name="Level 3: Shadow Spells" type="Archetype Feature" source="Ravenloft: The Horrors Within" id="ID_WOTC_RHW_ARCHETYPE_SORCERER_SHADOW_SORCERY_SHADOW_SPELLS">
+		<requirements>!ID_INTERNAL_RHW_FEATURE_REPLACEMENT_SORCERER_SHADOW_SORCERY_SHADOW_SPELLS</requirements>
+		<description>
+			<p>When you reach a Sorcerer level specified in the Shadow Spells table, you thereafter always have the listed spells prepared.</p>
+			<h5>SHADOW SPELLS</h5>
+			<table>
+				<thead>
+					<tr><td class="col-15" style="text-align:center">Sorcerer Level</td><td>Spells</td></tr>
+				</thead>
+				<tr><td style="text-align:center">3</td><td><em>Bane, Darkness, Inflict Wounds, Pass Without Trace</em></td></tr>
+				<tr><td style="text-align:center">5</td><td><em>Hunger of Hadar, Nondetection</em></td></tr>
+				<tr><td style="text-align:center">7</td><td><em>Greater Invisibility, Phantasmal Killer</em></td></tr>
+				<tr><td style="text-align:center">9</td><td><em>Contagion, Creation</em></td></tr>
+			</table>
+		</description>
+		<sheet display="false" />
+		<rules>
+			<grant type="Spell" id="ID_WOTC_PHB24_SPELL_BANE" spellcasting="Sorcerer" />
+			<grant type="Spell" id="ID_WOTC_PHB24_SPELL_INFLICT_WOUNDS" spellcasting="Sorcerer" />
+			<grant type="Spell" id="ID_WOTC_PHB24_SPELL_DARKNESS" spellcasting="Sorcerer" />
+			<grant type="Spell" id="ID_WOTC_PHB24_SPELL_PASS_WITHOUT_TRACE" spellcasting="Sorcerer" />
+			<grant type="Spell" id="ID_WOTC_PHB24_SPELL_HUNGER_OF_HADAR" level="5" spellcasting="Sorcerer" />
+			<grant type="Spell" id="ID_WOTC_PHB24_SPELL_NONDETECTION" level="5" spellcasting="Sorcerer" />
+			<grant type="Spell" id="ID_WOTC_PHB24_SPELL_GREATER_INVISIBILITY" level="7" spellcasting="Sorcerer" />
+			<grant type="Spell" id="ID_WOTC_PHB24_SPELL_PHANTASMAL_KILLER" level="7" spellcasting="Sorcerer" />
+			<grant type="Spell" id="ID_WOTC_PHB24_SPELL_CONTAGION" level="9" spellcasting="Sorcerer" />
+			<grant type="Spell" id="ID_WOTC_PHB24_SPELL_CREATION" level="9" spellcasting="Sorcerer" />
+		</rules>
+	</element>
+
+	<element name="Level 3: Power of Shadow" type="Archetype Feature" source="Ravenloft: The Horrors Within" id="ID_WOTC_RHW_ARCHETYPE_SORCERER_SHADOW_SORCERY_POWER_OF_SHADOW">
+		<requirements>!ID_INTERNAL_RHW_FEATURE_REPLACEMENT_SORCERER_SHADOW_SORCERY_POWER_OF_SHADOW</requirements>
+		<description>
+			<p>You gain the following benefits.</p>
+			<p class="indent"><b><i>Eyes of the Dark.</i></b> You have Darkvision with a range of 120 feet and Blindsight with a range of 10 feet. In addition, if a spell you cast creates an area of Darkness, you can see normally through that spell's Darkness.</p>
+			<p class="indent"><b><i>Strength of the Grave.</i></b> If you would drop to 0 Hit Points and not die outright, you can make a Charisma saving throw (DC 5 plus the damage taken). On a successful save, your Hit Points instead change to a number equal to your Charisma modifier plus your Sorcerer level. After you succeed on this save, you can't use this benefit again until you finish a Long Rest.</p>
+		</description>
+		<sheet alt="Power of Shadow">
+			<description>If a spell you cast creates an area of Darkness, you can see normally through that spell's Darkness.</description>
+		</sheet>
+		<rules>
+			<select type="Archetype Feature" name="Strength of the Grave" supports="RHW Strength of the Grave" default="ID_WOTC_RHW_ARCHETYPE_SORCERER_SHADOW_SORCERY_POWER_OF_SHADOW_STRENGTH_OF_THE_GRAVE" />
+		</rules>
+	</element>
+	<element name="Strength of the Grave" type="Archetype Feature" source="Ravenloft: The Horrors Within" id="ID_WOTC_RHW_ARCHETYPE_SORCERER_SHADOW_SORCERY_POWER_OF_SHADOW_STRENGTH_OF_THE_GRAVE">
+		<compendium display="false"/>
+		<supports>RHW Strength of the Grave</supports>
+		<description>
+			<p>If you would drop to 0 Hit Points and not die outright, you can make a Charisma saving throw (DC 5 plus the damage taken). On a successful save, your Hit Points instead change to a number equal to your Charisma modifier plus your Sorcerer level. After you succeed on this save, you can't use this benefit again until you finish a Long Rest.</p>
+		</description>
+		<sheet usage="1/Long Rest">
+			<description>If you would drop to 0 HPs and not die outright, you can make a Charisma saving throw (DC 5 plus the damage taken). On a successful save, your HPs instead change to {{strength of the grave:hp}}.</description>
+		</sheet>
+		<rules>
+			<stat name="strength of the grave:hp" value="charisma:modifier" bonus="ability" />
+			<stat name="strength of the grave:hp" value="level:sorcerer" bonus="level" />
+		</rules>
+	</element>
+	
+	<element name="Level 6: Beasts of Ill Omen" type="Archetype Feature" source="Ravenloft: The Horrors Within" id="ID_WOTC_RHW_ARCHETYPE_SORCERER_SHADOW_SORCERY_BEASTS_OF_ILL_OMEN">
+		<requirements>!ID_INTERNAL_RHW_FEATURE_REPLACEMENT_SORCERER_SHADOW_SORCERY_BEASTS_OF_ILL_OMEN</requirements>
+		<description>
+			<p>You can call forth a howling creature of shadow to hound your foes. You can spend 3 Sorcery Points to cast <i>Summon Beast</i> as a Bonus Action without expending a spell slot, without preparing the spell, and without Material components. The summoned creature appears as a beast made of shadow, and enemies within 5 feet of the summoned creature have Disadvantage on saving throws against spells you cast.</p>
+			<p class="indent">Whenever you cast the spell, you can modify it so that it doesn't require Concentration. If you do so, the spell's duration becomes 1 minute for that casting, and the spell ends early if you cast the spell again.</p>
+			<div class="reference">
+				<div element="ID_WOTC_PHB24_SPELL_SUMMON_BEAST"/>
+			</div>
+		</description>
+		<sheet alt="Beasts of Ill Omen" action="Bonus Action" usage="3 Sorcery Points">
+			<description>You can cast Summon Beast without expending a spell slot, without preparing the spell, and without Material components. The summoned creature appears as a beast made of shadow, and enemies within 5 feet of the summoned creature have Disadvantage on saving throws against spells you cast. Additionally, you can modify the spell so it doesn't require Concentration. If you do so, the spell's duration becomes 1 minute for that casting, and the spell ends early if you cast the spell again.</description>
+		</sheet>
+	</element>
+
+	<element name="Level 14: Shadow Walk" type="Archetype Feature" source="Ravenloft: The Horrors Within" id="ID_WOTC_RHW_ARCHETYPE_SORCERER_SHADOW_SORCERY_SHADOW_WALK">
+		<requirements>!ID_INTERNAL_RHW_FEATURE_REPLACEMENT_SORCERER_SHADOW_SORCERY_SHADOW_WALK</requirements>
+		<description>
+			<p>While you are in Dim Light or Darkness, you can take a Bonus Action to teleport up to 120 feet to an unoccupied space you can see that is also in Dim Light or Darkness.</p>
+		</description>
+		<sheet alt="Shadow Walk" action="Bonus Action">
+			<description>While you are in Dim Light or Darkness, you can teleport up to 120 feet to an unoccupied space you can see that is also in Dim Light or Darkness.</description>
+		</sheet>
+	</element>
+
+	<element name="Level 18: Umbral Form" type="Archetype Feature" source="Ravenloft: The Horrors Within" id="ID_WOTC_RHW_ARCHETYPE_SORCERER_SHADOW_SORCERY_UMBRAL_FORM">
+		<requirements>!ID_INTERNAL_RHW_FEATURE_REPLACEMENT_SORCERER_SHADOW_SORCERY_UMBRAL_FORM</requirements>
+		<description>
+			<p>When you use Innate Sorcery, you can adopt a shadowy form, gaining the benefits below while your Innate Sorcery is active or until you end the form (no action required). Once you use this feature, you can't use it again until you finish a Long Rest unless you spend 6 Sorcery Points (no action required) to restore your use of it.</p>
+			<p class="indent"><b><i>Incorporeal Movement.</i></b> You can move through creatures and objects as if they were Difficult Terrain, but you take 1d10 Force damage if you end your turn inside a creature or an object.</p>
+			<p class="indent"><b><i>Shadow Resilience.</i></b> You have Resistance to all damage except Force and Radiant damage.</p>
+		</description>
+		<sheet alt="Umbral Form" action="Innate Sorcery" usage="1/Long Rest">
+			<description>You adopt a shadowy form while your Innate Sorcery is active or until you end the form (no action required). While you are in this form, you can move through creatures and objects as if they were Difficult Terrain, taking 1d10 Force damage if you end your turn inside a creature or object, and have Resistance to all damage except Force and Radiant. &#13;
+			You can spend 6 Sorcery Points to restore a use of this feature.</description>
+		</sheet>
+	</element>
+
+	<!--Feature Replacement Grants-->
+	<element name="Shadow Spells Feature Replacement" type="Grants" source="Internal" id="ID_INTERNAL_RHW_FEATURE_REPLACEMENT_SORCERER_SHADOW_SORCERY_SHADOW_SPELLS" />
+	<element name="Power of Shadow Feature Replacement" type="Grants" source="Internal" id="ID_INTERNAL_RHW_FEATURE_REPLACEMENT_SORCERER_SHADOW_SORCERY_POWER_OF_SHADOW" />
+	<element name="Beasts of Ill Omen Feature Replacement" type="Grants" source="Internal" id="ID_INTERNAL_RHW_FEATURE_REPLACEMENT_SORCERER_SHADOW_SORCERY_BEASTS_OF_ILL_OMEN" />
+	<element name="Shadow Walk Feature Replacement" type="Grants" source="Internal" id="ID_INTERNAL_RHW_FEATURE_REPLACEMENT_SORCERER_SHADOW_SORCERY_SHADOW_WALK" />
+	<element name="Umbral Form Feature Replacement" type="Grants" source="Internal" id="ID_INTERNAL_RHW_FEATURE_REPLACEMENT_SORCERER_SHADOW_SORCERY_UMBRAL_FORM" />
+</elements>

@@ -1,0 +1,158 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<elements>
+	<info>
+		<name>Grave Domain</name>
+		<description>The Grave Domain subclass from Ravenloft: The Horrors Within</description>
+		<update version="0.0.1">
+			<file name="cleric-grave.xml" url="https://raw.githubusercontent.com/AuroraLegacy/elements/master/supplements/ravenloft-the-horrors-within/archetypes/cleric-grave.xml" />
+		</update>
+	</info>
+
+	<element name="Grave Domain" type="Archetype" source="Ravenloft: The Horrors Within" id="ID_WOTC_RHW_ARCHETYPE_CLERIC_GRAVE_DOMAIN">
+		<supports>Cleric Subclass</supports>
+		<description>
+			<p class="flavor">Embody Deific Forces of Death</p>
+			<p>The Grave Domain concerns itself with the boundary between life and death. To those who tap into this domain's power, death is a natural and inevitable part of the multiverse. Such Clerics seek to destroy undead and shepherd spirits.</p>
+			<p class="indent">The magic of this domain also allows these Clerics to stave off death for a time. But this is merely a delay of death, not a denial of it, for the grave will always claim its due.</p>
+			<div element="ID_WOTC_RHW_ARCHETYPE_FEATURE_GRAVE_DOMAIN_GRAVE_DOMAIN_SPELLS" />
+			<div element="ID_WOTC_RHW_ARCHETYPE_FEATURE_GRAVE_DOMAIN_CIRCLE_OF_MORTALITY" />
+			<div element="ID_WOTC_RHW_ARCHETYPE_FEATURE_GRAVE_DOMAIN_PATH_TO_THE_GRAVE" />
+			<div element="ID_WOTC_RHW_ARCHETYPE_FEATURE_GRAVE_DOMAIN_SENTINEL_AT_DEATHS_DOOR" />
+			<div element="ID_WOTC_RHW_ARCHETYPE_FEATURE_GRAVE_DOMAIN_DIVINE_REAPER" />
+		</description>
+		<sheet display="false" />
+		<rules>
+			<grant type="Archetype Feature" id="ID_WOTC_RHW_ARCHETYPE_FEATURE_GRAVE_DOMAIN_GRAVE_DOMAIN_SPELLS" level="3"/>
+			<grant type="Archetype Feature" id="ID_WOTC_RHW_ARCHETYPE_FEATURE_GRAVE_DOMAIN_CIRCLE_OF_MORTALITY" level="3" />
+			<grant type="Archetype Feature" id="ID_WOTC_RHW_ARCHETYPE_FEATURE_GRAVE_DOMAIN_PATH_TO_THE_GRAVE" level="3" />
+			<grant type="Archetype Feature" id="ID_WOTC_RHW_ARCHETYPE_FEATURE_GRAVE_DOMAIN_SENTINEL_AT_DEATHS_DOOR" level="6" />
+			<grant type="Archetype Feature" id="ID_WOTC_RHW_ARCHETYPE_FEATURE_GRAVE_DOMAIN_DIVINE_REAPER" level="17" /> 
+		</rules>
+	</element>
+
+	<element name="Level 3: Grave Domain Spells" type="Archetype Feature" source="Ravenloft: The Horrors Within" id="ID_WOTC_RHW_ARCHETYPE_FEATURE_GRAVE_DOMAIN_GRAVE_DOMAIN_SPELLS">
+		<requirements>!ID_INTERNAL_PHB24_FEATURE_REPLACEMENT_CLERIC_GRAVE_DOMAIN_GRAVE_DOMAIN_SPELLS</requirements>
+		<description>
+			<p>Your connection to this divine domain ensures you always have certain spells ready. When you reach a Cleric level specified in the Grave Domain Spells table, you thereafter always have the listed spells prepared.</p>
+			<h5>GRAVE DOMAIN SPELLS</h5>
+			<table>
+				<thead>
+					<tr><td class="col-15" style="text-align:center">Cleric Level</td><td>Prepared Spells</td></tr>
+				</thead>
+				<tr><td style="text-align:center">3</td><td><em>Detect Evil and Good, False Life, Gentle Repose, Ray of Enfeeblement, Spare the Dying</em></td></tr>
+				<tr><td style="text-align:center">5</td><td><em>Revivify, Vampiric Touch</em></td></tr>
+				<tr><td style="text-align:center">7</td><td><em>Blight, Death Ward</em></td></tr>
+				<tr><td style="text-align:center">9</td><td><em>Dispel Evil and Good, Raise Dead</em></td></tr>
+			</table>
+		</description>
+		<sheet display="false" />
+		<rules>
+			<grant type="Spell" id="ID_WOTC_PHB24_SPELL_DETECT_EVIL_AND_GOOD" level="3" spellcasting="Cleric" prepared="true" />
+			<grant type="Spell" id="ID_WOTC_PHB24_SPELL_FALSE_LIFE" level="3" spellcasting="Cleric" prepared="true" />
+			<grant type="Spell" id="ID_WOTC_PHB24_SPELL_GENTLE_REPOSE" level="3" spellcasting="Cleric" prepared="true" />
+			<grant type="Spell" id="ID_WOTC_PHB24_SPELL_RAY_OF_ENFEEBLEMENT" level="3" spellcasting="Cleric" prepared="true" />
+			<grant type="Spell" id="ID_WOTC_PHB24_SPELL_SPARE_THE_DYING" level="3" spellcasting="Cleric" prepared="true" />
+			<grant type="Spell" id="ID_WOTC_PHB24_SPELL_REVIVIFY" level="5" spellcasting="Cleric" prepared="true" />
+			<grant type="Spell" id="ID_WOTC_PHB24_SPELL_VAMPIRIC_TOUCH" level="5" spellcasting="Cleric" prepared="true" />
+			<grant type="Spell" id="ID_WOTC_PHB24_SPELL_BLIGHT" level="7" spellcasting="Cleric" prepared="true" />
+			<grant type="Spell" id="ID_WOTC_PHB24_SPELL_DEATH_WARD" level="7" spellcasting="Cleric" prepared="true" />
+			<grant type="Spell" id="ID_WOTC_PHB24_SPELL_DISPEL_EVIL_AND_GOOD" level="9" spellcasting="Cleric" prepared="true" />
+			<grant type="Spell" id="ID_WOTC_PHB24_SPELL_RAISE_DEAD" level="9" spellcasting="Cleric" prepared="true" />
+		</rules>
+	</element>
+
+	<element name="Level 3: Circle of Mortality" type="Archetype Feature" source="Ravenloft: The Horrors Within" id="ID_WOTC_RHW_ARCHETYPE_FEATURE_GRAVE_DOMAIN_CIRCLE_OF_MORTALITY">
+		<requirements>!ID_INTERNAL_PHB24_FEATURE_REPLACEMENT_CLERIC_GRAVE_DOMAIN_CIRCLE_OF_MORTALITY</requirements>
+		<description>
+			<p>You can manipulate the balance between life and death, granting you the following benefits.</p>
+			<p class="indent"><b><i>Pull of Death.</i></b> Once per turn, when you deal damage to a creature that's missing any Hit Points by casting a spell or by hitting with an attack roll, that creature takes an extra 1d4 Necrotic damage. This extra damage increases to 1d6 when you reach Cleric level 11.</p>
+			<p class="indent"><b><i>Return to Life.</i></b> You can cast <i>Spare the Dying</i> as a Bonus Action.</p>
+			<p class="indent">Additionally, when you would normally roll one or more dice to restore Hit Points to a creature at 0 Hit Points with a spell or Channel Divinity, don't roll those dice for the healing; instead, use the highest number possible for each die. For example, instead of restoring 2d4 Hit Points to a creature at 0 Hit Points with a spell, you restore 8.</p>
+			<div class="reference">
+				<div element="ID_WOTC_PHB24_SPELL_SPARE_THE_DYING"/>
+			</div>
+		</description>
+		<sheet alt="Circle of Mortality" usage="1/Turn">
+			<description>When you deal damage by spell or attack to a creature that's missing any HPs, it takes an extra 1d4 Necrotic damage.</description>
+			<description level="11">When you deal damage by spell or attack to a creature that's missing any HPs, it takes an extra 1d6 Necrotic damage.</description>
+		</sheet>
+		<rules>
+			<select type="Archetype Feature" name="Return to Life" supports="Return to Life RHW Version" default="ID_WOTC_RHW_ARCHETYPE_FEATURE_GRAVE_DOMAIN_CIRCLE_OF_MORTALITY_RETURN_TO_LIFE" />
+		</rules>
+	</element>
+	<element name="Return to Life" type="Archetype Feature" source="Ravenloft: The Horrors Within" id="ID_WOTC_RHW_ARCHETYPE_FEATURE_GRAVE_DOMAIN_CIRCLE_OF_MORTALITY_RETURN_TO_LIFE">
+		<compendium display="false"/>
+		<supports>Return to Life RHW Version</supports>
+		<description>
+			<p> You can cast <i>Spare the Dying</i> as a Bonus Action.</p>
+			<p class="indent">Additionally, when you would normally roll one or more dice to restore Hit Points to a creature at 0 Hit Points with a spell or Channel Divinity, don't roll those dice for the healing; instead, use the highest number possible for each die. For example, instead of restoring 2d4 Hit Points to a creature at 0 Hit Points with a spell, you restore 8.</p>
+		</description>
+		<sheet alt="Return to Life">
+			<description>You can cast Spare the Dying as a Bonus Action. &#13;
+			Additionally, when you restore HPs to a creature at 0 HPs with a spell or Channel Divinity, you restore the highest possible amount for each die rolled. </description>
+		</sheet>
+	</element>
+	
+	<element name="Level 3: Path to the Grave" type="Archetype Feature" source="Ravenloft: The Horrors Within" id="ID_WOTC_RHW_ARCHETYPE_FEATURE_GRAVE_DOMAIN_PATH_TO_THE_GRAVE">
+		<requirements>!ID_INTERNAL_PHB24_FEATURE_REPLACEMENT_CLERIC_GRAVE_DOMAIN_PATH_TO_THE_GRAVE</requirements>
+		<description>
+			<p>As a Bonus Action, you present your Holy Symbol and expend a use of Channel Divinity to curse one creature you can see within 30 feet of yourself until the start of your next turn. While cursed, the creature has Disadvantage on attack rolls and saving throws.</p>
+			<p class="indent">When you or an ally you can see hits the cursed target with an attack roll, you can end the curse early (no action required) to make the attack deal extra Necrotic or Radiant damage (your choice) equal to your Cleric level.</p>
+		</description>
+		<sheet alt="Path to the Grave" action="Bonus Action" usage="Channel Divinity">
+			<description>Curse one creature you can see within 30ft. until the start of your next turn. While cursed, the creature has Disadvantage on attack rolls and saving throws. When you or an ally you can see hits the cursed creature with an attack roll, you can end the curse (no action required) to make the attack deal an extra {{level:cleric}} Necrotic or Radiant damage (your choice).</description>
+		</sheet>
+	</element>
+
+	<element name="Level 6: Sentinel at Death's Door" type="Archetype Feature" source="Ravenloft: The Horrors Within" id="ID_WOTC_RHW_ARCHETYPE_FEATURE_GRAVE_DOMAIN_SENTINEL_AT_DEATHS_DOOR">
+		<requirements>!ID_INTERNAL_PHB24_FEATURE_REPLACEMENT_CLERIC_GRAVE_DOMAIN_SENTINEL_AT_DEATHS_DOOR</requirements>
+		<description>
+			<p>When you or a Bloodied creature you can see within 60 feet of yourself is hit with an attack roll, you can take a Reaction to halve that attack's damage (round down). If the triggering attack roll was a Critical Hit, any effects triggered by a Critical Hit are canceled.</p>
+			<p class="indent">You can use this feature a number of times equal to your Wisdom modifier (minimum of once). You regain all expended uses when you finish a Long Rest.</p>
+		</description>
+		<sheet alt="Sentinel at Death's Door" action="Reaction" usage="{{sentinel at deaths door:uses}}/Long Rest">
+			<description>When you or a Bloodied creature you can see within 60ft. of you is hit with an attack roll, you can halve that attack's damage (round down). If the triggering attack roll was a Critical hit, any effects triggered by the Critical Hit are canceled.</description>
+		</sheet>
+		<rules>
+			<stat name="sentinel at deaths door:uses" value="1" bonus="ability" />
+			<stat name="sentinel at deaths door:uses" value="wisdom:modifier" bonus="ability" />
+		</rules>
+	</element>
+
+	<element name="Level 17: Divine Reaper" type="Archetype Feature" source="Ravenloft: The Horrors Within" id="ID_WOTC_RHW_ARCHETYPE_FEATURE_GRAVE_DOMAIN_DIVINE_REAPER">
+		<requirements>!ID_INTERNAL_PHB24_FEATURE_REPLACEMENT_CLERIC_GRAVE_DOMAIN_DIVINE_REAPER</requirements>
+		<description>
+			<p>Your deep connection to this domain renders you a hallowed harbinger of death, granting you the following benefits.</p>
+			<p class="indent"><b><i>Enhanced Necromancy.</i></b> When you cast a spell of level 5 or lower from the Necromancy school that targets one creature, or when you cast a spell from the Grave Domain Spells table, you can expend a use of Channel Divinity to target a second creature within the spell's range. If the spell requires costly or consumed Material components, you must provide Material components for each target.</p>
+			<p class="indent"><b><i>Keeper of Souls.</i></b> When an enemy dies within 60 feet of you, you or one creature you can see within 60 feet of yourself regains Hit Points equal to twice your Cleric level. You can't use this feature if you have the Incapacitated condition. Once you use this feature, you can't use it again until you finish a Short or Long Rest, unless you expend a level 6+ spell slot (no action required) to restore your use of it.</p>
+		</description>
+		<sheet alt="Divine Reaper" usage="Channel Divinity">
+			<description>When you cast a spell of level 5 or lower from the Necromancy school that targets one creature, or when you cast a spell from the Grave Domain Spells table, you can target a second creature within the spell's range. If the spell requires costly or consumed Material components, you must provide Material components for each target.</description>
+		</sheet>
+		<rules>
+			<select type="Archetype Feature" name="Keeper of Souls" supports="Keeper of Souls RHW Version" default="ID_WOTC_RHW_ARCHETYPE_FEATURE_GRAVE_DOMAIN_DIVINE_REAPER_KEEPER_OF_SOULS" />
+		</rules>
+	</element>
+	<element name="Keeper of Souls" type="Archetype Feature" source="Ravenloft: The Horrors Within" id="ID_WOTC_RHW_ARCHETYPE_FEATURE_GRAVE_DOMAIN_DIVINE_REAPER_KEEPER_OF_SOULS">
+		<compendium display="false"/>
+		<supports>Keeper of Souls RHW Version</supports>
+		<description>
+			<p> When an enemy dies within 60 feet of you, you or one creature you can see within 60 feet of yourself regains Hit Points equal to twice your Cleric level. You can't use this feature if you have the Incapacitated condition. Once you use this feature, you can't use it again until you finish a Short or Long Rest, unless you expend a level 6+ spell slot (no action required) to restore your use of it.</p>
+		</description>
+		<sheet usage="1/Short Rest">
+			<description>When an enemy dies within 60ft. of you and you are not Incapacitated, you or one creature you can see within 60 feet of yourself regains {{keeper of souls:hp}} HPs. &#13;
+			You can expend a level 6+ spell slot (no action required) to restore your use of this feature.</description>
+		</sheet>
+		<rules>
+			<stat name="keeper of souls:hp" value="level:cleric" />
+			<stat name="keeper of souls:hp" value="level:cleric" />
+		</rules>
+	</element>
+
+	<!--Feature Replacement Grants-->
+	<element name="Grave Domain Spells Feature Replacement" type="Grants" source="Internal" id="ID_INTERNAL_PHB24_FEATURE_REPLACEMENT_CLERIC_GRAVE_DOMAIN_GRAVE_DOMAIN_SPELLS" />
+	<element name="Circle of Mortality Feature Replacement" type="Grants" source="Internal" id="ID_INTERNAL_PHB24_FEATURE_REPLACEMENT_CLERIC_GRAVE_DOMAIN_CIRCLE_OF_MORTALITY" />
+	<element name="Path to the Grave Feature Replacement" type="Grants" source="Internal" id="ID_INTERNAL_PHB24_FEATURE_REPLACEMENT_CLERIC_GRAVE_DOMAIN_PATH_TO_THE_GRAVE" />
+	<element name="Sentinel at Death's Door Feature Replacement" type="Grants" source="Internal" id="ID_INTERNAL_PHB24_FEATURE_REPLACEMENT_CLERIC_GRAVE_DOMAIN_SENTINEL_AT_DEATHS_DOOR" />
+	<element name="Divine Reaper Feature Replacement" type="Grants" source="Internal" id="ID_INTERNAL_PHB24_FEATURE_REPLACEMENT_CLERIC_GRAVE_DOMAIN_DIVINE_REAPER" />
+</elements>

@@ -1,0 +1,144 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<elements>
+	<info>
+		<name>Hexblood</name>
+		<description>The Hexblood species from Ravenloft: The Horrors Within.</description>
+		<update version="0.0.1">
+			<file name="race-hexblood.xml" url="https://raw.githubusercontent.com/AuroraLegacy/elements/master/supplements/ravenloft-the-horrors-within/races/race-hexblood.xml" />
+		</update>
+	</info>
+	
+	<element name="Hexblood" type="Race" source="Ravenloft: The Horrors Within" id="ID_WOTC_RHW_RACE_HEXBLOOD">
+		<description>
+			<p>Hexbloods are individuals infused with fey magic as a result of eldritch energy or mysterious witchcraft. Many hexbloods are transformed into such beings after making a deal with a powerful hag, but other strange forces can result in the birth of a hexblood. A hexblood's strange fey power manifests as eerie clairvoyance and beguiling magic.</p>
+			<h5>HEXBLOOD TRAITS</h5>
+			<ul class="unstyled" style="text-indent:-1em; margin-left:1em; margin-bottom:5px">
+				<li><strong>Creature Type:</strong> Fey</li>
+				<li><strong>Size:</strong> Medium (about 4-7 feet tall) or Small (about 2-4 feet tall), chosen when you select this species</li>
+				<li><strong>Speed:</strong> 30 feet</li>
+			</ul>
+			<p>As a Hexblood, you have these special traits.</p>
+			<p class="indent"><strong><em>Darkvision.</em></strong> You have Darkvision with a range of 60 feet.</p>
+			<p class="indent"><strong><em>Eerie Token.</em></strong> As a Bonus Action, you can create a magical token by harmlessly removing a lock of hair, detaching a nail, or using some other method. While the token exists, you gain the following benefits:</p> 
+			<ul class="unstyled" style="margin-left:2em; margin-bottom:1em">
+				<li><b>Distant Message.</b> As a Magic action, you can send a telepathic message of 25 words or fewer to a creature holding or carrying the token, as long as you are within 10 miles of it.</li>
+				<li><b>Remote Viewing.</b> If you are within 10 miles of the token, you can take a Magic action to extend your senses through the token for 1 minute, until you have the Incapacitated condition, or until you end this state (no action required). During this state, you can see and hear from the token as if you were located where it is. When this state ends, the token is harmlessly destroyed.</li>
+			</ul>
+			<p class="indent">Unless the token is destroyed early, it lasts until you finish a Long Rest. Once you create a token using this feature, you can't do so again until you finish a Long Rest.</p>
+			<p class="indent"><b><i>Hex Magic.</i></b> You always have the <i>Disguise Self</i> and <i>Hex</i> spells prepared. You can cast each spell once without a spell slot, and you regain the ability to cast it in that way when you finish a Long Rest. You can also cast the spell using any spell slots you have of the appropriate level. Intelligence, Wisdom, or Charisma is your spellcasting ability for the spells you cast with this trait (choose the ability when you select this species).</p>
+		<div class="reference">
+			<div element="ID_WOTC_PHB24_SPELL_DISGUISE_SELF" />
+		</div>
+		<div class="reference">
+			<div element="ID_WOTC_PHB24_SPELL_HEX" />
+		</div>
+		</description>
+		<sheet display="false" />
+		<rules>
+			<grant type="Grants" id="ID_INTERNAL_GRANT_RACE_HEXBLOOD" />
+			<select type="Ability Score Improvement" name="Ability Score Improvement Option (Hexblood)" supports="Custom Ability Score Improvement Option" requirements="!ID_INTERNAL_GRANTS_BACKGROUND_ASI" />
+			<select type="Racial Trait" name="Size (Hexblood)" supports="ID_INTERNAL_RACIAL_TRAIT_SMALL|ID_INTERNAL_RACIAL_TRAIT_MEDIUM" />
+			<stat name="innate speed" value="30" bonus="base" />
+
+			<grant type="Language" id="ID_LANGUAGE_COMMON" requirements="!ID_WOTC_TCOE_OPTION_CUSTOMIZED_LANGUAGE" />
+			<select type="Language" name="Language (Hexblood)" supports="Standard" number="2" requirements="!ID_WOTC_TCOE_OPTION_CUSTOMIZED_LANGUAGE" />
+			<select type="Language" name="Customized Language (Hexblood)" supports="Custom Race Language"  requirements="ID_WOTC_TCOE_OPTION_CUSTOMIZED_LANGUAGE" number="3" />
+
+			<grant type="Vision" id="ID_VISION_DARKVISION" requirements="!ID_INTERNAL_RHW_RACIAL_TRAIT_REPLACEMENT_HEXBLOOD_DARKVISION" />
+			<grant type="Racial Trait" id="ID_WOTC_RHW_RACIAL_TRAIT_HEXBLOOD_EERIE_TOKEN" requirements="!ID_INTERNAL_RHW_RACIAL_TRAIT_REPLACEMENT_HEXBLOOD_EERIE_TOKEN" />
+			<grant type="Racial Trait" id="ID_WOTC_RHW_RACIAL_TRAIT_HEXBLOOD_HEX_MAGIC" requirements="!ID_INTERNAL_RHW_RACIAL_TRAIT_REPLACEMENT_HEXBLOOD_HEX_MAGIC" />
+		</rules>
+	</element>
+
+	<element name="Eerie Token" type="Racial Trait" source="Ravenloft: The Horrors Within" id="ID_WOTC_RHW_RACIAL_TRAIT_HEXBLOOD_EERIE_TOKEN">
+		<requirements>!ID_INTERNAL_RHW_RACIAL_TRAIT_REPLACEMENT_HEXBLOOD_EERIE_TOKEN</requirements>
+		<description>
+			<p>As a Bonus Action, you can create a magical token by harmlessly removing a lock of hair, detaching a nail, or using some other method. While the token exists, you gain the following benefits:</p> 
+			<ul class="unstyled" style="text-indent:-1em; margin-left:1em; margin-bottom:5px">
+				<li><b>Distant Message.</b> As a Magic action, you can send a telepathic message of 25 words or fewer to a creature holding or carrying the token, as long as you are within 10 miles of it.</li>
+				<li><b>Remote Viewing.</b> If you are within 10 miles of the token, you can take a Magic action to extend your senses through the token for 1 minute, until you have the Incapacitated condition, or until you end this state (no action required). During this state, you can see and hear from the token as if you were located where it is. When this state ends, the token is harmlessly destroyed.</li>
+			</ul>
+			<p class="indent">Unless the token is destroyed early, it lasts until you finish a Long Rest. Once you create a token using this feature, you can't do so again until you finish a Long Rest.</p>
+		</description>
+		<sheet action="Bonus Action" usage="1/Long Rest">
+			<description>You can create a magical token by harmlessly removing a lock of hair, detaching a nail, or using some other method. Unless the token is destroyed early, it lasts until you finish a Long Rest. While the token exists, you gain the following benefits:</description>
+		</sheet>
+		<rules>
+			<select type="Racial Trait" name="Distant Message" supports="RHW Distant Message" default="ID_WOTC_RHW_RACIAL_TRAIT_HEXBLOOD_EERIE_TOKEN_DISTANT_MESSAGE"/>
+			<select type="Racial Trait" name="Remote Viewing" supports="RHW Remote Viewing" default="ID_WOTC_RHW_RACIAL_TRAIT_HEXBLOOD_EERIE_TOKEN_REMOTE_VIEWING"/>
+		</rules>
+	</element>
+	<element name="Distant Message" type="Racial Trait" source="Ravenloft: The Horrors Within" id="ID_WOTC_RHW_RACIAL_TRAIT_HEXBLOOD_EERIE_TOKEN_DISTANT_MESSAGE">
+		<compendium display="false"/>
+		<supports>RHW Distant Message</supports>
+		<description>
+			<p>As a Magic action, you can send a telepathic message of 25 words or fewer to a creature holding or carrying the token, as long as you are within 10 miles of it.</p>
+		</description>
+		<sheet action="Action">
+			<description>You can send a telepathic message of 25 words or fewer to a creature holding or carrying the token, as long as you are within 10 miles of it.</description>
+		</sheet>
+	</element>
+	<element name="Remote Viewing" type="Racial Trait" source="Ravenloft: The Horrors Within" id="ID_WOTC_RHW_RACIAL_TRAIT_HEXBLOOD_EERIE_TOKEN_REMOTE_VIEWING">
+		<compendium display="false"/>
+		<supports>RHW Remote Viewing</supports>
+		<description>
+			<p>If you are within 10 miles of the token, you can take a Magic action to extend your senses through the token for 1 minute, until you have the Incapacitated condition, or until you end this state (no action required). During this state, you can see and hear from the token as if you were located where it is. When this state ends, the token is harmlessly destroyed.</p>
+		</description>
+		<sheet action="Action" >
+			<description>If you are within 10 miles of the token, you can extend your senses through the token for 1 minute, until you have the Incapacitated condition, or until you end this state (no action required). During this state, you can see and hear from the token as if you were located where it is. When this state ends, the token is harmlessly destroyed.</description>
+		</sheet>
+	</element>
+
+	<element name="Hex Magic" type="Racial Trait" source="Ravenloft: The Horrors Within" id="ID_WOTC_RHW_RACIAL_TRAIT_HEXBLOOD_HEX_MAGIC">
+		<requirements>!ID_INTERNAL_RHW_RACIAL_TRAIT_REPLACEMENT_HEXBLOOD_HEX_MAGIC</requirements>
+		<description>
+			<p>You always have the <i>Disguise Self</i> and <i>Hex</i> spells prepared. You can cast each spell once without a spell slot, and you regain the ability to cast it in that way when you finish a Long Rest. You can also cast the spell using any spell slots you have of the appropriate level. Intelligence, Wisdom, or Charisma is your spellcasting ability for the spells you cast with this trait (choose the ability when you select this species).</p>
+		<div class="reference">
+			<div element="ID_WOTC_PHB24_SPELL_DISGUISE_SELF" />
+		</div>
+		<div class="reference">
+			<div element="ID_WOTC_PHB24_SPELL_HEX" />
+		</div>
+		</description>
+		<sheet display="false"/>
+		<rules>
+			<select type="Racial Trait" name="Spellcasting Ability (Hex Magic)" supports="ID_WOTC_RHW_RACIAL_TRAIT_HEXBLOOD_HEX_MAGIC_INTELLIGENCE|ID_WOTC_RHW_RACIAL_TRAIT_HEXBLOOD_HEX_MAGIC_WISDOM|ID_WOTC_RHW_RACIAL_TRAIT_HEXBLOOD_HEX_MAGIC_CHARISMA" />
+
+			<grant type="Spell" id="ID_WOTC_PHB24_SPELL_DISGUISE_SELF" prepared="true" alt="Hex Magic"/>
+			<grant type="Spell" id="ID_WOTC_PHB24_SPELL_HEX" prepared="true" alt="Hex Magic"/>
+		</rules>
+	</element>
+	<element name="Intelligence" type="Racial Trait" source="Ravenloft: The Horrors Within" id="ID_WOTC_RHW_RACIAL_TRAIT_HEXBLOOD_HEX_MAGIC_INTELLIGENCE">
+		<compendium display="false"/>
+		<description>
+			<p>Intelligence is your spellcasting ability for the spells you cast with this trait.</p>
+		</description>
+		<sheet alt="Hex Magic" usage="1/Long Rest">
+			<description>You can cast Disguise Self and Hex once each without a spell slot. You can also cast these spells using spell slots you have of the appropriate level. Intelligence is your spellcasting ability for them.</description>
+		</sheet>
+	</element>
+	<element name="Wisdom" type="Racial Trait" source="Ravenloft: The Horrors Within" id="ID_WOTC_RHW_RACIAL_TRAIT_HEXBLOOD_HEX_MAGIC_WISDOM">
+		<compendium display="false"/>
+		<description>
+			<p>Wisdom is your spellcasting ability for the spells you cast with this trait.</p>
+		</description>
+		<sheet alt="Hex Magic" usage="1/Long Rest">
+			<description>You can cast Disguise Self and Hex once each without a spell slot. You can also cast these spells using spell slots you have of the appropriate level. Wisdom is your spellcasting ability for them.</description>
+		</sheet>
+	</element>
+	<element name="Charisma" type="Racial Trait" source="Ravenloft: The Horrors Within" id="ID_WOTC_RHW_RACIAL_TRAIT_HEXBLOOD_HEX_MAGIC_CHARISMA">
+		<compendium display="false"/>
+		<description>
+			<p>Charisma is your spellcasting ability for the spells you cast with this trait.</p>
+		</description>
+		<sheet alt="Hex Magic" usage="1/Long Rest">
+			<description>You can cast Disguise Self and Hex once each without a spell slot. You can also cast these spells using spell slots you have of the appropriate level. Charisma is your spellcasting ability for them.</description>
+		</sheet>
+	</element>
+	
+	<!--racial trait replacement grants-->
+	<element name="Darkvision Trait Replacement" type="Grants" source="Internal" id="ID_INTERNAL_RHW_RACIAL_TRAIT_REPLACEMENT_HEXBLOOD_DARKVISION" />
+	<element name="Eerie Token Replacement" type="Grants" source="Internal" id="ID_INTERNAL_RHW_RACIAL_TRAIT_REPLACEMENT_HEXBLOOD_EERIE_TOKEN" />
+	<element name="Hex Magic Replacement" type="Grants" source="Internal" id="ID_INTERNAL_RHW_RACIAL_TRAIT_REPLACEMENT_HEXBLOOD_HEX_MAGIC" />
+
+</elements>

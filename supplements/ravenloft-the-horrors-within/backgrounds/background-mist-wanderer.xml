@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<elements>
+	<info>
+		<name>Mist Wanderer</name>
+		<description>The Mist Wanderer background from Ravenloft: The Horrors Within.</description>
+		<update version="0.0.1">
+			<file name="background-mist-wanderer.xml" url="https://raw.githubusercontent.com/AuroraLegacy/elements/master/supplements/ravenloft-the-horrors-within/backgrounds/background-mist-wanderer.xml" />
+		</update>
+	</info>
+
+	<element name="Mist Wanderer" type="Background" source="Ravenloft: The Horrors Within" id="ID_WOTC_RHW_BACKGROUND_MIST_WANDERER">
+		<description>
+			<ul class="unstyled" style="text-indent:-1em; margin-left:1em; margin-bottom:5px">
+				<li><strong>Ability Scores:</strong> Dexterity, Constitution, Wisdom</li>
+				<li><strong>Feat:</strong> A Dark Gift feat of your choice (Mist Walker is recommended)</li>
+				<li><strong>Skill Proficiencies:</strong> Survival and Stealth</li>
+				<li><strong>Tool Proficiency:</strong> Choose one kind of Artisan's Tools</li>
+				<li><strong>Equipment:</strong><i> Choose A or B:</i> (A) Artisan's Tools (same as above), Lamp, Oil (5 flasks), Pouch, Rope, Tinderbox, Traveler's Clothes, and 30 GP; or (B) 50 GP</li>
+			</ul>
+			<p>You once knew your home. But one day, the Mists rose and drew you into a Domain of Dread. Ever since, you have wandered between domains, braving the mercurial Mists as you search for a way home. Your time in these cursed realms has changed you, yet you find solace in communities of fellow wanderers throughout the Mists.</p>
+			<div class="reference">
+				<div element="ID_WOTC_RHW_FEAT_MIST_WALKER" />
+			</div>
+		</description>
+		<setters>
+			<set name="short">Dexterity, Constitution, Wisdom, a Dark Gift Feat, Survival and Stealth Skills, an Artisan's Tool</set>
+		</setters>
+		<rules>
+			<grant type="Ability Score Improvement" id="ID_INTERNAL_ABILITY_SCORE_IMPROVEMENT_COMBINATION_DEX_CON_WIS" />
+			<select type="Feat" name="Origin Feat (Mist Wanderer)" supports="Dark Gift" />
+			<grant type="Proficiency" id="ID_PROFICIENCY_SKILL_SURVIVAL" />
+			<grant type="Proficiency" id="ID_PROFICIENCY_SKILL_STEALTH" />
+			<grant type="Grants" id="ID_INTERNAL_GRANTS_BACKGROUND_ASI" />
+			<select type="Proficiency" name="Tool Proficiency (Mist Wanderer)" supports="Tool, Artisan tools" />
+		</rules>
+	</element>
+</elements>

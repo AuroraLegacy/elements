@@ -1,0 +1,685 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<elements>
+	<info>
+		<name>Dark Gift Feats</name>
+		<description>Dark Gift Feats from Ravenloft: The Horrors Within.</description>
+		<update version="0.0.1">
+			<file name="feats-dark-gift.xml" url="https://raw.githubusercontent.com/AuroraLegacy/elements/master/supplements/ravenloft-the-horrors-within/feats/feats-dark-gift.xml" />
+		</update>
+	</info>
+
+	<element name="Aberrant Anatomy" type="Feat" source="Ravenloft: The Horrors Within" id="ID_WOTC_RHW_FEAT_ABERRANT_ANATOMY">
+		<supports>Origin, Dark Gift</supports>
+		<prerequisites>Ravenloft Campaign</prerequisites>
+		<description>
+			<p class="flavor">Dark Gift Feat (Prerequisite: Ravenloft Campaign)</p>
+			<p>Exposure to alien horrors like those of the Far Realm has warped your physical form in supernatural ways. You gain the following features.</p>
+			<p class="indent"><b><i>Breathless.</i></b> You can hold your breath for 1 hour.</p>
+			<p class="indent"><b><i>Extrasensory Perception.</i></b> You have proficiency in the Perception skill, if you lack it. You also gain Expertise in that skill.</p>
+			<p class="indent">In addition, you have Blindsight with a range of 15 feet.</p>
+			<p class="indent"><b><i>Warping Flesh.</i></b> Immediately after you make a D20 Test and roll a 1 on the d20, the aberrant influence infecting your form flares, wrenching control of your flesh. Make a Constitution saving throw (DC 13 plus your Proficiency Bonus). On a failed save, you have the Stunned condition until the end of your next turn.</p>
+		</description>
+		<setters>
+			<set name="keywords">ravenloft</set>
+		</setters>
+		<sheet>
+			<description>You can hold your breath for 1 hour.</description>
+		</sheet>
+		<rules>
+			<grant type="Proficiency" id="ID_PROFICIENCY_SKILL_PERCEPTION" />
+			<grant type="Proficiency" id="ID_INTERNAL_PROFICIENCY_SKILL_EXPERTISE_PERCEPTION" />
+			<grant type="Vision" id="ID_VISION_BLINDSIGHT" />
+			<stat name="blindsight:range" value="15" bonus="base" />
+			<grant type="Feat Feature" id="ID_WOTC_RHW_FEAT_FEATURE_ABERRANT_ANATOMY_WARPING_FLESH" />
+		</rules>
+	</element>
+	<element name="Warping Flesh" type="Feat Feature" source="Ravenloft: The Horrors Within" id="ID_WOTC_RHW_FEAT_FEATURE_ABERRANT_ANATOMY_WARPING_FLESH">
+		<compendium display="false"/>
+		<requirements>ID_WOTC_RHW_FEAT_ABERRANT_ANATOMY</requirements>
+		<description>
+			<p>Immediately after you make a D20 Test and roll a 1 on the d20, the aberrant influence infecting your form flares, wrenching control of your flesh. Make a Constitution saving throw (DC 13 plus your Proficiency Bonus). On a failed save, you have the Stunned condition until the end of your next turn.</p>
+		</description>
+		<setters>
+			<set name="keywords">ravenloft</set>
+		</setters>
+		<sheet>
+			<description>Immediately after you make a D20 Test and roll a 1 on the d20, make a DC{{warping flesh:dc}} Constitution saving throw. On a failed save, you have the Stunned condition until the end of your next turn.</description>
+		</sheet>
+		<rules>
+			<stat name="warping flesh:dc" value="13" bonus="base" />
+			<stat name="warping flesh:dc" value="proficiency" bonus="proficiency" />
+		</rules>
+	</element>
+
+	<element name="Echoing Soul" type="Feat" source="Ravenloft: The Horrors Within" id="ID_WOTC_RHW_FEAT_ECHOING_SOUL">
+		<supports>Origin, Dark Gift</supports>
+		<prerequisites>Ravenloft Campaign</prerequisites>
+		<description>
+			<p class="flavor">Dark Gift Feat (Prerequisite: Ravenloft Campaign)</p>
+			<p>You experience echoes from a past or alternate life. You gain the following features.</p>
+			<p class="indent"><b><i>Channeled Prowess.</i></b> You have proficiency in two skills of your choice.</p>
+			<p class="indent">In addition, choose one skill you have proficiency in. You gain Expertise in that skill. Whenever you finish a Long Rest, you can change your choice for this benefit.</p>
+			<p class="indent"><b><i>Inherent Tongues.</i></b> You know one additional language of your choice, which you choose from the language tables in the Player's Handbook.</p>
+			<p class="indent"><b><i>Intrusive Echoes.</i></b> Immediately after you make a D20 Test and roll a 1 on the d20, memories and sensations from your soul's other life threaten to overtake you. Make a Constitution saving throw (DC 13 plus your Proficiency Bonus). On a failed save, you have the Incapacitated condition until the end of your next turn. While you are Incapacitated in this way, your Speed is halved.</p>
+		</description>
+		<setters>
+			<set name="keywords">ravenloft</set>
+		</setters>
+		<sheet>
+			<description>Choose one skill you have proficiency in. You gain Expertise in that skill. You can change this choice whenever you finish a Long Rest.</description>
+		</sheet>
+		<rules>
+			<select type="Proficiency" name="Skill Proficiency (Echoing Soul)" supports="Skill" number="2" />
+			<select type="Proficiency" name="Skill Expertise (Echoing Soul)" supports="Expertise" />
+			<select type="Language" name="Language (Echoing Soul)" supports="Standard" />
+			<grant type="Feat Feature" id="ID_WOTC_RHW_FEAT_FEATURE_ECHOING_SOUL_INTRUSIVE_ECHOES" />
+		</rules>
+	</element>
+	<element name="Intrusive Echoes" type="Feat Feature" source="Ravenloft: The Horrors Within" id="ID_WOTC_RHW_FEAT_FEATURE_ECHOING_SOUL_INTRUSIVE_ECHOES">
+		<compendium display="false"/>
+		<requirements>ID_WOTC_RHW_FEAT_ECHOING_SOUL</requirements>
+		<description>
+			<p>Immediately after you make a D20 Test and roll a 1 on the d20, memories and sensations from your soul's other life threaten to overtake you. Make a Constitution saving throw (DC 13 plus your Proficiency Bonus). On a failed save, you have the Incapacitated condition until the end of your next turn. While you are Incapacitated in this way, your Speed is halved.</p>
+		</description>
+		<sheet>
+			<description>Immediately after you make a D20 Test and roll a 1 on the d20, make a DC{{intrusive echoes:dc}} Constitution saving throw. On a failed save, you have the Incapacitated condition until the end of your next turn. While you are Incapacitated in this way, your Speed is halved.</description>
+		</sheet>
+		<rules>
+			<stat name="intrusive echoes:dc" value="13" bonus="base" />
+			<stat name="intrusive echoes:dc" value="proficiency" bonus="proficiency" />
+		</rules>
+	</element>
+
+	<element name="Gathered Whispers" type="Feat" source="Ravenloft: The Horrors Within" id="ID_WOTC_RHW_FEAT_GATHERED_WHISPERS">
+		<supports>Origin, Dark Gift</supports>
+		<prerequisites>Ravenloft Campaign</prerequisites>
+		<description>
+			<p class="flavor">Dark Gift Feat (Prerequisite: Ravenloft Campaign)</p>
+			<p>You are haunted by a cacophony of whispering spirits only you can hear. You gain the following features.</p>
+			<p class="indent"><b><i>Spirit Whispers.</i></b> You learn the <i>Message</i> spell and can cast it without Material components. Additionally, you always have the <i>Augury</i> spell prepared. You can cast it without a spell slot or spell components, and you must finish a Long Rest before you can cast it in this way again. You can also cast the spell using any spell slots you have.</p>
+			<p class="indent">Intelligence, Wisdom, or Charisma is your spellcasting ability for this benefit (choose when you select this feat).</p>
+			<p class="indent"><b><i>Unearthly Scream.</i></b> When you are hit by an attack roll, you can take a Reaction to channel your haunting spirits into a protective, otherworldly scream. You can add your Proficiency Bonus to your AC against that attack, potentially causing it to miss. You can use this benefit a number of times equal to your Proficiency Bonus, and you regain all expended uses when you finish a Long Rest.</p>
+			<p class="indent"><b><i>Voices from Beyond.</i></b> Immediately after you make a D20 Test and roll a 1 on the d20, the haunting voices rise to a ghastly volume. Make a Wisdom saving throw (DC 13 plus your Proficiency Bonus). On a failed save, you have the Deafened condition until the end of your next turn. While Deafened, you have Disadvantage on ability checks and attack rolls.</p>
+		<div class="reference">
+			<div element="ID_WOTC_PHB24_SPELL_MESSAGE"/>
+		</div>
+		<div class="reference">
+			<div element="ID_WOTC_PHB24_SPELL_AUGURY"/>
+		</div>
+		</description>
+		<setters>
+			<set name="keywords">ravenloft</set>
+		</setters>
+		<sheet action="Reaction" usage="{{proficiency}}/Long Rest" >
+			<description>When you are hit by an attack roll, you can add +{{proficiency}} to your AC against that attack, potentially causing it to miss.</description>
+		</sheet>
+		<rules>
+			<grant type="Spell" id="ID_WOTC_PHB24_SPELL_MESSAGE" prepared="true" />
+			<grant type="Spell" id="ID_WOTC_PHB24_SPELL_AUGURY" prepared="true" />
+			
+			<select type="Feat Feature" name="Spellcasting Ability (Gathered Whispers)" supports="RHW Spirit Whispers" />
+			<grant type="Feat Feature" id="ID_WOTC_RHW_FEAT_FEATURE_GATHERED_WHISPERS_VOICES_FROM_BEYOND" />
+		</rules>
+	</element>
+	<element name="Intelligence" type="Feat Feature" source="Ravenloft: The Horrors Within" id="ID_WOTC_RHW_FEAT_FEATURE_GATHERED_WHISPERS_SPIRIT_WHISPERS_INTELLIGENCE">
+		<compendium display="false"/>
+		<supports>RHW Spirit Whispers</supports>
+		<description>
+			<p>You learn the <i>Message</i> spell and can cast it without Material components. Additionally, you always have the <i>Augury</i> spell prepared. You can cast it without a spell slot or spell components, and you must finish a Long Rest before you can cast it in this way again. You can also cast the spell using any spell slots you have.</p>
+			<p class="indent">Intelligence is your spellcasting ability for this benefit.</p>
+		<div class="reference">
+			<div element="ID_WOTC_PHB24_SPELL_MESSAGE"/>
+		</div>
+		<div class="reference">
+			<div element="ID_WOTC_PHB24_SPELL_AUGURY"/>
+		</div>
+		</description>
+		<sheet alt="Spirit Whispers">
+			<description>You can cast Message without Material components. Additionally, you can cast Augury without a spell slot or spell components once per Long Rest. You can also cast it using any spell slots you have. Intelligence is your spellcasting ability for these spells.</description>
+		</sheet>
+	</element>
+	<element name="Wisdom" type="Feat Feature" source="Ravenloft: The Horrors Within" id="ID_WOTC_RHW_FEAT_FEATURE_GATHERED_WHISPERS_SPIRIT_WHISPERS_WISDOM">
+		<compendium display="false"/>
+		<supports>RHW Spirit Whispers</supports>
+		<description>
+			<p>You learn the <i>Message</i> spell and can cast it without Material components. Additionally, you always have the <i>Augury</i> spell prepared. You can cast it without a spell slot or spell components, and you must finish a Long Rest before you can cast it in this way again. You can also cast the spell using any spell slots you have.</p>
+			<p class="indent">Wisdom is your spellcasting ability for this benefit.</p>
+		<div class="reference">
+			<div element="ID_WOTC_PHB24_SPELL_MESSAGE"/>
+		</div>
+		<div class="reference">
+			<div element="ID_WOTC_PHB24_SPELL_AUGURY"/>
+		</div>
+		</description>
+		<sheet alt="Spirit Whispers">
+			<description>You can cast Message without Material components. Additionally, you can cast Augury without a spell slot or spell components once per Long Rest. You can also cast it using any spell slots you have. Wisdom is your spellcasting ability for these spells.</description>
+		</sheet>
+	</element>
+	<element name="Charisma" type="Feat Feature" source="Ravenloft: The Horrors Within" id="ID_WOTC_RHW_FEAT_FEATURE_GATHERED_WHISPERS_SPIRIT_WHISPERS_CHARISMA">
+		<compendium display="false"/>
+		<supports>RHW Spirit Whispers</supports>
+		<description>
+			<p>You learn the <i>Message</i> spell and can cast it without Material components. Additionally, you always have the <i>Augury</i> spell prepared. You can cast it without a spell slot or spell components, and you must finish a Long Rest before you can cast it in this way again. You can also cast the spell using any spell slots you have.</p>
+			<p class="indent">Charisma is your spellcasting ability for this benefit.</p>
+		<div class="reference">
+			<div element="ID_WOTC_PHB24_SPELL_MESSAGE"/>
+		</div>
+		<div class="reference">
+			<div element="ID_WOTC_PHB24_SPELL_AUGURY"/>
+		</div>
+		</description>
+		<sheet alt="Spirit Whispers">
+			<description>You can cast Message without Material components. Additionally, you can cast Augury without a spell slot or spell components once per Long Rest. You can also cast it using any spell slots you have. Charisma is your spellcasting ability for these spells.</description>
+		</sheet>
+	</element>
+	<element name="Voices from Beyond" type="Feat Feature" source="Ravenloft: The Horrors Within" id="ID_WOTC_RHW_FEAT_FEATURE_GATHERED_WHISPERS_VOICES_FROM_BEYOND">
+		<compendium display="false"/>
+		<requirements>ID_WOTC_RHW_FEAT_GATHERED_WHISPERS</requirements>
+		<description>
+			<p>Immediately after you make a D20 Test and roll a 1 on the d20, the haunting voices rise to a ghastly volume. Make a Wisdom saving throw (DC 13 plus your Proficiency Bonus). On a failed save, you have the Deafened condition until the end of your next turn. While Deafened, you have Disadvantage on ability checks and attack rolls.</p>
+		</description>
+		<sheet>
+			<description>Immediately after you make a D20 Test and roll a 1 on the d20, make a DC{{voices from beyond:dc}} Wisdom saving throw. On a failed save, you have the Deafened condition until the end of your next turn. While Deafened, you have Disadvantage on ability checks and attack rolls.</description>
+		</sheet>
+		<rules>
+			<stat name="voices from beyond:dc" value="13" bonus="base" />
+			<stat name="voices from beyond:dc" value="proficiency" bonus="proficiency" />
+		</rules>
+	</element>
+
+	<element name="Living Shadow" type="Feat" source="Ravenloft: The Horrors Within" id="ID_WOTC_RHW_FEAT_LIVING_SHADOW">
+		<supports>Origin, Dark Gift</supports>
+		<prerequisites>Ravenloft Campaign</prerequisites>
+		<description>
+			<p class="flavor">Dark Gift Feat (Prerequisite: Ravenloft Campaign)</p>
+			<p>The shadow you cast is animate and ever-present—sometimes it even acts according to its own will. You gain the following features.</p>
+			<p class="indent"><b><i>Grasping Shadow.</i></b> You learn the <i>Mage Hand</i> spell and can cast it without spell components. Intelligence, Wisdom, or Charisma is your spellcasting ability for this spell (choose when you select this feat).</p>
+			<p class="indent"><b><i>Lengthened Strike.</i></b> When you make a melee attack roll as part of the Attack or Magic action on your turn, you can increase your reach for that attack by 10 feet, as your shadow stretches to aid you. You can use this feature a number of times equal to your Proficiency Bonus, and you regain all expended uses when you finish a Long Rest.</p>
+			<p class="indent"><b><i>Ominous Will.</i></b> Immediately after you make a D20 Test and roll a 1 on the d20, your shadow attempts to exert its will. Make a Wisdom saving throw (DC 13 plus your Proficiency Bonus). On a failed save, you have the Incapacitated condition until the start of your next turn, at which point you must roll on the Shadow's Will table to determine what you do during that turn.</p>
+			<h5>SHADOW'S WILL</h5>
+			<table>
+				<thead>
+					<tr><td class="col-10">1d8</td><td>Behavior</td></tr>
+				</thead>
+				<tr><td>1</td><td>You don't take an action or a Bonus Action, and you use all your movement to move. Roll 1d4 for the direction: <b>1</b>, north; <b>2</b>, east; <b>3</b>, south; or <b>4</b>, west.</td></tr>
+				<tr><td>2-6</td><td>You don't move or take a Bonus Action, and you take the Attack action to make one melee attack against a random creature within reach. If none are within reach, you take no action.</td></tr>
+				<tr><td>7-8</td><td>You have the Prone condition, and your turn ends.</td></tr>
+			</table>
+		<div class="reference">
+			<div element="ID_WOTC_PHB24_SPELL_MAGE_HAND"/>
+		</div>
+		</description>
+		<setters>
+			<set name="keywords">ravenloft</set>
+		</setters>
+		<sheet usage="{{proficiency}}/Long Rest" >
+			<description>When you make a melee attack roll as part of the Attack or Magic action on your turn, you can increase your reach for that attack by 10 feet, as your shadow stretches to aid you.</description>
+		</sheet>
+		<rules>
+			<grant type="Spell" id="ID_WOTC_PHB24_SPELL_MAGE_HAND" prepared="true" />
+
+			<select type="Feat Feature" name="Spellcasting Ability (Living Shadow)" supports="RHW Grasping Shadow" />
+			<grant type="Feat Feature" id="ID_WOTC_RHW_FEAT_FEATURE_LIVING_SHADOW_OMINOUS_WILL" />
+		</rules>
+	</element>
+	<element name="Intelligence" type="Feat Feature" source="Ravenloft: The Horrors Within" id="ID_WOTC_RHW_FEAT_FEATURE_LIVING_SHADOW_GRASPING_SHADOW_INTELLIGENCE">
+		<compendium display="false"/>
+		<supports>RHW Grasping Shadow</supports>
+		<description>
+			<p>You learn the <i>Mage Hand</i> spell and can cast it without spell components. Intelligence is your spellcasting ability for this spell.</p>
+		<div class="reference">
+			<div element="ID_WOTC_PHB24_SPELL_MAGE_HAND"/>
+		</div>
+		</description>
+		<sheet alt="Grasping Shadow">
+			<description>You can cast Mage Hand without spell components. Intelligence is your spellcasting ability for it.</description>
+		</sheet>
+	</element>
+	<element name="Wisdom" type="Feat Feature" source="Ravenloft: The Horrors Within" id="ID_WOTC_RHW_FEAT_FEATURE_LIVING_SHADOW_GRASPING_SHADOW_WISDOM">
+		<compendium display="false"/>
+		<supports>RHW Grasping Shadow</supports>
+		<description>
+			<p>You learn the <i>Mage Hand</i> spell and can cast it without spell components. Wisdom is your spellcasting ability for this spell.</p>
+		<div class="reference">
+			<div element="ID_WOTC_PHB24_SPELL_MAGE_HAND"/>
+		</div>
+		</description>
+		<sheet alt="Grasping Shadow">
+			<description>You can cast Mage Hand without spell components. Wisdom is your spellcasting ability for it.</description>
+		</sheet>
+	</element>
+	<element name="Charisma" type="Feat Feature" source="Ravenloft: The Horrors Within" id="ID_WOTC_RHW_FEAT_FEATURE_LIVING_SHADOW_GRASPING_SHADOW_CHARISMA">
+		<compendium display="false"/>
+		<supports>RHW Grasping Shadow</supports>
+		<description>
+			<p>You learn the <i>Mage Hand</i> spell and can cast it without spell components. Charisma is your spellcasting ability for this spell.</p>
+		<div class="reference">
+			<div element="ID_WOTC_PHB24_SPELL_MAGE_HAND"/>
+		</div>
+		</description>
+		<sheet alt="Grasping Shadow">
+			<description>You can cast Mage Hand without spell components. Charisma is your spellcasting ability for it.</description>
+		</sheet>
+	</element>
+	<element name="Ominous Will" type="Feat Feature" source="Ravenloft: The Horrors Within" id="ID_WOTC_RHW_FEAT_FEATURE_LIVING_SHADOW_OMINOUS_WILL">
+		<compendium display="false"/>
+		<requirements>ID_WOTC_RHW_FEAT_LIVING_SHADOW</requirements>
+		<description>
+			<p>Immediately after you make a D20 Test and roll a 1 on the d20, your shadow attempts to exert its will. Make a Wisdom saving throw (DC 13 plus your Proficiency Bonus). On a failed save, you have the Incapacitated condition until the start of your next turn, at which point you must roll on the Shadow's Will table to determine what you do during that turn.</p>
+			<h5>SHADOW'S WILL</h5>
+			<table>
+				<thead>
+					<tr><td class="col-10">1d8</td><td>Behavior</td></tr>
+				</thead>
+				<tr><td>1</td><td>You don't take an action or a Bonus Action, and you use all your movement to move. Roll 1d4 for the direction: <b>1</b>, north; <b>2</b>, east; <b>3</b>, south; or <b>4</b>, west.</td></tr>
+				<tr><td>2-6</td><td>You don't move or take a Bonus Action, and you take the Attack action to make one melee attack against a random creature within reach. If none are within reach, you take no action.</td></tr>
+				<tr><td>7-8</td><td>You have the Prone condition, and your turn ends.</td></tr>
+			</table>
+		</description>
+		<sheet>
+			<description>Immediately after you make a D20 Test and roll a 1 on the d20, make a DC{{ominous will:dc}} Wisdom saving throw. On a failed save, you have the Incapacitated condition until the start of your next turn, at which point you must roll a 1d8 to determine what you do during that turn. &#13;
+			1: You don't take an action or a Bonus Action, and you use all your movement to move. Roll 1d4 for the direction: 1, north; 2, east; 3, south; or 4, west. &#13;
+			2-6: You don't move or take a Bonus Action, and you take the Attack action to make one melee attack against a random creature within reach. If none are within reach, you take no action. &#13;
+			7-8: You have the Prone condition, and your turn ends.</description>
+		</sheet>
+		<rules>
+			<stat name="ominous will:dc" value="13" bonus="base" />
+			<stat name="ominous will:dc" value="proficiency" bonus="proficiency" />
+		</rules>
+	</element>
+
+	<element name="Mist Walker" type="Feat" source="Ravenloft: The Horrors Within" id="ID_WOTC_RHW_FEAT_MIST_WALKER">
+		<supports>Origin, Dark Gift</supports>
+		<prerequisites>Ravenloft Campaign</prerequisites>
+		<description>
+			<p class="flavor">Dark Gift Feat (Prerequisite: Ravenloft Campaign)</p>
+			<p>You know how to slip through the Mists' grasp, but this freedom comes at a price: If you remain in one area for too long, the Mists find you and drain your life force. You gain the following features.</p>
+			<p class="indent"><b><i>Domain Traveler.</i></b> When you enter the Mists intent on reaching a specific domain, you are treated as if you possess a <i>Mist talisman</i> keyed to that domain. To use this feature, you must know the name of the domain you have chosen as your destination, but you don't need to have previously visited that land. This trait doesn't allow you to bypass domain borders closed by a Darklord's will.</p>
+			<p class="indent"><b><i>Mist Walk.</i></b> When you take damage or fail a saving throw to avoid or end the Grappled or Restrained condition, you can take a Reaction and teleport up to 15 feet to an unoccupied space you can see. You can use this feature a number of times equal to your Proficiency Bonus, and you regain all expended uses when you finish a Long Rest.</p>
+			<p class="indent"><b><i>Poisoned Roots.</i></b> When you finish a Long Rest, the world around you in a 10-mile radius becomes a siphon that leeches away at your vitality. Whenever you finish a Short Rest in that area, make a Constitution saving throw (DC 13 plus your Proficiency Bonus). On a failed save, you get no benefits from finishing that rest.</p>
+		</description>
+		<setters>
+			<set name="keywords">ravenloft</set>
+		</setters>
+		<sheet>
+			<description>When you enter the Mists intent on reaching a specific domain, you are treated as if you possess a Mist talisman keyed to that domain. You must know the name of the domain you have chosen as your destination, but you don't need to have previously visited that land. You cannot bypass domain borders closed by a Darklord's will.</description>
+		</sheet>
+		<rules>
+			<select type="Feat Feature" name="Mist Walk" supports="RHW Mist Walk" default="ID_WOTC_RHW_FEAT_FEATURE_MIST_WALKER_MIST_WALK" />
+			<grant type="Feat Feature" id="ID_WOTC_RHW_FEAT_FEATURE_MIST_WALKER_POISONED_ROOTS" />
+		</rules>
+	</element>
+	<element name="Mist Walk" type="Feat Feature" source="Ravenloft: The Horrors Within" id="ID_WOTC_RHW_FEAT_FEATURE_MIST_WALKER_MIST_WALK">
+		<compendium display="false"/>
+		<supports>RHW Mist Walk</supports>
+		<description>
+			<p>When you take damage or fail a saving throw to avoid or end the Grappled or Restrained condition, you can take a Reaction and teleport up to 15 feet to an unoccupied space you can see. You can use this feature a number of times equal to your Proficiency Bonus, and you regain all expended uses when you finish a Long Rest.</p>
+		</description>
+		<sheet action="Reaction" usage="{{proficiency}}/Long Rest">
+			<description>When you take damage or fail a saving throw to avoid or end the Grappled or Restrained condition, you can teleport up to 15 feet to an unoccupied space you can see.</description>
+		</sheet>
+	</element>
+	<element name="Poisoned Roots" type="Feat Feature" source="Ravenloft: The Horrors Within" id="ID_WOTC_RHW_FEAT_FEATURE_MIST_WALKER_POISONED_ROOTS">
+		<compendium display="false"/>
+		<requirements>ID_WOTC_RHW_FEAT_MIST_WALKER</requirements>
+		<description>
+			<p>When you finish a Long Rest, the world around you in a 10-mile radius becomes a siphon that leeches away at your vitality. Whenever you finish a Short Rest in that area, make a Constitution saving throw (DC 13 plus your Proficiency Bonus). On a failed save, you get no benefits from finishing that rest.</p>
+		</description>
+		<sheet>
+			<description>When you finish a Long Rest, the world around you in a 10-mile radius becomes a siphon that leeches away at your vitality. Whenever you finish a Short Rest in that area, make a DC{{poisoned roots:dc}} Constitution saving throw. On a failed save, you get no benefits from finishing that rest.</description>
+		</sheet>
+		<rules>
+			<stat name="poisoned roots:dc" value="13" bonus="base" />
+			<stat name="poisoned roots:dc" value="proficiency" bonus="proficiency" />
+		</rules>
+	</element>
+
+	<element name="Second Skin" type="Feat" source="Ravenloft: The Horrors Within" id="ID_WOTC_RHW_FEAT_SECOND_SKIN">
+		<supports>Origin, Dark Gift</supports>
+		<prerequisites>Ravenloft Campaign</prerequisites>
+		<description>
+			<p class="flavor">Dark Gift Feat (Prerequisite: Ravenloft Campaign)</p>
+			<p>There is another side of you that most people never see: a beast, a terrifying avenger, or a walking nightmare. You gain the following features.</p>
+			<p class="indent"><b><i>Alternate Form.</i></b> You always have the <i>Alter Self</i> spell prepared. You can cast it without a spell slot or spell components, and you must finish a Long Rest before you can cast it in this way again. You can also cast it using spell slots you have of the appropriate level. Intelligence, Wisdom, or Charisma is your spellcasting ability for this spell (choose when you select this feat).</p>
+			<p class="indent">When you cast <i>Alter Self</i> without a spell slot using this feature, it doesn't require Concentration.</p>
+			<p class="indent"><b><i>Involuntary Change.</i></b> Certain circumstances can involuntarily trigger your transformation. When you select this feat, roll on the Change Catalyst table to determine what triggers your change.</p>
+			<p class="indent">After you experience the catalyst, at the start of your next turn, make a Charisma saving throw (DC 13 plus your Proficiency Bonus). On a failed save, you immediately use Alternate Form to cast <i>Alter Self</i> without a spell slot. If you've already expended the use of that feature, you instead have the Stunned condition until the start of your next turn.</p>
+			<h5>CHANGE CATALYST</h5>
+			<table>
+				<thead>
+					<tr><td class="col-10">1d6</td><td>Catalyst</td></tr>
+				</thead>
+				<tr><td>1</td><td>Seeing a particular phase of the moon</td></tr>
+				<tr><td>2</td><td>Smelling the scent of a certain type of flower</td></tr>
+				<tr><td>3</td><td>Hearing temple bells ringing</td></tr>
+				<tr><td>4</td><td>Hearing a particular melody</td></tr>
+				<tr><td>5</td><td>Touching pure silver with your bare skin</td></tr>
+				<tr><td>6</td><td>Seeing someone who resembles a specific individual</td></tr>
+			</table>
+		<div class="reference">
+			<div element="ID_WOTC_PHB24_SPELL_ALTER_SELF"/>
+		</div>
+		</description>
+		<setters>
+			<set name="keywords">ravenloft</set>
+		</setters>
+		<sheet display="false"/>
+		<rules>
+			<grant type="Spell" id="ID_WOTC_PHB24_SPELL_ALTER_SELF" prepared="true" />
+			
+			<select type="Feat Feature" name="Spellcasting Ability (Second Skin)" supports="RHW Alternate Form" />
+			<select type="Feat Feature" name="Catalyst (Second Skin)" supports="RHW Involuntary Change" />
+			
+			<stat name="involuntary change:dc" value="13" bonus="base" />
+			<stat name="involuntary change:dc" value="proficiency" bonus="proficiency" />
+		</rules>
+	</element>
+	<element name="Intelligence" type="Feat Feature" source="Ravenloft: The Horrors Within" id="ID_WOTC_RHW_FEAT_FEATURE_SECOND_SKIN_ALTERNATE_FORM_INTELLIGENCE">
+		<compendium display="false"/>
+		<supports>RHW Alternate Form</supports>
+		<description>
+			<p>You always have the <i>Alter Self</i> spell prepared. You can cast it without a spell slot or spell components, and you must finish a Long Rest before you can cast it in this way again. You can also cast it using spell slots you have of the appropriate level. Intelligence is your spellcasting ability for this spell.</p>
+			<p class="indent">When you cast <i>Alter Self</i> without a spell slot using this feature, it doesn't require Concentration.</p>
+		<div class="reference">
+			<div element="ID_WOTC_PHB24_SPELL_ALTER_SELF"/>
+		</div>
+		</description>
+		<sheet alt="Second Skin" usage="1/Long Rest">
+			<description>You can cast Alter Self once without a spell slot or spell components. When you cast it in this way, it doesn't require Concentration. You can also cast it using spell slots you have of the appropriate level. Intelligence is your spellcasting ability for it.</description>
+		</sheet>
+
+	</element>
+	<element name="Wisdom" type="Feat Feature" source="Ravenloft: The Horrors Within" id="ID_WOTC_RHW_FEAT_FEATURE_SECOND_SKIN_ALTERNATE_FORM_WISDOM">
+		<compendium display="false"/>
+		<supports>RHW Alternate Form</supports>
+		<description>
+			<p>You always have the <i>Alter Self</i> spell prepared. You can cast it without a spell slot or spell components, and you must finish a Long Rest before you can cast it in this way again. You can also cast it using spell slots you have of the appropriate level. Wisdom is your spellcasting ability for this spell.</p>
+			<p class="indent">When you cast <i>Alter Self</i> without a spell slot using this feature, it doesn't require Concentration.</p>
+		<div class="reference">
+			<div element="ID_WOTC_PHB24_SPELL_ALTER_SELF"/>
+		</div>
+		</description>
+		<sheet alt="Second Skin" usage="1/Long Rest">
+			<description>You can cast Alter Self once without a spell slot or spell components. When you cast it in this way, it doesn't require Concentration. You can also cast it using spell slots you have of the appropriate level. Wisdom is your spellcasting ability for it.</description>
+		</sheet>
+	</element>
+	<element name="Charisma" type="Feat Feature" source="Ravenloft: The Horrors Within" id="ID_WOTC_RHW_FEAT_FEATURE_SECOND_SKIN_ALTERNATE_FORM_CHARISMA">
+		<compendium display="false"/>
+		<supports>RHW Alternate Form</supports>
+		<description>
+			<p>You always have the <i>Alter Self</i> spell prepared. You can cast it without a spell slot or spell components, and you must finish a Long Rest before you can cast it in this way again. You can also cast it using spell slots you have of the appropriate level. Charisma is your spellcasting ability for this spell.</p>
+			<p class="indent">When you cast <i>Alter Self</i> without a spell slot using this feature, it doesn't require Concentration.</p>
+		<div class="reference">
+			<div element="ID_WOTC_PHB24_SPELL_ALTER_SELF"/>
+		</div>
+		</description>
+		<sheet alt="Second Skin" usage="1/Long Rest">
+			<description>You can cast Alter Self once without a spell slot or spell components. When you cast it in this way, it doesn't require Concentration. You can also cast it using spell slots you have of the appropriate level. Charisma is your spellcasting ability for it.</description>
+		</sheet>
+	</element>
+	<element name="1: Phase of the Moon" type="Feat Feature" source="Ravenloft: The Horrors Within" id="ID_WOTC_RHW_FEAT_FEATURE_SECOND_SKIN_INVOLUNTARY_CHANGE_CATALYST_MOON">
+		<compendium display="false"/>
+		<requirements>ID_WOTC_RHW_FEAT_SECOND_SKIN</requirements>
+		<supports>RHW Involuntary Change</supports>
+		<description>
+			<p>Certain circumstances can involuntarily trigger your transformation. Your catalyst is <b>"Seeing a particular phase of the moon"</b>.</p>
+			<p class="indent">After you experience the catalyst, at the start of your next turn, make a Charisma saving throw (DC 13 plus your Proficiency Bonus). On a failed save, you immediately use Alternate Form to cast <i>Alter Self</i> without a spell slot. If you've already expended the use of that feature, you instead have the Stunned condition until the start of your next turn.</p>
+		</description>
+		<sheet alt="Involuntary Change">
+			<description>Your catalyst is "Seeing a particular phase of the moon". After you experience this catalyst, at the start of your next turn, make a DC{{involuntary change:dc}} Charisma saving throw. On a failed save, you immediately use Alternate Form to cast Alter Self without a spell slot. If you've already expended the use of that feature, you instead have the Stunned condition until the start of your next turn.</description>
+		</sheet>
+	</element>
+	<element name="2: Scent of a Flower" type="Feat Feature" source="Ravenloft: The Horrors Within" id="ID_WOTC_RHW_FEAT_FEATURE_SECOND_SKIN_INVOLUNTARY_CHANGE_CATALYST_FLOWER">
+		<compendium display="false"/>
+		<requirements>ID_WOTC_RHW_FEAT_SECOND_SKIN</requirements>
+		<supports>RHW Involuntary Change</supports>
+		<description>
+			<p>Certain circumstances can involuntarily trigger your transformation. Your catalyst is <b>"Smelling the scent of a certain type of flower"</b>.</p>
+			<p class="indent">After you experience the catalyst, at the start of your next turn, make a Charisma saving throw (DC 13 plus your Proficiency Bonus). On a failed save, you immediately use Alternate Form to cast <i>Alter Self</i> without a spell slot. If you've already expended the use of that feature, you instead have the Stunned condition until the start of your next turn.</p>
+		</description>
+		<sheet alt="Involuntary Change">
+			<description>Your catalyst is "Smelling the scent of a certain type of flower". After you experience this catalyst, at the start of your next turn, make a DC{{involuntary change:dc}} Charisma saving throw. On a failed save, you immediately use Alternate Form to cast Alter Self without a spell slot. If you've already expended the use of that feature, you instead have the Stunned condition until the start of your next turn.</description>
+		</sheet>
+	</element>
+	<element name="3: Hearing Temple Bells" type="Feat Feature" source="Ravenloft: The Horrors Within" id="ID_WOTC_RHW_FEAT_FEATURE_SECOND_SKIN_INVOLUNTARY_CHANGE_CATALYST_BELLS">
+		<compendium display="false"/>
+		<requirements>ID_WOTC_RHW_FEAT_SECOND_SKIN</requirements>
+		<supports>RHW Involuntary Change</supports>
+		<description>
+			<p>Certain circumstances can involuntarily trigger your transformation. Your catalyst is <b>"Hearing temple bells ringing"</b>.</p>
+			<p class="indent">After you experience the catalyst, at the start of your next turn, make a Charisma saving throw (DC 13 plus your Proficiency Bonus). On a failed save, you immediately use Alternate Form to cast <i>Alter Self</i> without a spell slot. If you've already expended the use of that feature, you instead have the Stunned condition until the start of your next turn.</p>
+		</description>
+		<sheet alt="Involuntary Change">
+			<description>Your catalyst is "Hearing temple bells ringing". After you experience this catalyst, at the start of your next turn, make a DC{{involuntary change:dc}} Charisma saving throw. On a failed save, you immediately use Alternate Form to cast Alter Self without a spell slot. If you've already expended the use of that feature, you instead have the Stunned condition until the start of your next turn.</description>
+		</sheet>
+	</element>
+	<element name="4: Hearing A Particular Melody" type="Feat Feature" source="Ravenloft: The Horrors Within" id="ID_WOTC_RHW_FEAT_FEATURE_SECOND_SKIN_INVOLUNTARY_CHANGE_CATALYST_MELODY">
+		<compendium display="false"/>
+		<requirements>ID_WOTC_RHW_FEAT_SECOND_SKIN</requirements>
+		<supports>RHW Involuntary Change</supports>
+		<description>
+			<p>Certain circumstances can involuntarily trigger your transformation. Your catalyst is <b>"Hearing a particular melody"</b>.</p>
+			<p class="indent">After you experience the catalyst, at the start of your next turn, make a Charisma saving throw (DC 13 plus your Proficiency Bonus). On a failed save, you immediately use Alternate Form to cast <i>Alter Self</i> without a spell slot. If you've already expended the use of that feature, you instead have the Stunned condition until the start of your next turn.</p>
+		</description>
+		<sheet alt="Involuntary Change">
+			<description>Your catalyst is "Hearing a particular melody". After you experience this catalyst, at the start of your next turn, make a DC{{involuntary change:dc}} Charisma saving throw. On a failed save, you immediately use Alternate Form to cast Alter Self without a spell slot. If you've already expended the use of that feature, you instead have the Stunned condition until the start of your next turn.</description>
+		</sheet>
+	</element>
+	<element name="5: Touching Pure Silver" type="Feat Feature" source="Ravenloft: The Horrors Within" id="ID_WOTC_RHW_FEAT_FEATURE_SECOND_SKIN_INVOLUNTARY_CHANGE_CATALYST_SILVER">
+		<compendium display="false"/>
+		<requirements>ID_WOTC_RHW_FEAT_SECOND_SKIN</requirements>
+		<supports>RHW Involuntary Change</supports>
+		<description>
+			<p>Certain circumstances can involuntarily trigger your transformation. Your catalyst is <b>"Touching pure silver with your bare skin"</b>.</p>
+			<p class="indent">After you experience the catalyst, at the start of your next turn, make a Charisma saving throw (DC 13 plus your Proficiency Bonus). On a failed save, you immediately use Alternate Form to cast <i>Alter Self</i> without a spell slot. If you've already expended the use of that feature, you instead have the Stunned condition until the start of your next turn.</p>
+		</description>
+		<sheet alt="Involuntary Change">
+			<description>Your catalyst is "Touching pure silver with your bare skin". After you experience this catalyst, at the start of your next turn, make a DC{{involuntary change:dc}} Charisma saving throw. On a failed save, you immediately use Alternate Form to cast Alter Self without a spell slot. If you've already expended the use of that feature, you instead have the Stunned condition until the start of your next turn.</description>
+		</sheet>
+	</element>
+	<element name="6: Seeing a Specific Individual" type="Feat Feature" source="Ravenloft: The Horrors Within" id="ID_WOTC_RHW_FEAT_FEATURE_SECOND_SKIN_INVOLUNTARY_CHANGE_CATALYST_INDIVIDUAL">
+		<compendium display="false"/>
+		<requirements>ID_WOTC_RHW_FEAT_SECOND_SKIN</requirements>
+		<supports>RHW Involuntary Change</supports>
+		<description>
+			<p>Certain circumstances can involuntarily trigger your transformation. Your catalyst is <b>"Seeing someone who resembles a specific individual"</b>.</p>
+			<p class="indent">After you experience the catalyst, at the start of your next turn, make a Charisma saving throw (DC 13 plus your Proficiency Bonus). On a failed save, you immediately use Alternate Form to cast <i>Alter Self</i> without a spell slot. If you've already expended the use of that feature, you instead have the Stunned condition until the start of your next turn.</p>
+		</description>
+		<sheet alt="Involuntary Change">
+			<description>Your catalyst is "Seeing someone who resembles a specific individual". After you experience this catalyst, at the start of your next turn, make a DC{{involuntary change:dc}} Charisma saving throw. On a failed save, you immediately use Alternate Form to cast Alter Self without a spell slot. If you've already expended the use of that feature, you instead have the Stunned condition until the start of your next turn.</description>
+		</sheet>
+	</element>
+
+	<element name="Symbiotic Being" type="Feat" source="Ravenloft: The Horrors Within" id="ID_WOTC_RHW_FEAT_SYMBIOTIC_BEING">
+		<supports>Origin, Dark Gift</supports>
+		<prerequisites>Ravenloft Campaign</prerequisites>
+		<description>
+			<p class="flavor">Dark Gift Feat (Prerequisite: Ravenloft Campaign)</p>
+			<p>A second being resides within your body, offering knowledge and assistance while furthering its own agenda. You gain the following features.</p>
+			<p class="indent"><b><i>Entwined Existence.</i></b> The symbiote can't be targeted. If you die, so does your symbiote. If you are returned to life, your symbiote also revives.</p>
+			<p class="indent"><b><i>Second Mind.</i></b> You gain proficiency in one of the following skills: Arcana, Deception, History, Intimidation, Insight, Investigation, Nature, Religion, Perception, or Persuasion. You also know one additional language of your choice, chosen from the language tables in the Player's Handbook.</p>
+			<p class="indent"><b><i>Sustained Symbiosis.</i></b> When you fail a saving throw, you can take a Reaction and expend one of your Hit Dice. Roll the die and add the number rolled to the saving throw, potentially turning the failure into a success.</p>
+			<p class="indent">You can use this feature a number of times equal to your Proficiency Bonus, and you regain all expended uses when you finish a Long Rest.</p>
+			<p class="indent"><b><i>Symbiotic Agenda.</i></b> Immediately after you make a D20 Test and roll a 1 on the d20, your symbiote attempts to assert control. Make a Charisma saving throw (DC 13 plus your Proficiency Bonus). On a failed save, you have the Charmed condition for 1d12 hours. While Charmed, you must try to follow the symbiote's commands and further its goals, as determined by the DM. Whenever you take damage, you can repeat this save, ending the effect on a success.</p>
+			<p class="indent">At the DM's discretion, you might make this saving throw whenever you act contrary to the symbiote's agenda.</p>
+		</description>
+		<setters>
+			<set name="keywords">ravenloft</set>
+		</setters>
+		<sheet>
+			<description>A symbiote resides within your body. It cannot be targeted, dies when you do, but also returns to life with you if you are revived.</description>
+		</sheet>
+		<rules>
+			<select type="Proficiency" name="Skill Proficiency (Symbiotic Being)" supports="ID_PROFICIENCY_SKILL_ARCANA|ID_PROFICIENCY_SKILL_DECEPTION|ID_PROFICIENCY_SKILL_HISTORY|ID_PROFICIENCY_SKILL_INTIMIDATION|ID_PROFICIENCY_SKILL_INSIGHT|ID_PROFICIENCY_SKILL_INVESTIGATION|ID_PROFICIENCY_SKILL_NATURE|ID_PROFICIENCY_SKILL_RELIGION|ID_PROFICIENCY_SKILL_PERCEPTION|ID_PROFICIENCY_SKILL_PERSUASION" />
+			<select type="Language" name="Language (Symbiotic Being)" supports="Standard" />
+
+			<select type="Feat Feature" name="Sustained Symbiosis" supports="RHW Sustained Symbiosis" default="ID_WOTC_RHW_FEAT_FEATURE_SYMBIOTIC_BEING_SUSTAINED_SYMBIOSIS" />
+			<grant type="Feat Feature" id="ID_WOTC_RHW_FEAT_FEATURE_SYMBIOTIC_BEING_SYMBIOTIC_AGENDA" />
+		</rules>
+	</element>
+	<element name="Sustained Symbiosis" type="Feat Feature" source="Ravenloft: The Horrors Within" id="ID_WOTC_RHW_FEAT_FEATURE_SYMBIOTIC_BEING_SUSTAINED_SYMBIOSIS">
+		<compendium display="false"/>
+		<requirements>ID_WOTC_RHW_FEAT_SYMBIOTIC_BEING</requirements>
+		<supports>RHW Sustained Symbiosis</supports>
+		<description>
+			<p>When you fail a saving throw, you can take a Reaction and expend one of your Hit Dice. Roll the die and add the number rolled to the saving throw, potentially turning the failure into a success.</p>
+			<p class="indent">You can use this feature a number of times equal to your Proficiency Bonus, and you regain all expended uses when you finish a Long Rest.</p>
+		</description>
+		<sheet action="Reaction" usage="{{proficiency}}/Long Rest">
+			<description>When you fail a saving throw, you can expend one of your Hit Dice. Roll the die and add the number rolled to the saving throw, potentially turning the failure into a success.</description>
+		</sheet>
+	</element>
+	<element name="Symbiotic Agenda" type="Feat Feature" source="Ravenloft: The Horrors Within" id="ID_WOTC_RHW_FEAT_FEATURE_SYMBIOTIC_BEING_SYMBIOTIC_AGENDA">
+		<compendium display="false"/>
+		<requirements>ID_WOTC_RHW_FEAT_SYMBIOTIC_BEING</requirements>
+		<description>
+			<p>Immediately after you make a D20 Test and roll a 1 on the d20, your symbiote attempts to assert control. Make a Charisma saving throw (DC 13 plus your Proficiency Bonus). On a failed save, you have the Charmed condition for 1d12 hours. While Charmed, you must try to follow the symbiote's commands and further its goals, as determined by the DM. Whenever you take damage, you can repeat this save, ending the effect on a success.</p>
+			<p class="indent">At the DM's discretion, you might make this saving throw whenever you act contrary to the symbiote's agenda.</p>
+		</description>
+		<sheet>
+			<description>Immediately after you make a D20 Test and roll a 1 on the d20, make a DC{{symbiotic agenda:dc}} Charisma saving throw. On a failed save, you have the Charmed condition for 1d12 hours. While Charmed, you must try to follow the symbiote's commands and further its goals, as determined by the DM. Whenever you take damage, you can repeat this save, ending the effect on a success. &#13;
+			At the DM's discretion, you might make this saving throw whenever you act contrary to the symbiote's agenda.</description>
+		</sheet>
+		<rules>
+			<stat name="symbiotic agenda:dc" value="13" bonus="base" />
+			<stat name="symbiotic agenda:dc" value="proficiency" bonus="proficiency" />
+		</rules>
+	</element>
+
+	<element name="Touch of Death" type="Feat" source="Ravenloft: The Horrors Within" id="ID_WOTC_RHW_FEAT_TOUCH_OF_DEATH">
+		<supports>Origin, Dark Gift</supports>
+		<prerequisites>Ravenloft Campaign</prerequisites>
+		<description>
+			<p class="flavor">Dark Gift Feat (Prerequisite: Ravenloft Campaign)</p>
+			<p>Deathly power resides within you, bursting out at the slightest provocation. You gain the following features.</p>
+			<p class="indent"><b><i>Death Touch.</i></b> You learn the <i>Chill Touch</i> spell and can cast it without spell components. Necrotic damage you deal with this spell ignores Resistance. Intelligence, Wisdom, or Charisma is your spellcasting ability for this spell (choose when you select this feat).</p>
+			<p class="indent"><b><i>Pull of the Grave.</i></b> You have Disadvantage on Death Saving Throws.</p>
+		<div class="reference">
+			<div element="ID_WOTC_PHB24_SPELL_CHILL_TOUCH"/>
+		</div>
+		</description>
+		<setters>
+			<set name="keywords">ravenloft</set>
+		</setters>
+		<sheet display="false"/>
+		<rules>
+			<grant type="Spell" id="ID_WOTC_PHB24_SPELL_CHILL_TOUCH" prepared="true" alt="Touch of Death"/>
+			<select type="Feat Feature" name="Spellcasting Ability (Touch of Death)" supports="RHW Death Touch" />
+			<grant type="Feat Feature" id="ID_WOTC_RHW_FEAT_FEATURE_TOUCH_OF_DEATH_PULL_OF_THE_GRAVE" />
+		</rules>
+	</element>
+	<element name="Intelligence" type="Feat Feature" source="Ravenloft: The Horrors Within" id="ID_WOTC_RHW_FEAT_FEATURE_TOUCH_OF_DEATH_DEATH_TOUCH_INTELLIGENCE">
+		<compendium display="false"/>
+		<supports>RHW Death Touch</supports>
+		<description>
+			<p>You learn the <i>Chill Touch</i> spell and can cast it without spell components. Necrotic damage you deal with this spell ignores Resistance. Intelligence is your spellcasting ability for this spell.</p>
+		<div class="reference">
+			<div element="ID_WOTC_PHB24_SPELL_CHILL_TOUCH"/>
+		</div>
+		</description>
+		<sheet alt="Touch of Death">
+			<description>You can cast Chill Touch without spell components, and its damage ignores Necrotic Resistance. Intelligence is your spellcasting ability for it.</description>
+		</sheet>
+	</element>
+	<element name="Wisdom" type="Feat Feature" source="Ravenloft: The Horrors Within" id="ID_WOTC_RHW_FEAT_FEATURE_TOUCH_OF_DEATH_DEATH_TOUCH_WISDOM">
+		<compendium display="false"/>
+		<supports>RHW Death Touch</supports>
+		<description>
+			<p>You learn the <i>Chill Touch</i> spell and can cast it without spell components. Necrotic damage you deal with this spell ignores Resistance. Wisdom is your spellcasting ability for this spell.</p>
+		<div class="reference">
+			<div element="ID_WOTC_PHB24_SPELL_CHILL_TOUCH"/>
+		</div>
+		</description>
+		<sheet alt="Touch of Death">
+			<description>You can cast Chill Touch without spell components, and its damage ignores Necrotic Resistance. Wisdom is your spellcasting ability for it.</description>
+		</sheet>
+	</element>
+	<element name="Charisma" type="Feat Feature" source="Ravenloft: The Horrors Within" id="ID_WOTC_RHW_FEAT_FEATURE_TOUCH_OF_DEATH_DEATH_TOUCH_CHARISMA">
+		<compendium display="false"/>
+		<supports>RHW Death Touch</supports>
+		<description>
+			<p>You learn the <i>Chill Touch</i> spell and can cast it without spell components. Necrotic damage you deal with this spell ignores Resistance. Charisma is your spellcasting ability for this spell.</p>
+		<div class="reference">
+			<div element="ID_WOTC_PHB24_SPELL_CHILL_TOUCH"/>
+		</div>
+		</description>
+		<sheet alt="Touch of Death">
+			<description>You can cast Chill Touch without spell components, and its damage ignores Necrotic Resistance. Charisma is your spellcasting ability for it.</description>
+		</sheet>
+	</element>
+	<element name="Pull of the Grave" type="Feat Feature" source="Ravenloft: The Horrors Within" id="ID_WOTC_RHW_FEAT_FEATURE_TOUCH_OF_DEATH_PULL_OF_THE_GRAVE">
+		<compendium display="false"/>
+		<requirements>ID_WOTC_RHW_FEAT_TOUCH_OF_DEATH</requirements>
+		<description>
+			<p>You have Disadvantage on Death Saving Throws.</p>
+		</description>
+		<sheet alt="Pull of the Grave">
+			<description>You have Disadvantage on Death Saving Throws.</description>
+		</sheet>
+	</element>
+
+	<element name="Watchers" type="Feat" source="Ravenloft: The Horrors Within" id="ID_WOTC_RHW_FEAT_WATCHERS">
+		<supports>Origin, Dark Gift</supports>
+		<prerequisites>Ravenloft Campaign</prerequisites>
+		<description>
+			<p class="flavor">Dark Gift Feat (Prerequisite: Ravenloft Campaign)</p>
+			<p>Something unnatural is always watching you, taking the form of scurrying vermin and other eerie creatures. You gain the following features.</p>
+			<p class="indent"><b><i>Borrowed Eyes.</i></b> You always have the <i>Beast Sense</i> and <i>Speak with Animals</i> spells prepared. You can cast each spell without a spell slot, and you must finish a Long Rest before you can cast it in this way again. You can also cast these spells using spell slots you have of the appropriate level.</p>
+			<p class="indent"><b><i>Heightened Suspicion.</i></b> Whenever you take the Search action, you can roll 1d4 and add the number rolled to any ability check made as part of that action.</p>
+			<p class="indent"><b><i>Incessant Watchers.</i></b> You have Disadvantage on saving throws made against the <i>Scrying</i> spell.</p>
+			<p class="indent">In addition, immediately after you make a D20 Test and roll a 1 on the d20, paranoia threatens to overwhelm you. Make a Wisdom saving throw (DC 13 plus your Proficiency Bonus). On a failed save, you have Disadvantage on D20 Tests for 1 minute. You can repeat the save at the end of each of your turns, ending the effect early on a success.</p>
+		<div class="reference">
+			<div element="ID_WOTC_PHB24_SPELL_BEAST_SENSE"/>
+		</div>
+		<div class="reference">
+			<div element="ID_WOTC_PHB24_SPELL_SPEAK_WITH_ANIMALS"/>
+		</div>
+		</description>
+		<setters>
+			<set name="keywords">ravenloft</set>
+		</setters>
+		<sheet action="Search">
+			<description>You can add 1d4 to any ability check made as part of the Search action.</description>
+		</sheet>
+		<rules>
+			<grant type="Spell" id="ID_WOTC_PHB24_SPELL_BEAST_SENSE" prepared="true" />
+			<grant type="Spell" id="ID_WOTC_PHB24_SPELL_SPEAK_WITH_ANIMALS" prepared="true" />
+
+			<select type="Feat Feature" name="Borrowed Eyes" supports="RHW Borrowed Eyes" default="ID_WOTC_RHW_FEAT_FEATURE_WATCHERS_BORROWED_EYES" />
+			<grant type="Feat Feature" id="ID_WOTC_RHW_FEAT_FEATURE_WATCHERS_INCESSANT_WATCHERS" />
+		</rules>
+	</element>
+	<element name="Borrowed Eyes" type="Feat Feature" source="Ravenloft: The Horrors Within" id="ID_WOTC_RHW_FEAT_FEATURE_WATCHERS_BORROWED_EYES">
+		<compendium display="false"/>
+		<supports>RHW Borrowed Eyes</supports>
+		<description>
+			<p>You always have the <i>Beast Sense</i> and <i>Speak with Animals</i> spells prepared. You can cast each spell without a spell slot, and you must finish a Long Rest before you can cast it in this way again. You can also cast these spells using spell slots you have of the appropriate level.</p>
+		<div class="reference">
+			<div element="ID_WOTC_PHB24_SPELL_BEAST_SENSE"/>
+		</div>
+		<div class="reference">
+			<div element="ID_WOTC_PHB24_SPELL_SPEAK_WITH_ANIMALS"/>
+		</div>
+		</description>
+		<sheet alt="Borrowed Eyes" usage="1/Long Rest">
+			<description>You can cast Beast Sense and Speak with Animals once each without a spell slot. You can also cast these spells using spell slots you have of the appropriate level.</description>
+		</sheet>
+	</element>
+	<element name="Incessant Watchers" type="Feat Feature" source="Ravenloft: The Horrors Within" id="ID_WOTC_RHW_FEAT_FEATURE_WATCHERS_INCESSANT_WATCHERS">
+		<compendium display="false"/>
+		<requirements>ID_WOTC_RHW_FEAT_WATCHERS</requirements>
+		<description>
+			<p>You have Disadvantage on saving throws made against the <i>Scrying</i> spell.</p>
+			<p class="indent">In addition, immediately after you make a D20 Test and roll a 1 on the d20, paranoia threatens to overwhelm you. Make a Wisdom saving throw (DC 13 plus your Proficiency Bonus). On a failed save, you have Disadvantage on D20 Tests for 1 minute. You can repeat the save at the end of each of your turns, ending the effect early on a success.</p>
+		</description>
+		<sheet alt="Incessant Watchers">
+			<description>You have Disadvantage on saving throws made against Scrying. &#13;
+			In addition, immediately after you make a D20 Test and roll a 1 on the d20, make a DC{{incessant watchers:dc}} Wisdom saving throw. On a failed save, you have Disadvantage on D20 Tests for 1 minute. You can repeat the save at the end of each of your turns, ending the effect early on a success.</description>
+		</sheet>
+		<rules>
+			<stat name="incessant watchers:dc" value="13" bonus="base" />
+			<stat name="incessant watchers:dc" value="proficiency" bonus="proficiency" />
+		</rules>
+	</element>
+
+</elements>

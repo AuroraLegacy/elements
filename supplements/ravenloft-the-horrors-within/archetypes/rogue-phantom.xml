@@ -1,0 +1,166 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<elements>
+	<info>
+		<name>Phantom</name>
+		<description>The Phantom subclass from Ravenloft: The Horrors Within</description>
+		<update version="0.0.1">
+			<file name="rogue-phantom.xml" url="https://raw.githubusercontent.com/AuroraLegacy/elements/master/supplements/ravenloft-the-horrors-within/archetypes/rogue-phantom.xml" />
+		</update>
+	</info>
+
+	<element name="Phantom" type="Archetype" source="Ravenloft: The Horrors Within" id="ID_WOTC_RHW_ARCHETYPE_ROGUE_PHANTOM">
+		<supports>Rogue Subclass</supports>
+		<description>
+			<p class="flavor">Embrace Death and Wield Ghostly Power</p>
+			<p>Some Rogues traverse the veil between life and death, shepherding opponents to the grave and slipping through the world as undetectable as a spirit. In these pursuits, a Rogue might discover a mystical connection to death itself. Such an individual becomes immersed in negative energy, infusing their strikes with deathly energy and stealing knowledge from souls who have passed on. Thieves' guilds value Rogues of this persuasion as highly effective information gatherers and spies.</p>
+			<div element="ID_WOTC_RHW_ARCHETYPE_FEATURE_ROGUE_PHANTOM_WAILS_FROM_THE_GRAVE" />
+			<div element="ID_WOTC_RHW_ARCHETYPE_FEATURE_ROGUE_PHANTOM_WHISPERS_OF_THE_DEAD" />
+			<div element="ID_WOTC_RHW_ARCHETYPE_FEATURE_ROGUE_PHANTOM_TOKENS_OF_THE_DEPARTED" />
+			<div element="ID_WOTC_RHW_ARCHETYPE_FEATURE_ROGUE_PHANTOM_VOICE_OF_DEATH" />
+			<div element="ID_WOTC_RHW_ARCHETYPE_FEATURE_ROGUE_PHANTOM_GHOST_WALK" />
+			<div element="ID_WOTC_RHW_ARCHETYPE_FEATURE_ROGUE_PHANTOM_DEATHS_FRIEND" />
+		</description>
+		<sheet display="false" />
+		<rules>
+			<grant type="Archetype Feature" id="ID_WOTC_RHW_ARCHETYPE_FEATURE_ROGUE_PHANTOM_WAILS_FROM_THE_GRAVE" level="3" />
+			<grant type="Archetype Feature" id="ID_WOTC_RHW_ARCHETYPE_FEATURE_ROGUE_PHANTOM_WHISPERS_OF_THE_DEAD" level="3" />
+			<grant type="Archetype Feature" id="ID_WOTC_RHW_ARCHETYPE_FEATURE_ROGUE_PHANTOM_TOKENS_OF_THE_DEPARTED" level="9" />
+			<grant type="Archetype Feature" id="ID_WOTC_RHW_ARCHETYPE_FEATURE_ROGUE_PHANTOM_VOICE_OF_DEATH" level="9" />
+			<grant type="Archetype Feature" id="ID_WOTC_RHW_ARCHETYPE_FEATURE_ROGUE_PHANTOM_GHOST_WALK" level="13" />
+			<grant type="Archetype Feature" id="ID_WOTC_RHW_ARCHETYPE_FEATURE_ROGUE_PHANTOM_DEATHS_FRIEND" level="17" />
+		</rules>
+	</element>
+
+	<element name="Level 3: Wails from the Grave" type="Archetype Feature" source="Ravenloft: The Horrors Within" id="ID_WOTC_RHW_ARCHETYPE_FEATURE_ROGUE_PHANTOM_WAILS_FROM_THE_GRAVE">
+		<requirements>!ID_INTERNAL_RHW_FEATURE_REPLACEMENT_ROGUE_PHANTOM_WAILS_FROM_THE_GRAVE</requirements>
+		<description>
+			<p>Immediately after you deal Sneak Attack damage to a creature on your turn, you can target a second creature that you can see within 30 feet of the first creature. Roll half the number of Sneak Attack damage dice for your level (round up), and the second creature takes Necrotic damage equal to the roll's total as wails of the dead sound around it.</p>
+			<p class="indent">You can use this feature a number of times equal to your Dexterity modifier (minimum of once), and you regain all expended uses when you finish a Long Rest.</p>
+		</description>
+		<sheet alt="Wails from the Grave" usage="{{wails from the grave:uses}}/Long Rest">
+			<description>Immediately after you deal Sneak Attack damage to a creature on your turn, you can target a second creature that you can see within 30 feet of the first creature. It takes {{wails from the grave:dice count}}d6 Necrotic damage.</description>
+			<description level="17">Immediately after you deal Sneak Attack damage to a creature on your turn, you can target a second creature that you can see within 30 feet of the first creature. Both creatures take {{wails from the grave:dice count}}d6 Necrotic damage.</description>
+		</sheet>
+		<rules>
+			<stat name="wails from the grave:uses" value="1" bonus="ability"/>
+			<stat name="wails from the grave:uses" value="dexterity:modifier" bonus="ability"/>
+
+			<stat name="wails from the grave:dice count" value="1" bonus="base"/>
+			<stat name="wails from the grave:dice count" value="2" level="5" bonus="base"/>
+			<stat name="wails from the grave:dice count" value="3" level="9" bonus="base"/>
+			<stat name="wails from the grave:dice count" value="4" level="13" bonus="base"/>
+			<stat name="wails from the grave:dice count" value="5" level="17" bonus="base"/>
+		</rules>
+	</element>
+
+	<element name="Level 3: Whispers of the Dead" type="Archetype Feature" source="Ravenloft: The Horrors Within" id="ID_WOTC_RHW_ARCHETYPE_FEATURE_ROGUE_PHANTOM_WHISPERS_OF_THE_DEAD">
+		<requirements>!ID_INTERNAL_RHW_FEATURE_REPLACEMENT_ROGUE_PHANTOM_WHISPERS_OF_THE_DEAD</requirements>
+		<description>
+			<p>Whenever you finish a Short or Long Rest, you can choose one skill or tool proficiency that you lack and gain it, as a ghostly presence shares its knowledge with you. You lose this proficiency when you use this benefit again to choose a different proficiency.</p>
+		</description>
+		<sheet usage="Short Rest">
+			<description>You can choose one skill or tool proficiency that you lack and gain it, as a ghostly presence shares its knowledge with you. You lose this proficiency when you use this benefit again to choose a different proficiency.</description>
+		</sheet>
+	</element>
+
+	<element name="Level 9: Tokens of the Departed" type="Archetype Feature" source="Ravenloft: The Horrors Within" id="ID_WOTC_RHW_ARCHETYPE_FEATURE_ROGUE_PHANTOM_TOKENS_OF_THE_DEPARTED">
+		<requirements>!ID_INTERNAL_RHW_FEATURE_REPLACEMENT_ROGUE_PHANTOM_TOKENS_OF_THE_DEPARTED</requirements>
+		<description>
+			<p>The spirits of the dead are drawn to you, and echoes of their past lives magically manifest as strange curios with resonant power.</p>
+			<p class="indent">You gain two soul trinkets. A soul trinket is a Tiny object (the DM determines the trinket's form or has you roll on the Trinkets table in the Player's Handbook to generate it). If you move more than 30 feet from a trinket, the trinket immediately teleports to you, appearing somewhere on your person.</p>
+			<p class="indent"><b><i>Using Soul Trinkets.</i></b> You can use soul trinkets in the following ways:</p>
+			<ul class="unstyled" style="margin-left:2em; margin-bottom:1em">
+				<li><b>Death's Knell.</b> When you deal Sneak Attack damage on your turn, you can destroy one soul trinket and immediately use Wails from the Grave without expending a use of that feature.</li>
+				<li><b>Life Essence.</b> While you have at least one soul trinket, you have Advantage on Death Saving Throws and Constitution saving throws.</li>
+				<li><b>Spirit Query.</b> You can take a Magic action to destroy one soul trinket and immediately cast the <i>Augury</i> spell, requiring no spell components and using Constitution as the spellcasting modifier. If you know the creature with which the trinket is associated, you can ask the creature's spirit one question instead of casting the spell. In this case, the spirit appears to you and answers as concisely as possible in a language it knew in life.</li>
+			</ul>
+			<p class="indent"><b><i>Gaining Additional Soul Trinkets.</i></b> When a creature you can see within 30 feet of you dies, you can take a Reaction to gain another soul trinket, claiming a sliver of that creature's departing spirit. The new trinket appears somewhere on your person.</p>
+			<p class="indent">You can have a maximum of two soul trinkets at a time. If you try to gain a soul trinket while at your maximum, one of your existing trinkets is immediately destroyed and replaced by the new trinket. The maximum number of soul trinkets you can have increases when you reach Rogue levels 13 (three trinkets) and 17 (four trinkets).</p>
+			<p class="indent">Whenever you finish a Long Rest with fewer than two soul trinkets, you gain soul trinkets until you have two.</p>
+			<div class="reference">
+				<div element="ID_WOTC_PHB24_SPELL_AUGURY"/>
+			</div>
+		</description>
+		<sheet alt="Tokens of the Departed" >
+			<description>When you finish a Long Rest, you gain 2 soul trinkets. If a creature you can see within 30ft. of you dies, you can take a Reaction to gain another soul trinket, up to your maximum of {{soul trinkets:max}} trinkets. While you have at least one soul trinket, you have Advantage on Death Saving Throws and Constitution saving throws. You can also use them in the following ways.</description>
+			<description level="17">When you finish a Long Rest, you gain 2 soul trinkets. If a creature you can see within 30ft. of you dies, you can take a Reaction to gain another soul trinket, up to your maximum of {{soul trinkets:max}} trinkets. If you roll Initiative and have no trinkets, you immediately gain one. While you have at least one soul trinket, you have Advantage on Death Saving Throws and Constitution saving throws. You can also use them in the following ways.</description>
+		</sheet>
+		<rules>
+			<stat name="soul trinkets:max" value="2" bonus="base" />
+			<stat name="soul trinkets:max" value="3" bonus="base" level="13" />
+			<stat name="soul trinkets:max" value="4" bonus="base" level="17" />
+
+			<select type="Archetype Feature" name="Death's Knell" supports="RHW Phantom Rogue Deaths Knell" default="ID_WOTC_RHW_ARCHETYPE_FEATURE_ROGUE_PHANTOM_TOKENS_OF_THE_DEPARTED_DEATHS_KNELL"/>
+			<select type="Archetype Feature" name="Spirit Query" supports="RHW Phantom Rogue Spirit Query" default="ID_WOTC_RHW_ARCHETYPE_FEATURE_ROGUE_PHANTOM_TOKENS_OF_THE_DEPARTED_SPIRIT_QUERY"/>
+		</rules>
+	</element>
+	<element name="Death's Knell" type="Archetype Feature" source="Ravenloft: The Horrors Within" id="ID_WOTC_RHW_ARCHETYPE_FEATURE_ROGUE_PHANTOM_TOKENS_OF_THE_DEPARTED_DEATHS_KNELL">
+		<supports>RHW Phantom Rogue Deaths Knell</supports>
+		<compendium display="false" />
+		<description>
+			<p>When you deal Sneak Attack damage on your turn, you can destroy one soul trinket and immediately use Wails from the Grave without expending a use of that feature.</p>
+		</description>
+		<sheet>
+			<description>When you deal Sneak Attack damage on your turn, you can destroy one soul trinket and immediately use Wails from the Grave without expending a use of that feature.</description>
+		</sheet>
+	</element>
+	<element name="Spirit Query" type="Archetype Feature" source="Ravenloft: The Horrors Within" id="ID_WOTC_RHW_ARCHETYPE_FEATURE_ROGUE_PHANTOM_TOKENS_OF_THE_DEPARTED_SPIRIT_QUERY">
+		<supports>RHW Phantom Rogue Spirit Query</supports>
+		<compendium display="false" />
+		<description>
+			<p>You can take a Magic action to destroy one soul trinket and immediately cast the <i>Augury</i> spell, requiring no spell components and using Constitution as the spellcasting modifier. If you know the creature with which the trinket is associated, you can ask the creature's spirit one question instead of casting the spell. In this case, the spirit appears to you and answers as concisely as possible in a language it knew in life.</p>
+			<div class="reference">
+				<div element="ID_WOTC_PHB24_SPELL_AUGURY"/>
+			</div>
+		</description>
+		<sheet action="Action">
+			<description>You can destroy one soul trinket and immediately cast the Augury spell, requiring no spell components and using Constitution as the spellcasting modifier. If you know the creature with which the trinket is associated, you can ask the creature's spirit one question instead of casting the spell. In this case, the spirit appears to you and answers as concisely as possible in a language it knew in life.</description>
+		</sheet>
+	</element>
+
+	<element name="Level 9: Voice of Death" type="Archetype Feature" source="Ravenloft: The Horrors Within" id="ID_WOTC_RHW_ARCHETYPE_FEATURE_ROGUE_PHANTOM_VOICE_OF_DEATH">
+		<requirements>!ID_INTERNAL_RHW_FEATURE_REPLACEMENT_ROGUE_PHANTOM_VOICE_OF_DEATH</requirements>
+		<description>
+			<p>You can cast <i>Speak with Dead</i> once without a spell slot, requiring no spell components and using Dexterity as the spellcasting modifier. You regain the ability to cast it this way when you finish a Short or Long Rest.</p>
+			<p class="indent">When you cast the spell, you can target one of your soul trinkets from Tokens of the Departed instead of a corpse, allowing the spirit of the creature associated with the trinket to answer.</p>
+			<div class="reference">
+				<div element="ID_WOTC_PHB24_SPELL_SPEAK_WITH_DEAD"/>
+			</div>
+		</description>
+		<sheet alt="Voice of Death"  usage="1/Short Rest">
+			<description>You can cast Speak with Dead once without a spell slot, requiring no spell components and using Dexterity as the spellcasting modifier. When you cast the spell, you can target one of your soul trinkets from Tokens of the Departed instead of a corpse, allowing the spirit of the creature associated with the trinket to answer.</description>
+		</sheet>
+	</element>
+
+	<element name="Level 13: Ghost Walk" type="Archetype Feature" source="Ravenloft: The Horrors Within" id="ID_WOTC_RHW_ARCHETYPE_FEATURE_ROGUE_PHANTOM_GHOST_WALK">
+		<requirements>!ID_INTERNAL_RHW_FEATURE_REPLACEMENT_ROGUE_PHANTOM_GHOST_WALK</requirements>
+		<description>
+			<p>As a Bonus Action, you assume a spectral form, gaining the benefits below for 10 minutes or until you end them (no action required). Once you use this feature, you can't use it again until you finish a Long Rest unless you destroy one of your soul trinkets from Tokens of the Departed (no action required) to restore your use of it.</p>
+			<p class="indent"><b><i>Flight.</i></b> You gain a Fly Speed of 10 feet and can hover.</p>
+			<p class="indent"><b><i>Hazy Form.</i></b> Attack rolls have Disadvantage against you.</p>
+			<p class="indent"><b><i>Incorporeal Movement.</i></b> You can move through creatures and objects as if they were Difficult Terrain, but you take 1d10 Force damage if you end your turn inside a creature or an object.</p>
+		</description>
+		<sheet alt="Ghost Walk" action="Bonus Action" usage="1/Long Rest">
+			<description>For 10 minutes or until you end it, you gain a Fly Speed of 10 feet and can hover, attack rolls have Disadvantage against you, and you can move through creatures and objects as if they were Difficult Terrain, taking 1d10 Force damage if you end your turn inside a creature or object. &#13;
+			You can expend a soul trinket to restore your use of this feature.</description>
+		</sheet>
+	</element>
+
+	<element name="Level 17: Death's Friend" type="Archetype Feature" source="Ravenloft: The Horrors Within" id="ID_WOTC_RHW_ARCHETYPE_FEATURE_ROGUE_PHANTOM_DEATHS_FRIEND">
+		<requirements>!ID_INTERNAL_RHW_FEATURE_REPLACEMENT_ROGUE_PHANTOM_DEATHS_FRIEND</requirements>
+		<description>
+			<p>Your association with death has become so close that you gain the following benefits.</p>
+			<p class="indent"><b><i>Death's Lament.</i></b> When you use Wails from the Grave, you can deal the feature's Necrotic damage to both the first and the second creature.</p>
+			<p class="indent"><b><i>Draw of Death.</i></b> When you roll Initiative, you gain one soul trinket for your Tokens of the Departed if you have none remaining.</p>
+		</description>
+		<sheet display="false"/>
+	</element>	
+
+	<!--Feature Replacement Grants-->
+	<element name="Wails from the Grave Feature Replacement" type="Grants" source="Internal" id="ID_INTERNAL_RHW_FEATURE_REPLACEMENT_ROGUE_PHANTOM_WAILS_FROM_THE_GRAVE" />
+	<element name="Whispers of the Dead Feature Replacement" type="Grants" source="Internal" id="ID_INTERNAL_RHW_FEATURE_REPLACEMENT_ROGUE_PHANTOM_WHISPERS_OF_THE_DEAD" />
+	<element name="Tokens of the Departed Feature Replacement" type="Grants" source="Internal" id="ID_INTERNAL_RHW_FEATURE_REPLACEMENT_ROGUE_PHANTOM_TOKENS_OF_THE_DEPARTED" />
+	<element name="Voice of Death Feature Replacement" type="Grants" source="Internal" id="ID_INTERNAL_RHW_FEATURE_REPLACEMENT_ROGUE_PHANTOM_VOICE_OF_DEATH" />
+	<element name="Ghost Walk Feature Replacement" type="Grants" source="Internal" id="ID_INTERNAL_RHW_FEATURE_REPLACEMENT_ROGUE_PHANTOM_GHOST_WALK" />
+	<element name="Death's Friend Feature Replacement" type="Grants" source="Internal" id="ID_INTERNAL_RHW_FEATURE_REPLACEMENT_ROGUE_PHANTOM_DEATHS_FRIEND" />
+</elements>
