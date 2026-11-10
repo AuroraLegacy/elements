@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<elements>
+	<info>
+		<name>Covenant of the Grave Recruit</name>
+		<description>The Covenant of the Grave Recruit background from Arcana Unleashed.</description>
+		<update version="0.0.1">
+			<file name="background-covenant-of-the-grave-recruit.xml" url="https://raw.githubusercontent.com/AuroraLegacy/elements/master/supplements/arcana-unleashed/backgrounds/background-covenant-of-the-grave-recruit.xml" />
+		</update>
+	</info>
+
+	<element name="Covenant of the Grave Recruit" type="Background" source="Arcana Unleashed" id="ID_WOTC_AU_BACKGROUND_COVENANT_OF_THE_GRAVE_RECRUIT">
+		<description>
+			<ul class="unstyled" style="text-indent:-1em; margin-left:1em; margin-bottom:5px">
+				<li><strong>Ability Scores:</strong> Strength, Intelligence, Wisdom</li>
+				<li><strong>Feat:</strong> Arcane Undertaker</li>
+				<li><strong>Skill Proficiencies:</strong> History and Medicine</li>
+				<li><strong>Tool Proficiency:</strong> Herbalism Kit</li>
+				<li><strong>Equipment:</strong><i> Choose A or B:</i> (A) Dagger, Herbalism Kit, Book (anatomy), Shovel, 16 GP; or (B) 50 GP</li>
+			</ul>
+			<p>Death has always fascinated you. You've studied that morbid topic alongside members of the Covenant of the Grave, analyzing the macabre with scientific precision. Through these studies, you've amassed knowledge of medication, necromancy, and history.</p>
+			<div class="reference">
+				<div element="ID_WOTC_AU_FEAT_ARCANE_UNDERTAKER" />
+			</div>
+		</description>
+		<setters>
+			<set name="short">Strength, Intelligence, Wisdom, Arcane Undertaker Feat, History and Medicine Skills, Herbalism Kit</set>
+		</setters>
+		<rules>
+			<grant type="Ability Score Improvement" id="ID_INTERNAL_ABILITY_SCORE_IMPROVEMENT_COMBINATION_STR_INT_WIS" />
+			<grant type="Feat" id="ID_WOTC_AU_FEAT_ARCANE_UNDERTAKER" />
+			<grant type="Proficiency" id="ID_PROFICIENCY_SKILL_HISTORY" />
+			<grant type="Proficiency" id="ID_PROFICIENCY_SKILL_MEDICINE" />
+			<grant type="Grants" id="ID_INTERNAL_GRANTS_BACKGROUND_ASI" />
+			<grant type="Proficiency" id="ID_PROFICIENCY_TOOL_PROFICIENCY_HERBALISM_KIT" />
+		</rules>
+	</element>
+</elements>

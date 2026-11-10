@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<elements>
+	<info>
+		<name>Conjurer</name>
+		<description>The Conjurer subclass from Arcana Unleashed.</description>
+		<update version="0.0.1">
+			<file name="wizard-conjurer.xml" url="https://raw.githubusercontent.com/AuroraLegacy/elements/master/supplements/arcana-unleashed/archetypes/wizard-conjurer.xml" />
+		</update>
+	</info>
+
+	<element name="Conjurer" type="Archetype" source="Arcana Unleashed" id="ID_WOTC_AU_ARCHETYPE_WIZARD_CONJURER">
+		<supports>Wizard Subclass</supports>
+		<description>
+			<p class="flavor">Step Across Space and Call Creatures from Thin Air</p>
+			<p>A Conjurer considers distance and matter to be flexible guidelines rather than physical laws. Conjurers master magic that moves creatures instantly through space and summons creatures to fight on their behalf.</p>
+			<div element="ID_WOTC_AU_ARCHETYPE_WIZARD_CONJURER_BENIGN_TRANSPOSITION" />
+			<div element="ID_WOTC_AU_ARCHETYPE_WIZARD_CONJURER_CONJURATION_SAVANT" />
+			<div element="ID_WOTC_AU_ARCHETYPE_WIZARD_CONJURER_DISTANT_TRANSPOSITION" />
+			<div element="ID_WOTC_AU_ARCHETYPE_WIZARD_CONJURER_DURABLE_SUMMONS" />
+			<div element="ID_WOTC_AU_ARCHETYPE_WIZARD_CONJURER_FOCUSED_CONJURATION" />
+			<div element="ID_WOTC_AU_ARCHETYPE_WIZARD_CONJURER_SPLINTERED_SUMMONS" />
+		</description>
+		<sheet display="false" />
+		<rules>
+			<grant type="Archetype Feature" id="ID_WOTC_AU_ARCHETYPE_WIZARD_CONJURER_BENIGN_TRANSPOSITION" level="3"/>
+			<grant type="Archetype Feature" id="ID_WOTC_AU_ARCHETYPE_WIZARD_CONJURER_CONJURATION_SAVANT" level="3"/>
+			<grant type="Archetype Feature" id="ID_WOTC_AU_ARCHETYPE_WIZARD_CONJURER_DISTANT_TRANSPOSITION" level="6"/>
+			<grant type="Archetype Feature" id="ID_WOTC_AU_ARCHETYPE_WIZARD_CONJURER_DURABLE_SUMMONS" level="6"/>
+			<grant type="Archetype Feature" id="ID_WOTC_AU_ARCHETYPE_WIZARD_CONJURER_FOCUSED_CONJURATION" level="10"/>
+			<grant type="Archetype Feature" id="ID_WOTC_AU_ARCHETYPE_WIZARD_CONJURER_SPLINTERED_SUMMONS" level="14"/>
+		</rules>
+	</element>
+
+	<element name="Level 3: Benign Transposition" type="Archetype Feature" source="Arcana Unleashed" id="ID_WOTC_AU_ARCHETYPE_WIZARD_CONJURER_BENIGN_TRANSPOSITION">
+		<requirements>!ID_INTERNAL_AU_FEATURE_REPLACEMENT_WIZARD_CONJURER_BENIGN_TRANSPOSITION</requirements>
+		<description>
+			<p>As a Bonus Action, you teleport up to 30 feet to an unoccupied space that you can see. Alternatively, you can choose a space within range that is occupied by a Medium or smaller creature. If that creature is willing, you both teleport, swapping places.</p>
+			<p class="indent">You can use this feature a number of times equal to your Intelligence modifier (minimum of once), and you regain all expended uses when you finish a Long Rest.</p>
+		</description>
+		<sheet alt="Benign Transposition" action="Bonus Action" usage="{{benign transposition:uses}}/Long Rest">
+			<description>You teleport up to 30 feet to an unoccupied space that you can see. Alternatively, you can choose a space within range that is occupied by a Medium or smaller creature. If that creature is willing, you both teleport, swapping places.</description>
+			<description level="6">You teleport up to 60 feet to an unoccupied space that you can see. Alternatively, you can choose a space within range that is occupied by a Medium or smaller creature. If that creature is willing, you both teleport, swapping places. &#13;
+			You can restore a use of this feature by expending a level 3+ spell slot (no action required).</description>
+		</sheet>
+		<rules>
+			<stat name="benign transposition:uses" value="1" bonus="ability" />
+			<stat name="benign transposition:uses" value="intelligence:modifier" bonus="ability" />
+		</rules>
+	</element>
+
+	<element name="Level 3: Conjuration Savant" type="Archetype Feature" source="Arcana Unleashed" id="ID_WOTC_AU_ARCHETYPE_WIZARD_CONJURER_CONJURATION_SAVANT">
+		<requirements>!ID_INTERNAL_AU_FEATURE_REPLACEMENT_WIZARD_CONJURER_CONJURATION_SAVANT</requirements>
+		<description>
+			<p>Choose two Wizard spells from the Conjuration school, each of which must be no higher than level 2, and add them to your spellbook for free.</p>
+			<p class="indent">In addition, whenever you gain access to a new level of spell slots in this class, you can add one Wizard spell from the Conjuration school to your spellbook for free. The chosen spell must be of a level for which you have spell slots.</p>
+		</description>
+		<sheet display="false" />
+		<rules>
+			<select type="Spell" name="Conjuration Spell (Conjuration Savant)" supports="$(spellcasting:slots),Conjuration,Wizard" number="2" level="3" spellcasting="Wizard" />
+			<select type="Spell" name="Conjuration Spell (Conjuration Savant)" supports="$(spellcasting:slots),Conjuration,Wizard" level="5" spellcasting="Wizard" />
+			<select type="Spell" name="Conjuration Spell (Conjuration Savant)" supports="$(spellcasting:slots),Conjuration,Wizard" level="7" spellcasting="Wizard" />
+			<select type="Spell" name="Conjuration Spell (Conjuration Savant)" supports="$(spellcasting:slots),Conjuration,Wizard" level="9" spellcasting="Wizard" />
+			<select type="Spell" name="Conjuration Spell (Conjuration Savant)" supports="$(spellcasting:slots),Conjuration,Wizard" level="11" spellcasting="Wizard" />
+			<select type="Spell" name="Conjuration Spell (Conjuration Savant)" supports="$(spellcasting:slots),Conjuration,Wizard" level="13" spellcasting="Wizard" />
+			<select type="Spell" name="Conjuration Spell (Conjuration Savant)" supports="$(spellcasting:slots),Conjuration,Wizard" level="15" spellcasting="Wizard" />
+			<select type="Spell" name="Conjuration Spell (Conjuration Savant)" supports="$(spellcasting:slots),Conjuration,Wizard" level="17" spellcasting="Wizard" />
+		</rules>
+	</element>
+
+	<element name="Level 6: Distant Transposition" type="Archetype Feature" source="Arcana Unleashed" id="ID_WOTC_AU_ARCHETYPE_WIZARD_CONJURER_DISTANT_TRANSPOSITION">
+		<requirements>!ID_INTERNAL_AU_FEATURE_REPLACEMENT_WIZARD_CONJURER_DISTANT_TRANSPOSITION</requirements>
+		<description>
+			<p>The range of your Benign Transposition feature increases to 60 feet. Additionally, you can restore one use of it by expending a level 3+ spell slot (no action required).</p>
+		</description>
+		<sheet display="false" />
+	</element>
+
+	<element name="Level 6: Durable Summons" type="Archetype Feature" source="Arcana Unleashed" id="ID_WOTC_AU_ARCHETYPE_WIZARD_CONJURER_DURABLE_SUMMONS">
+		<requirements>!ID_INTERNAL_AU_FEATURE_REPLACEMENT_WIZARD_CONJURER_DURABLE_SUMMONS</requirements>
+		<description>
+			<p>When you cast a Conjuration spell to summon or create a creature using a spell slot, that creature gains Temporary Hit Points equal to twice your Wizard level when it first appears. While it has these Temporary Hit Points, the creature has Resistance to every damage type except Force, Necrotic, Psychic, and Radiant.</p>
+		</description>
+		<sheet alt="Durable Summons">
+			<description>When you cast a Conjuration spell to summon or create a creature using a spell slot, that creature gains {{durable summons:thp}} THPs when it first appears. While it has these THPs, the creature has Resistance to every damage type except Force, Necrotic, Psychic, and Radiant.</description>
+		</sheet>
+		<rules>
+			<stat name="durable summons:thp" value="level:wizard" bonus="base" />
+			<stat name="durable summons:thp" value="level:wizard" bonus="double" />
+		</rules>
+	</element>
+
+	<element name="Level 10: Focused Conjuration" type="Archetype Feature" source="Arcana Unleashed" id="ID_WOTC_AU_ARCHETYPE_WIZARD_CONJURER_FOCUSED_CONJURATION">
+		<requirements>!ID_INTERNAL_AU_FEATURE_REPLACEMENT_WIZARD_CONJURER_FOCUSED_CONJURATION</requirements>
+		<description>
+			<p>Taking damage can't break your Concentration on Conjuration spells.</p>
+		</description>
+		<sheet alt="Focused Conjuration">
+			<description>Taking damage can't break your Concentration on Conjuration spells.</description>
+		</sheet>
+	</element>
+
+	<element name="Level 14: Splintered Summons" type="Archetype Feature" source="Arcana Unleashed" id="ID_WOTC_AU_ARCHETYPE_WIZARD_CONJURER_SPLINTERED_SUMMONS">
+		<requirements>!ID_INTERNAL_AU_FEATURE_REPLACEMENT_WIZARD_CONJURER_SPLINTERED_SUMMONS</requirements>
+		<description>
+			<p>When you use a spell slot to cast a Conjuration spell that summons a spirit whose stat block is included in the spell description, such as <i>Summon Aberration</i>, you can modify the spell to summon two creatures with the spell instead of one. Each creature is of the same kind, uses the stat block and rules denoted by the spell, and manifests in a different unoccupied space of your choice within the spell's range, but the summoned creatures' Hit Point maximums and current Hit Points are halved. If you lose Concentration on the spell, both creatures disappear.</p>
+		</description>
+		<sheet alt="Splintered Summons">
+			<description>When you use a spell slot to cast a Conjuration spell that summons a spirit whose stat block is included in the spell description, you can modify the spell to summon two creatures with the spell instead of one. Each creature is of the same kind, uses the stat block and rules denoted by the spell, and manifests in a different unoccupied space of your choice within the spell's range, but the summoned creatures' Hit Point maximums and current Hit Points are halved. If you lose Concentration on the spell, both creatures disappear.</description>
+		</sheet>
+	</element>
+	
+	<!--Feature Replacement Grants-->
+	<element name="Benign Transposition Feature Replacement" type="Grants" source="Internal" id="ID_INTERNAL_AU_FEATURE_REPLACEMENT_WIZARD_CONJURER_BENIGN_TRANSPOSITION" />
+	<element name="Conjuration Savant Feature Replacement" type="Grants" source="Internal" id="ID_INTERNAL_AU_FEATURE_REPLACEMENT_WIZARD_CONJURER_CONJURATION_SAVANT" />
+	<element name="Distant Transposition Feature Replacement" type="Grants" source="Internal" id="ID_INTERNAL_AU_FEATURE_REPLACEMENT_WIZARD_CONJURER_DISTANT_TRANSPOSITION" />
+	<element name="Durable Summons Feature Replacement" type="Grants" source="Internal" id="ID_INTERNAL_AU_FEATURE_REPLACEMENT_WIZARD_CONJURER_DURABLE_SUMMONS" />
+	<element name="Focused Conjuration Feature Replacement" type="Grants" source="Internal" id="ID_INTERNAL_AU_FEATURE_REPLACEMENT_WIZARD_CONJURER_FOCUSED_CONJURATION" />
+	<element name="Splintered Summons Feature Replacement" type="Grants" source="Internal" id="ID_INTERNAL_AU_FEATURE_REPLACEMENT_WIZARD_CONJURER_SPLINTERED_SUMMONS" />
+</elements>

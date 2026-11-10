@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<elements>
+	<info>
+		<name>Seer Apprentice</name>
+		<description>The Seer Apprentice background from Arcana Unleashed.</description>
+		<update version="0.0.1">
+			<file name="background-seer-apprentice.xml" url="https://raw.githubusercontent.com/AuroraLegacy/elements/master/supplements/arcana-unleashed/backgrounds/background-seer-apprentice.xml" />
+		</update>
+	</info>
+
+	<element name="Seer Apprentice" type="Background" source="Arcana Unleashed" id="ID_WOTC_AU_BACKGROUND_SEER_APPRENTICE">
+		<description>
+			<ul class="unstyled" style="text-indent:-1em; margin-left:1em; margin-bottom:5px">
+				<li><strong>Ability Scores:</strong> Intelligence, Wisdom, Charisma</li>
+				<li><strong>Feat:</strong> Arcane Omens</li>
+				<li><strong>Skill Proficiencies:</strong> History and Insight</li>
+				<li><strong>Tool Proficiency:</strong> Navigator's Tools</li>
+				<li><strong>Equipment:</strong><i> Choose A or B:</i> (A) Navigator's Tools, 8 Candles, Ink, Ink Pen, Parchment (9 sheets), Pouch, Tinderbox, Traveler's Clothes, 11 GP; or (B) 50 GP</li>
+			</ul>
+			<p>As an apprentice among the Seers of Sea and Sky, you learned to interpret minor omens from the clouds above and the fathoms below. The organization's rich network of libraries furthered your education, and you now travel across the world, imparting advice and aid to others.</p>
+			<div class="reference">
+				<div element="ID_WOTC_AU_FEAT_ARCANE_OMENS" />
+			</div>
+		</description>
+		<setters>
+			<set name="short">Intelligence, Wisdom, Charisma, Arcane Omens Feat, History and Insight Skills, Navigator's Tools</set>
+		</setters>
+		<rules>
+			<grant type="Ability Score Improvement" id="ID_INTERNAL_ABILITY_SCORE_IMPROVEMENT_COMBINATION_INT_WIS_CHA" />
+			<grant type="Feat" id="ID_WOTC_AU_FEAT_ARCANE_OMENS" />
+			<grant type="Proficiency" id="ID_PROFICIENCY_SKILL_HISTORY" />
+			<grant type="Proficiency" id="ID_PROFICIENCY_SKILL_INSIGHT" />
+			<grant type="Grants" id="ID_INTERNAL_GRANTS_BACKGROUND_ASI" />
+			<grant type="Proficiency" id="ID_PROFICIENCY_TOOL_PROFICIENCY_NAVIGATORS_TOOLS" />
+		</rules>
+	</element>
+</elements>

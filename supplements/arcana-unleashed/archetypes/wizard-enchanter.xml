@@ -1,0 +1,170 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<elements>
+	<info>
+		<name>Enchanter</name>
+		<description>The Enchanter subclass from Arcana Unleashed.</description>
+		<update version="0.0.1">
+			<file name="wizard-enchanter.xml" url="https://raw.githubusercontent.com/AuroraLegacy/elements/master/supplements/arcana-unleashed/archetypes/wizard-enchanter.xml" />
+		</update>
+	</info>
+
+	<element name="Enchanter" type="Archetype" source="Arcana Unleashed" id="ID_WOTC_AU_ARCHETYPE_WIZARD_ENCHANTER">
+		<supports>Wizard Subclass</supports>
+		<description>
+			<p class="flavor">Entrance and Beguile Others</p>
+			<p>An Enchanter's magic clouds or captivates minds. Some Enchanters use their abilities to encourage peace and soften cruelty, while others use their mind-altering magic for selfish ends.</p>
+			<div element="ID_WOTC_AU_ARCHETYPE_WIZARD_ENCHANTER_ENCHANTING_CONVERSATIONALIST" />
+			<div element="ID_WOTC_AU_ARCHETYPE_WIZARD_ENCHANTER_ENCHANTMENT_SAVANT" />
+			<div element="ID_WOTC_AU_ARCHETYPE_WIZARD_ENCHANTER_HYPNOTIC_PRESENCE" />
+			<div element="ID_WOTC_AU_ARCHETYPE_WIZARD_ENCHANTER_SPLIT_ENCHANTMENT" />
+			<div element="ID_WOTC_AU_ARCHETYPE_WIZARD_ENCHANTER_INSTINCTIVE_CHARM" />
+			<div element="ID_WOTC_AU_ARCHETYPE_WIZARD_ENCHANTER_ALTER_MEMORIES" />
+		</description>
+		<sheet display="false" />
+		<rules>
+			<grant type="Archetype Feature" id="ID_WOTC_AU_ARCHETYPE_WIZARD_ENCHANTER_ENCHANTING_CONVERSATIONALIST" level="3"/>
+			<grant type="Archetype Feature" id="ID_WOTC_AU_ARCHETYPE_WIZARD_ENCHANTER_ENCHANTMENT_SAVANT" level="3"/>
+			<grant type="Archetype Feature" id="ID_WOTC_AU_ARCHETYPE_WIZARD_ENCHANTER_HYPNOTIC_PRESENCE" level="3"/>
+			<grant type="Archetype Feature" id="ID_WOTC_AU_ARCHETYPE_WIZARD_ENCHANTER_SPLIT_ENCHANTMENT" level="6"/>
+			<grant type="Archetype Feature" id="ID_WOTC_AU_ARCHETYPE_WIZARD_ENCHANTER_INSTINCTIVE_CHARM" level="10"/>
+			<grant type="Archetype Feature" id="ID_WOTC_AU_ARCHETYPE_WIZARD_ENCHANTER_ALTER_MEMORIES" level="14"/>
+		</rules>
+	</element>
+
+	<element name="Level 3: Enchanting Conversationalist" type="Archetype Feature" source="Arcana Unleashed" id="ID_WOTC_AU_ARCHETYPE_WIZARD_ENCHANTER_ENCHANTING_CONVERSATIONALIST">
+		<requirements>!ID_INTERNAL_AU_FEATURE_REPLACEMENT_WIZARD_ENCHANTER_ENCHANTING_CONVERSATIONALIST</requirements>
+		<description>
+			<p>You gain proficiency in one of the following skills of your choice: <i>Deception</i>, <i>Intimidation</i>, or <i>Persuasion</i>.</p>
+			<p class="indent">In addition, when you make an ability check with the chosen skill, you gain a bonus to the check equal to your Intelligence modifier (minimum of +1).</p>
+		</description>
+		<sheet display="false"/>
+		<rules>
+			<select type="Archetype Feature" name="Skill Proficiency (Enchanting Conversationalist)" supports="Enchanting Conversationalist" />
+			<stat name="enchanting conversationalist:bonus" value="1" bonus="ability" />
+			<stat name="enchanting conversationalist:bonus" value="intelligence:modifier" bonus="ability" />
+		</rules>
+	</element>
+	<element name="Deception" type="Archetype Feature" source="Arcana Unleashed" id="ID_WOTC_AU_ARCHETYPE_WIZARD_ENCHANTER_ENCHANTING_CONVERSATIONALIST_DECEPTION">
+		<supports>Enchanting Conversationalist</supports>
+		<compendium display="false"/>
+		<description>
+			<p>You gain proficiency in <i>Deception</i>. When you make a Charisma (Deception) check, you gain a bonus to the check equal to your Intelligence modifier (minimum of +1).</p>
+		</description>
+		<sheet alt="Enchanting Conversationalist">
+			<description>When you make a Charisma (Deception) check, you gain a +{{enchanting conversationalist:bonus}} bonus to the check.</description>
+		</sheet>
+		<rules>
+			<grant type="Proficiency" id="ID_PROFICIENCY_SKILL_DECEPTION" />
+		</rules>
+	</element>
+	<element name="Intimidation" type="Archetype Feature" source="Arcana Unleashed" id="ID_WOTC_AU_ARCHETYPE_WIZARD_ENCHANTER_ENCHANTING_CONVERSATIONALIST_INTIMIDATION">
+		<supports>Enchanting Conversationalist</supports>
+		<compendium display="false"/>
+		<description>
+			<p>You gain proficiency in <i>Intimidation</i>. When you make a Charisma (Intimidation) check, you gain a bonus to the check equal to your Intelligence modifier (minimum of +1).</p>
+		</description>
+		<sheet alt="Enchanting Conversationalist">
+			<description>When you make a Charisma (Intimidation) check, you gain a +{{enchanting conversationalist:bonus}} bonus to the check.</description>
+		</sheet>
+		<rules>
+			<grant type="Proficiency" id="ID_PROFICIENCY_SKILL_INTIMIDATION" />
+		</rules>
+	</element>
+	<element name="Persuasion" type="Archetype Feature" source="Arcana Unleashed" id="ID_WOTC_AU_ARCHETYPE_WIZARD_ENCHANTER_ENCHANTING_CONVERSATIONALIST_PERSUASION">
+		<supports>Enchanting Conversationalist</supports>
+		<compendium display="false"/>
+		<description>
+			<p>You gain proficiency in <i>Persuasion</i>. When you make a Charisma (Persuasion) check, you gain a bonus to the check equal to your Intelligence modifier (minimum of +1).</p>
+		</description>
+		<sheet alt="Enchanting Conversationalist">
+			<description>When you make a Charisma (Persuasion) check, you gain a +{{enchanting conversationalist:bonus}} bonus to the check.</description>
+		</sheet>
+		<rules>
+			<grant type="Proficiency" id="ID_PROFICIENCY_SKILL_PERSUASION" />
+		</rules>
+	</element>
+
+	<element name="Level 3: Enchantment Savant" type="Archetype Feature" source="Arcana Unleashed" id="ID_WOTC_AU_ARCHETYPE_WIZARD_ENCHANTER_ENCHANTMENT_SAVANT">
+		<requirements>!ID_INTERNAL_AU_FEATURE_REPLACEMENT_WIZARD_ENCHANTER_ENCHANTMENT_SAVANT</requirements>
+		<description>
+			<p>Choose two Wizard spells from the Enchantment school, each of which must be no higher than level 2, and add them to your spellbook for free.</p>
+			<p class="indent">In addition, whenever you gain access to a new level of spell slots in this class, you can add one Wizard spell from the Enchantment school to your spellbook for free. The chosen spell must be of a level for which you have spell slots.</p>
+		</description>
+		<sheet display="false" />
+		<rules>
+			<select type="Spell" name="Enchantment Spell (Enchantment Savant)" supports="$(spellcasting:slots),Enchantment,Wizard" number="2" level="3" spellcasting="Wizard" />
+			<select type="Spell" name="Enchantment Spell (Enchantment Savant)" supports="$(spellcasting:slots),Enchantment,Wizard" level="5" spellcasting="Wizard" />
+			<select type="Spell" name="Enchantment Spell (Enchantment Savant)" supports="$(spellcasting:slots),Enchantment,Wizard" level="7" spellcasting="Wizard" />
+			<select type="Spell" name="Enchantment Spell (Enchantment Savant)" supports="$(spellcasting:slots),Enchantment,Wizard" level="9" spellcasting="Wizard" />
+			<select type="Spell" name="Enchantment Spell (Enchantment Savant)" supports="$(spellcasting:slots),Enchantment,Wizard" level="11" spellcasting="Wizard" />
+			<select type="Spell" name="Enchantment Spell (Enchantment Savant)" supports="$(spellcasting:slots),Enchantment,Wizard" level="13" spellcasting="Wizard" />
+			<select type="Spell" name="Enchantment Spell (Enchantment Savant)" supports="$(spellcasting:slots),Enchantment,Wizard" level="15" spellcasting="Wizard" />
+			<select type="Spell" name="Enchantment Spell (Enchantment Savant)" supports="$(spellcasting:slots),Enchantment,Wizard" level="17" spellcasting="Wizard" />
+		</rules>
+	</element>
+
+	<element name="Level 3: Hypnotic Presence" type="Archetype Feature" source="Arcana Unleashed" id="ID_WOTC_AU_ARCHETYPE_WIZARD_ENCHANTER_HYPNOTIC_PRESENCE">
+		<requirements>!ID_INTERNAL_AU_FEATURE_REPLACEMENT_WIZARD_ENCHANTER_HYPNOTIC_PRESENCE</requirements>
+		<description>
+			<p>Your charming words and enchanting gaze can enthrall another creature. As a Magic action, choose one creature that you can see within 10 feet of yourself. If the target can see or hear you, it must succeed on a Wisdom saving throw against your spell save DC or have the Charmed condition for 1 minute or until the target is more than 10 feet away from you, the target can neither see nor hear you, or the target takes damage. While Charmed, the target has the Incapacitated condition and a Speed of 0.</p>
+			<p class="indent">You can use this feature a number of times equal to your Intelligence modifier (minimum of once), and you regain all expended uses when you finish a Long Rest.</p>
+		</description>
+		<sheet alt="Hypnotic Presence" action="Action" usage="{{hypnotic presence:uses}}/Long Rest" >
+			<description>Choose one creature that you can see within 10 feet of yourself. If the target can see or hear you, it must succeed on a Wisdom saving throw against your spell save DC or have the Charmed condition for 1 minute or until the target is more than 10 feet away from you, the target can neither see nor hear you, or the target takes damage. While Charmed, the target has the Incapacitated condition and a Speed of 0.</description>
+		</sheet>
+		<rules>
+			<stat name="hypnotic presence:uses" value="1" bonus="ability" />
+			<stat name="hypnotic presence:uses" value="intelligence:modifier" bonus="ability" />
+		</rules>
+	</element>
+
+	<element name="Level 6: Split Enchantment" type="Archetype Feature" source="Arcana Unleashed" id="ID_WOTC_AU_ARCHETYPE_WIZARD_ENCHANTER_SPLIT_ENCHANTMENT">
+		<requirements>!ID_INTERNAL_AU_FEATURE_REPLACEMENT_WIZARD_ENCHANTER_SPLIT_ENCHANTMENT</requirements>
+		<description>
+			<p>When you use a spell slot to cast an Enchantment spell, such as <i>Charm Person</i>, that can be cast with a higher-level spell slot to target an additional creature, you can increase the spell's effective level by 1.</p>
+			<p class="indent">You can use this feature a number of times equal to your Intelligence modifier, and you regain all expended uses when you finish a Long Rest.</p>
+		</description>
+		<sheet alt="Split Enchantment" usage="{{split enchantment:uses}}/Long Rest" >
+			<description>When you use a spell slot to cast an Enchantment spell that can be cast with a higher-level spell slot to target an additional creature, you can increase the spell's effective level by 1.</description>
+		</sheet>
+		<rules>
+			<stat name="split enchantment:uses" value="1" bonus="ability" />
+			<stat name="split enchantment:uses" value="intelligence:modifier" bonus="ability" />
+		</rules>
+	</element>
+
+	<element name="Level 10: Instinctive Charm" type="Archetype Feature" source="Arcana Unleashed" id="ID_WOTC_AU_ARCHETYPE_WIZARD_ENCHANTER_INSTINCTIVE_CHARM">
+		<requirements>!ID_INTERNAL_AU_FEATURE_REPLACEMENT_WIZARD_ENCHANTER_INSTINCTIVE_CHARM</requirements>
+		<description>
+			<p>When a creature within 30 feet of you that you can see hits you with an attack roll, you can take a Reaction to force the attacker to make a Wisdom saving throw against your spell save DC. On a failed save, the attack misses instead, and if there is another creature within range of the attack other than the attacker, the attacker targets that creature with the triggering attack, using the same attack roll. If multiple creatures are within the attack's range, you choose which one to target.</p>
+			<p class="indent">Once you take this Reaction, you can't do so again until you finish a Long Rest. You can also restore your use of it by casting an Enchantment spell with a spell slot.</p>
+		</description>
+		<sheet alt="Instinctive Charm" action="Reaction" usage="1/Long Rest">
+			<description>When a creature within 30 feet of you that you can see hits you with an attack roll, you can force the attacker to make a Wisdom saving throw against your spell save DC. On a failed save, the attack misses instead, and if there is another creature within range of the attack other than the attacker, the attacker targets that creature with the triggering attack, using the same attack roll. If multiple creatures are within the attack's range, you choose which one to target. &#13;
+			You can restore your use of this ability by casting an Enchantment spell with a spell slot.</description>
+		</sheet>
+	</element>
+
+	<element name="Level 14: Alter Memories" type="Archetype Feature" source="Arcana Unleashed" id="ID_WOTC_AU_ARCHETYPE_WIZARD_ENCHANTER_ALTER_MEMORIES">
+		<requirements>!ID_INTERNAL_AU_FEATURE_REPLACEMENT_WIZARD_ENCHANTER_ALTER_MEMORIES</requirements>
+		<description>
+			<p>You can make a creature unaware of your magical influence. When you cast an Enchantment spell that imposes the Charmed condition using a spell slot, you can choose one creature targeted by the spell. That creature remains unaware of being Charmed by you.</p>
+			<p class="indent">In addition, once before the spell ends, you can take a Magic action to force the chosen creature to make an Intelligence saving throw against your spell save DC. On a failed save, you can make the creature lose a number of hours of its memories equal to 1 plus your Intelligence modifier (minimum of 1 hour lost). You can make the creature forget less time, and the amount of time can't exceed the duration of your Enchantment spell.</p>
+		</description>
+		<sheet alt="Alter Memories">
+			<description>When you cast an Enchantment spell that imposes the Charmed condition using a spell slot, you can choose one creature targeted by the spell. That creature remains unaware of being Charmed by you. In addition, once before the spell ends, you can take a Magic action to force the chosen creature to make an Intelligence saving throw against your spell save DC. On a failed save, you can make the creature lose up to {{alter memories:duration}} hours of its memories. You can make the creature forget less time, but the amount of time can't exceed the duration of the spell.</description>
+		</sheet>
+		<rules>
+			<stat name="alter memories:duration" value="1" />
+			<stat name="alter memories:duration" value="intelligence:modifier" />
+		</rules>
+	</element>
+	
+	<!--Feature Replacement Grants-->
+	<element name="Enchanting Conversationalist Feature Replacement" type="Grants" source="Internal" id="ID_INTERNAL_AU_FEATURE_REPLACEMENT_WIZARD_ENCHANTER_ENCHANTING_CONVERSATIONALIST" />
+	<element name="Enchantment Savant Feature Replacement" type="Grants" source="Internal" id="ID_INTERNAL_AU_FEATURE_REPLACEMENT_WIZARD_ENCHANTER_ENCHANTMENT_SAVANT" />
+	<element name="Hypnotic Presence Feature Replacement" type="Grants" source="Internal" id="ID_INTERNAL_AU_FEATURE_REPLACEMENT_WIZARD_ENCHANTER_HYPNOTIC_PRESENCE" />
+	<element name="Split Enchantment Feature Replacement" type="Grants" source="Internal" id="ID_INTERNAL_AU_FEATURE_REPLACEMENT_WIZARD_ENCHANTER_SPLIT_ENCHANTMENT" />
+	<element name="Instinctive Charm Feature Replacement" type="Grants" source="Internal" id="ID_INTERNAL_AU_FEATURE_REPLACEMENT_WIZARD_ENCHANTER_INSTINCTIVE_CHARM" />
+	<element name="Alter Memories Feature Replacement" type="Grants" source="Internal" id="ID_INTERNAL_AU_FEATURE_REPLACEMENT_WIZARD_ENCHANTER_ALTER_MEMORIES" />
+</elements>
