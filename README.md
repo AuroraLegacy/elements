@@ -9,6 +9,33 @@ This branch keeps only content for the **2024 rules (D&D 5.5e)**, so nothing wri
 
 Master index (Aurora Builder's *Additional Content* tab, or DaybreakBuilder's Content page): https://raw.githubusercontent.com/SpikeTheDragon40k/elements/dnd-2024/AuroraLegacy.index
 
+## 2024-rules content coverage
+
+✅ in this branch · ❌ missing · ➖ no player options (monsters/items/adventure only)
+
+| Book | Released | Type | Status | Upstream PR |
+|---|---|---|---|---|
+| Player's Handbook (2024) | Sep 2024 | Core | ✅ | merged |
+| Dungeon Master's Guide (2024) | Nov 2024 | Core | ✅ | merged |
+| Monster Manual (2025) | Feb 2025 | Core | ✅ | merged |
+| System Reference Document 5.2.1 | 2025 | Core (monsters) | ✅ | — |
+| Quests from the Infinite Staircase | Jul 2024 | Adventure anthology | ❌ ➖ | — |
+| Dragon Delves | Jul 2025 | Adventure anthology | ❌ ➖ | — |
+| Starter Set: Heroes of the Borderlands | Sep 2025 | Starter set | ❌ | — |
+| Astarion's Book of Hungers | 2025 | Supplement (digital) | ✅ | #334 |
+| Netheril's Fall | 2025 | Supplement (digital) | ✅ | #334 |
+| Forgotten Realms: Heroes of Faerûn | Nov 2025 | Player sourcebook | ✅ | #335 |
+| Forgotten Realms: Adventures in Faerûn | Nov 2025 | DM sourcebook | ✅ | #335 |
+| Eberron: Forge of the Artificer | Dec 2025 | Class sourcebook | ✅ | #341 |
+| Lorwyn: First Light | 2026 | Setting sourcebook | ✅ | #340 |
+| Ravenloft: The Horrors Within | 2026 | Setting sourcebook | ✅ | #355 |
+| Arcana Unleashed | Sep 2026 | Sourcebook | ✅ | #354 |
+| Arcana Unleashed: Deadfall | Sep 2026 | Adventure | ✅ | #354 |
+| Unearthed Arcana (2024+ playtests) | ongoing | Playtest | ❌ | — |
+| Winter 2026 book (unannounced) | TBA | — | ❌ | — |
+
+Release dates are approximate; check D&D Beyond for exact ones.
+
 `master` stays an unmodified copy of [AuroraLegacy/elements](https://github.com/AuroraLegacy/elements). The original README follows.
 
 ---
