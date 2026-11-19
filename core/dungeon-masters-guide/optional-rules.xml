@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<elements>
+	<info>
+		<name>Optional Rules</name>
+		<update version="0.0.1">
+			<file name="optional-rules.xml" url="https://raw.githubusercontent.com/AuroraLegacy/elements/master/core/dungeon-masters-guide/optional-rules.xml" />
+		</update>
+	</info>
+
+	<append id="ID_INTERNAL_GRANTS_CHARACTER_BASE">
+	   <rules>
+			<grant type="Feat Feature" id="ID_WOTC_DMG_FEAT_FEATURE_PROFICIENCY_DICE" requirements="ID_WOTC_DMG_PROFICIENCY_DICE" />
+		</rules>
+	</append>
+
+	<!--Proficiency Dice-->
+	<element name="Optional Rule: Proficiency Dice" type="Item" source="Dungeon Master’s Guide" id="ID_WOTC_DMG_PROFICIENCY_DICE">
+		<description>
+			<p><i>You can equip this item to “enable” it. It remains hidden from the inventory on your character sheet.</i></p>
+			<p>This optional rule replaces a character's proficiency bonus with a proficiency die, adding more randomness to the game and making proficiency a less reliable indicator of mastery. Instead of adding a proficiency bonus to an ability check, an attack roll, or saving throw, the character's player rolls a die. The Proficiency Die table shows which die or dice to roll, as determined by the character's level.</p>
+			<p class="indent">Whenever a feature, such as the rogue's Expertise, lets a character double his or her proficiency bonus, the player rolls the character's proficiency die twice instead of once.</p>
+			<p class="indent">This option is intended for player characters and nonplayer characters who have levels, as opposed to monsters who don't.</p>
+			<h5 class="caption">PROFICIENCY DICE</h5>
+			<table>
+				<thead>
+					<tr><td>Level</td><td>Proficiency Bonus</td><td>Proficiency Die</td></tr>
+				</thead>
+				<tr><td>1st-4th</td><td><em>+2</em></td><td><em>1d4</em></td></tr>
+				<tr><td>5th-8th</td><td><em>+3</em></td><td><em>1d6</em></td></tr>
+				<tr><td>9th-12th</td><td><em>+4</em></td><td><em>1d8</em></td></tr>
+				<tr><td>13th-16th</td><td><em>+5</em></td><td><em>1d10</em></td></tr>
+				<tr><td>17th-20th</td><td><em>+6</em></td><td><em>1d12</em></td></tr>
+			</table>
+		</description>
+		<setters>
+			<set name="category">Additional Feature</set>
+			<set name="slot">misc</set>
+			<set name="inventory-hidden">true</set>
+		</setters>
+	</element>
+
+	<element name="Proficiency Dice" type="Feat Feature" source="Dungeon Master’s Guide" id="ID_WOTC_DMG_FEAT_FEATURE_PROFICIENCY_DICE">
+		<description>
+			<p>This optional rule replaces a character's proficiency bonus with a proficiency die, adding more randomness to the game and making proficiency a less reliable indicator of mastery. Instead of adding a proficiency bonus to an ability check, an attack roll, or saving throw, the character's player rolls a die. The Proficiency Die table shows which die or dice to roll, as determined by the character's level.</p>
+			<p class="indent">Whenever a feature, such as the rogue's Expertise, lets a character double his or her proficiency bonus, the player rolls the character's proficiency die twice instead of once.</p>
+			<p class="indent">This option is intended for player characters and nonplayer characters who have levels, as opposed to monsters who don't.</p>
+			<h5 class="caption">PROFICIENCY DICE</h5>
+			<table>
+				<thead>
+					<tr><td>Level</td><td>Proficiency Bonus</td><td>Proficiency Die</td></tr>
+				</thead>
+				<tr><td>1st-4th</td><td><em>+2</em></td><td><em>1d4</em></td></tr>
+				<tr><td>5th-8th</td><td><em>+3</em></td><td><em>1d6</em></td></tr>
+				<tr><td>9th-12th</td><td><em>+4</em></td><td><em>1d8</em></td></tr>
+				<tr><td>13th-16th</td><td><em>+5</em></td><td><em>1d10</em></td></tr>
+				<tr><td>17th-20th</td><td><em>+6</em></td><td><em>1d12</em></td></tr>
+			</table>
+		</description>
+		<sheet>
+			<description>Instead of adding your proficiency bonus to an ability check, an attack roll, or saving throw, you roll 1d{{proficiency:dice}} and add it to the d20 roll. If a feature adds double your proficnecy bonus, you roll 2d{{proficiency:dice}} instead.</description>
+		</sheet>
+		<rules>
+			<stat name="proficiency:dice" value="4" bonus="base" level="1" />
+			<stat name="proficiency:dice" value="6" bonus="base" level="5" />
+			<stat name="proficiency:dice" value="8" bonus="base" level="9" />
+			<stat name="proficiency:dice" value="10" bonus="base" level="13" />
+			<stat name="proficiency:dice" value="12" bonus="base" level="17" />
+		</rules>
+	</element>
+
+</elements>
