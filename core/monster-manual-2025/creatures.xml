@@ -3,7 +3,7 @@
 	<info>
 		<name>Creatures</name>
 		<description>Creature statblocks from the Monster Manual (2025).</description>
-		<update version="0.0.3">
+		<update version="0.0.4">
 			<file name="creatures.xml" url="https://raw.githubusercontent.com/AuroraLegacy/elements/master/core/monster-manual-2025/creatures.xml" />
 		</update>
 	</info>
@@ -261,6 +261,31 @@
 		<sheet>
 			<description>Melee Weapon Attack: +2, reach 5 ft. Hit: 1 Piercing damage.</description>
 		</sheet>
+	</element>
+	<element name="Badger" type="Information" source="Monster Manual (2025)" id="ID_WOTC_MM25_INFORMATION_BADGER_STATBLOCK">
+		<description>
+			<p style="margin-bottom:5px"><i>Tiny Beast, Unaligned</i></p>
+			<ul class="unstyled mb">
+				<li style="margin-bottom:-1em"><b>AC</b> 11</li>
+				<li style="text-align:right; margin-top:-1em"><b>Initiative</b> +0 (10)</li>
+				<li><b>HP</b> 5 (1d4 + 3)</li>
+				<li><b>Speed</b> 20 ft., Burrow 5 ft.</li>
+			</ul>
+			<table style="text-align:center;margin-top:2px;margin-bottom:10px">
+				<tr style="font-size:8px"><td colspan="2" /><td>MOD</td><td>SAVE</td><td colspan="2" /><td>MOD</td><td>SAVE</td><td colspan="2" /><td>MOD</td><td>SAVE</td></tr>
+				<tr><td><b>STR</b></td><td>10</td><td>+0</td><td>+0</td><td><b>DEX</b></td><td>11</td><td>+1</td><td>+1</td><td><b>CON</b></td><td>16</td><td>+3</td><td>+3</td></tr>
+				<tr><td><b>INT</b></td><td>2</td><td>-4</td><td>-4</td><td><b>WIS</b></td><td>12</td><td>+1</td><td>+1</td><td><b>CHA</b></td><td>5</td><td>-3</td><td>-3</td></tr>
+			</table>
+			<ul class="unstyled mb">
+				<li><b>Skills</b> Perception +3</li>
+				<li><b>Resistances</b> Poison</li>
+				<li><b>Senses</b> Darkvision 30 ft.; Passive Perception 13</li>
+				<li><b>Languages</b> None</li>
+				<li><b>CR</b> 0 (XP 10; PB +2)</li>
+			</ul>
+			<h4 style="margin-top:5px">Actions</h4>
+				<p><i><b>Bite.</b> Melee Attack Roll:</i> +2, reach 5 ft. <i>Hit:</i> 1 Piercing damage.</p>
+		</description>
 	</element>
 
 	<element name="Bat" type="Companion" source="Monster Manual (2025)" id="ID_WOTC_MM25_COMPANION_BAT">
@@ -917,6 +942,86 @@
 			<h4 style="margin-top:5px">Actions</h4>
 				<p><b><i>Multiattack.</i></b> The golem makes two Slam attacks.</p>
 				<p><i><b>Slam.</b> Melee Attack Roll:</i> +7, reach 5 ft. <i>Hit:</i> 13 (2d8 + 4) Bludgeoning damage plus 4 (1d8) Lightning damage.</p>
+		</description>
+	</element>
+
+	<element name="Flying Snake" type="Companion" source="Monster Manual (2025)" id="ID_WOTC_MM25_COMPANION_FLYING_SNAKE">
+		<compendium display="false" />
+		<description>
+			<p class="flavor">Our partners in the Zhentarim provide these remarkable pets, fully domesticated and trained to deliver messages. Always wear gloves when handling venomous creatures.</p>
+		</description>
+		<setters>
+			<set name="strength">4</set>
+			<set name="dexterity">15</set>
+			<set name="constitution">11</set>
+			<set name="intelligence">2</set>
+			<set name="wisdom">12</set>
+			<set name="charisma">5</set>
+			<set name="ac">14</set>
+			<set name="hp">5 (2d4)</set>
+			<set name="speed">30 ft., fly 60 ft., swim 30 ft.</set>
+			<set name="skills" />
+			<set name="senses">Blindsight 10ft., Passive Perception 11</set>
+			<set name="languages">—</set>
+			<set name="type">Monstrosity</set>
+			<set name="size">Tiny</set>
+			<set name="alignment">unaligned</set>
+			<set name="challenge">1/8</set>
+			<set name="proficiency">2</set>
+			<set name="traits">ID_WOTC_MM25_COMPANION_TRAIT_FLYING_SNAKE_FLYBY</set>
+			<set name="actions">ID_WOTC_MM25_COMPANION_ACTION_FLYING_SNAKE_BITE</set>
+		</setters>
+		<rules>
+			<stat name="companion:ac" value="14" />
+			<stat name="companion:hp:max" value="5" bonus="base" />
+			<stat name="companion:speed" value="30" bonus="base" />
+			<stat name="companion:speed:fly" value="60" bonus="base" />
+			<stat name="companion:speed:swim" value="30" bonus="base" />
+		</rules>
+	</element>
+	<element name="Flyby" type="Companion Trait" source="Monster Manual (2025)" id="ID_WOTC_MM25_COMPANION_TRAIT_FLYING_SNAKE_FLYBY">
+		<compendium display="false" />
+		<description>
+			<p>The snake doesn’t provoke an Opportunity Attack when it flies out of an enemy’s reach.</p>
+		</description>
+		<sheet>
+			<description>The snake doesn’t provoke an Opportunity Attack when it flies out of an enemy’s reach.</description>
+		</sheet>
+	</element>
+	<element name="Bite" type="Companion Action" source="Monster Manual (2025)" id="ID_WOTC_MM25_COMPANION_ACTION_FLYING_SNAKE_BITE">
+		<compendium display="false" />
+		<description>
+			<p><i>Melee Attack Roll:</i> +4, reach 5 ft. <i>Hit:</i> 1 Piercing damage plus 5 (2d4) Poison damage.</p>
+		</description>
+		<sheet>
+			<description>Melee Weapon Attack: +4 to hit, reach 5 ft., one target. Hit: 1 Piercing damage plus 5 (2d4) Poison damage.</description>
+		</sheet>
+	</element>
+	<element name="Flying Snake" type="Information" source="Monster Manual (2025)" id="ID_WOTC_MM25_INFORMATION_FLYING_SNAKE_STATBLOCK">
+		<description>
+			<p class="flavor">Our partners in the Zhentarim provide these remarkable pets, fully domesticated and trained to deliver messages. Always wear gloves when handling venomous creatures.</p>
+			<h4 style="margin-top:0px" />
+			<p style="margin-bottom:5px"><i>Tiny Beast, Unaligned</i></p>
+			<ul class="unstyled mb">
+				<li style="margin-bottom:-1em"><b>AC</b> 14</li>
+				<li style="text-align:right; margin-top:-1em"><b>Initiative</b> -1 (9)</li>
+				<li><b>HP</b> 5 (2d4)</li>
+				<li><b>Speed</b> 30 ft., fly 60 ft., swim 30 ft.</li>
+			</ul>
+			<table style="text-align:center;margin-top:2px;margin-bottom:10px">
+				<tr style="font-size:8px"><td colspan="2" /><td>MOD</td><td>SAVE</td><td colspan="2" /><td>MOD</td><td>SAVE</td><td colspan="2" /><td>MOD</td><td>SAVE</td></tr>
+				<tr><td><b>STR</b></td><td>4</td><td>-3</td><td>-3</td><td><b>DEX</b></td><td>15</td><td>+2</td><td>+2</td><td><b>CON</b></td><td>11</td><td>+0</td><td>+0</td></tr>
+				<tr><td><b>INT</b></td><td>2</td><td>-4</td><td>-4</td><td><b>WIS</b></td><td>12</td><td>+1</td><td>+1</td><td><b>CHA</b></td><td>5</td><td>-3</td><td>-3</td></tr>
+			</table>
+			<ul class="unstyled mb">
+				<li><b>Senses</b> Blindsight 10ft., Passive Perception 11</li>
+				<li><b>Languages</b> —</li>
+				<li><b>CR</b> 1/8 (XP 25; PB +2)</li>
+			</ul>
+			<h4 style="margin-top:5px">Traits</h4>
+				<p><b><i>Flyby. </i></b> The snake doesn’t provoke an Opportunity Attack when it flies out of an enemy’s reach.</p>
+			<h4 style="margin-top:5px">Actions</h4>
+				<p><b><i>Bite. </i></b> <i>Melee Attack Roll:</i> +4, reach 5 ft.  <i>Hit:</i> 1 Piercing damage plus 5 (2d4) Poison damage.</p>
 		</description>
 	</element>
 
